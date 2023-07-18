@@ -1447,6 +1447,7 @@ The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
 \end{df}
 
 \begin{prop}
+\label{prop:Uaplus}
 For a transitive set $a$,
 \[ \bigcup (a^+) = a \enspace . \]
 \end{prop}
@@ -1543,6 +1544,23 @@ Every natural number except 0 is the successor of some natural number.
 
 \begin{proof}
 \pf\ Trivially by induction. \qed
+\end{proof}
+
+\begin{prop}
+Every natural number is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$0$ is a transitive set.}
+\begin{proof}
+	\pf\ Vacuously, if $x \in y \in 0$ then $x \in 0$.
+\end{proof}
+\step{2}{For every natural number $n$, if $n$ is a transitive set then $n^+$ is a transitive set.}
+\begin{proof}
+	\pf\ If $n$ is a transitive set then $\bigcup(n^+) = n \subseteq n^+$ by Proposition \ref{prop:Uaplus} and so $n^+$ is a transitive set.
+\end{proof} %TODO Extract lemma
+\qed
 \end{proof}
 
 \chapter{Complex Analysis}
