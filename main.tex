@@ -1430,6 +1430,77 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 \qed
 \end{proof}
 
+\chapter{Natural Numbers}
+
+\section{Inductive Sets}
+
+\begin{df}[Successor]
+The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
+\end{df}
+
+\begin{df}
+We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
+\end{df}
+
+\begin{df}[Inductive]
+A set $I$ is \emph{inductive} iff $\emptyset \in I$ and $\forall x \in I. x^+ \in I$.
+\end{df}
+
+\begin{df}[Natural Number]
+A \emph{natural number} is a set that belongs to every inductive set.
+\end{df}
+
+\begin{thm}
+The class $\mathbb{N}$ of natural numbers is a set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ an inductive set $I$.}
+\begin{proof}
+	\pf\ Axiom of Infinity.
+\end{proof}
+\step{2}{$\mathbb{N} \subseteq I$}
+\qed
+\end{proof}
+
+\begin{thm}
+$\mathbb{N}$ is inductive, and is a subset of every other inductive set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbb{N}$ is inductive.}
+\begin{proof}
+	\step{a}{$0 \in \mathbb{N}$}
+	\begin{proof}
+		\pf\ Since $0$ is a member of every inductive set.
+	\end{proof}
+	\step{b}{$\forall n \in \mathbb{N}. n^+ \in \mathbb{N}$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{N}$}}
+		\step{ii}{\pflet{$I$ be any inductive set.} \prove{$n^+ \in I$}}
+		\step{iii}{$n \in I$}
+		\begin{proof}
+			\pf\ \stepref{i}, \stepref{ii}
+		\end{proof}
+		\step{iv}{$n^+ \in I$}
+		\begin{proof}
+			\pf\ \stepref{ii}, \stepref{iii}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{$\mathbb{N}$ is a subset of every inductive set.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Induction Principle for $\mathbb{N}$]
+Any inductive subset of $\mathbb{N}$ coincides with $\mathbb{N}$.
+\end{cor}
+
 \chapter{Complex Analysis}
 
 \begin{df}
