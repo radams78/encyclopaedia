@@ -1446,6 +1446,34 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
 \end{df}
 
+\begin{prop}
+For a transitive set $a$,
+\[ \bigcup (a^+) = a \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup (a^+) \subseteq a$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \bigcup (a^+)$} \prove{$x \in a$}}
+	\step{b}{\pick\ $y \in a^+$ such that $x \in y$.}
+	\step{c}{$y \in a$ or $y = a$.}
+	\step{d}{\case{$y \in a$}}
+	\begin{proof}
+		\pf\ Then $x \in a$ because $a$ is a transitive set.
+	\end{proof}
+	\step{e}{\case{$y = a$}}
+	\begin{proof}
+		\pf\ Then $x \in a$ immediately.
+	\end{proof}
+\end{proof}
+\step{2}{$a \subseteq \bigcup (a^+)$}
+\begin{proof}
+	\pf\ Since $a \in a^+$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}
 We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
 \end{df}
