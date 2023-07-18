@@ -1397,6 +1397,10 @@ Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \i
 \qed
 \end{proof}
 
+\begin{df}[Closed]
+Let $\mathbf{F}$ be a function and $\mathbf{A} \subseteq \dom \mathbf{F}$. Then $\mathbf{A}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{A}. \mathbf{F}(x) \in \mathbf{A}$.
+\end{df}
+
 \section{Dependent Product Sets}
 
 \begin{df}
@@ -1500,6 +1504,14 @@ $\mathbb{N}$ is inductive, and is a subset of every other inductive set.
 \begin{cor}[Induction Principle for $\mathbb{N}$]
 Any inductive subset of $\mathbb{N}$ coincides with $\mathbb{N}$.
 \end{cor}
+
+\begin{thm}
+Every natural number except 0 is the successor of some natural number.
+\end{thm}
+
+\begin{proof}
+\pf\ Trivially by induction. \qed
+\end{proof}
 
 \chapter{Complex Analysis}
 
