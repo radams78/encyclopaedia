@@ -1,0 +1,12 @@
+For each concept:
+
+* Examples
+* Relate to the previous concepts
+  - Subclass? Superclass?
+* Relations between
+* Methods of constructing
+  
+For each theorem:
+* Counterexample to show converse does not hold.
+* Counterexample to show hypotheses cannot be weakened.
+* Counterexample to show conclusion cannot be strengthened.

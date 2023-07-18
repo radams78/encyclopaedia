@@ -1,0 +1,132 @@
+# Set Theories
+
+## Constructive Material Set Theories
+
+CZF - Constructive Zermelo-Fraenkel
+IZF - Intuitionistic Zermelo-Fraenkel
+
+## Classical Material Set Theories
+
+## Constructive Structural Set Theories
+
+CSEAR - Constructive Sets Elements and Relations
+CETCSR - Constructive Elementary Theory of the Category of Sets and Relations
+PSEAR - Predicative Sets Elements and Relations
+ISEAR - Intuitionistic Sets Elements And Relations
+IETCSR - Intuitionistic Elementary Theory of the Category of Sets and Relations
+
+## Classical Structural Set Theories
+
+ETCS - Elementary Theory of the Category of Sets
+SEAR - Sets Elements And Relations
+Structural ZFC
+Local set theory
+
+# Type Theories
+
+Martin-Lof Type Theory
+Homotopy Type Theory
+Cubical Type Theory
+
+# Formal Category Theories
+
+ETCC
+
+--------------------------------
+
+# Reading List
+
+# Formalizations of Mathematics
+
+B. Russell. Principia Mathematica, 1910.
+
+# The Foundations of Mathematics
+
+L. A. Harrington (ed.), Harvey Friedman’s Research on the Foundations of Mathematics, Studies in Logic and the Foundations of Mathematics (2012)
+Paul Taylor, Practical Foundations of Mathematics, Cambridge University Press 
+Robert Harper, Practical Foundations for Programming Languages
+Samuel Eilenberg, Norman Steenrod, Foundations of Algebraic Topology. Princeton University Press, 1952
+Steve Awodey, From Sets to Types to Categories to Sets
+C. Truesdell. Mechanical foundations of elasticity and fluid mechanics. Journal of Rational Mechanics and Analysis, vol. 1 (1952), pp. 125-171 & 173-300.
+W. Lawvere. Toposes of laws of motion, 1997. http://www.acsu.buffalo.edu/~wlawvere/downloadlist.html
+P. Cartier. Groupes alg\'{e}briques et groupes formels. Colloq. th\'{e}orie des groupes alg\'{e}briques, (Bruxelles 1962) (Paris), Gauthier-Villars, pp. 86-111
+A. Grothendieck. Techniques of construction in analytic geometry. Cartan seminar, 1960.
+J. Isbell, Adequate subcategories, Illinois Journal of Mathematics, vol. 4 (1960), pp. 541-552
+F. W. Lawvere. Thesis: Functorial semantics of algebraic theories, Columbia University, 1963.
+F. W. Lawvere. Categories of space and of quantity. The space of mathematics: Philosophical, epistemological and historical explorations. De Gruyter, Berlin, 1992. pp. 14-30
+F. W. Lawvere. Cohesive toposes and Cantor's "lauter Einsen", Philosophia Mathematica, vol. 2 (1994) pp. 5-15
+F. W. Lawvere. Volterra's functional and the covariant cohesion of space, Categorical studies in Italy, Rendiconti del Circolo Matematico di Palermo. Serie II. Supplemento, vol 64 (2000) pp. 201-214
+V. Volterra. Sur une g\'{e}n\'{e}ralisation de la th\'{e}orie des fonctions d'une variable imaginaire, Acta Mathematica, vol. 12 (1889), pp. 233-286
+William Lawvere, Foundations and applications: axiomatization and education, Bulletin of Symbolic Logic 9 (2003), 213-224
+
+# Set Theory
+
+Michael Shulman (2018). Comparing material and structural set theories. arXiv:1808.05204.
+Freek Wiedijk, Is ZF a hack? Comparing the complexity of some (formalist interpretations of) foundational systems for mathematics
+Colin McLarty, Set theory for Grothendieck’s number theory
+
+# Formal Category Theory
+
+F. W. Lawvere. The category of categories as a foundation for mathematics, La Jolla conference on categorical algebra, Springer-Verlag, 1966, pp. 1-20
+
+----------------------------
+# First-Order Theories of Natural Numbers
+
+* Robinson arithmetic
+* EFA
+* PA
+
+* Heyting Arithmetic
+
+# Second-Order Theories of Natural Numbers
+
+* Z2
+
+# Set Theories
+
+## Material Set Theories
+
+* BZ
+* BZC
+* Z
+* ZF
+* ZFC
+* ZFA/ZFU
+* TG
+* NFU
+
+* CPZ
+* CZF
+* IZF
+* CST
+
+### Class Theories
+
+* NBG
+* MK
+
+## Structural Set Theories
+
+* ETCS
+* SEAR
+* SEARC
+
+# Type Theories
+
+## Set-level Type Theories
+
+## Higher Foundations
+
+### Homotopy type theories
+
+* Book HoTT
+
+# Uncategorized
+
+Second order arithmetic
+Unsorted set theory
+Higher-order logic
+Mostowski set theory
+Structural ZFC
+Algebraic set theory
+

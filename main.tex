@@ -1,0 +1,5045 @@
+\documentclass{book}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
+\usepackage{pf2}
+\usepackage{hyperref}
+
+\title{Mathematics}
+\author{Robin Adams}
+
+\newtheorem{ax}{Axiom}[section]
+\newtheorem{axs}[ax]{Axiom Schema}
+\newtheorem{prop}[ax]{Proposition}
+\newtheorem{props}[ax]{Proposition Schema}
+\newtheorem{cor}{Corollary}[ax]
+\newtheorem{thm}[ax]{Theorem}
+\theoremstyle{definition}
+\newtheorem{df}[ax]{Definition}
+\newtheorem{dfs}[ax]{Definition Schema}
+
+\newcommand{\dom}{\ensuremath{\operatorname{dom}}}
+\newcommand{\ran}{\ensuremath{\operatorname{ran}}}
+\newcommand{\fld}{\ensuremath{\operatorname{fld}}}
+\newcommand{\spn}{\ensuremath{\operatorname{span}}}
+\newcommand{\cl}{\ensuremath{\operatorname{cl}}}
+\newcommand{\sgn}{\ensuremath{\operatorname{sgn}}}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Sets and Classes}
+
+\section{Classes}
+
+Our language is the language of first-order logic with equality over one primitive binary predicate $\in$. We call all the objects we reason about \emph{sets}. When $a \in b$, we say $a$ is a \emph{member} or \emph{element} of $b$, or $b$ \emph{contains} $a$. We write $b \ni a$ for $a \in b$, and $a \notin b$ for $\neg(a \in b)$. We write $\forall x \in a. \phi$ as an abbreviation for $\forall x(x \in a \rightarrow \phi)$, and $\exists x \in a. \phi$ as an abbreviation for $\exists x(x \in a \wedge \phi)$.
+
+We shall speak informally of \emph{classes} as an abbreviation for talking about predicates. A \emph{class} is determined by a unary predicate $\phi[x]$ (possibly with parameters). We write $\{ x \mid \phi[x] \}$ or $\{ x : \phi[x] \}$ for the class determined by $\phi[x]$. We write '$a$ is an element of $\{x \mid \phi[x]\}$' or '$a \in \{x \mid \phi[x]\}$' for $\phi[a]$.
+
+We say two classes $\mathbf{A}$ and $\mathbf{B}$ are \emph{equal}, and write $\mathbf{A} = \mathbf{B}$, iff $\forall x (x \in \mathbf{A} \leftrightarrow x \in \mathbf{B})$.
+
+The following are all valid formulas of first-order logic:
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems:
+\begin{enumerate}
+\item $\mathbf{A} = \mathbf{A}$
+\item If $\mathbf{A} = \mathbf{B}$ then $\mathbf{B} = \mathbf{A}$.
+\item If $\mathbf{A} = \mathbf{B}$ and $\mathbf{B} = \mathbf{C}$ then $\mathbf{A} = \mathbf{C}$.
+\end{enumerate}
+\end{props}
+
+\begin{df}[Subclass]
+We say a class $\mathbf{A}$ is a \emph{subclass} of $\mathbf{B}$, or $\mathbf{B}$ is a \emph{superclass} of $\mathbf{A}$, or $\mathbf{B}$ \emph{includes} $\mathbf{A}$, and write $\mathbf{A} \subseteq \mathbf{B}$ or $\mathbf{B} \supseteq \mathbf{A}$, iff every element of $\mathbf{A}$ is an element of $\mathbf{B}$. Otherwise we write $\mathbf{A} \nsubseteq \mathbf{B}$ or $\mathbf{B} \nsupseteq \mathbf{A}$.
+
+We say $\mathbf{A}$ is a \emph{proper} subclass of $\mathbf{B}$, $\mathbf{B}$ is a \emph{proper} superclass of $\mathbf{A}$, or $\mathbf{B}$ \emph{properly} includes $\mathbf{A}$, and write $\mathbf{A} \subsetneq \mathbf{B}$ or $\mathbf{B} \supsetneq \mathbf{A}$, iff in addition $\mathbf{A} \neq \mathbf{B}$.
+\end{df}
+
+The following are all valid formulas of first-order logic:
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems:
+\begin{enumerate}
+\item $\mathbf{A} \subseteq \mathbf{A}$
+\item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A}$ then $\mathbf{A} = \mathbf{B}$.
+\item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \subseteq \mathbf{C}$.
+\end{enumerate}
+\end{props}
+
+\begin{df}[Empty Class]
+The \emph{empty class} $\emptyset$ is $\{ x \mid \bot\}$.
+\end{df}
+
+\begin{prop}
+For any class $\mathbf{A}$, we have $\emptyset \subseteq \mathbf{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Vacuously, every element of $\emptyset$ is an element of $\mathbf{A}$. \qed	
+\end{proof}
+
+\begin{df}[Universal Class]
+The \emph{universal class} $\mathbf{V}$ is $\{ x \mid \top \}$.
+\end{df}
+
+\begin{prop}
+For any class $\mathbf{A}$, we have $\mathbf{A} \subseteq \mathbf{V}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Trivially, every element of $\mathbf{A}$ is an element of $\mathbf{V}$. \qed	
+\end{proof}
+
+\begin{df}[Union]
+The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} \cup \mathbf{B} & = \mathbf{B} \cup \mathbf{A} \\
+\mathbf{A} \cup (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cup \mathbf{C} \\
+\mathbf{A} \cup \emptyset & = \mathbf{A}
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ These are valid formulas of first-order logic. \qed
+\end{proof}
+
+\begin{df}[Intersection]
+The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} \cap \mathbf{B} & = \mathbf{B} \cap \mathbf{A} \\
+\mathbf{A} \cap (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cap \mathbf{C} \\
+\mathbf{A} \cap \emptyset & = \emptyset
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ These are valid formulas of first-order logic. \qed
+\end{proof}
+
+\begin{prop}[Distributive Laws]
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} \cup (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cap (\mathbf{A} \cup \mathbf{C}) \\
+\mathbf{A} \cap (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cup (\mathbf{A} \cap \mathbf{C})
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ These are valid formulas of first-order logic. \qed
+\end{proof}
+
+\begin{df}[Union]
+The \emph{union} of a class $\mathbf{A}$ is $\{ x \mid \exists X \in \mathbf{A}. x \in X\}$.
+We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\begin{df}[Intersection]
+The \emph{intersection} of a class $\mathbf{A}$ is $\{ x \mid \forall X \in \mathbf{A}. x \in X \}$. We write $\bigcap_{P(x)} t(x)$ for $\bigcap \{ t(x) \mid P(x) \}$.
+\end{df}
+
+\begin{df}[Relative Complement]
+Let $\mathbf{A}$ and $\mathbf{B}$ be classes. The \emph{relative complement} of $\mathbf{B}$ in $\mathbf{A}$ is the class $\mathbf{A} - \mathbf{B} = \{ x \in \mathbf{A} \mid x \notin \mathbf{B} \}$.
+\end{df}
+
+\begin{prop}[De Morgan's Laws]
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} - (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} - \mathbf{B}) \cap (\mathbf{A} - \mathbf{C}) \\
+\mathbf{A} - (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} - \mathbf{B}) \cup (\mathbf{A} - \mathbf{C})
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\begin{prop}
+If $\mathbf{A} \subseteq \mathbf{B}$ then $\mathbf{C} - \mathbf{B} \subseteq \mathbf{C} - \mathbf{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\begin{df}[Symmetric Difference]
+The \emph{symmetric difference} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} + \mathbf{B} := (\mathbf{A} - \mathbf{B}) \cup (\mathbf{B} - \mathbf{A})$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} \cap (\mathbf{B} + \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) + (\mathbf{A} \cap \mathbf{C}) \\
+\mathbf{A} + (\mathbf{B} + \mathbf{C}) & = (\mathbf{A} + \mathbf{B}) + \mathbf{C}
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\section{Axioms}
+	
+\begin{ax}[Extensionality]
+If two sets have exactly the same members, they are equal.
+\end{ax}
+
+Thanks to this axiom, we may identify a set $a$ with the class $\{x \mid x \in a\}$. Our use of the symbols $\in$ and $=$ is consistent. We say a class $\mathbf{A}$ \emph{is a set} iff there exists a set $a$ such that $a = \mathbf{A}$; that is, $\{x \mid \phi[x]\}$ is a set iff $\exists a \forall x (x \in a \leftrightarrow \phi[x])$. Otherwise, $\mathbf{A}$ is a \emph{proper class}.
+
+\begin{ax}[Union]
+The union of a set is a set.
+\end{ax}
+
+\begin{ax}[Power Set]
+For any set $A$, the class $\mathcal{P} A = \{x \mid x \subseteq A\}$ is a set, called the \emph{power set} of $A$.
+\end{ax}
+
+\begin{ax}[Infinity]
+There exists a set $I$ such that:
+\begin{itemize}
+\item There exists an element of $I$ that has no members
+\item For every $x \in I$, there exists a set $y \in I$ such that the elements of $y$ are exactly $x$ and the members of $x$.
+\end{itemize}
+\end{ax}
+
+\begin{ax}[Choice]
+For any set $A$ of pairwise disjoint, nonempty sets, there exists a set $C$ such that, for all $x \in A$, $x \cap C$ has exactly one element.
+\end{ax}
+
+\begin{axs}[Replacement]
+For any predicate $P(x,y)$, the following is an axiom:
+
+Let $A$ be a set. Assume that, for all $x \in A$, there exists at most one $y$ such that $P(x,y)$. Then $\{y \mid \exists x \in A. P(x,y)\}$ is a set.
+\end{axs}
+
+\begin{ax}[Regularity]
+For any nonempty set $A$, there exists $m \in A$ such that $m \cap A = \emptyset$.
+\end{ax}
+
+\section{Basic Constructions on Sets}
+
+\subsection{Consequences of the Axioms}
+
+\begin{prop}
+The class $\emptyset = \{x \mid \bot \}$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from the Axiom of Infinity. \qed
+\end{proof}
+
+\begin{prop}[Pairing]
+For any sets $a$ and $b$, the class $\{a,b\} = \{x \mid x = a \vee x = b\}$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(x,y)$ be the predicate $(x = \emptyset \wedge y = a) \vee (x = \mathcal{P} \emptyset \wedge y = b)$.}}
+\step{2}{For all $x \in \mathcal{P} \mathcal{P} \emptyset$, there exists at most one $y$ such that $P(x,y)$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathcal{P} \mathcal{P} \emptyset$}}
+	\step{b}{\pflet{$y$ and $y'$ be sets.}}
+	\step{c}{\assume{$P(x,y)$ and $P(x,y')$}}
+	\step{d}{$(x = \emptyset \wedge y = a) \vee (x = \mathcal{P} \emptyset \wedge y = b)$}
+	\begin{proof}
+		\pf\ From \stepref{c}.
+	\end{proof}
+	\step{e}{$(x = \emptyset \wedge y' = a) \vee (x = \mathcal{P} \emptyset \wedge y' = b)$}
+	\begin{proof}
+		\pf\ From \stepref{c}.
+	\end{proof}
+	\step{f}{$\emptyset \neq \mathcal{P} \emptyset$}
+	\begin{proof}
+		\pf\ Since $\emptyset \in \mathcal{P} \emptyset$ and $\emptyset \notin \emptyset$.
+	\end{proof}
+	\step{g}{$y = y'$}
+\end{proof}
+\step{3}{\pflet{$A$ be the set $\{ y \mid \exists x \in \mathcal{P} \mathcal{P} \emptyset. P(x,y)\}$.}}
+\step{4}{$A = \{a,b\}$}
+\qed
+\end{proof}
+
+\begin{prop}
+The union of two sets is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ The union of two sets $A$ and $B$ is $\bigcup \{A,B\}$. \qed
+\end{proof}
+
+\begin{props}
+For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x = a_1 \vee \cdots \vee x = a_n\}$ is a set.
+\end{props}
+
+\begin{proof}
+\pf\ The case $n=1$ follows from Pairing since $\{a\} = \{a,a\}$.
+
+If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
+\end{proof}
+
+\subsection{Comprehension}
+
+\begin{props}[Comprehension]
+For any predicate $P(x)$, the following is a theorem:
+
+For any set $A$, the class $\{x \in A \mid P(x)\}$ is a set.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{\pflet{$Q(x,y)$ be the predicate $P(x) \wedge y = x$.}}
+\step{3}{For all $x \in A$, there exists at most one $y$ such that $Q(x,y)$.}
+\begin{proof}
+	\step{3a}{\pflet{$x \in A$}}
+	\step{3b}{\pflet{$y$ and $y'$ be sets.}}
+	\step{3c}{\assume{$Q(x,y)$ and $Q(x,y')$}}
+	\step{3d}{$x \in A \wedge P(x) \wedge y = x \wedge y' = x$}
+	\begin{proof}
+		\pf\ From \stepref{3c}.
+	\end{proof}
+	\step{3e}{$y = y'$}
+	\begin{proof}
+		\pf\ From \stepref{3d}.
+	\end{proof}
+\end{proof}
+\step{4}{\pflet{$B$ be the set $\{y \mid \exists x \in A. Q(x,y)\}$}}
+\begin{proof}
+	\pf\ This is a set by an Axiom of Replacement and \stepref{3}.
+\end{proof}
+\step{5}{$B = \{y \in A \mid P(y)\}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y \in B & \Leftrightarrow \exists x \in A. Q(x,y) & (\text{\stepref{4}}) \\
+		& \Leftrightarrow \exists x \in A (P(x) \wedge y = x) & (\text{\stepref{2}}) \\
+		& \Leftrightarrow P(y)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The intersection of a set and a class is a set.
+\end{cor}
+
+\begin{cor}
+The intersection of a nonempty class is a set.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathbf{A}$ be a nonempty class.}}
+\step{2}{\pick $A \in \mathbf{A}$}
+\step{3}{$\bigcap \mathbf{A} = \{ x \in A \mid \forall X \in \mathbf{A}. x \in X \}$ which is a set.}
+\qed
+\end{proof}
+
+\begin{cor}
+The relative complement of a class in a set is a set.
+\end{cor}
+
+\begin{cor}[Russell's Paradox]
+$\mathbf{V}$ is a proper class.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathbf{R} = \{x \mid x \notin x\}$}}
+\step{2}{$\mathbf{R}$ is a proper class.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\mathbf{R}$ is a set}}
+	\step{b}{$\mathbf{R} \in \mathbf{R}$ iff $\mathbf{R} \notin \mathbf{R}$}
+	\step{c}{This is a contradiction.}
+\end{proof}
+\step{3}{$\mathbf{V}$ is a proper class.}
+\begin{proof}
+	\pf\ From Comprehension and \stepref{2}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+For any sets $A$ and $B$, the \emph{relative complement} $A-B$ is the set $\{x \in A \mid x \notin B\}$.
+\end{df}
+
+\begin{prop}[Distributive Laws]
+For any set $A$ and class $\mathbf{B}$, we have
+\begin{align*}
+A \cup \bigcap \mathbf{B} & = \bigcap \{ A \cup X \mid X \in \mathbf{B} \} \\
+A \cap \bigcup \mathbf{B} & = \bigcup \{ A \cap X \mid X \in \mathbf{B} \}
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\begin{prop}[De Morgan's Laws]
+For any set $C$ and class $\mathbf{A}$, we have
+\begin{align*}
+C - \bigcap \mathbf{A} & = \bigcup \{ C - X \mid X \in \mathbf{A} \} \\
+C - \bigcup \mathbf{A} & = \bigcap \{ C - X \mid X \in \mathbf{A} \}
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\chapter{Relations}
+
+\section{Ordered Pairs}
+
+\begin{df}[Ordered Pair]
+For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined to be $\{ \{ a \}, \{a , b \} \}$.
+\end{df}
+
+\begin{thm}
+For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ and $b = d$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $(a,b) = (c,d)$ then $a = c$ and $b = d$.}
+\begin{proof}
+	\step{a}{\assume{$\{\{a\},\{a,b\}\} = \{\{c\},\{c,d\}\}$}}
+	\step{b}{$\bigcap \{\{a\},\{a,b\}\} = \bigcap \{\{c\},\{c,d\}\}$}
+	\step{c}{$\{a\} = \{c\}$}
+	\step{d}{$a=c$}
+	\step{e}{$\bigcup\{\{a\},\{a,b\}\} = \bigcup \{\{c\},\{c,d\}\}$}
+	\step{f}{$\{a,b\} = \{c,d\}$}
+	\step{g}{$b = c$ or $b = d$}
+	\step{h}{$a = d$ or $b = d$}
+	\step{i}{If $b = c$ and $a = d$ then $b = d$}
+	\begin{proof}
+		\pf\ By \stepref{d}.
+	\end{proof}
+	\step{j}{$b = d$}
+	\begin{proof}
+		\pf\ From \stepref{g}, \stepref{h}, \stepref{i}.
+	\end{proof}
+\end{proof}
+\step{2}{If $a = c$ and $b = d$ then $(a,b) = (c,d)$.}
+\begin{proof}
+	\pf\ First-order logic.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Cartesian Product]
+The \emph{Cartesian product} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \times \mathbf{B} := \{(x,y) \mid x \in \mathbf{A}, y \in \mathbf{B}\}$.
+\end{df}
+
+\begin{prop}
+If $A$ and $B$ are sets then $A \times B$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ It is a subset of $\mathcal{P} \mathcal{P} (A \cup B)$. \qed
+\end{proof}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, we have $\mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C})$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(x,y) \in \mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) & \Leftrightarrow x \in \mathbf{A} \wedge (y \in \mathbf{B} \vee y \in \mathbf{C}) \\
+& \Leftrightarrow (x \in \mathbf{A} \wedge y \in \mathbf{B}) \vee (x \in \mathbf{A} \wedge y \in \mathbf{C}) \\
+& \Leftrightarrow (x,y) \in (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C}) & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}$ is nonempty then $\mathbf{B} = \mathbf{C}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick{$a \in \mathbf{A}$}}
+\step{2}{For all $x$ we have $x \in \mathbf{B}$ iff $x \in \mathbf{C}$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		x \in \mathbf{B} & \Leftrightarrow (a,x) \in \mathbf{A} \times \mathbf{B} \\
+		& \Leftrightarrow (a,x) \in \mathbf{A} \times \mathbf{C} \\
+		& \Leftrightarrow x \in \mathbf{C}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any set $A$ and class $\mathbf{B}$, we have $A \times \bigcup \mathbf{B} = \bigcup \{A \times X \mid X \in \mathbf{B}\}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(x,y) \in A \times \bigcup \mathbf{B} & \Leftrightarrow x \in A \wedge \exists Y \in \mathbf{B}. y \in Y \\
+& \Leftrightarrow \exists Y \in \mathbf{B} (x \in A \wedge y \in Y) \\
+& \Leftrightarrow (x,y) \in \bigcup \{A \times X \mid X \in \mathbf{B}\} & \qed
+\end{align*}
+\end{proof}
+
+\section{Relations}
+
+\begin{df}[Relation]
+A \emph{relation} is a class of ordered pairs.
+\end{df}
+
+\begin{df}[Domain]
+The \emph{domain} of a class $\mathbf{R}$ is the class
+\[ \dom \mathbf{R} := \{ x \mid \exists y. (x,y) \in \mathbf{R} \} \enspace . \]
+\end{df}
+
+\begin{df}[Range]
+The \emph{range} of a class $\mathbf{R}$ is the class
+\[ \ran \mathbf{R} := \{ x \mid \exists y. (y,x) \in \mathbf{R} \} \enspace . \]
+\end{df}
+
+\begin{df}[Field]
+The \emph{field} of a class $\mathbf{R}$ is the class
+\[ \fld \mathbf{R} := \dom \mathbf{R} \cup \ran \mathbf{R} \enspace . \]
+\end{df}
+
+\begin{prop}
+For any set $R$, the classes $\dom R$, $\ran R$, $\fld R$ are sets.
+\end{prop}
+
+\begin{proof}
+\pf\ They are all subsets of $\bigcup \bigcup R$. \qed
+\end{proof}
+
+\begin{df}[Single-Rooted]
+A class $\mathbf{R}$ is \emph{single-rooted} iff, for all $y \in \ran \mathbf{R}$, there is exactly one $x$ such that $(x,y) \in \mathbf{R}$.
+\end{df}
+
+\begin{df}[Inverse]
+The \emph{inverse} of a class $\mathbf{F}$ is the class
+\[ \mathbf{F}^{-1} := \{ (x,y) \mid (y,x) \in \mathbf{F} \} \enspace . \]
+\end{df}
+
+\begin{prop}
+\label{prop:dominv}
+For any class $\mathbf{F}$, we have $\dom \mathbf{F}^{-1} = \ran \mathbf{F}$
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+y \in \dom \mathbf{F}^{-1} & \Leftrightarrow \exists x. (y,x) \in \mathbf{F}^{-1} \\
+& \Leftrightarrow \exists x. (x,y) \in \mathbf{F} \\
+& \Leftrightarrow y \in \ran \mathbf{F} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any class $\mathbf{F}$, we have $\ran \mathbf{F}^{-1} = \dom \mathbf{F}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+y \in \ran \mathbf{F}^{-1} & \Leftrightarrow \exists x. (x,y) \in \mathbf{F}^{-1} \\
+& \Leftrightarrow \exists x. (y,x) \in \mathbf{F} \\
+& \Leftrightarrow y \in \dom \mathbf{F} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any relation $\mathbf{F}$, we have $(\mathbf{F}^{-1})^{-1} = \mathbf{F}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(x,y) \in (\mathbf{F}^{-1})^{-1} & \Leftrightarrow (y,x) \in \mathbf{F}^{-1} \\
+& \Leftrightarrow (x,y) \in \mathbf{F} & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Composition]
+The \emph{composition} of classes $\mathbf{F}$ and $\mathbf{G}$ is the class
+\[ \mathbf{F} \circ \mathbf{G} := \{ (x,z) \mid \exists y. (x,y) \in \mathbf{G} \wedge (y,z) \in \mathbf{F} \} \enspace . \]
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{F}$ and $\mathbf{G}$,
+\[ (\mathbf{F} \circ \mathbf{G})^{-1} = \mathbf{G}^{-1} \circ \mathbf{F}^{-1} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(z,x) \in (\mathbf{F} \circ \mathbf{G})^{-1} & \Leftrightarrow (x,z) \in \mathbf{F} \circ \mathbf{G} \\
+& \Leftrightarrow \exists y. (x,y) \in \mathbf{G} \wedge (y,z) \in \mathbf{F} \\
+& \Leftrightarrow \exists y. (y,x) \in \mathbf{G}^{-1} \wedge (z,y) \in \mathbf{F}^{-1} \\
+& \Leftrightarrow (z,x) \in \mathbf{G}^{-1} \circ \mathbf{F}^{-1} & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Restriction]
+The \emph{restriction} of the class $\mathbf{F}$ to the class $\mathbf{A}$ is the class $\mathbf{F} \restriction \mathbf{A} := \{ (x,y) \mid x \in \mathbf{A}, (x,y) \in \mathbf{F} \}$.
+\end{df}
+
+\begin{df}[Image]
+The \emph{image} of the class $\mathbf{A}$ under the class $\mathbf{F}$ is the set $F(A) := \ran (F \restriction A) = \{ y \mid \exists x \in \mathbf{A}. (x,y) \in \mathbf{F} \}$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have
+\[ \mathbf{F}(\mathbf{A} \cup \mathbf{B}) = \mathbf{F}(\mathbf{A}) \cup \mathbf{F}(\mathbf{B}) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	y \in \mathbf{F}(\mathbf{A} \cup \mathbf{B})
+	& \Leftrightarrow \exists x \in \mathbf{A} \cup \mathbf{B}. (x,y) \in \mathbf{F} \\
+	& \Leftrightarrow \exists x \in \mathbf{A}. (x,y) \in \mathbf{F} \vee \exists x \in \mathbf{B}. (x,y) \in \mathbf{F} \\
+	& \Leftrightarrow y \in \mathbf{F}(\mathbf{A}) \cup \mathbf{F}(\mathbf{B}) & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:imgunion}
+For any classes $\mathbf{F}$ and $\mathbf{A}$ we have $\mathbf{F}(\bigcup \mathbf{A}) = \bigcup \{\mathbf{F}(X) \mid X \in \mathbf{A}\}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	y \in \mathbf{F}(\bigcup \mathbf{A}) & \Leftrightarrow \exists x \in \bigcup \mathbf{A}. (x,y) \in \mathbf{F} \\
+	& \Leftrightarrow \exists x. \exists X. X \in \mathbf{A} \wedge x \in X \wedge (x,y) \in \mathbf{F} \\
+	& \Leftrightarrow \exists X \in \mathbf{F}. y \in \mathbf{F}(X) & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$. Equality holds if $\mathbf{F}$ is single-rooted.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}
+\begin{proof}
+	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}}
+	\step{b}{\pick\ $x \in \mathbf{A} \cap \mathbf{B}$ such that $(x,y) \in \mathbf{F}$}
+	\step{c}{$y \in \mathbf{F}(\mathbf{A})$}
+	\begin{proof}
+		\pf\ Since $x \in \mathbf{A}$.
+	\end{proof}
+	\step{d}{$y \in \mathbf{F}(\mathbf{B})$}
+	\begin{proof}
+		\pf\ Since $x \in \mathbf{B}$.
+	\end{proof}
+\end{proof}
+\step{2}{If $\mathbf{F}$ is single-rooted then $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) = \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$.}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{F}$ is single-rooted.}}
+	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}}
+	\step{c}{\pick\ $x \in \mathbf{A}$ such that $(x,y) \in \mathbf{F}$}
+	\step{d}{\pick\ $x' \in \mathbf{B}$ such that $(x',y) \in \mathbf{F}$}
+	\step{e}{$x = x'$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{f}{$x \in \mathbf{A} \cap \mathbf{B}$}
+	\step{g}{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:imgint}
+For any classes $\mathbf{F}$ and $\mathbf{A}$ we have
+\[ \mathbf{F} \left( \bigcap \mathbf{A} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \} \enspace . \]
+Equality holds if $\mathbf{F}$ is single-rooted and $\mathbf{A}$ is nonempty.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F} \left( \bigcap \mathbf{A} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
+\begin{proof}
+	\step{a}{\pflet{$y \in \mathbf{F} (\bigcap \mathbf{A})$}}
+	\step{b}{\pick\ $x \in \bigcap \mathbf{A}$ such that $(x,y) \in \mathbf{F}$}
+	\step{c}{\pflet{$X \in \mathbf{A}$} \prove{$y \in \mathbf{F}(X)$}}
+	\step{d}{$x \in X$}
+	\step{e}{$y \in \mathbf{F}(X)$}
+\end{proof}
+\step{2}{If $\mathbf{F}$ is single-rooted then $\mathbf{F} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{F}$ is single-rooted.}}
+	\step{aa}{\assume{$\mathbf{A}$ is nonempty.}}
+	\step{b}{\pflet{$y \in \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}}
+	\step{c}{\pick\ $X_0 \in \mathbf{A}$}
+	\step{d}{\pick\ $x \in X_0$ such that $(x,y) \in \mathbf{F}$}
+	\step{e}{$x \in \bigcap \mathbf{A}$}
+	\begin{proof}
+		\step{i}{\pflet{$X \in \mathbf{A}$}}
+		\step{ii}{\pick\ $x' \in X$ such that $(x',y) \in \mathbf{F}$.}
+		\step{iii}{$x = x'$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iv}{$x \in X$}
+	\end{proof}
+	\step{f}{$y \in \mathbf{F}(\bigcap \mathbf{A})$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:imgdiff}
+For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have
+\[ \mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) \subseteq \mathbf{F}(\mathbf{A} - \mathbf{B}) \enspace . \]
+Equality holds if $\mathbf{F}$ is single-rooted.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) \subseteq \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\begin{proof}
+	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B})$}}
+	\step{b}{\pick\ $x \in \mathbf{A}$ such that $(x,y) \in \mathbf{F}$}
+	\step{c}{$x \notin \mathbf{B}$}
+	\step{d}{$x \in \mathbf{A} - \mathbf{B}$}
+	\step{e}{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\end{proof}
+\step{2}{If $\mathbf{F}$ is single-rooted then $\mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) = \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{F}$ is single-rooted.}}
+	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}}
+	\step{c}{\pick\ $x \in \mathbf{A} - \mathbf{B}$ such that $(x,y) \in \mathbf{F}$}
+	\step{d}{$y \in \mathbf{F}(\mathbf{A})$}
+	\step{e}{$y \notin \mathbf{F}(\mathbf{B})$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $y \in \mathbf{F}(\mathbf{B})$}}
+		\step{ii}{\pick\ $x' \in \mathbf{B}$ such that $(x',y) \in \mathbf{F}$}
+		\step{iii}{$x = x'$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iv}{$x \in \mathbf{B}$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{c}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Reflexive]
+Let $\mathbf{R}$ be a binary relation on $\mathbf{A}$. Then $\mathbf{R}$ is \emph{reflexive} on $\mathbf{A}$ iff $\forall x \in \mathbf{A}. (x,x) \in \mathbf{R}$.
+\end{df}
+
+\begin{df}[Irreflexive]
+A relation $\mathbf{R}$ is \emph{irreflexive} iff there is no $x$ such that $(x,x) \in \mathbf{R}$.
+\end{df}
+
+\begin{df}[Symmetric]
+A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $(x,y) \in \mathbf{R}$, then $(y,x) \in \mathbf{R}$.
+\end{df}
+
+\begin{df}[Transitive]
+A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $(x,y), (y,z) \in \mathbf{R}$, then $(x,z) \in \mathbf{R}$.
+\end{df}
+
+\begin{prop}
+\label{prop:invtrans}
+If $\mathbf{R}$ is transitive then $\mathbf{R}^{-1}$ is transitive.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$(x,y), (y,z) \in \mathbf{R}^{-1}$}}
+\step{2}{$(y,x),(z,y) \in \mathbf{R}$}
+\step{3}{$(z,x) \in \mathbf{R}$}
+\step{4}{$(x,z) \in \mathbf{R}^{-1}$}
+\qed
+\end{proof}
+
+\section{$n$-ary Relations}
+
+\begin{dfs}
+For any sets $a_1$, \ldots, $a_n$, define the \emph{ordered $n$-tuple} $(a_1, \ldots, a_n)$ by
+\begin{align*}
+(a_1) & := a_1 \\
+(a_1, \ldots, a_n, a_{n+1}) & = ((a_1, \ldots, a_n), a_{n+1})
+\end{align*}
+\end{dfs}
+
+\begin{dfs}
+An \emph{$n$-ary relation on $\mathbf{A}$} is a class of ordered $n$-tuples all of whose components are in $\mathbf{A}$.
+\end{dfs}
+
+\section{Equivalence Relations}
+
+\begin{df}[Equivalence Relation]
+An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
+\end{df}
+
+\begin{prop}
+If $\mathbf{R}$ is a symmetric and transitive relation, then $\mathbf{R}$ is an equivalence relation on $\fld \mathbf{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \fld \mathbf{R}$} \prove{$(x,x) \in \mathbf{R}$}}
+\step{2}{\pick\ $y$ such that either $(x,y) \in \mathbf{R}$ or $(y,x) \in \mathbf{R}$}
+\step{3}{$(x,y) \in \mathbf{R}$ and $(y,x) \in \mathbf{R}$}
+\begin{proof}
+	\pf\ Symmetry.
+\end{proof}
+\step{4}{$(x,x) \in \mathbf{R}$}
+\begin{proof}
+	\pf\ Transitivity.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Equivalence Class]
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph{equivalence class} of $a$ \emph{modulo} $\mathbf{R}$ is
+\[ [a]_{\mathbf{R}} := \{ x \mid (a,x) \in \mathbf{R} \} \enspace . \]
+\end{df}
+
+\begin{prop}
+\label{prop:eqclassequal}
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $(a,b) \in \mathbf{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $[a]_\mathbf{R} = [b]_\mathbf{R}$ then $(a,b) \in \mathbf{R}$.}
+\begin{proof}
+	\step{a}{\assume{$[a]_\mathbf{R} = [b]_\mathbf{R}$}}
+	\step{b}{$(b,b) \in \mathbf{R}$}
+	\begin{proof}
+		\pf\ Reflexivity
+	\end{proof}
+	\step{c}{$b \in [b]_\mathbf{R}$}
+	\step{d}{$b \in [a]_\mathbf{R}$}
+	\step{e}{$(a,b) \in \mathbf{R}$}
+\end{proof}
+\step{2}{If $(a,b) \in \mathbf{R}$ then $[a]_\mathbf{R} = [b]_\mathbf{R}$.}
+\begin{proof}
+	\step{a}{For all $x,y \in \mathbf{A}$, if $(x,y) \in \mathbf{R}$ then $[y]_\mathbf{R} \subseteq [x]_\mathbf{R}$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in \mathbf{A}$}}
+		\step{ii}{\assume{$(x,y) \in \mathbf{R}$}}
+		\step{iii}{\pflet{$t \in [y]_\mathbf{R}$}}
+		\step{iv}{$(y,t) \in \mathbf{R}$}
+		\begin{proof}
+			\pf\ \stepref{iii}
+		\end{proof}
+		\step{v}{$(x,t) \in \mathbf{R}$}
+		\begin{proof}
+			\pf\ Transitivity, \stepref{ii}, \stepref{iv}.
+		\end{proof}
+		\step{vi}{$t \in [x]_\mathbf{R}$}
+		\begin{proof}
+			\pf\ \stepref{v}
+		\end{proof}
+	\end{proof}
+	\step{b}{\assume{$(a,b) \in \mathbf{R}$}}
+	\step{c}{$[b]_\mathbf{R} \subseteq [a]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{b}.
+	\end{proof}
+	\step{d}{$(b,a) \in \mathbf{R}$}
+	\begin{proof}
+		\pf\ Symmetry, \stepref{b}.
+	\end{proof}
+	\step{e}{$[a]_\mathbf{R} \subseteq [b]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{d}.
+	\end{proof}
+	\step{f}{$[a]_\mathbf{R} = [b]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{e}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Partition]
+A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that is disjoint and exhaustive, i.e.
+\begin{enumerate}
+\item no two different sets in $\Pi$ have any common elements, and
+\item each element of $A$ is in some set in $\Pi$.
+\end{enumerate}
+\end{df}
+
+\begin{df}
+Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
+\end{df}
+
+\begin{prop}
+Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{2}{Every member of $A/R$ is nonempty.}
+\begin{proof}
+	\pf\ Since $a \in [a]_R$ by reflexivity.
+\end{proof}
+\step{3}{No two different sets in $A/R$ have any common elements.}
+\begin{proof}
+	\step{a}{\pflet{$[a]_R, [b]_R \in A/R$}}
+	\step{b}{\pflet{$c \in [a]_R \cap [b]_R$} \prove{$[a]_R = [b]_R$}}
+	\step{c}{$(a,c) \in R$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{$(b,c) \in R$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{e}{$(c,b) \in R$}
+	\begin{proof}
+		\pf\ Symmetry, \stepref{d}
+	\end{proof}
+	\step{f}{$(a,b) \in R$}
+	\begin{proof}
+		\pf\ Transitivity, \stepref{c}, \stepref{e}
+	\end{proof}
+	\step{g}{$[a]_R = [b]_R$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:eqclassequal}, \stepref{f}
+	\end{proof}
+\end{proof}
+\step{4}{Each element of $A$ is in some set in $A/R$.}
+\begin{proof}
+	\pf\ Since $a \in [a]_R$ by reflexivity.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Ordering Relations}
+
+\begin{df}[Linear Ordering]
+Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} on $\mathbf{A}$ is a relation $\mathbf{R}$ on $\mathbf{A}$ such that:
+\begin{enumerate}
+\item $\mathbf{R}$ is transitive.
+\item \emph{Trichotomy}. For all $x,y \in \mathbf{A}$, exactly one of the following holds:
+\[ (x,y) \in \mathbf{R}, \qquad (y,x) \in \mathbf{R}, \qquad x = y \enspace . \]
+\end{enumerate}
+
+We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
+\end{df}
+
+\begin{thm}
+Any linear ordering on a class is irreflexive.
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from trichotomy. \qed
+\end{proof}
+
+\begin{prop}
+If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{R}^{-1}$ is transitive.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:invtrans}.
+\end{proof}
+\step{2}{$\mathbf{R}^{-1}$ satisfies trichotomy.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \mathbf{A}$}}
+	\step{b}{Exactly one of $(x,y) \in \mathbf{R}$, $(y,x) \in \mathbf{R}$, $x = y$ holds.}
+	\step{c}{Exactly one of $(y,x) \in \mathbf{R}^{-1}$, $(x,y) \in \mathbf{R}^{-1}$, $x = y$ holds.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Lexicographic Ordering]
+Let $A$ and $B$ be linearly ordered sets. The \emph{lexicographic ordering} $<$ on $A \times B$ is defined by:
+\[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A \times B$ is a linear ordering.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$<$ is transitive.}
+\begin{proof}
+	\step{a}{\pflet{$(a_1,b_1) < (a_2,b_2) < (a_3,b_3)$} \prove{$(a_1,b_1) < (a_3,b_3)$}}
+	\step{b}{\case{$a_1 < a_2$}}
+	\begin{proof}
+		\step{i}{$a_2 < a_3$ or $a_2 = a_3$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{ii}{$a_1 < a_3$}
+		\begin{proof}
+			\pf\ Transitivity
+		\end{proof}
+		\step{iii}{$(a_1,b_1) < (a_3,b_3)$}
+	\end{proof}
+	\step{c}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 < a_3$}}
+	\begin{proof}
+		\pf\ We have $a_1 < a_3$ so $(a_1,b_1) < (a_3,b_3)$.
+	\end{proof}
+	\step{d}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 = a_3$ and $b_2 < b_3$}}
+	\begin{proof}
+		\pf\ We have $a_1 = a_3$ and $b_1 < b_3$ so $(a_1,b_1) < (a_3,b_3)$.
+	\end{proof}
+\end{proof}
+\step{2}{$<$ satisfies trichotomy.}
+\begin{proof}
+	\step{a}{\pflet{$(a_1,b_1),(a_2,b_2) \in A \times B$}}
+	\step{b}{Exactly one of $a_1 < a_2$, $a_1 = a_2$, $a_2 < a_1$ holds.}
+	\step{c}{\case{$a_1 < a_2$}}
+	\begin{proof}
+		\pf\ We have $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) \neq (a_2,b_2)$, and $(a_2,b_2) \nless (a_1,b_1)$.
+	\end{proof}
+	\step{d}{\case{$a_1 = a_2$}}
+	\begin{proof}
+		\step{i}{Exactly one of $b_1 < b_2$, $b_1 = b_2$, $b_2 < b_1$ holds.}
+		\step{ii}{Exactly one of $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) = (a_2,b_2)$, $(a_2,b_2) < (a_1, b_1)$ holds.}
+	\end{proof}
+	\step{e}{\case{$a_2 < a_1$}}
+	\begin{proof}
+		\pf\ We have $(a_2,b_2) < (a_1,b_1)$, $(a_2,b_2) \neq (a_1,b_1)$, and $(a_1,b_1) \nless (a_2,b_2)$.
+	\end{proof}
+\end{proof}
+\end{proof}
+
+\chapter{Functions}
+
+\section{Functions}
+
+\begin{df}[Function]
+A \emph{function} is a relation $\mathbf{F}$ such that, for all $x \in \dom \mathbf{F}$, there is only one $y$ such that $(x,y) \in \mathbf{F}$. We denote this $y$ by $\mathbf{F}(x)$.
+
+We say that $\mathbf{F}$ is a function \emph{from $\mathbf{A}$ into $\mathbf{B}$}, or that \emph{$\mathbf{F}$ maps $\mathbf{A}$ into $\mathbf{B}$}, and write $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, iff $\mathbf{F}$ is a function, $\dom \mathbf{F} = \mathbf{A}$ and $\ran \mathbf{F} \subseteq \mathbf{B}$.
+\end{df}
+
+\begin{prop}
+\label{prop:invfunc}
+For any class $\mathbf{F}$, $\mathbf{F}^{-1}$ is a function if and only if $\mathbf{F}$ is single-rooted.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:invsingroot}
+For any relation $\mathbf{F}$, $\mathbf{F}$ is a function if and only if $\mathbf{F}^{-1}$ is single-rooted.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+Let $\mathbf{F}$ and $\mathbf{G}$ be functions. Then $\mathbf{F} \circ \mathbf{G}$ is a function, its domain is
+\[ \{ x \in \dom \mathbf{G} \mid \mathbf{G}(x) \in \dom \mathbf{F} \} \enspace , \]
+and for $x$ in this domain, $(\mathbf{F} \circ \mathbf{G})(x) = \mathbf{F}(\mathbf{G}(x))$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F} \circ \mathbf{G}$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$(x,z),(x,z') \in \mathbf{F} \circ \mathbf{G}$}}
+	\step{b}{\pick\ $y$, $y'$ such that $(x,y) \in \mathbf{G}$, $(y,z) \in \mathbf{F}$, $(x,y') \in \mathbf{G}$, $(y',z') \in \mathbf{F}$}
+	\step{c}{$y = y'$}
+	\begin{proof}
+		\pf\ $\mathbf{G}$ is a function.
+	\end{proof}
+	\step{d}{$z = z'$}
+	\begin{proof}
+		\pf\ $\mathbf{F}$ is a function.
+	\end{proof}
+\end{proof}
+\step{2}{$\dom (\mathbf{F} \circ \mathbf{G}) = \{ x \in \dom \mathbf{G} \mid \mathbf{G}(x) \in \dom \mathbf{F} \}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		x \in \dom (\mathbf{F} \circ \mathbf{G}) & \Leftrightarrow \exists z. (x,z) \in \mathbf{F} \circ \mathbf{G} \\
+		& \Leftrightarrow \exists y,z ((x,y) \in \mathbf{G} \wedge (y,z) \in \mathbf{F}) \\
+		& \Leftrightarrow \exists y ((x,y) \in \mathbf{G} \wedge y \in \dom \mathbf{F}) \\
+		& \Leftrightarrow x \in \dom \mathbf{G} \wedge \mathbf{G}(y) \in \dom \mathbf{F}
+	\end{align*}
+\end{proof}
+\step{3}{$\forall x \in \dom (\mathbf{F} \circ \mathbf{G}). (\mathbf{F} \circ \mathbf{G})(x) = \mathbf{F}(\mathbf{G}(x))$}
+\begin{proof}
+	\pf
+	\step{a}{\pflet{$x \in \dom (\mathbf{F} \circ \mathbf{G})$}}
+	\step{b}{$(x, (\mathbf{F} \circ \mathbf{G})(x)) \in \mathbf{F} \circ \mathbf{G}$}
+	\step{c}{\pick\ $y$ such that $(x,y) \in \mathbf{G}$ and $(y, (\mathbf{F} \circ \mathbf{G})(x)) \in \mathbf{F}$}
+	\step{d}{$y = \mathbf{G}(x)$}
+	\step{e}{$\mathbf{F}(\mathbf{G}(x)) = (\mathbf{F} \circ \mathbf{G})(x)$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$ (a \emph{choice function} for $A$) such that, for every nonempty $B \subseteq A$, we have $F(B) \in B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{\pflet{$\mathcal{A} = \{ \{ B \} \times B \mid B \in \mathcal{P} A - \{ \emptyset \} \}$}}
+\step{3}{Every member of $\mathcal{A}$ is nonempty.}
+\step{4}{Any two distinct members of $\mathcal{A}$ are disjoint.}
+\step{5}{\pick\ a set $C$ such that, for all $X \in \mathcal{A}$, we have $C \cap X$ is a singleton.}
+\begin{proof}
+	\pf\ Axiom of Choice.
+\end{proof}
+\step{6}{\pflet{$F = C \cap \bigcup \mathcal{A}$}}
+\step{7}{$F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$}
+\begin{proof}
+	\step{a}{$F$ is a function.}
+	\begin{proof}
+		\step{i}{\pflet{$(B,b),(B,b') \in F$}}
+		\step{ii}{$(B,b),(B,b') \in \{B\} \times B$}
+		\begin{proof}
+			\pf\ Since $(B,b),(B,b') \in \bigcup \mathcal{A}$.
+		\end{proof}
+		\step{iii}{$(B,b),(B,b') \in C \cap (\{B\} \times B)$}
+		\step{iv}{$(B,b) = (B,b')$}
+		\begin{proof}
+			\pf\ From \stepref{5}.
+		\end{proof}
+		\step{v}{$b = b'$}
+	\end{proof}
+	\step{b}{$\dom F = \mathcal{P} A - \{ \emptyset \}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			B \in \dom F & \Leftrightarrow \exists b. (B,b) \in F \\
+			& \Leftrightarrow \exists b. ((B,b) \in \bigcup \mathcal{A} \wedge (B,b) \in C) \\
+			& \Leftrightarrow \exists b. \exists B' \in \mathcal{P} A - \{ \emptyset \}. ((B,b) \in \{ B' \} \times B' \wedge (B,b) \in C) \\
+			& \Leftrightarrow B \in \mathcal{P} A - \{ \emptyset \} \wedge \exists b \in B. (B,b) \in C \\
+			& \Leftrightarrow B \in \mathcal{P} A - \{ \emptyset \} & (\text{\stepref{5}})
+		\end{align*}
+	\end{proof}
+	\step{c}{$\ran F \subseteq A$}
+\end{proof}
+\step{8}{For every nonempty $B \subseteq A$ we have $F(B) \in B$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:AxChoice}
+For any relation $R$ there exists a function $H \subseteq R$ with $\dom H = \dom R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a relation.}}
+\step{2}{\pick\ a choice function $G$ for $\ran R$.}
+\step{3}{Define $H : dom R \rightarrow \ran R$ by $H(x) = G(\{y \mid xRy\})$}
+\step{4}{$H \subseteq R$}
+\qed
+\end{proof}
+
+\begin{prop}
+For any function $\mathbf{G}$ and nonempty class $\mathbf{A}$, we have
+\[ \mathbf{G}^{-1} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{G}^{-1}(X) \mid X \in \mathbf{A} \} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:imgint} and \ref{prop:invsingroot}. \qed
+\end{proof}
+
+\begin{prop}
+For any function $\mathbf{G}$ and classes $\mathbf{A}$ and $\mathbf{B}$, we have
+\[ \mathbf{G}^{-1}(\mathbf{A} - \mathbf{B}) = \mathbf{G}^{-1}(\mathbf{A}) - \mathbf{G}^{-1}(\mathbf{B}) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:imgdiff} and \ref{prop:invsingroot}. \qed
+\end{proof}
+
+\begin{df}[Identity Function]
+For any class $\mathbf{A}$, the \emph{identity function} on $\mathbf{A}$ is $\mathbf{I}_\mathbf{A} = \{ (x,x) \mid x \in \mathbf{A} \}$.
+\end{df}
+
+\begin{df}[Injective]
+A function is \emph{one-to-one}, \emph{injective} or an \emph{injection} iff it is single-rooted.
+\end{df}
+
+\begin{prop}
+Let $\mathbf{F}$ be a one-to-one function. Let $x \in \dom \mathbf{F}$. Then $\mathbf{F}^{-1}(\mathbf{F}(x)) = x$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}^{-1}$ is a function.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:invfunc}.
+\end{proof}
+\step{2}{$(x, \mathbf{F}(x)) \in \mathbf{F}$}
+\step{3}{$(\mathbf{F}(x),x) \in \mathbf{F}^{-1}$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\mathbf{F}$ be a one-to-one function. Let $y \in \ran \mathbf{F}$. Then $\mathbf{F}(\mathbf{F}^{-1}(y)) = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}^{-1}$ is a function.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:invfunc}.
+\end{proof}
+\step{2}{$y \in \dom \mathbf{F}^{-1}$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:dominv}.
+\end{proof}
+\step{3}{$(y, \mathbf{F}^{-1}(y)) \in \mathbf{F}^{-1}$}
+\step{4}{$(\mathbf{F}^{-1}(y),y) \in \mathbf{F}$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = I_A$ if and only if $F$ is one-to-one.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If there exists $G : B \rightarrow A$ such that $G \circ F = I_A$ then $F$ is one-to-one.}
+\begin{proof}
+	\step{a}{\assume{$G : B \rightarrow A$ and $G \circ F = I_A$}}
+	\step{b}{\pflet{$x,y \in A$}}
+	\step{c}{\assume{$F(x) = F(y)$}}
+	\step{d}{$x = y$}
+	\begin{proof}
+		\pf\ $x = G(F(x)) = G(F(y)) = y$
+	\end{proof}
+\end{proof}
+\step{2}{If $F$ is one-to-one then there exists $G : B \rightarrow A$ such that $G \circ F = I_A$.}
+\begin{proof}
+	\step{a}{\assume{$F$ is one-to-one.}}
+	\step{b}{\pick\ $a \in A$}
+	\step{c}{\pflet{$G : B \rightarrow A$ be the function defined by: $G(b) = F^{-1}(b)$ if $b \in \ran F$, $G(b) = a$ otherwise.} \prove{$G \circ F = I_A$}}
+	\step{d}{\pflet{$x \in A$}}
+	\step{e}{$G(F(x)) = x$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Surjective]
+Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
+\end{df}
+
+\begin{prop}
+Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = I_B$ if and only if $F$ maps $A$ onto $B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ has a right inverse then $F$ is surjective.}
+\begin{proof}
+	\step{a}{\assume{$F$ has a right inverse $H : B \rightarrow A$.}}
+	\step{b}{\pflet{$y \in B$}}
+	\step{c}{$F(H(y)) = y$}
+	\step{c}{There exists $x \in A$ such that $F(x) = y$}
+\end{proof}
+\step{2}{If $F$ is surjective then $F$ has a right inverse.}
+\begin{proof}
+	\step{a}{\assume{$F$ is surjective.}}
+	\step{b}{\pick\ a function $H$ such that $H \subseteq F^{-1}$ and $\dom H = \dom F^{-1} = B$}
+	\step{c}{$H : B \rightarrow A$}
+	\step{d}{$F \circ H = I_B$}
+	\begin{proof}
+		\step{i}{\pflet{$y \in B$}}
+		\step{ii}{$(y,H(y)) \in F^{-1}$}
+		\step{iii}{$F(H(y)) = y$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Function Set]
+Given a set $A$ and a class $\mathbf{B}$, we write $\mathbf{B}^A$ for the class of all functions $A \rightarrow \mathbf{B}$.
+\end{df}
+
+\begin{prop}
+If $A$ and $B$ are sets then $A^B$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
+\end{proof}
+
+\begin{df}[Natural Map]
+Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} $A \rightarrow A / R$ is the function that maps $a \in A$ to $[a]_R$.
+\end{df}
+
+\begin{df}[Respects]
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ \emph{respects} $\mathbf{A}$ iff, whenever $(x,y) \in \mathbf{R}$, then $\mathbf{F}(x) = \mathbf{F}(y)$.
+\end{df}
+
+\begin{thm}
+Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
+\[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
+In this case, $\hat{F}$ is unique.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ respects $R$ then there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$.}
+\begin{proof}
+	\step{a}{\assume{$F$ respects $R$.}}
+	\step{b}{\pflet{$\hat{F} = \{([a]_R, F(a)) \mid a \in A \}$}}
+	\step{c}{$\hat{F}$ is a function.}
+	\begin{proof}
+		\step{i}{\assume{$a,a' \in A$ and $[a]_R = [a']_R$} \prove{$F(a) = F(a')$}}
+		\step{ii}{$(a,a') \in R$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:eqclassequal}.
+		\end{proof}
+		\step{iii}{$F(a) = F(a')$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+	\end{proof}
+	\step{d}{$\dom \hat{F} = A / R$}
+	\step{e}{$\ran \hat{F} \subseteq \mathbf{B}$}
+	\step{f}{$\forall a \in A. \hat{F}([a]_R) = F(a)$}
+\end{proof}
+\step{2}{If there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$ then $F$ respects $R$.}
+\begin{proof}
+	\step{a}{\assume{$\hat{F} : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. \hat{F}([a]_R) = F(a)$}}
+	\step{b}{\pflet{$a,a' \in A$}}
+	\step{c}{\assume{$(a,a') \in R$}}
+	\step{d}{$[a]_R = [a']_R$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:eqclassequal}.
+		\end{proof}
+	\step{e}{$F(a) = F(a')$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+\end{proof}
+\step{3}{If $G, H : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. G([a]_R) = H([a]_R)$ then $G = H$.}
+\qed
+\end{proof}
+
+\begin{df}[Strictly Monotone]
+Let $(A,<_A)$ and $(B, <_B)$ be linearly ordered sets. A function $f : A \rightarrow B$ is \emph{strictly monotone} iff, whenever $x <_A y$, then $f(x) <_B f(y)$.
+\end{df}
+
+\begin{prop}
+A strictly monotone function is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(A, <_A)$ and $(B, <_B)$ be linearly ordered sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ be strictly monotone.}}
+\step{3}{\pflet{$x,y \in A$}}
+\step{4}{\assume{$f(x) = f(y)$}}
+\step{5}{$f(x) \nless f(y)$ and $f(y) \nless f(x)$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\step{6}{$x \nless y$ and $y \nless x$}
+\step{7}{$x = y$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \in A$. If $f$ is strictly monotone and $f(x) < f(y)$ then $x < y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$f(x) \neq f(y)$ and $f(y) \nless f(x)$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\step{2}{$x \neq y$ and $y \nless x$}
+\step{3}{$x < y$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Dependent Product Sets}
+
+\begin{df}
+Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write $\prod_{i \in I} \mathbf{H}(i)$ for the class of all functions $f$ with $\dom f = I$ and $\forall i \in I. f(i) \in \mathbf{H}(i)$.
+\end{df}
+
+\begin{prop}
+If $I$ is a set and $H(i)$ is a set for all $i \in I$, then $\prod_{i \in I} H(i)$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\{ H(i) \mid i \in I \}$ is a set.}
+\begin{proof}
+	\pf\ Axiom of Replacement.
+\end{proof}
+\step{2}{$\prod_{i \in I} H(i) \subseteq \bigcup \{H(i) \mid i \in I\}^I$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(i) \neq \emptyset$ then $\prod_{i \in I} H(i) \neq \emptyset.$
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\forall i \in I. H(i) \neq \emptyset$}}
+\step{2}{\pflet{$R = \{ (i,x) \mid i \in I, x \in H(i) \}$}}
+\step{3}{\pick\ a function $f \subseteq R$ such that $\dom f = \dom R$}
+\step{4}{$f \in \prod_{i \in I} H(i)$}
+\qed
+\end{proof}
+
+\chapter{Complex Analysis}
+
+\begin{df}
+For $p \geq 1$, let $l^p$ be the set of all sequences of complex numbers $(x_n)$ such that $\sum_{n=1}^\infty |x_n|^p < \infty$.
+\end{df}
+
+\begin{prop}
+\label{prop:lp_closed_under_addition}
+If $(x_n), (y_n) \in l^p$ then $(x_n + y_n) \in l^p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{a}{\pflet{$(x_n), (y_n) \in l^p$}}
+\step{b}{$\sum_{n=1}^\infty |x_n + y_n|^p \leq 2^p (\sum_{n=1}^\infty |x_n|^p + \sum_{n=1}^\infty |y_n|^p)$}
+\begin{proof}
+	\pf
+	\step{i}{For all $n \in \mathbb{N}$ we have $|x_n + y_n|^p \leq 2^p (|x_n|^p + |y_n|^p)$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			|x_n + y_n|^p & \leq (|x_n| + |y_n|)^p & (\text{Triangle Inequality}) \\
+			& \leq (2 \max(|x_n|,|y_n|))^p \\
+			& \leq 2^p (|x_n|^p + |y_n|^p)
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[H\"{o}lder's Inequality]
+Let $p$ and $q$ be reals such that $p > 1$, $q > 1$ and $1/p + 1/q = 1$. Let $(x_n) \in l^p$ and $(y_n) \in l^q$. Then
+\[ \sum_n |x_n y_n| \leq \left( \sum_n |x_n|^p \right)^{1/p} \left( \sum_n |y_n|^q \right)^{1/q} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. neither $(x_n)$ nor $(y_n)$ are all zero.}}
+\step{2}{For $0 \leq x \leq 1$ we have
+\[ x^{1/p} \leq \frac{1}{p} x + \frac{1}{q} \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$f(x) = x/p + 1/q - x^{1/p}$}}
+	\step{b}{$f'(x) = 1/p(1 - x^{(1-p)/p})$}
+	\step{bb}{$f'(x) \geq 0$ for all $x \in [0,1]$}
+	\step{e}{$f$ is a monotonically decreasing function on $[0,1]$}
+	\step{c}{$f(0) = 1/q$}
+	\step{d}{$f(1) = 0$}
+	\step{e}{$f(x) \geq 0$ for all $x \in [0,1]$}
+\end{proof}
+\step{3}{For any $a,b \geq 0$ we have
+\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q} \enspace . \]}
+\begin{proof}
+	\step{a}{\case{$a^p \leq b^q$}}
+	\begin{proof}
+		\step{i}{$ab^{-q/p} \leq \frac{1}{p} \frac{a^p}{b^q} + \frac{1}{q}$}
+		\begin{proof}
+			\pf\ Substituting $x = a^p / b^q$ in \stepref{2}.
+		\end{proof}
+		\step{ii}{$ab^{1-q} \leq \frac{1}{p} \frac{a^p}{b^q} + \frac{1}{q}$}
+		\begin{proof}
+			\pf\ From \stepref{i} since $1-q = -q/p$.
+		\end{proof}
+		\step{iii}{$ab \leq \frac{a^p}{p} + \frac{b^q}{q}$}
+		\begin{proof}
+			\pf\ Multiplying \stepref{ii} by $b^q$.
+		\end{proof}
+	\end{proof}
+	\step{b}{\case{$b^q \leq a^p$}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{4}{For any integers $1 \leq j \leq n$, we have
+\[ \frac{|x_j|}{\left( \sum_{k=1}^n|x_k|^p\right)^{1/p}}
+\frac{|y_j|}{\left( \sum_{k=1}^n |y_k|^q \right)^{1/q}}
+\leq \frac{1}{p} \frac{|x_j|^p}{\sum_{k=1}^n |x_k|^p}
++ \frac{1}{q} \frac{|y_j|^q}{\sum_{k=1}^n |y_k|^q} \]}
+\begin{proof}
+	\pf\ From \stepref{3} substituting
+	\[ a = \frac{|x_j|}{\left( \sum_{k=1}^n |x_k|^p \right)^{1/p}} \text{ and }
+	b = \frac{|y_j|}{\left( \sum_{k=1}^n |y_k|^q \right)^{1/q}} \]
+\end{proof}
+\step{5}{For any positive integer $n$ we have
+\[ \frac{\sum_{k=1}^n |x_k| |y_k|}{\left( \sum_{k=1}^n |x_k|^p \right)^{1/p}
+\left( \sum_{k=1}^n |y_k|^q \right)^{1/q}}
+\leq 1 \]}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\frac{\sum_{j=1}^n |x_j| |y_j|}{\left( \sum_{k=1}^n |x_k|^p \right)^{1/p}
+\left( \sum_{k=1}^n |y_k|^q \right)^{1/q}}
+& \leq \frac{1}{p} + \frac{1}{q} & (\text{Summing \stepref{4} from } j = 1 \text{ to } n) \\
+& = 1
+	\end{align*}
+\end{proof}
+\step{6}{\[ \sum_n |x_n y_n| \leq \left( \sum_n |x_n|^p \right)^{1/p} \left( \sum_n |y_n|^q \right)^{1/q} \]}
+\begin{proof}
+	\pf\ Taking the limit $n \rightarrow \infty$ in \stepref{5}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Minkowski's Inequality]
+Let $p \geq 1$. Let $(x_n), (y_n) \in l^p$. Then
+\[ \left( \sum_{n=1}^\infty |x_n + y_n|^p \right)^{1/p} \leq \left( \sum_{n=1}^\infty |x_n|^p \right)^{1/p} + \left( \sum_{n=1}^\infty |y_n|^p \right)^{1/p} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\case{$p = 1$}}
+\begin{proof}
+	\pf\ This is just the Triangle Inequality.
+\end{proof}
+\step{2}{\case{$p > 1$}}
+\begin{proof}
+	\step{a}{\pflet{$q = p/(p-1)$}}
+	\step{b}{\begin{align*}
+	 \sum_{n=1}^\infty |x_n + y_n|^p & \leq \left( \sum_{n=1}^\infty |x_n|^p \right)^{1/p} \left( \sum_{n=1}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \\
+	& + \left( \sum_{n=1}^\infty |y_n|^p \right)^{1/p} \left( \sum_{n=1}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q}
+	\end{align*}}
+	\begin{proof}
+		\pf
+		\step{i}{$(|x_n + y_n|^{p-1}) \in l^q$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\sum_{n=1}^\infty |x_n + y_n|^{(p-1)q} & = \sum_{n=1}^\infty |x_n + y_n|^p & (\text{\stepref{b}}) \\
+				& < \infty & (\text{Proposition \ref{prop:lp_closed_under_addition}})
+			\end{align*}
+		\end{proof}
+		\qedstep
+		\begin{proof}
+		\pf
+		\begin{align*}
+			\sum_{n=1}^\infty |x_n + y_n|^p
+			& = \sum_{n=1}^\infty |x_n + y_n| |x_n + y_n|^{p-1} \\
+			& \leq \sum_{n=1}^\infty |x_n| |x_n + y_n|^{p-1} + \sum_{n=1}^\infty |y_n| |x_n + y_n|^{p-1} \\
+			& \leq \left( \sum_{n=1}^\infty |x_n|^p \right)^{1/p} \left( \sum_{n=1}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \\
+	& + \left( \sum_{n=1}^\infty |y_n|^p \right)^{1/p} \left( \sum_{n=1}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} & (\text{H\"{o}lder's Inequality}, \text{\stepref{b}})
+		\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{c}{\[ \sum_{n=1}^\infty |x_n + y_n|^p
+	\leq \left\{ \left( \sum_{n=1}^\infty |x_n|^p \right)^{1/p} + \left(
+	\sum_{n=1}^\infty |y_n|^p \right)^{1/p} \right\}
+	\left( \sum_{n=1}^\infty |x_n + y_n|^p \right)^{1/q} \]}
+	\begin{proof}
+		\step{i}{$q(p-1)=p$}
+		\begin{proof}
+			\pf\ \stepref{b}
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ From \stepref{b}, \stepref{i}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\part{Linear Algebra}
+
+\chapter{Vector Spaces}
+
+\section{Vector Spaces}
+
+%TODO Define $\mathbb{R}$
+%TODO Define $\mathbb{C}$
+\begin{df}[Vector Space]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{vector space} over $K$ is a triple $(V,+,\cdot)$ such that:
+\begin{itemize}
+\item $V$ is a nonempty set, whose elemnts are called \emph{vectors};
+\item $+ : V^2 \rightarrow V$
+\item $\cdot : K \times V \rightarrow V$
+\end{itemize}
+such that the following hold for all $u,v,w \in V$ and $\alpha, \beta \in K$:
+\begin{enumerate}
+\item $u + v = v + u$
+\item $u + (v + w) = (u + v) + w$
+\item For every $u, v \in V$ there exists $w \in V$ such that $u + w = v$
+\item $\alpha (\beta v) = (\alpha \beta) v$
+\item $(\alpha + \beta) v = \alpha v + \beta v$
+\item $\alpha (u + v) = \alpha u + \alpha v$
+\item $1v = v$
+\end{enumerate}
+Elements of $K$ are called \emph{scalars}.
+
+We write \emph{real vector space} for 'vector space over $\mathbb{R}$', and \emph{complex vector space} for 'vector space over $\mathbb{C}$'.
+\end{df}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ and $\mathbb{C}$.
+The set $\{0\}$ is a vector space over $K$ under the unique functions $+ : \{0\}^2 \rightarrow \{0\}$, $\cdot : K \times \{0\} \rightarrow \{0\}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each axiom holds trivially because $x=y$ holds for all $x,y \in \{0\}$. \qed
+\end{proof}
+
+\begin{prop}
+The set $\mathbb{R}$ is a real vector space under real addition and real multiplication.
+\end{prop}
+
+\begin{proof}
+\pf\ TODO --- after we have proved these facts about $\mathbb{R}$. \qed
+\end{proof}
+
+\begin{prop}
+The set $\mathbb{C}$ is a real vector space under complex addition and complex multiplication.
+\end{prop}
+
+\begin{proof}
+\pf\ TODO
+\end{proof}
+
+\begin{prop}
+The set $\mathbb{C}$ is a complex vector space under complex addition and complex multiplication.
+\end{prop}
+
+\begin{proof}
+\pf\ TODO
+\end{proof}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$.
+Let $\{ V_i \}_{i \in I}$ be a family of vector spaces over $K$. Then $\prod_{i \in I} V_i$ is a vector space over $K$ under the operations given by
+\begin{align*}
+\{x_i\}_{i \in I} + \{y_i\}_{i \in I} & = \{ x_i + y_i \}_{i \in I} \\
+\alpha \{x_i\}_{i \in I} & = \{ \alpha x_i \}_{i \in I}
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ Each axiom follows from the corresponding axiom in $V_i$. \qed
+\qed
+\end{proof}
+
+\begin{cor}
+Let $V$ be a vector space over $K$. For any set $I$, we have $V^I$ is a vector space over $K$.
+\end{cor}
+
+\begin{cor}
+Let $n \in \mathbb{Z}_+$. Then $\mathbb{R}^n$ is a real vector space, and $\mathbb{C}^n$ is both a real and a complex vector space, under
+\begin{align*}
+(x_1, \ldots, x_n) + (y_1, \ldots, y_n) & = (x_1 + y_1, \ldots, x_n + y_n) \\
+\lambda (x_1, \ldots, x_n) & = (\lambda x_1, \ldots, \lambda x_n)
+\end{align*}
+\end{cor}
+
+\begin{prop}
+\label{prop:zero}
+Let $V$ be a vector space over $K$. Then there exists a unique $0 \in V$ such that, for all $v \in V$, we have $v + 0 = v$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{There exists $0 \in V$ such that $\forall v \in V. v + 0 = v$}
+\begin{proof}
+	\step{a}{Pick $v \in V$}
+	\step{b}{Pick $0 \in V$ such that $v + 0 = v$}
+	\begin{proof}
+		\pf\ Axiom 3.
+	\end{proof}
+	\step{c}{For all $u \in V$, we have $u + 0 = u$}
+	\begin{proof}
+		\step{i}{\pflet{$u \in V$}}
+		\step{ii}{\pick\ $u' \in V$ such that $v + u' = u$}
+		\begin{proof}
+			\pf\ Axiom 3.
+		\end{proof}
+		\step{ii}{$u + 0 = u$}
+		\begin{align*}
+			u + 0 & = v + u' + 0 & (\text{\stepref{ii}}) \\
+			& = v + u' & (\text{\stepref{b}}) \\
+			& = u & (\text{\stepref{ii}}) 
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If $0, 0' \in V$ are such that $\forall v \in V. v + 0 = v$ and $\forall v \in V. v + 0' = v$, then $0 = 0'$.}
+\begin{proof}
+	\step{a}{\pflet{$0,0' \in V$}}
+	\step{b}{\assume{$\forall v \in V. v + 0 = v$}}
+	\step{c}{\assume{$\forall v \in V. v + 0' = v$}}
+	\step{d}{$0 = 0'$}
+	\begin{align*}
+		0 & = 0 + 0' & (\text{\stepref{b}}) \\
+		& = 0' & (\text{\stepref{c}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:subtract}
+Let $V$ be a vector space. For any $v \in V$, there exists a unique $-v \in V$ such that $v + (-v) = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$v \in V$}}
+\step{1}{There exists $-v \in V$ such that $v + (-v) = u$}
+\begin{proof}
+	\pf\ Axiom 3.
+\end{proof}
+\step{2}{If $v + x = 0$ and $v + y = 0$ then $x = y$}
+\begin{proof}
+	\step{a}{\assume{$v + x = 0$}}
+	\step{b}{\assume{$v + y = 0$}}
+	\step{c}{$x = y$}
+	\begin{proof}
+	\pf
+		\begin{align*}
+			x & = x + 0 & (\text{Proposition \ref{prop:zero}}) \\
+			& = x + v + y & (\text{\stepref{b}}) \\
+			& = 0 + y & (\text{\stepref{a}}) \\
+			& = y & (\text{Proposition \ref{prop:zero}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a vector space. For any $u,v \in V$, there exists a unique $u-v \in V$ such that $v + (u-v) = u$, namely $u-v = u + (-v)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$u,v \in V$}}
+\step{2}{$v + (u + (-v)) = u$}
+\begin{proof}
+	\pf
+	\begin{align*}
+	v + u + (-v) & = u + 0 & (\text{Proposition \ref{prop:subtract}}) \\
+	& = u & (\text{Proposition \ref{prop:zero}})
+	\end{align*}
+\end{proof}
+\step{3}{For all $x \in V$, if $v + x = u$ then $x = u + (-v)$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in V$}}
+	\step{b}{\assume{$v + x = u$}}
+	\step{c}{$x = u + (-v)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			u + (-v) & = v + x + (-v) & (\text{\stepref{b}}) \\
+			& = x + 0 & (\text{Proposition \ref{prop:subtract}}) \\
+			& = x & (\text{Proposition \ref{prop:zero}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:cancel}
+Let $V$ be a vector space over $K$. Let $u,v,w \in V$. If $u + v = u + w$ then $v = w$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$u + v = u + w$}}
+\step{2}{$v = w$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		v & = v + 0 & (\text{Proposition \ref{prop:zero}}) \\
+		& = v + u + (-u) & (\text{Proposition \ref{prop:subtract}}) \\
+		& = w + u + (-u) & (\text{\stepref{1}}) \\
+		& = w + 0 & (\text{Proposition \ref{prop:subtract}}) \\
+		& = w & (\text{Proposition \ref{prop:zero}})
+	\end{align*}
+\end{proof}
+\end{proof}
+
+\begin{prop}
+Let $V$ be a vector space over $K$. Let $\lambda \in K$. Then $\lambda 0 = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\lambda 0 + \lambda 0 = \lambda 0 + 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\lambda 0 + \lambda 0 & = \lambda (0 + 0) & (\text{Axiom 6}) \\
+		& = \lambda 0 & (\text{Proposition \ref{prop:zero}})
+	\end{align*}
+\end{proof}
+\step{2}{$\lambda 0 = 0$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:cancel}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a vector space over $K$. Let $\lambda \in K$ and $v \in V$. If $\lambda v = 0$ then $\lambda = 0$ or $v = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\lambda \neq 0$}}
+\step{2}{\assume{$\lambda v = 0$}}
+\step{3}{$v = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		v & = 1 v & (\text{Axiom 7}) \\
+		& = \lambda^{-1} \lambda v \\
+		& = \lambda^{-1} 0 & (\text{\stepref{2}}) \\
+		& = 0
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:zeromult}
+Let $V$ be a vector space over $K$. For all $v \in V$ we have $0v = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$0v + 0 = 0v+0v$}
+\begin{proof}
+	\begin{align*}
+	0v + 0 & = 0v & (\text{Proposition \ref{prop:zero}}) \\
+	& = (0+0)v \\
+	& = 0v + 0v & (\text{Axiom 5})
+\end{align*}
+\end{proof}
+\step{2}{$0v = 0$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:cancel}, \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a vector space over $K$. Let $v \in V$. Then $(-1)v = -v$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$v + (-1)v = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		v + (-1)v & = 1v + (-1)v & (\text{Axiom 7}) \\
+		& = (1 + (-1))v & (\text{Axiom 5}) \\
+		& = 0v \\
+		& = 0 & (\text{Proposition \ref{prop:zeromult}})
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Proposition \ref{prop:subtract}.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Subspaces}
+
+\begin{df}[Subspace]
+Let $V$ be a vector space over $K$ and $U \subseteq V$. Then $U$ is a \emph{subspace} of $V$ iff $\forall \alpha, \beta \in K. \forall u,v \in U. \alpha u + \beta v \in U$. It is a \emph{proper} subspace iff in addition $U \neq V$.
+\end{df}
+
+\begin{prop}
+Let $V$ be a vector space over $K$ and $U$ a subspace of $V$. Then $U$ is a vector space over $K$ under the restrictions of the operations of $V$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each of the axioms follows from the corresponding axiom in $V$. For axiom 3, we have if $u,v \in U$ then $v-u = 1v + (-1)u \in U$. \qed
+\end{proof}
+
+\begin{prop}
+Every vector space is a subspace of itself.
+\end{prop}
+
+\begin{proof}
+\pf\ Trivial. \qed
+\end{proof}
+
+%TODO Define everything below
+\begin{prop}
+Let $\Omega$ be a subset of $\mathbb{R}^N$. Let $\mathcal{C}(\Omega)$ be the set of all continuous functions $\Omega \rightarrow \mathbb{C}$. Then $\mathcal{C}(\Omega)$ is a subspace of $\mathbb{C}^\Omega$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f,g : \Omega \rightarrow \mathbb{C}$ are continuous then so is $\alpha f + \beta g$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be an open set in $\mathbb{R}^N$. Let $\mathcal{C}^k(\Omega)$ be the set of all continuous functions $\Omega \rightarrow \mathbb{C}$ with continuous partial derivatives of order $k$. Then $\mathcal{C}^k(\Omega)$ is a subspace of $\mathbb{C}^\Omega$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f,g : \Omega \rightarrow \mathbb{C}$ have continuous partial derivatives of order $k$ then so does $\alpha f + \beta g$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be an open set in $\mathbb{R}^N$. Let $\mathcal{C}^\infty(\Omega)$ be the set of all infinitely differentiable functions $\Omega \rightarrow \mathbb{C}$. Then $\mathcal{C}^\infty(\Omega)$ is a subspace of $\mathbb{C}^\Omega$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f,g : \Omega \rightarrow \mathbb{C}$ are infinitely differentiable then so is $\alpha f + \beta g$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be an open set in $\mathbb{R}^N$. Let $\mathcal{P}(\Omega)$ be the set of all polynomials in $N$ variables considered as functions $\Omega \rightarrow \mathbb{C}$. Then $\mathcal{P}(\Omega)$ is a subspace of $\mathbb{C}^\Omega$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f,g : \Omega \rightarrow \mathbb{C}$ are polynomials in $N$ variables then so is $\alpha f + \beta g$. \qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a vector space and $U_1$, $U_2$ subspaces of $V$. If $U_1 \subseteq U_2$ then $U_1$ is a subspace of $U_2$.
+\end{prop}
+
+\begin{proof}
+\pf\ Trivial. \qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a vector space over $K$ . The intersection of a set of subspaces of $V$ is a subspace of $V$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{U}$ be a set of subspaces of $V$.}}
+\step{2}{\pflet{$u,v \in \bigcap \mathcal{U}$ and $\lambda, \mu \in K$}}
+\step{3}{$\lambda u + \mu v \in \bigcap \mathcal{U}$}
+\begin{proof}
+	\step{a}{\pflet{$U \in \mathcal{U}$}}
+	\step{b}{$u,v \in U$}
+	\begin{proof}
+		\pf\ \stepref{2}, \stepref{a}.
+	\end{proof}
+	\step{c}{$\lambda u + \beta v \in U$}
+	\begin{proof}
+		\pf\ \stepref{1}, \stepref{2}, \stepref{a}, \stepref{b}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The set of all bounded complex sequences is a proper subspace of $\mathbb{C}^\mathbb{N}$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $(x_n)$ and $(y_n)$ are bounded then so is $(\lambda x_n + \mu y_n)$. \qed
+\end{proof}
+
+\begin{prop}
+The set of all convergent complex sequences is a proper subspace of the space of all bounded complex sequences.
+\end{prop}
+
+\begin{proof}
+\pf\ If $(x_n)$ and $(y_n)$ converge then so does $(\lambda x_n + \mu y_n)$. \qed
+\end{proof}
+
+\begin{prop}
+The set $l^p$ of all sequences $(x_n)$ in $\mathbb{C}$ such that $\sum_n |x_n|^p < \infty$ is a subspace of $\mathbb{C}^\mathbb{N}$.
+\end{prop}
+
+\begin{proof}
+\pf\ It is closed under addition by Proposition \ref{prop:lp_closed_under_addition}, and it is easy to see that it is closed under scalar multiplication. \qed
+\end{proof}
+
+\section{Linear Independence and Bases}
+
+\begin{df}[Linear Combination]
+Let $V$ be a vector space over $K$. Let $v, v_1, \ldots, v_n \in V$. Then $v$ is a \emph{linear combination} of $v_1$, \ldots, $v_n$ iff there exist scalars $\lambda_1, \ldots, \lambda_n \in K$ such that
+\[ v = \lambda_1 v_1 + \cdots + \lambda_n v_n \enspace . \]
+\end{df}
+
+\begin{df}[Linearly Independent]
+Let $V$ be a vector space over $K$. Let $A \subseteq V$. Then $A$ is \emph{linearly independent} iff, for all $\lambda_1, \ldots, \lambda_n \in K$ and $v_1, \ldots, v_n \in A$, if $\lambda_1 v_1 + \cdots + \lambda_n v_n = 0$ then $\lambda_1 = \cdots = \lambda_n = 0$.
+\end{df}
+
+\begin{df}[Span]
+Let $V$ be a vector space over $K$ and $A \subseteq V$. The \emph{span} of $A$, or the subspace of $V$ \emph{spanned} by $A$, is the set of all linear combinations of vectors in $A$.
+\end{df}
+
+\begin{prop}
+Let $V$ be a vector space over $K$ and $A \subseteq V$. Then $\spn A$ is a subspace of $V$.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $\alpha, \beta \in K$ and $\lambda_1 u_1 + \cdots + \lambda_m u_m, \mu_1 v_1 + \cdots + \mu_n v_n \in \spn A$, we have
+\begin{align*}
+& \alpha (\lambda_1 u_1 + \cdots + \lambda_m u_m) + \beta (\mu_1 v_1 + \cdots + \mu_n v_n) \\
+& = \alpha \lambda_1 u_1 + \cdots + \alpha \lambda_m u_m + \beta \mu_1 v_1 + \cdots + \beta \mu_n v_n \\
+& \in \spn A & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Basis]
+Let $V$ be a vector space over $K$ and $B \subseteq V$. Then $B$ is a \emph{basis} for $V$ iff $B$ is linearly independent and $\spn B = V$.
+\end{df}
+
+\begin{df}[Finite Dimensional]
+A vector space is \emph{finite dimensional} iff there exists a finite basis; otherwise it is \emph{infinite dimensional}.
+\end{df}
+
+\begin{prop}
+In a finite dimensional space, any two bases have the same size.
+\end{prop}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\begin{df}[Dimension]
+The \emph{dimension} of a finite dimensional vector space $V$, $\dim V$, is the number of vectors in any basis.
+\end{df}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Then $K^n$ as a vector space over $K$ has dimension $n$.
+\end{prop}
+
+\begin{proof}
+\pf\ The vectors with one component 1 and all other components 0 form a basis. \qed
+\end{proof}
+
+\begin{prop}
+As a real vector space, $\mathbb{C}^n$ has dimension $2n$.
+\end{prop}
+
+\begin{proof}
+\pf\ The vectors with one component either 1 or $i$ and all other components 0 form a basis. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a nonempty open set in $\mathbb{R}^n$. The space $\mathcal{C}(\Omega)$ is infinite dimensional.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $\pi_1 : \mathbb{R}^n \rightarrow \mathbb{R}$ be the first projection. The functions $1$, $\pi_1(x)$, $\pi_1(x)^2$, $\pi_1(x)^3$, \ldots form an infinite linearly independent set in $\mathcal{C}(\Omega)$. \qed
+\end{proof}
+
+\begin{prop}
+The spaces $\mathcal{C}^k(\mathbb{R}^n)$ and $\mathcal{C}^\infty(\mathbb{R}^n)$ are infinite dimensional.
+\end{prop}
+
+\begin{proof}
+\pf\ The monomials $1$, $x$, $x^2$, \ldots form an infinite linearly independent set. \qed
+\end{proof}
+
+\section{Linear Mappings}
+
+\begin{df}[Kernel]
+Let $U$ and $V$ be vector spaces and $T : U \rightarrow V$. The \emph{kernel} of $T$ is
+\[ \ker T := \{ u \in U \mid T(u) = 0 \} \enspace . \]
+\end{df}
+
+\begin{df}[Linear Mapping]
+Let $U$ and $V$ be vector spaces over $K$. A function $L : U \rightarrow V$ is a \emph{linear mapping} iff $\forall x,y \in U. \forall \alpha, \beta \in K. L(\alpha x + \beta y) = \alpha L(x) + \beta L(y)$.
+\end{df}
+
+\begin{prop}
+Let $U$ and $V$ be vector spaces over $K$. The set of linear mappings from $U$ to $V$ is a subspace of $V^U$.
+\end{prop}
+
+
+\section{Eigenvalues and Eigenvectors}
+
+\begin{df}[Eigenvalue and Eigenvector]
+Let $V$ be a vector space over $K$. Let $A : V \rightarrow V$ be a linear transformation. Let $v \in V$ and $\lambda \in K$. Then $v$ is an \emph{eigenvector} of $A$ with \emph{eigenvalue} $\lambda$ iff $A(v) = \lambda v$.
+\end{df}
+
+\chapter{Normed Spaces}
+
+\begin{df}[Norm]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. A \emph{norm} on $V$ is a function $\|\ \| : V \rightarrow \mathbb{R}$ such that, for all $u,v \in V$ and $\lambda \in K$:
+\begin{enumerate}
+\item If $\|v\| = 0$ then $v = 0$.
+\item $\| \lambda v\| = |\lambda| \|v\|$
+\item (\emph{Triangle Inequality}) $\|u + v\| \leq \|u\| + \|v\|$
+\end{enumerate}
+A \emph{normed space} over $K$ is a pair $(V, \|\ \|)$ where $V$ is a vector space over $K$ and $\|\ \|$ is a norm on $V$.
+\end{df}
+
+\begin{prop}
+\label{prop:normzero}
+In a normed space, $\|0\| = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ $\|0\| = |0| \|0\| = 0$ by Axiom 2. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:normnonnegative}
+Let $V$ be a normed vector space over $K$. For all $v \in V$ we have $\| v \| \geq 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+0 & = \|0\| & (\text{Proposition \ref{prop:normzero}}) \\
+& = \| v - v\| \\
+& \leq \|v\| + \|-v\| & (\text{Triangle Inequality}) \\
+& = 2\|v\| & (\text{Axiom 2})
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:diffnorms}
+Let $V$ be a normed space. Let $u,v \in V$. Then
+\[ |\|u\| - \|v\|| \leq \|u-v\| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\|u\| & \leq \|u-v\| + \|v\| & (\text{Triangle Inequality}) \\
+\therefore \|u\| - \|v\| & \leq \|u-v\| \\
+\|v\| & \leq \|v-u\| + \|u\| & (\text{Triangle Inequality}) \\
+& = \|u-v\| + \|u\| & (\text{Axiom 2})\\
+\therefore \|v\| - \|u\| & \leq \|u-v\|
+\end{align*}
+\end{proof}
+
+\begin{df}[Euclidean Norm]
+The \emph{Euclidean norm} on $K^n$ is defined by
+\[ \| (x_1, \ldots, x_n) \| = \sqrt{|x_1|^2 + \cdots + |x_n|^2} \enspace . \]
+\end{df}
+
+\begin{prop}
+The Euclidean norm on $K^n$ is a norm.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\|\vec{x}\| = 0$ then $\vec{x} = \vec{0}$}
+\begin{proof}
+	\pf\ If $\sqrt{|x_1|^2 + \cdots + |x_n|^2} = 0$ then $x_1 = \cdots = x_n = 0$.
+\end{proof}
+\step{2}{$\| \lambda \vec{x} \| = |\lambda| \|\vec{x}\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| \lambda \vec{x} \| & \sqrt{|\lambda x_1|^2 + \cdots + |\lambda x_n|^2} \\
+		& = \sqrt{|\lambda|^2 |x_1|^2 + \cdots + |\lambda|^2 |x_n|^2} \\
+		& = |\lambda| \sqrt{|x_1|^2 + \cdots + |x_n|^2} \\
+		& = |\lambda| \|\vec{x}\|
+	\end{align*}
+\end{proof}
+\step{3}{$\|\vec{u} + \vec{v}\| \leq \| \vec{u}\| + \|\vec{v}\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|\vec{u} + \vec{v}\|^2 & = |u_1 + v_1|^2 + \cdots + |u_n + v_n|^2 \\
+		& = |u_1|^2 + \cdots + |u_n|^2 + |v_1|^2 + \cdots + |v_n|^2 \\
+		& +
+		2|u_1||v_1| + \cdots + 2|u_n||v_n| \\
+		& \leq \|\vec{u}\|^2 + \|\vec{v}\|^2 + 2 |u_1 v_1 + \cdots + u_n v_n| \\
+		& \leq \|\vec{u}\|^2 + \|\vec{v}\|^2 + 2 \| \vec{u} \| \| \vec{v} \| & (\text{Cauchy-Schwarz}) \\
+		& = (\| \vec{u}\| + \|\vec{v}\|)^2
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The absolute value function $|\ |$ is a norm on $K$.
+\end{cor}
+
+\begin{prop}
+The function $\| \vec{x} \| = |x_1| + \cdots + |x_n|$ is a norm on $\mathbb{C}^n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\|\vec{x}\| = 0$ then $\vec{x} = \vec{0}$}
+\begin{proof}
+	\pf\ If $|x_1| + \cdots + |x_n| = 0$ then $x_1 = \cdots = x_n = 0$.
+\end{proof}
+\step{2}{$\| \lambda \vec{x} \| = |\lambda| \|\vec{x}\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| \lambda \vec{x} \| & |\lambda x_1| + \cdots + |\lambda x_n| \\\\
+		& = |\lambda| (|x_1| + \cdots + |x_n|) \\
+		& = |\lambda| \|\vec{x}\|
+	\end{align*}
+\end{proof}
+\step{3}{$\|\vec{u} + \vec{v}\| \leq \| \vec{u}\| + \|\vec{v}\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|\vec{u} + \vec{v}\|^2 & = |u_1 + v_1| + \cdots + |u_n + v_n| \\
+		& \leq |u_1| + |v_1| + \cdots + |u_n| + |v_n| \\
+		& = \|\vec{u}\| + \|\vec{v}\|
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The function $\|\vec{x}\| = \max(|x_1|, \ldots, |x_n|)$ is a norm on $\mathbb{C}^n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\|\vec{x}\| = 0$ then $\vec{x} = \vec{0}$}
+\begin{proof}
+	\pf\ If $\max(|x_1|, \ldots, |x|n|) = 0$ then $x_1 = \cdots = x_n = 0$.
+\end{proof}
+\step{2}{$\| \lambda \vec{x} \| = |\lambda| \|\vec{x}\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|\lambda \vec{x}\| & = \max(|\lambda x_1|, \ldots, |\lambda x_n|) \\
+		& = |\lambda| \max(|x_1|, \ldots, |x_n|) \\
+		& = |\lambda| \|\vec{x}\|
+	\end{align*}
+\end{proof}
+\step{3}{$\|\vec{u} + \vec{v}\| \leq \| \vec{u}\| + \|\vec{v}\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|\vec{u} + \vec{v}\| & = \max(|u_1 + v_1|, \ldots, |u_n + v_n|) \\
+		& \leq \max(|u_1| + |v_1|, \ldots, |u_n| + |v_n|) \\
+		& \leq \max(|u_1|, \ldots, |u_n|) + \max(|v_1|, \ldots, |v_n|)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Uniform Convergence Norm]
+Let $\Omega$ be a closed bounded subset of $\mathbb{R}^n$. The \emph{uniform convergence norm} on $\mathcal{C}(\Omega)$ is the function defined by $\| f \| = \max_{x \in \Omega} |f(x)|$.
+\end{df}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded subset of $\mathbb{R}^n$. The uniform convergence norm is a norm on $\mathcal{C}(\Omega)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\|f\| = 0$ then $f = 0$}
+\begin{proof}
+	\pf\ If $\max_x |f(x)| = 0$ then $f(x) = 0$ for all $x$.
+\end{proof}
+\step{2}{$\|\lambda f\| = |\lambda|\|f\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|\lambda f\| & = \max_x |\lambda f(x)| \\
+		& = |\lambda| \max_x |f(x)| \\
+		& = |\lambda| \|f\|
+	\end{align*}
+\end{proof}
+\step{3}{$\|f + g\| \leq \|f\| + \|g\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|f+g\| & = \max_x |f(x) + g(x)| \\
+		& \leq \max_x (|f(x)| + |g(x)|) \\
+		& \leq \max_x |f(x)| + \max_x |g(x)| \\
+		& = \| f \| + \| g \|
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $p \geq 1$.
+The function $\|(z_n)\| = \left( \sum_{n=1}^\infty |z_n|^p \right)^{1/p}$ is a norm on $l^p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\|(z_n)\| = 0$ then $(z_n) = (0)$}
+\begin{proof}
+	\pf\ If $(\sum_n |z_n|^p)^{1/p} = 0$ then $\sum_n |z_n|^p = 0$ so $|z_n|^p = 0$ for all $n$, and so $z_n = 0$ for all $n$.
+\end{proof}
+\step{2}{$\|(\lambda z_n)\| = |\lambda| \|(z_n)\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| (\lambda z_n) \| & = \left( \sum_n |\lambda z_n|^p \right)^{1/p} \\
+		& = |\lambda| \left( \sum_n |z_n|^p \right)^{1/p} \\
+		& = |\lambda| \left| (z_n) \right|
+	\end{align*}
+\end{proof}
+\step{3}{The triangle inequality holds.}
+	\pf\ This is Minkowski's Inequality.
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space and $U$ a vector subspace of $V$. Then $U$ is a normed space under the restriction of the norm to $U$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each axiom follows from the fact it holds in $V$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:lm1_3_12}
+Let $V$ be a normed space over $K$. Let $x_1$, \ldots, $x_n$ be linearly independent elements of $V$. Then there exists a real number $c > 0$ such that, for all $\alpha_1, \ldots, \alpha_n \in K$, we have
+\[ \| \alpha_1 x_1 + \cdots + \alpha_n x_n \| \geq c (|\alpha_1| + \cdots + |\alpha_n|) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define $f : K^n \rightarrow \mathbb{R}$ by 
+\[f(\alpha_1, \ldots, \alpha_n) = \| \alpha_1 x_1 + \cdots + \alpha_n x_n \| \]}
+\step{2}{$f$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$(\alpha_1, \ldots, \alpha_n) \in K^n$ and $\epsilon > 0$}}
+	\step{b}{\pflet{$\delta = \epsilon / (\|x_1\| + \cdots + \|x_n\|)$}}
+	\begin{proof}
+		\pf\ $x_1$, \ldots, $x_n$ are not all zero because they are linearly independent.
+	\end{proof}
+	\step{c}{\pflet{$(\beta_1, \ldots, \beta_n)$ with $|\alpha_i - \beta_i| < \delta$ for all $i$}}
+	\step{d}{$\| (\alpha_1 x_1 + \cdots + \alpha_n x_n) - (\beta_1 x_1 + \beta_n x_n)\| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			& \| (\alpha_1 x_1 + \cdots + \alpha_n x_n) - (\beta_1 x_1 + \beta_n x_n)\| \\
+			\leq & |\alpha_1 - \beta_1| \|x_1\| + \cdots + |\alpha_n - \beta_n| \|x_n\| & (\text{Axioms 2 and 3}) \\
+			< & \delta (\|x_1\| + \cdots + \|x_n\|) & (\text{\stepref{c}}) \\
+			= & \epsilon & (\text{\stepref{b}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{\pick\ $(\beta_1, \ldots, \beta_n) \in \{ (\beta_1, \ldots, \beta_n) \in K^n \mid |\beta_1| + \cdots + |\beta_n| = 1 \}$ at which $f$ attains its minimum.}
+\begin{proof}
+	\pf\ Extreme Value Theorem.
+\end{proof}
+\step{4}{Let $c = f(\beta_1, \ldots, \beta_n)$}
+\step{5}{$c > 0$}
+\begin{proof}
+	\pf\ Linear independence.
+\end{proof}
+\step{6}{\pflet{$\alpha_1, \ldots, \alpha_n \in K$}}
+\step{7}{$\|\alpha_1 x_1 + \cdots + \alpha_n x_n\| \geq c (|\alpha_1| + \cdots + |\alpha_n|)$}
+\begin{proof}
+	\step{zero}{\assume{w.l.o.g. $\alpha_1$ \ldots, $\alpha_n$ are not all zero.}}
+	\step{a}{\pflet{$\beta_i = \alpha_i / (|\alpha_1| + \cdots + |\alpha_n|)$ for $i=1, \ldots, n$}}
+	\step{b}{$|\beta_1| + \cdots + |\beta_n| = 1$}
+	\step{c}{$f(\beta_1, \ldots, \beta_n) \geq c$}
+	\qedstep
+	\begin{proof}
+		\pf\ Multiply both sides by $|\alpha_1| + \cdots + |\alpha_n|$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space over $K$. Define $d : V^2 \rightarrow \mathbb{R}$ by $d(x,y) = \| x-y\|$. Then $d$ is a metric on $V$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $x,y \in V$ we have $d(x,y) \geq 0$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:normnonnegative}.
+\end{proof}
+\step{2}{For all $x,y \in V$ we have $d(x,y) = 0$ iff $x=y$}
+\begin{proof}
+	\step{a}{If $d(x,y) = 0$ then $x = y$}
+	\begin{proof}
+		\pf\ Axiom 1.
+	\end{proof}
+	\step{b}{If $x=y$ then $d(x,y) = 0$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:normzero}.
+	\end{proof}
+\end{proof}
+\step{3}{$\forall x,y \in V. d(x,y) = d(y,x)$}
+\begin{proof}
+	\pf\ By Axiom 2.
+\end{proof}
+\step{4}{$\forall x,y,z \in V. d(x,z) \leq d(x,y) + d(y,z)$}
+\begin{proof}
+	\pf\ By Axiom 3.
+\end{proof}
+\qed
+\end{proof}
+
+Henceforth we identify any normed space with this metric space.
+
+\section{Convergence}
+
+\begin{prop}
+Let $V$ be a normed space over $K$. Let $(x_n)$ be a sequence in $V$ and $l \in V$. Then $x_n \rightarrow l$ as $n \rightarrow \infty$ in $V$ if and only if $\| x_n - l \| \rightarrow 0$ as $n \rightarrow \infty$ in $\mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:onelimit}
+In a normed space, a sequence has at most one limit.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a vector space over $K$.}}
+\step{2}{\assume{$x_n \rightarrow l$ and $x_n \rightarrow m$ as $n \rightarrow \infty$.}}
+\step{3}{\assume{for a contradiction $l \neq m$}}
+\step{4}{\pflet{$\epsilon = \|l-m\|/2$}}
+\step{5}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon$ and $\forall n \geq N. \| x_n - m \| < \epsilon$}
+\begin{proof}
+	\pf\ \stepref{2}, \stepref{4}
+\end{proof}
+\step{6}{$\| l - m \| < \| l - m \|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|l - m\| & \leq \| x_N - l \| + \| x_N - m \| & (\text{Triangle Inequality}) \\
+		& < 2 \epsilon & (\text{\stepref{5}}) \\
+		& = \| l - m \| & (\text{\stepref{4}}
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Bounded]
+Let $V$ be a normed space over $K$. A sequence $(x_n)$ in $V$ is \emph{bounded} iff there exists $B$ such that $\forall n \leq N. \|x_n\| < B$.
+\end{df}
+
+\begin{prop}
+Every convergent sequence is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x_n \rightarrow l$ as $n \rightarrow \infty$}}
+\step{2}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < 1$}
+\step{3}{\pflet{$B = \max(\|x_1\|, \|x_2\|, \ldots, \|x_{N-1}\|, \|l\| + 1)$}}
+\step{4}{\pflet{$n \in \mathbb{N}$}}
+\step{5}{$\| x_n \| \leq B$}
+\begin{proof}
+	\step{a}{\case{$n < N$}}
+	\begin{proof}
+		\pf\ $\| x_n \| \leq B$ from \stepref{3}.
+	\end{proof}
+	\step{b}{\case{$n \geq N$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|x_n\| & \leq \|l\| + \|x_n - l\| & (\text{Triangle Inequality}) \\
+			& < \|l\| + 1 & (\text{\stepref{2}}) \\
+			& \leq B & (\text{\stepref{3}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space over $K$. If $x_n \rightarrow l$ as $n \rightarrow \infty$ in $V$, and $\lambda_n \rightarrow \lambda$ as $n \rightarrow \infty$ in $K$, then $\lambda_n x_n \rightarrow \lambda l$ as $n \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$x_n \rightarrow l$ as $n \rightarrow \infty$}}
+\step{3}{\pflet{$\lambda_n \rightarrow \lambda$ as $n \rightarrow \infty$}}
+\step{4}{\pflet{$\epsilon > 0$}}
+\step{5}{\pick\ $N$ such that, for all $n \geq N$, we have $\| x_n - l \| < \epsilon / 2|\lambda|$ and $|\lambda_n - \lambda| < \sqrt{\epsilon/2}$ and $\|x_n\| < \sqrt{\epsilon/2}$}
+\step{6}{\pflet{$n \geq N$}}
+\step{7}{$\| \lambda_n x_n - \lambda l \| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|\lambda_n x_n - \lambda l\| & \leq \| \lambda_n x_n - \lambda x_n \| + \| \lambda x_n - \lambda l \| & (\text{Triangle Inequality}) \\
+		& = |\lambda_n - \lambda| \| x_n \| + |\lambda| \| x_n - l \|  & (\text{Axiom 2}) \\
+		& < \sqrt{\epsilon/2} \sqrt{\epsilon/2} + |\lambda| \epsilon/2|\lambda| & (\text{\stepref{5}}) \\
+		& = \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space over $K$. If $x_n \rightarrow l$ and $y_n \rightarrow m$ as $n \rightarrow \infty$, then $x_n + y_n \rightarrow l + m$ as $n \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $N$ such that, for all $n \geq N$, we have $\| x_n - l\| < \epsilon / 2$ and $\| y_n - m \| < \epsilon / 2$}
+\step{3}{\pflet{$n \geq N$}}
+\step{4}{$\|(x_n + y_n) - (l + m)\| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|(x_n + y_n) - (l + m)\| & \leq \|x_n - l\| + \|y_n - m\| & (\text{Triangle Inequality}) \\
+		& < \epsilon / 2 + \epsilon / 2 & (\text{\stepref{2}}) \\
+		& = \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Uniform Convergence]
+Let $\Omega$ be a closed bounded subset of $\mathbb{R}^n$. Let $(f_n)$ be a sequence in $\mathcal{C}(\Omega)$ and $f \in \mathcal{C}(\Omega)$. Then $(f_n)$ \emph{converges uniformly} to $f$ iff, for every $\epsilon > 0$, there exists $N$ such that $\forall x \in \Omega. \forall n \geq N. |f_n(x) - f(x)| < \epsilon$.
+\end{df}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded subset of $\mathbb{R}^n$. Let $(f_n)$ be a sequence in $\mathcal{C}(\Omega)$ and $f \in \mathcal{C}(\Omega)$. Then $(f_n)$ \emph{converges uniformly} to $f$ iff $f_n$ converges to $f$ under the uniform convergence norm.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+& (f_n) \text{ converges to } f \text{ under the uniform convergence norm} \\
+\Leftrightarrow & \forall \epsilon > 0. \exists N. \forall n \geq N. \| f_n - f \| < \epsilon \\
+\Leftrightarrow & \forall \epsilon > 0. \exists N. \forall n \geq N. \forall x \in X. |f_n(x) - f(x)| < \epsilon & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Pointwise Convergence]
+Let $(f_n)$ be a sequence in $\mathcal{C}([0,1])$ and $f \in \mathcal{C}([0,1])$. Then $(f_n)$ \emph{converges pointwise} to $f$ iff, for all $t \in [0,1]$, we have $|f_n(t) - f(t)| \rightarrow 0$ as $n \rightarrow \infty$.
+\end{df}
+
+\begin{prop}
+There is no norm $n$ on $\mathcal{C}([0,1])$ such that, for every sequence $(f_n)$ and function $f$ in $\mathcal{C}([0,1])$, we have $(f_n)$ converges pointwise to $f$ if and only if $(f_n)$ converges to $f$ under $n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\|\ \|$ is a norm on $\mathcal{C}([0,1])$ such that, for every sequence $(f_n)$ and function $f$ in $\mathcal{C}([0,1])$, we have $(f_n)$ converges pointwise to $f$ if and only if $(f_n)$ converges to $f$ under $\|\ \|$.}}
+\step{2}{For $n \in \mathbb{Z}_+$, define $g_n \in \mathcal{C}([0,1])$ by
+\[ g_n(t) = \begin{cases}
+2^n t & \text{if } 0 \leq t \leq 2^{-n} \\
+2 - 2^n t & \text{if } 2^{-n} \leq t \leq 2^{1-n} \\
+0 & \text{if } 2^{1-n} \leq t \leq 1
+\end{cases} \]}
+\step{3}{For all $n$, $\|g_n\| \neq 0$}
+\begin{proof}
+	\pf\ Axiom 1.
+\end{proof}
+\step{4}{For $n \in \mathbb{Z}_+$, define $f_n \in \mathcal{C}([0,1])$ by $f_n = g_n / \| g_n \|$}
+\step{5}{For all $n$, $\|f_n\| = 1$}
+\begin{proof}
+	\pf\ Axiom 2.
+\end{proof}
+\step{6}{$(f_n)$ does not converge under $\|\ \|$}
+\step{7}{$(f_n)$ converges pointwise to 0.}
+\step{8}{This is a contradiction.}
+\qed
+\end{proof}
+
+\begin{df}[Equivalence of Norms]
+Let $\|\ \|_1$ and $\|\ \|_2$ be two norms on the same vector space $V$. Then the norms are \emph{equivalent} if and only if, for any sequence $(x_n)$ in $V$ and $l \in V$, we have that $(x_n)$ converges to $l$ under $\|\ \|_1$ if and only if $(x_n)$ converges to $l$ under $\|\ \|_2$.
+\end{df}
+
+\begin{thm}
+\label{thm:equivalent_norms}
+Let $\|\ \|_1$ and $\|\ \|_2$ be two norms on the same vector space $E$ over $K$. Then $\|\ \|_1$ and $\|\ \|_2$ are equivalent if and only if there exist positive real numbers $\alpha$ and $\beta$ such that, for all $x \in E$,
+\[ \alpha \| x \|_1 \leq \| x \|_2 \leq \beta \| x \|_1 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $\|\ \|_1$ and $\|\ \|_2$ are equivalent then there exist positive real numbers $\alpha$ and $\beta$ such that, for all $x \in E$,
+$ \alpha \| x \|_1 \leq \| x \|_2 \leq \beta \| x \|_1$.}
+\begin{proof}
+	\step{a}{\assume{$\|\ \|_1$ and $\|\ \|_2$ are equivalent.}}
+	\step{b}{There exists $\alpha > 0$ such that, for all $x \in E$, we have $\alpha \|x\|_1 \leq \|x\|_2$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction there is no $\alpha > 0$ such that, for all $x \in E$, we have $\alpha \|x\|_1 \leq \|x\|_2$.}}
+		\step{2}{For all $n \in \mathbb{Z}_+$, \pick\ $x_n \in E$ such that $1/n \|x_n\|_1 > \|x\|_2$}
+		\step{3}{For all $n \in \mathbb{Z}_+$, \pflet{\[y_n = \frac{1}{\sqrt{n}} \frac{x_n}{\|x_n\|_2}\]}}
+		\step{4}{$(y_n)$ converges to 0 under $\|\ \|_2$}
+		\step{5}{$(y_n)$ converges to 0 under $\|\ \|_1$}
+		\step{6}{For all $n \in \mathbb{Z}_+$, we have $\|y_n\| > \sqrt{n}$}
+		\step{7}{This is a contradiction.}
+	\end{proof}
+	\step{c}{There exists $\beta > 0$ such that, for all $x \in E$, we have $\|x\|_2 \leq \beta \|x\|_1$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{2}{If there exist positive real numbers $\alpha$ and $\beta$ such that, for all $x \in E$,
+$ \alpha \| x \|_1 \leq \| x \|_2 \leq \beta \| x \|_1$. then $\|\ \|_1$ and $\|\ \|_2$ are equivalent.}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ and $\beta$ are positive reals with $\forall x \in E. \alpha \|x\|_1 \leq \|x\|_2 \leq \beta \|x\|_1$.}}
+	\step{b}{Let $(x_n)$ be a sequence in $E$ and $l \in E$}
+	\step{c}{If $(x_n)$ converges to $l$ under $\|\ \|_1$ then $(x_n)$ converges to $l$ under $\|\ \|_2$.}
+	\begin{proof}
+		\step{i}{\assume{$(x_n)$ converges to $l$ under $\|\ \|_1$}}
+		\step{2}{\pflet{$\epsilon > 0$}}
+		\step{3}{\pick\ $N$ such that $\forall n \geq N. \|x_n - l\|_1 < \epsilon / \beta$}
+		\step{4}{$\forall n \geq N. \|x_n - l\|_2 < \epsilon$}
+	\end{proof}
+	\step{d}{If $(x_n)$ converges to $l$ under $\|\ \|_2$ then $(x_n)$ converges to $l$ under $\|\ \|_1$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:findimeqnorm}
+Any two norms on a finite dimensional vector space are equivalent.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a finite dimensional vector space over $K$.}}
+\step{1a}{\assume{w.l.o.g. $\dim V > 0$}}
+\step{2}{\pick\ a basis $\{e_1, \ldots, e_n\}$ for $V$.}
+\step{3}{\pflet{$\|\ \|_0 : V \rightarrow \mathbb{R}$ be the function: $\| \alpha_1 e_1 + \cdots + \alpha_n e_n \|_0 = |\alpha_1| + \cdots + |\alpha_n|$.}}
+\step{4}{$\|\ \|_0$ is a norm.}
+\begin{proof}
+	\step{a}{If $\| v \|_0 = 0$ then $v = 0$}
+	\begin{proof}
+		\pf\ If $|\alpha_1| + \cdots + |\alpha_n| = 0$ then $\alpha_1 = \cdots = \alpha_n = 0$ so $\alpha_1 e_1 + \cdots + \alpha_n e_n = 0$.
+	\end{proof}
+	\step{b}{$\|\lambda v\|_0 = |\lambda| \|v\|_0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|\lambda (\alpha_1 e_1 + \cdots + \alpha_n e_n)\|_0
+			& = \|\lambda \alpha_1 e_1 + \cdots + \lambda \alpha_n e_n\|_0 \\
+			& = |\lambda \alpha_1| + \cdots + |\lambda \alpha_n| & (\text{\stepref{3}}) \\
+			& = |\lambda| (|\alpha_1| + \cdots + |\alpha_n|) \\
+			& = |\lambda| \|\alpha_1 e_1 + \cdots + \alpha_n e_n\|_0 & (\text{\stepref{3}})
+		\end{align*}
+	\end{proof}
+	\step{c}{$\|u + v\|_0 \leq \|u\|_0 + \|v\|_0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|(\alpha_1 e_1 + \cdots + \alpha_n e_n) + (\beta_1 e_1 + \cdots + \beta_n e_n)\|
+			& = |\alpha_1 + \beta_1| + \cdots + |\alpha_n + \beta_n| \\
+			& \leq |\alpha_1| + \cdots + |\alpha_n| + |\beta_1| + \cdots + |\beta_n| \\
+			& = \|\alpha_1 e_1 + \cdots + \alpha_n e_n\|_0 + \|\beta_1 e_1 + \cdots + \beta_n e_n\|_0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{5}{Any norm on $V$ is equivalent to $\|\ \|_0$.}
+\begin{proof}
+	\step{a}{\pflet{$\|\ \|$ be any norm on $V$.}}
+	\step{b}{\pick\ $\alpha > 0$ such that, for all $\alpha_1, \ldots, \alpha_n \in K$, we have $\|\alpha_1 e_1 + \cdots + \alpha_n e_n\| \geq \alpha (|\alpha_1| + \cdots + |\alpha_n|)$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:lm1_3_12}, \stepref{a}, \stepref{2}.
+	\end{proof}
+	\step{c}{\pflet{$\beta = \max(\|e_1\|, \ldots, \|e_n\|)$}}
+	\step{d}{$\beta > 0$}
+	\begin{proof}
+		\pf\ $e_1$, \ldots, $e_n$ cannot all be zero by \stepref{2}.
+	\end{proof}
+	\step{e}{For all $x \in V$ we have $\alpha \|x\|_0 \leq \|x\| \leq \beta \|x\|_0$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in V$}}
+		\step{ii}{$\alpha \|x\|_0 \leq \|x\|$}
+		\begin{proof}
+			\pf\ \stepref{2}, \stepref{3}, \stepref{b}.
+		\end{proof}
+		\step{iii}{$\|x\| \leq \beta \|x\|_0$}
+		\begin{proof}
+			\step{one}{\pflet{$x = \alpha_1 e_1 + \cdots + \alpha_n e_n$}}
+			\qedstep
+			\begin{proof}
+				\pf
+				\begin{align*}
+					\|x\| & = \|\alpha_1 e_1 + \cdots + \alpha_n e_n\| & (\text{\stepref{one}}) \\
+					& \leq |\alpha_1| \|e_1\| + \cdots + |\alpha_n| \|e_n\| & (\text{\stepref{a}}) \\
+					& \leq \beta (|\alpha_1| + \cdots + |\alpha_n|) & (\text{\stepref{c}}) \\
+					& = \beta \|x\|_0 & (\text{\stepref{3}})
+				\end{align*}
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Theorem \ref{thm:equivalent_norms}, \stepref{4}, \stepref{a}, \stepref{b}, \stepref{d}, \stepref{e}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Open Ball]
+Let $V$ be a normed space over $K$. Let $x \in V$. Let $r > 0$. The \emph{open ball} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ B(x,r) := \{ y \in V \mid \| y-x\| < r \} \enspace . \]
+\end{df}
+
+\begin{df}[Closed Ball]
+Let $V$ be a normed space over $K$. Let $x \in V$. Let $r > 0$. The \emph{closed ball} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ \overline{B}(x,r) := \{ y \in V \mid \| y-x\| \leq r \} \enspace . \]
+\end{df}
+
+\begin{df}[Sphere]
+Let $V$ be a normed space over $K$. Let $x \in V$. Let $r > 0$. The \emph{sphere} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ S(x,r) := \{ y \in V \mid \| y-x\| = r \} \enspace . \]
+\end{df}
+
+\begin{df}[Open Set]
+Let $V$ be a normed space over $K$. A set $S \subseteq V$ is \emph{open} iff, for all $x \in S$, there exists $\epsilon > 0$ such that $B(x,\epsilon) \subseteq S$.
+\end{df}
+
+\begin{prop}
+Equivalent norms define the same set of open sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$\|\ \|_1$ and $\|\ \|_2$ be equivalent norms on $V$.}}
+\step{3}{\pick\ reals $\alpha, \beta > 0$ such that, for all $x \in V$, we have $\alpha \|x\|_1 \leq \|x\|_2 \leq \beta \|x\|_1$}
+\step{4}{\pflet{$S \subseteq V$}}
+\step{5}{If $S$ is open under $\|\ \|_1$ then $S$ is open under $\|\ \|_2$.}
+\begin{proof}
+	\step{a}{\assume{$S$ is open under $\|\ \|_1$.}}
+	\step{b}{\pflet{$x \in S$}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $\{ y \in V \mid \|x-y\|_1 < \epsilon \} \subseteq S$.}
+	\step{d}{\pflet{$\delta = \alpha \epsilon$}}
+	\step{e}{$\{ y \in V \mid \|x-y\|_2 < \delta \} \subseteq S$}
+\end{proof}
+\step{6}{If $S$ is open under $\|\ \|_2$ then $S$ is open under $\|\ \|_1$.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every open ball is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$c \in V$ and $r > 0$} \prove{$B(c,r)$ is open.}}
+\step{3}{\pflet{$x \in B(c,r)$}}
+\step{4}{\pflet{$\epsilon = r - \|x-c\|$} \prove{$B(x,\epsilon) \subseteq B(c,r)$}}
+\step{5}{\pflet{$y \in B(x, \epsilon)$} \prove{$y \in B(c,r)$}}
+\step{6}{$\|y-c\| < r$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|y-c\| & \leq \|y-x\| + \|x-c\| & (\text{Triangle Inequality}) \\
+		& < \epsilon + \|x-c\| & (\text{\stepref{5}}) \\
+		& = r & (\text{\stepref{4}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$. Then $U = \{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. g(x) < f(x) \}$ is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$g \in U$}}
+\step{2}{\pflet{$\epsilon = \max_{x \in \Omega} (f(x) - g(x))$} \prove{$B(g,\epsilon) \subseteq S$}}
+\step{3}{$\epsilon > 0$}
+\step{4}{\pflet{$h \in B(g,\epsilon/2)$} \prove{$h \in S$}}
+\step{5}{\pflet{$x \in \Omega$}}
+\step{6}{$h(x) < f(x)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		h(x) & \leq g(x) + \epsilon/2 & (\text{\stepref{4}}) \\
+		& < g(x) + \epsilon & (\text{\stepref{3}}) \\
+		& \leq f(x) & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$. Then $U = \{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. g(x) > f(x) \}$ is open.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $g \in U$, let $\epsilon = \max_x (g(x) - f(x))/2$. Then $B(g,\epsilon) \subseteq U$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$ be such that $f(x) > 0$ for all $x \in \Omega$. Then $U = \{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. |g(x)| < f(x) \}$ is open.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $g \in U$, let $\epsilon = \max_x (f(x) - |g(x)|)/2$. Then $B(g,\epsilon) \subseteq U$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$ be such that $f(x) > 0$ for all $x \in \Omega$. Then $U = \{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. |g(x)| > f(x) \}$ is open.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $g \in U$, let $\epsilon = \max_x (|g(x)| - f(x))/2$. Then $B(g,\epsilon) \subseteq U$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:unionopen}
+The union of a set of open sets is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$\mathcal{U}$ be a set of open sets in $V$.}}
+\step{3}{\pflet{$x \in \bigcup \mathcal{U}$}}
+\step{4}{\pick\ $U \in \mathcal{U}$ such that $x \in U$.}
+\step{5}{\pick\ $\epsilon > 0$ such that $B(x,\epsilon) \subseteq U$}
+\step{6}{$B(x,\epsilon) \subseteq \bigcup \mathcal{U}$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:openint}
+The intersection of two open sets is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$U_1$ and $U_2$ be open sets in $V$.}}
+\step{3}{\pflet{$x \in U_1 \cap U_2$}}
+\step{4}{\pick\ $\epsilon_1 > 0$ such that $B(x, \epsilon_1) \subseteq U_1$}
+\step{5}{\pick\ $\epsilon_2 > 0$ such that $B(x, \epsilon_2) \subseteq U_2$}
+\step{6}{\pflet{$\epsilon = \min(\epsilon_1, \epsilon_2)$}}
+\step{7}{$B(x, \epsilon) \subseteq U_1 \cap U_2$}
+\qed
+\end{proof}
+
+\begin{prop}
+In any normed space, $\emptyset$ is open.
+\end{prop}
+
+\begin{proof}
+\pf\ Vacuous. \qed
+\end{proof}
+
+\begin{prop}
+In any normed space $V$, the whole space $V$ is open.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $x \in V$ we have $B(x,1) \subseteq V$. \qed
+\end{proof}
+
+\begin{df}[Closed Set]
+Let $V$ be a normed space over $K$. A set $S \subseteq V$ is \emph{closed} iff $V - S$ is open.
+\end{df}
+
+\begin{prop}
+Every closed ball is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$c \in V$ and $r > 0$} \prove{$\overline{B}(c,r)$ is closed.}}
+\step{3}{\pflet{$x \in V - \overline{B}(c,r)$}}
+\step{4}{\pflet{$\epsilon = \|x-c\| - r$} \prove{$B(x,\epsilon) \subseteq V - \overline{B}(c,r)$}}
+\step{5}{$\epsilon > 0$}
+\begin{proof}
+	\pf\ Since $\|x-c\| > r$ by \stepref{3}.
+\end{proof}
+\step{6}{\pflet{$y \in B(x, \epsilon)$}}
+\step{7}{$\|y - c\| > r$}
+\begin{proof}
+	\pf
+	\begin{align*}
+	\|y-c\| & \geq \|x-c\| - \|x-y\| & (\text{Triangle Inequality}) \\
+	& > \|x-c\| - \epsilon & (\text{\stepref{6}}) \\
+	& = r & (\text{\stepref{4}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:closedint}
+The intersection of a set of closed sets is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:unionopen}. \qed
+\end{proof}
+
+\begin{prop}
+The union of two closed sets is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:openint}. \qed
+\end{proof}
+
+\begin{prop}
+Every sphere is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ $S(c,r) = \overline{B}(c,r) - B(c,r)$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$. Then $\{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. g(x) \leq f(x) \}$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ It is $\mathcal{C}(\Omega) - \{ g \mid \forall x \in \Omega. g(x) > f(x) \}$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$. Then $\{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. g(x) \geq f(x) \}$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ It is $\mathcal{C}(\Omega) - \{ g \mid \forall x \in \Omega. g(x) < f(x) \}$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$. Then $\{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. |g(x)| \leq f(x) \}$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ It is $\mathcal{C}(\Omega) - \{ g \mid \forall x \in \Omega. |g(x)| > f(x) \}$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $f \in \mathcal{C}(\Omega)$. Then $\{ g \in \mathcal{C}(\Omega) \mid \forall x \in \Omega. |g(x)| \geq f(x) \}$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ It is $\mathcal{C}(\Omega) - \{ g \mid \forall x \in \Omega. |g(x)| < f(x) \}$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $x_0 \in \Omega$ and $\lambda \in \mathbb{C}$. Then $C = \{ g \in \mathcal{C}(\Omega) \mid g(x_0) = \lambda \}$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $g \in \mathcal{C}(\Omega) - C$, let $\epsilon = |g(x_0) - \lambda|/2$. Then $B(g,\epsilon) \subseteq \mathcal{C}(\Omega) - C$. \qed
+\end{proof}
+
+\begin{prop}
+In any normed space $V$, we have $\emptyset$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $V - \emptyset = V$ is open. \qed
+\end{proof}
+
+\begin{prop}
+In any normed space $V$, the whole space $V$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $V - V = \emptyset$ is open. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:closedconverge}
+Let $V$ be a normed space over $K$. Let $S$ be a subset of $V$. Then $S$ is closed if and only if, for any sequence $(x_n)$ in $S$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $l \in S$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $S$ is closed then, for any sequence $(x_n)$ in $S$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $l \in S$.}
+\begin{proof}
+	\step{a}{\assume{$S$ is closed.}}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $S$.}}
+	\step{c}{\assume{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
+	\step{d}{\assume{for a contradiction $l \notin S$.}}
+	\step{e}{\pick\ $\epsilon > 0$ such that $B(l,\epsilon) \subseteq V - S$}
+	\step{f}{\pick\ $N$ such that $\forall n \geq N. x_n \in B(l,\epsilon)$}
+	\step{g}{$x_N \in V - S$}
+	\step{h}{This contradicts \stepref{b}.}
+\end{proof}
+\step{2}{If, for any sequence $(x_n)$ in $S$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $l \in S$, then $S$ is closed.}
+\begin{proof}
+	\step{a}{\assume{for any sequence $(x_n)$ in $S$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $l \in S$.}}
+	\step{b}{\pflet{$x \in V - S$}}
+	\step{c}{\assume{for a contradiction there is no $\epsilon > 0$ such that $B(x, \epsilon) \subseteq V - S$.}}
+	\step{d}{For $n \in \mathbb{Z}_+$, \pick\ $x_n \in B(x, 1/n) \cap S$}
+	\step{e}{$x_n \rightarrow x$ as $n \rightarrow \infty$}
+	\step{f}{$x \in S$}
+	\step{g}{This contradicts \stepref{b}.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Closure]
+Let $V$ be a normed space over $K$. Let $S$ be a subset of $V$. The \emph{closure} of $S$, $\cl S$, is the intersection of the set of closed sets that include $S$.
+\end{df}
+
+\begin{prop}
+Let $V$ be a normed space over $K$. Let $S$ be a subset of $V$. Then the closure of $S$ is the smallest closed set that includes $S$.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:closedint}. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:closureconverge}
+Let $V$ be a normed space over $K$. Let $S$ be a subset of $V$. Then
+\[ \cl S = \{l \in V \mid \exists \text{ a sequence } (x_n) \text{ in } S. x_n \rightarrow l \text{ as } n \rightarrow \infty \} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all $l \in \cl S$, there exists a sequence $(x_n)$ in $S$ such that $x_n \rightarrow l$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\step{a}{\pflet{$l \in \cl S$}}
+	\step{b}{For $n \in \mathbb{Z}_+$, pick $x_n \in B(l,1/n) \cap S$}
+	\begin{proof}
+		\pf\ There must be such an $x_n$ otherwise $S - B(l,1/n)$ would be a smaller closed set that includes $S$.
+	\end{proof}
+	\step{c}{$x_n \rightarrow l$ as $n \rightarrow \infty$}
+\end{proof}
+\step{2}{For any sequence $(x_n)$ in $S$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $l \in \cl S$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:closedconverge}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Dense]
+Let $V$ be a normed space over $K$. Let $S \subseteq V$. Then $S$ is \emph{dense} if and only if $\cl S = V$.
+\end{df}
+
+\begin{thm}[Weierstrass Approximation Theorem]
+Let $a$ and $b$ be real numbers with $a < b$.
+In $\mathcal{C}([a,b])$, the set of polynomials is dense.
+\end{thm}
+
+\begin{proof}
+\pf TODO
+\end{proof}
+
+\begin{prop}
+Let $p \geq 1$. The set of all sequences that have only finitely many non-zero terms is dense in $l^p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(z_n) \in l^p$}}
+\step{2}{\pflet{$\epsilon > 0$} \prove{There exists a sequence $(x_n)$ with only finitely many non-zero terms such that $\left( \sum_{n=1}^\infty |z_n - x_n|^p \right)^{1/p} < \epsilon$}}
+\step{3}{\pick\ $N$ such that $|\sum_{n=1}^\infty |z_n|^p - \sum_{n=1}^N |z_n|^p| < \epsilon^p$}
+\step{4}{\pflet{$(x_n)$ be the sequence that agrees with $(z_n)$ up to term $N$, and then zeros after that.}}
+\step{5}{$\left( \sum_{n=1}^\infty |z_n - x_n|^p \right)^{1/p} < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\left( \sum_{n=1}^\infty |z_n - x_n|^p \right)^{1/p} & = \left( \sum_{n=N+1}^\infty |z_n|^p \right)^{1/p} & (\text{\stepref{4}}) \\
+		& < \epsilon & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $V$ be a normed space over $K$. Let $S \subseteq V$. Then the following are equivalent.
+\begin{enumerate}
+\item $S$ is dense.
+\item For all $l \in V$, there exists a sequence $(x_n)$ in $S$ such that $x_n \rightarrow l$ as $n \rightarrow \infty$.
+\item Every nonempty open subset of $V$ intersects $S$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Leftrightarrow 2$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:closureconverge}.
+\end{proof}
+\step{2}{$1 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$S$ is dense.}}
+	\step{b}{\pflet{$U$ be a nonempty open subset of $V$.}}
+	\step{c}{$X - U$ does not include $S$.}
+	\begin{proof}
+		\pf\ Lest we have $\cl S \subseteq X - U$.
+	\end{proof}
+	\step{d}{$U$ intersects $S$.}
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{Every nonempty subset of $V$ intersects $S$.}}
+	\step{b}{Every closed proper subset of $V$ does not include $S$.}
+	\step{c}{$\cl S = V$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Compact]
+Let $V$ be a normed space over $K$ and $S \subseteq V$. Then $S$ is \emph{compact} if and only if every sequence in $S$ has a convergent subsequence whose limit is in $S$.
+\end{df}
+
+\begin{prop}
+In $K^n$, a set is compact if and only if it is bounded and closed.
+\end{prop}
+
+\begin{proof}
+\pf\ TODO
+\end{proof}
+
+\begin{df}[Bounded]
+Let $V$ be a normed space over $K$ and $S \subseteq V$. Then $S$ is \emph{bounded} iff there exists $r > 0$ such that $V \subseteq B(0,r)$.
+\end{df}
+
+\begin{thm}
+Every compact set is closed and bounded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$S \subseteq V$ be compact.}}
+\step{3}{$S$ is closed.}
+\begin{proof}
+	\step{a}{\pflet{$(x_n)$ be a sequence in $S$ that converges to $l$}}
+	\step{b}{\pick\ a sequence $(x_{n_r})$ that converges to $x \in S$}
+	\begin{proof}
+		\pf\ \stepref{2}, \stepref{a}
+	\end{proof}
+	\step{c}{$x_{n_r} \rightarrow l$ as $n \rightarrow \infty$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{b}
+	\end{proof}
+	\step{d}{$l = x$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:onelimit}.
+	\end{proof}
+	\step{e}{$l \in S$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{d}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Theorem \ref{thm:closedconverge}.
+	\end{proof}
+\end{proof}
+\step{4}{$S$ is bounded.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $S$ is unbounded.}}
+	\step{b}{For $n \in \mathbb{Z}_+$, \pick\ $x_n \in S - B(0,n)$}
+	\step{c}{\pick\ a convergent subsequence $(x_{n_r})$ that converges to $l$, say.}
+	\step{d}{\pick\ $N \in \mathbb{Z}_+$ such that $\|l\| < N$}
+	\step{e}{\pick\ $r$ such that $n_r > N$ and $\|x_{n_r} - l\| < N - \|l\|$}
+	\step{f}{$\|x_{n_r}\| < N < n_r$}
+	\step{g}{This contradicts \stepref{b}.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+In $\mathcal{C}([0,1])$, the closed ball $\overline{B}(0,1)$ is closed and bounded but not compact.
+\end{prop}
+
+\begin{proof}
+\pf\ The sequence of functions $(x^n)$ is in $\overline{B}(0,1)$ but has no convergent subsequence. \qed
+\end{proof}
+
+\begin{thm}[Riesz's Lemma]
+Let $V$ be a normed vector space over $K$. Let $X$ be a closed proper subspace of $V$. Let $0 < \epsilon < 1$. Then there exists $x \in V$ such that $\| x \| = 1$ and $\forall y \in X. \|x-y\| \geq \epsilon$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $z \in V - X$}
+\step{2}{\pflet{$d = \inf_{x \in X} \| z - x \|$}}
+\step{3}{$d > 0$}
+\begin{proof}
+	\pf\ Since $X$ is closed, there exists $e > 0$ such that $B(z,d) \subseteq V - X$ and hence $\|z-x\| \geq d$ for all $x \in X$.
+\end{proof}
+\step{4}{\pick\ $x_0 \in X$ such that $d \leq \| z - x_0 \| \leq d / \epsilon$}
+\begin{proof}
+	\pf\ One exists since $d / \epsilon$ is not a lower bound for $\{ \| z - x \| \mid x \in X \}$.
+\end{proof}
+\step{5}{\pflet{$x = (z-x_0)/\|z-x_0\|$}}
+\step{6}{\pflet{$y \in X$}}
+\step{7}{$\|x-y\| \geq \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|x-y\| & = \left\| \frac{z-x_0}{\|z-x_0\|} - y \right\| & (\text{\stepref{5}}) \\
+		& = \frac{1}{\|z - x_0\|} \| z - (x_0 + \|z - x_0\|y) \| \\
+		& \geq \frac{1}{\|z - x_0\|} d & (\text{\stepref{2}}) \\
+		& \geq \epsilon & (\text{\stepref{4}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $V$ be a normed space over $K$. Then $V$ is finite dimensional if and only if $\overline{B}(0,1)$ is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $V$ is finite dimensional then $\overline{B}(0,1)$ is compact.}
+\begin{proof}
+	\step{a}{\assume{$V$ is finite dimensional.}}
+	\step{b}{\pick\ a basis $\{e_1, \ldots, e_n\}$}
+	\step{c}{\assume{w.l.o.g. $\| \alpha_1 e_1 + \cdots + \alpha_n e_n\| = |\alpha_1| + \cdots + |\alpha_n|$}}
+	\step{d}{\pflet{$(\alpha_{k1} e_1 + \cdots + \alpha_{kn} e_n)$ be a sequence in $\overline{B}(0,1)$}}
+	\step{e}{\pick\ a convergent subsequence $(\alpha_{k_r1})$ of $(\alpha_{k1})$, a convergent subsequence $(\alpha_{k'_r}2)$ of $(\alpha_{k_r2})$, \ldots, a convergent subsequence $(\alpha_{k''_r}n)$.}
+	\step{f}{$(\alpha_{k''_r1} e_1 + \cdots + \alpha_{k''_rn})$ converges.}
+\end{proof}
+\step{2}{If $V$ is infinite dimensional then $\overline{B}(0,1)$ is not compact.}
+\begin{proof}
+	\step{a}{\assume{$V$ is infinite dimensional.}}
+	\step{b}{Choose a sequence $(x_n)$ with $\|x_n\| = 1$ and $\|x_m - x_n\| \geq 1/2$ for $m \neq n$}
+	\begin{proof}
+		\step{i}{\assume{$x_1$, \ldots, $x_n$ satisfy $\|x_i\| = 1$ and $\|x_i - x_j\| \geq 1/2$ for $i \neq j$}}
+		\step{ii}{\pick\ $x_{n+1} \in V$ such that $\|x_{n+1}\| = 1$ and for all $y \in \spn \{x_1, \ldots, x_n\}$ we have $\| x_{n+1} - y \| \geq 1/2$}
+		\begin{proof}
+			\step{one}{$\spn \{x_1, \ldots, x_n\}$ is closed.}
+			\begin{proof}
+			%TODO
+				\step{A}{\pflet{$S = \spn \{x_1, \ldots, x_n\}$}}
+				\step{B}{\pflet{$(a_n)$ be a sequence in $S$ that converges to $a \in V$} \prove{$a \in S$}}
+				\step{C}{$(a_n)$ is a Cauchy sequence in $V$.}
+				\step{D}{$(a_n)$ is a Cauchy sequence in $S$.}
+				\step{E}{A finite dimensional normed space is a Banach space.}
+				\step{F}{$S$ is complete.}
+				\step{G}{$a \in S$}
+			\end{proof}
+			\step{two}{$\spn \{x_1, \ldots, x_n\}$ is a proper subspace of $V$.}
+			\begin{proof}
+				\pf\ \stepref{a}
+			\end{proof}
+			\qedstep
+			\begin{proof}
+				\pf\ Riesz's Lemma.
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{c}{\assume{for a contradiction $(x_{n_r})$ is a subsequence that converges to $l$}}
+	\step{d}{For all $r \in \mathbb{N}$, we have $\|x_{n_r} - l\|  + \|x_{n_{r+1}} - l\| \geq 1/2$}
+	\step{e}{This is a contradiction.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space. The closure of a subspace of $V$ is a subspace.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ be a subspace of $V$}}
+\step{2}{\pflet{$x,y \in \cl U$ and $\alpha, \beta \in K$}}
+\step{3}{\pick\ sequences $(x_n)$, $(y_n)$ in $U$ that converge to $x$ and $y$ respectively.}
+\step{4}{$\alpha x_n + \beta y_n \rightarrow \alpha x + \beta y$ as $n \rightarrow \infty$}
+\step{5}{$\alpha x + \beta y \in \cl U$}
+\qed
+\end{proof}
+
+\section{Continuous Linear Mappings}
+
+\begin{df}[Continuous]
+Let $U$ and $V$ be normed spaces. Let $f : U \rightarrow V$ and $x \in U$. Then $f$ is \emph{continuous at $x$} iff, for any sequence $(x_n)$ in $U$, if $x_n \rightarrow x$ as $n \rightarrow \infty$ then $f(x_n) \rightarrow f(x)$ as $n \rightarrow \infty$. The function $f$ is \emph{continuous} iff $f$ is continuous at every point.
+\end{df}
+
+\begin{prop}
+Let $V$ be a normed space. Then the norm is a continuous function $V \rightarrow \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:diffnorms}. \qed
+\end{proof}
+
+\begin{prop}
+Let $U$ and $V$ be normed space. Let $f : U \rightarrow V$. Then the following are equivalent.
+\begin{enumerate}
+\item $f$ is continuous.
+\item For any open set $S$ in $V$, we have $f^{-1}(S)$ is open in $U$.
+\item For any closed set $C$ in $V$, we have $f^{-1}(C)$ is closed in $U$.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}
+\label{prop:continuousonepoint}
+Let $U$ and $V$ be normed spaces over $K$. Let $T : U \rightarrow V$ be a linear transformation. If $T$ is continuous at some point, then it is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$T$ is continuous at $u_0$}}
+\step{2}{\pflet{$x_n \rightarrow l$ as $n \rightarrow \infty$ in $U$}}
+\step{3}{$x_n - l + u_0 \rightarrow u_0$ as $n \rightarrow \infty$.}
+\step{4}{$T(x_n - l + u_0) \rightarrow T(u_0)$ as $n \rightarrow \infty$.}
+\step{5}{$T(x_n) - T(l) + T(u_0) \rightarrow T(u_0)$ as $n \rightarrow \infty$.}
+\step{6}{$T(x_n) \rightarrow T(l)$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
+\begin{df}[Bounded]
+Let $U$ and $V$ be normed spaces over $K$. Let $T : U \rightarrow V$ be a linear transformation. Then $T$ is \emph{bounded} iff there exists $\alpha > 0$ such that, for all $x \in U$, we have $\|T(x)\| \leq \alpha \|x\|$.
+\end{df}
+
+\begin{thm}
+Let $U$ and $V$ be normed spaces over $K$. Let $T : U \rightarrow V$ be a linear transformation. Then $T$ is continuous if and only if it is bounded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $T$ is continuous then $T$ is bounded.}
+\begin{proof}
+	\step{a}{\assume{$T$ is not bounded.}}
+	\step{b}{For $n \in \mathbb{Z}_+$, \pick\ $x_n \in U$ such that $\|T(x_n)\| > n \|x_n\|$.}
+	\step{c}{For $n \in \mathbb{Z}_+$, \pflet{\[ y_n = \frac{x_n}{n\|x_n\|} \]}}
+	\step{d}{$y_n \rightarrow 0$ as $n \rightarrow \infty$}
+	\step{e}{$T(y_n) \not\rightarrow 0$ as $n \rightarrow \infty$}
+	\step{f}{$T$ is not continuous.}
+\end{proof}
+\step{2}{If $T$ is bounded then $T$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{$T$ is bounded.}}
+	\step{aa}{\pick\ $\alpha > 0$ such that $\forall x \in U. \| T(x) \| \leq \alpha \|x\|$.}
+	\step{b}{$T$ is continuous at $0$.}
+	\begin{proof}
+		\step{i}{\pflet{$(x_n)$ be a sequence that converges to 0 in $U$}}
+		\step{ii}{$T(x_n) \rightarrow 0$ as $n \rightarrow \infty$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\| T(x_n) \| & \leq \alpha \| x_n \| & (\text{\stepref{aa}}) \\
+				& \rightarrow 0 & \text{as } n \rightarrow \infty
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{c}{$T$ is continuous.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:continuousonepoint}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $U$ and $V$ be normed spaces over $K$ where $U$ is finite dimensional. Let $T : U \rightarrow V$ be a linear transformation. Then $T$ is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a basis $\{e_1, \ldots, e_n\}$ of unit vectors for $U$.}
+\step{2}{\pflet{$M = \max(\|T(e_1)\|, \ldots, \|T(e_n)\|)$}}
+\step{3}{\pick\ $C > 0$ such that, for all $\alpha_1, \ldots, \alpha_n \in K$, we have $|\alpha_1| + \cdots + |\alpha_n| \leq C \|\alpha_1 e_1 + \cdots + \alpha_n e_n\|$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:findimeqnorm}.
+\end{proof}
+\step{4}{\pflet{$x \in U$} \prove{$\|T(x)\| \leq CM\|x\|$}}
+\step{5}{\pflet{$x = \alpha_1 e_1 + \cdots + \alpha_n e_n$}}
+\step{6}{$\|T(x)\| \leq CM\|x\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|T(x)\| & = \|\alpha_1 T(e_1) + \cdots + \alpha_n T(e_n)\| & (T \text{ linear}) \\
+		& \leq |\alpha_1| \|T(e_1)\| + \cdots + |\alpha_n| \|T(e_n)\| & (\text{Triangle inequality}) \\
+		& \leq M(|\alpha_1| + \cdots + |\alpha_n|) & (\text{\stepref{2}}) \\
+		& \leq CM\|x\| & (\text{\stepref{3}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $U$ and $V$ be normed spaces over $K$ where $U$ is finite dimensional. Let $T : U \rightarrow V$ be a linear transformation. Then $T$ is continuous.
+\end{cor}
+
+\begin{prop}
+Let $U$ and $V$ be normed spaces over $K$. Let $T : U \rightarrow V$ be a linear transformation. If $T$ is continuous, then $T$ is uniformly continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$T$ is continuous}}
+\step{2}{\pick\ $B > 0$ such that $\forall x \in U. \|T(x)\| \leq B\|x\|$}
+\step{3}{\pflet{$\epsilon > 0$}}
+\step{3a}{\pflet{$\delta = \epsilon / B$}}
+\step{4}{\pflet{$x,y \in U$}}
+\step{5}{\assume{$\|x-y\| < \delta$}}
+\step{6}{$\|T(x)-T(y)\| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|T(x) - T(y)\| & = \|T(x-y)\| & (T \text{ linear}) \\
+		& \leq B\|x-y\| & (\text{\stepref{2}}) \\
+		& < B \delta & (\text{\stepref{5}}) \\
+		& = \epsilon & (\text{\stepref{3a}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $U$ and $V$ be normed spaces over $K$. The set $\mathcal{B}(U,V)$ of all bounded linear maps from $U$ to $V$ forms a subspace of the space of all linear maps from $U$ to $V$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S,T : U \rightarrow V$ be bounded linear maps and $\alpha, \beta \in K$.} \prove{$\alpha S + \beta T$ is bounded.}}
+\step{2}{\pick\ $B, C > 0$ such that $\forall x \in U. \| S(x)\| \leq B \|x\|$ and $\|T(x)\| \leq C\|x\|$}
+\step{3}{$\forall x \in U. \|(\alpha S + \beta T)(x)\| \leq (|\alpha| B + |\beta| C)\|x\|$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $U$ and $V$ be normed spaces over $K$. Define the \emph{operator norm} $\|\ \|$ on $\mathcal{B}(U,V)$ by $\|T\| := \sup \{ \|T(x)\| \mid x \in U, \|x\| = 1 \}$. Then $\|\ \|$ is a norm on $\mathcal{B}(U,V)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $T \in \mathcal{B}(U,V)$, the set $\{ \|T(x)\| \mid x \in U, \|x\| = 1\}$ is bounded above.}
+\begin{proof}
+	\step{a}{\pflet{$T \in \mathcal{B}(U,V)$}}
+	\step{b}{\pick\ $B$ such that $\forall x \in U. \|T(x)\| \leq B \|x\|$.}
+	\step{c}{$B$ is an upper bound for $\{ \|T(x)\| \mid x \in U, \|x\| = 1 \}$.}
+\end{proof}
+\step{2}{If $\|T\| = 0$ then $T = 0$.}
+\begin{proof}
+	\step{a}{\assume{$\|T\| = 0$}}
+	\step{b}{\pflet{$x \in U$} \prove{$T(x) = 0$}}
+	\step{c}{\assume{w.l.o.g. $\|x\| \neq 0$}}
+	\step{d}{\pflet{$y = x / \|x\|$}}
+	\step{e}{$\|y\| = 1$}
+	\step{f}{$\|T(y)\| = 0$}
+	\step{g}{$T(y) = 0$}
+	\step{h}{$T(x) = 0$}
+\end{proof}
+\step{3}{For all $\lambda \in K$ and $T \in \mathcal{B}(U,V)$, we have $\|\lambda T\| = |\lambda| \|T\|$}
+\begin{proof}
+	\step{a}{\pflet{$\lambda \in K$ and $T \in \mathcal{B}(U,V)$}}
+	\step{b}{$\| \lambda T \| = |\lambda| \|T\|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \lambda T \| & = \sup \{ \| \lambda T(x) \| \mid x \in U, \|x\| = 1 \} \\
+			& = \sup \{ |\lambda| \|T(x)\| \mid x \in U, \|x\| = 1 \} \\
+			& = |\lambda| \sup \{ \|T(x)\| \mid x \in U, \|x\| = 1 \} \\
+			& = |\lambda| \|T\|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{For all $S, T \in \mathcal{B}(U,V)$, we have $\|S+T\| \leq \|S\| + \|T\|$.}
+\begin{proof}
+	\step{a}{\pflet{$S, T \in \mathcal{B}(U,V)$}}
+	\step{b}{$\|S+T\| \leq \|S\| + \|T\|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|S+T\| & = \sup \{ \|S(x) + T(x)\| \mid x \in U, \|x\| = 1 \} \\
+			& \leq \sup \{ \|S(x)\| + \|T(x)\| \mid x \in U, \|x\| = 1 \} \\
+			& \leq \sup \{ \|S(x)\| \mid x \in U, \|x\| = 1 \} + \sup \{ \|T(x)\| \mid x \in U, \|x\| = 1 \} \\
+			& = \|S\| + \|T\|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:normmult}
+Let $U$ and $V$ be normed spaces. Let $T \in \mathcal{B}(U,V)$. Then $\|T\|$ is the least number such that $\forall u \in U. \|T(u)\| \leq \|T\| \|u\|$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall u \in U. \|T(u)\| \leq \|T\| \|u\|$}
+\begin{proof}
+	\step{a}{\pflet{$u \in U$}}
+	\step{b}{\pflet{$v = u / \|u\|$}}
+	\step{c}{$\|T(v)\| \leq \|T\|$}
+	\step{d}{$\|T(u)\| \leq \|T\|\|u\|$}
+\end{proof}
+\step{2}{If $\alpha$ satisfies $\forall u \in U. \|T(u)\| \leq \alpha \|u\|$, then $\|T\| \leq \alpha$}
+\begin{proof}
+	\step{a}{\assume{$\forall u \in U. \|T(u)\| \leq \alpha \|u\|$}}
+	\step{b}{For all $x \in U$, if $\|x\| = 1$ then $\|T(x)\| \leq \alpha$}
+	\step{c}{$\|T\| \leq \alpha$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space. Then $\mathrm{id}_V$ is a bounded linear function $V \rightarrow V$, and $\| \mathrm{id}_V \| = 1$.
+\end{prop}
+
+\begin{prop}
+Let $U$ and $V$ be normed spaces. The constant zero function $U \rightarrow V$ is a bounded linear transformation with norm 0.
+\end{prop}
+
+\begin{prop}
+Let $N \in \mathbb{N}$. Let $T : \mathbb{C}^N \rightarrow \mathbb{C}^N$ be a linear transformation with matrix $A = (a_{ij})$. Then $T$ is bounded and
+\[ \| T \| \leq \sqrt{\sum_{i=1}^N \sum_{j=1}^N |a_{ij}|^2} \enspace . \]
+\end{prop}
+
+\begin{df}[Uniform Convergence]
+Let $U$ and $V$ be normed spaces. Let $(T_n)$ be a sequence in $\mathcal{B}(U,V)$ and $T \in \mathcal{B}(U,V)$. Then $(T_n)$ \emph{converges uniformly} to $T$ iff $(T_n)$ converges to $T$ under the standard norm defined above.
+\end{df}
+
+\begin{thm}
+Let $U$ and $V$ be normed spaces. Let $T : U \rightarrow V$ be a continuous linear function. Then $\ker T$ is a closed subspace of $U$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\ker T$ is a subspace of $U$}
+\begin{proof}
+	\pf\ If $x,y \in \ker T$ and $\alpha, \beta \in K$ then $T(\alpha x + \beta y) = \alpha T(x) + \beta T(y) = 0$.
+\end{proof}
+\step{2}{$\ker T$ is closed.}
+\begin{proof}
+	\pf\ Let $(x_n)$ be a sequence in $\ker T$ and $x_n \rightarrow l$. Then $T(l) = \lim_{n \rightarrow \infty} T(x_n) = 0$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $U$ and $V$ be normed spaces. Let $W$ be a closed subspace of $U$ and $T : W \rightarrow V$ be a continuous linear mapping. Then the graph $G = \{(x,T(x)) \mid x \in W \}$ is closed in $U \times V$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{0}{\assume{w.l.o.g. $T \neq 0$}}
+\step{1}{\pflet{$(x,y) \in (U \times V) - G$, i.e. $y \neq T(x)$}}
+\step{11}{\pflet{$\epsilon = \|y-T(x)\| > 0$}}
+\step{2}{\pflet{$x' \in W$ with $\|x - x'\| < \epsilon / 3\|T\|$}}
+\step{3}{\pflet{$y' \in V$ with $\|y - y'\| < \epsilon / 3$}}
+\step{4}{$y' \neq T(x')$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| y' - T(x')\| & \geq \| y - T(x) \| - \| y - y' \| - \|T(x) - T(x')\| \\
+		& > \epsilon /3 \\
+		& > 0
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Diagonal Theorem]
+Let $E$ be a normed space over $K$. Let $(x_{ij})$ be an infinite matrix of elements of $V$. If:
+\begin{enumerate}
+\item For all $j \in \mathbb{Z}_+$, we have $x_{ij} \rightarrow 0$ as $i \rightarrow \infty$;
+\item Every increasing sequence of positive integers $(p_j)$ has a subsequence $(p_{j_r})$ such that 
+\[ \sum_{s=1}^\infty x_{p_{j_r}p_{j_s}} \rightarrow 0 \text{ as } r \rightarrow \infty \]
+\end{enumerate}
+then $x_{ii} \rightarrow 0$ as $i \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $x_{ii} \not\rightarrow 0$ as $i \rightarrow \infty$}}
+\step{2}{\pick\ $\epsilon > 0$ such that, for all $N$, there exists $n \geq N$ such that $\|x_{nn}\| \geq \epsilon$}
+\step{3}{\pick\ an increasing sequence of integers $(p_j)$ such that $\|x_{p_jp_j}\| \geq \epsilon$ for all $j$.}
+\step{4}{\pick\ a subsequence $(q_i)$ such that $\sum_{j=1}^\infty x_{q_i q_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\step{5}{For all $i$, we have $x_{q_i q_j} \rightarrow 0$ as $j \rightarrow \infty$}
+\step{6}{For all $j$, we have $x_{q_i q_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\step{7}{Define a subsequence $(r_n)$ of $(q_i)$ by $r_1 = q_1$ and, for all $n$, $r_{n+1}$ is the first entry such that $r_{n+1} > r_n$, $\|x_{q_ir_n}\| < \epsilon / 2^{n+1}$ for all $q_i \geq r_{n+1}$, and $\|x_{r_jr_{n+1}}\| < \epsilon / 2^{n+2}$ for $j = 1, \ldots, n$.}
+\step{8}{$\|x_{r_ir_j}\| < \epsilon / 2^{j+1}$ for all $i$, $j$ such that $i \neq j$}
+\step{9}{\pick\ a subsequence $(s_j)$ of $(r_j)$ such that $\sum_{j=1}^\infty x_{s_is_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\step{10}{For all $i$ we have $\| \sum_{j=1}^\infty x_{s_is_j} \| \geq \epsilon / 2$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\left\| \sum_{j=1}^\infty x_{s_is_j} \right\| & = \left\| x_{s_i s_i} + \sum_{i \neq j} x_{s_is_j} \right\| \\
+		& \geq \left| \| x_{s_i s_i} \| - \left\| \sum_{i \neq j} x_{s_is_j} \right\| \right| & (\text{Proposition \ref{prop:diffnorms}}) \\
+		& \geq \left| \| x_{s_i s_i} \| - \sum_{i \neq j} \| x_{s_is_j} \| \right| \\
+		& \geq \epsilon / 2 & (\text{\stepref{2}, \stepref{8}})
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{9} and \stepref{10} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Banach Spaces}
+
+\begin{df}[Cauchy Sequence]
+Let $V$ be a normed space over $K$. A \emph{Cauchy sequence} is a sequence of points $(x_n)$ such that, for every $\epsilon > 0$, there exists $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < \epsilon$.
+\end{df}
+
+\begin{thm}
+Let $V$ be a normed space over $K$. Let $(x_n)$ be a sequence in $V$. The following are equivalent.
+\begin{enumerate}
+\item $(x_n)$ is Cauchy.
+\item For every pair of increasing sequences of positive integers $(p_n)$ and $(q_n)$, we have $\| x_{p_n} - x_{q_n} \| \rightarrow 0$ as $n \rightarrow \infty$.
+\item For every increasing sequence of positive integers $(p_n)$, we have $\| x_{p_n} - x_n \| \rightarrow 0$ as $n \rightarrow \infty$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$(x_n)$ is Cauchy.}}
+	\step{b}{\pflet{$(p_n)$ and $(q_n)$ are increasing sequences of positive integers.}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{\pick\ $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < \epsilon$}
+	\step{e}{$\forall n \geq N. \|x_{p_n} - x_{q_n}\| < \epsilon$}
+	\begin{proof}
+		\pf\ Since $p_n, q_n \geq n \geq N$.
+	\end{proof}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{$(x_n)$ is not Cauchy}}
+	\step{b}{Pick $\epsilon > 0$ such that, for every $N \in \mathbb{Z}_+$, there exist $m_N, n_N \geq N$ such that $\|x_{m_N} - x_{n_N}\| \geq \epsilon$}
+	\step{c}{\assume{w.l.o.g. $(m_N)$ and $(n_N)$ are increasing sequences.}}
+	\step{d}{$\|x_{m_N} - x_{n_N}\| \not\rightarrow 0$ as $N \rightarrow \infty$.}
+\end{proof}
+\step{4}{$3 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{3}}
+	\step{b}{\pflet{$(p_n)$ and $(q_n)$ be increasing sequences of positive integers.}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{\pick\ $N$ such that $\forall n \geq N. \| x_{p_n} - x_n \| < \epsilon / 2$ and $\forall n \geq N. \| x_{q_n} - x_n \| < \epsilon / 2$}
+	\step{e}{$\forall n \geq N. \| x_{p_n} - x_{q_n} \| < \epsilon$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every convergent sequence is Cauchy.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon / 2$}
+\step{4}{For all $m,n \geq N$ we have $\| x_m - x_n \| < \epsilon$.}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:P01example}
+In $\mathcal{P}([0,1])$, let
+\[ P_n(x) = 1 + x + \frac{x^2}{2} + \cdots + \frac{x^n}{n!} \enspace . \]
+Then $(P_n)$ is Cauchy but does not converge.
+\end{prop}
+
+\begin{proof}
+\pf\ It converges to $e^x$ in $\mathcal{C}([0,1])$, therefore it is Cauchy in $\mathcal{C}([0,1])$, hence Cauchy in $\mathcal{P}([0,1])$. Since $e^x \notin \mathcal{P}([0,1])$, it does not converge in that space. \qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space over $K$. Let $(x_n)$ be a Cauchy sequence in $V$. Then $(\|x_n\|)$ converges in $\mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$(\|x_n\|)$ is Cauchy.}
+\begin{proof}
+	\step{a}{\pflet{$\epsilon > 0$}}
+	\step{b}{\pick\ $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < \epsilon$}
+	\step{c}{$\forall m,n \geq N. | \|x_m\| - \|x_n\| | < \epsilon$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:diffnorms}.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Since every Cauchy sequence in $\mathbb{R}$ converges.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every Cauchy sequence is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{\pflet{$(x_n)$ be a Cauchy sequence in $V$.}}
+\step{3}{\pick\ $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < 1$.}
+\step{4}{\pflet{$B = \max(\|x_1\|, \ldots, \|x_{N-1}\|, \|x_N\| + 1$}}
+\step{5}{$\forall n. \|x_n\| \leq B$}
+\qed
+\end{proof}
+
+\begin{df}[Banach Space]
+A normed space $V$ over $K$ is \emph{complete} or a \emph{Banach space} iff every Cauchy sequence converges.
+\end{df}
+
+\begin{prop}
+$l^2$ is complete.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(a_n)$ be a Cauchy sequence in $l^2$ where $a_n = (\alpha_{n1}, \alpha_{n2}, \ldots)$.}}
+\step{2}{For all $\epsilon > 0$, there exists $n_0 \in \mathbb{Z}_+$ such that $\forall m,n \geq n_0. \sum_{k=1}^\infty |\alpha_{mk} - \alpha_{nk}|^2 < \epsilon^2$.}
+\step{3}{For every $k \in \mathbb{Z}_+$ and $\epsilon > 0$, there exists $n_0 \in \mathbb{Z}_+$ such that $\forall m,n \geq n_0. |\alpha_{mk} - \alpha_{nk}| < \epsilon$.}
+\step{4}{For every $k \in \mathbb{Z}_+$, $(\alpha_{nk})$ is Cauchy in $\mathbb{C}$.}
+\step{5}{For every $k \in \mathbb{Z}_+$, $(\alpha_{nk})$ converges in $\mathbb{C}$.}
+\step{6}{For $k \in \mathbb{Z}_+$, \pflet{$\alpha_k = \lim_{n \rightarrow \infty} \alpha_{nk}$}}
+\step{7}{Let $a$ be the sequence $(\alpha_k)$}
+\step{111}{For all $\epsilon > 0$, there exists $n_0$ such that $\forall n \geq n_0. \sum_{k=1}^\infty |\alpha_k - \alpha_{nk}|^2 \leq \epsilon^2$.}
+\begin{proof}
+	\pf\ Letting $m \rightarrow \infty$ in \stepref{2}.
+\end{proof}
+\step{8}{$a \in l^2$}
+\begin{proof}
+	\step{a}{\pick\ $n_0$ such that $\forall n \geq n_0. \sum_{k=1}^\infty |\alpha_k - \alpha_{nk}|^2 \leq 1$}
+	\begin{proof}
+		\pf\ \stepref{111}
+	\end{proof}
+	\step{b}{$(\alpha_k - \alpha_{n_0k}) \in l^2$}
+	\step{c}{$(\alpha_{n_0k}) \in l^2$}
+	\begin{proof}
+		\pf\ By \stepref{1} since the sequence is $a_{n_0}$.
+	\end{proof}
+	\step{d}{$(\alpha_k) \in l^2$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:lp_closed_under_addition}.
+	\end{proof}
+\end{proof}
+\step{9}{$a_n \rightarrow a$ as $n \rightarrow \infty$}
+\begin{proof}
+	\pf\ By \stepref{111} since $\| a - a_n \| = \sqrt{\sum_{k=1}^\infty |\alpha_k - \alpha_{nk}|^2}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $a$ and $b$ be real numbers with $a < b$. The space $\mathcal{C}([a,b])$ is complete.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$X = [a,b]$}}
+\step{1}{\pflet{$(f_n)$ be a Cauchy sequence in $\mathcal{C}([a,b])$.}}
+\step{2}{For all $\epsilon > 0$, there exists $n_0$ such that $\forall n,m \geq n_0. \| f_n - f_m \| < \epsilon$.}
+\step{3}{For all $\epsilon > 0$, there exists $n_0$ such that $\forall n,m \geq n_0. \forall x \in X. | f_n(x) - f_m(x) | < \epsilon$.}
+\step{4}{For all $x \in [a,b]$, $(f_n(x))$ is Cauchy.}
+\step{5}{Define $f : [a,b] \rightarrow \mathbb{C}$ by $f(x) = \lim_{n \rightarrow \infty} f_n(x)$.}
+\step{6}{For all $\epsilon > 0$, there exists $n_0$ such that $\forall n \geq n_0. \forall x \in X. |f_n(x) - f(x)| < \epsilon$}
+\begin{proof}
+	\pf\ Letting $m \rightarrow \infty$ in \stepref{3}.
+\end{proof}
+\step{7}{$f$ is continuous}
+\begin{proof}
+	\step{a}{\pflet{$x_0 \in X$}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $n_0$ such that $\forall n \geq n_0. \forall x \in X. |f_n(x) - f(x)| < \epsilon/3$}
+	\begin{proof}
+		\pf\ By \stepref{6}.
+	\end{proof}
+	\step{d}{\pick\ $\delta > 0$ such that $\forall x \in X. |x-x_0| < \delta \Rightarrow |f_{n_0}(x)-f_{n_0}(x_0)| < \epsilon/3$}
+	\begin{proof}
+		\pf\ Since $f_{n_0}$ is continuous.
+	\end{proof}
+	\step{e}{\pflet{$x \in X$}}
+	\step{f}{\assume{$|x-x_0|<\delta$}}
+	\step{g}{$|f(x)-f(x_0)| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			|f(x) - f(x_0)| & \leq |f(x) - f_{n_0}(x)| + |f_{n_0}(x) - f_{n_0}(x_0)| + |f_{n_0}(x_0) - f(x_0)| & (\text{Triangle Inequality}) \\
+			& < \epsilon / 3 + \epsilon / 3 + \epsilon / 3 & (\text{\stepref{c}, \stepref{d}}) \\
+			& = \epsilon
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{8}{$(f_n)$ converges to $f$ uniformly.}
+\begin{proof}
+	\pf\ From \stepref{6}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Series]
+Let $V$ be a normed space over $K$.
+A \emph{convergent series} in $V$ is a sequence $(x_n)$ in $V$ such that $(x_1 + \cdots + x_n)$ is a convergent sequence, in which case we write $\sum_{n=1}^\infty x_n$ for its limit.
+\end{df}
+
+\begin{df}[Absolutely Convergent Series]
+Let $V$ be a normed space over $K$. An \emph{absolutely convergent series} in $V$ is a sequence $(x_n)$ such that $\sum_{n=1}^\infty \| x_n\| < \infty$.
+\end{df}
+
+\begin{prop}
+In $\mathcal{P}([0,1])$, the series $\sum_{n=0}^\infty x^n/n!$ is absolutely convergent but not convergent.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:P01example}. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:absconvconv}
+A normed space is complete if and only if every absolutely convergent series is convergent.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{If $V$ is complete then every absolutely convergent series is convergent.}
+\begin{proof}
+	\step{a}{\assume{$V$ is complete.}}
+	\step{b}{\pflet{$\sum_{n=1}^\infty a_n$ be absolutely convergent in $V$.}}
+	\step{c}{For $n \in \mathbb{Z}_+$, \pflet{$s_n = \sum_{k=1}^n a_k$}.}
+	\step{d}{$(s_n)$ is Cauchy.}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon > 0$}}
+		\step{ii}{\pick\ $k$ such that $\sum_{n=k+1}^\infty \| a_n \| < \epsilon$}
+		\step{iii}{\pflet{$m > n > k$}}
+		\step{iv}{$\| s_m - s_n \| < \epsilon$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+			\| s_m - s_n \| & = \left\| \sum_{i=n+1}^m a_i \right\| & (\text{\stepref{c}, \stepref{iii}}) \\
+			& \leq \sum_{i=s+1}^m \| a_i \| & (\text{Triangle inequality}) \\
+			& \leq \sum_{i=k+1}^\infty \| a_i \| \\
+			& < \epsilon & (\text{\stepref{ii}, \stepref{iii}}) 
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{e}{$(s_n)$ converges.}
+\end{proof}
+\step{3}{If every absolutely convergent series is convergent then $V$ is complete.}
+\begin{proof}
+	\step{a}{\assume{Every absolutely convergent series in $V$ is convergent.}}
+	\step{b}{\pflet{$(a_n)$ be a Cauchy sequence in $V$.}}
+	\step{c}{\pick\ a strictly increasing sequence of positive integers $(p_n)$ such that $\forall k. \forall m,n \geq p_k. \| x_m - x_n \| < 2^{-k}$.}
+	\step{d}{$\sum_{k=1}^\infty (x_{p_{k+1}} - x_{p_k})$ is absolutely convergent.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\sum_{k=1}^\infty \|x_{p_{k+1}} - x_{p_k}\| & < \sum_{k=1}^\infty 2^{-k} & (\text{\stepref{c}}) \\
+			& < \infty
+		\end{align*}
+	\end{proof}
+	\step{e}{$\sum_{k=1}^\infty (x_{p_{k+1}} - x_{p_k})$ is convergent.}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{e}
+	\end{proof}
+	\step{f}{\pflet{$s = \sum_{k=1}^\infty (x_{p_{k+1}} - x_{p_k})$}}
+	\step{g}{$x_{p_k} \rightarrow s + x_{p_1}$ as $k \rightarrow \infty$.}
+	\begin{proof}
+		\step{i}{$\sum_{i=1}^k (x_{p_{i+1}} - x_{p_i}) \rightarrow s$ as $k \rightarrow \infty$}
+		\begin{proof}
+			\pf\ \stepref{f}
+		\end{proof}
+		\step{ii}{$x_{p_{k+1}} - x_{p_1} \rightarrow s$ as $k \rightarrow \infty$}
+	\end{proof}
+	\step{h}{$x_n \rightarrow s + x_{p_1}$ as $k \rightarrow \infty$.}
+	\begin{proof}
+		\pf
+		\step{i}{\pflet{$\epsilon > 0$}}
+		\step{ii}{\pick\ $N$ such that $\forall k \geq N. \|x_{p_k} - (s + x_{p_1})\| < \epsilon / 2$ and $\forall m,n \geq N. \| x_m - x_n \| < \epsilon / 2$}
+		\begin{proof}
+			\pf\ \stepref{b}, \stepref{g}
+		\end{proof}
+		\step{iii}{$\forall n \geq N. \| x_n - (s + x_{p_1}) \| < \epsilon$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+A closed vector subspace of a Banach space is a Banach space.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a Banach space over $K$.}}
+\step{2}{\pflet{$U$ be a closed vector subspace of $V$.}}
+\step{3}{\pflet{$(a_n)$ be a Cauchy sequence in $U$.}}
+\step{4}{$(a_n)$ is a Cauchy sequence in $V$.}
+\step{5}{\pflet{$l = \lim_{n \rightarrow \infty} a_n$}}
+\step{6}{$l \in U$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:closedconverge}.
+\end{proof}
+\step{7}{$a_n \rightarrow l$ as $n \rightarrow \infty$ in $U$.}
+\qed
+\end{proof}
+
+\begin{df}[Completion]
+Let $V$ be a normed space over $K$. A \emph{completion} of $V$ consists of a normed space $W$ over $K$ and an injection $\phi : V \rightarrow W$ such that:
+\begin{enumerate}
+\item $\forall x,y \in V. \forall \alpha, \beta \in K. \phi(\alpha x + \beta y) = \alpha \phi(x) + \beta \phi(y)$
+\item $\forall x \in V. \|\phi(x)\| = \|x\|$
+\item $\phi(V)$ is dense in $W$.
+\item $W$ is complete.
+\end{enumerate}
+\end{df}
+
+\begin{prop}
+Every normed space has a completion.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space over $K$.}}
+\step{2}{Let us say two Cauchy sequences $(x_n)$, $(y_n)$ ore \emph{equivalent} iff $x_n - y_n \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{2a}{Equivalence is an equivalence relation on the set of Cauchy sequences.}
+\step{3}{\pflet{$W$ be the set of Cauchy sequences in $V$ quotiented by equivalence.}}
+\step{4}{Define addition and multiplication on $W$ by
+\begin{align*}
+[(x_n)] + [(y_n)] & = [(x_n + y_n)] \\
+\lambda [(x_n)] & = [(\lambda x_n)]
+\end{align*}}
+\step{5}{Define a norm on $W$ by $\| [(x_n)] \| = \lim_{n \rightarrow \infty} \|x_n\|$}
+\step{6}{Define $\phi : V \rightarrow W$ by $\phi(v) = [(v)]$.}
+\step{7}{$\phi$ is injective.}
+\step{8}{$\forall x,y \in V. \forall \alpha,\beta \in K. \phi(\alpha x + \beta y) = \alpha \phi(x) + \beta \phi(y)$}
+\step{9}{$\forall x \in V. \| \phi(x) \| = \| x \|$}
+\step{10}{$\phi(V)$ is dense in $W$.}
+\begin{proof}
+	\step{a}{\pflet{$[(a_n)] \in W$ and $\epsilon > 0$.} \prove{$B([(a_n)],\epsilon)$ intersects $\phi(V)$.}}
+	\step{b}{\pick\ $N$ such that $\forall m,n \geq N. \| a_m - a_n \| < \epsilon / 2$}
+	\step{c}{$\phi(a_N) \in B([(a_n)], \epsilon)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| [(a_n)] - \phi(a_N) \| & = \lim_{n \rightarrow \infty} \| a_n - a_N \| \\
+			& \leq \epsilon / 2 & (\text{\stepref{b}}) \\
+			& < \epsilon
+		\end{align*}
+	\end{proof}	
+\end{proof}	 
+\step{11}{$W$ is complete.}
+\begin{proof}
+	\step{a}{\pflet{$(X_n)$ be a Cauchy sequence in $W$.}}
+	\step{b}{For $n \in \mathbb{Z}_+$, \pick\ $x_n \in V$ such that
+	\[ \| \phi(x_n) - X_n \| < 1/n \enspace . \]}
+	\step{c}{$(x_n)$ is Cauchy in $V$.}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon > 0$}}
+		\step{2}{\pick\ $N$ such that $\forall m,n \geq N. \|X_n - X_m\| < \epsilon /3$ and $1/N < \epsilon / 3$}
+		\step{3}{\pflet{$m,n \geq N$}}
+		\step{4}{$\|x_m - x_n\| < \epsilon$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\|x_m - x_n\| & = \| \phi(x_m) - \phi(x_n) \| \\
+				& \leq \| \phi(x_m) - X_m \| + \| X_m - X_n \| + \| X_n - \phi(x_n)\| \\
+				& < \|X_m - X_n\| + 1/m + 1/n \\
+				& < \epsilon
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{d}{\pflet{$X = [(x_n)]$}}
+	\step{e}{$X_n \rightarrow X$ as $n \rightarrow \infty$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|X_n - X\| & \leq \| X_n - \phi(x_n) \| + \| \phi(x_n) - X \| \\
+			& < \| \phi(x_n) - X \| + 1/n \\
+			& \rightarrow 0 & \text{as } n \rightarrow \infty
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $U$ be a normed space and $V$ a Banach space. Then $\mathcal{B}(U,V)$ is a Banach space.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(T_n)$ be a Cauchy sequence in $\mathcal{B}(U,V)$}}
+\step{2}{For all $u \in U$, $(T_n(u))$ is a Cauchy sequence in $V$.}
+\begin{proof}
+	\step{a}{\pflet{$u \in U$}}
+	\step{b}{\pflet{$\epsilon > 0$} \prove{$\exists N. \forall m,n \geq N. \|T_m(u) - T_n(u)\| < \epsilon$}}
+	\step{bb}{\assume{w.l.o.g. $u \neq 0$}}
+	\step{c}{\pick\ $N$ such that $\forall m,n \geq N. \|T_m - T_n\| < \epsilon / \|u\|$}
+	\step{d}{\pflet{$m,n \geq N$}}
+	\step{e}{$\|T_m(u) - T_n(u)\| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|T_m(u) - T_n(u)\| & \leq \|T_m - T_n\| \|u\| & (\text{Proposition \ref{prop:normmult}}) \\
+			& < \epsilon 
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{Define $T : U \rightarrow V$ by $T(u) = \lim_{n \rightarrow \infty} T_n(u)$}
+\step{4}{$T \in \mathcal{B}(U,V)$}
+\begin{proof}
+	\step{a}{For all $x,y \in U$ and $\alpha, \beta \in K$ we have $T(\alpha x + \beta y) = \alpha T(x) + \beta T(y)$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in U$}}
+		\step{ii}{\pflet{$\alpha, \beta \in K$}}
+		\step{iii}{$T(\alpha x + \beta y) = \alpha T(x) + \beta T(y)$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				T(\alpha x + \beta y) & = \lim_{n \rightarrow \infty} T_n(\alpha x + \beta y) \\
+				& = \lim_{n \rightarrow \infty} (\alpha T_n(x) + \beta T_n(y)) \\
+				& = \alpha T(x) + \beta T(y)
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{b}{$T$ is bounded.}
+	\begin{proof}
+		\step{i}{\pick\ $N$ such that $\forall n \geq N. \|T_n - T\| < 1$}
+		\step{ii}{\pick\ $B > 0$ such that $\forall x \in U. \|T_N(x)\| \leq B \|x\|$}
+		\step{iii}{\pflet{$x \in U$}}
+		\step{iv}{$\|T(x)\| \leq (B+1)\|x\|$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\|T(x)\| & \leq \|T_N(x) - T(x)\| + \|T(x)\| & (\text{Triangle inequality}) \\
+				& \leq \|T_N - T\|\|x\| + \|T\| \|x\| & (\text{Proposition \ref{prop:normmult}}) \\
+				& < \|x\| + B \|x\| & (\text{\stepref{i}, \stepref{ii}}) \\
+				& = (B + 1) \|x\|
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{5}{$T_n \rightarrow T$ as $n \rightarrow \infty$}
+\begin{proof}
+	\step{a}{\pflet{$\epsilon > 0$}}
+	\step{b}{\pick\ $N$ such that $\forall m,n \geq N. \|T_m - T_n\| < \epsilon / 2$}
+	\step{c}{\pflet{$n \geq N$} \prove{$\|T_n - T\| < \epsilon$}}
+	\step{d}{\pflet{$x \in U$ with $\|x\| = 1$}}
+	\step{e}{$\|T_n(x) - T(x)\| \leq \epsilon / 2$}
+	\begin{proof}
+		\pf\ Let $n \rightarrow \infty$ in \stepref{b}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any normed space $V$ over $K$, the space $\mathcal{B}(V,K)$ is a Banach space.
+\end{cor}
+
+\begin{thm}
+Let $U$ be a normed space and $V$ a Banach space. Let $W$ be a subspace of $U$. Let $T : W \rightarrow V$ be a continuous linear transformation. Then $T$ has a unique extension to a continuous linear transformation $\cl W \rightarrow V$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $S : \cl W \rightarrow V$ by: $S(x) = \lim_{n \rightarrow \infty} T(x_n)$, where $(x_n)$ is any sequence in $W$ that converges to $x$.}
+\begin{proof}
+	\step{a}{For all $x \in \cl W$, there exists a sequence $(x_n)$ in $W$ that converges to $x$.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:closureconverge}.
+	\end{proof}
+	\step{b}{If $(x_n)$ is a Cauchy sequence in $W$ then $(T(x_n))$ is Cauchy in $V$.}
+	\begin{proof}
+		\step{x}{\assume{w.l.o.g. $T \neq 0$}}
+		\step{i}{\pflet{$(x_n)$ be a Cauchy sequence in $W$.}}
+		\step{ii}{\pick\ $B > 0$ such that $\forall x \in W. \|T(x)\| \leq B \|x\|$}
+		\step{iii}{\pflet{$\epsilon > 0$}}
+		\step{iv}{\pick\ $N$ such that $\forall m,n \geq N. \|x_m - x_n\| < \epsilon / \|T\|$}
+		\step{v}{\pflet{$m,n \geq N$}}
+		\step{vi}{$\|T(x_m) - T(x_n)\| < \epsilon$}
+	\end{proof}
+	\step{c}{If $(x_n)$ and $(y_n)$ are sequences in $W$ that converge to the same element in $\cl W$ then $(T(x_n))$ and $(T(y_n))$ have the same limit in $V$.}
+	\begin{proof}
+		\step{0}{\assume{w.l.o.g. $T \neq 0$}}
+		\step{i}{\assume{$x_n \rightarrow l$ and $y_n \rightarrow l$ as $n \rightarrow \infty$}}
+		\step{2}{\pflet{$T(x_n) \rightarrow a$ and $T(y_n) \rightarrow b$ as $n \rightarrow \infty$}}
+		\step{3}{\assume{for a contradiction $a \neq b$}}
+		\step{4}{\pflet{$\epsilon = \|a-b\|$}}
+		\step{5}{\pick\ $N$ such that $\forall n \geq N. \|x_n - l\| < \epsilon / 3\|T\|$ and $\forall n \geq N. \|y_n - l\| < \epsilon / 3\|T\|$}
+		\step{6}{$\forall n \geq N. \|T(x_n) - T(y_n)\| < 2 \epsilon / 3$}
+		\step{7}{$\|a - b \| \leq 2 \epsilon/ 3$}
+		\step{8}{This contradicts \stepref{4}.}
+	\end{proof}
+\end{proof}
+\step{2}{$S$ extends $T$}
+\begin{proof}
+	\step{a}{\pflet{$w \in W$}}
+	\step{b}{$w \rightarrow w$ as $n \rightarrow \infty$}
+	\step{c}{$T(w) \rightarrow T(w)$ as $n \rightarrow \infty$}
+	\step{d}{$S(w) = T(w)$}
+\end{proof}
+\step{3}{$S$ is bounded.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \cl W$} \prove{$\|S(x)\| \leq \|T\|\|x\|$}}
+	\step{b}{\pick\ a sequence $(x_n)$ in $W$ that converges to $x$.}
+	\step{c}{$\|T(x_n)\| \leq \|T\|\|x_n\|$ for all $n$.}
+	\step{d}{$\|S(x)\| \leq \|T\|\|x\|$}
+	\begin{proof}
+		\pf\ Taking the limit as $n \rightarrow \infty$.
+	\end{proof}
+\end{proof}
+\step{4}{$S$ is linear.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \cl W$ and $\alpha, \beta \in K$}}
+	\step{b}{\pick\ sequences $(x_n)$ and $(y_n)$ in $W$ that converge to $x$ and $y$.}
+	\step{c}{$T(\alpha x_n + \beta y_n) = \alpha T(x_n) + \beta T(y_n)$ for all $n$.}
+	\step{d}{$S(\alpha x + \beta y) = \alpha S(x) + \beta S(y)$}
+	\begin{proof}
+		\pf\ Taking the limit as $n \rightarrow \infty$.
+	\end{proof}
+\end{proof}
+\step{5}{$S$ is unique.}
+\begin{proof}
+	\step{a}{\pflet{$S'$ be a continuous linear extension of $S$ defined on $\cl W$.}}
+	\step{b}{\pflet{$x \in W$} \prove{$S(x) = S'(x)$}}
+	\step{c}{\pick\ a sequence $(x_n)$ in $W$ that converges to $x$.}
+	\step{d}{$T(x_n) = S'(x_n) \rightarrow S'(x)$ as $n \rightarrow \infty$}
+	\step{e}{$S'(x) = S(x)$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $U$ be a normed space and $V$ a Banach space. Let $W$ be a dense subspace of $U$. Let $T : W \rightarrow V$ be a continuous linear transformation. Then $T$ has a unique extension to a continuous linear transformation $U \rightarrow V$.
+\end{cor}
+
+\begin{df}[Functional]
+Let $V$ be a normed space over $K$. A \emph{functional} on $V$ is a bounded linear mapping $V \rightarrow K$. The \emph{dual space} of $V$ is the space $\mathcal{B}(V,K)$ of all functionals.
+\end{df}
+
+\begin{thm}[Banach-Steinhaus Theorem]
+Let $\mathcal{T}$ be a family of bounded linear mappings from a Banach space $X$ into a normed space $Y$. If, for every $x \in X$, there exists a constant $M_x$ such that $\forall T \in \mathcal{T}. \| T(x) \| \leq M_x$, then there exists a constant $M > 0$ such that $\forall T \in \mathcal{T}. \|T\| \leq M$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction no such $M$ exists.}}
+\step{2}{For $n \in \mathbb{Z}_+$, \pick\ $T_n \in \mathcal{T}$ such that $\|T_n\| > n2^n$.}
+\step{3}{For $n \in \mathbb{Z}_+$, \pick\ $x_n \in X$ such that $\|x_n\| = 1$ and $\|T_n(x_n)\| > n2^n$.}
+\step{4}{For $n \in \mathbb{Z}_+$,
+\[ \left\| \frac{1}{n} T_n \left( \frac{x_n}{2^n} \right) \right\| > 1 \enspace . \]}
+\step{5}{For $i,j \in \mathbb{Z}_+$, \pflet{$y_{ij} = \frac{1}{i} T_i(\frac{x_j}{2^j})$.}}
+\step{6}{For all $j \in \mathbb{Z}_+$, $y_{ij} \rightarrow 0$ as $i \rightarrow \infty$}
+\begin{proof}
+	\step{a}{\pflet{$j \in \mathbb{Z}_+$}}
+	\step{b}{\pick\ $M$ such that $\forall T \in \mathcal{T}. \|T(x_j/2^j)\| \leq M$}
+	\step{c}{For all $i$, $\|y_{ij}\| \leq M/i$}
+\end{proof}
+\step{7}{For any increasing sequence of positive integers $(p_i)$, we have $\sum_{j=1}^\infty y_{p_ip_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\begin{proof}
+	\step{a}{\pflet{$(p_i)$ be an increasing sequence of positive integers.}}
+	\step{b}{\pflet{$z = \sum_{j=1}^\infty x_{p_j}/2^{p_j}$}}
+	\begin{proof}
+		\pf\ This converges by Theorem \ref{thm:absconvconv}.
+	\end{proof}
+	\step{c}{\pick\ $C$ such that $\forall T \in \mathcal{T}. \| T(z) \| \leq C$}
+	\step{d}{For all $i$, $\| \sum_{j=1}^\infty y_{p_i p_j} \| \leq C/p_i$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\left\| \sum_{j=1}^\infty y_{p_i p_j} \right\|
+			& = \left\| \sum_{j=1}^\infty \frac{1}{p_i} T_{p_i}\left( \frac{x_{p_j}}{2^{p_j}} \right) \right\| & (\text{\stepref{5}}) \\
+			& = \frac{1}{p_i} \left\| T_{p_i} \left( \sum_{j=1}^\infty \frac{x_{p_j}}{2^{p_j}} \right) \right\| & (T_{p_i} \text{ continuous}) \\
+			& = \frac{1}{p_i} \| T_{p_i}(z) \| & (\text{\stepref{b}}) \\
+			& \leq \frac{C}{p_i}& (\text{\stepref{c}})
+		\end{align*}
+	\end{proof}
+	\step{e}{$\sum_{j=1}^\infty y_{p_i p_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\end{proof}
+\step{8}{$y_{ii} \rightarrow 0$ as $i \rightarrow \infty$}
+\begin{proof}
+	\pf\ Diagonal Theorem, \stepref{6}, \stepref{7}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{4} and \stepref{8} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Contraction Mappings}
+
+\begin{df}[Contraction Mapping]
+Let $E$ be a normed space over $K$. Let $A \subseteq E$. A function $f : A \rightarrow E$ is a \emph{contraction (mapping)} iff there exists a real $\alpha$ such that $0 < \alpha < 1$ and
+\[ \forall x,y \in A. \| f(x) - f(y) \| \leq \alpha \|x-y\| \enspace . \]
+\end{df}
+
+\begin{prop}
+\label{prop:contcont}
+Contraction mappings are uniformly continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be a normed space over $K$.}}
+\step{2}{\pflet{$A \subseteq E$}}
+\step{3}{\pflet{$f : A \rightarrow E$ be a contraction mapping.}}
+\step{4}{\pick\ $\alpha$ such that $0 < \alpha < 1$ and $\forall x,y \in A. \|f(x) - f(y)\| \leq \alpha \|x-y\|$.}
+\step{5}{\pflet{$\epsilon > 0$}}
+\step{6}{\pflet{$\delta = \epsilon / \alpha$}}
+\step{7}{For all $x,y \in A$, if $\|x-y\| < \delta$ then $\|f(x) - f(y)\| < \epsilon$.}
+\qed
+\end{proof}
+
+\begin{thm}[Banach Fixed Point Theorem]
+Let $E$ be a Banach space over $K$. Let $F$ be a nonempty closed subset of $E$. Let $f : F \rightarrow F$ be a contraction mapping. Then there exists a unique $z \in F$ such that $f(z) = z$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $\alpha$ such that $0 < \alpha < 1$ and
+\[ \forall x,y \in F. \| f(x) - f(y) \| \leq \alpha \| x - y \| \enspace . \]}
+\step{2}{\pick\ $x_0 \in F$}
+\step{3}{For $n \in \mathbb{Z}_+$, \pflet{$x_n = f^n(x_0)$.}}
+\step{4}{$(x_n)$ is a Cauchy sequence.}
+\begin{proof}
+	\step{a}{For all $n \in \mathbb{Z}_+$ we have $\|x_{n+1} - x_n\| \leq \alpha^n \|x_1 - x_0\|$.}
+	\step{b}{For all $m,n \in \mathbb{Z}_+$ with $m < n$ we have $\| x_n - x_m \| < \alpha^m \|x_1 - x_0\| / (1-\alpha)$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|x_n - x_m\| & \leq \|x_n - x_{n-1}\| + \| x_{n-1} - x_{n-2} \| + \cdots + \| x_{m+1} - x_m \| & (\text{Triangle inequality}) \\
+			& \leq (\alpha^{n-1} + \alpha^{n-2} + \cdots + \alpha^m) \|x_1 - x_0\| & (\text{\stepref{a}}) \\
+			& < \frac{\|x_1 - x_0\|}{1-\alpha} \alpha^m
+		\end{align*}
+	\end{proof}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{\pick\ $N$ such that $\alpha^N \| x_1 - x_0 \| / (1 - \alpha) < \epsilon$}
+	\step{e}{For all $m,n \geq N$, we have $\|x_n - x_m\| < \epsilon$}
+\end{proof}
+\step{5}{\pflet{$z = \lim_{n \rightarrow \infty} x_n$}}
+\step{6}{$f(z) = z$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		f(z) & = f \left( \lim_{n \rightarrow \infty} x_n \right) \\
+		& = \lim_{n \rightarrow \infty} f(x_n) & (\text{Proposition \ref{prop:contcont}}) \\
+		& = \lim_{n \rightarrow \infty} x_{n+1} \\
+		& = z
+	\end{align*}
+\end{proof}
+\step{7}{For any $w \in F$, if $f(w) = w$ then $w = z$.}
+\begin{proof}
+	\step{a}{\pflet{$w \in F$}}
+	\step{b}{\assume{$f(w) = w$}}
+	\step{c}{$\| z-w \| \leq \alpha \|z-w\|$}
+	\begin{proof}
+		\pf\ $\|z-w\| = \|f(z) - f(w)\| \leq \alpha \|z-w\|$
+	\end{proof}
+	\step{d}{$\|z-w\| = 0$}
+	\step{e}{$z = w$}
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Inner Product Spaces}
+
+\begin{df}[Inner Product Space]
+Let $E$ be a complex vector space. An \emph{inner product} on $E$ is a function $\langle \ , \ \rangle : E^2 \rightarrow \mathbb{C}$ such that, for all $x,y,z \in E$ and $\alpha, \beta \in \mathbb{C}$, we have:
+\begin{enumerate}
+\item $\langle x,y \rangle = \overline{\langle y,x \rangle}$
+\item $\langle \alpha x + \beta y, z \rangle = \alpha \langle x,z \rangle + \beta \langle y,z \rangle$
+\item $\langle x,x \rangle \geq 0$
+\item If $\langle x,x \rangle = 0$ then $x = 0$
+\end{enumerate}
+An \emph{inner product space} consists of a complex vector space $V$ and an inner product on $V$.
+\end{df}
+
+\begin{prop}
+Let $E$ be an inner product space. For any $x \in E$, we have $\langle x,x \rangle$ is real.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\langle x,x \rangle = \overline{\langle x,x \rangle}$. \qed
+\end{proof}
+
+\begin{prop}
+\[ \langle x, \alpha y + \beta z \rangle = \overline{\alpha} \langle x,y \rangle + \overline{\beta} \langle x,z \rangle \]
+\end{prop}
+
+\begin{prop}
+\[ \langle 0,y \rangle = \langle x,0 \rangle = 0 \]
+\end{prop}
+
+\begin{prop}
+The function $\langle \vec{x}, \vec{y} \rangle = \sum_{i=1}^n x_i \overline{y_i}$ is an inner product on $\mathbb{C}^n$.
+\end{prop}
+
+\begin{prop}
+The function $\langle (x_n), (y_n) \rangle = \sum_{i=1}^\infty x_i \overline{y_i}$ is an inner product on $l^2$.
+\end{prop}
+
+\begin{prop}
+The function $\langle f, g \rangle = \int_a^b f(x) \overline{g(x)} dx$ is an inner product on $\mathcal{C}([a,b])$.
+\end{prop}
+
+\begin{prop}
+Let $p > 1$ and $\Omega \subseteq \mathbb{R}^N$. Let $L^p(\Omega)$ be the set of all functions $f : \Omega \rightarrow \mathbb{C}$ such that $|f|^p$ is Lebesgue integrable.
+
+The function $\langle f,g \rangle = \int_\Omega f(x) \overline{g(x)} dx$ is an inner product on $L^2(\Omega)$.
+\end{prop}
+
+\begin{prop}
+Let $E_1$ and $E_2$ be inner product spaces. Then the function $\langle (e_1,e_2),(e_1',e_2') \rangle = \langle e_1, e_1' \rangle + \langle e_2, e_2' \rangle$ is an inner product on $E_1 \times E_2$.
+\end{prop}
+
+\begin{df}[Norm]
+In an inner product space, define $\|x\| = \sqrt{\langle x,x \rangle}$.
+\end{df}
+
+\begin{prop}[Schwarz's Inequality]
+In any inner product space,
+\[ |\langle x,y \rangle| \leq \| x \| \| y \| \enspace . \]
+Equality holds iff $x$ and $y$ are linearly dependent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $y \neq 0$}}
+\step{1}{$|\langle x,y \rangle| \leq \|x\| \|y\|$}
+\begin{proof}
+	\step{2}{For all $\alpha \in \mathbb{C}$ we have $\langle x,x \rangle + \overline{\alpha}\langle x,y \rangle + \alpha \langle y,x \rangle + |\alpha|^2 \langle y,y \rangle$}
+	\begin{proof}
+		\pf\ The right-hand side is $\langle x + \alpha y, x + \alpha y \rangle$.
+	\end{proof}
+	\step{3}{$\langle x,x \rangle \langle y,y \rangle - |\langle x,y \rangle|^2 \geq 0$}
+	\begin{proof}
+		\pf\ Taking $\alpha = - \langle x,x \rangle / \langle y,y \rangle$ in \stepref{2}.
+	\end{proof}
+\end{proof}
+\step{2}{If $|\langle x,y \rangle| = \|x\| \|y\|$ then $x$ and $y$ are linearly dependent.}
+\begin{proof}
+	\step{a}{\assume{$|\langle x,y \rangle| = \|x\|\|y\|$}}
+	\step{b}{$\langle x,y \rangle \langle y,x \rangle = \langle x,x \rangle \langle y,y \rangle$}
+	\step{c}{$\langle y,y \rangle x - \langle x,x \rangle y = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\langle \langle y,y \rangle x - \langle x,y \rangle y, \langle y,y \rangle x - \langle x,y \rangle y \rangle
+			& = \langle y,y \rangle^2 \langle x,x \rangle - \langle y,y \rangle \langle y,x \rangle \langle x,y \rangle - \langle x,y \rangle \langle y,y \rangle \langle y,x \rangle + \langle x,y \rangle \langle y,x \rangle \langle y,y \rangle \\
+			& = 0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{If $x$ and $y$ are linearly dependent then $|\langle x,y \rangle| = \|x\| \|y\|$}
+\begin{proof}
+	\step{a}{\assume{$x$ and $y$ are linearly dependent.}}
+	\step{b}{\pflet{$y = \alpha x$}}
+	\step{c}{$|\langle x,y \rangle| = \|x\|\|y\|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			|\langle x,y \rangle| & = |\langle x, \alpha x \rangle| \\
+			& = |\alpha| |\langle x,x \rangle| \\
+			& = |\alpha| \|x\|^2 \\
+			& = \|x\| \|\alpha x\| \\
+			& = \|x\| \|y\|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Triangle Inequality]
+In any inner product space,
+\[ \| x + y \| \leq \| x \| + \| y \| \]
+\end{cor}
+
+\begin{proof}
+\pf
+\begin{align*}
+\|x+y\|^2 & = \langle x+y, x+y \rangle \\
+& = \langle x,x \rangle + \langle x,y \rangle + \langle y,x \rangle + \langle y,y \rangle \\
+& \leq \langle x,x \rangle + 2 |\langle x,y \rangle| + \langle y,y \rangle \\
+& \leq \|x\|^2 + 2 \|x\| \|y\| + \|y\|^2 & (\text{Schwarz's Inequality}) \\
+& = (\|x\| + \|y\|)^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+The norm in an inner product space is a norm.
+\end{cor}
+
+\begin{thm}[Parallelogram Law]
+In any inner product space,
+\[ \|x+y\|^2 + \|x-y\|^2 = 2 (\|x\|^2 + \|y\|^2) \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\|x+y\|^2 = \|x\|^2 + \langle x,y \rangle + \langle y,x \rangle + \|y\|^2$}
+\step{2}{$\|x-y\|^2 = \|x\|^2 - \langle x,y \rangle - \langle y,x \rangle + \|y\|^2$}
+\qedstep
+\begin{proof}
+	\pf\ Add \stepref{1} and \stepref{2}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $E$ be a normed space over $\mathbb{C}$. Then there exists an inner product on $E$ that induces the norm of $E$ iff $E$ satisfies the Parallelogram Law.
+\end{prop}
+
+\begin{proof}
+\pf\ If $E$ satisfies the parallelogram law, define \[ \langle x,y \rangle = \frac{1}{4}(\|x+y\|^2 - \|x-y\|^2 + i \|x+iy\|^2 -i\|x-iy\|^2) \enspace . \]
+\end{proof}
+
+\begin{df}[Orthogonal]
+Vectors $x$ and $y$ in an inner product space are \emph{orthogonal}, $x \perp y$, iff $\langle x,y \rangle = 0$.
+\end{df}
+
+\begin{thm}[Pythagorean Formula]
+If $x$ and $y$ are orthogonal then
+\[ \| x + y \|^2 = \|x\|^2 + \|y\|^2 \enspace . \]
+\end{thm}
+
+\begin{df}[Weak Convergence]
+Let $E$ be an inner product space. Let $(x_n)$ be a sequence in $E$ and $l \in E$. Then $(x_n)$ \emph{weakly converges} to $l$, $x_n \stackrel{w}{\rightarrow} l$ as $n \rightarrow \infty$, iff $\forall y \in E. \langle x_n, y \rangle \rightarrow \langle l,y \rangle$ as $n \rightarrow \infty$.
+\end{df}
+
+\begin{prop}
+In any inner product space $E$, the inner product $\langle \ , \ \rangle : E^2 \rightarrow \mathbb{C}$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x_n \rightarrow x$ and $y_n \rightarrow y$ in $E$.}}
+\step{2}{{$\langle x_n, y_n \rangle \rightarrow \langle x,y \rangle$}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|\langle x_n, y_n \rangle - \langle x,y \rangle| & \leq |\langle x_n, y_n \rangle - \langle x_n, y \rangle | + |\langle x_n, y \rangle - \langle x,y \rangle| \\
+		& = |\langle x_n, y_n - y \rangle | + |\langle x_n - x, y \rangle| \\
+		& \leq \| x_n \| \| y_n - y \| + \| x_n - x \| \| y \| & (\text{Schwarz's Inequality}) \\
+		& \rightarrow 0
+	\end{align*}
+	using the fact that $(x_n)$ is bounded.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+$x_n \rightarrow l$ if and only if $x_n \stackrel{w}{\rightarrow} l$ and $\|x_n\| \rightarrow \|x\|$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $x_n \rightarrow l$ then $x_n \stackrel{w}{\rightarrow} l$ and $\|x_n\| \rightarrow \|l\|$.}
+\begin{proof}
+	\pf\ Easy using the fact that the inner product is continuous.
+\end{proof}
+\step{2}{If $x_n \stackrel{w}{\rightarrow} l$ and $\|x_n\| \rightarrow \|l\|$ then $x_n \rightarrow l$.}
+\begin{proof}
+	\step{a}{\assume{$x_n \stackrel{w}{\rightarrow} l$ and $\|x_n\| \rightarrow \|l\|$}}
+	\step{b}{$\langle x_n, l \rangle \rightarrow \|l\|^2$}
+	\step{c}{$\|x_n - l\| \rightarrow 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|x_n - l\|^2 & = \langle x_n - l, x_n - l \rangle \\
+			& = \langle x_n, x_n \rangle - \langle x_n, l \rangle - \langle l, x_n \rangle + \langle l,l \rangle \\
+			& = \| x_n\|^2 - \langle x_n, l \rangle - \overline{\langle x_n, l \rangle} + \| l \|^2 \\
+			& \rightarrow \|l\|^2 - 2 \|l\|^2 + \|l\|^2 \\
+			& = 0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $S$ be a subset of an inner product space $E$ such that $\spn S$ is dense in $E$. If $(x_n)$ is a bounded sequence in $E$ and, for all $y \in S$, we have $\langle x_n, y \rangle \rightarrow \langle x,y \rangle$ then $x_n \stackrel{w}{\rightarrow} x$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all $y \in \spn S$, we have $\langle x_n, y \rangle \rightarrow \langle x, y \rangle$}
+\step{2}{\pflet{$z \in E$} \prove{$\langle x_n, z \rangle \rightarrow \langle x,z \rangle$}}
+\step{3}{\pflet{$\epsilon > 0$} \prove{There exists $n_0$ such that $\forall n \geq n_0. |\langle x_n, z \rangle - \langle x,z \rangle| < \epsilon$}}
+\step{4}{\pick\ $M > 0$ such that $\|x\| \leq M$ and $\forall n \in \mathbb{Z}_+. \|x_n\| \leq M$.}
+\step{5}{\pick\ $y_0 \in \spn S$ such that $\| z - y_0 \| < \epsilon / 3M$}
+\step{6}{\pick\ $n_0 \in \mathbb{Z}_+$ such that, for all $n \geq n_0$, we have $|\langle x_n, y_0 \rangle - \langle x, y_0 \rangle| < \epsilon / 3$}
+\step{7}{\pflet{$n \geq n_0$}}
+\step{8}{$|\langle x_n, z \rangle - \langle x,z \rangle| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|\langle x_n, z \rangle - \langle x,z \rangle| & \leq |\langle x_n, z \rangle - \langle x_n, y_0 \rangle| + |\langle x_n, y_0 \rangle - \langle x,y_0 \rangle| + |\langle x, y_0 \rangle - \langle x, z \rangle| \\
+		& < \|x_n\| \|z-y_0\| + \epsilon / 3 + \|x\| \|y_0 - z\| \\
+		& < M (\epsilon / 3M) + \epsilon / 3 + M (\epsilon / 3M) \\
+		& = \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Orthonormal Bases}
+
+\begin{df}[Orthogonal]
+Let $V$ be an inner product space and $S \subseteq V$. Then $S$ is \emph{orthogonal} iff any two distinct elements of $S$ are orthogonal.
+\end{df}
+
+\begin{df}[Orthonormal]
+Let $V$ be an inner product space and $S \subseteq V$. Then $S$ is \emph{orthonormal} iff it is orthogonal and $\forall x \in S. \|x\| = 1$.
+\end{df}
+
+\begin{prop}
+Orthonormal sets are linearly independent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S$ be orthonormal}}
+\step{2}{\assume{$\alpha_1 e_1 + \cdots + \alpha_n e_n = 0$ where $e_1, \ldots, e_n \in S$}}
+\step{3}{$|\alpha_1|^2 + \cdots | \alpha_n|^2 = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		0 & = \sum_{m=1}^n \langle 0, \alpha_m e_m \rangle \\
+		& = \sum_{m=1}^n \langle \sum_{k=1}^n \alpha_k e_k, \alpha_m e_m \rangle \\
+		& = \sum_{m=1}^n \sum_{k=1}^n \alpha_k \overline{\alpha_m} \langle e_k, e_m \rangle \\
+		& = \sum_{k=1}^n |\alpha_k|^2
+	\end{align*}
+\end{proof}
+\step{4}{$\alpha_1 = \cdots = \alpha_n = 0$}
+\qed
+\end{proof}
+
+\begin{prop}
+In $l^2$, let $e_n$ be the sequence whose $n$th element is 1 and whose other elements are 0. Then $\{ e_n \mid n \in \mathbb{Z}_+ \}$ is orthonormal.
+\end{prop}
+
+\begin{prop}
+In $L^2([-\pi,\pi])$, let $\phi_n(x) = e^{inx}/\sqrt{2\pi}$ for $n \in \mathbb{Z}$. Then $\{ \phi_n \mid n \in \mathbb{Z} \}$ is orthonormal.
+\end{prop}
+
+\begin{df}[Legendre Polynomials]
+The \emph{Legendre polynomials} $P_n \in \mathbb{Q}[x]$ for $n \in \mathbb{N}$ are defined by
+\begin{align*}
+P_0 & = 1 \\
+P_n & = \frac{1}{2^n n!} \frac{d^n}{dx^n} (x^2-1)^n
+\end{align*}
+\end{df}
+
+\begin{prop}
+Let $P_n$ be the $n$th Legendre polynomial. Then $\{ P_n \mid n \in \mathbb{N} \}$ is orthogonal in $L^2([-1,1])$.
+\end{prop}
+
+\begin{df}[Hermite Polynomial]
+The \emph{Hermite polynomials} $H_n \in \mathbb{R}[x]$ for $n \in \mathbb{N}$ are defined by
+\[ H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2} \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $H_n$ be the $n$th Hermite polynomial. Then $\{ e^{-x^2/2}H_n(x) \mid n \in \mathbb{N} \}$ is orthogonal in $L^2(\mathbb{R})$.
+\end{prop}
+
+\begin{thm}
+\label{thm:Pythagorean2}
+Let $V$ be an inner product space.
+If $x_1, \ldots, x_n \in V$ are orthogonal then
+\[ \left\| \sum_{i=1}^n x_i \right\|^2 = \sum_{i=1}^n \| x_i \|^2 \enspace . \]
+\end{thm}
+
+\begin{thm}[Bessel's Equality]
+Let $V$ be an inner product space. Let $x_1, \ldots, x_n \in V$ be orthonormal. Let $x \in V$. Then
+\[ \left\| x - \sum_{k=1}^n \langle x, x_k \rangle x_k \right\|^2 = \|x\|^2 - \sum_{k=1}^n |\langle x, x_k \rangle|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+\left\| x - \sum_{k=1}^n \langle x, x_k \rangle x_k \right\|^2
+& = \left\langle x - \sum_{k=1}^n \langle x, x_k \rangle x_k, x - \sum_{k=1}^n \langle x, x_k \rangle x_k \right\rangle \\
+& = \langle x,x \rangle - \left\langle x, \sum_{k=1}^n \langle x, x_k \rangle x_k \right\rangle
+- \left\langle \sum_{k=1}^n \langle x, x_k \rangle x_k, x \right\rangle \\
+& + \left\langle \sum_{k=1}^n \langle x, x_k \rangle x_k, \sum_{k=1}^n \langle x, x_k \rangle x_k \right\rangle \\
+& = \langle x,x \rangle - 2 \sum_{k=1}^n \langle x,x_k \rangle \langle x_k, x \rangle + \sum_{i=1}^n \sum_{j=1}^n \langle x,x_i \rangle \langle x_j,x \rangle \langle x_i,x_j \rangle \\
+& = \|x\|^2 - 2 \sum_{k=1}^n |\langle x,x_k \rangle|^2 + \sum_{i=1}^n \langle x,x_i \rangle \langle x_i,x \rangle \\
+& = \| x \|^2 - \sum_{k=1}^n |\langle x, x_k \rangle|^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}[Bessel's Inequality]
+Let $V$ be an inner product space. Let $x_1, \ldots, x_n \in V$ be orthonormal. Let $x \in E$. Then
+\[ \sum_{k=1}^n |\langle x, x_k \rangle|^2 \leq \|x\|^2 \enspace . \]
+\end{cor}
+
+\begin{cor}
+Orthonormal sequences are weakly convergent to 0.
+\end{cor}
+
+\begin{proof}
+\pf\ Let $(x_n)$ be an orthonormal sequence.
+Taking the limit in Bessel's inequality we have $\sum_{k=1}^\infty |\langle x, x_k \rangle|^2 \leq \|x\|^2 < \infty$ and so $\langle x, x_k \rangle \rightarrow 0$ as $k \rightarrow \infty$. \qed
+\end{proof}
+
+\begin{cor}[Generalized Fourier Series]
+Let $V$ be an inner product space. Let $(e_n)$ be an orthonormal sequence in $V$. For any $x \in V$, the \emph{generalized Fourier series} of $x$ is
+\[ \sum_{n=1}^\infty \langle x, e_n \rangle e_n \enspace , \]
+and $\langle x, e_n \rangle$ is called the $n$th \emph{generalized Fourier coefficient} of $x$ with respect to $(e_n)$.
+We have $(\langle x, e_n \rangle e_n)_n \in l^2$.
+\end{cor}
+
+\begin{df}[Complete Orthonormal Sequence]
+Let $E$ be an inner product space. Let $(x_n)$ be an orthonormal sequence in $E$. Then $(x_n)$ is \emph{complete} iff, for all $x \in E$, we have
+\[ \sum_{n=1}^\infty \langle x, x_n \rangle x_n = x \enspace . \]
+\end{df}
+
+\chapter{Hilbert Spaces}
+
+\begin{df}[Hilbert Space]
+A \emph{Hilbert space} is a complete inner product space.
+\end{df}
+
+\begin{prop}
+For $n \in \mathbb{N}$, $\mathbb{C}^n$ is a Hilbert space.
+\end{prop}
+
+\begin{prop}
+$l^2$ is a Hilbert space.
+\end{prop}
+
+\begin{prop}
+$L^2(\mathbb{R})$ is a Hilbert space.
+\end{prop}
+
+\begin{prop}
+$L^2([a,b])$ is a Hilbert space.
+\end{prop}
+
+\begin{prop}
+Let $\rho$ be a measurable function on $[a,b]$ such that $\rho(x) > 0$ almost everywhere. Let $L^{2\rho}([a,b])$ be the set of all measurable functions $f : [a,b] \rightarrow \mathbb{C}$ such that
+\[ \int_a^b |f(x)|^2 \rho(x) dx < \infty \enspace . \]
+Define an inner product on $L^{2\rho}([a,b])$ by
+\[ \langle f,g \rangle = \int_a^b f(x) \overline{g(x)} \rho(x) dx \enspace . \]
+Then $L^{2\rho}([a,b])$ is a Hilbert space.
+\end{prop}
+
+\begin{prop}
+Let $m$ and $N$ be positive integers.
+Let $\Omega$ be an open set in $\mathbb{R}^N$. Let $\tilde{H}^m(\Omega)$ be the set of all $f \in \mathcal{C}^m(\Omega)$ such that, for every $\alpha = (\alpha_1, \ldots, \alpha_N) \in \mathbb{Z}_+^N$ with $|\alpha| := \alpha_1 + \cdots + \alpha_N \leq m$, we have 
+\[ D^\alpha f := \frac{\partial^{|\alpha|} f}{\partial x_1^{\alpha_1} \partial x_2^{\alpha_2} \cdots \partial x_N^{\alpha_N}} \in L^2(\Omega) \enspace . \]
+Define an inner product on $\tilde{H}^m(\Omega)$ by
+\[ \langle f,g \rangle := \int_\Omega \sum_\alpha D^\alpha f \overline{D^\alpha g} \enspace . \]
+Let $H^m(\Omega)$ be the completion of $\tilde{H}^m(\Omega)$. Then $H^m(\Omega)$ is a Hilbert space.
+\end{prop}
+
+\begin{thm}
+Weakly convergent sequences in a Hilbert space are bounded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$H$ be a Hilbert space.}}
+\step{2}{\pflet{$(x_n)$ be a weakly convergent sequence in $H$.}}
+\step{3}{For $n \in \mathbb{Z}_+$, \pflet{$f_n : H \rightarrow \mathbb{C}$, $f_n(x) = \langle x, x_n \rangle$}}
+\step{4}{For $n \in \mathbb{Z}_+$, $f_n$ is a bounded linear functional.}
+\step{5}{For every $x \in H$, the sequence $(f_n(x))$ is bounded.}
+\begin{proof}
+	\pf\ Since it converges.
+\end{proof}
+\step{6}{\pick\ $M > 0$ such that, for all $n \in \mathbb{Z}_+$, we have $\| f_n \| \leq M$.}
+\begin{proof}
+	\pf\ Banach-Steinhaus Theorem, \stepref{4}, \stepref{5}.
+\end{proof}
+\step{7}{$\forall n \in \mathbb{Z}_+. \| f_n \| = \| x_n \|$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \mathbb{Z}_+$}}
+	\step{b}{$\|f_n\| \leq \|x_n\|$}
+	\begin{proof}
+		\pf\ Since for all $x \in H$ we have $|f_n(x)| = |\langle x,x_n\rangle| \leq \|x\|\|x_n\|$ by Schwarz's Inequality.
+	\end{proof}
+	\step{c}{$\|x_n\| \leq \|f_n\|$}
+	\begin{proof}
+		\pf\ Since $\|x_n\|^2 = |\langle x_n, x_n\rangle| = |f_n(x_n)| \leq \|f_n\| \|x_n\|$.
+	\end{proof}
+\end{proof}
+\step{8}{$\forall n \in \mathbb{Z}_+. \| x_n \| \leq M$}
+\begin{proof}
+	\pf\ \stepref{6}, \stepref{7}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:infinite_Pythagoras}
+Let $H$ be a Hilbert space. Let $(x_n)$ be an orthonormal sequence in $H$ and let $(\alpha_n)$ be a sequence of complex numbers. Then the series $\sum_{n=1}^\infty \alpha_n x_n$ converges in $H$ if and only if $\sum_{n=1}^\infty |\alpha_n|$ converges  in $\mathbb{R}$, in which case
+\[ \left\| \sum_{n=1}^\infty \alpha_n x_n \right\|^2 = \sum_{n=1}^\infty |\alpha_n|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $m > k > 0$ we have
+\[ \left\| \sum_{n=k}^m \alpha_n x_n \right\|^2 = \sum_{n=k}^m |\alpha_n|^2 \enspace . \]}
+\begin{proof}
+	\pf\ Theorem \ref{thm:Pythagorean2}.
+\end{proof}
+\step{2}{If $\sum_{n=1}^\infty |\alpha_n|^2 < \infty$ then $\sum_{n=1}^\infty \alpha_n x_n$ converges.}
+\begin{proof}
+	\step{a}{\assume{$\sum_{n=1}^\infty |\alpha_n|^2 < \infty$}}
+	\step{b}{$\left( \sum_{n=1}^m \alpha_n x_n \right)_m$ is Cauchy.}
+	\begin{proof}
+		\pf\ From \stepref{1}.
+	\end{proof}
+	\step{c}{$\sum_{n=1}^\infty \alpha_n x_n$ converges.}
+\end{proof}
+\step{3}{If $\sum_{n=1}^\infty \alpha_n x_n$ converges then $\sum_{n=1}^\infty |\alpha_n|^2 < \infty$.}
+\begin{proof}
+	\pf\ From \stepref{1}.
+\end{proof}
+\step{4}{If $\sum_{n=1}^\infty |\alpha_n|^2 < \infty$ then
+\[ \left\| \sum_{n=1}^\infty \alpha_n x_n \right\|^2 = \sum_{n=1}^\infty |\alpha_n|^2 \enspace . \]}
+\begin{proof}
+	\pf\ From \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every complete orthonormal sequence in a Hilbert space is a basis.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be an inner product space.}}
+\step{2}{\pflet{$(e_n)$ be a complete orthonormal sequence in $E$.}}
+\step{3}{For all $x \in E$, there exists a sequence $(\alpha_n)$ in $\mathbb{C}$ such that $x = \sum_n \alpha_n e_n$.}
+\begin{proof}
+	\pf\ Immediate from \stepref{2}.
+\end{proof}
+\step{4}{If $\sum_n \alpha_n e_n = \sum_n \beta_n e_n$ then $\alpha_n = \beta_n$ for all $n$.}
+\begin{proof}
+	\step{a}{\pflet{$x = \sum_n \alpha_n e_n = \sum_n \beta_n e_n$}}
+	\step{b}{$\sum_n |\alpha_n - \beta_n|^2 = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			0 & = \|x - x\|^2 \\
+			& = \left\| \sum_{n=1}^\infty \alpha_n e_n - \sum_{n=1}^\infty \beta_n e_n \right\|^2 & (\text{\stepref{a}}) \\
+			& = \left\| \sum_{n=1}^\infty (\alpha_n - \beta_n) e_n \right\|^2 \\
+			& = \sum_{n=1}^\infty |\alpha_n - \beta_n|^2 & (\text{Theorem \ref{thm:infinite_Pythagoras}})
+		\end{align*}
+	\end{proof}
+	\step{c}{$\alpha_n = \beta_n$ for all $n$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+An orthonormal sequence $(x_n)$ in a Hilbert space $H$ is complete if and only if, for all $x \in H$, if $\forall n. \langle x, x_n \rangle = 0$ then $x = 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $(x_n)$ is complete then, for all $x \in H$, if $\forall n. \langle x, x_n \rangle = 0$ then $x = 0$.}
+\begin{proof}
+	\step{a}{\assume{$(x_n)$ is complete.}}
+	\step{b}{\pflet{$x \in H$}}
+	\step{c}{\assume{$\forall n. \langle x, x_n \rangle = 0$}}
+	\step{d}{$x = \sum_{n=1}^\infty \langle x, x_n \rangle x_n = 0$}
+\end{proof}
+\step{2}{If, for all $x \in H$, if $\forall n. \langle x, x_n \rangle = 0$ then $x = 0$, then $(x_n)$ is complete.}
+\begin{proof}
+	\step{a}{\assume{For all $x \in H$, if $\forall n. \langle x, x_n \rangle = 0$, then $x = 0$.}}
+	\step{b}{\pflet{$y = x - \sum_{n=1}^\infty \langle x, x_n \rangle x_n$}}
+	\step{c}{For all $n$, $\langle y, x_n \rangle = 0$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{Z}_+$}}
+		\step{ii}{$\langle y, x_n \rangle = 0$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\langle y, x_n \rangle & = \left\langle x - \sum_{m=1}^\infty \langle x, x_m \rangle x_m , x_n \right\rangle \\
+				& = \langle x, x_n \rangle - \sum_{m=1}^\infty \langle x, x_m \rangle \langle x_m, x_n \rangle \\
+				& = \langle x, x_n \rangle - \langle x, x_n \rangle \\
+				& = 0
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{d}{$y = 0$}
+	\step{e}{$x = \sum_{n=1}^\infty \langle x, x_n \rangle x_n$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Parseval's Formula]
+Let $H$ be a Hilbert space. Let $(x_n)$ be an orthonormal sequence in $H$. Then $(x_n)$ is complete if and only if, for all $x \in H$,
+\[ \| x \|^2 = \sum_{n=1}^\infty |\langle x, x_n \rangle|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $(x_n)$ is complete then for all $x \in H$ we have $\|x\|^2 = \sum_{n=1}^\infty |\langle x, x_n \rangle|^2$.}
+\begin{proof}
+	\step{a}{\assume{$(x_n)$ is complete.}}
+	\step{b}{\pflet{$x \in H$}}
+	\step{c}{$\|x\|^2 = \sum_{n=1}^\infty |\langle x, x_n \rangle|^2$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\|x\|^2 & = \left\| \sum_{n=1}^\infty \langle x, x_n \rangle x_n \right\|^2 & (\text{\stepref{a}}) \\
+			& = \sum_{n=1}^\infty |\langle x, x_n \rangle|^2 & (\text{Theorem \ref{thm:infinite_Pythagoras}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If, for all $x \in H$, we have $\|x\|^2 = \sum_{n=1}^\infty |\langle x, x_n \rangle|^2$, then $(x_n)$ is complete.}	
+\begin{proof}
+	\step{a}{\assume{For all $x \in H$, we have $\|x\|^2 = \sum_{n=1}^\infty |\langle x, x_n \rangle|^2$}}
+	\step{b}{\pflet{$x \in H$}}
+	\step{c}{$x = \sum_{n=1}^\infty \langle x,x_n \rangle x_n$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:Example3_4_16}
+For $n \in \mathbb{Z}$, let $\pi_n(x) = e^{inx}/\sqrt{2 \pi}$. Then $\{ \pi_n \mid n \in \mathbb{Z} \}$ is a complete orthonormal set in $L^2([-\pi,\pi])$.
+\end{prop}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\begin{prop}
+$B = \{ 1/\sqrt{2 \pi} \} \cup \{ \cos nx / \sqrt{\pi} \mid n \in \mathbb{Z}_+ \} \cup \{ \sin n x / \sqrt{\pi} \mid n \in \mathbb{Z}_+ \}$ is a complete orthonormal set in $L^2([-\pi, \pi])$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $f \in B$ we have $\|f\| = 1$}
+\begin{proof}
+	\step{a}{$\| 1/\sqrt{2 \pi} \| = 1$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| 1 / \sqrt{2 \pi} \| & = \int_{- \pi}^\pi dx / 2 \pi \\
+			& = 1 
+		\end{align*}
+	\end{proof}
+	\step{b}{For all $n \in \mathbb{Z}_+$ we have $\| \cos n x / \sqrt{\pi} \| = 1$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \cos n x / \sqrt{\pi} \| & = 1 / \pi \int_{-\pi}^\pi \cos^2 n x \, d x \\
+			& = 1/2\pi \int_{-\pi}^\pi (\cos 2 n x + 1) dx \\
+			& = 1/2\pi \left[ 1/2n \sin 2nx + x \right]_{-\pi}^\pi \\
+			& = (1/2\pi) (2 \pi) \\
+			& = 1
+		\end{align*}
+	\end{proof}
+	\step{c}{For all $n \in \mathbb{Z}_+$ we have $\| \sin n x / \sqrt{\pi} \| = 1$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \sin n x / \sqrt{\pi} \| & = 1 / \pi \int_{-\pi}^\pi \sin^2 n x \, d x \\
+			& = -1/2\pi \int_{-\pi}^\pi (\cos 2 n x - 1) dx \\
+			& = -1/2\pi \left[ 1/2n \sin 2nx - x \right]_{-\pi}^\pi \\
+			& = (-1/2\pi) (-2 \pi) \\
+			& = 1
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For all $f,g \in B$ with $f \neq g$ we have $\langle f,g \rangle = 0$}
+\begin{proof}
+	\step{a}{$\langle 1, \cos nx \rangle = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int_{-\pi}^\pi \cos nx \, dx
+			& = \left[ 1/n \sin nx \right]_{-\pi}^\pi \\
+			& = 0
+		\end{align*}
+	\end{proof}
+	\step{b}{$\langle 1, \sin nx \rangle = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int_{-\pi}^\pi \sin nx \, dx
+			& = \left[ -1/n \cos nx \right]_{-\pi}^\pi \\
+			& = -1/n \cos n \pi + 1/n \cos n \pi \\
+			& = 0
+		\end{align*}
+	\end{proof}
+	\step{c}{If $m \neq n$ then $\langle \cos mx, \cos nx \rangle = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int_{-\pi}^\pi \cos mx \cos nx \, dx
+			& = 1/2 \int_{-\pi}^\pi (\cos(n+m)x - \cos (n-m) x) dx \\
+			& = 1/2 \left[ \frac{1}{n+m} \sin (n+m) x - \frac{1}{n-m} \sin (n-m)x \right]_{-\pi}^\pi \\
+			& = 0
+		\end{align*}
+	\end{proof}
+	\step{d}{$\langle \cos mx, \sin nx \rangle = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int_{-\pi}^\pi \cos mx \sin nx \, dx
+			& = 1/2 \int_{-\pi}^\pi (\sin (n+m)x - \sin(n-m)x) dx \\
+			& = 1/2 \left[ - \frac{1}{n+m} \cos (n+m)x + \frac{1}{n-m} \cos (n-m)x \right]_{-\pi}^\pi \\
+			& = 0 & (\cos \text{ is odd})
+		\end{align*}
+	\end{proof}
+	\step{e}{If $m \neq n$ then $\langle \sin mx, \sin nx \rangle = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int_{-\pi}^\pi \sin mx \sin nx \, dx
+			& = 1/2 \int_{-\pi}^\pi (\cos (n-m)x - \cos (n+m)x) dx \\
+			& = 1/2 \left[\frac{1}{n-m} \sin(n-m)x - \frac{1}{n+m} \sin(n+m)x \right]_{-\pi}^\pi \\
+			& = 0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{For all $f \in L^2([-\pi,\pi])$, if $\forall g \in B. \langle f,g \rangle = 0$ then $f = 0$}
+\begin{proof}
+	\step{a}{\pflet{$f \in L^2([-\pi,\pi])$}}
+	\step{b}{\assume{$\forall g \in B. \langle f,g \rangle = 0$}}
+	\step{c}{For all $n \in \mathbb{Z}$, $\langle f, e^{inx} \rangle = 0$}
+	\begin{proof}
+		\pf\ Since $e^{inx} = \cos nx + i \sin nx$.
+	\end{proof}
+	\step{d}{$f = 0$}
+	\begin{proof}
+		\pf\ From Proposition \ref{prop:Example3_4_16}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+$\{\frac{1}{\sqrt{\pi}}\} \cup \{\sqrt{\frac{2}{\pi}} \cos nx \mid n \in \mathbb{Z}_+ \}$ is a complete orthonormal set in $L^2([0,\pi])$.
+\end{prop}
+
+\begin{prop}
+$\{\sqrt{\frac{2}{\pi}} \sin n x \mid n \in \mathbb{Z}_+ \}$ is a complete orthonormal set in $L^2([0,\pi])$.
+\end{prop}
+
+\begin{df}[Signum]
+The \emph{signum} function $\sgn : \mathbb{R} \rightarrow \mathbb{R}$ is defined by
+\[ \sgn x = \begin{cases}
+1 & \text{if } x > 0 \\
+0 & \text{if } x = 0 \\
+-1 & \text{if } x < 0
+\end{cases} \]
+\end{df}
+
+\begin{df}[Rademacher Functions]
+The \emph{Rademarcher functions} $R : \mathbb{N} \times [0,1] \rightarrow \{-1,0,1\}$ are defined by
+\[ R(m,x) = \sgn(\sin(2^m \pi x)) \enspace . \]
+\end{df}
+
+\begin{prop}
+The Rademacher functios $\{ R(m,-) \mid m \in \mathbb{N} \}$ are orthonormal in $L^2([0,1])$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m \in \mathbb{N}. \| R(m,-)\| = 1$}
+\begin{proof}
+	\pf\ $\int_0^1 \sgn(\sin(2^m \pi x))^2 dx = 1$ since the integrand is 1 except for finitely many points in $[0,1]$.
+\end{proof}
+\step{2}{Given natural numbers $m \neq n$, we have $\langle R(m,-), R(n,-) \rangle = 0$}
+\begin{proof}
+	\step{a}{Given reals $a$, $b$ and a natural number $m$, we have $\int_a^b R(m,x) dx = 0$ whenever $2^m(b-a)$ is an even integer.}
+	\begin{proof}
+		\pf\ If $m > 0$, or if $m = 0$ and $b-a$ is an even integer, then the regions where $R(m,x) = 1$ are isometric with the regions where $R(m,x) = -1$.
+	\end{proof}
+	\step{b}{\pflet{$m$ and $n$ be natural numbers with $n < m$.}}
+	\step{c}{$\langle R(m,-), R(n,-) \rangle = 0$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int_0^1 R(m,x) R(n,x) dx
+			& = \sum_{k=1}^{2^n} \int_{\frac{k-1}{2^n}}^{\frac{k}{2^n}} R(m,x) R(n,x) dx \\
+			& = \sum_{k=1}^{2^n} (-i)^{k+1} \int_{\frac{k-1}{2^n}}^{\frac{k}{2^n}} R(m,x)dx \\
+			& = 0 & (\text{\stepref{a}}, 2^m\left(\frac{k}{2^n} - \frac{k-1}{2^n}\right) = 2^{m-n} \text{ is an even integer})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The set of Rademacher functions is not complete.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define $f : [0,1] \rightarrow \mathbb{C}$ by $f(x) = 0$ if $0 \leq x < 1/4$, $f(x) = 1$ if $1/4 \leq x \leq 3/4$, $f(x) = 0$ if $3/4 < x \leq 1$.}
+\step{2}{$f \in L^2([0,1])$}
+\step{3}{$\langle R(0,-),f\rangle = 1/2$}
+\step{4}{$\langle R(m,-),f \rangle = 0$ for $m \geq 1$}
+\step{5}{$f \neq 1/2 R(0,-)$}
+\qed
+\end{proof}
+
+\begin{df}[Walsh Functions]
+Define the \emph{Walsh functions} $W : \mathbb{N} \times [0,1] \rightarrow \{-1,0,1\}$ as follows. Given $m \in \mathbb{N}$, let $m = \sum_{k=1}^n 2^{k-1} a_k$ where each $a_k$ is either 0 or 1. Then
+\[ W(m,x) = \prod_{k=1}^n R(k,x)^{a_k} \enspace . \]
+\end{df}
+
+\begin{prop}
+The set of Walsh functions $\{ W(m,-) \mid m \in \mathbb{N} \}$ is a compete orthonormal set.
+\end{prop}
+
+\begin{proof}
+TODO
+\end{proof}
+
+\end{document}
