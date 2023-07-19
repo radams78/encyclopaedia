@@ -515,6 +515,25 @@ For any set $a$, we have $a$ is a transitive set if and only if $\mathcal{P} a$ 
 \qed
 \end{proof}
 
+\begin{prop}
+If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive class.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\mathbf{A}$ is a transitive class.}}
+\step{2}{\pflet{$x \in y \in \bigcup \mathbf{A}$}}
+\step{3}{$y \in \mathbf{A}$}
+\begin{proof}
+	\pf\ \stepref{1}, \stepref{2}
+\end{proof}
+\step{4}{$x \in \mathbf{A}$}
+\begin{proof}
+	\pf\ \stepref{1}, \stepref{2}, \stepref{3}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Relations}
 
 \section{Ordered Pairs}
