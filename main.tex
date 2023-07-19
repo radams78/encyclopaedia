@@ -299,6 +299,21 @@ If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \
 \end{proof}
 
 \begin{prop}
+\label{prop:unionmonotone}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+	\pf
+	\step{1}{\assume{$\mathbf{A} \subseteq \mathbf{B}$}}
+	\step{2}{\pflet{$x \in \bigcup \mathbf{A}$}}
+	\step{3}{\pick\ $A \in \mathbf{A}$ such that $x \in A$}
+	\step{4}{$A \in \mathbf{B}$}
+	\step{5}{$x \in \bigcup \mathbf{B}$}
+	\qed
+\end{proof}
+
+\begin{prop}
 \label{prop:powermonotone}
 For any sets $A$ and $B$, if $A \subseteq B$ then $\mathcal{P} A \subseteq \mathcal{P} B$.
 \end{prop}
@@ -450,6 +465,8 @@ C - \bigcup \mathbf{A} & = \bigcap \{ C - X \mid X \in \mathbf{A} \}
 \begin{proof}
 \pf\ First-order logic. \qed
 \end{proof}
+
+\section{Transitive Classes}
 
 \begin{df}[Transitive Class]
 A class $\mathbf{A}$ is a \emph{transitive class} iff whenever $x \in y \in \mathbf{A}$ then $x \in \mathbf{A}$.
@@ -1599,12 +1616,15 @@ The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
 
 \begin{prop}
 \label{prop:Uaplus}
-For a transitive set $a$,
+A set $a$ is a transitive set if and only if
 \[ \bigcup (a^+) = a \enspace . \]
 \end{prop}
 
 \begin{proof}
 \pf
+\step{One}{If $a$ is a transitive set then $\bigcup (a^+) = a$.}
+\begin{proof}
+\step{0}{\assume{$a$ is a transitive set.}}
 \step{1}{$\bigcup (a^+) \subseteq a$}
 \begin{proof}
 	\step{a}{\pflet{$x \in \bigcup (a^+)$} \prove{$x \in a$}}
@@ -1622,6 +1642,23 @@ For a transitive set $a$,
 \step{2}{$a \subseteq \bigcup (a^+)$}
 \begin{proof}
 	\pf\ Since $a \in a^+$.
+\end{proof}
+\end{proof}
+\step{Two}{If $\bigcup (a^+) = a$ then $a$ is a transitive set.}
+\begin{proof}
+	\step{1}{\assume{$\bigcup (a^+) = a$}}
+	\step{2}{$\bigcup a \subseteq a$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\bigcup a & \subseteq \bigcup (a^+) & (\text{Proposition \ref{prop:unionmonotone}}) \\
+			& = a & (\text{\stepref{1}})
+		\end{align*}
+	\end{proof}
+	\step{3}{$a$ is a transitive set.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
