@@ -63,6 +63,7 @@ We say $\mathbf{A}$ is a \emph{proper} subclass of $\mathbf{B}$, $\mathbf{B}$ is
 The following are all valid formulas of first-order logic:
 
 \begin{props}
+\label{prop:subclass}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems:
 \begin{enumerate}
 \item $\mathbf{A} \subseteq \mathbf{A}$
@@ -297,6 +298,49 @@ For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x 
 If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:powermonotone}
+For any sets $A$ and $B$, if $A \subseteq B$ then $\mathcal{P} A \subseteq \mathcal{P} B$.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:subclass}. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:UPA}
+For any set $A$ we have $\bigcup \mathcal{P} A = A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup \mathcal{P} A \subseteq A$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \bigcup \mathcal{P} A$}}
+	\step{b}{\pick\ $X \in \mathcal{P} A$ such that $x \in X$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{c}{$X \subseteq A$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{$x \in A$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{c}
+	\end{proof}
+\end{proof}
+\step{2}{$A \subseteq \bigcup \mathcal{P} A$}
+\begin{proof}
+	\pf\ For all $x \in A$ we have $x \in \{x\} \in \mathcal{P} A$.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ By Proposition \ref{prop:subclass}.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Comprehension}
 
 \begin{props}[Comprehension]
@@ -407,9 +451,69 @@ C - \bigcup \mathbf{A} & = \bigcap \{ C - X \mid X \in \mathbf{A} \}
 \pf\ First-order logic. \qed
 \end{proof}
 
-\begin{df}[Transitive Set]
-A set $A$ is a \emph{transitive set} iff whenever $x \in y \in A$ then $x \in A$.
+\begin{df}[Transitive Class]
+A class $\mathbf{A}$ is a \emph{transitive class} iff whenever $x \in y \in \mathbf{A}$ then $x \in \mathbf{A}$.
 \end{df}
+
+\begin{prop}
+\label{prop:transitiveset}
+Let $A$ be a set. Then the following are equivalent.
+\begin{enumerate}
+\item
+$A$ is a transitive class.
+\item
+$\bigcup A \subseteq A$
+\item
+Every element of $A$ is a subset of $A$.
+\item
+$A \subseteq \mathcal{P} A$
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+For any set $a$, we have $a$ is a transitive set if and only if $\mathcal{P} a$ is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ is a transitive set then $\mathcal{P} a$ is a transitive set.}
+\begin{proof}
+	\step{a}{\assume{$a$ is a transitive set.}}
+	\step{b}{$a \subseteq \mathcal{P} a$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}, \stepref{a}.
+	\end{proof}
+	\step{c}{$\mathcal{P} a \subseteq \mathcal{P} \mathcal{P} a$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:powermonotone}, \stepref{b}.
+	\end{proof}
+	\step{d}{$\mathcal{P} a$ is a transitive set.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}, \stepref{c}.
+	\end{proof}
+\end{proof}
+\step{2}{If $\mathcal{P} a$ is a transitive set then $a$ is a transitive set.}
+\begin{proof}
+	\step{a}{\assume{$\mathcal{P} a$ is a transitive set.}}
+	\step{b}{$\bigcup \mathcal{P} a \subseteq \mathcal{P} a$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}, \stepref{a}.
+	\end{proof}
+	\step{c}{$a \subseteq \mathcal{P} a$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:UPA}, \stepref{b}
+	\end{proof}
+	\step{d}{$a$ is a transitive set.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}, \stepref{c}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Relations}
 
@@ -1475,6 +1579,35 @@ For a transitive set $a$,
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:successortransitive}
+For any set $a$, we have $a$ is a transitive set if and only if $a^+$ is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ is a transitive set then $a^+$ is a transitiveset.}
+\begin{proof}
+	\pf\ If $a$ is a transitive set then $\bigcup(a^+) = a \subseteq a^+$ by Proposition \ref{prop:Uaplus} and so $a^+$ is a transitive set.
+\end{proof}
+\step{2}{If $a^+$ is a transitive set then $a$ is a transitive set.}
+\begin{proof}
+	\step{a}{\assume{$a^+$ is a transitive set.}}
+	\step{b}{\pflet{$x \in y \in a$}}
+	\step{c}{$x \in y \in a^+$}
+	\step{d}{$x \in a^+$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{e}{$x \neq a$}
+	\begin{proof}
+		\pf\ From \stepref{b} and the Axiom of Regularity.
+	\end{proof}
+	\step{f}{$x \in a$}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}
 We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
 \end{df}
@@ -1558,8 +1691,23 @@ Every natural number is a transitive set.
 \end{proof}
 \step{2}{For every natural number $n$, if $n$ is a transitive set then $n^+$ is a transitive set.}
 \begin{proof}
-	\pf\ If $n$ is a transitive set then $\bigcup(n^+) = n \subseteq n^+$ by Proposition \ref{prop:Uaplus} and so $n^+$ is a transitive set.
-\end{proof} %TODO Extract lemma
+	\pf\ Proposition \ref{prop:successortransitive}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+$\mathbb{N}$ is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$0 \subseteq \mathbb{N}$}
+\step{2}{$\forall n \in \mathbb{N}. n \subseteq \mathbb{N} \Rightarrow n^+ \subseteq \mathbb{N}$}
+\step{3}{$\forall n \in \mathbb{N}. n \subseteq \mathbb{N}$}
+\begin{proof}
+	\pf\ From \stepref{1} and \stepref{2} by induction.
+\end{proof}
 \qed
 \end{proof}
 
