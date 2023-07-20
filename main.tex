@@ -1552,6 +1552,7 @@ A strictly monotone function is injective.
 \end{proof}
 
 \begin{prop}
+\label{prop:strictmonotoneinv}
 Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \in A$. If $f$ is strictly monotone and $f(x) < f(y)$ then $x < y$.
 \end{prop}
 
@@ -2424,6 +2425,54 @@ For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq 
 		\end{proof}
 	\end{proof}
 	\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:pluslt}
+For natural numbers $m$, $n$ and $p$, we have $m < n$ iff $m + p < n + p$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m,n. m < n \Leftrightarrow p + 0 < n + 0$}
+\step{2}{For any natural number $p$, if $\forall m,n. m < n \Leftrightarrow m + p < n + p$ then $\forall m,n. m < n \Leftrightarrow m + p^+ < n + p^+$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:succltsucc}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For natural numbers $m$, $n$ and $p$, if $m < n$ and $p \neq 0$ then $mp < np$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
+\step{2}{\assume{$m < n$} \prove{$\forall p. mp^+ < np^+$}}
+\step{3}{$m0^+ < n0^+$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:multone}.
+\end{proof}
+\step{4}{For any natural number $p$, if $mp < np$ then $mp^+ < np^+$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		mp^+ & = mp + m \\
+		& < np + m & (\text{induction hypothesis. Theorem \ref{thm:pluslt}}) \\
+		& < np + n & (\text{\stepref{2}, Theorem \ref{thm:pluslt}}) \\
+		& = np^+
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For natural numbers $m$, $n$ and $p$, if $p \neq 0$ then $m < n$ if and only if $mp < np$.
+\end{cor}
+
+\begin{proof}
+	\pf\ Proposition \ref{prop:strictmonotoneinv}. \qed
 \end{proof}
 
 \chapter{Complex Analysis}
