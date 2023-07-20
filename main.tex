@@ -2524,6 +2524,26 @@ Every nonempty subset of $\mathbb{N}$ has a least element.
 There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
 \end{cor}
 
+\begin{thm}[Strong Induction Principle for $\mathbb{N}$]
+Let $A \subseteq \mathbb{N}$. Assume that, for every $n \in \mathbb{N}$, if $\forall m < n. m \in A$ then $n \in A$. Then $A = \mathbb{N}$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $A \neq \mathbb{N}$}}
+\step{2}{\pflet{$n$ be the least element of $\mathbb{N} - A$}}
+\begin{proof}
+	\pf\ Since $\mathbb{N}$ is well ordered.
+\end{proof}
+\step{3}{$\forall m < n. m \in A$}
+\step{4}{$n \notin A$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the hypothesis of the theorem.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Complex Analysis}
 
 \begin{df}
