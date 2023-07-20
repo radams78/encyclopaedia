@@ -1909,10 +1909,11 @@ For all $m,n,p \in \mathbb{N}$,
 \qed
 \end{proof}
 
-\begin{prop}[Commutative Law for Addition]
+\begin{thm}[Commutative Law for Addition]
+\label{thm:pluscomm}
 For all $m,n \in \mathbb{N}$,
 \[ m + n = n + m \]
-\end{prop}
+\end{thm}
 
 \begin{proof}
 \pf
@@ -1997,6 +1998,94 @@ For all $m,n,p \in \mathbb{N}$,
 \end{proof}
 \qed
 \end{proof}
+
+\begin{thm}[Associative Law for Multiplication]
+\label{thm:timesassoc}
+For all $m,n,p \in \mathbb{N}$,
+\[ m(np) = (mn)p \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m,n \in \mathbb{N}. m(n0) = (mn)0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(n0) & = m0 \\
+		& = 0 \\
+		& = (mn)0
+	\end{align*}
+\end{proof}
+\step{2}{For any $p \in \mathbb{N}$, if $\forall m,n. m(np) = (mn)p$, then $\forall m,n. m(np^+) = (mn)p^+$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(np^+) & = m(np + n) \\
+		& = m(np) + mn \\
+		& = (mn)p + mn & (\text{induction hypothesis}) \\
+		& = (mn)p^+
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Commutative Law for Multiplication]
+For all $m,n \in \mathbb{N}$,
+\[ mn = nm \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m \in \mathbb{N}. m0 = 0m$}
+\begin{proof}
+	\pf
+	\step{a}{$0 \cdot 0 = 0 \cdot 0$}
+	\step{b}{For all $m$, if $m0 = 0m$ then $m^+ 0 = 0 m^+$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+		0 m^+ & = 0m + 0 \\
+		& = 0m \\
+		& = m0 & (\text{induction hypothesis}) \\
+		& = 0 \\
+		& = m^+ 0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For any $n \in \mathbb{N}$, if $\forall m. mn = nm$ then $\forall m. mn^+ = n^+m$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \mathbb{N}$}}
+	\step{b}{\assume{$\forall m. mn = nm$}}
+	\step{c}{$0n^+ = n^+0$}
+	\begin{proof}
+		\pf\ \stepref{1}
+	\end{proof}
+	\step{d}{For all $m$, if $mn^+ = n^+m$ then $m^+n^+ = n^+m^+$}
+	\begin{proof}
+		\pf
+		\step{i}{\pflet{$m \in \mathbb{N}$}}
+		\step{ii}{\assume{$mn^+ = n^+m$}}
+		\step{iii}{$m^+ n^+ = n^+ m^+$}
+		\begin{proof}
+		\pf
+		\begin{align*}
+			m^+ n^+ & = m^+ n + m^+ \\
+			& = (m^+ n + m)^+ \\
+			& = (nm^+ + m)^+ & (\text{\stepref{b}}) \\
+			& = (nm + n + m)^+ \\
+			& = (mn + n + m)^+ & (\text{\stepref{b}}) \\
+			& = (mn + m + n)^+ & (\text{Theorems \ref{thm:plusassoc}, \ref{thm:pluscomm}}) \\
+			& = (mn^+ + n)^+ \\
+			& = mn^+ + n^+ \\
+			& = n^+ m + n^+ & (\text{\stepref{ii}}) \\
+			& = n^+ m^+
+		\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Exponentiation]
 \emph{Exponentiation} is the binary operation on $\mathbb{N}$ defined recursively by:
 \begin{align*}
