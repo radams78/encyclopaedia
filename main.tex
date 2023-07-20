@@ -1769,6 +1769,7 @@ Every natural number except 0 is the successor of some natural number.
 \end{proof}
 
 \begin{prop}
+\label{prop:nattrans}
 Every natural number is a transitive set.
 \end{prop}
 
@@ -2267,6 +2268,163 @@ For all $m,n,p \in \mathbb{N}$,
 \begin{df}
 Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$. We write $m \leq n$ iff $m < n$ or $m = n$.
 \end{df}
+
+\begin{prop}
+\label{prop:succltsucc}
+For any natural numbers $m$ and $n$, we have $m < n$ if and only if $m^+ < n^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any natural numbers $m$ and $n$, if $m < n$ then $m^+ < n^+$.}
+\begin{proof}
+	\step{a}{For any natural number $m$, if $m < 0$ then $m^+ < 0^+$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m < n. m^+ < n^+$ then $\forall m < n^+. m^+ < n^{++}$}
+	\begin{proof}
+		\step{i}{\pflet{$m < n^+$}}
+		\step{ii}{$m < n$ or $m = n$}
+		\step{iii}{\case{$m < n$}}
+		\begin{proof}
+			\step{one}{$m^+ < n^+$}
+			\begin{proof}
+				\pf\ Induction hypothesis.
+			\end{proof}
+			\step{two}{$m^+ < n^{++}$}
+		\end{proof}
+		\step{iv}{\case{$m = n$}}
+		\begin{proof}
+			\pf\ $m^+ = n^+ < n^{++}$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{For any natural numbers $m$ and $n$, if $m^+ < n^+$ then $m < n$.}
+\begin{proof}
+	\step{a}{We never have $m^+ < 0^+$.}
+	\begin{proof}
+		\step{i}{$m^+ \nless 0$}
+		\step{ii}{$m^+ \neq 0$}
+		\step{iii}{$m^+ \nless 0^+$}
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m. m^+ < n^+ \Rightarrow m < n$, then $\forall m. m^+ < n^{++} \Rightarrow m < n^+$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m. m^+ < n^+ \Rightarrow m < n$}}
+		\step{iii}{\pflet{$m$ be a natural number.}}
+		\step{iv}{\assume{$m^+ < n^{++}$}}
+		\step{v}{$m^+ < n^+$ or $m^+ = n^+$}
+		\step{vi}{\case{$m^+ < n^+$}}
+		\begin{proof}
+			\step{one}{$m < n$}
+			\begin{proof}
+				\pf\ Induction hypothesis.
+			\end{proof}
+			\step{two}{$m < n^+$}
+		\end{proof}
+		\step{vii}{\case{$m^+ = n^+$}}
+		\begin{proof}
+			\pf\ $m = n < n^+$ by Proposition \ref{prop:Peano2}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Trichotomy Law for $\mathbb{N}$]
+For any natural numbers $m$ and $n$, exactly one of $m < n$, $n < m$, $m = n$ holds.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all $m$ and $n$, at most one of $m < n$, $n < m$, $m = n$ holds.}
+\begin{proof}
+	\step{a}{We do not have $m < n$ and $m = n$.}
+	\begin{proof}
+		\pf\ This would imply $n < n$ contradicting the Axiom of Regularity.
+	\end{proof}
+	\step{b}{We do not have $m < n$ and $n < m$.}
+	\begin{proof}
+		\pf\ This would imply $n < n$ by Proposition \ref{prop:nattrans}, contradicting the Axiom of Regularity.
+	\end{proof}
+\end{proof}
+\step{2}{For all $m$ and $n$, either $m < n$ or $n < m$ or $m = n$.}
+\begin{proof}
+	\step{a}{For all $m$, either $m = 0$ or $0 < m$.}
+	\begin{proof}
+		\step{i}{$0 = 0$}
+		\step{ii}{For any natural number $m$, we have $0 < m^+$.}
+		\begin{proof}
+			\step{one}{$0 < 0^+$}
+			\step{two}{For any natural number $m$, if $0 < m^+$ then $0 < m^{++}$.}
+		\end{proof}
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m (m < n \vee n < m \vee m = n)$ then $\forall m (m < n^+ \vee n^+ < m \vee m = n^+)$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m (m < n \vee n < m \vee m = n)$}}
+		\step{iii}{\pflet{$m$ be a natural number.}}
+		\step{iv}{\case{$m < n$}}
+		\begin{proof}
+			\pf\ Then $m < n^+$.
+		\end{proof}
+		\step{v}{\case{$n < m$}}
+		\begin{proof}
+			\step{one}{$m \neq 0$}
+			\step{two}{\pick\ $p$ such that $m = p^+$}
+			\step{three}{$n < p$ or $n = p$}
+			\step{four}{\case{$n < p$}}
+			\begin{proof}
+				\pf\ Then $n^+ < p^+ = m$ by Proposition \ref{prop:succltsucc}.
+			\end{proof}
+			\step{five}{\case{$n = p$}}
+			\begin{proof}
+				\pf\ Then $n^+ = p^+ = m$.
+			\end{proof}
+		\end{proof}
+		\step{vi}{\case{$m = n$}}
+		\begin{proof}
+			\pf\ Then $m < n^+$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq n$.
+\end{cor}
+
+\begin{proof}
+	\pf
+	\step{1}{If $m \leq n$ then $m \subseteq n$}
+	\begin{proof}
+		\step{a}{\assume{$m \leq n$}}
+		\step{b}{\pflet{$p \in m$}}
+		\step{c}{\case{$m < n$}}
+		\begin{proof}
+			\pf\ Then $p \in n$ by Proposition \ref{prop:nattrans}.
+		\end{proof}
+		\step{d}{\case{$m = n$}}
+		\begin{proof}
+			\pf\ Then $p \in n$ immediately.
+		\end{proof}
+	\end{proof}
+	\step{2}{If $m \subseteq n$ then $m \leq n$}
+	\begin{proof}
+		\step{a}{\assume{$m \subseteq n$}}
+		\step{b}{$n \nless m$}
+		\begin{proof}
+			\pf\ If $n < m$ then $n \in n$ contradicting the Axiom of Regularity.
+		\end{proof}
+		\step{c}{$m \leq n$}
+		\begin{proof}
+			\pf\ By trichotomy.
+		\end{proof}
+	\end{proof}
+	\qed
+\end{proof}
 
 \chapter{Complex Analysis}
 
