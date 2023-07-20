@@ -1870,6 +1870,32 @@ and for every $n \in \mathbb{N}$,
 \qed
 \end{proof}
 
+\section{Arithmetic}
+
+\begin{df}[Addition]
+\emph{Addition} $+$ is the binary operation on $\mathbb{N}$ defined recursively by:
+\begin{align*}
+m + 0 & = m \\
+m + n^+ & = (m + n)^+
+\end{align*}
+\end{df}
+
+\begin{df}[Multiplication]
+\emph{Multiplication} $\cdot$ is the binary operation on $\mathbb{N}$ defined recursively by:
+\begin{align*}
+m0 & = 0 \\
+mn^+ & = mn + m
+\end{align*}
+\end{df}
+
+\begin{df}[Exponentiation]
+\emph{Exponentiation} is the binary operation on $\mathbb{N}$ defined recursively by:
+\begin{align*}
+m^0 & = 1 \\
+m^{n^+} & = m^n m
+\end{align*}
+\end{df}
+
 \chapter{Complex Analysis}
 
 \begin{df}
