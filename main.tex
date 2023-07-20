@@ -1573,6 +1573,10 @@ Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \i
 Let $\mathbf{F}$ be a function and $\mathbf{A} \subseteq \dom \mathbf{F}$. Then $\mathbf{A}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{A}. \mathbf{F}(x) \in \mathbf{A}$.
 \end{df}
 
+\begin{df}[Binary Operation]
+A \emph{binary operation} on a set $A$ is a function from $A \times A$ into $A$.
+\end{df}
+
 \section{Dependent Product Sets}
 
 \begin{df}
@@ -1791,6 +1795,77 @@ $\mathbb{N}$ is a transitive set.
 \step{3}{$\forall n \in \mathbb{N}. n \subseteq \mathbb{N}$}
 \begin{proof}
 	\pf\ From \stepref{1} and \stepref{2} by induction.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Recursion}
+
+\begin{thm}[Recursion Theorem on $\mathbb{N}$]
+Let $A$ be a set, $a \in A$, and $F : A \rightarrow A$. Then there exists a unique function $h : \mathbb{N} \rightarrow A$ such that
+\[ h(0) = a \enspace , \]
+and for every $n \in \mathbb{N}$,
+\[ h(n^+) = F(h(n)) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define a function $v$ to be \emph{acceptable} iff $\dom v \subseteq \mathbb{N}$, $\ran v \subseteq A$, and:
+\begin{enumerate}
+\item If $0 \in \dom v$ then $v(0) = a$
+\item For all $n \in \mathbb{N}$, if $n^+ \in \dom v$, then $n \in \dom v$ and $v(n^+) = F(v(n))$.
+\end{enumerate}}
+\step{2}{\pflet{$\mathcal{K}$ be the set of all acceptable functions.}}
+\begin{proof}
+	\pf\ This is a set because it is a subset of $\mathcal{P}(\mathbb{N} \times A)$.
+\end{proof}
+\step{3}{\pflet{$h = \bigcup \mathcal{K}$}}
+\step{4}{For all $n$ and $y$ we have $(n,y) \in h$ iff there exists an acceptable $v$ such that $v(n) = y$.}
+\step{5}{$h$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$P(n)$ be the predicate: there is at most one $y$ such that $(n,y) \in h$.}}
+	\step{b}{$P(0)$}
+	\begin{proof}
+		\pf\ If $(0,y) \in h$ then $y = a$.
+	\end{proof}
+	\step{c}{$\forall n \in \mathbb{N}. P(n) \Rightarrow P(n^+)$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{N}$}}
+		\step{ii}{\assume{$P(n)$}}
+		\step{iii}{\pflet{$(n^+,x),(n^+,y) \in h$}}
+		\step{iv}{\pick\ acceptable $v_1$, $v_2$ such that $v_1(n^+) = x$ and $v_2(n^+) = y$}
+		\step{v}{$F(v_1(n)) = x$ and $F(v_2(n)) = y$}
+		\step{vi}{$v_1(n) = v_2(n)$}
+		\begin{proof}
+			\pf\ \stepref{ii}
+		\end{proof}
+		\step{vii}{$x = y$}
+	\end{proof}
+	\step{d}{$\forall n \in \mathbb{N}. P(n)$}
+\end{proof}
+\step{6}{$h$ is acceptable.}
+\begin{proof}
+	\step{a}{If $0 \in \dom h$ then $h(0) = a$}
+	\step{b}{For all $n \in \mathbb{N}$, if $n^+ \in \dom h$ then $n \in \dom h$ and $h(n^+) = F(h(n))$}
+\end{proof}
+\step{7}{$\dom h = \mathbb{N}$}
+\begin{proof}
+	\step{a}{$0 \in \dom h$}
+	\begin{proof}
+		\pf\ Since $\{(0,a)\}$ is an acceptable function.
+	\end{proof}
+	\step{b}{$\forall n \in \dom h. n^+ \in \dom h$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \dom h$}}
+		\step{ii}{\pick\ an acceptable $v$ with $n \in \dom v$}
+		\step{iii}{\assume{w.l.o.g. $n^+ \notin \dom v$}}
+		\step{iv}{$v \cup \{(n^+, F(v(n)))\}$ is acceptable.}
+		\step{v}{$n^+ \in \dom h$}
+	\end{proof}
+\end{proof}
+\step{8}{For any function $k : \mathbb{N} \rightarrow A$, if $k(0) = a$ and $\forall n \in \mathbb{N}. k(n^+) = F(k(n))$ then $k = h$.}
+\begin{proof}
+	\pf\ Prove $\forall n \in \mathbb{N}. k(n) = h(n)$ by induction on $n$.
 \end{proof}
 \qed
 \end{proof}
