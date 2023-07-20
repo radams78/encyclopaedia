@@ -2491,6 +2491,39 @@ For natural numbers $m$, $n$ and $p$, if $mp = np$ and $p \neq 0$ then $m = n$.
 	\pf\ By trichotomy. \qed
 \end{proof}
 
+\begin{thm}[Well-Ordering of $\mathbb{N}$]
+Every nonempty subset of $\mathbb{N}$ has a least element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A \subseteq \mathbb{N}$}}
+\step{2}{\assume{$A$ has no least element.} \prove{$A = \emptyset$}}
+\step{3}{$\forall n. \forall m < n. m \notin A$}
+\begin{proof}
+	\step{a}{$\forall m < 0. m \notin A$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m < n. m \notin A$, then $\forall m < n^+. m \notin A$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m < n. m \notin A$}}
+		\step{iii}{$n \notin A$}
+		\begin{proof}
+			\pf\ If $n \in A$ then $n$ is the least element in $A$.
+		\end{proof}
+		\step{iv}{$\forall m < n^+. m \notin A$}
+	\end{proof}
+\end{proof}
+\step{4}{$A = \emptyset$}
+\qed
+\end{proof}
+
+\begin{cor}
+There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
+\end{cor}
+
 \chapter{Complex Analysis}
 
 \begin{df}
