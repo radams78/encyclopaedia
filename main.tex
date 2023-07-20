@@ -1760,6 +1760,7 @@ Any inductive subset of $\mathbb{N}$ coincides with $\mathbb{N}$.
 \end{cor}
 
 \begin{thm}
+\label{thm:zeroorsucc}
 Every natural number except 0 is the successor of some natural number.
 \end{thm}
 
@@ -1784,6 +1785,19 @@ Every natural number is a transitive set.
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:Peano2}
+For natural numbers $m$ and $n$, if $m^+ = n^+$ then $m = n$.
+\end{prop}
+
+\begin{proof}
+	\pf\ If $m^+ = n^+$ then
+	\begin{align*}
+		m & = \bigcup (m^+) & (\text{Proposition \ref{prop:Uaplus}}) \\
+		& = \bigcup (n^+) \\
+		& = n & (\text{Proposition \ref{prop:Uaplus}})
+	\end{align*}
+\end{proof}
 \begin{prop}
 $\mathbb{N}$ is a transitive set.
 \end{prop}
@@ -1969,6 +1983,22 @@ mn^+ & = mn + m
 \end{align*}
 \end{df}
 
+\begin{prop}
+\label{prop:multone}
+For any $n \in \mathbb{N}$ we have $n \cdot 1 = n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	n \cdot 1 & = n 0^+ \\
+	& = n0 + n \\
+	& = 0 + n \\
+	& = n + 0 & (\text{Theorem \ref{thm:pluscomm}}) \\
+	& = n
+\end{align*}
+\end{proof}
+
 \begin{thm}[Distributive Law]
 For all $m,n,p \in \mathbb{N}$,
 \[ m(n+p) = mn + mp \enspace . \]
@@ -2086,6 +2116,114 @@ For all $m,n \in \mathbb{N}$,
 \qed
 \end{proof}
 
+\begin{prop}
+For natural numbers $m$ and $n$, if $mn = 0$ then $m = 0$ or $n = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$m,n \in \mathbb{N}$}}
+\step{2}{\assume{$m \neq 0$ and $n \neq 0$}}
+\step{3}{\pick\ $p,q \in \mathbb{N}$ such that $m = p^+$ and $n = q^+$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:zeroorsucc}.
+\end{proof}
+\step{4}{$mn = (p^+q + p)^+$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		mn & = p^+ q^+ & (\text{\stepref{3}}) \\
+		& = p^+q + p^+ \\
+		& = (p^+ q + p)^+
+	\end{align*}
+\end{proof}
+\step{5}{$mn \neq 0$}
+\qed
+\end{proof}
+
+\begin{df}[Even]
+A natural number $n$ is \emph{even} iff there exists $m \in \mathbb{N}$ such that $n = 2m$.
+\end{df}
+
+\begin{df}[Odd]
+A natural number $n$ is \emph{odd} iff there exists $p \in \mathbb{N}$ such that $n = 2p+1$.
+\end{df}
+
+\begin{prop}
+Every natural number is either even or odd.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$0$ is even.}
+\begin{proof}
+	\pf\ $0 = 2 \times 0$.
+\end{proof}
+\step{2}{For any natural number $n$, if $n$ is either even or odd then $n^+$ is either even or odd.}
+\begin{proof}
+	\pf
+	\step{a}{\pflet{$n \in \mathbb{N}$}}
+	\step{b}{If $n$ is even then $n^+$ is odd.}
+	\begin{proof}
+		\pf\ If $n = 2p$ then $n^+ = 2p+1$.
+	\end{proof}
+	\step{c}{If $n$ is odd then $n^+$ is even.}
+	\begin{proof}
+		\pf\ If $n = 2p+1$ then $n^+ = 2(p+1)$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+No natural number is both even and odd.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{0 is not odd.}
+\begin{proof}
+	\pf\ For any $p$ we have $2p+1 = (2p)^+ \neq 0$.
+\end{proof}
+\step{2}{For any natural number $n$, if $n$ is not both even and odd, then $n^+$ is not both even and odd.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{If $n^+$ is even then $n$ is odd.}
+	\begin{proof}
+		\step{i}{\assume{$n^+$ is even.}}
+		\step{ii}{\pick\ $p$ such that $n^+ = 2p$}
+		\step{iii}{$p \neq 0$}
+		\begin{proof}
+			\pf\ Since $n^+ \neq 0$.
+		\end{proof}
+		\step{iv}{\pick\ $q$ such that $p = q^+$}
+		\begin{proof}
+			\pf\ Theorem \ref{thm:zeroorsucc}.
+		\end{proof}
+		\step{vi}{$n^+ = 2q + 2$}
+		\begin{proof}
+			\pf\ \stepref{ii}, \stepref{iv}.
+		\end{proof}
+		\step{vii}{$n = 2q+1$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:Peano2}, \stepref{vi}
+		\end{proof}
+		\step{viii}{$n$ is odd.}
+	\end{proof}
+	\step{c}{If $n^+$ is odd then $n$ is even.}
+	\begin{proof}
+		\step{i}{\assume{$n^+$ is odd.}}
+		\step{ii}{\pick\ $p$ such that $n^+ = 2p+1$}
+		\step{iii}{$n = 2p$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:Peano2}, \stepref{ii}
+		\end{proof}
+		\step{iv}{$n$ is even.}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Exponentiation]
 \emph{Exponentiation} is the binary operation on $\mathbb{N}$ defined recursively by:
 \begin{align*}
@@ -2093,6 +2231,36 @@ m^0 & = 1 \\
 m^{n^+} & = m^n m
 \end{align*}
 \end{df}
+
+\begin{prop}
+For all $m,n,p \in \mathbb{N}$,
+\[ m^{n+p} = m^n m^p \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m,n. m^{n+0} = m^n m^0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m^{n+0} & = m^n \\
+		& = m^n \cdot 1 & (\text{Proposition \ref{prop:multone}}) \\
+		& = m^n m^0
+	\end{align*}
+\end{proof}
+\step{2}{For any $p \in \mathbb{N}$, if $\forall m,n. m^{n+p} = m^n m^p$ then $\forall m,n. m^{n+p^+} = m^n m^{p^+}$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m^{n+p^+} & = m^{(n+p)^+} \\
+		& = m^{n+p} m \\
+		& = (m^n m^p)m & (\text{induction hypothesis}) \\
+		& = m^n (m^p m) & (\text{Theorem \ref{thm:timesassoc}}) \\
+		& = m^n m^{p^+}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Complex Analysis}
 
