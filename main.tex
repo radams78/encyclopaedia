@@ -1880,6 +1880,86 @@ m + n^+ & = (m + n)^+
 \end{align*}
 \end{df}
 
+\begin{thm}[Associative Law for Addition]
+\label{thm:plusassoc}
+For all $m,n,p \in \mathbb{N}$,
+\[ m + (n + p) = (m + n) + p \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m,n \in \mathbb{N}. m + (n + 0) = (m + n) + 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m + (n + 0) & = m + n \\
+		& = (m + n) + 0
+	\end{align*}
+\end{proof}
+\step{2}{For any $p \in \mathbb{N}$, if $\forall m,n \in \mathbb{N}. m + (n + p) = (m + n) + p$, then $\forall m,n \in \mathbb{N}. m + (n + p^+) = (m + n) + p^+$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m + (n + p^+) & = m + (n + p)^+ \\
+		& = (m + (n + p))^+ \\
+		& = ((m + n) + p)^+ & (\text{induction hypothesis}) \\
+		& = (m + n) + p^+
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Commutative Law for Addition]
+For all $m,n \in \mathbb{N}$,
+\[ m + n = n + m \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m \in \mathbb{N}. m + 0 = 0 + m$}
+\begin{proof}
+	\step{a}{$0 + 0 = 0 + 0$}
+	\step{b}{For all $m \in \mathbb{N}$, if $m + 0 = 0 + m$ then $m^+ + 0 = 0 + m^+$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			m^+ + 0 & = m^+ \\
+			& = (m + 0)^+ \\
+			& = (0 + m)^+ & (\text{induction hypothesis}) \\
+			& = 0 + m^+
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For all $m \in \mathbb{N}$, if $\forall n. m + n = n + m$ then $\forall n. m^+ + n = n + m^+$}
+\begin{proof}
+	\step{a}{\pflet{$m \in \mathbb{N}$}}
+	\step{b}{\assume{$\forall n. m + n = n + m$}}
+	\step{c}{$m^+ + 0 = 0 + m^+$}
+	\begin{proof}
+		\pf\ \stepref{1}
+	\end{proof}
+	\step{d}{For all $n \in \mathbb{N}$, if $m^+ + n = n + m^+$ then $m^+ + n^+ = n^+ + m^+$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{N}$}}
+		\step{ii}{\assume{$m^+ + n = n + m^+$}}
+		\step{iii}{$m^+ + n^+ = n^+ + m^+$}
+		\begin{proof}
+		\pf
+		\begin{align*}
+			m^+ + n^+ & = (m^+ + n)^+ \\
+			& = (n + m^+)^+ & (\text{\stepref{ii}}) \\
+			& = (n + m)^{++} \\
+			& = (m + n)^{++} & (\text{\stepref{b}}) \\
+			& = (m + n^+)^+ \\
+			& = (n^+ + m)^+ & (\text{\stepref{b}}) \\
+			& = n^+ + m^+
+		\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Multiplication]
 \emph{Multiplication} $\cdot$ is the binary operation on $\mathbb{N}$ defined recursively by:
 \begin{align*}
@@ -1888,6 +1968,35 @@ mn^+ & = mn + m
 \end{align*}
 \end{df}
 
+\begin{thm}[Distributive Law]
+For all $m,n,p \in \mathbb{N}$,
+\[ m(n+p) = mn + mp \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\forall m,n \in \mathbb{N}. m(n+0) = mn+m0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(n+0) & = mn \\
+		& = mn + 0 \\
+		& = mn + m0
+	\end{align*}
+\end{proof}
+\step{2}{For any $p \in \mathbb{N}$, if $\forall m,n \in \mathbb{N}. m(n+p) = mn+mp$, then $\forall m,n \in \mathbb{N}. m(n+p^+) = mn+mp^+$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(n+p^+) & = m(n+p)^+ \\
+		& = m(n+p) + m \\
+		& = (mn + mp) + m & (\text{induction hypothesis}) \\
+		& = mn + (mp + m) & (\text{Theorem \ref{thm:plusassoc}}) \\
+		& = mn + mp^+
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
 \begin{df}[Exponentiation]
 \emph{Exponentiation} is the binary operation on $\mathbb{N}$ defined recursively by:
 \begin{align*}
