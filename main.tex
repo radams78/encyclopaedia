@@ -2615,6 +2615,115 @@ For natural numbers $m$, $n$ and $p$, if $mp = np$ and $p \neq 0$ then $m = n$.
 	\pf\ By trichotomy. \qed
 \end{proof}
 
+\begin{prop}
+Let $m$, $n$, $p$, $q$ be natural numbres. Assume $m + n = p + q$. Then $m < p$ if and only if $q < n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $m < p$ then $q < n$.}
+\begin{proof}
+	\pf\ If $m < p$ and $n \leq q$ then $m+n < p + q$.
+\end{proof}
+\step{2}{If $q < n$ then $m < p$.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $m$, $n$, $p$ and $q$ be natural numbers. Assume $n < m$ and $q < p$. Then
+\[ mq + np < mp + nq \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ positive natural numbers $a$ and $b$ such that $m = n + a$ and $p = q + b$.}
+\step{2}{$mp + nq > mq + np$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		mp + nq & = (n+a) (q + b) + nq \\
+		& = 2nq + nb + aq + ab \\
+		mq + np & = (n + a) q + n (q + b) \\
+		& = 2nq + aq + nb \\
+		\therefore mp + nq & = mq + np + ab \\
+		& > mq + np
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Cardinality}
+
+\begin{df}
+Let $A$ be a set and $n \in \mathbb{N}$. We say that $A$ \emph{has $n$ elements} iff there exists a bijection between $A$ and $n$.
+\end{df}
+
+\begin{prop}
+\label{prop:cardsum}
+If $A$ has $m$ elements, $B$ has $n$ elements, and $A \cap B = \emptyset$, then $A \cup B$ has $m + n$ elements.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: For any natural number $m$ and sets $A$ and $B$, if $A$ has $m$ elements, $B$ has $n$ elements, and $A \cap B = \emptyset$, then $A \cup B$ has $m + n$ elements.}}
+\step{1}{$P(0)$}
+\begin{proof}
+	\step{a}{\pflet{$A$ have $m$ elements, $B$ have 0 elements, and $A \cap B = \emptyset$}}
+	\step{b}{$B = \emptyset$}
+	\step{c}{$A \cup B = A$}
+	\step{d}{$A \cup B$ has $m$ elements.}
+\end{proof}
+\step{2}{$\forall n. P(n) \rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\assume{$P(n)$}}
+	\step{a}{\pflet{$A$ have $m$ elements, $B$ have $n+1$ elements, and $A \cap B = \emptyset$}}
+	\step{b}{\pick\ $b \in B$}
+	\step{c}{$B - \{b\}$ has $n$ elements.}
+	\step{d}{$A \cup B - \{b\}$ has $m + n$ elements.}
+	\step{e}{$A \cup B$ has $m + n + 1$ elements.}
+\end{proof}
+\step{3}{$\forall n P(n)$}
+\qed
+\end{proof}
+
+\begin{prop}
+If $A$ has $m$ elements and $B$ has $n$ elements then $A \times B$ has $mn$ elements.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for any natural number $m$ and sets $A$ and $B$, if $A$ has $m$ elements and $B$ has $n$ elements then $A \times B$ has $mn$ elements.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\step{a}{\pflet{$A$ have $m$ elements and $B$ have 0 elements.}}
+	\step{b}{$B = \emptyset$}
+	\step{c}{$A \times B = \emptyset$}
+	\step{d}{$A \times B$ has 0 elements.}
+\end{proof}
+\step{3}{$\forall n. P(n) \rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\assume{$P(n)$}}
+	\step{b}{\pflet{$A$ have $m$ elements and $B$ have $n+1$ elements.}}
+	\step{c}{\pick\ $b \in B$}
+	\step{d}{$B - \{b\}$ has $n$ elements.}
+	\step{e}{$A \times (B - \{b\})$ has $mn$ elements.}
+	\step{f}{$A \times B = (A \times (B - \{b\})) \cup (A \times \{b\})$}
+	\step{g}{$A \times \{b\}$ has $m$ elements.}
+	\begin{proof}
+		\pf\ It is bijective with $A$.
+	\end{proof}
+	\step{h}{$A \times B$ has $mn+m$ elements.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:cardsum}.
+	\end{proof}
+\end{proof}
+\step{4}{$\forall n P(n)$}
+\qed
+\end{proof}
+
 \chapter{Complex Analysis}
 
 \begin{df}
