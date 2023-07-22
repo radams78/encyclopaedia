@@ -2567,6 +2567,7 @@ For natural numbers $m$, $n$ and $p$, we have $m < n$ iff $m + p < n + p$.
 \end{proof}
 
 \begin{cor}
+\label{cor:pluscancel}
 For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
 \end{cor}
 
@@ -2722,6 +2723,110 @@ If $A$ has $m$ elements and $B$ has $n$ elements then $A \times B$ has $mn$ elem
 \end{proof}
 \step{4}{$\forall n P(n)$}
 \qed
+\end{proof}
+
+\chapter{Number Systems}
+
+\section{The Integers}
+
+\begin{df}
+The set of \emph{integers} $\mathbb{Z}$ is the quotient set $\mathbb{N}^2 / \sim$, where $(m,n) \sim (p,q)$ iff $m + q = n + p$.
+
+We prove$\sim$ is an equivalence relation on $\mathbb{N}^2$.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ For all $m,n \in \mathbb{N}$ we have $m + n = n + m$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ If $m + q = n + p$ then $p + n = q + m$.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$(m,n) \sim (p,q) \sim (r,s)$}}
+	\step{b}{$m + q = n + p$ and $p + s = q + r$}
+	\step{c}{$m + q + s = n + q + r$}
+	\step{d}{$m + s = n + r$}
+	\begin{proof}
+		\pf\ Corollary \ref{cor:pluscancel}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Addition]
+Define \emph{addition} $+$ on $\mathbb{Z}$ by $[(m,n)] + [(p,q)] = [(m+p,n+q)]$.
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf\ If $m + n' = n + m'$ and $p + q' = q + p'$ then $m + p + n' + q' = n + q + m' + p'$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:plusZcomm}
+Addition on $\mathbb{Z}$ is commutative.
+\end{prop}
+
+\begin{proof}
+\pf\ $[(m,n)] + [(p,q)] = [(m+p,n+q)] = [(p+m,q+n)] = [(p,q)] + [(m,n)]$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:plusZassoc}
+Addition on $\mathbb{Z}$ is associative.
+\end{prop}
+
+\begin{proof}
+\pf\ $[(m,n)] + ([(p,q)] + [(r,s)]) = [(m+p+r,n+q+s)] = ([(m,n)] + [(p,q)]) + [(r,s)]$. \qed
+\end{proof}
+
+\begin{df}[Zero]
+The integer \emph{zero} is $0 := [(0,0)]$.
+\end{df}
+
+\begin{prop}
+\label{prop:plusZzero}
+For all $a \in \mathbb{Z}$ we have $a + 0 = a$.
+\end{prop}
+
+\begin{proof}
+\pf\ $[(m,n)] + [(0,0)] = [(m+0,n+0)] = [(m,n)]$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:plusZinv}
+For all $a \in \mathbb{Z}$, there exists $b \in \mathbb{Z}$ such that $a + b = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ $[(m,n)] + [(n,m)] = [(m+n,m+n)] = [(0,0)]$ \qed
+\end{proof}
+
+\chapter{Group Theory}
+
+\section{Abelian Groups}
+
+\begin{df}[Abelian group]
+An \emph{Abelian group} $G$ consists of a set $G$ and a function $\cdot : G^2 \rightarrow G$ such that:
+\begin{enumerate}
+\item $\cdot$ is associative
+\item $\cdot$ is commutative
+\item There exists $e \in G$ such that $\forall x \in G. xe = x$ and $\forall x \in G. \exists y \in G. xy = e$.
+\end{enumerate}
+\end{df}
+
+\begin{prop}
+The integers form an Abelian group under addition.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:plusZcomm}, \ref{prop:plusZassoc}, \ref{prop:plusZzero}, \ref{prop:plusZinv}. \qed
 \end{proof}
 
 \chapter{Complex Analysis}
