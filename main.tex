@@ -2634,6 +2634,7 @@ Let $m$, $n$, $p$, $q$ be natural numbres. Assume $m + n = p + q$. Then $m < p$ 
 \end{proof}
 
 \begin{prop}
+\label{prop:intmultlemma}
 Let $m$, $n$, $p$ and $q$ be natural numbers. Assume $n < m$ and $q < p$. Then
 \[ mq + np < mp + nq \enspace . \]
 \end{prop}
@@ -2855,6 +2856,7 @@ Multiplication on integers agrees with multiplication on natural numbers.
 \end{proof}
 
 \begin{prop}
+\label{prop:timesZcomm}
 Multiplication on $\mathbb{Z}$ is commutative.
 \end{prop}
 
@@ -2863,6 +2865,7 @@ Multiplication on $\mathbb{Z}$ is commutative.
 \end{proof}
 
 \begin{prop}
+\label{prop:timesZassoc}
 Multiplication on $\mathbb{Z}$ is associative.
 \end{prop}
 
@@ -2877,6 +2880,7 @@ Multiplication on $\mathbb{Z}$ is associative.
 \end{proof}
 
 \begin{prop}
+\label{prop:timesZdist}
 Multiplication distributes over addition.
 \end{prop}
 
@@ -2891,11 +2895,45 @@ Multiplication distributes over addition.
 \end{proof}
 
 \begin{prop}
+\label{prop:timesZone}
 For any integer $a$ we have $a1 = a$.
 \end{prop}
 
 \begin{proof}
 \pf\ Since $[(m,n)][(1,0)] = [(m1+n0,m0+n1)] = [(m,n)]$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:Zno_zero_div}
+For any integeres $a$ and $b$, if $ab = 0$ then $a = 0$ or $b = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$[(m,n)][(p,q)] = [(0,0)]$}}
+\step{2}{$mp+nq = mq+np$}
+\step{3}{\assume{$[(m,n)] \neq [(0,0)]$}}
+\step{4}{$m \neq n$ \prove{$p = q$}}
+\step{5}{\case{$m < n$}}
+\begin{proof}
+	\step{a}{$p \nless q$}
+	\begin{proof}
+		\pf\ If $p < q$ then $mq+np < mp+nq$ by Proposition \ref{prop:intmultlemma}.
+	\end{proof}
+	\step{b}{$q \nless p$}
+	\begin{proof}
+		\pf\ If $q < p$ then $mp+nq < mq+np$ by Proposition \ref{prop:intmultlemma}.
+	\end{proof}
+	\step{c}{$p = q$}
+	\begin{proof}
+		\pf\ By trichotomy.
+	\end{proof}
+\end{proof}
+\step{6}{\case{$n < m$}}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Group Theory}
@@ -2912,6 +2950,7 @@ An \emph{Abelian group} $G$ consists of a set $G$ and a function $\cdot : G^2 \r
 \end{df}
 
 \begin{prop}
+\label{prop:Zgroup}
 The integers form an Abelian group under addition.
 \end{prop}
 
@@ -2943,6 +2982,31 @@ The inverse of an element in an Abelian group is unique.
 Given an integer $a$, we write $-a$ for the inverse of $a$ under addition. We write $b-a$ for $b + (-a)$.
 \end{df}
 
+\chapter{Ring Theory}
+
+\section{Integral Domains}
+
+\begin{df}[Integral Domain]
+An \emph{integral domain} consists of a set $D$ and two binary operations $+$, $\cdot$ on $D$ such that:
+\begin{itemize}
+\item
+$D$ is an Abelian group under $+$. Let us write 0 for its identity element.
+\item
+$\cdot$ is commutative and associative, and distributes over $+$.
+\item
+$\cdot$ has an identity element that is different from 0.
+\item
+For all $a,b \in D$, if $ab = 0$ then $a = 0$ or $b = 0$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+The integers $\mathbb{Z}$ form an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:timesZcomm}, \ref{prop:timesZassoc}, \ref{prop:timesZdist}, \ref{prop:timesZone}, \ref{prop:Zno_zero_div}, \ref{prop:Zgroup}. \qed
+\end{proof}
 \chapter{Complex Analysis}
 
 \begin{df}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  22 JUL 2023 18:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  22 JUL 2023 19:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -406,12 +406,12 @@ Chapter 5.
 [43
 
 ]
-Overfull \hbox (5.81142pt too wide) detected at line 2876
+Overfull \hbox (5.81142pt too wide) detected at line 2879
 []
  []
 
 [44]
-Overfull \hbox (10.26518pt too wide) detected at line 2890
+Overfull \hbox (10.26518pt too wide) detected at line 2894
 []
  []
 
@@ -423,43 +423,43 @@ Chapter 6.
 
 ]
 Chapter 7.
+[49] [50
+
+]
+Chapter 8.
 WARNING: proof step "e" (<2>7) already defined
-[49] [50]
-Overfull \hbox (68.70209pt too wide) detected at line 3085
+[51] [52]
+Overfull \hbox (68.70209pt too wide) detected at line 3149
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 3091
+Overfull \hbox (13.13249pt too wide) detected at line 3155
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
 
-[51] [52
+[53] [54
 
-] [53] [54]
-Chapter 8.
-[55
+] [55] [56]
+Chapter 9.
+[57
 
 ]
 WARNING: proof step "ii" (<3>3) already defined
-[56] [57] [58] [59] [60] [61] [62]
-Chapter 9.
-[63
+[58] [59] [60] [61] [62] [63] [64]
+Chapter 10.
+[65
 
-] [64]
-Underfull \vbox (badness 1939) has occurred while \output is active []
-
- [65]
-[66] [67] [68] [69] [70]
+] [66] [67] [68] [69] [70] [71] [72]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 4192
+Overfull \hbox (76.64789pt too wide) detected at line 4256
 []
  []
 
-[71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 5068--5069
+[73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85]
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 5132--5133
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -467,79 +467,76 @@ n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
-[84] [85] [86] [87]
-Overfull \hbox (91.49588pt too wide) detected at line 5325
+[86] [87] [88] [89]
+Overfull \hbox (91.49588pt too wide) detected at line 5389
 []
  []
 
-[88] [89] [90]
+[90] [91] [92]
 WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
-[91] [92] [93] [94] [95]
-Overfull \hbox (62.14355pt too wide) detected at line 5771
-[]
- []
-
-[96]
-Chapter 10.
-[97
-
-]
-WARNING: proof step "1" (<1>2) already defined
-
-Overfull \hbox (133.82387pt too wide) detected at line 5888
+[93] [94] [95] [96] [97]
+Overfull \hbox (62.14355pt too wide) detected at line 5835
 []
  []
 
 [98]
-Overfull \hbox (22.05334pt too wide) detected at line 5982
+Chapter 11.
+[99
+
+]
+WARNING: proof step "1" (<1>2) already defined
+
+Overfull \hbox (133.82387pt too wide) detected at line 5952
 []
  []
 
-[99] [100]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 6101--6102
-[]\OT1/cmr/bx/n/10 Proposition 10.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
+[100]
+Overfull \hbox (22.05334pt too wide) detected at line 6046
+[]
+ []
+
+[101] [102]
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 6165--6166
+[]\OT1/cmr/bx/n/10 Proposition 11.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
-[101]
-Overfull \hbox (14.47572pt too wide) detected at line 6127
+[103]
+Overfull \hbox (14.47572pt too wide) detected at line 6191
 []
  []
 
-[102] [103] [104
+[104] [105] [106
 
 ]
-Chapter 11.
-[105] [106]
+Chapter 12.
+[107] [108]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [107]
-[108]
-Overfull \hbox (68.12585pt too wide) detected at line 6449
+ [109]
+[110]
+Overfull \hbox (68.12585pt too wide) detected at line 6513
 []
  []
 
-[109] [110]
-Overfull \hbox (135.96497pt too wide) detected at line 6525
+[111] [112]
+Overfull \hbox (135.96497pt too wide) detected at line 6589
 []
  []
 
-[111] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+[113] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6004CCB7DE3CA41C5536EA62510F68E0;5513.
+(rerunfilecheck)             Checksum: CA0F5499B878869A3C4E64CD12D5E648;5762.
  ) 
 Here is how much of TeX's memory you used:
- 9690 strings out of 476091
- 143381 string characters out of 5794082
+ 9706 strings out of 476091
+ 143709 string characters out of 5794082
  1873330 words of memory out of 5000000
- 29371 multiletter control sequences out of 15000+600000
+ 29380 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,541b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -565,10 +562,10 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (111 pages, 554791 bytes).
+Output written on main.pdf (113 pages, 557659 bytes).
 PDF statistics:
- 1673 PDF objects out of 1728 (max. 8388607)
- 1277 compressed objects within 13 object streams
- 610 named destinations out of 1000 (max. 500000)
- 337 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1703 PDF objects out of 1728 (max. 8388607)
+ 1304 compressed objects within 14 object streams
+ 617 named destinations out of 1000 (max. 500000)
+ 353 words of extra memory for PDF output out of 10000 (max. 10000000)
 
