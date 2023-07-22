@@ -2786,9 +2786,25 @@ Addition on $\mathbb{Z}$ is associative.
 \pf\ $[(m,n)] + ([(p,q)] + [(r,s)]) = [(m+p+r,n+q+s)] = ([(m,n)] + [(p,q)]) + [(r,s)]$. \qed
 \end{proof}
 
-\begin{df}[Zero]
-The integer \emph{zero} is $0 := [(0,0)]$.
+\begin{prop}
+Given natural numbers $m$ and $n$, we have $[(m,0)] = [(n,0)]$ iff $m = n$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}
+We identify any natural number $n$ with the integer $[(n,0)]$.
 \end{df}
+
+\begin{prop}
+Addition on integers agrees with addition on natural numbers.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $[(m,0)] + [(n,0)] = [(m+n,0)]$. \qed
+\end{proof}
 
 \begin{prop}
 \label{prop:plusZzero}
@@ -2806,6 +2822,80 @@ For all $a \in \mathbb{Z}$, there exists $b \in \mathbb{Z}$ such that $a + b = 0
 
 \begin{proof}
 \pf\ $[(m,n)] + [(n,m)] = [(m+n,m+n)] = [(0,0)]$ \qed
+\end{proof}
+
+\begin{df}
+Define multiplication $\cdot$ on $\mathbb{Z}$ by: $[(m,n)][(p,q)] = [(mp+nq,mq+np)]$.
+
+We prove this is well defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$m + n' = n + m'$ and $p + q' = q + p'$} \prove{$mp + nq + m'q' + n'p' = mq + np + m'p' + n'q'$}}
+\step{2}{$mp + n'p = np + m'p$}
+\step{3}{$nq + m'q = mq + n'q$}
+\step{4}{$m'p + m'q' = m'q + m'p'$}
+\step{5}{$n'q + n'p' = n'p + n'q'$}
+\step{6}{$mp + n'p + nq + m'q + m'p + m'q' + n'q + n'p'
+= np + m'p + mq + n'q + m'q + m'p' + n'p + n'q'$}
+\step{7}{$mp + nq + m'q' + n'p' = mq + np + m'p' + n'q'$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:pluscancel}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Multiplication on integers agrees with multiplication on natural numbers.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $[(m,0)][(n,0)] = [(mn+0,m0+n0)] = [(mn,0)]$. \qed
+\end{proof}
+
+\begin{prop}
+Multiplication on $\mathbb{Z}$ is commutative.
+\end{prop}
+
+\begin{proof}
+\pf\ $[(m,n)][(p,q)] = [(mp+nq,mq+np)] = [(pm+qn,pn+qm)] = [(p,q)][(m,n)]$. \qed
+\end{proof}
+
+\begin{prop}
+Multiplication on $\mathbb{Z}$ is associative.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[(m,n)]([(p,q)][(r,s)]) & = [(m,n)][(pr+qs,ps+qr)] \\
+& = [(mpr+mqs+nps+nqr,mps+mqr+npr+nqs)] \\
+& = [(mp+nq,mq+np)][(r,s)] \\
+& = ([(m,n)][(p,q)])[(r,s)] & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Multiplication distributes over addition.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[(m,n)]([(p,q)]+[(r,s)]) & = [(m,n)][(p+r,q+s)] \\
+& = [(mp+mr+nq+ns, np+nr+mq+ms)] \\
+[(m,n)][(p,q)] + [(m,n)][(r,s)] & = [(mp+nq,mq+np)] + [(mr+ns,ms+nr)] \\
+& = [(mp+nq+mr+ns,mq+np+ms+nr)] & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any integer $a$ we have $a1 = a$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $[(m,n)][(1,0)] = [(m1+n0,m0+n1)] = [(m,n)]$. \qed
 \end{proof}
 
 \chapter{Group Theory}
@@ -2828,6 +2918,30 @@ The integers form an Abelian group under addition.
 \begin{proof}
 \pf\ Proposition \ref{prop:plusZcomm}, \ref{prop:plusZassoc}, \ref{prop:plusZzero}, \ref{prop:plusZinv}. \qed
 \end{proof}
+
+\begin{prop}
+The inverse of an element in an Abelian group is unique.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$b$ and $b'$ are inverses of $a$.}}
+\step{2}{$b = b'$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		b & = be \\
+		& = bab' \\
+		& = eb' \\
+		& = b'
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Given an integer $a$, we write $-a$ for the inverse of $a$ under addition. We write $b-a$ for $b + (-a)$.
+\end{df}
 
 \chapter{Complex Analysis}
 
