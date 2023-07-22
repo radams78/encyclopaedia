@@ -2961,6 +2961,14 @@ We prove this is well-defined.
 \end{proof}
 
 \begin{prop}
+The ordering on the integers agrees with the ordering on the natural numbers.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $[(m,0)] < [(n,0)]$ iff $m < n$. \qed
+\end{proof}
+
+\begin{prop}
 $<$ is a linear order on $\mathbb{Z}$.
 \end{prop}
 
@@ -3012,6 +3020,108 @@ For any integers $a$, $b$ and $c$, we have $a < b$ if and only if $a + c < b + c
 \step{2}{If $a + c < b + c$ then $a < b$.}
 \begin{proof}
 	\pf\ From \stepref{1} and Proposition \ref{prop:strictmonotoneinv}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $a$, $b$ and $c$ be integers. If $0 < c$, then $a < b$ if and only if $ac < bc$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$c = [(r,s)]$}}
+\step{2}{\assume{$0 < c$}}
+\step{3}{$s < r$}
+\step{4}{For all integers $a$ and $b$, if $a < b$ then $ac < bc$}
+\begin{proof}
+	\step{1}{\pflet{$a = [(m,n)]$, $b = [(p,q)]$.}}
+	\step{a}{\assume{$a < b$}}
+	\step{b}{$m + q < n + p$}
+	\step{w}{$(m+q)r + (p+n)s < (m+q)s + (p+n)r$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:intmultlemma}, \stepref{3}, \stepref{b}.
+	\end{proof}
+	\step{x}{$mr + ns + ps + qr < ms + nr + pr + qs$}
+	\step{y}{$[(mr+ns,ms+nr)] < [(pr+qs,ps+qr)]$}
+	\step{z}{$ac < bc$}
+\end{proof}
+\step{5}{For all integers $a$ and $b$, if $ac < bc$ then $a < b$}
+\begin{proof}
+	\pf\ From \stepref{4} and Proposition \ref{prop:strictmonotoneinv}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+\label{cor:timesZcancel}
+For any integers $a$, $b$ and $C$, if $ac = bc$ and $c \neq 0$ then $a = b$.
+\end{cor}
+
+\section{The Rationals}
+
+\begin{df}[Rational Numbers]
+The set $\mathbb{Q}$ of \emph{rational numbers} is the quotient set $(\mathbb{Z} \times (\mathbb{Z} - \{0\})) / \sim$, where $(a,b) \sim (c,d)$ iff $ad = bc$.
+
+We prove this is an equivalence relation on $\mathbb{Z} \times (\mathbb{Z} - \{0\})$.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ We always have $ab = ba$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ If $ad = bc$ then $cb = da$.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$(a,b) \sim (c,d) \sim (e,f)$}}
+	\step{b}{$ad = bc$ and $cf = de$}
+	\step{c}{$adf = bde$}
+	\begin{proof}
+		\pf\ $adf = bcf = bde$
+	\end{proof}
+	\step{d}{$af = be$}
+	\begin{proof}
+		\pf\ Corollary \ref{cor:timesZcancel}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any integers $a$ and $b$, we have $[(a,1)] = [(b,1)]$ iff $a = b$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+Henceforth we identify any integer $a$ with the rational number $[(a,1)]$.
+
+\begin{df}
+Define \emph{addition} $+$ on $\mathbb{Q}$ by $[(a,b)] + [(c,d)] = [(ad + bc, bd)]$.
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{If $b \neq 0$ and $d \neq 0$ then $bd \neq 0$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Zno_zero_div}.
+\end{proof}
+\step{2}{If $ab' = a'b$ and $cd' = c'd$ then $(ad+bc)b'd' = (a'd' + b'c')bd$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(ad+bc)b'd' & = ab'dd' + bb'cd' \\
+		& = a'bdd' + bb'c'd \\
+		& = (a'd' + b'c')bd
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
@@ -3121,15 +3231,14 @@ In any integral domain, $0x = 0$.
 \end{proof}
 
 \begin{prop}
-In any integral domain, $(-1)x = -x$.
+In any integral domain, $(-a)b = -(ab)$.
 \end{prop}
 
 \begin{proof}
 \pf
 \begin{align*}
-x + (-1)x & = 1x + (-1) x \\
-& = (1 + (-1))x \\
-& = 0x \\
+ab + (-a)b & = (a + (-a))b \\
+& = 0b \\
 & = 0 & (\text{Proposition \ref{prop:timeszero}}) \qed
 \end{align*}
 \end{proof}
