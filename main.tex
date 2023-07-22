@@ -2151,6 +2151,34 @@ A natural number $n$ is \emph{even} iff there exists $m \in \mathbb{N}$ such tha
 A natural number $n$ is \emph{odd} iff there exists $p \in \mathbb{N}$ such that $n = 2p+1$.
 \end{df}
 
+\begin{prop}[Division Algorithm]
+Let $m$ be a natural number and $d$ a nonzero natural number. Then there exist natural numbers $q$ and $r$ such that $m = dq + r$ and $r < d$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$d$ be a nonzero natural number.}}
+\step{2}{$\exists q,r. 0 = dq+r \wedge r < d$}
+\begin{proof}
+	\pf\ Take $q = r = 0$.
+\end{proof}
+\step{3}{For any natural number $m$, if $\exists q,r. m = dq+r \wedge r < d$ then $\exists q,r. m^+ = dq+r \wedge r < d$}
+\begin{proof}
+	\step{a}{\pflet{$m$ be a natural number.}}
+	\step{b}{\assume{$m = dq + r$ and $r < d$}}
+	\step{c}{$r^+ \leq d$}
+	\step{d}{\case{$r^+ < d$}}
+	\begin{proof}
+		\pf\ In this case we have $m^+ = dq + r^+$.
+	\end{proof}
+	\step{e}{\case{$r^+ = d$}}
+	\begin{proof}
+		\pf\ In this case we have $m^+ = dq^+ + 0$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}
 Every natural number is either even or odd.
 \end{prop}
@@ -2427,6 +2455,102 @@ For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq 
 	\qed
 \end{proof}
 
+\begin{thm}[Well-Ordering of $\mathbb{N}$]
+Every nonempty subset of $\mathbb{N}$ has a least element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A \subseteq \mathbb{N}$}}
+\step{2}{\assume{$A$ has no least element.} \prove{$A = \emptyset$}}
+\step{3}{$\forall n. \forall m < n. m \notin A$}
+\begin{proof}
+	\step{a}{$\forall m < 0. m \notin A$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m < n. m \notin A$, then $\forall m < n^+. m \notin A$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m < n. m \notin A$}}
+		\step{iii}{$n \notin A$}
+		\begin{proof}
+			\pf\ If $n \in A$ then $n$ is the least element in $A$.
+		\end{proof}
+		\step{iv}{$\forall m < n^+. m \notin A$}
+	\end{proof}
+\end{proof}
+\step{4}{$A = \emptyset$}
+\qed
+\end{proof}
+
+\begin{cor}
+There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
+\end{cor}
+
+\begin{thm}[Strong Induction Principle for $\mathbb{N}$]
+Let $A \subseteq \mathbb{N}$. Assume that, for every $n \in \mathbb{N}$, if $\forall m < n. m \in A$ then $n \in A$. Then $A = \mathbb{N}$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $A \neq \mathbb{N}$}}
+\step{2}{\pflet{$n$ be the least element of $\mathbb{N} - A$}}
+\begin{proof}
+	\pf\ Since $\mathbb{N}$ is well ordered.
+\end{proof}
+\step{3}{$\forall m < n. m \in A$}
+\step{4}{$n \notin A$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the hypothesis of the theorem.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$, we have $m < n$ if and only if there exists $p \in \mathbb{N}$ such that $n = m + p^+$.
+\end{prop}
+
+\begin{proof}
+	\pf
+	\step{1}{For any natural numbers $m$ and $p$ we have $m < m + p^+$.}
+	\begin{proof}
+		\step{a}{$\forall m. m < m + 0^+$}
+		\begin{proof}
+			\pf\ Since $m \in m^+ = m+0^+$.
+		\end{proof}
+		\step{b}{For any natural number $p$, if $\forall m. m < m + p^+$ then $\forall m. m < m + p^{++}$}
+		\begin{proof}
+			\pf\ If $m \in m + p^+$ then $m \in (m + p^+)^+ = m + p^{++}$.
+		\end{proof}
+	\end{proof}
+	\step{2}{For any natural numbers $m$ and $n$, if $m < n$ then there exists $p$ such that $n = m + p^+$.}
+	\begin{proof}
+		\step{a}{$\forall m < 0. \exists p. 0 = m + p^+$}
+		\begin{proof}
+			\pf\ Vacuous.
+		\end{proof}
+		\step{b}{For any natural number $n$, if $\forall m < n. \exists p. n = m + p^+$, then $\forall m < n^+. \exists p. n^+ = m + p^+$.}
+		\begin{proof}
+			\step{i}{\pflet{$n$ be a natural number.}}
+			\step{ii}{\assume{$\forall m < n. \exists p. n = m + p^+$}}
+			\step{iii}{\pflet{$m < n^+$}}
+			\step{iv}{$m < n$ or $m = n$}
+			\step{v}{\case{$m < n$}}
+			\begin{proof}
+				\step{one}{\pick\ $p$ such that $n = m + p^+$}
+				\step{two}{$n^+ = m + p^{++}$}
+			\end{proof}
+			\step{vi}{\case{$m = n$}}
+			\begin{proof}
+				\pf\ Then $n^+ = m + 0^+$.
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\qed
+\end{proof}
+
 \begin{thm}
 \label{thm:pluslt}
 For natural numbers $m$, $n$ and $p$, we have $m < n$ iff $m + p < n + p$.
@@ -2489,59 +2613,6 @@ For natural numbers $m$, $n$ and $p$, if $mp = np$ and $p \neq 0$ then $m = n$.
 
 \begin{proof}
 	\pf\ By trichotomy. \qed
-\end{proof}
-
-\begin{thm}[Well-Ordering of $\mathbb{N}$]
-Every nonempty subset of $\mathbb{N}$ has a least element.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A \subseteq \mathbb{N}$}}
-\step{2}{\assume{$A$ has no least element.} \prove{$A = \emptyset$}}
-\step{3}{$\forall n. \forall m < n. m \notin A$}
-\begin{proof}
-	\step{a}{$\forall m < 0. m \notin A$}
-	\begin{proof}
-		\pf\ Vacuous.
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m < n. m \notin A$, then $\forall m < n^+. m \notin A$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m < n. m \notin A$}}
-		\step{iii}{$n \notin A$}
-		\begin{proof}
-			\pf\ If $n \in A$ then $n$ is the least element in $A$.
-		\end{proof}
-		\step{iv}{$\forall m < n^+. m \notin A$}
-	\end{proof}
-\end{proof}
-\step{4}{$A = \emptyset$}
-\qed
-\end{proof}
-
-\begin{cor}
-There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
-\end{cor}
-
-\begin{thm}[Strong Induction Principle for $\mathbb{N}$]
-Let $A \subseteq \mathbb{N}$. Assume that, for every $n \in \mathbb{N}$, if $\forall m < n. m \in A$ then $n \in A$. Then $A = \mathbb{N}$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $A \neq \mathbb{N}$}}
-\step{2}{\pflet{$n$ be the least element of $\mathbb{N} - A$}}
-\begin{proof}
-	\pf\ Since $\mathbb{N}$ is well ordered.
-\end{proof}
-\step{3}{$\forall m < n. m \in A$}
-\step{4}{$n \notin A$}
-\qedstep
-\begin{proof}
-	\pf\ This contradicts the hypothesis of the theorem.
-\end{proof}
-\qed
 \end{proof}
 
 \chapter{Complex Analysis}
