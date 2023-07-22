@@ -2617,6 +2617,7 @@ For natural numbers $m$, $n$ and $p$, if $mp = np$ and $p \neq 0$ then $m = n$.
 \end{proof}
 
 \begin{prop}
+\label{prop:intltlemma}
 Let $m$, $n$, $p$, $q$ be natural numbres. Assume $m + n = p + q$. Then $m < p$ if and only if $q < n$.
 \end{prop}
 
@@ -2936,6 +2937,85 @@ For any integeres $a$ and $b$, if $ab = 0$ then $a = 0$ or $b = 0$.
 \qed
 \end{proof}
 
+\begin{df}
+Define $<$ on $\mathbb{Z}$ by $[(m,n)] < [(p,q)]$ if and only if $m + q < n + p$.
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$m + n' = n + m'$ and $p + q' = q + p'$.} \prove{$m + q < n + p$ if and only if $m' + q' < n' + p'$}}
+\step{2}{$m + q < n + p$ if and only if $m' + q' < n' + p'$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m + q < n + p & \Leftrightarrow m + n' + q < n + n' + p & (\text{Theorem \ref{thm:pluslt}}) \\
+		& \Leftrightarrow m' + n + q < n + n' + p \\
+		& \Leftrightarrow m' + q < n' + p & (\text{Theorem \ref{thm:pluslt}}) \\
+		& \Leftrightarrow m' + q + p' < n' + p + p' & (\text{Theorem \ref{thm:pluslt}}) \\
+		& \Leftrightarrow m' + q' + p < n' + p + p' \\
+		& \Leftrightarrow m' + q' < n' + p' & (\text{Theorem \ref{thm:pluslt}}) & \qed \\
+	\end{align*}
+\end{proof}
+\end{proof}
+
+\begin{prop}
+$<$ is a linear order on $\mathbb{Z}$.
+\end{prop}
+
+\begin{proof}
+	\pf
+	\step{1}{$<$ is irreflexive.}
+	\begin{proof}
+		\pf\ We never have $m + n < m + n$.
+	\end{proof}
+	\step{2}{$<$ is transitive.}
+	\begin{proof}
+		\step{a}{\assume{$[(m,n)] < [(p,q)] < [(r,s)]$}}
+		\step{b}{$m + q < n + p$ and $p + s < q + r$}
+		\step{c}{$m + q + s < n + q + r$}
+		\begin{proof}
+			\pf\ $m + q + s < n + p + s < n + q + r$
+		\end{proof}
+		\step{d}{$m + s < n + r$}
+		\begin{proof}
+			\pf\ Theorem \ref{thm:pluslt}.
+		\end{proof}
+	\end{proof}
+	\step{3}{$<$ is total.}
+	\begin{proof}
+		\pf\ Given natural numbers $m$, $n$, $p$ and $q$, either $m +q < n + p$, or $m + q = n + p$, or $n + p < m + q$.
+	\end{proof}
+	\qed
+\end{proof}
+
+\begin{df}[Positive]
+An integer $a$ is \emph{positive} iff $a > 0$.
+\end{df}
+
+\begin{thm}
+For any integers $a$, $b$ and $c$, we have $a < b$ if and only if $a + c < b + c$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $a < b$ then $a + c < b + c$.}
+\begin{proof}
+	\step{a}{\pflet{$a = [(m,n)]$, $b = [(p,q)]$ and $c = [(r,s)]$.}}
+	\step{b}{\assume{$a < b$}}
+	\step{c}{$m + q < n + p$}
+	\step{d}{$m + r + q + s < n + r + p + s$}
+	\step{e}{$[(m+r,n+s)] < [(p+r,q+s)]$}
+	\step{f}{$a + c < b + c$}
+\end{proof}
+\step{2}{If $a + c < b + c$ then $a < b$.}
+\begin{proof}
+	\pf\ From \stepref{1} and Proposition \ref{prop:strictmonotoneinv}.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Group Theory}
 
 \section{Abelian Groups}
@@ -2979,8 +3059,26 @@ The inverse of an element in an Abelian group is unique.
 \end{proof}
 
 \begin{df}
-Given an integer $a$, we write $-a$ for the inverse of $a$ under addition. We write $b-a$ for $b + (-a)$.
+We write $x^{-1}$ for the inverse of $x$.
+
+We may also say we are writing an Abelian group \emph{additively}, meaning we write $a + b$ for $ab$, $0$ for $e$ and $-a$ for $a^{-1}$. In this case we write $a-b$ for $ab^{-1}$.
 \end{df}
+
+\begin{prop}
+\label{prop:Abgroupcancel}
+In any Abelian group, if $ab = ac$ then $b = c$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+b & = eb \\
+& = a^{-1}ab \\
+& = a^{-1}ac \\
+& = ec \\
+& = c & \qed
+\end{align*}
+\end{proof}
 
 \chapter{Ring Theory}
 
@@ -3007,6 +3105,35 @@ The integers $\mathbb{Z}$ form an integral domain.
 \begin{proof}
 \pf\ Propositions \ref{prop:timesZcomm}, \ref{prop:timesZassoc}, \ref{prop:timesZdist}, \ref{prop:timesZone}, \ref{prop:Zno_zero_div}, \ref{prop:Zgroup}. \qed
 \end{proof}
+
+\begin{prop}
+\label{prop:timeszero}
+In any integral domain, $0x = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(0+0)x & = 0x \\
+\therefore 0x + 0x & = 0x + 0 \\
+\therefore 0x & = 0 & (\text{Proposition \ref{prop:Abgroupcancel}}) \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+In any integral domain, $(-1)x = -x$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x + (-1)x & = 1x + (-1) x \\
+& = (1 + (-1))x \\
+& = 0x \\
+& = 0 & (\text{Proposition \ref{prop:timeszero}}) \qed
+\end{align*}
+\end{proof}
+
 \chapter{Complex Analysis}
 
 \begin{df}
