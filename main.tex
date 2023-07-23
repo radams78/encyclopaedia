@@ -3995,6 +3995,75 @@ x & \text{if } 0 \leq x \\
 \end{cases} \]
 \end{df}
 
+\begin{df}[Multiplication]
+Define \emph{multiplication} $\cdot$ on $\mathbb{R}$ as follows:
+\begin{itemize}
+\item If $x$ and $y$ are non-negative then
+\[ xy = 0 \cup \{ rs \mid 0 \leq r \in x \wedge 0 \leq s \in y \} \enspace . \]
+\item If $x$ and $y$ are both negative then
+\[ xy = (-x)(-y) \enspace . \]
+\item If one of $x$ and $y$ is negative and one is non-negative then
+\[ xy = -(|x||y|) \enspace .\]
+\end{itemize}
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$ and $y$ be non-negative reals.} \prove{$xy$ is real.}}
+\step{2}{$xy \neq \emptyset$}
+\begin{proof}
+	\pf\ Since $-1 \in xy$.
+\end{proof}
+\step{3}{$xy \neq \mathbb{Q}$}
+\begin{proof}
+	\step{a}{\pick\ $r \notin x$ and $s \notin y$ \prove{$rs \notin xy$}}
+	\step{b}{$0 \leq r$ and $0 \leq s$}
+	\begin{proof}
+		\pf\ Since $0 \subseteq x$ and $0 \subseteq y$.
+	\end{proof}
+	\step{c}{\assume{for a contradiction $rs \in xy$}}
+	\step{d}{\pick\ $r'$ and $s'$ such that $0 \leq r' \in x$, $0 \leq s' \in y$ and $rs = r's'$}
+	\step{e}{$r' < r$}
+	\step{f}{$s' < s$}
+	\step{g}{$r's' < rs$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{4}{$xy$ is closed downwards.}
+\begin{proof}
+	\step{a}{\pflet{$q \in xy$ and $r < q$}}
+	\step{b}{\case{$q \in 0$}}
+	\begin{proof}
+		\pf\ Then $r < q < 0$ so $r \in xy$
+	\end{proof}
+	\step{c}{\case{$q = s_1 s_2$ where $0 \leq s_1 \in x$ and $0 \leq s_2 \in y$}}
+	\begin{proof}
+		\step{i}{\assume{w.l.o.g. $0 \leq r$}}
+		\step{ii}{$0 < s_1$ and $0 < s_2$}
+		\step{iii}{$r / s_2 < s_1$}
+		\step{iv}{$r / s_2 \in x$}
+		\step{v}{$r = (r/s_2)s_2 \in xy$}
+	\end{proof}
+\end{proof}
+\step{5}{$xy$ has no greatest element.}
+\begin{proof}
+	\step{a}{\pflet{$q \in xy$}}
+	\step{b}{\case{$q \in 0$}}
+	\begin{proof}
+		\pf\ $q < q/2 \in 0$
+	\end{proof}
+	\step{c}{\case{$q = rs$ where $0 \leq r \in x$ and $0 \leq s \in y$}}
+	\begin{proof}
+		\step{i}{\pick\ $r'$ and $s'$ with $r < r' \in x$ and $s < s' \in y$}
+		\step{ii}{$q < r's' \in xy$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Complex Analysis}
 
 \begin{df}

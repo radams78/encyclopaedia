@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  23 JUL 2023 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  23 JUL 2023 19:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -435,32 +435,32 @@ Overfull \hbox (10.26518pt too wide) detected at line 3189
 
 [53] [54]
 WARNING: proof step "1" (<2>1) already defined
-[55] [56] [57] [58] [59] [60] [61] [62] [63] [64]
+[55] [56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66
+
+]
 Chapter 9.
 WARNING: proof step "e" (<2>7) already defined
-[65
-
-] [66]
-Overfull \hbox (68.70209pt too wide) detected at line 4137
+[67] [68]
+Overfull \hbox (68.70209pt too wide) detected at line 4206
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 4143
+Overfull \hbox (13.13249pt too wide) detected at line 4212
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
 
-[67] [68
+[69] [70
 
-] [69] [70]
+] [71] [72]
 Chapter 10.
-[71
+[73
 
 ]
 WARNING: proof step "ii" (<3>3) already defined
-[72] [73] [74] [75]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 4563--4564
+[74] [75] [76] [77]
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 4632--4633
 []\OT1/cmr/bx/n/10 Proposition 10.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -468,19 +468,19 @@ ch that $[][] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[]\OMS/cmsy/m/n/10 j[] \OML/c
 mm/m/it/10 <
  []
 
-[76] [77] [78]
+[78] [79] [80]
 Chapter 11.
-[79
+[81
 
-] [80] [81] [82] [83] [84] [85] [86]
+] [82] [83] [84] [85] [86] [87] [88]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 5244
+Overfull \hbox (76.64789pt too wide) detected at line 5313
 []
  []
 
-[87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 6120--6121
+[89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 6189--6190
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -488,74 +488,74 @@ n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
-[100] [101] [102] [103]
-Overfull \hbox (91.49588pt too wide) detected at line 6377
+[102] [103] [104] [105]
+Overfull \hbox (91.49588pt too wide) detected at line 6446
 []
  []
 
-[104] [105] [106]
+[106] [107] [108]
 WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
-[107] [108] [109] [110] [111]
-Overfull \hbox (62.14355pt too wide) detected at line 6823
-[]
- []
-
-[112]
-Chapter 12.
-[113
-
-]
-WARNING: proof step "1" (<1>2) already defined
-
-Overfull \hbox (133.82387pt too wide) detected at line 6940
+[109] [110] [111] [112] [113]
+Overfull \hbox (62.14355pt too wide) detected at line 6892
 []
  []
 
 [114]
-Overfull \hbox (22.05334pt too wide) detected at line 7034
+Chapter 12.
+[115
+
+]
+WARNING: proof step "1" (<1>2) already defined
+
+Overfull \hbox (133.82387pt too wide) detected at line 7009
 []
  []
 
-[115] [116]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 7153--7154
+[116]
+Overfull \hbox (22.05334pt too wide) detected at line 7103
+[]
+ []
+
+[117] [118]
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 7222--7223
 []\OT1/cmr/bx/n/10 Proposition 12.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
-[117]
-Overfull \hbox (14.47572pt too wide) detected at line 7179
+[119]
+Overfull \hbox (14.47572pt too wide) detected at line 7248
 []
  []
 
-[118] [119] [120
+[120] [121] [122
 
 ]
 Chapter 13.
-[121] [122]
+[123] [124]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [123]
-[124]
-Overfull \hbox (68.12585pt too wide) detected at line 7501
+ [125]
+[126]
+Overfull \hbox (68.12585pt too wide) detected at line 7570
 []
  []
 
-[125] [126]
-Overfull \hbox (135.96497pt too wide) detected at line 7577
+[127] [128]
+Overfull \hbox (135.96497pt too wide) detected at line 7646
 []
  []
 
-[127] (./main.aux)
+[129] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CE33E12848252302C73208CDB585A887;6357.
  ) 
 Here is how much of TeX's memory you used:
- 9801 strings out of 476091
- 144629 string characters out of 5794082
+ 9804 strings out of 476091
+ 144654 string characters out of 5794082
  1873330 words of memory out of 5000000
  29400 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
@@ -583,10 +583,10 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (127 pages, 592365 bytes).
+Output written on main.pdf (129 pages, 594870 bytes).
 PDF statistics:
- 1914 PDF objects out of 2073 (max. 8388607)
- 1458 compressed objects within 15 object streams
- 692 named destinations out of 1000 (max. 500000)
+ 1923 PDF objects out of 2073 (max. 8388607)
+ 1465 compressed objects within 15 object streams
+ 695 named destinations out of 1000 (max. 500000)
  393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
