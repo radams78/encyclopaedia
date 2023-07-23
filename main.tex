@@ -2841,12 +2841,16 @@ In any integral domain, if $ab = ac$ and $a \neq 0$ then $b = c$.
 \section{Fields}
 
 \begin{df}[Field]
-A \emph{field} $F$ is an integral domain such that, for all $x \in F$, if $x \neq 0$ then there exists $y \in F$ such that $xy = 1$.
+A \emph{field} $F$ is an integral domain such that $0 \neq 1$ and, for all $x \in F$, if $x \neq 0$ then there exists $y \in F$ such that $xy = 1$.
 \end{df}
 
 \begin{prop}
 In any field $F$, we have $F - \{0\}$ is an Abelian group under multiplication.
 \end{prop}
+
+\begin{proof}
+\pf\ Immediate from the definition. \qed
+\end{proof}
 
 \begin{df}[Field of Fractions]
 Let $D$ be an integral domain. The \emph{field of fractions} of $D$ is the quotient set $F = (D \times (D - \{0\})) / \sim$ where
@@ -2967,6 +2971,32 @@ We prove this is a field.
 \pf\ If $qr = 0$ and $q \neq 0$, pick $q' \in F$ such that $qq' = 1$. Then $r = 1r = q'qr = q' 0 = 0$.
 \end{proof}
 \qed
+\end{proof}
+
+\section{Ordered Fields}
+
+\begin{df}[Ordered Field]
+An \emph{ordered field} consists of a field $F$ with a linear order $<$ on $F$ such that:
+\begin{itemize}
+\item for all $x,y,z \in F$, we have $x < y$ if and only if $x + z < y + z$.
+\item for all $x,y,z \in F$, if $0 < z$ then we have $x < y$ if and only if $xz < yz$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+In any ordered field, $0 < 1$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $1 < 0$ then we have $0 < -1$ and so $0 < (-1)(-1) = 1$, which is a contradiction. \qed
+\end{proof}
+
+\begin{prop}
+The ordering on an ordered field is dense; that is, if $x < y$ then there exists $z$ such that $x < z < y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Take $z = (x + y) / 2$. \qed
 \end{proof}
 
 \chapter{Number Systems}
@@ -3376,6 +3406,101 @@ We prove this is well-defined.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+The ordering on the rationals agrees with the ordering on the integers.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $[(a,1)] < [(b,1)]$ if and only if $a < b$. \qed
+\end{proof}
+
+\begin{prop}
+The relation $<$ is a linear ordering on $\mathbb{Q}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$<$ is irreflexive.}
+\begin{proof}
+	\pf\ We never have $ab < ab$.
+\end{proof}
+\step{2}{$<$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$[(a,b)] < [(c,d)] < [(e,f)]$ where $b$, $d$ and $f$ are positive.}}
+	\step{b}{$ad < bc$ and $cf < de$}
+	\step{c}{$adf < bde$}
+	\begin{proof}
+		\pf\ $adf < bcf < bde$
+	\end{proof}
+	\step{d}{$af < be$}
+\end{proof}
+\step{3}{$<$ is total.}
+\begin{proof}
+	\pf\ For any integers $a$, $b$, $c$, $d$, we have $ad < bc$ or $ad = bc$ or $bc < ad$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any rationals $r$, $s$ and $t$, we have $r < s$ if and only if $r + t < s + t$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a$, $b$, $c$, $d$, $e$, $f$ be integers with $b$, $d$ and $f$ positive.}}
+\step{2}{$[(a,b)] + [(e,f)] < [(c,d)] + [(e,f)]$ if and only if $[(a,b)] < [(c,d)]$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		[(a,b)] + [(e,f)] < [(c,d)] + [(e,f)] & \Leftrightarrow [(af + be, bf)] < [(cf + de, df)] \\
+		& \Leftrightarrow (af + be) df < (cf+de)bf \\
+		& \Leftrightarrow afdf + bedf < cfbf + debf \\
+		& \Leftrightarrow afdf < cfbf \\
+		& \Leftrightarrow ad < bc \\
+		& \Leftrightarrow [(a,b)] < [(c,d)]
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any rational $r$, we have $r < 0$ if and only if $0 < -r$.
+\end{cor}
+
+\begin{df}[Absolute Value]
+For any rational $r$, the \emph{absolute value} of $r$ is defined by
+\[ |r| := \begin{cases}
+-r & \text{if } 0 < -r \\
+r & \text{otherwise}
+\end{cases} \]
+\end{df}
+
+\begin{prop}
+For any rationals $r$, $s$ and $t$, if $t$ is positive then $r < s$ iff $rt < st$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r = [(a,b)]$, $s = [(c,d)]$ and $t = [(e,f)]$ where $b$, $d$ and $f$ are positive.}}
+\step{2}{\assume{$0 < t$}}
+\step{3}{$e > 0$}
+\step{4}{$rt < st$ iff $r < s$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		rt < st & \Leftrightarrow [(ae,bf)] < [(ce,df)]  \\
+		& \Leftrightarrow aedf < cebf \\
+		& \Leftrightarrow ad < bc \\
+		& \Leftrightarrow r < s
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The rationals form an ordered field.
+\end{cor}
 
 \chapter{Complex Analysis}
 
