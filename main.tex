@@ -1207,6 +1207,18 @@ Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A 
 \end{proof}
 \end{proof}
 
+\begin{df}[Upper Bound]
+Let $\mathbf{R}$ be a linear ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
+\end{df}
+
+\begin{df}[Bounded]
+Let $\mathbf{R}$ be a linear ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded above} iff it has an upper bound.
+\end{df}
+
+\begin{df}[Least Upper Bound]
+Let $\mathbf{R}$ be a linear ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $s \in \mathbf{A}$. Then $s$ is the \emph{least upper bound} or \emph{supremum} of $\mathbf{B}$ iff $s$ is an upper bound for $\mathbf{B}$ and, for every upper bound $u$ for $\mathbf{B}$, we have $s \leq u$.
+\end{df}
+
 \chapter{Functions}
 
 \section{Functions}
@@ -3501,6 +3513,116 @@ For any rationals $r$, $s$ and $t$, if $t$ is positive then $r < s$ iff $rt < st
 \begin{cor}
 The rationals form an ordered field.
 \end{cor}
+
+\section{The Real Numbers}
+
+\begin{df}[Cauchy Sequence]
+A \emph{Cauchy sequence} is a sequence $(q_n)$ of rationals such that, for every positive rational $\epsilon$, there exists $k \in \mathbb{N}$ such that $\forall m,n > k. |q_m - q_n| < \epsilon$.
+\end{df}
+
+%TODO: Cauchy sequences modulo $\sim$ form the reals.
+
+\begin{df}[Dedekind Cut]
+A \emph{Dedekind cut} is a set $x \subseteq \mathbb{Q}$ such that:
+\begin{enumerate}
+\item $\emptyset \neq x \neq \mathbb{Q}$
+\item $x$ is closed downwards.
+\item $x$ has no greatest member.
+\end{enumerate}
+
+The set $\mathbb{R}$ of \emph{real numbers} is the set of Dedekind cuts.
+\end{df}
+
+\begin{df}
+Define the ordering $<$ on $\mathbb{R}$ by: $x < y$ iff $x \subsetneq y$.
+\end{df}
+
+\begin{prop}
+The ordering $<$ is a linear ordering on $\mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$<$ is irreflexive.}
+\begin{proof}
+	\pf\ No set is a proper subset of itself.
+\end{proof}
+\step{2}{$<$ is transitive.}
+\begin{proof}
+	\pf\ Since the relationship $\subsetneq$ is transitive on the class of all sets.
+\end{proof}
+\step{3}{$<$ is total.}
+\begin{proof}
+	\step{a}{\pflet{$x$, $y$ be Dedekind cuts.}}
+	\step{b}{\assume{$x \nsubseteq y$} \prove{$y \subsetneq x$}}
+	\step{c}{\pick\ $q \in x$ such that $q \notin y$}
+	\step{d}{\pflet{$r \in y$} \prove{$r \in x$}}
+	\step{e}{$q \not\leq r$}
+	\begin{proof}
+		\pf\ Since $y$ is closed downwards.
+	\end{proof}
+	\step{f}{$r < q$}
+	\step{g}{$r \in x$}
+	\begin{proof}
+		\pf\ Since $x$ is closed downwards.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Any bounded nonempty subset of $\mathbb{R}$ has a least upper bound.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a bounded nonempty subset of $\mathbb{R}$.}}
+\step{2}{$\bigcup A$ is a Dedekind cut.}
+\begin{proof}
+	\step{a}{$\bigcup A \neq \emptyset$}
+	\begin{proof}
+		\step{i}{\pick $x \in A$}
+		\step{ii}{\pick\ $q \in x$}
+		\step{iii}{$q \in \bigcup A$}
+	\end{proof}
+	\step{b}{$\bigcup A \neq \mathbb{Q}$}
+	\begin{proof}
+		\step{i}{\pick\ an upper bound $u$ for $A$}
+		\step{ii}{\pick\ $q \notin u$ \prove{$q \notin \bigcup A$}}
+		\step{iii}{\assume{for a contradiction $q \in \bigcup A$}}
+		\step{iv}{\pick\ $x \in A$ such that $q \in x$}
+		\step{v}{$x \leq u$}
+		\step{vi}{$q \in u$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{c}{$\bigcup A$ is closed downwards.}
+	\begin{proof}
+		\step{i}{\pflet{$q \in \bigcup A$ and $r < q$}}
+		\step{ii}{\pick\ $x \in A$ such that $q \in x$}
+		\step{iii}{$r \in x$}
+		\step{iv}{$r \in \bigcup A$}
+	\end{proof}
+	\step{d}{$\bigcup A$ has no greatest element.}
+	\begin{proof}
+		\step{i}{\pflet{$q \in \bigcup A$}}
+		\step{ii}{\pick\ $x \in A$ such that $q \in x$}
+		\step{iii}{\pick\ $r \in x$ such that $q < r$}
+		\step{iv}{$r \in \bigcup A$}
+	\end{proof}
+\end{proof}
+\step{3}{$\bigcup A$ is an upper bound for $A$.}
+\begin{proof}
+	\pf\ For all $x \in A$ we have $x \subseteq \bigcup A$.
+\end{proof}
+\step{4}{For any upper bound $u$ for $\bigcup A$ we have $\bigcup A \leq u$.}
+\begin{proof}
+	\pf\ If $\forall x \in A. x \subseteq u$ we have $\bigcup A \subseteq u$.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Complex Analysis}
 
