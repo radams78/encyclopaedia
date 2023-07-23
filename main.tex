@@ -3533,9 +3533,92 @@ A \emph{Dedekind cut} is a set $x \subseteq \mathbb{Q}$ such that:
 The set $\mathbb{R}$ of \emph{real numbers} is the set of Dedekind cuts.
 \end{df}
 
+\begin{prop}
+For any rational $q$, we have $\{ r \in \mathbb{Q} \mid r < q \} \in \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$q \in \mathbb{Q}$}}
+\step{2}{\pflet{$q \downarrow = \{ r \mid r < q \}$}}
+\step{3}{$q \downarrow \neq \emptyset$}
+\begin{proof}
+	\pf\ We have $q - 1 \in q \downarrow$.
+\end{proof}
+\step{4}{$q \downarrow \neq \mathbb{Q}$}
+\begin{proof}
+	\pf\ Since $q \notin q \downarrow$.
+\end{proof}
+\step{5}{$q \downarrow$ is closed downwards.}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{6}{$q \downarrow$ has no greatest element.}
+\begin{proof}
+	\pf\ For all $r \in q \downarrow$ we have $r < (q+r)/2 \in q \downarrow$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:QtoRwd}
+For rationals $q$ and $r$, we have $q = r$ if and only if $\{ s \in \mathbb{Q} \mid s < q \} = \{ s \in \mathbb{Q} \mid s < r \}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$q \downarrow = \{ s \in \mathbb{Q} \mid s < q \}$}}
+\step{2}{\pflet{$r \downarrow = \{ s \in \mathbb{Q} \mid s < r \}$}}
+\step{3}{If $q = r$ then $q \downarrow = r \downarrow$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{4}{If $q < r$ then $q \downarrow \neq r \downarrow$}
+\begin{proof}
+	\pf\ We have $q \in r \downarrow$ and $q \notin q \downarrow$.
+\end{proof}
+\step{5}{If $r < q$ then $q \downarrow \neq r \downarrow$}
+\begin{proof}
+	\pf\ We have $r \in q \downarrow$ and $q \notin q \downarrow$.
+\end{proof}
+\qed
+\end{proof}
+
+Henceforth we identify a rational $q$ with the real number $\{ r \in \mathbb{Q} \mid r < q \}$.
+
 \begin{df}
 Define the ordering $<$ on $\mathbb{R}$ by: $x < y$ iff $x \subsetneq y$.
 \end{df}
+
+\begin{prop}
+The ordering on the reals agrees with the ordering on the rationals.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$q, r \in \mathbb{Q}$}}
+\step{2}{\pflet{$q \downarrow = \{ s \in \mathbb{Q} \mid s < q \}$.}}
+\step{3}{\pflet{$r \downarrow = \{ s \in \mathbb{Q} \mid s < r \}$.} \prove{$q < r$ iff $q \downarrow \subsetneq r \downarrow$}}
+\step{4}{If $q < r$ then $q \downarrow \subsetneq r \downarrow$}
+\begin{proof}
+	\step{a}{\assume{$q < r$}}
+	\step{b}{$q \downarrow \subseteq r \downarrow$}
+	\begin{proof}
+		\pf\ If $s < q$ then $s < r$.
+	\end{proof}
+	\step{c}{$q \downarrow \neq r \downarrow$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:QtoRwd}.
+	\end{proof}
+\end{proof}
+\step{5}{If $q \downarrow \subsetneq r \downarrow$ then $q < r$}
+\begin{proof}
+	\step{a}{\assume{$q \downarrow \subsetneq r \downarrow$}}
+	\step{b}{\pick\ $s \in r \downarrow$ such that $s \notin q \downarrow$}
+	\step{c}{$q \leq s < r$}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 The ordering $<$ is a linear ordering on $\mathbb{R}$.
@@ -3622,6 +3705,98 @@ Any bounded nonempty subset of $\mathbb{R}$ has a least upper bound.
 	\pf\ If $\forall x \in A. x \subseteq u$ we have $\bigcup A \subseteq u$.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{df}[Addition]
+Define \emph{addition} $+$ on the reals by
+\[ x + y := \{ q + r \mid q \in x, r \in y \} \enspace . \]
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$} \prove{$X+y$ is a Dedekind cut.}}
+\step{2}{$x + y \neq \emptyset$}
+\begin{proof}
+	\pf\ Pick $q \in x$ and $r \in y$; then $q+r \in x+y$.
+\end{proof}
+\step{3}{$x + y \neq \mathbb{Q}$}
+\begin{proof}
+	\step{a}{\pick\ $q \notin x$ and $r \notin y$ \prove{$q+r \notin x+y$}}
+	\step{b}{\assume{for a contradiction $q + r \in x + y$}}
+	\step{c}{\pick\ $q' \in x$ and $r' \in y$ such that $q + r = q' + r'$}
+	\step{d}{$q' < q$ and $r' < r$}
+	\step{e}{$q' + r' < q + r$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{4}{$x + y$ is closed downwards.}
+\begin{proof}
+	\step{a}{\pflet{$q \in x$ and $r \in y$}}
+	\step{b}{\pflet{$s < q + r$} \prove{$s \in x + y$}}
+	\step{c}{$s - r < q$}
+	\step{d}{$s - r \in x$}
+	\step{e}{$s = (s - r) + r \in x + y$}
+\end{proof}
+\step{5}{$x + y$ has no greatest element.}
+\begin{proof}
+	\step{a}{\pflet{$q \in x$ and $r \in y$} \prove{There exists $s \in x + y$ such that $q + r < s$}}
+	\step{b}{\pick\ $q' \in x$ and $r' \in y$ such that $q < q'$ and $r < r'$}
+	\step{c}{$q + r < q' + r' \in x + y$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Addition on the reals agrees with addition on the rationals.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$q, r \in \mathbb{Q}$}}
+\step{2}{$q \downarrow + r \downarrow \subseteq (q+r)\downarrow$}
+\begin{proof}
+	\pf\ If $s_1 < q$ and $s_2 < r$ then $s_1 + s_2 < q + r$.
+\end{proof}
+\step{3}{$(q+r) \downarrow \subseteq q \downarrow + r \downarrow$}
+\begin{proof}
+	\step{a}{\pflet{$s < q + r$}}
+	\step{b}{$s - r < q$}
+	\step{c}{\pick\ $t$ such that $s - r < t < q$}
+	\step{d}{$s - t < r$}
+	\step{e}{$s = t + (s - t) \in q\downarrow + r\downarrow$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Addition is associative.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x + (y + z) & = \{ q + r \mid q \in x, r \in y + z \} \\
+& = \{ q + s_1 + s_2 \mid q \in x, s_1 \in y, s_2 \in z \} \\
+& = \{ r + s_2 \mid r \in x + y, s_2 \in z \} \\
+& = (x + y) + z & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Addition is commutative.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x + y & = \{ q + r \mid q \in x, r \in y \} \\
+& = \{ r + q \mid r \in y, q \in x \} \\
+& = y + x & \qed
+\end{align*}
 \end{proof}
 
 \chapter{Complex Analysis}
