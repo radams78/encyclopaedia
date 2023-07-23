@@ -3312,11 +3312,6 @@ Let $a$, $b$ and $c$ be integers. If $0 < c$, then $a < b$ if and only if $ac < 
 \qed
 \end{proof}
 
-\begin{cor}
-\label{cor:timesZcancel}
-For any integers $a$, $b$ and $C$, if $ac = bc$ and $c \neq 0$ then $a = b$.
-\end{cor}
-
 \section{The Rationals}
 
 \begin{df}[Rational Numbers]
@@ -3347,6 +3342,39 @@ Multiplication on the rationals agrees with multiplication on the integers.
 
 \begin{proof}
 \pf\ $[(a,1)][(b,1)] = [(ab,1)]$ \qed
+\end{proof}
+
+\begin{df}
+Define the ordering $<$ on the rationals by: if $b$ and $d$ are positive, then $[(a,b)] < [(c,d)]$ iff $ad < bc$.
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{For any rational $q$, there exist integers $a$, $b$ with $b$ positive such that $q = [(a,b)]$.}
+\begin{proof}
+	\pf\ Since $[(a,b)] = [(-a,-b)]$, and if $b \neq 0$ then one of $b$ and $-b$ is positive.
+\end{proof}
+\step{2}{If $b$, $b'$, $d$ and $d'$ are positive, $[(a,b)] = [(a',b')]$, and $[(c,d)] = [(c',d')]$, then $ad < bc$ iff $a'd' < b'c'$.}
+\begin{proof}
+	\pf
+	\step{a}{If $ad < bc$ then $a'd' < b'c'$.}
+	\begin{proof}
+		\step{i}{\assume{$ad < bc$}}
+		\step{ii}{$ab'd < bb'c$}
+		\step{iii}{$a'bd < bb'c$}
+		\step{iv}{$a'd < b'c$}
+		\step{v}{$a'dd'< b'cd'$}
+		\step{vi}{$a'dd' < b'c'd$}
+		\step{vii}{$a'd' < b'c'$}
+	\end{proof}
+	\step{b}{If $a'd' < b'c'$ then $ad < bc$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Complex Analysis}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  23 JUL 2023 12:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  23 JUL 2023 12:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -435,18 +435,18 @@ Overfull \hbox (10.26518pt too wide) detected at line 3146
 
 [53] [54]
 WARNING: proof step "1" (<2>1) already defined
-[55] [56
-
-]
+[55] [56]
 Chapter 9.
 WARNING: proof step "e" (<2>7) already defined
-[57] [58]
-Overfull \hbox (68.70209pt too wide) detected at line 3491
+[57
+
+] [58]
+Overfull \hbox (68.70209pt too wide) detected at line 3519
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 3497
+Overfull \hbox (13.13249pt too wide) detected at line 3525
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
@@ -460,7 +460,7 @@ Chapter 10.
 ]
 WARNING: proof step "ii" (<3>3) already defined
 [64] [65] [66] [67]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 3917--3918
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 3945--3946
 []\OT1/cmr/bx/n/10 Proposition 10.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -475,12 +475,12 @@ Chapter 11.
 ] [72] [73] [74] [75] [76] [77] [78]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 4598
+Overfull \hbox (76.64789pt too wide) detected at line 4626
 []
  []
 
 [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 5474--5475
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 5502--5503
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -489,7 +489,7 @@ cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
 [92] [93] [94] [95]
-Overfull \hbox (91.49588pt too wide) detected at line 5731
+Overfull \hbox (91.49588pt too wide) detected at line 5759
 []
  []
 
@@ -498,7 +498,7 @@ WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
 [99] [100] [101] [102] [103]
-Overfull \hbox (62.14355pt too wide) detected at line 6177
+Overfull \hbox (62.14355pt too wide) detected at line 6205
 []
  []
 
@@ -509,17 +509,17 @@ Chapter 12.
 ]
 WARNING: proof step "1" (<1>2) already defined
 
-Overfull \hbox (133.82387pt too wide) detected at line 6294
+Overfull \hbox (133.82387pt too wide) detected at line 6322
 []
  []
 
 [106]
-Overfull \hbox (22.05334pt too wide) detected at line 6388
+Overfull \hbox (22.05334pt too wide) detected at line 6416
 []
  []
 
 [107] [108]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 6507--6508
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 6535--6536
 []\OT1/cmr/bx/n/10 Proposition 12.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
@@ -527,7 +527,7 @@ L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
 [109]
-Overfull \hbox (14.47572pt too wide) detected at line 6533
+Overfull \hbox (14.47572pt too wide) detected at line 6561
 []
  []
 
@@ -540,27 +540,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [115]
 [116]
-Overfull \hbox (68.12585pt too wide) detected at line 6855
+Overfull \hbox (68.12585pt too wide) detected at line 6883
 []
  []
 
 [117] [118]
-Overfull \hbox (135.96497pt too wide) detected at line 6931
+Overfull \hbox (135.96497pt too wide) detected at line 6959
 []
  []
 
 [119] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 23F6C35C6146B8A298924755A38616F4;6088.
  ) 
 Here is how much of TeX's memory you used:
- 9745 strings out of 476091
- 144142 string characters out of 5794082
+ 9744 strings out of 476091
+ 144120 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29392 multiletter control sequences out of 15000+600000
+ 29391 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,541b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -586,7 +583,7 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (119 pages, 570367 bytes).
+Output written on main.pdf (119 pages, 571490 bytes).
 PDF statistics:
  1816 PDF objects out of 2073 (max. 8388607)
  1369 compressed objects within 14 object streams
