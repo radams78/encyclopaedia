@@ -3126,6 +3126,27 @@ We prove this is well-defined.
 \qed
 \end{proof}
 
+\begin{prop}
+Addition is commutative.
+\end{prop}
+
+\begin{proof}
+\pf\ $[(a,b)] + [(c,d)] = [(ad+bc,bd)] = [(cb+da,db)] = [(c,d)] + [(a,b)]$ \qed
+\end{proof}
+
+\begin{prop}
+Addition is associative.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[(a,b)] + ([(c,d)] + [(e,f)]) & = [(a,b)] + [(cf+de,df)] \\
+& = [(adf + bcf + bde,bdf)] \\
+& = [(ad+bc,bd)] + [(e,f)] \\
+& = ([(a,b)] + [(c,d)]) + [(e,f)] & \qed
+\end{align*}
+\end{proof}
 \chapter{Group Theory}
 
 \section{Abelian Groups}
