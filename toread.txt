@@ -1,2 +1,6 @@
 Claude Burrill. Foundations of Real Numbers. 1967.
 Norman Hamilton, Joseph Landin. Set Theory and the Structure of Arithmetic. 1961
+Elliott Mendelson. Number Systems and the Foundations of Analysis. 1973
+Andrew Gleason. Fundamentals of Abstract Analysis. 1966
+R. Baer. Dichte, Archimedizität und Starrheit geordneter Körper, Mat. Ann. 188 (1970) 165-205
+D. Scott. On completing ordered fields. Applications of Model Theory, Proc. Int. Symp. California Inst. Technol. (1967) pp. 274-278

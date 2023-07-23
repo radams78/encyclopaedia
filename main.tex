@@ -4064,6 +4064,346 @@ We prove this is well-defined.
 \qed
 \end{proof}
 
+\begin{prop}
+Multiplication is commutative.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definition. \qed
+\end{proof}
+
+\begin{prop}
+Multiplication is associative.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For non-negative reals $x$, $y$ and $z$, we have $x(yz) = (xy)z$}
+\begin{proof}
+	\pf\ It computes to $0 \cup \{qrs \mid 0 \leq q \in x, 0 \leq r \in y, 0 \leq s \in z\}$.
+\end{proof}
+\step{2}{For all reals $x$, $y$ and $z$, we have $x(yz) = (xy)z$}
+\begin{proof}
+	\pf\ It is equal to $|x||y||z|$ if an even number of them are negative, and $-(|x||y||z|)$ otherwise.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Multiplication distributes over addition.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all non-negative reals $x$, $y$ and $z$, we have $x(y+z) = xy + xz$}
+\begin{proof}
+	\step{a}{\pflet{$x$, $y$ and $z$ be non-negative reals.}}
+	\step{b}{$x(y+z) \subseteq xy+xz$}
+	\begin{proof}
+		\step{i}{\pflet{$q \in x(y+z)$}}
+		\step{ii}{\case{$q < 0$}}
+		\begin{proof}
+			\pf\ Then we have $q/2 \in xy$ and $q/2 \in xz$ so $q \in xy+xz$.
+		\end{proof}
+		\step{iii}{\case{$q = rs$ where $0 \leq r \in x$ and $0 \leq s \in y+z$}}
+		\begin{proof}
+			\step{one}{\pick\ $s_1 \in y$ and $s_2 \in z$ such that $s = s_1 + s_2$}
+			\step{two}{$rs_1 \in xy$}
+			\begin{proof}
+				\pf\ If $s_1 < 0$ then $rs_1 < 0$ so $rs_1 \in xy$. If $0 \leq s_1$ then we also have $rs_1 \in xy$.
+			\end{proof}
+			\step{three}{$rs_2 \in xz$}
+			\begin{proof}
+				\pf\ Similar.
+			\end{proof}
+			\step{four}{$q \in xy+xz$}
+			\begin{proof}
+				\pf\ Since $q = rs_1 + rs_2$.
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{c}{$xy+xz \subseteq x(y+z)$}
+	\begin{proof}
+		\step{i}{\pflet{$q \in xy$ and $r \in xz$.} \prove{$q+r \in x(y+z)$}}
+		\step{ii}{\case{$q < 0$ and $r < 0$}}
+		\begin{proof}
+			\pf\ Then $q + r < 0$ so $q + r \in x(y+z)$.
+		\end{proof}
+		\step{iii}{\case{$q < 0$ and $r = r_1 r_2$ where $0 \leq r_1 \in x$ and $0 \leq r_2 \in z$}}
+		\begin{proof}
+			\step{one}{$q + r < r$}
+			\step{two}{$q + r \in xz$}
+			\step{three}{\assume{w.l.o.g. $0 \leq q + r$}}
+			\begin{proof}
+				\pf\ Otherwise $q + r \in x(y+z)$ immediately.
+			\end{proof}
+			\step{four}{\pick\ $s_1$, $s_2$ with $0 \leq s_1 \in x$, $0 \leq s_2 \in y$ and $q + r = s_1 s_2$}
+			\step{five}{$s_2 \in y + z$}
+			\begin{proof}
+				\pf\ Since $0 \in z$ so $s_2 = s_2 + 0 \in y + z$.
+			\end{proof}
+			\step{six}{$q + r \in x(y+z)$}
+		\end{proof}
+		\step{iv}{\case{$q = q_1 q_2$ where $0 \leq q_1 \in x$ and $0 \leq q_2 \in y$ and $r < 0$}}
+		\begin{proof}
+			\pf\ Similar.
+		\end{proof}
+		\step{v}{\case{$q = q_1 q_2$ where $0 \leq q_1 \in x$ and $0 \leq q_2 \in y$ and $r = r_1 r_2$ where $0 \leq r_1 \in x$ and $0 \leq r_2 \in z$}}
+		\begin{proof}
+			\step{one}{\assume{w.l.o.g. $q_1 \leq r_1$}}
+			\step{two}{$q + r \leq r_1(q_2 + r_2) \in x(y+z)$}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{For any negative real $x$ and non-negative reals $y$ and $z$, we have $x(y+z) = xy+xz$}
+\begin{proof}
+	\pf
+	\begin{align*}
+	x(y+z) = -(-x)(y+z)
+	& = -((-x)y + (-x)z) & (\text{\stepref{1}}) \\
+	& = -((-x)y) -((-x)z) \\
+	& = xy + xz
+	\end{align*}
+\end{proof}
+\step{3}{For any non-negative real $x$ and reals $y$ and $z$ with one negative and one non-negative, we have $x(y+z) = xy+xz$}
+\begin{proof}
+	\step{a}{\assume{w.l.o.g. $y$ is negative and $z$ is non-negative.}}
+	\step{b}{\case{$0 \leq y + z$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+		xy + xz & = xy + x(-y + y + z) \\
+		& = -(x(-y)) + x(-y + y + z) \\
+		& = -(x(-y)) + x(-y) + x(y+z) & (\text{\stepref{1}}) \\
+		& = x(y+z)
+		\end{align*}
+	\end{proof}
+	\step{c}{\case{$y + z < 0$}}
+	\begin{proof}
+		\step{one}{$-y-z > 0$}
+		\step{two}{$-y = z -y-z$}
+		\step{three}{$xy + xz = x(y+z)$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				xy + xz & = -(x(-y)) + xz \\
+				& = -(x(z -y-z)) + xz \\
+				& = -(xz + x(-y-z)) + xz & (\text{\stepref{1}}) \\
+				& = -xy -x(-y-z) + xz \\
+				& = -x(-y-z) \\
+				& = x(y+z)
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{4}{For any non-negative real $x$ and negative reals $y$ and $z$, we have $x(y+z) = xy+xz$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		x(y+z) & = -x(-y-z) \\
+		& = -(x(-y) + x(-z)) & (\text{\stepref{1}}) \\
+		& = -x(-y) -x(-z) \\
+		& = xy + xz
+	\end{align*}
+\end{proof}
+\step{5}{For any negative real $x$ and reals $y$ and $z$ with one negative and one non-negative, we have $x(y+z) = xy+xz$}
+\begin{proof}
+	\step{a}{\assume{w.l.o.g. $y$ is negative and $z$ is non-negative.}}
+	\step{b}{\case{$0 \leq y + z$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			x(y+z) & = -((-x)(y+z)) \\
+			& = -((-x)y + (-x)z) & (\text{\stepref{3}}) \\
+			& = -((-x)y) -((-x)z) \\
+			& = (-x)(-y) - ((-x)z) \\
+			& = xy+xz
+		\end{align*}
+	\end{proof}
+	\step{c}{\case{$y + z < 0$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			x(y+z) & = (-x)(-y-z) \\
+			& = (-x)(-y) + (-x)(-z) & (\text{\stepref{3}}) \\
+			& = xy + xz
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{6}{For any negative reals $x$, $y$ and $z$, we have $x(y+z) = xy+xz$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		x(y+z) & = (-x)(-y-z) \\
+		& = (-x)(-y) + (-x)(-z) & (\text{\stepref{1}}) \\
+		& = xy + xz
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any real $x$ we have $x1 = x$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\case{$0 \leq x$}}
+\begin{proof}
+	\step{a}{$x1 \subseteq x$}
+	\begin{proof}
+		\step{one}{\pflet{$q \in x1$}}
+		\step{two}{\case{$q < 0$}}
+		\begin{proof}
+			\pf\ Then $q \in x$ because $0 \leq x$.
+		\end{proof}
+		\step{three}{$q = rs$ where $0 \leq r \in x$ and $0 \leq s < 1$}
+		\begin{proof}
+			\pf\ Then $q < r$ so $q \in x$.
+		\end{proof}
+	\end{proof}
+	\step{b}{$x \subseteq x1$}
+	\begin{proof}
+		\step{one}{\pflet{$q \in x$}}
+		\step{two}{\assume{w.l.o.g. $0 \leq q$}}
+		\step{two}{\pick\ $r$ such that $q < r \in x$}
+		\step{three}{$0 \leq q/r < 1$}
+		\step{four}{$q = r(q/r) \in x1$}
+	\end{proof}
+\end{proof}
+\step{2}{\case{$x < 0$}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		x1 & = -((-x)1) \\
+		& = -(-x) & (\text{\stepref{1}}) \\
+		& = x
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{lm}
+\label{lm:Rmultinv}
+Let $x \in \mathbb{R}$ and $c$ be a positive rational. Then there exists $a \in x$ and a non-least rational upper bound $b$ for $x$ such that $b-a = c$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a_1 \in x$ such that if $x$ has a rational supremum $s$ then $a_1 > s - c$}
+\step{2}{There exists a natural number $n$ such that $a_1 + nc$ is an upper bound for $x$.}
+\begin{proof}
+\step{2}{\pick\ a non-least upper bound $b_1$ for $x$.}
+\step{3}{\pick\ a natural number $n$ such that $nc > b_1 - a_1$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Qarchimedean}.
+\end{proof}
+\step{4}{$a_1 + nc > b_1$}
+\step{5}{$a_1 + nc$ is an upper bound for $x$.}
+\end{proof}
+\step{6}{\pflet{$k$ be the least natural number such that $a_1 + kc$ is an upper bound for $x$.}}
+\step{7}{$a_1 + (k-1)c \in x$}
+\step{8}{$a_1 + kc$ is not the supremum of $x$.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $a_1 + kc$ is the supremum of $x$.}}
+	\step{b}{$a_1 > a_1 + (k-1)c$}
+	\begin{proof}
+		\pf\ \stepref{1}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{9}{\pflet{$a = a_1 + (k-1)c$}}
+\step{10}{\pflet{$b = a_1 + kc$}}
+\step{11}{$b - a = c$}
+\qed
+\end{proof}
+
+\begin{prop}
+For any non-zero real $x$, there exists a real $y$ such that $xy = 1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\case{$0 < x$}}
+\begin{proof}
+	\step{a}{\pflet{$y = \{ q \in \mathbb{Q} \mid q \leq 0 \} \cup \{ u^{-1} \mid u \text{ is an upper bound for } x \text{ but not the supremum of } x \}$}}
+	\step{b}{$y$ is a real number.}
+	\begin{proof}
+		\step{i}{$y \neq \emptyset$}
+		\begin{proof}
+			\pf\ Since $0 \in y$.
+		\end{proof}
+		\step{ii}{$y \neq \mathbb{Q}$}
+		\begin{proof}
+			\step{one}{\pick\ $q \in x$ such that $0 < q$}
+			\step{two}{$q^{-1} \notin y$}
+		\end{proof}
+		\step{iii}{$y$ is closed downwards.}
+		\begin{proof}
+			\step{one}{\pflet{$q \in y$ and $r < q$} \prove{$r \in y$}}
+			\step{two}{\assume{w.l.o.g. $0 < r$}}
+			\step{three}{$q^{-1}$ is a non-least upper bound for $x$.}
+			\step{four}{$q^{-1} < r^{-1}$}
+			\step{five}{$r^{-1}$ is a non-least upper bound for $x$.}
+			\step{six}{$r \in y$}
+		\end{proof}
+		\step{iv}{$y$ has no greatest element.}
+		\begin{proof}
+			\step{one}{\pflet{$q \in y$} \prove{There exists $r \in y$ such that $q < r$}}
+			\step{two}{\case{$q \leq 0$}}
+			\begin{proof}
+				\step{A}{\pick\ a non-least upper bound $u$ for $x$.}
+				\step{B}{$q < u^{-1} \in x$}
+			\end{proof}
+			\step{three}{\case{$q = u^{-1}$ where $u$ is a non-least upper bound for $x$.}}
+			\begin{proof}
+				\step{A}{\pick\ a non-least upper bound $v$ with $v < u$}
+				\step{B}{$u^{-1} < v^{-1} \in y$}
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{c}{$0 < y$}
+	\step{d}{$xy \subseteq 1$}
+	\begin{proof}
+		\step{i}{\pflet{$q \in xy$}}
+		\step{ii}{\assume{w.l.o.g. $0 < q$}}
+		\step{iii}{\pick\ $0 < r \in x$ and $0 < s \in y$ such that $q = rs$}
+		\step{iv}{$s^{-1}$ is a non-least upper bound for $x$}
+		\step{v}{$r < s^{-1}$}
+		\step{vi}{$rs < 1$}
+	\end{proof}
+	\step{e}{$1 \subseteq xy$}
+	\begin{proof}
+		\step{i}{\pflet{$q < 1$} \prove{$q \in xy$}}
+		\step{ii}{\assume{w.l.o.g. $0 < q$}}
+		\step{iii}{\pick\ $a_1$ with $0 < a_1 \in x$}
+		\step{iv}{$(1-q)a_1 > 0$}
+		\step{v}{\pick\ $a \in x$ and a non-least upper bound $w$ of $x$ such that $w - a = (1-q)a_1$}
+		\begin{proof}
+			\pf\ Lemma \ref{lm:Rmultinv}.
+		\end{proof}
+		\step{vi}{$w - a < (1-q)w$}
+		\step{vii}{$qw < a$}
+		\step{viii}{$w < a / q$}
+		\step{ix}{$a/q$ is a non-least upper bound for $x$}
+		\step{xxx}{$q/a \in y$}
+		\step{x}{$q \in xy$}
+	\end{proof}
+\end{proof}
+\step{2}{\case{$x < 0$}}
+\begin{proof}
+	\step{a}{\pick\ $y$ such that $(-x)y = 1$}
+	\begin{proof}
+		\pf\ \stepref{1}
+	\end{proof}
+	\step{b}{$x(-y) = 1$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Complex Analysis}
 
 \begin{df}
