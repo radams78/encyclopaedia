@@ -3963,6 +3963,38 @@ For every real $x$ we have $x + (-x) = 0$.
 The reals form an Abelian group under addition.
 \end{cor}
 
+\begin{prop}
+For any reals $x$, $y$ and $z$, we have $x < y$ if and only if $x + z < y + z$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall x,y,z \in \mathbb{R}. x \leq y \Rightarrow x + z \leq y + z$}
+\begin{proof}
+	\step{a}{\pflet{$x,y,z \in \mathbb{R}$}}
+	\step{b}{\assume{$x \leq y$}}
+	\step{c}{For all $q \in x$ and $r \in z$ we have $q + r \in y + z$}
+\end{proof}
+\step{2}{$\forall x,y,z \in \mathbb{R}. x + z = y + z \Leftrightarrow x = y$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Abgroupcancel}.
+\end{proof}
+\step{3}{$\forall x,y,z \in \mathbb{R}. x < y \Rightarrow x + z < y + z$}
+\qedstep
+\begin{proof}
+	\pf\ Proposition \ref{prop:strictmonotoneinv}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Absolute Value]
+The \emph{absolute value} of a real number $x$ is defined to be
+\[ |x| = \begin{cases}
+x & \text{if } 0 \leq x \\
+-x & \text{if } x < 0
+\end{cases} \]
+\end{df}
+
 \chapter{Complex Analysis}
 
 \begin{df}
