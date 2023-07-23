@@ -18,6 +18,7 @@
 \newtheorem{props}[ax]{Proposition Schema}
 \newtheorem{cor}{Corollary}[ax]
 \newtheorem{thm}[ax]{Theorem}
+\newtheorem{lm}[ax]{Lemma}
 \theoremstyle{definition}
 \newtheorem{df}[ax]{Definition}
 \newtheorem{dfs}[ax]{Definition Schema}
@@ -3354,6 +3355,24 @@ Let $a$, $b$ and $c$ be integers. If $0 < c$, then $a < b$ if and only if $ac < 
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:Zarchimedean}
+Let $a$ be a positive integer. For any integer $b$, there exists $k \in \mathbb{N}$ such that $b < ak$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\case{$b \leq 0$}}
+\begin{proof}
+	\pf\ Take $k = 1$.
+\end{proof}
+\step{2}{\case{$b > 0$}}
+\begin{proof}
+	\pf\ Take $k = b + 1$.
+\end{proof}
+\qed
+\end{proof}
+
 \section{The Rationals}
 
 \begin{df}[Rational Numbers]
@@ -3513,6 +3532,22 @@ For any rationals $r$, $s$ and $t$, if $t$ is positive then $r < s$ iff $rt < st
 \begin{cor}
 The rationals form an ordered field.
 \end{cor}
+
+\begin{prop}
+\label{prop:Qarchimedean}
+Let $p$ be a positive rational. For any rational number $r$, there exists $k \in \mathbb{N}$ such that $r < pk$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p = a/b$ and $r = c/d$ where $a$, $b$ and $d$ are positive.}}
+\step{2}{\pick\ $k \in \mathbb{N}$ such that $bc < adk$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Zarchimedean}.
+\end{proof}
+\step{3}{$r < pk$}
+\qed
+\end{proof}
 
 \section{The Real Numbers}
 
@@ -3798,6 +3833,135 @@ x + y & = \{ q + r \mid q \in x, r \in y \} \\
 & = y + x & \qed
 \end{align*}
 \end{proof}
+
+\begin{prop}
+For any $x \in \mathbb{R}$ we have $x + 0 = x$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$x + 0 \subseteq x$}
+\begin{proof}
+	\pf\ If $q \in x$ and $r < 0$ then $q + r < q$ so $q + r \in x$.
+\end{proof}
+\step{2}{$x \subseteq x + 0$}
+\begin{proof}
+	\step{a}{\pflet{$q \in x$}}
+	\step{b}{\pick\ $r \in x$ such that $q < r$.}
+	\begin{proof}
+		\pf\ $x$ has no greatest element.
+	\end{proof}
+	\step{c}{$q - r < 0$}
+	\step{d}{$q = r + (q-r) \in x + 0$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+For $x \in \mathbb{R}$, define $-x := \{ q \in \mathbb{Q} \mid \exists r > q. -r \notin x \}$.
+\end{df}
+
+\begin{prop}
+For all $x \in \mathbb{R}$ we have $-x \in \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \mathbb{R}$}}
+\step{2}{$-x \neq \emptyset$}
+\begin{proof}
+	\step{a}{\pick\ $s \notin x$}
+	\step{b}{$-s-1 \in -x$}
+\end{proof}
+\step{3}{$-x \neq \mathbb{Q}$}
+\begin{proof}
+	\step{a}{\pick\ $s \in x$ \prove{$-s \notin -x$}}
+	\step{b}{\assume{for a contradiction $-s \in -x$}}
+	\step{c}{\pick\ $r > -s$ such that $-r \notin x$}
+	\step{d}{$-r < s$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $x$ is closed downwards.
+	\end{proof}
+\end{proof}
+\step{4}{$-x$ is closed downwards.}
+\begin{proof}
+	\pf\ Immediate from definition.
+\end{proof}
+\step{5}{$-x$ has no greatest element.}
+\begin{proof}
+	\step{a}{\pflet{$q \in -x$}}
+	\step{b}{\pick\ $r > q$ such that $-r \notin x$}
+	\step{c}{\pick\ $s$ such that $q < s < r$}
+	\step{d}{$s \in -x$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{lm}
+\label{lm:Rinv}
+Let $p$ be a positive rational number. For any real number $x$, there exists a rational $q \in x$ such that $p + q \notin x$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $q_0 \in x$}
+\step{2}{There exists $k \in \mathbb{N}$ such that $q_0 + kp \notin x$}
+\begin{proof}
+	\step{a}{\pick\ $q_1 \notin x$}
+	\step{b}{\pick\ $k \in \mathbb{N}$ such that $q_1 - q_0 < p k$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:Qarchimedean}.
+	\end{proof}
+	\step{c}{$q_1 < q_0 + kp$}
+	\step{d}{$q_0 + kp \notin x$}
+\end{proof}
+\step{3}{\pflet{$k$ be the least natural number such that $q_0 + kp \notin x$}}
+\step{4}{$k \neq 0$}
+\begin{proof}
+	\pf\ \stepref{1}
+\end{proof}
+\step{5}{\pflet{$q = q_0 + (k-1)p$}}
+\step{6}{$q \in x$ and $q + p \notin x$.}
+\qed
+\end{proof}
+
+\begin{prop}
+For every real $x$ we have $x + (-x) = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$ be a real number.}}
+\step{2}{$x + (-x) \subseteq 0$}
+\begin{proof}
+	\step{a}{\pflet{$q_1 \in x$ and $q_2 \in -x$}}
+	\step{b}{\pick\ $r > q_2$ such that $-r \notin x$}
+	\step{c}{$q_1 < -r$}
+	\step{d}{$r < - q_1$}
+	\step{e}{$q_2 < - q_1$}
+	\step{f}{$q_1 + q_2 < 0$}
+\end{proof}
+\step{3}{$0 \subseteq x + (-x)$}
+\begin{proof}
+	\step{a}{\pflet{$p < 0$}}
+	\step{b}{$0 < -p$}
+	\step{c}{\pick\ $q \in x$ such that $q-p/2 \notin x$}
+	\begin{proof}
+		\pf\ Lemma \ref{lm:Rinv}.
+	\end{proof}
+	\step{d}{\pflet{$s = p/2 - q$}}
+	\step{e}{$-s \notin x$}
+	\step{f}{$p-q < s$}
+	\step{g}{$p-q \in -x$}
+	\step{h}{$p \in x + (-x)$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The reals form an Abelian group under addition.
+\end{cor}
 
 \chapter{Complex Analysis}
 
