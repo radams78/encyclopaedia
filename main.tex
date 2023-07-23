@@ -2727,6 +2727,248 @@ If $A$ has $m$ elements and $B$ has $n$ elements then $A \times B$ has $mn$ elem
 \qed
 \end{proof}
 
+\chapter{Group Theory}
+
+\section{Abelian Groups}
+
+\begin{df}[Abelian group]
+An \emph{Abelian group} $G$ consists of a set $G$ and a function $\cdot : G^2 \rightarrow G$ such that:
+\begin{enumerate}
+\item $\cdot$ is associative
+\item $\cdot$ is commutative
+\item There exists $e \in G$ such that $\forall x \in G. xe = x$ and $\forall x \in G. \exists y \in G. xy = e$.
+\end{enumerate}
+\end{df}
+
+\begin{prop}
+The inverse of an element in an Abelian group is unique.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$b$ and $b'$ are inverses of $a$.}}
+\step{2}{$b = b'$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		b & = be \\
+		& = bab' \\
+		& = eb' \\
+		& = b'
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+We write $x^{-1}$ for the inverse of $x$.
+
+We may also say we are writing an Abelian group \emph{additively}, meaning we write $a + b$ for $ab$, $0$ for $e$ and $-a$ for $a^{-1}$. In this case we write $a-b$ for $ab^{-1}$.
+\end{df}
+
+\begin{prop}
+\label{prop:Abgroupcancel}
+In any Abelian group, if $ab = ac$ then $b = c$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+b & = eb \\
+& = a^{-1}ab \\
+& = a^{-1}ac \\
+& = ec \\
+& = c & \qed
+\end{align*}
+\end{proof}
+
+\chapter{Ring Theory}
+
+\section{Integral Domains}
+
+\begin{df}[Integral Domain]
+An \emph{integral domain} consists of a set $D$ and two binary operations $+$, $\cdot$ on $D$ such that:
+\begin{itemize}
+\item
+$D$ is an Abelian group under $+$. Let us write 0 for its identity element.
+\item
+$\cdot$ is commutative and associative, and distributes over $+$.
+\item
+$\cdot$ has an identity element that is different from 0.
+\item
+For all $a,b \in D$, if $ab = 0$ then $a = 0$ or $b = 0$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+\label{prop:timeszero}
+In any integral domain, $0x = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(0+0)x & = 0x \\
+\therefore 0x + 0x & = 0x + 0 \\
+\therefore 0x & = 0 & (\text{Proposition \ref{prop:Abgroupcancel}}) \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+In any integral domain, $(-a)b = -(ab)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+ab + (-a)b & = (a + (-a))b \\
+& = 0b \\
+& = 0 & (\text{Proposition \ref{prop:timeszero}}) \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:multcancel}
+In any integral domain, if $ab = ac$ and $a \neq 0$ then $b = c$.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $a(b-c) = 0$ and $a \neq 0$ so $b - c = 0$ hence $b = c$. \qed
+\end{proof}
+
+\chapter{Field Theory}
+
+\section{Fields}
+
+\begin{df}[Field]
+A \emph{field} $F$ is an integral domain such that, for all $x \in F$, if $x \neq 0$ then there exists $y \in F$ such that $xy = 1$.
+\end{df}
+
+\begin{prop}
+In any field $F$, we have $F - \{0\}$ is an Abelian group under multiplication.
+\end{prop}
+
+\begin{df}[Field of Fractions]
+Let $D$ be an integral domain. The \emph{field of fractions} of $D$ is the quotient set $F = (D \times (D - \{0\})) / \sim$ where
+\[ (a,b) \sim (c,d) \Leftrightarrow ad = bc \]
+under
+\begin{align*}
+[(a,b)] + [(c,d)] & = [(ad+bc,bd)] \\
+[(a,b)][(c,d)] & = [(ac,bd)]
+\end{align*}
+
+We prove this is a field.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is an equivalence relation on $D \times (D - \{0\})$.}
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ We always have $ab = ba$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ If $ad = bc$ then $cb = da$.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$(a,b) \sim (c,d) \sim (e,f)$}}
+	\step{b}{$ad = bc$ and $cf = de$}
+	\step{c}{$adf = bde$}
+	\begin{proof}
+		\pf\ $adf = bcf = bde$
+	\end{proof}
+	\step{d}{$af = be$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:multcancel}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+\step{2}{Addition is well-defined.}
+\begin{proof}
+\pf
+\step{1}{If $b \neq 0$ and $d \neq 0$ then $bd \neq 0$.}
+\begin{proof}
+	\pf\ Since $D$ is an integral domain.
+\end{proof}
+\step{2}{If $ab' = a'b$ and $cd' = c'd$ then $(ad+bc)b'd' = (a'd' + b'c')bd$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(ad+bc)b'd' & = ab'dd' + bb'cd' \\
+		& = a'bdd' + bb'c'd \\
+		& = (a'd' + b'c')bd
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+\step{3}{Multiplication is well-defined.}
+\begin{proof}
+\pf
+\step{1}{If $b \neq 0$ and $d \neq 0$ then $bd \neq 0$.}
+\begin{proof}
+	\pf\ Since $D$ is an integral domain.
+\end{proof}
+\step{2}{If $[(a,b)] = [(a',b')]$ and $[(c,d)] = [(c',d')]$ then $[(ac,bd)] = [(a'c',b'd')]$.}
+\begin{proof}
+	\pf\ If $ab' = a'b$ and $cd' = c'd$ then $acb'd' = a'c'bd$.
+\end{proof}
+\qed
+\end{proof}
+\step{4}{Addition is commutative.}
+\begin{proof}
+\pf\ $[(a,b)] + [(c,d)] = [(ad+bc,bd)] = [(cb+da,db)] = [(c,d)] + [(a,b)]$ \qed
+\end{proof}
+\step{5}{Addition is associative.}
+\begin{proof}
+\pf
+\begin{align*}
+[(a,b)] + ([(c,d)] + [(e,f)]) & = [(a,b)] + [(cf+de,df)] \\
+& = [(adf + bcf + bde,bdf)] \\
+& = [(ad+bc,bd)] + [(e,f)] \\
+& = ([(a,b)] + [(c,d)]) + [(e,f)] & \qed
+\end{align*}
+\end{proof}
+\step{6}{For any $x \in F$ we have $x + [(0,1)] = x$}
+\begin{proof}
+\pf\ $[(a,b)] + [(0,1)] = [(a \cdot 1 + b \cdot 0, b \cdot 1)] = [(a,b)]$ \qed
+\end{proof}
+\step{7}{For any $x \in F$, there exists $y \in F$ such that $x + y = [(0,1)]$.}
+\begin{proof}
+\pf\ $[(a,b)] + [(-a,b)] = [(ab-ab,b^2)] = [(0,b^2)] = [(0,1)]$ \qed
+\end{proof}
+\step{8}{Multiplication is commutative.}
+\begin{proof}
+\pf\ $[(a,b)][(c,d)] = [(c,d)][(a,b)] = [(ac,bd)]$. \qed
+\end{proof}
+\step{9}{Multiplication is assocative.}
+\begin{proof}
+\pf\ $[(a,b)]([(c,d)][(e,f)]) = ([(a,b)][(c,d)])[(e,f)] = [(ace,bdf)]$. \qed
+\end{proof}
+\step{10}{For any $x \in F$ we have $x[(1,1)] = x$}
+\begin{proof}
+\pf\ $[(a,b)][(1,1)] = [(a,b)]$ \qed
+\end{proof}
+\step{11}{For any non-zero $x \in F$, there exists $y \in F$ such that $xy = [(1,1)]$.}
+\begin{proof}
+\pf
+\step{a}{\pflet{$[(a,b)] \in \mathbb{Q}$}}
+\step{b}{\assume{$[(a,b)] \neq [(0,1)]$}}
+\step{c}{$a \neq 0$}
+\step{d}{$[(a,b)][(b,a)] = [(1,1)]$}
+\qed
+\end{proof}
+\step{12}{For any $x,y \in F$, if $xy = [(0,1)]$ then $x = [(0,1)]$ or $y = [(0,1)]$.}
+\begin{proof}
+\pf\ If $qr = 0$ and $q \neq 0$, pick $q' \in F$ such that $qq' = 1$. Then $r = 1r = q'qr = q' 0 = 0$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Number Systems}
 
 \section{The Integers}
@@ -2824,6 +3066,15 @@ For all $a \in \mathbb{Z}$, there exists $b \in \mathbb{Z}$ such that $a + b = 0
 
 \begin{proof}
 \pf\ $[(m,n)] + [(n,m)] = [(m+n,m+n)] = [(0,0)]$ \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:Zgroup}
+The integers form an Abelian group under addition.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:plusZcomm}, \ref{prop:plusZassoc}, \ref{prop:plusZzero}, \ref{prop:plusZinv}. \qed
 \end{proof}
 
 \begin{df}
@@ -2935,6 +3186,14 @@ For any integeres $a$ and $b$, if $ab = 0$ then $a = 0$ or $b = 0$.
 	\pf\ Similar.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+The integers $\mathbb{Z}$ form an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:timesZcomm}, \ref{prop:timesZassoc}, \ref{prop:timesZdist}, \ref{prop:timesZone}, \ref{prop:Zno_zero_div}, \ref{prop:Zgroup}. \qed
 \end{proof}
 
 \begin{df}
@@ -3061,36 +3320,8 @@ For any integers $a$, $b$ and $C$, if $ac = bc$ and $c \neq 0$ then $a = b$.
 \section{The Rationals}
 
 \begin{df}[Rational Numbers]
-The set $\mathbb{Q}$ of \emph{rational numbers} is the quotient set $(\mathbb{Z} \times (\mathbb{Z} - \{0\})) / \sim$, where $(a,b) \sim (c,d)$ iff $ad = bc$.
-
-We prove this is an equivalence relation on $\mathbb{Z} \times (\mathbb{Z} - \{0\})$.
+The set $\mathbb{Q}$ of \emph{rational numbers} is the field of fractions over the integers.
 \end{df}
-
-\begin{proof}
-\pf
-\step{1}{$\sim$ is reflexive.}
-\begin{proof}
-	\pf\ We always have $ab = ba$.
-\end{proof}
-\step{2}{$\sim$ is symmetric.}
-\begin{proof}
-	\pf\ If $ad = bc$ then $cb = da$.
-\end{proof}
-\step{3}{$\sim$ is transitive.}
-\begin{proof}
-	\step{a}{\assume{$(a,b) \sim (c,d) \sim (e,f)$}}
-	\step{b}{$ad = bc$ and $cf = de$}
-	\step{c}{$adf = bde$}
-	\begin{proof}
-		\pf\ $adf = bcf = bde$
-	\end{proof}
-	\step{d}{$af = be$}
-	\begin{proof}
-		\pf\ Corollary \ref{cor:timesZcancel}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
 
 \begin{prop}
 For any integers $a$ and $b$, we have $[(a,1)] = [(b,1)]$ iff $a = b$.
@@ -3102,166 +3333,20 @@ For any integers $a$ and $b$, we have $[(a,1)] = [(b,1)]$ iff $a = b$.
 
 Henceforth we identify any integer $a$ with the rational number $[(a,1)]$.
 
-\begin{df}
-Define \emph{addition} $+$ on $\mathbb{Q}$ by $[(a,b)] + [(c,d)] = [(ad + bc, bd)]$.
-
-We prove this is well-defined.
-\end{df}
-
-\begin{proof}
-\pf
-\step{1}{If $b \neq 0$ and $d \neq 0$ then $bd \neq 0$.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:Zno_zero_div}.
-\end{proof}
-\step{2}{If $ab' = a'b$ and $cd' = c'd$ then $(ad+bc)b'd' = (a'd' + b'c')bd$.}
-\begin{proof}
-	\pf
-	\begin{align*}
-		(ad+bc)b'd' & = ab'dd' + bb'cd' \\
-		& = a'bdd' + bb'c'd \\
-		& = (a'd' + b'c')bd
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
 \begin{prop}
-Addition is commutative.
+Addition on the rationals agrees with addition on the integers.
 \end{prop}
 
 \begin{proof}
-\pf\ $[(a,b)] + [(c,d)] = [(ad+bc,bd)] = [(cb+da,db)] = [(c,d)] + [(a,b)]$ \qed
+\pf\ $[(a,1)] + [(b,1)] = [(a \cdot 1 + b \cdot 1, 1 \cdot 1)] = [(a + b, 1)]$. \qed
 \end{proof}
 
 \begin{prop}
-Addition is associative.
+Multiplication on the rationals agrees with multiplication on the integers.
 \end{prop}
 
 \begin{proof}
-\pf
-\begin{align*}
-[(a,b)] + ([(c,d)] + [(e,f)]) & = [(a,b)] + [(cf+de,df)] \\
-& = [(adf + bcf + bde,bdf)] \\
-& = [(ad+bc,bd)] + [(e,f)] \\
-& = ([(a,b)] + [(c,d)]) + [(e,f)] & \qed
-\end{align*}
-\end{proof}
-\chapter{Group Theory}
-
-\section{Abelian Groups}
-
-\begin{df}[Abelian group]
-An \emph{Abelian group} $G$ consists of a set $G$ and a function $\cdot : G^2 \rightarrow G$ such that:
-\begin{enumerate}
-\item $\cdot$ is associative
-\item $\cdot$ is commutative
-\item There exists $e \in G$ such that $\forall x \in G. xe = x$ and $\forall x \in G. \exists y \in G. xy = e$.
-\end{enumerate}
-\end{df}
-
-\begin{prop}
-\label{prop:Zgroup}
-The integers form an Abelian group under addition.
-\end{prop}
-
-\begin{proof}
-\pf\ Proposition \ref{prop:plusZcomm}, \ref{prop:plusZassoc}, \ref{prop:plusZzero}, \ref{prop:plusZinv}. \qed
-\end{proof}
-
-\begin{prop}
-The inverse of an element in an Abelian group is unique.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$b$ and $b'$ are inverses of $a$.}}
-\step{2}{$b = b'$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		b & = be \\
-		& = bab' \\
-		& = eb' \\
-		& = b'
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}
-We write $x^{-1}$ for the inverse of $x$.
-
-We may also say we are writing an Abelian group \emph{additively}, meaning we write $a + b$ for $ab$, $0$ for $e$ and $-a$ for $a^{-1}$. In this case we write $a-b$ for $ab^{-1}$.
-\end{df}
-
-\begin{prop}
-\label{prop:Abgroupcancel}
-In any Abelian group, if $ab = ac$ then $b = c$.
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-b & = eb \\
-& = a^{-1}ab \\
-& = a^{-1}ac \\
-& = ec \\
-& = c & \qed
-\end{align*}
-\end{proof}
-
-\chapter{Ring Theory}
-
-\section{Integral Domains}
-
-\begin{df}[Integral Domain]
-An \emph{integral domain} consists of a set $D$ and two binary operations $+$, $\cdot$ on $D$ such that:
-\begin{itemize}
-\item
-$D$ is an Abelian group under $+$. Let us write 0 for its identity element.
-\item
-$\cdot$ is commutative and associative, and distributes over $+$.
-\item
-$\cdot$ has an identity element that is different from 0.
-\item
-For all $a,b \in D$, if $ab = 0$ then $a = 0$ or $b = 0$.
-\end{itemize}
-\end{df}
-
-\begin{prop}
-The integers $\mathbb{Z}$ form an integral domain.
-\end{prop}
-
-\begin{proof}
-\pf\ Propositions \ref{prop:timesZcomm}, \ref{prop:timesZassoc}, \ref{prop:timesZdist}, \ref{prop:timesZone}, \ref{prop:Zno_zero_div}, \ref{prop:Zgroup}. \qed
-\end{proof}
-
-\begin{prop}
-\label{prop:timeszero}
-In any integral domain, $0x = 0$.
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-(0+0)x & = 0x \\
-\therefore 0x + 0x & = 0x + 0 \\
-\therefore 0x & = 0 & (\text{Proposition \ref{prop:Abgroupcancel}}) \qed
-\end{align*}
-\end{proof}
-
-\begin{prop}
-In any integral domain, $(-a)b = -(ab)$.
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-ab + (-a)b & = (a + (-a))b \\
-& = 0b \\
-& = 0 & (\text{Proposition \ref{prop:timeszero}}) \qed
-\end{align*}
+\pf\ $[(a,1)][(b,1)] = [(ab,1)]$ \qed
 \end{proof}
 
 \chapter{Complex Analysis}
