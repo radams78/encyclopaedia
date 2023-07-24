@@ -2939,19 +2939,18 @@ If $A$ has $m$ elements and $B$ has $n$ elements then $A \times B$ has $mn$ elem
 
 \chapter{Group Theory}
 
-\section{Abelian Groups}
+\section{Groups}
 
-\begin{df}[Abelian group]
-An \emph{Abelian group} $G$ consists of a set $G$ and a function $\cdot : G^2 \rightarrow G$ such that:
+\begin{df}[Group]
+A \emph{group} $G$ consists of a set $G$ and a function $\cdot : G^2 \rightarrow G$ such that:
 \begin{enumerate}
 \item $\cdot$ is associative
-\item $\cdot$ is commutative
 \item There exists $e \in G$ such that $\forall x \in G. xe = x$ and $\forall x \in G. \exists y \in G. xy = e$.
 \end{enumerate}
 \end{df}
 
 \begin{prop}
-The inverse of an element in an Abelian group is unique.
+The inverse of an element in a group is unique.
 \end{prop}
 
 \begin{proof}
@@ -2972,13 +2971,11 @@ The inverse of an element in an Abelian group is unique.
 
 \begin{df}
 We write $x^{-1}$ for the inverse of $x$.
-
-We may also say we are writing an Abelian group \emph{additively}, meaning we write $a + b$ for $ab$, $0$ for $e$ and $-a$ for $a^{-1}$. In this case we write $a-b$ for $ab^{-1}$.
 \end{df}
 
 \begin{prop}
-\label{prop:Abgroupcancel}
-In any Abelian group, if $ab = ac$ then $b = c$.
+\label{prop:groupcancel}
+In any group, if $ab = ac$ then $b = c$.
 \end{prop}
 
 \begin{proof}
@@ -2992,27 +2989,33 @@ b & = eb \\
 \end{align*}
 \end{proof}
 
+\section{Abelian Groups}
+
+\begin{df}[Abelian group]
+An \emph{Abelian group} is a group whose multiplication is commutative.
+
+We may say we are writing an Abelian group \emph{additively}, meaning we write $a + b$ for $ab$, $0$ for $e$ and $-a$ for $a^{-1}$. In this case we write $a-b$ for $ab^{-1}$.
+\end{df}
+
 \chapter{Ring Theory}
 
-\section{Integral Domains}
+\section{Rings}
 
-\begin{df}[Integral Domain]
-An \emph{integral domain} consists of a set $D$ and two binary operations $+$, $\cdot$ on $D$ such that:
+\begin{df}[Commutative Ring]
+A \emph{commutative ring} consists of a set $R$ and two binary operations $+$, $\cdot$ on $R$ such that:
 \begin{itemize}
 \item
 $D$ is an Abelian group under $+$. Let us write 0 for its identity element.
 \item
 $\cdot$ is commutative and associative, and distributes over $+$.
 \item
-$\cdot$ has an identity element that is different from 0.
-\item
-For all $a,b \in D$, if $ab = 0$ then $a = 0$ or $b = 0$.
+$\cdot$ has an identity element 1 that is different from 0.
 \end{itemize}
 \end{df}
 
 \begin{prop}
 \label{prop:timeszero}
-In any integral domain, $0x = 0$.
+In any commutative ring, $0x = 0$.
 \end{prop}
 
 \begin{proof}
@@ -3020,12 +3023,12 @@ In any integral domain, $0x = 0$.
 \begin{align*}
 (0+0)x & = 0x \\
 \therefore 0x + 0x & = 0x + 0 \\
-\therefore 0x & = 0 & (\text{Proposition \ref{prop:Abgroupcancel}}) \qed
+\therefore 0x & = 0 & (\text{Proposition \ref{prop:groupcancel}}) \qed
 \end{align*}
 \end{proof}
 
 \begin{prop}
-In any integral domain, $(-a)b = -(ab)$.
+In any commutative ring, $(-a)b = -(ab)$.
 \end{prop}
 
 \begin{proof}
@@ -3037,6 +3040,38 @@ ab + (-a)b & = (a + (-a))b \\
 \end{align*}
 \end{proof}
 
+\section{Ordered Rings}
+
+\begin{df}[Ordered Commutative Ring]
+An \emph{ordered commutative ring} consists of a commutative ring $R$ with a linear order $<$ on $R$ such that:
+\begin{itemize}
+\item for all $x,y,z \in R$, we have $x < y$ if and only if $x + z < y + z$.
+\item for all $x,y,z \in R$, if $0 < z$ then we have $x < y$ if and only if $xz < yz$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+In any ordered commutative ring, $0 < 1$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $1 < 0$ then we have $0 < -1$ and so $0 < (-1)(-1) = 1$, which is a contradiction. \qed
+\end{proof}
+
+\begin{prop}
+The ordering on an ordered commutative ring is dense; that is, if $x < y$ then there exists $z$ such that $x < z < y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Take $z = (x + y) / 2$. \qed
+\end{proof}
+
+\section{Integral Domains}
+
+\begin{df}[Integral Domain]
+An \emph{integral domain} is a commutative ring such that, for all $a,b \in D$, if $ab = 0$ then $a = 0$ or $b = 0$.
+\end{df}
+
 \begin{prop}
 \label{prop:multcancel}
 In any integral domain, if $ab = ac$ and $a \neq 0$ then $b = c$.
@@ -3046,13 +3081,25 @@ In any integral domain, if $ab = ac$ and $a \neq 0$ then $b = c$.
 \pf\ We have $a(b-c) = 0$ and $a \neq 0$ so $b - c = 0$ hence $b = c$. \qed
 \end{proof}
 
+\begin{df}[Ordered Integral Domain]
+An \emph{ordered integral domain} is an ordered commutative ring that is an integral domain.
+\end{df}
+
 \chapter{Field Theory}
 
 \section{Fields}
 
 \begin{df}[Field]
-A \emph{field} $F$ is an integral domain such that $0 \neq 1$ and, for all $x \in F$, if $x \neq 0$ then there exists $y \in F$ such that $xy = 1$.
+A \emph{field} $F$ is a commutative ring such that $0 \neq 1$ and, for all $x \in F$, if $x \neq 0$ then there exists $y \in F$ such that $xy = 1$.
 \end{df}
+
+\begin{prop}
+Every field is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ If $ab = 0$ and $a \neq 0$ then $b = a^{-1}ab = 0$. \qed
+\end{proof}
 
 \begin{prop}
 In any field $F$, we have $F - \{0\}$ is an Abelian group under multiplication.
@@ -3176,10 +3223,6 @@ We prove this is a field.
 \step{d}{$[(a,b)][(b,a)] = [(1,1)]$}
 \qed
 \end{proof}
-\step{12}{For any $x,y \in F$, if $xy = [(0,1)]$ then $x = [(0,1)]$ or $y = [(0,1)]$.}
-\begin{proof}
-\pf\ If $qr = 0$ and $q \neq 0$, pick $q' \in F$ such that $qq' = 1$. Then $r = 1r = q'qr = q' 0 = 0$.
-\end{proof}
 \qed
 \end{proof}
 
@@ -3295,28 +3338,8 @@ Let $F$ and $G$ be fields of characteristic 0. Then there exists a unique field 
 \section{Ordered Fields}
 
 \begin{df}[Ordered Field]
-An \emph{ordered field} consists of a field $F$ with a linear order $<$ on $F$ such that:
-\begin{itemize}
-\item for all $x,y,z \in F$, we have $x < y$ if and only if $x + z < y + z$.
-\item for all $x,y,z \in F$, if $0 < z$ then we have $x < y$ if and only if $xz < yz$.
-\end{itemize}
+An \emph{ordered field} is an ordered commutative ring that is a field.
 \end{df}
-
-\begin{prop}
-In any ordered field, $0 < 1$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $1 < 0$ then we have $0 < -1$ and so $0 < (-1)(-1) = 1$, which is a contradiction. \qed
-\end{proof}
-
-\begin{prop}
-The ordering on an ordered field is dense; that is, if $x < y$ then there exists $z$ such that $x < z < y$.
-\end{prop}
-
-\begin{proof}
-\pf\ Take $z = (x + y) / 2$. \qed
-\end{proof}
 
 \begin{prop}
 Every ordered field $F$ has characteristic 0.
@@ -4509,7 +4532,7 @@ For any reals $x$, $y$ and $z$, we have $x < y$ if and only if $x + z < y + z$.
 \end{proof}
 \step{2}{$\forall x,y,z \in \mathbb{R}. x + z = y + z \Leftrightarrow x = y$}
 \begin{proof}
-	\pf\ Proposition \ref{prop:Abgroupcancel}.
+	\pf\ Proposition \ref{prop:groupcancel}.
 \end{proof}
 \step{3}{$\forall x,y,z \in \mathbb{R}. x < y \Rightarrow x + z < y + z$}
 \qedstep
