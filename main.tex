@@ -1115,23 +1115,231 @@ Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A
 
 \section{Ordering Relations}
 
+\subsection{Partial Orders}
+
+\begin{df}[Partial Ordering]
+Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a relation $\mathbf{R}$ on $\mathbf{A}$ that is reflexive, antisymmetric and transitive.
+
+We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
+\end{df}
+
+\begin{df}[Partially Ordered Set]
+A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
+\end{df}
+
+\begin{df}[Upper Bound]
+Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
+\end{df}
+
+\begin{df}[Bounded]
+Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded above} iff it has an upper bound.
+\end{df}
+
+\begin{df}[Least Upper Bound]
+Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $s \in \mathbf{A}$. Then $s$ is the \emph{least upper bound} or \emph{supremum} of $\mathbf{B}$ iff $s$ is an upper bound for $\mathbf{B}$ and, for every upper bound $u$ for $\mathbf{B}$, we have $s \leq u$.
+\end{df}
+
+\begin{df}[Complete]
+A poset is \emph{complete} iff every nonempty subset bounded above has a supremum, and every nonempty subset bounded below has an infimum.
+\end{df}
+
+\begin{df}[Dense]
+Let $A$ be a poset and $B \subseteq A$. Then $B$ is \emph{dense} iff, for all $x,y \in A$, if $x < y$ then there exists $z \in B$ such that $x < z < y$.
+\end{df}
+
+\begin{prop}
+\label{prop:orderisoid}
+Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense. Let $\theta : A \rightarrow A$ be a monotone map that is the identity on $B$. Then $\theta = \mathrm{id}_A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a \in A$} \prove{$\theta(a) = a$}}
+\step{3}{\pflet{$S(a) = \{b \in B \mid b < a\}$}}
+\step{2}{$S(a)$ is nonempty and bounded above.}
+\begin{proof}
+	\step{a}{$S(a)$ is nonempty.}
+	\begin{proof}
+		\step{i}{\pick\ $a_1 < a$}
+		\begin{proof}
+			\pf\ Since $a$ is not least.
+		\end{proof}
+		\step{ii}{There exists $b \in B$ such that $a_1 < b < a$.}
+	\end{proof}
+	\step{b}{$S(a)$ is bounded above by $a$.}
+\end{proof}
+\step{4}{$\sup S(a) \leq a$}
+\step{5}{$\sup S(a) = a$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\sup S(a) < a$}}
+	\step{b}{\pick\ $b \in B$ such that $\sup S(a) < b < a$}
+	\step{c}{$b \in S(a)$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $\sup S(a) < b$.
+	\end{proof}
+\end{proof}
+\step{6}{For all $b \in S(a)$ we have $b \leq \theta(a)$}
+\begin{proof}
+	\step{a}{\pflet{$b \in S(a)$}}
+	\step{b}{$b < a$}
+	\step{c}{$\theta(b) \leq \theta(a)$}
+	\step{d}{$b \leq \theta(a)$}
+	\begin{proof}
+		\pf\ $\theta(b) = b$
+	\end{proof}
+\end{proof}
+\step{7}{$a \leq \theta(a)$}
+\begin{proof}
+	\pf\ Since $a = \sup S(a)$ and $\theta(a)$ is an upper bound for $S(a)$.
+\end{proof}
+\step{8}{$a \nless \theta(a)$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $a < \theta(a)$.}}
+	\step{b}{\pick\ $b \in B$ such that $a < b < \theta(a)$}
+	\step{c}{$\theta(a) \leq \theta(b) = b$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $b < \theta(a)$.
+	\end{proof}
+\end{proof}
+\step{9}{$\theta(a) = a$}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:extendorderiso}
+Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $a \in A$, let $S(a) = \{ b \in B \mid b < a \}$.}
+\step{2}{Define $\overline{\phi} : A \rightarrow P$ by $\overline{\phi}(a) = \sup \phi(S(a))$.}
+\begin{proof}
+	\step{a}{$\phi(S(a))$ is nonempty.}
+	\begin{proof}
+		\step{i}{\pick\ $a_1 < a$}
+		\begin{proof}
+			\pf\ Since $a$ is not least.
+		\end{proof}
+		\step{ii}{\pick\ $b \in B$ such that $a_1 < b < a$.}
+		\step{iii}{$\phi(b) \in \phi(S(a))$}
+	\end{proof}
+	\step{b}{$\phi(S(a))$ is bounded above.}
+	\begin{proof}
+		\step{i}{\pick\ $a_2 > a$}
+		\begin{proof}
+			\pf\ Since $a$ is not greatest.
+		\end{proof}
+		\step{ii}{\pick\ $b \in B$ such that $a < b < a_2$}
+		\step{iii}{$\phi(b)$ is an upper bound for $\phi(S(a))$.}
+	\end{proof}
+\end{proof}
+\step{3}{$\overline{\phi}$ is monotone.}
+\begin{proof}
+	\pf\ If $a \leq a'$ then $S(a) \subseteq S(a')$ and so $\overline{\phi}(a) \leq \overline{\phi}(a')$.
+\end{proof}
+\step{4}{$\overline{\phi}$ extends $\phi$.}
+\begin{proof}
+	\step{a}{\pflet{$b \in B$} \prove{$\phi(b) = \sup \phi(S(b))$}}
+	\step{b}{$\phi(b)$ is an upper bound for $\phi(S(b))$}
+	\step{c}{\pflet{$u$ be any upper bound for $\phi(S(b))$} \prove{$\phi(b) \leq u$}}
+	\step{d}{\assume{for a contradiction $u < \phi(b)$}}
+	\step{e}{\pick\ $q \in Q$ such that $u < q < \phi(b)$}
+	\step{f}{\pick\ $b' \in B$ such that $\phi(b') = q$}
+	\step{g}{$b' < b$}
+	\step{h}{$b' \in S(b)$}
+	\step{i}{$q = \phi(b') \leq u$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{5}{\pflet{$\psi = \phi^{-1}$}}
+\step{6}{\pflet{$\overline{\psi} : P \rightarrow A$ be the function $\overline{\psi}(p) = \sup \{ \psi(q) \mid q \in Q, q < p \}$}}
+\step{7}{$\overline{\psi}$ is monotone and extends $\psi$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{8}{$\overline{\psi} \circ \overline{\phi} : A \rightarrow A$ is monotone and the identity on $B$.}
+\step{9}{$\overline{\psi} \circ \overline{\phi} = \mathrm{id}_A$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:orderisoid}.
+\end{proof}
+\step{10}{$\overline{\phi} \circ \overline{\psi} = \mathrm{id}_B$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:orderisoid}.
+\end{proof}
+\step{11}{If $\phi^* : A \cong P$ is any order isomorphism that extends $\phi$ then $\phi^* = \overline{\phi}$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in A$} \prove{$\phi^*(a) = \sup \phi(S(a))$}}
+	\step{b}{$\phi^*(a)$ is an upper bound for $\phi(S(a))$}
+	\step{c}{\pflet{$u$ be any upper bound for $\phi(S(a))$} \prove{$\phi^*(a) \leq u$}}
+	\step{d}{\assume{for a contradiction $u < \phi^*(a)$}}
+	\step{e}{\pick\ $q \in Q$ such that $u < q < \phi^*(a)$}
+	\step{f}{\pick\ $b \in B$ such that $q = \phi(b)$}
+	\step{g}{$b < a$}
+	\step{h}{$b \in S(a)$}
+	\step{i}{$q = \phi(b) \leq u$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Knaster Fixed-Point Theorem]
+Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B = \{ x \in A \mid x \leq \phi(x) \}$}}
+\step{2}{\pflet{$a = \sup B$}}
+\begin{proof}
+	\pf\ $B$ is nonempty because the least element of $A$ is in $B$, and it is bounded above by the greatest element of $A$.
+\end{proof}
+\step{3}{For all $b \in B$ we have $b \leq \phi(a)$}
+\begin{proof}
+	\step{a}{\pflet{$b \in B$}}
+	\step{b}{$b \leq \phi(b)$}
+	\step{c}{$b \leq a$}
+	\step{d}{$\phi(b) \leq \phi(a)$}
+	\step{e}{$b \leq \phi(a)$}
+\end{proof}
+\step{4}{$a \leq \phi(a)$}
+\step{5}{$\phi(a) \leq \phi(\phi(a))$}
+\step{6}{$\phi(a) \in B$}
+\step{7}{$\phi(a) \leq a$}
+\step{8}{$\phi(a) = a$}
+\qed
+\end{proof}
+
+\subsection{Linear Orders}
+
 \begin{df}[Linear Ordering]
-Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} on $\mathbf{A}$ is a relation $\mathbf{R}$ on $\mathbf{A}$ such that:
-\begin{enumerate}
-\item $\mathbf{R}$ is transitive.
-\item \emph{Trichotomy}. For all $x,y \in \mathbf{A}$, exactly one of the following holds:
-\[ (x,y) \in \mathbf{R}, \qquad (y,x) \in \mathbf{R}, \qquad x = y \enspace . \]
-\end{enumerate}
+Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} on $\mathbf{A}$ is a partial ordering $\leq$ on $\mathbf{A}$ that is \emph{total}, i.e.
+\[ \forall x,y \in \mathbf{A}. x \leq y \vee y \leq x \]
 
 We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
 \end{df}
 
-\begin{thm}
-Any linear ordering on a class is irreflexive.
-\end{thm}
+\begin{prop}[Trichotomy]
+Let $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
+\end{prop}
 
 \begin{proof}
-\pf\ Immediate from trichotomy. \qed
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+Let $<$ be an irreflexive relation on $\mathbf{A}$ that satisfies trichotomy. Define $\leq$ on $\mathbf{A}$ by $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a linear ordering on $\mathbf{A}$ and $x < y$ iff $x \leq y$ and $x \neq y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
 \end{proof}
 
 \begin{prop}
@@ -1208,17 +1416,6 @@ Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A 
 \end{proof}
 \end{proof}
 
-\begin{df}[Upper Bound]
-Let $\mathbf{R}$ be a linear ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
-\end{df}
-
-\begin{df}[Bounded]
-Let $\mathbf{R}$ be a linear ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded above} iff it has an upper bound.
-\end{df}
-
-\begin{df}[Least Upper Bound]
-Let $\mathbf{R}$ be a linear ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $s \in \mathbf{A}$. Then $s$ is the \emph{least upper bound} or \emph{supremum} of $\mathbf{B}$ iff $s$ is an upper bound for $\mathbf{B}$ and, for every upper bound $u$ for $\mathbf{B}$, we have $s \leq u$.
-\end{df}
 
 \chapter{Functions}
 
@@ -2986,6 +3183,115 @@ We prove this is a field.
 \qed
 \end{proof}
 
+\begin{df}
+For any field $F$, let $N(F)$ be the intersection of all the subsets $S \subseteq F$ such that $1 \in S$ and $\forall x \in S. x + 1 \in S$.
+\end{df}
+
+\begin{df}[Characteristic Zero]
+A field $F$ has \emph{characteristic 0} iff $0 \notin N(F)$.
+\end{df}
+
+\begin{prop}
+\label{prop:NFbij}
+In a field $F$ with characteristic 0, the function $n : \mathbb{N} \rightarrow N(F)$ defined by
+\begin{align*}
+n(0) & = 1 \\
+n(x+1) & = n(x) + 1
+\end{align*}
+is a bijection.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$n$ is injective.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $n(i) = n(j)$ with $i \neq j$}}
+	\step{b}{\assume{w.l.o.g. $i < j$}}
+	\step{c}{$n(j-i) = 0$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $F$ has characteristic 0.
+	\end{proof}
+\end{proof}
+\step{2}{$n$ is surjective.}
+\begin{proof}
+	\pf\ Since $\ran n$ is a subset of $F$ that includes 1 and is closed under $+1$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+In any field $F$, let
+\[ I(F) = N(F) \cup \{0\} \cup \{-x \mid x \in N(F) \} \]
+\end{df}
+
+\begin{df}
+In any field $F$, let
+\[ Q(F) = \{ x/y \mid x,y \in I(F), y \neq 0 \} \]
+\end{df}
+
+\begin{prop}
+$Q(F)$ is the smallest subfield of $F$.
+\end{prop}
+
+\begin{proof}
+\pf\ $Q(F)$ is closed under $+$ and $\cdot$, and any subset of $F$ closed under $+$ and $\cdot$ that contains 0 and 1 must include $Q(F)$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:Qisounique}
+Let $F$ and $G$ be fields of characteristic 0. Then there exists a unique field isomorphism between $Q(F)$ and $Q(G)$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : N(F) \rightarrow N(G)$ be the unique function such that $\phi(1) = 1$ and $\forall x \in N(F). \phi(x+1) = \phi(x) + 1$.}}
+\step{2}{$\phi$ is a bijection.}
+\begin{proof}
+	\pf\ Similar to Proposition \ref{prop:NFbij}.
+\end{proof}
+\step{3}{$\forall x,y \in N(F). \phi(x+y) = \phi(x) + \phi(y)$}
+\begin{proof}
+	\pf\ Induction on $y$.
+\end{proof}
+\step{4}{$\forall x,y \in N(F). \phi(xy) = \phi(x)\phi(y)$}
+\begin{proof}
+	\pf\ Induction on $y$.
+\end{proof}
+\step{5}{Extend $\phi$ to a bijection $I(F) \cong I(G)$ such that $\forall x,y \in I(F).\phi(x+y) = \phi(x) + \phi(y)$ and $\forall x,y \in I(F). \phi(xy) = \phi(x)\phi(y)$}
+\begin{proof}
+	\step{a}{Define $\phi(0) = 0$ and $\phi(-x) = -\phi(x)$ for $x \in N(F)$}
+	\begin{proof}
+		\step{i}{$0 \notin N(F)$}
+		\step{ii}{For all $x \in N(F)$ we have $-x \notin N(F)$}
+		\begin{proof}
+			\pf\ Then we would have $x + -x = 0 \in N(F)$.
+		\end{proof}
+		\step{iii}{For all $x \in N(F)$ we have $-x \neq 0$}
+	\end{proof}
+	\step{b}{For all $x,y \in I(F)$ we have $\phi(x+y) = \phi(x) + \phi(y)$}
+	\begin{proof}
+		\pf\ Case analysis on $x$ and $y$.
+	\end{proof}
+	\step{c}{For all $x,y \in I(F)$ we have $\phi(xy) = \phi(x) \phi(y)$}
+	\begin{proof}
+		\pf\ Case analysis on $x$ and $y$.
+	\end{proof}
+\end{proof}
+\step{6}{Extend $\phi$ to a bijection $Q(F) \cong Q(G)$ such that $\forall x,y \in Q(F).\phi(x+y) = \phi(x) + \phi(y)$ and $\forall x,y \in Q(F). \phi(xy) = \phi(x)\phi(y)$}
+\begin{proof}
+	\step{a}{Define $\phi(x/y) = \phi(x)/\phi(y)$}
+\end{proof}
+\step{7}{$\phi$ is unique.}
+\begin{proof}
+	\step{a}{\pflet{$\theta$ satisfy the theorem.}}
+	\step{b}{For all $x \in N(F)$ we have $\theta(x) = \phi(x)$}
+	\step{c}{For all $x \in I(F)$ we have $\theta(x) = \phi(x)$}
+	\step{d}{For all $x \in Q(F)$ we have $\theta(x) = \phi(x)$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Ordered Fields}
 
 \begin{df}[Ordered Field]
@@ -3010,6 +3316,232 @@ The ordering on an ordered field is dense; that is, if $x < y$ then there exists
 
 \begin{proof}
 \pf\ Take $z = (x + y) / 2$. \qed
+\end{proof}
+
+\begin{prop}
+Every ordered field $F$ has characteristic 0.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $0 < n$ for all $n \in N(F)$. \qed
+\end{proof}
+
+\begin{prop}
+Let $F$ be a field of characteristic 0. Then there exists a unique relation $<$ on $Q(F)$ that makes $Q(F)$ into an ordered field.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+\label{cor:isoQs}
+Let $F$ and $G$ be ordered fields. Let $\phi$ be the unique field isomorphism between $Q(F)$ and $Q(G)$. Then $\phi$ is an ordered field isomorphism.
+\end{cor}
+
+\begin{df}[Archimedean]
+An ordered field $F$ is \emph{Archimedean} iff
+\[ \forall x \in F. \exists n \in N(F). n > x \enspace . \]
+\end{df}
+
+\begin{prop}
+\label{prop:Archimedean1}
+Let $F$ be an Archimedean ordered field. Let $x,y \in F$ with $x > 0$. Then there exists $n \in N(F)$ such that $nx > y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Pick $n > y/x$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:Qdense}
+Let $F$ be an Archimedean ordered field. For all $x,y \in F$, if $x < y$, then there exists $r \in Q(F)$ such that $x < r < y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{one}{\case{$x > 0$}}
+\begin{proof}
+\step{1}{\pick\ $n \in N(F)$ such that $n(y-x) > 1$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Archimedean1}.
+\end{proof}
+\step{2}{$ny > 1 + nx$}
+\step{3}{\pflet{$m$ be the least element of $N(F)$ such that $m > nx$.}}
+\step{4}{$m-1 \leq nx$}
+\step{5}{$nx < m < ny$}
+\step{6}{$x < m/n < y$}
+\end{proof}
+\step{two}{\case{$x \leq 0$}}
+\begin{proof}
+	\step{1}{\pick\ $k \in N(F)$ such that $k > -x$}
+	\step{2}{$0 < x+k < y + k$}
+	\step{3}{\pick\ $r \in Q(F)$ such that $x + k < r < y + k$}
+	\begin{proof}
+		\pf\ \stepref{one}
+	\end{proof}
+	\step{4}{$x < r-k < y$}
+\end{proof}
+\end{proof}
+
+\begin{df}[Complete]
+An ordered field $F$ is \emph{complete} iff every nonempty subset of $F$ bounded above has a least upper bound.
+\end{df}
+
+\begin{prop}
+Every complete ordered field is Archimedean.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$F$ be a complete ordered field.}}
+\step{2}{\pflet{$x \in F$}}
+\step{3}{\assume{for a contradiction there is no member of $N(F)$ greater than $x$.}}
+\step{4}{$x$ is an upper bound for $N(F)$.}
+\step{5}{\pflet{$y = \sup N(F)$}}
+\step{6}{\pick\ $n \in N(F)$ such that $y-1 < n$}
+\step{7}{$y < n + 1$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $F$ be a complete ordered field and $a \in F$ be nonnegative. Then there exists $b \in F$ such that $b^2 = a$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B = \{ x \in F \mid 0 \leq x \leq 1 + a \}$}}
+\step{2}{\pflet{$\phi : B \rightarrow B$ be the function
+\[ \phi(x) = x + \frac{1}{2(1+a)}(a-x^2) \enspace . \]}}
+\step{3}{$\phi$ is strictly monotone.}
+\begin{proof}
+	\step{a}{\pflet{$0 \leq x < y \leq 1 + a$}}
+	\step{b}{$1 - \frac{x+y}{2(1+a)} > 0$}
+	\step{c}{$\phi(y) - \phi(x) = (y-x)(1 - \frac{x+y}{2(1+a)}) > 0$}
+	\step{d}{$\phi(x) < \phi(y)$}
+\end{proof}
+\step{4}{\pick\ $b \in B$ such that $\phi(b) = b$.}
+\begin{proof}
+	\pf\ Knaster Fixed-Point Theorem.
+\end{proof}
+\step{5}{$b^2 = a$}
+\qed
+\end{proof}
+
+\begin{thm}[Uniqueness of the Complete Ordered Field]
+If $F$ and $G$ are complete ordered fields, then there exists a unique bijection $\phi : F \cong G$ such that, for all $x,y \in F$,
+\begin{align*}
+\phi(x+y) & =\phi(x) + \phi(y) \\
+\phi(xy) & = \phi(x) \phi(y)
+\end{align*}
+This bijection also satisfies: for all $x,y \in F$,
+\[ x < y \Leftrightarrow \phi(x) < \phi(y) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a bijection $\phi : Q(F) \cong Q(G)$ such that, for all $x,y \in Q(F)$,
+\begin{align*}
+\phi(x+y) & = \phi(x) + \phi(y) \\
+\phi(xy) & = \phi(x)\phi(y) \\
+x < y & \Leftrightarrow \phi(x) < \phi(y)
+\end{align*}}
+\begin{proof}
+	\pf\ Corollary \ref{cor:isoQs}.
+\end{proof}
+\step{2}{$Q(F)$ intersects every interval in $F$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Qdense}.
+\end{proof}
+\step{3}{$Q(G)$ intersects every interval in $G$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Qdense}.
+\end{proof}
+\step{4}{\pick\ an order isomorphism $\psi : F \cong G$ that extends $\phi$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:extendorderiso}.
+\end{proof}
+\step{5}{$\forall x,y \in F. \psi(x+y) = \psi(x) + \psi(y)$}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in F$}}
+	\step{b}{$\psi(x) + \psi(y) \nless \psi(x+y)$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $\psi(x) + \psi(y) < \psi(x+y)$}}
+		\step{ii}{\pick\ $r' \in Q(G)$ such that $\psi(x) < r' < \psi(x+y) - \psi(y)$}
+		\step{iii}{\pick\ $s' \in Q(G)$ such that $\psi(y) < s' < \psi(x+y) - r'$}
+		\step{vi}{$r' + s' < \psi(x+y)$}
+		\step{vii}{\pick\ $r,s \in Q(F)$ such that $\phi(r) = r'$ and $\phi(s) = s'$}
+		\step{viii}{$\phi(r+s) = r' + s'$}
+		\step{ix}{$\psi(x) < \psi(r)$}
+		\step{x}{$\psi(y) < \psi(s)$}
+		\step{xi}{$\psi(x+y) >\psi(r+s)$}
+		\step{xii}{$x < r$}
+		\step{xiii}{$y < s$}
+		\step{xiv}{$x+y > r+s$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}		 
+	\end{proof}
+	\step{c}{$\psi(x+y) \nless \psi(x) + \psi(y)$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{6}{$\forall x,y \in F. \psi(xy) = \psi(x)\psi(y)$}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in F$}}
+	\step{b}{\case{$x$ and $y$ are positive.}}
+	\begin{proof}
+		\step{i}{$\psi(x) \psi(y) \nless \psi(xy)$}
+		\begin{proof}
+			\step{one}{\assume{for a contradiction $\psi(x) \psi(y) < \psi(xy)$}}
+			\step{two}{\pick\ $r' \in Q(G)$ such that $\psi(x) < r' < \psi(xy) / \psi(y)$}
+			\step{three}{\pick\ $s' \in Q(G)$ such that $\psi(y) < s' < \psi(xy) / r'$}
+			\step{four}{$r's' < \psi(xy)$}
+			\step{five}{\pick\ $r,s \in Q(F)$ such that $\phi(r) = r'$ and $\phi(s) = s'$}
+			\step{six}{$\phi(rs) = r's'$}
+			\step{seven}{$x < r$, $y < s$ and $rs < xy$}
+			\qedstep
+			\begin{proof}
+				\pf\ This is a contradiction.
+			\end{proof}
+		\end{proof}
+		\step{ii}{$\psi(xy) \nless \psi(x) \psi(y)$}
+		\begin{proof}
+			\pf\ Similar.
+		\end{proof}
+	\end{proof}
+	\step{c}{\case{$x$ and $y$ are not both positive.}}
+	\begin{proof}
+		\pf\ Follows from \stepref{b} since $\psi(-x) = -\psi(x)$ by \stepref{5}.
+	\end{proof}
+\end{proof}
+\step{7}{For any field isomorphism $\theta : F \cong G$, we have $\theta = \psi$.}
+\begin{proof}
+	\step{a}{$\theta \restriction Q(F) = \phi$}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:Qisounique}.
+	\end{proof}
+	\step{b}{$\theta$ is strictly monotone.}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in F$ with $x < y$}}
+		\step{ii}{$y-x > 0$}
+		\step{iii}{\pick\ $z \in F$ such that $z^2 = y-x$}
+		\step{iv}{$\theta(z)^2 = \theta(y) - \theta(x)$}
+		\step{v}{$\theta(y) - \theta(x) > 0$}
+		\step{vi}{$\theta(x) < \theta(y)$}
+	\end{proof}
+	\step{c}{$\theta = \psi$}
+	\begin{proof}
+		\pf\ By the uniqueness of $\psi$.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Number Systems}
@@ -4404,6 +4936,40 @@ For any non-zero real $x$, there exists a real $y$ such that $xy = 1$.
 \qed
 \end{proof}
 
+\begin{prop}
+For real numbers $x$, $y$ and $z$, if $0 < z$ then $x < y$ if and only if $xz < yz$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any real numbers $x$, $y$ and $z$, if $0 < z$ and $x < y$ then $xz < yz$}
+\begin{proof}
+	\step{a}{\pflet{$x$, $y$ and $z$ be real numbers.}}
+	\step{b}{\assume{$0 < z$ and $x < y$.}}
+	\step{c}{$y = x + (y-x)$}
+	\step{d}{$y-x > 0$}
+	\step{e}{$(y-x)z > 0$}
+	\step{f}{$yz > xz$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			yz & = (x+(y-x))z \\
+			& = xz + (y-x)z \\
+			& > xz
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For any real numbers $x$, $y$ and $z$, if $0 < z$ and $xz < yz$ then $x < y$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:strictmonotoneinv}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The real numbers form a complete ordered field.
+\end{cor}
+
 \chapter{Complex Analysis}
 
 \begin{df}
@@ -4570,7 +5136,6 @@ Let $p \geq 1$. Let $(x_n), (y_n) \in l^p$. Then
 
 \section{Vector Spaces}
 
-%TODO Define $\mathbb{R}$
 %TODO Define $\mathbb{C}$
 \begin{df}[Vector Space]
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{vector space} over $K$ is a triple $(V,+,\cdot)$ such that:
