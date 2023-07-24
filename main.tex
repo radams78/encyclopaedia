@@ -18,6 +18,7 @@
 \newtheorem{props}[ax]{Proposition Schema}
 \newtheorem{cor}{Corollary}[ax]
 \newtheorem{thm}[ax]{Theorem}
+\newtheorem{thms}[ax]{Theorem Schema}
 \newtheorem{lm}[ax]{Lemma}
 \theoremstyle{definition}
 \newtheorem{df}[ax]{Definition}
@@ -1486,6 +1487,43 @@ Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A 
 A \emph{well ordering} on a set $A$ is a linear ordering on $A$ such that every nonempty subset has a least element.
 \end{df}
 
+\begin{thm}[Transfinite Induction Principle]
+Let $<$ be a well ordering on $A$. Let $B \subseteq A$. Assume that, for all $t \in A$,
+\[ \seg t \subseteq B \Rightarrow t \in B \enspace . \]
+Then $B = A$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $B \neq A$}}
+\step{2}{\pflet{$m$ be the least element of $A - B$}}
+\step{3}{$\seg m \subseteq B$}
+\begin{proof}
+	\pf\ By leastness of $m$.
+\end{proof}
+\step{4}{$m \in B$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $<$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $<$ is a well ordering on $A$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C \subseteq A$ be nonempty.}}
+\step{2}{\pflet{$B = \{ t \in A \mid \forall x \in C. t < x \}$}}
+\step{3}{$B \cap C = \emptyset$}
+\step{4}{$B \neq A$}
+\step{5}{\pick\ $t \in A$ such that $\seg t \subseteq B$ and $t \notin B$}
+\step{6}{$t$ is least in $C$.}
+\qed
+\end{proof}
+
 \chapter{Functions}
 
 \section{Functions}
@@ -1943,6 +1981,133 @@ No set is equinumerous to its power set.
 \qed
 \end{proof}
 
+\section{Transfinite Recursion}
+
+\begin{thms}[Transfinite Recursion Theorem Schema]
+For any property $G(x,y)$, the following is a theorem:
+
+Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there exists a unique $y$ such that $G(f,y)$. Then there exists a unique function $F$ such that $\dom F = A$ and
+\[ \forall t \in A. G(F \restriction \seg t, F(t)) \enspace . \]
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{For $t \in A$, let us say that a function $v$ is \emph{$G$-constructed up to $t$} iff $\dom v = \{x \in A \mid x \leq t \}$ and
+\[ \forall x \in \dom v. G(v \restriction \seg x, v(x)) \enspace . \]}
+\step{2}{For all $t_1, t_2 \in A$ with $t_1 \leq t_2$, if $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$, then $\forall x \leq t_1. v_1(x) = v_2(x)$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in A$}}
+	\step{b}{\assume{$\forall y < x. (y \leq t_1 \Rightarrow v_1(y) = v_2(y))$}}
+	\step{c}{\assume{$x \leq t_1$}}
+	\step{d}{$G(v_1 \restriction \seg x, v_1(x))$}
+	\step{e}{$G(v_2 \restriction \seg x, v_2(x))$}
+	\step{f}{$v_1 \restriction \seg x = v_2 \restriction \seg x$}
+	\step{g}{$v_1(x) = v_2(x)$}
+	\qedstep
+	\begin{proof}
+		\pf\ By transfinite induction.
+	\end{proof}
+\end{proof}
+\step{3}{Let $\mathcal{K}$ be the set of all functions $v$ such that there exists $t \in A$ such that $v$ is $G$-constructed up to $t$.}
+\begin{proof}
+	\pf\ By an Axiom of Replacement using \stepref{2}.
+\end{proof}
+\step{4}{\pflet{$F = \bigcup \mathcal{K}$}}
+\step{5}{$F$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$(x,y_1),(x,y_2) \in F$}}
+	\step{b}{\pick\ $v_1,v_2 \in \mathcal{K}$ such that $v_1(x) = y_1$ and $v_2(x) = y_2$.}
+	\step{c}{\pick\ $t_1, t_2 \in A$ such that $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$.}
+	\step{d}{\assume{w.l.o.g. $t_1 \leq t_2$}}
+	\step{e}{$v_1(x) = v_2(x)$}
+	\begin{proof}
+		\pf\ \stepref{2}.
+	\end{proof}
+	\step{f}{$y_1 = y_2$}
+\end{proof}
+\step{6}{$\forall x \in \dom F. G(F \restriction \seg x, F(x))$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \dom F$}}
+	\step{b}{\pick\ $v \in \mathcal{K}$ such that $v(x) = F(x)$}
+	\step{c}{\pick\ $t$ such that $v$ is $G$-constructed up to $t$.}
+	\step{d}{$G(v \restriction \seg x, v(x))$}
+	\step{e}{$v \restriction \seg x = F \restriction \seg x$}
+	\begin{proof}
+		\step{i}{\pflet{$y < x$} \prove{$v(y) = F(y)$}}
+		\step{ii}{$y \in \dom F$}
+		\begin{proof}
+			\pf\ Since $y \in \dom v$ and $v \in \mathcal{K}$.
+		\end{proof}
+		\step{iii}{\pick\ $u \in \mathcal{K}$ such that $u(y) = F(y)$}
+		\step{iv}{$u(y) = v(y)$}
+		\begin{proof}
+			\pf\ \stepref{2}.
+		\end{proof}
+		\step{v}{$v(y) = F(y)$}
+	\end{proof}
+	\step{f}{$G(F \restriction \seg x, F(x))$}
+\end{proof}
+\step{7}{$\dom F = A$}
+\begin{proof}
+	\step{a}{\assume{$\dom F \neq A$}}
+	\step{b}{\pflet{$t$ be least in $A - \dom F$}}
+	\step{c}{$\seg t = \dom F$}
+	\step{d}{\pflet{$y$ be the unique object such that $G(F, y)$}}
+	\step{e}{\pflet{$v = F \cup \{(t,y)\}$}}
+	\step{f}{$v$ is $G$-constructed up to $t$.}
+	\step{g}{$t \in \dom F$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{8}{$F$ is unique.}
+\begin{proof}
+	\pf\ If $F'$ also satisfies the theorem, prove $F(x) = F'(x)$ by transfinite induction on $x$.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Ordinal Numbers}
+
+\begin{df}[Ordinal Number]
+Let $A$ be a well ordered set. Define the function $E$ on $A$ by transfinite recursion by:
+\[ E(t) = \{ E(x) \mid x < t \} \enspace . \]
+The \emph{ordinal number} of $A$ is $\alpha := \ran E$.
+\end{df}
+
+\begin{prop}
+\label{prop:Ebij}
+$E$ is a bijection between $A$ and $\alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $s < t$ then $E(s) \in E(t)$ so $E(s) \neq E(t)$. \qed
+\end{proof}
+
+\begin{prop}
+For all $s,t \in A$, we have $s < t$ if and only if $E(s) \in E(t)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $s < t$ then $E(s) \in E(t)$.}
+\begin{proof}
+	\pf\ By definition of $E(t)$.
+\end{proof}
+\step{2}{If $E(s) \in E(t)$ then $s < t$.}
+\begin{proof}
+	\step{a}{\assume{$E(s) \in E(t)$}}
+	\step{b}{\pick\ $s' < t$ such that $E(s) = E(s')$}
+	\step{c}{$s = s'$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:Ebij}.
+	\end{proof}
+	\step{d}{$s < t$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -2147,76 +2312,224 @@ $\mathbb{N}$ is a transitive set.
 \qed
 \end{proof}
 
-\section{Recursion}
+\section{Ordering on $\mathbb{N}$}
 
-\begin{thm}[Recursion Theorem on $\mathbb{N}$]
-Let $A$ be a set, $a \in A$, and $F : A \rightarrow A$. Then there exists a unique function $h : \mathbb{N} \rightarrow A$ such that
-\[ h(0) = a \enspace , \]
-and for every $n \in \mathbb{N}$,
-\[ h(n^+) = F(h(n)) \enspace . \]
+\begin{df}
+Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$. We write $m \leq n$ iff $m < n$ or $m = n$.
+\end{df}
+
+\begin{prop}
+\label{prop:succltsucc}
+For any natural numbers $m$ and $n$, we have $m < n$ if and only if $m^+ < n^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any natural numbers $m$ and $n$, if $m < n$ then $m^+ < n^+$.}
+\begin{proof}
+	\step{a}{For any natural number $m$, if $m < 0$ then $m^+ < 0^+$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m < n. m^+ < n^+$ then $\forall m < n^+. m^+ < n^{++}$}
+	\begin{proof}
+		\step{i}{\pflet{$m < n^+$}}
+		\step{ii}{$m < n$ or $m = n$}
+		\step{iii}{\case{$m < n$}}
+		\begin{proof}
+			\step{one}{$m^+ < n^+$}
+			\begin{proof}
+				\pf\ Induction hypothesis.
+			\end{proof}
+			\step{two}{$m^+ < n^{++}$}
+		\end{proof}
+		\step{iv}{\case{$m = n$}}
+		\begin{proof}
+			\pf\ $m^+ = n^+ < n^{++}$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{For any natural numbers $m$ and $n$, if $m^+ < n^+$ then $m < n$.}
+\begin{proof}
+	\step{a}{We never have $m^+ < 0^+$.}
+	\begin{proof}
+		\step{i}{$m^+ \nless 0$}
+		\step{ii}{$m^+ \neq 0$}
+		\step{iii}{$m^+ \nless 0^+$}
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m. m^+ < n^+ \Rightarrow m < n$, then $\forall m. m^+ < n^{++} \Rightarrow m < n^+$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m. m^+ < n^+ \Rightarrow m < n$}}
+		\step{iii}{\pflet{$m$ be a natural number.}}
+		\step{iv}{\assume{$m^+ < n^{++}$}}
+		\step{v}{$m^+ < n^+$ or $m^+ = n^+$}
+		\step{vi}{\case{$m^+ < n^+$}}
+		\begin{proof}
+			\step{one}{$m < n$}
+			\begin{proof}
+				\pf\ Induction hypothesis.
+			\end{proof}
+			\step{two}{$m < n^+$}
+		\end{proof}
+		\step{vii}{\case{$m^+ = n^+$}}
+		\begin{proof}
+			\pf\ $m = n < n^+$ by Proposition \ref{prop:Peano2}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Trichotomy Law for $\mathbb{N}$]
+For any natural numbers $m$ and $n$, exactly one of $m < n$, $n < m$, $m = n$ holds.
 \end{thm}
 
 \begin{proof}
 \pf
-\step{1}{Define a function $v$ to be \emph{acceptable} iff $\dom v \subseteq \mathbb{N}$, $\ran v \subseteq A$, and:
-\begin{enumerate}
-\item If $0 \in \dom v$ then $v(0) = a$
-\item For all $n \in \mathbb{N}$, if $n^+ \in \dom v$, then $n \in \dom v$ and $v(n^+) = F(v(n))$.
-\end{enumerate}}
-\step{2}{\pflet{$\mathcal{K}$ be the set of all acceptable functions.}}
+\step{1}{For all $m$ and $n$, at most one of $m < n$, $n < m$, $m = n$ holds.}
 \begin{proof}
-	\pf\ This is a set because it is a subset of $\mathcal{P}(\mathbb{N} \times A)$.
-\end{proof}
-\step{3}{\pflet{$h = \bigcup \mathcal{K}$}}
-\step{4}{For all $n$ and $y$ we have $(n,y) \in h$ iff there exists an acceptable $v$ such that $v(n) = y$.}
-\step{5}{$h$ is a function.}
-\begin{proof}
-	\step{a}{\pflet{$P(n)$ be the predicate: there is at most one $y$ such that $(n,y) \in h$.}}
-	\step{b}{$P(0)$}
+	\step{a}{We do not have $m < n$ and $m = n$.}
 	\begin{proof}
-		\pf\ If $(0,y) \in h$ then $y = a$.
+		\pf\ This would imply $n < n$ contradicting the Axiom of Regularity.
 	\end{proof}
-	\step{c}{$\forall n \in \mathbb{N}. P(n) \Rightarrow P(n^+)$}
+	\step{b}{We do not have $m < n$ and $n < m$.}
 	\begin{proof}
-		\step{i}{\pflet{$n \in \mathbb{N}$}}
-		\step{ii}{\assume{$P(n)$}}
-		\step{iii}{\pflet{$(n^+,x),(n^+,y) \in h$}}
-		\step{iv}{\pick\ acceptable $v_1$, $v_2$ such that $v_1(n^+) = x$ and $v_2(n^+) = y$}
-		\step{v}{$F(v_1(n)) = x$ and $F(v_2(n)) = y$}
-		\step{vi}{$v_1(n) = v_2(n)$}
+		\pf\ This would imply $n < n$ by Proposition \ref{prop:nattrans}, contradicting the Axiom of Regularity.
+	\end{proof}
+\end{proof}
+\step{2}{For all $m$ and $n$, either $m < n$ or $n < m$ or $m = n$.}
+\begin{proof}
+	\step{a}{For all $m$, either $m = 0$ or $0 < m$.}
+	\begin{proof}
+		\step{i}{$0 = 0$}
+		\step{ii}{For any natural number $m$, we have $0 < m^+$.}
 		\begin{proof}
-			\pf\ \stepref{ii}
+			\step{one}{$0 < 0^+$}
+			\step{two}{For any natural number $m$, if $0 < m^+$ then $0 < m^{++}$.}
 		\end{proof}
-		\step{vii}{$x = y$}
 	\end{proof}
-	\step{d}{$\forall n \in \mathbb{N}. P(n)$}
-\end{proof}
-\step{6}{$h$ is acceptable.}
-\begin{proof}
-	\step{a}{If $0 \in \dom h$ then $h(0) = a$}
-	\step{b}{For all $n \in \mathbb{N}$, if $n^+ \in \dom h$ then $n \in \dom h$ and $h(n^+) = F(h(n))$}
-\end{proof}
-\step{7}{$\dom h = \mathbb{N}$}
-\begin{proof}
-	\step{a}{$0 \in \dom h$}
+	\step{b}{For any natural number $n$, if $\forall m (m < n \vee n < m \vee m = n)$ then $\forall m (m < n^+ \vee n^+ < m \vee m = n^+)$.}
 	\begin{proof}
-		\pf\ Since $\{(0,a)\}$ is an acceptable function.
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m (m < n \vee n < m \vee m = n)$}}
+		\step{iii}{\pflet{$m$ be a natural number.}}
+		\step{iv}{\case{$m < n$}}
+		\begin{proof}
+			\pf\ Then $m < n^+$.
+		\end{proof}
+		\step{v}{\case{$n < m$}}
+		\begin{proof}
+			\step{one}{$m \neq 0$}
+			\step{two}{\pick\ $p$ such that $m = p^+$}
+			\step{three}{$n < p$ or $n = p$}
+			\step{four}{\case{$n < p$}}
+			\begin{proof}
+				\pf\ Then $n^+ < p^+ = m$ by Proposition \ref{prop:succltsucc}.
+			\end{proof}
+			\step{five}{\case{$n = p$}}
+			\begin{proof}
+				\pf\ Then $n^+ = p^+ = m$.
+			\end{proof}
+		\end{proof}
+		\step{vi}{\case{$m = n$}}
+		\begin{proof}
+			\pf\ Then $m < n^+$.
+		\end{proof}
 	\end{proof}
-	\step{b}{$\forall n \in \dom h. n^+ \in \dom h$}
-	\begin{proof}
-		\step{i}{\pflet{$n \in \dom h$}}
-		\step{ii}{\pick\ an acceptable $v$ with $n \in \dom v$}
-		\step{iii}{\assume{w.l.o.g. $n^+ \notin \dom v$}}
-		\step{iv}{$v \cup \{(n^+, F(v(n)))\}$ is acceptable.}
-		\step{v}{$n^+ \in \dom h$}
-	\end{proof}
-\end{proof}
-\step{8}{For any function $k : \mathbb{N} \rightarrow A$, if $k(0) = a$ and $\forall n \in \mathbb{N}. k(n^+) = F(k(n))$ then $k = h$.}
-\begin{proof}
-	\pf\ Prove $\forall n \in \mathbb{N}. k(n) = h(n)$ by induction on $n$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq n$.
+\end{cor}
+
+\begin{proof}
+	\pf
+	\step{1}{If $m \leq n$ then $m \subseteq n$}
+	\begin{proof}
+		\step{a}{\assume{$m \leq n$}}
+		\step{b}{\pflet{$p \in m$}}
+		\step{c}{\case{$m < n$}}
+		\begin{proof}
+			\pf\ Then $p \in n$ by Proposition \ref{prop:nattrans}.
+		\end{proof}
+		\step{d}{\case{$m = n$}}
+		\begin{proof}
+			\pf\ Then $p \in n$ immediately.
+		\end{proof}
+	\end{proof}
+	\step{2}{If $m \subseteq n$ then $m \leq n$}
+	\begin{proof}
+		\step{a}{\assume{$m \subseteq n$}}
+		\step{b}{$n \nless m$}
+		\begin{proof}
+			\pf\ If $n < m$ then $n \in n$ contradicting the Axiom of Regularity.
+		\end{proof}
+		\step{c}{$m \leq n$}
+		\begin{proof}
+			\pf\ By trichotomy.
+		\end{proof}
+	\end{proof}
+	\qed
+\end{proof}
+
+\begin{thm}[Well-Ordering of $\mathbb{N}$]
+Every nonempty subset of $\mathbb{N}$ has a least element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A \subseteq \mathbb{N}$}}
+\step{2}{\assume{$A$ has no least element.} \prove{$A = \emptyset$}}
+\step{3}{$\forall n. \forall m < n. m \notin A$}
+\begin{proof}
+	\step{a}{$\forall m < 0. m \notin A$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{b}{For any natural number $n$, if $\forall m < n. m \notin A$, then $\forall m < n^+. m \notin A$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$\forall m < n. m \notin A$}}
+		\step{iii}{$n \notin A$}
+		\begin{proof}
+			\pf\ If $n \in A$ then $n$ is the least element in $A$.
+		\end{proof}
+		\step{iv}{$\forall m < n^+. m \notin A$}
+	\end{proof}
+\end{proof}
+\step{4}{$A = \emptyset$}
+\qed
+\end{proof}
+
+\begin{cor}
+There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
+\end{cor}
+
+\begin{thm}[Strong Induction Principle for $\mathbb{N}$]
+Let $A \subseteq \mathbb{N}$. Assume that, for every $n \in \mathbb{N}$, if $\forall m < n. m \in A$ then $n \in A$. Then $A = \mathbb{N}$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $A \neq \mathbb{N}$}}
+\step{2}{\pflet{$n$ be the least element of $\mathbb{N} - A$}}
+\begin{proof}
+	\pf\ Since $\mathbb{N}$ is well ordered.
+\end{proof}
+\step{3}{$\forall m < n. m \in A$}
+\step{4}{$n \notin A$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the hypothesis of the theorem.
+\end{proof}
+\qed
+\end{proof}
+
+
+\section{Recursion}
 
 \begin{thm}
 Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and only if there does not exist a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
@@ -2653,222 +2966,6 @@ $\mathbb{N}^2 \approx \mathbb{N}$
 
 \begin{proof}
 \pf\ The function $J : \mathbb{N}^2 \rightarrow \mathbb{N}$ defined by $J(m,n) = ((m+n)^2 + 3m + n)/2$ is a bijection. \qed
-\end{proof}
-
-\section{Ordering on $\mathbb{N}$}
-
-\begin{df}
-Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$. We write $m \leq n$ iff $m < n$ or $m = n$.
-\end{df}
-
-\begin{prop}
-\label{prop:succltsucc}
-For any natural numbers $m$ and $n$, we have $m < n$ if and only if $m^+ < n^+$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{For any natural numbers $m$ and $n$, if $m < n$ then $m^+ < n^+$.}
-\begin{proof}
-	\step{a}{For any natural number $m$, if $m < 0$ then $m^+ < 0^+$}
-	\begin{proof}
-		\pf\ Vacuous.
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m < n. m^+ < n^+$ then $\forall m < n^+. m^+ < n^{++}$}
-	\begin{proof}
-		\step{i}{\pflet{$m < n^+$}}
-		\step{ii}{$m < n$ or $m = n$}
-		\step{iii}{\case{$m < n$}}
-		\begin{proof}
-			\step{one}{$m^+ < n^+$}
-			\begin{proof}
-				\pf\ Induction hypothesis.
-			\end{proof}
-			\step{two}{$m^+ < n^{++}$}
-		\end{proof}
-		\step{iv}{\case{$m = n$}}
-		\begin{proof}
-			\pf\ $m^+ = n^+ < n^{++}$.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\step{2}{For any natural numbers $m$ and $n$, if $m^+ < n^+$ then $m < n$.}
-\begin{proof}
-	\step{a}{We never have $m^+ < 0^+$.}
-	\begin{proof}
-		\step{i}{$m^+ \nless 0$}
-		\step{ii}{$m^+ \neq 0$}
-		\step{iii}{$m^+ \nless 0^+$}
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m. m^+ < n^+ \Rightarrow m < n$, then $\forall m. m^+ < n^{++} \Rightarrow m < n^+$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m. m^+ < n^+ \Rightarrow m < n$}}
-		\step{iii}{\pflet{$m$ be a natural number.}}
-		\step{iv}{\assume{$m^+ < n^{++}$}}
-		\step{v}{$m^+ < n^+$ or $m^+ = n^+$}
-		\step{vi}{\case{$m^+ < n^+$}}
-		\begin{proof}
-			\step{one}{$m < n$}
-			\begin{proof}
-				\pf\ Induction hypothesis.
-			\end{proof}
-			\step{two}{$m < n^+$}
-		\end{proof}
-		\step{vii}{\case{$m^+ = n^+$}}
-		\begin{proof}
-			\pf\ $m = n < n^+$ by Proposition \ref{prop:Peano2}.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{thm}[Trichotomy Law for $\mathbb{N}$]
-For any natural numbers $m$ and $n$, exactly one of $m < n$, $n < m$, $m = n$ holds.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{For all $m$ and $n$, at most one of $m < n$, $n < m$, $m = n$ holds.}
-\begin{proof}
-	\step{a}{We do not have $m < n$ and $m = n$.}
-	\begin{proof}
-		\pf\ This would imply $n < n$ contradicting the Axiom of Regularity.
-	\end{proof}
-	\step{b}{We do not have $m < n$ and $n < m$.}
-	\begin{proof}
-		\pf\ This would imply $n < n$ by Proposition \ref{prop:nattrans}, contradicting the Axiom of Regularity.
-	\end{proof}
-\end{proof}
-\step{2}{For all $m$ and $n$, either $m < n$ or $n < m$ or $m = n$.}
-\begin{proof}
-	\step{a}{For all $m$, either $m = 0$ or $0 < m$.}
-	\begin{proof}
-		\step{i}{$0 = 0$}
-		\step{ii}{For any natural number $m$, we have $0 < m^+$.}
-		\begin{proof}
-			\step{one}{$0 < 0^+$}
-			\step{two}{For any natural number $m$, if $0 < m^+$ then $0 < m^{++}$.}
-		\end{proof}
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m (m < n \vee n < m \vee m = n)$ then $\forall m (m < n^+ \vee n^+ < m \vee m = n^+)$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m (m < n \vee n < m \vee m = n)$}}
-		\step{iii}{\pflet{$m$ be a natural number.}}
-		\step{iv}{\case{$m < n$}}
-		\begin{proof}
-			\pf\ Then $m < n^+$.
-		\end{proof}
-		\step{v}{\case{$n < m$}}
-		\begin{proof}
-			\step{one}{$m \neq 0$}
-			\step{two}{\pick\ $p$ such that $m = p^+$}
-			\step{three}{$n < p$ or $n = p$}
-			\step{four}{\case{$n < p$}}
-			\begin{proof}
-				\pf\ Then $n^+ < p^+ = m$ by Proposition \ref{prop:succltsucc}.
-			\end{proof}
-			\step{five}{\case{$n = p$}}
-			\begin{proof}
-				\pf\ Then $n^+ = p^+ = m$.
-			\end{proof}
-		\end{proof}
-		\step{vi}{\case{$m = n$}}
-		\begin{proof}
-			\pf\ Then $m < n^+$.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq n$.
-\end{cor}
-
-\begin{proof}
-	\pf
-	\step{1}{If $m \leq n$ then $m \subseteq n$}
-	\begin{proof}
-		\step{a}{\assume{$m \leq n$}}
-		\step{b}{\pflet{$p \in m$}}
-		\step{c}{\case{$m < n$}}
-		\begin{proof}
-			\pf\ Then $p \in n$ by Proposition \ref{prop:nattrans}.
-		\end{proof}
-		\step{d}{\case{$m = n$}}
-		\begin{proof}
-			\pf\ Then $p \in n$ immediately.
-		\end{proof}
-	\end{proof}
-	\step{2}{If $m \subseteq n$ then $m \leq n$}
-	\begin{proof}
-		\step{a}{\assume{$m \subseteq n$}}
-		\step{b}{$n \nless m$}
-		\begin{proof}
-			\pf\ If $n < m$ then $n \in n$ contradicting the Axiom of Regularity.
-		\end{proof}
-		\step{c}{$m \leq n$}
-		\begin{proof}
-			\pf\ By trichotomy.
-		\end{proof}
-	\end{proof}
-	\qed
-\end{proof}
-
-\begin{thm}[Well-Ordering of $\mathbb{N}$]
-Every nonempty subset of $\mathbb{N}$ has a least element.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A \subseteq \mathbb{N}$}}
-\step{2}{\assume{$A$ has no least element.} \prove{$A = \emptyset$}}
-\step{3}{$\forall n. \forall m < n. m \notin A$}
-\begin{proof}
-	\step{a}{$\forall m < 0. m \notin A$}
-	\begin{proof}
-		\pf\ Vacuous.
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m < n. m \notin A$, then $\forall m < n^+. m \notin A$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m < n. m \notin A$}}
-		\step{iii}{$n \notin A$}
-		\begin{proof}
-			\pf\ If $n \in A$ then $n$ is the least element in $A$.
-		\end{proof}
-		\step{iv}{$\forall m < n^+. m \notin A$}
-	\end{proof}
-\end{proof}
-\step{4}{$A = \emptyset$}
-\qed
-\end{proof}
-
-\begin{cor}
-There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
-\end{cor}
-
-\begin{thm}[Strong Induction Principle for $\mathbb{N}$]
-Let $A \subseteq \mathbb{N}$. Assume that, for every $n \in \mathbb{N}$, if $\forall m < n. m \in A$ then $n \in A$. Then $A = \mathbb{N}$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $A \neq \mathbb{N}$}}
-\step{2}{\pflet{$n$ be the least element of $\mathbb{N} - A$}}
-\begin{proof}
-	\pf\ Since $\mathbb{N}$ is well ordered.
-\end{proof}
-\step{3}{$\forall m < n. m \in A$}
-\step{4}{$n \notin A$}
-\qedstep
-\begin{proof}
-	\pf\ This contradicts the hypothesis of the theorem.
-\end{proof}
-\qed
 \end{proof}
 
 \begin{prop}
