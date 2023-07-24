@@ -1115,6 +1115,12 @@ Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A
 
 \section{Ordering Relations}
 
+\subsection{Structures}
+
+\begin{df}[Structure]
+A \emph{structure} is a pair $(A,R)$ where $A$ is a set and $R$ is a binary relation on $A$.
+\end{df}
+
 \subsection{Partial Orders}
 
 \begin{df}[Partial Ordering]
@@ -1126,6 +1132,26 @@ We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq
 \begin{df}[Partially Ordered Set]
 A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
 \end{df}
+
+\begin{df}[Minimal]
+Let $A$ be a poset. An element $m \in A$ is \emph{minimal} iff there is no $x \in A$ such that $x < m$.
+\end{df}
+
+\begin{df}[Maximal]
+Let $A$ be a poset. An element $m \in A$ is \emph{maximal} iff there is no $x \in A$ such that $m < x$.
+\end{df}
+
+\begin{df}[Least]
+Let $A$ be a poset. An element $m \in A$ is \emph{least} iff for all $x \in A$ we have $m \leq x$.
+\end{df}
+
+\begin{prop}
+A poset has at most one least element.
+\end{prop}
+
+\begin{proof}
+\pf\ If $m$ and $m'$ are least then $m \leq m'$ and $m' \leq m$, so $m = m'$. \qed
+\end{proof}
 
 \begin{df}[Upper Bound]
 Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
