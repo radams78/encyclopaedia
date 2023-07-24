@@ -1133,6 +1133,14 @@ We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq
 A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
 \end{df}
 
+\begin{prop}
+If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \begin{df}[Minimal]
 Let $A$ be a poset. An element $m \in A$ is \emph{minimal} iff there is no $x \in A$ such that $x < m$.
 \end{df}
@@ -1169,12 +1177,24 @@ A poset has at most one greatest element.
 Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
 \end{df}
 
-\begin{df}[Bounded]
+\begin{df}[Lower Bound]
+Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $l \in \mathbf{A}$. Then $l$ is a \emph{lower bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. l \leq x$.
+\end{df}
+
+\begin{df}[Bounded Above]
 Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded above} iff it has an upper bound.
+\end{df}
+
+\begin{df}[Bounded Below]
+Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded below} iff it has a lower bound.
 \end{df}
 
 \begin{df}[Least Upper Bound]
 Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $s \in \mathbf{A}$. Then $s$ is the \emph{least upper bound} or \emph{supremum} of $\mathbf{B}$ iff $s$ is an upper bound for $\mathbf{B}$ and, for every upper bound $u$ for $\mathbf{B}$, we have $s \leq u$.
+\end{df}
+
+\begin{df}[Greatest Lower Bound]
+Let $\mathbf{R}$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $i \in \mathbf{A}$. Then $i$ is the \emph{greatest lower bound} or \emph{infimum} of $\mathbf{B}$ iff $i$ is a lower bound for $\mathbf{B}$ and, for every lower bound $l$ for $\mathbf{B}$, we have $i \leq l$.
 \end{df}
 
 \begin{df}[Complete]
