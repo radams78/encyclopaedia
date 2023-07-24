@@ -29,6 +29,7 @@
 \newcommand{\spn}{\ensuremath{\operatorname{span}}}
 \newcommand{\cl}{\ensuremath{\operatorname{cl}}}
 \newcommand{\sgn}{\ensuremath{\operatorname{sgn}}}
+\newcommand{\seg}{\ensuremath{\operatorname{seg}}}
 
 \begin{document}
 
@@ -1375,6 +1376,11 @@ Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \ri
 \qed
 \end{proof}
 
+\begin{df}[Initial Segment]
+Let $A$ be a poset and $t \in A$. The \emph{initial segment} up to $t$ is
+\[ \seg t := \{ x \in A \mid x < t \} \enspace . \]
+\end{df}
+
 \subsection{Linear Orders}
 
 \begin{df}[Linear Ordering]
@@ -1477,7 +1483,7 @@ Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A 
 \subsection{Well Orderings}
 
 \begin{df}[Well Ordering]
-A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{A}$ such that every nonempty subset has a least element.
+A \emph{well ordering} on a set $A$ is a linear ordering on $A$ such that every nonempty subset has a least element.
 \end{df}
 
 \chapter{Functions}
@@ -2208,6 +2214,29 @@ and for every $n \in \mathbb{N}$,
 \step{8}{For any function $k : \mathbb{N} \rightarrow A$, if $k(0) = a$ and $\forall n \in \mathbb{N}. k(n^+) = F(k(n))$ then $k = h$.}
 \begin{proof}
 	\pf\ Prove $\forall n \in \mathbb{N}. k(n) = h(n)$ by induction on $n$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and only if there does not exist a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$ then $<$ is not a well ordering on $A$.}
+\begin{proof}
+	\pf\ $\ran f$ is a nonempty subset of $A$ with no least element.
+\end{proof}
+\step{2}{If $<$ is not a well ordering on $A$ then there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.}
+\begin{proof}
+	\step{a}{\assume{$<$ is not a well ordering on $A$.}}
+	\step{b}{\pick\ a nonempty subset $B \subseteq A$ that has no least element.}
+	\step{c}{$\forall x \in B. \exists y \in B. y < x$}
+	\step{d}{Choose a function $g : B \rightarrow B$ such that $\forall x \in B. g(x) < x$}
+	\step{e}{\pick\ $b \in B$}
+	\step{f}{Define $f : \mathbb{N} \rightarrow A$ recursively by $f(0) = b$ and $\forall n \in \mathbb{N}. f(n+1) = g(f(n))$}
+	\step{g}{$\forall n \in \mathbb{N}. f(n+1) < f(n)$}
 \end{proof}
 \qed
 \end{proof}
