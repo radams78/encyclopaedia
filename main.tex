@@ -1821,6 +1821,59 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 \qed
 \end{proof}
 
+\section{Equinumerosity}
+
+\begin{df}[Equinumerous]
+Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
+\end{df}
+
+\begin{prop}
+Equinumerosity is an equivalence relation on the class of all sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any set $A$ we have $A \approx A$.}
+\begin{proof}
+	\pf\ We have $\mathrm{id}_A$ is a bijection between $A$ and $A$.
+\end{proof}
+\step{2}{If $A \approx B$ then $B \approx A$.}
+\begin{proof}
+	\pf\ If $f : A \approx B$ then $f^{-1} : B \approx A$.
+\end{proof}
+\step{3}{If $A \approx B$ and $B \approx C$ then $A \approx C$.}
+\begin{proof}
+	\pf\ If $f : A \approx B$ and $g : B \approx C$ then $g \circ f : A \approx C$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $2 = \{ \emptyset, \{ \emptyset\} \}$. 
+For any set $A$ we have $\mathcal{P} A \approx 2^A$.
+\end{prop}
+
+\begin{proof}
+\pf\ The function $H : \mathcal{P} A \rightarrow 2^A$ defined by $H(S)(a) = \{\emptyset\}$ if $a \in S$ and $\emptyset$ if $a \notin S$ is a bijection. \qed
+\end{proof}
+
+\begin{thm}[Cantor 1873]
+No set is equinumerous to its power set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $f : A \approx \mathcal{P} A$}}
+\step{2}{\pflet{$S = \{x \in A \mid x \notin f(x)\}$}}
+\step{3}{\pick\ $a \in A$ such that $f(a) = S$}
+\step{4}{$a \in S$ if and only if $a \notin S$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -2502,6 +2555,14 @@ For all $m,n,p \in \mathbb{N}$,
 \qed
 \end{proof}
 
+\begin{prop}
+$\mathbb{N}^2 \approx \mathbb{N}$
+\end{prop}
+
+\begin{proof}
+\pf\ The function $J : \mathbb{N}^2 \rightarrow \mathbb{N}$ defined by $J(m,n) = ((m+n)^2 + 3m + n)/2$ is a bijection. \qed
+\end{proof}
+
 \section{Ordering on $\mathbb{N}$}
 
 \begin{df}
@@ -2870,9 +2931,114 @@ Let $m$, $n$, $p$ and $q$ be natural numbers. Assume $n < m$ and $q < p$. Then
 
 \section{Cardinality}
 
-\begin{df}
-Let $A$ be a set and $n \in \mathbb{N}$. We say that $A$ \emph{has $n$ elements} iff there exists a bijection between $A$ and $n$.
+\begin{df}[Finite]
+A set is \emph{finite} iff it is equinumerous to some natural number; otherwise it is \emph{infinite}.
 \end{df}
+
+\begin{thm}[Pigeonhole Principle]
+No natural number is equinumerous to a proper subset of itself.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: any one-to-one function $n \rightarrow n$ is surjective.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ The only function $0 \rightarrow 0$ is injective.
+\end{proof}
+\step{3}{For every natural number $n$, if $P(n)$ then $P(n+1)$.}
+\begin{proof}
+	\step{a}{\assume{$P(n)$}}
+	\step{b}{\pflet{$f$ be a one-to-one function $n+1 \rightarrow n+1$}}
+	\step{c}{$f \restriction n$ is a one-to-one function $n \rightarrow n+1$}
+	\step{d}{\case{$n \notin ran f$}}
+	\begin{proof}
+		\step{i}{$f \restriction n : n \rightarrow n$}
+		\step{ii}{$\ran (f \restriction n) = n$}
+		\step{iii}{$f(n) = n$}
+		\begin{proof}
+			\pf\ \stepref{a}.
+		\end{proof}
+		\step{iv}{$\ran f = n+1$}
+	\end{proof}
+	\step{e}{\case{$n \in \ran f$}}
+	\begin{proof}
+		\step{i}{\pick\ $p \in n$ such that $f(p) = n$}
+		\step{ii}{\pflet{$\hat{f} : n \rightarrow n$ be the function
+		\begin{align*}
+		\hat{f}(p) & = f(n) \\
+		\hat{f}(x) & = f(x) & (x \neq p)
+		\end{align*}}}
+		\step{iii}{$\hat{f}$ is one-to-one}
+		\step{iv}{$\ran \hat{f} = n$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{v}{$\ran f = n + 1$}
+	\end{proof}
+\end{proof}
+\step{4}{For every natural number $n$, $P(n)$.}
+\qed
+\end{proof}
+
+\begin{cor}
+No finite set is equinumerous to a proper subset of itself.
+\end{cor}
+
+\begin{cor}
+$\mathbb{N}$ is infinite.
+\end{cor}
+
+\begin{proof}
+\pf\ The function that maps $n$ to $n+1$ is a bijection between $\mathbb{N}$ and $\mathbb{N} - \{0\}$. \qed
+\end{proof}
+
+\begin{cor}
+Every finite set is equinumerous to a unique natural number.
+\end{cor}
+
+\begin{df}
+Let $A$ be a finite set. The \emph{cardinality} of $A$, $|A|$, is the natural number such that $A \approx |A|$. We say that $A$ \emph{has $|A|$ elements}.
+\end{df}
+
+\begin{prop}
+If $C$ is a proper subset of a natural number $n$, then there exists $m < n$ such that $C \approx m$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for every proper subset $C$ of $n$, there exists a natural number $m$ such that $C \approx m$.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Vacuous.
+\end{proof}
+\step{3}{For every natural number $n$, if $P(n)$ then $P(n+1)$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$C$ be a proper subset of $n+1$}}
+	\step{d}{\case{$C = n$}}
+	\begin{proof}
+		\pf\ $C \approx n < n+1$
+	\end{proof}
+	\step{e}{\case{$C \subsetneq n$}}
+	\begin{proof}
+		\pf\ There exists $m < n$ such that $C \approx m$ by \stepref{b}.
+	\end{proof}
+	\step{f}{\case{$n \in C$}}
+	\begin{proof}
+		\step{i}{$C - \{n\} \subsetneq n$}
+		\step{ii}{\pick\ $m < n$ such that $C - \{n\} \approx m$}
+		\step{iii}{$C \approx m+1$}
+	\end{proof}
+\end{proof}
+\step{4}{For every natural number $n$, $P(n)$.}
+\qed
+\end{proof}
+
+\begin{cor}
+Any subset of a finite set is finite.
+\end{cor}
 
 \begin{prop}
 \label{prop:cardsum}
@@ -4104,6 +4270,13 @@ Let $p$ be a positive rational. For any rational number $r$, there exists $k \in
 \qed
 \end{proof}
 
+\begin{prop}
+$\mathbb{Q} \approx \mathbb{N}$
+\end{prop}
+
+\begin{proof}
+\pf\ Arrange the rationals in order $0/1$, $1/1$, $1/2$, $0/2$, $-1/2$, $-1/1$, $-2/1$, $-2/2$, $-2/3$, $-1/3$, $0/3$, $1/3$, $2/3$, etc. then remove all duplicates. \qed
+\end{proof}
 \section{The Real Numbers}
 
 \begin{df}[Cauchy Sequence]
@@ -4992,6 +5165,31 @@ For real numbers $x$, $y$ and $z$, if $0 < z$ then $x < y$ if and only if $xz < 
 \begin{cor}
 The real numbers form a complete ordered field.
 \end{cor}
+
+\begin{prop}
+\[ (0,1) \approx \mathbb{R} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function $f(x) = (2x-1)/(x-x^2)$ is a bijection between $(0,1)$ and $\mathbb{R}$. \qed
+\end{proof}
+
+%TODO Define decimal expansions
+\begin{prop}
+\[ \mathbb{R} \not\approx \mathbb{N} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $f : \mathbb{N} \approx \mathbb{R}$}}
+\step{2}{\pflet{$z$ be the real number with integer part 0 whose $n+1$st decimal place is 7 unless the $n+1$st decimal place of $f(n)$ is 7, in which case it is 6.}}
+\step{3}{$z \neq f(n)$ for all $n$.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Complex Analysis}
 
