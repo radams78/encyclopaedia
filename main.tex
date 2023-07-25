@@ -536,6 +536,7 @@ For any set $a$, we have $a$ is a transitive set if and only if $\mathcal{P} a$ 
 \end{proof}
 
 \begin{prop}
+\label{prop:uniontransitive}
 If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive class.
 \end{prop}
 
@@ -1143,6 +1144,14 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \begin{df}[Minimal]
 Let $A$ be a poset. An element $m \in A$ is \emph{minimal} iff there is no $x \in A$ such that $x < m$.
 \end{df}
@@ -1426,6 +1435,14 @@ If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is a
 \qed
 \end{proof}
 
+\begin{prop}
+Let $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \begin{df}[Lexicographic Ordering]
 Let $A$ and $B$ be linearly ordered sets. The \emph{lexicographic ordering} $<$ on $A \times B$ is defined by:
 \[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
@@ -1486,6 +1503,14 @@ Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A 
 \begin{df}[Well Ordering]
 A \emph{well ordering} on a set $A$ is a linear ordering on $A$ such that every nonempty subset has a least element.
 \end{df}
+
+\begin{prop}
+Let $\mathbf{R}$ be a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a well ordering on $\mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \begin{thm}[Transfinite Induction Principle]
 Let $<$ be a well ordering on $A$. Let $B \subseteq A$. Assume that, for all $t \in A$,
@@ -1981,6 +2006,10 @@ No set is equinumerous to its power set.
 \qed
 \end{proof}
 
+\begin{df}[Dominate]
+A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
+\end{df}
+
 \section{Transfinite Recursion}
 
 \begin{thms}[Transfinite Recursion Theorem Schema]
@@ -2068,6 +2097,85 @@ Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there
 \qed
 \end{proof}
 
+\section{Structure Isomorphisms}
+
+\begin{df}[Isomorphism]
+Let $(A,R)$ and $(B,S)$ be structures. An \emph{isomorphism} between $(A,R)$ and $(B,S)$ is a bijection $f : A \cong B$ such that, for all $x,y \in A$, we have $(x,y) \in R$ if and only if $(f(x),f(y)) \in S$.
+We write $f : (A,R) \cong (B,S)$.
+
+We say $(A,R)$ and $(B,S)$ are \emph{isomorphic} iff there exists an isomorphism between them.
+\end{df}
+
+\begin{thm}
+Isomorphism is an equivalence relation on the class of structures.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\mathrm{id}_A : (A,R) \cong (A,R)$}
+\step{2}{If $f : (A,R) \cong (B,S)$ then $f^{-1} : (B,S) \cong (A,R)$.}
+\step{3}{If $f : (A,R) \cong (B,S)$ and $g : (B,S) \cong (C,T)$ then $g \circ f : (A,R) \cong (C,T)$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
+\begin{enumerate}
+\item $\leq$ is a partial order on $A$.
+\item If $B$ is a linearly ordered set then $\leq$ is a linear order on $A$.
+\item If $B$ is a well ordered set then $\leq$ is a well ordering on $A$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+There is at most one isomorphism between two well ordered sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be well ordered sets.}}
+\step{2}{\pflet{$f, g : A \cong B$ be isomorphisms.}}
+\step{3}{$\forall x \in A. f(x) = g(x)$}
+\begin{proof}
+	\pf\ Transfinite induction on $x$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $A$ and $B$ be well ordered sets. Then one of the following holds: $A \cong B$; there exists $b \in B$ such that $A \cong \seg b$; there exists $a \in A$ such that $\seg a \cong B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $e$ that is not in $A$ or $B$.}
+\step{2}{\pflet{$F : A \rightarrow B \cup \{e\}$ be the function defined by transfinite recursion thus:
+\[ F(t) =
+\begin{cases}
+\text{the least element of } B - F(\seg t) & \text{if } B - F(\seg t) \neq \emptyset \\
+e & \text{if } B - F(\seg t) = \emptyset
+\end{cases} \]}}
+\step{3}{\case{$e \in \ran F$}}
+\begin{proof}
+	\step{a}{\pflet{$t$ be least such that $F(t) = e$}}
+	\step{b}{$F \restriction \seg t : \seg t \cong B$}
+\end{proof}
+\step{4}{\case{$\ran F = B$}}
+\begin{proof}
+	\pf\ We have $F : A \cong B$
+\end{proof}
+\step{5}{\case{$\ran F \subsetneq B$}}
+\begin{proof}
+	\step{a}{\pflet{$b$ be the least element of $B - \ran F$}}
+	\step{b}{$F : A \cong \seg b$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Ordinal Numbers}
 
 \begin{df}[Ordinal Number]
@@ -2108,9 +2216,158 @@ For all $s,t \in A$, we have $s < t$ if and only if $E(s) \in E(t)$.
 \qed
 \end{proof}
 
-\chapter{Natural Numbers}
+\begin{cor}
+\label{cor:wosetiso}
+$(A, \leq)$ is isomorphic to $\alpha$ ordered by $\in$.
+\end{cor}
 
-\section{Inductive Sets}
+\begin{cor}
+\label{cor:ordwo}
+$\alpha$ is well ordered by $\in$.
+\end{cor}
+
+\begin{cor}
+Two well-ordered sets are isomorphic if and only if they have the same ordinal number.
+\end{cor}
+
+\begin{prop}
+\label{prop:ordtrans}
+$\alpha$ is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$y \in z \in \alpha$}}
+\step{2}{\pick\ $a \in A$ such that $z = E(a)$}
+\step{3}{\pick\ $b < a$ such that $y = E(b)$}
+\step{4}{$y \in \alpha$}
+\qed
+\end{proof}
+
+\begin{thm}
+A set $\alpha$ is an ordinal number if and only if it is a transitive set well-ordered by $\in$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Every ordinal number is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ordtrans}.
+\end{proof}
+\step{2}{Every ordinal number is well-ordered by $\in$.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:ordwo}.
+\end{proof}
+\step{3}{Every transitive set well-ordered by $\in$ is an ordinal number.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ be a transitive set well-ordered by $\in$}}
+	\step{b}{\pflet{$E : (\alpha, \in) \cong (\beta, \in)$ be the isomorphism between $(\alpha, \in)$ and its ordinal number.}}
+	\step{c}{$\forall x \in \alpha. E(x) = x$}
+	\begin{proof}
+		\pf\ By transfinite induction on $x$.
+	\end{proof}
+	\step{d}{$\beta = \alpha$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every element of an ordinal number is an ordinal number.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal number.}}
+\step{2}{\pflet{$\beta \in \alpha$}}
+\step{3}{$\beta$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$x \in y \in \beta$}}
+	\step{b}{$y \in \alpha$}
+	\begin{proof}
+		\pf\ Since $\alpha$ is a transitive set.
+	\end{proof}
+	\step{c}{$x \in \alpha$}
+	\begin{proof}
+		\pf\ Since $\alpha$ is a transitive set.
+	\end{proof}
+	\step{d}{$x \in \beta$}
+	\begin{proof}
+		\pf\ Since $\alpha$ is well-ordered by $\in$.
+	\end{proof}
+\end{proof}
+\step{4}{$\beta$ is well-ordered by $\in$.}
+\begin{proof}
+	\pf\ Since $\beta \subseteq \alpha$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, $\alpha = \beta$, $\beta \in \alpha$ holds.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{At most one holds.}
+\begin{proof}
+	\pf\ Since we never have $\alpha \in \alpha$.
+\end{proof}
+\step{2}{At least one holds.}
+\begin{proof}
+	\step{a}{Either $\alpha \cong \beta$ or $\exists t \in \beta. \alpha \cong \seg t$ or $\exists t \in \alpha. \seg t \cong \beta$.}
+	\step{b}{\case{$\alpha \cong \beta$}}
+	\begin{proof}
+		\pf\ Then $\alpha = \beta$ as isomorphic well-ordered sets have the same ordinal number.
+	\end{proof}
+	\step{c}{\case{There exists $t \in \beta$ such that $\alpha \cong \seg t$}}
+	\begin{proof}
+		\pf\ $t$ is an ordinal number and $\alpha = t$, so $\alpha \in \beta$.
+	\end{proof}
+	\step{d}{\case{There exists $t \in \alpha$ such that $\seg t \cong \beta$}}
+	\begin{proof}
+		\pf\ $t$ is an ordinal number and $t = \beta$, so $\beta \in \alpha$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Any nonempty set $S$ of ordinal numbers has a least element.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $\beta \in S$}
+\step{2}{\case{$\beta \cap S = \emptyset$}}
+\begin{proof}
+	\pf\ Then $\beta$ is least in $S$.
+\end{proof}
+\step{3}{\case{$\beta \cap S \neq \emptyset$}}
+\begin{proof}
+	\pf\ The least element of $\beta \cap S$ is least in $S$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Any transitive set of ordinal numbers is an ordinal number.
+\end{prop}
+
+\begin{proof}
+\pf\ It is well-ordered by $\in$ by the above propositions. \qed
+\end{proof}
+
+\begin{prop}
+$\emptyset$ is an ordinal number.
+\end{prop}
+
+\begin{proof}
+\pf\ Vacuously, it is a transitive set well-ordered by $\in$.
+\end{proof}
+
+\begin{df}
+We define $0 = \emptyset$.
+\end{df}
 
 \begin{df}[Successor]
 The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
@@ -2197,6 +2454,199 @@ For any set $a$, we have $a$ is a transitive set if and only if $a^+$ is a trans
 \begin{df}
 We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
 \end{df}
+
+\begin{prop}
+For any ordinal number $\alpha$ we have $\alpha^+$ is an ordinal number.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha^+$ is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:successortransitive}.
+\end{proof}
+\step{2}{$\alpha^+$ is well-ordered by $\in$.}
+\begin{proof}
+	\step{x}{For all $x,y,z \in \alpha^+$, if $x \in y \in z$ then $x \in z$}
+	\begin{proof}
+		\step{i}{\case{$z = \alpha$}}
+		\begin{proof}
+			\pf\ Then $x \in \alpha$ since $\alpha$ is a transitive set.
+		\end{proof}
+		\step{ii}{\case{$z \in \alpha$}}
+		\begin{proof}
+			\pf\ Then $x \in z$ since $\alpha$ is well-ordered by $\in$.
+		\end{proof}
+	\end{proof}
+	\step{a}{For all $x,y \in \alpha^+$ we have $x \in y$ or $x = y$ or $y \in x$}
+	\begin{proof}
+		\step{i}{\case{$x,y \in \alpha$}}
+		\begin{proof}
+			\pf\ The result follows because $\alpha$ is well-ordered by $\in$.
+		\end{proof}
+		\step{ii}{\case{$x \in \alpha$, $y = \alpha$}}
+		\begin{proof}
+			\pf\ Then $x \in y$.
+		\end{proof}
+		\step{iii}{\case{$x = \alpha$, $y \in \alpha$}}
+		\begin{proof}
+			\pf\ Then $y \in x$.
+		\end{proof}
+		\step{iv}{\case{$x = \alpha$, $y = \alpha$}}
+		\begin{proof}
+			\pf\ Then $x = y$.
+		\end{proof}
+	\end{proof}
+	\step{b}{Every nonempty subset of $\alpha^+$ has an $\in$-least element.}
+	\begin{proof}
+		\step{i}{\pflet{$S \subseteq \alpha^+$ be nonempty}}
+		\step{ii}{\case{$S = \{\alpha\}$}}
+		\begin{proof}
+			\pf\ $\alpha$ is least in $S$.
+		\end{proof}
+		\step{iii}{\case{$S \neq \{\alpha\}$}}
+		\begin{proof}
+			\step{one}{$S - \{\alpha\}$ is a nonempty subset of $\alpha$}
+			\step{two}{\pflet{$\beta$ be least in $S - \{\alpha\}$}}
+			\step{three}{$\beta$ is least in $S$.}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+If $A$ is a set of ordinal numbers then $\bigcup A$ is an ordinal number.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup A$ is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:uniontransitive}.
+\end{proof}
+\step{2}{$\bigcup A$ is a set of ordinals.}
+\qed
+\end{proof}
+
+\begin{thm}[Burali-Forti]
+The class of ordinal numbers is a proper class.
+\end{thm}
+
+\begin{proof}
+\pf\ If it is a set then it is a transitive set of ordinal numbers, hence an ordinal number, hence a member of itself, which is impossible. \qed
+\end{proof}
+
+\begin{thm}[Hartogs]
+For any set $A$, there exists an ordinal not dominated by $A$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be the class of all ordinals $\beta$ such that $\beta \preccurlyeq A$} \prove{$\alpha$ is a set.}}
+\step{2}{\pflet{$W = \{ (B, R) \mid B \subseteq A, R \text{ is a well ordering on } B \}$}}
+\step{3}{$\alpha$ is the class of the ordinals of the elements of $W$.}
+\begin{proof}
+	\step{a}{For all $(B,R) \in W$, the ordinal of $(B,R)$ is in $\alpha$.}
+	\begin{proof}
+		\step{i}{\pflet{$(B,R) \in W$}}
+		\step{ii}{\pflet{$\beta$ be the ordinal of $(B,R)$}}
+		\step{iii}{\pflet{$E : B \cong \beta$ be the canonical isomorphism.}}
+		\step{iv}{\pflet{$i : B \hookrightarrow A$ be the inclusion}}
+		\step{v}{$i \circ E^{-1}$ is an injection $\beta \rightarrow A$}
+		\step{vi}{$\beta \in \alpha$}
+	\end{proof}
+	\step{b}{For all $\beta \in \alpha$, there exists $(B,R) \in W$ such that $\beta$ is the ordinal number of $(B,R)$.}
+	\begin{proof}
+		\step{i}{\pflet{$\beta \in \alpha$}}
+		\step{ii}{\pick\ an injection $f : \beta \rightarrow A$}
+		\step{iii}{Define $\leq$ on $\ran f$ by $f(x) \leq f(y)$ iff $x \leq y$}
+		\step{iv}{$(\ran f, \leq) \in W$}
+		\step{v}{$\beta$ is the ordinal number of $(\ran f, \leq)$}
+	\end{proof}
+\end{proof}
+\step{4}{$\alpha$ is a set.}
+\begin{proof}
+	\pf\ By an Axiom of Replacement.
+\end{proof}
+\step{5}{$\alpha$ is an ordinal.}
+\begin{proof}
+	\pf\ It is a transitive set of ordinals.
+\end{proof}
+\step{6}{$\alpha \not\preccurlyeq A$}
+\begin{proof}
+	\pf\ Since $\alpha \notin \alpha$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Numeration Theorem]
+Every set is equinumerous with some ordinal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be any set.}}
+\step{2}{\pick\ an ordinal $\alpha$ not dominated by $A$.}
+\step{3}{\pick\ a choice function $G$ for $A$.}
+\step{4}{\pick\ $e \notin A$}
+\step{5}{\pflet{$F : \alpha \rightarrow A \cup \{e\}$ by transfinite recursion:
+\[ F(\gamma) = \begin{cases}
+G(A - F(\{ \delta \mid \delta < \gamma \}) & \text{if } A - F(\{ \delta \mid \delta < \gamma \}) \neq \emptyset \\
+e & \text{if } A - F(\{\delta \mid \delta < \gamma \}) = \emptyset
+\end{cases} \]}}
+\step{6}{$e \in \ran F$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $e \notin \ran F$}}
+	\step{b}{$F$ is an injection $\alpha \rightarrow A$.}
+	\begin{proof}
+		\step{i}{\pflet{$\beta, \gamma \in \alpha$ with $\beta \neq \gamma$} \prove{$F(\beta) \neq F(\gamma)$}}
+		\step{ii}{\assume{w.l.o.g. $\beta < \gamma$}}
+		\step{iii}{$F(\gamma) \in A - F(\{\delta \mid \delta < \gamma\})$}
+		\step{iv}{$F(\gamma) \notin F(\{\delta \mid \delta < \gamma \})$}
+		\step{v}{$F(\gamma) \neq F(\beta)$}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{2}.
+	\end{proof}
+\end{proof}
+\step{7}{\pflet{$\delta$ be least such that $F(\delta) = e$}}
+\step{8}{$F \restriction \delta : \delta \approx A$}
+\end{proof}
+
+\begin{thm}[Well-Ordering Theorem]
+Any set can be well ordered.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ an ordinal $\delta$ and a bijection $F : A \approx \delta$}
+\step{9}{Define $\leq$ on $A$ by $F(x) \leq F(y)$ iff $x \leq y$ for $x,y \in \delta$}
+\step{10}{$\leq$ is a well ordering on $A$.}
+\qed
+\end{proof}
+
+\chapter{Cardinal Numbers}
+
+\section{Cardinal Numbers}
+
+\begin{df}[Cardinality]
+For any set $A$, the \emph{cardinality} $|A|$ of $A$ is the least ordinal equinumerous with $A$.
+\end{df}
+
+\begin{prop}
+For any sets $A$ and $B$, we have $A \approx B$ iff $|A| = |B|$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\chapter{Natural Numbers}
+
+\section{Inductive Sets}
+
 
 \begin{df}[Inductive]
 A set $I$ is \emph{inductive} iff $\emptyset \in I$ and $\forall x \in I. x^+ \in I$.
