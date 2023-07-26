@@ -2627,6 +2627,69 @@ Any set can be well ordered.
 \qed
 \end{proof}
 
+\begin{thm}[Zorn's Lemma]
+Let $\mathcal{A}$ be a set such that, for every chain $\mathcal{B} \subseteq \mathcal{A}$, we have $\bigcup \mathcal{B} \in \mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a well ordering $<$ on $\mathcal{A}$.}
+\step{2}{\pflet{$F : \mathcal{A} \rightarrow 2$ be the function defined by transfinite recursion by:
+\[ F(A) = \begin{cases}
+1 & \text{if $A$ includes every set $B < A$ for which $F(B) = 1$} \\
+0 & \text{otherwise}
+\end{cases} \]}}
+\step{3}{\pflet{$\mathcal{C} = \{ A \in \mathcal{A} \mid F(A) = 1 \}$} \prove{$\bigcup \mathcal{C}$ is a maximal element of $\mathcal{A}$}}
+\step{4}{For all $A \in \mathcal{A}$, we have $A \in \mathcal{C}$ iff $\forall B < A. B \in \mathcal{C} \Rightarrow B \subseteq A$}
+\step{5}{$\mathcal{C}$ is a chain.}
+\begin{proof}
+	\step{a}{\pflet{$A,A' \in \mathcal{C}$}}
+	\step{b}{\assume{w.l.o.g. $A \leq A'$}}
+	\step{c}{$A \subseteq A'$}
+	\begin{proof}
+		\pf\ By \stepref{4}
+	\end{proof}
+\end{proof}
+\step{6}{$\bigcup \mathcal{C} \in \mathcal{A}$}
+\step{7}{$\bigcup \mathcal{C}$ is maximal in $\mathcal{A}$.}
+\begin{proof}
+	\step{a}{\pflet{$A \in \mathcal{A}$ and $\bigcup \mathcal{C} \subseteq A$}}
+	\step{b}{$A \in \mathcal{C}$}
+	\begin{proof}
+		\pf\ By \stepref{4} since $\forall B \in \mathcal{C}. B \subseteq A$.
+	\end{proof}
+	\step{c}{$A \subseteq \bigcup \mathcal{C}$}
+	\step{d}{$A = \bigcup \mathcal{C}$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Teichm\"{u}ller-Tukey Lemma]
+Let $\mathcal{A}$ be a nonempty set such that, for every $B$, we have $B \in \mathcal{A}$ if and only if every finite subset of $B$ is a member of $\mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For every chain $\mathcal{B} \subseteq \mathcal{A}$, we have $\bigcup \mathcal{B} \in \mathcal{A}$}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{B} \subseteq \mathcal{A}$ be a chain.}}
+	\step{b}{Every finite subset of $\bigcup \mathcal{B}$ is a member of $\mathcal{A}$.}
+	\begin{proof}
+		\step{i}{\pflet{$C$ be a finite subset of $\bigcup \mathcal{B}$.}}
+		\step{ii}{\pick\ $B \in \mathcal{B}$ such that $C \subseteq B$.}
+		\step{iii}{$B \in \mathcal{A}$}
+		\step{iv}{Every finite subset of $B$ is in $\mathcal{A}$.}
+		\step{v}{$C \in \mathcal{A}$}
+	\end{proof}
+	\step{c}{$\bigcup \mathcal{B} \in \mathcal{A}$.}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Zorn's lemma.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Cardinal Numbers}
 
 \section{Cardinal Numbers}
@@ -2869,6 +2932,51 @@ For any cardinal number $\kappa$ we have $\kappa < 2^\kappa$.
 There is no largest cardinal number.
 \end{cor}
 
+\begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$, $\mu$, if $\kappa \leq \lambda$ then $\kappa + \mu \leq \lambda + \mu$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : A \rightarrow B$ is injective, and $A \cap C = B \cap C = \emptyset$, then the function $A \cup C \rightarrow B \cup C$ that maps $a$ to $f(a)$ and maps $c$ to $c$ is an injection. \qed
+\end{proof}
+
+\begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$, $\mu$, if $\kappa \leq \lambda$ then $\kappa \mu \leq \lambda \mu$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : A \rightarrow B$ is injective, then the function $A \times C \rightarrow B \times C$ that maps $(a,c)$ to $(f(a),c)$ is injective. \qed
+\end{proof}
+
+\begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$, $\mu$, if $\kappa \leq \lambda$ then $\kappa^\mu \leq \lambda^\mu$.
+\end{prop}
+
+\begin{proof}
+\pf\ Given an injection $f : A \rightarrow B$, the function that maps $A^C \rightarrow B^C$ that maps $g$ to $f \circ g$ is an injection. \qed
+\end{proof}
+
+\begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$, $\mu$, if $\kappa \leq \lambda$ and $\mu$ and $\kappa$ are not both 0, then $\mu^\kappa \leq \mu^\lambda$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$, $B$ and $C$ be sets with $A$ and $C$ not both empty.}}
+\step{2}{\pflet{$f : A \rightarrow B$ be an injection.} \prove{$C^A \preccurlyeq C^B$}}
+\step{3}{\case{$C = \emptyset$}}
+\begin{proof}
+	\pf\ Then $A \neq \emptyset$ so $C^A = \emptyset \preccurlyeq C^B$.
+\end{proof}
+\step{4}{\case{$C \neq \emptyset$}}
+\begin{proof}
+	\step{a}{\pick\ $c \in C$}
+	\step{b}{\pflet{$g : C^A \rightarrow C^B$ be the function $g(h)(f(a)) = h(a)$, $g(h)(b) = c$ if $b \notin f(A)$}}
+	\step{c}{$g$ is an injection.}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -2987,6 +3095,18 @@ $\mathbb{N}$ is a transitive set.
 \qed
 \end{proof}
 
+\begin{prop}[Dependent Choice]
+Let $A$ be a nonempty set and $R$ a relation on $A$ such that $\forall x \in A. \exists y \in A. (y,x) \in R$. Then there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. (f(n+1),f(n)) \in R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a choice function $F$ for $A$.}
+\step{2}{\pick\ $a \in A$}
+\step{3}{Define $f : \mathbb{N} \rightarrow A$ by $f(0) = a$ and $f(n+1) = F(\{ y \in A \mid (y,f(n)) \in R \})$.}
+\qed
+\end{proof}
+
 \section{Ordering on $\mathbb{N}$}
 
 \begin{prop}
@@ -3052,66 +3172,6 @@ For any natural numbers $m$ and $n$, we have $m < n$ if and only if $m^+ < n^+$.
 \qed
 \end{proof}
 
-\begin{thm}[Trichotomy Law for $\mathbb{N}$]
-For any natural numbers $m$ and $n$, exactly one of $m < n$, $n < m$, $m = n$ holds.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{For all $m$ and $n$, at most one of $m < n$, $n < m$, $m = n$ holds.}
-\begin{proof}
-	\step{a}{We do not have $m < n$ and $m = n$.}
-	\begin{proof}
-		\pf\ This would imply $n < n$ contradicting the Axiom of Regularity.
-	\end{proof}
-	\step{b}{We do not have $m < n$ and $n < m$.}
-	\begin{proof}
-		\pf\ This would imply $n < n$ by Proposition \ref{prop:nattrans}, contradicting the Axiom of Regularity.
-	\end{proof}
-\end{proof}
-\step{2}{For all $m$ and $n$, either $m < n$ or $n < m$ or $m = n$.}
-\begin{proof}
-	\step{a}{For all $m$, either $m = 0$ or $0 < m$.}
-	\begin{proof}
-		\step{i}{$0 = 0$}
-		\step{ii}{For any natural number $m$, we have $0 < m^+$.}
-		\begin{proof}
-			\step{one}{$0 < 0^+$}
-			\step{two}{For any natural number $m$, if $0 < m^+$ then $0 < m^{++}$.}
-		\end{proof}
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m (m < n \vee n < m \vee m = n)$ then $\forall m (m < n^+ \vee n^+ < m \vee m = n^+)$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m (m < n \vee n < m \vee m = n)$}}
-		\step{iii}{\pflet{$m$ be a natural number.}}
-		\step{iv}{\case{$m < n$}}
-		\begin{proof}
-			\pf\ Then $m < n^+$.
-		\end{proof}
-		\step{v}{\case{$n < m$}}
-		\begin{proof}
-			\step{one}{$m \neq 0$}
-			\step{two}{\pick\ $p$ such that $m = p^+$}
-			\step{three}{$n < p$ or $n = p$}
-			\step{four}{\case{$n < p$}}
-			\begin{proof}
-				\pf\ Then $n^+ < p^+ = m$ by Proposition \ref{prop:succltsucc}.
-			\end{proof}
-			\step{five}{\case{$n = p$}}
-			\begin{proof}
-				\pf\ Then $n^+ = p^+ = m$.
-			\end{proof}
-		\end{proof}
-		\step{vi}{\case{$m = n$}}
-		\begin{proof}
-			\pf\ Then $m < n^+$.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
 \begin{cor}
 For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq n$.
 \end{cor}
@@ -3145,60 +3205,6 @@ For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq 
 	\end{proof}
 	\qed
 \end{proof}
-
-\begin{thm}[Well-Ordering of $\mathbb{N}$]
-Every nonempty subset of $\mathbb{N}$ has a least element.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A \subseteq \mathbb{N}$}}
-\step{2}{\assume{$A$ has no least element.} \prove{$A = \emptyset$}}
-\step{3}{$\forall n. \forall m < n. m \notin A$}
-\begin{proof}
-	\step{a}{$\forall m < 0. m \notin A$}
-	\begin{proof}
-		\pf\ Vacuous.
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m < n. m \notin A$, then $\forall m < n^+. m \notin A$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m < n. m \notin A$}}
-		\step{iii}{$n \notin A$}
-		\begin{proof}
-			\pf\ If $n \in A$ then $n$ is the least element in $A$.
-		\end{proof}
-		\step{iv}{$\forall m < n^+. m \notin A$}
-	\end{proof}
-\end{proof}
-\step{4}{$A = \emptyset$}
-\qed
-\end{proof}
-
-\begin{cor}
-There is no function $f : \mathbb{N} \rightarrow \mathbb{N}$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
-\end{cor}
-
-\begin{thm}[Strong Induction Principle for $\mathbb{N}$]
-Let $A \subseteq \mathbb{N}$. Assume that, for every $n \in \mathbb{N}$, if $\forall m < n. m \in A$ then $n \in A$. Then $A = \mathbb{N}$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $A \neq \mathbb{N}$}}
-\step{2}{\pflet{$n$ be the least element of $\mathbb{N} - A$}}
-\begin{proof}
-	\pf\ Since $\mathbb{N}$ is well ordered.
-\end{proof}
-\step{3}{$\forall m < n. m \in A$}
-\step{4}{$n \notin A$}
-\qedstep
-\begin{proof}
-	\pf\ This contradicts the hypothesis of the theorem.
-\end{proof}
-\qed
-\end{proof}
-
 
 \section{Recursion}
 
@@ -3461,6 +3467,31 @@ For any natural numbers $m$ and $n$, we have $m^n$ is a natural number.
 If $A$ and $B$ are finite sets then $A^B$ are finite.
 \end{cor}
 
+\begin{df}
+Let $\aleph_0 := |\mathbb{N}|$.
+\end{df}
+
+\begin{prop}
+For any infinite cardinal $\kappa$ we have $\aleph_0 \leq \kappa$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be an infinite set.} \prove{$\mathbb{N} \preccurlyeq A$}}
+\step{2}{\pick\ a choice function $F$ for $A$.}
+\step{3}{Define $h : \mathbb{N} \rightarrow \{ X \in \mathcal{P} A \mid X \text{ is finite} \}$ by
+\begin{align*}
+h(0) & = \emptyset \\
+h(n+1) & = h(n) \cup \{ F(A - \{ h(m) \mid m < n \}) \}
+\end{align*}}
+\step{4}{Define $g : \mathbb{N} \rightarrow A$ by $g(n) = F(A - \{ h(m) \mid m < n \})$}
+\step{5}{$g$ is injective.}
+\begin{proof}
+	\pf\ If $m < n$ then $g(m) \neq g(n)$.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Arithmetic}
 
 \begin{df}[Even]
@@ -3618,24 +3649,9 @@ For any natural numbers $m$ and $n$, we have $m < n$ if and only if there exists
 \end{proof}
 
 \begin{thm}
-\label{thm:pluslt}
-For natural numbers $m$, $n$ and $p$, we have $m < n$ iff $m + p < n + p$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{$\forall m,n. m < n \Leftrightarrow p + 0 < n + 0$}
-\step{2}{For any natural number $p$, if $\forall m,n. m < n \Leftrightarrow m + p < n + p$ then $\forall m,n. m < n \Leftrightarrow m + p^+ < n + p^+$}
-\begin{proof}
-	\pf\ Proposition \ref{prop:succltsucc}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-\label{cor:pluscancel}
+\label{thm:pluscancel}
 For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
-\end{cor}
+\end{thm}
 
 \begin{proof}
 \pf\ By trichotomy. \qed
