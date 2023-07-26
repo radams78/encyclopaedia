@@ -46,6 +46,14 @@ We shall speak informally of \emph{classes} as an abbreviation for talking about
 
 We say two classes $\mathbf{A}$ and $\mathbf{B}$ are \emph{equal}, and write $\mathbf{A} = \mathbf{B}$, iff $\forall x (x \in \mathbf{A} \leftrightarrow x \in \mathbf{B})$.
 
+\begin{df}[Empty Class]
+The \emph{empty class} $\emptyset$ is $\{ x \mid \bot\}$.
+\end{df}
+
+\begin{df}[Universal Class]
+The \emph{universal class} $\mathbf{V}$ is $\{ x \mid \top \}$.
+\end{df}
+
 The following are all valid formulas of first-order logic:
 
 \begin{props}
@@ -56,6 +64,67 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are t
 \item If $\mathbf{A} = \mathbf{B}$ and $\mathbf{B} = \mathbf{C}$ then $\mathbf{A} = \mathbf{C}$.
 \end{enumerate}
 \end{props}
+
+\subsection{Binary Union}
+
+\begin{df}[Union]
+The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} \cup \mathbf{B} & = \mathbf{B} \cup \mathbf{A} \\
+\mathbf{A} \cup (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cup \mathbf{C} \\
+\mathbf{A} \cup \emptyset & = \mathbf{A} \\
+\mathbf{A} \cup \mathbf{V} & = \mathbf{V}
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ These are valid formulas of first-order logic. \qed
+\end{proof}
+
+\subsection{Binary Intersection}
+
+\begin{df}[Intersection]
+The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
+\end{df}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
+\begin{align*}
+\mathbf{A} \cap \mathbf{B} & = \mathbf{B} \cap \mathbf{A} \\
+\mathbf{A} \cap (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cap \mathbf{C} \\
+\mathbf{A} \cap \emptyset & = \emptyset \\
+\mathbf{A} \cap \mathbf{V} & = \mathbf{A} \\
+\mathbf{A} \cap (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cup (\mathbf{A} \cap \mathbf{C}) \\
+\mathbf{A} \cup (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cap (\mathbf{A} \cup \mathbf{C})
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ These are valid formulas of first-order logic. \qed
+\end{proof}
+
+\subsection{Union of a Class}
+
+\begin{df}[Union]
+The \emph{union} of a class $\mathbf{A}$ is $\{ x \mid \exists X \in \mathbf{A}. x \in X\}$.
+We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
+\end{df}
+
+\begin{prop}
+\[ \bigcup \emptyset = \emptyset \]
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+For $\bigcup \mathbf{V}$, see Proposition \ref{prop:unionV}.
+
+\subsection{Subclasses}
 
 \begin{df}[Subclass]
 We say a class $\mathbf{A}$ is a \emph{subclass} of $\mathbf{B}$, or $\mathbf{B}$ is a \emph{superclass} of $\mathbf{A}$, or $\mathbf{B}$ \emph{includes} $\mathbf{A}$, and write $\mathbf{A} \subseteq \mathbf{B}$ or $\mathbf{B} \supseteq \mathbf{A}$, iff every element of $\mathbf{A}$ is an element of $\mathbf{B}$. Otherwise we write $\mathbf{A} \nsubseteq \mathbf{B}$ or $\mathbf{B} \nsupseteq \mathbf{A}$.
@@ -72,83 +141,14 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are t
 \item $\mathbf{A} \subseteq \mathbf{A}$
 \item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A}$ then $\mathbf{A} = \mathbf{B}$.
 \item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \subseteq \mathbf{C}$.
+\item For any class $\mathbf{A}$, we have $\emptyset \subseteq \mathbf{A}$.
+\item For any class $\mathbf{A}$, we have $\mathbf{A} \subseteq \mathbf{V}$.
+\item $\mathbf{A} \subseteq \mathbf{A} \cup \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A} \cup \mathbf{B}$.
+\item If $\mathbf{A} \subseteq \mathbf{C}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \cup \mathbf{B} \subseteq \mathbf{C}$.
+\item $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{A}$ and $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{B}$.
+\item If $\mathbf{C} \subseteq \mathbf{A}$ and $\mathbf{C} \subseteq \mathbf{B}$ then $\mathbf{C} \subseteq \mathbf{A} \cap \mathbf{B}$.
 \end{enumerate}
 \end{props}
-
-\begin{df}[Empty Class]
-The \emph{empty class} $\emptyset$ is $\{ x \mid \bot\}$.
-\end{df}
-
-\begin{prop}
-For any class $\mathbf{A}$, we have $\emptyset \subseteq \mathbf{A}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Vacuously, every element of $\emptyset$ is an element of $\mathbf{A}$. \qed	
-\end{proof}
-
-\begin{df}[Universal Class]
-The \emph{universal class} $\mathbf{V}$ is $\{ x \mid \top \}$.
-\end{df}
-
-\begin{prop}
-For any class $\mathbf{A}$, we have $\mathbf{A} \subseteq \mathbf{V}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Trivially, every element of $\mathbf{A}$ is an element of $\mathbf{V}$. \qed	
-\end{proof}
-
-\begin{df}[Union]
-The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
-\end{df}
-
-\begin{prop}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} \cup \mathbf{B} & = \mathbf{B} \cup \mathbf{A} \\
-\mathbf{A} \cup (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cup \mathbf{C} \\
-\mathbf{A} \cup \emptyset & = \mathbf{A}
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ These are valid formulas of first-order logic. \qed
-\end{proof}
-
-\begin{df}[Intersection]
-The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
-\end{df}
-
-\begin{prop}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} \cap \mathbf{B} & = \mathbf{B} \cap \mathbf{A} \\
-\mathbf{A} \cap (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cap \mathbf{C} \\
-\mathbf{A} \cap \emptyset & = \emptyset
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ These are valid formulas of first-order logic. \qed
-\end{proof}
-
-\begin{prop}[Distributive Laws]
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} \cup (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cap (\mathbf{A} \cup \mathbf{C}) \\
-\mathbf{A} \cap (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cup (\mathbf{A} \cap \mathbf{C})
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ These are valid formulas of first-order logic. \qed
-\end{proof}
-
-\begin{df}[Union]
-The \emph{union} of a class $\mathbf{A}$ is $\{ x \mid \exists X \in \mathbf{A}. x \in X\}$.
-We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
-\end{df}
 
 \begin{prop}
 For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
@@ -244,6 +244,7 @@ For any nonempty set $A$, there exists $m \in A$ such that $m \cap A = \emptyset
 
 \subsection{Consequences of the Axioms}
 
+
 \begin{prop}
 The class $\emptyset = \{x \mid \bot \}$ is a set.
 \end{prop}
@@ -299,6 +300,24 @@ For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x 
 \pf\ The case $n=1$ follows from Pairing since $\{a\} = \{a,a\}$.
 
 If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:unionV}
+\[ \bigcup \mathbf{V} = \mathbf{V} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup \mathbf{V} \subseteq \mathbf{V}$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{2}{$\mathbf{V} \subseteq \bigcup \mathbf{V}$}
+\begin{proof}
+	\pf\ For all $x$ we have $x \in \{x\} \in \mathbf{V}$ so $x \in \bigcup \mathbf{V}$.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
@@ -2010,6 +2029,29 @@ No set is equinumerous to its power set.
 A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
 \end{df}
 
+\begin{prop}
+Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $A \preccurlyeq B$ iff there exists a surjective function $B \rightarrow A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $A \preccurlyeq B$ and $A \neq \emptyset$ then there exists a surjective function $B \rightarrow A$.}
+\begin{proof}
+	\step{a}{\assume{$f : A \rightarrow B$ be injective.}}
+	\step{b}{\pick\ $a \in A$}
+	\step{c}{\pflet{$g : B \rightarrow A$ be the function defined by $g(b) = f^{-1}(b)$ if $b \in \ran f$, and $g(b) = a$ otherwise.}}
+	\step{d}{$g$ is surjective.}
+\end{proof}
+\step{2}{If there exists a surjective function $B \rightarrow A$ then $A \preccurlyeq B$.}
+\begin{proof}
+	\step{a}{\assume{there exists a surjective function $g : B \rightarrow A$}}
+	\step{x}{$\forall a \in A. \exists b \in B. g(b) = a$}
+	\step{b}{Choose a function $f : A \rightarrow B$ such that $\forall a \in A. g(f(a)) = a$}
+	\step{c}{$f$ is injective.}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Transfinite Recursion}
 
 \begin{thms}[Transfinite Recursion Theorem Schema]
@@ -2977,6 +3019,20 @@ For any cardinal numbers $\kappa$, $\lambda$, $\mu$, if $\kappa \leq \lambda$ an
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:unioncard}
+Let $\mathcal{A}$ be a set such that $\forall X \in \mathcal{A}. |X| \leq \kappa$. Then
+\[ \left| \bigcup \mathcal{A} \right| \leq |\mathcal{A}| \kappa \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{a}{For $X \in \mathcal{A}$, choose a surjection $f_X : \kappa \rightarrow X$.}
+\step{b}{Define $g : \mathcal{A} \times \kappa \rightarrow \bigcup \mathcal{A}$ by $g(X,\alpha) = f_X(\alpha)$}
+\step{c}{$g$ is surjective.}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -3492,6 +3548,21 @@ h(n+1) & = h(n) \cup \{ F(A - \{ h(m) \mid m < n \}) \}
 \qed
 \end{proof}
 
+
+\section{Countable Sets}
+
+\begin{df}[Countable]
+A set $A$ is \emph{countable} iff $|A| \leq \aleph_0$.
+\end{df}
+
+\begin{thm}
+The union of a countable set of countable sets is countable.
+\end{thm}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:unioncard}. \qed
+\end{proof}
+
 \section{Arithmetic}
 
 \begin{df}[Even]
@@ -3738,6 +3809,22 @@ Let $m$, $n$, $p$ and $q$ be natural numbers. Assume $n < m$ and $q < p$. Then
 	\end{align*}
 \end{proof}
 \qed
+\end{proof}
+
+\section{Sequences}
+
+\begin{df}[Sequence]
+Let $A$ be a set. A \emph{finite sequence} in $A$ is a function $a : n \rightarrow A$ for some natural number $n$; we write it as $(a(0), a(1), \ldots, a(n-1))$. An \emph{(infinite) sequence} in $A$ is a function $\mathbb{N} \rightarrow A$.
+
+We write $A^*$ for the set of all finite sequences in $A$.
+\end{df}
+
+\begin{prop}
+If $A$ is countable then $A^*$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $n$, the set $A^n$ is countable, and $A^*$ is equinumerous with $\bigcup_n A^n$. \qed
 \end{proof}
 
 \chapter{Group Theory}
@@ -5829,6 +5916,35 @@ The real numbers form a complete ordered field.
 \qed
 \end{proof}
 
+%TODO Define algebraic numbers
+\begin{prop}
+The set of algebraic numbers is countable.
+\end{prop}
+
+\begin{proof}
+\pf\ There are countably many integer polynomials, each with finitely many roots. \qed
+\end{proof}
+
+\begin{cor}
+There are uncountably many transcendental numbers.
+\end{cor}
+
+%TODO Define circles in the plane
+\begin{prop}
+Let $A$ be a set of disks in the plane, no two of which intersect. Then $A$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf\ Every circle includes a point with rational coordinates. Define $f : \{ q \in \mathbb{Q}^2 \mid \exists C \in A. q \in C \} \rightarrow A$ by $f(q) = C$ iff $q \in C$. Then $f$ is surjective. \qed
+\end{proof}
+
+\begin{prop}
+There exists an uncountable set of circles in the plane that do not intersect.
+\end{prop}
+
+\begin{proof}
+\pf\ The set of all circles with origin O is uncountable. \qed
+\end{proof}
 \chapter{Complex Analysis}
 
 \begin{df}

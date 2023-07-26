@@ -1,0 +1,7 @@
+For each concept:
+
+Definition
+Examples
+Basic properties
+Relationship with previous concepts
+Methods of constructing instances
