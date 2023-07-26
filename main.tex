@@ -2731,6 +2731,14 @@ For any cardinal numbers $\kappa$ and $\lambda$, we have $\kappa \lambda = \lamb
 \pf\ Since $A \times B \approx B \times A$. \qed
 \end{proof}
 
+\begin{thm}
+For any cardinal numbers $\kappa$ and $\lambda$, if $\kappa \lambda = 0$ then $\kappa = 0$ or $\lambda = 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ if $A \times B = \emptyset$ then $A = \emptyset$ or $B = \emptyset$. \qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -3240,31 +3248,6 @@ For any natural numbers $m$ and $n$, we have $mn$ is a natural number.
 \end{cor}
 
 \section{Arithmetic}
-
-\begin{prop}
-For natural numbers $m$ and $n$, if $mn = 0$ then $m = 0$ or $n = 0$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$m,n \in \mathbb{N}$}}
-\step{2}{\assume{$m \neq 0$ and $n \neq 0$}}
-\step{3}{\pick\ $p,q \in \mathbb{N}$ such that $m = p^+$ and $n = q^+$}
-\begin{proof}
-	\pf\ Theorem \ref{thm:zeroorsucc}.
-\end{proof}
-\step{4}{$mn = (p^+q + p)^+$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		mn & = p^+ q^+ & (\text{\stepref{3}}) \\
-		& = p^+q + p^+ \\
-		& = (p^+ q + p)^+
-	\end{align*}
-\end{proof}
-\step{5}{$mn \neq 0$}
-\qed
-\end{proof}
 
 \begin{df}[Even]
 A natural number $n$ is \emph{even} iff there exists $m \in \mathbb{N}$ such that $n = 2m$.
