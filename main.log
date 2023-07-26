@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  26 JUL 2023 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  26 JUL 2023 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -389,22 +389,22 @@ Chapter 4.
 Chapter 5.
 [41
 
-] [42] [43] [44
+] [42] [43] [44]
+Chapter 6.
+[45
 
 ]
-Chapter 6.
-[45]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2974.
+(hyperref)                removing `math shift' on input line 2990.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2974.
+(hyperref)                removing `math shift' on input line 2990.
 
 [46] [47] [48] [49] [50] [51] [52] [53]
 
-LaTeX Warning: Reference `prop:multone' on page 54 undefined on input line 3582
+LaTeX Warning: Reference `prop:multone' on page 54 undefined on input line 3598
 .
 
 [54] [55] [56
@@ -426,7 +426,7 @@ WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 [62] [63] [64]
-Overfull \hbox (0.14412pt too wide) in paragraph at lines 4126--4127
+Overfull \hbox (0.14412pt too wide) in paragraph at lines 4142--4143
 []\OT1/cmr/bx/n/10 Definition 9.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/10
  . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \O
 T1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
@@ -437,12 +437,12 @@ T1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
 ]
 Chapter 10.
 [69]
-Overfull \hbox (5.81142pt too wide) detected at line 4444
+Overfull \hbox (5.81142pt too wide) detected at line 4460
 []
  []
 
 [70]
-Overfull \hbox (10.26518pt too wide) detected at line 4459
+Overfull \hbox (10.26518pt too wide) detected at line 4475
 []
  []
 
@@ -456,7 +456,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
 [86]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 5609--5609
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 5625--5625
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
@@ -469,12 +469,12 @@ WARNING: proof step "e" (<2>7) already defined
 [89
 
 ] [90]
-Overfull \hbox (68.70209pt too wide) detected at line 5882
+Overfull \hbox (68.70209pt too wide) detected at line 5898
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 5888
+Overfull \hbox (13.13249pt too wide) detected at line 5904
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
@@ -488,7 +488,7 @@ Chapter 12.
 ]
 WARNING: proof step "ii" (<3>3) already defined
 [96] [97] [98] [99]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 6307--6308
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 6323--6324
 []\OT1/cmr/bx/n/10 Proposition 12.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -503,13 +503,13 @@ Chapter 13.
 ] [104] [105] [106] [107] [108] [109] [110]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 6988
+Overfull \hbox (76.64789pt too wide) detected at line 7004
 []
  []
 
 [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121] [122]
 [123]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 7864--7865
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 7880--7881
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -518,7 +518,7 @@ cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
 [124] [125] [126] [127]
-Overfull \hbox (91.49588pt too wide) detected at line 8121
+Overfull \hbox (91.49588pt too wide) detected at line 8137
 []
  []
 
@@ -527,7 +527,7 @@ WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
 [131] [132] [133] [134] [135]
-Overfull \hbox (62.14355pt too wide) detected at line 8567
+Overfull \hbox (62.14355pt too wide) detected at line 8583
 []
  []
 
@@ -538,17 +538,17 @@ Chapter 14.
 ]
 WARNING: proof step "1" (<1>2) already defined
 
-Overfull \hbox (133.82387pt too wide) detected at line 8684
+Overfull \hbox (133.82387pt too wide) detected at line 8700
 []
  []
 
 [138]
-Overfull \hbox (22.05334pt too wide) detected at line 8778
+Overfull \hbox (22.05334pt too wide) detected at line 8794
 []
  []
 
 [139] [140]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 8897--8898
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 8913--8914
 []\OT1/cmr/bx/n/10 Proposition 14.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
@@ -556,7 +556,7 @@ L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
 [141]
-Overfull \hbox (14.47572pt too wide) detected at line 8923
+Overfull \hbox (14.47572pt too wide) detected at line 8939
 []
  []
 
@@ -569,12 +569,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [147]
 [148]
-Overfull \hbox (68.12585pt too wide) detected at line 9245
+Overfull \hbox (68.12585pt too wide) detected at line 9261
 []
  []
 
 [149] [150]
-Overfull \hbox (135.96497pt too wide) detected at line 9321
+Overfull \hbox (135.96497pt too wide) detected at line 9337
 []
  []
 
@@ -586,8 +586,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 21D379D05006DBF481555BA5D5C53C8B;8212.
  ) 
 Here is how much of TeX's memory you used:
- 9990 strings out of 476091
- 146509 string characters out of 5794082
+ 9992 strings out of 476091
+ 146525 string characters out of 5794082
  1874330 words of memory out of 5000000
  29434 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
@@ -615,10 +615,10 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (151 pages, 662974 bytes).
+Output written on main.pdf (151 pages, 663638 bytes).
 PDF statistics:
- 2187 PDF objects out of 2487 (max. 8388607)
- 1746 compressed objects within 18 object streams
- 847 named destinations out of 1000 (max. 500000)
+ 2189 PDF objects out of 2487 (max. 8388607)
+ 1748 compressed objects within 18 object streams
+ 849 named destinations out of 1000 (max. 500000)
  505 words of extra memory for PDF output out of 10000 (max. 10000000)
 
