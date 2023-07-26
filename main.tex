@@ -2750,6 +2750,15 @@ We prove this is well-defined.
 If $f : A \approx A'$ and $g : B \approx B'$, then the function that maps $h : B \rightarrow A$ to $f \circ h \circ g^{-1}$ is a bijection $A^B \approx A'^{B'}$. \qed
 \end{proof}
 
+\begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$ and $\mu$,
+\[ \kappa^{\lambda + \mu} = (\kappa^{\lambda})^\mu \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $f : A \times B \rightarrow C$ to $\lambda a \in A. \lambda b \in B. f(a,b)$ is a bijection $A^{B \times C} \approx (A^B)^C$. \qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -3258,6 +3267,14 @@ For any natural numbers $m$ and $n$ we have $m \cdot n^+ = mn + m$.
 For any natural numbers $m$ and $n$, we have $mn$ is a natural number.
 \end{cor}
 
+\begin{prop}
+$\mathbb{N}^2 \approx \mathbb{N}$
+\end{prop}
+
+\begin{proof}
+\pf\ The function $J : \mathbb{N}^2 \rightarrow \mathbb{N}$ defined by $J(m,n) = ((m+n)^2 + 3m + n)/2$ is a bijection. \qed
+\end{proof}
+
 \section{Arithmetic}
 
 \begin{df}[Even]
@@ -3369,44 +3386,6 @@ No natural number is both even and odd.
 	\end{proof}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{prop}
-For all $m,n,p \in \mathbb{N}$,
-\[ m^{n+p} = m^n m^p \]
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\forall m,n. m^{n+0} = m^n m^0$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		m^{n+0} & = m^n \\
-		& = m^n \cdot 1 & (\text{Proposition \ref{prop:multone}}) \\
-		& = m^n m^0
-	\end{align*}
-\end{proof}
-\step{2}{For any $p \in \mathbb{N}$, if $\forall m,n. m^{n+p} = m^n m^p$ then $\forall m,n. m^{n+p^+} = m^n m^{p^+}$.}
-\begin{proof}
-	\pf
-	\begin{align*}
-		m^{n+p^+} & = m^{(n+p)^+} \\
-		& = m^{n+p} m \\
-		& = (m^n m^p)m & (\text{induction hypothesis}) \\
-		& = m^n (m^p m) & (\text{Theorem \ref{thm:timesassoc}}) \\
-		& = m^n m^{p^+}
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-$\mathbb{N}^2 \approx \mathbb{N}$
-\end{prop}
-
-\begin{proof}
-\pf\ The function $J : \mathbb{N}^2 \rightarrow \mathbb{N}$ defined by $J(m,n) = ((m+n)^2 + 3m + n)/2$ is a bijection. \qed
 \end{proof}
 
 \begin{prop}
