@@ -2817,6 +2817,22 @@ For any cardinal number $\kappa$ we have $2^\kappa \neq \kappa$.
 \pf\ By Cantor's Theorem. \qed
 \end{proof}
 
+\section{Ordering on Cardinal Numbers}
+
+\begin{df}[Domination]
+A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
+\end{df}
+
+\begin{df}
+Given cardinal numbers $\kappa$ and $\lambda$, we write $\kappa \leq \lambda$ iff $A \preccurlyeq B$ where $|A| = \kappa$ and $|B| = \lambda$.
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf\ If $f : A \approx A'$, $g : B \approx B'$, and $h : A \rightarrow B$ is an injection, then $g \circ h \circ f^{-1}$ is an injection $A' \rightarrow B'$. \qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
