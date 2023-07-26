@@ -3227,6 +3227,62 @@ Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and o
 
 \section{Cardinality}
 
+\begin{thm}[Schr\"{o}der-Bernstein]
+For any cardinal numbers $\kappa$ and $\lambda$, if $\kappa \leq \lambda$ and $\lambda \leq \kappa$ then $\kappa = \lambda$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrow B$ and $g : B \rightarrow A$ be injections.} \prove{$A \approx B$}}
+\step{2}{Define the sets $C_n$ for $n \in \mathbb{N}$ by recursion:
+\begin{align*}
+C_0 & := A - \ran g \\
+C_{n+1} & := g(f(C_n))
+\end{align*}}
+\step{3}{\pflet{$h : A \rightarrow B$ be the function
+\[ h(x) = \begin{cases}
+f(x) & \text{if } \exists n. x \in C_n \\
+g^{-1}(x) & \text{otherwise}
+\end{cases} \]}}
+\step{4}{For $n \in \mathbb{N}$, \pflet{$D_n = f(C_n)$}}
+\step{5}{$h$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x, x' \in A$}}
+	\step{b}{\assume{$h(x) = h(x')$}}
+	\step{c}{\case{$x \in C_m$ and $x' \in C_n$}}
+	\begin{proof}
+		\pf\ We have $f(x) = f(x')$ so $x = x'$.
+	\end{proof}
+	\step{d}{\case{$x \in C_m$ and $\forall n.x' \notin C_n$}}
+	\begin{proof}
+		\pf\ We have $f(x) = g^{-1}(x')$ so $x' = g(f(x)) \in C_{m+1}$ which is a contradiction.
+	\end{proof}
+	\step{e}{\case{$\forall n. x \notin C_n$ and $x' \in C_n$}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{f}{\case{$\forall n. x \notin C_n$ and $\forall n. x' \notin C_n$}}
+	\begin{proof}
+		\pf\ We have $g^{-1}(x) = g^{-1}(x')$ so $x = x'$.
+	\end{proof}
+\end{proof}
+\step{6}{$h$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$y \in B$}}
+	\step{b}{\case{$y \in D_n$}}
+	\begin{proof}
+		\step{i}{\pick\ $x \in C_n$ such that $y = f(x)$}
+		\step{ii}{$y = h(x)$}
+	\end{proof}
+	\step{c}{\case{$\forall n. y \notin D_n$}}
+	\begin{proof}
+		\step{i}{$\forall n. g(y) \notin C_n$}
+		\step{ii}{$h(g(y)) = y$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Finite]
 A set is \emph{finite} iff it is equinumerous to some natural number; otherwise it is \emph{infinite}.
 \end{df}
@@ -5739,19 +5795,20 @@ The real numbers form a complete ordered field.
 \pf\ The function $f(x) = (2x-1)/(x-x^2)$ is a bijection between $(0,1)$ and $\mathbb{R}$. \qed
 \end{proof}
 
-%TODO Define decimal expansions
+%TODO Define expansions in base n
 \begin{prop}
-\[ \mathbb{R} \not\approx \mathbb{N} \]
+\[ |\mathbb{R}| = 2^{\aleph_0} \]
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\assume{for a contradiction $f : \mathbb{N} \approx \mathbb{R}$}}
-\step{2}{\pflet{$z$ be the real number with integer part 0 whose $n+1$st decimal place is 7 unless the $n+1$st decimal place of $f(n)$ is 7, in which case it is 6.}}
-\step{3}{$z \neq f(n)$ for all $n$.}
-\qedstep
+\step{1}{$(0,1) \preccurlyeq 2^\mathbb{N}$}
 \begin{proof}
-	\pf\ This is a contradiction.
+	\pf\ The function $H$ where $H(x)(n)$ is the $n$th binary digit of the binary expansion of $x$ is an injection.
+\end{proof}
+\step{2}{$2^\mathbb{N} \preccurlyeq \mathbb{R}$}
+\begin{proof}
+	\pf\ Map $f$ to the real number in $[0, 1/9]$ whose $n+1$st decimal digit is $f(n)$.
 \end{proof}
 \qed
 \end{proof}
