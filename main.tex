@@ -2824,7 +2824,7 @@ A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists
 \end{df}
 
 \begin{df}
-Given cardinal numbers $\kappa$ and $\lambda$, we write $\kappa \leq \lambda$ iff $A \preccurlyeq B$ where $|A| = \kappa$ and $|B| = \lambda$.
+Given cardinal numbers $\kappa$ and $\lambda$, we write $\kappa \leq \lambda$ iff $A \preccurlyeq B$ where $|A| = \kappa$ and $|B| = \lambda$. We write $\kappa < \lambda$ iff $\kappa \leq \lambda$ and $\kappa \neq \lambda$.
 
 We prove this is well-defined.
 \end{df}
@@ -2832,6 +2832,26 @@ We prove this is well-defined.
 \begin{proof}
 \pf\ If $f : A \approx A'$, $g : B \approx B'$, and $h : A \rightarrow B$ is an injection, then $g \circ h \circ f^{-1}$ is an injection $A' \rightarrow B'$. \qed
 \end{proof}
+
+\begin{prop}
+For any cardinal number $\kappa$ we have $0 \leq \kappa$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any set $A$, we have $\emptyset$ is an injection $\emptyset \rightarrow A$. \qed
+\end{proof}
+
+\begin{prop}
+For any cardinal number $\kappa$ we have $\kappa < 2^\kappa$.
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $a$ to $\{a\}$ is an injection $A \rightarrow \mathcal{P} A$, so $\kappa \leq 2^\kappa$. They are unequal by Cantor's Theorem. \qed
+\end{proof}
+
+\begin{cor}
+There is no largest cardinal number.
+\end{cor}
 
 \chapter{Natural Numbers}
 
@@ -2952,10 +2972,6 @@ $\mathbb{N}$ is a transitive set.
 \end{proof}
 
 \section{Ordering on $\mathbb{N}$}
-
-\begin{df}
-Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$. We write $m \leq n$ iff $m < n$ or $m = n$.
-\end{df}
 
 \begin{prop}
 \label{prop:succltsucc}
