@@ -2739,6 +2739,17 @@ For any cardinal numbers $\kappa$ and $\lambda$, if $\kappa \lambda = 0$ then $\
 \pf\ if $A \times B = \emptyset$ then $A = \emptyset$ or $B = \emptyset$. \qed
 \end{proof}
 
+\begin{df}[Exponentiation]
+Given cardinal numbers $\kappa$ and $\lambda$, we define $\kappa^\lambda$ to be $|A^B|$, where $|A| = \kappa$ and $|B| = \lambda$.
+
+We prove this is well-defined.
+\end{df}
+
+\begin{proof}
+\pf
+If $f : A \approx A'$ and $g : B \approx B'$, then the function that maps $h : B \rightarrow A$ to $f \circ h \circ g^{-1}$ is a bijection $A^B \approx A'^{B'}$. \qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -3359,14 +3370,6 @@ No natural number is both even and odd.
 \end{proof}
 \qed
 \end{proof}
-
-\begin{df}[Exponentiation]
-\emph{Exponentiation} is the binary operation on $\mathbb{N}$ defined recursively by:
-\begin{align*}
-m^0 & = 1 \\
-m^{n^+} & = m^n m
-\end{align*}
-\end{df}
 
 \begin{prop}
 For all $m,n,p \in \mathbb{N}$,
