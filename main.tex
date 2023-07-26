@@ -2760,6 +2760,24 @@ For any cardinal numbers $\kappa$, $\lambda$ and $\mu$,
 \end{proof}
 
 \begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$ and $\mu$,
+\[ (\kappa \lambda)^\mu = \kappa^\mu \lambda^\mu \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function $f : A^C \times B^C \rightarrow (A \times B)^C$ with $f(g,h)(c) = (g(c),h(c))$ is a bijection. \qed
+\end{proof}
+
+\begin{prop}
+For any cardinal numbers $\kappa$, $\lambda$ and $\mu$, we have
+\[ \kappa^{\lambda + \mu} = \kappa^\lambda \kappa^\mu \enspace .\]
+\end{prop}
+
+\begin{proof}
+\pf\ If $B \cap C = \emptyset$, then $f : A^B \times A^C \rightarrow A^{B \cup C}$ given by $f(g,h)(b) = g(b)$ and $f(g,h)(c) = h(c)$ is a bijection. \qed
+\end{proof}
+
+\begin{prop}
 For any cardinal number $\kappa$, we have $\kappa^0 = 1$.
 \end{prop}
 
@@ -3307,6 +3325,10 @@ For any natural numbers $m$ and $n$ we have $m \cdot n^+ = mn + m$.
 For any natural numbers $m$ and $n$, we have $mn$ is a natural number.
 \end{cor}
 
+\begin{cor}
+If $A$ and $B$ are finite sets then $A \times B$ is finite.
+\end{cor}
+
 \begin{prop}
 $\mathbb{N}^2 \approx \mathbb{N}$
 \end{prop}
@@ -3314,6 +3336,18 @@ $\mathbb{N}^2 \approx \mathbb{N}$
 \begin{proof}
 \pf\ The function $J : \mathbb{N}^2 \rightarrow \mathbb{N}$ defined by $J(m,n) = ((m+n)^2 + 3m + n)/2$ is a bijection. \qed
 \end{proof}
+
+\begin{cor}
+For any natural numbers $m$ and $n$, we have $m^n$ is a natural number.
+\end{cor}
+
+\begin{proof}
+\pf\ By induction on $n$ since $m^0 = 1$ and $m^{n+1} = m^n m$. \qed
+\end{proof}
+
+\begin{cor}
+If $A$ and $B$ are finite sets then $A^B$ are finite.
+\end{cor}
 
 \section{Arithmetic}
 
