@@ -44,15 +44,9 @@ Our language is the language of first-order logic with equality over one primiti
 
 We shall speak informally of \emph{classes} as an abbreviation for talking about predicates. A \emph{class} is determined by a unary predicate $\phi[x]$ (possibly with parameters). We write $\{ x \mid \phi[x] \}$ or $\{ x : \phi[x] \}$ for the class determined by $\phi[x]$. We write '$a$ is an element of $\{x \mid \phi[x]\}$' or '$a \in \{x \mid \phi[x]\}$' for $\phi[a]$.
 
+We write $\{t[x_1, \ldots, x_n] \mid P[x_1, \ldots, x_n] \}$ for $\{y \mid \exists x_1, \ldots, x_n (y = t[x_1, \ldots, x_n] \wedge P[x_1, \ldots, x_n]) \}$.
+
 We say two classes $\mathbf{A}$ and $\mathbf{B}$ are \emph{equal}, and write $\mathbf{A} = \mathbf{B}$, iff $\forall x (x \in \mathbf{A} \leftrightarrow x \in \mathbf{B})$.
-
-\begin{df}[Empty Class]
-The \emph{empty class} $\emptyset$ is $\{ x \mid \bot\}$.
-\end{df}
-
-\begin{df}[Universal Class]
-The \emph{universal class} $\mathbf{V}$ is $\{ x \mid \top \}$.
-\end{df}
 
 The following are all valid formulas of first-order logic:
 
@@ -65,7 +59,13 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are t
 \end{enumerate}
 \end{props}
 
-\subsection{Subclasses}
+\begin{df}[Empty Class]
+The \emph{empty class} $\emptyset$ is $\{ x \mid \bot\}$.
+\end{df}
+
+\begin{df}[Universal Class]
+The \emph{universal class} $\mathbf{V}$ is $\{ x \mid \top \}$.
+\end{df}
 
 \begin{df}[Subclass]
 We say a class $\mathbf{A}$ is a \emph{subclass} of $\mathbf{B}$, or $\mathbf{B}$ is a \emph{superclass} of $\mathbf{A}$, or $\mathbf{B}$ \emph{includes} $\mathbf{A}$, and write $\mathbf{A} \subseteq \mathbf{B}$ or $\mathbf{B} \supseteq \mathbf{A}$, iff every element of $\mathbf{A}$ is an element of $\mathbf{B}$. Otherwise we write $\mathbf{A} \nsubseteq \mathbf{B}$ or $\mathbf{B} \nsupseteq \mathbf{A}$.
@@ -73,162 +73,31 @@ We say a class $\mathbf{A}$ is a \emph{subclass} of $\mathbf{B}$, or $\mathbf{B}
 We say $\mathbf{A}$ is a \emph{proper} subclass of $\mathbf{B}$, $\mathbf{B}$ is a \emph{proper} superclass of $\mathbf{A}$, or $\mathbf{B}$ \emph{properly} includes $\mathbf{A}$, and write $\mathbf{A} \subsetneq \mathbf{B}$ or $\mathbf{B} \supsetneq \mathbf{A}$, iff in addition $\mathbf{A} \neq \mathbf{B}$.
 \end{df}
 
-The following are all valid formulas of first-order logic:
-
-\begin{props}
-\label{prop:subclass}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems:
-\begin{enumerate}
-\item $\mathbf{A} \subseteq \mathbf{A}$
-\item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A}$ then $\mathbf{A} = \mathbf{B}$.
-\item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \subseteq \mathbf{C}$.
-\item For any class $\mathbf{A}$, we have $\emptyset \subseteq \mathbf{A}$.
-\item For any class $\mathbf{A}$, we have $\mathbf{A} \subseteq \mathbf{V}$.
-\end{enumerate}
-\end{props}
-
-\subsection{Binary Union}
 
 \begin{df}[Union]
 The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
 \end{df}
 
-The following are all valid formulas of first-order logic.
-
-\begin{props}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, the following are theorems:
-\begin{enumerate}
-\item $\mathbf{A} \cup \mathbf{B} = \mathbf{B} \cup \mathbf{A}$
-\item $\mathbf{A} \cup (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \cup \mathbf{B}) \cup \mathbf{C}$
-\item $\mathbf{A} \cup \emptyset = \mathbf{A}$
-\item $\mathbf{A} \cup \mathbf{V} = \mathbf{V}$
-\item $\mathbf{A} \subseteq \mathbf{A} \cup \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A} \cup \mathbf{B}$.
-\item If $\mathbf{A} \subseteq \mathbf{C}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \cup \mathbf{B} \subseteq \mathbf{C}$.
-\end{enumerate}
-\end{props}
-
-\subsection{Binary Intersection}
-
 \begin{df}[Intersection]
 The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
 \end{df}
-
-The following are all valid formulas of first-order logic.
-
-\begin{props}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems.
-\begin{enumerate}
-\item $\mathbf{A} \cap \mathbf{B} = \mathbf{B} \cap \mathbf{A}$
-\item $\mathbf{A} \cap (\mathbf{B} \cap \mathbf{C}) = (\mathbf{A} \cap \mathbf{B}) \cap \mathbf{C}$
-\item $\mathbf{A} \cap \emptyset = \emptyset$
-\item $\mathbf{A} \cap \mathbf{V} = \mathbf{A}$
-\item $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{A}$ and $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{B}$.
-\item If $\mathbf{C} \subseteq \mathbf{A}$ and $\mathbf{C} \subseteq \mathbf{B}$ then $\mathbf{C} \subseteq \mathbf{A} \cap \mathbf{B}$.
-\item $\mathbf{A} \cap (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \cap \mathbf{B}) \cup (\mathbf{A} \cap \mathbf{C})$
-\item $\mathbf{A} \cup (\mathbf{B} \cap \mathbf{C}) = (\mathbf{A} \cup \mathbf{B}) \cap (\mathbf{A} \cup \mathbf{C})$
-\end{enumerate}
-\end{props}
-
-\subsection{Union of a Class}
 
 \begin{df}[Union]
 The \emph{union} of a class $\mathbf{A}$ is $\{ x \mid \exists X \in \mathbf{A}. x \in X\}$.
 We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
 \end{df}
 
-\begin{prop}
-\[ \bigcup \emptyset = \emptyset \]
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-For $\bigcup \mathbf{V}$, see Proposition \ref{prop:unionV}.
-
-\begin{prop}
-For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-\begin{prop}
-\[ \bigcup (\mathbf{A} \cup \mathbf{B}) = \bigcup \mathbf{A} \cup \bigcup \mathbf{B} \]
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-\begin{prop}
-\[ \bigcup (\mathbf{A} \cap \mathbf{B}) \subseteq \bigcup \mathbf{A} \cap \bigcup \mathbf{B} \]
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-For an example showing that this inclusion cannot always be strengthened to an equality, see Proposition \ref{prop:bigcupcapcounterex}.
-
-For the distributive law between $\cap$ and $\bigcup$, see Proposition \ref{prop:capbigcup}.
-
-\subsection{Intersection of a Class}
-
 \begin{df}[Intersection]
 The \emph{intersection} of a class $\mathbf{A}$ is $\{ x \mid \forall X \in \mathbf{A}. x \in X \}$. We write $\bigcap_{P(x)} t(x)$ for $\bigcap \{ t(x) \mid P(x) \}$.
 \end{df}
-
-\begin{prop}
-\[ \bigcap \emptyset = \mathbf{V} \]
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-For $\bigcap \mathbf{V}$, see Proposition \ref{prop:bigcapV}.
 
 \begin{df}[Relative Complement]
 Let $\mathbf{A}$ and $\mathbf{B}$ be classes. The \emph{relative complement} of $\mathbf{B}$ in $\mathbf{A}$ is the class $\mathbf{A} - \mathbf{B} = \{ x \in \mathbf{A} \mid x \notin \mathbf{B} \}$.
 \end{df}
 
-\begin{prop}[De Morgan's Laws]
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} - (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} - \mathbf{B}) \cap (\mathbf{A} - \mathbf{C}) \\
-\mathbf{A} - (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} - \mathbf{B}) \cup (\mathbf{A} - \mathbf{C})
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-\begin{prop}
-If $\mathbf{A} \subseteq \mathbf{B}$ then $\mathbf{C} - \mathbf{B} \subseteq \mathbf{C} - \mathbf{A}$.
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
 \begin{df}[Symmetric Difference]
 The \emph{symmetric difference} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} + \mathbf{B} := (\mathbf{A} - \mathbf{B}) \cup (\mathbf{B} - \mathbf{A})$.
 \end{df}
-
-\begin{prop}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} \cap (\mathbf{B} + \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) + (\mathbf{A} \cap \mathbf{C}) \\
-\mathbf{A} + (\mathbf{B} + \mathbf{C}) & = (\mathbf{A} + \mathbf{B}) + \mathbf{C}
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
 
 \section{Axioms}
 	
@@ -242,8 +111,12 @@ Thanks to this axiom, we may identify a set $a$ with the class $\{x \mid x \in a
 The union of a set is a set.
 \end{ax}
 
+\begin{df}[Power Class]
+For any class $\mathbf{A}$, the \emph{power class} $\mathcal{P} \mathbf{A}$ is $\{ X \mid X \subseteq \mathbf{A} \}$.
+\end{df}
+
 \begin{ax}[Power Set]
-For any set $A$, the class $\mathcal{P} A = \{x \mid x \subseteq A\}$ is a set, called the \emph{power set} of $A$.
+The power class of a set is a set, which we call a \emph{power set}.
 \end{ax}
 
 \begin{ax}[Infinity]
@@ -273,30 +146,11 @@ For any nonempty set $A$, there exists $m \in A$ such that $m \cap A = \emptyset
 \subsection{Consequences of the Axioms}
 
 \begin{prop}
-\label{prop:capbigcup}
-For any set $A$ and class $\mathbf{B}$, we have
-\[ A \cap \bigcup \mathbf{B} = \bigcup \{ A \cap X \mid X \in \mathbf{B} \} \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-\begin{prop}
-The class $\emptyset = \{x \mid \bot \}$ is a set.
+The empty class $\emptyset$ is a set.
 \end{prop}
 
 \begin{proof}
 \pf\ Immediate from the Axiom of Infinity. \qed
-\end{proof}
-
-\begin{prop}
-\label{prop:bigcapV}
-\[ \bigcap \mathbf{V} = \emptyset \]
-\end{prop}
-
-\begin{proof}
-\pf\ If $x \in \bigcap \mathbf{V}$ then $x \in \emptyset$ which is impossible. \qed
 \end{proof}
 
 \begin{prop}[Pairing]
@@ -349,89 +203,31 @@ If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \
 \end{proof}
 
 \begin{prop}
-\label{prop:bigcupcapcounterex}
-There exist sets $A$ and $B$ such that $\bigcup (A \cap B) \neq \bigcup A \cap \bigcup B$.
+\label{prop:powermono}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\mathcal{P} \mathbf{A} \subseteq \mathcal{P} \mathbf{B}$.
 \end{prop}
 
 \begin{proof}
-\step{1}{\pflet{$A = \{ \{ \emptyset \} \}$ and $B = \{ \{ \emptyset, \{ \emptyset \} \} \}$}}
-\step{2}{$\bigcup(A \cap B) = \emptyset$}
-\step{3}{$\bigcup A \cap \bigcup B = \{ \emptyset \}$}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:unionV}
-\[ \bigcup \mathbf{V} = \mathbf{V} \]
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\bigcup \mathbf{V} \subseteq \mathbf{V}$}
-\begin{proof}
-	\pf\ Trivial.
-\end{proof}
-\step{2}{$\mathbf{V} \subseteq \bigcup \mathbf{V}$}
-\begin{proof}
-	\pf\ For all $x$ we have $x \in \{x\} \in \mathbf{V}$ so $x \in \bigcup \mathbf{V}$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:unionmonotone}
-For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-	\pf
-	\step{1}{\assume{$\mathbf{A} \subseteq \mathbf{B}$}}
-	\step{2}{\pflet{$x \in \bigcup \mathbf{A}$}}
-	\step{3}{\pick\ $A \in \mathbf{A}$ such that $x \in A$}
-	\step{4}{$A \in \mathbf{B}$}
-	\step{5}{$x \in \bigcup \mathbf{B}$}
-	\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:powermonotone}
-For any sets $A$ and $B$, if $A \subseteq B$ then $\mathcal{P} A \subseteq \mathcal{P} B$.
-\end{prop}
-
-\begin{proof}
-\pf\ From Proposition \ref{prop:subclass}. \qed
+\pf\ For any set $X$, if $X \subseteq \mathbf{A}$ then $X \subseteq \mathbf{B}$. \qed
 \end{proof}
 
 \begin{prop}
 \label{prop:UPA}
-For any set $A$ we have $\bigcup \mathcal{P} A = A$.
+For any class $\mathbf{A}$ we have $\bigcup \mathcal{P} \mathbf{A} = \mathbf{A}$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$\bigcup \mathcal{P} A \subseteq A$}
+\step{1}{$\bigcup \mathcal{P} \mathbf{A} \subseteq \mathbf{A}$}
 \begin{proof}
-	\step{a}{\pflet{$x \in \bigcup \mathcal{P} A$}}
-	\step{b}{\pick\ $X \in \mathcal{P} A$ such that $x \in X$}
-	\begin{proof}
-		\pf\ \stepref{a}
-	\end{proof}
-	\step{c}{$X \subseteq A$}
-	\begin{proof}
-		\pf\ \stepref{b}
-	\end{proof}
-	\step{d}{$x \in A$}
-	\begin{proof}
-		\pf\ \stepref{b}, \stepref{c}
-	\end{proof}
+	\step{a}{\pflet{$x \in \bigcup \mathcal{P} \mathbf{A}$}}
+	\step{b}{\pick\ $X \in \mathcal{P} \mathbf{A}$ such that $x \in X$}
+	\step{c}{$X \subseteq \mathbf{A}$}
+	\step{d}{$x \in \mathbf{A}$}
 \end{proof}
-\step{2}{$A \subseteq \bigcup \mathcal{P} A$}
+\step{2}{$\mathbf{A} \subseteq \bigcup \mathcal{P} \mathbf{A}$}
 \begin{proof}
-	\pf\ For all $x \in A$ we have $x \in \{x\} \in \mathcal{P} A$.
-\end{proof}
-\qedstep
-\begin{proof}
-	\pf\ By Proposition \ref{prop:subclass}.
+	\pf\ For all $x \in \mathbf{A}$ we have $x \in \{x\} \in \mathcal{P} \mathbf{A}$.
 \end{proof}
 \qed
 \end{proof}
@@ -518,34 +314,6 @@ $\mathbf{V}$ is a proper class.
 \qed
 \end{proof}
 
-\begin{df}
-For any sets $A$ and $B$, the \emph{relative complement} $A-B$ is the set $\{x \in A \mid x \notin B\}$.
-\end{df}
-
-\begin{prop}[Distributive Laws]
-For any set $A$ and class $\mathbf{B}$, we have
-\begin{align*}
-A \cup \bigcap \mathbf{B} & = \bigcap \{ A \cup X \mid X \in \mathbf{B} \} \\
-A \cap \bigcup \mathbf{B} & = \bigcup \{ A \cap X \mid X \in \mathbf{B} \}
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-\begin{prop}[De Morgan's Laws]
-For any set $C$ and class $\mathbf{A}$, we have
-\begin{align*}
-C - \bigcap \mathbf{A} & = \bigcup \{ C - X \mid X \in \mathbf{A} \} \\
-C - \bigcup \mathbf{A} & = \bigcap \{ C - X \mid X \in \mathbf{A} \}
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
 \section{Transitive Classes}
 
 \begin{df}[Transitive Class]
@@ -554,62 +322,21 @@ A class $\mathbf{A}$ is a \emph{transitive class} iff whenever $x \in y \in \mat
 
 \begin{prop}
 \label{prop:transitiveset}
-Let $A$ be a set. Then the following are equivalent.
+Let $\mathbf{A}$ be a class. Then the following are equivalent.
 \begin{enumerate}
 \item
-$A$ is a transitive class.
+$\mathbf{A}$ is a transitive class.
 \item
-$\bigcup A \subseteq A$
+$\bigcup \mathbf{A} \subseteq \mathbf{A}$
 \item
-Every element of $A$ is a subset of $A$.
+Every element of $\mathbf{A}$ is a subset of $\mathbf{A}$.
 \item
-$A \subseteq \mathcal{P} A$
+$\mathbf{A} \subseteq \mathcal{P} \mathbf{A}$
 \end{enumerate}
 \end{prop}
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
-\end{proof}
-
-\begin{prop}
-For any set $a$, we have $a$ is a transitive set if and only if $\mathcal{P} a$ is a transitive set.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $a$ is a transitive set then $\mathcal{P} a$ is a transitive set.}
-\begin{proof}
-	\step{a}{\assume{$a$ is a transitive set.}}
-	\step{b}{$a \subseteq \mathcal{P} a$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:transitiveset}, \stepref{a}.
-	\end{proof}
-	\step{c}{$\mathcal{P} a \subseteq \mathcal{P} \mathcal{P} a$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:powermonotone}, \stepref{b}.
-	\end{proof}
-	\step{d}{$\mathcal{P} a$ is a transitive set.}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:transitiveset}, \stepref{c}.
-	\end{proof}
-\end{proof}
-\step{2}{If $\mathcal{P} a$ is a transitive set then $a$ is a transitive set.}
-\begin{proof}
-	\step{a}{\assume{$\mathcal{P} a$ is a transitive set.}}
-	\step{b}{$\bigcup \mathcal{P} a \subseteq \mathcal{P} a$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:transitiveset}, \stepref{a}.
-	\end{proof}
-	\step{c}{$a \subseteq \mathcal{P} a$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:UPA}, \stepref{b}
-	\end{proof}
-	\step{d}{$a$ is a transitive set.}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:transitiveset}, \stepref{c}.
-	\end{proof}
-\end{proof}
-\qed
 \end{proof}
 
 \begin{prop}
@@ -623,11 +350,49 @@ If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive 
 \step{2}{\pflet{$x \in y \in \bigcup \mathbf{A}$}}
 \step{3}{$y \in \mathbf{A}$}
 \begin{proof}
-	\pf\ \stepref{1}, \stepref{2}
+	\pf\ Since $\bigcup \mathbf{A} \subseteq \mathbf{A}$ by Proposition \ref{prop:transitiveset}.
 \end{proof}
-\step{4}{$x \in \mathbf{A}$}
+\step{4}{$x \in \bigcup \mathbf{A}$}
+\qed
+\end{proof}
+
+\begin{prop}
+For any class $\mathbf{A}$, we have $\mathbf{A}$ is a transitive class if and only if $\mathcal{P} \mathbf{A}$ is a transitive class.
+\end{prop}
+
 \begin{proof}
-	\pf\ \stepref{1}, \stepref{2}, \stepref{3}
+\pf
+\step{1}{If $\mathbf{A}$ is a transitive class then $\mathcal{P} \mathbf{A}$ is a transitive class.}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{A}$ is a transitive class.}}
+	\step{b}{$\mathbf{A} \subseteq \mathcal{P} \mathbf{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}.
+	\end{proof}
+	\step{c}{$\mathcal{P} \mathbf{A} \subseteq \mathcal{P} \mathcal{P} \mathbf{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:powermono}.
+	\end{proof}
+	\step{d}{$\mathcal{P} \mathbf{A}$ is a transitive class.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}.
+	\end{proof}
+\end{proof}
+\step{2}{If $\mathcal{P} \mathbf{A}$ is a transitive class then $\mathbf{A}$ is a transitive class.}
+\begin{proof}
+	\step{a}{\assume{$\mathcal{P} \mathbf{A}$ is a transitive class.}}
+	\step{b}{$\bigcup \mathcal{P} \mathbf{A} \subseteq \mathcal{P} \mathbf{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}.
+	\end{proof}
+	\step{c}{$\mathbf{A} \subseteq \mathcal{P} \mathbf{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:UPA}.
+	\end{proof}
+	\step{d}{$\mathbf{A}$ is a transitive class.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transitiveset}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
@@ -642,6 +407,9 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcup \mathbf{A}$ is
 \step{2}{\pflet{$x \in y \in \bigcup \mathbf{A}$}}
 \step{3}{\pick\ $A \in \mathbf{A}$ such that $y \in A$.}
 \step{4}{$x \in A$}
+\begin{proof}
+	\pf\ Since $A$ is a transitive set.
+\end{proof}
 \step{5}{$x \in \bigcup \mathbf{A}$}
 \qed
 \end{proof}
@@ -657,6 +425,9 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is
 \step{3}{\pflet{$A \in \mathbf{A}$}}
 \step{4}{$y \in A$}
 \step{5}{$x \in A$}
+\begin{proof}
+	\pf\ Since $A$ is a transitive set.
+\end{proof}
 \qed
 \end{proof}
 
@@ -731,7 +502,7 @@ If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}
 
 \begin{proof}
 \pf
-\step{1}{\pick{$a \in \mathbf{A}$}}
+\step{1}{\pick\ $a \in \mathbf{A}$}
 \step{2}{For all $x$ we have $x \in \mathbf{B}$ iff $x \in \mathbf{C}$.}
 \begin{proof}
 	\pf
@@ -760,7 +531,7 @@ For any set $A$ and class $\mathbf{B}$, we have $A \times \bigcup \mathbf{B} = \
 \section{Relations}
 
 \begin{df}[Relation]
-A \emph{relation} is a class of ordered pairs.
+A \emph{relation} between classes $\mathbf{A}$ and $\mathbf{B}$ is a subclass of $\mathbf{A} \times \mathbf{B}$.
 \end{df}
 
 \begin{df}[Domain]
