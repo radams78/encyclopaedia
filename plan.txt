@@ -4,4 +4,5 @@ Definition
 Examples
 Basic properties
 Relationship with previous concepts
+Relation/functions between instances
 Methods of constructing instances

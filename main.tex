@@ -65,65 +65,6 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are t
 \end{enumerate}
 \end{props}
 
-\subsection{Binary Union}
-
-\begin{df}[Union]
-The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
-\end{df}
-
-\begin{prop}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} \cup \mathbf{B} & = \mathbf{B} \cup \mathbf{A} \\
-\mathbf{A} \cup (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cup \mathbf{C} \\
-\mathbf{A} \cup \emptyset & = \mathbf{A} \\
-\mathbf{A} \cup \mathbf{V} & = \mathbf{V}
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ These are valid formulas of first-order logic. \qed
-\end{proof}
-
-\subsection{Binary Intersection}
-
-\begin{df}[Intersection]
-The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
-\end{df}
-
-\begin{prop}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, we have
-\begin{align*}
-\mathbf{A} \cap \mathbf{B} & = \mathbf{B} \cap \mathbf{A} \\
-\mathbf{A} \cap (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cap \mathbf{C} \\
-\mathbf{A} \cap \emptyset & = \emptyset \\
-\mathbf{A} \cap \mathbf{V} & = \mathbf{A} \\
-\mathbf{A} \cap (\mathbf{B} \cup \mathbf{C}) & = (\mathbf{A} \cap \mathbf{B}) \cup (\mathbf{A} \cap \mathbf{C}) \\
-\mathbf{A} \cup (\mathbf{B} \cap \mathbf{C}) & = (\mathbf{A} \cup \mathbf{B}) \cap (\mathbf{A} \cup \mathbf{C})
-\end{align*}
-\end{prop}
-
-\begin{proof}
-\pf\ These are valid formulas of first-order logic. \qed
-\end{proof}
-
-\subsection{Union of a Class}
-
-\begin{df}[Union]
-The \emph{union} of a class $\mathbf{A}$ is $\{ x \mid \exists X \in \mathbf{A}. x \in X\}$.
-We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
-\end{df}
-
-\begin{prop}
-\[ \bigcup \emptyset = \emptyset \]
-\end{prop}
-
-\begin{proof}
-\pf\ First-order logic. \qed
-\end{proof}
-
-For $\bigcup \mathbf{V}$, see Proposition \ref{prop:unionV}.
-
 \subsection{Subclasses}
 
 \begin{df}[Subclass]
@@ -143,12 +84,67 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are t
 \item If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \subseteq \mathbf{C}$.
 \item For any class $\mathbf{A}$, we have $\emptyset \subseteq \mathbf{A}$.
 \item For any class $\mathbf{A}$, we have $\mathbf{A} \subseteq \mathbf{V}$.
-\item $\mathbf{A} \subseteq \mathbf{A} \cup \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A} \cup \mathbf{B}$.
-\item If $\mathbf{A} \subseteq \mathbf{C}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \cup \mathbf{B} \subseteq \mathbf{C}$.
-\item $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{A}$ and $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{B}$.
-\item If $\mathbf{C} \subseteq \mathbf{A}$ and $\mathbf{C} \subseteq \mathbf{B}$ then $\mathbf{C} \subseteq \mathbf{A} \cap \mathbf{B}$.
 \end{enumerate}
 \end{props}
+
+\subsection{Binary Union}
+
+\begin{df}[Union]
+The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
+\end{df}
+
+The following are all valid formulas of first-order logic.
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, the following are theorems:
+\begin{enumerate}
+\item $\mathbf{A} \cup \mathbf{B} = \mathbf{B} \cup \mathbf{A}$
+\item $\mathbf{A} \cup (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \cup \mathbf{B}) \cup \mathbf{C}$
+\item $\mathbf{A} \cup \emptyset = \mathbf{A}$
+\item $\mathbf{A} \cup \mathbf{V} = \mathbf{V}$
+\item $\mathbf{A} \subseteq \mathbf{A} \cup \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A} \cup \mathbf{B}$.
+\item If $\mathbf{A} \subseteq \mathbf{C}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \cup \mathbf{B} \subseteq \mathbf{C}$.
+\end{enumerate}
+\end{props}
+
+\subsection{Binary Intersection}
+
+\begin{df}[Intersection]
+The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
+\end{df}
+
+The following are all valid formulas of first-order logic.
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems.
+\begin{enumerate}
+\item $\mathbf{A} \cap \mathbf{B} = \mathbf{B} \cap \mathbf{A}$
+\item $\mathbf{A} \cap (\mathbf{B} \cap \mathbf{C}) = (\mathbf{A} \cap \mathbf{B}) \cap \mathbf{C}$
+\item $\mathbf{A} \cap \emptyset = \emptyset$
+\item $\mathbf{A} \cap \mathbf{V} = \mathbf{A}$
+\item $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{A}$ and $\mathbf{A} \cap \mathbf{B} \subseteq \mathbf{B}$.
+\item If $\mathbf{C} \subseteq \mathbf{A}$ and $\mathbf{C} \subseteq \mathbf{B}$ then $\mathbf{C} \subseteq \mathbf{A} \cap \mathbf{B}$.
+\item $\mathbf{A} \cap (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \cap \mathbf{B}) \cup (\mathbf{A} \cap \mathbf{C})$
+\item $\mathbf{A} \cup (\mathbf{B} \cap \mathbf{C}) = (\mathbf{A} \cup \mathbf{B}) \cap (\mathbf{A} \cup \mathbf{C})$
+\end{enumerate}
+\end{props}
+
+\subsection{Union of a Class}
+
+\begin{df}[Union]
+The \emph{union} of a class $\mathbf{A}$ is $\{ x \mid \exists X \in \mathbf{A}. x \in X\}$.
+We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
+\end{df}
+
+\begin{prop}
+\[ \bigcup \emptyset = \emptyset \]
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+For $\bigcup \mathbf{V}$, see Proposition \ref{prop:unionV}.
 
 \begin{prop}
 For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
@@ -158,9 +154,39 @@ For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{
 \pf\ First-order logic. \qed
 \end{proof}
 
+\begin{prop}
+\[ \bigcup (\mathbf{A} \cup \mathbf{B}) = \bigcup \mathbf{A} \cup \bigcup \mathbf{B} \]
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+\begin{prop}
+\[ \bigcup (\mathbf{A} \cap \mathbf{B}) \subseteq \bigcup \mathbf{A} \cap \bigcup \mathbf{B} \]
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
+
+For an example showing that this inclusion cannot always be strengthened to an equality, see Proposition \ref{prop:bigcupcapcounterex}.
+
+For the distributive law between $\cap$ and $\bigcup$, see Proposition \ref{prop:capbigcup}.
+
+\subsection{Intersection of a Class}
+
 \begin{df}[Intersection]
 The \emph{intersection} of a class $\mathbf{A}$ is $\{ x \mid \forall X \in \mathbf{A}. x \in X \}$. We write $\bigcap_{P(x)} t(x)$ for $\bigcap \{ t(x) \mid P(x) \}$.
 \end{df}
+
+\begin{prop}
+\[ \bigcap \emptyset = \mathbf{V} \]
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
 
 \begin{df}[Relative Complement]
 Let $\mathbf{A}$ and $\mathbf{B}$ be classes. The \emph{relative complement} of $\mathbf{B}$ in $\mathbf{A}$ is the class $\mathbf{A} - \mathbf{B} = \{ x \in \mathbf{A} \mid x \notin \mathbf{B} \}$.
@@ -244,6 +270,15 @@ For any nonempty set $A$, there exists $m \in A$ such that $m \cap A = \emptyset
 
 \subsection{Consequences of the Axioms}
 
+\begin{prop}
+\label{prop:capbigcup}
+For any set $A$ and class $\mathbf{B}$, we have
+\[ A \cap \bigcup \mathbf{B} = \bigcup \{ A \cap X \mid X \in \mathbf{B} \} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ First-order logic. \qed
+\end{proof}
 
 \begin{prop}
 The class $\emptyset = \{x \mid \bot \}$ is a set.
@@ -300,6 +335,18 @@ For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x 
 \pf\ The case $n=1$ follows from Pairing since $\{a\} = \{a,a\}$.
 
 If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:bigcupcapcounterex}
+There exist sets $A$ and $B$ such that $\bigcup (A \cap B) \neq \bigcup A \cap \bigcup B$.
+\end{prop}
+
+\begin{proof}
+\step{1}{\pflet{$A = \{ \{ \emptyset \} \}$ and $B = \{ \{ \emptyset, \{ \emptyset \} \} \}$}}
+\step{2}{$\bigcup(A \cap B) = \emptyset$}
+\step{3}{$\bigcup A \cap \bigcup B = \{ \emptyset \}$}
+\qed
 \end{proof}
 
 \begin{prop}
