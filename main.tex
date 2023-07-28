@@ -1070,44 +1070,22 @@ Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D}
 \end{proof}
 
 \begin{prop}
-Let $\mathbf{F}$ and $\mathbf{G}$ be functions. Then $\mathbf{F} \circ \mathbf{G}$ is a function, its domain is
-\[ \{ x \in \dom \mathbf{G} \mid \mathbf{G}(x) \in \dom \mathbf{F} \} \enspace , \]
-and for $x$ in this domain, $(\mathbf{F} \circ \mathbf{G})(x) = \mathbf{F}(\mathbf{G}(x))$.
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
+\[ (\mathbf{G} \circ \mathbf{F})(x) = \mathbf{G}(\mathbf{F}(x)) \enspace . \]
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$\mathbf{F} \circ \mathbf{G}$ is a function.}
+\step{1}{$\forall x \in \mathbf{A}. (x, \mathbf{G}(\mathbf{F}(x))) \in \mathbf{G} \circ \mathbf{F})$}
 \begin{proof}
-	\step{a}{\pflet{$(x,z),(x,z') \in \mathbf{F} \circ \mathbf{G}$}}
-	\step{b}{\pick\ $y$, $y'$ such that $(x,y) \in \mathbf{G}$, $(y,z) \in \mathbf{F}$, $(x,y') \in \mathbf{G}$, $(y',z') \in \mathbf{F}$}
-	\step{c}{$y = y'$}
-	\begin{proof}
-		\pf\ $\mathbf{G}$ is a function.
-	\end{proof}
-	\step{d}{$z = z'$}
-	\begin{proof}
-		\pf\ $\mathbf{F}$ is a function.
-	\end{proof}
+	\pf\ Because $(x, \mathbf{F}(x)) \in \mathbf{F}$ and $(\mathbf{F}(x), \mathbf{G}(\mathbf{F}(x))) \in \mathbf{G}$.
 \end{proof}
-\step{2}{$\dom (\mathbf{F} \circ \mathbf{G}) = \{ x \in \dom \mathbf{G} \mid \mathbf{G}(x) \in \dom \mathbf{F} \}$}
+\step{2}{If $(x,z) \in \mathbf{F} \circ \mathbf{G}$ then $z = \mathbf{G}(\mathbf{F}(x))$}
 \begin{proof}
-	\pf
-	\begin{align*}
-		x \in \dom (\mathbf{F} \circ \mathbf{G}) & \Leftrightarrow \exists z. (x,z) \in \mathbf{F} \circ \mathbf{G} \\
-		& \Leftrightarrow \exists y,z ((x,y) \in \mathbf{G} \wedge (y,z) \in \mathbf{F}) \\
-		& \Leftrightarrow \exists y ((x,y) \in \mathbf{G} \wedge y \in \dom \mathbf{F}) \\
-		& \Leftrightarrow x \in \dom \mathbf{G} \wedge \mathbf{G}(y) \in \dom \mathbf{F}
-	\end{align*}
-\end{proof}
-\step{3}{$\forall x \in \dom (\mathbf{F} \circ \mathbf{G}). (\mathbf{F} \circ \mathbf{G})(x) = \mathbf{F}(\mathbf{G}(x))$}
-\begin{proof}
-	\pf
-	\step{a}{\pflet{$x \in \dom (\mathbf{F} \circ \mathbf{G})$}}
-	\step{b}{$(x, (\mathbf{F} \circ \mathbf{G})(x)) \in \mathbf{F} \circ \mathbf{G}$}
-	\step{c}{\pick\ $y$ such that $(x,y) \in \mathbf{G}$ and $(y, (\mathbf{F} \circ \mathbf{G})(x)) \in \mathbf{F}$}
-	\step{d}{$y = \mathbf{G}(x)$}
-	\step{e}{$\mathbf{F}(\mathbf{G}(x)) = (\mathbf{F} \circ \mathbf{G})(x)$}
+	\step{a}{\pick\ $y \in \mathbf{B}$ such that $x \mathbf{F} y$ and $y \mathbf{G} z$}
+	\step{b}{$y = \mathbf{F}(x)$}
+	\step{c}{$z = \mathbf{G}(y)$}
+	\step{d}{$z = \mathbf{G}(\mathbf{F}(x))$}
 \end{proof}
 \qed
 \end{proof}
