@@ -17,6 +17,7 @@
 \newtheorem{prop}[ax]{Proposition}
 \newtheorem{props}[ax]{Proposition Schema}
 \newtheorem{cor}{Corollary}[ax]
+\newtheorem{cors}{Corollary Schema}[ax]
 \newtheorem{thm}[ax]{Theorem}
 \newtheorem{thms}[ax]{Theorem Schema}
 \newtheorem{lm}[ax]{Lemma}
@@ -31,6 +32,7 @@
 \newcommand{\cl}{\ensuremath{\operatorname{cl}}}
 \newcommand{\sgn}{\ensuremath{\operatorname{sgn}}}
 \newcommand{\seg}{\ensuremath{\operatorname{seg}}}
+\newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 
 \begin{document}
 
@@ -48,38 +50,118 @@ We write $\{t[x_1, \ldots, x_n] \mid P[x_1, \ldots, x_n] \}$ for $\{y \mid \exis
 
 We say two classes $\mathbf{A}$ and $\mathbf{B}$ are \emph{equal}, and write $\mathbf{A} = \mathbf{B}$, iff $\forall x (x \in \mathbf{A} \leftrightarrow x \in \mathbf{B})$.
 
-The following are all valid formulas of first-order logic:
-
 \begin{props}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following are theorems:
-\begin{enumerate}
-\item $\mathbf{A} = \mathbf{A}$
-\item If $\mathbf{A} = \mathbf{B}$ then $\mathbf{B} = \mathbf{A}$.
-\item If $\mathbf{A} = \mathbf{B}$ and $\mathbf{B} = \mathbf{C}$ then $\mathbf{A} = \mathbf{C}$.
-\end{enumerate}
+For any class $\mathbf{A}$, the following is a theorem.
+
+\[ \mathbf{A} = \mathbf{A} \]
 \end{props}
 
+\begin{proof}
+\pf\ We have $\forall x (x \in \mathbf{A} \Leftrightarrow x \in \mathbf{A})$. \qed
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
+
+If $\mathbf{A} = \mathbf{B}$ then $\mathbf{B} = \mathbf{A}$.
+\end{props}
+
+\begin{proof}
+\pf\ If $\forall x (x \in \mathbf{A} \Leftrightarrow x \in \mathbf{B})$ then $\forall x (x \in \mathbf{B} \Leftrightarrow x \in \mathbf{A})$. \qed
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a theorem.
+
+If $\mathbf{A} = \mathbf{B}$ and $\mathbf{B} = \mathbf{C}$ then $\mathbf{A} = \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf\ If $\forall x (x \in \mathbf{A} \Leftrightarrow x \in \mathbf{B})$ and $\forall x (x \in \mathbf{B} \Leftrightarrow x \in \mathbf{C})$ then $\forall x (x \in \mathbf{A} \Leftrightarrow x \in \mathbf{C})$. \qed
+\end{proof}
+
+\subsection{Subclasses}
+
+\begin{df}[Subclass]
+We say a class $\mathbf{A}$ is a \emph{subclass} of $\mathbf{B}$, or $\mathbf{B}$ is a \emph{superclass} of $\mathbf{A}$, or $\mathbf{B}$ \emph{includes} $\mathbf{A}$, and write $\mathbf{A} \subseteq \mathbf{B}$ or $\mathbf{B} \supseteq \mathbf{A}$, iff every element of $\mathbf{A}$ is an element of $\mathbf{B}$. Otherwise we write $\mathbf{A} \nsubseteq \mathbf{B}$ or $\mathbf{B} \nsupseteq \mathbf{A}$.
+
+We say $\mathbf{A}$ is a \emph{proper} subclass of $\mathbf{B}$, $\mathbf{B}$ is a \emph{proper} superclass of $\mathbf{A}$, or $\mathbf{B}$ \emph{properly} includes $\mathbf{A}$, and write $\mathbf{A} \subsetneq \mathbf{B}$ or $\mathbf{B} \supsetneq \mathbf{A}$, iff $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{A} \neq \mathbf{B}$.
+\end{df}
+
+\begin{props}
+For any class $\mathbf{A}$, the following is a theorem.
+
+\[ \mathbf{A} \subseteq \mathbf{A} \]
+\end{props}
+
+\begin{proof}
+\pf\ Every element of $\mathbf{A}$ is an element of $\mathbf{A}$. \qed
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
+
+If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{A}$ then $\mathbf{A} = \mathbf{B}$.
+\end{props}
+
+\begin{proof}
+\pf\ If every element of $\mathbf{A}$ is an element of $\mathbf{B}$, and every element of $\mathbf{B}$ is an element of $\mathbf{A}$, then $\mathbf{A}$ and $\mathbf{B}$ have exactly the same elements. \qed
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a theorem.
+
+If $\mathbf{A} \subseteq \mathbf{B}$ and $\mathbf{B} \subseteq \mathbf{C}$ then $\mathbf{A} \subseteq \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf\ If every element of $\mathbf{A}$ is an element of $\mathbf{B}$ and every element of $\mathbf{B}$ is an element of $\mathbf{C}$ then every element of $\mathbf{A}$ is an element of $\mathbf{C}$. \qed
+\end{proof}
+
+\subsection{Constructions of Classes}
+
 \begin{df}[Empty Class]
-The \emph{empty class} $\emptyset$ is $\{ x \mid \bot\}$.
+The \emph{empty class} $\emptyset$ is $\{ x \mid \bot \}$. Every other class is \emph{nonempty}.
 \end{df}
 
 \begin{df}[Universal Class]
 The \emph{universal class} $\mathbf{V}$ is $\{ x \mid \top \}$.
 \end{df}
 
-\begin{df}[Subclass]
-We say a class $\mathbf{A}$ is a \emph{subclass} of $\mathbf{B}$, or $\mathbf{B}$ is a \emph{superclass} of $\mathbf{A}$, or $\mathbf{B}$ \emph{includes} $\mathbf{A}$, and write $\mathbf{A} \subseteq \mathbf{B}$ or $\mathbf{B} \supseteq \mathbf{A}$, iff every element of $\mathbf{A}$ is an element of $\mathbf{B}$. Otherwise we write $\mathbf{A} \nsubseteq \mathbf{B}$ or $\mathbf{B} \nsupseteq \mathbf{A}$.
-
-We say $\mathbf{A}$ is a \emph{proper} subclass of $\mathbf{B}$, $\mathbf{B}$ is a \emph{proper} superclass of $\mathbf{A}$, or $\mathbf{B}$ \emph{properly} includes $\mathbf{A}$, and write $\mathbf{A} \subsetneq \mathbf{B}$ or $\mathbf{B} \supsetneq \mathbf{A}$, iff in addition $\mathbf{A} \neq \mathbf{B}$.
-\end{df}
-
-
-\begin{df}[Union]
-The \emph{union} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \cup \mathbf{B} = \{x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
+\begin{df}[Enumeration]
+Given objects $a_1$, \ldots, $a_n$, we define the class $\{ a_1, \ldots, a_n \}$ to be the class $\{ x \mid x = a_1 \vee \cdots \vee x = a_n \}$.
 \end{df}
 
 \begin{df}[Intersection]
-The \emph{intersection} of two classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the \emph{intersection} $\mathbf{A} \cap \mathbf{B}$ is $\{ x \mid x \in \mathbf{A} \wedge x \in \mathbf{B}\}$.
+\end{df}
+
+\begin{df}[Union]
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the \emph{union} $\mathbf{A} \cup \mathbf{B}$ is $\{ x \mid x \in \mathbf{A} \vee x \in \mathbf{B} \}$.
+\end{df}
+
+\begin{df}[Relative Complement]
+Let $\mathbf{A}$ and $\mathbf{B}$ be classes. The \emph{relative complement} of $\mathbf{B}$ in $\mathbf{A}$ is the class $\mathbf{A} - \mathbf{B} := \{x \in \mathbf{A} \mid x \notin \mathbf{B} \}$.
+\end{df}
+
+\begin{df}[Symmetric Difference]
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the \emph{symmetric difference} is the class $\mathbf{A} + \mathbf{B} := (\mathbf{A} - \mathbf{B}) \cup (\mathbf{B} - \mathbf{A})$.
+\end{df}
+
+\begin{df}[Pairwise disjoint]
+Let $\mathbf{A}$ be a class. We say the elements of $\mathbf{A}$ are \emph{pairwise disjoint} iff, for all $x, y \in \mathbf{A}$, if $x \cap y \neq \emptyset$ then $x = y$.
+\end{df}
+
+\section{Sets and the Axiom of Extensionality}
+	
+\begin{ax}[Extensionality]
+If two sets have exactly the same members, they are equal.
+\end{ax}
+
+Thanks to this axiom, we may identify a set $a$ with the class $\{x \mid x \in a\}$. Our use of the symbols $\in$ and $=$ is consistent. We say a class $\mathbf{A}$ \emph{is a set} iff there exists a set $a$ such that $a = \mathbf{A}$; that is, $\{x \mid \phi[x]\}$ is a set iff $\exists a \forall x (x \in a \leftrightarrow \phi[x])$. Otherwise, $\mathbf{A}$ is a \emph{proper class}.
+
+\begin{df}[Subset]
+If $A$ is a set and $A \subseteq \mathbf{B}$, we say $A$ is a \emph{subset} of $\mathbf{B}$.
 \end{df}
 
 \begin{df}[Union]
@@ -91,29 +173,15 @@ We write $\bigcup_{P(x)} t(x)$ for $\bigcup \{ t(x) \mid P(x) \}$.
 The \emph{intersection} of a class $\mathbf{A}$ is $\{ x \mid \forall X \in \mathbf{A}. x \in X \}$. We write $\bigcap_{P(x)} t(x)$ for $\bigcap \{ t(x) \mid P(x) \}$.
 \end{df}
 
-\begin{df}[Relative Complement]
-Let $\mathbf{A}$ and $\mathbf{B}$ be classes. The \emph{relative complement} of $\mathbf{B}$ in $\mathbf{A}$ is the class $\mathbf{A} - \mathbf{B} = \{ x \in \mathbf{A} \mid x \notin \mathbf{B} \}$.
+\begin{df}[Power Class]
+For any class $\mathbf{A}$, the \emph{power class} $\mathcal{P} \mathbf{A}$ is $\{ X \mid X \subseteq \mathbf{A} \}$.
 \end{df}
 
-\begin{df}[Symmetric Difference]
-The \emph{symmetric difference} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} + \mathbf{B} := (\mathbf{A} - \mathbf{B}) \cup (\mathbf{B} - \mathbf{A})$.
-\end{df}
-
-\section{Axioms}
-	
-\begin{ax}[Extensionality]
-If two sets have exactly the same members, they are equal.
-\end{ax}
-
-Thanks to this axiom, we may identify a set $a$ with the class $\{x \mid x \in a\}$. Our use of the symbols $\in$ and $=$ is consistent. We say a class $\mathbf{A}$ \emph{is a set} iff there exists a set $a$ such that $a = \mathbf{A}$; that is, $\{x \mid \phi[x]\}$ is a set iff $\exists a \forall x (x \in a \leftrightarrow \phi[x])$. Otherwise, $\mathbf{A}$ is a \emph{proper class}.
+\section{The Other Axioms}
 
 \begin{ax}[Union]
 The union of a set is a set.
 \end{ax}
-
-\begin{df}[Power Class]
-For any class $\mathbf{A}$, the \emph{power class} $\mathcal{P} \mathbf{A}$ is $\{ X \mid X \subseteq \mathbf{A} \}$.
-\end{df}
 
 \begin{ax}[Power Set]
 The power class of a set is a set, which we call a \emph{power set}.
@@ -128,7 +196,7 @@ There exists a set $I$ such that:
 \end{ax}
 
 \begin{ax}[Choice]
-For any set $A$ of pairwise disjoint, nonempty sets, there exists a set $C$ such that, for all $x \in A$, $x \cap C$ has exactly one element.
+For any set $A$ of pairwise disjoint, nonempty sets, there exists a set $C$ such that, for all $x \in A$, we have $x \cap C$ has exactly one element.
 \end{ax}
 
 \begin{axs}[Replacement]
@@ -138,12 +206,10 @@ Let $A$ be a set. Assume that, for all $x \in A$, there exists at most one $y$ s
 \end{axs}
 
 \begin{ax}[Regularity]
-For any nonempty set $A$, there exists $m \in A$ such that $m \cap A = \emptyset$.
+For any $A$, if $A$ has a member, then there exists $m \in A$ such that $m \cap A = \emptyset$.
 \end{ax}
 
-\section{Basic Constructions on Sets}
-
-\subsection{Consequences of the Axioms}
+\section{Consequences of the Axioms}
 
 \begin{prop}
 The empty class $\emptyset$ is a set.
@@ -153,8 +219,16 @@ The empty class $\emptyset$ is a set.
 \pf\ Immediate from the Axiom of Infinity. \qed
 \end{proof}
 
+\begin{prop}[Russell's Paradox]
+The class $\{ x \mid x \notin x \}$ is a proper class.
+\end{prop}
+
+\begin{proof}
+\pf\ Assume for a contradiction $R = \{ x \mid x \notin x \}$ is a set. Then $R \in R$ if and only if $R \notin R$, which is impossible. \qed
+\end{proof}
+
 \begin{prop}[Pairing]
-For any sets $a$ and $b$, the class $\{a,b\} = \{x \mid x = a \vee x = b\}$ is a set.
+For any sets $a$ and $b$, the class $\{a,b\}$ is a set.
 \end{prop}
 
 \begin{proof}
@@ -189,10 +263,12 @@ The union of two sets is a set.
 \end{prop}
 
 \begin{proof}
-\pf\ The union of two sets $A$ and $B$ is $\bigcup \{A,B\}$. \qed
+\pf\ Because $A \cup B = \bigcup \{A,B\}$. \qed
 \end{proof}
 
 \begin{props}
+For any number $n$, the following is a theorem:
+
 For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x = a_1 \vee \cdots \vee x = a_n\}$ is a set.
 \end{props}
 
@@ -201,38 +277,6 @@ For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x 
 
 If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
 \end{proof}
-
-\begin{prop}
-\label{prop:powermono}
-For any classes $\mathbf{A}$ and $\mathbf{B}$, if $\mathbf{A} \subseteq \mathbf{B}$ then $\mathcal{P} \mathbf{A} \subseteq \mathcal{P} \mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ For any set $X$, if $X \subseteq \mathbf{A}$ then $X \subseteq \mathbf{B}$. \qed
-\end{proof}
-
-\begin{prop}
-\label{prop:UPA}
-For any class $\mathbf{A}$ we have $\bigcup \mathcal{P} \mathbf{A} = \mathbf{A}$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\bigcup \mathcal{P} \mathbf{A} \subseteq \mathbf{A}$}
-\begin{proof}
-	\step{a}{\pflet{$x \in \bigcup \mathcal{P} \mathbf{A}$}}
-	\step{b}{\pick\ $X \in \mathcal{P} \mathbf{A}$ such that $x \in X$}
-	\step{c}{$X \subseteq \mathbf{A}$}
-	\step{d}{$x \in \mathbf{A}$}
-\end{proof}
-\step{2}{$\mathbf{A} \subseteq \bigcup \mathcal{P} \mathbf{A}$}
-\begin{proof}
-	\pf\ For all $x \in \mathbf{A}$ we have $x \in \{x\} \in \mathcal{P} \mathbf{A}$.
-\end{proof}
-\qed
-\end{proof}
-
-\subsection{Comprehension}
 
 \begin{props}[Comprehension]
 For any predicate $P(x)$, the following is a theorem:
@@ -274,42 +318,62 @@ For any set $A$, the class $\{x \in A \mid P(x)\}$ is a set.
 \qed
 \end{proof}
 
+\begin{cors}
+For any class $\mathbf{A}$, the following is a theorem:
+
+For any set $B$, if $\mathbf{A} \subseteq B$ then $\mathbf{A}$ is a set.
+\end{cors}
+
+\begin{cor}
+The universal class $\mathbf{V}$ is a proper class.
+\end{cor}
+
 \begin{cor}
 The intersection of a set and a class is a set.
+\end{cor}
+
+\begin{cor}
+The relative complement of a class in a set is a set.
+\end{cor}
+
+\begin{cor}
+The symmetric difference of two sets is a set.
 \end{cor}
 
 \begin{cor}
 The intersection of a nonempty class is a set.
 \end{cor}
 
+\begin{props}
+\label{prop:powermono}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
+
+If $\mathbf{A} \subseteq \mathbf{B}$ then $\mathcal{P} \mathbf{A} \subseteq \mathcal{P} \mathbf{B}$.
+\end{props}
+
 \begin{proof}
-\pf
-\step{1}{\pflet{$\mathbf{A}$ be a nonempty class.}}
-\step{2}{\pick $A \in \mathbf{A}$}
-\step{3}{$\bigcap \mathbf{A} = \{ x \in A \mid \forall X \in \mathbf{A}. x \in X \}$ which is a set.}
-\qed
+\pf\ Every subset of $\mathbf{A}$ is a subset of $\mathbf{B}$. \qed
 \end{proof}
 
-\begin{cor}
-The relative complement of a class in a set is a set.
-\end{cor}
+\begin{props}
+\label{prop:UPA}
+For any class $\mathbf{A}$, the following is a theorem:
 
-\begin{cor}[Russell's Paradox]
-$\mathbf{V}$ is a proper class.
-\end{cor}
+\[ \mathbf{A} = \bigcup \mathcal{P} \mathbf{A} \]
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$\mathbf{R} = \{x \mid x \notin x\}$}}
-\step{2}{$\mathbf{R}$ is a proper class.}
+\step{1}{$\mathbf{A} \subseteq \bigcup \mathcal{P} \mathbf{A}$}
 \begin{proof}
-	\step{a}{\assume{for a contradiction $\mathbf{R}$ is a set}}
-	\step{b}{$\mathbf{R} \in \mathbf{R}$ iff $\mathbf{R} \notin \mathbf{R}$}
-	\step{c}{This is a contradiction.}
+	\pf\ For all $x \in \mathbf{A}$ we have $x \in \{x\} \in \mathcal{P} \mathbf{A}$.
 \end{proof}
-\step{3}{$\mathbf{V}$ is a proper class.}
+\step{2}{$\bigcup \mathcal{P} \mathbf{A} \subseteq \mathbf{A}$}
 \begin{proof}
-	\pf\ From Comprehension and \stepref{2}.
+	\step{a}{\pflet{$x \in \bigcup \mathcal{P} \mathbf{A}$}}
+	\step{b}{\pick\ $X \in \mathcal{P} \mathbf{A}$ such that $x \in X$}
+	\step{c}{$X \subseteq \mathbf{A}$}
+	\step{d}{$x \in \mathbf{A}$}
 \end{proof}
 \qed
 \end{proof}
@@ -320,9 +384,11 @@ $\mathbf{V}$ is a proper class.
 A class $\mathbf{A}$ is a \emph{transitive class} iff whenever $x \in y \in \mathbf{A}$ then $x \in \mathbf{A}$.
 \end{df}
 
-\begin{prop}
+\begin{props}
 \label{prop:transitiveset}
-Let $\mathbf{A}$ be a class. Then the following are equivalent.
+For any class $\mathbf{A}$, the following is a theorem:
+
+The following are equivalent.
 \begin{enumerate}
 \item
 $\mathbf{A}$ is a transitive class.
@@ -333,16 +399,18 @@ Every element of $\mathbf{A}$ is a subset of $\mathbf{A}$.
 \item
 $\mathbf{A} \subseteq \mathcal{P} \mathbf{A}$
 \end{enumerate}
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\begin{prop}
+\begin{props}
 \label{prop:uniontransitive}
+For any class $\mathbf{A}$, the following is a theorem:
+
 If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive class.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -356,9 +424,11 @@ If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive 
 \qed
 \end{proof}
 
-\begin{prop}
-For any class $\mathbf{A}$, we have $\mathbf{A}$ is a transitive class if and only if $\mathcal{P} \mathbf{A}$ is a transitive class.
-\end{prop}
+\begin{props}
+For any class $\mathbf{A}$, the following is a theorem:
+
+We have $\mathbf{A}$ is a transitive class if and only if $\mathcal{P} \mathbf{A}$ is a transitive class.
+\end{props}
 
 \begin{proof}
 \pf
@@ -397,9 +467,11 @@ For any class $\mathbf{A}$, we have $\mathbf{A}$ is a transitive class if and on
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{props}
+For any class $\mathbf{A}$, the following is a theorem:
+
 If every member of $\mathbf{A}$ is a transitive set then $\bigcup \mathbf{A}$ is a transitive class.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -414,9 +486,11 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcup \mathbf{A}$ is
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{props}
+For any class $\mathbf{A}$, the following is a theorem:
+
 If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is a transitive class.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -476,16 +550,18 @@ The \emph{Cartesian product} of classes $\mathbf{A}$ and $\mathbf{B}$ is the cla
 \end{df}
 
 \begin{prop}
-If $A$ and $B$ are sets then $A \times B$ is a set.
+For any sets $A$ and $B$, the class $A \times B$ is a set.
 \end{prop}
 
 \begin{proof}
 \pf\ It is a subset of $\mathcal{P} \mathcal{P} (A \cup B)$. \qed
 \end{proof}
 
-\begin{prop}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, we have $\mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C})$.
-\end{prop}
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a theorem:
+
+\[ \mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C}) \]
+\end{props}
 
 \begin{proof}
 \pf
@@ -496,9 +572,11 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, we have $\mathbf{A}
 \end{align*}
 \end{proof}
 
-\begin{prop}
+\begin{props}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
+
 If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}$ is nonempty then $\mathbf{B} = \mathbf{C}$.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -515,16 +593,17 @@ If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}
 \qed
 \end{proof}
 
-\begin{prop}
-For any set $A$ and class $\mathbf{B}$, we have $A \times \bigcup \mathbf{B} = \bigcup \{A \times X \mid X \in \mathbf{B}\}$.
-\end{prop}
+\begin{props}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
+
+\[ \mathbf{A} \times \bigcup \mathbf{B} = \{ (a,b) \mid \exists Y \in \mathbf{B}. (a \in \mathbf{A} \wedge b \in Y) \} \]
+\end{props}
 
 \begin{proof}
 \pf
 \begin{align*}
 (x,y) \in A \times \bigcup \mathbf{B} & \Leftrightarrow x \in A \wedge \exists Y \in \mathbf{B}. y \in Y \\
-& \Leftrightarrow \exists Y \in \mathbf{B} (x \in A \wedge y \in Y) \\
-& \Leftrightarrow (x,y) \in \bigcup \{A \times X \mid X \in \mathbf{B}\} & \qed
+& \Leftrightarrow \exists Y \in \mathbf{B} (x \in A \wedge y \in Y) & \qed
 \end{align*}
 \end{proof}
 
@@ -538,14 +617,25 @@ A \emph{(binary) relation on $\mathbf{A}$} is a relation between $\mathbf{A}$ an
 We write $x \mathbf{R} y$ for $(x,y) \in \mathbf{R}$.
 \end{df}
 
+\subsection{Identity Functions}
+
+\begin{df}[Identity Function]
+For any class $\mathbf{A}$, the \emph{identity function} or \emph{diagonal relation} $\mathrm{id}_\mathbf{A}$ on $\mathbf{A}$ is
+\[ \mathrm{id}_\mathbf{A} := \{(x,x) \mid x \in \mathbf{A} \} \enspace . \]
+\end{df}
+
+\subsection{Inverses}
+
 \begin{df}[Inverse]
 The \emph{inverse} of a relation $\mathbf{R}$ between $\mathbf{A}$ and $\mathbf{B}$ is the relation $\mathbf{R}^{-1}$ between $\mathbf{B}$ and $\mathbf{A}$ defined by
 \[ b \mathbf{R}^{-1} a \Leftrightarrow a \mathbf{R} b \enspace . \]
 \end{df}
 
-\begin{prop}
-For any relation $\mathbf{R}$, we have $(\mathbf{R}^{-1})^{-1} = \mathbf{R}$.
-\end{prop}
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, we have $(\mathbf{R}^{-1})^{-1} = \mathbf{R}$.
+\end{props}
 
 \begin{proof}
 \pf
@@ -555,14 +645,19 @@ x (\mathbf{R}^{-1})^{-1} y & \Leftrightarrow y \mathbf{R}^{-1} x \\
 \end{align*}
 \end{proof}
 
+\subsection{Composition}
+
 \begin{df}[Composition]
 Let $\mathbf{R}$ be a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\mathbf{S}$ be a relation between $\mathbf{B}$ and $\mathbf{C}$. The \emph{composition} $\mathbf{S} \circ \mathbf{R}$ is the relation between $\mathbf{A}$ and $\mathbf{C}$ defined by
 \[ a (\mathbf{S} \circ \mathbf{R}) c \Leftrightarrow \exists b (a \mathbf{R} b \wedge b \mathbf{S} c) \enspace. \]
 \end{df}
 
-\begin{prop}
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
+
+If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\mathbf{S}$ is a relation between $\mathbf{B}$ and $\mathbf{C}$, then
 \[ (\mathbf{S} \circ \mathbf{R})^{-1} = \mathbf{R}^{-1} \circ \mathbf{S}^{-1} \enspace . \]
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -573,6 +668,8 @@ z(\mathbf{S} \circ \mathbf{R})^{-1}x & \Leftrightarrow x(\mathbf{S} \circ \mathb
 & \Leftrightarrow z (\mathbf{R}^{-1} \circ \mathbf{S}^{-1}) x & \qed
 \end{align*}
 \end{proof}
+
+\subsection{Properties of Relaitons}
 
 \begin{df}[Reflexive]
 Let $\mathbf{R}$ be a binary relation on $\mathbf{A}$. Then $\mathbf{R}$ is \emph{reflexive} on $\mathbf{A}$ iff $\forall x \in \mathbf{A}. (x,x) \in \mathbf{R}$.
@@ -594,10 +691,12 @@ A relation $\mathbf{R}$ is \emph{antisymmetric} iff, whenever $x \mathbf{R} y$ a
 A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $(x,y), (y,z) \in \mathbf{R}$, then $(x,z) \in \mathbf{R}$.
 \end{df}
 
-\begin{prop}
+\begin{props}
 \label{prop:invtrans}
-If $\mathbf{R}$ is transitive then $\mathbf{R}^{-1}$ is transitive.
-\end{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+If $\mathbf{R}$ is a transitive relation between $\mathbf{A}$ and $\mathbf{B}$ then $\mathbf{R}^{-1}$ is transitive.
+\end{props}
 
 \begin{proof}
 \pf
@@ -622,401 +721,6 @@ For any sets $a_1$, \ldots, $a_n$, define the \emph{ordered $n$-tuple} $(a_1, \l
 An \emph{$n$-ary relation on $\mathbf{A}$} is a class of ordered $n$-tuples all of whose components are in $\mathbf{A}$.
 \end{dfs}
 
-\section{Equivalence Relations}
-
-\begin{df}[Equivalence Relation]
-An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
-\end{df}
-
-\begin{df}[Equivalence Class]
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph{equivalence class} of $a$ \emph{modulo} $\mathbf{R}$ is
-\[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
-\end{df}
-
-\begin{prop}
-\label{prop:eqclassequal}
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $a \mathbf{R} b$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $[a]_\mathbf{R} = [b]_\mathbf{R}$ then $a \mathbf{R} b$.}
-\begin{proof}
-	\step{a}{\assume{$[a]_\mathbf{R} = [b]_\mathbf{R}$}}
-	\step{b}{$b\mathbf{R}b$}
-	\begin{proof}
-		\pf\ Reflexivity
-	\end{proof}
-	\step{c}{$b \in [b]_\mathbf{R}$}
-	\step{d}{$b \in [a]_\mathbf{R}$}
-	\step{e}{$a\mathbf{R}b$}
-\end{proof}
-\step{2}{If $a\mathbf{R}b$ then $[a]_\mathbf{R} = [b]_\mathbf{R}$.}
-\begin{proof}
-	\step{a}{For all $x,y \in \mathbf{A}$, if $x \mathbf{R}y$ then $[y]_\mathbf{R} \subseteq [x]_\mathbf{R}$}
-	\begin{proof}
-		\step{i}{\pflet{$x,y \in \mathbf{A}$}}
-		\step{ii}{\assume{$x\mathbf{R}y$}}
-		\step{iii}{\pflet{$t \in [y]_\mathbf{R}$}}
-		\step{iv}{$y\mathbf{R}t$}
-		\step{v}{$x\mathbf{R}t$}
-		\begin{proof}
-			\pf\ Transitivity, \stepref{ii}, \stepref{iv}.
-		\end{proof}
-		\step{vi}{$t \in [x]_\mathbf{R}$}
-	\end{proof}
-	\step{b}{\assume{$a\mathbf{R}b$}}
-	\step{c}{$[b]_\mathbf{R} \subseteq [a]_\mathbf{R}$}
-	\begin{proof}
-		\pf\ \stepref{a}, \stepref{b}.
-	\end{proof}
-	\step{d}{$b\mathbf{R}a$}
-	\begin{proof}
-		\pf\ Symmetry, \stepref{b}.
-	\end{proof}
-	\step{e}{$[a]_\mathbf{R} \subseteq [b]_\mathbf{R}$}
-	\begin{proof}
-		\pf\ \stepref{a}, \stepref{d}.
-	\end{proof}
-	\step{f}{$[a]_\mathbf{R} = [b]_\mathbf{R}$}
-	\begin{proof}
-		\pf\ \stepref{c}, \stepref{e}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Partition]
-A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that is disjoint and exhaustive, i.e.
-\begin{enumerate}
-\item no two different sets in $\Pi$ have any common elements, and
-\item each element of $A$ is in some set in $\Pi$.
-\end{enumerate}
-\end{df}
-
-\begin{df}
-Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
-\end{df}
-
-\begin{prop}
-Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{2}{Every member of $A/R$ is nonempty.}
-\begin{proof}
-	\pf\ Since $a \in [a]_R$ by reflexivity.
-\end{proof}
-\step{3}{No two different sets in $A/R$ have any common elements.}
-\begin{proof}
-	\step{a}{\pflet{$[a]_R, [b]_R \in A/R$}}
-	\step{b}{\pflet{$c \in [a]_R \cap [b]_R$} \prove{$[a]_R = [b]_R$}}
-	\step{c}{$aRc$}
-	\begin{proof}
-		\pf\ \stepref{b}
-	\end{proof}
-	\step{d}{$bRc$}
-	\begin{proof}
-		\pf\ \stepref{b}
-	\end{proof}
-	\step{e}{$cRb$}
-	\begin{proof}
-		\pf\ Symmetry, \stepref{d}
-	\end{proof}
-	\step{f}{$aRb$}
-	\begin{proof}
-		\pf\ Transitivity, \stepref{c}, \stepref{e}
-	\end{proof}
-	\step{g}{$[a]_R = [b]_R$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:eqclassequal}, \stepref{f}
-	\end{proof}
-\end{proof}
-\step{4}{Each element of $A$ is in some set in $A/R$.}
-\begin{proof}
-	\pf\ Since $a \in [a]_R$ by reflexivity.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-For any partition $P$ of a set $A$, there exists a unique equivalence relation $R$ on $A$ such that $A/R = P$, namely $xRy$ iff $\exists X \in P(x \in X \wedge y \in X)$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\section{Ordering Relations}
-
-\subsection{Structures}
-
-\begin{df}[Structure]
-A \emph{structure} is a pair $(A,R)$ where $A$ is a set and $R$ is a binary relation on $A$.
-\end{df}
-
-\subsection{Partial Orders}
-
-\begin{df}[Partial Ordering]
-Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a relation $\mathbf{R}$ on $\mathbf{A}$ that is reflexive, antisymmetric and transitive.
-
-We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
-\end{df}
-
-\begin{df}[Partially Ordered Set]
-A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
-\end{df}
-
-\begin{prop}
-If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{df}[Minimal]
-Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{minimal} iff there is no $x \in \mathbf{A}$ such that $x < m$.
-\end{df}
-
-\begin{df}[Maximal]
-Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{maximal} iff there is no $x \in \mathbf{A}$ such that $m < x$.
-\end{df}
-
-\begin{df}[Least]
-Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{least} iff for all $x \in \mathbf{A}$ we have $m \leq x$.
-\end{df}
-
-\begin{prop}
-A partial order has at most one least element.
-\end{prop}
-
-\begin{proof}
-\pf\ If $m$ and $m'$ are least then $m \leq m'$ and $m' \leq m$, so $m = m'$. \qed
-\end{proof}
-
-\begin{df}[Greatst]
-Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{greatest} iff for all $x \in A$ we have $x \leq m$.
-\end{df}
-
-\begin{prop}
-A poset has at most one greatest element.
-\end{prop}
-
-\begin{proof}
-\pf\ If $m$ and $m'$ are greatest then $m \leq m'$ and $m' \leq m$, so $m = m'$. \qed
-\end{proof}
-
-\begin{df}[Upper Bound]
-Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
-\end{df}
-
-\begin{df}[Lower Bound]
-Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $l \in \mathbf{A}$. Then $l$ is a \emph{lower bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. l \leq x$.
-\end{df}
-
-\begin{df}[Bounded Above]
-Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded above} iff it has an upper bound.
-\end{df}
-
-\begin{df}[Bounded Below]
-Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded below} iff it has a lower bound.
-\end{df}
-
-\begin{df}[Least Upper Bound]
-Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $s \in \mathbf{A}$. Then $s$ is the \emph{least upper bound} or \emph{supremum} of $\mathbf{B}$ iff $s$ is an upper bound for $\mathbf{B}$ and, for every upper bound $u$ for $\mathbf{B}$, we have $s \leq u$.
-\end{df}
-
-\begin{df}[Greatest Lower Bound]
-Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $i \in \mathbf{A}$. Then $i$ is the \emph{greatest lower bound} or \emph{infimum} of $\mathbf{B}$ iff $i$ is a lower bound for $\mathbf{B}$ and, for every lower bound $l$ for $\mathbf{B}$, we have $i \leq l$.
-\end{df}
-
-\begin{df}[Complete]
-A partial order is \emph{complete} iff every nonempty subset bounded above has a supremum, and every nonempty subset bounded below has an infimum.
-\end{df}
-
-\begin{df}[Dense]
-Let $\leq$ be a partial order on $\mathbf{A}$ and
-$\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
-\end{df}
-
-\begin{df}[Initial Segment]
-Let $A$ be a poset and $t \in A$. The \emph{initial segment} up to $t$ is
-\[ \seg t := \{ x \in A \mid x < t \} \enspace . \]
-\end{df}
-
-\subsection{Linear Orders}
-
-\begin{df}[Linear Ordering]
-Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} on $\mathbf{A}$ is a partial ordering $\leq$ on $\mathbf{A}$ that is \emph{total}, i.e.
-\[ \forall x,y \in \mathbf{A}. x \leq y \vee y \leq x \]
-
-We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
-\end{df}
-
-\begin{prop}[Trichotomy]
-Let $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
-\end{prop}
-
-\begin{proof}
-\pf\ Immediate from definitions. \qed
-\end{proof}
-
-\begin{prop}
-Let $<$ be an irreflexive relation on $\mathbf{A}$ that satisfies trichotomy. Define $\leq$ on $\mathbf{A}$ by $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a linear ordering on $\mathbf{A}$ and $x < y$ iff $x \leq y$ and $x \neq y$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\mathbf{R}^{-1}$ is transitive.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:invtrans}.
-\end{proof}
-\step{2}{$\mathbf{R}^{-1}$ satisfies trichotomy.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in \mathbf{A}$}}
-	\step{b}{Exactly one of $(x,y) \in \mathbf{R}$, $(y,x) \in \mathbf{R}$, $x = y$ holds.}
-	\step{c}{Exactly one of $(y,x) \in \mathbf{R}^{-1}$, $(x,y) \in \mathbf{R}^{-1}$, $x = y$ holds.}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{df}[Lexicographic Ordering]
-Let $A$ and $B$ be linearly ordered sets. The \emph{lexicographic ordering} $<$ on $A \times B$ is defined by:
-\[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
-\end{df}
-
-\begin{prop}
-Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A \times B$ is a linear ordering.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$<$ is transitive.}
-\begin{proof}
-	\step{a}{\pflet{$(a_1,b_1) < (a_2,b_2) < (a_3,b_3)$} \prove{$(a_1,b_1) < (a_3,b_3)$}}
-	\step{b}{\case{$a_1 < a_2$}}
-	\begin{proof}
-		\step{i}{$a_2 < a_3$ or $a_2 = a_3$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{ii}{$a_1 < a_3$}
-		\begin{proof}
-			\pf\ Transitivity
-		\end{proof}
-		\step{iii}{$(a_1,b_1) < (a_3,b_3)$}
-	\end{proof}
-	\step{c}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 < a_3$}}
-	\begin{proof}
-		\pf\ We have $a_1 < a_3$ so $(a_1,b_1) < (a_3,b_3)$.
-	\end{proof}
-	\step{d}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 = a_3$ and $b_2 < b_3$}}
-	\begin{proof}
-		\pf\ We have $a_1 = a_3$ and $b_1 < b_3$ so $(a_1,b_1) < (a_3,b_3)$.
-	\end{proof}
-\end{proof}
-\step{2}{$<$ satisfies trichotomy.}
-\begin{proof}
-	\step{a}{\pflet{$(a_1,b_1),(a_2,b_2) \in A \times B$}}
-	\step{b}{Exactly one of $a_1 < a_2$, $a_1 = a_2$, $a_2 < a_1$ holds.}
-	\step{c}{\case{$a_1 < a_2$}}
-	\begin{proof}
-		\pf\ We have $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) \neq (a_2,b_2)$, and $(a_2,b_2) \nless (a_1,b_1)$.
-	\end{proof}
-	\step{d}{\case{$a_1 = a_2$}}
-	\begin{proof}
-		\step{i}{Exactly one of $b_1 < b_2$, $b_1 = b_2$, $b_2 < b_1$ holds.}
-		\step{ii}{Exactly one of $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) = (a_2,b_2)$, $(a_2,b_2) < (a_1, b_1)$ holds.}
-	\end{proof}
-	\step{e}{\case{$a_2 < a_1$}}
-	\begin{proof}
-		\pf\ We have $(a_2,b_2) < (a_1,b_1)$, $(a_2,b_2) \neq (a_1,b_1)$, and $(a_1,b_1) \nless (a_2,b_2)$.
-	\end{proof}
-\end{proof}
-\end{proof}
-
-\subsection{Well Orderings}
-
-\begin{df}[Well Ordering]
-A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{A}$ such that:
-\begin{itemize}
-\item For all $t \in \mathbf{A}$ we have $\seg t$ is a set.
-\item Every nonempty subset of $\mathbf{A}$ has a least element.
-\end{itemize}
-\end{df}
-
-\begin{prop}
-Let $\mathbf{R}$ be a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a well ordering on $\mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{thm}[Transfinite Induction Principle]
-Let $\leq$ be a well ordering on $\mathbf{A}$. Let $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
-\[ \seg t \subseteq \mathbf{B} \Rightarrow t \in \mathbf{B} \enspace . \]
-Then $\mathbf{B} = \mathbf{A}$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $\mathbf{B} \neq \mathbf{A}$}}
-\step{2}{\pick\ $a \in \mathbf{A} - \mathbf{B}$}
-\step{2}{\pflet{$m$ be the least element of $(\seg a \cup \{a\}) - B$}}
-\step{3}{$\seg m \subseteq \mathbf{B}$}
-\begin{proof}
-	\pf\ By leastness of $m$.
-\end{proof}
-\step{4}{$m \in \mathbf{B}$}
-\qedstep
-\begin{proof}
-	\pf\ This is a contradiction.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{thm}
-Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$C \subseteq A$ be nonempty.}}
-\step{2}{\pflet{$B = \{ t \in A \mid \forall x \in C. t < x \}$}}
-\step{3}{$B \cap C = \emptyset$}
-\step{4}{$B \neq A$}
-\step{5}{\pick\ $t \in A$ such that $\seg t \subseteq B$ and $t \notin B$}
-\step{6}{$t$ is least in $C$.}
-\qed
-\end{proof}
-
 \chapter{Functions}
 
 \section{Functions}
@@ -1025,54 +729,22 @@ Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ suc
 A \emph{function} from $\mathbf{A}$ to $\mathbf{B}$ is a relation $\mathbf{F}$ between $\mathbf{A}$ and $\mathbf{B}$ such that, for all $x \in \mathbf{A}$, there is only one $y$ such that $x \mathbf{F} y$. We denote this $y$ by $\mathbf{F}(x)$.
 \end{df}
 
-\begin{df}[Restriction]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Let $\mathbf{C} \subseteq \mathbf{A}$. The \emph{restriction} of $\mathbf{F}$ to $\mathbf{C}$, denoted $\mathbf{F} \restriction \mathbf{C}$, is the function
-\begin{align*}
-\mathbf{F} \restriction \mathbf{C} & : \mathbf{C} \rightarrow \mathbf{B} \\
-(\mathbf{F} \restriction \mathbf{C})(x) & = \mathbf{F}(x) & (x \in \mathbf{C})
-\end{align*}
-\end{df}
-
-\begin{df}[Image]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{A}$. The \emph{image} of $\mathbf{C}$ under $\mathbf{F}$ is the class
-\[ \mathbf{F}(\mathbf{C}) := \{ \mathbf{F}(x) \mid x \in \mathbf{C} \} \enspace . \]
-\end{df}
-
 \begin{prop}
-\label{prop:imgunion}
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
-\[ \mathbf{F} \left( \bigcup \mathbf{C} \right) = \{ y \mid \exists X \in \mathbf{C}. y \in \mathbf{F}(X) \} \]
+For any class $\mathbf{A}$, the following is a theorem:
+
+\[ \mathrm{id}_\mathbf{A} : \mathbf{A} \rightarrow \mathbf{A} \]
 \end{prop}
 
 \begin{proof}
-\pf
-\begin{align*}
-	y \in \mathbf{F} \left( \bigcup \mathbf{C} \right) & \Leftrightarrow \exists x \in \bigcup \mathbf{C}. y = \mathbf{F}(x) \\
-	& \Leftrightarrow \exists x. \exists X. X \in \mathbf{C} \wedge x \in X \wedge y = \mathbf{F}(x) \\
-	& \Leftrightarrow \exists X \in \mathbf{C}. y \in \mathbf{F}(X) & \qed
-\end{align*}
+\pf\ For all $x \in \mathbf{A}$, the only $y$ such that $(x,y) \in \mathrm{id}_\mathbf{A}$ is $y = x$. \qed
 \end{proof}
 
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
-\begin{prop}
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
-\[ \mathbf{F}(\mathbf{C} \cup \mathbf{D}) = \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-	y \in \mathbf{F}(\mathbf{C} \cup \mathbf{D})
-	& \Leftrightarrow \exists x \in \mathbf{C} \cup \mathbf{D}. y = \mathbf{F}(x) \\
-	& \Leftrightarrow \exists x \in \mathbf{C}. y = \mathbf{F}(x) \vee \exists x \in \mathbf{D}. y = \mathbf{F}(x) \\
-	& \Leftrightarrow y \in \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) & \qed
-\end{align*}
-\end{proof}
-
-\begin{prop}
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
 \[ (\mathbf{G} \circ \mathbf{F})(x) = \mathbf{G}(\mathbf{F}(x)) \enspace . \]
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -1140,46 +812,93 @@ For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \ri
 
 \begin{prop}
 \label{prop:AxChoice}
-For any relation $R$ there exists a function $H \subseteq R$ with $\dom H = \dom R$.
+For any relation $R$ between $A$ and $B$, there exists a function $H : A \rightarrow B$ such that $H \subseteq R$ (i.e. $\forall x \in A. xRH(x)$).
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$R$ be a relation.}}
-\step{2}{\pick\ a choice function $G$ for $\ran R$.}
-\step{3}{Define $H : dom R \rightarrow \ran R$ by $H(x) = G(\{y \mid xRy\})$}
+\step{1}{\pflet{$R$ be a relation between $A$ and $B$.}}
+\step{2}{\pick\ a choice function $G$ for $B$.}
+\step{3}{Define $H : A \rightarrow B$ by $H(x) = G(\{y \mid xRy\})$}
 \step{4}{$H \subseteq R$}
 \qed
 \end{proof}
 
-\begin{prop}
-For any function $\mathbf{G}$ and nonempty class $\mathbf{A}$, we have
-\[ \mathbf{G}^{-1} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{G}^{-1}(X) \mid X \in \mathbf{A} \} \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Propositions \ref{prop:imgint} and \ref{prop:invsingroot}. \qed
-\end{proof}
-
-\begin{prop}
-For any function $\mathbf{G}$ and classes $\mathbf{A}$ and $\mathbf{B}$, we have
-\[ \mathbf{G}^{-1}(\mathbf{A} - \mathbf{B}) = \mathbf{G}^{-1}(\mathbf{A}) - \mathbf{G}^{-1}(\mathbf{B}) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Proposition \ref{prop:imgdiff} and \ref{prop:invsingroot}. \qed
-\end{proof}
-
-\begin{df}[Identity Function]
-For any class $\mathbf{A}$, the \emph{identity function} on $\mathbf{A}$ is $\mathbf{I}_\mathbf{A} = \{ (x,x) \mid x \in \mathbf{A} \}$.
-\end{df}
+\subsection{Injective Functions}
 
 \begin{df}[Injective]
-A function is \emph{one-to-one}, \emph{injective} or an \emph{injection} iff it is single-rooted.
+A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection} iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
 \end{df}
 
+\subsection{Restrictions}
+
+\begin{df}[Restriction]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Let $\mathbf{C} \subseteq \mathbf{A}$. The \emph{restriction} of $\mathbf{F}$ to $\mathbf{C}$, denoted $\mathbf{F} \restriction \mathbf{C}$, is the function
+\begin{align*}
+\mathbf{F} \restriction \mathbf{C} & : \mathbf{C} \rightarrow \mathbf{B} \\
+(\mathbf{F} \restriction \mathbf{C})(x) & = \mathbf{F}(x) & (x \in \mathbf{C})
+\end{align*}
+\end{df}
+
+\subsection{Images}
+
+\begin{df}[Image]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{A}$. The \emph{image} of $\mathbf{C}$ under $\mathbf{F}$ is the class
+\[ \mathbf{F}(\mathbf{C}) := \{ \mathbf{F}(x) \mid x \in \mathbf{C} \} \enspace . \]
+\end{df}
+
+\begin{props}
+For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
+
+If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \subseteq \mathbf{A}$, the class $\mathbf{F}(S)$ is a set.
+\end{props}
+
+\begin{proof}
+\pf\ By an Axiom of Replacement. \qed
+\end{proof}
+
+\begin{props}
+\label{prop:imgunion}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
+\[ \mathbf{F} \left( \bigcup \mathbf{C} \right) = \{ y \mid \exists X \in \mathbf{C}. y \in \mathbf{F}(X) \} \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+	y \in \mathbf{F} \left( \bigcup \mathbf{C} \right) & \Leftrightarrow \exists x \in \bigcup \mathbf{C}. y = \mathbf{F}(x) \\
+	& \Leftrightarrow \exists x. \exists X. X \in \mathbf{C} \wedge x \in X \wedge y = \mathbf{F}(x) \\
+	& \Leftrightarrow \exists X \in \mathbf{C}. y \in \mathbf{F}(X) & \qed
+\end{align*}
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
+\[ \mathbf{F}(\mathbf{C} \cup \mathbf{D}) = \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+	y \in \mathbf{F}(\mathbf{C} \cup \mathbf{D})
+	& \Leftrightarrow \exists x \in \mathbf{C} \cup \mathbf{D}. y = \mathbf{F}(x) \\
+	& \Leftrightarrow \exists x \in \mathbf{C}. y = \mathbf{F}(x) \vee \exists x \in \mathbf{D}. y = \mathbf{F}(x) \\
+	& \Leftrightarrow y \in \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) & \qed
+\end{align*}
+\end{proof}
+
 \begin{prop}
-For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$. Equality holds if $\mathbf{F}$ is single-rooted.
+For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{D}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
+
+\[ \mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B}) \enspace . \]
+
+Equality holds if $\mathbf{F}$ is injective.
 \end{prop}
 
 \begin{proof}
@@ -1187,7 +906,7 @@ For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have $\mathbf{F}
 \step{1}{$\mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}
 \begin{proof}
 	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}}
-	\step{b}{\pick\ $x \in \mathbf{A} \cap \mathbf{B}$ such that $(x,y) \in \mathbf{F}$}
+	\step{b}{\pick\ $x \in \mathbf{A} \cap \mathbf{B}$ such that $y = \mathbf{F}(x)$}
 	\step{c}{$y \in \mathbf{F}(\mathbf{A})$}
 	\begin{proof}
 		\pf\ Since $x \in \mathbf{A}$.
@@ -1197,12 +916,12 @@ For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have $\mathbf{F}
 		\pf\ Since $x \in \mathbf{B}$.
 	\end{proof}
 \end{proof}
-\step{2}{If $\mathbf{F}$ is single-rooted then $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) = \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$.}
+\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) = \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$.}
 \begin{proof}
-	\step{a}{\assume{$\mathbf{F}$ is single-rooted.}}
+	\step{a}{\assume{$\mathbf{F}$ is injective.}}
 	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}}
-	\step{c}{\pick\ $x \in \mathbf{A}$ such that $(x,y) \in \mathbf{F}$}
-	\step{d}{\pick\ $x' \in \mathbf{B}$ such that $(x',y) \in \mathbf{F}$}
+	\step{c}{\pick\ $x \in \mathbf{A}$ such that $y = \mathbf{F}(x)$}
+	\step{d}{\pick\ $x' \in \mathbf{B}$ such that $y = \mathbf{F}(x')$}
 	\step{e}{$x = x'$}
 	\begin{proof}
 		\pf\ \stepref{a}
@@ -1213,26 +932,30 @@ For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, we have $\mathbf{F}
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{props}
 \label{prop:imgint}
-For any classes $\mathbf{F}$ and $\mathbf{A}$ we have
-\[ \mathbf{F} \left( \bigcap \mathbf{A} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \} \enspace . \]
+For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$, the following is a theorem:
+
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
+
+\[ \mathbf{F} \left( \bigcap \mathbf{C} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \} \enspace . \]
+
 Equality holds if $\mathbf{F}$ is injective and $\mathbf{A}$ is nonempty.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
 \step{1}{$\mathbf{F} \left( \bigcap \mathbf{A} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
 \begin{proof}
 	\step{a}{\pflet{$y \in \mathbf{F} (\bigcap \mathbf{A})$}}
-	\step{b}{\pick\ $x \in \bigcap \mathbf{A}$ such that $(x,y) \in \mathbf{F}$}
-	\step{c}{\pflet{$X \in \mathbf{A}$} \prove{$y \in \mathbf{F}(X)$}}
+	\step{b}{\pick\ $x \in \bigcap \mathbf{A}$ such that $y = \mathbf{F}(x)$}
+	\step{c}{\pflet{$X \in \mathbf{A}$}}
 	\step{d}{$x \in X$}
 	\step{e}{$y \in \mathbf{F}(X)$}
 \end{proof}
-\step{2}{If $\mathbf{F}$ is single-rooted then $\mathbf{F} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
+\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
 \begin{proof}
-	\step{a}{\assume{$\mathbf{F}$ is single-rooted.}}
+	\step{a}{\assume{$\mathbf{F}$ is injective.}}
 	\step{aa}{\assume{$\mathbf{A}$ is nonempty.}}
 	\step{b}{\pflet{$y \in \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}}
 	\step{c}{\pick\ $X_0 \in \mathbf{A}$}
@@ -1254,7 +977,9 @@ Equality holds if $\mathbf{F}$ is injective and $\mathbf{A}$ is nonempty.
 
 \begin{prop}
 \label{prop:imgdiff}
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
 \[ \mathbf{F}(\mathbf{C}) - \mathbf{F}(\mathbf{D}) \subseteq \mathbf{F}(\mathbf{C} - \mathbf{D}) \enspace . \]
 Equality holds if $\mathbf{F}$ is injective.
 \end{prop}
@@ -1264,21 +989,21 @@ Equality holds if $\mathbf{F}$ is injective.
 \step{1}{$\mathbf{F}(\mathbf{C}) - \mathbf{F}(\mathbf{D}) \subseteq \mathbf{F}(\mathbf{A} - \mathbf{B})$}
 \begin{proof}
 	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B})$}}
-	\step{b}{\pick\ $x \in \mathbf{A}$ such that $(x,y) \in \mathbf{F}$}
+	\step{b}{\pick\ $x \in \mathbf{A}$ such that $y = \mathbf{F}(x)$}
 	\step{c}{$x \notin \mathbf{B}$}
 	\step{d}{$x \in \mathbf{A} - \mathbf{B}$}
 	\step{e}{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}
 \end{proof}
-\step{2}{If $\mathbf{F}$ is single-rooted then $\mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) = \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) = \mathbf{F}(\mathbf{A} - \mathbf{B})$}
 \begin{proof}
-	\step{a}{\assume{$\mathbf{F}$ is single-rooted.}}
+	\step{a}{\assume{$\mathbf{F}$ is injective.}}
 	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}}
-	\step{c}{\pick\ $x \in \mathbf{A} - \mathbf{B}$ such that $(x,y) \in \mathbf{F}$}
+	\step{c}{\pick\ $x \in \mathbf{A} - \mathbf{B}$ such that $y = \mathbf{F}(x)$}
 	\step{d}{$y \in \mathbf{F}(\mathbf{A})$}
 	\step{e}{$y \notin \mathbf{F}(\mathbf{B})$}
 	\begin{proof}
 		\step{i}{\assume{for a contradiction $y \in \mathbf{F}(\mathbf{B})$}}
-		\step{ii}{\pick\ $x' \in \mathbf{B}$ such that $(x',y) \in \mathbf{F}$}
+		\step{ii}{\pick\ $x' \in \mathbf{B}$ such that $y = \mathbf{F}(x')$}
 		\step{iii}{$x = x'$}
 		\begin{proof}
 			\pf\ \stepref{a}
@@ -1291,6 +1016,47 @@ Equality holds if $\mathbf{F}$ is injective.
 	\end{proof}
 \end{proof}
 \qed
+\end{proof}
+
+\subsection{Inverse Images}
+
+\begin{df}[Inverse Image]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{B}$. Then the \emph{inverse image} of $\mathbf{C}$ under $\mathbf{F}$ is
+\[ \mathbf{F}^{-1}(\mathbf{C}) = \{ x \in \mathbf{A} \mid \mathbf{F}(x) \in \mathbf{C} \} \enspace . \]
+\end{df}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{B}$. Then
+\[ \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right) = \bigcap \{ \mathbf{F}^{-1}(X) \mid X \in \mathbf{C} \} \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+x \in \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right)
+& \Leftrightarrow \mathbf{F}(x) \in \bigcap \mathbf{C} \\
+& \Leftrightarrow \forall X \in \mathbf{C}. \mathbf{F}(x) \in X \\
+& \Leftrightarrow \forall X \in \mathbf{C}. x \in \mathbf{F}^{-1}(X) & \qed
+\end{align*}
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{B}$. Then
+\[ \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) = \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \in \mathbf{C} - \mathbf{D} \\
+& \Leftrightarrow \mathbf{F}(x) \in \mathbf{C} \wedge \mathbf{F}(x) \notin \mathbf{D} \\
+& \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) \wedge x \in \mathbf{F}^{-1}(\mathbf{D}) \\
+& \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) & \qed
+\end{align*}
 \end{proof}
 
 \begin{prop}
@@ -1953,6 +1719,402 @@ e & \text{if } B - F(\seg t) = \emptyset
 \end{proof}
 \qed
 \end{proof}
+
+\chapter{Equivalence Relations}
+
+\begin{df}[Equivalence Relation]
+An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
+\end{df}
+
+\begin{df}[Equivalence Class]
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph{equivalence class} of $a$ \emph{modulo} $\mathbf{R}$ is
+\[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
+\end{df}
+
+\begin{prop}
+\label{prop:eqclassequal}
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $a \mathbf{R} b$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $[a]_\mathbf{R} = [b]_\mathbf{R}$ then $a \mathbf{R} b$.}
+\begin{proof}
+	\step{a}{\assume{$[a]_\mathbf{R} = [b]_\mathbf{R}$}}
+	\step{b}{$b\mathbf{R}b$}
+	\begin{proof}
+		\pf\ Reflexivity
+	\end{proof}
+	\step{c}{$b \in [b]_\mathbf{R}$}
+	\step{d}{$b \in [a]_\mathbf{R}$}
+	\step{e}{$a\mathbf{R}b$}
+\end{proof}
+\step{2}{If $a\mathbf{R}b$ then $[a]_\mathbf{R} = [b]_\mathbf{R}$.}
+\begin{proof}
+	\step{a}{For all $x,y \in \mathbf{A}$, if $x \mathbf{R}y$ then $[y]_\mathbf{R} \subseteq [x]_\mathbf{R}$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in \mathbf{A}$}}
+		\step{ii}{\assume{$x\mathbf{R}y$}}
+		\step{iii}{\pflet{$t \in [y]_\mathbf{R}$}}
+		\step{iv}{$y\mathbf{R}t$}
+		\step{v}{$x\mathbf{R}t$}
+		\begin{proof}
+			\pf\ Transitivity, \stepref{ii}, \stepref{iv}.
+		\end{proof}
+		\step{vi}{$t \in [x]_\mathbf{R}$}
+	\end{proof}
+	\step{b}{\assume{$a\mathbf{R}b$}}
+	\step{c}{$[b]_\mathbf{R} \subseteq [a]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{b}.
+	\end{proof}
+	\step{d}{$b\mathbf{R}a$}
+	\begin{proof}
+		\pf\ Symmetry, \stepref{b}.
+	\end{proof}
+	\step{e}{$[a]_\mathbf{R} \subseteq [b]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{d}.
+	\end{proof}
+	\step{f}{$[a]_\mathbf{R} = [b]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{e}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Partition]
+A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that is disjoint and exhaustive, i.e.
+\begin{enumerate}
+\item no two different sets in $\Pi$ have any common elements, and
+\item each element of $A$ is in some set in $\Pi$.
+\end{enumerate}
+\end{df}
+
+\begin{df}
+Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
+\end{df}
+
+\begin{prop}
+Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{2}{Every member of $A/R$ is nonempty.}
+\begin{proof}
+	\pf\ Since $a \in [a]_R$ by reflexivity.
+\end{proof}
+\step{3}{No two different sets in $A/R$ have any common elements.}
+\begin{proof}
+	\step{a}{\pflet{$[a]_R, [b]_R \in A/R$}}
+	\step{b}{\pflet{$c \in [a]_R \cap [b]_R$} \prove{$[a]_R = [b]_R$}}
+	\step{c}{$aRc$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{$bRc$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{e}{$cRb$}
+	\begin{proof}
+		\pf\ Symmetry, \stepref{d}
+	\end{proof}
+	\step{f}{$aRb$}
+	\begin{proof}
+		\pf\ Transitivity, \stepref{c}, \stepref{e}
+	\end{proof}
+	\step{g}{$[a]_R = [b]_R$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:eqclassequal}, \stepref{f}
+	\end{proof}
+\end{proof}
+\step{4}{Each element of $A$ is in some set in $A/R$.}
+\begin{proof}
+	\pf\ Since $a \in [a]_R$ by reflexivity.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any partition $P$ of a set $A$, there exists a unique equivalence relation $R$ on $A$ such that $A/R = P$, namely $xRy$ iff $\exists X \in P(x \in X \wedge y \in X)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\chapter{Ordering Relations}
+
+\subsection{Structures}
+
+\begin{df}[Structure]
+A \emph{structure} is a pair $(A,R)$ where $A$ is a set and $R$ is a binary relation on $A$.
+\end{df}
+
+\subsection{Partial Orders}
+
+\begin{df}[Partial Ordering]
+Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a relation $\mathbf{R}$ on $\mathbf{A}$ that is reflexive, antisymmetric and transitive.
+
+We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
+\end{df}
+
+\begin{df}[Partially Ordered Set]
+A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
+\end{df}
+
+\begin{prop}
+If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Minimal]
+Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{minimal} iff there is no $x \in \mathbf{A}$ such that $x < m$.
+\end{df}
+
+\begin{df}[Maximal]
+Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{maximal} iff there is no $x \in \mathbf{A}$ such that $m < x$.
+\end{df}
+
+\begin{df}[Least]
+Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{least} iff for all $x \in \mathbf{A}$ we have $m \leq x$.
+\end{df}
+
+\begin{prop}
+A partial order has at most one least element.
+\end{prop}
+
+\begin{proof}
+\pf\ If $m$ and $m'$ are least then $m \leq m'$ and $m' \leq m$, so $m = m'$. \qed
+\end{proof}
+
+\begin{df}[Greatst]
+Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{greatest} iff for all $x \in A$ we have $x \leq m$.
+\end{df}
+
+\begin{prop}
+A poset has at most one greatest element.
+\end{prop}
+
+\begin{proof}
+\pf\ If $m$ and $m'$ are greatest then $m \leq m'$ and $m' \leq m$, so $m = m'$. \qed
+\end{proof}
+
+\begin{df}[Upper Bound]
+Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $u \in \mathbf{A}$. Then $u$ is an \emph{upper bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. x \leq u$.
+\end{df}
+
+\begin{df}[Lower Bound]
+Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $l \in \mathbf{A}$. Then $l$ is a \emph{lower bound} for $\mathbf{B}$ iff $\forall x \in \mathbf{B}. l \leq x$.
+\end{df}
+
+\begin{df}[Bounded Above]
+Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded above} iff it has an upper bound.
+\end{df}
+
+\begin{df}[Bounded Below]
+Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{bounded below} iff it has a lower bound.
+\end{df}
+
+\begin{df}[Least Upper Bound]
+Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $s \in \mathbf{A}$. Then $s$ is the \emph{least upper bound} or \emph{supremum} of $\mathbf{B}$ iff $s$ is an upper bound for $\mathbf{B}$ and, for every upper bound $u$ for $\mathbf{B}$, we have $s \leq u$.
+\end{df}
+
+\begin{df}[Greatest Lower Bound]
+Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Let $i \in \mathbf{A}$. Then $i$ is the \emph{greatest lower bound} or \emph{infimum} of $\mathbf{B}$ iff $i$ is a lower bound for $\mathbf{B}$ and, for every lower bound $l$ for $\mathbf{B}$, we have $i \leq l$.
+\end{df}
+
+\begin{df}[Complete]
+A partial order is \emph{complete} iff every nonempty subset bounded above has a supremum, and every nonempty subset bounded below has an infimum.
+\end{df}
+
+\begin{df}[Dense]
+Let $\leq$ be a partial order on $\mathbf{A}$ and
+$\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
+\end{df}
+
+\begin{df}[Initial Segment]
+Let $A$ be a poset and $t \in A$. The \emph{initial segment} up to $t$ is
+\[ \seg t := \{ x \in A \mid x < t \} \enspace . \]
+\end{df}
+
+\subsection{Linear Orders}
+
+\begin{df}[Linear Ordering]
+Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} on $\mathbf{A}$ is a partial ordering $\leq$ on $\mathbf{A}$ that is \emph{total}, i.e.
+\[ \forall x,y \in \mathbf{A}. x \leq y \vee y \leq x \]
+
+We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
+\end{df}
+
+\begin{prop}[Trichotomy]
+Let $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+Let $<$ be an irreflexive relation on $\mathbf{A}$ that satisfies trichotomy. Define $\leq$ on $\mathbf{A}$ by $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a linear ordering on $\mathbf{A}$ and $x < y$ iff $x \leq y$ and $x \neq y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{R}^{-1}$ is transitive.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:invtrans}.
+\end{proof}
+\step{2}{$\mathbf{R}^{-1}$ satisfies trichotomy.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \mathbf{A}$}}
+	\step{b}{Exactly one of $(x,y) \in \mathbf{R}$, $(y,x) \in \mathbf{R}$, $x = y$ holds.}
+	\step{c}{Exactly one of $(y,x) \in \mathbf{R}^{-1}$, $(x,y) \in \mathbf{R}^{-1}$, $x = y$ holds.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Lexicographic Ordering]
+Let $A$ and $B$ be linearly ordered sets. The \emph{lexicographic ordering} $<$ on $A \times B$ is defined by:
+\[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A \times B$ is a linear ordering.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$<$ is transitive.}
+\begin{proof}
+	\step{a}{\pflet{$(a_1,b_1) < (a_2,b_2) < (a_3,b_3)$} \prove{$(a_1,b_1) < (a_3,b_3)$}}
+	\step{b}{\case{$a_1 < a_2$}}
+	\begin{proof}
+		\step{i}{$a_2 < a_3$ or $a_2 = a_3$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{ii}{$a_1 < a_3$}
+		\begin{proof}
+			\pf\ Transitivity
+		\end{proof}
+		\step{iii}{$(a_1,b_1) < (a_3,b_3)$}
+	\end{proof}
+	\step{c}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 < a_3$}}
+	\begin{proof}
+		\pf\ We have $a_1 < a_3$ so $(a_1,b_1) < (a_3,b_3)$.
+	\end{proof}
+	\step{d}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 = a_3$ and $b_2 < b_3$}}
+	\begin{proof}
+		\pf\ We have $a_1 = a_3$ and $b_1 < b_3$ so $(a_1,b_1) < (a_3,b_3)$.
+	\end{proof}
+\end{proof}
+\step{2}{$<$ satisfies trichotomy.}
+\begin{proof}
+	\step{a}{\pflet{$(a_1,b_1),(a_2,b_2) \in A \times B$}}
+	\step{b}{Exactly one of $a_1 < a_2$, $a_1 = a_2$, $a_2 < a_1$ holds.}
+	\step{c}{\case{$a_1 < a_2$}}
+	\begin{proof}
+		\pf\ We have $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) \neq (a_2,b_2)$, and $(a_2,b_2) \nless (a_1,b_1)$.
+	\end{proof}
+	\step{d}{\case{$a_1 = a_2$}}
+	\begin{proof}
+		\step{i}{Exactly one of $b_1 < b_2$, $b_1 = b_2$, $b_2 < b_1$ holds.}
+		\step{ii}{Exactly one of $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) = (a_2,b_2)$, $(a_2,b_2) < (a_1, b_1)$ holds.}
+	\end{proof}
+	\step{e}{\case{$a_2 < a_1$}}
+	\begin{proof}
+		\pf\ We have $(a_2,b_2) < (a_1,b_1)$, $(a_2,b_2) \neq (a_1,b_1)$, and $(a_1,b_1) \nless (a_2,b_2)$.
+	\end{proof}
+\end{proof}
+\end{proof}
+
+\subsection{Well Orderings}
+
+\begin{df}[Well Ordering]
+A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{A}$ such that:
+\begin{itemize}
+\item For all $t \in \mathbf{A}$ we have $\seg t$ is a set.
+\item Every nonempty subset of $\mathbf{A}$ has a least element.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+Let $\mathbf{R}$ be a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a well ordering on $\mathbf{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}[Transfinite Induction Principle]
+Let $\leq$ be a well ordering on $\mathbf{A}$. Let $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
+\[ \seg t \subseteq \mathbf{B} \Rightarrow t \in \mathbf{B} \enspace . \]
+Then $\mathbf{B} = \mathbf{A}$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\mathbf{B} \neq \mathbf{A}$}}
+\step{2}{\pick\ $a \in \mathbf{A} - \mathbf{B}$}
+\step{2}{\pflet{$m$ be the least element of $(\seg a \cup \{a\}) - B$}}
+\step{3}{$\seg m \subseteq \mathbf{B}$}
+\begin{proof}
+	\pf\ By leastness of $m$.
+\end{proof}
+\step{4}{$m \in \mathbf{B}$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C \subseteq A$ be nonempty.}}
+\step{2}{\pflet{$B = \{ t \in A \mid \forall x \in C. t < x \}$}}
+\step{3}{$B \cap C = \emptyset$}
+\step{4}{$B \neq A$}
+\step{5}{\pick\ $t \in A$ such that $\seg t \subseteq B$ and $t \notin B$}
+\step{6}{$t$ is least in $C$.}
+\qed
+\end{proof}
+
 
 \chapter{Ordinal Numbers}
 

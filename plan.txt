@@ -2,7 +2,66 @@ For each concept:
 
 Definition
 Examples
+Relation/functions between instances
 Basic properties
 Relationship with previous concepts
-Relation/functions between instances
 Methods of constructing instances
+Types of
+
+List of concepts covered:
+
+Class
+- Empty Class
+- Universal Class
+- Subclass
+- Union
+- Power Class
+*1. Classes
+1.1 Definition - done
+1.2 Examples
+*1.2.1 Empty class - done
+*1.2.2 Universal class - done
+*1.3 Relation between classes - subclasses
+1.3.1 Definition - done
+1.3.2 Basic properties - done
+1.3.3 Relationship with previous concepts
+1.3.3.1 Empty class and subclasses - done
+1.3.3.2 Universal class and subclasses - done
+1.4 Methods of constructing instances
+*1.4.1 Union
+1.4.1.1 Definition - done
+1.4.1.2 Relation with previous concepts
+1.4.1.2.1 Union of empty class
+1.4.1.2.2 Union of universal class
+1.4.1.2.3 Union and subclassing
+*1.4.2 Power Class
+1.4.2.1 Definition - done
+1.4.2.2 Relation with previous concepts
+1.4.2.2.1 Power class of empty class
+1.4.2.2.2 Power class of universal class
+1.4.2.2.3 Power class and subclassing
+1.4.2.2.4 Power class and union
+*1.4.3 Binary intersection
+1.4.3.1 Definition - done
+1.4.3.2 Relation with previous concepts
+1.4.3.2.1 Binary intersection and empty class
+1.4.3.2.2 Binary intersection and universal class
+1.4.3.2.3 Binary intersection and subclassing
+1.4.3.2.4 Binary intersection and union
+1.4.3.2.5 Binary intersection and power class
+1.5 Types of class
+*1.5.1 Sets
+1.5.1.1 Definition - done
+1.5.1.2 Examples
+*1.5.1.3 Relations between sets - subset relation
+1.5.1.4 Basic properties of sets
+1.5.1.5 Relation with previous concepts
+1.5.1.5.1 The empty set
+1.5.1.5.2 The universal class is a proper class
+1.5.1.5.3 Union of a set is a set
+1.5.1.5.4 Power set
+1.5.1.5.5 Binary intersection of sets
+1.5.1.6 Methods of constructing sets
+1.5.1.7 Types of sets
+*1.5.2 Pairwise Disjoint
+1.
