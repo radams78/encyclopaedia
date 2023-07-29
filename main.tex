@@ -1145,48 +1145,6 @@ If $A$ and $B$ are sets then $B^A$ is a set.
 \pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
 \end{proof}
 
-
-\begin{prop}
-A strictly monotone function is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$(A, <_A)$ and $(B, <_B)$ be linearly ordered sets.}}
-\step{2}{\pflet{$f : A \rightarrow B$ be strictly monotone.}}
-\step{3}{\pflet{$x,y \in A$}}
-\step{4}{\assume{$f(x) = f(y)$}}
-\step{5}{$f(x) \nless f(y)$ and $f(y) \nless f(x)$}
-\begin{proof}
-	\pf\ Trichotomy.
-\end{proof}
-\step{6}{$x \nless y$ and $y \nless x$}
-\step{7}{$x = y$}
-\begin{proof}
-	\pf\ Trichotomy.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:strictmonotoneinv}
-Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \in A$. If $f$ is strictly monotone and $f(x) < f(y)$ then $x < y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$f(x) \neq f(y)$ and $f(y) \nless f(x)$}
-\begin{proof}
-	\pf\ Trichotomy.
-\end{proof}
-\step{2}{$x \neq y$ and $y \nless x$}
-\step{3}{$x < y$}
-\begin{proof}
-	\pf\ Trichotomy.
-\end{proof}
-\qed
-\end{proof}
-
 \begin{df}[Closed]
 Let $\mathbf{F}$ be a function and $\mathbf{A} \subseteq \dom \mathbf{F}$. Then $\mathbf{A}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{A}. \mathbf{F}(x) \in \mathbf{A}$.
 \end{df}
@@ -1850,6 +1808,28 @@ Let $(A,<_A)$ and $(B, <_B)$ be linearly ordered sets. A function $f : A \righta
 \end{df}
 
 \begin{prop}
+A strictly monotone function is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(A, <_A)$ and $(B, <_B)$ be linearly ordered sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ be strictly monotone.}}
+\step{3}{\pflet{$x,y \in A$}}
+\step{4}{\assume{$f(x) = f(y)$}}
+\step{5}{$f(x) \nless f(y)$ and $f(y) \nless f(x)$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\step{6}{$x \nless y$ and $y \nless x$}
+\step{7}{$x = y$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \end{prop}
 
@@ -1944,12 +1924,32 @@ Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} o
 We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
 \end{df}
 
+
 \begin{prop}[Trichotomy]
 Let $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
 \end{prop}
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:strictmonotoneinv}
+Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \in A$. If $f$ is strictly monotone and $f(x) < f(y)$ then $x < y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$f(x) \neq f(y)$ and $f(y) \nless f(x)$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\step{2}{$x \neq y$ and $y \nless x$}
+\step{3}{$x < y$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}

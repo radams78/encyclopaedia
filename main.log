@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  29 JUL 2023 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  29 JUL 2023 18:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -382,7 +382,7 @@ Chapter 4.
 [29
 
 ]
-Overfull \hbox (0.27765pt too wide) in paragraph at lines 1735--1735
+Overfull \hbox (0.27765pt too wide) in paragraph at lines 1693--1693
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 re-spects $\OML/cmm/m
 /it/10 R$ \OT1/cmr/m/n/10 then there ex-ists $[] : \OML/cmm/m/it/10 A=R \OMS/cm
 sy/m/n/10 ! \OT1/cmr/bx/n/10 B$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 8\O
@@ -396,11 +396,11 @@ ML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 A:[]\OT1/cmr/m/n/10 ([\OML
 Chapter 5.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1830.
+(hyperref)                than one, level fixed on input line 1788.
 
-[33] [34] [35]
+[33] [34] [35] [36]
 WARNING: proof step "2" (<1>3) already defined
-[36] [37] [38
+[37] [38
 
 ]
 Chapter 6.
@@ -695,7 +695,7 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (159 pages, 675592 bytes).
+Output written on main.pdf (159 pages, 675356 bytes).
 PDF statistics:
  2214 PDF objects out of 2487 (max. 8388607)
  1813 compressed objects within 19 object streams
