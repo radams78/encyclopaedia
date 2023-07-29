@@ -1121,21 +1121,29 @@ x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \
 \end{align*}
 \end{proof}
 
+\subsection{Function Sets}
+
+\begin{prop}
+For any classes $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
+
+Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ By an Axiom of Replacement, we have $R = \{ \mathbf{F}(x) \mid x \in A \}$ is a set. Hence $\mathbf{F}$ is a set since $\mathbf{F} \subseteq A \times R$. \qed
+\end{proof}
+
 \begin{df}[Function Set]
 Given a set $A$ and a class $\mathbf{B}$, we write $\mathbf{B}^A$ for the class of all functions $A \rightarrow \mathbf{B}$.
 \end{df}
 
 \begin{prop}
-If $A$ and $B$ are sets then $A^B$ is a set.
+If $A$ and $B$ are sets then $B^A$ is a set.
 \end{prop}
 
 \begin{proof}
 \pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
 \end{proof}
-
-\begin{df}[Natural Map]
-Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} $A \rightarrow A / R$ is the function that maps $a \in A$ to $[a]_R$.
-\end{df}
 
 \begin{df}[Respects]
 Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ \emph{respects} $\mathbf{A}$ iff, whenever $(x,y) \in \mathbf{R}$, then $\mathbf{F}(x) = \mathbf{F}(y)$.
@@ -1814,6 +1822,10 @@ For any partition $P$ of a set $A$, there exists a unique equivalence relation $
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
+\begin{df}[Natural Map]
+Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} $A \rightarrow A / R$ is the function that maps $a \in A$ to $[a]_R$.
+\end{df}
 
 \chapter{Ordering Relations}
 
