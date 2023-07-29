@@ -833,7 +833,7 @@ For any relation $R$ between $A$ and $B$, there exists a function $H : A \righta
 \subsection{Injective Functions}
 
 \begin{df}[Injective]
-A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection} iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
+A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection}, $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$, iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
 \end{df}
 
 \begin{prop}
@@ -845,6 +845,28 @@ $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
 
 \begin{proof}
 \pf\ If $\id{\mathbf{A}}(x) = \id{\mathbf{A}}(y)$ then immediately $x = y$. \qed
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$, $\mathbf{G}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrowtail \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbf{A}$}}
+\step{2}{\assume{$(\mathbf{G} \circ \mathbf{F})(x) = (\mathbf{G} \circ \mathbf{F})(y)$}}
+\step{3}{$\mathbf{G}(\mathbf{F}(x)) = \mathbf{G}(\mathbf{F}(y))$}
+\step{4}{$\mathbf{F}(x) = \mathbf{F}(y)$}
+\begin{proof}
+	\pf\ Since $\mathbf{G}$ is injective.
+\end{proof}
+\step{5}{$x = y$}
+\begin{proof}
+	\pf\ Since $\mathbf{F}$ is injective.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
