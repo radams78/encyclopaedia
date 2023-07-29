@@ -933,8 +933,51 @@ The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bij
 \end{prop}
 
 \begin{proof}
-\pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed
+\pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed	
 \end{proof}
+
+\begin{prop}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
+
+If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{B} \approx \mathbf{A}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}^{-1} : \mathbf{B} \rightarrow \mathbf{A}$}
+\begin{proof}
+	\step{a}{\pflet{$b \in \mathbf{B}$}}
+	\step{b}{\pick\ $a \in \mathbf{A}$ such that $\mathbf{F}(a) = b$.}
+	\begin{proof}
+		\pf\ Since $\mathbf{F}$ is surjective.
+	\end{proof}
+	\step{c}{$(b,a) \in \mathbf{F}^{-1}$}
+	\step{d}{If $(b,a') \in \mathbf{F}^{-1}$ then $a' = a$.}
+	\begin{proof}
+		\step{i}{\pflet{$a' \in \mathbf{A}$ such that $(b,a') \in \mathbf{F}^{-1}$}}
+		\step{ii}{$\mathbf{F}(a') = \mathbf{F}(a)$}
+		\step{iii}{$a' = a$}
+		\begin{proof}
+			\pf\ Since $\mathbf{F}$ is injective.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{$\mathbf{F}^{-1}$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \mathbf{B}$}}
+	\step{b}{\assume{$\mathbf{F}^{-1}(x) = \mathbf{F}^{-1}(y)$}}
+	\step{c}{$x = y$}
+	\begin{proof}
+		\pf\ $x = \mathbf{F}(\mathbf{F}^{-1}(x)) = \mathbf{F}(\mathbf{F}^{-1}(y)) = y$.
+	\end{proof}
+\end{proof}
+\step{3}{$\mathbf{F}^{-1}$ is surjective.}
+\begin{proof}
+	\pf\ For all $a \in \mathbf{A}$ we have $\mathbf{F}^{-1}(\mathbf{F}(a)) = a$.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Restrictions}
 
 \begin{df}[Restriction]
