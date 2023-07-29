@@ -862,6 +862,36 @@ Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow
 Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
 \end{df}
 
+\begin{prop}
+Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ has a right inverse then $F$ is surjective.}
+\begin{proof}
+	\step{a}{\assume{$F$ has a right inverse $H : B \rightarrow A$.}}
+	\step{b}{\pflet{$y \in B$}}
+	\step{c}{$F(H(y)) = y$}
+	\step{c}{There exists $x \in A$ such that $F(x) = y$}
+\end{proof}
+\step{2}{If $F$ is surjective then $F$ has a right inverse.}
+\begin{proof}
+	\step{a}{\assume{$F$ is surjective.}}
+	\step{b}{\pick\ a function $H : B \rightarrow A$ such that $H \subseteq F^{-1}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:AxChoice}.
+	\end{proof}
+	\step{d}{$F \circ H = \id{B}$}
+	\begin{proof}
+		\step{i}{\pflet{$y \in B$}}
+		\step{ii}{$(y,H(y)) \in F^{-1}$}
+		\step{iii}{$F(H(y)) = y$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Restrictions}
 
 \begin{df}[Restriction]
@@ -1089,35 +1119,6 @@ x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \
 & \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) \wedge x \in \mathbf{F}^{-1}(\mathbf{D}) \\
 & \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) & \qed
 \end{align*}
-\end{proof}
-
-
-\begin{prop}
-Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = I_B$ if and only if $F$ maps $A$ onto $B$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $F$ has a right inverse then $F$ is surjective.}
-\begin{proof}
-	\step{a}{\assume{$F$ has a right inverse $H : B \rightarrow A$.}}
-	\step{b}{\pflet{$y \in B$}}
-	\step{c}{$F(H(y)) = y$}
-	\step{c}{There exists $x \in A$ such that $F(x) = y$}
-\end{proof}
-\step{2}{If $F$ is surjective then $F$ has a right inverse.}
-\begin{proof}
-	\step{a}{\assume{$F$ is surjective.}}
-	\step{b}{\pick\ a function $H$ such that $H \subseteq F^{-1}$ and $\dom H = \dom F^{-1} = B$}
-	\step{c}{$H : B \rightarrow A$}
-	\step{d}{$F \circ H = I_B$}
-	\begin{proof}
-		\step{i}{\pflet{$y \in B$}}
-		\step{ii}{$(y,H(y)) \in F^{-1}$}
-		\step{iii}{$F(H(y)) = y$}
-	\end{proof}
-\end{proof}
-\qed
 \end{proof}
 
 \begin{df}[Function Set]
