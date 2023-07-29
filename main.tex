@@ -830,6 +830,32 @@ For any relation $R$ between $A$ and $B$, there exists a function $H : A \righta
 A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection} iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
 \end{df}
 
+\begin{prop}
+Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = \id{A}$ if and only if $F$ is one-to-one.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If there exists $G : B \rightarrow A$ such that $G \circ F = \id{A}$ then $F$ is one-to-one.}
+\begin{proof}
+	\step{a}{\assume{$G : B \rightarrow A$ and $G \circ F = I_A$}}
+	\step{b}{\pflet{$x,y \in A$}}
+	\step{c}{\assume{$F(x) = F(y)$}}
+	\step{d}{$x = y$}
+	\begin{proof}
+		\pf\ $x = G(F(x)) = G(F(y)) = y$
+	\end{proof}
+\end{proof}
+\step{2}{If $F$ is one-to-one then there exists $G : B \rightarrow A$ such that $G \circ F = I_A$.}
+\begin{proof}
+	\step{a}{\assume{$F$ is one-to-one.}}
+	\step{b}{\pick\ $a \in A$}
+	\step{c}{\pflet{$G : B \rightarrow A$ be the function defined by: $G(b)$ is the (unique) $x \in A$ such that $F(x) = b$ if there exists such an $x$, $G(b) = a$ otherwise.}}
+	\step{d}{For all $x \in A$ we have $G(F(x)) = x$.}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Restrictions}
 
 \begin{df}[Restriction]
@@ -1057,33 +1083,6 @@ x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \
 & \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) \wedge x \in \mathbf{F}^{-1}(\mathbf{D}) \\
 & \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) & \qed
 \end{align*}
-\end{proof}
-
-\begin{prop}
-Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = I_A$ if and only if $F$ is one-to-one.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If there exists $G : B \rightarrow A$ such that $G \circ F = I_A$ then $F$ is one-to-one.}
-\begin{proof}
-	\step{a}{\assume{$G : B \rightarrow A$ and $G \circ F = I_A$}}
-	\step{b}{\pflet{$x,y \in A$}}
-	\step{c}{\assume{$F(x) = F(y)$}}
-	\step{d}{$x = y$}
-	\begin{proof}
-		\pf\ $x = G(F(x)) = G(F(y)) = y$
-	\end{proof}
-\end{proof}
-\step{2}{If $F$ is one-to-one then there exists $G : B \rightarrow A$ such that $G \circ F = I_A$.}
-\begin{proof}
-	\step{a}{\assume{$F$ is one-to-one.}}
-	\step{b}{\pick\ $a \in A$}
-	\step{c}{\pflet{$G : B \rightarrow A$ be the function defined by: $G(b) = F^{-1}(b)$ if $b \in \ran F$, $G(b) = a$ otherwise.} \prove{$G \circ F = I_A$}}
-	\step{d}{\pflet{$x \in A$}}
-	\step{e}{$G(F(x)) = x$}
-\end{proof}
-\qed
 \end{proof}
 
 \begin{df}[Surjective]
