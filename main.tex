@@ -837,6 +837,17 @@ A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}
 \end{df}
 
 \begin{prop}
+\label{prop:idinj}
+For any class $\mathbf{A}$, the following is a theorem:
+
+$\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\id{\mathbf{A}}(x) = \id{\mathbf{A}}(y)$ then immediately $x = y$. \qed
+\end{proof}
+
+\begin{prop}
 Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = \id{A}$ if and only if $F$ is one-to-one.
 \end{prop}
 
@@ -869,6 +880,17 @@ Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \em
 \end{df}
 
 \begin{prop}
+\label{prop:idsurj}
+For any class $\mathbf{A}$, the following is a theorem:
+
+$\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is surjective.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $y \in \mathbf{A}$ we have $\id{\mathbf{A}}(y) = y$. \qed
+\end{proof}
+
+\begin{prop}
 Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
 \end{prop}
 
@@ -898,6 +920,21 @@ Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inv
 \qed
 \end{proof}
 
+\subsection{Bijections}
+
+\begin{df}[Bijection]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ is \emph{bijective} or a \emph{bijection}, $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$, iff it is injective and surjective.
+\end{df}
+
+\begin{prop}
+For any class $\mathbf{A}$, the following is a theorem:
+
+The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bijection.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed
+\end{proof}
 \subsection{Restrictions}
 
 \begin{df}[Restriction]
@@ -1139,16 +1176,14 @@ Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ i
 \pf\ By an Axiom of Replacement, we have $R = \{ \mathbf{F}(x) \mid x \in A \}$ is a set. Hence $\mathbf{F}$ is a set since $\mathbf{F} \subseteq A \times R$. \qed
 \end{proof}
 
-\begin{df}[Dependent Product Set]
+\begin{df}[Dependent Product Class]
 Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write $\prod_{i \in I} \mathbf{H}(i)$ for the class of all functions $f : I \rightarrow \bigcup_{i \in I} \mathbf{H}(i)$ such that $\forall i \in I. f(i) \in \mathbf{H}(i)$.
 
 We write $\mathbf{B}^I$ for $\prod_{i \in I} \mathbf{B}$ where $\mathbf{B}$ does not depend on $I$.
 \end{df}
 
 \begin{props}
-Let $\mathbf{H}(i)$ be a class with a parameter. Then the following is a theorem:
-
-Let $I$ be a set. Assume that, for all $i \in I$, the class $\mathbf{H}(i)$ is a set. Then $\prod_{i \in I} \mathbf{H}(i)$ is a set.
+Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I} \mathbf{H}(i)$ is a set.
 \end{props}
 
 \begin{proof}
@@ -1165,23 +1200,6 @@ Let $I$ be a set. Assume that, for all $i \in I$, the class $\mathbf{H}(i)$ is a
 \qed
 \end{proof}
 
-\section{Dependent Product Sets}
-
-
-\begin{prop}
-If $I$ is a set and $H(i)$ is a set for all $i \in I$, then $\prod_{i \in I} H(i)$ is a set.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\{ H(i) \mid i \in I \}$ is a set.}
-\begin{proof}
-	\pf\ Axiom of Replacement.
-\end{proof}
-\step{2}{$\prod_{i \in I} H(i) \subseteq \bigcup \{H(i) \mid i \in I\}^I$}
-\qed
-\end{proof}
-
 \begin{prop}
 Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(i) \neq \emptyset$ then $\prod_{i \in I} H(i) \neq \emptyset.$
 \end{prop}
@@ -1190,7 +1208,10 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 \pf
 \step{1}{\assume{$\forall i \in I. H(i) \neq \emptyset$}}
 \step{2}{\pflet{$R = \{ (i,x) \mid i \in I, x \in H(i) \}$}}
-\step{3}{\pick\ a function $f \subseteq R$ such that $\dom f = \dom R$}
+\step{3}{\pick\ a function $f : I \rightarrow \bigcup_{i \in I} H(i)$ such that $f \subseteq R$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:AxChoice}.
+\end{proof}
 \step{4}{$f \in \prod_{i \in I} H(i)$}
 \qed
 \end{proof}
