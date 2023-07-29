@@ -1139,23 +1139,34 @@ Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ i
 \pf\ By an Axiom of Replacement, we have $R = \{ \mathbf{F}(x) \mid x \in A \}$ is a set. Hence $\mathbf{F}$ is a set since $\mathbf{F} \subseteq A \times R$. \qed
 \end{proof}
 
-\begin{df}[Function Set]
-Given a set $A$ and a class $\mathbf{B}$, we write $\mathbf{B}^A$ for the class of all functions $A \rightarrow \mathbf{B}$.
+\begin{df}[Dependent Product Set]
+Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write $\prod_{i \in I} \mathbf{H}(i)$ for the class of all functions $f : I \rightarrow \bigcup_{i \in I} \mathbf{H}(i)$ such that $\forall i \in I. f(i) \in \mathbf{H}(i)$.
+
+We write $\mathbf{B}^I$ for $\prod_{i \in I} \mathbf{B}$ where $\mathbf{B}$ does not depend on $I$.
 \end{df}
 
-\begin{prop}
-If $A$ and $B$ are sets then $B^A$ is a set.
-\end{prop}
+\begin{props}
+Let $\mathbf{H}(i)$ be a class with a parameter. Then the following is a theorem:
+
+Let $I$ be a set. Assume that, for all $i \in I$, the class $\mathbf{H}(i)$ is a set. Then $\prod_{i \in I} \mathbf{H}(i)$ is a set.
+\end{props}
 
 \begin{proof}
-\pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
+\pf
+\step{1}{$\{ \mathbf{H}(i) \mid i \in I \}$ is a set.}
+\begin{proof}
+	\pf\ By an Axiom of Replacement.
+\end{proof}
+\step{2}{$\bigcup_{i \in I} \mathbf{H}(i)$ is a set.}
+\step{3}{$\prod_{i \in I} \mathbf{H}(i)$ is a set.}
+\begin{proof}
+	\pf\ It is a subset of $\mathcal{P}\left( I \times \bigcup_{i \in I} \mathbf{H}(i) \right)$.
+\end{proof}
+\qed
 \end{proof}
 
 \section{Dependent Product Sets}
 
-\begin{df}
-Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write $\prod_{i \in I} \mathbf{H}(i)$ for the class of all functions $f$ with $\dom f = I$ and $\forall i \in I. f(i) \in \mathbf{H}(i)$.
-\end{df}
 
 \begin{prop}
 If $I$ is a set and $H(i)$ is a set for all $i \in I$, then $\prod_{i \in I} H(i)$ is a set.
