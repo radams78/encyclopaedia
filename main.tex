@@ -848,6 +848,7 @@ $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
 \end{proof}
 
 \begin{props}
+\label{prop:compinj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$, $\mathbf{G}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrowtail \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{C}$.
@@ -901,17 +902,32 @@ Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow
 Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
 \end{df}
 
-\begin{prop}
+\begin{props}
 \label{prop:idsurj}
 For any class $\mathbf{A}$, the following is a theorem:
 
 $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is surjective.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf\ For any $y \in \mathbf{A}$ we have $\id{\mathbf{A}}(y) = y$. \qed
 \end{proof}
 
+\begin{props}
+\label{prop:compsurj}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
+
+If $\mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \twoheadrightarrow \mathbf{C}$, then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$c \in \mathbf{C}$}}
+\step{2}{\pick\ $b \in \mathbf{B}$ such that $\mathbf{G}(b) = c$.}
+\step{3}{\pick\ $a \in \mathbf{A}$ such that $\mathbf{F}(a) = b$.}
+\step{4}{$(\mathbf{G} \circ \mathbf{F})(a) = c$}
+\qed
+\end{proof}
 \begin{prop}
 Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
 \end{prop}
@@ -948,21 +964,23 @@ Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inv
 Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ is \emph{bijective} or a \emph{bijection}, $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$, iff it is injective and surjective.
 \end{df}
 
-\begin{prop}
+\begin{props}
+\label{prop:idbij}
 For any class $\mathbf{A}$, the following is a theorem:
 
 The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bijection.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed	
 \end{proof}
 
-\begin{prop}
+\begin{props}
+\label{prop:invbij}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
 
 If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{B} \approx \mathbf{A}$.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -998,6 +1016,17 @@ If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{
 	\pf\ For all $a \in \mathbf{A}$ we have $\mathbf{F}^{-1}(\mathbf{F}(a)) = a$.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{props}
+\label{prop:compbij}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
+
+If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \approx \mathbf{C}$ then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \approx \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:compinj} and \ref{prop:compsurj}. \qed
 \end{proof}
 
 \subsection{Restrictions}
@@ -1287,36 +1316,6 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
 \end{df}
 
-\begin{prop}
-Equinumerosity is an equivalence relation on the class of all sets.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{For any set $A$ we have $A \approx A$.}
-\begin{proof}
-	\pf\ We have $\mathrm{id}_A$ is a bijection between $A$ and $A$.
-\end{proof}
-\step{2}{If $A \approx B$ then $B \approx A$.}
-\begin{proof}
-	\pf\ If $f : A \approx B$ then $f^{-1} : B \approx A$.
-\end{proof}
-\step{3}{If $A \approx B$ and $B \approx C$ then $A \approx C$.}
-\begin{proof}
-	\pf\ If $f : A \approx B$ and $g : B \approx C$ then $g \circ f : A \approx C$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $2 = \{ \emptyset, \{ \emptyset\} \}$. 
-For any set $A$ we have $\mathcal{P} A \approx 2^A$.
-\end{prop}
-
-\begin{proof}
-\pf\ The function $H : \mathcal{P} A \rightarrow 2^A$ defined by $H(S)(a) = \{\emptyset\}$ if $a \in S$ and $\emptyset$ if $a \notin S$ is a bijection. \qed
-\end{proof}
-
 \begin{thm}[Cantor 1873]
 No set is equinumerous to its power set.
 \end{thm}
@@ -1333,6 +1332,8 @@ No set is equinumerous to its power set.
 \end{proof}
 \qed
 \end{proof}
+
+\section{Domination}
 
 \begin{df}[Dominate]
 A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
@@ -1361,92 +1362,202 @@ Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $
 \qed
 \end{proof}
 
-\section{Transfinite Recursion}
+\chapter{Equivalence Relations}
 
-\begin{thms}[Transfinite Recursion Theorem Schema]
-For any property $G(x,y)$, the following is a theorem:
+\begin{df}[Equivalence Relation]
+An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
+\end{df}
 
-Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there exists a unique $y$ such that $G(f,y)$. Then there exists a unique function $F$ such that $\dom F = A$ and
-\[ \forall t \in A. G(F \restriction \seg t, F(t)) \enspace . \]
-\end{thms}
+\begin{prop}
+Equinumerosity is an equivalence relation on the class of all sets.
+\end{prop}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:idbij}, \ref{prop:invbij}, \ref{prop:compbij}. \qed
+\end{proof}
+
+\begin{df}[Respects]
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ \emph{respects} $\mathbf{A}$ iff, whenever $(x,y) \in \mathbf{R}$, then $\mathbf{F}(x) = \mathbf{F}(y)$.
+\end{df}
+
+\begin{df}[Equivalence Class]
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph{equivalence class} of $a$ \emph{modulo} $\mathbf{R}$ is
+\[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
+\end{df}
+
+\begin{prop}
+\label{prop:eqclassequal}
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $a \mathbf{R} b$.
+\end{prop}
 
 \begin{proof}
 \pf
-\step{1}{For $t \in A$, let us say that a function $v$ is \emph{$G$-constructed up to $t$} iff $\dom v = \{x \in A \mid x \leq t \}$ and
-\[ \forall x \in \dom v. G(v \restriction \seg x, v(x)) \enspace . \]}
-\step{2}{For all $t_1, t_2 \in A$ with $t_1 \leq t_2$, if $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$, then $\forall x \leq t_1. v_1(x) = v_2(x)$.}
+\step{1}{If $[a]_\mathbf{R} = [b]_\mathbf{R}$ then $a \mathbf{R} b$.}
 \begin{proof}
-	\step{a}{\pflet{$x \in A$}}
-	\step{b}{\assume{$\forall y < x. (y \leq t_1 \Rightarrow v_1(y) = v_2(y))$}}
-	\step{c}{\assume{$x \leq t_1$}}
-	\step{d}{$G(v_1 \restriction \seg x, v_1(x))$}
-	\step{e}{$G(v_2 \restriction \seg x, v_2(x))$}
-	\step{f}{$v_1 \restriction \seg x = v_2 \restriction \seg x$}
-	\step{g}{$v_1(x) = v_2(x)$}
-	\qedstep
+	\step{a}{\assume{$[a]_\mathbf{R} = [b]_\mathbf{R}$}}
+	\step{b}{$b\mathbf{R}b$}
 	\begin{proof}
-		\pf\ By transfinite induction.
+		\pf\ Reflexivity
 	\end{proof}
+	\step{c}{$b \in [b]_\mathbf{R}$}
+	\step{d}{$b \in [a]_\mathbf{R}$}
+	\step{e}{$a\mathbf{R}b$}
 \end{proof}
-\step{3}{Let $\mathcal{K}$ be the set of all functions $v$ such that there exists $t \in A$ such that $v$ is $G$-constructed up to $t$.}
+\step{2}{If $a\mathbf{R}b$ then $[a]_\mathbf{R} = [b]_\mathbf{R}$.}
 \begin{proof}
-	\pf\ By an Axiom of Replacement using \stepref{2}.
-\end{proof}
-\step{4}{\pflet{$F = \bigcup \mathcal{K}$}}
-\step{5}{$F$ is a function.}
-\begin{proof}
-	\step{a}{\pflet{$(x,y_1),(x,y_2) \in F$}}
-	\step{b}{\pick\ $v_1,v_2 \in \mathcal{K}$ such that $v_1(x) = y_1$ and $v_2(x) = y_2$.}
-	\step{c}{\pick\ $t_1, t_2 \in A$ such that $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$.}
-	\step{d}{\assume{w.l.o.g. $t_1 \leq t_2$}}
-	\step{e}{$v_1(x) = v_2(x)$}
+	\step{a}{For all $x,y \in \mathbf{A}$, if $x \mathbf{R}y$ then $[y]_\mathbf{R} \subseteq [x]_\mathbf{R}$}
 	\begin{proof}
-		\pf\ \stepref{2}.
-	\end{proof}
-	\step{f}{$y_1 = y_2$}
-\end{proof}
-\step{6}{$\forall x \in \dom F. G(F \restriction \seg x, F(x))$}
-\begin{proof}
-	\step{a}{\pflet{$x \in \dom F$}}
-	\step{b}{\pick\ $v \in \mathcal{K}$ such that $v(x) = F(x)$}
-	\step{c}{\pick\ $t$ such that $v$ is $G$-constructed up to $t$.}
-	\step{d}{$G(v \restriction \seg x, v(x))$}
-	\step{e}{$v \restriction \seg x = F \restriction \seg x$}
-	\begin{proof}
-		\step{i}{\pflet{$y < x$} \prove{$v(y) = F(y)$}}
-		\step{ii}{$y \in \dom F$}
+		\step{i}{\pflet{$x,y \in \mathbf{A}$}}
+		\step{ii}{\assume{$x\mathbf{R}y$}}
+		\step{iii}{\pflet{$t \in [y]_\mathbf{R}$}}
+		\step{iv}{$y\mathbf{R}t$}
+		\step{v}{$x\mathbf{R}t$}
 		\begin{proof}
-			\pf\ Since $y \in \dom v$ and $v \in \mathcal{K}$.
+			\pf\ Transitivity, \stepref{ii}, \stepref{iv}.
 		\end{proof}
-		\step{iii}{\pick\ $u \in \mathcal{K}$ such that $u(y) = F(y)$}
-		\step{iv}{$u(y) = v(y)$}
-		\begin{proof}
-			\pf\ \stepref{2}.
-		\end{proof}
-		\step{v}{$v(y) = F(y)$}
+		\step{vi}{$t \in [x]_\mathbf{R}$}
 	\end{proof}
-	\step{f}{$G(F \restriction \seg x, F(x))$}
-\end{proof}
-\step{7}{$\dom F = A$}
-\begin{proof}
-	\step{a}{\assume{$\dom F \neq A$}}
-	\step{b}{\pflet{$t$ be least in $A - \dom F$}}
-	\step{c}{$\seg t = \dom F$}
-	\step{d}{\pflet{$y$ be the unique object such that $G(F, y)$}}
-	\step{e}{\pflet{$v = F \cup \{(t,y)\}$}}
-	\step{f}{$v$ is $G$-constructed up to $t$.}
-	\step{g}{$t \in \dom F$}
-	\qedstep
+	\step{b}{\assume{$a\mathbf{R}b$}}
+	\step{c}{$[b]_\mathbf{R} \subseteq [a]_\mathbf{R}$}
 	\begin{proof}
-		\pf\ This is a contradiction.
+		\pf\ \stepref{a}, \stepref{b}.
 	\end{proof}
-\end{proof}
-\step{8}{$F$ is unique.}
-\begin{proof}
-	\pf\ If $F'$ also satisfies the theorem, prove $F(x) = F'(x)$ by transfinite induction on $x$.
+	\step{d}{$b\mathbf{R}a$}
+	\begin{proof}
+		\pf\ Symmetry, \stepref{b}.
+	\end{proof}
+	\step{e}{$[a]_\mathbf{R} \subseteq [b]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{d}.
+	\end{proof}
+	\step{f}{$[a]_\mathbf{R} = [b]_\mathbf{R}$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{e}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Partition]
+A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that is disjoint and exhaustive, i.e.
+\begin{enumerate}
+\item no two different sets in $\Pi$ have any common elements, and
+\item each element of $A$ is in some set in $\Pi$.
+\end{enumerate}
+\end{df}
+
+\begin{df}
+Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
+\end{df}
+
+\begin{thm}
+Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
+\[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
+In this case, $\hat{F}$ is unique.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ respects $R$ then there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$.}
+\begin{proof}
+	\step{a}{\assume{$F$ respects $R$.}}
+	\step{b}{\pflet{$\hat{F} = \{([a]_R, F(a)) \mid a \in A \}$}}
+	\step{c}{$\hat{F}$ is a function.}
+	\begin{proof}
+		\step{i}{\assume{$a,a' \in A$ and $[a]_R = [a']_R$} \prove{$F(a) = F(a')$}}
+		\step{ii}{$(a,a') \in R$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:eqclassequal}.
+		\end{proof}
+		\step{iii}{$F(a) = F(a')$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+	\end{proof}
+	\step{d}{$\dom \hat{F} = A / R$}
+	\step{e}{$\ran \hat{F} \subseteq \mathbf{B}$}
+	\step{f}{$\forall a \in A. \hat{F}([a]_R) = F(a)$}
+\end{proof}
+\step{2}{If there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$ then $F$ respects $R$.}
+\begin{proof}
+	\step{a}{\assume{$\hat{F} : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. \hat{F}([a]_R) = F(a)$}}
+	\step{b}{\pflet{$a,a' \in A$}}
+	\step{c}{\assume{$(a,a') \in R$}}
+	\step{d}{$[a]_R = [a']_R$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:eqclassequal}.
+		\end{proof}
+	\step{e}{$F(a) = F(a')$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+\end{proof}
+\step{3}{If $G, H : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. G([a]_R) = H([a]_R)$ then $G = H$.}
+\qed
+\end{proof}
+
+
+\begin{prop}
+Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{2}{Every member of $A/R$ is nonempty.}
+\begin{proof}
+	\pf\ Since $a \in [a]_R$ by reflexivity.
+\end{proof}
+\step{3}{No two different sets in $A/R$ have any common elements.}
+\begin{proof}
+	\step{a}{\pflet{$[a]_R, [b]_R \in A/R$}}
+	\step{b}{\pflet{$c \in [a]_R \cap [b]_R$} \prove{$[a]_R = [b]_R$}}
+	\step{c}{$aRc$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{$bRc$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{e}{$cRb$}
+	\begin{proof}
+		\pf\ Symmetry, \stepref{d}
+	\end{proof}
+	\step{f}{$aRb$}
+	\begin{proof}
+		\pf\ Transitivity, \stepref{c}, \stepref{e}
+	\end{proof}
+	\step{g}{$[a]_R = [b]_R$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:eqclassequal}, \stepref{f}
+	\end{proof}
+\end{proof}
+\step{4}{Each element of $A$ is in some set in $A/R$.}
+\begin{proof}
+	\pf\ Since $a \in [a]_R$ by reflexivity.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any partition $P$ of a set $A$, there exists a unique equivalence relation $R$ on $A$ such that $A/R = P$, namely $xRy$ iff $\exists X \in P(x \in X \wedge y \in X)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Natural Map]
+Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} $A \rightarrow A / R$ is the function that maps $a \in A$ to $[a]_R$.
+\end{df}
+
+\chapter{Ordering Relations}
+
+\subsection{Structures}
+
+\begin{df}[Structure]
+A \emph{structure} is a pair $(A,R)$ where $A$ is a set and $R$ is a binary relation on $A$.
+\end{df}
 
 \section{Structure Isomorphisms}
 
@@ -1696,195 +1807,6 @@ e & \text{if } B - F(\seg t) = \emptyset
 \end{proof}
 \qed
 \end{proof}
-
-\chapter{Equivalence Relations}
-
-\begin{df}[Equivalence Relation]
-An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
-\end{df}
-
-\begin{df}[Respects]
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ \emph{respects} $\mathbf{A}$ iff, whenever $(x,y) \in \mathbf{R}$, then $\mathbf{F}(x) = \mathbf{F}(y)$.
-\end{df}
-
-\begin{df}[Equivalence Class]
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph{equivalence class} of $a$ \emph{modulo} $\mathbf{R}$ is
-\[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
-\end{df}
-
-\begin{prop}
-\label{prop:eqclassequal}
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $a \mathbf{R} b$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $[a]_\mathbf{R} = [b]_\mathbf{R}$ then $a \mathbf{R} b$.}
-\begin{proof}
-	\step{a}{\assume{$[a]_\mathbf{R} = [b]_\mathbf{R}$}}
-	\step{b}{$b\mathbf{R}b$}
-	\begin{proof}
-		\pf\ Reflexivity
-	\end{proof}
-	\step{c}{$b \in [b]_\mathbf{R}$}
-	\step{d}{$b \in [a]_\mathbf{R}$}
-	\step{e}{$a\mathbf{R}b$}
-\end{proof}
-\step{2}{If $a\mathbf{R}b$ then $[a]_\mathbf{R} = [b]_\mathbf{R}$.}
-\begin{proof}
-	\step{a}{For all $x,y \in \mathbf{A}$, if $x \mathbf{R}y$ then $[y]_\mathbf{R} \subseteq [x]_\mathbf{R}$}
-	\begin{proof}
-		\step{i}{\pflet{$x,y \in \mathbf{A}$}}
-		\step{ii}{\assume{$x\mathbf{R}y$}}
-		\step{iii}{\pflet{$t \in [y]_\mathbf{R}$}}
-		\step{iv}{$y\mathbf{R}t$}
-		\step{v}{$x\mathbf{R}t$}
-		\begin{proof}
-			\pf\ Transitivity, \stepref{ii}, \stepref{iv}.
-		\end{proof}
-		\step{vi}{$t \in [x]_\mathbf{R}$}
-	\end{proof}
-	\step{b}{\assume{$a\mathbf{R}b$}}
-	\step{c}{$[b]_\mathbf{R} \subseteq [a]_\mathbf{R}$}
-	\begin{proof}
-		\pf\ \stepref{a}, \stepref{b}.
-	\end{proof}
-	\step{d}{$b\mathbf{R}a$}
-	\begin{proof}
-		\pf\ Symmetry, \stepref{b}.
-	\end{proof}
-	\step{e}{$[a]_\mathbf{R} \subseteq [b]_\mathbf{R}$}
-	\begin{proof}
-		\pf\ \stepref{a}, \stepref{d}.
-	\end{proof}
-	\step{f}{$[a]_\mathbf{R} = [b]_\mathbf{R}$}
-	\begin{proof}
-		\pf\ \stepref{c}, \stepref{e}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Partition]
-A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that is disjoint and exhaustive, i.e.
-\begin{enumerate}
-\item no two different sets in $\Pi$ have any common elements, and
-\item each element of $A$ is in some set in $\Pi$.
-\end{enumerate}
-\end{df}
-
-\begin{df}
-Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
-\end{df}
-
-\begin{thm}
-Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
-\[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
-In this case, $\hat{F}$ is unique.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{If $F$ respects $R$ then there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$.}
-\begin{proof}
-	\step{a}{\assume{$F$ respects $R$.}}
-	\step{b}{\pflet{$\hat{F} = \{([a]_R, F(a)) \mid a \in A \}$}}
-	\step{c}{$\hat{F}$ is a function.}
-	\begin{proof}
-		\step{i}{\assume{$a,a' \in A$ and $[a]_R = [a']_R$} \prove{$F(a) = F(a')$}}
-		\step{ii}{$(a,a') \in R$}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:eqclassequal}.
-		\end{proof}
-		\step{iii}{$F(a) = F(a')$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-	\end{proof}
-	\step{d}{$\dom \hat{F} = A / R$}
-	\step{e}{$\ran \hat{F} \subseteq \mathbf{B}$}
-	\step{f}{$\forall a \in A. \hat{F}([a]_R) = F(a)$}
-\end{proof}
-\step{2}{If there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$ then $F$ respects $R$.}
-\begin{proof}
-	\step{a}{\assume{$\hat{F} : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. \hat{F}([a]_R) = F(a)$}}
-	\step{b}{\pflet{$a,a' \in A$}}
-	\step{c}{\assume{$(a,a') \in R$}}
-	\step{d}{$[a]_R = [a']_R$}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:eqclassequal}.
-		\end{proof}
-	\step{e}{$F(a) = F(a')$}
-	\begin{proof}
-		\pf\ \stepref{a}
-	\end{proof}
-\end{proof}
-\step{3}{If $G, H : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. G([a]_R) = H([a]_R)$ then $G = H$.}
-\qed
-\end{proof}
-
-
-\begin{prop}
-Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{2}{Every member of $A/R$ is nonempty.}
-\begin{proof}
-	\pf\ Since $a \in [a]_R$ by reflexivity.
-\end{proof}
-\step{3}{No two different sets in $A/R$ have any common elements.}
-\begin{proof}
-	\step{a}{\pflet{$[a]_R, [b]_R \in A/R$}}
-	\step{b}{\pflet{$c \in [a]_R \cap [b]_R$} \prove{$[a]_R = [b]_R$}}
-	\step{c}{$aRc$}
-	\begin{proof}
-		\pf\ \stepref{b}
-	\end{proof}
-	\step{d}{$bRc$}
-	\begin{proof}
-		\pf\ \stepref{b}
-	\end{proof}
-	\step{e}{$cRb$}
-	\begin{proof}
-		\pf\ Symmetry, \stepref{d}
-	\end{proof}
-	\step{f}{$aRb$}
-	\begin{proof}
-		\pf\ Transitivity, \stepref{c}, \stepref{e}
-	\end{proof}
-	\step{g}{$[a]_R = [b]_R$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:eqclassequal}, \stepref{f}
-	\end{proof}
-\end{proof}
-\step{4}{Each element of $A$ is in some set in $A/R$.}
-\begin{proof}
-	\pf\ Since $a \in [a]_R$ by reflexivity.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-For any partition $P$ of a set $A$, there exists a unique equivalence relation $R$ on $A$ such that $A/R = P$, namely $xRy$ iff $\exists X \in P(x \in X \wedge y \in X)$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{df}[Natural Map]
-Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} $A \rightarrow A / R$ is the function that maps $a \in A$ to $[a]_R$.
-\end{df}
-
-\chapter{Ordering Relations}
-
-\subsection{Structures}
-
-\begin{df}[Structure]
-A \emph{structure} is a pair $(A,R)$ where $A$ is a set and $R$ is a binary relation on $A$.
-\end{df}
 
 \subsection{Partial Orders}
 
@@ -2146,6 +2068,93 @@ A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{
 \item Every nonempty subset of $\mathbf{A}$ has a least element.
 \end{itemize}
 \end{df}
+
+\section{Transfinite Recursion}
+
+\begin{thms}[Transfinite Recursion Theorem Schema]
+For any property $G(x,y)$, the following is a theorem:
+
+Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there exists a unique $y$ such that $G(f,y)$. Then there exists a unique function $F$ such that $\dom F = A$ and
+\[ \forall t \in A. G(F \restriction \seg t, F(t)) \enspace . \]
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{For $t \in A$, let us say that a function $v$ is \emph{$G$-constructed up to $t$} iff $\dom v = \{x \in A \mid x \leq t \}$ and
+\[ \forall x \in \dom v. G(v \restriction \seg x, v(x)) \enspace . \]}
+\step{2}{For all $t_1, t_2 \in A$ with $t_1 \leq t_2$, if $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$, then $\forall x \leq t_1. v_1(x) = v_2(x)$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in A$}}
+	\step{b}{\assume{$\forall y < x. (y \leq t_1 \Rightarrow v_1(y) = v_2(y))$}}
+	\step{c}{\assume{$x \leq t_1$}}
+	\step{d}{$G(v_1 \restriction \seg x, v_1(x))$}
+	\step{e}{$G(v_2 \restriction \seg x, v_2(x))$}
+	\step{f}{$v_1 \restriction \seg x = v_2 \restriction \seg x$}
+	\step{g}{$v_1(x) = v_2(x)$}
+	\qedstep
+	\begin{proof}
+		\pf\ By transfinite induction.
+	\end{proof}
+\end{proof}
+\step{3}{Let $\mathcal{K}$ be the set of all functions $v$ such that there exists $t \in A$ such that $v$ is $G$-constructed up to $t$.}
+\begin{proof}
+	\pf\ By an Axiom of Replacement using \stepref{2}.
+\end{proof}
+\step{4}{\pflet{$F = \bigcup \mathcal{K}$}}
+\step{5}{$F$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$(x,y_1),(x,y_2) \in F$}}
+	\step{b}{\pick\ $v_1,v_2 \in \mathcal{K}$ such that $v_1(x) = y_1$ and $v_2(x) = y_2$.}
+	\step{c}{\pick\ $t_1, t_2 \in A$ such that $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$.}
+	\step{d}{\assume{w.l.o.g. $t_1 \leq t_2$}}
+	\step{e}{$v_1(x) = v_2(x)$}
+	\begin{proof}
+		\pf\ \stepref{2}.
+	\end{proof}
+	\step{f}{$y_1 = y_2$}
+\end{proof}
+\step{6}{$\forall x \in \dom F. G(F \restriction \seg x, F(x))$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \dom F$}}
+	\step{b}{\pick\ $v \in \mathcal{K}$ such that $v(x) = F(x)$}
+	\step{c}{\pick\ $t$ such that $v$ is $G$-constructed up to $t$.}
+	\step{d}{$G(v \restriction \seg x, v(x))$}
+	\step{e}{$v \restriction \seg x = F \restriction \seg x$}
+	\begin{proof}
+		\step{i}{\pflet{$y < x$} \prove{$v(y) = F(y)$}}
+		\step{ii}{$y \in \dom F$}
+		\begin{proof}
+			\pf\ Since $y \in \dom v$ and $v \in \mathcal{K}$.
+		\end{proof}
+		\step{iii}{\pick\ $u \in \mathcal{K}$ such that $u(y) = F(y)$}
+		\step{iv}{$u(y) = v(y)$}
+		\begin{proof}
+			\pf\ \stepref{2}.
+		\end{proof}
+		\step{v}{$v(y) = F(y)$}
+	\end{proof}
+	\step{f}{$G(F \restriction \seg x, F(x))$}
+\end{proof}
+\step{7}{$\dom F = A$}
+\begin{proof}
+	\step{a}{\assume{$\dom F \neq A$}}
+	\step{b}{\pflet{$t$ be least in $A - \dom F$}}
+	\step{c}{$\seg t = \dom F$}
+	\step{d}{\pflet{$y$ be the unique object such that $G(F, y)$}}
+	\step{e}{\pflet{$v = F \cup \{(t,y)\}$}}
+	\step{f}{$v$ is $G$-constructed up to $t$.}
+	\step{g}{$t \in \dom F$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{8}{$F$ is unique.}
+\begin{proof}
+	\pf\ If $F'$ also satisfies the theorem, prove $F(x) = F'(x)$ by transfinite induction on $x$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 Let $\mathbf{R}$ be a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a well ordering on $\mathbf{B}$.
@@ -2472,6 +2481,15 @@ For any set $a$, we have $a$ is a transitive set if and only if $a^+$ is a trans
 \begin{df}
 We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
 \end{df}
+
+\begin{prop}
+Let $2 = \{ \emptyset, \{ \emptyset\} \}$. 
+For any set $A$ we have $\mathcal{P} A \approx 2^A$.
+\end{prop}
+
+\begin{proof}
+\pf\ The function $H : \mathcal{P} A \rightarrow 2^A$ defined by $H(S)(a) = \{\emptyset\}$ if $a \in S$ and $\emptyset$ if $a \notin S$ is a bijection. \qed
+\end{proof}
 
 \begin{prop}
 For any ordinal number $\alpha$ we have $\alpha^+$ is an ordinal number.
