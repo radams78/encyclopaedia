@@ -1145,9 +1145,6 @@ If $A$ and $B$ are sets then $B^A$ is a set.
 \pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
 \end{proof}
 
-\begin{df}[Respects]
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ \emph{respects} $\mathbf{A}$ iff, whenever $(x,y) \in \mathbf{R}$, then $\mathbf{F}(x) = \mathbf{F}(y)$.
-\end{df}
 
 \begin{thm}
 Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
@@ -1701,6 +1698,10 @@ e & \text{if } B - F(\seg t) = \emptyset
 
 \begin{df}[Equivalence Relation]
 An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
+\end{df}
+
+\begin{df}[Respects]
+Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ \emph{respects} $\mathbf{A}$ iff, whenever $(x,y) \in \mathbf{R}$, then $\mathbf{F}(x) = \mathbf{F}(y)$.
 \end{df}
 
 \begin{df}[Equivalence Class]
