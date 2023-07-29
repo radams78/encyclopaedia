@@ -729,6 +729,10 @@ An \emph{$n$-ary relation on $\mathbf{A}$} is a class of ordered $n$-tuples all 
 A \emph{function} from $\mathbf{A}$ to $\mathbf{B}$ is a relation $\mathbf{F}$ between $\mathbf{A}$ and $\mathbf{B}$ such that, for all $x \in \mathbf{A}$, there is only one $y$ such that $x \mathbf{F} y$. We denote this $y$ by $\mathbf{F}(x)$.
 \end{df}
 
+\begin{df}[Closed]
+Let $\mathbf{F}$ be a function and $\mathbf{A} \subseteq \dom \mathbf{F}$. Then $\mathbf{A}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{A}. \mathbf{F}(x) \in \mathbf{A}$.
+\end{df}
+
 \begin{prop}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1144,10 +1148,6 @@ If $A$ and $B$ are sets then $B^A$ is a set.
 \begin{proof}
 \pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
 \end{proof}
-
-\begin{df}[Closed]
-Let $\mathbf{F}$ be a function and $\mathbf{A} \subseteq \dom \mathbf{F}$. Then $\mathbf{A}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{A}. \mathbf{F}(x) \in \mathbf{A}$.
-\end{df}
 
 \begin{df}[Binary Operation]
 A \emph{binary operation} on a set $A$ is a function from $A \times A$ into $A$.
