@@ -1145,53 +1145,6 @@ If $A$ and $B$ are sets then $B^A$ is a set.
 \pf\ It is a subset of $\mathcal{P}(A \times B)$. \qed
 \end{proof}
 
-
-\begin{thm}
-Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
-\[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
-In this case, $\hat{F}$ is unique.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{If $F$ respects $R$ then there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$.}
-\begin{proof}
-	\step{a}{\assume{$F$ respects $R$.}}
-	\step{b}{\pflet{$\hat{F} = \{([a]_R, F(a)) \mid a \in A \}$}}
-	\step{c}{$\hat{F}$ is a function.}
-	\begin{proof}
-		\step{i}{\assume{$a,a' \in A$ and $[a]_R = [a']_R$} \prove{$F(a) = F(a')$}}
-		\step{ii}{$(a,a') \in R$}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:eqclassequal}.
-		\end{proof}
-		\step{iii}{$F(a) = F(a')$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-	\end{proof}
-	\step{d}{$\dom \hat{F} = A / R$}
-	\step{e}{$\ran \hat{F} \subseteq \mathbf{B}$}
-	\step{f}{$\forall a \in A. \hat{F}([a]_R) = F(a)$}
-\end{proof}
-\step{2}{If there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$ then $F$ respects $R$.}
-\begin{proof}
-	\step{a}{\assume{$\hat{F} : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. \hat{F}([a]_R) = F(a)$}}
-	\step{b}{\pflet{$a,a' \in A$}}
-	\step{c}{\assume{$(a,a') \in R$}}
-	\step{d}{$[a]_R = [a']_R$}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:eqclassequal}.
-		\end{proof}
-	\step{e}{$F(a) = F(a')$}
-	\begin{proof}
-		\pf\ \stepref{a}
-	\end{proof}
-\end{proof}
-\step{3}{If $G, H : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. G([a]_R) = H([a]_R)$ then $G = H$.}
-\qed
-\end{proof}
-
 \begin{df}[Strictly Monotone]
 Let $(A,<_A)$ and $(B, <_B)$ be linearly ordered sets. A function $f : A \rightarrow B$ is \emph{strictly monotone} iff, whenever $x <_A y$, then $f(x) <_B f(y)$.
 \end{df}
@@ -1773,6 +1726,53 @@ A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that i
 \begin{df}
 Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
 \end{df}
+
+\begin{thm}
+Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
+\[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
+In this case, $\hat{F}$ is unique.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ respects $R$ then there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$.}
+\begin{proof}
+	\step{a}{\assume{$F$ respects $R$.}}
+	\step{b}{\pflet{$\hat{F} = \{([a]_R, F(a)) \mid a \in A \}$}}
+	\step{c}{$\hat{F}$ is a function.}
+	\begin{proof}
+		\step{i}{\assume{$a,a' \in A$ and $[a]_R = [a']_R$} \prove{$F(a) = F(a')$}}
+		\step{ii}{$(a,a') \in R$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:eqclassequal}.
+		\end{proof}
+		\step{iii}{$F(a) = F(a')$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+	\end{proof}
+	\step{d}{$\dom \hat{F} = A / R$}
+	\step{e}{$\ran \hat{F} \subseteq \mathbf{B}$}
+	\step{f}{$\forall a \in A. \hat{F}([a]_R) = F(a)$}
+\end{proof}
+\step{2}{If there exists $\hat{F} : A / R \rightarrow \mathbf{B}$ such that $\forall a \in A. \hat{F}([a]_R) = F(a)$ then $F$ respects $R$.}
+\begin{proof}
+	\step{a}{\assume{$\hat{F} : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. \hat{F}([a]_R) = F(a)$}}
+	\step{b}{\pflet{$a,a' \in A$}}
+	\step{c}{\assume{$(a,a') \in R$}}
+	\step{d}{$[a]_R = [a']_R$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:eqclassequal}.
+		\end{proof}
+	\step{e}{$F(a) = F(a')$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+\end{proof}
+\step{3}{If $G, H : A / R \rightarrow \mathbf{B}$ and $\forall a \in A. G([a]_R) = H([a]_R)$ then $G = H$.}
+\qed
+\end{proof}
+
 
 \begin{prop}
 Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
