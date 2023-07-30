@@ -2632,6 +2632,7 @@ Every element of an ordinal is an ordinal.
 \end{proof}
 
 \begin{prop}
+\label{prop:ordtrichotomy}
 Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, $\alpha = \beta$, $\beta \in \alpha$ holds.
 \end{prop}
 
@@ -2685,6 +2686,7 @@ Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, 
 \end{proof}
 
 \begin{prop}
+\label{prop:ordwellord}
 Any nonempty set $S$ of ordinal numbers has a least element.
 \end{prop}
 
@@ -2698,6 +2700,36 @@ Any nonempty set $S$ of ordinal numbers has a least element.
 \step{3}{\case{$\beta \cap S \neq \emptyset$}}
 \begin{proof}
 	\pf\ The least element of $\beta \cap S$ is least in $S$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+The class $\mathbf{On}$ is well ordered by $\in$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathbf{E} = \{(x,y) \in \mathbf{On}^2 \mid x \in y \}$}}
+\step{2}{$\mathbf{E}$ is transitive.}
+\begin{proof}
+	\pf\ If $\alpha \in \beta \in \gamma$ then $\alpha \in \gamma$ because every ordinal is a transitive set.
+\end{proof}
+\step{3}{$\mathbf{E}$ satisfies trichotomy.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ordtrichotomy}.
+\end{proof}
+\step{3a}{$\mathbf{E}$ linearly orders $\mathbf{On}$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:linord}.
+\end{proof}
+\step{4}{For any $\alpha \in \mathbf{On}$, the class $\{ \beta \in \mathbf{On} \mid \beta \mathbf{E} \alpha \}$ is a set.}
+\begin{proof}
+	\pf\ It is equal to $\alpha$.
+\end{proof}
+\step{5}{Every nonempty subset of $\mathbf{On}$ has an $\mathbf{E}$-least element.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ordwellord}.
 \end{proof}
 \qed
 \end{proof}
