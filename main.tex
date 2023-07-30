@@ -1556,20 +1556,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 \chapter{Ordering Relations}
 
 
-\begin{prop}
-There is at most one isomorphism between two well ordered sets.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A$ and $B$ be well ordered sets.}}
-\step{2}{\pflet{$f, g : A \cong B$ be isomorphisms.}}
-\step{3}{$\forall x \in A. f(x) = g(x)$}
-\begin{proof}
-	\pf\ Transfinite induction on $x$.
-\end{proof}
-\qed
-\end{proof}
 
 \begin{thm}
 Let $A$ and $B$ be well ordered sets. Then one of the following holds: $A \cong B$; there exists $b \in B$ such that $A \cong \seg b$; there exists $a \in A$ such that $\seg a \cong B$.
@@ -2032,6 +2018,21 @@ A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{
 \item Every nonempty subset of $\mathbf{A}$ has a least element.
 \end{itemize}
 \end{df}
+
+\begin{prop}
+There is at most one isomorphism between two well ordered sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be well ordered sets.}}
+\step{2}{\pflet{$f, g : A \cong B$ be isomorphisms.}}
+\step{3}{$\forall x \in A. f(x) = g(x)$}
+\begin{proof}
+	\pf\ Transfinite induction on $x$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
