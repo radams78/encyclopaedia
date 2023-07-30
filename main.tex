@@ -425,6 +425,7 @@ If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive 
 \end{proof}
 
 \begin{props}
+\label{prop:powtransitive}
 For any class $\mathbf{A}$, the following is a theorem:
 
 We have $\mathbf{A}$ is a transitive class if and only if $\mathcal{P} \mathbf{A}$ is a transitive class.
@@ -3926,6 +3927,31 @@ For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
 \pf\ By trichotomy. \qed
 \end{proof}
 
+\begin{thm}
+For natural numbers $m$, $n$ and $p$, if $m < n$ and $p \neq 0$ then $mp < np$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
+\step{2}{\assume{$m < n$} \prove{$\forall p. mp^+ < np^+$}}
+\step{3}{$m0^+ < n0^+$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:multone}.
+\end{proof}
+\step{4}{For any natural number $p$, if $mp < np$ then $mp^+ < np^+$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		mp^+ & = mp + m \\
+		& < np + m & (\text{induction hypothesis. Theorem \ref{thm:pluslt}}) \\
+		& < np + n & (\text{\stepref{2}, Theorem \ref{thm:pluslt}}) \\
+		& = np^+
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{cor}
 For natural numbers $m$, $n$ and $p$, if $p \neq 0$ then $m < n$ if and only if $mp < np$.
 \end{cor}
@@ -3998,6 +4024,31 @@ If $A$ is countable then $A^*$ is countable.
 
 \begin{proof}
 \pf\ For any $n$, the set $A^n$ is countable, and $A^*$ is equinumerous with $\bigcup_n A^n$. \qed
+\end{proof}
+
+\chapter{Rank of a Set}
+
+\begin{df}[Cumulative Hierarchy]
+Define the function $V : \mathbf{On} \rightarrow \mathbf{V}$ by transfinite recursion thus:
+\[ V_\alpha = \bigcup_{\beta < \alpha} \mathcal{P} V_\beta \]
+\end{df}
+
+\begin{prop}
+For all $\alpha \in \mathbf{On}$, $V_\alpha$ is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha \in \mathbf{On}$}}
+\step{2}{\assume{as transfinite induction hypothesis $\forall \beta < \alpha. V_\beta$ is a transitive set.}}
+\step{3}{For all $\beta < \alpha$, $\mathcal{P} V_\beta$ is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:powtransitive}.
+\end{proof}
+\step{4}{$V_\alpha$ is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:uniontransitive}.
+\end{proof}
 \end{proof}
 
 \chapter{Group Theory}
@@ -4657,7 +4708,7 @@ We prove$\sim$ is an equivalence relation on $\mathbb{N}^2$.
 	\step{c}{$m + q + s = n + q + r$}
 	\step{d}{$m + s = n + r$}
 	\begin{proof}
-		\pf\ Corollary \ref{cor:pluscancel}.
+		\pf\ Theorem \ref{thm:pluscancel}.
 	\end{proof}
 \end{proof}
 \qed
