@@ -1563,6 +1563,43 @@ Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a rela
 We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
 \end{df}
 
+\begin{prop}
+If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{R}^{-1}$ is reflexive.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathbf{A}$}}
+	\step{b}{$x \mathbf{R} x$}
+	\begin{proof}
+		\pf\ Since $\mathbf{R}$ is reflexive.
+	\end{proof}
+	\step{c}{$x \mathbf{R}^{-1} x$}
+\end{proof}
+\step{2}{$\mathbf{R}^{-1}$ is antisymmetric.}
+\begin{proof}
+	\step{a}{\assume{$x \mathbf{R}^{-1} y$ and $y \mathbf{R}^{-1} x$}}
+	\step{b}{$y \mathbf{R} x$ and $x \mathbf{R} y$}
+	\step{c}{$x = y$}
+	\begin{proof}
+		\pf\ Since $\mathbf{R}$ is antisymmetric.
+	\end{proof}
+\end{proof}
+\step{3}{$\mathbf{R}^{-1}$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$x \mathbf{R}^{-1} y$ and $y \mathbf{R}^{-1} z$}}
+	\step{b}{$y \mathbf{R} x$ and $z \mathbf{R} y$}
+	\step{c}{$z \mathbf{R} x$}
+	\begin{proof}
+		\pf\ Since $\mathbf{R}$ is transitive.
+	\end{proof}
+	\step{d}{$x \mathbf{R}^{-1} z$}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Partially Ordered Set]
 A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
 \end{df}
@@ -1570,14 +1607,6 @@ A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ i
 \begin{df}[Strictly Monotone]
 Let $(A,<_A)$ and $(B, <_B)$ be posets. A function $f : A \rightarrow B$ is \emph{strictly monotone} iff, whenever $x <_A y$, then $f(x) <_B f(y)$.
 \end{df}
-
-\begin{prop}
-If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
 
 \begin{prop}
 Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
