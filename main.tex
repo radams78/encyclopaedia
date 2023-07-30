@@ -705,6 +705,24 @@ A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $(x,y) \in \mathbf{R}$
 A relation $\mathbf{R}$ is \emph{antisymmetric} iff, whenever $x \mathbf{R} y$ and $y \mathbf{R} x$, then $x = y$.
 \end{df}
 
+\begin{props}
+\label{prop:invantisym}
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
+
+If $\mathbf{R}$ is an antisymmetric relation on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$x \mathbf{R}^{-1} y$ and $y \mathbf{R}^{-1} x$}}
+\step{2}{$y \mathbf{R} x$ and $x \mathbf{R} y$}
+\step{3}{$x = y$}
+\begin{proof}
+	\pf\ Since $\mathbf{R}$ is antisymmetric.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Transitive]
 A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $(x,y), (y,z) \in \mathbf{R}$, then $(x,z) \in \mathbf{R}$.
 \end{df}
@@ -1581,9 +1599,11 @@ Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a rela
 We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
 \end{df}
 
-\begin{prop}
+\begin{props}
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
+
 If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf
@@ -1593,12 +1613,7 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \end{proof}
 \step{2}{$\mathbf{R}^{-1}$ is antisymmetric.}
 \begin{proof}
-	\step{a}{\assume{$x \mathbf{R}^{-1} y$ and $y \mathbf{R}^{-1} x$}}
-	\step{b}{$y \mathbf{R} x$ and $x \mathbf{R} y$}
-	\step{c}{$x = y$}
-	\begin{proof}
-		\pf\ Since $\mathbf{R}$ is antisymmetric.
-	\end{proof}
+	\pf\ Proposition \ref{prop:invantisym}.
 \end{proof}
 \step{3}{$\mathbf{R}^{-1}$ is transitive.}
 \begin{proof}
