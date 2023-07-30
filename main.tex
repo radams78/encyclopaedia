@@ -1555,18 +1555,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 
 \chapter{Ordering Relations}
 
-\begin{thm}
-Isomorphism is an equivalence relation on the class of structures.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{$\mathrm{id}_A : (A,R) \cong (A,R)$}
-\step{2}{If $f : (A,R) \cong (B,S)$ then $f^{-1} : (B,S) \cong (A,R)$.}
-\step{3}{If $f : (A,R) \cong (B,S)$ and $g : (B,S) \cong (C,T)$ then $g \circ f : (A,R) \cong (C,T)$.}
-\qed
-\end{proof}
-
 \begin{prop}
 Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
 \begin{enumerate}
@@ -1821,7 +1809,7 @@ Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be
 \end{proof}
 \qed
 \end{proof}
-
+	
 \begin{thm}[Knaster Fixed-Point Theorem]
 Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
 \end{thm}
