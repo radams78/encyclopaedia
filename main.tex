@@ -1557,35 +1557,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 
 
 
-\begin{thm}
-Let $A$ and $B$ be well ordered sets. Then one of the following holds: $A \cong B$; there exists $b \in B$ such that $A \cong \seg b$; there exists $a \in A$ such that $\seg a \cong B$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ $e$ that is not in $A$ or $B$.}
-\step{2}{\pflet{$F : A \rightarrow B \cup \{e\}$ be the function defined by transfinite recursion thus:
-\[ F(t) =
-\begin{cases}
-\text{the least element of } B - F(\seg t) & \text{if } B - F(\seg t) \neq \emptyset \\
-e & \text{if } B - F(\seg t) = \emptyset
-\end{cases} \]}}
-\step{3}{\case{$e \in \ran F$}}
-\begin{proof}
-	\step{a}{\pflet{$t$ be least such that $F(t) = e$}}
-	\step{b}{$F \restriction \seg t : \seg t \cong B$}
-\end{proof}
-\step{4}{\case{$\ran F = B$}}
-\begin{proof}
-	\pf\ We have $F : A \cong B$
-\end{proof}
-\step{5}{\case{$\ran F \subsetneq B$}}
-\begin{proof}
-	\step{a}{\pflet{$b$ be the least element of $B - \ran F$}}
-	\step{b}{$F : A \cong \seg b$}
-\end{proof}
-\qed
-\end{proof}
 
 \subsection{Partial Orders}
 
@@ -2018,6 +1989,36 @@ A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{
 \item Every nonempty subset of $\mathbf{A}$ has a least element.
 \end{itemize}
 \end{df}
+
+\begin{thm}
+Let $A$ and $B$ be well ordered sets. Then one of the following holds: $A \cong B$; there exists $b \in B$ such that $A \cong \seg b$; there exists $a \in A$ such that $\seg a \cong B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $e$ that is not in $A$ or $B$.}
+\step{2}{\pflet{$F : A \rightarrow B \cup \{e\}$ be the function defined by transfinite recursion thus:
+\[ F(t) =
+\begin{cases}
+\text{the least element of } B - F(\seg t) & \text{if } B - F(\seg t) \neq \emptyset \\
+e & \text{if } B - F(\seg t) = \emptyset
+\end{cases} \]}}
+\step{3}{\case{$e \in \ran F$}}
+\begin{proof}
+	\step{a}{\pflet{$t$ be least such that $F(t) = e$}}
+	\step{b}{$F \restriction \seg t : \seg t \cong B$}
+\end{proof}
+\step{4}{\case{$\ran F = B$}}
+\begin{proof}
+	\pf\ We have $F : A \cong B$
+\end{proof}
+\step{5}{\case{$\ran F \subsetneq B$}}
+\begin{proof}
+	\step{a}{\pflet{$b$ be the least element of $B - \ran F$}}
+	\step{b}{$F : A \cong \seg b$}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 There is at most one isomorphism between two well ordered sets.
