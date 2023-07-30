@@ -1556,66 +1556,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 \chapter{Ordering Relations}
 
 
-\begin{prop}
-\label{prop:orderisoid}
-Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense. Let $\theta : A \rightarrow A$ be a monotone map that is the identity on $B$. Then $\theta = \mathrm{id}_A$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$a \in A$} \prove{$\theta(a) = a$}}
-\step{3}{\pflet{$S(a) = \{b \in B \mid b < a\}$}}
-\step{2}{$S(a)$ is nonempty and bounded above.}
-\begin{proof}
-	\step{a}{$S(a)$ is nonempty.}
-	\begin{proof}
-		\step{i}{\pick\ $a_1 < a$}
-		\begin{proof}
-			\pf\ Since $a$ is not least.
-		\end{proof}
-		\step{ii}{There exists $b \in B$ such that $a_1 < b < a$.}
-	\end{proof}
-	\step{b}{$S(a)$ is bounded above by $a$.}
-\end{proof}
-\step{4}{$\sup S(a) \leq a$}
-\step{5}{$\sup S(a) = a$}
-\begin{proof}
-	\step{a}{\assume{for a contradiction $\sup S(a) < a$}}
-	\step{b}{\pick\ $b \in B$ such that $\sup S(a) < b < a$}
-	\step{c}{$b \in S(a)$}
-	\qedstep
-	\begin{proof}
-		\pf\ This contradicts the fact that $\sup S(a) < b$.
-	\end{proof}
-\end{proof}
-\step{6}{For all $b \in S(a)$ we have $b \leq \theta(a)$}
-\begin{proof}
-	\step{a}{\pflet{$b \in S(a)$}}
-	\step{b}{$b < a$}
-	\step{c}{$\theta(b) \leq \theta(a)$}
-	\step{d}{$b \leq \theta(a)$}
-	\begin{proof}
-		\pf\ $\theta(b) = b$
-	\end{proof}
-\end{proof}
-\step{7}{$a \leq \theta(a)$}
-\begin{proof}
-	\pf\ Since $a = \sup S(a)$ and $\theta(a)$ is an upper bound for $S(a)$.
-\end{proof}
-\step{8}{$a \nless \theta(a)$}
-\begin{proof}
-	\step{a}{\assume{for a contradiction $a < \theta(a)$.}}
-	\step{b}{\pick\ $b \in B$ such that $a < b < \theta(a)$}
-	\step{c}{$\theta(a) \leq \theta(b) = b$}
-	\qedstep
-	\begin{proof}
-		\pf\ This contradicts the fact that $b < \theta(a)$.
-	\end{proof}
-\end{proof}
-\step{9}{$\theta(a) = a$}
-\qed
-\end{proof}
-
 \begin{thm}
 \label{thm:extendorderiso}
 Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
@@ -1907,6 +1847,66 @@ Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \ri
 \step{6}{$\phi(a) \in B$}
 \step{7}{$\phi(a) \leq a$}
 \step{8}{$\phi(a) = a$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:orderisoid}
+Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense. Let $\theta : A \rightarrow A$ be a monotone map that is the identity on $B$. Then $\theta = \mathrm{id}_A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a \in A$} \prove{$\theta(a) = a$}}
+\step{3}{\pflet{$S(a) = \{b \in B \mid b < a\}$}}
+\step{2}{$S(a)$ is nonempty and bounded above.}
+\begin{proof}
+	\step{a}{$S(a)$ is nonempty.}
+	\begin{proof}
+		\step{i}{\pick\ $a_1 < a$}
+		\begin{proof}
+			\pf\ Since $a$ is not least.
+		\end{proof}
+		\step{ii}{There exists $b \in B$ such that $a_1 < b < a$.}
+	\end{proof}
+	\step{b}{$S(a)$ is bounded above by $a$.}
+\end{proof}
+\step{4}{$\sup S(a) \leq a$}
+\step{5}{$\sup S(a) = a$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\sup S(a) < a$}}
+	\step{b}{\pick\ $b \in B$ such that $\sup S(a) < b < a$}
+	\step{c}{$b \in S(a)$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $\sup S(a) < b$.
+	\end{proof}
+\end{proof}
+\step{6}{For all $b \in S(a)$ we have $b \leq \theta(a)$}
+\begin{proof}
+	\step{a}{\pflet{$b \in S(a)$}}
+	\step{b}{$b < a$}
+	\step{c}{$\theta(b) \leq \theta(a)$}
+	\step{d}{$b \leq \theta(a)$}
+	\begin{proof}
+		\pf\ $\theta(b) = b$
+	\end{proof}
+\end{proof}
+\step{7}{$a \leq \theta(a)$}
+\begin{proof}
+	\pf\ Since $a = \sup S(a)$ and $\theta(a)$ is an upper bound for $S(a)$.
+\end{proof}
+\step{8}{$a \nless \theta(a)$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $a < \theta(a)$.}}
+	\step{b}{\pick\ $b \in B$ such that $a < b < \theta(a)$}
+	\step{c}{$\theta(a) \leq \theta(b) = b$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $b < \theta(a)$.
+	\end{proof}
+\end{proof}
+\step{9}{$\theta(a) = a$}
 \qed
 \end{proof}
 
