@@ -1913,9 +1913,73 @@ Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be
 \end{proof}
 
 \begin{df}[Initial Segment]
-Let $A$ be a poset and $t \in A$. The \emph{initial segment} up to $t$ is
-\[ \seg t := \{ x \in A \mid x < t \} \enspace . \]
+Let $\leq$ be a partial order on $\mathbf{A}$ and $t \in A$. The \emph{initial segment} up to $t$ is the class
+\[ \seg t := \{ x \in \mathbf{A} \mid x < t \} \enspace . \]
 \end{df}
+
+\begin{df}[Lexicographic Ordering]
+Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{S}$ a partial order on $\mathbf{B}$. The \emph{lexicographic ordering} $\leq$ on $\mathbf{A} \times \mathbf{B}$ is defined by:
+\[ (a,b) \leq (a',b') \Leftrightarrow (a \mathbf{R} a' \wedge a \neq a') \vee (a = a' \wedge b \mathbf{S} b') \enspace . \]
+\end{df}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
+
+If $\mathbf{R}$ is a partial order on $\mathbf{A}$ and $\mathbf{S}$ is a partial order on $\mathbf{B}$ then the lexicographic ordering on $\mathbf{A} \times \mathbf{B}$ is a partial order.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\leq$ be the lexicographic ordering on $\mathbf{A} \times \mathbf{B}$}}
+\step{2}{$\leq$ is reflexive.}
+\begin{proof}
+	\pf\ For any $a \in \mathbf{A}$ and $b \in \mathbf{B}$ we have $a = a$ and $b \mathbf{S} b$, so $(a,b) \leq (a,b)$.
+\end{proof}
+\step{3}{$\leq$ is antisymmetric.}
+\begin{proof}
+	\step{a}{\assume{$(a,b) \leq (a',b')$ and $(a',b') \leq (a,b)$}}
+	\step{b}{$(a \mathbf{R} a' \wedge a \neq a') \vee (a = a' \wedge b \mathbf{S} b')$}
+	\step{c}{$(a' \mathbf{R} a \wedge a' \neq a) \vee (a' = a \wedge b \mathbf{S} b')$}
+	\step{d}{\case{$a = a'$}}
+	\begin{proof}
+		\pf\ Then $b \mathbf{S} b'$ and $b' \mathbf{S} b$ hence $b = b'$ and $(a,b) = (a',b')$.
+	\end{proof}
+	\step{e}{\case{$a \neq a'$}}
+	\begin{proof}
+		\pf\ Then $a \mathbf{R} a'$ and $a' \mathbf{R} a$ hence $a = a'$ which is a contradiction.
+	\end{proof}
+\end{proof}
+\step{4}{$\leq$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$(a_1,b_1) \leq (a_2,b_2) \leq (a_3,b_3)$}}
+	\step{b}{$(a_1 \mathbf{R} a_2 \wedge a_1 \neq a_2) \vee (a_1 = a_2 \wedge b_1 \mathbf{S} b_2)$}
+	\step{c}{$(a_2 \mathbf{R} a_3 \wedge a_2 \neq a_3) \vee (a_2 = a_3 \wedge b_2 \mathbf{S} b_3)$}
+	\step{d}{\case{$a_1 \mathbf{R} a_2, a_1 \neq a_2, a_2 \mathbf{R} a_3, a_2 \neq a_3$}}
+	\begin{proof}
+		\step{i}{$a_1 \mathbf{R} a_3$}
+		\begin{proof}
+			\pf\ Since $\mathbf{R}$ is transitive.
+		\end{proof}
+		\step{ii}{$a_1 \neq a_3$}
+		\begin{proof}
+			\pf\ If $a_1 = a_3$ then $a_1 \mathbf{R} a_2$ and $a_2 \mathbf{R} a_1$ so $a_1 = a_2$ which is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{e}{\case{$a_1 \mathbf{R} a_2, a_1 \neq a_2, a_2 = a_3, b_2 \mathbf{S} b_3$}}
+	\begin{proof}
+		\pf\ Then $a_1 \mathbf{R} a_3$ and $a_1 \neq a_3$.
+	\end{proof}
+	\step{f}{\case{$a_1 = a_2, b_1 \mathbf{S} b_2, a_2 \mathbf{R} a_3, a_2 \neq a_3$}}
+	\begin{proof}
+		\pf\ Then $a_1 \mathbf{R} a_3$ and $a_1 \neq a_3$.
+	\end{proof}
+	\step{g}{\case{$a_1 = a_2, b_1 \mathbf{S} b_2, a_2 = a_3, b_2 \mathbf{S} b_3$}}
+	\begin{proof}
+		\pf\ Then $a_1 = a_3$ and $b_1 \mathbf{S} b_3$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Linear Orders}
 
@@ -2071,11 +2135,6 @@ Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq 
 \end{proof}
 \qed
 \end{proof}
-
-\begin{df}[Lexicographic Ordering]
-Let $A$ and $B$ be linearly ordered sets. The \emph{lexicographic ordering} $<$ on $A \times B$ is defined by:
-\[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
-\end{df}
 
 \begin{prop}
 Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A \times B$ is a linear ordering.
