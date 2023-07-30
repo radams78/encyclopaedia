@@ -1923,6 +1923,7 @@ Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{S}$ a partial o
 \end{df}
 
 \begin{props}
+\label{prop:lexicposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
 If $\mathbf{R}$ is a partial order on $\mathbf{A}$ and $\mathbf{S}$ is a partial order on $\mathbf{B}$ then the lexicographic ordering on $\mathbf{A} \times \mathbf{B}$ is a partial order.
@@ -2136,54 +2137,36 @@ Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq 
 \qed
 \end{proof}
 
-\begin{prop}
-Let $A$ and $B$ be linearly ordered sets. Then the lexicographic ordering on $A \times B$ is a linear ordering.
-\end{prop}
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$ and $\mathbf{S}$ is a linear order on $\mathbf{B}$. Then the lexicographic ordering is a linear order on $\mathbf{A} \times \mathbf{B}$.
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{$<$ is transitive.}
+\step{1}{\pflet{$\leq$ be the lexicographic order on $\mathbf{A} \times \mathbf{B}$}}
+\step{2}{$\leq$ is a partial order.}
 \begin{proof}
-	\step{a}{\pflet{$(a_1,b_1) < (a_2,b_2) < (a_3,b_3)$} \prove{$(a_1,b_1) < (a_3,b_3)$}}
-	\step{b}{\case{$a_1 < a_2$}}
+	\pf\ Proposition \ref{prop:lexicposet}.
+\end{proof}
+\step{3}{$\leq$ is total.}
+\begin{proof}
+	\step{a}{\pflet{$a,a' \in \mathbf{A}$ and $b, b' \in \mathbf{B}$}}
+	\step{b}{\case{$a \mathbf{R} a'$ and $a \neq a'$}}
 	\begin{proof}
-		\step{i}{$a_2 < a_3$ or $a_2 = a_3$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{ii}{$a_1 < a_3$}
-		\begin{proof}
-			\pf\ Transitivity
-		\end{proof}
-		\step{iii}{$(a_1,b_1) < (a_3,b_3)$}
+		\pf\ Then $(a,b) \leq (a',b')$.
 	\end{proof}
-	\step{c}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 < a_3$}}
+	\step{c}{\case{$a = a'$}}
 	\begin{proof}
-		\pf\ We have $a_1 < a_3$ so $(a_1,b_1) < (a_3,b_3)$.
+		\pf\ We have $b \mathbf{S} b'$ or $b' \mathbf{S} b$, so $(a,b) \leq (a',b')$ or $(a',b') \leq (a,b)$.
 	\end{proof}
-	\step{d}{\case{$a_1 = a_2$ and $b_1 < b_2$ and $a_2 = a_3$ and $b_2 < b_3$}}
+	\step{d}{\case{$a' \mathbf{R} a$ and $a \neq a'$}}
 	\begin{proof}
-		\pf\ We have $a_1 = a_3$ and $b_1 < b_3$ so $(a_1,b_1) < (a_3,b_3)$.
+		\pf\ Then $(a',b') \leq (a,b)$.
 	\end{proof}
 \end{proof}
-\step{2}{$<$ satisfies trichotomy.}
-\begin{proof}
-	\step{a}{\pflet{$(a_1,b_1),(a_2,b_2) \in A \times B$}}
-	\step{b}{Exactly one of $a_1 < a_2$, $a_1 = a_2$, $a_2 < a_1$ holds.}
-	\step{c}{\case{$a_1 < a_2$}}
-	\begin{proof}
-		\pf\ We have $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) \neq (a_2,b_2)$, and $(a_2,b_2) \nless (a_1,b_1)$.
-	\end{proof}
-	\step{d}{\case{$a_1 = a_2$}}
-	\begin{proof}
-		\step{i}{Exactly one of $b_1 < b_2$, $b_1 = b_2$, $b_2 < b_1$ holds.}
-		\step{ii}{Exactly one of $(a_1,b_1) < (a_2,b_2)$, $(a_1,b_1) = (a_2,b_2)$, $(a_2,b_2) < (a_1, b_1)$ holds.}
-	\end{proof}
-	\step{e}{\case{$a_2 < a_1$}}
-	\begin{proof}
-		\pf\ We have $(a_2,b_2) < (a_1,b_1)$, $(a_2,b_2) \neq (a_1,b_1)$, and $(a_1,b_1) \nless (a_2,b_2)$.
-	\end{proof}
-\end{proof}
+\qed
 \end{proof}
 
 \subsection{Well Orderings}
