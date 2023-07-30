@@ -675,6 +675,24 @@ z(\mathbf{S} \circ \mathbf{R})^{-1}x & \Leftrightarrow x(\mathbf{S} \circ \mathb
 Let $\mathbf{R}$ be a binary relation on $\mathbf{A}$. Then $\mathbf{R}$ is \emph{reflexive} on $\mathbf{A}$ iff $\forall x \in \mathbf{A}. (x,x) \in \mathbf{R}$.
 \end{df}
 
+\begin{props}
+\label{prop:invref}
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
+
+If $\mathbf{R}$ is a reflexive relation on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \mathbf{A}$}}
+\step{2}{$x \mathbf{R} x$}
+\begin{proof}
+	\pf\ Since $\mathbf{R}$ is reflexive.
+\end{proof}
+\step{3}{$x \mathbf{R}^{-1} x$}
+\qed
+\end{proof}
+
 \begin{df}[Irreflexive]
 A relation $\mathbf{R}$ is \emph{irreflexive} iff there is no $x$ such that $(x,x) \in \mathbf{R}$.
 \end{df}
@@ -1571,12 +1589,7 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \pf
 \step{1}{$\mathbf{R}^{-1}$ is reflexive.}
 \begin{proof}
-	\step{a}{\pflet{$x \in \mathbf{A}$}}
-	\step{b}{$x \mathbf{R} x$}
-	\begin{proof}
-		\pf\ Since $\mathbf{R}$ is reflexive.
-	\end{proof}
-	\step{c}{$x \mathbf{R}^{-1} x$}
+	\pf\ Proposition \ref{prop:invref}.
 \end{proof}
 \step{2}{$\mathbf{R}^{-1}$ is antisymmetric.}
 \begin{proof}
