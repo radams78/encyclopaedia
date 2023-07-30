@@ -1572,28 +1572,6 @@ Let $(A,<_A)$ and $(B, <_B)$ be posets. A function $f : A \rightarrow B$ is \emp
 \end{df}
 
 \begin{prop}
-A strictly monotone function is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$(A, <_A)$ and $(B, <_B)$ be linearly ordered sets.}}
-\step{2}{\pflet{$f : A \rightarrow B$ be strictly monotone.}}
-\step{3}{\pflet{$x,y \in A$}}
-\step{4}{\assume{$f(x) = f(y)$}}
-\step{5}{$f(x) \nless f(y)$ and $f(y) \nless f(x)$}
-\begin{proof}
-	\pf\ Trichotomy.
-\end{proof}
-\step{6}{$x \nless y$ and $y \nless x$}
-\step{7}{$x = y$}
-\begin{proof}
-	\pf\ Trichotomy.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
 If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \end{prop}
 
@@ -1865,6 +1843,28 @@ Let $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, e
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+A strictly monotone function is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(A, <_A)$ and $(B, <_B)$ be linearly ordered sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ be strictly monotone.}}
+\step{3}{\pflet{$x,y \in A$}}
+\step{4}{\assume{$f(x) = f(y)$}}
+\step{5}{$f(x) \nless f(y)$ and $f(y) \nless f(x)$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\step{6}{$x \nless y$ and $y \nless x$}
+\step{7}{$x = y$}
+\begin{proof}
+	\pf\ Trichotomy.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
