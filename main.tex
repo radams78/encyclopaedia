@@ -1734,88 +1734,6 @@ A partial order is \emph{complete} iff every nonempty subset bounded above has a
 Let $A$ and $B$ be posets. An \emph{order isomorphism} between $A$ and $B$, $f : A \cong B$, is a bijection $f : A \approx B$ such that $f$ and $f^{-1}$ are monotone.
 \end{df}
 
-\begin{thm}
-\label{thm:extendorderiso}
-Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $\phi : B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{For $a \in A$, let $S(a) = \{ b \in B \mid b < a \}$.}
-\step{2}{Define $\overline{\phi} : A \rightarrow P$ by $\overline{\phi}(a) = \sup \phi(S(a))$.}
-\begin{proof}
-	\step{a}{$\phi(S(a))$ is nonempty.}
-	\begin{proof}
-		\step{i}{\pick\ $a_1 < a$}
-		\begin{proof}
-			\pf\ Since $a$ is not least.
-		\end{proof}
-		\step{ii}{\pick\ $b \in B$ such that $a_1 < b < a$.}
-		\step{iii}{$\phi(b) \in \phi(S(a))$}
-	\end{proof}
-	\step{b}{$\phi(S(a))$ is bounded above.}
-	\begin{proof}
-		\step{i}{\pick\ $a_2 > a$}
-		\begin{proof}
-			\pf\ Since $a$ is not greatest.
-		\end{proof}
-		\step{ii}{\pick\ $b \in B$ such that $a < b < a_2$}
-		\step{iii}{$\phi(b)$ is an upper bound for $\phi(S(a))$.}
-	\end{proof}
-\end{proof}
-\step{3}{$\overline{\phi}$ is monotone.}
-\begin{proof}
-	\pf\ If $a \leq a'$ then $S(a) \subseteq S(a')$ and so $\overline{\phi}(a) \leq \overline{\phi}(a')$.
-\end{proof}
-\step{4}{$\overline{\phi}$ extends $\phi$.}
-\begin{proof}
-	\step{a}{\pflet{$b \in B$} \prove{$\phi(b) = \sup \phi(S(b))$}}
-	\step{b}{$\phi(b)$ is an upper bound for $\phi(S(b))$}
-	\step{c}{\pflet{$u$ be any upper bound for $\phi(S(b))$} \prove{$\phi(b) \leq u$}}
-	\step{d}{\assume{for a contradiction $u < \phi(b)$}}
-	\step{e}{\pick\ $q \in Q$ such that $u < q < \phi(b)$}
-	\step{f}{\pick\ $b' \in B$ such that $\phi(b') = q$}
-	\step{g}{$b' < b$}
-	\step{h}{$b' \in S(b)$}
-	\step{i}{$q = \phi(b') \leq u$}
-	\qedstep
-	\begin{proof}
-		\pf\ This is a contradiction.
-	\end{proof}
-\end{proof}
-\step{5}{\pflet{$\psi = \phi^{-1}$}}
-\step{6}{\pflet{$\overline{\psi} : P \rightarrow A$ be the function $\overline{\psi}(p) = \sup \{ \psi(q) \mid q \in Q, q < p \}$}}
-\step{7}{$\overline{\psi}$ is monotone and extends $\psi$}
-\begin{proof}
-	\pf\ Similar.
-\end{proof}
-\step{8}{$\overline{\psi} \circ \overline{\phi} : A \rightarrow A$ is monotone and the identity on $B$.}
-\step{9}{$\overline{\psi} \circ \overline{\phi} = \mathrm{id}_A$}
-\begin{proof}
-	\pf\ Proposition \ref{prop:orderisoid}.
-\end{proof}
-\step{10}{$\overline{\phi} \circ \overline{\psi} = \mathrm{id}_B$}
-\begin{proof}
-	\pf\ Proposition \ref{prop:orderisoid}.
-\end{proof}
-\step{11}{If $\phi^* : A \cong P$ is any order isomorphism that extends $\phi$ then $\phi^* = \overline{\phi}$.}
-\begin{proof}
-	\step{a}{\pflet{$a \in A$} \prove{$\phi^*(a) = \sup \phi(S(a))$}}
-	\step{b}{$\phi^*(a)$ is an upper bound for $\phi(S(a))$}
-	\step{c}{\pflet{$u$ be any upper bound for $\phi(S(a))$} \prove{$\phi^*(a) \leq u$}}
-	\step{d}{\assume{for a contradiction $u < \phi^*(a)$}}
-	\step{e}{\pick\ $q \in Q$ such that $u < q < \phi^*(a)$}
-	\step{f}{\pick\ $b \in B$ such that $q = \phi(b)$}
-	\step{g}{$b < a$}
-	\step{h}{$b \in S(a)$}
-	\step{i}{$q = \phi(b) \leq u$}
-	\qedstep
-	\begin{proof}
-		\pf\ This is a contradiction.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
 	
 \begin{thm}[Knaster Fixed-Point Theorem]
 Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
@@ -1908,6 +1826,89 @@ Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense.
 Let $\leq$ be a partial order on $\mathbf{A}$ and
 $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
 \end{df}
+
+\begin{thm}
+\label{thm:extendorderiso}
+Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $\phi : B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $a \in A$, let $S(a) = \{ b \in B \mid b < a \}$.}
+\step{2}{Define $\overline{\phi} : A \rightarrow P$ by $\overline{\phi}(a) = \sup \phi(S(a))$.}
+\begin{proof}
+	\step{a}{$\phi(S(a))$ is nonempty.}
+	\begin{proof}
+		\step{i}{\pick\ $a_1 < a$}
+		\begin{proof}
+			\pf\ Since $a$ is not least.
+		\end{proof}
+		\step{ii}{\pick\ $b \in B$ such that $a_1 < b < a$.}
+		\step{iii}{$\phi(b) \in \phi(S(a))$}
+	\end{proof}
+	\step{b}{$\phi(S(a))$ is bounded above.}
+	\begin{proof}
+		\step{i}{\pick\ $a_2 > a$}
+		\begin{proof}
+			\pf\ Since $a$ is not greatest.
+		\end{proof}
+		\step{ii}{\pick\ $b \in B$ such that $a < b < a_2$}
+		\step{iii}{$\phi(b)$ is an upper bound for $\phi(S(a))$.}
+	\end{proof}
+\end{proof}
+\step{3}{$\overline{\phi}$ is monotone.}
+\begin{proof}
+	\pf\ If $a \leq a'$ then $S(a) \subseteq S(a')$ and so $\overline{\phi}(a) \leq \overline{\phi}(a')$.
+\end{proof}
+\step{4}{$\overline{\phi}$ extends $\phi$.}
+\begin{proof}
+	\step{a}{\pflet{$b \in B$} \prove{$\phi(b) = \sup \phi(S(b))$}}
+	\step{b}{$\phi(b)$ is an upper bound for $\phi(S(b))$}
+	\step{c}{\pflet{$u$ be any upper bound for $\phi(S(b))$} \prove{$\phi(b) \leq u$}}
+	\step{d}{\assume{for a contradiction $u < \phi(b)$}}
+	\step{e}{\pick\ $q \in Q$ such that $u < q < \phi(b)$}
+	\step{f}{\pick\ $b' \in B$ such that $\phi(b') = q$}
+	\step{g}{$b' < b$}
+	\step{h}{$b' \in S(b)$}
+	\step{i}{$q = \phi(b') \leq u$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{5}{\pflet{$\psi = \phi^{-1}$}}
+\step{6}{\pflet{$\overline{\psi} : P \rightarrow A$ be the function $\overline{\psi}(p) = \sup \{ \psi(q) \mid q \in Q, q < p \}$}}
+\step{7}{$\overline{\psi}$ is monotone and extends $\psi$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{8}{$\overline{\psi} \circ \overline{\phi} : A \rightarrow A$ is monotone and the identity on $B$.}
+\step{9}{$\overline{\psi} \circ \overline{\phi} = \mathrm{id}_A$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:orderisoid}.
+\end{proof}
+\step{10}{$\overline{\phi} \circ \overline{\psi} = \mathrm{id}_B$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:orderisoid}.
+\end{proof}
+\step{11}{If $\phi^* : A \cong P$ is any order isomorphism that extends $\phi$ then $\phi^* = \overline{\phi}$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in A$} \prove{$\phi^*(a) = \sup \phi(S(a))$}}
+	\step{b}{$\phi^*(a)$ is an upper bound for $\phi(S(a))$}
+	\step{c}{\pflet{$u$ be any upper bound for $\phi(S(a))$} \prove{$\phi^*(a) \leq u$}}
+	\step{d}{\assume{for a contradiction $u < \phi^*(a)$}}
+	\step{e}{\pick\ $q \in Q$ such that $u < q < \phi^*(a)$}
+	\step{f}{\pick\ $b \in B$ such that $q = \phi(b)$}
+	\step{g}{$b < a$}
+	\step{h}{$b \in S(a)$}
+	\step{i}{$q = \phi(b) \leq u$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Initial Segment]
 Let $A$ be a poset and $t \in A$. The \emph{initial segment} up to $t$ is
