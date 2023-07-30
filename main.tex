@@ -1733,7 +1733,6 @@ A partial order is \emph{complete} iff every nonempty subset bounded above has a
 \begin{df}[Order Isomorphism]
 Let $A$ and $B$ be posets. An \emph{order isomorphism} between $A$ and $B$, $f : A \cong B$, is a bijection $f : A \approx B$ such that $f$ and $f^{-1}$ are monotone.
 \end{df}
-
 	
 \begin{thm}[Knaster Fixed-Point Theorem]
 Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
@@ -1761,6 +1760,12 @@ Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \ri
 \step{8}{$\phi(a) = a$}
 \qed
 \end{proof}
+
+
+\begin{df}[Dense]
+Let $\leq$ be a partial order on $\mathbf{A}$ and
+$\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
+\end{df}
 
 \begin{prop}
 \label{prop:orderisoid}
@@ -1821,11 +1826,6 @@ Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense.
 \step{9}{$\theta(a) = a$}
 \qed
 \end{proof}
-
-\begin{df}[Dense]
-Let $\leq$ be a partial order on $\mathbf{A}$ and
-$\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
-\end{df}
 
 \begin{thm}
 \label{thm:extendorderiso}
