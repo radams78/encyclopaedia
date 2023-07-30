@@ -2790,6 +2790,36 @@ The poset $\mathbf{On}$ is complete.
 \pf\ For any nonempty set $A$ of ordinals, $\bigcup A$ is its supremum. \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:subsetleq}
+Let $\alpha$ be an ordinal and $S \subseteq \alpha$. Then $S$ is well-ordered by $\in$ and the ordinal of $(S, \in)$ is $\leq \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$S$ is well ordered by $\in$.}
+\step{2}{\pflet{$\beta$ be the ordinal of $(S, \in)$}}
+\step{3}{\pflet{$E : S \approx \beta$ be the unique isomorphism.}}
+\step{4}{$\forall \gamma \in S. E(\gamma) \leq \gamma$}
+\begin{proof}
+	\step{o}{\pflet{$\gamma \in S$}}
+	\step{a}{\assume{as transfinite induction hypothesis $\forall \delta < \gamma. E(\delta) \leq \delta$}}
+	\step{b}{$E(\gamma)$ is the least element of $\beta$ that is greater than $E(\delta)$ for all $\delta < \gamma$}
+	\step{c}{$\gamma$ is greater than $E(\delta)$ for all $\delta < \gamma$}
+	\step{d}{$E(\gamma) \leq \gamma$}
+\end{proof}
+\step{5}{$\beta \leq \alpha$}
+\begin{proof}
+	\step{a}{$\forall \gamma < \beta. \gamma < \alpha$}
+	\begin{proof}
+		\step{i}{\pflet{$\gamma < \beta$}}
+		\step{ii}{\pick\ $\delta \in S$ such that $E(\delta) = \gamma$}
+		\step{iii}{$\gamma = E(\delta) \leq \delta < \alpha$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Successors}
 
 \begin{df}[Successor]
@@ -2958,6 +2988,18 @@ For ordinals $\alpha$ and $\beta$, if $\alpha^+ = \beta^+$ then $\alpha = \beta$
 		& = \bigcup (\beta^+) \\
 		& = \beta & (\text{Proposition \ref{prop:Uaplus}})
 	\end{align*}
+\end{proof}
+
+\begin{prop}
+For ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ if and only if $\alpha^+ < \beta^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\alpha < \beta & \Leftrightarrow \alpha^+ \leq \beta \\
+& \Leftrightarrow \alpha^+ < \beta^+ & \qed
+\end{align*}
 \end{proof}
 
 \section{The Well-Ordering Theorem and Zorn's Lemma}
@@ -3298,7 +3340,7 @@ For any set $A$ we have $|\mathcal{P} A| = 2^{|A|}$.
 \end{proof}
 
 \begin{cor}
-For any cardinal number $\kappa$ we have $2^\kappa \neq \kappa$.
+For any cardinal number $\kappa$ we have $\kappa < 2^\kappa$.
 \end{cor}
 
 \begin{proof}
@@ -3308,45 +3350,34 @@ For any cardinal number $\kappa$ we have $2^\kappa \neq \kappa$.
 \section{Ordering on Cardinal Numbers}
 
 \begin{df}
-Given cardinal numbers $\kappa$ and $\lambda$, we write $\kappa \leq \lambda$ iff $A \preccurlyeq B$ where $|A| = \kappa$ and $|B| = \lambda$. We write $\kappa < \lambda$ iff $\kappa \leq \lambda$ and $\kappa \neq \lambda$.
-
-We prove this is well-defined.
+Given cardinal numbers $\kappa$ and $\lambda$, we have $\kappa \leq \lambda$ iff $A \preccurlyeq B$, where $|A| = \kappa$ and $|B| = \lambda$.
 \end{df}
 
 \begin{proof}
-\pf\ If $f : A \approx A'$, $g : B \approx B'$, and $h : A \rightarrow B$ is an injection, then $g \circ h \circ f^{-1}$ is an injection $A' \rightarrow B'$. \qed
-\end{proof}
-
-\begin{prop}
-For any cardinal number $\kappa$ we have $\kappa \leq \kappa$.
-\end{prop}
-
+\pf
+\step{1}{\pflet{$|A| = \kappa$ and $|B| = \lambda$}}
+\step{2}{\pick\ bijections $f : A \approx \kappa$ and $g : B \approx \lambda$}
+\step{3}{If $\kappa \leq \lambda$ then $A \preccurlyeq B$}
 \begin{proof}
-\pf\ For any set $A$ we have $\mathrm{id}_A$ is an injection $A \rightarrow A$. \qed
+	\pf\ Let $i : \kappa \hookrightarrow \lambda$ be the inclusion. Then $g^{-1} \circ i \circ f$ is an injection $A \rightarrow B$.
 \end{proof}
-
-\begin{prop}
-For any cardinal numbers $\kappa$, $\lambda$ and $\mu$, if $\kappa \leq \lambda$ and $\lambda \leq \mu$ then $\kappa \leq \mu$.
-\end{prop}
-
+\step{4}{If $A \preccurlyeq B$ then $\kappa \leq \lambda$}
 \begin{proof}
-\pf\ If $f : A \rightarrow B$ and $g : B \rightarrow C$ are injective then so is $g \circ f : A \rightarrow C$. \qed
+	\step{a}{\assume{$A \preccurlyeq B$}}
+	\step{b}{\pick\ an injection $h : A \rightarrowtail B$}
+	\step{c}{$g(h(A)) \subseteq B$ is well-ordered by $\in$}
+	\step{d}{\pflet{$\gamma$ be the ordinal number of $(g(h(A)), \in)$}}
+	\step{e}{$\gamma \leq \lambda$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:subsetleq}.
+	\end{proof}
+	\step{f}{$\kappa \leq \gamma$}
+	\begin{proof}
+		\pf\ By the leastness of $\kappa$, since $A$ is equinumerous with $\gamma$.
+	\end{proof}
+	\step{g}{$\kappa \leq \lambda$}
 \end{proof}
-
-\begin{prop}
-For any cardinal number $\kappa$ we have $0 \leq \kappa$.
-\end{prop}
-
-\begin{proof}
-\pf\ For any set $A$, we have $\emptyset$ is an injection $\emptyset \rightarrow A$. \qed
-\end{proof}
-
-\begin{prop}
-For any cardinal number $\kappa$ we have $\kappa < 2^\kappa$.
-\end{prop}
-
-\begin{proof}
-\pf\ The function that maps $a$ to $\{a\}$ is an injection $A \rightarrow \mathcal{P} A$, so $\kappa \leq 2^\kappa$. They are unequal by Cantor's Theorem. \qed
+\qed
 \end{proof}
 
 \begin{cor}
@@ -3528,107 +3559,6 @@ Let $A$ be a nonempty set and $R$ a relation on $A$ such that $\forall x \in A. 
 \qed
 \end{proof}
 
-\section{Ordering on $\mathbb{N}$}
-
-\begin{prop}
-\label{prop:succltsucc}
-For any natural numbers $m$ and $n$, we have $m < n$ if and only if $m^+ < n^+$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{For any natural numbers $m$ and $n$, if $m < n$ then $m^+ < n^+$.}
-\begin{proof}
-	\step{a}{For any natural number $m$, if $m < 0$ then $m^+ < 0^+$}
-	\begin{proof}
-		\pf\ Vacuous.
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m < n. m^+ < n^+$ then $\forall m < n^+. m^+ < n^{++}$}
-	\begin{proof}
-		\step{i}{\pflet{$m < n^+$}}
-		\step{ii}{$m < n$ or $m = n$}
-		\step{iii}{\case{$m < n$}}
-		\begin{proof}
-			\step{one}{$m^+ < n^+$}
-			\begin{proof}
-				\pf\ Induction hypothesis.
-			\end{proof}
-			\step{two}{$m^+ < n^{++}$}
-		\end{proof}
-		\step{iv}{\case{$m = n$}}
-		\begin{proof}
-			\pf\ $m^+ = n^+ < n^{++}$.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\step{2}{For any natural numbers $m$ and $n$, if $m^+ < n^+$ then $m < n$.}
-\begin{proof}
-	\step{a}{We never have $m^+ < 0^+$.}
-	\begin{proof}
-		\step{i}{$m^+ \nless 0$}
-		\step{ii}{$m^+ \neq 0$}
-		\step{iii}{$m^+ \nless 0^+$}
-	\end{proof}
-	\step{b}{For any natural number $n$, if $\forall m. m^+ < n^+ \Rightarrow m < n$, then $\forall m. m^+ < n^{++} \Rightarrow m < n^+$.}
-	\begin{proof}
-		\step{i}{\pflet{$n$ be a natural number.}}
-		\step{ii}{\assume{$\forall m. m^+ < n^+ \Rightarrow m < n$}}
-		\step{iii}{\pflet{$m$ be a natural number.}}
-		\step{iv}{\assume{$m^+ < n^{++}$}}
-		\step{v}{$m^+ < n^+$ or $m^+ = n^+$}
-		\step{vi}{\case{$m^+ < n^+$}}
-		\begin{proof}
-			\step{one}{$m < n$}
-			\begin{proof}
-				\pf\ Induction hypothesis.
-			\end{proof}
-			\step{two}{$m < n^+$}
-		\end{proof}
-		\step{vii}{\case{$m^+ = n^+$}}
-		\begin{proof}
-			\pf\ $m = n < n^+$ by Proposition \ref{prop:Peano2}.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-For natural numbers $m$ and $n$, we have $m \leq n$ if and only if $m \subseteq n$.
-\end{cor}
-
-\begin{proof}
-	\pf
-	\step{1}{If $m \leq n$ then $m \subseteq n$}
-	\begin{proof}
-		\step{a}{\assume{$m \leq n$}}
-		\step{b}{\pflet{$p \in m$}}
-		\step{c}{\case{$m < n$}}
-		\begin{proof}
-			\pf\ Then $p \in n$ by Proposition \ref{prop:nattrans}.
-		\end{proof}
-		\step{d}{\case{$m = n$}}
-		\begin{proof}
-			\pf\ Then $p \in n$ immediately.
-		\end{proof}
-	\end{proof}
-	\step{2}{If $m \subseteq n$ then $m \leq n$}
-	\begin{proof}
-		\step{a}{\assume{$m \subseteq n$}}
-		\step{b}{$n \nless m$}
-		\begin{proof}
-			\pf\ If $n < m$ then $n \in n$ contradicting the Axiom of Regularity.
-		\end{proof}
-		\step{c}{$m \leq n$}
-		\begin{proof}
-			\pf\ By trichotomy.
-		\end{proof}
-	\end{proof}
-	\qed
-\end{proof}
-
-\section{Recursion}
-
 \begin{thm}
 Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and only if there does not exist a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
 \end{thm}
@@ -3653,62 +3583,6 @@ Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and o
 \end{proof}
 
 \section{Cardinality}
-
-\begin{thm}[Schr\"{o}der-Bernstein]
-For any cardinal numbers $\kappa$ and $\lambda$, if $\kappa \leq \lambda$ and $\lambda \leq \kappa$ then $\kappa = \lambda$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : A \rightarrow B$ and $g : B \rightarrow A$ be injections.} \prove{$A \approx B$}}
-\step{2}{Define the sets $C_n$ for $n \in \mathbb{N}$ by recursion:
-\begin{align*}
-C_0 & := A - \ran g \\
-C_{n+1} & := g(f(C_n))
-\end{align*}}
-\step{3}{\pflet{$h : A \rightarrow B$ be the function
-\[ h(x) = \begin{cases}
-f(x) & \text{if } \exists n. x \in C_n \\
-g^{-1}(x) & \text{otherwise}
-\end{cases} \]}}
-\step{4}{For $n \in \mathbb{N}$, \pflet{$D_n = f(C_n)$}}
-\step{5}{$h$ is injective.}
-\begin{proof}
-	\step{a}{\pflet{$x, x' \in A$}}
-	\step{b}{\assume{$h(x) = h(x')$}}
-	\step{c}{\case{$x \in C_m$ and $x' \in C_n$}}
-	\begin{proof}
-		\pf\ We have $f(x) = f(x')$ so $x = x'$.
-	\end{proof}
-	\step{d}{\case{$x \in C_m$ and $\forall n.x' \notin C_n$}}
-	\begin{proof}
-		\pf\ We have $f(x) = g^{-1}(x')$ so $x' = g(f(x)) \in C_{m+1}$ which is a contradiction.
-	\end{proof}
-	\step{e}{\case{$\forall n. x \notin C_n$ and $x' \in C_n$}}
-	\begin{proof}
-		\pf\ Similar.
-	\end{proof}
-	\step{f}{\case{$\forall n. x \notin C_n$ and $\forall n. x' \notin C_n$}}
-	\begin{proof}
-		\pf\ We have $g^{-1}(x) = g^{-1}(x')$ so $x = x'$.
-	\end{proof}
-\end{proof}
-\step{6}{$h$ is surjective.}
-\begin{proof}
-	\step{a}{\pflet{$y \in B$}}
-	\step{b}{\case{$y \in D_n$}}
-	\begin{proof}
-		\step{i}{\pick\ $x \in C_n$ such that $y = f(x)$}
-		\step{ii}{$y = h(x)$}
-	\end{proof}
-	\step{c}{\case{$\forall n. y \notin D_n$}}
-	\begin{proof}
-		\step{i}{$\forall n. g(y) \notin C_n$}
-		\step{ii}{$h(g(y)) = y$}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
 
 \begin{df}[Finite]
 A set is \emph{finite} iff it is equinumerous to some natural number; otherwise it is \emph{infinite}.
@@ -3773,6 +3647,14 @@ Every natural number is a cardinal number.
 \end{proof}
 
 \begin{cor}
+$\mathbb{N}$ is a cardinal number.
+\end{cor}
+
+\begin{df}
+We define $\aleph_0 = \mathbb{N}$.
+\end{df}
+
+\begin{cor}
 $\mathbb{N}$ is infinite.
 \end{cor}
 
@@ -3780,57 +3662,17 @@ $\mathbb{N}$ is infinite.
 \pf\ The function that maps $n$ to $n+1$ is a bijection between $\mathbb{N}$ and $\mathbb{N} - \{0\}$. \qed
 \end{proof}
 
-\begin{prop}
+\begin{cor}
 If $C$ is a proper subset of a natural number $n$, then there exists $m < n$ such that $C \approx m$.
-\end{prop}
+\end{cor}
 
 \begin{proof}
-\pf
-\step{1}{\pflet{$P(n)$ be the property: for every proper subset $C$ of $n$, there exists a natural number $m$ such that $C \approx m$.}}
-\step{2}{$P(0)$}
-\begin{proof}
-	\pf\ Vacuous.
-\end{proof}
-\step{3}{For every natural number $n$, if $P(n)$ then $P(n+1)$.}
-\begin{proof}
-	\step{a}{\pflet{$n$ be a natural number.}}
-	\step{b}{\assume{$P(n)$}}
-	\step{c}{\pflet{$C$ be a proper subset of $n+1$}}
-	\step{d}{\case{$C = n$}}
-	\begin{proof}
-		\pf\ $C \approx n < n+1$
-	\end{proof}
-	\step{e}{\case{$C \subsetneq n$}}
-	\begin{proof}
-		\pf\ There exists $m < n$ such that $C \approx m$ by \stepref{b}.
-	\end{proof}
-	\step{f}{\case{$n \in C$}}
-	\begin{proof}
-		\step{i}{$C - \{n\} \subsetneq n$}
-		\step{ii}{\pick\ $m < n$ such that $C - \{n\} \approx m$}
-		\step{iii}{$C \approx m+1$}
-	\end{proof}
-\end{proof}
-\step{4}{For every natural number $n$, $P(n)$.}
-\qed
+\pf\ By Proposition \ref{prop:subsetleq}. \qed
 \end{proof}
 
 \begin{cor}
 Any subset of a finite set is finite.
 \end{cor}
-
-\begin{prop}
-For any natural numbers $m$ and $n$ we have $m + n^+ = (m+n)^+$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ disjoint sets $A$ and $B$ of cardinalities $m$ and $n$.}
-\step{2}{\pick\ an element $e \notin A \cup B$}
-\step{3}{$A \cup B \cup \{e\} \approx m + n^+$}
-\step{4}{$A \cup B \cup \{e\} \approx (m + n)^+$}
-\qed
-\end{proof}
 
 \begin{prop}
 For any natural numbers $m$ and $n$ we have $m+n$ is a natural number.
@@ -3840,33 +3682,37 @@ For any natural numbers $m$ and $n$ we have $m+n$ is a natural number.
 \pf\ Induction on $n$. \qed
 \end{proof}
 
-\begin{prop}
-For any natural numbers $m$ and $n$ we have $m \cdot n^+ = mn + m$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ sets $A$ and $B$ of cardinality $m$ and $n$ respectively.}
-\step{2}{\pick\ $e \notin B$}
-\step{3}{$A \times (B \cup \{e\}) = (A \times B) \cup (A \times \{e\})$}
-\qed
-\end{proof}
+\begin{cor}
+The union of two finite sets is finite.
+\end{cor}
 
 \begin{cor}
-For any natural numbers $m$ and $n$, we have $mn$ is a natural number.
+The union of a finite set of finite sets is finite.
 \end{cor}
+
+\begin{proof}
+\pf\ By induction on the number of elements. \qed
+\end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$, we have $mn$ is a natural number.
+\end{prop}
 
 \begin{cor}
 If $A$ and $B$ are finite sets then $A \times B$ is finite.
 \end{cor}
 
 \begin{prop}
-The union of a finite set of finite sets is finite.
+For any natural numbers $m$ and $n$ we have $m^n$ is a natural number.
 \end{prop}
 
 \begin{proof}
-\pf\ By induction on the number of elements. \qed
+\pf\ Induction on $n$.
 \end{proof}
+
+\begin{cor}
+If $A$ and $B$ are finite sets then $A^B$ are finite.
+\end{cor}
 
 \begin{prop}
 $\mathbb{N}^2 \approx \mathbb{N}$
@@ -3877,20 +3723,8 @@ $\mathbb{N}^2 \approx \mathbb{N}$
 \end{proof}
 
 \begin{cor}
-For any natural numbers $m$ and $n$, we have $m^n$ is a natural number.
+$\aleph_0^2 = \aleph_0$
 \end{cor}
-
-\begin{proof}
-\pf\ By induction on $n$ since $m^0 = 1$ and $m^{n+1} = m^n m$. \qed
-\end{proof}
-
-\begin{cor}
-If $A$ and $B$ are finite sets then $A^B$ are finite.
-\end{cor}
-
-\begin{df}
-Let $\aleph_0 := |\mathbb{N}|$.
-\end{df}
 
 \begin{prop}
 For any infinite cardinal $\kappa$ we have $\aleph_0 \leq \kappa$.
@@ -3912,7 +3746,6 @@ h(n+1) & = h(n) \cup \{ F(A - \{ h(m) \mid m < n \}) \}
 \end{proof}
 \qed
 \end{proof}
-
 
 \section{Countable Sets}
 
@@ -4091,31 +3924,6 @@ For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
 
 \begin{proof}
 \pf\ By trichotomy. \qed
-\end{proof}
-
-\begin{thm}
-For natural numbers $m$, $n$ and $p$, if $m < n$ and $p \neq 0$ then $mp < np$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
-\step{2}{\assume{$m < n$} \prove{$\forall p. mp^+ < np^+$}}
-\step{3}{$m0^+ < n0^+$}
-\begin{proof}
-	\pf\ Proposition \ref{prop:multone}.
-\end{proof}
-\step{4}{For any natural number $p$, if $mp < np$ then $mp^+ < np^+$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		mp^+ & = mp + m \\
-		& < np + m & (\text{induction hypothesis. Theorem \ref{thm:pluslt}}) \\
-		& < np + n & (\text{\stepref{2}, Theorem \ref{thm:pluslt}}) \\
-		& = np^+
-	\end{align*}
-\end{proof}
-\qed
 \end{proof}
 
 \begin{cor}
