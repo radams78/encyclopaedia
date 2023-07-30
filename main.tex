@@ -3003,6 +3003,22 @@ For ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ if and only if $\alp
 \end{align*}
 \end{proof}
 
+\begin{df}[Successor Ordinal]
+An ordinal $\alpha$ is a \emph{successor ordinal} iff $\alpha = \beta^+$ for some $\beta$.
+\end{df}
+
+\begin{df}[Limit Ordinal]
+A \emph{limit ordinal} is an ordinal that is neither 0 nor a successor ordinal.
+\end{df}
+
+\begin{prop}
+If $\lambda$ is a limit ordinal and $\beta < \lambda$ then $\beta^+ < \lambda$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\beta^+ \leq \lambda$ and $\beta^+ \neq \lambda$. \qed
+\end{proof}
+
 \section{The Well-Ordering Theorem and Zorn's Lemma}
 
 \begin{thm}[Hartogs]
@@ -4026,7 +4042,7 @@ If $A$ is countable then $A^*$ is countable.
 \pf\ For any $n$, the set $A^n$ is countable, and $A^*$ is equinumerous with $\bigcup_n A^n$. \qed
 \end{proof}
 
-\chapter{Rank of a Set}
+\chapter{The Cumulative Hierarchy}
 
 \begin{df}[Cumulative Hierarchy]
 Define the function $V : \mathbf{On} \rightarrow \mathbf{V}$ by transfinite recursion thus:
@@ -4049,6 +4065,67 @@ For all $\alpha \in \mathbf{On}$, $V_\alpha$ is a transitive set.
 \begin{proof}
 	\pf\ Proposition \ref{prop:uniontransitive}.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:Vmono}
+For any ordinals $\alpha$ and $\beta$, if $\beta < \alpha$ then $V_\beta \subseteq V_\alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $V_\beta \in \mathcal{P} V_\beta \subseteq V_\alpha$ and $V_\alpha$ is a transitive set. \qed
+\end{proof}
+
+\begin{thm}$ $
+\begin{enumerate}
+\item $V_0 = \emptyset$
+\item $\forall \alpha \in \mathbf{On}. V_{\alpha^+} = \mathcal{P} V_\alpha$
+\item For any limit ordinal $\lambda$, $V_\lambda = \bigcup_{\alpha < \lambda} V_\alpha$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$V_0 = \emptyset$}
+\begin{proof}
+	\pf\ Immediate from definition.
+\end{proof}
+\step{2}{$\forall \alpha \in \mathbf{On}. V_{\alpha^+} = \mathcal{P} V_\alpha$}
+\begin{proof}
+	\pf
+	\step{a}{\pflet{$\alpha \in \mathbf{On}$}}
+	\step{b}{For all $\beta < \alpha$ we have $\mathcal{P} V_\beta \subseteq \mathcal{P} V_\alpha$}
+	\begin{proof}
+		\pf\ Propositions \ref{prop:powermono} and \ref{prop:Vmono}.
+	\end{proof}
+	\step{c}{$V_{\alpha^+} = \mathcal{P} V_\alpha$}
+	\begin{proof}
+	\begin{align*}
+		V_{\alpha^+} & = \bigcup_{\beta < \alpha^+} \mathcal{P} V_\beta \\
+		& = \bigcup_{\beta < \alpha} \mathcal{P} V_\beta \cup \mathcal{P} V_\alpha \\
+		& \mathcal{P} V_\alpha & \qed
+	\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{For any limit ordinal $\lambda$, $V_\lambda = \bigcup_{\alpha < \lambda} V_\alpha$}
+\begin{proof}
+	\pf
+	\step{a}{$V_\lambda \subseteq \bigcup_{\alpha < \lambda} V_\alpha$}
+	\begin{proof}
+	\pf
+	\begin{align*}
+		V_\lambda & = \bigcup_{\alpha < \lambda} \mathcal{P} V_\alpha \\
+		& = \bigcup_{\alpha < \lambda} V_{\alpha^+} & (\text{\stepref{2}}) \\
+		& \subseteq \bigcup_{\alpha < \lambda} V_\alpha
+	\end{align*}
+	\end{proof}
+	\step{b}{$\bigcup_{\alpha < \lambda} V_\alpha \subseteq V_\lambda$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:Vmono}.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Group Theory}

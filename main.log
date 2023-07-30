@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  30 JUL 2023 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  30 JUL 2023 21:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,12 +425,12 @@ e 2869.
 LaTeX Warning: Reference `prop:unionmonotone' on page 48 undefined on input lin
 e 2869.
 
-[48]
-Overfull \hbox (23.77295pt too wide) in paragraph at lines 3006--3006
+[48] [49]
+Overfull \hbox (23.77295pt too wide) in paragraph at lines 3022--3022
 []\OT1/cmr/bx/n/14.4 The Well-Ordering The-o-rem and Zorn's Lemma 
  []
 
-[49] [50] [51] [52]
+[50] [51] [52]
 Chapter 7.
 [53
 
@@ -440,30 +440,30 @@ Chapter 8.
 
 ] [58] [59] [60] [61] [62]
 
-LaTeX Warning: Reference `prop:multone' on page 63 undefined on input line 3940
+LaTeX Warning: Reference `prop:multone' on page 63 undefined on input line 3956
 .
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3950.
+LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3966.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3950.
+LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3966.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3950.
+LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3966.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3950.
+LaTeX Warning: Reference `thm:pluslt' on page 63 undefined on input line 3966.
 
 [63] [64]
 Chapter 9.
 [65
 
-] [66
-
-]
+] [66]
 Chapter 10.
-[67] [68]
+[67
+
+] [68]
 Chapter 11.
 [69
 
@@ -478,7 +478,7 @@ WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 [72] [73] [74]
-Overfull \hbox (5.89409pt too wide) in paragraph at lines 4525--4526
+Overfull \hbox (5.89409pt too wide) in paragraph at lines 4602--4603
 []\OT1/cmr/bx/n/10 Definition 12.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \
 OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
@@ -491,45 +491,45 @@ Chapter 13.
 [79]
 
 LaTeX Warning: Reference `cor:pluscancel' on page 80 undefined on input line 48
-09.
+86.
 
 
-Overfull \hbox (5.81142pt too wide) detected at line 4843
+Overfull \hbox (5.81142pt too wide) detected at line 4920
 []
  []
 
 [80]
-Overfull \hbox (10.26518pt too wide) detected at line 4858
+Overfull \hbox (10.26518pt too wide) detected at line 4935
 []
  []
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4930.
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 5007.
 
 [81]
 
-LaTeX Warning: Reference `thm:pluslt' on page 82 undefined on input line 4962.
+LaTeX Warning: Reference `thm:pluslt' on page 82 undefined on input line 5039.
 
 [82]
 WARNING: proof step "1" (<2>1) already defined
@@ -541,7 +541,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
 [96]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 6008--6008
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 6085--6085
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
@@ -554,12 +554,12 @@ msy/m/n/10 j \OML/cmm/m/it/10 u[]x[]x\OMS/cmsy/m/n/10 g$
 Chapter 14.
 WARNING: proof step "e" (<2>7) already defined
 [101] [102]
-Overfull \hbox (68.70209pt too wide) detected at line 6311
+Overfull \hbox (68.70209pt too wide) detected at line 6388
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 6317
+Overfull \hbox (13.13249pt too wide) detected at line 6394
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
@@ -573,7 +573,7 @@ Chapter 15.
 ]
 WARNING: proof step "ii" (<3>3) already defined
 [108] [109] [110] [111]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 6736--6737
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 6813--6814
 []\OT1/cmr/bx/n/10 Proposition 15.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -588,13 +588,13 @@ Chapter 16.
 ] [116] [117] [118] [119] [120] [121] [122]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 7417
+Overfull \hbox (76.64789pt too wide) detected at line 7494
 []
  []
 
 [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134]
 [135]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 8293--8294
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 8370--8371
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -603,7 +603,7 @@ cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
 [136] [137] [138] [139]
-Overfull \hbox (91.49588pt too wide) detected at line 8550
+Overfull \hbox (91.49588pt too wide) detected at line 8627
 []
  []
 
@@ -612,7 +612,7 @@ WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
 [143] [144] [145] [146] [147]
-Overfull \hbox (62.14355pt too wide) detected at line 8996
+Overfull \hbox (62.14355pt too wide) detected at line 9073
 []
  []
 
@@ -623,17 +623,17 @@ Chapter 17.
 ]
 WARNING: proof step "1" (<1>2) already defined
 
-Overfull \hbox (133.82387pt too wide) detected at line 9113
+Overfull \hbox (133.82387pt too wide) detected at line 9190
 []
  []
 
 [150]
-Overfull \hbox (22.05334pt too wide) detected at line 9207
+Overfull \hbox (22.05334pt too wide) detected at line 9284
 []
  []
 
 [151] [152]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 9326--9327
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 9403--9404
 []\OT1/cmr/bx/n/10 Proposition 17.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
@@ -641,7 +641,7 @@ L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
 [153]
-Overfull \hbox (14.47572pt too wide) detected at line 9352
+Overfull \hbox (14.47572pt too wide) detected at line 9429
 []
  []
 
@@ -654,12 +654,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [159]
 [160]
-Overfull \hbox (68.12585pt too wide) detected at line 9674
+Overfull \hbox (68.12585pt too wide) detected at line 9751
 []
  []
 
 [161] [162]
-Overfull \hbox (135.96497pt too wide) detected at line 9750
+Overfull \hbox (135.96497pt too wide) detected at line 9827
 []
  []
 
@@ -668,13 +668,13 @@ Overfull \hbox (135.96497pt too wide) detected at line 9750
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F811E98BD91EBAAD6E58336FBF26B837;10363.
+(rerunfilecheck)             Checksum: ED7BDAC39978AF6AD4FEC6318C298C93;10415.
  ) 
 Here is how much of TeX's memory you used:
- 10068 strings out of 476091
- 147517 string characters out of 5794082
+ 10077 strings out of 476091
+ 147592 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29479 multiletter control sequences out of 15000+600000
+ 29480 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,541b,810s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -700,10 +700,10 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (163 pages, 688857 bytes).
+Output written on main.pdf (163 pages, 690663 bytes).
 PDF statistics:
- 2269 PDF objects out of 2487 (max. 8388607)
- 1864 compressed objects within 19 object streams
- 880 named destinations out of 1000 (max. 500000)
+ 2281 PDF objects out of 2487 (max. 8388607)
+ 1876 compressed objects within 19 object streams
+ 888 named destinations out of 1000 (max. 500000)
  625 words of extra memory for PDF output out of 10000 (max. 10000000)
 
