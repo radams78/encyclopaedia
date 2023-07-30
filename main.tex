@@ -1600,6 +1600,7 @@ We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq
 \end{df}
 
 \begin{props}
+\label{prop:invposet}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
 If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
@@ -1629,6 +1630,7 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \end{proof}
 
 \begin{props}
+\label{prop:subposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
@@ -1924,11 +1926,11 @@ Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} o
 We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
 \end{df}
 
-\begin{prop}[Trichotomy]
+\begin{props}[Trichotomy]
 For any classes $\mathbf{A}$ and $\leq$, the following is a theorem:
 
 Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
-\end{prop}
+\end{props}
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
@@ -1983,6 +1985,27 @@ Let $<$ be a transitive relation on $\mathbf{A}$ that satisfies trichotomy. Defi
 \end{proof}
 
 \begin{props}
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
+
+If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{R}^{-1}$ is a partial order on $\mathbf{A}$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:invposet}.
+\end{proof}
+\step{2}{$\mathbf{R}^{-1}$ is total.}
+\begin{proof}
+	\step{a}{\pflet{$x, y \in \mathbf{A}$}}
+	\step{b}{$x \mathbf{R} y$ or $y \mathbf{R} x$.}
+	\step{c}{$y \mathbf{R}^{-1} x$ or $x \mathbf{R}^{-1} y$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{R}$, $\mathbf{S}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$, $\mathbf{S}$ is a partial order on $\mathbf{B}$, and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. If $\mathbf{F}$ is strictly monotone then it is injective.
@@ -2027,32 +2050,26 @@ Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear o
 \qed
 \end{proof}
 
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
-\begin{prop}
-If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
-\end{prop}
+Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{$\mathbf{R}^{-1}$ is transitive.}
+\step{1}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{B}^2$}}
+\step{2}{$\mathbf{R}'$ is a partial order on $\mathbf{B}$.}
 \begin{proof}
-	\pf\ Proposition \ref{prop:invtrans}.
+	\pf\ Proposition \ref{prop:subposet}.
 \end{proof}
-\step{2}{$\mathbf{R}^{-1}$ satisfies trichotomy.}
+\step{3}{$\mathbf{R}'$ is total.}
 \begin{proof}
-	\step{a}{\pflet{$x,y \in \mathbf{A}$}}
-	\step{b}{Exactly one of $(x,y) \in \mathbf{R}$, $(y,x) \in \mathbf{R}$, $x = y$ holds.}
-	\step{c}{Exactly one of $(y,x) \in \mathbf{R}^{-1}$, $(x,y) \in \mathbf{R}^{-1}$, $x = y$ holds.}
+	\step{a}{\pflet{$x, y \in \mathbf{B}$}}
+	\step{b}{$x \mathbf{R} y$ or $y \mathbf{R} x$}
+	\step{c}{$x \mathbf{R}' y$ or $y \mathbf{R}' x$}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{prop}
-Let $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
 \end{proof}
 
 \begin{df}[Lexicographic Ordering]
