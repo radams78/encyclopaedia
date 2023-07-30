@@ -1924,49 +1924,102 @@ Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} o
 We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
 \end{df}
 
-
 \begin{prop}[Trichotomy]
-Let $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
+For any classes $\mathbf{A}$ and $\leq$, the following is a theorem:
+
+Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
 \end{prop}
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\begin{prop}
-A strictly monotone function is injective.
-\end{prop}
+\begin{props}
+For any classes $\mathbf{A}$ and $<$, the following is a theorem:
+
+Let $<$ be a transitive relation on $\mathbf{A}$ that satisfies trichotomy. Define $\leq$ on $\mathbf{A}$ by $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a linear ordering on $\mathbf{A}$ and $x < y$ iff $x \leq y$ and $x \neq y$.
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$(A, <_A)$ and $(B, <_B)$ be linearly ordered sets.}}
-\step{2}{\pflet{$f : A \rightarrow B$ be strictly monotone.}}
-\step{3}{\pflet{$x,y \in A$}}
-\step{4}{\assume{$f(x) = f(y)$}}
-\step{5}{$f(x) \nless f(y)$ and $f(y) \nless f(x)$}
+\step{1}{$\leq$ is reflexive.}
 \begin{proof}
-	\pf\ Trichotomy.
+	\pf\ By definition we have $\forall x \in \mathbf{A}. x \leq x$.
 \end{proof}
-\step{6}{$x \nless y$ and $y \nless x$}
-\step{7}{$x = y$}
+\step{2}{$\leq$ is antisymmetric.}
 \begin{proof}
-	\pf\ Trichotomy.
+	\step{a}{\assume{$x \leq y$ and $y \leq x$}}
+	\step{b}{$x < y$ or $x = y$}
+	\step{c}{$y < x$ or $y = x$}
+	\step{d}{We cannot have $x < y$ and $y < x$}
+	\begin{proof}
+		\pf\ Trichotomy.
+	\end{proof}
+	\step{e}{$x = y$}
+\end{proof}
+\step{3}{$\leq$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$x \leq y$ and $y \leq z$}}
+	\step{b}{$x < y$ or $x = y$}
+	\step{c}{$y < z$ or $y = z$}
+	\step{d}{\case{$x < y$ and $y < z$}}
+	\begin{proof}
+		\pf\ Then $x < z$ by transitivity, so $x \leq z$.
+	\end{proof}
+	\step{e}{\case{$x = y$}}
+	\begin{proof}
+		\pf\ Then we have $y \leq z$ and so $x \leq z$.
+	\end{proof}
+	\step{f}{\case{$y = z$}}
+	\begin{proof}
+		\pf\ Then we have $x \leq y$ and so $x \leq z$.
+	\end{proof}
+\end{proof}
+\step{4}{$\leq$ is total.}
+\begin{proof}
+	\pf\ Immediate from trichotomy.
 \end{proof}
 \qed
 \end{proof}
 
-\begin{prop}
-\label{prop:strictmonotoneinv}
-Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \in A$. If $f$ is strictly monotone and $f(x) < f(y)$ then $x < y$.
-\end{prop}
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{R}$, $\mathbf{S}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$, $\mathbf{S}$ is a partial order on $\mathbf{B}$, and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. If $\mathbf{F}$ is strictly monotone then it is injective.
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{$f(x) \neq f(y)$ and $f(y) \nless f(x)$}
+\step{3}{\pflet{$x,y \in \mathbf{A}$}}
+\step{6}{\assume{$x \neq y$} \prove{$\mathbf{F}(x) \neq \mathbf{F}(y)$}}
+\step{5}{\assume{w.l.o.g. $x \mathbf{R} y$}}
+\begin{proof}
+	\pf\ $\mathbf{R}$ is total.
+\end{proof}
+\step{7}{$\mathbf{F}(x) \mathbf{S} \mathbf{F}(y)$ and $\mathbf{F}(x) \neq \mathbf{F}(y)$}
+\begin{proof}
+	\pf\ $\mathbf{F}$ is strictly monotone.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}
+\label{prop:strictmonotoneinv}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\leq$, $\preccurlyeq$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear order on $\mathbf{B}$. Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{F}$ is strictly monotone. For all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) \prec \mathbf{F}(y)$ then $x < y$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}(x) \neq \mathbf{F}(y)$ and $\mathbf{F}(y) \not\prec \mathbf{F}(x)$}
 \begin{proof}
 	\pf\ Trichotomy.
 \end{proof}
 \step{2}{$x \neq y$ and $y \nless x$}
+\begin{proof}
+	\pf\ $\mathbf{F}$ is strictly monotone.
+\end{proof}
 \step{3}{$x < y$}
 \begin{proof}
 	\pf\ Trichotomy.
@@ -1974,13 +2027,6 @@ Let $A$ and $B$ be linearly ordered sets. Let $f : A \rightarrow B$. Let $x,y \i
 \qed
 \end{proof}
 
-\begin{prop}
-Let $<$ be an irreflexive relation on $\mathbf{A}$ that satisfies trichotomy. Define $\leq$ on $\mathbf{A}$ by $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a linear ordering on $\mathbf{A}$ and $x < y$ iff $x \leq y$ and $x \neq y$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
 
 \begin{prop}
 If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
