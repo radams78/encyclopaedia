@@ -3995,8 +3995,8 @@ For natural numbers $m$, $n$ and $p$, if $m < n$ and $p \neq 0$ then $mp < np$.
 	\pf
 	\begin{align*}
 		mp^+ & = mp + m \\
-		& < np + m & (\text{induction hypothesis. Theorem \ref{thm:pluslt}}) \\
-		& < np + n & (\text{\stepref{2}, Theorem \ref{thm:pluslt}}) \\
+		& < np + m & (\text{induction hypothesis. Proposition \ref{prop:pluslt}}) \\
+		& < np + n & (\text{\stepref{2}, Proposition \ref{prop:pluslt}}) \\
 		& = np^+
 	\end{align*}
 \end{proof}
@@ -4843,7 +4843,7 @@ We prove$\sim$ is an equivalence relation on $\mathbb{N}^2$.
 	\step{c}{$m + q + s = n + q + r$}
 	\step{d}{$m + s = n + r$}
 	\begin{proof}
-		\pf\ Theorem \ref{thm:pluscancel}.
+		\pf\ Corollary \ref{cor:pluscancel}.
 	\end{proof}
 \end{proof}
 \qed
@@ -5056,12 +5056,12 @@ We prove this is well-defined.
 \begin{proof}
 	\pf
 	\begin{align*}
-		m + q < n + p & \Leftrightarrow m + n' + q < n + n' + p & (\text{Theorem \ref{thm:pluslt}}) \\
+		m + q < n + p & \Leftrightarrow m + n' + q < n + n' + p & (\text{Proposition \ref{prop:pluslt}}) \\
 		& \Leftrightarrow m' + n + q < n + n' + p \\
-		& \Leftrightarrow m' + q < n' + p & (\text{Theorem \ref{thm:pluslt}}) \\
-		& \Leftrightarrow m' + q + p' < n' + p + p' & (\text{Theorem \ref{thm:pluslt}}) \\
+		& \Leftrightarrow m' + q < n' + p & (\text{Proposition \ref{prop:pluslt}}) \\
+		& \Leftrightarrow m' + q + p' < n' + p + p' & (\text{Proposition \ref{prop:pluslt}}) \\
 		& \Leftrightarrow m' + q' + p < n' + p + p' \\
-		& \Leftrightarrow m' + q' < n' + p' & (\text{Theorem \ref{thm:pluslt}}) & \qed \\
+		& \Leftrightarrow m' + q' < n' + p' & (\text{Proposition \ref{prop:pluslt}}) & \qed \\
 	\end{align*}
 \end{proof}
 \end{proof}
@@ -5094,7 +5094,7 @@ $<$ is a linear order on $\mathbb{Z}$.
 		\end{proof}
 		\step{d}{$m + s < n + r$}
 		\begin{proof}
-			\pf\ Theorem \ref{thm:pluslt}.
+			\pf\ Proposition \ref{prop:pluslt}.
 		\end{proof}
 	\end{proof}
 	\step{3}{$<$ is total.}
