@@ -1631,36 +1631,38 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 
 \begin{props}
 \label{prop:subposet}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{R}$, the following is a theorem:
 
-Assume $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
+Assume $\mathbf{R}$ is a partial order on $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is injective. Define $\mathbf{S}$ on $\mathbf{A}$ by $x \mathbf{S} y$ iff $\mathbf{F}(x) \mathbf{R} \mathbf{F}(y)$. Then $\mathbf{S}$ is a partial order on $\mathbf{A}$.
 \end{props}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{B}^2$}}
-\step{2}{$\mathbf{R}'$ is reflexive.}
+\step{1}{$\mathbf{S}$ is reflexive.}
 \begin{proof}
-	\step{a}{\pflet{$x \in \mathbf{B}$}}
-	\step{b}{$x \in \mathbf{A}$}
-	\step{c}{$x \mathbf{R} x$}
-	\step{d}{$x \mathbf{R}' x$}
+	\pf\ For any $x \in \mathbf{A}$ we have $\mathbf{F}(x) \mathbf{R} \mathbf{F}(x)$.
 \end{proof}
-\step{3}{$\mathbf{R}'$ is antisymmetric.}
+\step{2}{$\mathbf{S}$ is antisymmetric.}
 \begin{proof}
-	\step{a}{\assume{$x \mathbf{R}' y$ and $y \mathbf{R}' x$}}
-	\step{b}{$x \mathbf{R} y$ and $y \mathbf{R} x$}
-	\step{c}{$x = y$}
+	\step{a}{\pflet{$x,y \in \mathbf{A}$}}
+	\step{b}{\assume{$x \mathbf{S} y$ and $y \mathbf{S} x$}}
+	\step{c}{$\mathbf{F}(x) \mathbf{R} \mathbf{F}(y)$ and $\mathbf{F}(y) \mathbf{R} \mathbf{F}(x)$}
+	\step{d}{$\mathbf{F}(x) = \mathbf{F}(y)$}
+	\begin{proof}
+		\pf\ $\mathbf{R}$ is antisymmetric.
+	\end{proof}
+	\step{e}{$x = y$}
 \end{proof}
-\step{4}{$\mathbf{R}'$ is transitive.}
-\begin{proof}
-	\step{a}{\assume{$x \mathbf{R}' y$ and $y \mathbf{R}' z$ where $x,y,z \in \mathbf{B}$}}
-	\step{b}{$x \mathbf{R} y$ and $y \mathbf{R} z$}
-	\step{c}{$x \mathbf{R} z$}
-	\step{d}{$x \mathbf{R}' z$}
-\end{proof}
+\step{3}{$\mathbf{S}$ is transitive.}
 \qed
 \end{proof}
+
+\begin{cors}
+\label{cor:subposet}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
+\end{cors}
 
 \begin{df}[Partially Ordered Set]
 A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
@@ -1982,7 +1984,7 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ and $\mathbf{S}$ is a partial
 \qed
 \end{proof}
 
-\subsection{Linear Orders}
+\section{Linear Orders}
 
 \begin{df}[Linear Ordering]
 Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} on $\mathbf{A}$ is a partial ordering $\leq$ on $\mathbf{A}$ that is \emph{total}, i.e.
@@ -2116,26 +2118,30 @@ Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear o
 \end{proof}
 
 \begin{props}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+\label{prop:subloset}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
 
-Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
+Assume $\mathbf{S}$ is a linear order on $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$. Define $\mathbf{R}$ on $\mathbf{A}$ by $x \mathbf{R} y$ if and only if $\mathbf{F}(x) \mathbf{S} \mathbf{F}(y)$. Then $\mathbf{R}$ is a linear order on $\mathbf{A}$.
 \end{props}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{B}^2$}}
-\step{2}{$\mathbf{R}'$ is a partial order on $\mathbf{B}$.}
+\step{1}{$\mathbf{R}$ is a partial order on $\mathbf{A}$.}
 \begin{proof}
 	\pf\ Proposition \ref{prop:subposet}.
 \end{proof}
-\step{3}{$\mathbf{R}'$ is total.}
+\step{2}{$\mathbf{R}$ is total.}
 \begin{proof}
-	\step{a}{\pflet{$x, y \in \mathbf{B}$}}
-	\step{b}{$x \mathbf{R} y$ or $y \mathbf{R} x$}
-	\step{c}{$x \mathbf{R}' y$ or $y \mathbf{R}' x$}
+	\pf\ For all $x,y \in \mathbf{A}$ we have $\mathbf{F}(x) \mathbf{S} \mathbf{F}(y)$ or $\mathbf{F}(y) \mathbf{S} \mathbf{F}(x)$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cors}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
+\end{cors}
 
 \begin{props}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
@@ -2169,7 +2175,7 @@ Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$ and $\mathbf{S}$ is a line
 \qed
 \end{proof}
 
-\subsection{Well Orderings}
+\section{Well Orderings}
 
 \begin{df}[Well Ordering]
 A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{A}$ such that:
@@ -2179,21 +2185,140 @@ A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{
 \end{itemize}
 \end{df}
 
+\begin{props}
+\label{prop:leastelement}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\leq$, the following is a theorem:
 
-\begin{prop}
-Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
-\begin{enumerate}
-\item $\leq$ is a partial order on $A$.
-\item If $B$ is a linearly ordered set then $\leq$ is a linear order on $A$.
-\item If $B$ is a well ordered set then $\leq$ is a well ordering on $A$.
-\end{enumerate}
-\end{prop}
+Assume $\leq$ well orders $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$ is nonempty. Then $\mathbf{B}$ has a least element.
+\end{props}
 
 \begin{proof}
-\pf\ Easy. \qed
+\pf
+\step{1}{\pick\ $b \in \mathbf{B}$}
+\step{2}{\pflet{$S = \seg b \cap \mathbf{B}$}}
+\step{3}{\case{$S = \emptyset$}}
+\begin{proof}
+	\pf\ In this case $b$ is the least element of $\mathbf{B}$.
+\end{proof}
+\step{4}{\case{$S \neq \emptyset$}}
+\begin{proof}
+	\pf\ In this cases $S$ has a least element, which is the least element of $\mathbf{B}$.
+\end{proof}
+\qed
 \end{proof}
 
-\section{Transfinite Recursion}
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
+
+Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$. Define $\mathbf{R}$ on $\mathbf{A}$ by $x \mathbf{R} y$ if and only if $\mathbf{F}(x) \mathbf{S} \mathbf{F}(y)$. Then $\mathbf{R}$ well orders $\mathbf{A}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{R}$ linearly orders $\mathbf{A}$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:subloset}.
+\end{proof}
+\step{2}{For all $t \in \mathbf{A}$ we have $\{ x \in \mathbf{A} \mid x \mathbf{R} t \wedge x \neq t \}$ is a set.}
+\begin{proof}
+	\step{a}{\pflet{$t \in \mathbf{A}$}}
+	\step{b}{\pflet{$S = \{ y \in \mathbf{B} \mid y \mathbf{S} \mathbf{F}(t) \wedge y \neq \mathbf{F}(t) \}$}}
+	\step{c}{\pflet{$P(x,y)$ be the property $\mathbf{F}(y) = x$}}
+	\step{d}{For all $x \in S$ there exists at most one $y$ such that $P(x,y)$}
+	\begin{proof}
+		\pf\ $\mathbf{F}$ is injective.
+	\end{proof}
+	\step{e}{\pflet{$T = \{ y \mid \exists x \in S. P(x,y) \}$}}
+	\begin{proof}
+		\pf\ Axiom of Replacement.
+	\end{proof}
+	\step{f}{$T = \{ x \in \mathbf{A} \mid x \mathbf{R} t \wedge x \neq t \}$}
+\end{proof}
+\step{3}{Every nonempty subset of $\mathbf{A}$ has a least element.}
+\begin{proof}
+	\step{a}{\pflet{$S$ be a nonempty subset of $\mathbf{A}$.}}
+	\step{b}{\pflet{$y$ be the least element of $\mathbf{F}(S)$.}}
+	\step{c}{\pick\ $x \in S$ such that $\mathbf{F}(x) = y$.}
+	\step{d}{$x$ is least in $S$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cors}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+If $\mathbf{R}$ well orders $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$ then $\mathbf{R} \cap \mathbf{A}^2$ well orders $\mathbf{A}$.
+\end{cors}
+
+\subsection{Transfinite Induction}
+
+\begin{thms}[Transfinite Induction Principle]
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\leq$, the following is a theorem:
+
+Assume $\leq$ is a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
+\[ \seg t \subseteq \mathbf{B} \Rightarrow t \in \mathbf{B} \enspace . \]
+Then $\mathbf{B} = \mathbf{A}$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\mathbf{B} \neq \mathbf{A}$}}
+\step{2}{\pflet{$m$ be the least element of $\mathbf{A} - \mathbf{B}$}}
+\begin{proof}
+	\pf\ Proposition \ref{prop:leastelement}.
+\end{proof}
+\step{3}{$\seg m \subseteq \mathbf{B}$}
+\begin{proof}
+	\pf\ By leastness of $m$.
+\end{proof}
+\step{4}{$m \in \mathbf{B}$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C \subseteq A$ be nonempty.}}
+\step{2}{\pflet{$B = \{ t \in A \mid \forall x \in C. t < x \}$}}
+\step{3}{$B \cap C = \emptyset$}
+\step{4}{$B \neq A$}
+\step{5}{\pick\ $t \in A$ such that $\seg t \subseteq B$ and $t \notin B$}
+\step{6}{$t$ is least in $C$.}
+\qed
+\end{proof}
+
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{G}$, $\leq$ and $\preccurlyeq$, the following is a theorem:
+
+Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B}$. Assume $\mathbf{F}$ and $\mathbf{G}$ are order isomorphisms between $\mathbf{A}$ and $\mathbf{B}$. Then $\mathbf{F} = \mathbf{G}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{For all $x \in \mathbf{A}$, if $\forall t < x. \mathbf{F}(t) = \mathbf{G}(t)$, then $\mathbf{F}(x) = \mathbf{G}(x)$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathbf{A}$}}
+	\step{b}{\assume{$\forall t < x. \mathbf{F}(t) = \mathbf{G}(t)$}}
+	\step{e}{$\mathbf{F}(\seg x) = \mathbf{G}(\seg x)$}
+	\step{c}{$\mathbf{F}(x)$ is the least element of $\mathbf{B} - \mathbf{F}(\seg x)$}
+	\step{d}{$\mathbf{G}(x)$ is the least element of $\mathbf{B} - \mathbf{G}(\seg x)$}
+	\step{e}{$\mathbf{F}(x) = \mathbf{G}(x)$}
+\end{proof}
+\step{2}{$\forall x \in \mathbf{A}. \mathbf{F}(x) = \mathbf{G}(x)$}
+\begin{proof}
+	\pf\ Transfinite induction.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Transfinite Recursion}
 
 \begin{thms}[Transfinite Recursion Theorem Schema]
 For any property $G(x,y)$, the following is a theorem:
@@ -2309,68 +2434,6 @@ e & \text{if } B - F(\seg t) = \emptyset
 \end{proof}
 \qed
 \end{proof}
-
-\begin{prop}
-Let $\mathbf{R}$ be a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a well ordering on $\mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{thm}[Transfinite Induction Principle]
-Let $\leq$ be a well ordering on $\mathbf{A}$. Let $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
-\[ \seg t \subseteq \mathbf{B} \Rightarrow t \in \mathbf{B} \enspace . \]
-Then $\mathbf{B} = \mathbf{A}$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $\mathbf{B} \neq \mathbf{A}$}}
-\step{2}{\pick\ $a \in \mathbf{A} - \mathbf{B}$}
-\step{2}{\pflet{$m$ be the least element of $(\seg a \cup \{a\}) - B$}}
-\step{3}{$\seg m \subseteq \mathbf{B}$}
-\begin{proof}
-	\pf\ By leastness of $m$.
-\end{proof}
-\step{4}{$m \in \mathbf{B}$}
-\qedstep
-\begin{proof}
-	\pf\ This is a contradiction.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-There is at most one isomorphism between two well ordered sets.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A$ and $B$ be well ordered sets.}}
-\step{2}{\pflet{$f, g : A \cong B$ be isomorphisms.}}
-\step{3}{$\forall x \in A. f(x) = g(x)$}
-\begin{proof}
-	\pf\ Transfinite induction on $x$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{thm}
-Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$C \subseteq A$ be nonempty.}}
-\step{2}{\pflet{$B = \{ t \in A \mid \forall x \in C. t < x \}$}}
-\step{3}{$B \cap C = \emptyset$}
-\step{4}{$B \neq A$}
-\step{5}{\pick\ $t \in A$ such that $\seg t \subseteq B$ and $t \notin B$}
-\step{6}{$t$ is least in $C$.}
-\qed
-\end{proof}
-
 
 \chapter{Ordinal Numbers}
 

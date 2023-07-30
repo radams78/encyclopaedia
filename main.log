@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  30 JUL 2023 13:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  30 JUL 2023 15:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,178 +401,181 @@ ML/cmm/m/it/10 a \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 A:[]\OT1/cmr/m/n/10 ([\OML
 
 ]
 Chapter 5.
-[29] [30] [31] [32] [33]
+[29] [30] [31] [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33]
 Underfull \vbox (badness 4024) has occurred while \output is active []
 
  [34]
-[35] [36] [37] [38] [39]
-WARNING: proof step "2" (<1>3) already defined
-[40]
+[35] [36] [37] [38]
+WARNING: proof step "e" (<2>6) already defined
+[39] [40] [41] [42
+
+]
 Chapter 6.
-[41
+[43] [44]
 
-] [42]
-
-LaTeX Warning: Reference `prop:unionmonotone' on page 43 undefined on input lin
-e 2611.
+LaTeX Warning: Reference `prop:unionmonotone' on page 45 undefined on input lin
+e 2674.
 
 
-LaTeX Warning: Reference `prop:unionmonotone' on page 43 undefined on input lin
-e 2611.
+LaTeX Warning: Reference `prop:unionmonotone' on page 45 undefined on input lin
+e 2674.
 
-[43] [44] [45] [46] [47] [48
+[45] [46] [47] [48] [49] [50
 
 ]
 Chapter 7.
-[49] [50] [51] [52]
+[51] [52] [53] [54]
 Chapter 8.
-[53
+[55
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3329.
+(hyperref)                removing `math shift' on input line 3392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3329.
+(hyperref)                removing `math shift' on input line 3392.
 
-[54] [55] [56] [57] [58] [59] [60] [61]
+[56] [57] [58] [59] [60] [61] [62] [63]
 
-LaTeX Warning: Reference `prop:multone' on page 62 undefined on input line 3904
+LaTeX Warning: Reference `prop:multone' on page 64 undefined on input line 3967
 .
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3914.
+LaTeX Warning: Reference `thm:pluslt' on page 64 undefined on input line 3977.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3914.
+LaTeX Warning: Reference `thm:pluslt' on page 64 undefined on input line 3977.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3914.
+LaTeX Warning: Reference `thm:pluslt' on page 64 undefined on input line 3977.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3914.
+LaTeX Warning: Reference `thm:pluslt' on page 64 undefined on input line 3977.
 
-[62] [63] [64
+[64] [65] [66
 
 ]
 Chapter 9.
-[65] [66]
+[67] [68]
 Chapter 10.
-[67
+[69
 
-] [68]
+] [70]
 Chapter 11.
 WARNING: proof step "1" (<2>1) already defined
-[69
+[71
 
 ]
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
-[70] [71] [72]
-Overfull \hbox (5.89409pt too wide) in paragraph at lines 4464--4465
+[72] [73] [74]
+Overfull \hbox (5.89409pt too wide) in paragraph at lines 4527--4528
 []\OT1/cmr/bx/n/10 Definition 11.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \
 OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
  []
 
-[73] [74] [75] [76
+[75] [76] [77] [78
 
 ]
 Chapter 12.
 
-LaTeX Warning: Reference `cor:pluscancel' on page 77 undefined on input line 46
-50.
-
-[77]
-
-LaTeX Warning: Reference `cor:pluscancel' on page 78 undefined on input line 47
-48.
-
-
-Overfull \hbox (5.81142pt too wide) detected at line 4782
-[]
- []
-
-[78]
-Overfull \hbox (10.26518pt too wide) detected at line 4797
-[]
- []
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
-
-
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4869.
+LaTeX Warning: Reference `cor:pluscancel' on page 79 undefined on input line 47
+13.
 
 [79]
 
-LaTeX Warning: Reference `thm:pluslt' on page 80 undefined on input line 4901.
+LaTeX Warning: Reference `cor:pluscancel' on page 80 undefined on input line 48
+11.
+
+
+Overfull \hbox (5.81142pt too wide) detected at line 4845
+[]
+ []
 
 [80]
+Overfull \hbox (10.26518pt too wide) detected at line 4860
+[]
+ []
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+
+LaTeX Warning: Reference `thm:pluslt' on page 81 undefined on input line 4932.
+
+[81]
+
+LaTeX Warning: Reference `thm:pluslt' on page 82 undefined on input line 4964.
+
+[82]
 WARNING: proof step "1" (<2>1) already defined
-[81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91]
+[83] [84] [85] [86] [87] [88] [89] [90] [91] [92] [93]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [92]
-[93]
+ [94]
+[95]
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
-[94]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 5947--5947
+[96]
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 6010--6010
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
 msy/m/n/10 j \OML/cmm/m/it/10 u[]x[]x\OMS/cmsy/m/n/10 g$ 
  []
 
-[95] [96] [97] [98
+[97] [98] [99] [100
 
 ]
 Chapter 13.
 WARNING: proof step "e" (<2>7) already defined
-[99] [100]
-Overfull \hbox (68.70209pt too wide) detected at line 6250
+[101] [102]
+Overfull \hbox (68.70209pt too wide) detected at line 6313
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 6256
+Overfull \hbox (13.13249pt too wide) detected at line 6319
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
 
-[101] [102
+[103] [104
 
-] [103] [104]
+] [105] [106]
 Chapter 14.
-[105
+[107
 
 ]
 WARNING: proof step "ii" (<3>3) already defined
-[106] [107] [108] [109]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 6675--6676
+[108] [109] [110] [111]
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 6738--6739
 []\OT1/cmr/bx/n/10 Proposition 14.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -580,20 +583,20 @@ ch that $[][] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[]\OMS/cmsy/m/n/10 j[] \OML/c
 mm/m/it/10 <
  []
 
-[110] [111] [112]
+[112] [113] [114]
 Chapter 15.
-[113
+[115
 
-] [114] [115] [116] [117] [118] [119] [120]
+] [116] [117] [118] [119] [120] [121] [122]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 7356
+Overfull \hbox (76.64789pt too wide) detected at line 7419
 []
  []
 
-[121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132]
-[133]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 8232--8233
+[123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133] [134]
+[135]
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 8295--8296
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -601,79 +604,79 @@ n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
-[134] [135] [136] [137]
-Overfull \hbox (91.49588pt too wide) detected at line 8489
+[136] [137] [138] [139]
+Overfull \hbox (91.49588pt too wide) detected at line 8552
 []
  []
 
-[138] [139] [140]
+[140] [141] [142]
 WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
-[141] [142] [143] [144] [145]
-Overfull \hbox (62.14355pt too wide) detected at line 8935
-[]
- []
-
-[146]
-Chapter 16.
-[147
-
-]
-WARNING: proof step "1" (<1>2) already defined
-
-Overfull \hbox (133.82387pt too wide) detected at line 9052
+[143] [144] [145] [146] [147]
+Overfull \hbox (62.14355pt too wide) detected at line 8998
 []
  []
 
 [148]
-Overfull \hbox (22.05334pt too wide) detected at line 9146
+Chapter 16.
+[149
+
+]
+WARNING: proof step "1" (<1>2) already defined
+
+Overfull \hbox (133.82387pt too wide) detected at line 9115
 []
  []
 
-[149] [150]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 9265--9266
+[150]
+Overfull \hbox (22.05334pt too wide) detected at line 9209
+[]
+ []
+
+[151] [152]
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 9328--9329
 []\OT1/cmr/bx/n/10 Proposition 16.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
-[151]
-Overfull \hbox (14.47572pt too wide) detected at line 9291
+[153]
+Overfull \hbox (14.47572pt too wide) detected at line 9354
 []
  []
 
-[152] [153] [154
+[154] [155] [156
 
 ]
 Chapter 17.
-[155] [156]
+[157] [158]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [157]
-[158]
-Overfull \hbox (68.12585pt too wide) detected at line 9613
+ [159]
+[160]
+Overfull \hbox (68.12585pt too wide) detected at line 9676
 []
  []
 
-[159] [160]
-Overfull \hbox (135.96497pt too wide) detected at line 9689
+[161] [162]
+Overfull \hbox (135.96497pt too wide) detected at line 9752
 []
  []
 
-[161] (./main.aux)
+[163] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FEBE0422DC6F1A1B1ACE74D9D3CDD3F8;9823.
+(rerunfilecheck)             Checksum: 7A64266B1B5FA4972D1FFD6D689A486E;9986.
  ) 
 Here is how much of TeX's memory you used:
- 10052 strings out of 476091
- 147289 string characters out of 5794082
+ 10059 strings out of 476091
+ 147382 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29465 multiletter control sequences out of 15000+600000
+ 29469 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,541b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -699,10 +702,10 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (161 pages, 684179 bytes).
+Output written on main.pdf (163 pages, 687491 bytes).
 PDF statistics:
- 2237 PDF objects out of 2487 (max. 8388607)
- 1834 compressed objects within 19 object streams
- 878 named destinations out of 1000 (max. 500000)
- 601 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2252 PDF objects out of 2487 (max. 8388607)
+ 1847 compressed objects within 19 object streams
+ 881 named destinations out of 1000 (max. 500000)
+ 609 words of extra memory for PDF output out of 10000 (max. 10000000)
 
