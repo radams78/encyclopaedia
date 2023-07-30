@@ -1555,32 +1555,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 
 \chapter{Ordering Relations}
 
-\begin{thm}[Knaster Fixed-Point Theorem]
-Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$B = \{ x \in A \mid x \leq \phi(x) \}$}}
-\step{2}{\pflet{$a = \sup B$}}
-\begin{proof}
-	\pf\ $B$ is nonempty because the least element of $A$ is in $B$, and it is bounded above by the greatest element of $A$.
-\end{proof}
-\step{3}{For all $b \in B$ we have $b \leq \phi(a)$}
-\begin{proof}
-	\step{a}{\pflet{$b \in B$}}
-	\step{b}{$b \leq \phi(b)$}
-	\step{c}{$b \leq a$}
-	\step{d}{$\phi(b) \leq \phi(a)$}
-	\step{e}{$b \leq \phi(a)$}
-\end{proof}
-\step{4}{$a \leq \phi(a)$}
-\step{5}{$\phi(a) \leq \phi(\phi(a))$}
-\step{6}{$\phi(a) \in B$}
-\step{7}{$\phi(a) \leq a$}
-\step{8}{$\phi(a) = a$}
-\qed
-\end{proof}
 
 \begin{prop}
 \label{prop:orderisoid}
@@ -1908,6 +1882,33 @@ Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \math
 \begin{df}[Complete]
 A partial order is \emph{complete} iff every nonempty subset bounded above has a supremum, and every nonempty subset bounded below has an infimum.
 \end{df}
+
+\begin{thm}[Knaster Fixed-Point Theorem]
+Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B = \{ x \in A \mid x \leq \phi(x) \}$}}
+\step{2}{\pflet{$a = \sup B$}}
+\begin{proof}
+	\pf\ $B$ is nonempty because the least element of $A$ is in $B$, and it is bounded above by the greatest element of $A$.
+\end{proof}
+\step{3}{For all $b \in B$ we have $b \leq \phi(a)$}
+\begin{proof}
+	\step{a}{\pflet{$b \in B$}}
+	\step{b}{$b \leq \phi(b)$}
+	\step{c}{$b \leq a$}
+	\step{d}{$\phi(b) \leq \phi(a)$}
+	\step{e}{$b \leq \phi(a)$}
+\end{proof}
+\step{4}{$a \leq \phi(a)$}
+\step{5}{$\phi(a) \leq \phi(\phi(a))$}
+\step{6}{$\phi(a) \in B$}
+\step{7}{$\phi(a) \leq a$}
+\step{8}{$\phi(a) = a$}
+\qed
+\end{proof}
 
 \begin{df}[Dense]
 Let $\leq$ be a partial order on $\mathbf{A}$ and
