@@ -27,12 +27,12 @@
 
 \newcommand{\dom}{\ensuremath{\operatorname{dom}}}
 \newcommand{\ran}{\ensuremath{\operatorname{ran}}}
-\newcommand{\fld}{\ensuremath{\operatorname{fld}}}
 \newcommand{\spn}{\ensuremath{\operatorname{span}}}
 \newcommand{\cl}{\ensuremath{\operatorname{cl}}}
 \newcommand{\sgn}{\ensuremath{\operatorname{sgn}}}
 \newcommand{\seg}{\ensuremath{\operatorname{seg}}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
+\newcommand{\rank}{\ensuremath{\operatorname{rank}}}
 
 \begin{document}
 
@@ -46,7 +46,8 @@ Our language is the language of first-order logic with equality over one primiti
 
 We shall speak informally of \emph{classes} as an abbreviation for talking about predicates. A \emph{class} is determined by a unary predicate $\phi[x]$ (possibly with parameters). We write $\{ x \mid \phi[x] \}$ or $\{ x : \phi[x] \}$ for the class determined by $\phi[x]$. We write '$a$ is an element of $\{x \mid \phi[x]\}$' or '$a \in \{x \mid \phi[x]\}$' for $\phi[a]$.
 
-We write $\{t[x_1, \ldots, x_n] \mid P[x_1, \ldots, x_n] \}$ for $\{y \mid \exists x_1, \ldots, x_n (y = t[x_1, \ldots, x_n] \wedge P[x_1, \ldots, x_n]) \}$.
+We write $\{t[x_1, \ldots, x_n] \mid P[x_1, \ldots, x_n] \}$ for 
+\[ \{y \mid \exists x_1, \ldots, x_n (y = t[x_1, \ldots, x_n] \wedge P[x_1, \ldots, x_n]) \} \enspace . \]
 
 We say two classes $\mathbf{A}$ and $\mathbf{B}$ are \emph{equal}, and write $\mathbf{A} = \mathbf{B}$, iff $\forall x (x \in \mathbf{A} \leftrightarrow x \in \mathbf{B})$.
 
@@ -353,6 +354,17 @@ If $\mathbf{A} \subseteq \mathbf{B}$ then $\mathcal{P} \mathbf{A} \subseteq \mat
 
 \begin{proof}
 \pf\ Every subset of $\mathbf{A}$ is a subset of $\mathbf{B}$. \qed
+\end{proof}
+
+\begin{props}
+\label{prop:unionmonotone}
+For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
+
+If $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup \mathbf{B}$.
+\end{props}
+
+\begin{proof}
+\pf\ If $x \in X \in \mathbf{A}$ then $x \in X \in \mathbf{B}$. \qed
 \end{proof}
 
 \begin{props}
@@ -699,7 +711,7 @@ A relation $\mathbf{R}$ is \emph{irreflexive} iff there is no $x$ such that $(x,
 \end{df}
 
 \begin{df}[Symmetric]
-A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $(x,y) \in \mathbf{R}$, then $(y,x) \in \mathbf{R}$.
+A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $x\mathbf{R}y$, then $y\mathbf{R}x$.
 \end{df}
 
 \begin{df}[Antisymmetric]
@@ -725,7 +737,7 @@ If $\mathbf{R}$ is an antisymmetric relation on $\mathbf{A}$ then so is $\mathbf
 \end{proof}
 
 \begin{df}[Transitive]
-A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $(x,y), (y,z) \in \mathbf{R}$, then $(x,z) \in \mathbf{R}$.
+A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $x\mathbf{R}y$ and $y \mathbf{R} z$, then $x\mathbf{R} z$.
 \end{df}
 
 \begin{props}
@@ -744,7 +756,7 @@ If $\mathbf{R}$ is a transitive relation between $\mathbf{A}$ and $\mathbf{B}$ t
 \qed
 \end{proof}
 
-\section{$n$-ary Relations}
+\section{n-ary Relations}
 
 \begin{dfs}
 For any sets $a_1$, \ldots, $a_n$, define the \emph{ordered $n$-tuple} $(a_1, \ldots, a_n)$ by
@@ -769,7 +781,7 @@ A \emph{binary operation} on a class $\mathbf{A}$ is a function $\mathbf{A}^2 \r
 \end{df}
 
 \begin{df}[Closed]
-Let $\mathbf{F}$ be a function and $\mathbf{A} \subseteq \dom \mathbf{F}$. Then $\mathbf{A}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{A}. \mathbf{F}(x) \in \mathbf{A}$.
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{A}$ be a function and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{B}. \mathbf{F}(x) \in \mathbf{B}$.
 \end{df}
 
 \begin{prop}
@@ -840,11 +852,12 @@ For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \ri
 	\begin{proof}
 		\pf
 		\begin{align*}
-			B \in \dom F & \Leftrightarrow \exists b. (B,b) \in F \\
-			& \Leftrightarrow \exists b. ((B,b) \in \bigcup \mathcal{A} \wedge (B,b) \in C) \\
-			& \Leftrightarrow \exists b. \exists B' \in \mathcal{P} A - \{ \emptyset \}. ((B,b) \in \{ B' \} \times B' \wedge (B,b) \in C) \\
-			& \Leftrightarrow B \in \mathcal{P} A - \{ \emptyset \} \wedge \exists b \in B. (B,b) \in C \\
-			& \Leftrightarrow B \in \mathcal{P} A - \{ \emptyset \} & (\text{\stepref{5}})
+			& B \in \dom F \\
+			\Leftrightarrow & \exists b. (B,b) \in F \\
+			\Leftrightarrow & \exists b. ((B,b) \in \bigcup \mathcal{A} \wedge (B,b) \in C) \\
+			\Leftrightarrow & \exists b. \exists B' \in \mathcal{P} A - \{ \emptyset \}. ((B,b) \in \{ B' \} \times B' \wedge (B,b) \in C) \\
+			\Leftrightarrow & B \in \mathcal{P} A - \{ \emptyset \} \wedge \exists b \in B. (B,b) \in C \\
+			\Leftrightarrow & B \in \mathcal{P} A - \{ \emptyset \} & (\text{\stepref{5}})
 		\end{align*}
 	\end{proof}
 	\step{c}{$\ran F \subseteq A$}
@@ -2075,6 +2088,7 @@ If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is a
 \end{proof}
 
 \begin{props}
+\label{prop:strictmonotoneinj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{R}$, $\mathbf{S}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$, $\mathbf{S}$ is a partial order on $\mathbf{B}$, and $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. If $\mathbf{F}$ is strictly monotone then it is injective.
@@ -2992,6 +3006,7 @@ For ordinals $\alpha$ and $\beta$, if $\alpha^+ = \beta^+$ then $\alpha = \beta$
 \end{proof}
 
 \begin{prop}
+\label{prop:succltsucc}
 For ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ if and only if $\alpha^+ < \beta^+$.
 \end{prop}
 
@@ -3247,6 +3262,7 @@ For any cardinal number $\kappa$ we have $\kappa \cdot 0 = 0$.
 \end{proof}
 
 \begin{prop}
+\label{prop:multone}
 For any cardinal number $\kappa$ we have $\kappa \cdot 1 = \kappa$.
 \end{prop}
 
@@ -3934,13 +3950,32 @@ For any natural numbers $m$ and $n$, we have $m < n$ if and only if there exists
 	\qed
 \end{proof}
 
-\begin{thm}
-\label{thm:pluscancel}
-For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
-\end{thm}
+\begin{prop}
+\label{prop:pluslt}
+For natural numbers $m$, $n$ and $p$, if $m < n$ then $m + p < n + p$.
+\end{prop}
 
 \begin{proof}
-\pf\ By trichotomy. \qed
+\pf
+\step{1}{\pflet{$P[p]$ be the property: for any natural numbers $m$ and $n$, if $m < n$ then $m + p < n + p$.}}
+\step{2}{$P[0]$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{3}{$\forall p \in \mathbb{N}. P[p] \Rightarrow P[p^+]$}
+\begin{proof}
+	\pf\ By Proposition \ref{prop:succltsucc}.
+\end{proof}
+\qed 
+\end{proof}
+
+\begin{cor}
+\label{cor:pluscancel}
+For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
+\end{cor}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:strictmonotoneinj}.
 \end{proof}
 
 \begin{thm}
@@ -4125,6 +4160,29 @@ For any ordinals $\alpha$ and $\beta$, if $\beta < \alpha$ then $V_\beta \subset
 		\pf\ Proposition \ref{prop:Vmono}.
 	\end{proof}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Grounded]
+A set $A$ is \emph{grounded} iff there exists an ordinal $\alpha$ such that $A \in V_\alpha$.
+\end{df}
+
+\begin{df}[Rank]
+The \emph{rank} of a grounded set $A$ is the least ordinal $\alpha$ such that $A \in V_{\alpha^+}$.
+\end{df}
+
+\begin{prop}
+If $a \in A$ and $A$ is grounded, then $a$ is grounded and $\rank a < \rank A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$A \in \mathcal{P} V_{\rank A}$}
+\begin{proof}
+	\pf\ $A \in V_{(\rank A)^+} = \mathcal{P} V_{\rank A}$.
+\end{proof}
+\step{2}{$a \in V_{\rank A}$}
+\step{3}{$a$ is grounded and $(\rank a)^+ \leq \rank A$}
 \qed
 \end{proof}
 
