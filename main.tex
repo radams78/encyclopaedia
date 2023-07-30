@@ -1555,18 +1555,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 
 \chapter{Ordering Relations}
 
-\begin{prop}
-Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
-\begin{enumerate}
-\item $\leq$ is a partial order on $A$.
-\item If $B$ is a linearly ordered set then $\leq$ is a linear order on $A$.
-\item If $B$ is a well ordered set then $\leq$ is a well ordering on $A$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
 
 \begin{prop}
 There is at most one isomorphism between two well ordered sets.
@@ -1624,6 +1612,7 @@ We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq
 \begin{df}[Partially Ordered Set]
 A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
 \end{df}
+
 
 \begin{df}[Strictly Monotone]
 Let $(A,<_A)$ and $(B, <_B)$ be linearly ordered sets. A function $f : A \rightarrow B$ is \emph{strictly monotone} iff, whenever $x <_A y$, then $f(x) <_B f(y)$.
@@ -2043,6 +2032,19 @@ A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{
 \item Every nonempty subset of $\mathbf{A}$ has a least element.
 \end{itemize}
 \end{df}
+
+\begin{prop}
+Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
+\begin{enumerate}
+\item $\leq$ is a partial order on $A$.
+\item If $B$ is a linearly ordered set then $\leq$ is a linear order on $A$.
+\item If $B$ is a well ordered set then $\leq$ is a well ordering on $A$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \section{Transfinite Recursion}
 
