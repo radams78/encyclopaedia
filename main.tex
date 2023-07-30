@@ -1628,21 +1628,47 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \qed
 \end{proof}
 
+\begin{props}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{B}^2$}}
+\step{2}{$\mathbf{R}'$ is reflexive.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathbf{B}$}}
+	\step{b}{$x \in \mathbf{A}$}
+	\step{c}{$x \mathbf{R} x$}
+	\step{d}{$x \mathbf{R}' x$}
+\end{proof}
+\step{3}{$\mathbf{R}'$ is antisymmetric.}
+\begin{proof}
+	\step{a}{\assume{$x \mathbf{R}' y$ and $y \mathbf{R}' x$}}
+	\step{b}{$x \mathbf{R} y$ and $y \mathbf{R} x$}
+	\step{c}{$x = y$}
+\end{proof}
+\step{4}{$\mathbf{R}'$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$x \mathbf{R}' y$ and $y \mathbf{R}' z$ where $x,y,z \in \mathbf{B}$}}
+	\step{b}{$x \mathbf{R} y$ and $y \mathbf{R} z$}
+	\step{c}{$x \mathbf{R} z$}
+	\step{d}{$x \mathbf{R}' z$}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Partially Ordered Set]
 A \emph{partially ordered set} or \emph{poset} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a partial ordering on $A$. We often write just $A$ for $(A, \leq)$.
+
+If $(A, \leq)$ is a poset and $B \subseteq A$ we write just $B$ for the poset $(B, \leq \cap B^2)$.
 \end{df}
 
 \begin{df}[Strictly Monotone]
 Let $(A,<_A)$ and $(B, <_B)$ be posets. A function $f : A \rightarrow B$ is \emph{strictly monotone} iff, whenever $x <_A y$, then $f(x) <_B f(y)$.
 \end{df}
-
-\begin{prop}
-Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a partial order on $\mathbf{B}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
 
 \begin{df}[Minimal]
 Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{minimal} iff there is no $x \in \mathbf{A}$ such that $x < m$.
