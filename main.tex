@@ -2181,21 +2181,6 @@ A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{
 
 
 \begin{prop}
-There is at most one isomorphism between two well ordered sets.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A$ and $B$ be well ordered sets.}}
-\step{2}{\pflet{$f, g : A \cong B$ be isomorphisms.}}
-\step{3}{$\forall x \in A. f(x) = g(x)$}
-\begin{proof}
-	\pf\ Transfinite induction on $x$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
 Let $B$ be a poset, $A$ a set, and $f : A \rightarrow B$ an injection. Define $\leq$ on $A$ by $x \leq y$ iff $f(x) \leq f(y)$.
 \begin{enumerate}
 \item $\leq$ is a partial order on $A$.
@@ -2352,6 +2337,21 @@ Then $\mathbf{B} = \mathbf{A}$.
 \qedstep
 \begin{proof}
 	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+There is at most one isomorphism between two well ordered sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be well ordered sets.}}
+\step{2}{\pflet{$f, g : A \cong B$ be isomorphisms.}}
+\step{3}{$\forall x \in A. f(x) = g(x)$}
+\begin{proof}
+	\pf\ Transfinite induction on $x$.
 \end{proof}
 \qed
 \end{proof}
