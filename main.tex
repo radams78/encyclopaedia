@@ -1730,9 +1730,13 @@ Let $\leq$ be a partial ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \math
 A partial order is \emph{complete} iff every nonempty subset bounded above has a supremum, and every nonempty subset bounded below has an infimum.
 \end{df}
 
+\begin{df}[Order Isomorphism]
+Let $A$ and $B$ be posets. An \emph{order isomorphism} between $A$ and $B$, $f : A \cong B$, is a bijection $f : A \approx B$ such that $f$ and $f^{-1}$ are monotone.
+\end{df}
+
 \begin{thm}
 \label{thm:extendorderiso}
-Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
+Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $\phi : B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
 \end{thm}
 
 \begin{proof}

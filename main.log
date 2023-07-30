@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  30 JUL 2023 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  30 JUL 2023 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -410,11 +410,11 @@ Chapter 6.
 [41] [42]
 
 LaTeX Warning: Reference `prop:unionmonotone' on page 43 undefined on input lin
-e 2500.
+e 2504.
 
 
 LaTeX Warning: Reference `prop:unionmonotone' on page 43 undefined on input lin
-e 2500.
+e 2504.
 
 [43] [44] [45] [46] [47] [48
 
@@ -427,28 +427,28 @@ Chapter 8.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3218.
+(hyperref)                removing `math shift' on input line 3222.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3218.
+(hyperref)                removing `math shift' on input line 3222.
 
 [54] [55] [56] [57] [58] [59] [60] [61]
 
-LaTeX Warning: Reference `prop:multone' on page 62 undefined on input line 3793
+LaTeX Warning: Reference `prop:multone' on page 62 undefined on input line 3797
 .
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3803.
+LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3807.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3803.
+LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3807.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3803.
+LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3807.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3803.
+LaTeX Warning: Reference `thm:pluslt' on page 62 undefined on input line 3807.
 
 [62] [63] [64
 
@@ -469,7 +469,7 @@ WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 [70] [71] [72]
-Overfull \hbox (5.89409pt too wide) in paragraph at lines 4353--4354
+Overfull \hbox (5.89409pt too wide) in paragraph at lines 4357--4358
 []\OT1/cmr/bx/n/10 Definition 11.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \
 OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
@@ -481,50 +481,50 @@ OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
 Chapter 12.
 
 LaTeX Warning: Reference `cor:pluscancel' on page 77 undefined on input line 45
-39.
+43.
 
 [77]
 
 LaTeX Warning: Reference `cor:pluscancel' on page 78 undefined on input line 46
-37.
+41.
 
 
-Overfull \hbox (5.81142pt too wide) detected at line 4671
+Overfull \hbox (5.81142pt too wide) detected at line 4675
 []
  []
 
 [78]
-Overfull \hbox (10.26518pt too wide) detected at line 4686
+Overfull \hbox (10.26518pt too wide) detected at line 4690
 []
  []
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 
-LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4758.
+LaTeX Warning: Reference `thm:pluslt' on page 79 undefined on input line 4762.
 
 [79]
 
-LaTeX Warning: Reference `thm:pluslt' on page 80 undefined on input line 4790.
+LaTeX Warning: Reference `thm:pluslt' on page 80 undefined on input line 4794.
 
 [80]
 WARNING: proof step "1" (<2>1) already defined
@@ -536,7 +536,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
 [94]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 5836--5836
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 5840--5840
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
@@ -549,12 +549,12 @@ msy/m/n/10 j \OML/cmm/m/it/10 u[]x[]x\OMS/cmsy/m/n/10 g$
 Chapter 13.
 WARNING: proof step "e" (<2>7) already defined
 [99] [100]
-Overfull \hbox (68.70209pt too wide) detected at line 6139
+Overfull \hbox (68.70209pt too wide) detected at line 6143
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 6145
+Overfull \hbox (13.13249pt too wide) detected at line 6149
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
@@ -568,7 +568,7 @@ Chapter 14.
 ]
 WARNING: proof step "ii" (<3>3) already defined
 [106] [107] [108] [109]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 6564--6565
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 6568--6569
 []\OT1/cmr/bx/n/10 Proposition 14.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -583,13 +583,13 @@ Chapter 15.
 ] [114] [115] [116] [117] [118] [119] [120]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 7245
+Overfull \hbox (76.64789pt too wide) detected at line 7249
 []
  []
 
 [121] [122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132]
 [133]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 8121--8122
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 8125--8126
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -598,7 +598,7 @@ cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
 [134] [135] [136] [137]
-Overfull \hbox (91.49588pt too wide) detected at line 8378
+Overfull \hbox (91.49588pt too wide) detected at line 8382
 []
  []
 
@@ -607,7 +607,7 @@ WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
 [141] [142] [143] [144] [145]
-Overfull \hbox (62.14355pt too wide) detected at line 8824
+Overfull \hbox (62.14355pt too wide) detected at line 8828
 []
  []
 
@@ -618,17 +618,17 @@ Chapter 16.
 ]
 WARNING: proof step "1" (<1>2) already defined
 
-Overfull \hbox (133.82387pt too wide) detected at line 8941
+Overfull \hbox (133.82387pt too wide) detected at line 8945
 []
  []
 
 [148]
-Overfull \hbox (22.05334pt too wide) detected at line 9035
+Overfull \hbox (22.05334pt too wide) detected at line 9039
 []
  []
 
 [149] [150]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 9154--9155
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 9158--9159
 []\OT1/cmr/bx/n/10 Proposition 16.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
@@ -636,7 +636,7 @@ L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
 [151]
-Overfull \hbox (14.47572pt too wide) detected at line 9180
+Overfull \hbox (14.47572pt too wide) detected at line 9184
 []
  []
 
@@ -649,12 +649,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [157]
 [158]
-Overfull \hbox (68.12585pt too wide) detected at line 9502
+Overfull \hbox (68.12585pt too wide) detected at line 9506
 []
  []
 
 [159] [160]
-Overfull \hbox (135.96497pt too wide) detected at line 9578
+Overfull \hbox (135.96497pt too wide) detected at line 9582
 []
  []
 
@@ -662,76 +662,43 @@ Overfull \hbox (135.96497pt too wide) detected at line 9578
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 08075CBF1BB6846C9EDB0CA5BE9D3A59;9838
-(rerunfilecheck)             After:  FEBE0422DC6F1A1B1ACE74D9D3CDD3F8;9823.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: FEBE0422DC6F1A1B1ACE74D9D3CDD3F8;9823.
  ) 
 Here is how much of TeX's memory you used:
- 10053 strings out of 476091
- 147306 string characters out of 5794082
+ 10048 strings out of 476091
+ 147235 string characters out of 5794082
  1874330 words of memory out of 5000000
  29462 multiletter control sequences out of 15000+600000
  524962 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,541b,801s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{ax.5.0.19} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.5.0.27} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.5.0.21} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.0.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.0.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.5.0.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (161 pages, 680808 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (161 pages, 681574 bytes).
 PDF statistics:
- 2239 PDF objects out of 2487 (max. 8388607)
- 1836 compressed objects within 19 object streams
- 882 named destinations out of 1000 (max. 500000)
+ 2234 PDF objects out of 2487 (max. 8388607)
+ 1831 compressed objects within 19 object streams
+ 877 named destinations out of 1000 (max. 500000)
  601 words of extra memory for PDF output out of 10000 (max. 10000000)
 
