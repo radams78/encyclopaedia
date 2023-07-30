@@ -2004,6 +2004,7 @@ Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$
 \end{proof}
 
 \begin{props}
+\label{prop:linord}
 For any classes $\mathbf{A}$ and $<$, the following is a theorem:
 
 Let $<$ be a transitive relation on $\mathbf{A}$ that satisfies trichotomy. Define $\leq$ on $\mathbf{A}$ by $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a linear ordering on $\mathbf{A}$ and $x < y$ iff $x \leq y$ and $x \neq y$.
@@ -2252,6 +2253,7 @@ Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \right
 \end{proof}
 
 \begin{cors}
+\label{cor:subwoset}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 If $\mathbf{R}$ well orders $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$ then $\mathbf{R} \cap \mathbf{A}^2$ well orders $\mathbf{A}$.
@@ -2514,14 +2516,117 @@ Every well-ordered set is isomorphic to a unique ordinal.
 	\[ E(t) = \{ E(x) \mid x < t \} \qquad (t \in A) \enspace . \]}
 	\step{c}{\pflet{$\alpha = \{ E(x) \mid x \in A \}$}}
 	\step{d}{$\alpha$ is an ordinal.}
-	\step{e}{$E$ is injective.}
+	\begin{proof}
+		\step{i}{$\alpha$ is a transitive set.}
+		\begin{proof}
+			\step{one}{\pflet{$x \in y \in \alpha$}}
+			\step{two}{\pick\ $t \in A$ such that $y = E(t)$}
+			\step{three}{$x \in E(t) = \{ E(s) \mid s < t \}$}
+			\step{four}{\pick\ $s < t$ such that $x = E(s)$}
+			\step{five}{$x \in \alpha$}
+		\end{proof}
+		\step{ii}{$\alpha$ is well-ordered by $\in$.}
+		\begin{proof}
+			\step{one}{\pflet{$< = \{(x,y) \in \alpha \mid x \in y \}$}}
+			\step{two}{$<$ is transitive.}
+			\begin{proof}
+				\step{A}{\pflet{$x,y,z \in \alpha$ with $x \in y \in z$}}
+				\step{B}{\pick\ $t \in A$ such that $z = E(t)$}
+				\step{C}{\pick\ $s \in A$ such that $s < t$ and $y = E(s)$}
+				\step{D}{\pick\ $r \in A$ such that $r < s$ and $x = E(r)$}
+				\step{E}{$r < t$}
+				\step{F}{$x \in z$}
+			\end{proof}
+			\step{three}{$<$ satisfies trichotomy.}
+			\begin{proof}
+				\step{A}{\pflet{$x,y \in \alpha$}}
+				\step{B}{\pick\ $s, t \in A$ such that $E(s) = x$ and $E(t) = y$}
+				\step{C}{Exactly one of $s < t$, $s = t$, $t < s$ holds.}
+				\step{D}{\case{$s < t$}}
+				\begin{proof}
+					\step{ONE}{$x \in y$}
+					\step{TWO}{$x \neq y$ and $y \notin x$}
+					\begin{proof}
+						\pf\ Axiom of Regularity.
+					\end{proof}
+				\end{proof}
+				\step{E}{\case{$s = t$}}
+				\begin{proof}
+					\step{ONE}{$x = y$}
+					\step{TWO}{$x \notin y$ and $y \notin x$}
+					\begin{proof}
+						\pf\ Axiom of Regularity.
+					\end{proof}
+				\end{proof}
+				\step{F}{\case{$t < s$}}
+				\begin{proof}
+					\pf\ Similar to \stepref{D}.
+				\end{proof}
+			\end{proof}
+			\step{four}{$\leq$ is a linear order on $\alpha$.}
+			\begin{proof}
+				\pf\ Proposition \ref{prop:linord}.
+			\end{proof}
+			\step{five}{Every nonempty subset of $\alpha$ has a least element.}
+			\begin{proof}
+				\step{A}{\pflet{$S$ be a nonempty subset of $\alpha$}}
+				\step{B}{\pflet{$T = \{ x \in A \mid E(x) \in S \}$}}
+				\step{C}{\pflet{$t$ be the least element of $T$.} \prove{$E(t)$ is least in $S$}}
+				\step{D}{\pflet{$y \in S$}}
+				\step{E}{\pick\ $s \in T$ such that $E(s) = y$}
+				\step{F}{$t \leq s$}
+				\step{G}{$x \leq y$}
+			\end{proof}
+		\end{proof}
+	\end{proof}
 	\step{f}{$E$ is surjective.}
+	\begin{proof}
+		\pf\ By definition of $\alpha$.
+	\end{proof}
 	\step{g}{$E$ is strictly monotone.}
+	\begin{proof}
+		\pf\ If $s < t$ then $E(s) \in E(t)$ by definition of $E(t)$.
+	\end{proof}
 	\qedstep
+	\begin{proof}
+		\pf\ Corollary \ref{cor:orderiso}.
+	\end{proof}
 \end{proof}
 \step{2}{For any ordinals $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.}
 \begin{proof}
 	\pf\ Proposition \ref{prop:ordisoeq}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:elordinal}
+Every element of an ordinal is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal.}}
+\step{2}{\pflet{$\beta \in \alpha$}}
+\step{3}{$\beta$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$x \in y \in \beta$}}
+	\step{b}{$y \in \alpha$}
+	\begin{proof}
+		\pf\ $\alpha$ is transitive.
+	\end{proof}
+	\step{c}{$x \in \alpha$}
+	\begin{proof}
+		\pf\ $\alpha$ is transitive.
+	\end{proof}
+	\step{d}{$x \in \beta$}
+	\begin{proof}
+		\pf\ Since $\{(x,y) \in \alpha^2 \mid x \in y\}$ is transitive.
+	\end{proof}
+\end{proof}
+\step{4}{$\beta$ is well ordered by $\in$.}
+\begin{proof}
+	\pf\ By Corollary \ref{cor:subwoset}.
 \end{proof}
 \qed
 \end{proof}
@@ -2541,15 +2646,39 @@ Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, 
 	\step{a}{Either $\alpha \cong \beta$ or $\exists t \in \beta. \alpha \cong \seg t$ or $\exists t \in \alpha. \seg t \cong \beta$.}
 	\step{b}{\case{$\alpha \cong \beta$}}
 	\begin{proof}
-		\pf\ Then $\alpha = \beta$ as isomorphic well-ordered sets have the same ordinal number.
+		\pf\ Then $\alpha = \beta$ by Proposition \ref{prop:ordisoeq}.
 	\end{proof}
 	\step{c}{\case{There exists $t \in \beta$ such that $\alpha \cong \seg t$}}
 	\begin{proof}
-		\pf\ $t$ is an ordinal number and $\alpha = t$, so $\alpha \in \beta$.
+		\step{i}{$t$ is an ordinal number.}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:elordinal}.
+		\end{proof}
+		\step{ii}{$t = \seg t$}
+		\begin{proof}
+			\step{one}{$t \subseteq \seg t$}
+			\begin{proof}
+				\step{A}{\pflet{$s \in t$}}
+				\step{B}{$s \in \beta$}
+				\begin{proof}
+					\pf\ $\beta$ is a transitive set.
+				\end{proof}
+				\step{C}{$s \in \seg t$}
+			\end{proof}
+			\step{two}{$\seg t \subseteq t$}
+			\begin{proof}
+				\pf\ Immediate from definitions.
+			\end{proof}
+		\end{proof}
+		\step{ii}{$\alpha = t$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:ordisoeq}.
+		\end{proof}
+		\step{iii}{$\alpha \in \beta$}
 	\end{proof}
 	\step{d}{\case{There exists $t \in \alpha$ such that $\seg t \cong \beta$}}
 	\begin{proof}
-		\pf\ $t$ is an ordinal number and $t = \beta$, so $\beta \in \alpha$.
+		\pf\ $\beta \in \alpha$ similarly.
 	\end{proof}
 \end{proof}
 \qed
