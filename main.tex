@@ -2446,12 +2446,14 @@ e & \text{if } B - F(\seg t) = \emptyset
 
 \chapter{Ordinal Numbers}
 
+\section{Ordinals}
+
 \begin{df}[Ordinal Number]
 An \emph{ordinal (number)} is a transitive set $\alpha$ that is \emph{well-ordered by $\in$}; that is, such that $\{(x,y) \in \alpha^2 \mid x \in y \vee x = y \}$ well orders $\alpha$.
 
 Given $x, y \in \alpha$, we write $x < y$ iff $x \in y$, and $x \leq y$ iff $x \in y$ or $x = y$.
 
-Let $\mathbf{On}$ be the class of ordinal numbers.
+Let $\mathbf{On}$ be the class of ordinal numbers. For $\alpha, \beta \in \mathbf{On}$, we write $\alpha < \beta$ iff $\alpha \in \beta$, and $\alpha \leq \beta$ iff $\alpha < \beta$ or $\alpha = \beta$.
 \end{df}
 
 \begin{prop}
@@ -2763,6 +2765,33 @@ $\emptyset$ is an ordinal number.
 We define $0 = \emptyset$.
 \end{df}
 
+\begin{prop}
+If $A$ is a set of ordinal numbers then $\bigcup A$ is an ordinal number.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup A$ is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:uniontransitive}.
+\end{proof}
+\step{2}{$\bigcup A$ is a set of ordinals.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:elordinal}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The poset $\mathbf{On}$ is complete.
+\end{cor}
+
+\begin{proof}
+\pf\ For any nonempty set $A$ of ordinals, $\bigcup A$ is its supremum. \qed
+\end{proof}
+
+\section{Successors}
+
 \begin{df}[Successor]
 The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
 \end{df}
@@ -2850,7 +2879,6 @@ We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
 \end{df}
 
 \begin{prop}
-Let $2 = \{ \emptyset, \{ \emptyset\} \}$. 
 For any set $A$ we have $\mathcal{P} A \approx 2^A$.
 \end{prop}
 
@@ -2919,26 +2947,20 @@ For any ordinal number $\alpha$ we have $\alpha^+$ is an ordinal number.
 \end{proof}
 
 \begin{prop}
-If $A$ is a set of ordinal numbers then $\bigcup A$ is an ordinal number.
+\label{prop:Peano2}
+For ordinals $\alpha$ and $\beta$, if $\alpha^+ = \beta^+$ then $\alpha = \beta$.
 \end{prop}
 
 \begin{proof}
-\pf
-\step{1}{$\bigcup A$ is a transitive set.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:uniontransitive}.
-\end{proof}
-\step{2}{$\bigcup A$ is a set of ordinals.}
-\qed
+	\pf\ If $\alpha^+ = \beta^+$ then
+	\begin{align*}
+		\alpha & = \bigcup (\alpha^+) & (\text{Proposition \ref{prop:Uaplus}}) \\
+		& = \bigcup (\beta^+) \\
+		& = \beta & (\text{Proposition \ref{prop:Uaplus}})
+	\end{align*}
 \end{proof}
 
-\begin{thm}[Burali-Forti]
-The class of ordinal numbers is a proper class.
-\end{thm}
-
-\begin{proof}
-\pf\ If it is a set then it is a transitive set of ordinal numbers, hence an ordinal number, hence a member of itself, which is impossible. \qed
-\end{proof}
+\section{The Well-Ordering Theorem and Zorn's Lemma}
 
 \begin{thm}[Hartogs]
 For any set $A$, there exists an ordinal not dominated by $A$.
@@ -3285,10 +3307,6 @@ For any cardinal number $\kappa$ we have $2^\kappa \neq \kappa$.
 
 \section{Ordering on Cardinal Numbers}
 
-\begin{df}[Domination]
-A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
-\end{df}
-
 \begin{df}
 Given cardinal numbers $\kappa$ and $\lambda$, we write $\kappa \leq \lambda$ iff $A \preccurlyeq B$ where $|A| = \kappa$ and $|B| = \lambda$. We write $\kappa < \lambda$ iff $\kappa \leq \lambda$ and $\kappa \neq \lambda$.
 
@@ -3399,7 +3417,7 @@ Let $\mathcal{A}$ be a set such that $\forall X \in \mathcal{A}. |X| \leq \kappa
 \section{Inductive Sets}
 
 \begin{df}[Inductive]
-A set $I$ is \emph{inductive} iff $\emptyset \in I$ and $\forall x \in I. x^+ \in I$.
+A set $I$ is \emph{inductive} iff $0 \in I$ and $\forall x \in I. x^+ \in I$.
 \end{df}
 
 \begin{df}[Natural Number]
@@ -3468,35 +3486,13 @@ Every natural number except 0 is the successor of some natural number.
 
 \begin{prop}
 \label{prop:nattrans}
-Every natural number is a transitive set.
+Every natural number is an ordinal.
 \end{prop}
 
 \begin{proof}
-\pf
-\step{1}{$0$ is a transitive set.}
-\begin{proof}
-	\pf\ Vacuously, if $x \in y \in 0$ then $x \in 0$.
-\end{proof}
-\step{2}{For every natural number $n$, if $n$ is a transitive set then $n^+$ is a transitive set.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:successortransitive}.
-\end{proof}
-\qed
+\pf\ By induction. \qed
 \end{proof}
 
-\begin{prop}
-\label{prop:Peano2}
-For natural numbers $m$ and $n$, if $m^+ = n^+$ then $m = n$.
-\end{prop}
-
-\begin{proof}
-	\pf\ If $m^+ = n^+$ then
-	\begin{align*}
-		m & = \bigcup (m^+) & (\text{Proposition \ref{prop:Uaplus}}) \\
-		& = \bigcup (n^+) \\
-		& = n & (\text{Proposition \ref{prop:Uaplus}})
-	\end{align*}
-\end{proof}
 \begin{prop}
 $\mathbb{N}$ is a transitive set.
 \end{prop}
@@ -3511,6 +3507,14 @@ $\mathbb{N}$ is a transitive set.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+$\mathbb{N}$ is an ordinal.
+\end{cor}
+
+\begin{df}
+We define $\omega = \mathbb{N}$.
+\end{df}
 
 \begin{prop}[Dependent Choice]
 Let $A$ be a nonempty set and $R$ a relation on $A$ such that $\forall x \in A. \exists y \in A. (y,x) \in R$. Then there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. (f(n+1),f(n)) \in R$.
