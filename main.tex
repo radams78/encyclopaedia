@@ -1365,7 +1365,7 @@ Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $
 \chapter{Equivalence Relations}
 
 \begin{df}[Equivalence Relation]
-An \emph{equivalence relation} on a class $\mathbf{A}$ is a relation on $\mathbf{A}$ that is reflexive on $\mathbf{A}$, symmetric and transitive.
+An \emph{equivalence relation} on a class $\mathbf{A}$ is a binary relation on $\mathbf{A}$ that is reflexive, symmetric and transitive.
 \end{df}
 
 \begin{prop}
@@ -1385,10 +1385,12 @@ Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A
 \[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
 \end{df}
 
-\begin{prop}
+\begin{props}
 \label{prop:eqclassequal}
-Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $a \mathbf{R} b$.
-\end{prop}
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem.
+
+Assume $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$. Let $a,b \in \mathbf{A}$. Then $[a]_\mathbf{R} = [b]_\mathbf{R}$ if and only if $a \mathbf{R} b$.
+\end{props}
 
 \begin{proof}
 \pf
@@ -1552,12 +1554,6 @@ Let $A$ be a set and $R$ an equivalence relation on $A$. The \emph{natural map} 
 \end{df}
 
 \chapter{Ordering Relations}
-
-\subsection{Structures}
-
-\begin{df}[Structure]
-A \emph{structure} is a pair $(A,R)$ where $A$ is a set and $R$ is a binary relation on $A$.
-\end{df}
 
 \section{Structure Isomorphisms}
 
