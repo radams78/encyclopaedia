@@ -2117,6 +2117,13 @@ Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear o
 \qed
 \end{proof}
 
+\begin{cors}
+\label{cor:orderiso}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\leq$, $\preccurlyeq$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear order on $\mathbf{B}$. Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{F}$ is strictly monotone. Then $\mathbf{F}$ is an order isomorphism.
+\end{cors}
+
 \begin{props}
 \label{prop:subloset}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
@@ -2438,6 +2445,118 @@ e & \text{if } B - F(\seg t) = \emptyset
 \chapter{Ordinal Numbers}
 
 \begin{df}[Ordinal Number]
+An \emph{ordinal (number)} is a transitive set $\alpha$ that is \emph{well-ordered by $\in$}; that is, such that $\{(x,y) \in \alpha^2 \mid x \in y \vee x = y \}$ well orders $\alpha$.
+
+Given $x, y \in \alpha$, we write $x < y$ iff $x \in y$, and $x \leq y$ iff $x \in y$ or $x = y$.
+
+Let $\mathbf{On}$ be the class of ordinal numbers.
+\end{df}
+
+\begin{prop}
+\label{prop:ordisoeq}
+For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : \alpha \cong \beta$}}
+\step{2}{For all $x \in \alpha$, if $\forall t < x. f(t) = t$ then $f(x) = x$}
+\begin{proof}
+	\step{a}{$f(x) \subseteq x$}
+	\begin{proof}
+		\step{i}{\pflet{$y \in f(x)$}}
+		\step{ii}{$y \in \beta$}
+		\step{iii}{\pick\ $t \in \alpha$ such that $f(t) = y$}
+		\begin{proof}
+			\pf\ $f$ is surjective.
+		\end{proof}
+		\step{iv}{$f(t) \in f(x)$}
+		\step{v}{$t \in x$}
+		\begin{proof}
+			\pf\ Since $f$ is an order isomorphism.
+		\end{proof}
+		\step{vi}{$f(t) = t$}
+		\begin{proof}
+			\pf\ Induction hypothesis.
+		\end{proof}
+		\step{viii}{$y = t$}
+		\step{ix}{$y \in x$}
+	\end{proof}
+	\step{b}{$x \subseteq f(x)$}
+	\begin{proof}
+		\step{i}{\pflet{$t \in x$}}
+		\step{ii}{$f(t) \in f(x)$}
+		\step{iii}{$f(t) = t$}
+		\step{iv}{$t \in f(x)$}
+	\end{proof}
+\end{proof}
+\step{3}{$\forall x \in \alpha. f(x) = x$}
+\begin{proof}
+	\pf\ Transfinite induction.
+\end{proof}
+\step{4}{$\alpha = \beta$}
+\begin{proof}
+	\pf\ Since $\beta = \{ f(t) \mid t \in \alpha \} = \{ t \mid t \in \alpha \} = \alpha$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Every well-ordered set is isomorphic to a unique ordinal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any well-ordered set $A$, there exists an ordinal $\alpha$ such that $A \cong \alpha$.}
+\begin{proof}
+	\step{a}{\pflet{$A$ be a well-ordered set.}}
+	\step{b}{Define the function $E$ on $A$ by transfinite recursion thus:
+	\[ E(t) = \{ E(x) \mid x < t \} \qquad (t \in A) \enspace . \]}
+	\step{c}{\pflet{$\alpha = \{ E(x) \mid x \in A \}$}}
+	\step{d}{$\alpha$ is an ordinal.}
+	\step{e}{$E$ is injective.}
+	\step{f}{$E$ is surjective.}
+	\step{g}{$E$ is strictly monotone.}
+	\qedstep
+\end{proof}
+\step{2}{For any ordinals $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ordisoeq}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, $\alpha = \beta$, $\beta \in \alpha$ holds.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{At most one holds.}
+\begin{proof}
+	\pf\ Since every ordinal is a transitive set and we never have $\alpha \in \alpha$.
+\end{proof}
+\step{2}{At least one holds.}
+\begin{proof}
+	\step{a}{Either $\alpha \cong \beta$ or $\exists t \in \beta. \alpha \cong \seg t$ or $\exists t \in \alpha. \seg t \cong \beta$.}
+	\step{b}{\case{$\alpha \cong \beta$}}
+	\begin{proof}
+		\pf\ Then $\alpha = \beta$ as isomorphic well-ordered sets have the same ordinal number.
+	\end{proof}
+	\step{c}{\case{There exists $t \in \beta$ such that $\alpha \cong \seg t$}}
+	\begin{proof}
+		\pf\ $t$ is an ordinal number and $\alpha = t$, so $\alpha \in \beta$.
+	\end{proof}
+	\step{d}{\case{There exists $t \in \alpha$ such that $\seg t \cong \beta$}}
+	\begin{proof}
+		\pf\ $t$ is an ordinal number and $t = \beta$, so $\beta \in \alpha$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+
+\begin{df}[Ordinal Number]
 Let $A$ be a well ordered set. Define the function $E$ on $A$ by transfinite recursion by:
 \[ E(t) = \{ E(x) \mid x < t \} \enspace . \]
 The \emph{ordinal number} of $A$ is $\alpha := \ran E$.
@@ -2561,34 +2680,6 @@ Every element of an ordinal number is an ordinal number.
 \qed
 \end{proof}
 
-\begin{prop}
-Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, $\alpha = \beta$, $\beta \in \alpha$ holds.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{At most one holds.}
-\begin{proof}
-	\pf\ Since we never have $\alpha \in \alpha$.
-\end{proof}
-\step{2}{At least one holds.}
-\begin{proof}
-	\step{a}{Either $\alpha \cong \beta$ or $\exists t \in \beta. \alpha \cong \seg t$ or $\exists t \in \alpha. \seg t \cong \beta$.}
-	\step{b}{\case{$\alpha \cong \beta$}}
-	\begin{proof}
-		\pf\ Then $\alpha = \beta$ as isomorphic well-ordered sets have the same ordinal number.
-	\end{proof}
-	\step{c}{\case{There exists $t \in \beta$ such that $\alpha \cong \seg t$}}
-	\begin{proof}
-		\pf\ $t$ is an ordinal number and $\alpha = t$, so $\alpha \in \beta$.
-	\end{proof}
-	\step{d}{\case{There exists $t \in \alpha$ such that $\seg t \cong \beta$}}
-	\begin{proof}
-		\pf\ $t$ is an ordinal number and $t = \beta$, so $\beta \in \alpha$.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
 
 \begin{prop}
 Any nonempty set $S$ of ordinal numbers has a least element.
