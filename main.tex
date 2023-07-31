@@ -3494,6 +3494,53 @@ Assume that $\mathbf{T}$ is a normal ordinal operation. For any nonempty set of 
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:enumerationnormal}
+For any classes $\mathbf{A}$ and $\mathbf{T}$, the following is a theorem:
+
+Assume $\mathbf{A}$ is a proper class of ordinals such that, for every set $S \subseteq \mathbf{A}$, we have $\bigcup S \in \mathbf{A}$. Assume $\mathbf{T}$ is the unique order isomorphism $\mathbf{On} \cong \mathbf{A}$. Then $\mathbf{T}$ is normal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{T}$ is strictly monotone.}
+\begin{proof}
+	\pf\ Since it is an order isomorphism.
+\end{proof}
+\step{2}{$\mathbf{T}$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal.}}
+	\step{b}{$\mathbf{T}'(\lambda)$ is the least member of $\mathbf{A}$ that is greater than $\mathbf{T}'(\alpha)$ for all $\alpha < \lambda$}
+	\step{c}{$\mathbf{T}'(\lambda) = \sup_{\alpha < \lambda} \mathbf{T}'(\alpha)$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}
+For any class $\mathbf{T}$, the following is a theorem:
+
+If $\mathbf{T}$ is a normal ordinal operation, then for any limit ordinal $\lambda$, we have $\mathbf{T}(\lambda)$ is a limit ordinal.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{T}(\lambda) \neq 0$}
+\begin{proof}
+	\pf\ Since $0 \leq \mathbf{T}(0) < \mathbf{T}(\lambda)$.
+\end{proof}
+\step{2}{$\mathbf{T}(\lambda)$ is not a successor ordinal.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\mathbf{T}(\lambda) = \alpha^+$}}
+	\step{b}{$\alpha < \mathbf{T}(\lambda) = \sup_{\beta < \lambda} \mathbf{T}(\beta)$}
+	\step{c}{\pick\ $\beta < \lambda$ such that $\alpha < \mathbf{T}(\beta)$}
+	\step{d}{$\alpha^+ \leq \mathbf{T}(\beta) < \mathbf{T}(\lambda)$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Cardinal Numbers}
 
@@ -4524,6 +4571,38 @@ f(n^+) & = \mathbf{T}(f(n))
 \qed
 \end{proof}
 
+\begin{df}[Derived Operation]
+Let $\mathbf{T}$ be a normal ordinal operation. The \emph{derived} operation $\mathbf{T}' : \mathbf{On} \rightarrow \mathbf{V}$ is the unique order isomorphism between $\mathbf{On}$ and the fixed points of $\mathbf{T}$.
+\end{df}
+
+\begin{props}
+For any class $\mathbf{T}$, the following is a theorem:
+
+If $\mathbf{T}$ is a normal ordinal operation, then the derived operation is normal.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{For any set $S$ of fixed points of $\mathbf{T}$, we have $\bigcup S$ is a fixed point of $\mathbf{T}$}
+\begin{proof}
+	\step{a}{\pflet{$S$ be a set of fixed points of $\mathbf{T}$.}}
+	\step{b}{$\mathbf{T}(\sup S) = \sup S$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\mathbf{T}(\sup S) & = \sup_{\alpha \in S} \mathbf{T}(\alpha) & (\text{Theorem \ref{thm:normalsup}}) \\
+			& = \sup_{\alpha \in S} \alpha & (\text{\stepref{a}}) \\
+			& = \sup S
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Proposition \ref{prop:enumerationnormal}.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Infinite Cardinals}
 
 \section{Alephs}
@@ -4537,24 +4616,7 @@ The operation $\aleph$ is normal.
 \end{prop}
 
 \begin{proof}
-\pf
-\step{1}{$\aleph$ is continuous.}
-\begin{proof}
-	\step{a}{\pflet{$\lambda$ be a limit ordinal.} \prove{$\aleph_\lambda = \bigcup_{\alpha < \lambda} \aleph_\alpha$}}
-	\step{b}{For all $\alpha < \lambda$ we have $\aleph_\alpha \leq \aleph_\lambda$}
-	\begin{proof}
-		\pf\ By definition of $\aleph_\lambda$.
-	\end{proof}
-	\step{c}{If $\forall \alpha < \lambda. \aleph_\alpha \leq \beta$ then $\aleph_\lambda \leq \beta$}
-	\begin{proof}
-		\pf\ By Lemma \ref{lm:supcard}.
-	\end{proof}
-\end{proof}
-\step{2}{$\aleph$ is strictly monotone.}
-\begin{proof}
-	\pf\ Since it is an order isomorphism.
-\end{proof}
-\qed
+\pf\ Proposition \ref{prop:enumerationnormal} and Lemma \ref{lm:supcard}. \qed
 \end{proof}
 
 \begin{df}[Continuum Hypothesis]
