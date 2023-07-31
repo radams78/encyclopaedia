@@ -3882,6 +3882,7 @@ For any ordinal $\alpha$, the operation that maps $\beta$ to $\alpha + \beta$ is
 \end{proof}
 
 \begin{cor}
+\label{cor:pluslt}
 For any ordinals $\alpha$, $\beta$, $\gamma$, we have $\beta < \gamma$ if and only if $\alpha + \beta < \alpha + \gamma$.
 \end{cor}
 
@@ -4821,118 +4822,6 @@ No natural number is both even and odd.
 	\end{proof}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{prop}
-For any natural numbers $m$ and $n$, we have $m < n$ if and only if there exists $p \in \mathbb{N}$ such that $n = m + p^+$.
-\end{prop}
-
-\begin{proof}
-	\pf
-	\step{1}{For any natural numbers $m$ and $p$ we have $m < m + p^+$.}
-	\begin{proof}
-		\step{a}{$\forall m. m < m + 0^+$}
-		\begin{proof}
-			\pf\ Since $m \in m^+ = m+0^+$.
-		\end{proof}
-		\step{b}{For any natural number $p$, if $\forall m. m < m + p^+$ then $\forall m. m < m + p^{++}$}
-		\begin{proof}
-			\pf\ If $m \in m + p^+$ then $m \in (m + p^+)^+ = m + p^{++}$.
-		\end{proof}
-	\end{proof}
-	\step{2}{For any natural numbers $m$ and $n$, if $m < n$ then there exists $p$ such that $n = m + p^+$.}
-	\begin{proof}
-		\step{a}{$\forall m < 0. \exists p. 0 = m + p^+$}
-		\begin{proof}
-			\pf\ Vacuous.
-		\end{proof}
-		\step{b}{For any natural number $n$, if $\forall m < n. \exists p. n = m + p^+$, then $\forall m < n^+. \exists p. n^+ = m + p^+$.}
-		\begin{proof}
-			\step{i}{\pflet{$n$ be a natural number.}}
-			\step{ii}{\assume{$\forall m < n. \exists p. n = m + p^+$}}
-			\step{iii}{\pflet{$m < n^+$}}
-			\step{iv}{$m < n$ or $m = n$}
-			\step{v}{\case{$m < n$}}
-			\begin{proof}
-				\step{one}{\pick\ $p$ such that $n = m + p^+$}
-				\step{two}{$n^+ = m + p^{++}$}
-			\end{proof}
-			\step{vi}{\case{$m = n$}}
-			\begin{proof}
-				\pf\ Then $n^+ = m + 0^+$.
-			\end{proof}
-		\end{proof}
-	\end{proof}
-	\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:pluslt}
-For natural numbers $m$, $n$ and $p$, if $m < n$ then $m + p < n + p$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$P[p]$ be the property: for any natural numbers $m$ and $n$, if $m < n$ then $m + p < n + p$.}}
-\step{2}{$P[0]$}
-\begin{proof}
-	\pf\ Trivial.
-\end{proof}
-\step{3}{$\forall p \in \mathbb{N}. P[p] \Rightarrow P[p^+]$}
-\begin{proof}
-	\pf\ By Proposition \ref{prop:succltsucc}.
-\end{proof}
-\qed 
-\end{proof}
-
-\begin{cor}
-\label{cor:pluscancel}
-For natural numbers $m$, $n$ and $p$, if $m + p = n + p$ then $m = n$.
-\end{cor}
-
-\begin{proof}
-\pf\ By Proposition \ref{prop:strictmonotoneinj}.
-\end{proof}
-
-\begin{thm}
-For natural numbers $m$, $n$ and $p$, if $m < n$ and $p \neq 0$ then $mp < np$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
-\step{2}{\assume{$m < n$} \prove{$\forall p. mp^+ < np^+$}}
-\step{3}{$m0^+ < n0^+$}
-\begin{proof}
-	\pf\ Proposition \ref{prop:multone}.
-\end{proof}
-\step{4}{For any natural number $p$, if $mp < np$ then $mp^+ < np^+$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		mp^+ & = mp + m \\
-		& < np + m & (\text{induction hypothesis. Proposition \ref{prop:pluslt}}) \\
-		& < np + n & (\text{\stepref{2}, Proposition \ref{prop:pluslt}}) \\
-		& = np^+
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-For natural numbers $m$, $n$ and $p$, if $p \neq 0$ then $m < n$ if and only if $mp < np$.
-\end{cor}
-
-\begin{proof}
-	\pf\ Proposition \ref{prop:strictmonotoneinv}. \qed
-\end{proof}
-
-\begin{cor}
-For natural numbers $m$, $n$ and $p$, if $mp = np$ and $p \neq 0$ then $m = n$.
-\end{cor}
-
-\begin{proof}
-	\pf\ By trichotomy. \qed
 \end{proof}
 
 \begin{prop}
@@ -6065,7 +5954,7 @@ We prove$\sim$ is an equivalence relation on $\mathbb{N}^2$.
 	\step{c}{$m + q + s = n + q + r$}
 	\step{d}{$m + s = n + r$}
 	\begin{proof}
-		\pf\ Corollary \ref{cor:pluscancel}.
+		\pf\ By cancellation.
 	\end{proof}
 \end{proof}
 \qed
@@ -6163,7 +6052,7 @@ We prove this is well defined.
 = np + m'p + mq + n'q + m'q + m'p' + n'p + n'q'$}
 \step{7}{$mp + nq + m'q' + n'p' = mq + np + m'p' + n'q'$}
 \begin{proof}
-	\pf\ Corollary \ref{cor:pluscancel}.
+	\pf\ By cancellation.
 \end{proof}
 \qed
 \end{proof}
@@ -6278,12 +6167,12 @@ We prove this is well-defined.
 \begin{proof}
 	\pf
 	\begin{align*}
-		m + q < n + p & \Leftrightarrow m + n' + q < n + n' + p & (\text{Proposition \ref{prop:pluslt}}) \\
+		m + q < n + p & \Leftrightarrow m + n' + q < n + n' + p & (\text{Corollary \ref{cor:pluslt}}) \\
 		& \Leftrightarrow m' + n + q < n + n' + p \\
-		& \Leftrightarrow m' + q < n' + p & (\text{Proposition \ref{prop:pluslt}}) \\
-		& \Leftrightarrow m' + q + p' < n' + p + p' & (\text{Proposition \ref{prop:pluslt}}) \\
+		& \Leftrightarrow m' + q < n' + p & (\text{Corollary \ref{cor:pluslt}}) \\
+		& \Leftrightarrow m' + q + p' < n' + p + p' & (\text{Corollary \ref{cor:pluslt}}) \\
 		& \Leftrightarrow m' + q' + p < n' + p + p' \\
-		& \Leftrightarrow m' + q' < n' + p' & (\text{Proposition \ref{prop:pluslt}}) & \qed \\
+		& \Leftrightarrow m' + q' < n' + p' & (\text{Corollary \ref{cor:pluslt}}) & \qed \\
 	\end{align*}
 \end{proof}
 \end{proof}
@@ -6316,7 +6205,7 @@ $<$ is a linear order on $\mathbb{Z}$.
 		\end{proof}
 		\step{d}{$m + s < n + r$}
 		\begin{proof}
-			\pf\ Proposition \ref{prop:pluslt}.
+			\pf\ Corollary \ref{cor:pluslt}.
 		\end{proof}
 	\end{proof}
 	\step{3}{$<$ is total.}
