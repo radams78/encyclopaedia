@@ -2200,6 +2200,7 @@ Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq 
 \end{cors}
 
 \begin{props}
+\label{prop:lexicographlinear}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$ and $\mathbf{S}$ is a linear order on $\mathbf{B}$. Then the lexicographic ordering is a linear order on $\mathbf{A} \times \mathbf{B}$.
@@ -2306,6 +2307,35 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a 
 
 If $\mathbf{R}$ well orders $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$ then $\mathbf{R} \cap \mathbf{A}^2$ well orders $\mathbf{A}$.
 \end{cors}
+
+\begin{prop}
+\label{prop:lexicogwellorder}
+For any well ordered sets $A$ and $B$, the lexicographic order well orders $A \times B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$A \times B$ is linearly ordered.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:lexicographlinear}.
+\end{proof}
+\step{2}{Every nonempty subset of $A \times B$ has a least element.}
+\begin{proof}
+	\step{a}{\pflet{$S$ be a nonempty subset of $A \times B$.}}
+	\step{b}{\pflet{$a$ be the least element of $\{ x \in A \mid \exists y \in B. (x,y) \in S \}$.}}
+	\step{c}{\pflet{$b$ be the least element of $\{ y \in B \mid (a,y) \in S \}$.}}
+	\step{d}{$(a,b)$ is least in $S$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[End Extension]
+Let $A$ and $B$ be well ordered sets. Then $B$ is an \emph{end extension} of $A$ iff $A \subseteq B$ and:
+\begin{itemize}
+\item Whenever $x,y \in A$ then $x \leq_A y$ iff $x \leq_B y$.
+\item Whenever $x \in A$ and $y \in B - A$ then $x < y$.
+\end{itemize}
+\end{df}
 
 \subsection{Transfinite Induction}
 
@@ -2928,6 +2958,160 @@ Let $\alpha$ be a set. Then the following are equivalent.
 \qed
 \end{proof}
 
+\begin{lm}
+\label{lm:endextleq}
+Let $A$ and $B$ be well-ordered sets. If $B$ is an end extension of $A$ then the ordinal of $A$ is $\leq$ the ordinal of $B$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be the ordinal of $A$ and $\beta$ the ordinal of $B$.}}
+\step{2}{\pflet{$E_A : A \cong \alpha$ and $E_B : B \cong \beta$ be the canonical isomorphisms.}}
+\step{3}{$\forall a \in A. E_A(a) = E_B(a)$}
+\begin{proof}
+	\step{a}{\pflet{$a \in A$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall x < a. E_A(x) = E_B(x)$}}
+	\step{c}{$E_A(a)$ is the least ordinal that is greater than $E_A(x)$ for all $x < a$}
+	\step{d}{$E_B(a)$ is the least ordinal that is greater than $E_B(x)$ for all $x < b$}
+	\step{e}{$\{ x \in A \mid x <_A a \} = \{ x \in B \mid x <_B a \}$}
+	\step{f}{$E_A(a) = E_B(a)$}
+\end{proof}
+\step{4}{$\alpha \subseteq \beta$}
+\step{5}{$\alpha \leq \beta$}
+\qed
+\end{proof}
+
+\begin{lm}
+\label{lm:union_of_end_extensions}
+Let $\mathcal{C}$ be a set of well ordered sets such that, for any $A,B \in \mathcal{C}$, we have that one of $A$ and $B$ is an end extension of the other. Let $W = \bigcup \mathcal{C}$ under $x \leq y$ iff there exists $A \in W$ such that $x,y \in A$ and $x \leq y$. Then $W$ is a well ordered set whose ordinal is the supremum of the ordinals of the members of $\mathcal{C}$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$\leq$ is reflexive on $W$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in W$}}
+	\step{b}{\pick\ $A \in W$ such that $x \in A$.}
+	\step{c}{$x \leq x$}
+\end{proof}
+\step{2}{$\leq$ is antisymmetric on $W$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in W$}}
+	\step{b}{\assume{$x \leq y$ and $y \leq x$}}
+	\step{c}{\pick\ $A \in W$ such that $x,y \in A$ and $x \leq_A y$, and $B \in W$ such that $x,y \in B$ and $y \leq_B x$}
+	\step{d}{\assume{w.l.o.g. $B$ is an end extension of $A$}}
+	\step{e}{$x \leq_B y$ and $y \leq_B x$}
+	\step{f}{$x = y$}
+\end{proof}
+\step{3}{$\leq$ is transitive on $W$.}
+\begin{proof}
+	\step{a}{\assume{$x \leq y \leq z$}}
+	\step{b}{\pick\ $A,B \in W$ such that $x \leq_A y$ and $y \leq_B z$}
+	\step{c}{\case{$A$ is an end extension of $B$.}}
+	\begin{proof}
+		\step{i}{$x \leq_A y$ and $y \leq_A z$}
+		\step{2}{$x \leq_A z$}
+		\step{3}{$x \leq z$}
+	\end{proof}
+	\step{d}{\case{$B$ is an end extension of $A$.}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{4}{$\leq$ is total on $W$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in W$}}
+	\step{b}{\pick\ $A,B \in \mathcal{C}$ such that $x \in A$ and $y \in B$}
+	\step{c}{\assume{w.l.o.g. $B$ is an end extension of $A$}}
+	\step{d}{$x \leq_B y$ or $y \leq_B x$}
+	\step{e}{$x \leq_W y$ or $y \leq_W x$}
+\end{proof}
+\step{5}{Every nonempty subset of $W$ has a least element.}
+\begin{proof}
+	\step{a}{\pflet{$S$ be a nonempty subset of $W$}}
+	\step{b}{\pick\ $s \in S$}
+	\step{c}{\pick\ $A \in \mathcal{C}$ such that $s \in A$}
+	\step{d}{\pflet{$a$ be the $\leq_A$-least element of $S \cap A$} \prove{$a$ is least in $S$}}
+	\step{e}{\pflet{$x \in S$} \prove{$a \leq x$}}
+	\step{f}{\pick\ $B \in \mathcal{C}$ such that $x \in B$}
+	\step{g}{\case{$A$ is an end extension of $B$}}
+	\begin{proof}
+		\step{i}{$a \leq_A x$}
+		\step{ii}{$a \leq x$}
+	\end{proof}
+	\step{h}{\case{$B$ is an end extension of $A$}}
+	\begin{proof}
+		\step{i}{\case{$x \in A$}}
+		\begin{proof}
+			\step{one}{$a \leq_A x$}
+			\step{two}{$a \leq x$}
+		\end{proof}
+		\step{ii}{\case{$x \in B - A$}}
+		\begin{proof}
+			\step{one}{$a \leq_B x$}
+			\step{two}{$a \leq x$}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{6}{For all $A \in \mathcal{C}$, $W$ is an end extension of $A$.}
+\begin{proof}
+	\step{a}{For all $x, y \in A$, we have $x \leq_A y$ if and only if $x \leq_W y$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in A$}}
+		\step{ii}{If $x \leq_A y$ then $x \leq_W y$}
+		\begin{proof}
+			\pf\ Immediate from definitions.
+		\end{proof}
+		\step{iii}{If $x \leq_W y$ then $x \leq_A y$}
+		\begin{proof}
+			\step{one}{\assume{$x \leq_W y$}}
+			\step{two}{\pick\ $B \in \mathcal{C}$ such that $x \leq_B y$}
+			\step{three}{\case{$A$ is an end extension of $B$}}
+			\begin{proof}
+				\pf\ Then $x \leq_A y$.
+			\end{proof}
+			\step{four}{\case{$B$ is an end extension of $A$}}
+			\begin{proof}
+				\pf\ Then $x \leq_A y$.
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{b}{For all $x \in A$ and $y \in W - A$ we have $x < y$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in A$ and $y \in W - A$}}
+		\step{ii}{\pick\ $B \in \mathcal{C}$ such that $y \in B$}
+		\step{iii}{$B$ is an end extension of $A$}
+		\step{iv}{$x <_B y$}
+		\step{v}{$x <_W y$}
+	\end{proof}
+\end{proof}
+\step{7}{For all $A \in \mathcal{C}$, the ordinal of $A$ is $\leq$ the ordinal of $W$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:endextleq}.
+\end{proof}
+\step{7}{For any ordinal $\alpha$, if for all $A \in \mathcal{C}$ the ordinal of $A$ is $\leq \alpha$, then the ordinal of $W$ is $\leq \alpha$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ be an ordinal.}}
+	\step{b}{\assume{for all $A \in \mathcal{C}$, the ordinal of $A$ is $\leq \alpha$}}
+	\step{c}{\pflet{$\beta$ be the ordinal of $W$}}
+	\step{d}{\pflet{$E : W \approx \beta$ be the canonical isomorphism.}}
+	\step{e}{\assume{for a contradiction $\alpha < \beta$}}
+	\step{f}{\pflet{$a \in W$ be the element with $E(a) = \alpha$}}
+	\step{g}{\pick\ $A \in \mathcal{C}$ such that $a \in A$}
+	\step{h}{\pflet{$\gamma$ be the ordinal of $A$ and $E_A : A \cong \gamma$ be the canonical isomorphism.}}
+	\step{i}{For all $x \in A$ we have $E_A(x) = E(x)$}
+	\begin{proof}
+		\pf\ Transfinite induction on $x$.
+	\end{proof}
+	\step{j}{$E_A(a) = \alpha$}
+	\step{k}{$\alpha < \gamma$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{b}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Successors}
 
@@ -3402,6 +3586,7 @@ Assume $\mathbf{T}$ is a normal ordinal operation. For every ordinal $\alpha$, w
 \end{proof}
 
 \begin{props}
+\label{prop:greatestordinal}
 For any class $\mathbf{T}$, the following is a theorem:
 
 Assume $\mathbf{T}$ is a normal ordinal operation. For any ordinal $\beta \geq \mathbf{T}(0)$, there exists a greatest ordinal $\gamma$ such that $\mathbf{T}(\gamma) \leq \beta$.
@@ -3540,6 +3725,332 @@ If $\mathbf{T}$ is a normal ordinal operation, then for any limit ordinal $\lamb
 	\end{proof}
 \end{proof}
 \qed
+\end{proof}
+
+\section{Ordinal Arithmetic}
+
+\subsection{Addition}
+
+\begin{df}
+Let $A$ and $B$ be disjoint well-ordered sets. The \emph{concatenation} of $A$ and $B$ is the set $A \cup B$ under the relation:
+\begin{itemize}
+\item if $a,a' \in A$ then $a \leq a'$ iff $a \leq a'$ in $A$
+\item if $b, b' \in B$ then $b \leq b'$ iff $b \leq b'$ in $B$
+\item if $a \in A$ and $b \in B$ then $a \leq b$ and $b \not\leq a$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+If $A$ and $B$ are disjoint well-ordered sets, then their concatenation is well-ordered.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\leq$ is reflexive.}
+\begin{proof}
+	\pf\ For all $a \in A$ we have $a \leq a$, and for all $b \in B$ we have $b \leq b$.
+\end{proof}
+\step{2}{$\leq$ is antisymmetric.}
+\begin{proof}
+	\step{a}{\assume{$x \leq y \leq x$}}
+	\step{b}{\case{$x,y \in A$}}
+	\begin{proof}
+		\pf\ Then $x = y$ since the order on $A$ is antisymmetric.
+	\end{proof}
+	\step{c}{\case{$x \in A$ and $y \in B$}}
+	\begin{proof}
+		\pf\ This is impossible as it would imply $y \not\leq x$.
+	\end{proof}
+	\step{d}{\case{$x \in B$ and $y \in A$}}
+	\begin{proof}
+		\pf\ This is impossible as it would imply $x \not\leq y$.
+	\end{proof}
+	\step{e}{\case{$x,y \in B$}}
+	\begin{proof}
+		\pf\ Then $x = y$ since the order on $B$ is antisymmetric.
+	\end{proof}
+\end{proof}
+\step{3}{$\leq$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$x \leq y \leq z$}}
+	\step{b}{\case{$x, z \in A$}}
+	\begin{proof}
+		\pf\ In this case $y \in A$ since $y \leq z$, and so $x \leq z$ since the order on $A$ is transitive.
+	\end{proof}
+	\step{c}{\case{$x \in A$ and $z \in B$}}
+	\begin{proof}
+		\pf\ Then $x \leq z$ immediately.
+	\end{proof}
+	\step{d}{\case{$x \in B$ and $z \in A$}}
+	\begin{proof}
+		\pf\ This is impossible because we have $y \notin A$ since $x \leq y$ and $y \notin B$ since $y \leq z$.
+	\end{proof}
+	\step{e}{\case{$x,z \in B$}}
+	\begin{proof}
+		\pf\ In this case $y \in B$ since $x \leq y$, and so $x \leq z$ since the order on $B$ is transitive.
+	\end{proof}
+\end{proof}
+\step{4}{$\leq$ is total.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in A \cup B$}}
+	\step{b}{\case{$x,y \in A$}}
+	\begin{proof}
+		\pf\ Then $x \leq y$ or $y \leq x$ because the order on $A$ is total.
+	\end{proof}
+	\step{c}{\case{$x \in A$ and $y \in B$}}
+	\begin{proof}
+		\pf\ Then $x \leq y$.
+	\end{proof}
+	\step{d}{\case{$x \in B$ and $y \in A$}}
+	\begin{proof}
+		\pf\ Then $y \leq x$.
+	\end{proof}
+	\step{e}{\case{$x,y \in B$}}
+	\begin{proof}
+		\pf\ Then $x \leq y$ or $y \leq x$ because the order on $B$ is total.
+	\end{proof}
+\end{proof}
+\step{5}{Every nonempty subset of $A \cup B$ has a least element.}
+\begin{proof}
+	\step{a}{\pflet{$S$ be a nonempty subset of $A \cup B$}}
+	\step{b}{\case{$S \cap A = \emptyset$}}
+	\begin{proof}
+		\pf\ Then $S \subseteq B$ and so $S$ has a least element.
+	\end{proof}
+	\step{c}{\case{$S \cap A \neq \emptyset$}}
+	\begin{proof}
+		\pf\ The least element of $S \cap A$ is the least element of $S$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Ordinal Addition]
+Let $\alpha$ and $\beta$ be ordinal numbers. Then $\alpha + \beta$ is the ordinal number of the concatenation of $A$ and $B$, where $A$ is any well ordered set with ordinal $\alpha$ and $B$ is any well ordered set with ordinal $\beta$.
+\end{df}
+
+\begin{thm}[Associative Law for Addition]
+For any ordinals $\rho$, $\sigma$ and $\tau$, we have
+\[ \rho + (\sigma + \tau) = (\rho + \sigma) + \tau \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ Given disjoint well ordered sets $A$, $B$ and $C$, the concatenation of $A$ with (the concatenation of $B$ and $C$) is the same as the concatenation of (the concatenation of $A$ and $B$) and $C$. \qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\rho$ we have
+\[ \rho + 0 = 0 + \rho = \rho \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ For any well ordered set $A$, the concatenation of $A$ with $\emptyset$ is $A$, and the concatenation of $\emptyset$ with $A$ is $A$. \qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\alpha$ we have $\alpha + 1 = \alpha^+$.
+\end{thm}
+
+\begin{proof}
+\pf\ Since $\alpha^+$ is the concatenation of $\alpha$ and $\{ \alpha \}$. \qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\alpha$, the operation that maps $\beta$ to $\alpha + \beta$ is normal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any limit ordinal $\lambda$, we have $\alpha + \lambda = \sup_{\beta < \lambda} (\alpha + \beta)$.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal.}}
+	\step{b}{$(\{0\} \times \alpha) \cup (\{1\} \times \lambda) = \bigcup_{\beta \in \lambda} ((\{0\} \times \alpha) \cup (\{1\} \times \beta))$, where the order on the right hand side is as in Lemma \ref{lm:union_of_end_extensions}.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(\{0\} \times \alpha) \cup (\{1\} \times \lambda) & = (\{0\} \times \alpha) \cup (\{1\} \times \bigcup_{\beta < \lambda} \beta) \\
+			& = (\{0\} \times \alpha) \cup \bigcup_{\beta < \lambda} (\{1\} \times \beta) \\
+			& = \bigcup_{\beta < \lambda} ((\{0\} \times \alpha) \cup (\{1\} \times \beta))
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For any ordinal $\beta$ we have $\alpha + \beta < \alpha + \beta^+$}
+\begin{proof}
+	\pf\ Since $\alpha + \beta^+ = \alpha + \beta + 1 = (\alpha + \beta)^+$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any ordinals $\alpha$, $\beta$, $\gamma$, we have $\beta < \gamma$ if and only if $\alpha + \beta < \alpha + \gamma$.
+\end{cor}
+
+\begin{cor}[Left Cancellation for Addition]
+For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\alpha + \beta = \alpha + \gamma$ then $\beta = \gamma$.
+\end{cor}
+
+\begin{thm}
+For any ordinals $\alpha$, $\beta$, $\gamma$, if $\beta \leq \gamma$ then $\beta + \alpha \leq \gamma + \alpha$.
+\end{thm}
+
+\begin{proof}
+\pf\ Transfinite induction on $\alpha$. \qed
+\end{proof}
+
+\begin{thm}[Subtraction Theorem]
+Let $\alpha$ and $\beta$ be ordinals with $\alpha \leq \beta$. Then there exists a unique ordinal $\delta$ such that $\alpha + \delta = \beta$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all ordinals $\alpha$ and $\beta$ with $\alpha \leq \beta$, there exists $\delta$ such that $\alpha + \delta = \beta$}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ and $\beta$ be ordinals with $\alpha \leq \beta$}}
+	\step{b}{\pflet{$\delta$ be the greatest ordinal such that $\alpha + \delta \leq \beta$}}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:greatestordinal}.
+	\end{proof}
+	\step{c}{$\alpha + \delta = \beta$}
+	\begin{proof}
+		\pf\ If $\alpha + \delta < \beta$ then $\alpha + \delta + 1 \leq \beta$ contradicting the greatestness of $\delta$.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Uniqueness follows from the Left Cancellation Law.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Multiplication}
+
+\begin{df}[Ordinal Multiplication]
+Let $\alpha$ and $\beta$ be ordinal numbers. Then $\alpha \beta$ is the ordinal number of $A \times B$ under the lexicographic order, where $A$ is any well ordered set with ordinal $\alpha$ and $B$ is any well ordered set with ordinal $\beta$.
+\end{df}
+
+This is well defined by Proposition \ref{prop:lexicogwellorder}.
+
+\begin{thm}[Associative Law]
+For any ordinals $\rho$, $\sigma$ and $\tau$, we have
+\[ \rho (\sigma \tau) = (\rho \sigma) \tau \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ Let $A$, $B$ and $C$ be well ordered sets with ordinals $\rho$, $\sigma$ and $\tau$. Then both $\rho (\sigma \tau)$ and $(\rho \sigma) \tau$ are the ordinal of $A \times B \times C$ under
+\[ (a,b,c) \leq (a',b',c') \Leftrightarrow a \leq a' \vee (a = a' \wedge b \leq b') \vee (a = a' \wedge b = b' \wedge c \leq c') \enspace . \qquad \qed \]
+\end{proof}
+
+\begin{thm}[Left Distributive Law]
+For any ordinals $\rho$, $\sigma$ and $\tau$, we have
+\[ \rho (\sigma + \tau) = \rho \sigma + \rho \tau \]
+\end{thm}
+
+\begin{proof}
+\pf\ Let $A$, $B$ and $C$ be well ordered sets with ordinals $\rho$, $\sigma$ and $\tau$ and with $B \cap C = \emptyset$. Then both $\rho (\sigma + \tau)$ and $\rho \sigma + \rho \tau$ are the ordinal of $A \times (B \cup C)$ under the lexicographic ordering. \qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\rho$ we have $\rho 0 = 0 \rho = 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ For any well ordered set $A$ we have $A \times \emptyset = \emptyset \times A = \emptyset$. \qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\rho$ we have $\rho 1 = 1 \rho = \rho$.
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}
+For any ordinals $\rho$ and $\sigma$, if $\rho \sigma = 0$ then $\rho = 0$ or $\sigma = 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ If $A \times B = \emptyset$ then $A = \emptyset$ or $B = \emptyset$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:multnormal}
+For any non-zero ordinal $\alpha$, the operation that maps $\beta$ to $\alpha \beta$ is normal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any limit ordinal $\lambda$, we have $\alpha \lambda = \bigcup_{\beta < \lambda} \alpha \beta$}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal}}
+	\step{b}{$\alpha \times \lambda = \bigcup_{\beta < \lambda} (\alpha \times \beta)$ as well-ordered sets}
+\end{proof}
+\step{2}{For any ordinal $\beta$ we have $\alpha \beta < \alpha \beta^+$}
+\begin{proof}
+	\pf\ $\alpha \beta^+ = \alpha \beta + \alpha > \alpha \beta$
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \neq 0$ then $\beta < \gamma$ if and only if $\alpha \beta < \alpha \gamma$.
+\end{cor}
+
+\begin{cor}[Left Cancellation for Multiplication]
+For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \neq 0$ and $\alpha \beta = \alpha \gamma$ then $\beta = \gamma$.
+\end{cor}
+
+\begin{thm}
+For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\beta \alpha \leq \gamma \alpha$.
+\end{thm}
+
+\begin{proof}
+\pf\ Transfinite induction on $\alpha$. \qed
+\end{proof}
+
+\subsection{Exponentiation}
+
+\begin{df}
+Given ordinals $\alpha$ and $\beta$, define the ordinal $\alpha^\beta$ as follows:
+\begin{align*}
+0^\alpha & := 0 & (\alpha > 0) \\
+\alpha^0 & := 1 \\
+\alpha^{\beta^+} & := \alpha^\beta \alpha & (\alpha > 0) \\
+\alpha^\lambda & := \sup_{\beta < \lambda} \alpha^\beta & (\alpha > 0, \lambda \text{ a limit ordinal})
+\end{align*}
+\end{df}
+
+\begin{thm}
+Let $\alpha$ be an ordinal $\geq 2$. The operation that maps $\beta$ to $\alpha^\beta$ is normal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $\lambda$ a limit ordinal we have $\alpha^\lambda = \sup_{\beta < \lambda} \alpha^\beta$}
+\begin{proof}
+	\pf\ By definition.
+\end{proof}
+\step{2}{For any ordinal $\beta$ we have $\alpha^\beta < \alpha^{\beta^+}$}
+\begin{proof}
+	\pf\ We have $\alpha^{\beta^+} = \alpha^\beta \alpha > \alpha^\beta$ by Theorem \ref{thm:multnormal} since $\alpha > 1$ and $\alpha^\beta \neq 0$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \geq 2$ then $\beta < \gamma$ if and only if $\alpha^\beta < \alpha^\gamma$.
+\end{cor}
+
+\begin{cor}[Cancellation for Exponentiation]
+For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \geq 2$ and $\alpha^\beta = \alpha^\gamma$ then $\beta = \gamma$.
+\end{cor}
+
+\begin{thm}
+For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\beta^\alpha \leq \gamma^\alpha$.
+\end{thm}
+
+\begin{proof}
+\pf\ Transfinite induction on $\alpha$.
 \end{proof}
 
 \chapter{Cardinal Numbers}
@@ -4092,7 +4603,7 @@ Any subset of a finite set is finite.
 \end{cor}
 
 \begin{prop}
-For any natural numbers $m$ and $n$ we have $m+n$ is a natural number.
+For any natural numbers $m$ and $n$ we have $m+n$ (cardinal addition) is a natural number.
 \end{prop}
 
 \begin{proof}
@@ -4112,7 +4623,15 @@ The union of a finite set of finite sets is finite.
 \end{proof}
 
 \begin{prop}
-For any natural numbers $m$ and $n$, we have $mn$ is a natural number.
+For natural numbers $m$ and $n$, the cardinal sum $m + n$ is equal to the ordinal sum $m + n$.
+\end{prop}
+
+\begin{proof}
+\pf\ Induction on $n$. \qed
+\end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$, we have $mn$ (cardinal multiplication) is a natural number.
 \end{prop}
 
 \begin{cor}
@@ -4120,7 +4639,15 @@ If $A$ and $B$ are finite sets then $A \times B$ is finite.
 \end{cor}
 
 \begin{prop}
-For any natural numbers $m$ and $n$ we have $m^n$ is a natural number.
+For natural numbers $m$ and $n$, the cardinal product $mn$ is equal to the ordinal product $mn$.
+\end{prop}
+
+\begin{proof}
+\pf\ Induction on $n$. \qed
+\end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$ we have $m^n$  (cardinal exponentiation) is a natural number.
 \end{prop}
 
 \begin{proof}
@@ -4130,6 +4657,14 @@ For any natural numbers $m$ and $n$ we have $m^n$ is a natural number.
 \begin{cor}
 If $A$ and $B$ are finite sets then $A^B$ are finite.
 \end{cor}
+
+\begin{prop}
+For natural numbers $m$ and $n$, the cardinal exponentiation $m^n$ and the ordinal exponentiation $m^n$ agree.
+\end{prop}
+
+\begin{proof}
+\pf\ Induction on $n$. \qed
+\end{proof}
 
 \begin{prop}
 \label{prop:N^2approxN}
