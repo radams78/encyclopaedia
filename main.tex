@@ -4009,6 +4009,54 @@ For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\b
 \pf\ Transfinite induction on $\alpha$. \qed
 \end{proof}
 
+\begin{thm}[Division Theorem]
+Let $\alpha$ and $\delta$ be ordinal numbers with $\delta \neq 0$. Then there exist unique ordinals $\beta$ and $\gamma$ with $\gamma < \delta$ and
+\[ \alpha = \delta \beta + \gamma \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any ordinal numbers $\alpha$ and $\delta$ with $\delta \neq 0$, there exist ordinals $\beta$ and $\gamma$ such that $\gamma < \delta$ and $\alpha = \delta \beta + \gamma$}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ and $\delta$ be ordinals with $\delta \neq 0$}}
+	\step{b}{\pflet{$\beta$ be the greatest ordinal such that $\delta \beta \leq \alpha$}}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:greatestordinal}.
+	\end{proof}
+	\step{c}{There exists an ordinal $\gamma$ such that $\alpha = \delta \beta + \gamma$}
+	\begin{proof}
+		\pf\ Subtraction Theorem
+	\end{proof}
+\end{proof}
+\step{2}{For any ordinals $\delta$, $\beta$, $\beta'$, $\gamma$, $\gamma'$, if $\delta \beta + \gamma = \delta \beta' + \gamma'$ and $\delta \neq 0$ then $\beta = \beta'$ and $\gamma = \gamma'$}
+\begin{proof}
+	\step{a}{\pflet{$\delta$, $\beta$, $\beta'$, $\gamma$, $\gamma'$ be ordinals.}}
+	\step{b}{\assume{$\delta \neq 0$ and $\delta \beta + \gamma = \delta \beta' + \gamma'$}}
+	\step{c}{$\beta = \beta'$}
+	\begin{proof}
+		\step{i}{$\beta \nless \beta'$}
+		\begin{proof}
+			\pf\ If $\beta < \beta'$ then
+			\begin{align*}
+				\delta \beta' + \gamma' & \geq \delta \beta' \\
+				& \geq \delta (\beta + 1) \\
+				& = \delta \beta + \delta \\
+				& > \delta \beta + \gamma
+			\end{align*}
+		\end{proof}
+		\step{ii}{$\beta' \nless \beta$}
+		\begin{proof}
+			\pf\ Similar.
+		\end{proof}
+	\end{proof}
+	\step{d}{$\gamma = \gamma'$}
+	\begin{proof}
+		\pf\ By Cancellation.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Exponentiation}
 
 \begin{df}
