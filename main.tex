@@ -5091,6 +5091,48 @@ If $\mathbf{T}$ is a normal ordinal operation, then the derived operation is nor
 \qed
 \end{proof}
 
+\section{Cantor Normal Form}
+
+\begin{thm}
+For any ordinal $\alpha$, there exist a unique sequence of nonzero natural numbers $(n_1, \ldots, n_k)$ and sequence of ordinals $(\gamma_1, \ldots, \gamma_k)$ such that
+\[ \gamma_k < \gamma_{k-1} < \cdots < \gamma_1 \]
+and
+\[ \alpha = \omega^{\gamma_1} n_1 + \omega^{\gamma_2} n_2 + \cdots + \omega^{\gamma_k} n_k \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any ordinal $\alpha$, there exist a sequence of nonzero natural numbers $(n_1, \ldots, n_k)$ and sequence of ordinals $(\gamma_1, \ldots, \gamma_k)$ such that
+\[ \gamma_k < \gamma_{k-1} < \cdots < \gamma_1 \]
+and
+\[ \alpha = \omega^{\gamma_1} n_1 + \omega^{\gamma_2} n_2 + \cdots + \omega^{\gamma_k} n_k \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ be an ordinal}}
+	\step{b}{\assume{as an induction hypothesis that, for all $\beta < \alpha$, the theorem holds.}}
+	\step{c}{\assume{w.l.o.g. $\alpha \neq 0$}}
+	\step{c}{\pflet{$\gamma_1$, $n_1$, $\rho_1$ be the unique ordinals such that $0 \neq n_1 < \omega$, $\rho_1 < \omega^{\gamma_1}$, and $\alpha = \omega^{\gamma_1} n_1 + \rho_1$}}
+	\step{d}{\pflet{$(\gamma_2, \ldots, \gamma_k)$ and $(n_2, \ldots, n_k)$ be sequences such that $\gamma_k < \gamma_{k-1} < \cdots < \gamma_2$ and $\rho_1 = \omega^{\gamma_2} n_2 + \cdots + \omega^{\gamma_k} n_k$}}
+	\step{e}{$\gamma_2 < \gamma_1$}
+	\begin{proof}
+		\pf\ Since $\omega^{\gamma_2} \leq \rho_1 < \omega^{\gamma_1}$
+	\end{proof}
+\end{proof}
+\step{2}{If
+\[ \gamma_k < \gamma_{k-1} < \cdots < \gamma_1 \]
+\[ \gamma'_k < \gamma'_{k-1} < \cdots < \gamma'_1 \]
+and
+\[ \omega^{\gamma_1} n_1 + \omega^{\gamma_2} n_2 + \cdots + \omega^{\gamma_k} n_k = \omega^{\gamma'_1} n'_1 + \omega^{\gamma'_2} n'_2 + \cdots + \omega^{\gamma'_k} n'_k \]
+then $\gamma_i = \gamma'_i$ for all $i$ and $n_i = n'_i$ for all $i$}
+\begin{proof}
+	\pf\ Prove by induction on $i$ using the Logarithm Theorem.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Cantor Normal Form]
+For any ordinal $\alpha$, the \emph{Cantor normal form} of $\alpha$ is the expression $\alpha = \omega^{\gamma_1} n_1 + \cdots + \omega^{\gamma_k} n_k$ such that $n_1$, \ldots, $n_k$ are nonzero natural numbers and $\gamma_k < \gamma_{k-1} < \cdots < \gamma_1$.
+\end{df}
+
 \chapter{Infinite Cardinals}
 
 \section{Alephs}
