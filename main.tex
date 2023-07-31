@@ -390,6 +390,39 @@ For any class $\mathbf{A}$, the following is a theorem:
 \qed
 \end{proof}
 
+\begin{prop}
+No set is a member of itself.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$ be any set.}}
+\step{2}{\pick\ $m \in \{x\}$ such that $m \cap \{x\} = \emptyset$.}
+\step{3}{$m = x$}
+\step{4}{$x \cap \{x\} = \emptyset$}
+\step{5}{$x \notin x$}
+\qed
+\end{proof}
+
+\begin{prop}
+There are no sets $a$ and $b$ such that $a \in b$ and $b \in a$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a$ and $b$ be any sets.}}
+\step{2}{\pick\ $m \in \{a,b\}$ such that $m \cap \{a,b\} = \emptyset$}
+\step{3}{\case{$m = a$}}
+\begin{proof}
+	\pf\ Then $b \notin a$.
+\end{proof}
+\step{4}{\case{$m = b$}}
+\begin{proof}
+	\pf\ Then $a \notin b$.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Transitive Classes}
 
 \begin{df}[Transitive Class]
@@ -3615,6 +3648,23 @@ Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and o
 \qed
 \end{proof}
 
+\begin{prop}
+There is no function $f : \mathbb{N} \rightarrow \mathbf{V}$ such that $\forall n. f(n^+) \in f(n)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : \mathbb{N} \rightarrow \mathbf{V}$}}
+\step{2}{\pick\ $m \in f(\mathbb{N})$ such that $m \cap f(\mathbb{N}) = \emptyset$}
+\begin{proof}
+	\pf\ Axiom of Regularity.
+\end{proof}
+\step{3}{\pick\ $n \in \mathbb{N}$ such that $m = f(n)$.}
+\step{4}{$f(n) \cap f(\mathbb{N}) = \emptyset$}
+\step{5}{$f(n^+) \notin f(n)$}
+\qed
+\end{proof}
+
 \section{Cardinality}
 
 \begin{df}[Finite]
@@ -4077,6 +4127,74 @@ If $A$ is countable then $A^*$ is countable.
 \pf\ For any $n$, the set $A^n$ is countable, and $A^*$ is equinumerous with $\bigcup_n A^n$. \qed
 \end{proof}
 
+\section{Transitive Closure}
+
+\begin{prop}
+For any set $A$, there exists a unique transitive set $C$ such that:
+\begin{itemize}
+\item $A \subseteq C$
+\item For any transitive set $X$, if $A \subseteq X$ then $C \subseteq X$
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define a function $F : \mathbb{N} \rightarrow \mathbf{V}$ by
+\begin{align*}
+F(0) & = A \\
+F(n+1) & = A \cup \bigcup(F(0) \cup \cdots \cup F(n))
+\end{align*}}
+\step{2}{For all $n \in \mathbb{N}$ and $a \in F(n)$ we have $a \subseteq F(n+1)$}
+\begin{proof}
+	\pf\ $a \in F(0) \cup \cdots \cup F(n)$ so $a \subseteq \bigcup (F(0) \cup \cdots \cup F(n)) \subseteq F(n+1)$.
+\end{proof}
+\step{3}{\pflet{$C = \bigcup_{n \in \mathbb{N}} F(n)$}}
+\step{4}{$C$ is transitive.}
+\begin{proof}
+	\step{a}{\pflet{$x \in y \in C$}}
+	\step{b}{\pick\ $n \in \mathbb{N}$ such that $y \in F(n)$}
+	\step{c}{$y \subseteq F(n+1)$}
+	\begin{proof}
+		\pf\ \stepref{2}
+	\end{proof}
+	\step{d}{$x \in F(n+1)$}
+	\step{e}{$x \in C$}
+\end{proof}
+\step{5}{$A \subseteq C$}
+\begin{proof}
+	\pf\ Since $F(0) = A$.
+\end{proof}
+\step{6}{For any transitive set $X$, if $A \subseteq X$ then $C \subseteq X$}
+\begin{proof}
+	\step{a}{\pflet{$X$ be a transitive set}}
+	\step{b}{\assume{$A \subseteq X$}}
+	\step{c}{For all $n \in \mathbb{N}$ we have $F(n) \subseteq X$.}
+	\begin{proof}
+		\step{i}{$F(0) \subseteq X$}
+		\begin{proof}
+			\pf\ \stepref{b}
+		\end{proof}
+		\step{ii}{For all $n \in \mathbb{N}$, if $F(n) \subseteq X$, then $F(n+1) \subseteq X$.}
+		\begin{proof}
+			\step{A}{\pflet{$n \in \mathbb{N}$}}
+			\step{B}{\assume{$\forall m < n. F(m) \subseteq X$}}
+			\step{C}{$F(0) \cup \cdots \cup F(n) \subseteq X$}
+			\step{D}{$\bigcup (F(0) \cup \cdots \cup F(n)) \subseteq X$}
+			\begin{proof}
+				\pf\ Since $X$ is transitive.
+			\end{proof}
+			\step{E}{$F(n+1) \subseteq X$}
+		\end{proof}
+	\end{proof}
+	\step{d}{$C \subseteq X$}
+\end{proof}
+\step{7}{Let $D$ be a transitive set such that $A \subseteq D$ and, for any transitive set $X$, if $A \subseteq X$ then $D \subseteq X$. Then $D = C$.}
+\begin{proof}
+	\pf\ We have $C \subseteq D$ and $D \subseteq C$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{The Cumulative Hierarchy}
 
 \begin{df}[Cumulative Hierarchy]
@@ -4163,28 +4281,103 @@ For any ordinals $\alpha$ and $\beta$, if $\beta < \alpha$ then $V_\beta \subset
 \qed
 \end{proof}
 
-\begin{df}[Grounded]
-A set $A$ is \emph{grounded} iff there exists an ordinal $\alpha$ such that $A \in V_\alpha$.
-\end{df}
-
-\begin{df}[Rank]
-The \emph{rank} of a grounded set $A$ is the least ordinal $\alpha$ such that $A \in V_{\alpha^+}$.
-\end{df}
-
 \begin{prop}
-If $a \in A$ and $A$ is grounded, then $a$ is grounded and $\rank a < \rank A$.
+For every set $A$, there exists an ordinal $\alpha$ such that $A \in V_\alpha$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$A \in \mathcal{P} V_{\rank A}$}
+\step{1}{Let us say a set $A$ is \emph{grounded} iff there exists an ordinal $\alpha$ such that $A \in V_\alpha$.}
+\step{2}{For any set $A$, if every element of $A$ is grounded, then $A$ is grounded.}
 \begin{proof}
-	\pf\ $A \in V_{(\rank A)^+} = \mathcal{P} V_{\rank A}$.
+	\step{a}{\pflet{$A$ be a set.}}
+	\step{b}{$S = \{ \alpha \mid \exists a \in A. \alpha \text{ is the least ordinal such that } a \in V_\alpha \}$}
+	\begin{proof}
+		\pf\ $S$ is a set by an Axiom of Replacement.
+	\end{proof}
+	\step{c}{\pflet{$\beta = \sup S$}}
+	\step{d}{$A \subseteq V_\beta$}
+	\begin{proof}
+		\step{i}{\pflet{$a \in A$}}
+		\step{ii}{\pflet{$\alpha$ be the least ordinal such that $a \in V_\beta$}}
+		\step{iii}{$\alpha \in S$}
+		\step{iv}{$\alpha \leq \beta$}
+		\step{v}{$a \in V_\beta$}
+	\end{proof}
+	\step{e}{$A \in V_{\beta^+}$}
 \end{proof}
-\step{2}{$a \in V_{\rank A}$}
-\step{3}{$a$ is grounded and $(\rank a)^+ \leq \rank A$}
+\step{1}{\assume{for a contradiction there exists an ungrounded set.}}
+\step{3}{\pick\ a transitive set $B$ that has an ungrounded member.}
+\begin{proof}
+	\pf\ Pick a transitive set $c$, and take $B$ to be the transitive closure of $\{c\}$.
+\end{proof}
+\step{4}{\pflet{$A = \{ x \in B \mid x \text{ is ungrounded} \}$}}
+\step{5}{\pick\ $m \in A$ such that $m \cap A = \emptyset$}
+\begin{proof}
+	\pf\ Axiom of Regularity.
+\end{proof}
+\step{6}{Every member of $m$ is grounded.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $x \in m$ is ungrounded.}}
+	\step{b}{$x \in B$}
+	\begin{proof}
+		\pf\ Since $B$ is transitive (\stepref{3}).
+	\end{proof}
+	\step{c}{$x \in A$}
+	\begin{proof}
+		\pf\ \stepref{4}	
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{5}.
+	\end{proof}
+\end{proof}
+\step{7}{$m$ is grounded.}
+\begin{proof}
+	\pf\ \stepref{2}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{5}.
+\end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Rank]
+The \emph{rank} of a set $A$ is the least ordinal $\alpha$ such that $A \in V_{\alpha^+}$.
+\end{df}
+
+\begin{prop}
+\label{prop:allgrounded}
+For any set $A$ we have
+\[ \rank A = \bigcup_{a \in A} (\rank a)^+ \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha = \bigcup_{a \in A} (\rank a)^+$}}
+\step{2}{$A \subseteq V_\alpha$}
+\begin{proof}
+	\step{a}{\pflet{$a \in A$}}
+	\step{b}{$a \in V_{(\rank a)^+}$}
+	\step{c}{$a \in V_\alpha$}
+\end{proof}
+\step{3}{$A \in V_{\alpha^+}$}
+\step{4}{If $A \subseteq V_\beta$ then $\alpha \leq \beta$}
+\begin{proof}
+	\step{a}{\assume{$A \subseteq V_\beta$}}
+	\step{b}{For all $a \in A$ we have $(\rank a)^+ \leq \beta$}
+	\begin{proof}
+		\pf\ Since $a \in V_\beta$.
+	\end{proof}
+	\step{c}{$\alpha \leq \beta$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any sets $a$ and $b$, if $a \in b$ then $\rank a < \rank b$.
+\end{cor}
 
 \chapter{Group Theory}
 
