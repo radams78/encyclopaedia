@@ -3383,6 +3383,25 @@ If $\mathbf{T}$ is a continuous ordinal operation and $\forall \gamma. \mathbf{T
 \end{proof}
 
 \begin{props}
+\label{prop:gammaltTgamma}
+For any class $\mathbf{T}$, the following is a theorem:
+
+Assume $\mathbf{T}$ is a normal ordinal operation. For every ordinal $\alpha$, we have $\alpha \leq \mathbf{T}(\alpha)$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{i}{\pflet{$\gamma$ be an ordinal.}}
+\step{ii}{\assume{as induction hypothesis $\forall \delta < \gamma. \mathbf{T}(\delta) \geq \delta$}}
+\step{iii}{For all $\delta < \gamma$ we have $\delta < \mathbf{T}(\gamma)$}
+\begin{proof}
+	\pf\ $\mathbf{T}$ is strictly monotone.
+\end{proof}
+\step{iv}{$\gamma \leq \mathbf{T}(\gamma)$}
+\qed
+\end{proof}
+
+\begin{props}
 For any class $\mathbf{T}$, the following is a theorem:
 
 Assume $\mathbf{T}$ is a normal ordinal operation. For any ordinal $\beta \geq \mathbf{T}(0)$, there exists a greatest ordinal $\gamma$ such that $\mathbf{T}(\gamma) \leq \beta$.
@@ -3394,13 +3413,7 @@ Assume $\mathbf{T}$ is a normal ordinal operation. For any ordinal $\beta \geq \
 \begin{proof}
 	\step{a}{For all $\gamma$ we have $\mathbf{T}(\gamma) \geq \gamma$}
 	\begin{proof}
-		\step{i}{\pflet{$\gamma$ be an ordinal.}}
-		\step{ii}{\assume{as induction hypothesis $\forall \delta < \gamma. \mathbf{T}(\delta) \geq \delta$}}
-		\step{iii}{For all $\delta < \gamma$ we have $\delta < \mathbf{T}(\gamma)$}
-		\begin{proof}
-			\pf\ $\mathbf{T}$ is strictly monotone.
-		\end{proof}
-		\step{iv}{$\gamma \leq \mathbf{T}(\gamma)$}
+		\pf\ Proposition \ref{prop:gammaltTgamma}.
 	\end{proof}
 	\step{b}{$\mathbf{T}(\beta^+) > \beta$}
 \end{proof}
@@ -3431,6 +3444,7 @@ Assume $\mathbf{T}$ is a normal ordinal operation. For any ordinal $\beta \geq \
 \end{proof}
 
 \begin{thms}
+\label{thm:normalsup}
 For any class $\mathbf{T}$, the following is a theorem:
 
 Assume that $\mathbf{T}$ is a normal ordinal operation. For any nonempty set of ordinals $S$, we have
@@ -3479,6 +3493,7 @@ Assume that $\mathbf{T}$ is a normal ordinal operation. For any nonempty set of 
 \end{proof}
 \qed
 \end{proof}
+
 
 \chapter{Cardinal Numbers}
 
@@ -4460,6 +4475,51 @@ F(n+1) & = A \cup \bigcup(F(0) \cup \cdots \cup F(n))
 \step{7}{Let $D$ be a transitive set such that $A \subseteq D$ and, for any transitive set $X$, if $A \subseteq X$ then $D \subseteq X$. Then $D = C$.}
 \begin{proof}
 	\pf\ We have $C \subseteq D$ and $D \subseteq C$.
+\end{proof}
+\qed
+\end{proof}
+
+\section{The Veblen Fixed Point Theorem}
+
+\begin{thms}[Veblen Fixed Point Theorem]
+For any class $\mathbf{T}$, the following is a theorem:
+
+Assume $\mathbf{T}$ is a normal ordinal operation. For every ordinal $\beta$, there exists $\gamma \geq \beta$ such that $\mathbf{T}(\gamma) = \gamma$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\beta$ be an ordinal.}}
+\step{2}{\assume{w.l.o.g. $\beta < \mathbf{T}(\beta)$}}
+\begin{proof}
+	\pf\ We have $\beta \leq \mathbf{T}(\beta)$ by Proposition \ref{prop:gammaltTgamma}, and if $\beta = \mathbf{T}(\beta)$ we take $\gamma := \beta$.
+\end{proof}
+\step{3}{Define $f : \mathbb{N} \rightarrow \mathbf{On}$ by recursion thus:
+\begin{align*}
+f(0) & = \beta \\
+f(n^+) & = \mathbf{T}(f(n))
+\end{align*}}
+\step{4}{\pflet{$\gamma = \sup_{n \in \mathbb{N}} f(n)$}}
+\step{5}{$\beta \leq \gamma$}
+\begin{proof}
+	\pf\ Since $\beta = f(0)$.
+\end{proof}
+\step{5}{$\mathbf{T}(\gamma) = \gamma$}
+\begin{proof}
+	\step{a}{$\mathbf{T}(\gamma) \leq \gamma$}
+	\begin{proof}
+	\pf
+	\begin{align*}
+		\mathbf{T}(\gamma) & = \sup_{n \in \mathbb{N}} \mathbf{T}(f(n)) & (\text{Theorem \ref{thm:normalsup}}) \\
+		& = \sup_{n \in \mathbb{N}} f(n^+) & (\text{\stepref{3}}) \\
+		& \leq \sup_{n \in \mathbb{N}} f(n) \\
+		& = \gamma
+	\end{align*}
+	\end{proof}
+	\step{b}{$\gamma \leq \mathbf{T}(\gamma)$}
+	\begin{proof}
+		\pf Proposition \ref{prop:gammaltTgamma}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
