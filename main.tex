@@ -4146,6 +4146,60 @@ Let $\alpha$ and $\beta$ be ordinal numbers with $\alpha \neq 0$ and $\beta > 1$
 \qed
 \end{proof}
 
+\begin{thm}
+For any ordinal numbers $\alpha$, $\beta$, $\gamma$, we have
+\[ \alpha^{\beta + \gamma} = \alpha^\beta \alpha^\gamma \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P[\gamma]$ be the property: for any ordinals $\alpha$ and $\beta$ we have $\alpha^{\beta + \gamma} = \alpha^\beta \alpha^\gamma$}}
+\step{2}{$P[0]$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha^{\beta + 0} & = \alpha^\beta \\
+		& = \alpha^\beta 1 \\
+		& = \alpha^\beta \alpha^0
+	\end{align*}
+\end{proof}
+\step{3}{For all $\gamma$, if $P[\gamma]$ then $P[\gamma + 1]$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha^{\beta + \gamma + 1} & = \alpha^{\beta + \gamma} \alpha \\
+		& = \alpha^\beta \alpha^\gamma \alpha & (\text{induction hypothesis}) \\
+		& = \alpha^\beta \alpha^{\gamma + 1}
+	\end{align*}
+\end{proof}
+\step{4}{For any limit ordinal $\lambda$, if $\forall \gamma < \lambda. P[\gamma]$ then $P[\lambda]$.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal}}
+	\step{b}{\assume{$\forall \gamma < \lambda. P[\gamma]$}}
+	\step{c}{\pflet{$\alpha$ and $\beta$ be any ordinals.}}
+	\step{d}{\case{$\alpha = 0$}}
+	\begin{proof}
+		\pf\ We have $\alpha^{\beta + \lambda} = \alpha^\beta \alpha^\lambda = 0$.
+	\end{proof}
+	\step{e}{\case{$\alpha = 1$}}
+	\begin{proof}
+		\pf\ We have $\alpha^{\beta + \lambda} = \alpha^\beta \alpha^\lambda = 1$.
+	\end{proof}
+	\step{f}{\case{$\alpha > 1$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\alpha^{\beta + \lambda} & = \alpha^{\sup_{\gamma < \lambda} (\beta + \gamma)} \\
+			& = \sup_{\gamma < \lambda} \alpha^{\beta + \gamma} & (\text{Theorem \ref{thm:normalsup}}) \\
+			& = \sup_{\gamma < \lambda} \alpha^\beta \alpha^\gamma & (\text{\stepref{b}}) \\
+			& = \alpha^\beta \sup_{\gamma < \lambda} \alpha^\gamma & (\text{Theorem \ref{thm:normalsup}}) \\
+			& = \alpha^\beta \alpha^\lambda
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Cardinal Numbers}
 
 \section{Cardinal Numbers}
