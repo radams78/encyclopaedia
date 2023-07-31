@@ -2378,19 +2378,22 @@ Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B
 \subsection{Transfinite Recursion}
 
 \begin{thms}[Transfinite Recursion Theorem Schema]
-For any property $G(x,y)$, the following is a theorem:
+Let $\mathbf{A}$ and $<$ be classes.
+For any property $G(x,y)$, there exists a class $\mathbf{F}$ such that the following is a theorem:
 
-Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there exists a unique $y$ such that $G(f,y)$. Then there exists a unique function $F$ such that $\dom F = A$ and
-\[ \forall t \in A. G(F \restriction \seg t, F(t)) \enspace . \]
+Assume that $<$ is a well ordering on the class $\mathbf{A}$. Assume that, for any $f$, there exists a unique $y$ such that $G(f,y)$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ is the unique function such that, for all $t \in \mathbf{A}$, we have $\mathbf{F} \restriction \seg t$ is a set and
+ \[ G(\mathbf{F} \restriction \seg t, \mathbf{F}(t)) \enspace . \]
 \end{thms}
 
 \begin{proof}
 \pf
-\step{1}{For $t \in A$, let us say that a function $v$ is \emph{$G$-constructed up to $t$} iff $\dom v = \{x \in A \mid x \leq t \}$ and
-\[ \forall x \in \dom v. G(v \restriction \seg x, v(x)) \enspace . \]}
+\step{1}{For $t \in \mathbf{A}$, let us say that a function $v : \seg t \rightarrow \mathbf{V}$ is \emph{$G$-constructed up to $t$} iff 
+\[ \forall x < t. G(v \restriction \seg x, v(x)) \enspace . \]}
+\step{3}{Let $\mathbf{K}$ be the class of all functions $v$ such that there exists $t \in \mathbf{A}$ such that $v$ is $G$-constructed up to $t$.}
+\step{4}{\pflet{$\mathbf{F} = \bigcup \mathbf{K}$}}
 \step{2}{For all $t_1, t_2 \in A$ with $t_1 \leq t_2$, if $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$, then $\forall x \leq t_1. v_1(x) = v_2(x)$.}
 \begin{proof}
-	\step{a}{\pflet{$x \in A$}}
+	\step{a}{\pflet{$x \in \mathbf{V}$}}
 	\step{b}{\assume{$\forall y < x. (y \leq t_1 \Rightarrow v_1(y) = v_2(y))$}}
 	\step{c}{\assume{$x \leq t_1$}}
 	\step{d}{$G(v_1 \restriction \seg x, v_1(x))$}
@@ -2402,16 +2405,11 @@ Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there
 		\pf\ By transfinite induction.
 	\end{proof}
 \end{proof}
-\step{3}{Let $\mathcal{K}$ be the set of all functions $v$ such that there exists $t \in A$ such that $v$ is $G$-constructed up to $t$.}
+\step{5}{$\mathbf{F}$ is a function.}
 \begin{proof}
-	\pf\ By an Axiom of Replacement using \stepref{2}.
-\end{proof}
-\step{4}{\pflet{$F = \bigcup \mathcal{K}$}}
-\step{5}{$F$ is a function.}
-\begin{proof}
-	\step{a}{\pflet{$(x,y_1),(x,y_2) \in F$}}
-	\step{b}{\pick\ $v_1,v_2 \in \mathcal{K}$ such that $v_1(x) = y_1$ and $v_2(x) = y_2$.}
-	\step{c}{\pick\ $t_1, t_2 \in A$ such that $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$.}
+	\step{a}{\pflet{$(x,y_1),(x,y_2) \in \mathbf{F}$}}
+	\step{b}{\pick\ $v_1,v_2 \in \mathbf{K}$ such that $v_1(x) = y_1$ and $v_2(x) = y_2$.}
+	\step{c}{\pick\ $t_1, t_2 \in \mathbf{A}$ such that $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$.}
 	\step{d}{\assume{w.l.o.g. $t_1 \leq t_2$}}
 	\step{e}{$v_1(x) = v_2(x)$}
 	\begin{proof}
@@ -2419,45 +2417,49 @@ Assume that $<$ is a well ordering on a set $A$. Assume that, for any $f$, there
 	\end{proof}
 	\step{f}{$y_1 = y_2$}
 \end{proof}
-\step{6}{$\forall x \in \dom F. G(F \restriction \seg x, F(x))$}
+\step{6}{$\forall x \in \dom \mathbf{F}. G(\mathbf{F} \restriction \seg x, \mathbf{F}(x))$}
 \begin{proof}
 	\step{a}{\pflet{$x \in \dom F$}}
-	\step{b}{\pick\ $v \in \mathcal{K}$ such that $v(x) = F(x)$}
+	\step{b}{\pick\ $v \in \mathbf{K}$ such that $v(x) = \mathbf{F}(x)$}
 	\step{c}{\pick\ $t$ such that $v$ is $G$-constructed up to $t$.}
 	\step{d}{$G(v \restriction \seg x, v(x))$}
-	\step{e}{$v \restriction \seg x = F \restriction \seg x$}
+	\step{e}{$v \restriction \seg x = \mathbf{F} \restriction \seg x$}
 	\begin{proof}
-		\step{i}{\pflet{$y < x$} \prove{$v(y) = F(y)$}}
-		\step{ii}{$y \in \dom F$}
+		\step{i}{\pflet{$y < x$} \prove{$v(y) = \mathbf{F}(y)$}}
+		\step{ii}{$y \in \dom \mathbf{F}$}
 		\begin{proof}
-			\pf\ Since $y \in \dom v$ and $v \in \mathcal{K}$.
+			\pf\ Since $y \in \dom v$ and $v \in \mathbf{K}$.
 		\end{proof}
-		\step{iii}{\pick\ $u \in \mathcal{K}$ such that $u(y) = F(y)$}
+		\step{iii}{\pick\ $u \in \mathbf{K}$ such that $u(y) = F(y)$}
 		\step{iv}{$u(y) = v(y)$}
 		\begin{proof}
 			\pf\ \stepref{2}.
 		\end{proof}
-		\step{v}{$v(y) = F(y)$}
+		\step{v}{$v(y) = \mathbf{F}(y)$}
 	\end{proof}
-	\step{f}{$G(F \restriction \seg x, F(x))$}
+	\step{f}{$G(\mathbf{F} \restriction \seg x, \mathbf{F}(x))$}
 \end{proof}
-\step{7}{$\dom F = A$}
+\step{7}{$\dom \mathbf{F} = \mathbf{A}$}
 \begin{proof}
-	\step{a}{\assume{$\dom F \neq A$}}
-	\step{b}{\pflet{$t$ be least in $A - \dom F$}}
-	\step{c}{$\seg t = \dom F$}
-	\step{d}{\pflet{$y$ be the unique object such that $G(F, y)$}}
-	\step{e}{\pflet{$v = F \cup \{(t,y)\}$}}
+	\step{a}{\assume{$\dom \mathbf{F} \neq \mathbf{A}$}}
+	\step{b}{\pflet{$t$ be least in $\mathbf{A} - \dom \mathbf{F}$}}
+	\step{c}{$\seg t = \dom \mathbf{F}$}
+	\step{cc}{$\mathbf{F}$ is a set.}
+	\begin{proof}
+		\pf\ Axiom of Replacement.
+	\end{proof}
+	\step{d}{\pflet{$y$ be the unique object such that $G(\mathbf{F}, y)$}}
+	\step{e}{\pflet{$v = \mathbf{F} \cup \{(t,y)\}$}}
 	\step{f}{$v$ is $G$-constructed up to $t$.}
-	\step{g}{$t \in \dom F$}
+	\step{g}{$t \in \dom \mathbf{F}$}
 	\qedstep
 	\begin{proof}
 		\pf\ This is a contradiction.
 	\end{proof}
 \end{proof}
-\step{8}{$F$ is unique.}
+\step{8}{$\mathbf{F}$ is unique.}
 \begin{proof}
-	\pf\ If $F'$ also satisfies the theorem, prove $F(x) = F'(x)$ by transfinite induction on $x$.
+	\pf\ If $\mathbf{F}'$ also satisfies the theorem, prove $\mathbf{F}(x) = \mathbf{F}'(x)$ by transfinite induction on $x$.
 \end{proof}
 \qed
 \end{proof}
@@ -3281,12 +3283,211 @@ Let $\mathcal{A}$ be a nonempty set such that, for every $B$, we have $B \in \ma
 \qed
 \end{proof}
 
+\begin{thms}
+\label{thms:wellorderclass}
+For any class $\mathbf{A}$, there exists a class $\mathbf{F}$ such that the following is a theorem:
+
+If $\mathbf{A}$ is a proper class of ordinals, then $\mathbf{F} : \mathbf{On} \rightarrow \mathbf{A}$ is an order isomorphism.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{Define $\mathbf{F} : \mathbf{On} \rightarrow \mathbf{A}$ by transfinite recursion as follows: $\mathbf{F}(\alpha)$ is the least element of $\mathbf{A}$ that is different from $\mathbf{F}(\beta)$ for all $\beta < \alpha$.}
+\step{2}{For all $\alpha, \beta \in \mathbf{On}$, if $\alpha < \beta$ then $\mathbf{F}(\alpha) < \mathbf{F}(\beta)$}
+\begin{proof}
+	\pf\ We have $\mathbf{F}(\alpha) \neq \mathbf{F}(\beta)$ by the definition of $\mathbf{F}(\beta)$, and $\mathbf{F}(\beta) \nless \mathbf{F}(\alpha)$ by the leastness of $\mathbf{F}(\alpha)$.
+\end{proof}
+\step{3}{$\mathbf{F}$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha \in \mathbf{A}$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall \beta \in \mathbf{A}$, if $\beta < \alpha$ then there exists $\gamma$ such that $\beta = \mathbf{F}(\gamma)$.}}
+	\step{c}{\pflet{$\gamma = \{ \delta \in \mathbf{On} \mid \mathbf{F}(\delta) < \alpha \}$}}
+	\step{d}{$\gamma$ is a set.}
+	\begin{proof}
+		\pf\ Axiom of Replacement applied to $\alpha$.
+	\end{proof}
+	\step{e}{$\gamma$ is a transitive set.}
+	\begin{proof}
+		\pf\ If $\mathbf{F}(\delta) < \alpha$ and $\epsilon < \delta$ then $\mathbf{F}(\epsilon) < \alpha$ by \stepref{2}.
+	\end{proof}
+	\step{f}{$\gamma$ is an ordinal.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:transords}.
+	\end{proof}
+	\step{g}{$\mathbf{F}(\gamma) = \alpha$}
+	\begin{proof}
+		\step{i}{$\mathbf{F}(\gamma)$ is the least element of $\mathbf{A}$ different from $\mathbf{F}(\delta)$ for all $\delta < \gamma$}
+		\step{ii}{$\mathbf{F}(\gamma)$ is the least element of $\mathbf{A}$ different from $x$ for all $x \in \mathbf{A}$ with $x < \alpha$}
+		\step{iii}{$\mathbf{F}(\gamma) = \alpha$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Ordinal Operations}
+
+\begin{df}[Ordinal Operation]
+An \emph{ordinal operation} is a function $\mathbf{On} \rightarrow \mathbf{On}$.
+\end{df}
+
+\begin{df}[Continuous]
+An ordinal operation $\mathbf{T} : \mathbf{On} \rightarrow \mathbf{On}$ is \emph{continuous} iff, for every limit ordinal $\lambda$, we have $\mathbf{T}(\lambda) = \bigcup_{\alpha < \lambda} \mathbf{T}(\alpha)$.
+\end{df}
+
+\begin{df}[Normal]
+An ordinal operation is \emph{normal} iff it is continuous and strictly monotone.
+\end{df}
+
+\begin{props}
+\label{prop:normal}
+For any class $\mathbf{T}$, the following is a theorem.
+
+If $\mathbf{T}$ is a continuous ordinal operation and $\forall \gamma. \mathbf{T}(\gamma) < \mathbf{T}(\gamma^+)$, then $\mathbf{T}$ is normal.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P[\beta]$ be the property $\forall \gamma < \beta. \mathbf{T}(\gamma) < \mathbf{T}(\beta)$}}
+\step{2}{$P[0]$}
+\begin{proof}
+	\pf\ Vacuous.
+\end{proof}
+\step{3}{For any ordinal $\gamma$, if $P[\gamma]$ then $P[\gamma^+]$}
+\begin{proof}
+	\step{a}{\assume{$P[\gamma]$}}
+	\step{b}{\pflet{$\delta < \gamma^+$}}
+	\step{c}{\case{$\delta < \gamma$}}
+	\begin{proof}
+		\pf\ Then $\mathbf{T}(\delta) < \mathbf{T}(\gamma) < \mathbf{T}(\gamma^+)$.
+	\end{proof}
+	\step{d}{\case{$\delta = \gamma$}}
+	\begin{proof}
+		\pf\ Then $\mathbf{T}(\delta) = \mathbf{T}(\gamma) < \mathbf{T}(\gamma^+)$.
+	\end{proof}
+\end{proof}
+\step{4}{For any limit ordinal $\lambda$, if $\forall \gamma < \lambda. P[\gamma]$ then $P[\lambda]$.}
+\begin{proof}
+	\step{a}{\assume{$\forall \gamma < \lambda. P[\gamma]$}}
+	\step{b}{\pflet{$\delta < \lambda$}}
+	\step{c}{$\mathbf{T}(\delta) < \mathbf{T}(\lambda)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\mathbf{T}(\delta) & < \mathbf{T}(\delta^+) \\
+			& \leq \bigcup_{\epsilon < \lambda} \mathbf{T}(\epsilon) \\
+			& = \mathbf{T}(\lambda)
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}
+For any class $\mathbf{T}$, the following is a theorem:
+
+Assume $\mathbf{T}$ is a normal ordinal operation. For any ordinal $\beta \geq \mathbf{T}(0)$, there exists a greatest ordinal $\gamma$ such that $\mathbf{T}(\gamma) \leq \beta$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{There exists $\gamma$ such that $\mathbf{T}(\gamma) > \beta$}
+\begin{proof}
+	\step{a}{For all $\gamma$ we have $\mathbf{T}(\gamma) \geq \gamma$}
+	\begin{proof}
+		\step{i}{\pflet{$\gamma$ be an ordinal.}}
+		\step{ii}{\assume{as induction hypothesis $\forall \delta < \gamma. \mathbf{T}(\delta) \geq \delta$}}
+		\step{iii}{For all $\delta < \gamma$ we have $\delta < \mathbf{T}(\gamma)$}
+		\begin{proof}
+			\pf\ $\mathbf{T}$ is strictly monotone.
+		\end{proof}
+		\step{iv}{$\gamma \leq \mathbf{T}(\gamma)$}
+	\end{proof}
+	\step{b}{$\mathbf{T}(\beta^+) > \beta$}
+\end{proof}
+\step{2}{\pflet{$\delta$ be least such that $\mathbf{T}(\delta) > \beta$}}
+\step{3}{$\delta$ is a successor ordinal.}
+\begin{proof}
+	\step{a}{$\delta \neq 0$}
+	\begin{proof}
+		\pf\ Since $\mathbf{T}(0) \leq \beta$.
+	\end{proof}
+	\step{b}{$\delta$ is not a limit ordinal.}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $\delta$ is a limit ordinal.}}
+		\step{ii}{$\beta < \bigcup_{\epsilon < \delta} \mathbf{T}(\epsilon)$}
+		\begin{proof}
+			\pf\ $\mathbf{T}$ is continuous.
+		\end{proof}
+		\step{iii}{There exists $\epsilon < \delta$ such that $\beta < \mathbf{T}(\epsilon)$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts the minimality of $\delta$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{4}{\pflet{$\delta = \gamma^+$}}
+\step{5}{$\gamma$ is greatest such that $\mathbf{T}(\gamma) \leq \beta$}
+\qed
+\end{proof}
+
+\begin{thms}
+For any class $\mathbf{T}$, the following is a theorem:
+
+Assume that $\mathbf{T}$ is a normal ordinal operation. For any nonempty set of ordinals $S$, we have
+\[ \mathbf{T}(\sup S) = \sup_{\alpha \in S} \mathbf{T}(\alpha) \enspace . \]
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{$\forall \alpha \in S. \mathbf{T}(\alpha) \leq \mathbf{T}(\sup S)$}
+\begin{proof}
+	\pf\ Since $\mathbf{T}$ is monotone.
+\end{proof}
+\step{2}{For any ordinal $\beta$, if $\forall \alpha \in S. \mathbf{T}(\alpha) \leq \beta$, then $\mathbf{T}(\sup S) \leq \beta$}
+\begin{proof}
+	\step{a}{\pflet{$\beta$ be an ordinal.}}
+	\step{b}{\pflet{$\gamma = \sup S$}}
+	\step{c}{\assume{$\forall \alpha \in S. \mathbf{T}(\alpha) \leq \beta$}}
+	\step{d}{\case{$\gamma$ is 0 or a successor ordinal}}
+	\begin{proof}
+		\pf\ Then we must have $\gamma \in S$ so $\mathbf{T}(\gamma) \leq \beta$ from \stepref{c}.
+	\end{proof}
+	\step{f}{\case{$\gamma$ is a limit ordinal}}
+	\begin{proof}
+		\step{i}{$\mathbf{T}(\gamma) = \sup_{\alpha < \gamma} \mathbf{T}(\alpha)$}
+		\begin{proof}
+			\pf\ $\mathbf{T}$ is continuous.
+		\end{proof}
+		\step{ii}{\assume{for a contradiction $\beta < \mathbf{T}(\gamma)$}}
+		\step{iii}{\pick\ $\alpha < \gamma$ such that $\beta < \mathbf{T}(\alpha)$}
+		\begin{proof}
+			\pf\ \stepref{i}, \stepref{ii}
+		\end{proof}
+		\step{iv}{\pick\ $\alpha' \in S$ such that $\alpha < \alpha'$}
+		\begin{proof}
+			\pf\ \stepref{b}, \stepref{iii}
+		\end{proof}
+		\step{v}{$\beta < \mathbf{T}(\alpha') \leq \beta$}
+		\begin{proof}
+			\pf\ $\mathbf{T}$ is strictly monotone, \stepref{iii}, \stepref{iv}, \stepref{c}.
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Cardinal Numbers}
 
 \section{Cardinal Numbers}
 
 \begin{df}[Cardinality]
-For any set $A$, the \emph{cardinality} $|A|$ of $A$ is the least ordinal equinumerous with $A$.
+For any set $A$, the \emph{cardinality} or \emph{cardinal number} $|A|$ of $A$ is the least ordinal equinumerous with $A$.
+
+Let $\mathbf{Card}$ be the class of all cardinal numbers.
 \end{df}
 
 \begin{prop}
@@ -3568,6 +3769,22 @@ Let $\mathcal{A}$ be a set such that $\forall X \in \mathcal{A}. |X| \leq \kappa
 \qed
 \end{proof}
 
+\begin{lm}
+\label{lm:supcard}
+The union of a set of cardinal numbers is a cardinal number.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set of cardinal numbers.} 
+\prove{$\bigcup A$ is the smallest ordinal equinumerous with $\bigcup A$}}
+\step{2}{\pflet{$\alpha < \bigcup A$} \prove{$\alpha \not\approx \bigcup A$}}
+\step{3}{\pick\ $\kappa \in A$ such that $\alpha < \kappa$}
+\step{4}{$\alpha \prec \kappa$}
+\step{5}{$\alpha \prec \bigcup A$}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}
@@ -3792,10 +4009,6 @@ Every natural number is a cardinal number.
 $\mathbb{N}$ is a cardinal number.
 \end{cor}
 
-\begin{df}
-We define $\aleph_0 = \mathbb{N}$.
-\end{df}
-
 \begin{cor}
 $\mathbb{N}$ is infinite.
 \end{cor}
@@ -3857,16 +4070,13 @@ If $A$ and $B$ are finite sets then $A^B$ are finite.
 \end{cor}
 
 \begin{prop}
+\label{prop:N^2approxN}
 $\mathbb{N}^2 \approx \mathbb{N}$
 \end{prop}
 
 \begin{proof}
 \pf\ The function $J : \mathbb{N}^2 \rightarrow \mathbb{N}$ defined by $J(m,n) = ((m+n)^2 + 3m + n)/2$ is a bijection. \qed
 \end{proof}
-
-\begin{cor}
-$\aleph_0^2 = \aleph_0$
-\end{cor}
 
 \begin{prop}
 For any infinite cardinal $\kappa$ we have $\aleph_0 \leq \kappa$.
@@ -4252,6 +4462,76 @@ F(n+1) & = A \cup \bigcup(F(0) \cup \cdots \cup F(n))
 	\pf\ We have $C \subseteq D$ and $D \subseteq C$.
 \end{proof}
 \qed
+\end{proof}
+
+\chapter{Infinite Cardinals}
+
+\section{Alephs}
+
+\begin{df}[Aleph]
+Let $\aleph$ be the unique order isomorphism between $\mathbf{On}$ and the class of infinite cardinals.
+\end{df}
+
+\begin{prop}
+The operation $\aleph$ is normal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\aleph$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal.} \prove{$\aleph_\lambda = \bigcup_{\alpha < \lambda} \aleph_\alpha$}}
+	\step{b}{For all $\alpha < \lambda$ we have $\aleph_\alpha \leq \aleph_\lambda$}
+	\begin{proof}
+		\pf\ By definition of $\aleph_\lambda$.
+	\end{proof}
+	\step{c}{If $\forall \alpha < \lambda. \aleph_\alpha \leq \beta$ then $\aleph_\lambda \leq \beta$}
+	\begin{proof}
+		\pf\ By Lemma \ref{lm:supcard}.
+	\end{proof}
+\end{proof}
+\step{2}{$\aleph$ is strictly monotone.}
+\begin{proof}
+	\pf\ Since it is an order isomorphism.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Continuum Hypothesis]
+The \emph{continuum hypothesis} is the statement that $\aleph_1 = 2^{\aleph_0}$.
+\end{df}
+
+\begin{df}[Generalised Continuum Hypothesis]
+The \emph{generalised continuum hypothesis} is the statement that, for all $\alpha$, $\aleph_{\alpha^+} = 2^{\aleph_\alpha}$.
+\end{df}
+
+\section{Beths}
+
+\begin{df}[Beth]
+Define the operation $\beth : \mathbf{On} \rightarrow \mathbf{Card}$ by transfinite recursion as follows:
+\begin{align*}
+\beth_0 & := \aleph_0 \\
+\beth_{\alpha^+} & := 2^{\beth_\alpha} \\
+\beth_\lambda & := \bigcup_{\alpha < \lambda} \beth_\alpha & (\lambda \text{ a limit ordinal})
+\end{align*}
+\end{df}
+
+\begin{prop}
+$\beth$ is a normal operation.
+\end{prop}
+
+\begin{proof}
+\pf\ It is continuous by definition, and $\beth_\alpha < \beth_{\alpha^+}$ by Cantor's Theorem. \qed
+\end{proof}
+
+\begin{prop}
+The continuum hypothesis is equivalent to the statement $\beth_1 = \aleph_1$.
+
+The generalised continuum hypothesis is equivalent to the statement $\beth = \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
 \end{proof}
 
 \chapter{The Cumulative Hierarchy}
