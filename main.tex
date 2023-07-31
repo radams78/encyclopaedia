@@ -4028,7 +4028,7 @@ Let $\alpha$ and $\delta$ be ordinal numbers with $\delta \neq 0$. Then there ex
 		\pf\ Subtraction Theorem
 	\end{proof}
 \end{proof}
-\step{2}{For any ordinals $\delta$, $\beta$, $\beta'$, $\gamma$, $\gamma'$, if $\delta \beta + \gamma = \delta \beta' + \gamma'$ and $\delta \neq 0$ then $\beta = \beta'$ and $\gamma = \gamma'$}
+\step{2}{For any ordinals $\delta$, $\beta$, $\beta'$, $\gamma$, $\gamma'$, if $\delta \beta + \gamma = \delta \beta' + \gamma'$ and $\delta \neq 0$ and $\gamma, \gamma' < \delta$ then $\beta = \beta'$ and $\gamma = \gamma'$}
 \begin{proof}
 	\step{a}{\pflet{$\delta$, $\beta$, $\beta'$, $\gamma$, $\gamma'$ be ordinals.}}
 	\step{b}{\assume{$\delta \neq 0$ and $\delta \beta + \gamma = \delta \beta' + \gamma'$}}
@@ -4100,6 +4100,50 @@ For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\b
 
 \begin{proof}
 \pf\ Transfinite induction on $\alpha$.
+\end{proof}
+
+\begin{thm}[Logarithm Theorem]
+Let $\alpha$ and $\beta$ be ordinal numbers with $\alpha \neq 0$ and $\beta > 1$. Then there exist unique ordinals $\gamma$, $\delta$ and $\rho$ such that
+\[ \alpha = \beta^\gamma \delta + \rho, \qquad 0 \neq \delta < \beta, \qquad \rho < \beta^\gamma \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any ordinals $\alpha$ and $\beta$ with $\alpha \neq 0$ and $\beta > 1$, there exist ordinals $\gamma$, $\delta$, $\rho$ such that
+\[ \alpha = \beta^\gamma \delta + \rho, \qquad 0 \neq \delta < \beta, \qquad \rho < \beta^\gamma \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ and $\beta$ be ordinals with $\alpha \neq 0$ and $\beta > 1$.}}
+	\step{b}{\pflet{$\gamma$ be the greatest ordinal such that $\beta^\gamma \leq \alpha$.}}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:greatestordinal}.
+	\end{proof}
+	\step{c}{\pflet{$\delta$ and $\rho$ be the unique ordinals with $\rho < \beta^\gamma$ such that $\alpha = \beta^\gamma \delta + \rho$.}}
+	\begin{proof}
+		\pf\ By the Division Theorem.
+	\end{proof}
+	\step{d}{$\delta \neq 0$}
+	\begin{proof}
+		\pf\ If $\delta = 0$ then $\alpha = \beta^\gamma 0 + \rho = \rho < \beta^\gamma \leq \alpha$ which is a contradiction.
+	\end{proof}
+	\step{e}{$\delta < \beta$}
+	\begin{proof}
+		\pf\ If $\beta \leq \delta$ then $\alpha \geq \beta^\gamma \delta \geq \beta^\gamma \beta = \beta^{\gamma + 1}$, contradicting the greatestness of $\gamma$.
+	\end{proof}
+\end{proof}
+\step{2}{If $\beta^\gamma \delta + \rho = \beta^{\gamma'} \delta' + \rho'$ with $\beta > 1$, $0 \neq \delta < \beta$, $0 \neq \delta' < \beta$, $\rho < \beta^\gamma$ and $\rho' < \beta^{\gamma'}$, then $\gamma = \gamma'$, $\delta = \delta'$ and $\rho = \rho'$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha = \beta^\gamma \delta + \rho = \beta^{\gamma'} \delta' + \rho'$}}
+	\step{b}{$\beta^\gamma \leq \alpha < \beta^{\gamma + 1}$}
+	\step{c}{$\beta^{\gamma'} \leq \alpha < \beta^{\gamma' + 1}$}
+	\step{d}{$\beta^\gamma < \beta^{\gamma' + 1}$ and $\beta^{\gamma'} < \beta^{\gamma + 1}$}
+	\step{e}{$\gamma < \gamma' + 1$ and $\gamma' < \gamma + 1$}
+	\step{f}{$\gamma = \gamma'$}
+	\step{g}{$\delta = \delta'$ and $\rho = \rho'$}
+	\begin{proof}
+		\pf\ By the Division Theorem.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Cardinal Numbers}
