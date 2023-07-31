@@ -4769,34 +4769,6 @@ A natural number $n$ is \emph{even} iff there exists $m \in \mathbb{N}$ such tha
 A natural number $n$ is \emph{odd} iff there exists $p \in \mathbb{N}$ such that $n = 2p+1$.
 \end{df}
 
-\begin{prop}[Division Algorithm]
-Let $m$ be a natural number and $d$ a nonzero natural number. Then there exist natural numbers $q$ and $r$ such that $m = dq + r$ and $r < d$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$d$ be a nonzero natural number.}}
-\step{2}{$\exists q,r. 0 = dq+r \wedge r < d$}
-\begin{proof}
-	\pf\ Take $q = r = 0$.
-\end{proof}
-\step{3}{For any natural number $m$, if $\exists q,r. m = dq+r \wedge r < d$ then $\exists q,r. m^+ = dq+r \wedge r < d$}
-\begin{proof}
-	\step{a}{\pflet{$m$ be a natural number.}}
-	\step{b}{\assume{$m = dq + r$ and $r < d$}}
-	\step{c}{$r^+ \leq d$}
-	\step{d}{\case{$r^+ < d$}}
-	\begin{proof}
-		\pf\ In this case we have $m^+ = dq + r^+$.
-	\end{proof}
-	\step{e}{\case{$r^+ = d$}}
-	\begin{proof}
-		\pf\ In this case we have $m^+ = dq^+ + 0$.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
 \begin{prop}
 Every natural number is either even or odd.
 \end{prop}
