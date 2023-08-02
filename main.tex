@@ -1926,7 +1926,7 @@ Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a rela
 We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:invposet}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -1956,7 +1956,7 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:subposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -1984,7 +1984,7 @@ Assume $\mathbf{R}$ is a partial order on $\mathbf{B}$ and $\mathbf{F} : \mathbf
 \qed
 \end{proof}
 
-\begin{cors}
+\begin{cors}[Z]
 \label{cor:subposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -2005,7 +2005,7 @@ Let $(A,<_A)$ and $(B, <_B)$ be posets. A function $f : A \rightarrow B$ is \emp
 Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{least} iff for all $x \in \mathbf{A}$ we have $m \leq x$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 A partial order has at most one least element.
 \end{prop}
 
@@ -2017,7 +2017,7 @@ A partial order has at most one least element.
 Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{greatest} iff for all $x \in A$ we have $x \leq m$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 A poset has at most one greatest element.
 \end{prop}
 
@@ -2057,7 +2057,7 @@ A partial order is \emph{complete} iff every nonempty subset bounded above has a
 Let $A$ and $B$ be posets. An \emph{order isomorphism} between $A$ and $B$, $f : A \cong B$, is a bijection $f : A \approx B$ such that $f$ and $f^{-1}$ are monotone.
 \end{df}
 	
-\begin{thm}[Knaster Fixed-Point Theorem]
+\begin{thm}[Knaster Fixed-Point Theorem (Z)]
 Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
 \end{thm}
 
@@ -2084,13 +2084,12 @@ Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \ri
 \qed
 \end{proof}
 
-
 \begin{df}[Dense]
 Let $\leq$ be a partial order on $\mathbf{A}$ and
 $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:orderisoid}
 Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense. Let $\theta : A \rightarrow A$ be a monotone map that is the identity on $B$. Then $\theta = \mathrm{id}_A$.
 \end{prop}
@@ -2150,7 +2149,7 @@ Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense.
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[Z]
 \label{thm:extendorderiso}
 Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $\phi : B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
 \end{thm}
@@ -2243,7 +2242,7 @@ Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{S}$ a partial o
 \[ (a,b) \leq (a',b') \Leftrightarrow (a \mathbf{R} a' \wedge a \neq a') \vee (a = a' \wedge b \mathbf{S} b') \enspace . \]
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:lexicposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
@@ -2312,7 +2311,7 @@ Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} o
 We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
 \end{df}
 
-\begin{props}[Trichotomy]
+\begin{props}[Trichotomy (Z)]
 For any classes $\mathbf{A}$ and $\leq$, the following is a theorem:
 
 Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
@@ -2322,7 +2321,7 @@ Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:linord}
 For any classes $\mathbf{A}$ and $<$, the following is a theorem:
 
@@ -2371,7 +2370,7 @@ Let $<$ be a transitive relation on $\mathbf{A}$ that satisfies trichotomy. Defi
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
 If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
@@ -2392,7 +2391,7 @@ If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is a
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:strictmonotoneinj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{R}$, $\mathbf{S}$, the following is a theorem:
 
@@ -2414,7 +2413,7 @@ Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$, $\mathbf{S}$ is a partial
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:strictmonotoneinv}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\leq$, $\preccurlyeq$ and $\mathbf{F}$, the following is a theorem:
 
@@ -2438,14 +2437,14 @@ Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear o
 \qed
 \end{proof}
 
-\begin{cors}
+\begin{cors}[Z]
 \label{cor:orderiso}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\leq$, $\preccurlyeq$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear order on $\mathbf{B}$. Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{F}$ is strictly monotone. Then $\mathbf{F}$ is an order isomorphism.
 \end{cors}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:subloset}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
 
@@ -2465,13 +2464,13 @@ Assume $\mathbf{S}$ is a linear order on $\mathbf{B}$ and $\mathbf{F} : \mathbf{
 \qed
 \end{proof}
 
-\begin{cors}
+\begin{cors}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
 \end{cors}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:lexicographlinear}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
