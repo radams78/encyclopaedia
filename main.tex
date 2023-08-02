@@ -155,11 +155,12 @@ Let $\mathbf{A}$ be a class. We say the elements of $\mathbf{A}$ are \emph{pairw
 
 \section{Sets and the Axiom of Extensionality}
 	
-\begin{ax}[Extensionality]
-If two sets have exactly the same members, they are equal.
-\end{ax}
+\begin{df}[Axiom of Extensionality]
+The \emph{Axiom of Extensionality} is the statement: if two sets have exactly the same members, then they are equal.
+\[ \forall x, y (\forall z (z \in x \Leftrightarrow z \in y) \Rightarrow x = y) \enspace . \]
 
-Thanks to this axiom, we may identify a set $a$ with the class $\{x \mid x \in a\}$. Our use of the symbols $\in$ and $=$ is consistent. We say a class $\mathbf{A}$ \emph{is a set} iff there exists a set $a$ such that $a = \mathbf{A}$; that is, $\{x \mid \phi[x]\}$ is a set iff $\exists a \forall x (x \in a \leftrightarrow \phi[x])$. Otherwise, $\mathbf{A}$ is a \emph{proper class}.
+When working in a theory with the Axiom of Extensionality, we may identify a set $a$ with the class $\{x \mid x \in a\}$. Our use of the symbols $\in$ and $=$ is consistent. We say a class $\mathbf{A}$ \emph{is a set} iff there exists a set $a$ such that $a = \mathbf{A}$; that is, $\{x \mid \phi[x]\}$ is a set iff $\exists a \forall x (x \in a \leftrightarrow \phi[x])$. Otherwise, $\mathbf{A}$ is a \emph{proper class}.
+\end{df}
 
 \begin{df}[Subset]
 If $A$ is a set and $A \subseteq \mathbf{B}$, we say $A$ is a \emph{subset} of $\mathbf{B}$.
@@ -180,39 +181,96 @@ For any class $\mathbf{A}$, the \emph{power class} $\mathcal{P} \mathbf{A}$ is $
 
 \section{The Other Axioms}
 
-\begin{ax}[Union]
-The union of a set is a set.
-\end{ax}
+\begin{df}[Pairing Axiom]
+The \emph{Pairing Axiom} is the statement: for any sets $a$ and $b$, the class $\{a,b\}$ is a set.
+\[ \forall a \forall b \exists c \forall x (x \in c \Leftrightarrow x = a \vee x = b) \]
+\end{df}
 
-\begin{ax}[Power Set]
-The power class of a set is a set, which we call a \emph{power set}.
-\end{ax}
+\begin{df}[Union Axiom]
+The \emph{Union Axiom} is the statement: for any set $A$, the class $\bigcup A$ is a set.
+\[ \forall A \exists B \forall x (x \in B \Leftrightarrow \exists y (y \in A \wedge x \in y)) \]
+\end{df}
 
-\begin{ax}[Infinity]
-There exists a set $I$ such that:
-\begin{itemize}
-\item There exists an element of $I$ that has no members
-\item For every $x \in I$, there exists a set $y \in I$ such that the elements of $y$ are exactly $x$ and the members of $x$.
-\end{itemize}
-\end{ax}
+\begin{df}[Comprehension Axiom Scheme]
+The \emph{Comprehension Axiom Scheme} is the set of sentences of the form, for any class $\mathbf{A}$: If $\mathbf{A}$ is a subclass of a set then $\mathbf{A}$ is a set.
 
-\begin{ax}[Choice]
+That is, for any property $P[x,y_1,\ldots,y_n]$:
+
+For any sets $a_1$, \ldots, $a_n$ and $B$, the class $\{ x \in B \mid P[x,a_1, \ldots, a_n] \}$ is a set.
+\[ \forall a_1, \ldots, a_n, B. \exists C. \forall x (x \in C \Leftrightarrow x \in B \wedge P[x,a_1, \ldots, a_n]) \]
+\end{df}
+
+\begin{df}[Replacement Axiom Scheme]
+The \emph{Replacement Axiom Scheme} is the set of sentences of the form, for some property $P[x,y,z_1, \ldots, z_n]$:
+
+For any sets $a_1$, \ldots, $a_n$, $B$, assume for all $x \in B$ there exists at most one $y$ such that $P[x,y,a_1, \ldots, a_n]$. Then $\{ y \mid \exists x \in B. P[x,y,a_1, \ldots, a_n]$ is a set.
+
+\[ \forall a_1, \ldots, a_n, B (\forall x \in B. \forall y,y'(P[x,y,a_1, \ldots, a_n] \wedge P[x,y',a_1, \ldots, a_n] \Rightarrow y = y') \Rightarrow \]
+\[ \exists C \forall y (y \in C \Leftrightarrow \exists x \in B. P[x,y,a_1, \ldots, a_n])) \]
+\end{df}
+
+\begin{df}[Power Set Axiom]
+The \emph{Power Set Axiom} is the statement: the power class of a set is a set.
+\[ \forall A \exists B \forall x (x \in B \Leftrightarrow \forall y (y \in x \Rightarrow y \in A)) \]
+\end{df}
+
+\begin{df}[Axiom of Infinity]
+The \emph{Axiom of Infinity} is the statement: there exists a set $I$ such that $\emptyset \in I$ and $\forall x \in I. x \cup \{x\} \in I$.
+\[ \exists I (\exists e \in I. \forall x. x \notin e \wedge \forall x \in I. \exists y \in I. \forall z (z \in y \Leftrightarrow z \in x \vee z = x)) \]
+\end{df}
+
+\begin{df}[Axiom of Choice]
+The \emph{Axiom of Choice} is the statement: 
 For any set $A$ of pairwise disjoint, nonempty sets, there exists a set $C$ such that, for all $x \in A$, we have $x \cap C$ has exactly one element.
-\end{ax}
 
-\begin{axs}[Replacement]
-For any predicate $P(x,y)$, the following is an axiom:
+\begin{align*}
+& \forall A ( \forall x \in A. \exists y y \in x \wedge \\
+& \forall x,y \in A. \forall z(z \in x \wedge z \in y \Rightarrow x = y) \Rightarrow \\
+& \exists C. \forall x \in A. \exists y \forall z (z \in x \wedge z \in C \Leftrightarrow z = y))
+\end{align*}
+\end{df}
 
-Let $A$ be a set. Assume that, for all $x \in A$, there exists at most one $y$ such that $P(x,y)$. Then $\{y \mid \exists x \in A. P(x,y)\}$ is a set.
-\end{axs}
+\begin{df}[Axiom of Regularity]
+The \emph{Axiom of Regularity} is the statement:
+for any $A$, if $A$ has a member, then there exists $m \in A$ such that $m \cap A = \emptyset$.
 
-\begin{ax}[Regularity]
-For any $A$, if $A$ has a member, then there exists $m \in A$ such that $m \cap A = \emptyset$.
-\end{ax}
+\[ \forall A (\exists x. x \in A \Rightarrow \exists m \in A. \neg \exists x (x \in m \wedge x \in A)) \]
+\end{df}
 
-\section{Consequences of the Axioms}
+\begin{df}[Zermelo Set Theory]
+\emph{Zermelo set theory} is the theory whose axioms are:
+\begin{itemize}
+\item Extensionality
+\item Pairing
+\item Union
+\item Comprehension
+\item Power Set
+\item Infinity
+\item Choice
+\item Regularity
+\end{itemize}
+We label theorems with Z when they are provable in Zermelo set theory.
+\end{df}
 
-\begin{prop}
+\begin{df}[Zermelo-Fraenkel Set Theory]
+\emph{Zermelo-Fraenkel set theory} is the theory whose axioms are:
+\begin{itemize}
+\item Extensionality
+\item Union
+\item Replacement
+\item Power Set
+\item Infinity
+\item Choice
+\item Regularity
+\end{itemize}
+We label theorems with ZFC when they are provable in Zermelo-Fraenkel set theory.
+\end{df}
+
+We label a theorem with FOL if it can be proved in first-order logic, i.e. from no axioms.
+
+\section{ZFC Extends Z}
+
+\begin{prop}[Z,ZFC]
 The empty class $\emptyset$ is a set.
 \end{prop}
 
@@ -220,20 +278,13 @@ The empty class $\emptyset$ is a set.
 \pf\ Immediate from the Axiom of Infinity. \qed
 \end{proof}
 
-\begin{prop}[Russell's Paradox]
-The class $\{ x \mid x \notin x \}$ is a proper class.
-\end{prop}
-
-\begin{proof}
-\pf\ Assume for a contradiction $R = \{ x \mid x \notin x \}$ is a set. Then $R \in R$ if and only if $R \notin R$, which is impossible. \qed
-\end{proof}
-
-\begin{prop}[Pairing]
-For any sets $a$ and $b$, the class $\{a,b\}$ is a set.
+\begin{prop}[ZFC]
+The Axiom of Pairing is a theorem of ZFC.
 \end{prop}
 
 \begin{proof}
 \pf
+\step{0}{\pflet{$a,b$ be sets.}}
 \step{1}{\pflet{$P(x,y)$ be the predicate $(x = \emptyset \wedge y = a) \vee (x = \mathcal{P} \emptyset \wedge y = b)$.}}
 \step{2}{For all $x \in \mathcal{P} \mathcal{P} \emptyset$, there exists at most one $y$ such that $P(x,y)$.}
 \begin{proof}
@@ -259,34 +310,13 @@ For any sets $a$ and $b$, the class $\{a,b\}$ is a set.
 \qed
 \end{proof}
 
-\begin{prop}
-The union of two sets is a set.
-\end{prop}
-
-\begin{proof}
-\pf\ Because $A \cup B = \bigcup \{A,B\}$. \qed
-\end{proof}
-
-\begin{props}
-For any number $n$, the following is a theorem:
-
-For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x = a_1 \vee \cdots \vee x = a_n\}$ is a set.
-\end{props}
-
-\begin{proof}
-\pf\ The case $n=1$ follows from Pairing since $\{a\} = \{a,a\}$.
-
-If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
-\end{proof}
-
-\begin{props}[Comprehension]
-For any predicate $P(x)$, the following is a theorem:
-
-For any set $A$, the class $\{x \in A \mid P(x)\}$ is a set.
+\begin{props}[ZFC]
+Every instance of the Comprehension Axiom Scheme is a theorem of ZFC.
 \end{props}
 
 \begin{proof}
 \pf
+\step{0}{\pflet{$P(x)$ be a predicate.}}
 \step{1}{\pflet{$A$ be a set.}}
 \step{2}{\pflet{$Q(x,y)$ be the predicate $P(x) \wedge y = x$.}}
 \step{3}{For all $x \in A$, there exists at most one $y$ such that $Q(x,y)$.}
@@ -319,33 +349,116 @@ For any set $A$, the class $\{x \in A \mid P(x)\}$ is a set.
 \qed
 \end{proof}
 
-\begin{cors}
-For any class $\mathbf{A}$, the following is a theorem:
-
-For any set $B$, if $\mathbf{A} \subseteq B$ then $\mathbf{A}$ is a set.
+\begin{cors}[ZFC]
+Every axiom of Z is a theorem of ZFC.
 \end{cors}
 
-\begin{cor}
+It follows that every theorem of Z is a theorem of ZFC.
+
+\section{Consequences of the Axioms}
+
+\begin{prop}[Z]
+The union of two sets is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ Because $A \cup B = \bigcup \{A,B\}$. \qed
+\end{proof}
+
+\begin{props}[Z]
+For any number $n$, the following is a theorem:
+
+For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x = a_1 \vee \cdots \vee x = a_n\}$ is a set.
+\end{props}
+
+\begin{proof}
+\pf\ The case $n=1$ follows from Pairing since $\{a\} = \{a,a\}$.
+
+If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
+\end{proof}
+
+\begin{prop}[Z]
+\label{prop:xnotinx}
+No set is a member of itself.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$ be any set.}}
+\step{2}{\pick\ $m \in \{x\}$ such that $m \cap \{x\} = \emptyset$.}
+\begin{proof}
+	\pf\ Axiom of Regularity.
+\end{proof}
+\step{3}{$m = x$}
+\step{4}{$x \cap \{x\} = \emptyset$}
+\step{5}{$x \notin x$}
+\qed
+\end{proof}
+
+\begin{cor}[Z]
 The universal class $\mathbf{V}$ is a proper class.
 \end{cor}
 
-\begin{cor}
+\begin{proof}
+\pf\ If $\mathbf{V}$ is a set then $\mathbf{V} \in \mathbf{V}$, contradicting the Proposition. \qed
+\end{proof}
+
+\begin{prop}[Z]
+There are no sets $a$ and $b$ such that $a \in b$ and $b \in a$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a$ and $b$ be any sets.}}
+\step{2}{\pick\ $m \in \{a,b\}$ such that $m \cap \{a,b\} = \emptyset$}
+\step{3}{\case{$m = a$}}
+\begin{proof}
+	\pf\ Then $b \notin a$.
+\end{proof}
+\step{4}{\case{$m = b$}}
+\begin{proof}
+	\pf\ Then $a \notin b$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Z]
 The intersection of a set and a class is a set.
-\end{cor}
+\end{prop}
 
-\begin{cor}
+\begin{proof}
+\pf\ Immediate from Comprehension. \qed
+\end{proof}
+
+\begin{prop}[Z]
 The relative complement of a class in a set is a set.
-\end{cor}
+\end{prop}[Z]
 
-\begin{cor}
+\begin{proof}
+\pf\ Immediate from Comprehension. \qed
+\end{proof}
+
+\begin{cor}[Z]
 The symmetric difference of two sets is a set.
 \end{cor}
 
-\begin{cor}
+\begin{prop}[Z]
 The intersection of a nonempty class is a set.
-\end{cor}
+\end{prop}
 
-\begin{props}
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathbf{A}$ be a nonempty class.}}
+\step{2}{\pick\ $B \in \mathbf{A}$}
+\step{3}{$\bigcap \mathbf{A} \subseteq B$}
+\step{4}{$\bigcap \mathbf{A}$ is a set.}
+\begin{proof}
+	\pf\ By Comprehension.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}[FOL]
 \label{prop:powermono}
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
@@ -356,7 +469,7 @@ If $\mathbf{A} \subseteq \mathbf{B}$ then $\mathcal{P} \mathbf{A} \subseteq \mat
 \pf\ Every subset of $\mathbf{A}$ is a subset of $\mathbf{B}$. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[FOL]
 \label{prop:unionmonotone}
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
@@ -367,7 +480,7 @@ If $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup 
 \pf\ If $x \in X \in \mathbf{A}$ then $x \in X \in \mathbf{B}$. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:UPA}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -390,46 +503,13 @@ For any class $\mathbf{A}$, the following is a theorem:
 \qed
 \end{proof}
 
-\begin{prop}
-No set is a member of itself.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$x$ be any set.}}
-\step{2}{\pick\ $m \in \{x\}$ such that $m \cap \{x\} = \emptyset$.}
-\step{3}{$m = x$}
-\step{4}{$x \cap \{x\} = \emptyset$}
-\step{5}{$x \notin x$}
-\qed
-\end{proof}
-
-\begin{prop}
-There are no sets $a$ and $b$ such that $a \in b$ and $b \in a$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$a$ and $b$ be any sets.}}
-\step{2}{\pick\ $m \in \{a,b\}$ such that $m \cap \{a,b\} = \emptyset$}
-\step{3}{\case{$m = a$}}
-\begin{proof}
-	\pf\ Then $b \notin a$.
-\end{proof}
-\step{4}{\case{$m = b$}}
-\begin{proof}
-	\pf\ Then $a \notin b$.
-\end{proof}
-\qed
-\end{proof}
-
 \section{Transitive Classes}
 
 \begin{df}[Transitive Class]
 A class $\mathbf{A}$ is a \emph{transitive class} iff whenever $x \in y \in \mathbf{A}$ then $x \in \mathbf{A}$.
 \end{df}
 
-\begin{props}
+\begin{props}[FOL]
 \label{prop:transitiveset}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -450,7 +530,7 @@ $\mathbf{A} \subseteq \mathcal{P} \mathbf{A}$
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[FOL]
 \label{prop:uniontransitive}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -469,7 +549,7 @@ If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive 
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:powtransitive}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -513,7 +593,7 @@ We have $\mathbf{A}$ is a transitive class if and only if $\mathcal{P} \mathbf{A
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[FOL]
 For any class $\mathbf{A}$, the following is a theorem:
 
 If every member of $\mathbf{A}$ is a transitive set then $\bigcup \mathbf{A}$ is a transitive class.
@@ -532,7 +612,7 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcup \mathbf{A}$ is
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[FOL]
 For any class $\mathbf{A}$, the following is a theorem:
 
 If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is a transitive class.
@@ -559,7 +639,7 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is
 For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined to be $\{ \{ a \}, \{a , b \} \}$.
 \end{df}
 
-\begin{thm}
+\begin{thm}[Z]
 For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ and $b = d$.
 \end{thm}
 
@@ -595,7 +675,7 @@ For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ 
 The \emph{Cartesian product} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \times \mathbf{B} := \{(x,y) \mid x \in \mathbf{A}, y \in \mathbf{B}\}$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 For any sets $A$ and $B$, the class $A \times B$ is a set.
 \end{prop}
 
@@ -603,7 +683,7 @@ For any sets $A$ and $B$, the class $A \times B$ is a set.
 \pf\ It is a subset of $\mathcal{P} \mathcal{P} (A \cup B)$. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a theorem:
 
 \[ \mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C}) \]
@@ -618,7 +698,7 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a 
 \end{align*}
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
 If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}$ is nonempty then $\mathbf{B} = \mathbf{C}$.
@@ -639,7 +719,7 @@ If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
 \[ \mathbf{A} \times \bigcup \mathbf{B} = \{ (a,b) \mid \exists Y \in \mathbf{B}. (a \in \mathbf{A} \wedge b \in Y) \} \]
@@ -677,7 +757,7 @@ The \emph{inverse} of a relation $\mathbf{R}$ between $\mathbf{A}$ and $\mathbf{
 \[ b \mathbf{R}^{-1} a \Leftrightarrow a \mathbf{R} b \enspace . \]
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, we have $(\mathbf{R}^{-1})^{-1} = \mathbf{R}$.
@@ -698,7 +778,7 @@ Let $\mathbf{R}$ be a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\math
 \[ a (\mathbf{S} \circ \mathbf{R}) c \Leftrightarrow \exists b (a \mathbf{R} b \wedge b \mathbf{S} c) \enspace. \]
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
 If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\mathbf{S}$ is a relation between $\mathbf{B}$ and $\mathbf{C}$, then
@@ -721,7 +801,7 @@ z(\mathbf{S} \circ \mathbf{R})^{-1}x & \Leftrightarrow x(\mathbf{S} \circ \mathb
 Let $\mathbf{R}$ be a binary relation on $\mathbf{A}$. Then $\mathbf{R}$ is \emph{reflexive} on $\mathbf{A}$ iff $\forall x \in \mathbf{A}. (x,x) \in \mathbf{R}$.
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:invref}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -751,7 +831,7 @@ A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $x\mathbf{R}y$, then $
 A relation $\mathbf{R}$ is \emph{antisymmetric} iff, whenever $x \mathbf{R} y$ and $y \mathbf{R} x$, then $x = y$.
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:invantisym}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -773,7 +853,7 @@ If $\mathbf{R}$ is an antisymmetric relation on $\mathbf{A}$ then so is $\mathbf
 A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $x\mathbf{R}y$ and $y \mathbf{R} z$, then $x\mathbf{R} z$.
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:invtrans}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -789,12 +869,12 @@ If $\mathbf{R}$ is a transitive relation between $\mathbf{A}$ and $\mathbf{B}$ t
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 For any relation $R$ on a set $A$, there exists a smallest transitive relation on $A$ that includes $R$.
 \end{prop}
 
 \begin{proof}
-\pf\ The relation is $\bigcup \{ S \in \mathcal{P} A^2 \mid R \subseteq S, S \text{ is transitive} \}$. \qed
+\pf\ The relation is $\bigcap \{ S \in \mathcal{P} A^2 \mid R \subseteq S, S \text{ is transitive} \}$. \qed
 \end{proof}
 
 \begin{df}[Transitive Closure]
@@ -833,7 +913,7 @@ A relation $\mathbf{R}$ on a class $\mathbf{A}$ is \emph{well founded} iff:
 \end{itemize}
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 For any class $\mathbf{A}$, the relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
 \end{prop}
 
@@ -855,7 +935,7 @@ For any class $\mathbf{A}$, the relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:leastelement}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -880,7 +960,7 @@ Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \
 \qed
 \end{proof}
 
-\begin{thms}[Transfinite Induction Principle]
+\begin{thms}[Transfinite Induction Principle (Z)]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
@@ -907,7 +987,7 @@ Then $\mathbf{B} = \mathbf{A}$.
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[Z]
 The transitive closure of a well founded relation on a set is well founded.
 \end{thm}
 
@@ -933,7 +1013,7 @@ Let $\mathbf{R}$ be a relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph
 \[ \seg a := \{ x \in \mathbf{A} \mid x \mathbf{R} a \} \enspace . \]
 \end{df}
 
-\begin{thms}[Transfinite Recursion Theorem Schema]
+\begin{thms}[Transfinite Recursion Theorem Schema (ZFC)]
 For any classes $\mathbf{A}$, $\mathbf{R}$ and any property $G[x,y,z]$, there exists a class $\mathbf{F}$ such that, for any class $\mathbf{F}'$ the following is a theorem:
 
 Assume that $\mathbf{R}$ is a well-founded relation on $\mathbf{A}$. Assume that, for any $f$ and $t$, there exists a unique $z$ such that $G[f,t,z]$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ such that, for all $t \in \mathbf{A}$, we have $\mathbf{F} \restriction \seg t$ is a set and
@@ -977,8 +1057,11 @@ If $\mathbf{F}' : \mathbf{A} \rightarrow \mathbf{V}$ satisfies that, for all $t 
 \begin{proof}
 	\step{a}{\pflet{$x \in \mathbf{A}$}}
 	\step{b}{\assume{as transfinite induction hypothesis $\forall y \mathbf{R} x. y \in \mathbf{A}$}}
-	\step{c}{\assume{for a contradiction $x \notin \mathbf{A}$}}
+	\step{c}{\assume{for a contradiction $x \notin \dom \mathbf{F}$}}
 	\step{d}{$\mathbf{F} \restriction \seg x$ is a set}
+	\begin{proof}
+		\pf\ Axiom of Replacement.
+	\end{proof}
 	\step{e}{$\mathbf{F} \restriction \seg x$ is acceptable}
 	\step{f}{\pflet{$y$ be the unique object such that $G[\mathbf{F} \restriction \seg x, x, y]$}}
 	\step{g}{$\mathbf{F} \restriction \seg x \cup \{(x,y)\}$ is acceptable}
@@ -1014,7 +1097,7 @@ A \emph{binary operation} on a class $\mathbf{A}$ is a function $\mathbf{A}^2 \r
 Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{A}$ be a function and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{B}. \mathbf{F}(x) \in \mathbf{B}$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 For any class $\mathbf{A}$, the following is a theorem:
 
 \[ \mathrm{id}_\mathbf{A} : \mathbf{A} \rightarrow \mathbf{A} \]
@@ -1024,7 +1107,7 @@ For any class $\mathbf{A}$, the following is a theorem:
 \pf\ For all $x \in \mathbf{A}$, the only $y$ such that $(x,y) \in \mathrm{id}_\mathbf{A}$ is $y = x$. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
@@ -1047,7 +1130,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathb
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$ (a \emph{choice function} for $A$) such that, for every nonempty $B \subseteq A$, we have $F(B) \in B$.
 \end{prop}
 
@@ -1096,7 +1179,7 @@ For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \ri
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:AxChoice}
 For any relation $R$ between $A$ and $B$, there exists a function $H : A \rightarrow B$ such that $H \subseteq R$ (i.e. $\forall x \in A. xRH(x)$).
 \end{prop}
@@ -1116,7 +1199,7 @@ For any relation $R$ between $A$ and $B$, there exists a function $H : A \righta
 A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection}, $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$, iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:idinj}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1127,7 +1210,7 @@ $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
 \pf\ If $\id{\mathbf{A}}(x) = \id{\mathbf{A}}(y)$ then immediately $x = y$. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:compinj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$, $\mathbf{G}$, the following is a theorem:
 
@@ -1150,7 +1233,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$ and $\mathbf{G} : \m
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = \id{A}$ if and only if $F$ is one-to-one.
 \end{prop}
 
@@ -1182,7 +1265,7 @@ Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow
 Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:idsurj}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1193,7 +1276,7 @@ $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is surjective.
 \pf\ For any $y \in \mathbf{A}$ we have $\id{\mathbf{A}}(y) = y$. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:compsurj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
@@ -1208,7 +1291,8 @@ If $\mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{B}$ and $\mathbf{G} : \ma
 \step{4}{$(\mathbf{G} \circ \mathbf{F})(a) = c$}
 \qed
 \end{proof}
-\begin{prop}
+
+\begin{prop}[Z]
 Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
 \end{prop}
 
@@ -1244,7 +1328,7 @@ Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inv
 Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ is \emph{bijective} or a \emph{bijection}, $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$, iff it is injective and surjective.
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:idbij}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1255,7 +1339,7 @@ The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bij
 \pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed	
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:invbij}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
 
@@ -1298,7 +1382,7 @@ If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:compbij}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
@@ -1326,7 +1410,7 @@ Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \
 \[ \mathbf{F}(\mathbf{C}) := \{ \mathbf{F}(x) \mid x \in \mathbf{C} \} \enspace . \]
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
 
 If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \subseteq \mathbf{A}$, the class $\mathbf{F}(S)$ is a set.
@@ -1336,7 +1420,7 @@ If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \sub
 \pf\ By an Axiom of Replacement. \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:imgunion}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
 
@@ -1353,7 +1437,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subsete
 \end{align*}
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
@@ -1370,7 +1454,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf
 \end{align*}
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{D}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
@@ -1411,7 +1495,7 @@ Equality holds if $\mathbf{F}$ is injective.
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:imgint}
 For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$, the following is a theorem:
 
@@ -1454,7 +1538,7 @@ Equality holds if $\mathbf{F}$ is injective and $\mathbf{A}$ is nonempty.
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:imgdiff}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
 
@@ -1504,7 +1588,7 @@ Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \
 \[ \mathbf{F}^{-1}(\mathbf{C}) = \{ x \in \mathbf{A} \mid \mathbf{F}(x) \in \mathbf{C} \} \enspace . \]
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{B}$. Then
@@ -1521,7 +1605,7 @@ x \in \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right)
 \end{align*}
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{B}$. Then
@@ -1540,7 +1624,7 @@ x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \
 
 \subsection{Function Sets}
 
-\begin{prop}
+\begin{prop}[ZFC]
 For any classes $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
 
 Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ is a set.
@@ -1556,7 +1640,7 @@ Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write 
 We write $\mathbf{B}^I$ for $\prod_{i \in I} \mathbf{B}$ where $\mathbf{B}$ does not depend on $I$.
 \end{df}
 
-\begin{props}
+\begin{props}[ZFC]
 Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I} \mathbf{H}(i)$ is a set.
 \end{props}
 
@@ -1574,7 +1658,7 @@ Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I}
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(i) \neq \emptyset$ then $\prod_{i \in I} H(i) \neq \emptyset.$
 \end{prop}
 
@@ -1596,7 +1680,7 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
 \end{df}
 
-\begin{thm}[Cantor 1873]
+\begin{thm}[Cantor 1873 (Z)]
 No set is equinumerous to its power set.
 \end{thm}
 
@@ -1619,7 +1703,7 @@ No set is equinumerous to its power set.
 A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $A \preccurlyeq B$ iff there exists a surjective function $B \rightarrow A$.
 \end{prop}
 
@@ -1648,7 +1732,7 @@ Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $
 An \emph{equivalence relation} on a class $\mathbf{A}$ is a binary relation on $\mathbf{A}$ that is reflexive, symmetric and transitive.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 Equinumerosity is an equivalence relation on the class of all sets.
 \end{prop}
 
@@ -1665,7 +1749,7 @@ Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A
 \[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
 \end{df}
 
-\begin{props}
+\begin{props}[Z]
 \label{prop:eqclassequal}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem.
 
@@ -1732,7 +1816,7 @@ A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that i
 Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
 \end{df}
 
-\begin{thm}
+\begin{thm}[Z]
 Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
 \[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
 In this case, $\hat{F}$ is unique.
@@ -1778,8 +1862,7 @@ In this case, $\hat{F}$ is unique.
 \qed
 \end{proof}
 
-
-\begin{prop}
+\begin{prop}[Z]
 Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
 \end{prop}
 
@@ -1821,7 +1904,7 @@ Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 For any partition $P$ of a set $A$, there exists a unique equivalence relation $R$ on $A$ such that $A/R = P$, namely $xRy$ iff $\exists X \in P(x \in X \wedge y \in X)$.
 \end{prop}
 
@@ -5579,6 +5662,7 @@ We write '$\mathbf{M}$ is a model of $\sigma$' for the sentence $\sigma^\mathbf{
 \end{df}
 
 \begin{thms}
+\label{thm:modelExtensionality}
 For any class $\mathbf{M}$, the following is a theorem:
 
 If $\mathbf{M}$ is a transitive class, then $\mathbf{M}$ is a model of the Axiom of Extensionality.
@@ -5598,6 +5682,7 @@ If $\mathbf{M}$ is a transitive class, then $\mathbf{M}$ is a model of the Axiom
 \end{proof}
 
 \begin{thm}
+\label{thm:modelEmptySet}
 If $\alpha$ is a non-zero ordinal then $V_\alpha$ is a model of the statement: The empty class is a set.
 \end{thm}
 
@@ -5610,6 +5695,7 @@ If $\alpha$ is a non-zero ordinal then $V_\alpha$ is a model of the statement: T
 \end{proof}
 
 \begin{thm}
+\label{thm:modelPairing}
 For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the statement: for any sets $a$ and $b$, the class $\{ a,b \}$ is a set.
 \end{thm}
 
@@ -5627,6 +5713,7 @@ For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the statement
 \end{proof}
 
 \begin{thm}
+\label{thm:modelUnion}
 For any ordinal $\alpha$, we have $V_\alpha$ is a model of the Union Axiom.
 \end{thm}
 
@@ -5648,6 +5735,7 @@ For any ordinal $\alpha$, we have $V_\alpha$ is a model of the Union Axiom.
 \end{proof}
 
 \begin{thm}
+\label{thm:modelPowerSet}
 For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the Power Set Axiom.
 \end{thm}
 
@@ -5663,6 +5751,7 @@ For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the Power Set
 \end{proof}
 
 \begin{thms}
+\label{thm:modelComprehension}
 For any property $P[x,y_1, \ldots, y_n]$, the following is a theorem:
 
 For any ordinal $\alpha$, the set $V_\alpha$ is a model of the statement: for any sets $a_1$, \ldots, $a_n$, $B$, the class $\{ x \in B \mid P[x,a_1, \ldots, a_n] \}$ is a set.
@@ -5679,6 +5768,7 @@ For any ordinal $\alpha$, the set $V_\alpha$ is a model of the statement: for an
 \end{proof}
 
 \begin{thm}
+\label{thm:modelInfinity}
 For any ordinal $\alpha > \omega$, we have: $V_\alpha$ is a model of the Axiom of Infinity.
 \end{thm}
 
@@ -5690,6 +5780,56 @@ For any ordinal $\alpha > \omega$, we have: $V_\alpha$ is a model of the Axiom o
 \step{4}{$\forall x \in V_\alpha (x \in \mathbb{N} \Rightarrow \exists y \in V_\alpha \forall z \in V_\alpha (z \in y \Leftrightarrow z \in x \vee z = x))$}
 \qed
 \end{proof}
+
+\begin{thm}
+\label{thm:modelChoice}
+For any ordinal $\alpha$, we have $V_\alpha$ is a model of the Axiom of Choice.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal.}}
+\step{2}{\pflet{$A \in V_\alpha$}}
+\step{3}{\assume{$\forall x \in V_\alpha (x \in A \Rightarrow \exists y \in V_\alpha. y \in A)$}}
+\step{4}{\assume{$\forall x,y,z \in V_\alpha (x \in A \wedge y \in A \wedge z \in x \wedge z \in y \Rightarrow x = y)$}}
+\step{5}{$A$ is a set of pairwise disjoint nonempty sets.}
+\step{6}{\pick\ $c$ such that, for all $x \in A$, $x \cap c = \emptyset$}
+\step{7}{$c \cap \bigcup A \in V_\alpha$}
+\step{8}{$\forall x \in V_\alpha (x \in A \Rightarrow \exists y \in V_\alpha \forall z \in V_\alpha (z \in x \wedge z \in c \cap \bigcup A \Leftrightarrow z = y))$}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:modelRegularity}
+For any ordinal $\alpha$, we have $V_\alpha$ is a model of the Axiom of Regularity.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal.}}
+\step{2}{\pflet{$A \in V_\alpha$}}
+\step{3}{\assume{$\exists x \in V_\alpha. x \in A$}}
+\step{4}{\pick\ $m \in A$ of least rank.}
+\step{5}{$m \in V_\alpha$}
+\step{6}{$\neg \exists x \in V_\alpha (x \in m \wedge x \in A)$}
+\qed
+\end{proof}
+
+\begin{thms}
+For any axiom $\alpha$ of Zermelo set theory, the following is a theorem:
+
+For any limit ordinal $\lambda > \omega$, we have $V_\lambda$ is a model of $\alpha$.
+\end{thms}
+
+\begin{proof}
+\pf\ Theorems \ref{thm:modelExtensionality}, \ref{thm:modelEmptySet}, \ref{thm:modelPairing}, \ref{thm:modelUnion}, \ref{thm:modelPowerSet}, \ref{thm:modelComprehension}, \ref{thm:modelInfinity}, \ref{thm:modelChoice}, \ref{thm:modelRegularity}. \qed
+\end{proof}
+
+\begin{cors}
+for any axiom $\alpha$ of Zermelo set theory, the following is a theorem:
+
+$V_{\omega 2}$ is a model of $\alpha$.
+\end{cors}
 
 \chapter{Group Theory}
 
