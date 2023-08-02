@@ -5864,6 +5864,7 @@ $V_{\omega 2}$ is not a model of $\alpha$.
 \section{Arithmetic of Infinite Cardinals}
 
 \begin{prop}
+\label{prop:kappasquared}
 For any infinite cardinal $\kappa$ we have $\kappa \kappa = \kappa$.
 \end{prop}
 
@@ -5947,6 +5948,29 @@ For any infinite cardinal $\kappa$ we have $\kappa \kappa = \kappa$.
 	\begin{proof}
 		\pf\ This contradicts the maximality of $f_0$.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Absorpution Law of Cardinal Arithmetic]
+Let $\kappa$ and $\lambda$ be nonzero cardinal numbers such that at least one is infinite. Then
+\[ \kappa + \lambda = \kappa \lambda = \max(\kappa, \lambda) \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $\lambda \leq \kappa$}}
+\step{2}{$\kappa + \lambda = \kappa \lambda = \kappa$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\kappa & \leq \kappa + \lambda \\
+		& \leq \kappa + \kappa \\
+		& = 2 \kappa \\
+		& \leq \kappa \lambda \\
+		& \leq \kappa \kappa \\
+		& = \kappa & (\text{Proposition \ref{prop:kappasquared}})
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
