@@ -789,6 +789,26 @@ If $\mathbf{R}$ is a transitive relation between $\mathbf{A}$ and $\mathbf{B}$ t
 \qed
 \end{proof}
 
+\begin{prop}
+For any relation $R$ on a set $A$, there exists a smallest transitive relation on $A$ that includes $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ The relation is $\bigcup \{ S \in \mathcal{P} A^2 \mid R \subseteq S, S \text{ is transitive} \}$. \qed
+\end{proof}
+
+\begin{df}[Transitive Closure]
+For any relation $R$ on a set $A$, the \emph{transitive closure} of $R$ is the smallest transitive relation that includes $R$.
+\end{df}
+
+\begin{df}[Minimal]
+Let $\mathbf{R}$ be a relation on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{minimal} iff there is no $x \in \mathbf{A}$ such that $x \mathbf{R} m$.
+\end{df}
+
+\begin{df}[Maximal]
+Let $\mathbf{R}$ be a relation on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{maximal} iff there is no $x \in \mathbf{A}$ such that $m \mathbf{R} x$.
+\end{df}
+
 \section{n-ary Relations}
 
 \begin{dfs}
@@ -802,6 +822,183 @@ For any sets $a_1$, \ldots, $a_n$, define the \emph{ordered $n$-tuple} $(a_1, \l
 \begin{dfs}
 An \emph{$n$-ary relation on $\mathbf{A}$} is a class of ordered $n$-tuples all of whose components are in $\mathbf{A}$.
 \end{dfs}
+
+\section{Well Founded Relations}
+
+\begin{df}[Well Founded]
+A relation $\mathbf{R}$ on a class $\mathbf{A}$ is \emph{well founded} iff:
+\begin{itemize}
+\item for all $a \in A$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R} a \}$ is a set;
+\item every nonempty subset of $\mathbf{A}$ has an $\mathbf{R}$-minimal element.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+For any class $\mathbf{A}$, the relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $a \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \in a \}$ is a set.}
+\begin{proof}
+	\pf\ It is a subclass of $a$.
+\end{proof}
+\step{2}{Every nonempty subset of $\mathbf{A}$ has an $\in$-minimal element.}
+\begin{proof}
+	\step{a}{\pflet{$C$ be a nonempty subset of $\mathbf{A}$}}
+	\step{b}{\pick\ $m \in C$ such that $m \cap C = \emptyset$}
+	\begin{proof}
+		\pf\ Axiom of Regularity.
+	\end{proof}
+	\step{c}{$m$ is $\in$-minimal in $C$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}
+\label{prop:leastelement}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$ is nonempty. Then $\mathbf{B}$ has an $\mathbf{R}$-minimal element.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $b \in \mathbf{B}$}
+\step{2}{\pflet{$S = \{ x \in \mathbf{B} \mid x \mathbf{R} b \}$}}
+\begin{proof}
+	\pf\ $S$ is a set because it is a subclass of $\{ x \in \mathbf{A} \mid x \mathbf{R} b \}$.
+\end{proof}
+\step{3}{\case{$S = \emptyset$}}
+\begin{proof}
+	\pf\ In this case $b$ is an $\mathbf{R}$-minimal element of $\mathbf{B}$.
+\end{proof}
+\step{4}{\case{$S \neq \emptyset$}}
+\begin{proof}
+	\pf\ In this cases $S$ has an $\mathbf{R}$-minimal element, which is an $\mathbf{R}$-minimal element of $\mathbf{B}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thms}[Transfinite Induction Principle]
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
+\[ \{ x \in \mathbf{A} \mid x \mathbf{R} t \} \subseteq \mathbf{B} \Rightarrow t \in \mathbf{B} \enspace . \]
+Then $\mathbf{B} = \mathbf{A}$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\mathbf{B} \neq \mathbf{A}$}}
+\step{2}{\pick\ an $\mathbf{R}$-minimal element $m$ of $\mathbf{A} - \mathbf{B}$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:leastelement}.
+\end{proof}
+\step{3}{$\{ x \in \mathbf{A} \mid x \mathbf{R} m \} \subseteq \mathbf{B}$}
+\begin{proof}
+	\pf\ By minimality of $m$.
+\end{proof}
+\step{4}{$m \in \mathbf{B}$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+The transitive closure of a well founded relation on a set is well founded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a well founded relation on the set $A$.}}
+\step{2}{\pflet{$R^t$ be the transitive closure of $R$.}}
+\step{3}{For any $x,y \in A$, if $x R^t y$ then there exists $z \in A$ such that $z R y$.}
+\begin{proof}
+	\pf\ $\{ (x,y) \in A^2 \mid \exists z \in A. zRy \}$ is a transitive relation on $A$ that includes $R$.
+\end{proof}
+\step{4}{\pflet{$B$ be a nonempty subset of $A$.}}
+\step{5}{\pick\ an $R$-minimal element $b$ of $B$.}
+\step{6}{$b$ is $R^t$-minimal in $B$.}
+\begin{proof}
+	\pf\ If there exists $x$ such that $x R^t b$ then there exists $z$ such that $z R b$ by \stepref{3}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Initial Segment]
+Let $\mathbf{R}$ be a relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph{initial segment} up to $a$ is
+\[ \seg a := \{ x \in \mathbf{A} \mid x \mathbf{R} a \} \enspace . \]
+\end{df}
+
+\begin{thms}[Transfinite Recursion Theorem Schema]
+For any classes $\mathbf{A}$, $\mathbf{R}$ and any property $G[x,y,z]$, there exists a class $\mathbf{F}$ such that, for any class $\mathbf{F}'$ the following is a theorem:
+
+Assume that $\mathbf{R}$ is a well-founded relation on $\mathbf{A}$. Assume that, for any $f$ and $t$, there exists a unique $z$ such that $G[f,t,z]$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ such that, for all $t \in \mathbf{A}$, we have $\mathbf{F} \restriction \seg t$ is a set and
+\[ G[\mathbf{F} \restriction \seg t, t, \mathbf{F}(t)] \enspace . \]
+
+If $\mathbf{F}' : \mathbf{A} \rightarrow \mathbf{V}$ satisfies that, for all $t \in \mathbf{A}$, we have $\mathbf{F}' \restriction \seg t$ is a set and $G[\mathbf{F}' \restriction \seg t, t, \mathbf{F}'(t)]$, then $\mathbf{F}' = \mathbf{F}$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{For $B$ a subset of $\mathbf{A}$, let us say a function $v : B \rightarrow \mathbf{V}$ is \emph{acceptable} iff, for all $x \in B$, we have $\seg x \subseteq B$ and $G[v \restriction \seg x, x, v(x)]$}
+\step{2}{\pflet{$\mathbf{K}$ be the class of all acceptable functions.}}
+\step{3}{\pflet{$\mathbf{F} = \bigcup \mathbf{K}$}}
+\step{4}{For all $B,C \subseteq \mathbf{A}$, given $v_1 : B \rightarrow \mathbf{V}$ and $v_2 : C \rightarrow \mathbf{V}$ acceptable and $x \in B \cap C$, we have $v_1(x) = v_2(x)$}
+\begin{proof}
+	\step{a}{\assume{as transfinite induction hypothesis $\forall y \mathbf{R} x. y \in B \cap C \Rightarrow v_1(y) = v_2(y)$}}
+	\step{b}{$v_1 \restriction \seg x = v_2 \restriction \seg x$}
+	\step{c}{$G[v_1 \restriction \seg x, x, v_1(x)]$}
+	\step{d}{$G[v_2 \restriction \seg x, x, v_2(x)]$}
+	\step{e}{$v_1(x) = v_2(x)$}
+\end{proof}
+\step{5}{$\mathbf{F}$ is a function.}
+\begin{proof}
+	\step{a}{\assume{$(x,y),(x,z) \in \mathbf{F}$}}
+	\step{b}{\pick\ acceptable $v_1 : B \rightarrow \mathbf{V}$ and $v_2 : C \rightarrow \mathbf{V}$ such that $v_1(x) = y$ and $v_2(x) = z$}
+	\step{c}{$y = z$}
+	\begin{proof}
+		\pf\ By \stepref{4}.
+	\end{proof}
+\end{proof}
+\step{6}{For all $t \in \dom \mathbf{F}$, we have $\mathbf{F} \restriction \seg t$ is a set and $G[\mathbf{F} \restriction \seg t, t, \mathbf{F}(t)]$}
+\begin{proof}
+	\step{a}{\pflet{$t \in \dom \mathbf{F}$}}
+	\step{b}{\pick\ an acceptable $v : A \rightarrow \mathbf{V}$ such that $t \in A$}
+	\step{c}{For all $y \mathbf{R} x$ we have $v(y) = \mathbf{F}(y)$}
+	\step{d}{$\mathbf{F} \restriction \seg x = v \restriction \seg x$}
+	\step{e}{$G[v \restriction \seg x, x, v(x)]$}
+	\step{f}{$G[\mathbf{F} \restriction \seg x, x, \mathbf{F}(x)]$}
+\end{proof}
+\step{7}{$\dom \mathbf{F} = \mathbf{A}$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathbf{A}$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall y \mathbf{R} x. y \in \mathbf{A}$}}
+	\step{c}{\assume{for a contradiction $x \notin \mathbf{A}$}}
+	\step{d}{$\mathbf{F} \restriction \seg x$ is a set}
+	\step{e}{$\mathbf{F} \restriction \seg x$ is acceptable}
+	\step{f}{\pflet{$y$ be the unique object such that $G[\mathbf{F} \restriction \seg x, x, y]$}}
+	\step{g}{$\mathbf{F} \restriction \seg x \cup \{(x,y)\}$ is acceptable}
+	\step{h}{$x \in \dom \mathbf{F}$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{8}{If $\mathbf{F}' : \mathbf{A} \rightarrow \mathbf{V}$ satisfies the theorem, then $\mathbf{F}' = \mathbf{F}$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathbf{A}$} \prove{$\mathbf{F}'(x) = \mathbf{F}(x)$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall y \mathbf{R} x. \mathbf{F}'(y) = \mathbf{F}(y)$}}
+	\step{c}{$\mathbf{F} \restriction x = \mathbf{F}' \restriction x$}
+	\step{d}{$G[\mathbf{F} \restriction x, x, \mathbf{F}(x)]$}
+	\step{e}{$G[\mathbf{F}' \restriction x, x, \mathbf{F}'(x)]$}
+	\step{f}{$\mathbf{F}(x) = \mathbf{F}'(x)$}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Functions}
 
@@ -1721,14 +1918,6 @@ If $(A, \leq)$ is a poset and $B \subseteq A$ we write just $B$ for the poset $(
 Let $(A,<_A)$ and $(B, <_B)$ be posets. A function $f : A \rightarrow B$ is \emph{strictly monotone} iff, whenever $x <_A y$, then $f(x) <_B f(y)$.
 \end{df}
 
-\begin{df}[Minimal]
-Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{minimal} iff there is no $x \in \mathbf{A}$ such that $x < m$.
-\end{df}
-
-\begin{df}[Maximal]
-Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{maximal} iff there is no $x \in \mathbf{A}$ such that $m < x$.
-\end{df}
-
 \begin{df}[Least]
 Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{least} iff for all $x \in \mathbf{A}$ we have $m \leq x$.
 \end{df}
@@ -2235,34 +2424,8 @@ Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$ and $\mathbf{S}$ is a line
 \section{Well Orderings}
 
 \begin{df}[Well Ordering]
-A \emph{well ordering} on a class $\mathbf{A}$ is a linear ordering on $\mathbf{A}$ such that:
-\begin{itemize}
-\item For all $t \in \mathbf{A}$ we have $\seg t$ is a set.
-\item Every nonempty subset of $\mathbf{A}$ has a least element.
-\end{itemize}
+A \emph{well ordering} on a class $\mathbf{A}$ is a well-founded linear ordering on $\mathbf{A}$.
 \end{df}
-
-\begin{props}
-\label{prop:leastelement}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\leq$, the following is a theorem:
-
-Assume $\leq$ well orders $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$ is nonempty. Then $\mathbf{B}$ has a least element.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ $b \in \mathbf{B}$}
-\step{2}{\pflet{$S = \seg b \cap \mathbf{B}$}}
-\step{3}{\case{$S = \emptyset$}}
-\begin{proof}
-	\pf\ In this case $b$ is the least element of $\mathbf{B}$.
-\end{proof}
-\step{4}{\case{$S \neq \emptyset$}}
-\begin{proof}
-	\pf\ In this cases $S$ has a least element, which is the least element of $\mathbf{B}$.
-\end{proof}
-\qed
-\end{proof}
 
 \begin{props}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
@@ -2337,35 +2500,6 @@ Let $A$ and $B$ be well ordered sets. Then $B$ is an \emph{end extension} of $A$
 \end{itemize}
 \end{df}
 
-\subsection{Transfinite Induction}
-
-\begin{thms}[Transfinite Induction Principle]
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\leq$, the following is a theorem:
-
-Assume $\leq$ is a well ordering on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
-\[ \seg t \subseteq \mathbf{B} \Rightarrow t \in \mathbf{B} \enspace . \]
-Then $\mathbf{B} = \mathbf{A}$.
-\end{thms}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $\mathbf{B} \neq \mathbf{A}$}}
-\step{2}{\pflet{$m$ be the least element of $\mathbf{A} - \mathbf{B}$}}
-\begin{proof}
-	\pf\ Proposition \ref{prop:leastelement}.
-\end{proof}
-\step{3}{$\seg m \subseteq \mathbf{B}$}
-\begin{proof}
-	\pf\ By leastness of $m$.
-\end{proof}
-\step{4}{$m \in \mathbf{B}$}
-\qedstep
-\begin{proof}
-	\pf\ This is a contradiction.
-\end{proof}
-\qed
-\end{proof}
-
 \begin{thm}
 Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
 \end{thm}
@@ -2401,95 +2535,6 @@ Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B
 \step{2}{$\forall x \in \mathbf{A}. \mathbf{F}(x) = \mathbf{G}(x)$}
 \begin{proof}
 	\pf\ Transfinite induction.
-\end{proof}
-\qed
-\end{proof}
-
-\subsection{Transfinite Recursion}
-
-\begin{thms}[Transfinite Recursion Theorem Schema]
-Let $\mathbf{A}$ and $<$ be classes.
-For any property $G(x,y)$, there exists a class $\mathbf{F}$ such that the following is a theorem:
-
-Assume that $<$ is a well ordering on the class $\mathbf{A}$. Assume that, for any $f$, there exists a unique $y$ such that $G(f,y)$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ is the unique function such that, for all $t \in \mathbf{A}$, we have $\mathbf{F} \restriction \seg t$ is a set and
- \[ G(\mathbf{F} \restriction \seg t, \mathbf{F}(t)) \enspace . \]
-\end{thms}
-
-\begin{proof}
-\pf
-\step{1}{For $t \in \mathbf{A}$, let us say that a function $v : \seg t \rightarrow \mathbf{V}$ is \emph{$G$-constructed up to $t$} iff 
-\[ \forall x < t. G(v \restriction \seg x, v(x)) \enspace . \]}
-\step{3}{Let $\mathbf{K}$ be the class of all functions $v$ such that there exists $t \in \mathbf{A}$ such that $v$ is $G$-constructed up to $t$.}
-\step{4}{\pflet{$\mathbf{F} = \bigcup \mathbf{K}$}}
-\step{2}{For all $t_1, t_2 \in A$ with $t_1 \leq t_2$, if $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$, then $\forall x \leq t_1. v_1(x) = v_2(x)$.}
-\begin{proof}
-	\step{a}{\pflet{$x \in \mathbf{V}$}}
-	\step{b}{\assume{$\forall y < x. (y \leq t_1 \Rightarrow v_1(y) = v_2(y))$}}
-	\step{c}{\assume{$x \leq t_1$}}
-	\step{d}{$G(v_1 \restriction \seg x, v_1(x))$}
-	\step{e}{$G(v_2 \restriction \seg x, v_2(x))$}
-	\step{f}{$v_1 \restriction \seg x = v_2 \restriction \seg x$}
-	\step{g}{$v_1(x) = v_2(x)$}
-	\qedstep
-	\begin{proof}
-		\pf\ By transfinite induction.
-	\end{proof}
-\end{proof}
-\step{5}{$\mathbf{F}$ is a function.}
-\begin{proof}
-	\step{a}{\pflet{$(x,y_1),(x,y_2) \in \mathbf{F}$}}
-	\step{b}{\pick\ $v_1,v_2 \in \mathbf{K}$ such that $v_1(x) = y_1$ and $v_2(x) = y_2$.}
-	\step{c}{\pick\ $t_1, t_2 \in \mathbf{A}$ such that $v_1$ is $G$-constructed up to $t_1$ and $v_2$ is $G$-constructed up to $t_2$.}
-	\step{d}{\assume{w.l.o.g. $t_1 \leq t_2$}}
-	\step{e}{$v_1(x) = v_2(x)$}
-	\begin{proof}
-		\pf\ \stepref{2}.
-	\end{proof}
-	\step{f}{$y_1 = y_2$}
-\end{proof}
-\step{6}{$\forall x \in \dom \mathbf{F}. G(\mathbf{F} \restriction \seg x, \mathbf{F}(x))$}
-\begin{proof}
-	\step{a}{\pflet{$x \in \dom F$}}
-	\step{b}{\pick\ $v \in \mathbf{K}$ such that $v(x) = \mathbf{F}(x)$}
-	\step{c}{\pick\ $t$ such that $v$ is $G$-constructed up to $t$.}
-	\step{d}{$G(v \restriction \seg x, v(x))$}
-	\step{e}{$v \restriction \seg x = \mathbf{F} \restriction \seg x$}
-	\begin{proof}
-		\step{i}{\pflet{$y < x$} \prove{$v(y) = \mathbf{F}(y)$}}
-		\step{ii}{$y \in \dom \mathbf{F}$}
-		\begin{proof}
-			\pf\ Since $y \in \dom v$ and $v \in \mathbf{K}$.
-		\end{proof}
-		\step{iii}{\pick\ $u \in \mathbf{K}$ such that $u(y) = F(y)$}
-		\step{iv}{$u(y) = v(y)$}
-		\begin{proof}
-			\pf\ \stepref{2}.
-		\end{proof}
-		\step{v}{$v(y) = \mathbf{F}(y)$}
-	\end{proof}
-	\step{f}{$G(\mathbf{F} \restriction \seg x, \mathbf{F}(x))$}
-\end{proof}
-\step{7}{$\dom \mathbf{F} = \mathbf{A}$}
-\begin{proof}
-	\step{a}{\assume{$\dom \mathbf{F} \neq \mathbf{A}$}}
-	\step{b}{\pflet{$t$ be least in $\mathbf{A} - \dom \mathbf{F}$}}
-	\step{c}{$\seg t = \dom \mathbf{F}$}
-	\step{cc}{$\mathbf{F}$ is a set.}
-	\begin{proof}
-		\pf\ Axiom of Replacement.
-	\end{proof}
-	\step{d}{\pflet{$y$ be the unique object such that $G(\mathbf{F}, y)$}}
-	\step{e}{\pflet{$v = \mathbf{F} \cup \{(t,y)\}$}}
-	\step{f}{$v$ is $G$-constructed up to $t$.}
-	\step{g}{$t \in \dom \mathbf{F}$}
-	\qedstep
-	\begin{proof}
-		\pf\ This is a contradiction.
-	\end{proof}
-\end{proof}
-\step{8}{$\mathbf{F}$ is unique.}
-\begin{proof}
-	\pf\ If $\mathbf{F}'$ also satisfies the theorem, prove $\mathbf{F}(x) = \mathbf{F}'(x)$ by transfinite induction on $x$.
 \end{proof}
 \qed
 \end{proof}
@@ -4200,6 +4245,69 @@ For any ordinal numbers $\alpha$, $\beta$, $\gamma$, we have
 \qed
 \end{proof}
 
+\begin{thm}
+For any ordinal numbers $\alpha$, $\beta$ and $\gamma$, we have
+\[ (\alpha^\beta)^\gamma = \alpha^{\beta \gamma} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P[\gamma]$ be the property: For any ordinals $\alpha$ and $\beta$, we have $(\alpha^\beta)^\gamma = \alpha^{\beta \gamma}$}}
+\step{2}{$P[0]$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(\alpha^\beta)^0 & = 1 \\
+		& = \alpha^{\beta 0}
+	\end{align*}
+\end{proof}
+\step{3}{$\forall \gamma \in \mathbf{On}. P[\gamma] \Rightarrow P[\gamma + 1]$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(\alpha^\beta)^{\gamma + 1} & = (\alpha^\beta)^\gamma \alpha^\beta \\
+		& = \alpha^{\beta \gamma} \alpha^\beta \\
+		& = \alpha^{\beta \gamma + \beta} \\
+		& = \alpha^{\beta (\gamma + 1)}
+	\end{align*}
+\end{proof}
+\step{4}{For any limit ordinal $\lambda$, if $\forall \gamma < \lambda. P[\gamma]$ then $P[\lambda]$.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal.}}
+	\step{b}{\assume{$\forall \gamma < \lambda. P[\gamma]$}}
+	\step{c}{\pflet{$\alpha$ and $\beta$ be any ordinals.}}
+	\step{d}{\case{$\alpha = 0$ and $\beta = 0$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(0^\beta)^\lambda & = 1^\lambda \\
+			& = 1 \\
+			& = 0^0 \\
+			& = 0^{0 \lambda}
+		\end{align*}
+	\end{proof}
+	\step{dd}{\case{$\alpha = 0$ and $\beta \neq 0$}}
+	\begin{proof}
+		\pf\ $(0^\beta)^\lambda = 0^{\beta \lambda} = 0$.
+	\end{proof}
+	\step{e}{\case{$\alpha = 1$}}	
+	\begin{proof}
+		\pf\ $(1^\beta)^\lambda = 1^{\beta \lambda} = 1$
+	\end{proof}
+	\step{f}{\case{$\alpha > 1$}}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(\alpha^\beta)^\lambda & = \sup_{\gamma < \lambda} (\alpha^\beta)^\gamma \\
+			& = \sup_{\gamma < \lambda} \alpha^{\beta \gamma} \\
+			& = \alpha^{\sup_{\gamma < \lambda} \beta \gamma} \\
+			& = \alpha^{\beta \lambda}
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Cardinal Numbers}
 
 \section{Cardinal Numbers}
@@ -4621,43 +4729,29 @@ Let $A$ be a nonempty set and $R$ a relation on $A$ such that $\forall x \in A. 
 \qed
 \end{proof}
 
-\begin{thm}
-Let $<$ be a linear ordering on $A$. Then $<$ is a well ordering on $A$ if and only if there does not exist a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.
-\end{thm}
+\begin{thms}
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
+
+
+Assume $\mathbf{R}$ is a relation on $\mathbf{A}$ and, for all $a \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R} a \}$ is a set. Then $\mathbf{R}$ is well founded if and only if there does not exist a function $f : \mathbb{N} \rightarrow \mathbf{A}$ such that $\forall n \in \mathbb{N}. f(n+1) \mathbf{R} f(n)$.
+\end{thms}
 
 \begin{proof}
 \pf
-\step{1}{If there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$ then $<$ is not a well ordering on $A$.}
+\step{1}{If there exists a function $f : \mathbb{N} \rightarrow \mathbf{A}$ such that $\forall n \in \mathbb{N}. f(n+1) \mathbf{R} f(n)$ then $\mathbf{R}$ is not well founded.}
 \begin{proof}
-	\pf\ $\ran f$ is a nonempty subset of $A$ with no least element.
+	\pf\ $f(\mathbb{N})$ is a nonempty subset of $\mathbf{A}$ with no $\mathbf{R}$-minimal element.
 \end{proof}
-\step{2}{If $<$ is not a well ordering on $A$ then there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. f(n+1) < f(n)$.}
+\step{2}{If $\mathbf{R}$ is not well founded then there exists a function $f : \mathbb{N} \rightarrow \mathbf{A}$ such that $\forall n \in \mathbb{N}. f(n+1) \mathbf{R} f(n)$.}
 \begin{proof}
-	\step{a}{\assume{$<$ is not a well ordering on $A$.}}
-	\step{b}{\pick\ a nonempty subset $B \subseteq A$ that has no least element.}
-	\step{c}{$\forall x \in B. \exists y \in B. y < x$}
-	\step{d}{Choose a function $g : B \rightarrow B$ such that $\forall x \in B. g(x) < x$}
+	\step{a}{\assume{$\mathbf{R}$ is not well founded.}}
+	\step{b}{\pick\ a nonempty subset $B \subseteq \mathbf{A}$ that has no $\mathbf{R}$-minimal element.}
+	\step{c}{$\forall x \in B. \exists y \in B. y \mathbf{R} x$}
+	\step{d}{Choose a function $g : B \rightarrow B$ such that $\forall x \in B. g(x) \mathbf{R} x$}
 	\step{e}{\pick\ $b \in B$}
-	\step{f}{Define $f : \mathbb{N} \rightarrow A$ recursively by $f(0) = b$ and $\forall n \in \mathbb{N}. f(n+1) = g(f(n))$}
-	\step{g}{$\forall n \in \mathbb{N}. f(n+1) < f(n)$}
+	\step{f}{Define $f : \mathbb{N} \rightarrow \mathbf{A}$ recursively by $f(0) = b$ and $\forall n \in \mathbb{N}. f(n+1) = g(f(n))$}
+	\step{g}{$\forall n \in \mathbb{N}. f(n+1) \mathbf{R} f(n)$}
 \end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-There is no function $f : \mathbb{N} \rightarrow \mathbf{V}$ such that $\forall n. f(n^+) \in f(n)$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : \mathbb{N} \rightarrow \mathbf{V}$}}
-\step{2}{\pick\ $m \in f(\mathbb{N})$ such that $m \cap f(\mathbb{N}) = \emptyset$}
-\begin{proof}
-	\pf\ Axiom of Regularity.
-\end{proof}
-\step{3}{\pick\ $n \in \mathbb{N}$ such that $m = f(n)$.}
-\step{4}{$f(n) \cap f(\mathbb{N}) = \emptyset$}
-\step{5}{$f(n^+) \notin f(n)$}
 \qed
 \end{proof}
 
@@ -4762,6 +4856,7 @@ The union of two finite sets is finite.
 \end{cor}
 
 \begin{cor}
+\label{cor:finiteunion}
 The union of a finite set of finite sets is finite.
 \end{cor}
 
@@ -4839,6 +4934,24 @@ h(n+1) & = h(n) \cup \{ F(A - \{ h(m) \mid m < n \}) \}
 \step{5}{$g$ is injective.}
 \begin{proof}
 	\pf\ If $m < n$ then $g(m) \neq g(n)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thms}[K\"{o}nig's Lemma]
+For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ such that, for all $y \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R} y \}$ is a finite set. Let $\mathbf{R}^t$ be the transitive closure of $\mathbf{R}$. Then,for all $y \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R}^t y \}$ is a finite set.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$y \in \mathbf{A}$}}
+\step{2}{\assume{as transfinite induction hypothesis $\forall x \mathbf{R} y. \{ z \in \mathbf{A} \mid z \mathbf{R}^t x \}$ is a finite set.}}
+\step{3}{$\{ x \mid x \mathbf{R}^t y \} = \bigcup_{x \mathbf{R} y} (\{x\} \cup \{z \mid z \mathbf{R}^t x \}$}
+\step{4}{$\{ x \mid x \mathbf{R}^t y\}$ is finite.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:finiteunion}.
 \end{proof}
 \qed
 \end{proof}
@@ -5000,7 +5113,7 @@ If $A$ is countable then $A^*$ is countable.
 \pf\ For any $n$, the set $A^n$ is countable, and $A^*$ is equinumerous with $\bigcup_n A^n$. \qed
 \end{proof}
 
-\section{Transitive Closure}
+\section{Transitive Closure of a Set}
 
 \begin{prop}
 For any set $A$, there exists a unique transitive set $C$ such that:
@@ -5454,6 +5567,98 @@ For any ordinal number $\alpha$ we have $\rank \alpha = \alpha$.
 		\pf\ This is a contradiction.
 	\end{proof}
 \end{proof}
+\qed
+\end{proof}
+
+\chapter{Models of Set Theory}
+
+\begin{df}[Relativization]
+Let $\sigma$ be a sentence in the language of set theory and $\mathbf{M}$ a class. The \emph{relativization} of $\sigma$ to $\mathbf{M}$ is the sentence $\sigma^\mathbf{M}$ formed by replacing every quantifier $\forall x$ with $\forall x \in \mathbf{M}$, and $\exists x$ with $\exists x \in \mathbf{M}$.
+
+We write '$\mathbf{M}$ is a model of $\sigma$' for the sentence $\sigma^\mathbf{M}$.
+\end{df}
+
+\begin{thms}
+For any class $\mathbf{M}$, the following is a theorem:
+
+If $\mathbf{M}$ is a transitive class, then $\mathbf{M}$ is a model of the Axiom of Extensionality.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\mathbf{M}$ is a transitive class.} \prove{$\forall x,y \in \mathbf{M} (\forall z \in \mathbf{M} (z \in x \Leftrightarrow z \in y) \Rightarrow x = y)$}}
+\step{2}{\pflet{$x,y \in \mathbf{M}$}}
+\step{3}{\assume{$\forall z \in \mathbf{M} (z \in x \Leftrightarrow z \in y)$}}
+\step{4}{$\forall z (z \in x \Leftrightarrow z \in y)$}
+\begin{proof}
+	\pf\ Since $z \in x \Rightarrow z \in \mathbf{M}$ and $z \in y \Rightarrow z \in \mathbf{M}$ by \stepref{1}.
+\end{proof}
+\step{5}{$x = y$}
+\qed
+\end{proof}
+
+\begin{thm}
+If $\alpha$ is a non-zero ordinal then $V_\alpha$ is a model of the statement: The empty class is a set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha \neq 0$} \prove{$\exists x \in V_\alpha. \forall y \in V_\alpha. y \notin x$}}
+\step{2}{$\emptyset \in V_\alpha$}
+\step{3}{$\forall y \in V_\alpha. y \notin \emptyset$}
+\qed
+\end{proof}
+
+\begin{thm}
+For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the statement: for any sets $a$ and $b$, the class $\{ a,b \}$ is a set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\lambda$ be a limit ordinal.} \prove{$\forall a,b \in V_\lambda. \exists c \in V_\lambda. \forall x \in V_\lambda (x \in c \Leftrightarrow x = a \vee x = b)$}}
+\step{2}{\pflet{$a,b \in V_\lambda$}}
+\step{3}{\pick\ $\alpha, \beta < \lambda$ such that $a \in V_\alpha$ and $b \in V_\beta$}
+\step{4}{\assume{w.l.o.g. $\alpha \leq \beta$}}
+\step{5}{$a,b \in V_\beta$}
+\step{6}{$\{a,b\} \in V_{\beta + 1}$}
+\step{7}{$\{a,b\} \in V_\lambda$}
+\step{8}{$\forall x \in V_\lambda (x \in \{a,b\} \Leftrightarrow x = a \vee x = b)$}
+\qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\alpha$, we have $V_\alpha$ is a model of the Union Axiom.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal.} \prove{$\forall a \in V_\alpha. \exists b \in V_\alpha. \forall x \in V_\alpha (x \in b \Leftrightarrow \exists y \in V_\alpha (x \in y \wedge y \in a))$}}
+\step{2}{\pflet{$a \in V_\alpha$}}
+\step{3}{\pick\ $\beta < \alpha$ such that $a \subseteq V_\beta$}
+\step{4}{$\bigcup a \subseteq V_\beta$}
+\begin{proof}
+	\pf\ $V_\beta$ is a transitive set.
+\end{proof}
+\step{5}{$\bigcup a \in V_\alpha$}
+\step{6}{$\forall x \in V_\alpha (x \in \bigcup a \Leftrightarrow \exists y \in V_\alpha ( x \in y \wedge y \in a))$}
+\begin{proof}
+	\pf\ $V_\alpha$ is a transitive set.
+\end{proof}
+\qed 
+\end{proof}
+
+\begin{thm}
+For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the Power Set Axiom.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\lambda$ be a limit ordinal.} \prove{$\forall a \in V_\lambda. \exists b \in V_\lambda. \forall x \in V_\lambda (x \in b \Leftrightarrow \forall y \in V_\lambda (y \in x \Rightarrow y \in a))$}}
+\step{2}{\pflet{$a \in V_\lambda$}}
+\step{3}{\pick\ $\alpha < \lambda$ such that $a \in V_\alpha$}
+\step{4}{$\mathcal{P} a \in V_{\alpha + 1}$}
+\step{5}{$\mathcal{P} a \in V_\lambda$}
+\step{6}{$\forall x \in V_\lambda (x \in \mathcal{P} a \Leftrightarrow \forall y \in V_\lambda (y \in x \Rightarrow y \in a))$}
 \qed
 \end{proof}
 
