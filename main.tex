@@ -33,6 +33,7 @@
 \newcommand{\seg}{\ensuremath{\operatorname{seg}}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\rank}{\ensuremath{\operatorname{rank}}}
+\newcommand{\cf}{\ensuremath{\operatorname{cf}}}
 
 \begin{document}
 
@@ -914,6 +915,7 @@ A relation $\mathbf{R}$ on a class $\mathbf{A}$ is \emph{well founded} iff:
 \end{df}
 
 \begin{prop}[Z]
+\label{prop:inwellfounded}
 For any class $\mathbf{A}$, the relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
 \end{prop}
 
@@ -956,6 +958,27 @@ Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \
 \step{4}{\case{$S \neq \emptyset$}}
 \begin{proof}
 	\pf\ In this cases $S$ has an $\mathbf{R}$-minimal element, which is an $\mathbf{R}$-minimal element of $\mathbf{B}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}[Z]
+\label{prop:subwellfounded}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a well founded relation on $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$. Then $\mathbf{R} \cap \mathbf{A}^2$ is a well founded relation on $\mathbf{A}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{A}^2$}}
+\step{1}{For all $a \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R}' a \}$ is a set.}
+\begin{proof}
+	\pf\ By Comprehension since it is a subclass of $\{ x \in \mathbf{B} \mid x \mathbf{R} a \}$.
+\end{proof}
+\step{2}{Every nonempty subset of $\mathbf{A}$ has an $\mathbf{R}'$-minimal element.}
+\begin{proof}
+	\pf\ It is a nonempty subset of $\mathbf{B}$ and so has an $\mathbf{R}$-minimal element, which is also an $\mathbf{R}'$-minimal element.
 \end{proof}
 \qed
 \end{proof}
@@ -2465,6 +2488,7 @@ Assume $\mathbf{S}$ is a linear order on $\mathbf{B}$ and $\mathbf{F} : \mathbf{
 \end{proof}
 
 \begin{cors}[Z]
+\label{cor:subloset}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
@@ -2509,7 +2533,48 @@ Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$ and $\mathbf{S}$ is a line
 A \emph{well ordering} on a class $\mathbf{A}$ is a well-founded linear ordering on $\mathbf{A}$.
 \end{df}
 
-\begin{props}
+\begin{prop}[Z]
+Let $S$ be a well ordering of the set $B$ and $f : A \rightarrow B$ a function. Define $R$ on $A$ by $xRy$ if and only if $F(x) S F(y)$. Then $R$ well orders $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$R$ linearly orders $A$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:subloset}.
+\end{proof}
+\step{3}{Every nonempty subset of $A$ has a least element.}
+\begin{proof}
+	\step{a}{\pflet{$C$ be a nonempty subset of $A$.}}
+	\step{b}{\pflet{$y$ be the least element of $f(C)$.}}
+	\step{c}{\pick\ $x \in C$ such that $f(x) = y$.}
+	\step{d}{$x$ is least in $C$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}[Z]
+\label{prop:subwoset}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ well orders $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$. Then $\mathbf{R} \cap \mathbf{A}^2$ well orders $\mathbf{A}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{A}^2$}}
+\step{2}{$\mathbf{R}'$ linearly orders $\mathbf{A}$.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:subloset}.
+\end{proof}
+\step{3}{$\mathbf{R}'$ is well founded.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:subwellfounded}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}[ZFC]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
 
 Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$. Define $\mathbf{R}$ on $\mathbf{A}$ by $x \mathbf{R} y$ if and only if $\mathbf{F}(x) \mathbf{S} \mathbf{F}(y)$. Then $\mathbf{R}$ well orders $\mathbf{A}$.
@@ -2539,6 +2604,10 @@ Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \right
 \step{3}{Every nonempty subset of $\mathbf{A}$ has a least element.}
 \begin{proof}
 	\step{a}{\pflet{$S$ be a nonempty subset of $\mathbf{A}$.}}
+	\step{x}{$\mathbf{F}(S)$ is a nonempty subset of $\mathbf{B}$}
+	\begin{proof}
+		\pf\ Axiom of Replacement.
+	\end{proof}
 	\step{b}{\pflet{$y$ be the least element of $\mathbf{F}(S)$.}}
 	\step{c}{\pick\ $x \in S$ such that $\mathbf{F}(x) = y$.}
 	\step{d}{$x$ is least in $S$.}
@@ -2546,14 +2615,7 @@ Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \right
 \qed
 \end{proof}
 
-\begin{cors}
-\label{cor:subwoset}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
-
-If $\mathbf{R}$ well orders $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$ then $\mathbf{R} \cap \mathbf{A}^2$ well orders $\mathbf{A}$.
-\end{cors}
-
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:lexicogwellorder}
 For any well ordered sets $A$ and $B$, the lexicographic order well orders $A \times B$.
 \end{prop}
@@ -2582,7 +2644,7 @@ Let $A$ and $B$ be well ordered sets. Then $B$ is an \emph{end extension} of $A$
 \end{itemize}
 \end{df}
 
-\begin{thm}
+\begin{thm}[Z]
 Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
 \end{thm}
 
@@ -2597,7 +2659,7 @@ Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ suc
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[Z]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{G}$, $\leq$ and $\preccurlyeq$, the following is a theorem:
 
 Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B}$. Assume $\mathbf{F}$ and $\mathbf{G}$ are order isomorphisms between $\mathbf{A}$ and $\mathbf{B}$. Then $\mathbf{F} = \mathbf{G}$.
@@ -2621,7 +2683,7 @@ Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[ZFC]
 Let $A$ and $B$ be well ordered sets. Then one of the following holds: $A \cong B$; there exists $b \in B$ such that $A \cong \seg b$; there exists $a \in A$ such that $\seg a \cong B$.
 \end{thm}
 
@@ -2663,7 +2725,7 @@ Given $x, y \in \alpha$, we write $x < y$ iff $x \in y$, and $x \leq y$ iff $x \
 Let $\mathbf{On}$ be the class of ordinal numbers. For $\alpha, \beta \in \mathbf{On}$, we write $\alpha < \beta$ iff $\alpha \in \beta$, and $\alpha \leq \beta$ iff $\alpha < \beta$ or $\alpha = \beta$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:ordisoeq}
 For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.
 \end{prop}
@@ -2712,7 +2774,7 @@ For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alp
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[ZFC]
 Every well-ordered set is isomorphic to a unique ordinal.
 \end{thm}
 
@@ -2808,7 +2870,7 @@ Every well-ordered set is isomorphic to a unique ordinal.
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:elordinal}
 The class $\mathbf{On}$ is a transitive class. That is, every element of an ordinal is an ordinal.
 \end{prop}
@@ -2835,12 +2897,12 @@ The class $\mathbf{On}$ is a transitive class. That is, every element of an ordi
 \end{proof}
 \step{4}{$\beta$ is well ordered by $\in$.}
 \begin{proof}
-	\pf\ By Corollary \ref{cor:subwoset}.
+	\pf\ By Proposition \ref{prop:subwoset}.
 \end{proof}
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[ZFC]
 \label{prop:ordtrichotomy}
 Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, $\alpha = \beta$, $\beta \in \alpha$ holds.
 \end{prop}
@@ -2894,7 +2956,7 @@ Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, 
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:ordwellord}
 Any nonempty set $S$ of ordinal numbers has a least element.
 \end{prop}
@@ -2913,7 +2975,7 @@ Any nonempty set $S$ of ordinal numbers has a least element.
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[ZFC]
 \label{thm:Onwellord}
 The class $\mathbf{On}$ is well ordered by $\in$.
 \end{thm}
@@ -2933,35 +2995,31 @@ The class $\mathbf{On}$ is well ordered by $\in$.
 \begin{proof}
 	\pf\ Proposition \ref{prop:linord}.
 \end{proof}
-\step{4}{For any $\alpha \in \mathbf{On}$, the class $\{ \beta \in \mathbf{On} \mid \beta \mathbf{E} \alpha \}$ is a set.}
+\step{4}{$\mathbf{E}$ is well founded.}
 \begin{proof}
-	\pf\ It is equal to $\alpha$.
-\end{proof}
-\step{5}{Every nonempty subset of $\mathbf{On}$ has an $\mathbf{E}$-least element.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:ordwellord}.
+	\pf\ Proposition \ref{prop:inwellfounded}.
 \end{proof}
 \qed
 \end{proof}
 
-\begin{cor}[Burali-Forti Paradox]
+\begin{cor}[Burali-Forti Paradox (ZFC)]
 The class $\mathbf{On}$ is a proper class.
 \end{cor}
 
 \begin{proof}
-\pf\ If it were a set, it would be a transitive set well-ordered by $\in$, and hence a member of itself, contradicting the Axiom of Regularity.
+\pf\ If it were a set, it would be a transitive set well-ordered by $\in$, and hence a member of itself, contradicting Proposition \ref{prop:xnotinx}.
 \end{proof}
 
-\begin{prop}
+\begin{prop}[ZFC]
 \label{prop:transords}
 Any transitive set of ordinal numbers is an ordinal number.
 \end{prop}
 
 \begin{proof}
-\pf\ It is well-ordered by $\in$ by Corollary \ref{cor:subwoset} and Theorem \ref{thm:Onwellord}. \qed
+\pf\ It is well-ordered by $\in$ by Proposition \ref{prop:subwoset} and Theorem \ref{thm:Onwellord}. \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[Z]
 $\emptyset$ is an ordinal number.
 \end{prop}
 
@@ -2973,7 +3031,7 @@ $\emptyset$ is an ordinal number.
 We define $0 = \emptyset$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[ZFC]
 If $A$ is a set of ordinal numbers then $\bigcup A$ is an ordinal number.
 \end{prop}
 
@@ -2987,10 +3045,14 @@ If $A$ is a set of ordinal numbers then $\bigcup A$ is an ordinal number.
 \begin{proof}
 	\pf\ Proposition \ref{prop:elordinal}.
 \end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Proposition \ref{prop:transords}.
+\end{proof}
 \qed
 \end{proof}
 
-\begin{cor}
+\begin{cor}[ZFC]
 The poset $\mathbf{On}$ is complete.
 \end{cor}
 
@@ -2998,7 +3060,7 @@ The poset $\mathbf{On}$ is complete.
 \pf\ For any nonempty set $A$ of ordinals, $\bigcup A$ is its supremum. \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[ZFC]
 \label{prop:subsetleq}
 Let $\alpha$ be an ordinal and $S \subseteq \alpha$. Then $S$ is well-ordered by $\in$ and the ordinal of $(S, \in)$ is $\leq \alpha$.
 \end{prop}
@@ -3028,7 +3090,7 @@ Let $\alpha$ be an ordinal and $S \subseteq \alpha$. Then $S$ is well-ordered by
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[ZFC]
 Let $\alpha$ be a set. Then the following are equivalent.
 \begin{enumerate}
 \item $\alpha$ is an ordinal.
@@ -3085,7 +3147,7 @@ Let $\alpha$ be a set. Then the following are equivalent.
 \qed
 \end{proof}
 
-\begin{lm}
+\begin{lm}[Z]
 \label{lm:endextleq}
 Let $A$ and $B$ be well-ordered sets. If $B$ is an end extension of $A$ then the ordinal of $A$ is $\leq$ the ordinal of $B$.
 \end{lm}
@@ -3246,7 +3308,7 @@ Let $\mathcal{C}$ be a set of well ordered sets such that, for any $A,B \in \mat
 The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[Z]
 \label{prop:Uaplus}
 A set $a$ is a transitive set if and only if
 \[ \bigcup (a^+) = a \enspace . \]
@@ -5000,6 +5062,7 @@ $\mathbb{N}^2 \approx \mathbb{N}$
 \end{proof}
 
 \begin{prop}
+\label{prop:aleph0least}
 For any infinite cardinal $\kappa$ we have $\aleph_0 \leq \kappa$.
 \end{prop}
 
@@ -5382,59 +5445,6 @@ then $\gamma_i = \gamma'_i$ for all $i$ and $n_i = n'_i$ for all $i$}
 For any ordinal $\alpha$, the \emph{Cantor normal form} of $\alpha$ is the expression $\alpha = \omega^{\gamma_1} n_1 + \cdots + \omega^{\gamma_k} n_k$ such that $n_1$, \ldots, $n_k$ are nonzero natural numbers and $\gamma_k < \gamma_{k-1} < \cdots < \gamma_1$.
 \end{df}
 
-\chapter{Infinite Cardinals}
-
-\section{Alephs}
-
-\begin{df}[Aleph]
-Let $\aleph$ be the unique order isomorphism between $\mathbf{On}$ and the class of infinite cardinals.
-\end{df}
-
-\begin{prop}
-The operation $\aleph$ is normal.
-\end{prop}
-
-\begin{proof}
-\pf\ Proposition \ref{prop:enumerationnormal} and Lemma \ref{lm:supcard}. \qed
-\end{proof}
-
-\begin{df}[Continuum Hypothesis]
-The \emph{continuum hypothesis} is the statement that $\aleph_1 = 2^{\aleph_0}$.
-\end{df}
-
-\begin{df}[Generalised Continuum Hypothesis]
-The \emph{generalised continuum hypothesis} is the statement that, for all $\alpha$, $\aleph_{\alpha^+} = 2^{\aleph_\alpha}$.
-\end{df}
-
-\section{Beths}
-
-\begin{df}[Beth]
-Define the operation $\beth : \mathbf{On} \rightarrow \mathbf{Card}$ by transfinite recursion as follows:
-\begin{align*}
-\beth_0 & := \aleph_0 \\
-\beth_{\alpha^+} & := 2^{\beth_\alpha} \\
-\beth_\lambda & := \bigcup_{\alpha < \lambda} \beth_\alpha & (\lambda \text{ a limit ordinal})
-\end{align*}
-\end{df}
-
-\begin{prop}
-$\beth$ is a normal operation.
-\end{prop}
-
-\begin{proof}
-\pf\ It is continuous by definition, and $\beth_\alpha < \beth_{\alpha^+}$ by Cantor's Theorem. \qed
-\end{proof}
-
-\begin{prop}
-The continuum hypothesis is equivalent to the statement $\beth_1 = \aleph_1$.
-
-The generalised continuum hypothesis is equivalent to the statement $\beth = \alpha$.
-\end{prop}
-
-\begin{proof}
-\pf\ Immediate from definitions. \qed
-\end{proof}
-
 \chapter{The Cumulative Hierarchy}
 
 \begin{df}[Cumulative Hierarchy]
@@ -5652,6 +5662,10 @@ For any ordinal number $\alpha$ we have $\rank \alpha = \alpha$.
 \qed
 \end{proof}
 
+\begin{df}[Hereditarily Finite]
+A set is \emph{hereditarily finite} iff it is in $V_\omega$.
+\end{df}
+
 \chapter{Models of Set Theory}
 
 \begin{df}[Relativization]
@@ -5825,11 +5839,326 @@ For any limit ordinal $\lambda > \omega$, we have $V_\lambda$ is a model of $\al
 \end{proof}
 
 \begin{cors}
+\label{cor:modelZermelo}
 for any axiom $\alpha$ of Zermelo set theory, the following is a theorem:
 
 $V_{\omega 2}$ is a model of $\alpha$.
 \end{cors}
 
+\begin{lm}
+There exists a well-ordered structure in $V_{\omega 2}$ whose ordinal is not in $V_{\omega 2}$.
+\end{lm}
+
+\begin{proof}
+\pf\ Take the well-ordered set $\mathbb{N} \times \{0,1\}$ whose ordinal is $\omega 2$. \qed
+\end{proof}
+
+\begin{cors}
+There exists an instance $\alpha$ of the Axiom Schema of Replacement such that the following is a theorem:
+
+$V_{\omega 2}$ is not a model of $\alpha$.
+\end{cors}
+
+\chapter{Infinite Cardinals}
+
+\section{Arithmetic of Infinite Cardinals}
+
+\begin{prop}
+For any infinite cardinal $\kappa$ we have $\kappa \kappa = \kappa$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a set $B$ with $|B| = \kappa$}
+\step{2}{\pflet{$\mathcal{H} = \{ f \mid f = \emptyset \vee \exists A \subseteq B. (A \text{ is infinite} \wedge f : A \times A \approx A \}$}}
+\step{3}{For any chain $\mathcal{C} \subseteq \mathcal{H}$ we have $\bigcup \mathcal{C} \in \mathcal{H}$}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{C} \subseteq \mathcal{H}$ be a chain.}}
+	\step{b}{\assume{w.l.o.g. $\mathcal{C}$ has a nonempty element.}}
+	\step{c}{$\bigcup \mathcal{C}$ is a function.}
+	\begin{proof}
+		\step{i}{\assume{$(x,y),(x,z) \in \bigcup \mathcal{C}$}}
+		\step{ii}{\pick\ $f,g \in \mathcal{C}$ such that $f(x) = y$ and $g(x) = z$}
+		\step{iii}{\assume{w.l.o.g. $f \subseteq g$}}
+		\step{iv}{$y = z$}
+	\end{proof}
+	\step{d}{$\bigcup \mathcal{C}$ is injective.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{e}{\pflet{$A = \ran \bigcup \mathcal{C}$}}
+	\step{f}{$A$ is infinite.}
+	\begin{proof}
+		\step{i}{\pick\ a nonzero $f \in \mathcal{C}$}
+		\step{ii}{\pflet{$A'$ be the infinite subset of $B$ such that $f : A'^2 \approx A'$}}
+		\step{iii}{$A' \subseteq A$}
+	\end{proof}
+	\step{g}{$\dom \bigcup \mathcal{C} = A^2$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in A$}}
+		\step{ii}{\pick\ $f,g \in \mathcal{C}$ such that $x \in \ran f$ and $y \in \ran g$}
+		\step{iii}{\assume{w.l.o.g. $f \subseteq g$}}
+		\step{iv}{\pflet{$A'$ be the infinite subset of $B$ such that $g : A'^2 \approx A'$}}
+		\step{v}{$x,y \in A'$}
+		\step{vi}{$(x,y) \in \dom g$}
+		\step{vii}{$(x,y) \in \dom \bigcup \mathcal{C}$}
+	\end{proof}
+	\step{h}{$\bigcup \mathcal{C} \in \mathcal{H}$}
+\end{proof}
+\step{4}{\pick\ a maximal $f_0 \in \mathcal{H}$}
+\step{5}{$f_0 \neq \emptyset$}
+\begin{proof}
+	\step{a}{\pick\ a countably infinite subset $A$ of $B$.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:aleph0least}.
+	\end{proof}
+	\step{b}{\pick\ a bijection $f : A^2 \approx A$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:N^2approxN}.
+	\end{proof}
+	\step{c}{$\emptyset \subseteq f \in \mathcal{H}$}
+	\step{d}{$\emptyset$ is not maximal in $\mathcal{H}$}
+\end{proof}
+\step{6}{\pflet{$A_0$ be the infinite subset of $B$ such that $f_0 : A_0^2 \approx A_0$}}
+\step{7}{\pflet{$\lambda = |A_0|$}}
+\step{8}{$\lambda$ is infinite.}
+\step{9}{$\lambda^2 = \lambda$}
+\step{10}{$\lambda = \kappa$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\lambda < \kappa$}}
+	\step{b}{$\lambda \leq |B - A_0|$}
+	\step{c}{\pick\ a subset $D \subseteq B - A_0$ with $|D| = \lambda$}
+	\step{d}{$(A_0 \cup D)^2 = A_0^2 \cup (A_0 \times D) \cup (D \times A_0) \cup D^2$}
+	\step{e}{\pflet{$C = (A_0 \times D) \cup (D \times A_0) \cup D^2$}}
+	\step{f}{$|C| = \lambda$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			|(A_0 \times D) \cup (D \times A_0) \cup D^2| & = \lambda^2 + \lambda^2 + \lambda^2 \\
+			& = \lambda + \lambda + \lambda & (\text{\stepref{9}}) \\
+			& = 3 \lambda \\
+			& \leq \lambda \cdot \lambda \\
+			& = \lambda & (\text{\stepref{9}})
+		\end{align*}
+	\end{proof}
+	\step{g}{\pick\ a bijection $g : C \approx D$}
+	\step{h}{$f_0 \cup g : (A_0 \cup D)^2 \approx A_0 \cup D$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the maximality of $f_0$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Alephs}
+
+\begin{df}[Aleph]
+Let $\aleph$ be the unique order isomorphism between $\mathbf{On}$ and the class of infinite cardinals.
+\end{df}
+
+\begin{prop}
+The operation $\aleph$ is normal.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:enumerationnormal} and Lemma \ref{lm:supcard}. \qed
+\end{proof}
+
+\begin{df}[Continuum Hypothesis]
+The \emph{continuum hypothesis} is the statement that $\aleph_1 = 2^{\aleph_0}$.
+\end{df}
+
+\begin{df}[Generalised Continuum Hypothesis]
+The \emph{generalised continuum hypothesis} is the statement that, for all $\alpha$, $\aleph_{\alpha^+} = 2^{\aleph_\alpha}$.
+\end{df}
+
+\section{Beths}
+
+\begin{df}[Beth]
+Define the operation $\beth : \mathbf{On} \rightarrow \mathbf{Card}$ by transfinite recursion as follows:
+\begin{align*}
+\beth_0 & := \aleph_0 \\
+\beth_{\alpha^+} & := 2^{\beth_\alpha} \\
+\beth_\lambda & := \bigcup_{\alpha < \lambda} \beth_\alpha & (\lambda \text{ a limit ordinal})
+\end{align*}
+\end{df}
+
+\begin{prop}
+$\beth$ is a normal operation.
+\end{prop}
+
+\begin{proof}
+\pf\ It is continuous by definition, and $\beth_\alpha < \beth_{\alpha^+}$ by Cantor's Theorem. \qed
+\end{proof}
+
+\begin{prop}
+The continuum hypothesis is equivalent to the statement $\beth_1 = \aleph_1$.
+
+The generalised continuum hypothesis is equivalent to the statement $\beth = \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{lm}
+For any ordinal number $\alpha$, we have $|V_{\omega + \alpha}| = \beth_\alpha$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$|V_\omega| = \beth_0$}
+\begin{proof}
+	\pf\ Since $V_\omega$ is the union of $\aleph_0$ finite sets of increasing size.
+\end{proof}
+\step{2}{For any ordinal $\alpha$, if $|V_{\omega + \alpha}| = \beth_\alpha$ then $|V_{\omega + \alpha + 1}| = \beth_{\alpha + 1}$}
+\begin{proof}
+	\pf\ Since $V_{\omega + \alpha + 1} = \mathcal{P} V_{\omega + \alpha}$.
+\end{proof}
+\step{3}{For any limit ordinal $\lambda$, if $\forall \alpha < \lambda. |V_{\omega + \alpha}| = \beth_\alpha$ then $|V_{\omega + \lambda}| = \beth_\lambda$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|V_{\omega + \lambda}| & = \left| \bigcup_{\alpha < \lambda} V_{\omega + \alpha} \right| \\
+		& = \sup_{\alpha < \lambda} |V_{\omega + \alpha}| \\
+		& = \sup_{\alpha < \lambda} \beth_\alpha \\
+		& = \beth_\lambda
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Cofinality}
+
+\begin{df}[Cofinal]
+Let $\lambda$ be a limit ordinal and $S$ a set of ordinals smaller than $\lambda$. Then $S$ is \emph{cofinal} in $\lambda$ if and only if $\lambda = \sup S$.
+\end{df}
+
+\begin{df}[Cofinality]
+For any ordinal $\alpha$, define the \emph{cofinality} of $\alpha$, $\cf \alpha$, as follows:
+\begin{itemize}
+\item $\cf 0 = 0$
+\item For any ordinal $\alpha$, $\cf \alpha^+ = 1$
+\item For any limit ordinal $\lambda$, $\cf \lambda$ is the smallest cardinal such that there exists a set $S$ of ordinals cofinal in $\lambda$ with $|S| = \cf \lambda$.
+\end{itemize}
+\end{df}
+
+\begin{df}[Regular]
+A cardinal $\kappa$ is \emph{regular} iff $\cf \kappa = \kappa$; otherwise it is \emph{singular}.
+\end{df}
+
+\begin{prop}
+$\aleph_0$ is regular.
+\end{prop}
+
+\begin{proof}
+\pf\ $\aleph_0$ is not the supremum of $< \aleph_0$ smaller ordinals, because a finite union of finite ordinals is finite. \qed
+\end{proof}
+
+\begin{prop}
+For every ordinal $\alpha$, $\aleph_{\alpha + 1}$ is regular.
+\end{prop}
+
+\begin{proof}
+\pf\ If $S$ is a set of ordinals with $|S| < \aleph_{\alpha + 1}$ and $\forall \beta \in S. \beta < \aleph_{\alpha + 1}$, then we have $|S| \leq \aleph_\alpha$ and $\forall \beta \in S. \beta \leq \aleph_\alpha$, hence
+\begin{align*}
+|\bigcup S| & \leq \aleph_alpha^2 & (\text{Proposition \ref{prop:unioncard}}) \\
+& = \aleph_alpha & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+$\aleph_\omega$ is singular.
+\end{prop}
+
+\begin{proof}
+\pf\ It is the limit of $\aleph_n$ for $n \in \mathbb{N}$, so $\cf \aleph_\omega = \aleph_0$. \qed
+\end{proof}
+
+\section{Inaccessible Cardinals}
+
+\begin{df}[Inaccessible Cardinal]
+A cardinal number $\kappa$ is \emph{inaccessible} iff:
+\begin{itemize}
+\item $\kappa > \aleph_0$
+\item $\forall \lambda < \kappa. 2^\lambda < \kappa$ (cardinal exponentiation)
+\item $\kappa$ is regular.
+\end{itemize}
+\end{df}
+
+\begin{lm}
+Let $\kappa$ be an inaccessible cardinal. For every ordinal $\alpha < \kappa$ we have $\beth_\alpha < \kappa$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$\beth_0 < \kappa$}
+\begin{proof}
+	\pf\ Since $\kappa > \aleph_0$.
+\end{proof}
+\step{2}{For any ordinal $\alpha$, if $\beth_\alpha < \kappa$ then $\beth_{\alpha + 1} < \kappa$.}
+\begin{proof}
+	\pf\ Since $\beth_{\alpha + 1} = 2^{\beth_\alpha} < \kappa$.
+\end{proof}
+\step{3}{For any limit ordinal $\lambda$, if $\forall \alpha < \lambda. \beth_\alpha < \kappa$ and $\lambda < \kappa$ then $\beth_\lambda < \kappa$.}
+\begin{proof}
+	\pf\ By regularity of $\kappa$, since $\beth_\lambda$ is the union of $|\lambda|$ cardinals all $< \kappa$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{lm}
+Let $\kappa$ be an inaccessible cardinal. For all $A \in V_\kappa$ we have $|A| < \kappa$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A \in V_\kappa$}}
+\step{2}{\pick\ $\alpha < \kappa$ such that $A \in V_\alpha$}
+\step{3}{$A \subseteq V_\alpha$}
+\step{4}{$|A| \leq |V_\alpha| \leq \beth_\alpha < \kappa$}
+\qed
+\end{proof}
+
+\begin{thms}
+For every axiom $\alpha$ of ZFC, the following is a theorem:
+
+For any inaccessible cardinal $\kappa$, we have $V_\kappa$ is a model of $\alpha$.
+\end{thms}
+
+\begin{proof}
+\pf\ For every axiom except the Replacement Axioms, we have Corollary \ref{cor:modelZermelo}.
+
+For an Axiom of Replacement using the property $P[x,y,z_1, \ldots, z_n]$, we reason as follows:
+
+\step{1}{\pflet{$\kappa$ be an inaccessible cardinal}
+\prove{\[ \forall a_1, \ldots, a_n, B \in V_\kappa (\forall x \in B. \forall y,y' \in V_\kappa \]
+\[ (P[x,y,a_1, \ldots, a_n]^{V_\kappa} \wedge P[x,y',a_1, \ldots, a_n]^{V_\kappa} \Rightarrow y = y') \Rightarrow \]
+\[ \exists C \in V_\kappa \forall y \in V_\kappa (y \in C \Leftrightarrow \exists x \in B. P[x,y,a_1, \ldots, a_n]^{V_\kappa})) \]
+}}
+\step{2}{\pflet{$a_1, \ldots, a_n, B \in V_\kappa$}}
+\step{3}{\assume{for all $x \in B$, there exists at most one $y \in V_\kappa$ such that $P[x,y,a_1, \ldots, a_n]^{V_\kappa}$.}}
+\step{4}{\pflet{$F = \{(x,y) \in B \times V_\kappa \mid P[x,y,a_1, \ldots, a_n]^{V_\kappa} \}$}}
+\step{5}{\pflet{$C = \ran F$} \prove{$C \in V_\kappa$}}
+\step{6}{\pflet{$S = \{ \rank F(x) \mid x \in \dom F \}$}}
+\step{7}{$|S| < \kappa$}
+\begin{proof}
+	\pf\ Since $|S| \leq |\dom F| \leq |B| < \kappa$.
+\end{proof}
+\step{8}{$\forall \alpha \in S. \alpha < \kappa$}
+\begin{proof}
+	\pf\ Since $F(x) \in V_\kappa$ for all $x \in \dom F$.
+\end{proof}
+\step{9}{$\sup S < \kappa$}
+\begin{proof}
+	\pf\ Since $\kappa$ is regular.
+\end{proof}
+\step{10}{$\rank C \leq \sup S + 1$}
+\step{11}{$\rank C < \kappa$}
+\step{12}{$C \in V_\kappa$}
+\qed
+\end{proof}
 \chapter{Group Theory}
 
 \section{Groups}
