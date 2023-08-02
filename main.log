@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  2 AUG 2023 01:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  2 AUG 2023 01:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,88 +419,88 @@ WARNING: proof step "1" (<1>3) already defined
 Chapter 11.
 [91
 
-] [92]
+] [92] [93] [94
+
+]
 Chapter 12.
-[93
-
-] [94]
+[95] [96]
 Chapter 13.
-[95
+[97
 
-] [96]
+] [98]
 Chapter 14.
 WARNING: proof step "1" (<2>1) already defined
-[97
+[99
 
 ]
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
-[98] [99] [100]
-Overfull \hbox (5.89409pt too wide) in paragraph at lines 6136--6137
+[100] [101] [102]
+Overfull \hbox (5.89409pt too wide) in paragraph at lines 6165--6166
 []\OT1/cmr/bx/n/10 Definition 14.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \
 OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
  []
 
-[101] [102] [103] [104
+[103] [104] [105] [106
 
 ]
 Chapter 15.
-[105]
-Overfull \hbox (5.81142pt too wide) detected at line 6454
+[107]
+Overfull \hbox (5.81142pt too wide) detected at line 6483
 []
  []
 
-[106]
-Overfull \hbox (10.26518pt too wide) detected at line 6469
+[108]
+Overfull \hbox (10.26518pt too wide) detected at line 6498
 []
  []
 
-[107] [108]
+[109] [110]
 WARNING: proof step "1" (<2>1) already defined
-[109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119]
+[111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [120]
-[121]
+ [122]
+[123]
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
-[122]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 7619--7619
+[124]
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 7648--7648
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
 msy/m/n/10 j \OML/cmm/m/it/10 u[]x[]x\OMS/cmsy/m/n/10 g$ 
  []
 
-[123] [124] [125] [126
+[125] [126] [127] [128
 
 ]
 Chapter 16.
 WARNING: proof step "e" (<2>7) already defined
-[127] [128]
-Overfull \hbox (68.70209pt too wide) detected at line 7922
+[129] [130]
+Overfull \hbox (68.70209pt too wide) detected at line 7951
 []
  []
 
 
-Overfull \hbox (13.13249pt too wide) detected at line 7928
+Overfull \hbox (13.13249pt too wide) detected at line 7957
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
 
-[129] [130
+[131] [132
 
-] [131] [132]
+] [133] [134]
 Chapter 17.
-[133
+[135
 
 ]
 WARNING: proof step "ii" (<3>3) already defined
-[134] [135] [136] [137]
-Overfull \hbox (3.51474pt too wide) in paragraph at lines 8347--8348
+[136] [137] [138] [139]
+Overfull \hbox (3.51474pt too wide) in paragraph at lines 8376--8377
 []\OT1/cmr/bx/n/10 Proposition 17.2.12. \OT1/cmr/m/it/10 The set $\OML/cmm/m/it
 /10 l[]$ \OT1/cmr/m/it/10 of all se-quences $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 x[]\OT1/cmr/m/n/10 )$ \OT1/cmr/m/it/10 in $\U/msb/m/n/10 C$ \OT1/cmr/m/it/10 su
@@ -508,20 +508,20 @@ ch that $[][] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[]\OMS/cmsy/m/n/10 j[] \OML/c
 mm/m/it/10 <
  []
 
-[138] [139] [140]
+[140] [141] [142]
 Chapter 18.
-[141
+[143
 
-] [142] [143] [144] [145] [146] [147] [148]
+] [144] [145] [146] [147] [148] [149] [150]
 WARNING: proof step "2" (<3>2) already defined
 
-Overfull \hbox (76.64789pt too wide) detected at line 9028
+Overfull \hbox (76.64789pt too wide) detected at line 9057
 []
  []
 
-[149] [150] [151] [152] [153] [154] [155] [156] [157] [158] [159] [160]
-[161]
-Overfull \hbox (19.61322pt too wide) in paragraph at lines 9904--9905
+[151] [152] [153] [154] [155] [156] [157] [158] [159] [160] [161] [162]
+[163]
+Overfull \hbox (19.61322pt too wide) in paragraph at lines 9933--9934
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Let $(\OML/cmm/m/it/10 x[]\OT1/cmr/m/
 n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 /m/it/10 x[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 l$\OT1/cmr/m/n/10 . Then $\OML
@@ -529,74 +529,74 @@ n/10 )$ be a se-quence in $[] \OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 and $\OML/cmm
 cmm/m/it/10 T\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ) =
  []
 
-[162] [163] [164] [165]
-Overfull \hbox (91.49588pt too wide) detected at line 10161
+[164] [165] [166] [167]
+Overfull \hbox (91.49588pt too wide) detected at line 10190
 []
  []
 
-[166] [167] [168]
+[168] [169] [170]
 WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 WARNING: proof step "4" (<3>4) already defined
-[169] [170] [171] [172] [173]
-Overfull \hbox (62.14355pt too wide) detected at line 10607
-[]
- []
-
-[174]
-Chapter 19.
-[175
-
-]
-WARNING: proof step "1" (<1>2) already defined
-
-Overfull \hbox (133.82387pt too wide) detected at line 10724
+[171] [172] [173] [174] [175]
+Overfull \hbox (62.14355pt too wide) detected at line 10636
 []
  []
 
 [176]
-Overfull \hbox (22.05334pt too wide) detected at line 10818
+Chapter 19.
+[177
+
+]
+WARNING: proof step "1" (<1>2) already defined
+
+Overfull \hbox (133.82387pt too wide) detected at line 10753
 []
  []
 
-[177] [178]
-Overfull \hbox (11.69455pt too wide) in paragraph at lines 10937--10938
+[178]
+Overfull \hbox (22.05334pt too wide) detected at line 10847
+[]
+ []
+
+[179] [180]
+Overfull \hbox (11.69455pt too wide) in paragraph at lines 10966--10967
 []\OT1/cmr/bx/n/10 Proposition 19.1.9. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 H
 []$ \OT1/cmr/m/it/10 be the $\OML/cmm/m/it/10 n$\OT1/cmr/m/it/10 th Her-mite po
 ly-no-mial. Then $\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 e[]H[]\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j
  []
 
-[179]
-Overfull \hbox (14.47572pt too wide) detected at line 10963
+[181]
+Overfull \hbox (14.47572pt too wide) detected at line 10992
 []
  []
 
-[180] [181] [182
+[182] [183] [184
 
 ]
 Chapter 20.
-[183] [184]
+[185] [186]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [185]
-[186]
-Overfull \hbox (68.12585pt too wide) detected at line 11285
+ [187]
+[188]
+Overfull \hbox (68.12585pt too wide) detected at line 11314
 []
  []
 
-[187] [188]
-Overfull \hbox (135.96497pt too wide) detected at line 11361
+[189] [190]
+Overfull \hbox (135.96497pt too wide) detected at line 11390
 []
  []
 
-[189] (./main.aux)
+[191] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: E0992AA62FBB615041E76270C04F7F00;11935.
  ) 
 Here is how much of TeX's memory you used:
- 10216 strings out of 476091
- 148985 string characters out of 5794082
+ 10220 strings out of 476091
+ 149019 string characters out of 5794082
  1874330 words of memory out of 5000000
  29504 multiletter control sequences out of 15000+600000
  523715 words of font info for 74 fonts, out of 8000000 for 9000
@@ -623,10 +623,10 @@ msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (189 pages, 747604 bytes).
+Output written on main.pdf (191 pages, 749452 bytes).
 PDF statistics:
- 2621 PDF objects out of 2984 (max. 8388607)
- 2126 compressed objects within 22 object streams
- 1003 named destinations out of 1200 (max. 500000)
+ 2631 PDF objects out of 2984 (max. 8388607)
+ 2134 compressed objects within 22 object streams
+ 1007 named destinations out of 1200 (max. 500000)
  713 words of extra memory for PDF output out of 10000 (max. 10000000)
 

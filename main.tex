@@ -5662,6 +5662,35 @@ For any limit ordinal $\lambda$, we have $V_\lambda$ is a model of the Power Set
 \qed
 \end{proof}
 
+\begin{thms}
+For any property $P[x,y_1, \ldots, y_n]$, the following is a theorem:
+
+For any ordinal $\alpha$, the set $V_\alpha$ is a model of the statement: for any sets $a_1$, \ldots, $a_n$, $B$, the class $\{ x \in B \mid P[x,a_1, \ldots, a_n] \}$ is a set.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal.}}
+\step{2}{\pflet{$a_1, \ldots, a_n, B \in V_\alpha$}}
+\step{3}{\pflet{$C = \{ x \in B \mid P[x,a_1, \ldots, a_n]^{V_\alpha} \}$}}
+\step{4}{$C \in V_\alpha$}
+\step{5}{$\forall x \in V_\alpha (x \in C \Leftrightarrow x \in B \wedge P[x, a_1, \ldots, a_n]^{V_\alpha})$}
+\qed
+\end{proof}
+
+\begin{thm}
+For any ordinal $\alpha > \omega$, we have: $V_\alpha$ is a model of the Axiom of Infinity.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha > \omega$}}
+\step{2}{$\mathbb{N} \in V_\alpha$}
+\step{3}{$\exists e \in V_\alpha (e \in \mathbb{N} \wedge \forall x \in V_\alpha. x \notin e)$}
+\step{4}{$\forall x \in V_\alpha (x \in \mathbb{N} \Rightarrow \exists y \in V_\alpha \forall z \in V_\alpha (z \in y \Leftrightarrow z \in x \vee z = x))$}
+\qed
+\end{proof}
+
 \chapter{Group Theory}
 
 \section{Groups}
