@@ -1704,23 +1704,6 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
 \end{df}
 
-\begin{thm}[Cantor 1873 (Z)]
-No set is equinumerous to its power set.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\assume{for a contradiction $f : A \approx \mathcal{P} A$}}
-\step{2}{\pflet{$S = \{x \in A \mid x \notin f(x)\}$}}
-\step{3}{\pick\ $a \in A$ such that $f(a) = S$}
-\step{4}{$a \in S$ if and only if $a \notin S$}
-\qedstep
-\begin{proof}
-	\pf\ This is a contradiction.
-\end{proof}
-\qed
-\end{proof}
-
 \section{Domination}
 
 \begin{df}[Dominate]
@@ -4672,13 +4655,36 @@ For any set $A$ we have $|\mathcal{P} A| = 2^{|A|}$.
 \pf\ The function $f : \mathcal{P} A \rightarrow 2^A$ where $f(X)(a) = 0$ if $a \notin X$ and $f(X)(a) = 1$ if $a \in X$. \qed
 \end{proof}
 
+\begin{thm}[K\"{o}nig]
+Let $I$ be a set. Let $\{A_i\}_{i \in I}$ and $\{B_i\}_{i \in I}$ be families of sets. Assume that $\forall i \in I. |A_i| < |B_i|$. Then $\left| \bigcup_{i \in I} A_i \right| < \left| \prod_{i \in I} B_i \right|$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all $i \in I$, choose an injection $f_i : A_i \rightarrowtail B_i$}
+\step{2}{For all $i \in I$, choose $b_i \in B_i - f_i(A_i)$}
+\step{3}{$\left| \bigcup_{i \in I} A_i \right| \leq \left| \prod_{i \in I} B_i \right|$}
+\begin{proof}
+	\step{a}{Define $g : \bigcup_{i \in I} A_i \rightarrow \prod_{i \in I} B_i$ by
+	\[ g(i,a)(j) = \begin{cases}
+	f_i(a) & \text{if } i = j \\
+	b_j & \text{otherwise}
+	\end{cases} \]}
+	\step{b}{$g$ is injective.}
+\end{proof}
+\step{2}{$\left| \bigcup_{i \in I} A_i \right| \neq \left| \prod_{i \in I} B_i \right|$}
+\begin{proof}
+	\step{a}{\pflet{$h : \bigcup_{i \in I} A_i \rightarrow \prod_{i \in I} B_i$} \prove{$h$ is not surjective.}}
+	\step{b}{For $i \in I$, \pick\ $c_i \in B_i - \{ h(i,a)(i) \mid i \in I \}$}
+	\step{c}{$c \in \prod_{i \in I} B_i$}
+	\step{d}{$c \notin \ran h$}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{cor}
 For any cardinal number $\kappa$ we have $\kappa < 2^\kappa$.
 \end{cor}
-
-\begin{proof}
-\pf\ By Cantor's Theorem. \qed
-\end{proof}
 
 \section{Ordering on Cardinal Numbers}
 
@@ -6174,8 +6180,6 @@ $\aleph_\omega$ is singular.
 A cardinal is \emph{weakly inaccessible} iff it is $\aleph_\lambda$ for some limit ordinal $\lambda$ and regular.
 \end{df}
 
-%TODO: If ZFC is consistent then it cannot prove that weakly inaccessible cardinals exist
-
 \begin{lm}
 Let $\lambda$ be a limit ordinal. Then there exists a strictly increasing $\cf \lambda$-sequence that converges to $\lambda$.
 \end{lm}
@@ -6359,6 +6363,71 @@ A cardinal number $\kappa$ is \emph{inaccessible} iff:
 \item $\kappa$ is regular.
 \end{itemize}
 \end{df}
+
+\begin{proof}
+Any inaccessible cardinal is weakly inaccessible.
+\end{proof}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\kappa = \aleph_\lambda$ be weakly inaccessible.} \prove{$\lambda$ is a limit ordinal.}}
+\step{2}{$\lambda \neq 0$}
+\step{3}{\assume{for a contradiction $\lambda = \beta + 1$}}
+\step{4}{$\aleph_\beta < \kappa$}
+\step{5}{$2^{\aleph_\beta} < \kappa$}
+\step{6}{$\aleph_{\beta + 1} < \kappa$}
+\begin{proof}
+	\pf\ Since $\aleph_{\beta + 1} \leq 2^{\aleph_\beta}$.
+\end{proof}
+\qedstep
+\begin{proof}
+\pf\ This contradicts \stepref{3}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+If the Generalized Continuum Hypothesis is true, then every weakly inaccessible cardinal is inaccessible.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{The Generalized Continuum Hypothesis.}}
+\step{2}{\pflet{$\kappa = \aleph_\lambda$ be weakly inaccessible.}}
+\step{3}{$\kappa > \aleph_0$}
+\begin{proof}
+	\pf\ $\lambda > 0$ because $\lambda$ is a limit ordinal.
+\end{proof}
+\step{4}{For all $\mu < \kappa$ we have $2^\mu < \kappa$}
+\begin{proof}
+	\step{a}{\pflet{$\mu < \kappa$}}
+	\step{b}{\pflet{$\mu = \aleph_\alpha$}}
+	\step{c}{$\alpha < \lambda$}
+	\step{d}{$\alpha + 1 < \lambda$}
+	\begin{proof}
+		\pf\ $\lambda$ is a limit ordinal.
+	\end{proof}
+	\step{e}{$2^\mu < \kappa$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			2^\mu & = 2^{\aleph_\alpha} & (\text{\stepref{b}})  \\
+			& = 2^{\beth_\alpha} & (\text{\stepref{1}}) \\
+			& = \beth_{\alpha + 1} \\
+			& = \aleph_{\alpha + 1} & (\text{\stepref{1}}) \\
+			& < \aleph_\lambda & (\text{\stepref{d}}) \\
+			& = \kappa & (\text{\stepref{2}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{5}{$\kappa$ is regular.}
+\begin{proof}
+	\pf\ \stepref{2}
+\end{proof}
+\qed
+\end{proof}
+
+%TODO: If ZFC is consistent then it cannot prove that weakly inaccessible cardinals exist
 
 \begin{lm}
 Let $\kappa$ be an inaccessible cardinal. For every ordinal $\alpha < \kappa$ we have $\beth_\alpha < \kappa$.
