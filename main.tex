@@ -4452,6 +4452,34 @@ For any ordinal numbers $\alpha$, $\beta$ and $\gamma$, we have
 \qed
 \end{proof}
 
+\section{Sequences}
+<
+\begin{df}[Sequence]
+Given an ordinal $\alpha$ and class $\mathbf{A}$, an \emph{$\alpha$-sequence} in $\mathbf{A}$ is a function $a : \alpha \rightarrow \mathbf{A}$. We write $a_\beta$ for $a(\beta)$, and $(a_\beta)_{\beta < \alpha}$ for $a$.
+\end{df}
+
+\begin{df}[Strictly Increasing]
+A sequence $(a_\beta)$ of ordinals is \emph{strictly increasing} iff, whenever $\beta < \gamma$, then $a_\beta < a_\gamma$.
+\end{df}
+
+\begin{df}[Subsequence]
+Let $(a_\beta)_{\beta < \gamma}$ be a sequence in $\mathbf{A}$. A \emph{subsequence} of $(a_\beta)$ is a sequence of the form $(a_{\beta_\xi})_{\xi < \delta}$ where $(\beta_\xi)_{\xi < \delta}$ is a strictly increasing sequence in $\gamma$.
+\end{df}
+
+\begin{df}[Convergence]
+Let $(a_\beta)_{\beta < \gamma}$ be a sequence of ordinals and $\lambda$ an ordinal. Then $(a_\beta)$ \emph{converges} to the \emph{limit} $\lambda$ iff $\lambda = \sup_{\beta < \gamma} a_\beta$.
+\end{df}
+
+\begin{lm}
+\label{lm:convergentsubsequence}
+Let $(a_\beta)_{\beta < \gamma}$ be a sequence of ordinals. Then there is a strictly increasing subsequence $(a_{\beta_\xi})_{\xi < \delta}$ such that $\sup_{\xi < \delta} a_{\beta_\xi} = \sup_{\beta < \gamma} a_\beta$.
+\end{lm}
+
+\begin{proof}
+\pf\ Define $\beta_\xi$ by transfinite recursion as follows. $\beta_\xi$ is the least $\beta$ such that $a_\beta > a_{\beta_\zeta}$ for all $\zeta < \xi$ if there is such an $a_\beta$; if not, the sequence ends.
+\qed
+\end{proof}
+
 \chapter{Cardinal Numbers}
 
 \section{Cardinal Numbers}
@@ -6087,17 +6115,74 @@ For every ordinal $\alpha$, $\aleph_{\alpha + 1}$ is regular.
 \begin{proof}
 \pf\ If $S$ is a set of ordinals with $|S| < \aleph_{\alpha + 1}$ and $\forall \beta \in S. \beta < \aleph_{\alpha + 1}$, then we have $|S| \leq \aleph_\alpha$ and $\forall \beta \in S. \beta \leq \aleph_\alpha$, hence
 \begin{align*}
-|\bigcup S| & \leq \aleph_alpha^2 & (\text{Proposition \ref{prop:unioncard}}) \\
-& = \aleph_alpha & \qed
+\left|\bigcup S\right| & \leq \aleph_{\alpha}^2 & (\text{Proposition \ref{prop:unioncard}}) \\
+& = \aleph_{\alpha} & (\text{Proposition \ref{prop:kappasquared}}) \qed
 \end{align*}
 \end{proof}
 
 \begin{prop}
-$\aleph_\omega$ is singular.
+For any limit ordinal $\lambda$ we have $\cf \aleph_\lambda = \cf \lambda$.
 \end{prop}
 
 \begin{proof}
-\pf\ It is the limit of $\aleph_n$ for $n \in \mathbb{N}$, so $\cf \aleph_\omega = \aleph_0$. \qed
+\pf
+\step{1}{$\cf \aleph_\lambda \leq \cf \lambda$}
+\begin{proof}
+	\step{a}{\pick\ a set $S$ of ordinals $< \lambda$ with $|S| = \cf \lambda$ and $\sup S = \lambda$}
+	\step{b}{$\aleph_\lambda = \sup_{\alpha \in S} \aleph_\alpha$}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:normalsup}.
+	\end{proof}
+\end{proof}
+\step{2}{$\cf \lambda \leq \cf \aleph_\lambda$}
+\begin{proof}
+	\step{a}{\pick\ a set $A$ of ordinals $< \aleph_\lambda$ such that $|A| = \cf \aleph_\lambda$ and $\sup A = \aleph_\lambda$}
+	\step{b}{\pflet{$B = \{ \gamma < \lambda \mid \exists \alpha \in A. |\alpha| = \aleph_\gamma \}$}}
+	\step{c}{$|B| \leq |A| = \cf \aleph_\lambda$ \prove{$\sup B = \lambda$}}
+	\step{d}{$\forall \alpha \in A. |\alpha| \leq \aleph_{\sup B}$}
+	\step{e}{$\forall \alpha \in A. \alpha < \aleph_{\sup B + 1}$}
+	\step{f}{$\aleph_\lambda = \sup A \leq \aleph_{\sup B + 1}$}
+	\step{g}{$\lambda \leq \sup B + 1$}
+	\step{h}{$\lambda \leq \sup B$}
+	\begin{proof}
+		\pf\ $\lambda$ is a limit ordinal.
+	\end{proof}
+	\step{i}{$\sup B = \lambda$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+$\aleph_\omega$ is singular.
+\end{cor}
+
+\begin{proof}
+\pf\ $\cf \aleph_\omega = \cf \aleph_0 = \aleph_0$. \qed
+\end{proof}
+
+\begin{df}[Weakly Inaccessible]
+A cardinal is \emph{weakly inaccessible} iff it is $\aleph_\lambda$ for some limit ordinal $\lambda$ and regular.
+\end{df}
+
+%TODO: If ZFC is consistent then it cannot prove that weakly inaccessible cardinals exist
+
+\begin{lm}
+Let $\lambda$ be a limit ordinal. Then there exists a strictly increasing $\cf \lambda$-sequence that converges to $\lambda$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a set $S$ of ordinals $< \lambda$ with $|S| = \cf \lambda$ and $\sup S = \lambda$}
+\step{2}{\pick\ a bijection $a : \cf \lambda \approx S$}
+\step{3}{\pick\ a strictly increasing subsequence $(b_\delta)_{\delta < \beta}$ of $a$ that converges to $\lambda$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:convergentsubsequence}.
+\end{proof}
+\step{4}{$\beta = \cf \lambda$}
+\begin{proof}
+	\pf\ By minimiality of $\cf \lambda$.
+\end{proof}
+\qed
 \end{proof}
 
 \section{Inaccessible Cardinals}
