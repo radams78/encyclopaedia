@@ -6189,6 +6189,76 @@ Let $\lambda$ be a limit ordinal. Then there exists a strictly increasing $\cf \
 Let $\lambda$ be a limit ordinal. Then $\cf \lambda$ is the least ordinal such that there exists a strictly increasing $\cf \lambda$-sequence that converges to $\lambda$.
 \end{cor}
 
+\begin{prop}
+For any ordinal $\lambda$, $\cf \lambda$ is a regular cardinal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\lambda$ be an ordinal.}}
+\step{2}{\assume{w.l.o.g. $\lambda$ is a limit ordinal.}}
+\step{3}{\pick\ a strictly increasing sequence $(a_\alpha)_{\alpha < \cf \lambda}$ that converges to $\lambda$.}
+\step{4}{\pflet{$S$ be a set of ordinals $< \cf \lambda$ such that $|S| = \cf \cf \lambda$ and $\sup S = \cf \lambda$.}}
+\step{5}{\pflet{$a(S) = \{ a_\alpha \mid \alpha \in S \}$}}
+\step{6}{$a(S)$ is cofinal in $\lambda$.}
+\begin{proof}
+	\step{a}{\pflet{$\beta < \lambda$}}
+	\step{b}{\pick\ $\gamma < \cf \lambda$ such that $\beta < a_\gamma$}
+	\step{c}{\pick\ $\delta \in S$ such that $\gamma < \delta$}
+	\step{d}{$a_\delta \in a(S)$ and $\beta < a_\gamma < a_\delta$}
+\end{proof}
+\step{7}{$\cf \lambda \leq \cf \cf \lambda$}
+\begin{proof}
+	\pf\ Since $a(S)$ is a set of ordinals $< \lambda$ with $|a(S)| = \cf \cf \lambda$ and $\sup a(S) = \lambda$.
+\end{proof}
+\step{8}{$\cf \cf \lambda = \cf \lambda$}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $\lambda$ be an infinite cardinal. Then $\cf \lambda$ is the least cardinal such that $\lambda$ can be partitioned into $\cf \lambda$ sets, each of cardinality $< \lambda$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\lambda$ can be partitioned into $\cf \lambda$ sets, each of cardinality $< \lambda$}
+\begin{proof}
+	\step{a}{\pick\ a strictly increasing sequence of ordinlas $(a_\alpha)_{\alpha < \cf \lambda}$ that converges to $\lambda$}
+	\step{b}{$\{ \{ \beta \mid a_\alpha \leq \beta < a_{\alpha + 1} \} \mid \alpha < \cf \lambda \}$ is a partition of $\lambda$ into $\cf \lambda$ sets, each of cardinality $< \lambda$}
+\end{proof}
+\step{2}{If $\lambda$ can be partitioned into $\kappa$ sets, each of cardinality $< \lambda$, then $\cf \lambda \leq \kappa$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{A}$ be a partition of $\lambda$ into sets of cardinality $< \lambda$}}
+	\step{b}{\pflet{$\kappa = |P|$}}
+	\step{c}{\pick\ a bijection $A : \kappa \approx P$}
+	\step{d}{$\lambda = \bigcup_{\xi < \kappa} A(\xi)$}
+	\step{e}{For all $\xi < \kappa$ we have $|A(\xi)| < \lambda$}
+	\step{f}{\pflet{$\mu = \sup_{\xi < \kappa} |A(\xi)|$}}
+	\step{ff}{$\mu \leq \lambda$}
+	\step{g}{For all $\xi < \kappa$ we have $|A(\xi)| \leq \mu$}
+	\step{h}{$\lambda \leq \mu \kappa$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:unioncard}.
+	\end{proof}
+	\step{i}{\assume{w.l.o.g. $\kappa < \lambda$}}
+	\begin{proof}
+		\pf\ If $\lambda \leq \kappa$ then $\cf \lambda \leq \kappa$ since $\cf \lambda \leq \lambda$.
+	\end{proof}
+	\step{j}{$\lambda = \mu$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\lambda & \leq \mu \kappa & (\text{\stepref{h}}) \\
+			& \leq \lambda \lambda & (\text{\stepref{ff}, \stepref{i}}) \\
+			& = \lambda & (\text{Proposition \ref{prop:kappasquared}})
+		\end{align*}
+	\end{proof}
+	\step{k}{$\{ |A(\xi)| \mid \xi < \kappa \}$ is a set of $\leq \kappa$ ordinals all $< \lambda$ whose supremum is $\lambda$}
+	\step{l}{$\cf \lambda \leq \kappa$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Inaccessible Cardinals}
 
 \begin{df}[Inaccessible Cardinal]
