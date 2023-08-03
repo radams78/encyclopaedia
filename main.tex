@@ -34,6 +34,7 @@
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\rank}{\ensuremath{\operatorname{rank}}}
 \newcommand{\cf}{\ensuremath{\operatorname{cf}}}
+\newcommand{\ssup}{\ensuremath{\operatorname{ssup}}}
 
 \begin{document}
 
@@ -4480,6 +4481,12 @@ Let $(a_\beta)_{\beta < \gamma}$ be a sequence of ordinals. Then there is a stri
 \qed
 \end{proof}
 
+\section{Strict Supremum}
+
+\begin{df}[Strict Supremum]
+For any set $S$ of ordinals, define the \emph{strict supremum} of $S$, $\ssup S$, to be the least ordinal greater than every member of $S$.
+\end{df}
+
 \chapter{Cardinal Numbers}
 
 \section{Cardinal Numbers}
@@ -6216,6 +6223,7 @@ For any ordinal $\lambda$, $\cf \lambda$ is a regular cardinal.
 \end{proof}
 
 \begin{thm}
+\label{thm:cfpartition}
 Let $\lambda$ be an infinite cardinal. Then $\cf \lambda$ is the least cardinal such that $\lambda$ can be partitioned into $\cf \lambda$ sets, each of cardinality $< \lambda$.
 \end{thm}
 
@@ -6255,6 +6263,85 @@ Let $\lambda$ be an infinite cardinal. Then $\cf \lambda$ is the least cardinal 
 	\end{proof}
 	\step{k}{$\{ |A(\xi)| \mid \xi < \kappa \}$ is a set of $\leq \kappa$ ordinals all $< \lambda$ whose supremum is $\lambda$}
 	\step{l}{$\cf \lambda \leq \kappa$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[K\"{o}nig]
+For any infinite cardinal $\kappa$ we have $\kappa < \cf 2^\kappa$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\cf 2^\kappa \leq \kappa$}}
+\step{2}{\pflet{$S = 2^\kappa$}}
+\step{3}{\pick\ a partition $\{A_\xi \mid \xi < \kappa \}$ of $S^\kappa$ with $\forall \xi < \kappa. |A_\xi| < 2^\kappa$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:cfpartition}.
+\end{proof}
+\step{4}{$\forall \xi < \kappa. \{ g(\xi) \mid g \in A_\xi \} \subsetneq S$}
+\begin{proof}
+	\pf\ We do not have equality because $|\{ g(\xi) \mid g \in A_\xi \}| \leq |A_\xi| < 2^\kappa$.
+\end{proof}
+\step{5}{For all $\xi < \kappa$, choose $s_\xi \in S - \{ g(\xi) \mid g \in A_\xi \}$}
+\step{6}{$s \in S^\kappa$}
+\step{7}{For all $\xi < \kappa$ we have $s \notin A_\xi$}
+\begin{proof}
+	\pf\ Since for all $\xi < \kappa$ and $g \in A_\xi$ we have $s_\xi(\xi) \neq g(\xi)$.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{3}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+\[ 2^{\aleph_0} \neq \aleph_\omega \]
+\end{cor}
+
+\begin{prop}
+For any ordinal $\alpha$, we have $\cf \alpha$ is the least cardinal such that $\alpha$ is the strict supremum of $\cf \alpha$ smaller ordinals.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\case{$\alpha = 0$}}
+\begin{proof}
+	\pf\ Since $0 = \ssup \emptyset$.
+\end{proof}
+\step{2}{\case{$\alpha = \beta^+$}}
+\begin{proof}
+	\pf\ Since $\beta^+ = \ssup \{ \beta \}$.
+\end{proof}
+\step{3}{\case{$\alpha$ is a limit ordinal.}}
+\begin{proof}
+	\step{a}{There exists a set $S$ of ordinals $< \alpha$ such that $|S| = \cf \alpha$ and $\alpha = \ssup S$.}
+	\begin{proof}
+		\step{a}{\pick\ a set $S$ of ordinals $< \alpha$ such that $|S| = \cf \alpha$ and $\sup S = \alpha$ \prove{$\alpha = \ssup S$}}
+		\step{b}{$\forall \beta \in S. \beta < \alpha$}
+		\step{c}{For any ordinal $\gamma$, if $\forall \beta \in S. \beta < \gamma$ then $\alpha \leq \gamma$}
+	\end{proof}
+	\step{c}{If $T$ is a set of ordinals $< \alpha$ such that $\alpha = \ssup T$, then $\cf \alpha \leq |T|$.}
+	\begin{proof}
+		\step{i}{\pflet{$T$ be a set of ordinals $< \alpha$ such that $\alpha = \ssup T$}}
+		\step{ii}{$\alpha = \sup T$}
+		\begin{proof}
+			\step{one}{For all $\beta \in T$ we have $\beta \leq \alpha$}
+			\step{two}{\pflet{$\mu$ be any upper bound for $T$} \prove{$\alpha \leq \mu$}}
+			\step{three}{$\alpha \leq \mu + 1$}
+			\begin{proof}
+				\pf\ Since $\forall \beta \in T. \beta < \mu + 1$.
+			\end{proof}
+			\step{four}{$\alpha \neq \mu + 1$}
+			\begin{proof}
+				\pf\ Since $\alpha$ is a limit ordinal.
+			\end{proof}
+			\step{five}{$\alpha < \mu + 1$}
+			\step{six}{$\alpha \leq \mu$}
+		\end{proof}
+		\step{iii}{$\cf \alpha \leq |T|$}
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
