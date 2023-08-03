@@ -4,3 +4,11 @@ Elliott Mendelson. Number Systems and the Foundations of Analysis. 1973
 Andrew Gleason. Fundamentals of Abstract Analysis. 1966
 R. Baer. Dichte, Archimedizität und Starrheit geordneter Körper, Mat. Ann. 188 (1970) 165-205
 D. Scott. On completing ordered fields. Applications of Model Theory, Proc. Int. Symp. California Inst. Technol. (1967) pp. 274-278
+Georg Cantor. Contributions to the Founding of the Theory of Transfinite Numbers, translated by P. Jourdain. 1955
+Paul J. Cohen. Set Theory and the Continuum Hypothesis. 1966
+Frank R. Drake. Set Theory, An Introduction to Large Cardinals. 1974
+Abraham A. Fraenkel, Yehoshua Bar-Hillel, Azriel Levy. Foundations of Set Theory. 1973
+Thomas J. Jech. The Axiom of Choice. 1973
+K. Kuratowski, A Mostowski. Set Theory. 1968
+Waclaw Sierpiṅski. Cardinal and Ordinal Numbers. 1965
+Jean van Heiejenoort (editor). From Frege to Gödel, A Source Book in Mathematical Logic, 1879-1931. 1967
