@@ -6127,28 +6127,31 @@ For every ordinal $\alpha$, $\aleph_{\alpha + 1}$ is regular.
 \end{align*}
 \end{proof}
 
-\begin{prop}
-For any limit ordinal $\lambda$ we have $\cf \aleph_\lambda = \cf \lambda$.
-\end{prop}
+\begin{props}
+For any class $\mathbf{T}$, the following is a theorem.
+
+Assume $\mathbf{T} : \mathbf{On} \rightarrow \mathbf{On}$ is a normal operation.
+For any limit ordinal $\lambda$ we have $\cf \mathbf{T}(\lambda) = \cf \lambda$.
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{$\cf \aleph_\lambda \leq \cf \lambda$}
+\step{1}{$\cf \mathbf{T}(\lambda) \leq \cf \lambda$}
 \begin{proof}
 	\step{a}{\pick\ a set $S$ of ordinals $< \lambda$ with $|S| = \cf \lambda$ and $\sup S = \lambda$}
-	\step{b}{$\aleph_\lambda = \sup_{\alpha \in S} \aleph_\alpha$}
+	\step{b}{$\mathbf{T}(\lambda) = \sup_{\alpha \in S} \mathbf{T}(\alpha)$}
 	\begin{proof}
 		\pf\ Theorem \ref{thm:normalsup}.
 	\end{proof}
 \end{proof}
-\step{2}{$\cf \lambda \leq \cf \aleph_\lambda$}
+\step{2}{$\cf \lambda \leq \cf \mathbf{T}(\lambda)$}
 \begin{proof}
-	\step{a}{\pick\ a set $A$ of ordinals $< \aleph_\lambda$ such that $|A| = \cf \aleph_\lambda$ and $\sup A = \aleph_\lambda$}
-	\step{b}{\pflet{$B = \{ \gamma < \lambda \mid \exists \alpha \in A. |\alpha| = \aleph_\gamma \}$}}
-	\step{c}{$|B| \leq |A| = \cf \aleph_\lambda$ \prove{$\sup B = \lambda$}}
-	\step{d}{$\forall \alpha \in A. |\alpha| \leq \aleph_{\sup B}$}
-	\step{e}{$\forall \alpha \in A. \alpha < \aleph_{\sup B + 1}$}
-	\step{f}{$\aleph_\lambda = \sup A \leq \aleph_{\sup B + 1}$}
+	\step{a}{\pick\ a set $A$ of ordinals $< \mathbf{T}(\lambda)$ such that $|A| = \cf \mathbf{T}(\lambda)$ and $\sup A = \mathbf{T}(\lambda)$}
+	\step{b}{\pflet{$B = \{ \gamma < \lambda \mid \exists \alpha \in A. |\alpha| = \mathbf{T}(\gamma) \}$}}
+	\step{c}{$|B| \leq |A| = \cf \mathbf{T}(\lambda)$ \prove{$\sup B = \lambda$}}
+	\step{d}{$\forall \alpha \in A. |\alpha| \leq \mathbf{T}(\sup B)$}
+	\step{e}{$\forall \alpha \in A. \alpha < \mathbf{T}(\sup B + 1)$}
+	\step{f}{$\aleph_\lambda = \sup A \leq \mathbf{T}(\sup B + 1)$}
 	\step{g}{$\lambda \leq \sup B + 1$}
 	\step{h}{$\lambda \leq \sup B$}
 	\begin{proof}
