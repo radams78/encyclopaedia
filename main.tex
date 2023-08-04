@@ -9255,6 +9255,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector spaces over 
 \end{proof}
 
 \begin{prop}
+\label{prop:norm0lm}
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. If $x_1, \ldots, x_n \in V$ are linearly independent, then there exists $c > 0$ such that, for all $\alpha_1, \ldots, \alpha_n \in K$,
 \[ \| \alpha_1 x_1 + \cdots + \alpha_n x_n \| \geq c (|\alpha_1| + \cdots + |\alpha_n|) \enspace . \]
 \end{prop}
@@ -9278,6 +9279,69 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $
 \step{8}{$(\beta_1, \ldots, \beta_n) \in B$}
 \step{9}{$f(\beta_1, \ldots, \beta_n) \geq c$}
 \step{10}{$\| \alpha_1 x_1 + \cdots + \alpha_n x_n\| \geq c (|\alpha_1| + \cdots + |\alpha_n|)$}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a finite dimensional vector space over $K$. Then any two norms on $V$ are equivalent.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a basis $\{ e_1, \ldots, e_n \}$ for $V$}
+\step{2}{\pflet{$\|\ \|_0 : V \rightarrow \mathbb{R}$ be the function
+\[ \| \alpha_1 e_1 + \cdots + \alpha_n e_n \|_0 = |\alpha_1| + \cdots + |\alpha_n| \enspace . \]}}
+\step{3}{$\|\ \|_0$ is a norm.}
+\begin{proof}
+	\step{a}{$\forall x \in V. \| x \|_0 = 0 \Rightarrow x = 0$}
+	\begin{proof}
+		\pf\ If $|\alpha_1| + \cdots | \alpha_n| = 0$ then $\alpha_1 = \cdots = \alpha_n = 0$.
+	\end{proof}
+	\step{b}{$\forall \lambda \in K. \forall x \in V. \| \lambda x \| = |\lambda| \|x\|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \lambda (\alpha_1 e_1 + \cdots + \alpha_n e_n) \|_0 & = \| \lambda \alpha_1 e_1 + \cdots + \lambda \alpha_n e_n \|_0 \\
+			& = |\lambda \alpha_1| + \cdots + |\lambda \alpha_n| \\
+			& = |\lambda| (|\alpha_1| + \cdots + |\alpha_n|) \\
+			& = |\lambda| \| \alpha_1 e_1 + \cdots + \alpha_n e_n \|
+		\end{align*}
+	\end{proof}
+	\step{c}{The triangle inequality holds.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| (\alpha_1 e_1 + \cdots + \alpha_n e_n) + (\beta_1 e_1 + \cdots + \beta_n e_n) \|
+			& = \| (\alpha_1 + \beta_1) e_1 + \cdots + (\alpha_n + \beta_n) e_n \| \\
+			& = |\alpha_1 + \beta_1| + \cdots + |\alpha_n + \beta_n| \\
+			& \leq (|\alpha_1| + \cdots + |\alpha_n|) + (|\beta_1| + \cdots + |\beta_n|) \\
+			& = \| \alpha_1 e_1 + \cdots + \alpha_n e_n\|_0 + \| \beta_1 e_1 + \cdots + \beta_n e_n \|_0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{\pflet{$\|\ \|$ be any norm on $V$.} \prove{$\|\ \|$ is equivalent to $\|\ \|_0$.}}
+\step{5}{For all $\alpha_1, \ldots, \alpha_n \in K$,
+\[ \| \alpha_1 e_1 + \cdots + \alpha_n e_n \| \leq \max(\| e_1 \|, \ldots, \| e_n \|) (|\alpha_1| + \cdots | \alpha_n|) \]}
+\begin{proof}
+	\step{a}{\pflet{$\alpha_1, \ldots, \alpha_n \in K$}}
+	\step{b}{$\| \alpha_1 e_1 + \cdots + \alpha_n e_n \| \leq \max(\| e_1 \|, \ldots, \| e_n \|) (|\alpha_1| + \cdots | \alpha_n|)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \alpha_1 e_1 + \cdots + \alpha_n e_n \|
+			& \leq |\alpha_1| \| e_1 \| + \cdots + |\alpha_n| \|e_n\| \\
+			& \leq (|\alpha_1| + \cdots + |\alpha_n|) \max(\|e_1\|, \ldots, \|e_n\|) & \qed
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{6}{\pflet{$\beta = \max(\|e_1\|, \ldots, \|e_n\|)$}}
+\step{7}{For all $x \in V$,
+\[ \| x \| \leq \beta \| x \|_0 \enspace . \]}
+\step{8}{There exists $\alpha > 0$ such that, for all $x \in V$,
+\[ \alpha \| x \|_0 \leq \| x \| \enspace . \]}
+\begin{proof}
+	\pf\ Proposition \ref{prop:norm0lm}.
+\end{proof}
 \qed
 \end{proof}
 
