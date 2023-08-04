@@ -9254,4 +9254,31 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector spaces over 
 \qed
 \end{proof}
 
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. If $x_1, \ldots, x_n \in V$ are linearly independent, then there exists $c > 0$ such that, for all $\alpha_1, \ldots, \alpha_n \in K$,
+\[ \| \alpha_1 x_1 + \cdots + \alpha_n x_n \| \geq c (|\alpha_1| + \cdots + |\alpha_n|) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{2}{\pflet{$B = \{(\beta_1, \ldots, \beta_n) \in K^n \mid |\beta_1| + \cdots + |\beta_n| = 1\}$}}
+\step{1}{\pflet{$f : B \rightarrow \mathbb{R}$ be the function
+\[ f(\beta_1, \ldots, \beta_n) = \| \beta_1 x_1 + \cdots + \beta_n x_n \| \enspace . \]}}
+\step{3}{\pflet{$c$ be the minimum value in $f(B)$}}
+\begin{proof}
+	\pf\ $f$ is continuous and $B$ is compact.
+\end{proof}
+\step{4}{$c > 0$}
+\begin{proof}
+	\pf\ We never have $f(\beta_1, \ldots, \beta_n) = 0$ by linear independence.
+\end{proof}
+\step{5}{\pflet{$\alpha_1, \ldots, \alpha_n \in K$}}
+\step{6}{\assume{w.l.o.g. $\alpha_1$, \ldots, $\alpha_n$ are not all zero.}}
+\step{7}{For $i = 1, \ldots, n$, \pflet{$\beta_i = \alpha_i / (|\alpha_1| + \cdots + |\alpha_n|)$}}
+\step{8}{$(\beta_1, \ldots, \beta_n) \in B$}
+\step{9}{$f(\beta_1, \ldots, \beta_n) \geq c$}
+\step{10}{$\| \alpha_1 x_1 + \cdots + \alpha_n x_n\| \geq c (|\alpha_1| + \cdots + |\alpha_n|)$}
+\qed
+\end{proof}
+
 \end{document}
