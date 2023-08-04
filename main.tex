@@ -9086,4 +9086,67 @@ Then this defines a norm on $l^p$.
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{normed space} over $K$ consists of a vector space $V$ over $K$ and a norm on $V$.
 \end{df}
 
+We shall write simply:
+\begin{itemize}
+\item $K^n$ for the normed space $K^n$ under the Euclidean norm
+\item $\mathcal{C}(\Omega)$ for the normed space $\mathcal{C}(\Omega)$ under the norm $\| f \| = \max_{x \in \Omega} |f(x)|$
+\item $l^p$ for the normed space $l^p$ under the norm $\| (z_n) \| = \left( \sum_{n=0}^\infty |z_n|^p \right)^{1/p}$.
+\end{itemize}
+
+\begin{df}[Convergence]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. Let $(x_n)$ be a sequence in $V$ and $l \in V$. Then $x_n$ \emph{converges} to $l$, $x_n \rightarrow l$ as $n \rightarrow \infty$, iff for all $\epsilon > 0$ there exists $N$ such that, for all $n \geq N$, we have $\| x_n - l \| < \epsilon$.
+\end{df}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. Let $(x_n)$ be a sequence in $V$ and $l \in V$. Then $x_n \rightarrow l$ as $n \rightarrow \infty$ in $V$ if and only if $\| x_n - l \| \rightarrow 0$ as $n \rightarrow \infty$ in $\mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+A convergent sequence in a normed space has at most one limit.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$x_n \rightarrow l$ and $x_n \rightarrow m$ as $n \rightarrow \infty$}}
+\step{2}{$\| l - m \| = 0$}
+\begin{proof}
+	\step{a}{\pflet{$\epsilon > 0$} \prove{$\| l - m \| < \epsilon$}}
+	\step{b}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon / 2$ and $\forall n \geq N. \| x_n - m \| < \epsilon / 2$}
+	\step{c}{$\| l - m \| < \epsilon$}
+	\begin{proof}
+		\pf\ $\| l - m \| \leq \| x_N - l \| + \| x_N - m \| < \epsilon$
+	\end{proof}
+\end{proof}
+\step{3}{$l = m$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$.
+Let $V$ be a normed space over $K$. If $x_n \rightarrow l$ as $n \rightarrow \infty$ in $V$ and $\lambda_n \rightarrow \lambda$ as $n \rightarrow \infty$ in $K$, then $\lambda_n x_n \rightarrow \lambda l$ as $n \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{11}{\pflet{$K = |\lambda| + \epsilon / 2\|l\|$}}
+\step{2}{\pick\ $N$ such that, for all $n \geq N$, we have
+$|\lambda_n - \lambda| < \epsilon / 2 \|l\|$ and $\| x_n - l \| < \epsilon / (2K)$}
+\step{3}{For all $n \geq N$ we have $|\lambda_n| < K$}
+\step{3}{$\| \lambda_n x_n - \lambda l\| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| \lambda_n x_n - \lambda l \| & \leq \| \lambda_n x_n - \lambda_n l \| + \| \lambda_n l - \lambda l \| \\
+		& = |\lambda_n| \| x_n - l \| + | \lambda_n - \lambda | \|l\| \\
+		& < K \frac{\epsilon}{2K} + \frac{\epsilon}{2 \|l\|} \|l\| \\
+		& = \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
 \end{document}
