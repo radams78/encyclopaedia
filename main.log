@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  4 AUG 2023 13:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  4 AUG 2023 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,15 +535,15 @@ Overfull \hbox (3.13248pt too wide) detected at line 8733
 
 ]
 Chapter 17.
-[145] [146] [147] [148] (./main.aux)
+[145] [146] [147] [148] [149] [150] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 550F1517BEF930300C8B03510653D02E;11113.
  ) 
 Here is how much of TeX's memory you used:
- 9982 strings out of 476091
- 146775 string characters out of 5794082
+ 9998 strings out of 476091
+ 146925 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29490 multiletter control sequences out of 15000+600000
+ 29492 multiletter control sequences out of 15000+600000
  523017 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,541b,754s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -568,10 +568,10 @@ msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (148 pages, 628980 bytes).
+Output written on main.pdf (150 pages, 633470 bytes).
 PDF statistics:
- 2067 PDF objects out of 2073 (max. 8388607)
- 1736 compressed objects within 18 object streams
- 784 named destinations out of 1000 (max. 500000)
+ 2106 PDF objects out of 2487 (max. 8388607)
+ 1759 compressed objects within 18 object streams
+ 798 named destinations out of 1000 (max. 500000)
  673 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8780,6 +8780,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \end{proof}
 
 \begin{prop}
+\label{prop:zerotimes}
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. For any $x \in V$ we have $0x = 0$.
 \end{prop}
 
@@ -8977,11 +8978,112 @@ The dimension of $\mathbb{C}^n$ as a real vector space is $2n$.
 \begin{df}[Norm]
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$.
 A \emph{norm} on a vector space $V$ over $K$ is a function $\| \ \| : V \rightarrow \mathbb{R}$ such that:
-\begin{itemize}
+\begin{enumerate}
 \item $\forall x \in V. \| x \| = 0 \Rightarrow x = 0$
 \item $\forall \lambda \in K. \forall x \in V. \| \lambda x \| = |\lambda| \| x \|$
 \item \emph{Triangle Inequality} $\forall x,y \in V. \| x + y \| \leq \| x \| + \| y \|$
-\end{itemize}
+\end{enumerate}
+\end{df}
+
+\begin{prop}
+\label{prop:normzero}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $\|\ \|$ be a norm on $V$. Then
+\[ \| 0 \| = 0 \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\| 0 \| & = \| 0 \cdot 0 \| & (\text{Proposition \ref{prop:zerotimes}}) \\
+& = |0| \| 0 \| & (\text{Axiom 2 for a norm}) \\
+& = 0 & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $\|\ \|$ be a norm on $V$. Let $x \in V$. Then
+\[ \| x \| \geq 0 \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+0 & = \| 0 \| &  (\text{Proposition \ref{prop:normzero}}) \\
+& = \| x - x \| \\
+& \leq \| x \| + \| - x \| & (\text{Triangle Inequality}) \\
+& = \| x \| + \| x \| & (\text{Axiom 2 for a norm}) \\
+& = 2 \| x\| & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $\|\ \|$ be a norm on $V$. Let $x,y \in V$. Then
+\[ | \| x \| - \| y \| | \leq \| x - y \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\| x \| - \| y \| \leq \| x - y \|$}
+\begin{proof}
+	\pf\ $\|x\| \leq \| x - y \| + \|y \|$ by the Triangle Inequality.
+\end{proof}
+\step{2}{$\| y \| - \| x \| \leq \| x - y \|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| x \| + \| x - y \| & = \| x \| + \| y - x\| & (\text{Axiom 2 for a norm}) \\
+		& \leq \| y \| & (\text{Triangle Inequality})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Euclidean Norm]
+The \emph{Euclidean norm} on $\mathbb{C}^n$ is defined by
+\[ \| (z_1, \ldots, z_n) \| = \sqrt{|z_1|^2 + \cdots + |z_n|^2} \]
+\end{df}
+%TODO Prove this is a norm
+
+\begin{prop}
+Define $\|\ \| : \mathbb{C}^n \rightarrow \mathbb{R}$ by
+\[ \| (z_1, \ldots, z_n) \| = |z_1| + \cdots + |z_n| \]
+Then this defines a norm on $\mathbb{C}^n$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Define $\|\ \| : \mathbb{C}^n \rightarrow \mathbb{R}$ by
+\[ \| (z_1, \ldots, z_n) \| = \max(|z_1|, \ldots, |z_n|) \]
+Then this defines a norm on $\mathbb{C}^n$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\Omega$ be a closed bounded subset of $\mathbb{R}^n$. Define $\|\ \| : \mathcal{C}(\Omega) \rightarrow \mathbb{R}$ by $\| f \| = \max_{x \in \Omega} |f(x)|$. Then $\|\ \|$ defines a norm on $\mathcal{C}(\Omega)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $p$ be a real number, $p \geq 1$. Define $\|\ \| : l^p \rightarrow \mathbb{R}$ by
+\[ \| (z_n) \| = \left( \sum_{n=0}^\infty |z_n|^p \right)^{1/p} \enspace . \]
+Then this defines a norm on $l^p$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. The triangle inequality is Minkowski's Inequality. \qed
+\end{proof}
+
+\begin{df}[Normed Space]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{normed space} over $K$ consists of a vector space $V$ over $K$ and a norm on $V$.
 \end{df}
 
 \end{document}
