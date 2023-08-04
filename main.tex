@@ -8628,6 +8628,113 @@ There exists an uncountable set of circles in the plane that do not intersect.
 \pf\ The set of all circles with origin O is uncountable. \qed
 \end{proof}
 
+\chapter{Complex Analysis}
+
+\begin{thm}[H\"{o}lder's Inequality]
+Let $p$ and $q$ be real numbers with $p > 1$, $q > 1$ and $1/p + 1/q = 1$. If $(x_n) \in l^p$ and $(y_n) \in l^q$ then
+\[ \sum_{n=0}^\infty |x_n y_n| \leq \left( \sum_{n=0}^\infty  |x_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |y_n|^q \right)^{1/q} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p$ and $q$ be real numbers with $p > 1$ and $q > 1$}}
+\step{2}{\assume{$1/p + 1/q = 1$}}
+\step{3}{\pflet{$(x_n) \in l^p$}}
+\step{4}{\pflet{$(y_n) \in l^q$}}
+\step{5}{\assume{w.l.o.g. $x_0 \neq 0$ and $y_0 \neq 0$}}
+\step{6}{For all $x \in [0,1]$, we have
+\[ x^{1/p} \leq \frac{1}{p} x + \frac{1}{q} \enspace . \]}
+\begin{proof}
+	\pf
+	\step{a}{\pflet{$f : [0,1] \rightarrow \mathbb{R}$ be the function
+	\[ f(x) = \frac{1}{p} x + \frac{1}{q} - x^{1/p} \enspace . \]}}
+	\step{b}{$f'(x) = \frac{1}{p} - \frac{1}{p} x^{-1/q}$ for $x \in (0,1]$}
+	\step{c}{$f'(x) < 0$ for $x \in (0,1]$}
+	\step{d}{$f(1) = 1/p + 1/q - 1 = 0$}
+	\step{e}{$f(x) \geq 0$ for all $x \in [0,1]$}
+\end{proof}
+\step{7}{For all non-negative reals $a$ and $b$, we have
+\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q} \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$a$ and $b$ be non-negative reals.}}
+	\step{b}{\case{$a^p \leq b^q$}}
+	\begin{proof}
+		\step{i}{$0 \leq a^p / b^q \leq 1$}
+		\step{ii}{\[ ab^{-q/p} \leq \frac{1}{p} \frac{a^p}{b^q} + \frac{1}{q} \]}
+		\begin{proof}
+			\pf\ Taking $x = a^p / b^q$ in \stepref{6}.
+		\end{proof}
+		\step{iii}{\[ ab^{1-q} \leq \frac{1}{p} \frac{a^p}{b^q} + \frac{1}{q} \]}
+		\begin{proof}
+			\pf\ $-q/p = 1 - q$ from \stepref{2}.
+		\end{proof}
+		\step{iv}{\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q} \]}
+	\end{proof}
+	\step{c}{\case{$b^q \leq a^p$}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{8}{For $j = 1, \ldots, n$, we have
+\[ \frac{|x_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p}}
+\frac{|y_j|}{\left( \sum_{k=0}^n |y_k|^q \right)^{1/q}}
+\leq
+\frac{1}{p} \frac{|x_j|^p}{\sum_{k=0}^n |x_k|^p} + \frac{1}{q} \frac{|y_j|^q}{\sum_{k=0}^n |y_k|^q} \]}
+\begin{proof}
+	\pf\ From \stepref{7} with
+	\[ a = \frac{|x_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p}} \text{ and } b = \frac{|y_j|}{\left( \sum_{k=0}^n |y_k|^q \right)^{1/q}} \enspace . \]
+\end{proof}
+\step{9}{
+\[ \frac{\sum_{j=0}^n |x_j||y_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p} \left( \sum_{k=0}^n |y_k|^q \right)^{1/q}}
+\leq 1 \]}
+\begin{proof}
+	\pf
+	\begin{align*}
+	\frac{\sum_{j=0}^n |x_j||y_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p} \left( \sum_{k=0}^n |y_k|^q \right)^{1/q}}
+	& \leq \frac{1}{p} + \frac{1}{q} & (\text{Taking the sum $j = 0$ to $n$ in \stepref{8}}) \\
+	& = 1 & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Taking the limit $n \rightarrow \infty$ in \stepref{9}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Minkowski's Inequality]
+Let $p$ be a real number, $p \geq 1$. Let $(x_n), (y_n) \in l^p$. Then
+\[ \left( \sum_{n=1}^\infty |x_n + y_n|^p \right)^{1/p} \leq \left( \sum_{n=1}^\infty |x_n|^p \right)^{1/p} + \left( \sum_{n=1}^\infty |y_n|^p \right)^{1/p} \]
+\end{thm}
+%TODO Prove this
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p$ be a real number with $p \geq 1$}}
+\step{2}{\assume{w.l.o.g. $p > 1$}}
+\begin{proof}
+	\pf\ The case $p=1$ is just the Triangle Inequality.
+\end{proof}
+\step{3}{\pflet{$q$ be the real such that $1/p + 1/q = 1$}}
+\step{4}{\begin{align*}
+\sum_{n=0}^\infty |x_n + y_n|^p & \leq \left( \sum_{n=0}^\infty |x_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \\ & + \left( \sum_{n=0}^\infty |y_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \end{align*}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\sum_{n=0}^\infty |x_n + y_n|^p
+		& = \sum_{n=0}^\infty |x_n + y_n| |x_n + y_n|^{p-1} \\
+		& \leq \sum_{n=0}^\infty |x_n| |x_n + y_n|^{p-1} + 
+		\sum_{n=0}^\infty |y_n| |x_n + y_n|^{p-1} & (\text{Triangle Inequality}) \\
+		& \leq \left( \sum_{n=0}^\infty |x_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \\
+		& + \left( \sum_{n=0}^\infty |y_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} & (\text{H\"{o}lder's Inequality})
+	\end{align*}
+	%TODO Fallacy: We do not know that $((x_n + y_n)^{p-1}) \in l^q$
+\end{proof}
+\step{5}{\[ \sum_{n=0}^\infty |x_n + y_n|^p \leq \left\{ \left( \sum_{n=0}^\infty |x_n|^p \right)^{1/p} + \left( \sum_{n=0}^\infty |y_n|^p \right)^{1/p} \right\} \left( \sum_{n=0}^\infty |x_n + y_n|^{p} \right)^{1/q}\]}
+\qedstep
+\qed
+\end{proof}
+
 \chapter{Linear Algebra}
 
 \section{Vector Spaces}
@@ -8794,111 +8901,6 @@ The space of all convergent sequences in $\mathbb{C}$ is a subspace of the space
 Let $p$ be a real number, $p \geq 1$. Let $l^p$ be the set of all complex sequences $(z_n)$ such that $\sum_{n=1}^\infty |z_n|^p < \infty$.
 \end{df}
 
-\begin{thm}[H\"{o}lder's Inequality]
-Let $p$ and $q$ be real numbers with $p > 1$, $q > 1$ and $1/p + 1/q = 1$. If $(x_n) \in l^p$ and $(y_n) \in l^q$ then
-\[ \sum_{n=0}^\infty |x_n y_n| \leq \left( \sum_{n=0}^\infty  |x_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |y_n|^q \right)^{1/q} \]
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$p$ and $q$ be real numbers with $p > 1$ and $q > 1$}}
-\step{2}{\assume{$1/p + 1/q = 1$}}
-\step{3}{\pflet{$(x_n) \in l^p$}}
-\step{4}{\pflet{$(y_n) \in l^q$}}
-\step{5}{\assume{w.l.o.g. $x_0 \neq 0$ and $y_0 \neq 0$}}
-\step{6}{For all $x \in [0,1]$, we have
-\[ x^{1/p} \leq \frac{1}{p} x + \frac{1}{q} \enspace . \]}
-\begin{proof}
-	\pf
-	\step{a}{\pflet{$f : [0,1] \rightarrow \mathbb{R}$ be the function
-	\[ f(x) = \frac{1}{p} x + \frac{1}{q} - x^{1/p} \enspace . \]}}
-	\step{b}{$f'(x) = \frac{1}{p} - \frac{1}{p} x^{-1/q}$ for $x \in (0,1]$}
-	\step{c}{$f'(x) < 0$ for $x \in (0,1]$}
-	\step{d}{$f(1) = 1/p + 1/q - 1 = 0$}
-	\step{e}{$f(x) \geq 0$ for all $x \in [0,1]$}
-\end{proof}
-\step{7}{For all non-negative reals $a$ and $b$, we have
-\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q} \enspace . \]}
-\begin{proof}
-	\step{a}{\pflet{$a$ and $b$ be non-negative reals.}}
-	\step{b}{\case{$a^p \leq b^q$}}
-	\begin{proof}
-		\step{i}{$0 \leq a^p / b^q \leq 1$}
-		\step{ii}{\[ ab^{-q/p} \leq \frac{1}{p} \frac{a^p}{b^q} + \frac{1}{q} \]}
-		\begin{proof}
-			\pf\ Taking $x = a^p / b^q$ in \stepref{6}.
-		\end{proof}
-		\step{iii}{\[ ab^{1-q} \leq \frac{1}{p} \frac{a^p}{b^q} + \frac{1}{q} \]}
-		\begin{proof}
-			\pf\ $-q/p = 1 - q$ from \stepref{2}.
-		\end{proof}
-		\step{iv}{\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q} \]}
-	\end{proof}
-	\step{c}{\case{$b^q \leq a^p$}}
-	\begin{proof}
-		\pf\ Similar.
-	\end{proof}
-\end{proof}
-\step{8}{For $j = 1, \ldots, n$, we have
-\[ \frac{|x_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p}}
-\frac{|y_j|}{\left( \sum_{k=0}^n |y_k|^q \right)^{1/q}}
-\leq
-\frac{1}{p} \frac{|x_j|^p}{\sum_{k=0}^n |x_k|^p} + \frac{1}{q} \frac{|y_j|^q}{\sum_{k=0}^n |y_k|^q} \]}
-\begin{proof}
-	\pf\ From \stepref{7} with
-	\[ a = \frac{|x_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p}} \text{ and } b = \frac{|y_j|}{\left( \sum_{k=0}^n |y_k|^q \right)^{1/q}} \enspace . \]
-\end{proof}
-\step{9}{
-\[ \frac{\sum_{j=0}^n |x_j||y_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p} \left( \sum_{k=0}^n |y_k|^q \right)^{1/q}}
-\leq 1 \]}
-\begin{proof}
-	\pf
-	\begin{align*}
-	\frac{\sum_{j=0}^n |x_j||y_j|}{\left( \sum_{k=0}^n |x_k|^p \right)^{1/p} \left( \sum_{k=0}^n |y_k|^q \right)^{1/q}}
-	& \leq \frac{1}{p} + \frac{1}{q} & (\text{Taking the sum $j = 0$ to $n$ in \stepref{8}}) \\
-	& = 1 & (\text{\stepref{2}})
-	\end{align*}
-\end{proof}
-\qedstep
-\begin{proof}
-	\pf\ Taking the limit $n \rightarrow \infty$ in \stepref{9}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{thm}[Minkowski's Inequality]
-Let $p$ be a real number, $p \geq 1$. Let $(x_n), (y_n) \in l^p$. Then
-\[ \left( \sum_{n=1}^\infty |x_n + y_n|^p \right)^{1/p} \leq \left( \sum_{n=1}^\infty |x_n|^p \right)^{1/p} + \left( \sum_{n=1}^\infty |y_n|^p \right)^{1/p} \]
-\end{thm}
-%TODO Prove this
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$p$ be a real number with $p \geq 1$}}
-\step{2}{\assume{w.l.o.g. $p > 1$}}
-\begin{proof}
-	\pf\ The case $p=1$ is just the Triangle Inequality.
-\end{proof}
-\step{3}{\pflet{$q$ be the real such that $1/p + 1/q = 1$}}
-\step{4}{\begin{align*}
-\sum_{n=0}^\infty |x_n + y_n|^p & \leq \left( \sum_{n=0}^\infty |x_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \\ & + \left( \sum_{n=0}^\infty |y_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \end{align*}}
-\begin{proof}
-	\pf
-	\begin{align*}
-		\sum_{n=0}^\infty |x_n + y_n|^p
-		& = \sum_{n=0}^\infty |x_n + y_n| |x_n + y_n|^{p-1} \\
-		& \leq \sum_{n=0}^\infty |x_n| |x_n + y_n|^{p-1} + 
-		\sum_{n=0}^\infty |y_n| |x_n + y_n|^{p-1} & (\text{Triangle Inequality}) \\
-		& \leq \left( \sum_{n=0}^\infty |x_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} \\
-		& + \left( \sum_{n=0}^\infty |y_n|^p \right)^{1/p} \left( \sum_{n=0}^\infty |x_n + y_n|^{q(p-1)} \right)^{1/q} & (\text{H\"{o}lder's Inequality})
-	\end{align*}
-	%TODO Fallacy: We do not know that $((x_n + y_n)^{p-1}) \in l^q$
-\end{proof}
-\step{5}{\[ \sum_{n=0}^\infty |x_n + y_n|^p \leq \left\{ \left( \sum_{n=0}^\infty |x_n|^p \right)^{1/p} + \left( \sum_{n=0}^\infty |y_n|^p \right)^{1/p} \right\} \left( \sum_{n=0}^\infty |x_n + y_n|^{p} \right)^{1/q}\]}
-\qedstep
-\qed
-\end{proof}
-
 \begin{prop}
 For $p$ a real number $\geq 1$, we have that $l^p$ is a subspace of $\mathbb{C}^\mathbb{N}$.
 \end{prop}
@@ -8916,4 +8918,70 @@ For $p$ a real number $\geq 1$, we have that $l^p$ is a subspace of $\mathbb{C}^
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Linear Combination]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x, x_1, \ldots, x_n \in V$. Then $x$ is a \emph{linear combination} of $x_1$, \ldots, $x_n$ iff there exist $\alpha_1, \ldots, \alpha_n \in K$ such that
+\[ x = \alpha_1 x_1 + \cdots + \alpha_n x_n \enspace . \]
+\end{df}
+
+\begin{df}[Linearly Independent]
+A finite set of vectors $\{x_1, \ldots, x_n\}$ is \emph{linearly independent} iff, whenever $\alpha_1 x_1 + \cdots + \alpha_n x_n = 0$, then $\alpha_1 = \cdots = \alpha_n = 0$.
+
+A set of vectors is \emph{linearly independent} iff every finite subset is linearly independent; otherwise, it is \emph{linearly dependent}.
+\end{df}
+
+\begin{df}[Span]
+Let $\mathcal{A}$ be a set of vectors. The \emph{span} of $\mathcal{A}$, $\spn \mathcal{A}$, is the set of all linear combinations of elements of $\mathcal{A}$.
+\end{df}
+
+\begin{prop}
+$\spn \mathcal{A}$ is the smallest subspace of $V$ that includes $\mathcal{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Basis]
+A \emph{basis} for $V$ is a linearly independent set of vectors $\mathcal{B}$ such that $\spn \mathcal{B} = V$.
+\end{df}
+
+\begin{df}[Finite Dimensional]
+A vector space is \emph{finite dimensional} iff it has a finite basis; otherwise it is \emph{infinite dimensional}.
+\end{df}
+
+\begin{prop}
+In a finite dimensional vector space, any two bases have the same number of elements.
+\end{prop}
+
+%TODO Prove this
+
+\begin{df}[Dimension]
+The \emph{dimension} of a finite dimensional vector space $V$, $\dim V$, is the number of elements in any basis.
+\end{df}
+
+\begin{prop}
+\[ \dim K^n = n \]
+\end{prop}
+
+\begin{proof}
+\pf\ The standard basis is the set of vectors with one coordinate 1 and all others 0. \qed
+\end{proof}
+
+\begin{prop}
+The dimension of $\mathbb{C}^n$ as a real vector space is $2n$.
+\end{prop}
+
+\section{Normed Spaces}
+
+\begin{df}[Norm]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$.
+A \emph{norm} on a vector space $V$ over $K$ is a function $\| \ \| : V \rightarrow \mathbb{R}$ such that:
+\begin{itemize}
+\item $\forall x \in V. \| x \| = 0 \Rightarrow x = 0$
+\item $\forall \lambda \in K. \forall x \in V. \| \lambda x \| = |\lambda| \| x \|$
+\item $\forall x,y \in V. \| x + y \| \leq \| x \| + \| y \|$
+\end{itemize}
+\end{df}
+
 \end{document}
