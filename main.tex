@@ -9089,7 +9089,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{normed space} over $K$ c
 We shall write simply:
 \begin{itemize}
 \item $K^n$ for the normed space $K^n$ under the Euclidean norm
-\item $\mathcal{C}(\Omega)$ for the normed space $\mathcal{C}(\Omega)$ under the norm $\| f \| = \max_{x \in \Omega} |f(x)|$
+\item $\mathcal{C}(\Omega)$ for the normed space $\mathcal{C}(\Omega)$ under the norm $\| f \| = \max_{x \in \Omega} |f(x)|$, called the \emph{uniform convergence norm}
 \item $l^p$ for the normed space $l^p$ under the norm $\| (z_n) \| = \left( \sum_{n=0}^\infty |z_n|^p \right)^{1/p}$.
 \end{itemize}
 
@@ -9149,4 +9149,29 @@ $|\lambda_n - \lambda| < \epsilon / 2 \|l\|$ and $\| x_n - l \| < \epsilon / (2K
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+In a normed space, if $x_n \rightarrow l$ and $y_n \rightarrow m$ then $x_n + y_n \rightarrow l + m$
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\| (x_n + y_n) - (l + m) \| & \leq \| x_n - l \| + \| y_n - m \| \\
+& \rightarrow 0 & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Uniform Convergence]
+Let $\Omega$ be a closed bounded set in $\mathbb{R}^n$. Let $(f_n)$ be a sequence in $\mathcal{C}(\Omega)$ and $f \in \mathcal{C}(\Omega)$. Then $(f_n)$ \emph{converges uniformly} to $f$ if and only if, for every $\epsilon > 0$, there exists $N$ such that $\forall x \in \Omega. \forall n \geq N. |f_n(x) - f(x)| < \epsilon$.
+\end{df}
+
+\begin{prop}
+$(f_n)$ converges uniformly to $f$ iff $(f_n)$ converges to $f$ under the uniform convergence norm.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \end{document}
