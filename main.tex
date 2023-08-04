@@ -9174,4 +9174,84 @@ $(f_n)$ converges uniformly to $f$ iff $(f_n)$ converges to $f$ under the unifor
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+There is no norm on $\mathcal{C}([0,1])$ that induces pointwise convergence.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\|\ \|$ be any norm on $\mathcal{C}([0,1])$}}
+\step{2}{For $n \in \mathbb{N}$, define $g_n \in \mathcal{C}([0,1])$ by
+\[ g_n(t) = \begin{cases}
+2^n t & \text{if } 0 \leq t \leq 2^{-n} \\
+2 - 2^n t & \text{if } 2^{-n} \leq t \leq 2^{1-n} \\
+0 & \text{otherwise}
+\end{cases} \]}
+\step{3}{For all $n \in \mathbb{N}$ we have $\|g_n\| \neq 0$}
+\step{4}{For $n \in \mathbb{N}$, \pflet{$f_n = g_n / \| g_n \|$}}
+\step{5}{For all $n \in \mathbb{N}$, $\| f_n \| = 1$}
+\step{55}{$f_n$ does not converge to 0}
+\step{6}{$f_n \rightarrow 0$ as $n \rightarrow \infty$ pointwise.}
+\qed
+\end{proof}
+
+\begin{df}[Equivalent Norms]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector spaces over $K$. Then two norms $\|\ \|_1$ and $\|\ \|_2$ are \emph{equivalent} if and only if, for any sequence $(x_n)$ in $V$ and $l \in V$, we have $x_n \rightarrow l$ under $\|\ \|_1$ if and only if $x_n \rightarrow l$ under $\|\ \|_2$.
+\end{df}
+
+\begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector spaces over $K$. Let $\|\ \|_1$ and $\|\ \|_2$ be norms on $V$. Then $\|\ \|_1$ and $\|\ \|_2$ are equivalent if and only if there exist positive reals $\alpha$ and $\beta$ such that, for all $x \in V$,
+\begin{equation}
+\label{eq:eqnorm}
+ \alpha \| x \|_1 \leq \| x \|_2 \leq \beta \| x \|_1
+ \end{equation}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\|\ \|_1$ and $\|\ \|_2$ are equivalent then (\ref{eq:eqnorm}) holds.}
+\begin{proof}
+	\step{a}{\assume{$\|\ \|_1$ and $\|\ \|_2$ are equivalent.}}
+	\step{b}{There exists $\alpha > 0$ such that, for all $x \in V$, we have $\alpha \|x\|_1 \leq \| x \|_2$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $\forall \alpha > 0. \exists x \in V. \alpha \|x\|_1 > \|x\|_2$}}
+		\step{ii}{For $n \in \mathbb{Z}^+$, choose $x_n \in V$ such that $1/n \|x_n\|_1 > \|x_n\|_2$}
+		\step{iii}{For $n \in \mathbb{Z}^+$, \pflet{
+		\[ y_n = \frac{1}{\sqrt{n}} \frac{x_n}{\|x_n\|_2} \]}}
+		\step{iv}{$\|y_n\|_2 \rightarrow 0$ as $n \rightarrow \infty$}
+		\step{v}{For all $n \in \mathbb{Z}^+$, $\|y_n\|_1 > \sqrt{n}$}
+		\step{vi}{$\|y_n\| \not\rightarrow 0$ as $n \rightarrow \infty$}
+	\end{proof}
+	\step{c}{There exists $\beta > 0$ such that, for all $x \in V$, we have $\|x\|_2 \leq \beta \| x \|_1$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{2}{If (\ref{eq:eqnorm}) holds then $\|\ \|_1$ and $\|\ \|_2$ are equivalent.}
+\begin{proof}
+	\step{a}{\assume{(\ref{eq:eqnorm}) holds.}}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $V$ and $l \in V$}}
+	\step{c}{If $x_n \rightarrow l$ under $\|\ \|_1$ then $x_n \rightarrow l$ under $\|\ \|_2$.}
+	\begin{proof}
+		\step{i}{\assume{$x_n \rightarrow l$ und $\|\ \|_1$.}}
+		\step{ii}{\pflet{$\epsilon > 0$}}
+		\step{iii}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon / \beta$}
+		\step{iv}{\pflet{$n \geq N$}}
+		\step{v}{$\|x_n - l\|_2 < \epsilon$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\|x_n - l\|_2 & \leq \beta \| x_n - l\|_1 \\
+				& < \epsilon
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{d}{If $x_n \rightarrow l$ under $\|\ \|_2$ then $x_n \rightarrow l$ under $\|\ \|_1$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
