@@ -8636,6 +8636,12 @@ Let $a,b \in \mathbb{R}$ with $a < b$. Let $f : [a,b] \rightarrow \mathbb{R}$ be
 
 %TODO Prove this
 
+\begin{thm}[Bolzano-Weierstrass]
+Every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence.
+\end{thm}
+%TODO Prove this
+%TODO Complex version
+
 \chapter{Complex Analysis}
 
 \begin{thm}[H\"{o}lder's Inequality]
@@ -9453,6 +9459,7 @@ Let $V$ be a normed space and $A \subseteq V$. The \emph{closure} of $A$, $\cl A
 \end{df}
 
 \begin{thm}
+\label{thm:closureaslimits}
 Let $V$ be a normed space and $S \subseteq V$. Then the closure of $S$ is the set of all limits of convergent sequences in $S$.
 \end{thm}
 
@@ -9491,6 +9498,135 @@ In $\mathcal{C}([a,b])$, the set of polynomials is dense.
 
 \begin{proof}
 \pf\ By the Weierstrass Theorem. \qed
+\end{proof}
+
+\begin{prop}
+For any real $p \geq 1$, the set of all sequences with only finitely many non-zero terms is dense in $l^p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p \geq 1$}}
+\step{2}{\pflet{$(z_n) \in l^p$}}
+\step{3}{\pflet{$\epsilon > 0$}}
+\step{4}{\pick\ $N$ such that $\forall n \geq N. |z_n| < \epsilon / 2$}
+\step{5}{\pflet{$(y_n)$ be the sequence with $y_n = z_n$ for $n < N$, and $y_n = 0$ for $n \geq N$}}
+\step{6}{$\| (z_n) - (y_n) \| \leq \epsilon / 2$}
+\step{7}{$\| (z_n) - (y_n) \| < \epsilon$}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $V$ be a normed space. Let $S \subseteq V$. Then the following are equivalent:
+\begin{enumerate}
+\item $S$ is dense.
+\item For all $x \in V$, there exists a sequence $(x_n)$ in $S$ such that $x_n \rightarrow x$.
+\item Every nonempty open subset of $V$ intersects $S$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Leftrightarrow 2$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:closureaslimits}.
+\end{proof}
+\step{2}{$1 \Leftrightarrow 3$}
+\begin{proof}
+	\pf
+	\begin{align*}
+	S \text{ is dense} & \Leftrightarrow \text{the only closed set that includes $S$ is $V$} \\
+	& \Leftrightarrow \text{the only open set that does not intersect $S$ is empty}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Compact]
+Let $V$ be a normed space and $S \subseteq V$. Then $S$ is \emph{compact} if and only if every sequence in $S$ has a subsequence that converges to a limit in $S$.
+\end{df}
+
+\begin{prop}
+\label{prop:compactclosed}
+Every compact set is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$V$ be a normed space.}}
+\step{1}{\pflet{$C \subseteq V$ be compact.}}
+\step{2}{\pflet{$(x_n)$ be a sequence in $C$ that converges to $l \in V$.}}
+\step{3}{\pick\ a subsequence $(y_n)$ of $(x_n)$ that converges to $m \in C$.}
+\step{4}{$l = m$}
+\step{5}{$l \in C$}
+\qedstep
+\begin{proof}
+	\pf\ Proposition \ref{prop:closedconverge}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Bounded]
+Let $V$ be a normed space and $S \subseteq V$. Then $S$ is \emph{bounded} iff there exists $r > 0$ such that $S \subseteq B(0,r)$.
+\end{df}
+
+\begin{prop}
+In $\mathbb{R}^n$ and $\mathbb{C}^n$, the compact sets are the closed bounded sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C \subseteq K^n$}}
+\step{2}{If $C$ is compact then $C$ is closed.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:compactclosed}.
+\end{proof}
+\step{3}{If $C$ is compact then $C$ is bounded.}
+\begin{proof}
+	\step{a}{\assume{$C$ is compact.}}
+	\step{b}{\assume{for a contradiction $C$ is not bounded.}}
+	\step{c}{For $n \in \mathbb{N}$, \pick\ $x_n \in C$ with $\| x_n \| > n + 1$.}
+	\step{d}{\pick\ a convergent subsequence $(x_{n_r})$ that converges to $l \in C$}
+	\step{e}{$\| x_{n_r} \| \rightarrow \| l \|$}
+	\step{f}{$\| x_{n_r} \| \rightarrow + \infty$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{4}{If $C$ is closed and bounded then $C$ is compact.}
+\begin{proof}
+	\pf\ By the Bolzano-Weierstrass Theorem.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $V$ be a normed space and $S \subseteq V$. Then $S$ is bounded if and only if, for every sequence $(x_n)$ in $S$ and every sequence $(\lambda_n)$ in $K$, if $\lambda_n \rightarrow 0$ then $\| \lambda_n x_n \| \rightarrow 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $S$ is bounded then, for every sequence $(x_n)$ in $S$ and every sequence $(\lambda_n)$ in $K$, if $\lambda_n \rightarrow 0$ then $\| \lambda_n x_n \| \rightarrow 0$.}
+\begin{proof}
+	\step{a}{\assume{$S$ is bounded.}}
+	\step{aa}{\pick\ $r > 0$ such that $S \subseteq B(0,r)$.}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $S$.}}
+	\step{c}{\pflet{$(\lambda_n)$ be a sequence in $K$.}}
+	\step{d}{\assume{$\lambda_n \rightarrow 0$}}
+	\step{e}{\pflet{$\epsilon > 0$}}
+	\step{f}{\pick\ $N$ such that $\forall n \geq N. |\lambda_n| < \epsilon / r$}
+	\step{g}{$\forall n \geq N. \| \lambda_n x_n \| < \epsilon$}
+\end{proof}
+\step{2}{If $S$ is unbounded then there exists a sequence $(x_n)$ in $S$ and $(\lambda_n)$ in $K$ such that $\lambda_n \rightarrow 0$ and $\| \lambda_n x_n \| \not\rightarrow 0$.}
+\begin{proof}
+	\step{a}{$S$ is unbounded.}
+	\step{b}{For $n \in \mathbb{N}$, \pick\ $x_n \in S$ such that $\| x_n \| > n$.}
+	\step{c}{For $n \in \mathbb{N}$, \pflet{$\lambda_n = 1/n$ if $n > 0$, $1$ if $n = 0$}}
+	\step{d}{$\lambda_n \rightarrow 0$}
+	\step{e}{$\| \lambda_n x_n \| > 1$ for all $n > 1$}
+\end{proof}
+\qed
 \end{proof}
 
 \end{document}
