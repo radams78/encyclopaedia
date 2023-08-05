@@ -8628,6 +8628,14 @@ There exists an uncountable set of circles in the plane that do not intersect.
 \pf\ The set of all circles with origin O is uncountable. \qed
 \end{proof}
 
+\chapter{Real Analysis}
+
+\begin{thm}[Weierstrass]
+Let $a,b \in \mathbb{R}$ with $a < b$. Let $f : [a,b] \rightarrow \mathbb{R}$ be continuous. For every $\epsilon > 0$, there exists a polynomial $p$ such that $\forall x \in [a,b]. |f(x) - p(x)| < \epsilon$.
+\end{thm}
+
+%TODO Prove this
+
 \chapter{Complex Analysis}
 
 \begin{thm}[H\"{o}lder's Inequality]
@@ -8986,6 +8994,16 @@ A \emph{norm} on a vector space $V$ over $K$ is a function $\| \ \| : V \rightar
 \end{df}
 
 \begin{prop}
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. Define $d : V^2 \rightarrow \mathbb{R}$ by $d(x,y) = \| x-y \|$. Then $d$ is a metric on $V$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+We identify any normed space $V$ with this metric space.
+
+\begin{prop}
 \label{prop:normzero}
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $\|\ \|$ be a norm on $V$. Then
 \[ \| 0 \| = 0 \enspace . \]
@@ -9092,38 +9110,6 @@ We shall write simply:
 \item $\mathcal{C}(\Omega)$ for the normed space $\mathcal{C}(\Omega)$ under the norm $\| f \| = \max_{x \in \Omega} |f(x)|$, called the \emph{uniform convergence norm}
 \item $l^p$ for the normed space $l^p$ under the norm $\| (z_n) \| = \left( \sum_{n=0}^\infty |z_n|^p \right)^{1/p}$.
 \end{itemize}
-
-\begin{df}[Convergence]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. Let $(x_n)$ be a sequence in $V$ and $l \in V$. Then $x_n$ \emph{converges} to $l$, $x_n \rightarrow l$ as $n \rightarrow \infty$, iff for all $\epsilon > 0$ there exists $N$ such that, for all $n \geq N$, we have $\| x_n - l \| < \epsilon$.
-\end{df}
-
-\begin{prop}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. Let $(x_n)$ be a sequence in $V$ and $l \in V$. Then $x_n \rightarrow l$ as $n \rightarrow \infty$ in $V$ if and only if $\| x_n - l \| \rightarrow 0$ as $n \rightarrow \infty$ in $\mathbb{R}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Immediate from definitions. \qed
-\end{proof}
-
-\begin{prop}
-A convergent sequence in a normed space has at most one limit.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$x_n \rightarrow l$ and $x_n \rightarrow m$ as $n \rightarrow \infty$}}
-\step{2}{$\| l - m \| = 0$}
-\begin{proof}
-	\step{a}{\pflet{$\epsilon > 0$} \prove{$\| l - m \| < \epsilon$}}
-	\step{b}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon / 2$ and $\forall n \geq N. \| x_n - m \| < \epsilon / 2$}
-	\step{c}{$\| l - m \| < \epsilon$}
-	\begin{proof}
-		\pf\ $\| l - m \| \leq \| x_N - l \| + \| x_N - m \| < \epsilon$
-	\end{proof}
-\end{proof}
-\step{3}{$l = m$}
-\qed
-\end{proof}
 
 \begin{prop}
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$.
@@ -9343,6 +9329,168 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a finite dimensional 
 	\pf\ Proposition \ref{prop:norm0lm}.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{df}[Open Ball]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x \in V$ and let $r$ be a positive real number. The \emph{open ball} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ B(x,r) := \{ y \in V \mid \| x - y \| < r \} \enspace . \]
+\end{df}
+
+\begin{df}[Closed Ball]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x \in V$ and let $r$ be a positive real number. The \emph{closed ball} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ \overline{B(x,r)} := \{ y \in V \mid \| x - y \| \leq r \} \enspace . \]
+\end{df}
+
+\begin{df}[Sphere]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x \in V$ and let $r$ be a positive real number. The \emph{sphere} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ S(x,r) := \{ y \in V \mid \| x - y \| = r \} \enspace . \]
+\end{df}
+
+\begin{df}[Open]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $U \subseteq V$. Then $U$ is \emph{open} iff, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x,\epsilon) \subseteq U$.
+\end{df}
+
+\begin{prop}
+Every open ball is open.
+\end{prop}
+
+\begin{thm}
+The union of a set of open sets is open.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{U}$ be a set of open sets.}}
+\step{2}{\pflet{$x \in \bigcup \mathcal{U}$}}
+\step{3}{\pick\ $U \in \mathcal{U}$ such that $x \in U$.}
+\step{4}{\pick\ $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$}
+\step{5}{$B(x, \epsilon) \subseteq \bigcup \mathcal{U}$}
+\qed
+\end{proof}
+
+\begin{thm}
+The intersection of two open sets is open.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ and $V$ be open.}}
+\step{2}{\pflet{$x \in U \cap V$}}
+\step{3}{\pick\ $\delta > 0$ such that $B(x, \delta) \subseteq U$ and $\epsilon > 0$ such that $B(x, \epsilon) \subseteq V$.}
+\step{4}{\assume{w.l.o.g. $\delta \leq \epsilon$}}
+\step{5}{$B(x,\delta) \subseteq U \cap V$}
+\qed
+\end{proof}
+
+\begin{prop}
+In a normed space $V$, both $\emptyset$ and $V$ are open.
+\end{prop}
+
+\begin{df}[Closed]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $C \subseteq V$. Then $C$ is \emph{closed} iff $V - C$ is open.
+\end{df}
+
+\begin{prop}
+Every closed ball is closed.
+\end{prop}
+
+\begin{prop}
+Every sphere is closed.
+\end{prop}
+
+\begin{prop}
+The union of two closed sets is closed.
+\end{prop}
+
+\begin{prop}
+The intersection of a nonempty set of closed sets is closed.
+\end{prop}
+
+\begin{prop}
+In a normed space $V$, both $\emptyset$ and $V$ are closed.
+\end{prop}
+
+\begin{prop}
+\label{prop:closedconverge}
+Let $V$ be a normed space and $C \subseteq V$. Then $C$ is closed iff, for every sequence $(x_n)$ in $C$ and $l \in V$, if $x_n \rightarrow l$ then $l \in C$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $C$ is closed then, for every sequence $(x_n)$ in $C$ and $l \in V$, if $x_n \rightarrow l$ then $l \in C$.}
+\begin{proof}
+	\step{a}{\assume{$C$ is closed.}}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $C$.}}
+	\step{c}{\pflet{$l \in V$}}
+	\step{d}{\assume{$x_n \rightarrow l$ as $n \rightarrow \infty$}}
+	\step{e}{\assume{for a contradiction $l \notin C$}}
+	\step{f}{\pick\ $\epsilon > 0$ such that $B(l,\epsilon) \subseteq V - C$}
+	\step{g}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon$}
+	\step{h}{$x_N \in C$}
+	\step{i}{$\| x_N - l \| < \epsilon$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{2}{If, for every sequence $(x_n)$ in $C$ and $l \in V$, if $x_n \rightarrow l$ then $l \in C$, then $C$ is closed.}
+\begin{proof}
+	\step{a}{\assume{for every sequence $(x_n)$ in $C$ and $l \in V$, if $x_n \rightarrow l$ then $l \in C$.}}
+	\step{b}{\pflet{$x \in V - C$}}
+	\step{c}{\assume{for a contradiction there is no $\epsilon > 0$ such that $B(x,\epsilon) \subseteq V - C$}}
+	\step{d}{For $n \in \mathbb{Z}^+$, \pick\ $x_n \in B(x,\epsilon) \cap C$}
+	\step{e}{$x_n \rightarrow x$ as $n \rightarrow \infty$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Closure]
+Let $V$ be a normed space and $A \subseteq V$. The \emph{closure} of $A$, $\cl A$, is the intersection of all the closed sets that include $A$.
+\end{df}
+
+\begin{thm}
+Let $V$ be a normed space and $S \subseteq V$. Then the closure of $S$ is the set of all limits of convergent sequences in $S$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all $l \in \cl S$, there exists a sequence $(x_n)$ that converges to $l$.}
+\begin{proof}
+	\step{a}{\pflet{$l \in \cl S$}}
+	\step{b}{For $n \in \mathbb{N}$, \pick\ $x_n \in B(l,1/(n+1)) \cap S$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $B(l,1/(n+1))$ does not intersect $S$.}}
+		\step{ii}{$V - B(l,1/(n+1))$ is a closed set that includes $S$.}
+		\step{iii}{$\cl S \subseteq V - B(l,1/(n+1))$}
+		\step{iv}{$l \notin B(l,1/(n+1))$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{c}{$x_n \rightarrow l$}
+\end{proof}
+\step{2}{For every sequence $(x_n)$ in $S$, if $x_n \rightarrow l$ then $l \in \cl S$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:closedconverge}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Dense]
+Let $V$ be a normed space and $S \subseteq V$. Then $S$ is \emph{dense} iff $\cl S = V$.
+\end{df}
+
+\begin{prop}
+In $\mathcal{C}([a,b])$, the set of polynomials is dense.
+\end{prop}
+
+\begin{proof}
+\pf\ By the Weierstrass Theorem. \qed
 \end{proof}
 
 \end{document}
