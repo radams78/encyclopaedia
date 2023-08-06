@@ -9397,6 +9397,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \end{df}
 
 \begin{prop}
+\label{prop:closedball}
 Every closed ball is closed.
 \end{prop}
 
@@ -9625,6 +9626,114 @@ Let $V$ be a normed space and $S \subseteq V$. Then $S$ is bounded if and only i
 	\step{c}{For $n \in \mathbb{N}$, \pflet{$\lambda_n = 1/n$ if $n > 0$, $1$ if $n = 0$}}
 	\step{d}{$\lambda_n \rightarrow 0$}
 	\step{e}{$\| \lambda_n x_n \| > 1$ for all $n > 1$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+In $\mathcal{C}([0,1])$, the unit ball $\overline{B(0,1)}$ is closed and bounded but not compact.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\overline{B(0,1)}$ is closed.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:closedball}.
+\end{proof}
+\step{2}{$\overline{B(0,1)}$ is bounded.}
+\begin{proof}
+	\pf\ $\overline{B(0,1)} \subseteq B(0,2)$.
+\end{proof}
+\step{3}{$\overline{B(0,1)}$ is not compact.}
+\begin{proof}
+	\step{a}{For $n \in \mathbb{N}$, \pflet{$x_n : [0,1] \rightarrow \mathbb{R}$ be the function $x_n(t) = t^n$.}}
+	\step{b}{For $n \in \mathbb{N}$, we have $x_n \in \overline{B(0,1)}$.}
+	\step{c}{No subsequence of $(x_n)$ converges.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Riesz's Lemma]
+Let $X$ be a closed proper subspace of a normed space $V$. For every $\epsilon \in (0,1)$, there exists $x_\epsilon \in V$ such that $\| x_\epsilon \| = 1$ and $\forall x \in X. \| x_\epsilon - x \| \geq \epsilon$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $z \in E - X$}
+\step{2}{\pflet{$d = \inf_{x \in X} \| z - x \|$}}
+\step{3}{$d > 0$}
+\begin{proof}
+	\step{a}{\pick- $\epsilon > 0$ such that $B(z,\epsilon) \subseteq E - X$}
+	\step{b}{$d \geq \epsilon$}
+\end{proof}
+\step{4}{For all $\epsilon \in (0,1)$, choose $y_\epsilon \in X$ such that
+\[ d \leq \| z - y_\epsilon \| < d / \epsilon \enspace . \]}
+\step{5}{For $\epsilon \in (0,1)$, \pflet{
+\[ x_\epsilon = \frac{z - y_\epsilon}{\|z - y_\epsilon\|} \enspace . \]
+}}
+\step{6}{For all $x \in X$ we have $\| x_\epsilon - x \| > \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| x_\epsilon - x \| & =
+		\| \frac{z - y_\epsilon}{\|z - y_\epsilon\|} - x \| \\
+		& = \frac{1}{\| z - y_\epsilon \|} \| z - y_\epsilon - \| z - y_\epsilon \| x \| & (y_\epsilon + \| z - y_\epsilon \| x \in X) \\
+		& \geq \frac{1}{\| z - y_\epsilon \|} d \\
+		& > \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $V$ be a normed space. Then $V$ is finite dimensional if and only if $\overline{B(0,1)}$ is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $V$ is finite dimensional then $\overline{B(0,1)}$ is compact.}
+\begin{proof}
+	\step{a}{\assume{$V$ is finite dimensional.}}
+	\step{b}{\pick\ a basis $\{e_1, \ldots, e_n\}$.}
+	\step{c}{\assume{w.l.o.g. $\forall \alpha_1, \ldots, \alpha_n \in K. \| \alpha_1 e_1 + \cdots + \alpha_n e_n \| = | \alpha_1 | + \cdots + | \alpha_n |$}}
+	\step{d}{\pflet{$(x_m)$ be a sequence in $\overline{B(0,1)}$}}
+	\step{e}{For $m \in \mathbb{N}$, \pflet{$x_m = \alpha_{m1} e_1 + \cdots + \alpha_{mn} e_n$}}
+	\step{f}{For $m \in \mathbb{N}$ and $i = 1, \ldots, n$, we have $|\alpha_{mi}| \leq 1$}
+	\step{g}{For $i = 1, \ldots, n$, \pick\ a convergent subsequence $(\alpha_{m_ri})$ of $(\alpha_{mi})$ in $\mathbb{C}$ that converges to $l_i$}
+	\begin{proof}
+		\pf\ Since $\overline{B(0,1)}$ is compact in $K$.
+	\end{proof}
+	\step{h}{$x_m$ converges to $l_1 e_1 + \cdots + l_n e_n$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| x_m - l_1 e_1 - \cdots - l_n e_n \| & = \| (\alpha_{m1} - l_1) e_1 + \cdots + (\alpha_{mn} - l_n) e_n \| \\
+			& = | \alpha_{m1} - l_1 | + \cdots + |\alpha_{mn} - l_n| \\
+			& \rightarrow 0 & \text{as } m \rightarrow \infty
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If $V$ is infinite dimensional then $\overline{B(0,1)}$ is not compact.}
+\begin{proof}
+	\step{a}{\assume{$V$ is infinite dimensional.}}
+	\step{b}{Choose a sequence $(x_n)$ such that $\|x_n\| = 1$ and $\| x_m - x_n \| \geq 1/2$ for all $m \neq n$.}
+	\begin{proof}
+		\step{i}{\assume{as induction hypothesis there exists a sequence $(x_0, x_1, \ldots, x_n)$ such that $\| x_i \| = 1$ and $\| x_i - x_j \| \geq 1/2$ for $i \neq j$}}
+		\step{ii}{\pick\ $x_{n+1}$ such that $\| x_{n+1} \| = 1$ and $\| x_{n_1} - x \| \geq 1/2$ for $x \in \{ x_1, \ldots, x_n \}$.}
+	\end{proof}
+	\step{c}{\assume{for a contradiction $(x_{n_r})$ is a subsequence that converges to $l$}}
+	\step{d}{For all $r$ we have $1/2 \leq \| x_{n_r} - l \| + \| x_{n_{r+1}} - l \|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			1/2 & \leq \| x_{n_r} - x_{n_{r+1}} \| & (\text{\stepref{b}}) \\
+			& \leq \| x_{n_r} - l \| + \| x_{n_{r+1}} - l \| & (\text{Triangle Inequality})
+		\end{align*}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
