@@ -9738,4 +9738,73 @@ Let $V$ be a normed space. Then $V$ is finite dimensional if and only if $\overl
 \qed
 \end{proof}
 
+\section{Banach Spaces}
+
+\begin{df}[Cauchy Sequence]
+A sequence $(x_n)$ in a normed space is a \emph{Cauchy sequence} iff, for every $\epsilon > 0$, there exists $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < \epsilon$.
+\end{df}
+
+\begin{thm}
+Let $V$ be a normed space. Let $(x_n)$ be a sequence in $V$. Then the following are equivalent.
+\begin{enumerate}
+\item $(x_n)$ is Cauchy.
+\item For every pair of strictly increasing sequences of natural numbers $(p_n)$ and $(q_n)$, we have $\| x_{p_n} - x_{q_n} \| \rightarrow 0$ as $n \rightarrow \infty$.
+\item For every strictly increasing sequence of natural numbers $(p_n)$, we have $\| x_{p_{n+1}} - x_{p_n} \| \rightarrow 0$ as $n \rightarrow \infty$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$(x_n)$ is Cauchy.}}
+	\step{b}{\pflet{$(p_n)$ and $(q_n)$ be a pair of increasing sequences of natural numbers.}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{\pick\ $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < \epsilon$}
+	\step{e}{$\forall n \geq N. p_n, q_n \geq N$}
+	\step{f}{$\forall n \geq N. \| x_{p_n} - x_{q_n} \| < \epsilon$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{$(x_n)$ is not Cauchy.}}
+	\step{b}{\pick\ $\epsilon > 0$ such that, for all $N$, there exist $m, n \geq N$ such that $\| x_m - x_n \| \geq \epsilon$}
+	\step{c}{\pick\ strictly increasing sequences of natural numbers $(p_n)$ and $(q_n)$ such that, for all $n$, $\| x_{p_n} - x_{q_n} \| \geq \epsilon$}
+	\begin{proof}
+		\step{i}{\assume{as induction hypothesis we have chosen $(p_1, \ldots, p_n)$ and $(q_1, \ldots, q_n)$ strictly increasing such that $\forall i. \| x_{p_i} - x_{q_i} \| \geq \epsilon$}}
+		\step{ii}{\pick\ $p_{n+1}, q_{n+1} \geq \max(p_n,q_n)$ such that $\| x_{p_{n+1}} - x_{q_{n+1}} \| \geq \epsilon$}
+	\end{proof}
+	\step{d}{2 is false.}
+\end{proof}
+\step{4}{$3 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$(p_n)$ and $(q_n)$ are strictly increasonig sequences such that $\| x_{p_n} - x_{q_n} \| \not\rightarrow 0$ as $n \rightarrow \infty$.}}
+	\step{b}{\pick\ $\epsilon > 0$ such that, for all $N$, there exists $n \geq N$ such that $\| x_{p_n} - x_{q_n} \| \geq \epsilon$}
+	\step{c}{Choose a strictly increasing sequence $(r_n)$ such that, for all $n$, we have $\| x_{r_{2n}} - x_{r_{2n+1}} \| \geq \epsilon$}
+	\begin{proof}
+		\step{i}{\assume{as induction hypothesis we have chosen $(r_0, r_1, \ldots, r_{2n+1})$ such that, for $i = 0, 1, \ldots, n$, we have $\| x_{r_{2i}} - x_{r_{2i+1}} \| \geq \epsilon$}}
+		\step{ii}{\pick\ $i,j \geq r_{2n+1}$ such that $\| x_i - x_j \| \geq \epsilon$}
+		\step{iii}{Set $r_{2n+2} = \min(i,j)$ and $r_{2n+3} = \max(i,j)$}
+	\end{proof}
+	\step{d}{3 is false.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every convergent sequence is a Cauchy sequence.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(x_n)$ be a convergent sequence in a normed space $V$ with limit $l$.}}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon / 2$}
+\step{4}{$\forall m,n \geq N. \| x_m - x_n \| < \epsilon$}
+\qed
+\end{proof}
+
 \end{document}
