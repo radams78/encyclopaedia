@@ -8987,6 +8987,18 @@ The \emph{dimension} of a finite dimensional vector space $V$, $\dim V$, is the 
 The dimension of $\mathbb{C}^n$ as a real vector space is $2n$.
 \end{prop}
 
+\section{Linear Transformations}
+
+\begin{df}[Linear Transformation]
+Let $U$ and $V$ be vector spaces over $K$. Let $T : U \rightarrow V$. Then $T$ is a \emph{linear transformation} iff
+\[ \forall \alpha, \beta \in K. \forall x,y \in U. T(\alpha x + \beta y) = \alpha T(x) + \beta T(y) \enspace . \]
+\end{df}
+
+\begin{df}[Null Space]
+Let $U$ and $V$ be vector spaces over $K$ and $T : U \rightarrow V$. The \emph{null space} of $T$ is
+\[ \mathcal{N}(T) := \{ x \in U \mid T(x) = 0 \} \enspace . \]
+\end{df}
+
 \section{Normed Spaces}
 
 \begin{df}[Norm]
@@ -9991,6 +10003,98 @@ A normed space is complete if and only if every absolutely convergent series is 
 		\end{align*}
 	\end{proof}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+A closed subspace of a Banach space is a Banach space.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a Banach space.}}
+\step{2}{\pflet{$U$ be a closed subspace of $V$.}}
+\step{3}{\pflet{$(x_n)$ be a Cauchy sequence in $U$.}}
+\step{4}{$(x_n)$ is a Cauchy sequence in $V$.}
+\step{5}{\pflet{$l$ be the limit of $(x_n)$ in $V$.}}
+\step{6}{$l \in U$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:closedconverge}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Completion]
+Let $V$ be a normed space. A \emph{completion} of $V$ consists of a Banach space $W$ and a function $\phi : V \rightarrow W$ such that:
+\begin{itemize}
+\item $\phi$ is injective.
+\item $\phi$ is a linear transformation.
+\item $\phi$ preserves the norm.
+\item $\phi(V)$ is dense in $W$.
+\end{itemize}
+\end{df}
+
+\begin{df}[Equivalent Cauchy Sequences]
+Let $V$ be a normed space. Let $(x_n)$ and $(y_n)$ be Cauchy sequences in $V$. Then $(x_n)$ and $(y_n)$ are \emph{equivalent}, $(x_n) \sim (y_n)$, iff $\| x_n - y_n \| \rightarrow 0$ as $n \rightarrow \infty$.
+\end{df}
+
+\begin{prop}
+Equivalence is an equivalence relation on the set of Cauchy sequences.
+\end{prop}
+
+\begin{prop}
+If $(x_n) \sim (y_n)$ then $\lim_{n \rightarrow \infty} \| x_n \| = \lim_{n \rightarrow \infty} \| y_n \|$.
+\end{prop}
+
+\begin{thm}
+Let $V$ be a normed space. Let $W$ be the quotient set of all Cauchy sequences modulo $\sim$. Define $+$, $\cdot$ and $\|\ \|$ on $W$ by
+\begin{align*}
+[(x_n)] + [(y_n)] & = [(x_n + y_n)] \\
+\lambda [(x_n)] & = [(\lambda x_n)] \\
+\| [(x_n)] \| & = \lim_{n \rightarrow \infty} \| x_n \|
+\end{align*}
+Define $\phi : V \rightarrow W$ by $\phi(x)$ is the constant sequence $(x)$. Then $\phi : V \rightarrow W$ is the completion of $V$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$+$, $\cdot$ and $\|\ \|$ are well defined.}
+\step{2}{$W$ is a normed space.}
+\step{7}{$\phi(V)$ is dense in $W$.}
+\begin{proof}
+	\pf\ For any $[(x_n)] \in W$ we have $[(x_n)] = \lim_{n \rightarrow \infty} \phi(x_n)$.
+\end{proof}
+\step{3}{$W$ is complete.}
+\begin{proof}
+	\step{a}{\pflet{$(X_n)$ be a Cauchy sequence in $W$.}}
+	\step{b}{For all $n \in \mathbb{N}$, \pick\ $x_n \in V$ such that $\| \phi(x_n) - X_n \| < 1/n$}
+	\begin{proof}
+		\pf\ \stepref{7}
+	\end{proof}
+	\step{c}{For all $m$, $n$ we have $\| x_n - x_m \| \leq \| X_n - X_m \| + 1/n + 1/m$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| x_n - x_m \| & = \| \phi(x_n) - \phi(x_m) \| \\
+			& \leq \| \phi(x_n) - X_n \| + \| X_n - X_m \| + \| \phi(x_m) - X_m \| \\
+			& \leq \| X_n - X_m \| + 1/n + 1/m
+		\end{align*}
+	\end{proof}
+	\step{d}{$(x_n)$ is a Cauchy sequence in $V$.}
+	\step{e}{\pflet{$X = [(x_n)]$} \prove{$X_n \rightarrow X$ as $n \rightarrow \infty$}}
+	\step{f}{$\| X_n - X \| \rightarrow 0$ as $n \rightarrow \infty$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| X_n - X \| & \leq \| X_n - \phi(x_n) \| + \| \phi(x_n) - X \| \\
+			& < \| \phi(x_n) - X \| + 1/n \\
+			& \rightarrow 0
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{$\phi$ is injective.}
+\step{5}{$\phi$ is a linear transformation.}
+\step{6}{$\phi$ preserves the norm.}
 \qed
 \end{proof}
 
