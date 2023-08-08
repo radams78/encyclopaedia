@@ -8749,6 +8749,24 @@ Let $p$ be a real number, $p \geq 1$. Let $(x_n), (y_n) \in l^p$. Then
 \qed
 \end{proof}
 
+\chapter{Topology}
+
+\section{Topological Spaces}
+
+\begin{df}[Topology]
+Let $X$ be a set. A \emph{topology} on $X$ is a set $\mathcal{T} \subseteq \mathcal{P} X$, whose elements are called \emph{open sets}, such that:
+\begin{itemize}
+\item $X \in \mathcal{T}$
+\item $\forall \mathcal{U} \subseteq \mathcal{T}. \bigcup \mathcal{U} \in \mathcal{T}$
+\item $\forall U,V \in \mathcal{T}. U \cap V \in \mathcal{T}$
+\end{itemize}
+A \emph{topological space} is a pair $(X, \mathcal{T})$ such that $X$ is a set and $\mathcal{T}$ is a topology on $X$. We refer to the elements of $X$ as \emph{points}.
+\end{df}
+
+\begin{df}[Closed Set]
+In a topological space $X$, a set $C$ is \emph{closed} iff $X - C$ is open.
+\end{df}
+
 \chapter{Linear Algebra}
 
 \section{Vector Spaces}
