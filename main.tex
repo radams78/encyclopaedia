@@ -9437,11 +9437,6 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a finite dimensional 
 \qed
 \end{proof}
 
-\begin{df}[Open Ball]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x \in V$ and let $r$ be a positive real number. The \emph{open ball} with \emph{centre} $x$ and \emph{radius} $r$ is
-\[ B(x,r) := \{ y \in V \mid \| x - y \| < r \} \enspace . \]
-\end{df}
-
 \begin{df}[Closed Ball]
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x \in V$ and let $r$ be a positive real number. The \emph{closed ball} with \emph{centre} $x$ and \emph{radius} $r$ is
 \[ \overline{B(x,r)} := \{ y \in V \mid \| x - y \| \leq r \} \enspace . \]
@@ -9451,16 +9446,6 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x \in V$ and let $r$ be a positive real number. The \emph{sphere} with \emph{centre} $x$ and \emph{radius} $r$ is
 \[ S(x,r) := \{ y \in V \mid \| x - y \| = r \} \enspace . \]
 \end{df}
-
-\begin{thm}
-Let $V$ be a normed space. Then $\{ U \in \mathcal{P} V \mid \forall x \in U. \exists \epsilon > 0. B(x, \epsilon) \subseteq U \}$ is a topology on $V$.
-\end{thm}
-
-We identify a normed space $V$ with this topological space.
-
-\begin{prop}
-Every open ball is open.
-\end{prop}
 
 \begin{prop}
 \label{prop:closedball}
