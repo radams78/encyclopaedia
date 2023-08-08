@@ -9746,6 +9746,7 @@ A sequence $(x_n)$ in a normed space is a \emph{Cauchy sequence} iff, for every 
 \end{df}
 
 \begin{thm}
+\label{thm:Cauchy}
 Let $V$ be a normed space. Let $(x_n)$ be a sequence in $V$. Then the following are equivalent.
 \begin{enumerate}
 \item $(x_n)$ is Cauchy.
@@ -9933,6 +9934,62 @@ For any real number $a$, $b$ with $a < b$, the space $\mathcal{C}([a,b])$ is com
 \step{7}{$f_n \rightarrow f$ as $n \rightarrow \infty$.}
 \begin{proof}
 	\pf\ Immediate from \stepref{5}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Convergent Series]
+Let $(x_n)$ be a sequence in a normed space $V$. We say the series $\sum_{n=0}^\infty x_n$ is \emph{convergent} iff the sequence $(\sum_{n=0}^N x_n)_N$ is convergent, and then we write $\sum_{n=0}^\infty x_n = l$ for $\lim_{N \rightarrow \infty} \sum_{n=0}^N x_n = l$.
+\end{df}
+
+\begin{df}[Absolutely Convergent Series]
+Let $(x_n)$ be a sequence in a normed space $V$. We say the series $\sum_{n=0}^\infty x_n$ is \emph{absolutely convergent} iff the series $\sum_{n=0}^\infty \| x_n \|$ converges in $\mathbb{R}$.
+\end{df}
+
+\begin{thm}
+A normed space is complete if and only if every absolutely convergent series is convergent.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space.}}
+\step{2}{If $V$ is complete then every absolutely convergent series is convergent.}
+\begin{proof}
+	\step{a}{\assume{$V$ is complete.}}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $V$.}}
+	\step{c}{\assume{$\sum_{n=0}^\infty \| x_n \|$ converges.} \prove{$(\sum_{n=0}^N x_n)_N$ is Cauchy.}}
+	\step{d}{\pflet{$\epsilon > 0$}}
+	\step{e}{\pick\ $N$ such that $\sum_{n=N}^\infty \| x_n \| < \epsilon$}
+	\step{f}{\pflet{$m > n \geq N$}}
+	\step{g}{$\| \sum_{k=0}^m x_k - \sum_{k=0}^n x_k \| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \sum_{k=0}^m x_k - \sum_{k=0}^n x_k \| & = \| \sum_{k=n+1}^m x_k \| \\
+			& \leq \sum_{k=n+1}^m \| x_k \| \\
+			& \leq \sum_{k=n+1}^\infty \| x_k \| \\
+			& < \epsilon
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{If every absolutely convergent series is convergent then $V$ is complete.}
+\begin{proof}
+	\step{a}{\assume{Every absolutely convergent series is convergent.}}
+	\step{b}{\pflet{$(x_n)$ be a Cauchy sequence in $V$.}}
+	\step{c}{Choose an increasing sequence of natural numbers $(p_k)$ such that, for all $m, n \geq p_k$, we have
+	\[ \| x_m - x_n \| < 2^{-k} \enspace . \]}
+	\step{d}{$\sum_{k=0}^\infty \| x_{p_{k+1}} - x_{p_k} \|$ is absolutely convergent.}
+	\step{e}{$\sum_{k=0}^\infty \| x_{p_{k+1}} - x_{p_k} \|$ is convergent.}
+	\step{f}{$(x_{p_k})$ converges.}
+	\step{g}{\pflet{$l = \lim_{k \rightarrow \infty} x_{p_k}$}}
+	\step{h}{$x_n \rightarrow l$ as $n \rightarrow \infty$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| x_n - l \| & \leq \| x_n - x_{p_n} \| + \| x_{p_n} - l \| \\
+			& \rightarrow 0 & \text{as } n \rightarrow \infty & (\text{Theorem \ref{thm:Cauchy}})
+		\end{align*}
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
