@@ -9383,49 +9383,15 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \[ S(x,r) := \{ y \in V \mid \| x - y \| = r \} \enspace . \]
 \end{df}
 
-\begin{df}[Open]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $U \subseteq V$. Then $U$ is \emph{open} iff, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x,\epsilon) \subseteq U$.
-\end{df}
+\begin{thm}
+Let $V$ be a normed space. Then $\{ U \in \mathcal{P} V \mid \forall x \in U. \exists \epsilon > 0. B(x, \epsilon) \subseteq U \}$ is a topology on $V$.
+\end{thm}
+
+We identify a normed space $V$ with this topological space.
 
 \begin{prop}
 Every open ball is open.
 \end{prop}
-
-\begin{thm}
-The union of a set of open sets is open.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\mathcal{U}$ be a set of open sets.}}
-\step{2}{\pflet{$x \in \bigcup \mathcal{U}$}}
-\step{3}{\pick\ $U \in \mathcal{U}$ such that $x \in U$.}
-\step{4}{\pick\ $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$}
-\step{5}{$B(x, \epsilon) \subseteq \bigcup \mathcal{U}$}
-\qed
-\end{proof}
-
-\begin{thm}
-The intersection of two open sets is open.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$U$ and $V$ be open.}}
-\step{2}{\pflet{$x \in U \cap V$}}
-\step{3}{\pick\ $\delta > 0$ such that $B(x, \delta) \subseteq U$ and $\epsilon > 0$ such that $B(x, \epsilon) \subseteq V$.}
-\step{4}{\assume{w.l.o.g. $\delta \leq \epsilon$}}
-\step{5}{$B(x,\delta) \subseteq U \cap V$}
-\qed
-\end{proof}
-
-\begin{prop}
-In a normed space $V$, both $\emptyset$ and $V$ are open.
-\end{prop}
-
-\begin{df}[Closed]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $C \subseteq V$. Then $C$ is \emph{closed} iff $V - C$ is open.
-\end{df}
 
 \begin{prop}
 \label{prop:closedball}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  8 AUG 2023 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  8 AUG 2023 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -551,127 +551,61 @@ Overfull \hbox (76.64789pt too wide) detected at line 9342
  []
 
 [157] [158] [159] [160] [161] [162]
-Overfull \hbox (9.89566pt too wide) detected at line 9744
+Overfull \hbox (9.89566pt too wide) detected at line 9710
 []
  []
 
-[163]
-Overfull \hbox (12.00586pt too wide) in paragraph at lines 9752--9752
+
+Overfull \hbox (12.00586pt too wide) in paragraph at lines 9718--9718
 []\OT1/cmr/m/n/10 as in-duc-tion hy-poth-e-sis there ex-ists a se-quence $(\OML
 /cmm/m/it/10 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10 )$
  []
 
-[164] [165] [166]
-Overfull \hbox (16.33922pt too wide) detected at line 9961
+[163] [164] [165]
+Overfull \hbox (16.33922pt too wide) detected at line 9927
 []
  []
 
-
-Underfull \vbox (badness 1019) has occurred while \output is active []
-
- [167]
-[168] [169] (./main.aux)
+[166] [167] [168] [169] (./main.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 335376B2CD828602A3D7BF46A327580A;11521
-(rerunfilecheck)             After:  8B904EAFC2887C07AA15A75B93DADAAE;11756.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 8B904EAFC2887C07AA15A75B93DADAAE;11756.
  ) 
 Here is how much of TeX's memory you used:
- 10119 strings out of 476091
- 148149 string characters out of 5794082
+ 10103 strings out of 476091
+ 147986 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29505 multiletter control sequences out of 15000+600000
+ 29507 multiletter control sequences out of 15000+600000
  523017 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,541b,754s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{ax.18.5.2} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.5} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.30} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.43} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.37} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.35} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.19} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{equation.18.4.1} has been referenced but does not e
-xist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.4.3} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.18.1.4} has been referenced but does not exist, 
-replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.18.5} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.18.4} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.18.3} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.18.2} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (169 pages, 685172 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (169 pages, 683780 bytes).
 PDF statistics:
- 2327 PDF objects out of 2487 (max. 8388607)
- 1952 compressed objects within 20 object streams
- 906 named destinations out of 1000 (max. 500000)
- 697 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2311 PDF objects out of 2487 (max. 8388607)
+ 1936 compressed objects within 20 object streams
+ 888 named destinations out of 1000 (max. 500000)
+ 713 words of extra memory for PDF output out of 10000 (max. 10000000)
 
