@@ -9847,15 +9847,15 @@ A normed space is \emph{complete} or a \emph{Banach space} iff every Cauchy sequ
 \end{df}
 
 \begin{prop}
-The space $l^2$ in complete.
+For all $p \geq 1$, the space $l^p$ in complete.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$(a_n)$ be a Cauchy sequence in $l^2$.}}
+\step{1}{\pflet{$(a_n)$ be a Cauchy sequence in $l^p$.}}
 \step{2}{For $n \in \mathbb{N}$, \pflet{$a_n = (\alpha_{n0}, \alpha_{n1}, \ldots)$}}
 \step{3}{For all $\epsilon > 0$, there exists $N$ such that $\forall m,n \geq N$
-\[ \sum_{k=0}^\infty | \alpha_{mk} - \alpha_{nk} |^2 < \epsilon \enspace . \]}
+\[ \sum_{k=0}^\infty | \alpha_{mk} - \alpha_{nk} |^p < \epsilon \enspace . \]}
 \begin{proof}
 	\pf\ \stepref{1}
 \end{proof}
@@ -9872,22 +9872,67 @@ The space $l^2$ in complete.
 \[ \alpha_k = \lim_{n \rightarrow \infty} \alpha_{nk} \enspace . \]}}
 \step{7}{\pflet{$a = (\alpha_k)_k$}}
 \step{77}{For all $\epsilon > 0$, there exists $N$ such that $\forall n \geq N$
-\[ \sum_{k=0}^\infty | \alpha_k - \alpha_{nk} |^2 < \epsilon \enspace . \]}
+\[ \sum_{k=0}^\infty | \alpha_k - \alpha_{nk} |^p < \epsilon \enspace . \]}
 \begin{proof}
 	\pf\ Take the limit $m \rightarrow \infty$ in \stepref{4}.
 \end{proof}
-\step{8}{$a \in l^2$}
+\step{8}{$a \in l^p$}
 \begin{proof}
-	\step{a}{\pick\ $N$ such that $\forall n \geq N. \sum_{k=0}^\infty |\alpha_k - \alpha_{nk} |^2 < 1$}
-	\step{b}{$a - a_N \in l^2$}
+	\step{a}{\pick\ $N$ such that $\forall n \geq N. \sum_{k=0}^\infty |\alpha_k - \alpha_{nk} |^p < 1$}
+	\step{b}{$a - a_N \in l^p$}
 	\qedstep
 	\begin{proof}
-		\pf\ Since $l^2$ is closed under $+$.
+		\pf\ Since $l^p$ is closed under $+$.
 	\end{proof}
 \end{proof}
 \step{9}{$a_n \rightarrow a$ as $n \rightarrow \infty$.}
 \begin{proof}
 	\pf\ Immediate from \stepref{77}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any real number $a$, $b$ with $a < b$, the space $\mathcal{C}([a,b])$ is complete.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(f_n)$ be a Cauchy sequence in $\mathcal{C}([a,b])$}}
+\step{2}{For all $\epsilon > 0$, there exists $N$ such that, for all $m,n \geq N$ and $x \in [a,b]$,
+\[ |f_m(x) - f_n(x)| < \epsilon \enspace . \]}
+\step{3}{For all $x \in [a,b]$, $(f_n(x))_n$ is Cauchy.}
+\step{4}{\pflet{$f : [a,b] \rightarrow \mathbb{C}$ be the function
+\[ f(x) = \lim_{n \rightarrow \infty} f_n(x) \enspace . \]}}
+\step{5}{For all $\epsilon > 0$, there exists $N$ such that, for all $n \geq N$ and $x \in [a,b]$,
+\[ |f_n(x) - f(x)| < \epsilon \enspace . \]}
+\begin{proof}
+	\pf\ Take the limit $m \rightarrow \infty$ in \stepref{2}.
+\end{proof}
+\step{6}{$f$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$x_0 \in [a,b]$}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $N$ such that, for all $n \geq N$ and $y \in [a,b]$, we have
+	\[ |f_n(y) - f(y)| < \epsilon/3 \enspace . \]}
+	\begin{proof}
+		\pf\ \stepref{5}
+	\end{proof}
+	\step{d}{\pick\ $\delta > 0$ such that, for all $y \in [a,b]$ with $|x_0 - y| < \delta$, we have $|f_N(x_0) - f_N(y)| < \epsilon / 3$}
+	\step{e}{For all $y \in [a,b]$, if $|x_0 - y| < \delta$ then $|f(x_0) - f(y)| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			& |f(x_0) - f(y)| \\
+			\leq & |f(x_0) - f_N(x_0)| + |f_N(x_0) - f_N(y)| + |f_N(y) - f(y)| & (\text{Triangle Inequality}) \\
+			< & \epsilon / 3 + \epsilon / 3 + \epsilon / 3 & (\text{\stepref{c}, \stepref{d}}) \\
+			= & \epsilon
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{7}{$f_n \rightarrow f$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Immediate from \stepref{5}.
 \end{proof}
 \qed
 \end{proof}
