@@ -9041,6 +9041,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \end{proof}
 
 \begin{prop}
+\label{prop:distancebetweennorms}
 Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $\|\ \|$ be a norm on $V$. Let $x,y \in V$. Then
 \[ | \| x \| - \| y \| | \leq \| x - y \| \enspace . \]
 \end{prop}
@@ -9804,6 +9805,90 @@ Every convergent sequence is a Cauchy sequence.
 \step{2}{\pflet{$\epsilon > 0$}}
 \step{3}{\pick\ $N$ such that $\forall n \geq N. \| x_n - l \| < \epsilon / 2$}
 \step{4}{$\forall m,n \geq N. \| x_m - x_n \| < \epsilon$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\mathcal{P}([0,1])$ be the space of polynomials on $[0,1]$ under the norm of uniform convergence. For $n \in \mathbb{N}$, let $P_n = 1 + x + x^2 / 2! + \cdots + x^n / n!$. Then $(P_n)$ is Cauchy but does not converge, since $e^x$ is not a polynomial.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $(x_n)$ is a Cauchy sequence in a normed space $V$, then $(\| x_n \|)$ converges in $\mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$(\|x_n\|)$ is Cauchy.}
+\begin{proof}
+	\step{a}{\pflet{$\epsilon > 0$}}
+	\step{b}{\pick\ $N$ such that $\forall m,n \geq N. \| x_m - x_n \| < \epsilon$}
+	\step{c}{$\forall m,n \geq N. | \| x_m \| - \| x_n \| | < \epsilon$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:distancebetweennorms}.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Since $\mathbb{R}$ is complete.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Every Cauchy sequence is bounded.
+\end{cor}
+
+\begin{df}[Banach space]
+A normed space is \emph{complete} or a \emph{Banach space} iff every Cauchy sequence converges.
+\end{df}
+
+\begin{prop}
+The space $l^2$ in complete.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(a_n)$ be a Cauchy sequence in $l^2$.}}
+\step{2}{For $n \in \mathbb{N}$, \pflet{$a_n = (\alpha_{n0}, \alpha_{n1}, \ldots)$}}
+\step{3}{For all $\epsilon > 0$, there exists $N$ such that $\forall m,n \geq N$
+\[ \sum_{k=0}^\infty | \alpha_{mk} - \alpha_{nk} |^2 < \epsilon \enspace . \]}
+\begin{proof}
+	\pf\ \stepref{1}
+\end{proof}
+\step{4}{For all $k \in \mathbb{N}$ and $\epsilon > 0$, there exists $N$ such that $\forall m,n \geq N$
+\[ | \alpha_{mk} - \alpha_{nk} | < \epsilon \enspace . \]}
+\begin{proof}
+	\pf\ \stepref{3}
+\end{proof}
+\step{5}{For all $k \in \mathbb{N}$, the sequence $(\alpha_{nk})_n$ converges in $\mathbb{C}$.}
+\begin{proof}
+	\pf\ $\mathbb{C}$ is complete.
+\end{proof}
+\step{6}{For $k \in \mathbb{N}$, \pflet{
+\[ \alpha_k = \lim_{n \rightarrow \infty} \alpha_{nk} \enspace . \]}}
+\step{7}{\pflet{$a = (\alpha_k)_k$}}
+\step{77}{For all $\epsilon > 0$, there exists $N$ such that $\forall n \geq N$
+\[ \sum_{k=0}^\infty | \alpha_k - \alpha_{nk} |^2 < \epsilon \enspace . \]}
+\begin{proof}
+	\pf\ Take the limit $m \rightarrow \infty$ in \stepref{4}.
+\end{proof}
+\step{8}{$a \in l^2$}
+\begin{proof}
+	\step{a}{\pick\ $N$ such that $\forall n \geq N. \sum_{k=0}^\infty |\alpha_k - \alpha_{nk} |^2 < 1$}
+	\step{b}{$a - a_N \in l^2$}
+	\qedstep
+	\begin{proof}
+		\pf\ Since $l^2$ is closed under $+$.
+	\end{proof}
+\end{proof}
+\step{9}{$a_n \rightarrow a$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Immediate from \stepref{77}.
+\end{proof}
 \qed
 \end{proof}
 
