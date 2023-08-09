@@ -9288,7 +9288,6 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{normed space} over $K$ c
 We shall write simply:
 \begin{itemize}
 \item $K^n$ for the normed space $K^n$ under the Euclidean norm
-\item $\mathcal{C}(\Omega)$ for the normed space $\mathcal{C}(\Omega)$ under the norm $\| f \| = \max_{x \in \Omega} |f(x)|$, called the \emph{uniform convergence norm}
 \item $l^p$ for the normed space $l^p$ under the norm $\| (z_n) \| = \left( \sum_{n=0}^\infty |z_n|^p \right)^{1/p}$.
 \end{itemize}
 
@@ -9922,7 +9921,7 @@ If $U$ and $V$ are finite dimensional normed spaces, then every linear transform
 \begin{df}
 For $U$ and $V$ normed spaces, let $\mathcal{B}(U,V)$ be the space of all bounded linear transformations $U \rightarrow V$. This is a subspace of the space of all linear transformations $U \rightarrow V$.
 
-Define a norm on $\mathcal{B}(U,V)$ by
+Define the \emph{uniform convergence norm} on $\mathcal{B}(U,V)$ by
 \[ \| L \| = \sup \{ \| L(x) \| \mid x \in U, \| x \| = 1 \} \enspace . \]
 
 We prove this is a norm.
@@ -9971,6 +9970,10 @@ We prove this is a norm.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Let $U$ and $V$ be normed spaces and $L \in \mathcal{B}(U,V)$. Then $\|L\|$ is the least number such that $\forall x \in U. \| L(x) \| \leq \| L \| \| x \|$.
+\end{prop}
 
 \section{Banach Spaces}
 
@@ -10316,6 +10319,80 @@ Define $\phi : V \rightarrow W$ by $\phi(x)$ is the constant sequence $(x)$. The
 \step{4}{$\phi$ is injective.}
 \step{5}{$\phi$ is a linear transformation.}
 \step{6}{$\phi$ preserves the norm.}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $U$ be a normed space and $V$ a Banach space. Then $\mathcal{B}(U,V)$ is a Banach space.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(L_n)$ be a Cauchy sequence in $\mathcal{B}(U,V)$}}
+\step{2}{For all $x \in U$, we have $(L_n(x))$ is a Cauchy sequence in $V$.}
+\begin{proof}
+	\step{x}{\pflet{$x \in U$}}
+	\step{xx}{\assume{w.l.o.g. $x \neq 0$}}
+	\step{a}{\pflet{$\epsilon > 0$}}
+	\step{b}{\pick\ $N$ such that $\forall m,n \geq N. \| L_m - L_n \| < \epsilon / \| x \|$}
+	\step{c}{$\forall m,n \geq N. \| L_m(x) - L_n(x) \| < \epsilon$}
+	\begin{proof}
+		\pf\ $\| L_m(x) - L_n(x) \| \leq \| L_m - L_n \| \| x \| < \epsilon$
+	\end{proof}
+\end{proof}
+\step{3}{Define $L : U \rightarrow V$ by $L(x) = \lim_{n \rightarrow \infty} L_n(x)$}
+\step{4}{$L \in \mathcal{B}(U,V)$}
+\begin{proof}
+	\step{a}{$L$ is linear.}
+	\begin{proof}
+		\step{i}{\pflet{$\lambda, \mu \in K$ and $x,y \in U$}}
+		\step{ii}{$L(\lambda x + \mu y) = \lambda L(x) + \mu L(y)$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				L(\lambda x + \mu y) & = \lim_{n \rightarrow \infty} L_n(\lambda x + \mu y) \\
+				& = \lim_{n \rightarrow \infty} (\lambda L_n(x) + \mu L_n(y)) \\
+				& = \lambda L(x) + \mu L(y)
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{b}{$L$ is bounded.}
+	\begin{proof}
+		\step{i}{\pick\ $N$ such that $\forall m,n \geq N. \| L_m - L_n \| < 1$ \prove{$\forall x \in U. \| L(x) \| \leq (\| L_N \| + 1) \| x \|$}}
+		\step{x}{$\forall n \geq N. \| L_n \| \leq \| L_N \| + 1$}
+		\begin{proof}
+			\pf\ Since $| \| L_n \| - \| L_N \| | \leq \| L_n - L_N \| < 1$.
+		\end{proof}
+		\step{ii}{\pflet{$x \in U$}}
+		\step{iii}{$\| L(x) \| \leq (\| L_N \| + 1) \| x \|$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\| L(x) \| & = \left\| \lim_{n \rightarrow \infty} L_n(x) \right\| \\
+				& = \lim_{n \rightarrow \infty} \| L_n(x) \| \\
+				& \leq \lim_{n \rightarrow \infty} \| L_n \| \| x \| \\
+				& \leq (\| L_N \| + 1) \| x \|
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{5}{$L_n \rightarrow L$ as $n \rightarrow \infty$}
+\begin{proof}
+	\step{a}{\pflet{$\epsilon > 0$}}
+	\step{b}{\pick\ $N$ such that $\forall m,n \geq N. \| L_m - L_n \| < \epsilon / 4$}
+	\step{c}{\pflet{$n \geq N$}}
+	\step{d}{For all $x \in U$ we have $\| L_n(x) - L(x) \| < (\epsilon / 2) \| x \|$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in U$}}
+		\step{ii}{For all $m \geq N$ we have $\| L_n(x) - L_m(x) \| < (\epsilon / 4) \| x \|$}
+		\step{iii}{$\| L_n(x) - L(x) \| \leq (\epsilon / 4) \| x \|$}
+		\begin{proof}
+			\pf\ Taking the limit as $m \rightarrow \infty$.
+		\end{proof}
+	\end{proof}
+	\step{e}{$\| L_n - L \| \leq \epsilon / 2$}
+	\step{f}{$\| L_n - L \| < \epsilon$}
+\end{proof}
 \qed
 \end{proof}
 
