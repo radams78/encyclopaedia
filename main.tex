@@ -9857,6 +9857,7 @@ Let $V$ be a normed space. Then $V$ is finite dimensional if and only if $\overl
 
 %TODO Generalize
 \begin{prop}
+\label{prop:continuous_at_one_point}
 Let $U$ and $V$ be normed spaces. Let $f : U \rightarrow V$. If $f$ is continuous at one point, then it is continuous.
 \end{prop}
 
@@ -9868,6 +9869,40 @@ Let $U$ and $V$ be normed spaces. Let $f : U \rightarrow V$. If $f$ is continuou
 \step{4}{$f(x_n - l + x_0) \rightarrow f(x_0)$ as $n \rightarrow \infty$}
 \step{5}{$f(x_n) - f(l) + f(x_0) \rightarrow f(x_0)$ as $n \rightarrow \infty$}
 \step{6}{$f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
+\begin{df}[Bounded]
+Let $U$ and $V$ be normed spaces and $L : U \rightarrow V$ be a linear transformation. Then $L$ is \emph{bounded} iff there exists $\alpha > 0$ such that $\forall x \in U. \| L(x) \| \leq \alpha \| x \|$.
+\end{df}
+
+\begin{thm}
+Let $U$ and $V$ be normed spaces. Let $L : U \rightarrow V$ be a linear transformation. Then $L$ is continuous if and only if it is bounded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $L$ is continuous then $L$ is bounded.}
+\begin{proof}
+	\step{a}{\assume{$L$ is not bounded.}}
+	\step{b}{For $n \in \mathbb{N}$, choose $x_n \in U$ such that $\| L(x_n) \| > (n+1) \| x_n \|$}
+	\step{c}{For $n \in \mathbb{N}$, \pflet{$y_n = x_n / (n+1) \| x_n \|$}}
+	\step{d}{$y_n \rightarrow 0$ as $n \rightarrow \infty$}
+	\step{e}{For $n \in \mathbb{N}$, we have $\| L(y_n) \| > 1$}
+	\step{f}{$L(y_n) \not\rightarrow 0 = L(0)$ as $n \rightarrow \infty$}
+	\step{g}{$L$ is not continuous.}
+\end{proof}
+\step{2}{If $L$ is bounded then $L$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha > 0$ be such that $\forall x \in U. \| L(x) \| \leq \alpha \| x \|$}} \prove{$L$ is continuous at 0.}}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $U$ that converges to 0.}}
+	\step{c}{$L(x_n) \rightarrow 0$ as $n \rightarrow \infty$}
+	\qedstep
+	\begin{proof}
+		\pf\ Proposition \ref{prop:continuous_at_one_point}.
+	\end{proof}
+	\qed
+\end{proof}
 \qed
 \end{proof}
 
