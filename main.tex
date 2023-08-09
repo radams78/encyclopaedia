@@ -39,6 +39,7 @@
 \begin{document}
 
 \maketitle
+\tableofcontents
 
 \chapter{Sets and Classes}
 
@@ -9148,6 +9149,14 @@ Let $U$ and $V$ be vector spaces over $K$ and $T : U \rightarrow V$. The \emph{n
 If $T : U \rightarrow V$ is a linear transformation then $\mathcal{N}(T)$ is a subspace of $U$.
 \end{prop}
 
+\begin{prop}
+Let $U$ and $V$ be vector spaces over $K$. The set of all linear transformations $U \rightarrow V$ is a vector space over $K$ under
+\begin{align*}
+(S + T)(u) & = S(u) + T(u) \\
+(\lambda S)(u) & = \lambda S(u)
+\end{align*}
+\end{prop}
+
 \section{Normed Spaces}
 
 \begin{df}[Norm]
@@ -9894,7 +9903,7 @@ Let $U$ and $V$ be normed spaces. Let $L : U \rightarrow V$ be a linear transfor
 \end{proof}
 \step{2}{If $L$ is bounded then $L$ is continuous.}
 \begin{proof}
-	\step{a}{\pflet{$\alpha > 0$ be such that $\forall x \in U. \| L(x) \| \leq \alpha \| x \|$}} \prove{$L$ is continuous at 0.}}
+	\step{a}{\pflet{$\alpha > 0$ be such that $\forall x \in U. \| L(x) \| \leq \alpha \| x \|$} \prove{$L$ is continuous at 0.}}
 	\step{b}{\pflet{$(x_n)$ be a sequence in $U$ that converges to 0.}}
 	\step{c}{$L(x_n) \rightarrow 0$ as $n \rightarrow \infty$}
 	\qedstep
@@ -9909,6 +9918,59 @@ Let $U$ and $V$ be normed spaces. Let $L : U \rightarrow V$ be a linear transfor
 \begin{cor}
 If $U$ and $V$ are finite dimensional normed spaces, then every linear transformation $U \rightarrow V$ is continuous.
 \end{cor}
+
+\begin{df}
+For $U$ and $V$ normed spaces, let $\mathcal{B}(U,V)$ be the space of all bounded linear transformations $U \rightarrow V$. This is a subspace of the space of all linear transformations $U \rightarrow V$.
+
+Define a norm on $\mathcal{B}(U,V)$ by
+\[ \| L \| = \sup \{ \| L(x) \| \mid x \in U, \| x \| = 1 \} \enspace . \]
+
+We prove this is a norm.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\forall L \in \mathcal{B}(U,V). \| L \| = 0 \Rightarrow L = 0$}
+\begin{proof}
+	\step{a}{\pflet{$L \in \mathcal{B}(U,V)$}}
+	\step{b}{\assume{$\|L\\ = 0$}}
+	\step{c}{For all $x \in U$, if $\|x\| = 1$ then $\|L(x)\| = 0$}
+	\step{d}{\pflet{$x \in U$} \prove{$L(x) = 0$}}
+	\step{e}{\assume{w.l.o.g. $x \neq 0$}}
+	\step{f}{$\| L(x / \| x \|) \| = 0$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{g}{$L(x / \|x\|) = 0$}
+	\step{h}{$L(x) / \|x\| = 0$}
+	\step{i}{$L(x) = 0$}
+\end{proof}
+\step{2}{$\forall \lambda \in K. \forall L \in \mathcal{B}(U,V). \| \lambda L \| = |\lambda| \| L \|$}
+\begin{proof}
+	\step{a}{\pflet{$\lambda \in K$}}
+	\step{b}{\pflet{$L \in \mathcal{B}(U,V)$}}
+	\step{c}{$\| \lambda L \| = |\lambda| \|L\|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \lambda L \| & = \sup_{\|x\| = 1} \| \lambda L(x) \| \\
+			& = \sup_{\|x\| = 1} (|\lambda| \|L(x)\|) \\
+			& = |\lambda| \sup_{\|x\| = 1} \|L(x)\| \\
+			& = |\lambda| \|L\|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{The triangle inequality holds.}
+\begin{proof}
+	\step{a}{\pflet{$L,M \in \mathcal{B}(U,V)$}}
+	\step{b}{For all $x \in U$, if $\|x\| = 1$ then
+	\[ \| L(x) + M(x) \| \leq \| L(x) \| + \| M(x) \| \enspace . \]}
+	\step{c}{For all $x \in U$, if $\|x\| = 1$ then
+	\[ \| L(x) + M(x) \| \leq \| L \| + \| M \| \enspace . \]}
+	\step{d}{$\| L + M \| \leq \| L \| + \| M \|$}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Banach Spaces}
 
