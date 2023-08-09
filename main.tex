@@ -8801,16 +8801,18 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is \e
 \end{df}
 
 \begin{prop}
-<<<<<<< HEAD
 For any topological space $X$, the identity function $\id{X} : X \rightarrow X$ is continuous.
-=======
-For any topological space $X$, the identity function $\id{X} : X \righhtarrow X$ is continuous.
->>>>>>> 25c1aea6e79e651a8252dcfaf94ddf1087dd86a7
 \end{prop}
 
 \begin{prop}
 If $f : X \rightarrow Y$ and $g : Y \rightarrow Z$ are continuous then $g \circ f : X \rightarrow Z$ is continuous.
 \end{prop}
+
+\section{Convergence}
+
+\begin{df}[Convergence]
+Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$ and $l \in X$. Then $(x_n)$ \emph{converges} to $l$, $x_n \rightarrow l$ as $n \rightarrow \infty$, if and only if, for every open neighbourhood $U$ of $l$, there exists $N$ such that $\forall n \geq N. x_n \in U$.
+\end{df}
 
 \section{Metric Spaces}
 
@@ -8847,6 +8849,35 @@ If $d$ is a metric on $X$ and $Y \subseteq X$ then $d \restriction Y^2$ is a met
 \end{prop}
 
 We write just $Y$ for the metric space $(Y, d \restriction Y^2)$.
+
+\begin{prop}
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for every sequence $(x_n)$ in $X$ and $l \in X$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then, for every sequence $(x_n)$ in $X$ and $l \in X$, if $x_n \rightarrow l$ as $n \rightarrow \infty$, then $f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$(x_n)$ be a sequence in $X$.}}
+	\step{c}{\pflet{$l \in X$}}
+	\step{d}{\assume{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
+	\step{e}{\pflet{$V$ be an open neighbourhood of $f(l)$}}
+	\step{f}{$f^{-1}(V)$ is an open neighbourhood of $l$.}
+	\step{g}{\pick\ $N$ such that $\forall n \geq N. x_n \in f^{-1}(V)$}
+	\step{h}{$\forall n \geq N. f(x_n) \in V$}
+\end{proof}
+\step{2}{If, for every sequence $(x_n)$ in $X$ and $l \in X$, if $x_n \rightarrow l$ as $n \rightarrow \infty$, then $f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$, then $f$ is continuous.}
+\begin{proof}
+	\step{b}{\assume{$f$ is not continuous.}}
+	\step{c}{\pick\ an open set $V$ in $Y$ such that $f^{-1}(V)$ is not open in $X$}
+	\step{d}{\pick\ $l \in f^{-1}(V)$ such that, for all $\epsilon > 0$, $B(l,\epsilon) \nsubseteq f^{-1}(V)$.}
+	\step{e}{For $n \in \mathbb{N}$, \pick\ $x_n \in B(l,1/(n+1))$ such that $x_n \notin f^{-1}(V)$.}
+	\step{f}{$x_n \rightarrow l$ as $n \rightarrow \infty$.}
+	\step{g}{$f(x_n) \not\rightarrow f(l)$ as $n \rightarrow \infty$}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Linear Algebra}
 
@@ -9001,7 +9032,6 @@ Let $n \in \mathbb{N}$. Let $\Omega$ be an open subset of $\mathbb{R}^n$. Then $
 Let $n \in \mathbb{N}$. Let $\Omega$ be an open subset of $\mathbb{R}^n$. Then $\mathcal{P}(\Omega)$ is the complex vector space of all complex polynomials of $n$ variables, considered as functions $\Omega \rightarrow \mathbb{C}$. This is a subspace of $\mathcal{C}^\infty(\Omega)$.
 \end{df}
 
-%TODO Define convergent sequence
 \begin{prop}
 The space of all convergent sequences in $\mathbb{C}$ is a subspace of the space of all bounded sequences in $\mathbb{C}$, which is a subspace of $\mathbb{C}^\mathbb{N}$.
 \end{prop}
@@ -9093,10 +9123,22 @@ Let $U$ and $V$ be vector spaces over $K$. Let $T : U \rightarrow V$. Then $T$ i
 \[ \forall \alpha, \beta \in K. \forall x,y \in U. T(\alpha x + \beta y) = \alpha T(x) + \beta T(y) \enspace . \]
 \end{df}
 
+\begin{prop}
+If $T : U \rightarrow V$ is a linear transformation then $T(U)$ is a subspace of $V$.
+\end{prop}
+
+\begin{prop}
+If $T : U \rightarrow V$ is a linear transformation then the graph of $T$, $\{ (x, T(x)) \mid x \in U \}$, is a subspace of $U \times V$.
+\end{prop}
+
 \begin{df}[Null Space]
 Let $U$ and $V$ be vector spaces over $K$ and $T : U \rightarrow V$. The \emph{null space} of $T$ is
 \[ \mathcal{N}(T) := \{ x \in U \mid T(x) = 0 \} \enspace . \]
 \end{df}
+
+\begin{prop}
+If $T : U \rightarrow V$ is a linear transformation then $\mathcal{N}(T)$ is a subspace of $U$.
+\end{prop}
 
 \section{Normed Spaces}
 
