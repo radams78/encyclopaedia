@@ -8808,6 +8808,14 @@ For any topological space $X$, the identity function $\id{X} : X \rightarrow X$ 
 If $f : X \rightarrow Y$ and $g : Y \rightarrow Z$ are continuous then $g \circ f : X \rightarrow Z$ is continuous.
 \end{prop}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for every closed set $C$ in $Y$, we have $f^{-1}(C)$ is closed in $X$.
+\end{prop}
+
+\begin{df}[Continuous at a Point]
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $x \in X$. Then $f$ is \emph{continuous at $x$} iff, for every open neighbourhood $V$ of $f(x)$, we have $f^{-1}(V)$ is open.
+\end{df}
+
 \section{Convergence}
 
 \begin{df}[Convergence]
@@ -9215,6 +9223,10 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+Let $V$ be a normed space. Then $\|\ \| : V \rightarrow \mathbb{R}$ is continuous.
+\end{cor}
 
 \begin{df}[Euclidean Norm]
 The \emph{Euclidean norm} on $\mathbb{C}^n$ is defined by
@@ -9840,6 +9852,22 @@ Let $V$ be a normed space. Then $V$ is finite dimensional if and only if $\overl
 		\pf\ This is a contradiction.
 	\end{proof}
 \end{proof}
+\qed
+\end{proof}
+
+%TODO Generalize
+\begin{prop}
+Let $U$ and $V$ be normed spaces. Let $f : U \rightarrow V$. If $f$ is continuous at one point, then it is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$f$ is continuous at $x_0 \in U$.}}
+\step{2}{\pflet{$(x_n)$ be a sequence in $U$ that converges to $l \in U$.}}
+\step{3}{$x_n - l + x_0 \rightarrow x_0$ as $n \rightarrow \infty$}
+\step{4}{$f(x_n - l + x_0) \rightarrow f(x_0)$ as $n \rightarrow \infty$}
+\step{5}{$f(x_n) - f(l) + f(x_0) \rightarrow f(x_0)$ as $n \rightarrow \infty$}
+\step{6}{$f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$.}
 \qed
 \end{proof}
 
