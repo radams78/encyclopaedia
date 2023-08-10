@@ -9975,6 +9975,38 @@ We prove this is a norm.
 Let $U$ and $V$ be normed spaces and $L \in \mathcal{B}(U,V)$. Then $\|L\|$ is the least number such that $\forall x \in U. \| L(x) \| \leq \| L \| \| x \|$.
 \end{prop}
 
+\begin{thm}
+Let $U$ and $V$ be normed spaces. Let $T : U \rightarrow V$ be a continuous linear transformation. Then the null space $\mathcal{N}(T)$ is closed in $U$.
+\end{thm}
+
+\begin{proof}
+\pf\ If $(x_n)$ is a sequence in $\mathcal{N}(T)$ and $x_n \rightarrow l$ then $T(l) = \lim_{n \rightarrow \infty} T(x_n) = 0$ so $l \in \mathcal{N}(T)$. \qed
+\end{proof}
+
+\begin{thm}
+Let $U$ and $V$ be normed spaces. Let $W$ be a closed subspace of $U$ and $T : W \rightarrow V$ be a continuous linear transformation. Then the graph of $T$, $G = \{ (x,T(x)) \mid x \in W \}$, is closed in $U \times V$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$((x_n, T(x_n)))$ be a sequence in $G$.}}
+\step{2}{\pflet{$(x_n, T(x_n)) \rightarrow (x,y)$ as $n \rightarrow \infty$}}
+\step{3}{$x \in W$}
+\begin{proof}
+	\pf\ Since $x_n \rightarrow x$ and $W$ is closed.
+\end{proof}
+\step{4}{$y = T(x)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = \lim_{n \rightarrow \infty} T(x_n) \\
+		& = T \left( \lim_{n \rightarrow \infty} x_n \right) \\
+		& = T(x)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Banach Spaces}
 
 \begin{df}[Cauchy Sequence]

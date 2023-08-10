@@ -89,4 +89,4 @@
 \contentsline {section}{\numberline {19.2}Subspaces}{156}{section.19.2}%
 \contentsline {section}{\numberline {19.3}Linear Transformations}{158}{section.19.3}%
 \contentsline {section}{\numberline {19.4}Normed Spaces}{159}{section.19.4}%
-\contentsline {section}{\numberline {19.5}Banach Spaces}{171}{section.19.5}%
+\contentsline {section}{\numberline {19.5}Banach Spaces}{172}{section.19.5}%
