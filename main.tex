@@ -10009,6 +10009,84 @@ Let $U$ and $V$ be normed spaces. Let $T : U \rightarrow V$ be a continuous line
 \pf\ If $(x_n)$ is a sequence in $\mathcal{N}(T)$ and $x_n \rightarrow l$ then $T(l) = \lim_{n \rightarrow \infty} T(x_n) = 0$ so $l \in \mathcal{N}(T)$. \qed
 \end{proof}
 
+\begin{thm}[Diagonal Theorem]
+Let $V$ be a normed space. Let $(x_{ij})_{i,j \in \mathbb{N}}$ be an infinite matrix in $V$. If:
+\begin{enumerate}
+\item
+$\forall j \in \mathbb{N}. x_{ij} \rightarrow 0$ as $i \rightarrow \infty$;
+\item Every strictly increasing sequence of natural numbers $(p_i)$ has a subsequence $(q_i)$ such that
+\[ \sum_{j=0}^\infty x_{q_iq_j} \rightarrow 0 \text{ as } i \rightarrow \infty \]
+\end{enumerate}
+then $x_{ii} \rightarrow 0$ as $i \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a normed space.}}
+\step{2}{\pflet{$(x_{ij})_{i,j \in \mathbb{N}}$ be an infinite matrix in $V$.}}
+\step{3}{\assume{$\forall j \in \mathbb{N}. x_{ij} \rightarrow 0$ as $i \rightarrow \infty$}}
+\step{4}{\assume{Every strictly increasing sequence of natural numbers $(p_i)$ has a subsequence $(q_i)$ such that
+\[ \sum_{j=0}^\infty x_{q_iq_j} \rightarrow 0 \text{ as } i \rightarrow \infty \]}}
+\step{5}{\assume{for a contradiction $x_{ii} \not\rightarrow 0$ as $i \rightarrow \infty$}}
+\step{6}{\pick\ a strictly increasing sequence $(p_i)$ and $\epsilon > 0$ such that $\forall i \in \mathbb{N}. \| x_{p_ip_i} \| \geq \epsilon$}
+\begin{proof}
+	\step{a}{\pick\ $\epsilon > 0$ such that, for all $N$, there exists $n \geq N$ such that $\| x_{ii} \| \geq \epsilon$}
+	\step{b}{Choose a sequence $(p_i)$ such that, for all $i$, we have $p_{i+1} \geq p_i + 1$ and $\| x_{p_ip_i} \| \geq \epsilon$}
+\end{proof}
+\step{7}{\pick\ a subsequence $(q_i)$ of $(p_i)$ such that $\sum_{j=0}^\infty x_{q_iq_j} \rightarrow 0$ as $i \rightarrow \infty$.}
+\begin{proof}
+	\pf\ \stepref{4}
+\end{proof}
+\step{8}{For all $i$ we have $x_{q_iq_j} \rightarrow 0$ as $j \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Since $\sum_{j=0}^\infty x_{q_iq_j} < \infty$.
+\end{proof}
+\step{9}{For all $j$ we have $x_{q_iq_j} \rightarrow 0$ as $i \rightarrow \infty$.}
+\begin{proof}
+	\pf\ \stepref{3}
+\end{proof}
+\step{10}{\pick\ a subsequence $(r_i)$ of $(q_i)$ such that, for all $i$, $j$ with $i \neq j$, we have
+\[ \| x_{r_ir_j} \| < \epsilon / 2^{j+2} \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$r_1 = q_1$}}
+	\step{b}{\assume{as induction hypothesis we have defined $(r_1, \ldots, r_n)$ such that:
+	\begin{itemize}
+	\item $r_1 < r_2 < \cdots < r_n$
+	\item Whenever $q_i > r_j$ then $\| x_{q_ir_j} \| < \epsilon / 2^{j+2}$
+	\item Whenever $i < j$ then $\| x_{r_ir_j} \| < \epsilon / 2^{j+2}$
+\end{itemize}}}
+	\step{c}{\pflet{$r_{n+1}$ be the first element of $(q_i)$ such that $r_{n+1} > r_n$, $\| x_{q_ir_{n+1}} \| < \epsilon / 2^{n+2}$ whenever $q_i \geq r_{n+1}$, and $\| x_{r_jr_{n+1}} \| < \epsilon / 2^{n+3}$ for $j = 1, \ldots, n$.}}
+	\begin{proof}
+		\pf\ One exists by \stepref{8}.
+	\end{proof}
+	\step{d}{$r_1 < \cdots < r_n < r_{n+1}$}
+	\step{e}{Whenever $q_i > r_j$ then $\| x_{q_ir_j} \| < \epsilon / 2^{j+2}$}
+	\step{f}{Whenever $i < j$ then $\| x_{r_ir_j} \| < \epsilon / 2^{j+2}$}
+\end{proof}
+\step{11}{\pick\ a subsequence $(s_i)$ of $(r_i)$ such that $\sum_{j=0}^\infty x_{s_is_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\begin{proof}
+	\pf\ \stepref{4}
+\end{proof}
+\step{12}{$\forall i \in \mathbb{N}. \left\| \sum_{j=0}^\infty x_{s_is_j} \right\| > \epsilon /2$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\left\| \sum_{j=0}^\infty x_{s_is_j} \right\|
+		& = \left\| x_{s_is_i} + \sum_{j \neq i} x_{s_is_j} \right\| \\
+		& \geq \left| \| x_{s_is_i} \| - \left\| \sum_{j \neq i} x_{s_is_j} \right\| \right| & (\text{Proposition \ref{prop:distancebetweennorms}}) \\
+		& = \| x_{s_is_i} \| - \left\| \sum_{j \neq i} x_{s_is_j} \right\| & \left( \| x_{s_is_i} \| > \epsilon, \left\| \sum_j x_{s_is_j} \right\| \leq \epsilon /2\right) \\
+		& \geq  \| x_{s_is_i} \| - \sum_{j \neq i} \| x_{s_is_j} \| & (\text{Triangle Inequality, }) \\
+		& > \epsilon - \sum_{j \neq i} \epsilon / 2^{j+2} & (\text{\stepref{6}, \stepref{10}}) \\
+		& > \epsilon / 2
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{11}.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Functionals}
 
 \begin{df}[Functional]

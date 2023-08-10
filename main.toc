@@ -89,5 +89,5 @@
 \contentsline {section}{\numberline {19.2}Subspaces}{156}{section.19.2}%
 \contentsline {section}{\numberline {19.3}Linear Transformations}{158}{section.19.3}%
 \contentsline {section}{\numberline {19.4}Normed Spaces}{159}{section.19.4}%
-\contentsline {subsection}{\numberline {19.4.1}Functionals}{172}{subsection.19.4.1}%
-\contentsline {section}{\numberline {19.5}Banach Spaces}{172}{section.19.5}%
+\contentsline {subsection}{\numberline {19.4.1}Functionals}{173}{subsection.19.4.1}%
+\contentsline {section}{\numberline {19.5}Banach Spaces}{173}{section.19.5}%
