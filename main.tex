@@ -8823,6 +8823,32 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $x \in X$.
 Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$ and $l \in X$. Then $(x_n)$ \emph{converges} to $l$, $x_n \rightarrow l$ as $n \rightarrow \infty$, if and only if, for every open neighbourhood $U$ of $l$, there exists $N$ such that $\forall n \geq N. x_n \in U$.
 \end{df}
 
+%TODO Check hypotheses
+\begin{thm}
+Let $X$ and $Y$ be topological spaces. Let $Z$ be a closed subspace of $X$ and $f : Z \rightarrow Y$ a continuous function. Then the graph of $f$, $G = \{ (x,f(x)) \mid x \in Z \}$, is closed in $X \times Y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$((x_n, f(x_n)))$ be a sequence in $G$.}}
+\step{2}{\pflet{$(x_n, T(x_n)) \rightarrow (x,y)$ as $n \rightarrow \infty$}}
+\step{3}{$x \in W$}
+\begin{proof}
+	\pf\ Since $x_n \rightarrow x$ and $W$ is closed.
+\end{proof}
+\step{4}{$y = f(x)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = \lim_{n \rightarrow \infty} f(x_n) \\
+		& = f \left( \lim_{n \rightarrow \infty} x_n \right) \\
+		& = f(x)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+
 \section{Metric Spaces}
 
 \begin{df}[Metric]
@@ -9983,29 +10009,12 @@ Let $U$ and $V$ be normed spaces. Let $T : U \rightarrow V$ be a continuous line
 \pf\ If $(x_n)$ is a sequence in $\mathcal{N}(T)$ and $x_n \rightarrow l$ then $T(l) = \lim_{n \rightarrow \infty} T(x_n) = 0$ so $l \in \mathcal{N}(T)$. \qed
 \end{proof}
 
-\begin{thm}
-Let $U$ and $V$ be normed spaces. Let $W$ be a closed subspace of $U$ and $T : W \rightarrow V$ be a continuous linear transformation. Then the graph of $T$, $G = \{ (x,T(x)) \mid x \in W \}$, is closed in $U \times V$.
-\end{thm}
+\subsection{Functionals}
 
-\begin{proof}
-\pf
-\step{1}{\pflet{$((x_n, T(x_n)))$ be a sequence in $G$.}}
-\step{2}{\pflet{$(x_n, T(x_n)) \rightarrow (x,y)$ as $n \rightarrow \infty$}}
-\step{3}{$x \in W$}
-\begin{proof}
-	\pf\ Since $x_n \rightarrow x$ and $W$ is closed.
-\end{proof}
-\step{4}{$y = T(x)$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		y & = \lim_{n \rightarrow \infty} T(x_n) \\
-		& = T \left( \lim_{n \rightarrow \infty} x_n \right) \\
-		& = T(x)
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
+\begin{df}[Functional]
+Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $K$. A \emph{functional} over $V$ is a bounded linear transformation $V \rightarrow K$. The \emph{dual space} of $V$ is
+\[ V' := \mathcal{B}(V,K) \enspace . \]
+\end{df}
 
 \section{Banach Spaces}
 

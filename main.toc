@@ -83,10 +83,11 @@
 \contentsline {section}{\numberline {18.1}Topological Spaces}{151}{section.18.1}%
 \contentsline {section}{\numberline {18.2}Continuous Functions}{152}{section.18.2}%
 \contentsline {section}{\numberline {18.3}Convergence}{152}{section.18.3}%
-\contentsline {section}{\numberline {18.4}Metric Spaces}{152}{section.18.4}%
+\contentsline {section}{\numberline {18.4}Metric Spaces}{153}{section.18.4}%
 \contentsline {chapter}{\numberline {19}Linear Algebra}{155}{chapter.19}%
 \contentsline {section}{\numberline {19.1}Vector Spaces}{155}{section.19.1}%
 \contentsline {section}{\numberline {19.2}Subspaces}{156}{section.19.2}%
 \contentsline {section}{\numberline {19.3}Linear Transformations}{158}{section.19.3}%
 \contentsline {section}{\numberline {19.4}Normed Spaces}{159}{section.19.4}%
+\contentsline {subsection}{\numberline {19.4.1}Functionals}{172}{subsection.19.4.1}%
 \contentsline {section}{\numberline {19.5}Banach Spaces}{172}{section.19.5}%
