@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  9 AUG 2023 21:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  10 AUG 2023 08:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,13 +575,13 @@ Overfull \hbox (16.33922pt too wide) detected at line 10167
 []
  []
 
-[174] [175] [176] [177] [178] (./main.aux)
+[174] [175] [176] [177] [178] [179] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A7A2E8B9CD9CF10202FBBE3D977EFEF1;12153.
  ) 
 Here is how much of TeX's memory you used:
- 10154 strings out of 476091
- 148498 string characters out of 5794082
+ 10156 strings out of 476091
+ 148516 string characters out of 5794082
  1874330 words of memory out of 5000000
  29516 multiletter control sequences out of 15000+600000
  523316 words of font info for 73 fonts, out of 8000000 for 9000
@@ -608,10 +608,10 @@ msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (178 pages, 709523 bytes).
+Output written on main.pdf (179 pages, 713030 bytes).
 PDF statistics:
- 2490 PDF objects out of 2984 (max. 8388607)
- 2104 compressed objects within 22 object streams
- 927 named destinations out of 1000 (max. 500000)
+ 2496 PDF objects out of 2984 (max. 8388607)
+ 2109 compressed objects within 22 object streams
+ 929 named destinations out of 1000 (max. 500000)
  737 words of extra memory for PDF output out of 10000 (max. 10000000)
 

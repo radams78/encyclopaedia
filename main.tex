@@ -10396,4 +10396,85 @@ Let $U$ be a normed space and $V$ a Banach space. Then $\mathcal{B}(U,V)$ is a B
 \qed
 \end{proof}
 
+\begin{thm}
+Let $U$ be a normed space and $V$ a Banach space. Let $W$ be a subspace of $U$. Let $L : W \rightarrow V$ be a bounded linear transformation. Then $L$ has a unique extension to a bounded linear transformation $\overline{W} \rightarrow V$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $L' : \overline{W} \rightarrow V$ as follows. Given $x \in \overline{W}$, pick a sequence $(x_n)$ in $W$ that converges to $x$. Then $L'(x) = \lim_{n \rightarrow \infty} L(x_n)$}
+\begin{proof}
+	\step{a}{For all $x \in \overline{W}$, there exists a sequence $(x_n)$ in $W$ that converges to $x$.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:closureaslimits}.
+	\end{proof}
+	\step{b}{For any sequence $(x_n)$ in $W$ that converges in $\overline{W}$, we have $(L(x_n))$ converges in $V$.}
+	\begin{proof}
+		\step{i}{\pflet{$(x_n)$ be a sequence in $W$ that converges in $\overline{W}$}}
+		\step{ii}{$(x_n)$ is Cauchy.}
+		\step{iii}{$(L(x_n))$ is Cauchy.}
+		\begin{proof}
+			\pf\ For any strictly increasing sequence of natural numbers $(p_n)$, we have $\| L(x_{p_{n+1}}) - L(x_{p_n}) \| \leq \| L \| \| x_{p_{n+1}} - x_{p_n} \| \rightarrow 0$ as $n \rightarrow \infty$.
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ $W$ is a Banach space.
+		\end{proof}
+	\end{proof}
+	\step{c}{If $(x_n)$ and $(y_n)$ are sequences in $W$ that converge to the same point in $\overline{W}$, then $\lim_{n \rightarrow \infty} L(x_n) = \lim_{n \rightarrow \infty} L(y_n)$}
+	\begin{proof}
+		\pf\ Since $\| L(x_n) - L(y_n) \| \leq \| L \| \| x_n - y_n \| \rightarrow 0$.
+	\end{proof}
+\end{proof}
+\step{2}{$L'$ extends $L$}
+\begin{proof}
+	\pf\ For $x \in W$ we have the constant sequence $(x)$ converges to $x$, and the constant sequence $(L(x))$ converges to $L(x)$, so $L'(x) = L(x)$.
+\end{proof}
+\step{3}{$L'$ is a linear transformation.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda, \mu \in K$ and $x,y \in \overline{W}$}}
+	\step{b}{\pick\ sequences $(x_n)$, $(y_n)$ in $W$ that converge to $x$ and $y$ respectively.}
+	\step{c}{$\lambda x_n + \mu y_n \rightarrow \lambda x + \mu y$}
+	\qedstep
+	\begin{proof}
+		\pf
+		\begin{align*}
+			L'(\lambda x + \mu y) & = \lim_{n \rightarrow \infty} L(\lambda x_n + \mu y_n) \\
+			& = \lim_{n \rightarrow \infty} (\lambda L(x_n) + \mu L(y_n)) \\
+			& = \lambda L'(x) + \mu L'(y)
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{$L'$ is bounded.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \overline{W}$}}
+	\step{b}{\pick\ a sequence $(x_n)$ in $W$ that converges to $x$.}
+	\step{c}{$\| L'(x) \| \leq \| L \| \| x \|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| L'(x) \| & = \| \lim_{n \rightarrow \infty} L(x_n) \| \\
+			& = \lim_{n \rightarrow \infty} \| L(x_n) \| \\
+			& \leq \|L\| \lim_{n \rightarrow \infty} \| x_n \| \\
+			& = \| L \| \| x \|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{5}{If $L'' : \overline{W} \rightarrow V$ is a bounded linear transformation that extends $L$, then $L'' = L'$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \overline{W}$}}
+	\step{b}{\pick\ a sequence $(x_n)$ in $W$ that converges to $x$.}
+	\step{c}{$L''(x) = L'(x)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			L''(x) & = \lim_{n \rightarrow \infty} L''(x_n) \\
+			& = \lim_{n \rightarrow \infty} L(x_n) \\
+			& = L'(x_n)
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
