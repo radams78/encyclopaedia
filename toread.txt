@@ -12,3 +12,7 @@ Thomas J. Jech. The Axiom of Choice. 1973
 K. Kuratowski, A Mostowski. Set Theory. 1968
 Waclaw Sierpiṅski. Cardinal and Ordinal Numbers. 1965
 Jean van Heiejenoort (editor). From Frege to Gödel, A Source Book in Mathematical Logic, 1879-1931. 1967
+A. Church. Introduction to Mathematical Logic. 1956
+S. C. Kleene. Introduction to Metamathematics. 1952
+J. L. Bell, A. B. Slomson. Models and Ultraproducts: An Introduction. 1969
+

@@ -8722,6 +8722,39 @@ Every bounded sequence in $\mathbb{R}^n$ has a convergent subsequence.
 %TODO Prove this
 %TODO Complex version
 
+\section{Step Functions}
+
+\begin{df}[Step Function]
+A \emph{step function} on $\mathbb{R}$ is a function $f : \mathbb{R} \rightarrow \mathbb{R}$, where $[a_1,b_1)$, \ldots, $[a_n,b_n)$ are disjoint half-open intervals, such that $f$ is constant on each $[a_i,b_i)$, and zero outside them.
+\end{df}
+
+\begin{df}[Basic Representation]
+Let $f$ be a step function. The \emph{basic representation} of $f$ is defined as follows.
+
+Let $a_0$, $a_1$, \ldots, $a_n$ be the points of discontinuity of $f$. For $k = 1, \ldots, n$, let $\alpha_k = f(a_{k-1})$ and $g_k$ be the characteristic function of $[a_{k-1},a_k)$. Then the basic representation of $f$ is
+\[ f = \alpha_1 g_1 + \cdots + \alpha_n g_n \enspace . \]
+\end{df}
+
+\begin{prop}
+If $f$ and $g$ are step functions then $\lambda x.f(x) + g(x)$ is a step function.
+\end{prop}
+
+\begin{prop}
+If $c \in \mathbb{R}$ and $f$ is a step function then $\lambda x. cf(x)$ is a step function.
+\end{prop}
+
+\begin{prop}
+If $f$ is a step function then $\lambda x. |f(x)|$ is a step function.
+\end{prop}
+
+\begin{prop}
+If $f$ and $g$ are step functions then $\lambda x. \min(f(x),g(x))$ and $\lambda x.\max(f(x),g(x))$ are step functions.
+\end{prop}
+
+\begin{prop}
+If $f$ is a step function and $c \in \mathbb{R}$ then $\lambda x. f(x-c)$ is a step function.
+\end{prop}
+
 \chapter{Complex Analysis}
 
 \begin{thm}[H\"{o}lder's Inequality]
@@ -9275,6 +9308,10 @@ The \emph{dimension} of a finite dimensional vector space $V$, $\dim V$, is the 
 
 \begin{prop}
 The dimension of $\mathbb{C}^n$ as a real vector space is $2n$.
+\end{prop}
+
+\begin{prop}
+The set of all step functions is a subspace of $\mathbb{R}^\mathbb{R}$.
 \end{prop}
 
 \section{Linear Transformations}

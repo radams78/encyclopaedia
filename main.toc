@@ -81,6 +81,7 @@
 \contentsline {section}{\numberline {16.2}The Rationals}{129}{section.16.2}%
 \contentsline {section}{\numberline {16.3}The Real Numbers}{132}{section.16.3}%
 \contentsline {chapter}{\numberline {17}Real Analysis}{147}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Step Functions}{147}{section.17.1}%
 \contentsline {chapter}{\numberline {18}Complex Analysis}{149}{chapter.18}%
 \contentsline {chapter}{\numberline {19}Topology}{153}{chapter.19}%
 \contentsline {section}{\numberline {19.1}Topological Spaces}{153}{section.19.1}%
