@@ -1734,6 +1734,77 @@ Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $
 \qed
 \end{proof}
 
+\chapter{Category Theory}
+
+\section{Categories}
+
+\begin{df}[Category]
+A \emph{category} $\mathbf{C}$ consists of:
+\begin{itemize}
+\item a class of \emph{objects};
+\item for any objects $X$, $Y$, a set $\mathbf{C}(X,Y)$ whose elements are called \emph{morphisms}. We write $f : X \rightarrow Y$ for $f \in \mathbf{C}(X,Y)$.
+\item for any morphisms $f : X \rightarrow Y$ and $g : Y \rightarrow Z$, a morphism $gf : X \rightarrow Z$
+\end{itemize}
+such that:
+\begin{itemize}
+\item For all $f : X \rightarrow Y$, $g : Y \rightarrow Z$, $h : Z \rightarrow W$, we have $h(gf) = (hg)f$.
+\item For every object $X$, there exists a morphism $\id{X} : X \rightarrow X$ such that:
+\begin{itemize}
+\item for any object $Y$ and morphism $f : X \rightarrow Y$ we have $f \id{X} = f$.
+\item for any object $Y$ and morphism $f : Y \rightarrow X$ we have $\id{X} f = f$.
+\end{itemize}
+\end{itemize}
+\end{df}
+
+\begin{df}[Category of Sets]
+Let $\mathrm{Set}$ be the category of sets and functions.
+\end{df}
+
+\begin{df}[Category of Pointed Sets]
+The \emph{category of pointed sets} $\mathrm{Set}_*$ has:
+\begin{itemize}
+\item objects all pairs $(A,a)$ where $A$ is a set and $a \in A$;
+\item morphisms $f : (A,a) \rightarrow (B,b)$ all functions $f : A \rightarrow B$ such that $f(a) = b$.
+\end{itemize}
+\end{df}
+
+\begin{df}[Opposite Category]
+For any category $\mathbf{C}$, the \emph{opposite category} $\mathbf{C}^{\mathrm{op}}$ is the category with the same objects as $\mathbf{C}$ and $\mathbf{C}^{\mathrm{op}}(X,Y) = \mathbf{C}(Y,X)$.
+\end{df}
+
+\section{Invertible Morphisms}
+
+\begin{df}[Left Inverse, Right Inverse]
+In any category, let $f : A \rightarrow B$ and $g : B \rightarrow A$. Then $g$ is a \emph{left inverse} of $f$, and $f$ is a \emph{right inverse} of $f$, iff $g f = \id{A}$.
+\end{df}
+
+\begin{prop}
+Let $f : A \rightarrow B$ and $g,h : B \rightarrow A$. If $g$ is a left inverse to $f$ and $h$ is a right inverse to $f$ then $g = h$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $g = g \id{B} = gfh = \id{A} h = h$. \qed
+\end{proof}
+
+\begin{df}[Isomorphism]
+A morphism $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff it has both a left and a right inverse. In this case, its unique inverse is denoted $f^{-1}$.
+
+Two objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
+\end{df}
+
+\begin{prop}
+A function is an isomorphism in $\mathrm{Set}$ iff it is a bijection.
+\end{prop}
+
+\begin{prop}
+Let $f : A \rightarrow B$ in the category $\mathbf{C}$. Then the following are equivalent.
+\begin{enumerate}
+\item $f$ is an isomorphism.
+\item For every object $X$, the function $\mathbf{C}(X,f) : \mathbf{C}(X,A) \rightarrow \mathbf{C}(X,B)$ is a bijection.
+\item For every object $X$, the function $\mathbf{C}(f,X) : \mathbf{C}(B,X) \rightarrow \mathbf{C}(A,X)$ is a bijection.
+\end{enumerate}
+\end{prop}
+
 \chapter{Equivalence Relations}
 
 \begin{df}[Equivalence Relation]
@@ -6562,6 +6633,14 @@ b & = eb \\
 \end{align*}
 \end{proof}
 
+\begin{df}
+Let $\mathrm{Grp}$ be the category of groups and group homomorphisms.
+\end{df}
+
+\begin{df}
+We identify any group $G$ with the category $G$ with one object whose morphisms are the elements of $G$, with composition given by the multiplication in $G$.
+\end{df}
+
 \section{Abelian Groups}
 
 \begin{df}[Abelian group]
@@ -8809,6 +8888,10 @@ For any topological space $X$, the identity function $\id{X} : X \rightarrow X$ 
 If $f : X \rightarrow Y$ and $g : Y \rightarrow Z$ are continuous then $g \circ f : X \rightarrow Z$ is continuous.
 \end{prop}
 
+\begin{df}
+Let $\mathrm{Top}$ be the category of topological spaces and continuous functions.
+\end{df}
+
 \begin{prop}
 Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for every closed set $C$ in $Y$, we have $f^{-1}(C)$ is closed in $X$.
 \end{prop}
@@ -8816,6 +8899,26 @@ Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is con
 \begin{df}[Continuous at a Point]
 Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $x \in X$. Then $f$ is \emph{continuous at $x$} iff, for every open neighbourhood $V$ of $f(x)$, we have $f^{-1}(V)$ is open.
 \end{df}
+
+\begin{df}
+The category of \emph{pointed} topological spaces, $\mathrm{Top}_*$, is the category with:
+\begin{itemize}
+\item objects all pairs $(A,a)$ where $A$ is a topological space and $a \in A$;
+\item morphisms $f : (A,a) \rightarrow (B,b)$ all continuous functions $f : A \rightarrow B$ such that $f(a) = b$.
+\end{itemize}
+\end{df}
+
+\begin{df}[Homeomorphism]
+A \emph{homeomorphism} is an isomorphism in $\mathrm{Top}$. Two isomorphic topological spaces are called \emph{homeomorphic}.
+\end{df}
+
+\begin{df}[Topological Property]
+A property of topological spaces is a \emph{topological} property iff it is preserved by homeomorphism.
+\end{df}
+
+\begin{prop}
+Cardinality of a topological space is a topological property.
+\end{prop}
 
 \section{Convergence}
 
@@ -8848,6 +8951,16 @@ Let $X$ and $Y$ be topological spaces. Let $Z$ be a closed subspace of $X$ and $
 \qed
 \end{proof}
 
+\section{Homotopy}
+
+%TODO Define homotopy
+\begin{df}
+Let $\mathrm{hTop}$ be the category whose objects are topological spaces, and whose morphisms are homotopy classes of continuous functions.
+\end{df}
+
+\begin{df}
+A \emph{homotopy equivalence} is an isomorphism in $\mathrm{hTop}$. Isomorphic topological spaces are called \emph{homotopic}.
+\end{df}
 
 \section{Metric Spaces}
 
@@ -8914,12 +9027,27 @@ Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continu
 \qed
 \end{proof}
 
+\begin{prop}
+Completeness is not a topological property.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $(-1,1) \cong \mathbb{R}$, but $\mathbb{R}$ is complete and $(-1,1)$ is not. \qed
+\end{proof}
+
+\chapter{Ring Theory}
+
+%Define these
+\begin{df}
+Given a ring $R$, let $R-\mathrm{Mod}$ be the category of modules over $R$ and $R$-linear maps.
+\end{df}
+
 \chapter{Linear Algebra}
 
 \section{Vector Spaces}
 
 \begin{df}[Vector Space]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{vector space} over $K$ consists of:
+Let $K$ be a field. A \emph{vector space} over $K$ consists of:
 \begin{itemize}
 \item a set $V$, whose elements are called \emph{vectors};
 \item an operation $+ : V^2 \rightarrow V$, \emph{addition};
@@ -8938,7 +9066,7 @@ We call the elements of $K$ \emph{scalars}. A \emph{real vector space} is a vect
 \end{df}
 
 \begin{prop}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. For any $\lambda \in K$ we have $\lambda 0 = 0$.
+Let $K$ be a field. Let $V$ be a vector space over $K$. For any $\lambda \in K$ we have $\lambda 0 = 0$.
 \end{prop}
 
 \begin{proof}
@@ -8951,7 +9079,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \end{proof}
 
 \begin{prop}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $\lambda \in K$ and $x \in V$. If $\lambda x = 0$ then either $\lambda = 0$ or $x = 0$.
+Let $K$ be a field. Let $V$ be a vector space over $K$. Let $\lambda \in K$ and $x \in V$. If $\lambda x = 0$ then either $\lambda = 0$ or $x = 0$.
 \end{prop}
 
 \begin{proof}
@@ -8960,7 +9088,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 
 \begin{prop}
 \label{prop:zerotimes}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. For any $x \in V$ we have $0x = 0$.
+Let $K$ be a field. Let $V$ be a vector space over $K$. For any $x \in V$ we have $0x = 0$.
 \end{prop}
 
 \begin{proof}
@@ -8973,7 +9101,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $
 \end{proof}
 
 \begin{prop}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. For any $x \in V$, we have $(-1)x = -x$.
+Let $K$ be a field. Let $V$ be a vector space over $K$. For any $x \in V$, we have $(-1)x = -x$.
 \end{prop}
 
 \begin{proof}
@@ -8988,7 +9116,7 @@ x + (-1)x & = 1x + (-1) x \\
 \end{proof}
 
 \begin{prop}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Then $K$ is a vector space over $K$ under addition and multiplication in $K$.
+Let $K$ be a field. Then $K$ is a vector space over $K$ under addition and multiplication in $K$.
 \end{prop}
 
 \begin{proof}
@@ -9004,7 +9132,7 @@ $\mathbb{C}$ is a vector space over $\mathbb{R}$.
 \end{proof}
 
 \begin{prop}
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $\{ V_i \}_{i \in I}$ be a family of vector spaces over $K$. Then $\prod_{i \in I} V_i$ is a vector space under
+Let $K$ be a field. Let $\{ V_i \}_{i \in I}$ be a family of vector spaces over $K$. Then $\prod_{i \in I} V_i$ is a vector space under
 \begin{align*}
 (f + g)(i) & = f(i) + g(i) & (f,g \in \prod_{i \in I} V_i, x \in X) \\
 (\lambda f)(x) & = \lambda f(x) & (\lambda \in K, f \in \prod_{i \in I} V_i, x \in X)
@@ -9018,7 +9146,7 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $\{ V_i \}_{i \in I}$ be a f
 \section{Subspaces}
 
 \begin{df}[Vector Subspace]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. A \emph{vector subspace} of $V$ is a subset $U \subseteq V$ such that, for all $\alpha, \beta \in K$ and $x,y \in U$, we have $\alpha x + \beta y \in U$.
+Let $K$ be a field. Let $V$ be a vector space over $K$. A \emph{vector subspace} of $V$ is a subset $U \subseteq V$ such that, for all $\alpha, \beta \in K$ and $x,y \in U$, we have $\alpha x + \beta y \in U$.
 
 It is a \emph{proper} subspace iff $U \neq V$.
 \end{df}
@@ -9047,8 +9175,6 @@ If $U$ is a subspace of $V$ and $V$ is a subspace of $W$ then $U$ is a subspace 
 \pf\ Easy. \qed
 \end{proof}
 
-%TODO Define topological space
-%TODO Define continuous function
 \begin{df}
 Let $\Omega$ be a topological space. Then $\mathcal{C}(\Omega)$ is the complex vector space of all continuous functions from $\Omega$ to $\mathbb{C}$. This is a subspace of $\mathbb{C}^\Omega$.
 \end{df}
@@ -9099,7 +9225,7 @@ For $p$ a real number $\geq 1$, we have that $l^p$ is a subspace of $\mathbb{C}^
 \end{proof}
 
 \begin{df}[Linear Combination]
-Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a vector space over $K$. Let $x, x_1, \ldots, x_n \in V$. Then $x$ is a \emph{linear combination} of $x_1$, \ldots, $x_n$ iff there exist $\alpha_1, \ldots, \alpha_n \in K$ such that
+Let $K$ be a field. Let $V$ be a vector space over $K$. Let $x, x_1, \ldots, x_n \in V$. Then $x$ is a \emph{linear combination} of $x_1$, \ldots, $x_n$ iff there exist $\alpha_1, \ldots, \alpha_n \in K$ such that
 \[ x = \alpha_1 x_1 + \cdots + \alpha_n x_n \enspace . \]
 \end{df}
 
@@ -9154,8 +9280,11 @@ The dimension of $\mathbb{C}^n$ as a real vector space is $2n$.
 \section{Linear Transformations}
 
 \begin{df}[Linear Transformation]
+Let $K$ be a field.
 Let $U$ and $V$ be vector spaces over $K$. Let $T : U \rightarrow V$. Then $T$ is a \emph{linear transformation} iff
 \[ \forall \alpha, \beta \in K. \forall x,y \in U. T(\alpha x + \beta y) = \alpha T(x) + \beta T(y) \enspace . \]
+
+Let $\mathrm{Vect}_K$ be the category of vector spaces over $K$ and linear transformations.
 \end{df}
 
 \begin{prop}
@@ -10094,6 +10223,17 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. Let $V$ be a normed space over $
 \[ V' := \mathcal{B}(V,K) \enspace . \]
 \end{df}
 
+\subsection{Contraction Mappings}
+
+\begin{df}[Contraction]
+Let $V$ be a normed space and $A \subseteq V$. Let $f : A \rightarrow V$. Then $f$ is a \emph{contraction} iff there exists a real number $\alpha$ with $0 < \alpha < 1$ such that, for all $x,y \in A$, we have
+\[ \| f(x) - f(y) \| \leq \alpha \| x - y \| \enspace . \]
+\end{df}
+
+\begin{prop}
+Every contraction mapping is continuous.
+\end{prop}
+
 \section{Banach Spaces}
 
 \begin{df}[Cauchy Sequence]
@@ -10302,6 +10442,7 @@ Let $(x_n)$ be a sequence in a normed space $V$. We say the series $\sum_{n=0}^\
 \end{df}
 
 \begin{thm}
+\label{thm:completeabsconv}
 A normed space is complete if and only if every absolutely convergent series is convergent.
 \end{thm}
 
@@ -10595,6 +10736,136 @@ Let $U$ be a normed space and $V$ a Banach space. Let $W$ be a subspace of $U$. 
 			& = \lim_{n \rightarrow \infty} L(x_n) \\
 			& = L'(x_n)
 		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Banach-Steinhaus]
+Let $X$ be a Banach space and $Y$ a normed space. Let $\mathcal{T}$ be a set of bounded linear transformations from $X$ into $Y$. Assume that, for all $x \in X$, there exists $M_x > 0$ such that, for all $T \in \mathcal{T}$, we have $\| T(x) \| \leq M_x$. Then there exists $M > 0$ such that, for all $T \in \mathcal{T}$, we have $\| T \| \leq M$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a Banach space.}}
+\step{2}{\pflet{$Y$ be a normed space.}}
+\step{3}{\pflet{$\mathcal{T}$ be a set of bounded linear transformations.}}
+\step{4}{\assume{For all $x \in X$, there exists $M_x > 0$ such that, for all $T \in \mathcal{T}$, we have $\| T(x) \| \leq M_x$.}}
+\step{5}{\assume{for a contradiction there is no $M > 0$ such that, for all $T \in \mathcal{T}$, we have $\| T \| \leq M$}}
+\step{6}{For every positive integer $n$, choose $T_n \in \mathcal{T}$ such that $\| T_n \| > n2^n$.}
+\step{7}{For every positive integer $n$, choose $x_n \in U$ such that $\| x_n \| = 1$ and $\| T_n(x_n) \| > n2^n$.}
+\step{8}{For every positive integer $n$ we have
+\[ \left\| \frac{1}{n} T_n \left( \frac{x_n}{2^n} \right) \right\| > 1 \enspace . \]}
+\step{9}{For positive integers $i$ and $j$, \pflet{\[ y_{ij} = \frac{1}{i} T_i(\frac{x_j}{2^j}) \]}}
+\step{10}{\pflet{$z = \sum_{j=1}^\infty \frac{x_j}{2^j}$}}
+\begin{proof}
+	\step{a}{$\sum_{j=1}^\infty \frac{x_j}{2^j}$ is absolutely convergent.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\sum_{j=1}^\infty \left\| \frac{x_j}{2^j} \right\| & = \sum_{j=1}^\infty \frac{1}{2^j} & (\text{\stepref{7}}) \\
+			& = 1
+		\end{align*}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Theorem \ref{thm:completeabsconv}.
+	\end{proof}
+\end{proof}
+\step{11}{\pick\ $C > 0$ such that, for all $i$, we have $\left\| \sum_{j=1}^\infty y_{ij} \right\| \leq C / i$.}
+\begin{proof}
+	\step{a}{\pick\ $C > 0$ such that, for all $T \in \mathcal{T}$, we have $\| T(z) \| \leq C$.}
+	\begin{proof}
+		\pf\ \stepref{4}.
+	\end{proof}
+	\step{b}{For all $i$ we have $\left\| \sum_{j=1}^\infty y_{ij} \right\| \leq C / i$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\left\| \sum_{j=1}^\infty y_{ij} \right\|
+			& = \left\| \sum_{j=1}^\infty \frac{1}{i} T_i \left( \frac{x_j}{2^j} \right) \right\| & (\text{\stepref{9}}) \\
+			& = \frac{1}{i} \left\| T_i \left( \sum_{j=1}^\infty \frac{x_j}{2^j} \right) \right\| & (T_i \text{ continuous by \stepref{3}}) \\
+			& = \frac{1}{i} \| T_i(z) \| & (\text{\stepref{10}}) \\
+			& \leq \frac{C}{i} & (\text{\stepref{a}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{12}{$\sum_{j=1}^\infty y_{ij} \rightarrow 0$ as $i \rightarrow \infty$}
+\step{13}{For any increasing sequence of positive integers $(q_i)$, we have $\sum_{j=0}^\infty y_{q_iq_j} \rightarrow 0$ as $i \rightarrow \infty$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{14}{For all $j$ we have $y_{ij} \rightarrow 0$ as $i \rightarrow \infty$}
+\begin{proof}
+	\pf\ From \stepref{9} and the fact that $T_i$ is continuous.
+\end{proof}
+\step{15}{$y_{ii} \rightarrow 0$ as $i \rightarrow \infty$.}
+\begin{proof}
+	\pf\ By the Diagonal Theorem.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{8}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Banach Fixed Point Theorem]
+Let $V$ be a Banach space. Let $F \subseteq V$ be closed and nonempty. Let $f : F \rightarrow F$ be a contraction. Then there exists a unique $z \in F$ such that $f(z) = z$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{0}{\pick\ $\alpha$ such that $0 < \alpha < 1$ and $\forall x,y \in V. \| f(x) - f(y) \| \leq \alpha \| x - y \|$.}
+\step{1}{\pick\ $x_0 \in F$}
+\step{2}{Extend to the sequence $(x_n)$ in $F$ by defining $x_{n+1} := f(x_n)$.}
+\step{3}{$(x_n)$ is Cauchy.}
+\begin{proof}
+	\step{a}{$\forall n \in \mathbb{N}. \| x_{n+1} - x_n \| \leq \alpha^n \| x_1 - x_0 \|$}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $N$ such that $\frac{\|x_1 - x_0\|}{1 - \alpha} \alpha^N \leq \epsilon$}
+	\step{d}{$\forall m,n \geq N. \| x_n - x_m \| < \epsilon$}
+	\begin{proof}
+		\step{i}{\pflet{$m,n \geq N$}}
+		\step{ii}{\assume{w.l.o.g. $m < n$}}
+		\step{iii}{$\| x_n - x_m \| < \epsilon$}
+		\begin{proof}
+			\pf		
+			\begin{align*}
+				\| x_n - x_m \|
+				& \leq \| x_n - x_{n-1} \| + \| x_{n-1} - x_{n-2} \| + \cdots + \| x_{m+1} - x_m \| \\
+				& \leq (\alpha^{n-1} + \alpha^{n-2} + \cdots + \alpha^m) \| x_1 - x_0 \| \\
+				& < \frac{\|x_1 - x_0\|}{1 - \alpha} \alpha^m \\
+				& \leq \frac{\|x_1 - x_0\|}{1 - \alpha} \alpha^N \\
+				& \leq \epsilon
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{4}{\pflet{$z = \lim_{n \rightarrow \infty} x_n$}}
+\step{5}{$z$ is unique such that $f(z) = z$.}
+\begin{proof}
+	\step{a}{$f(z) = z$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			f(z) & = f \left( \lim_{n \rightarrow \infty} x_n \right) \\
+			& = \lim_{n \rightarrow \infty} f(x_n) \\
+			& = \lim_{n \rightarrow \infty} x_{n+1} \\
+			& = z
+		\end{align*}
+	\end{proof}
+	\step{b}{If $f(w) = w$ then $w = z$.}
+	\begin{proof}
+		\step{i}{$\| w - z \| \leq \alpha \| w - z \|$}
+		\begin{proof}
+			\pf\ $\| w - z \| = \| f(w) - f(z) \| \leq \alpha \| w - z \|$
+		\end{proof}
+		\step{ii}{$\| w - z \| = 0$}
+		\begin{proof}
+			\pf\ Otherwise $\| w - z \| < \| w - z \|$.
+		\end{proof}
+		\step{iii}{$w = z$}
 	\end{proof}
 \end{proof}
 \qed
