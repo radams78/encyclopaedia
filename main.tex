@@ -35,6 +35,7 @@
 \newcommand{\rank}{\ensuremath{\operatorname{rank}}}
 \newcommand{\cf}{\ensuremath{\operatorname{cf}}}
 \newcommand{\ssup}{\ensuremath{\operatorname{ssup}}}
+\newcommand{\supp}{\ensuremath{\operatorname{supp}}}
 
 \begin{document}
 
@@ -8755,6 +8756,228 @@ If $f$ and $g$ are step functions then $\lambda x. \min(f(x),g(x))$ and $\lambda
 If $f$ is a step function and $c \in \mathbb{R}$ then $\lambda x. f(x-c)$ is a step function.
 \end{prop}
 
+\begin{df}[Support]
+Given $f : \mathbb{R} \rightarrow \mathbb{R}$, the \emph{support} of $f$ is
+\[ \supp f := \{ x \in \mathbb{R} \mid f(x) \neq 0 \} \enspace . \]
+\end{df}
+
+\begin{df}[Integral of a Step Function]
+Given a step function $f$, define $\int f = \int f(x) dx \in \mathbb{R}$ as follows.
+
+Let $f(x) = \lambda_1 f_1(x) + \cdots + \lambda_n f_n(x)$, where $f_i$ is the characteristic function of $[a_i,b_i)$. Then
+\[ \int f = \lambda_1 (b_1 - a_1) + \cdots + \lambda_n (b_n - a_n) \enspace . \]
+We prove this is well defined.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f = \lambda_1 f_1(x) + \cdots + \lambda_m f_m(x) = \mu_1 g_1(x) + \cdots + \mu_n g_n(x)$, where $f_i$ is the characteristic function of $[a_i,b_i)$ and $g_i$ is the characteristic function of $[c_i,d_i)$, with $a_1 < b_1 \leq a_2 < b_2 \leq \cdots \leq a_m < b_m$ and $c_1 < d_1 \leq c_2 < d_2 \leq \cdots \leq c_n < d_n$.}}
+\step{2}{\assume{w.l.o.g. none of the $\lambda_i$ or $\mu_i$ is zero.}}
+\step{3}{\assume{w.l.o.g. we never have $\lambda_i = \lambda_{i+1}$ and $b_i = a_{i+1}$, and we never have $\mu_i = \mu_{i+1}$ and $d_i = c_{i+1}$.}}
+\step{4}{We have $m = n$ and for all $i$, $a_i = b_i$ and $c_i = d_i$ and $\lambda_i = \mu_i$.}
+\begin{proof}
+	\step{a}{\assume{w.l.o.g. $m \leq n$}}
+	\step{b}{\assume{as induction hypothesis $a_i = b_i$, $c_i = d_i$, $\lambda_i = \mu_i$ for $i = 1, \ldots, k$ with $k < m$.}}
+	\step{c}{$a_{k+1} = b_{k+1}$}
+	\begin{proof}
+		\pf\ It is $\inf \{ x \in (a_k, + \infty) : f(x) \neq 0 \}$ (or $\inf \{x \in \mathbb{R} : f(x) \neq 0 \}$ if $k = 0$).
+	\end{proof}
+	\step{d}{$\lambda_{k+1} = \mu_{k+1}$}
+	\begin{proof}
+		\pf\ It is $f(a_{k+1})$.
+	\end{proof}
+	\step{e}{$c_{k+1} = d_{k+1}$}
+	\begin{proof}
+		\pf\ It is $\sup \{ x \in (a_{k+1}, + \infty) : f(x) = \lambda_{k+1} \}$.
+	\end{proof}
+	\step{f}{$m = n$}
+	\begin{proof}
+		\pf\ For all $x > b_m$ we have $f(x) = 0$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+If $f$ and $g$ are step functions then $\int (f(x) + g(x)) dx = \int f + \int g$.
+\end{prop}
+
+\begin{prop}
+If $f$ is a step function then $\int cf(x)dx = c \int f$.
+\end{prop}
+
+\begin{prop}
+If $f$ and $g$ are step functions and $\forall x. f(x) \leq g(x)$ then $\int f \leq \int g$.
+\end{prop}
+
+\begin{proof}
+\pf We have $g(x) - f(x) \geq 0$ for all $x$ and so $\int (g(x) - f(x))dx \geq 0$. \qed
+\end{proof}
+
+\begin{prop}
+If $f$ is a step function then $\left| \int f \right| \leq \int |f(x)|dx$.
+\end{prop}
+
+\begin{prop}
+If $f$ is a step function and $c \in \mathbb{R}$ then $\int f(x-c)dx = \int f$.
+\end{prop}
+
+\begin{lm}
+Let $f$ be a step function with $\supp f \subseteq [a_1, b_1) \cup \cdots \cup [a_n, b_n)$. Let $M$ be a constant. If $\forall x. |f(x)| < M$ then
+\[ \int |f(x)| dx \leq M \sum_{k=1}^n (b_k - a_k) \enspace . \]
+\end{lm}
+
+\begin{lm}
+\label{lm:sum_of_interval_lengths}
+Let $\{ [a_i, b_i) \mid i \in \mathbb{N} \}$ be a partition of $[a,b)$. Then
+\[ \sum_{i=0}^\infty (b_i - a_i) = b - a \enspace . \]
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{For all $c \in (a,b]$ we have $\{ [a_i,b_i) \cap [a,c) \mid i \in \mathbb{N} \}$ is a partition of $[a,c)$.}
+\step{2}{For $c \in (a,b]$ and $n \in \mathbb{N}$, \pflet{$b_{cn} := min(b_n,c)$}}
+\step{3}{\pflet{$S = \left\{ c \in (a,b] \mid \sum_{a_n < b_{cn}} (b_{cn} - a_n) = c - a \right\}$}}
+\step{4}{$S \neq \emptyset$}
+\begin{proof}
+	\step{a}{\pick\ $n$ such that $a_n = a$}
+	\step{b}{$b_n \in S$}
+\end{proof}
+\step{5}{\pflet{$s := \sup S$}}
+\step{6}{$s \in S$}
+\begin{proof}
+	\step{a}{\pick\ an increasing sequence $(s_n)$ in $S$ that converges to $S$.}
+	\step{b}{For all $n$ we have $s_n - a \leq \sum_{a_m < b_{sm}} (b_{sm} - a_m) \leq s - a$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			s_n - a & = \sum_{a_m < b_{s_nm}} (b_{s_nm} - a_m) & (s_n \in S) \\
+			& \leq \sum_{a_m < b_{sm}} (b_{sm} - a_m) & (s_n \leq s) \\
+			& \leq s - a & (\text{\stepref{1}})
+		\end{align*}
+	\end{proof}
+	\step{c}{$\sum_{a_m < b_{sm}}(b_{sm} - a_m) = s - a$}
+	\begin{proof}
+		\pf\ Sandwich Theorem
+	\end{proof}
+\end{proof}
+\step{7}{$s = b$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $s < b$}}
+	\step{b}{\pick\ $k$ such that $s \in [a_k,b_k)$}
+	\step{c}{$b_k \in S$}
+	\begin{proof}
+		\pf\ Since $\sum_{a_m < b_{sm}} (b_{sm} - a_m) = \sum_{a_m < b_{b_km}} (b_{b_km} - a_m)$.
+	\end{proof}
+	\step{d}{$b_k \leq s$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{8}{$b \in S$}
+\step{9}{$\sum_{a_n < b_n} (b_n - a_n) = b - a$}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $(f_n)$ be a decreasing sequence of non-negative step functions such that, for all $x \in \mathbb{R}$, we have $f_n(x) \rightarrow 0$ as $n \rightarrow \infty$. Then $\int f_n \rightarrow 0$ as $n \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\left( \int f_n \right)$ is decreasing and bounded below by 0.}
+\step{2}{\pflet{$\epsilon := \lim_{n \rightarrow 0} \int f_n$}}
+\step{3}{\assume{for a contradiction $\epsilon > 0$.}}
+\step{4}{\pick\ $a,b \in \mathbb{R}$ such that $\supp f_0 \subseteq [a,b)$}
+\step{5}{\pflet{$\alpha := \epsilon / 2(b-a)$}}
+\step{6}{For $n \in \mathbb{N}$, \pflet{
+\[ A_n := \{ x \in [a,b) : f_n(x) < \alpha \} \enspace . \]}}
+\step{7}{\pflet{$B_0 := A_0$}}
+\step{8}{For $n$ a positive integer, \pflet{$B_n = A_n - A_{n-1}$.}}
+\step{9}{For all $n$ we have $A_n \subseteq A_{n+1}$.}
+\step{10}{For $m \neq n$ we have $B_m \cap B_n = \emptyset$.}
+\step{11}{$\bigcup_{n=0}^\infty A_n = [a,b)$}
+\begin{proof}
+	\pf\ For all $x \in [a,b)$, there exists $N$ such that $f_N(x) < \alpha$ because $f_n(x) \rightarrow 0$ as $n \rightarrow \infty$.
+\end{proof}
+\step{12}{$\bigcup_{n=0}^\infty B_n = [a,b)$}
+\step{13}{For $n \in \mathbb{N}$, \pflet{$B_n = [a_{n1},b_{n1}) \cup \cdots \cup [a_{nk_n},b_{nk_n})$.}}
+\step{14}{$\sum_{n=0}^\infty 	\sum_{k=1}^{k_n} (b_{nk} - a_{nk}) = b - a$}
+\begin{proof}
+	\pf\ Lemma \ref{lm:sum_of_interval_lengths}.
+\end{proof}
+\step{15}{\pflet{
+\[ \delta = \frac{\epsilon}{2 \max_x |f_0(x)|} \enspace . \]}}
+\step{15}{\pick\ $n_0$ such that
+\[ \sum_{n=n_0}^\infty \sum_{k=1}^{k_n} (b_{nk} - a_{nk}) < \delta \enspace . \]}
+\step{16}{$A_{n_0} = B_0 \cup \cdots \cup B_{n_0}$}
+\step{17}{\pflet{$g : \mathbb{R} \rightarrow \mathbb{R}$,
+\[ g(x) = \begin{cases}
+f_{n_0}(x) & \text{if } x \in A_{n_0} \\
+0 & \text{if } x \notin A_{n_0}
+\end{cases} \]}}
+\step{18}{\pflet{$h : \mathbb{R} \rightarrow \mathbb{R}$,
+\[ h(x) = \begin{cases}
+0 & \text{if } x \in A_{n_0} \\
+f_{n_0}(x) & \text{if } x \notin A_{n_0}
+\end{cases} \]}}
+\step{19}{$\forall x \in B. f_{n_0}(x) < \alpha$}
+\step{20}{$\forall x \in \mathbb{R}. g(x) < \alpha$}
+\step{21}{\[ \int g < \frac{\epsilon}{2} \]}
+\step{22}{\[ \int h < \frac{\epsilon}{2} \]}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\int h & < \delta \max_x |f_{n_0}(x)| \\
+		& \leq \delta \max_x |f_0(x)| \\
+		& = \epsilon / 2
+	\end{align*}
+\end{proof}
+\step{23}{\[ \int f_{n_0} < \epsilon \]}
+\begin{proof}
+	\pf\ Since $\forall x. f_{n_0}(x) = g(x) + h(x)$.
+\end{proof}
+\step{24}{\[ \lim_{n \rightarrow \infty} \int f_n < \epsilon \]}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{2}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $(f_n)$ be an increasing sequence of step functions. If $\lim_{n \rightarrow \infty} f_n(x) \geq 0$ for all $x$, then $\lim_{n \rightarrow \infty} \int f_n \geq 0$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{For $n \in \mathbb{N}$, \pflet{$g_n : \mathbb{R} \rightarrow \mathbb{R}$ be the function $g_n(x) = \max(0, -f_n(x))$.}}
+\step{2}{$(g_n)$ is a decreasing sequence of step functions and $g_n(x) \rightarrow 0$ as $n \rightarrow \infty$ for all $x$.}
+\step{3}{$\int g_n \rightarrow 0$ as $n \rightarrow \infty$}
+\step{4}{For all $n \in \mathbb{N}$ we have $f_n(x) = \max(0,f_n(x)) - \max(0,-f_n(x))$.}
+\step{5}{\[ \int f_n = \int \max(0, f_n(x)) dx - \int \max(0, -f_n(x)) dx \]}
+\step{6}{\[ \lim_{n \rightarrow \infty} \int f_n = \lim_{n \rightarrow \infty} \int \max(0, f_n(x)) dx \]}
+\step{7}{$\lim_{n \rightarrow \infty} \int f_n \geq 0$}
+\qed
+\end{proof}
+
+\section{Lebesgue Integration}
+
+\begin{df}[Lebesgue Integration]
+Let $f : \mathbb{R} \rightarrow \mathbb{R}$. Then $f$ is \emph{Lebesgue integrable} iff there exists a sequence $(f_n)$ of step functions such that:
+\begin{itemize}
+\item
+\[ \sum_{n=0}^\infty \int |f_n(x)|dx < \infty \]
+\item
+For all $x \in \mathbb{R}$, if $\sum_{n=0}^\infty |f_n(x)| < \infty$, then $f(x) = \sum_{n=0}^\infty f_n(x)$.
+\end{itemize}
+We write $f \simeq \sum_{n=0}^\infty f_n$ for these two conditions.
+
+The \emph{integral} of $f$ is then
+\[ \int f := \sum_{n=0}^\infty \int f_n \enspace . \]
+\end{df}
+
 \chapter{Complex Analysis}
 
 \begin{thm}[H\"{o}lder's Inequality]
@@ -10907,5 +11130,18 @@ Let $V$ be a Banach space. Let $F \subseteq V$ be closed and nonempty. Let $f : 
 \end{proof}
 \qed
 \end{proof}
+
+\section{Inner Product Spaces}
+
+\begin{df}[Inner Product Space]
+An \emph{inner product} on a complex vector space $V$ is a function $\langle \ ,\ \rangle : V^2 \rightarrow \mathbb{C}$ such that:
+\begin{itemize}
+\item $\forall x,y \in V. \langle x,y \rangle = \overline \langle y,x \rangle$
+\item $\forall \lambda \in \mathbb{C}. \forall x,y \in V. \langle \lambda x,y \rangle = \lambda \langle x,y \rangle$
+\item $\forall x,y,z \in V. \langle x + y, z \rangle = \langle x,z \rangle + \langle y,z \rangle$
+\item $\forall x \in V. \langle x,x \rangle = 0 \Rightarrow x = 0$
+\end{itemize}
+An \emph{inner product space} or \emph{pre-Hilbert space} is a complex vector space with an inner product.
+\end{df}
 
 \end{document}

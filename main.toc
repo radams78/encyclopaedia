@@ -82,19 +82,21 @@
 \contentsline {section}{\numberline {16.3}The Real Numbers}{132}{section.16.3}%
 \contentsline {chapter}{\numberline {17}Real Analysis}{147}{chapter.17}%
 \contentsline {section}{\numberline {17.1}Step Functions}{147}{section.17.1}%
-\contentsline {chapter}{\numberline {18}Complex Analysis}{149}{chapter.18}%
-\contentsline {chapter}{\numberline {19}Topology}{153}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Topological Spaces}{153}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Continuous Functions}{154}{section.19.2}%
-\contentsline {section}{\numberline {19.3}Convergence}{154}{section.19.3}%
-\contentsline {section}{\numberline {19.4}Homotopy}{155}{section.19.4}%
-\contentsline {section}{\numberline {19.5}Metric Spaces}{155}{section.19.5}%
-\contentsline {chapter}{\numberline {20}Ring Theory}{157}{chapter.20}%
-\contentsline {chapter}{\numberline {21}Linear Algebra}{159}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Vector Spaces}{159}{section.21.1}%
-\contentsline {section}{\numberline {21.2}Subspaces}{160}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Linear Transformations}{162}{section.21.3}%
-\contentsline {section}{\numberline {21.4}Normed Spaces}{163}{section.21.4}%
-\contentsline {subsection}{\numberline {21.4.1}Functionals}{177}{subsection.21.4.1}%
-\contentsline {subsection}{\numberline {21.4.2}Contraction Mappings}{177}{subsection.21.4.2}%
-\contentsline {section}{\numberline {21.5}Banach Spaces}{177}{section.21.5}%
+\contentsline {section}{\numberline {17.2}Lebesgue Integration}{151}{section.17.2}%
+\contentsline {chapter}{\numberline {18}Complex Analysis}{153}{chapter.18}%
+\contentsline {chapter}{\numberline {19}Topology}{157}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Topological Spaces}{157}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Continuous Functions}{158}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Convergence}{158}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Homotopy}{159}{section.19.4}%
+\contentsline {section}{\numberline {19.5}Metric Spaces}{159}{section.19.5}%
+\contentsline {chapter}{\numberline {20}Ring Theory}{161}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Linear Algebra}{163}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Vector Spaces}{163}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Subspaces}{164}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Linear Transformations}{166}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Normed Spaces}{167}{section.21.4}%
+\contentsline {subsection}{\numberline {21.4.1}Functionals}{181}{subsection.21.4.1}%
+\contentsline {subsection}{\numberline {21.4.2}Contraction Mappings}{181}{subsection.21.4.2}%
+\contentsline {section}{\numberline {21.5}Banach Spaces}{181}{section.21.5}%
+\contentsline {section}{\numberline {21.6}Inner Product Spaces}{192}{section.21.6}%

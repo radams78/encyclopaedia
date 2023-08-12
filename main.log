@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  11 AUG 2023 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  12 AUG 2023 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -292,36 +292,36 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-Package hyperref Info: Link coloring OFF on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+Package hyperref Info: Link coloring OFF on input line 40.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -340,14 +340,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 Chapter 1.
 [7] [8]
-Overfull \hbox (10.66151pt too wide) in paragraph at lines 207--208
+Overfull \hbox (10.66151pt too wide) in paragraph at lines 208--209
 []\OT1/cmr/bx/n/10 Definition 1.3.4 \OT1/cmr/m/n/10 (Re-place-ment Ax-iom Schem
 e)\OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 Re-place-ment Ax-iom 
 Scheme
  []
 
 
-Overfull \hbox (1.53764pt too wide) detected at line 211
+Overfull \hbox (1.53764pt too wide) detected at line 212
 \OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 a[]; [] ; a[]; B\OT1/cmr/m/n/10 (\OMS/cmsy/m
 /n/10 8\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 B:\OMS/cmsy/m/n/1
 0 8\OML/cmm/m/it/10 y; y[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 [\
@@ -362,7 +362,7 @@ m/m/it/10 P\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x; y[]; a[]; [] ; a[]\OT1/cmr/m/n/
 ]
 Chapter 2.
 [17] [18] [19] [20] [21] [22]
-Overfull \hbox (0.74097pt too wide) in paragraph at lines 1057--1057
+Overfull \hbox (0.74097pt too wide) in paragraph at lines 1058--1058
 []\OT1/cmr/m/n/10 as trans-fi-nite in-duc-tion hy-poth-e-sis $\OMS/cmsy/m/n/10 
 8\OML/cmm/m/it/10 y\OT1/cmr/bx/n/10 R\OML/cmm/m/it/10 x:y \OMS/cmsy/m/n/10 2 \O
 ML/cmm/m/it/10 B \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 ) \OML/
@@ -388,7 +388,7 @@ Chapter 5.
 [37
 
 ]
-Overfull \hbox (0.27765pt too wide) in paragraph at lines 1906--1906
+Overfull \hbox (0.27765pt too wide) in paragraph at lines 1907--1907
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 re-spects $\OML/cmm/m
 /it/10 R$ \OT1/cmr/m/n/10 then there ex-ists $[] : \OML/cmm/m/it/10 A=R \OMS/cm
 sy/m/n/10 ! \OT1/cmr/bx/n/10 B$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 8\O
@@ -414,7 +414,7 @@ WARNING: proof step "3" (<3>3) already defined
 [59]
 WARNING: proof step "7" (<1>8) already defined
 [60] [61] [62]
-Overfull \hbox (23.77295pt too wide) in paragraph at lines 3560--3560
+Overfull \hbox (23.77295pt too wide) in paragraph at lines 3561--3561
 []\OT1/cmr/bx/n/14.4 The Well-Ordering The-o-rem and Zorn's Lemma 
  []
 
@@ -450,7 +450,7 @@ Chapter 11.
 [99
 
 ] [100] [101]
-Overfull \hbox (1.70007pt too wide) in paragraph at lines 5970--5971
+Overfull \hbox (1.70007pt too wide) in paragraph at lines 5971--5972
 []\OT1/cmr/bx/n/10 Corollary Schema 11.0.12.1. \OT1/cmr/m/it/10 There ex-ists a
 n in-stance $\OML/cmm/m/it/10 $ \OT1/cmr/m/it/10 of the Ax-iom Schema
  []
@@ -484,7 +484,7 @@ WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 [118] [119] [120]
-Overfull \hbox (5.89409pt too wide) in paragraph at lines 7063--7064
+Overfull \hbox (5.89409pt too wide) in paragraph at lines 7064--7065
 []\OT1/cmr/bx/n/10 Definition 15.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \
 OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
@@ -495,12 +495,12 @@ OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
 ]
 Chapter 16.
 [125]
-Overfull \hbox (5.81142pt too wide) detected at line 7381
+Overfull \hbox (5.81142pt too wide) detected at line 7382
 []
  []
 
 [126]
-Overfull \hbox (10.26518pt too wide) detected at line 7396
+Overfull \hbox (10.26518pt too wide) detected at line 7397
 []
  []
 
@@ -514,7 +514,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
 [142]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 8546--8546
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 8547--8547
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
@@ -525,68 +525,70 @@ msy/m/n/10 j \OML/cmm/m/it/10 u[]x[]x\OMS/cmsy/m/n/10 g$
 
 ]
 Chapter 17.
-[147] [148
+[147] [148] [149]
+WARNING: proof step "15" (<1>16) already defined
+[150] [151] [152]
+Chapter 18.
+[153
 
 ]
-Chapter 18.
-[149]
-Overfull \hbox (12.217pt too wide) detected at line 8823
+Overfull \hbox (12.217pt too wide) detected at line 9046
 []
  []
 
 
-Overfull \hbox (26.47981pt too wide) detected at line 8857
+Overfull \hbox (26.47981pt too wide) detected at line 9080
 []
  []
 
-[150]
-Overfull \hbox (3.13248pt too wide) detected at line 8860
+[154]
+Overfull \hbox (3.13248pt too wide) detected at line 9083
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
 
-[151] [152
+[155] [156
 
 ]
 Chapter 19.
-[153] [154] [155] [156]
+[157] [158] [159] [160]
 Chapter 20.
-[157
+[161
 
-] [158
+] [162
 
 ]
 Chapter 21.
-[159] [160] [161] [162] [163] [164]
+[163] [164] [165] [166] [167] [168]
 WARNING: proof step "3" (<1>5) already defined
-[165] [166] [167]
-Overfull \hbox (76.64789pt too wide) detected at line 9677
+[169] [170] [171]
+Overfull \hbox (76.64789pt too wide) detected at line 9900
 []
  []
 
-[168] [169] [170] [171]
+[172] [173] [174] [175]
 Underfull \vbox (badness 1112) has occurred while \output is active []
 
- [172]
-Overfull \hbox (9.89566pt too wide) detected at line 10030
+ [176]
+Overfull \hbox (9.89566pt too wide) detected at line 10253
 []
  []
 
 
-Overfull \hbox (12.00586pt too wide) in paragraph at lines 10038--10038
+Overfull \hbox (12.00586pt too wide) in paragraph at lines 10261--10261
 []\OT1/cmr/m/n/10 as in-duc-tion hy-poth-e-sis there ex-ists a se-quence $(\OML
 /cmm/m/it/10 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10 )$
  []
 
-[173] [174]
-Overfull \hbox (2.20624pt too wide) in paragraph at lines 10179--10180
+[177] [178]
+Overfull \hbox (2.20624pt too wide) in paragraph at lines 10402--10403
 []\OT1/cmr/bx/n/10 Theorem 21.4.49 \OT1/cmr/m/n/10 (Di-ag-o-nal The-o-rem)\OT1/
 cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/it/10 be a n
 ormed space. Let $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )[]$
  []
 
-[175]
-Overfull \hbox (7.6992pt too wide) in paragraph at lines 10197--10197
+[179]
+Overfull \hbox (7.6992pt too wide) in paragraph at lines 10420--10420
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a strictly in-creas-ing se-quence $(\OM
 L/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )$ and $\OML/cmm/m/it/10 ^^O > \OT1/cmr/m/n/10
  0$ such that $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \U/msb/m
@@ -594,27 +596,27 @@ L/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )$ and $\OML/cmm/m/it/10 ^^O > \OT1/cmr/m/n/10
  k ^^U
  []
 
-[176] [177] [178] [179]
-Overfull \hbox (16.33922pt too wide) detected at line 10463
+[180] [181] [182] [183]
+Overfull \hbox (16.33922pt too wide) detected at line 10686
 []
  []
 
-[180] [181] [182] [183] [184] [185]
-Overfull \hbox (3.54703pt too wide) in paragraph at lines 10831--10831
+[184] [185] [186] [187] [188] [189]
+Overfull \hbox (3.54703pt too wide) in paragraph at lines 11054--11054
 []\OT1/cmr/m/n/10 For any in-creas-ing se-quence of pos-i-tive in-te-gers $(\OM
 L/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )$, we have $[][] \OML/cmm/m/it/10 y[] \OMS/cm
 sy/m/n/10 !
  []
 
-[186] [187] [188] (./main.aux)
+[190] [191] [192] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4DDD0FD4A304730AC81EC57C76572C4D;13156.
+(rerunfilecheck)             Checksum: A25CF329C330F42DECE0232FBBD7DAE3;13481.
  ) 
 Here is how much of TeX's memory you used:
- 10230 strings out of 476091
- 149255 string characters out of 5794082
+ 10262 strings out of 476091
+ 149545 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29530 multiletter control sequences out of 15000+600000
+ 29543 multiletter control sequences out of 15000+600000
  524014 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,14n,76p,541b,754s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -639,10 +641,10 @@ msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (188 pages, 739159 bytes).
+Output written on main.pdf (192 pages, 755195 bytes).
 PDF statistics:
- 2639 PDF objects out of 2984 (max. 8388607)
- 2235 compressed objects within 23 object streams
- 988 named destinations out of 1000 (max. 500000)
- 801 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2682 PDF objects out of 2984 (max. 8388607)
+ 2274 compressed objects within 23 object streams
+ 1007 named destinations out of 1200 (max. 500000)
+ 817 words of extra memory for PDF output out of 10000 (max. 10000000)
 
