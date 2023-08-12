@@ -11136,12 +11136,17 @@ Let $V$ be a Banach space. Let $F \subseteq V$ be closed and nonempty. Let $f : 
 \begin{df}[Inner Product Space]
 An \emph{inner product} on a complex vector space $V$ is a function $\langle \ ,\ \rangle : V^2 \rightarrow \mathbb{C}$ such that:
 \begin{itemize}
-\item $\forall x,y \in V. \langle x,y \rangle = \overline \langle y,x \rangle$
+\item $\forall x,y \in V. \langle x,y \rangle = \overline{ \langle y,x \rangle}$
 \item $\forall \lambda \in \mathbb{C}. \forall x,y \in V. \langle \lambda x,y \rangle = \lambda \langle x,y \rangle$
 \item $\forall x,y,z \in V. \langle x + y, z \rangle = \langle x,z \rangle + \langle y,z \rangle$
 \item $\forall x \in V. \langle x,x \rangle = 0 \Rightarrow x = 0$
 \end{itemize}
 An \emph{inner product space} or \emph{pre-Hilbert space} is a complex vector space with an inner product.
 \end{df}
+
+\begin{prop}
+$\mathbb{C}^n$ is an inner product space under
+\[ \langle (x_1, \ldots, x_n) , (y_1 ,\ldots, y_n) \rangle = x_1 \overline{y_1} + \cdots + x_n \overline{y_n} \enspace . \]
+\end{prop}
 
 \end{document}
