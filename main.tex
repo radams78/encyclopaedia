@@ -186,8 +186,13 @@ For any class $\mathbf{A}$, the \emph{power class} $\mathcal{P} \mathbf{A}$ is $
 
 \section{The Other Axioms}
 
+\begin{df}[Empty Set Axiom]
+The \emph{Empty Set Axiom} is the statement: The empty class $\emptyset$ is a set.
+\[ \exists e \forall x x \notin e \]
+\end{df}
+
 \begin{df}[Pairing Axiom]
-The \emph{Pairing Axiom} is the statement: for any sets $a$ and $b$, the class $\{a,b\}$ is a set.
+The \emph{Pairing Axiom} or \emph{Pair Set Axiom} is the statement: for any sets $a$ and $b$, the class $\{a,b\}$ is a set.
 \[ \forall a \forall b \exists c \forall x (x \in c \Leftrightarrow x = a \vee x = b) \]
 \end{df}
 
@@ -197,7 +202,7 @@ The \emph{Union Axiom} is the statement: for any set $A$, the class $\bigcup A$ 
 \end{df}
 
 \begin{df}[Comprehension Axiom Scheme]
-The \emph{Comprehension Axiom Scheme} is the set of sentences of the form, for any class $\mathbf{A}$: If $\mathbf{A}$ is a subclass of a set then $\mathbf{A}$ is a set.
+The \emph{Comprehension Axiom Scheme}, \emph{Subset Axiom Scheme} or \emph{Aussonderungsaxiom Scheme} is the set of sentences of the form, for any class $\mathbf{A}$: If $\mathbf{A}$ is a subclass of a set then $\mathbf{A}$ is a set.
 
 That is, for any property $P[x,y_1,\ldots,y_n]$:
 
@@ -236,10 +241,26 @@ For any set $A$ of pairwise disjoint, nonempty sets, there exists a set $C$ such
 \end{df}
 
 \begin{df}[Axiom of Regularity]
-The \emph{Axiom of Regularity} is the statement:
+The \emph{Axiom of Regularity} or \emph{Axiom of Foundation} is the statement:
 for any $A$, if $A$ has a member, then there exists $m \in A$ such that $m \cap A = \emptyset$.
 
 \[ \forall A (\exists x. x \in A \Rightarrow \exists m \in A. \neg \exists x (x \in m \wedge x \in A)) \]
+\end{df}
+
+\begin{df}[Skolem Set Theory]
+\emph{Skolem set theory} (S) is the theory whose axioms are:
+\begin{itemize}
+\item Extensionality
+\item Empty Set
+\item Pairing
+\item Union
+\item Comprehension
+\item Power Set
+\item Regularity
+\end{itemize}
+Let SC be the extension of S with the Axiom of Choice.
+
+\emph{Skolem-Fraenkel set theory} (SF) is the extension of S with the Axiom Schema of Replacement. SFC is the extension of SF with the Axiom of Choice.
 \end{df}
 
 \begin{df}[Zermelo Set Theory]
@@ -251,10 +272,24 @@ for any $A$, if $A$ has a member, then there exists $m \in A$ such that $m \cap 
 \item Comprehension
 \item Power Set
 \item Infinity
-\item Choice
 \item Regularity
 \end{itemize}
 We label theorems with Z when they are provable in Zermelo set theory.
+
+Let ZC be the extension of Z with the Axiom of Choice.
+\end{df}
+
+\begin{df}[Fraenkel-Mostowski Set Theory]
+\emph{Fraenkel-Mostowski set theory} (FM) is the theory whose axioms are:
+\begin{itemize}
+\item The \emph{Axiom of Extensionality with Urelements}: For any sets $x$ and $y$, if $x$ is nonempty and $x$ and $y$ have exactly the same elements, then $x = y$.
+\item Union
+\item Replacement
+\item Power Set
+\item Infinity
+\item Regularity
+\end{itemize}
+We write FMC for the extension of FM with Choice.
 \end{df}
 
 \begin{df}[Zermelo-Fraenkel Set Theory]
@@ -265,10 +300,11 @@ We label theorems with Z when they are provable in Zermelo set theory.
 \item Replacement
 \item Power Set
 \item Infinity
-\item Choice
 \item Regularity
 \end{itemize}
-We label theorems with ZFC when they are provable in Zermelo-Fraenkel set theory.
+We label theorems with ZF when they are provable in Zermelo-Fraenkel set theory.
+
+Let ZFC be the extension of ZF with the Axiom of Choice.
 \end{df}
 
 We label a theorem with FOL if it can be proved in first-order logic, i.e. from no axioms.
@@ -911,32 +947,27 @@ An \emph{$n$-ary relation on $\mathbf{A}$} is a class of ordered $n$-tuples all 
 \section{Well Founded Relations}
 
 \begin{df}[Well Founded]
-A relation $\mathbf{R}$ on a class $\mathbf{A}$ is \emph{well founded} iff:
+A relation $\mathbf{R}$ is \emph{well founded} iff:
 \begin{itemize}
-\item for all $a \in A$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R} a \}$ is a set;
-\item every nonempty subset of $\mathbf{A}$ has an $\mathbf{R}$-minimal element.
+\item Every nonempty set has an $\mathbf{R}$-minimal element.
+\item For every set $x$, there exists a set $u$ such that $x \subseteq u$ and, for all $w$, $y$, if $y \in u$ and $w \mathbf{R} y$ then $w \in u$.
 \end{itemize}
 \end{df}
 
 \begin{prop}[Z]
 \label{prop:inwellfounded}
-For any class $\mathbf{A}$, the relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
+For any class $\mathbf{A}$, the relation $\mathbf{E} = \{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{For all $a \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \in a \}$ is a set.}
+\step{1}{Every nonempty set has an $\mathbf{E}$-minimal element.}
 \begin{proof}
-	\pf\ It is a subclass of $a$.
+	\pf\ Axiom of Regularity.
 \end{proof}
-\step{2}{Every nonempty subset of $\mathbf{A}$ has an $\in$-minimal element.}
+\step{2}{For every set $x$, there exists a set $u$ such that $x \subseteq u$ and, for all $w$, $y$, if $y \in u$ and $w \mathbf{E} y$ then $w \in u$.}
 \begin{proof}
-	\step{a}{\pflet{$C$ be a nonempty subset of $\mathbf{A}$}}
-	\step{b}{\pick\ $m \in C$ such that $m \cap C = \emptyset$}
-	\begin{proof}
-		\pf\ Axiom of Regularity.
-	\end{proof}
-	\step{c}{$m$ is $\in$-minimal in $C$.}
+	\pf\ Take $u$ to be the transitive closure of $x$.
 \end{proof}
 \qed
 \end{proof}
@@ -11266,4 +11297,27 @@ Every inner product space is a normed space under $\| x \| = \langle x,x \rangle
 \end{proof}
 \qed
 \end{proof}
+
+\begin{thm}[Parallelogram Law]
+Let $V$ be an inner product space. Let $x,y \in V$. Then
+\[ \| x + y \|^2 + \| x - y \|^2 = 2 \| x \|^2 + 2 \| y \|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| x + y\|^2 & = \| x\|^2 + \langle x,y \rangle + \langle y,x \rangle + \| y\|^2 \\
+		\| x - y \|^2 & = \| x\|^2 - \langle x,y \rangle - \langle y,x \rangle + \| y \|^2
+	\end{align*}
+\end{proof}
+
+\begin{thm}[Polarization Identity]
+Let $V$ be an inner product space. Let $x,y \in V$. Then
+\[ 4 \langle x,y \rangle = \| x + y \|^2 - \| x - y \|^2 + i \| x + i y \|^2 - i \| x - iy \|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+	\pf\ Straightforward calculation. \qed
+\end{proof}
+
 \end{document}

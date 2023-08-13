@@ -6,7 +6,7 @@ R. Baer. Dichte, Archimedizität und Starrheit geordneter Körper, Mat. Ann. 188
 D. Scott. On completing ordered fields. Applications of Model Theory, Proc. Int. Symp. California Inst. Technol. (1967) pp. 274-278
 Georg Cantor. Contributions to the Founding of the Theory of Transfinite Numbers, translated by P. Jourdain. 1955
 Paul J. Cohen. Set Theory and the Continuum Hypothesis. 1966
-Frank R. Drake. Set Theory, An Introduction to Large Cardinals. 1974
+* Frank R. Drake. Set Theory, An Introduction to Large Cardinals. 1974
 Abraham A. Fraenkel, Yehoshua Bar-Hillel, Azriel Levy. Foundations of Set Theory. 1973
 Thomas J. Jech. The Axiom of Choice. 1973
 K. Kuratowski, A Mostowski. Set Theory. 1968
@@ -15,4 +15,21 @@ Jean van Heiejenoort (editor). From Frege to Gödel, A Source Book in Mathematic
 A. Church. Introduction to Mathematical Logic. 1956
 S. C. Kleene. Introduction to Metamathematics. 1952
 J. L. Bell, A. B. Slomson. Models and Ultraproducts: An Introduction. 1969
-
+E. Zermelo. Untersuchungen liber die Grundlagen der Mengenlehre, Math. Ann. 65 (1908) 261-281
+D. Mirimanoff. Les antinomies de Russell et de Burali-Forti et le probleme fondamental de la theorie des ensembles, Enseignemen Math. 19 (1917) 37-52
+A. A. Fraenkel. Zu den Grundlagen der Cantor-Zermcloschen Mengenlehre, Math. Ann. 86 (1922) 230-237
+Th. Skolem. Einige Bemerkungen zur axiomatischen Begrundung der Mengenlehre, in: Proc. 5th Scandinavian Math. Congr., Helsinki (1922) 217-232; translated in: J. van Heijenoort, ed., From Frege to Godel (Harvard Univ. Press, Cambridge, Mass., 1967) 290-301
+H. Wang. A survey of Skolem’s work in logic, in: J. E. Fenstad, ed., Selected Works in Logic by Th. Skolem (Universitetsforlaget, Oslo) 17-52. 1970
+B. Russell. Some difficulties in the theory of transfinite numbers and order types, Proc. London Math. Soc. (2) 4 (1906),29-53
+G. Frege Die Grundgesetze der Arithmetik, begriffsschriftlich abgeleitet (Jena, Pohle; Vol. 1, 1893, Vol. 2, 1903; reprinted by Ohms, Hildesheim, 1962)
+P. R. Halmos. Naive Set Theory. 1960
+W. V: Quine. New foundations for mathematical logic, Amer. Math. Monthly 44 (1937) 70-80
+J. B. Rosser and H. Wang. Non-standard models for formal logics, J. Symb. Logic 15 (1950), 113-129
+W. V. Quine. Mathematical Logic. 1951
+J. B. Rosser. The axiom of infinity in Quine’s New Foundations, J. Symb. Logic 17 (1952) 238-242
+P. Bernays and A. A. Fraenkel. Axiomatic Set Theory. 1968
+K. Gödel. The Consistency o f the Continuum Hypothesis. 1940
+J. von Neumann. Eine Axiomatisierung der Mengenlehre, J. Reine Angew. Math. 154 (1924, published in 1925) 219-240; Berichtigung, Ibid. 155, 128 1925
+A. Morse. A Theory of Sets. 1965
+J. L. Kelly. General Topology 1955
+Mostowski 1969
