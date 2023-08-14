@@ -2846,7 +2846,9 @@ Let $\mathbf{On}$ be the class of ordinals.
 \end{df}
 
 \begin{prop}[S]
-If $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
+\label{prop:Ontransitive}
+$\mathbf{On}$ is a transitive class. That is,
+if $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
 \end{prop}
 
 \begin{proof}
@@ -2993,6 +2995,14 @@ For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \be
 \qed
 \end{proof}
 
+\begin{cor}[Burali-Forti Paradox (S)]
+The class $\mathbf{On}$ is a proper class.
+\end{cor}
+
+\begin{proof}
+\pf\ If $\mathbf{On}$ is a set then it is an ordinal by Propositions \ref{prop:Ontransitive} and \ref{prop:ordtrichotomy}, hence $\mathbf{On} \in \mathbf{On}$ contradicting the Axiom of Foundation. \qed
+\end{proof}
+
 \begin{thm}[S]
 The class $\mathbf{On}$ is well ordered by $\leq$.
 \end{thm}
@@ -3049,6 +3059,78 @@ For any nonempty set of ordinals $x$, we have $\bigcup x$ is the supremum of $x$
 		\step{ii}{\assume{w.l.o.g. $\alpha \leq \beta$.}}
 		\step{iii}{$y,z \in \beta$}
 		\step{iv}{$y \in z$ or $y = z$ or $z \in y$.}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S]
+For any set $\alpha$, we have $\alpha$ is an ordinal if and only if $\alpha$ is a transitive set of transitive sets.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha$ is an ordinal then $\alpha$ is a transitive set of transitive sets.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:Ontransitive}.
+\end{proof}
+\step{2}{If $\alpha$ is a transitive set of transitive sets then $\alpha$ is an ordinal.}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ is a transitive set of transitive sets.}}
+	\step{b}{\assume{for a contradiction there exist $x,y \in \alpha$ such that $x \notin y$ and $x \neq y$ and $y \notin x$}}
+	\step{c}{$S = \{ x \in \alpha \mid \exists y \in \alpha. x \notin y \wedge x \neq y \wedge y \notin x \}$ is nonempty}
+	\step{d}{\pick\ $x \in S$ such that $x \cap S = \emptyset$}
+	\begin{proof}
+		\pf\ Axiom of Foundation.
+	\end{proof}
+	\step{e}{$T = \{ y \in \alpha \mid x \notin y \wedge x \neq y \wedge y \notin x \}$ is nonempty.}
+	\step{f}{\pick\ $y \in T$ such that $y \cap T = \emptyset$}
+	\begin{proof}
+		\pf\ Axiom of Foundation.
+	\end{proof}
+	\step{g}{$x \subseteq y$}
+	\begin{proof}
+		\step{i}{\pflet{$z \in x$}}
+		\step{ii}{$z \notin S$}
+		\begin{proof}
+			\pf\ \stepref{d}
+		\end{proof}
+		\step{iii}{$z \in y$ or $z = y$ or $y \in z$}
+		\step{iv}{$z \neq y$}
+		\begin{proof}
+			\pf\ Since $y \notin x$ (\stepref{f}).
+		\end{proof}
+		\step{v}{$y \notin z$}
+		\begin{proof}
+			\pf\ Since $x$ is transitive and $y \notin x$.
+		\end{proof}
+		\step{vi}{$z \in y$}
+	\end{proof}
+	\step{h}{$y \subseteq x$}
+	\begin{proof}
+		\step{i}{\pflet{$z \in y$}}
+		\step{ii}{$z \notin T$}
+		\begin{proof}
+			\pf\ \stepref{f}
+		\end{proof}
+		\step{iii}{$z \in x$ or $z = x$ or $x \in z$}
+		\step{iv}{$z \neq x$}
+		\begin{proof}
+			\pf\ Since $x \notin y$
+		\end{proof}
+		\step{v}{$x \notin z$}
+		\begin{proof}
+			\pf\ Since $y$ is a transitive set and $x \notin y$.
+		\end{proof}
+		\step{vi}{$z \in x$}
+	\end{proof}
+	\step{i}{$x = y$}
+	\begin{proof}
+		\pf\ Axiom of Extensionality.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{f}.
 	\end{proof}
 \end{proof}
 \qed
@@ -3206,7 +3288,7 @@ The class of natural numbers $\omega$ is a set.
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[Z]
 $\omega$ is a limit ordinal.
 \end{thm}
 
