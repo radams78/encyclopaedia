@@ -259,8 +259,20 @@ for any $A$, if $A$ has a member, then there exists $m \in A$ such that $m \cap 
 \item Regularity
 \end{itemize}
 Let SC be the extension of S with the Axiom of Choice.
+\end{df}
 
-\emph{Skolem-Fraenkel set theory} (SF) is the extension of S with the Axiom Schema of Replacement. SFC is the extension of SF with the Axiom of Choice.
+\begin{df}[Skolem-Fraenkel Set Theory]
+\emph{Skolem-Fraenkel set theory} (SF) is the theory whose axioms are:
+\begin{itemize}
+\item Extensionality
+\item Empty Set
+\item Union
+\item Replacement
+\item Power Set
+\item Regularity
+\end{itemize}
+
+Let SFC be the extension of SF with the Axiom of Choice.
 \end{df}
 
 \begin{df}[Zermelo Set Theory]
@@ -311,16 +323,26 @@ We label a theorem with FOL if it can be proved in first-order logic, i.e. from 
 
 \section{ZFC Extends Z}
 
-\begin{prop}[Z,ZFC]
-The empty class $\emptyset$ is a set.
+\begin{prop}
+The Axiom of Infinity implies the Empty Set Axiom.
 \end{prop}
 
 \begin{proof}
-\pf\ Immediate from the Axiom of Infinity. \qed
+\pf\ Trivial. \qed
 \end{proof}
 
-\begin{prop}[ZFC]
-The Axiom of Pairing is a theorem of ZFC.
+\begin{cor}
+Z is an extension of S.
+
+ZF is an extension of SF.
+
+ZC is an extension of SC.
+
+ZFC is an extension of SFC.
+\end{cor}
+
+\begin{prop}
+The Axiom of Pairing is a theorem of SF.
 \end{prop}
 
 \begin{proof}
@@ -351,8 +373,8 @@ The Axiom of Pairing is a theorem of ZFC.
 \qed
 \end{proof}
 
-\begin{props}[ZFC]
-Every instance of the Comprehension Axiom Scheme is a theorem of ZFC.
+\begin{props}
+Every instance of the Comprehension Axiom Scheme is a theorem of SF.
 \end{props}
 
 \begin{proof}
@@ -390,15 +412,19 @@ Every instance of the Comprehension Axiom Scheme is a theorem of ZFC.
 \qed
 \end{proof}
 
-\begin{cors}[ZFC]
-Every axiom of Z is a theorem of ZFC.
-\end{cors}
+\begin{cor}
+SF is an extension of S.
 
-It follows that every theorem of Z is a theorem of ZFC.
+SFC is an extension of SC.
+
+ZF is an extension of Z.
+
+ZFC is an extension of ZC.
+\end{cor}
 
 \section{Consequences of the Axioms}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 The union of two sets is a set.
 \end{prop}
 
@@ -406,7 +432,7 @@ The union of two sets is a set.
 \pf\ Because $A \cup B = \bigcup \{A,B\}$. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any number $n$, the following is a theorem:
 
 For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x = a_1 \vee \cdots \vee x = a_n\}$ is a set.
@@ -418,7 +444,7 @@ For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x 
 If we have proved the theorem for $n$ we have $\{a_1, \ldots, a_n, a_{n+1}\} = \{a_1, \ldots, a_n\} \cup \{a_{n+1}\}$. \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 \label{prop:xnotinx}
 No set is a member of itself.
 \end{prop}
@@ -436,7 +462,7 @@ No set is a member of itself.
 \qed
 \end{proof}
 
-\begin{cor}[Z]
+\begin{cor}[S]
 The universal class $\mathbf{V}$ is a proper class.
 \end{cor}
 
@@ -444,7 +470,7 @@ The universal class $\mathbf{V}$ is a proper class.
 \pf\ If $\mathbf{V}$ is a set then $\mathbf{V} \in \mathbf{V}$, contradicting the Proposition. \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 There are no sets $a$ and $b$ such that $a \in b$ and $b \in a$.
 \end{prop}
 
@@ -463,7 +489,7 @@ There are no sets $a$ and $b$ such that $a \in b$ and $b \in a$.
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 The intersection of a set and a class is a set.
 \end{prop}
 
@@ -471,19 +497,19 @@ The intersection of a set and a class is a set.
 \pf\ Immediate from Comprehension. \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 The relative complement of a class in a set is a set.
-\end{prop}[Z]
+\end{prop}
 
 \begin{proof}
 \pf\ Immediate from Comprehension. \qed
 \end{proof}
 
-\begin{cor}[Z]
+\begin{cor}[S]
 The symmetric difference of two sets is a set.
 \end{cor}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 The intersection of a nonempty class is a set.
 \end{prop}
 
@@ -521,7 +547,7 @@ If $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup 
 \pf\ If $x \in X \in \mathbf{A}$ then $x \in X \in \mathbf{B}$. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:UPA}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -590,7 +616,7 @@ If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive 
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:powtransitive}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -654,6 +680,7 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcup \mathbf{A}$ is
 \end{proof}
 
 \begin{props}[FOL]
+\label{prop:inttransitive}
 For any class $\mathbf{A}$, the following is a theorem:
 
 If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is a transitive class.
@@ -680,7 +707,7 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is
 For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined to be $\{ \{ a \}, \{a , b \} \}$.
 \end{df}
 
-\begin{thm}[Z]
+\begin{thm}[S]
 For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ and $b = d$.
 \end{thm}
 
@@ -716,7 +743,7 @@ For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ 
 The \emph{Cartesian product} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \times \mathbf{B} := \{(x,y) \mid x \in \mathbf{A}, y \in \mathbf{B}\}$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 For any sets $A$ and $B$, the class $A \times B$ is a set.
 \end{prop}
 
@@ -724,7 +751,7 @@ For any sets $A$ and $B$, the class $A \times B$ is a set.
 \pf\ It is a subset of $\mathcal{P} \mathcal{P} (A \cup B)$. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a theorem:
 
 \[ \mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C}) \]
@@ -739,7 +766,7 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a 
 \end{align*}
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
 If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}$ is nonempty then $\mathbf{B} = \mathbf{C}$.
@@ -760,7 +787,7 @@ If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
 \[ \mathbf{A} \times \bigcup \mathbf{B} = \{ (a,b) \mid \exists Y \in \mathbf{B}. (a \in \mathbf{A} \wedge b \in Y) \} \]
@@ -777,12 +804,32 @@ For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 \section{Relations}
 
 \begin{df}[Relation]
+A \emph{relation} is a class of ordered pairs.
+
 A \emph{relation} $\mathbf{R}$ between classes $\mathbf{A}$ and $\mathbf{B}$ is a subclass of $\mathbf{A} \times \mathbf{B}$.
 
 A \emph{(binary) relation on $\mathbf{A}$} is a relation between $\mathbf{A}$ and $\mathbf{A}$.
 
 We write $x \mathbf{R} y$ for $(x,y) \in \mathbf{R}$.
 \end{df}
+
+\begin{df}[Domain]
+The \emph{domain} of a class $\mathbf{R}$ is the class
+\[ \dom \mathbf{R} := \{ x \mid \exists y. x \mathbf{R} y \} \enspace . \]
+\end{df}
+
+\begin{prop}[S]
+The domain of a set is a set.
+\end{prop}
+
+\begin{df}[Range]
+The \emph{range} of a class $\mathbf{R}$ is the class
+\[ \ran \mathbf{R} := \{ y \mid \exists x. x \mathbf{R} y \} \]
+\end{df}
+
+\begin{prop}[S]
+The range of a set is a set.
+\end{prop}
 
 \subsection{Identity Functions}
 
@@ -798,10 +845,10 @@ The \emph{inverse} of a relation $\mathbf{R}$ between $\mathbf{A}$ and $\mathbf{
 \[ b \mathbf{R}^{-1} a \Leftrightarrow a \mathbf{R} b \enspace . \]
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
-If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, we have $(\mathbf{R}^{-1})^{-1} = \mathbf{R}$.
+If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$ then $(\mathbf{R}^{-1})^{-1} = \mathbf{R}$.
 \end{props}
 
 \begin{proof}
@@ -819,7 +866,7 @@ Let $\mathbf{R}$ be a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\math
 \[ a (\mathbf{S} \circ \mathbf{R}) c \Leftrightarrow \exists b (a \mathbf{R} b \wedge b \mathbf{S} c) \enspace. \]
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
 If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\mathbf{S}$ is a relation between $\mathbf{B}$ and $\mathbf{C}$, then
@@ -842,7 +889,7 @@ z(\mathbf{S} \circ \mathbf{R})^{-1}x & \Leftrightarrow x(\mathbf{S} \circ \mathb
 Let $\mathbf{R}$ be a binary relation on $\mathbf{A}$. Then $\mathbf{R}$ is \emph{reflexive} on $\mathbf{A}$ iff $\forall x \in \mathbf{A}. (x,x) \in \mathbf{R}$.
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:invref}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -872,7 +919,7 @@ A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $x\mathbf{R}y$, then $
 A relation $\mathbf{R}$ is \emph{antisymmetric} iff, whenever $x \mathbf{R} y$ and $y \mathbf{R} x$, then $x = y$.
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:invantisym}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -894,7 +941,7 @@ If $\mathbf{R}$ is an antisymmetric relation on $\mathbf{A}$ then so is $\mathbf
 A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $x\mathbf{R}y$ and $y \mathbf{R} z$, then $x\mathbf{R} z$.
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:invtrans}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -910,7 +957,7 @@ If $\mathbf{R}$ is a transitive relation between $\mathbf{A}$ and $\mathbf{B}$ t
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 For any relation $R$ on a set $A$, there exists a smallest transitive relation on $A$ that includes $R$.
 \end{prop}
 
@@ -954,25 +1001,20 @@ A relation $\mathbf{R}$ is \emph{well founded} iff:
 \end{itemize}
 \end{df}
 
-\begin{prop}[Z]
-\label{prop:inwellfounded}
-For any class $\mathbf{A}$, the relation $\mathbf{E} = \{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
-\end{prop}
+\begin{props}[S]
+For any class $\mathbf{R}$, the following is a theorem:
+
+Assume $\mathbf{R}$ is a well founded relation. For any set $a$, the class $\{ x \mid x \mathbf{R} a\}$ is a set.
+\end{props}
 
 \begin{proof}
 \pf
-\step{1}{Every nonempty set has an $\mathbf{E}$-minimal element.}
-\begin{proof}
-	\pf\ Axiom of Regularity.
-\end{proof}
-\step{2}{For every set $x$, there exists a set $u$ such that $x \subseteq u$ and, for all $w$, $y$, if $y \in u$ and $w \mathbf{E} y$ then $w \in u$.}
-\begin{proof}
-	\pf\ Take $u$ to be the transitive closure of $x$.
-\end{proof}
+\step{1}{\pick\ a set $u$ such that $\{ a \} \subseteq u$ and, for all $w$, $y$, if $y \in u$ and $w \mathbf{R} y$ then $w \in u$.}
+\step{2}{$\{ x \mid x \mathbf{R} a \} \subseteq u$}
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:leastelement}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -983,9 +1025,6 @@ Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \
 \pf
 \step{1}{\pick\ $b \in \mathbf{B}$}
 \step{2}{\pflet{$S = \{ x \in \mathbf{B} \mid x \mathbf{R} b \}$}}
-\begin{proof}
-	\pf\ $S$ is a set because it is a subclass of $\{ x \in \mathbf{A} \mid x \mathbf{R} b \}$.
-\end{proof}
 \step{3}{\case{$S = \emptyset$}}
 \begin{proof}
 	\pf\ In this case $b$ is an $\mathbf{R}$-minimal element of $\mathbf{B}$.
@@ -997,28 +1036,20 @@ Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[FOL]
 \label{prop:subwellfounded}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
+For any classes $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
-Assume $\mathbf{R}$ is a well founded relation on $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B}$. Then $\mathbf{R} \cap \mathbf{A}^2$ is a well founded relation on $\mathbf{A}$.
+Assume $\mathbf{R}$ is a relation.
+If $\mathbf{S}$ is a well-founded relation and $\mathbf{R} \subseteq \mathbf{S}$ then $\mathbf{R}$ is a well founded relation.
 \end{props}
 
 \begin{proof}
-\pf
-\step{0}{\pflet{$\mathbf{R}' = \mathbf{R} \cap \mathbf{A}^2$}}
-\step{1}{For all $a \in \mathbf{A}$, the class $\{ x \in \mathbf{A} \mid x \mathbf{R}' a \}$ is a set.}
-\begin{proof}
-	\pf\ By Comprehension since it is a subclass of $\{ x \in \mathbf{B} \mid x \mathbf{R} a \}$.
-\end{proof}
-\step{2}{Every nonempty subset of $\mathbf{A}$ has an $\mathbf{R}'$-minimal element.}
-\begin{proof}
-	\pf\ It is a nonempty subset of $\mathbf{B}$ and so has an $\mathbf{R}$-minimal element, which is also an $\mathbf{R}'$-minimal element.
-\end{proof}
+\pf\ Immediate from definitions.
 \qed
 \end{proof}
 
-\begin{thms}[Transfinite Induction Principle (Z)]
+\begin{thms}[Transfinite Induction Principle (S)]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
@@ -1045,7 +1076,7 @@ Then $\mathbf{B} = \mathbf{A}$.
 \qed
 \end{proof}
 
-\begin{thm}[Z]
+\begin{thm}[S]
 The transitive closure of a well founded relation on a set is well founded.
 \end{thm}
 
@@ -1155,7 +1186,7 @@ A \emph{binary operation} on a class $\mathbf{A}$ is a function $\mathbf{A}^2 \r
 Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{A}$ be a function and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{B}. \mathbf{F}(x) \in \mathbf{B}$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 For any class $\mathbf{A}$, the following is a theorem:
 
 \[ \mathrm{id}_\mathbf{A} : \mathbf{A} \rightarrow \mathbf{A} \]
@@ -1165,7 +1196,7 @@ For any class $\mathbf{A}$, the following is a theorem:
 \pf\ For all $x \in \mathbf{A}$, the only $y$ such that $(x,y) \in \mathrm{id}_\mathbf{A}$ is $y = x$. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
@@ -1188,7 +1219,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathb
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[SC]
 For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$ (a \emph{choice function} for $A$) such that, for every nonempty $B \subseteq A$, we have $F(B) \in B$.
 \end{prop}
 
@@ -1237,7 +1268,7 @@ For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \ri
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[SC]
 \label{prop:AxChoice}
 For any relation $R$ between $A$ and $B$, there exists a function $H : A \rightarrow B$ such that $H \subseteq R$ (i.e. $\forall x \in A. xRH(x)$).
 \end{prop}
@@ -1257,7 +1288,7 @@ For any relation $R$ between $A$ and $B$, there exists a function $H : A \righta
 A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection}, $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$, iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 \label{prop:idinj}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1268,7 +1299,7 @@ $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
 \pf\ If $\id{\mathbf{A}}(x) = \id{\mathbf{A}}(y)$ then immediately $x = y$. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:compinj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$, $\mathbf{G}$, the following is a theorem:
 
@@ -1291,7 +1322,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$ and $\mathbf{G} : \m
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = \id{A}$ if and only if $F$ is one-to-one.
 \end{prop}
 
@@ -1323,7 +1354,7 @@ Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow
 Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:idsurj}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1334,7 +1365,7 @@ $\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is surjective.
 \pf\ For any $y \in \mathbf{A}$ we have $\id{\mathbf{A}}(y) = y$. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:compsurj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
@@ -1350,7 +1381,7 @@ If $\mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{B}$ and $\mathbf{G} : \ma
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[SC]
 Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
 \end{prop}
 
@@ -1386,7 +1417,7 @@ Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inv
 Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ is \emph{bijective} or a \emph{bijection}, $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$, iff it is injective and surjective.
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:idbij}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -1397,7 +1428,7 @@ The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bij
 \pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed	
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:invbij}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
 
@@ -1440,7 +1471,7 @@ If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:compbij}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
 
@@ -1468,7 +1499,7 @@ Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \
 \[ \mathbf{F}(\mathbf{C}) := \{ \mathbf{F}(x) \mid x \in \mathbf{C} \} \enspace . \]
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
 
 If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \subseteq \mathbf{A}$, the class $\mathbf{F}(S)$ is a set.
@@ -1478,7 +1509,7 @@ If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \sub
 \pf\ By an Axiom of Replacement. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:imgunion}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
 
@@ -1495,7 +1526,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subsete
 \end{align*}
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
@@ -1512,7 +1543,7 @@ Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf
 \end{align*}
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{D}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
@@ -1553,7 +1584,7 @@ Equality holds if $\mathbf{F}$ is injective.
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 \label{prop:imgint}
 For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$, the following is a theorem:
 
@@ -1596,7 +1627,7 @@ Equality holds if $\mathbf{F}$ is injective and $\mathbf{A}$ is nonempty.
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S]
 \label{prop:imgdiff}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
 
@@ -1646,7 +1677,7 @@ Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \
 \[ \mathbf{F}^{-1}(\mathbf{C}) = \{ x \in \mathbf{A} \mid \mathbf{F}(x) \in \mathbf{C} \} \enspace . \]
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{B}$. Then
@@ -1663,7 +1694,7 @@ x \in \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right)
 \end{align*}
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{B}$. Then
@@ -1682,7 +1713,7 @@ x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \
 
 \subsection{Function Sets}
 
-\begin{prop}[ZFC]
+\begin{prop}[SF]
 For any classes $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
 
 Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ is a set.
@@ -1698,8 +1729,8 @@ Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write 
 We write $\mathbf{B}^I$ for $\prod_{i \in I} \mathbf{B}$ where $\mathbf{B}$ does not depend on $I$.
 \end{df}
 
-\begin{props}[ZFC]
-Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I} \mathbf{H}(i)$ is a set.
+\begin{props}[SF]
+Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I} H(i)$ is a set.
 \end{props}
 
 \begin{proof}
@@ -1716,7 +1747,7 @@ Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I}
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[SFC]
 Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(i) \neq \emptyset$ then $\prod_{i \in I} H(i) \neq \emptyset.$
 \end{prop}
 
@@ -1744,7 +1775,7 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[SC]
 Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $A \preccurlyeq B$ iff there exists a surjective function $B \rightarrow A$.
 \end{prop}
 
@@ -1811,7 +1842,7 @@ For any category $\mathbf{C}$, the \emph{opposite category} $\mathbf{C}^{\mathrm
 In any category, let $f : A \rightarrow B$ and $g : B \rightarrow A$. Then $g$ is a \emph{left inverse} of $f$, and $f$ is a \emph{right inverse} of $f$, iff $g f = \id{A}$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[FOL]
 Let $f : A \rightarrow B$ and $g,h : B \rightarrow A$. If $g$ is a left inverse to $f$ and $h$ is a right inverse to $f$ then $g = h$.
 \end{prop}
 
@@ -1825,11 +1856,11 @@ A morphism $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff 
 Two objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
 \end{df}
 
-\begin{prop}
+\begin{prop}[S]
 A function is an isomorphism in $\mathrm{Set}$ iff it is a bijection.
 \end{prop}
 
-\begin{prop}
+\begin{prop}[S]
 Let $f : A \rightarrow B$ in the category $\mathbf{C}$. Then the following are equivalent.
 \begin{enumerate}
 \item $f$ is an isomorphism.
@@ -2806,13 +2837,165 @@ e & \text{if } B - F(\seg t) = \emptyset
 
 \section{Ordinals}
 
-\begin{df}[Ordinal Number]
-An \emph{ordinal (number)} is a transitive set $\alpha$ that is \emph{well-ordered by $\in$}; that is, such that $\{(x,y) \in \alpha^2 \mid x \in y \vee x = y \}$ well orders $\alpha$.
+\begin{df}[Ordinal]
+An \emph{ordinal (number)} is a transitive set $\alpha$ such that, for all $x, y \in \alpha$, we have $x \in y$ or $x = y$ or $y \in x$.
 
-Given $x, y \in \alpha$, we write $x < y$ iff $x \in y$, and $x \leq y$ iff $x \in y$ or $x = y$.
+Given ordinals $\alpha$, $\beta$, we write $\alpha < \beta$ iff $\alpha \in \beta$, and $\alpha \leq \beta$ iff $\alpha \in \beta$ or $\alpha = \beta$.
 
-Let $\mathbf{On}$ be the class of ordinal numbers. For $\alpha, \beta \in \mathbf{On}$, we write $\alpha < \beta$ iff $\alpha \in \beta$, and $\alpha \leq \beta$ iff $\alpha < \beta$ or $\alpha = \beta$.
+Let $\mathbf{On}$ be the class of ordinals.
 \end{df}
+
+\begin{prop}[S]
+If $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\beta$ be an ordinal.}}
+\step{2}{\pflet{$\alpha \in \beta$}}
+\step{3}{$\alpha$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$x \in y \in \alpha$}}
+	\step{b}{$y \in \beta$}
+	\begin{proof}
+		\pf\ $\beta$ is a transitive set.
+	\end{proof}
+	\step{c}{$x \in \beta$}
+	\begin{proof}
+		\pf\ $\beta$ is a transitive set.
+	\end{proof}
+	\step{d}{$x \in \alpha$ or $x = \alpha$ or $\alpha \in x$}
+	\step{e}{$x \neq \alpha$}
+	\begin{proof}
+		\pf\ We cannot have $x \in y \in x$ by the Axiom of Foundation.
+	\end{proof}
+	\step{f}{$\alpha \notin x$}
+	\begin{proof}
+		\pf\ We cannot have $x \in y \in \alpha \in x$ by the Axiom of Foundation.
+	\end{proof}
+	\step{g}{$x \in \alpha$}
+\end{proof}
+\step{4}{$\forall x,y \in \alpha. x \in y \vee x = y \vee y \in x$}
+\begin{proof}
+	\pf\ This holds because if $x,y \in \alpha$ then $x,y \in \beta$ since $\beta$ is a transitive set.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S]
+$\emptyset$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Vacuous. \qed
+\end{proof}
+
+\begin{prop}[S]
+\label{prop:ordinalsubset}
+For ordinals $\alpha$ and $\beta$, we have $\alpha \subseteq \beta$ if and only if $\alpha \leq \beta$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha \leq \beta$ then $\alpha \subseteq \beta$.}
+\begin{proof}
+	\pf\ Since $\beta$ is a transitive set.
+\end{proof}
+\step{2}{If $\alpha \subseteq \beta$ then $\alpha \leq \beta$.}
+\begin{proof}
+	\step{a}{\assume{$\alpha \subsetneq \beta$} \prove{$\alpha \in \beta$}}
+	\step{b}{\pick\ $u \in \beta - \alpha$ such that $u \cap (\beta - \alpha) = \emptyset$}
+	\begin{proof}
+		\pf\ Axiom of Foundation.
+	\end{proof}
+	\step{c}{$u \in \beta$}
+	\step{d}{$u \notin \alpha$}
+	\step{e}{For all $v \in \beta$, if $v \notin \alpha$ then $v \notin u$}
+	\begin{proof}
+		\pf\ From \stepref{b}
+	\end{proof}
+	\step{f}{For all $v \in u$ we have $v \in \alpha$}
+	\step{g}{For all $w \in \alpha$ we have $w \in u$}
+	\begin{proof}
+		\step{i}{\pflet{$w \in \alpha$}}
+		\step{ii}{$w \in \beta$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iii}{$w \in u$ or $w = u$ or $u \in w$}
+		\begin{proof}
+			\pf\ $\beta$ is an ordinal, \stepref{c}, \stepref{ii}
+		\end{proof}
+		\step{iv}{$w \neq u$}
+		\begin{proof}
+			\pf\ \stepref{d}, \stepref{i}
+		\end{proof}
+		\step{v}{$u \notin w$}
+		\begin{proof}
+			\pf\ \stepref{d}, \stepref{i}, $\alpha$ is a transitive set.
+		\end{proof}
+		\step{vi}{$w \in u$}
+		\begin{proof}
+			\pf\ \stepref{iii}, \stepref{iv}, \stepref{v}
+		\end{proof}
+	\end{proof}
+	\step{h}{$u = \alpha$}
+	\begin{proof}
+		\pf\ \stepref{f}, \stepref{g}, Axiom of Extensionality.
+	\end{proof}
+	\step{i}{$\alpha \in \beta$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{h}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S]
+\label{prop:intordinal}
+If $\alpha$ and $\beta$ are ordinals then $\alpha \cap \beta$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha \cap \beta$ is a transitive set.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:inttransitive}.
+\end{proof}
+\step{2}{$\forall x,y \in \alpha \cap \beta. x \in y \vee x = y \vee y \in x$}
+\begin{proof}
+	\pf\ From the same condition in $\alpha$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[S]
+For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \beta$ or $\beta < \alpha$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ and $\beta$ be ordinals.}}
+\step{2}{\case{$\alpha \cap \beta = \alpha$ or $\alpha \cap \beta = \beta$}}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\alpha \cap \beta \subsetneq \alpha$ and $\alpha \cap \beta \subsetneq \beta$}}
+	\step{b}{$\alpha \cap \beta \in \alpha$ and $\alpha \cap \beta \in \beta$}
+	\begin{proof}
+		\pf\ Propositions \ref{prop:ordinalsubset}, \ref{prop:intordinal}.
+	\end{proof}
+	\step{c}{$\alpha \cap \beta \in \alpha \cap \beta$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the Axiom of Foundation.
+	\end{proof}
+\end{proof}
+\step{3}{$\alpha \subseteq \beta$ or $\beta \subseteq \alpha$}
+\step{4}{$\alpha \in \beta$ or $\alpha = \beta$ or $\beta \in \alpha$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ordinalsubset}.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}[Z]
 \label{prop:ordisoeq}
@@ -5468,6 +5651,24 @@ F(n+1) & = A \cup \bigcup(F(0) \cup \cdots \cup F(n))
 \step{7}{Let $D$ be a transitive set such that $A \subseteq D$ and, for any transitive set $X$, if $A \subseteq X$ then $D \subseteq X$. Then $D = C$.}
 \begin{proof}
 	\pf\ We have $C \subseteq D$ and $D \subseteq C$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[ZF]
+\label{prop:inwellfounded}
+For any class $\mathbf{A}$, the relation $\mathbf{E} = \{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every nonempty set has an $\mathbf{E}$-minimal element.}
+\begin{proof}
+	\pf\ Axiom of Regularity.
+\end{proof}
+\step{2}{For every set $x$, there exists a set $u$ such that $x \subseteq u$ and, for all $w$, $y$, if $y \in u$ and $w \mathbf{E} y$ then $w \in u$.}
+\begin{proof}
+	\pf\ Take $u$ to be the transitive closure of $x$.
 \end{proof}
 \qed
 \end{proof}
