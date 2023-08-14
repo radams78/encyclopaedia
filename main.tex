@@ -2998,18 +2998,21 @@ For ordinals $\alpha$ and $\beta$, we have $\alpha \subseteq \beta$ if and only 
 
 \begin{prop}[S]
 \label{prop:intordinal}
-If $\alpha$ and $\beta$ are ordinals then $\alpha \cap \beta$ is an ordinal.
+The intersection of any nonempty set of ordinals is an ordinal.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$\alpha \cap \beta$ is a transitive set.}
+\step{0}{\pflet{$x$ be a nonempty set of ordinals.}}
+\step{1}{$\bigcap x$ is a transitive set.}
 \begin{proof}
 	\pf\ Proposition \ref{prop:inttransitive}.
 \end{proof}
-\step{2}{$\forall x,y \in \alpha \cap \beta. x \in y \vee x = y \vee y \in x$}
+\step{2}{$\forall y,z \in \bigcap x. y \in z \vee y = z \vee z \in y$}
 \begin{proof}
-	\pf\ From the same condition in $\alpha$.
+	\step{a}{\pick\ $\alpha \in x$}
+	\step{b}{$y,z \in \alpha$}
+	\step{c}{$y \in z$ or $y = z$ or $z \in y$}
 \end{proof}
 \qed
 \end{proof}
@@ -3039,6 +3042,67 @@ For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \be
 \step{4}{$\alpha \in \beta$ or $\alpha = \beta$ or $\beta \in \alpha$}
 \begin{proof}
 	\pf\ Proposition \ref{prop:ordinalsubset}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[S]
+The class $\mathbf{On}$ is well ordered by $\leq$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For every ordinal $\alpha$ we have $\alpha \leq \alpha$.}
+\begin{proof}
+	\pf\ Immediate from definition.
+\end{proof}
+\step{2}{For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\alpha \leq \beta \leq \gamma$ then $\alpha \leq \gamma$.}
+\begin{proof}
+	\pf\ Since $\gamma$ is a transitive set.
+\end{proof}
+\step{3}{For any ordinals $\alpha$ and $\beta$, if $\alpha \leq \beta \leq \alpha$ then $\alpha = \beta$.}
+\begin{proof}
+	\pf\ If $\alpha \neq \beta$ then $\alpha \in \beta \in \alpha$ contradicting the Axiom of Foundation.
+\end{proof}
+\step{4}{For any ordinals $\alpha$ and $\beta$, either $\alpha \leq \beta$ or $\beta \leq \alpha$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:ordinaltrichotomy}.
+\end{proof}
+\step{5}{Any set of ordinals $x$ has a least element.}
+\begin{proof}
+	\pf\ Axiom of Foundation.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any nonempty set of ordinals $x$, we have $\bigcap x$ is the infimum of $x$ in $\mathbf{On}$.
+\end{prop}
+
+\begin{proof}
+\pf\ It is an ordinal by Proposition \ref{prop:intordinal}. The fact it is the infimum is
+immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+For any nonempty set of ordinals $x$, we have $\bigcup x$ is the supremum of $x$ in $\mathbf{On}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup x$ is an ordinal.}
+\begin{proof}
+	\step{a}{$\bigcup x$ is a transitive set.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:uniontransitive}.
+	\end{proof}
+	\step{b}{For all $y,z \in \bigcup x$ we have $y \in z$ or $y = z$ or $z \in y$}
+	\begin{proof}
+		\step{i}{\pick\ $\alpha, \beta \in x$ such that $y \in \alpha$ and $z \in \beta$.}
+		\step{ii}{\assume{w.l.o.g. $\alpha \leq \beta$.}}
+		\step{iii}{$y,z \in \beta$}
+		\step{iv}{$y \in z$ or $y = z$ or $z \in y$.}
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
@@ -3160,6 +3224,131 @@ $\omega$ is a limit ordinal.
 	\begin{proof}
 		\pf\ This contradicts the Axiom of Foundation.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Transitive Closure of a Set}
+
+\begin{df}[Transitive Closure]
+Let $x$ be a set. The \emph{transitive closure} of $x$ is the class
+\[ \mathrm{TC}(x) = \bigcap \{ y \mid y \text{ is a transitive set} \wedge x \in y \} \enspace . \]
+\end{df}
+
+\begin{thm}[ZF]
+For any set $x$, the transitive closure $\mathrm{TC}(x)$ is a set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E(n,y,x)$ be the predicate: There exists a function $f : n^+ \rightarrow \mathbf{V}$ such that $f(0) = y$ and $f(n) = x$ and $\forall m \in n. f(m) \in f(m^+)$}}
+\step{2}{$\forall x,y. E(0,y,x) \Leftrightarrow y = x$}
+\step{3}{\pflet{$x$ be a set.}}
+\step{3}{\pflet{$\mathbf{W} = \{ y \mid \exists n \in \mathbb{N}. E(n,y,x) \}$}}
+\step{4}{$\mathbf{W}$ is a set.}
+\begin{proof}
+	\step{a}{For $n \in \mathbb{N}$, \pflet{$\mathbf{W}_n = \{ y \mid E(n,y,x) \}$}}
+	\step{b}{For all $n \in \mathbb{N}$, $\mathbf{W}_n$ is a set.}
+	\begin{proof}
+		\step{i}{$\mathbf{W}_0$ is a set.}
+		\begin{proof}
+			\pf\ $\mathbf{W}_0 = \{x\}$.
+		\end{proof}
+		\step{ii}{For all $n \in \mathbb{N}$, if $\mathbf{W}_n$ is a set then $\mathbf{W}_{n^+}$ is a set.}
+		\begin{proof}
+			\step{one}{$\mathbf{W}_{n^+} = \bigcup \mathbf{W}_n$}
+			\begin{proof}
+				\step{A}{$\mathbf{W}_{n^+} \subseteq \bigcup \mathbf{W}_n$}
+				\begin{proof}
+					\step{one}{\pflet{$y \in \mathbf{W}_{n^+}$}}
+					\step{two}{$E(n^+,y,x)$}
+					\step{three}{\pick\ $f : n^{++} \rightarrow \mathbf{V}$ such that $f(0) = y$ and $f(n^+) = x$ and $\forall m \in n^+. f(m) \in f(m^+)$}
+					
+					\step{four}{$y \in f(1)$ and $E(n,f(1),x)$}
+					\begin{proof}
+						\pf\ Define $g : n^+ \rightarrow \mathbf{V}$ by $g(m) = f(m^+)$. Then $g(0) = f(1)$ and $g(n) = x$ and $\forall m \in n. g(m) \in g(m^+)$.
+					\end{proof}
+					\step{five}{$y \in f(1) \in \mathbf{W}_n$}
+				\end{proof}
+				\step{B}{$\bigcup \mathbf{W}_n \subseteq \mathbf{W}_{n^+}$}
+				\begin{proof}
+					\step{one}{\pflet{$y \in z \in \mathbf{W}_n$}}
+					\step{two}{\pick\ $f : n^+ \rightarrow \mathbf{V}$ such that $f(0) = z$ and $f(n) = x$ and $\forall m \in n. f(m) \in f(m^+)$}
+					\step{three}{\pflet{$g : n^{++} \rightarrow \mathbf{V}$ be the function defined by $g(0) = y$, $g(m^+) = f(m)$}}
+					\step{four}{$g(0) = y$ and $g(n^+) = x$ and $\forall m \in n^+. f(m) \in f(m^+)$}
+					\step{five}{$E(n^+,y,x)$}
+				\end{proof}
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{c}{$\mathbf{W} = \bigcup \{ \mathbf{W}_n \mid n \in \mathbb{N} \}$}
+	\step{d}{$\{ \mathbf{W}_n \mid n \in \mathbb{N} \}$ is a set.}
+	\begin{proof}
+		\pf\ Axiom of Replacement.
+	\end{proof}
+	\step{e}{$\mathbf{W}$ is a set.}
+	\begin{proof}
+		\pf\ Axiom of Union.
+	\end{proof}
+\end{proof}
+\step{4}{$\mathbf{W}$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$y \in z \in \mathbf{W}$}}
+	\step{b}{\pick\ $n \in \mathbb{N}$ and $f : n^+ \rightarrow \mathbf{V}$ such that $f(0) = z$, $f(n) = x$ and $\forall m \in n. f(m^+) \in f(m)$}
+	\step{c}{\pflet{$g : n^{++} \rightarrow \mathbf{V}$ be the function with $g(0) = y$ and $g(m^+) = f(m)$ for $m \in n$}}
+	\step{d}{$g(0) = y$ and $g(n^+) = x$ and $\forall m \in n^{++}. g(m^+) \in g(m)$}
+	\step{e}{$y \in \mathbf{W}$}
+\end{proof}
+\step{5}{$x \in \mathbf{W}$}
+\begin{proof}
+	\step{a}{\pflet{$f : 0^+ \rightarrow \mathbf{V}$ be the function $f = \{(0,x)\}$}}
+	\step{b}{$f(0) = x$ and $f(0) = x$ and vacuously $\forall m \in 0. f(m) \in f(m^+)$} 
+	\step{c}{$E(0,x,x)$}
+\end{proof}
+\step{6}{For any set $w'$, if $w'$ is a transitive set that contains $x$ then $\mathbf{W} \subseteq w'$}
+\begin{proof}
+	\step{a}{\pflet{$w'$ be a transitive set that contains $x$}}
+	\step{b}{$\forall n \in \mathbb{N}. \forall y. E(n,y,x) \Rightarrow y \in w'$}
+	\begin{proof}
+		\step{i}{$\forall y. E(0,y,x) \Rightarrow y \in w'$}
+		\begin{proof}
+			\step{a}{\pflet{$y$ be a set.}}
+			\step{b}{\assume{$E(0,y,x)$}}
+			\step{c}{\pick\ a function $f : 0^+ \rightarrow \mathbf{V}$ such that $f(0) = y$ and $f(0) = x$ and $\forall m \in 0. f(m) \in f(m^+)$}
+			\step{d}{$x = y$}
+			\begin{proof}
+				\pf\ $x = f(0) = y$
+			\end{proof}
+			\step{e}{$y \in w'$}
+			\begin{proof}
+				\pf\ \stepref{a}
+			\end{proof}
+		\end{proof}
+		\step{ii}{For all $n \in \mathbb{N}$, if $\forall y. E(n,y,x) \Rightarrow y \in w'$, then $\forall y. E(n^+,y,x) \Rightarrow y \in w'$}
+		\begin{proof}
+			\step{a}{\pflet{$n \in \mathbb{N}$}}
+			\step{b}{\assume{$\forall y. E(n,y,x) \Rightarrow y \in w'$}}
+			\step{c}{\pflet{$y$ be a set.}}
+			\step{d}{\assume{$E(n^+,y,x)$}}
+			\step{e}{\pick\ $f : n^{++} \rightarrow \mathbf{V}$ such that $f(0) = y$ and $f(n^+) = x$ and $\forall m \in n^+. f(m) \in f(m^+)$}
+			\step{f}{\pflet{$g : n^+ \rightarrow \mathbf{V}$ be the function $g(m) = f(m^+)$}}
+			\step{g}{$g(0) = f(0^+)$ and $g(n) = x$ and $\forall m \in n. g(m) \in g(m^+)$}
+			\step{h}{$E(n,f(0^+),x)$}
+			\step{ii}{$f(0^+) \in w'$}
+			\begin{proof}
+				\pf\ \stepref{e}
+			\end{proof}
+			\step{j}{$y \in f(0^+)$}
+			\begin{proof}
+				\pf\ $y = f(0) \in f(0^+)$ by \stepref{e}.
+			\end{proof}
+			\step{k}{$y \in w'$}
+			\begin{proof}
+				\pf\ From \stepref{ii} and \stepref{j} since $w'$ is transitive (\stepref{a}).
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{c}{$\mathbf{W} \subseteq w'$}
 \end{proof}
 \qed
 \end{proof}

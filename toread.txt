@@ -31,5 +31,5 @@ P. Bernays and A. A. Fraenkel. Axiomatic Set Theory. 1968
 K. Gödel. The Consistency o f the Continuum Hypothesis. 1940
 J. von Neumann. Eine Axiomatisierung der Mengenlehre, J. Reine Angew. Math. 154 (1924, published in 1925) 219-240; Berichtigung, Ibid. 155, 128 1925
 A. Morse. A Theory of Sets. 1965
-J. L. Kelly. General Topology 1955
-Mostowski 1969
+J. L. Kelly. General Topology. 1955
+A. Mostowski. Constructible Sets with Applications. 1969
