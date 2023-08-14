@@ -37,15 +37,16 @@
 \contentsline {section}{\numberline {6.3}Well Orderings}{51}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Ordinal Numbers}{55}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Ordinals}{55}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Successors}{65}{section.7.2}%
-\contentsline {section}{\numberline {7.3}The Well-Ordering Theorem and Zorn's Lemma}{67}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Ordinal Operations}{70}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Ordinal Arithmetic}{73}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Addition}{73}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}Multiplication}{76}{subsection.7.5.2}%
-\contentsline {subsection}{\numberline {7.5.3}Exponentiation}{77}{subsection.7.5.3}%
-\contentsline {section}{\numberline {7.6}Sequences}{80}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Strict Supremum}{81}{section.7.7}%
+\contentsline {section}{\numberline {7.2}Natural Numbers}{58}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Successors}{67}{section.7.3}%
+\contentsline {section}{\numberline {7.4}The Well-Ordering Theorem and Zorn's Lemma}{69}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Ordinal Operations}{72}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ordinal Arithmetic}{75}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Addition}{75}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Multiplication}{77}{subsection.7.6.2}%
+\contentsline {subsection}{\numberline {7.6.3}Exponentiation}{79}{subsection.7.6.3}%
+\contentsline {section}{\numberline {7.7}Sequences}{82}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Strict Supremum}{82}{section.7.8}%
 \contentsline {chapter}{\numberline {8}Cardinal Numbers}{83}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Cardinal Numbers}{83}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Ordering on Cardinal Numbers}{86}{section.8.2}%

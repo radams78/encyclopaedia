@@ -3015,6 +3015,7 @@ If $\alpha$ and $\beta$ are ordinals then $\alpha \cap \beta$ is an ordinal.
 \end{proof}
 
 \begin{thm}[S]
+\label{thm:ordinaltrichotomy}
 For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \beta$ or $\beta < \alpha$.
 \end{thm}
 
@@ -3038,6 +3039,127 @@ For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \be
 \step{4}{$\alpha \in \beta$ or $\alpha = \beta$ or $\beta \in \alpha$}
 \begin{proof}
 	\pf\ Proposition \ref{prop:ordinalsubset}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Successor Ordinal]
+An ordinal $\alpha$ is a \emph{successor ordinal} iff there exists an ordinal $\beta$ such that $\alpha = \beta^+$.
+\end{df}
+
+\begin{df}[Limit Ordinal]
+An ordinal is a \emph{limit ordinal} iff it is neither 0 nor a successor ordinal.
+\end{df}
+
+\section{Natural Numbers}
+
+\begin{df}[Natural Number]
+An ordinal $n$ is a \emph{natural number} iff either it is 0, or it is a successor ordinal and every element of $n$ is either 0 or a successor ordinal.
+
+We write $\omega$ or $\mathbb{N}$ for the class of natural numbers.
+\end{df}
+
+\begin{thms}[Mathematical Induction (S)]
+For any predicate $P(x)$, the following is a theorem:
+
+Assume $P(0)$. Assume that, for any ordinal $\alpha$, if $P(\alpha)$ then $P(\alpha^+)$. Then, for every natural number $n$, we have $P(n)$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$n$ is a natural number such that $\neg P(n)$}}
+\step{2}{\pflet{$y = \{ \gamma \in n^+ \mid \neg P(\gamma) \}$}}
+\step{3}{$y \neq \emptyset$}
+\step{4}{\pick\ $\gamma_0 \in y$ such that $y \cap \gamma_0 = \emptyset$}
+\step{5}{\case{$\gamma_0 = 0$}}
+\begin{proof}
+	\pf\ Then $\neg P(0)$
+\end{proof}
+\step{6}{\case{$\gamma_0 \neq 0$}}
+\begin{proof}
+	\step{a}{\pick\ $\gamma_1$ such that $\gamma_0 = \gamma_1^+$}
+	\begin{proof}
+		\pf\ Either $\gamma_0 = n$ or $\gamma_0 \in n$, and in either case $\gamma_0$ is a successor because $n$ is a natural number.
+	\end{proof}
+	\step{b}{$\gamma_1 \notin y$}
+	\begin{proof}
+		\pf\ From \stepref{4} since $\gamma_1 \in \gamma_0$.
+	\end{proof}
+	\step{c}{$\gamma_1 \in n^+$}
+	\begin{proof}
+		\pf\ Since $\gamma_1 \in \gamma_0 \in n^+$ and $n^+$ is a transitive set.
+	\end{proof}
+	\step{d}{$P(\gamma_1)$ and $\neg P(\gamma_1^+)$}
+	\begin{proof}
+		\pf\ \stepref{2}, \stepref{b}, \stepref{c}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Z]
+The class of natural numbers $\omega$ is a set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a set $I$ such that $\emptyset \in I$ and $\forall x \in I. x \cup \{x\} \in I$.}
+\begin{proof}
+	\pf\ Axiom of Infinity.
+\end{proof}
+\step{2}{Every natural number is in $I$.}
+\begin{proof}
+	\pf\ By induction.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ By an Axiom of Comprehension.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+$\omega$ is a limit ordinal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\omega$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$m \in n \in \omega$} \prove{$m$ is a natural number.}}
+	\step{b}{\assume{$m \neq 0$}}
+	\step{c}{$m$ is a successor ordinal.}
+	\begin{proof}
+		\pf\ Since $m \in n$ and $n$ is a natural number.
+	\end{proof}
+	\step{d}{Every element of $m$ is either 0 or a successor ordinal.}
+	\begin{proof}
+		\step{i}{\pflet{$x \in m$}}
+		\step{ii}{$x \in n$}
+		\begin{proof}
+			\pf\ Since $n$ is a transitive set.
+		\end{proof}
+		\step{iii}{$x = 0$ or $x$ is a successor ordinal.}
+	\end{proof}
+\end{proof}
+\step{2}{For all $m,n \in \omega$, either $m \in n$ or $m = n$ or $n \in m$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:ordinaltrichotomy}.
+\end{proof}
+\step{3}{$\omega \neq 0$}
+\begin{proof}
+	\pf\ Since $0 \in \omega$.
+\end{proof}
+\step{4}{$\omega$ is not a successor ordinal.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\omega = n^+$}}
+	\step{b}{$n$ is a natural number.}
+	\step{c}{$\omega$ is a natural number.}
+	\step{d}{$\omega \in \omega$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the Axiom of Foundation.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
