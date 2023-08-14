@@ -2883,59 +2883,6 @@ If $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
 \end{proof}
 
 \begin{prop}[S]
-$\emptyset$ is an ordinal.
-\end{prop}
-
-\begin{proof}
-\pf\ Vacuous. \qed
-\end{proof}
-
-\begin{df}[Successor]
-For any ordinal $\alpha$, the \emph{successor} of $\alpha$ is
-\[ \alpha^+ := \alpha \cup \{ \alpha \} \enspace . \]
-\end{df}
-
-\begin{prop}[S]
-For any ordinal $\alpha$, the successor $\alpha^+$ is an ordinal.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{0}{\pflet{$\alpha$ be an ordinal.}}
-\step{1}{$\alpha^+$ is a transitive set.}
-\begin{proof}
-	\step{a}{\pflet{$x \in y \in \alpha^+$}}
-	\step{b}{$y \in \alpha$ or $y = \alpha$}
-	\step{c}{$x \in \alpha$}
-	\begin{proof}
-		\pf\ If $y \in \alpha$ then this follows because $\alpha$ is a transitive set. If $y = \alpha$ this follows immediately.
-	\end{proof}
-	\step{d}{$x \in \alpha^+$}
-\end{proof}
-\step{2}{For any $x,y \in \alpha^+$, we have $x \in y$ or $x = y$ or $y \in X$.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in \alpha^+$}}
-	\step{b}{\case{$x \in \alpha$ and $y \in \alpha$}}
-	\begin{proof}
-		\pf\ Then $x \in y$ or $x = y$ or $y \in x$ because $\alpha$ is an ordinal.
-	\end{proof}
-	\step{c}{\case{$x \in \alpha$ and $y = \alpha$}}
-	\begin{proof}
-		\pf\ Then $x \in y$.
-	\end{proof}
-	\step{d}{\case{$x = \alpha$ and $y \in \alpha$}}
-	\begin{proof}
-		\pf\ Then $y \in x$.
-	\end{proof}
-	\step{e}{\case{$x = \alpha$ and $y = \alpha$}}
-	\begin{proof}
-		\pf\ Then $x = y$.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[S]
 \label{prop:ordinalsubset}
 For ordinals $\alpha$ and $\beta$, we have $\alpha \subseteq \beta$ if and only if $\alpha \leq \beta$.
 \end{prop}
@@ -3075,7 +3022,7 @@ The class $\mathbf{On}$ is well ordered by $\leq$.
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[S]
 For any nonempty set of ordinals $x$, we have $\bigcap x$ is the infimum of $x$ in $\mathbf{On}$.
 \end{prop}
 
@@ -3084,7 +3031,7 @@ For any nonempty set of ordinals $x$, we have $\bigcap x$ is the infimum of $x$ 
 immediate from definitions. \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[S]
 For any nonempty set of ordinals $x$, we have $\bigcup x$ is the supremum of $x$ in $\mathbf{On}$.
 \end{prop}
 
@@ -3107,6 +3054,82 @@ For any nonempty set of ordinals $x$, we have $\bigcup x$ is the supremum of $x$
 \qed
 \end{proof}
 
+\begin{prop}[S]
+$\emptyset$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Vacuous. \qed
+\end{proof}
+
+\begin{df}
+\[ 0 := \emptyset \]
+\end{df}
+
+\begin{df}[Successor]
+For any ordinal $\alpha$, the \emph{successor} of $\alpha$ is
+\[ \alpha^+ := \alpha \cup \{ \alpha \} \enspace . \]
+\end{df}
+
+\begin{prop}[S]
+For any ordinal $\alpha$, the successor $\alpha^+$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$\alpha$ be an ordinal.}}
+\step{1}{$\alpha^+$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$x \in y \in \alpha^+$}}
+	\step{b}{$y \in \alpha$ or $y = \alpha$}
+	\step{c}{$x \in \alpha$}
+	\begin{proof}
+		\pf\ If $y \in \alpha$ then this follows because $\alpha$ is a transitive set. If $y = \alpha$ this follows immediately.
+	\end{proof}
+	\step{d}{$x \in \alpha^+$}
+\end{proof}
+\step{2}{For any $x,y \in \alpha^+$, we have $x \in y$ or $x = y$ or $y \in X$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \alpha^+$}}
+	\step{b}{\case{$x \in \alpha$ and $y \in \alpha$}}
+	\begin{proof}
+		\pf\ Then $x \in y$ or $x = y$ or $y \in x$ because $\alpha$ is an ordinal.
+	\end{proof}
+	\step{c}{\case{$x \in \alpha$ and $y = \alpha$}}
+	\begin{proof}
+		\pf\ Then $x \in y$.
+	\end{proof}
+	\step{d}{\case{$x = \alpha$ and $y \in \alpha$}}
+	\begin{proof}
+		\pf\ Then $y \in x$.
+	\end{proof}
+	\step{e}{\case{$x = \alpha$ and $y = \alpha$}}
+	\begin{proof}
+		\pf\ Then $x = y$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S]
+There are no ordinals $\alpha$ and $\beta$ such that $\alpha < \beta < \alpha^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\alpha \in \beta \in \alpha^+$}}
+\step{2}{$\beta \in \alpha$ or $\beta = \alpha$.}
+\step{3}{\case{$\beta \in \alpha$}}
+\begin{proof}
+	\pf\ We have $\alpha \in \beta \in \alpha$ contradicting the Axiom of Foundation.
+\end{proof}
+\step{4}{\case{$\beta = \alpha$}}
+\begin{proof}
+	\pf\ We have $\alpha \in \alpha$ contradicting the Axiom of Foundation.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Successor Ordinal]
 An ordinal $\alpha$ is a \emph{successor ordinal} iff there exists an ordinal $\beta$ such that $\alpha = \beta^+$.
 \end{df}
@@ -3114,6 +3137,7 @@ An ordinal $\alpha$ is a \emph{successor ordinal} iff there exists an ordinal $\
 \begin{df}[Limit Ordinal]
 An ordinal is a \emph{limit ordinal} iff it is neither 0 nor a successor ordinal.
 \end{df}
+
 
 \section{Natural Numbers}
 

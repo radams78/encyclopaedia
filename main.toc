@@ -37,13 +37,13 @@
 \contentsline {section}{\numberline {6.3}Well Orderings}{51}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Ordinal Numbers}{55}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Ordinals}{55}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Natural Numbers}{58}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Natural Numbers}{59}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Transitive Closure of a Set}{60}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Successors}{69}{section.7.4}%
+\contentsline {section}{\numberline {7.4}Successors}{70}{section.7.4}%
 \contentsline {section}{\numberline {7.5}The Well-Ordering Theorem and Zorn's Lemma}{72}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Ordinal Operations}{74}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Ordinal Arithmetic}{77}{section.7.7}%
-\contentsline {subsection}{\numberline {7.7.1}Addition}{77}{subsection.7.7.1}%
+\contentsline {section}{\numberline {7.6}Ordinal Operations}{75}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Ordinal Arithmetic}{78}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Addition}{78}{subsection.7.7.1}%
 \contentsline {subsection}{\numberline {7.7.2}Multiplication}{80}{subsection.7.7.2}%
 \contentsline {subsection}{\numberline {7.7.3}Exponentiation}{82}{subsection.7.7.3}%
 \contentsline {section}{\numberline {7.8}Sequences}{85}{section.7.8}%
