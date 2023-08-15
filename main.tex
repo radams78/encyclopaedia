@@ -1002,6 +1002,7 @@ A relation $\mathbf{R}$ is \emph{well founded} iff:
 \end{df}
 
 \begin{props}[S]
+\label{prop:segset}
 For any class $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a well founded relation. For any set $a$, the class $\{ x \mid x \mathbf{R} a\}$ is a set.
@@ -1102,7 +1103,7 @@ Let $\mathbf{R}$ be a relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph
 \[ \seg a := \{ x \in \mathbf{A} \mid x \mathbf{R} a \} \enspace . \]
 \end{df}
 
-\begin{thms}[Transfinite Recursion Theorem Schema (ZFC)]
+\begin{thms}[Transfinite Recursion Theorem Schema (ZF)]
 For any classes $\mathbf{A}$, $\mathbf{R}$ and any property $G[x,y,z]$, there exists a class $\mathbf{F}$ such that, for any class $\mathbf{F}'$ the following is a theorem:
 
 Assume that $\mathbf{R}$ is a well-founded relation on $\mathbf{A}$. Assume that, for any $f$ and $t$, there exists a unique $z$ such that $G[f,t,z]$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ such that, for all $t \in \mathbf{A}$, we have $\mathbf{F} \restriction \seg t$ is a set and
@@ -1149,7 +1150,7 @@ If $\mathbf{F}' : \mathbf{A} \rightarrow \mathbf{V}$ satisfies that, for all $t 
 	\step{c}{\assume{for a contradiction $x \notin \dom \mathbf{F}$}}
 	\step{d}{$\mathbf{F} \restriction \seg x$ is a set}
 	\begin{proof}
-		\pf\ Axiom of Replacement.
+		\pf\ Axiom of Replacement, Proposition \ref{prop:segset}.
 	\end{proof}
 	\step{e}{$\mathbf{F} \restriction \seg x$ is acceptable}
 	\step{f}{\pflet{$y$ be the unique object such that $G[\mathbf{F} \restriction \seg x, x, y]$}}
@@ -3469,8 +3470,6 @@ The transitive closure of an ordinal $\alpha$ is $\alpha^+$.
 \step{2}{For any transitive set $x$, if $\alpha \in x$ then $\alpha^+ \subseteq x$.}
 \qed
 \end{proof}
-
-\section{Transfinite Induction}
 
 \begin{props}[ZF]
 For any class $\mathbf{A}$, the following is a theorem:
@@ -6288,12 +6287,12 @@ For any ordinal $\alpha$, the \emph{Cantor normal form} of $\alpha$ is the expre
 
 \chapter{The Cumulative Hierarchy}
 
-\begin{df}[Cumulative Hierarchy]
+\begin{df}[Cumulative Hierarchy (ZF)]
 Define the function $V : \mathbf{On} \rightarrow \mathbf{V}$ by transfinite recursion thus:
 \[ V_\alpha = \bigcup_{\beta < \alpha} \mathcal{P} V_\beta \]
 \end{df}
 
-\begin{prop}
+\begin{prop}[ZF]
 For all $\alpha \in \mathbf{On}$, $V_\alpha$ is a transitive set.
 \end{prop}
 
@@ -6312,7 +6311,7 @@ For all $\alpha \in \mathbf{On}$, $V_\alpha$ is a transitive set.
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[ZF]
 \label{prop:Vmono}
 For any ordinals $\alpha$ and $\beta$, if $\beta < \alpha$ then $V_\beta \subseteq V_\alpha$.
 \end{prop}
@@ -6321,7 +6320,7 @@ For any ordinals $\alpha$ and $\beta$, if $\beta < \alpha$ then $V_\beta \subset
 \pf\ Since $V_\beta \in \mathcal{P} V_\beta \subseteq V_\alpha$ and $V_\alpha$ is a transitive set. \qed
 \end{proof}
 
-\begin{thm}$ $
+\begin{thm}[ZF]$ $
 \begin{enumerate}
 \item $V_0 = \emptyset$
 \item $\forall \alpha \in \mathbf{On}. V_{\alpha^+} = \mathcal{P} V_\alpha$
@@ -6372,7 +6371,7 @@ For any ordinals $\alpha$ and $\beta$, if $\beta < \alpha$ then $V_\beta \subset
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[ZF]
 For every set $A$, there exists an ordinal $\alpha$ such that $A \in V_\alpha$.
 \end{prop}
 
@@ -6434,11 +6433,11 @@ For every set $A$, there exists an ordinal $\alpha$ such that $A \in V_\alpha$.
 \qed
 \end{proof}
 
-\begin{df}[Rank]
+\begin{df}[Rank (ZF)]
 The \emph{rank} of a set $A$ is the least ordinal $\alpha$ such that $A \in V_{\alpha^+}$.
 \end{df}
 
-\begin{prop}
+\begin{prop}[ZF]
 \label{prop:allgrounded}
 For any set $A$ we have
 \[ \rank A = \bigcup_{a \in A} (\rank a)^+ \]
@@ -6466,11 +6465,11 @@ For any set $A$ we have
 \qed
 \end{proof}
 
-\begin{cor}
+\begin{cor}[ZF]
 For any sets $a$ and $b$, if $a \in b$ then $\rank a < \rank b$.
 \end{cor}
 
-\begin{prop}
+\begin{prop}[ZF]
 For any ordinal number $\alpha$ we have $\rank \alpha = \alpha$.
 \end{prop}
 
@@ -6503,9 +6502,13 @@ For any ordinal number $\alpha$ we have $\rank \alpha = \alpha$.
 \qed
 \end{proof}
 
-\begin{df}[Hereditarily Finite]
+\begin{df}[Hereditarily Finite (ZF)]
 A set is \emph{hereditarily finite} iff it is in $V_\omega$.
 \end{df}
+
+\begin{prop}[ZF]
+$V_\omega$ is the smallest set $X$ such that $\emptyset \in X$ and every finite subset of $X$ is an element of $X$.
+\end{prop}
 
 \chapter{Models of Set Theory}
 
