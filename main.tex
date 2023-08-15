@@ -2932,7 +2932,7 @@ if $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 \label{prop:ordinalsubset}
 For ordinals $\alpha$ and $\beta$, we have $\alpha \subseteq \beta$ if and only if $\alpha \leq \beta$.
 \end{prop}
@@ -2946,10 +2946,7 @@ For ordinals $\alpha$ and $\beta$, we have $\alpha \subseteq \beta$ if and only 
 \step{2}{If $\alpha \subseteq \beta$ then $\alpha \leq \beta$.}
 \begin{proof}
 	\step{a}{\assume{$\alpha \subsetneq \beta$} \prove{$\alpha \in \beta$}}
-	\step{b}{\pick\ $u \in \beta - \alpha$ such that $u \cap (\beta - \alpha) = \emptyset$}
-	\begin{proof}
-		\pf\ Axiom of Foundation.
-	\end{proof}
+	\step{b}{\pflet{$u$ be the $\in$-least element of $\beta - \alpha$}}
 	\step{c}{$u \in \beta$}
 	\step{d}{$u \notin \alpha$}
 	\step{e}{For all $v \in \beta$, if $v \notin \alpha$ then $v \notin u$}

@@ -44,7 +44,7 @@
 \contentsline {section}{\numberline {7.6}Ordinal Operations}{77}{section.7.6}%
 \contentsline {section}{\numberline {7.7}Ordinal Arithmetic}{80}{section.7.7}%
 \contentsline {subsection}{\numberline {7.7.1}Addition}{80}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Multiplication}{83}{subsection.7.7.2}%
+\contentsline {subsection}{\numberline {7.7.2}Multiplication}{82}{subsection.7.7.2}%
 \contentsline {subsection}{\numberline {7.7.3}Exponentiation}{84}{subsection.7.7.3}%
 \contentsline {section}{\numberline {7.8}Sequences}{87}{section.7.8}%
 \contentsline {section}{\numberline {7.9}Strict Supremum}{88}{section.7.9}%
