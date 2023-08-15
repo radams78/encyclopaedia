@@ -37,17 +37,17 @@
 \contentsline {section}{\numberline {6.3}Well Orderings}{51}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Ordinal Numbers}{55}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Ordinals}{55}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Natural Numbers}{60}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Transitive Closure of a Set}{61}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Successors}{71}{section.7.4}%
-\contentsline {section}{\numberline {7.5}The Well-Ordering Theorem and Zorn's Lemma}{73}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Ordinal Operations}{76}{section.7.6}%
-\contentsline {section}{\numberline {7.7}Ordinal Arithmetic}{79}{section.7.7}%
-\contentsline {subsection}{\numberline {7.7.1}Addition}{79}{subsection.7.7.1}%
-\contentsline {subsection}{\numberline {7.7.2}Multiplication}{81}{subsection.7.7.2}%
-\contentsline {subsection}{\numberline {7.7.3}Exponentiation}{83}{subsection.7.7.3}%
-\contentsline {section}{\numberline {7.8}Sequences}{86}{section.7.8}%
-\contentsline {section}{\numberline {7.9}Strict Supremum}{87}{section.7.9}%
+\contentsline {section}{\numberline {7.2}Natural Numbers}{61}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Transitive Closure of a Set}{62}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Successors}{72}{section.7.4}%
+\contentsline {section}{\numberline {7.5}The Well-Ordering Theorem and Zorn's Lemma}{74}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ordinal Operations}{77}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Ordinal Arithmetic}{80}{section.7.7}%
+\contentsline {subsection}{\numberline {7.7.1}Addition}{80}{subsection.7.7.1}%
+\contentsline {subsection}{\numberline {7.7.2}Multiplication}{83}{subsection.7.7.2}%
+\contentsline {subsection}{\numberline {7.7.3}Exponentiation}{84}{subsection.7.7.3}%
+\contentsline {section}{\numberline {7.8}Sequences}{87}{section.7.8}%
+\contentsline {section}{\numberline {7.9}Strict Supremum}{88}{section.7.9}%
 \contentsline {chapter}{\numberline {8}Cardinal Numbers}{89}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Cardinal Numbers}{89}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Ordering on Cardinal Numbers}{92}{section.8.2}%

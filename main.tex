@@ -2839,7 +2839,11 @@ e & \text{if } B - F(\seg t) = \emptyset
 \section{Ordinals}
 
 \begin{df}[Ordinal]
-An \emph{ordinal (number)} is a transitive set $\alpha$ such that, for all $x, y \in \alpha$, we have $x \in y$ or $x = y$ or $y \in x$.
+A set $\alpha$ is an \emph{ordinal (number)} iff:
+\begin{itemize}
+\item $\alpha$ is a transitive set
+\item $\{ (x,y) \in \alpha^2 \mid x \in y \}$ is a strict well ordering of $\alpha$.
+\end{itemize}
 
 Given ordinals $\alpha$, $\beta$, we write $\alpha < \beta$ iff $\alpha \in \beta$, and $\alpha \leq \beta$ iff $\alpha \in \beta$ or $\alpha = \beta$.
 
@@ -2847,6 +2851,49 @@ Let $\mathbf{On}$ be the class of ordinals.
 \end{df}
 
 \begin{prop}[S]
+Let $\alpha$ be a set. Then $\alpha$ is an ordinal if and only if $\alpha$ is a transitive set and, for all $x,y \in \alpha$, we have $x \in y$ or $x = y$ or $y \in x$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be a set.}}
+\step{2}{If $\alpha$ is an ordinal then $\alpha$ is a transitive set and, for all $x,y \in \alpha$, we have $x \in y$ or $x = y$ or $y \in x$.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\step{3}{If $\alpha$ is a transitive set and $\forall x,y \in \alpha(x \in y \vee x = y \vee y \in x)$, then $\alpha$ is an ordinal.}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ is a transitive set.}}
+	\step{b}{\assume{$\forall x,y \in \alpha(x \in y \vee x = y \vee y \in x)$}}
+	\step{c}{\pflet{$E = \{ (x,y) \in \alpha^2 \mid x \in y \}$}}
+	\step{d}{$\forall x,y,z \in \alpha. x E y \wedge y E z \Rightarrow x E z$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y,z \in \alpha$}}
+		\step{ii}{\assume{$xEy$ and $yEz$}}
+		\step{iii}{$x \in z$ or $x = z$ or $z \in x$}
+		\step{iv}{$x \neq z$}
+		\begin{proof}
+			\pf\ We cannot have $x \in y \in x$ by the Axiom of Foundation.
+		\end{proof}
+		\step{v}{$z \notin x$}
+		\begin{proof}
+			\pf\ We cannot have $x \in y \in z \in x$ by the Axiom of Foundation.
+		\end{proof}
+		\step{vi}{$x \in z$}
+	\end{proof}
+	\step{e}{There is no $x \in \alpha$ such that $x E x$.}
+	\begin{proof}
+		\pf\ Axiom of Foundation.
+	\end{proof}
+	\step{f}{Every nonempty subset of $\alpha$ has an $E$-least element.}
+	\begin{proof}
+		\pf\ Axiom of Foundation.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S without Foundation]
 \label{prop:Ontransitive}
 $\mathbf{On}$ is a transitive class. That is,
 if $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
@@ -2870,17 +2917,17 @@ if $\beta$ is an ordinal and $\alpha \in \beta$ then $\alpha$ is an ordinal.
 	\step{d}{$x \in \alpha$ or $x = \alpha$ or $\alpha \in x$}
 	\step{e}{$x \neq \alpha$}
 	\begin{proof}
-		\pf\ We cannot have $x \in y \in x$ by the Axiom of Foundation.
+		\pf\ We cannot have $x \in y \in x$ since $\beta$ is well-ordered by $\in$.
 	\end{proof}
 	\step{f}{$\alpha \notin x$}
 	\begin{proof}
-		\pf\ We cannot have $x \in y \in \alpha \in x$ by the Axiom of Foundation.
+		\pf\ We cannot have $x \in y \in \alpha \in x$ since $\beta$ is well-ordered by $\in$.
 	\end{proof}
 	\step{g}{$x \in \alpha$}
 \end{proof}
-\step{4}{$\forall x,y \in \alpha. x \in y \vee x = y \vee y \in x$}
+\step{4}{$\alpha$ is well-ordered by $\in$}
 \begin{proof}
-	\pf\ This holds because if $x,y \in \alpha$ then $x,y \in \beta$ since $\beta$ is a transitive set.
+	\pf\ This holds because $\alpha \subseteq \beta$ since $\beta$ is a transitive set.
 \end{proof}
 \qed
 \end{proof}
@@ -3221,6 +3268,30 @@ An ordinal $\alpha$ is a \emph{successor ordinal} iff there exists an ordinal $\
 An ordinal is a \emph{limit ordinal} iff it is neither 0 nor a successor ordinal.
 \end{df}
 
+\begin{prop}[S]
+The relation $\{ (\alpha, \beta) \in \mathbf{On}^2 \mid \alpha < \beta \}$ is well founded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Any nonempty set has an $\in$-minimal element.}
+\begin{proof}
+	\pf\ Axiom of Foundation.
+\end{proof}
+\step{2}{For any set $x$, there exists a set $u$ such that $x \in u$ and for all ordinals $\alpha$, $\beta$, if $\beta \in u$ and $\alpha < \beta$ then $\alpha \in u$.}
+\begin{proof}
+	\step{a}{\pflet{$x$ be a set.}}
+	\step{b}{\pflet{$u = \{ x \}$ if $x$ is not an ordinal, $x^+$ if $x$ is an ordinal.}}
+	\step{c}{$x \in u$}
+	\step{d}{\pflet{$\alpha$, $\beta$ be ordinals.}}
+	\step{e}{\assume{$\beta \in u$}}
+	\step{f}{\assume{$\alpha < \beta$}}
+	\step{g}{$x$ is an ordinal}
+	\step{h}{$\alpha < \beta \leq x$}
+	\step{i}{$\alpha \in x^+ = u$}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Natural Numbers}
 
