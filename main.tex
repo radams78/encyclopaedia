@@ -342,7 +342,7 @@ ZFC is an extension of SFC.
 \end{cor}
 
 \begin{prop}
-The Axiom of Pairing is a theorem of SF.
+The Axiom of Pairing is a theorem of SF without Foundation.
 \end{prop}
 
 \begin{proof}
@@ -413,6 +413,14 @@ Every instance of the Comprehension Axiom Scheme is a theorem of SF.
 \end{proof}
 
 \begin{cor}
+SF without Foundation is an extension of S without Foundation.
+
+SFC without Foundation is an extension of SC without Foundation.
+
+ZF without Foundation is an extension of Z without Foundation.
+
+ZFC without Foundation is an extension of ZC without Foundation.
+
 SF is an extension of S.
 
 SFC is an extension of SC.
@@ -424,7 +432,7 @@ ZFC is an extension of ZC.
 
 \section{Consequences of the Axioms}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The union of two sets is a set.
 \end{prop}
 
@@ -432,7 +440,7 @@ The union of two sets is a set.
 \pf\ Because $A \cup B = \bigcup \{A,B\}$. \qed
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 For any number $n$, the following is a theorem:
 
 For any sets $a_1$, \ldots, $a_n$, the class $\{a_1, \ldots, a_n\} = \{x \mid x = a_1 \vee \cdots \vee x = a_n\}$ is a set.
@@ -454,7 +462,7 @@ No set is a member of itself.
 \step{1}{\pflet{$x$ be any set.}}
 \step{2}{\pick\ $m \in \{x\}$ such that $m \cap \{x\} = \emptyset$.}
 \begin{proof}
-	\pf\ Axiom of Regularity.
+	\pf\ Axiom of Foundation.
 \end{proof}
 \step{3}{$m = x$}
 \step{4}{$x \cap \{x\} = \emptyset$}
@@ -462,12 +470,12 @@ No set is a member of itself.
 \qed
 \end{proof}
 
-\begin{cor}[S]
+\begin{thm}[Russell's Paradox (S without Foundation)]
 The universal class $\mathbf{V}$ is a proper class.
-\end{cor}
+\end{thm}
 
 \begin{proof}
-\pf\ If $\mathbf{V}$ is a set then $\mathbf{V} \in \mathbf{V}$, contradicting the Proposition. \qed
+\pf\ If $\mathbf{V}$ is a set then $R = \{ x \in \mathbf{V} \mid x \notin x \}$ is a set. Then we have $R \in R$ if and only if $R \notin R$, which is a contradiction. \qed
 \end{proof}
 
 \begin{prop}[S]
@@ -489,7 +497,7 @@ There are no sets $a$ and $b$ such that $a \in b$ and $b \in a$.
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The intersection of a set and a class is a set.
 \end{prop}
 
@@ -497,7 +505,7 @@ The intersection of a set and a class is a set.
 \pf\ Immediate from Comprehension. \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The relative complement of a class in a set is a set.
 \end{prop}
 
@@ -505,11 +513,11 @@ The relative complement of a class in a set is a set.
 \pf\ Immediate from Comprehension. \qed
 \end{proof}
 
-\begin{cor}[S]
+\begin{cor}[S without Foundation]
 The symmetric difference of two sets is a set.
 \end{cor}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The intersection of a nonempty class is a set.
 \end{prop}
 
@@ -547,7 +555,7 @@ If $\mathbf{A} \subseteq \mathbf{B}$ then $\bigcup \mathbf{A} \subseteq \bigcup 
 \pf\ If $x \in X \in \mathbf{A}$ then $x \in X \in \mathbf{B}$. \qed
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:UPA}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -616,7 +624,7 @@ If $\mathbf{A}$ is a transitive class then $\bigcup \mathbf{A}$ is a transitive 
 \qed
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:powtransitive}
 For any class $\mathbf{A}$, the following is a theorem:
 
@@ -707,7 +715,7 @@ If every member of $\mathbf{A}$ is a transitive set then $\bigcap \mathbf{A}$ is
 For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined to be $\{ \{ a \}, \{a , b \} \}$.
 \end{df}
 
-\begin{thm}[S]
+\begin{thm}[S without Foundation]
 For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ and $b = d$.
 \end{thm}
 
@@ -743,7 +751,7 @@ For any sets $a$, $b$, $c$, $d$, we have $(a,b) = (c,d)$ if and only if $a = c$ 
 The \emph{Cartesian product} of classes $\mathbf{A}$ and $\mathbf{B}$ is the class $\mathbf{A} \times \mathbf{B} := \{(x,y) \mid x \in \mathbf{A}, y \in \mathbf{B}\}$.
 \end{df}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 For any sets $A$ and $B$, the class $A \times B$ is a set.
 \end{prop}
 
@@ -751,7 +759,7 @@ For any sets $A$ and $B$, the class $A \times B$ is a set.
 \pf\ It is a subset of $\mathcal{P} \mathcal{P} (A \cup B)$. \qed
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a theorem:
 
 \[ \mathbf{A} \times (\mathbf{B} \cup \mathbf{C}) = (\mathbf{A} \times \mathbf{B}) \cup (\mathbf{A} \times \mathbf{C}) \]
@@ -766,7 +774,7 @@ For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{C}$, the following is a 
 \end{align*}
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
 If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}$ is nonempty then $\mathbf{B} = \mathbf{C}$.
@@ -787,7 +795,7 @@ If $\mathbf{A} \times \mathbf{B} = \mathbf{A} \times \mathbf{C}$ and $\mathbf{A}
 \qed
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem:
 
 \[ \mathbf{A} \times \bigcup \mathbf{B} = \{ (a,b) \mid \exists Y \in \mathbf{B}. (a \in \mathbf{A} \wedge b \in Y) \} \]
@@ -818,7 +826,7 @@ The \emph{domain} of a class $\mathbf{R}$ is the class
 \[ \dom \mathbf{R} := \{ x \mid \exists y. x \mathbf{R} y \} \enspace . \]
 \end{df}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The domain of a set is a set.
 \end{prop}
 
@@ -827,7 +835,7 @@ The \emph{range} of a class $\mathbf{R}$ is the class
 \[ \ran \mathbf{R} := \{ y \mid \exists x. x \mathbf{R} y \} \]
 \end{df}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The range of a set is a set.
 \end{prop}
 
@@ -845,7 +853,7 @@ The \emph{inverse} of a relation $\mathbf{R}$ between $\mathbf{A}$ and $\mathbf{
 \[ b \mathbf{R}^{-1} a \Leftrightarrow a \mathbf{R} b \enspace . \]
 \end{df}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$ then $(\mathbf{R}^{-1})^{-1} = \mathbf{R}$.
@@ -866,7 +874,7 @@ Let $\mathbf{R}$ be a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\math
 \[ a (\mathbf{S} \circ \mathbf{R}) c \Leftrightarrow \exists b (a \mathbf{R} b \wedge b \mathbf{S} c) \enspace. \]
 \end{df}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
 If $\mathbf{R}$ is a relation between $\mathbf{A}$ and $\mathbf{B}$, and $\mathbf{S}$ is a relation between $\mathbf{B}$ and $\mathbf{C}$, then
@@ -889,7 +897,7 @@ z(\mathbf{S} \circ \mathbf{R})^{-1}x & \Leftrightarrow x(\mathbf{S} \circ \mathb
 Let $\mathbf{R}$ be a binary relation on $\mathbf{A}$. Then $\mathbf{R}$ is \emph{reflexive} on $\mathbf{A}$ iff $\forall x \in \mathbf{A}. (x,x) \in \mathbf{R}$.
 \end{df}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:invref}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -919,7 +927,7 @@ A relation $\mathbf{R}$ is \emph{symmetric} iff, whenever $x\mathbf{R}y$, then $
 A relation $\mathbf{R}$ is \emph{antisymmetric} iff, whenever $x \mathbf{R} y$ and $y \mathbf{R} x$, then $x = y$.
 \end{df}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:invantisym}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -941,7 +949,7 @@ If $\mathbf{R}$ is an antisymmetric relation on $\mathbf{A}$ then so is $\mathbf
 A relation $\mathbf{R}$ is \emph{transitive} iff, whenever $x\mathbf{R}y$ and $y \mathbf{R} z$, then $x\mathbf{R} z$.
 \end{df}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:invtrans}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -957,7 +965,7 @@ If $\mathbf{R}$ is a transitive relation between $\mathbf{A}$ and $\mathbf{B}$ t
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 For any relation $R$ on a set $A$, there exists a smallest transitive relation on $A$ that includes $R$.
 \end{prop}
 
@@ -1001,7 +1009,7 @@ A relation $\mathbf{R}$ is \emph{well founded} iff:
 \end{itemize}
 \end{df}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:segset}
 For any class $\mathbf{R}$, the following is a theorem:
 
@@ -1015,7 +1023,7 @@ Assume $\mathbf{R}$ is a well founded relation. For any set $a$, the class $\{ x
 \qed
 \end{proof}
 
-\begin{props}[S]
+\begin{props}[S without Foundation]
 \label{prop:leastelement}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -1050,7 +1058,7 @@ If $\mathbf{S}$ is a well-founded relation and $\mathbf{R} \subseteq \mathbf{S}$
 \qed
 \end{proof}
 
-\begin{thms}[Transfinite Induction Principle (S)]
+\begin{thms}[Transfinite Induction Principle (S without Foundation)]
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ is a well founded relation on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Assume that, for all $t \in \mathbf{A}$,
@@ -1077,7 +1085,7 @@ Then $\mathbf{B} = \mathbf{A}$.
 \qed
 \end{proof}
 
-\begin{thm}[S]
+\begin{thm}[S without Foundation]
 The transitive closure of a well founded relation on a set is well founded.
 \end{thm}
 
@@ -1103,7 +1111,635 @@ Let $\mathbf{R}$ be a relation on $\mathbf{A}$ and $a \in \mathbf{A}$. The \emph
 \[ \seg a := \{ x \in \mathbf{A} \mid x \mathbf{R} a \} \enspace . \]
 \end{df}
 
-\begin{thms}[Transfinite Recursion Theorem Schema (ZF)]
+\chapter{Functions}
+
+\section{Functions}
+
+\begin{df}[Function]
+A \emph{function} from $\mathbf{A}$ to $\mathbf{B}$ is a relation $\mathbf{F}$ between $\mathbf{A}$ and $\mathbf{B}$ such that, for all $x \in \mathbf{A}$, there is only one $y$ such that $x \mathbf{F} y$. We denote this $y$ by $\mathbf{F}(x)$.
+
+A \emph{binary operation} on a class $\mathbf{A}$ is a function $\mathbf{A}^2 \rightarrow \mathbf{A}$.
+\end{df}
+
+\begin{df}[Closed]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{A}$ be a function and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{B}. \mathbf{F}(x) \in \mathbf{B}$.
+\end{df}
+
+\begin{prop}[S without Foundation]
+For any class $\mathbf{A}$, the following is a theorem:
+
+\[ \mathrm{id}_\mathbf{A} : \mathbf{A} \rightarrow \mathbf{A} \]
+\end{prop}
+
+\begin{proof}
+\pf\ For all $x \in \mathbf{A}$, the only $y$ such that $(x,y) \in \mathrm{id}_\mathbf{A}$ is $y = x$. \qed
+\end{proof}
+
+\begin{props}[S without Foundation]
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
+\[ (\mathbf{G} \circ \mathbf{F})(x) = \mathbf{G}(\mathbf{F}(x)) \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\forall x \in \mathbf{A}. (x, \mathbf{G}(\mathbf{F}(x))) \in \mathbf{G} \circ \mathbf{F})$}
+\begin{proof}
+	\pf\ Because $(x, \mathbf{F}(x)) \in \mathbf{F}$ and $(\mathbf{F}(x), \mathbf{G}(\mathbf{F}(x))) \in \mathbf{G}$.
+\end{proof}
+\step{2}{If $(x,z) \in \mathbf{F} \circ \mathbf{G}$ then $z = \mathbf{G}(\mathbf{F}(x))$}
+\begin{proof}
+	\step{a}{\pick\ $y \in \mathbf{B}$ such that $x \mathbf{F} y$ and $y \mathbf{G} z$}
+	\step{b}{$y = \mathbf{F}(x)$}
+	\step{c}{$z = \mathbf{G}(y)$}
+	\step{d}{$z = \mathbf{G}(\mathbf{F}(x))$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[SC without Foundation]
+For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$ (a \emph{choice function} for $A$) such that, for every nonempty $B \subseteq A$, we have $F(B) \in B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{\pflet{$\mathcal{A} = \{ \{ B \} \times B \mid B \in \mathcal{P} A - \{ \emptyset \} \}$}}
+\step{3}{Every member of $\mathcal{A}$ is nonempty.}
+\step{4}{Any two distinct members of $\mathcal{A}$ are disjoint.}
+\step{5}{\pick\ a set $C$ such that, for all $X \in \mathcal{A}$, we have $C \cap X$ is a singleton.}
+\begin{proof}
+	\pf\ Axiom of Choice.
+\end{proof}
+\step{6}{\pflet{$F = C \cap \bigcup \mathcal{A}$}}
+\step{7}{$F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$}
+\begin{proof}
+	\step{a}{$F$ is a function.}
+	\begin{proof}
+		\step{i}{\pflet{$(B,b),(B,b') \in F$}}
+		\step{ii}{$(B,b),(B,b') \in \{B\} \times B$}
+		\begin{proof}
+			\pf\ Since $(B,b),(B,b') \in \bigcup \mathcal{A}$.
+		\end{proof}
+		\step{iii}{$(B,b),(B,b') \in C \cap (\{B\} \times B)$}
+		\step{iv}{$(B,b) = (B,b')$}
+		\begin{proof}
+			\pf\ From \stepref{5}.
+		\end{proof}
+		\step{v}{$b = b'$}
+	\end{proof}
+	\step{b}{$\dom F = \mathcal{P} A - \{ \emptyset \}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			& B \in \dom F \\
+			\Leftrightarrow & \exists b. (B,b) \in F \\
+			\Leftrightarrow & \exists b. ((B,b) \in \bigcup \mathcal{A} \wedge (B,b) \in C) \\
+			\Leftrightarrow & \exists b. \exists B' \in \mathcal{P} A - \{ \emptyset \}. ((B,b) \in \{ B' \} \times B' \wedge (B,b) \in C) \\
+			\Leftrightarrow & B \in \mathcal{P} A - \{ \emptyset \} \wedge \exists b \in B. (B,b) \in C \\
+			\Leftrightarrow & B \in \mathcal{P} A - \{ \emptyset \} & (\text{\stepref{5}})
+		\end{align*}
+	\end{proof}
+	\step{c}{$\ran F \subseteq A$}
+\end{proof}
+\step{8}{For every nonempty $B \subseteq A$ we have $F(B) \in B$}
+\qed
+\end{proof}
+
+\begin{prop}[SC without Foundation]
+\label{prop:AxChoice}
+For any relation $R$ between $A$ and $B$, there exists a function $H : A \rightarrow B$ such that $H \subseteq R$ (i.e. $\forall x \in A. xRH(x)$).
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a relation between $A$ and $B$.}}
+\step{2}{\pick\ a choice function $G$ for $B$.}
+\step{3}{Define $H : A \rightarrow B$ by $H(x) = G(\{y \mid xRy\})$}
+\step{4}{$H \subseteq R$}
+\qed
+\end{proof}
+
+\subsection{Injective Functions}
+
+\begin{df}[Injective]
+A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection}, $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$, iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
+\end{df}
+
+\begin{prop}[S without Foundation]
+\label{prop:idinj}
+For any class $\mathbf{A}$, the following is a theorem:
+
+$\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\id{\mathbf{A}}(x) = \id{\mathbf{A}}(y)$ then immediately $x = y$. \qed
+\end{proof}
+
+\begin{props}[S without Foundation]
+\label{prop:compinj}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$, $\mathbf{G}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrowtail \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbf{A}$}}
+\step{2}{\assume{$(\mathbf{G} \circ \mathbf{F})(x) = (\mathbf{G} \circ \mathbf{F})(y)$}}
+\step{3}{$\mathbf{G}(\mathbf{F}(x)) = \mathbf{G}(\mathbf{F}(y))$}
+\step{4}{$\mathbf{F}(x) = \mathbf{F}(y)$}
+\begin{proof}
+	\pf\ Since $\mathbf{G}$ is injective.
+\end{proof}
+\step{5}{$x = y$}
+\begin{proof}
+	\pf\ Since $\mathbf{F}$ is injective.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S without Foundation]
+Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = \id{A}$ if and only if $F$ is one-to-one.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If there exists $G : B \rightarrow A$ such that $G \circ F = \id{A}$ then $F$ is one-to-one.}
+\begin{proof}
+	\step{a}{\assume{$G : B \rightarrow A$ and $G \circ F = I_A$}}
+	\step{b}{\pflet{$x,y \in A$}}
+	\step{c}{\assume{$F(x) = F(y)$}}
+	\step{d}{$x = y$}
+	\begin{proof}
+		\pf\ $x = G(F(x)) = G(F(y)) = y$
+	\end{proof}
+\end{proof}
+\step{2}{If $F$ is one-to-one then there exists $G : B \rightarrow A$ such that $G \circ F = I_A$.}
+\begin{proof}
+	\step{a}{\assume{$F$ is one-to-one.}}
+	\step{b}{\pick\ $a \in A$}
+	\step{c}{\pflet{$G : B \rightarrow A$ be the function defined by: $G(b)$ is the (unique) $x \in A$ such that $F(x) = b$ if there exists such an $x$, $G(b) = a$ otherwise.}}
+	\step{d}{For all $x \in A$ we have $G(F(x)) = x$.}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Surjective Functions}
+
+\begin{df}[Surjective]
+Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
+\end{df}
+
+\begin{props}[S without Foundation]
+\label{prop:idsurj}
+For any class $\mathbf{A}$, the following is a theorem:
+
+$\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is surjective.
+\end{props}
+
+\begin{proof}
+\pf\ For any $y \in \mathbf{A}$ we have $\id{\mathbf{A}}(y) = y$. \qed
+\end{proof}
+
+\begin{props}[S without Foundation]
+\label{prop:compsurj}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
+
+If $\mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \twoheadrightarrow \mathbf{C}$, then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$c \in \mathbf{C}$}}
+\step{2}{\pick\ $b \in \mathbf{B}$ such that $\mathbf{G}(b) = c$.}
+\step{3}{\pick\ $a \in \mathbf{A}$ such that $\mathbf{F}(a) = b$.}
+\step{4}{$(\mathbf{G} \circ \mathbf{F})(a) = c$}
+\qed
+\end{proof}
+
+\begin{prop}[SC without Foundation]
+Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ has a right inverse then $F$ is surjective.}
+\begin{proof}
+	\step{a}{\assume{$F$ has a right inverse $H : B \rightarrow A$.}}
+	\step{b}{\pflet{$y \in B$}}
+	\step{c}{$F(H(y)) = y$}
+	\step{c}{There exists $x \in A$ such that $F(x) = y$}
+\end{proof}
+\step{2}{If $F$ is surjective then $F$ has a right inverse.}
+\begin{proof}
+	\step{a}{\assume{$F$ is surjective.}}
+	\step{b}{\pick\ a function $H : B \rightarrow A$ such that $H \subseteq F^{-1}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:AxChoice}.
+	\end{proof}
+	\step{d}{$F \circ H = \id{B}$}
+	\begin{proof}
+		\step{i}{\pflet{$y \in B$}}
+		\step{ii}{$(y,H(y)) \in F^{-1}$}
+		\step{iii}{$F(H(y)) = y$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Bijections}
+
+\begin{df}[Bijection]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ is \emph{bijective} or a \emph{bijection}, $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$, iff it is injective and surjective.
+\end{df}
+
+\begin{props}[S without Foundation]
+\label{prop:idbij}
+For any class $\mathbf{A}$, the following is a theorem:
+
+The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bijection.
+\end{props}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed	
+\end{proof}
+
+\begin{props}[S without Foundation]
+\label{prop:invbij}
+For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
+
+If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{B} \approx \mathbf{A}$.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}^{-1} : \mathbf{B} \rightarrow \mathbf{A}$}
+\begin{proof}
+	\step{a}{\pflet{$b \in \mathbf{B}$}}
+	\step{b}{\pick\ $a \in \mathbf{A}$ such that $\mathbf{F}(a) = b$.}
+	\begin{proof}
+		\pf\ Since $\mathbf{F}$ is surjective.
+	\end{proof}
+	\step{c}{$(b,a) \in \mathbf{F}^{-1}$}
+	\step{d}{If $(b,a') \in \mathbf{F}^{-1}$ then $a' = a$.}
+	\begin{proof}
+		\step{i}{\pflet{$a' \in \mathbf{A}$ such that $(b,a') \in \mathbf{F}^{-1}$}}
+		\step{ii}{$\mathbf{F}(a') = \mathbf{F}(a)$}
+		\step{iii}{$a' = a$}
+		\begin{proof}
+			\pf\ Since $\mathbf{F}$ is injective.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{$\mathbf{F}^{-1}$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \mathbf{B}$}}
+	\step{b}{\assume{$\mathbf{F}^{-1}(x) = \mathbf{F}^{-1}(y)$}}
+	\step{c}{$x = y$}
+	\begin{proof}
+		\pf\ $x = \mathbf{F}(\mathbf{F}^{-1}(x)) = \mathbf{F}(\mathbf{F}^{-1}(y)) = y$.
+	\end{proof}
+\end{proof}
+\step{3}{$\mathbf{F}^{-1}$ is surjective.}
+\begin{proof}
+	\pf\ For all $a \in \mathbf{A}$ we have $\mathbf{F}^{-1}(\mathbf{F}(a)) = a$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}[S without Foundation]
+\label{prop:compbij}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
+
+If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \approx \mathbf{C}$ then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \approx \mathbf{C}$.
+\end{props}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:compinj} and \ref{prop:compsurj}. \qed
+\end{proof}
+
+\subsection{Restrictions}
+
+\begin{df}[Restriction]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Let $\mathbf{C} \subseteq \mathbf{A}$. The \emph{restriction} of $\mathbf{F}$ to $\mathbf{C}$, denoted $\mathbf{F} \restriction \mathbf{C}$, is the function
+\begin{align*}
+\mathbf{F} \restriction \mathbf{C} & : \mathbf{C} \rightarrow \mathbf{B} \\
+(\mathbf{F} \restriction \mathbf{C})(x) & = \mathbf{F}(x) & (x \in \mathbf{C})
+\end{align*}
+\end{df}
+
+\subsection{Images}
+
+\begin{df}[Image]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{A}$. The \emph{image} of $\mathbf{C}$ under $\mathbf{F}$ is the class
+\[ \mathbf{F}(\mathbf{C}) := \{ \mathbf{F}(x) \mid x \in \mathbf{C} \} \enspace . \]
+\end{df}
+
+\begin{props}[S without Foundation]
+For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
+
+If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \subseteq \mathbf{A}$, the class $\mathbf{F}(S)$ is a set.
+\end{props}
+
+\begin{proof}
+\pf\ By an Axiom of Replacement. \qed
+\end{proof}
+
+\begin{props}[S without Foundation]
+\label{prop:imgunion}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
+\[ \mathbf{F} \left( \bigcup \mathbf{C} \right) = \{ y \mid \exists X \in \mathbf{C}. y \in \mathbf{F}(X) \} \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+	y \in \mathbf{F} \left( \bigcup \mathbf{C} \right) & \Leftrightarrow \exists x \in \bigcup \mathbf{C}. y = \mathbf{F}(x) \\
+	& \Leftrightarrow \exists x. \exists X. X \in \mathbf{C} \wedge x \in X \wedge y = \mathbf{F}(x) \\
+	& \Leftrightarrow \exists X \in \mathbf{C}. y \in \mathbf{F}(X) & \qed
+\end{align*}
+\end{proof}
+
+\begin{props}[S without Foundation]
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
+\[ \mathbf{F}(\mathbf{C} \cup \mathbf{D}) = \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+	y \in \mathbf{F}(\mathbf{C} \cup \mathbf{D})
+	& \Leftrightarrow \exists x \in \mathbf{C} \cup \mathbf{D}. y = \mathbf{F}(x) \\
+	& \Leftrightarrow \exists x \in \mathbf{C}. y = \mathbf{F}(x) \vee \exists x \in \mathbf{D}. y = \mathbf{F}(x) \\
+	& \Leftrightarrow y \in \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}[S without Foundation]
+For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{D}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
+
+\[ \mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B}) \enspace . \]
+
+Equality holds if $\mathbf{F}$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}
+\begin{proof}
+	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}}
+	\step{b}{\pick\ $x \in \mathbf{A} \cap \mathbf{B}$ such that $y = \mathbf{F}(x)$}
+	\step{c}{$y \in \mathbf{F}(\mathbf{A})$}
+	\begin{proof}
+		\pf\ Since $x \in \mathbf{A}$.
+	\end{proof}
+	\step{d}{$y \in \mathbf{F}(\mathbf{B})$}
+	\begin{proof}
+		\pf\ Since $x \in \mathbf{B}$.
+	\end{proof}
+\end{proof}
+\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) = \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$.}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{F}$ is injective.}}
+	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}}
+	\step{c}{\pick\ $x \in \mathbf{A}$ such that $y = \mathbf{F}(x)$}
+	\step{d}{\pick\ $x' \in \mathbf{B}$ such that $y = \mathbf{F}(x')$}
+	\step{e}{$x = x'$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{f}{$x \in \mathbf{A} \cap \mathbf{B}$}
+	\step{g}{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{props}[S without Foundation]
+\label{prop:imgint}
+For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$, the following is a theorem:
+
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
+
+\[ \mathbf{F} \left( \bigcap \mathbf{C} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \} \enspace . \]
+
+Equality holds if $\mathbf{F}$ is injective and $\mathbf{A}$ is nonempty.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F} \left( \bigcap \mathbf{A} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
+\begin{proof}
+	\step{a}{\pflet{$y \in \mathbf{F} (\bigcap \mathbf{A})$}}
+	\step{b}{\pick\ $x \in \bigcap \mathbf{A}$ such that $y = \mathbf{F}(x)$}
+	\step{c}{\pflet{$X \in \mathbf{A}$}}
+	\step{d}{$x \in X$}
+	\step{e}{$y \in \mathbf{F}(X)$}
+\end{proof}
+\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{F}$ is injective.}}
+	\step{aa}{\assume{$\mathbf{A}$ is nonempty.}}
+	\step{b}{\pflet{$y \in \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}}
+	\step{c}{\pick\ $X_0 \in \mathbf{A}$}
+	\step{d}{\pick\ $x \in X_0$ such that $(x,y) \in \mathbf{F}$}
+	\step{e}{$x \in \bigcap \mathbf{A}$}
+	\begin{proof}
+		\step{i}{\pflet{$X \in \mathbf{A}$}}
+		\step{ii}{\pick\ $x' \in X$ such that $(x',y) \in \mathbf{F}$.}
+		\step{iii}{$x = x'$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iv}{$x \in X$}
+	\end{proof}
+	\step{f}{$y \in \mathbf{F}(\bigcap \mathbf{A})$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[S without Foundation]
+\label{prop:imgdiff}
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
+\[ \mathbf{F}(\mathbf{C}) - \mathbf{F}(\mathbf{D}) \subseteq \mathbf{F}(\mathbf{C} - \mathbf{D}) \enspace . \]
+Equality holds if $\mathbf{F}$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathbf{F}(\mathbf{C}) - \mathbf{F}(\mathbf{D}) \subseteq \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\begin{proof}
+	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B})$}}
+	\step{b}{\pick\ $x \in \mathbf{A}$ such that $y = \mathbf{F}(x)$}
+	\step{c}{$x \notin \mathbf{B}$}
+	\step{d}{$x \in \mathbf{A} - \mathbf{B}$}
+	\step{e}{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\end{proof}
+\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) = \mathbf{F}(\mathbf{A} - \mathbf{B})$}
+\begin{proof}
+	\step{a}{\assume{$\mathbf{F}$ is injective.}}
+	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}}
+	\step{c}{\pick\ $x \in \mathbf{A} - \mathbf{B}$ such that $y = \mathbf{F}(x)$}
+	\step{d}{$y \in \mathbf{F}(\mathbf{A})$}
+	\step{e}{$y \notin \mathbf{F}(\mathbf{B})$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $y \in \mathbf{F}(\mathbf{B})$}}
+		\step{ii}{\pick\ $x' \in \mathbf{B}$ such that $y = \mathbf{F}(x')$}
+		\step{iii}{$x = x'$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iv}{$x \in \mathbf{B}$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{c}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Inverse Images}
+
+\begin{df}[Inverse Image]
+Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{B}$. Then the \emph{inverse image} of $\mathbf{C}$ under $\mathbf{F}$ is
+\[ \mathbf{F}^{-1}(\mathbf{C}) = \{ x \in \mathbf{A} \mid \mathbf{F}(x) \in \mathbf{C} \} \enspace . \]
+\end{df}
+
+\begin{props}[S without Foundation]
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{B}$. Then
+\[ \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right) = \bigcap \{ \mathbf{F}^{-1}(X) \mid X \in \mathbf{C} \} \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+x \in \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right)
+& \Leftrightarrow \mathbf{F}(x) \in \bigcap \mathbf{C} \\
+& \Leftrightarrow \forall X \in \mathbf{C}. \mathbf{F}(x) \in X \\
+& \Leftrightarrow \forall X \in \mathbf{C}. x \in \mathbf{F}^{-1}(X) & \qed
+\end{align*}
+\end{proof}
+
+\begin{props}[S without Foundation]
+For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
+
+Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{B}$. Then
+\[ \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) = \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) \enspace . \]
+\end{props}
+
+\begin{proof}
+\pf
+\begin{align*}
+x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \in \mathbf{C} - \mathbf{D} \\
+& \Leftrightarrow \mathbf{F}(x) \in \mathbf{C} \wedge \mathbf{F}(x) \notin \mathbf{D} \\
+& \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) \wedge x \in \mathbf{F}^{-1}(\mathbf{D}) \\
+& \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) & \qed
+\end{align*}
+\end{proof}
+
+\subsection{Function Sets}
+
+\begin{prop}[SF without Foundation]
+For any classes $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
+
+Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ is a set.
+\end{prop}
+
+\begin{proof}
+\pf\ By an Axiom of Replacement, we have $R = \{ \mathbf{F}(x) \mid x \in A \}$ is a set. Hence $\mathbf{F}$ is a set since $\mathbf{F} \subseteq A \times R$. \qed
+\end{proof}
+
+\begin{df}[Dependent Product Class]
+Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write $\prod_{i \in I} \mathbf{H}(i)$ for the class of all functions $f : I \rightarrow \bigcup_{i \in I} \mathbf{H}(i)$ such that $\forall i \in I. f(i) \in \mathbf{H}(i)$.
+
+We write $\mathbf{B}^I$ for $\prod_{i \in I} \mathbf{B}$ where $\mathbf{B}$ does not depend on $I$.
+\end{df}
+
+\begin{props}[SF without Foundation]
+Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I} H(i)$ is a set.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{$\{ \mathbf{H}(i) \mid i \in I \}$ is a set.}
+\begin{proof}
+	\pf\ By an Axiom of Replacement.
+\end{proof}
+\step{2}{$\bigcup_{i \in I} \mathbf{H}(i)$ is a set.}
+\step{3}{$\prod_{i \in I} \mathbf{H}(i)$ is a set.}
+\begin{proof}
+	\pf\ It is a subset of $\mathcal{P}\left( I \times \bigcup_{i \in I} \mathbf{H}(i) \right)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[SFC without Foundation]
+Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(i) \neq \emptyset$ then $\prod_{i \in I} H(i) \neq \emptyset.$
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\forall i \in I. H(i) \neq \emptyset$}}
+\step{2}{\pflet{$R = \{ (i,x) \mid i \in I, x \in H(i) \}$}}
+\step{3}{\pick\ a function $f : I \rightarrow \bigcup_{i \in I} H(i)$ such that $f \subseteq R$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:AxChoice}.
+\end{proof}
+\step{4}{$f \in \prod_{i \in I} H(i)$}
+\qed
+\end{proof}
+
+\section{Equinumerosity}
+
+\begin{df}[Equinumerous]
+Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
+\end{df}
+
+\section{Domination}
+
+\begin{df}[Dominate]
+A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
+\end{df}
+
+\begin{prop}[SC without Foundation]
+Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $A \preccurlyeq B$ iff there exists a surjective function $B \rightarrow A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $A \preccurlyeq B$ and $A \neq \emptyset$ then there exists a surjective function $B \rightarrow A$.}
+\begin{proof}
+	\step{a}{\assume{$f : A \rightarrow B$ be injective.}}
+	\step{b}{\pick\ $a \in A$}
+	\step{c}{\pflet{$g : B \rightarrow A$ be the function defined by $g(b) = f^{-1}(b)$ if $b \in \ran f$, and $g(b) = a$ otherwise.}}
+	\step{d}{$g$ is surjective.}
+\end{proof}
+\step{2}{If there exists a surjective function $B \rightarrow A$ then $A \preccurlyeq B$.}
+\begin{proof}
+	\step{a}{\assume{there exists a surjective function $g : B \rightarrow A$}}
+	\step{x}{$\forall a \in A. \exists b \in B. g(b) = a$}
+	\step{b}{Choose a function $f : A \rightarrow B$ such that $\forall a \in A. g(f(a)) = a$}
+	\step{c}{$f$ is injective.}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Transfinite Recursion}
+
+\begin{thms}[Transfinite Recursion Theorem Schema (SF without Foundation)]
 For any classes $\mathbf{A}$, $\mathbf{R}$ and any property $G[x,y,z]$, there exists a class $\mathbf{F}$ such that, for any class $\mathbf{F}'$ the following is a theorem:
 
 Assume that $\mathbf{R}$ is a well-founded relation on $\mathbf{A}$. Assume that, for any $f$ and $t$, there exists a unique $z$ such that $G[f,t,z]$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ such that, for all $t \in \mathbf{A}$, we have $\mathbf{F} \restriction \seg t$ is a set and
@@ -1173,632 +1809,6 @@ If $\mathbf{F}' : \mathbf{A} \rightarrow \mathbf{V}$ satisfies that, for all $t 
 \qed
 \end{proof}
 
-\chapter{Functions}
-
-\section{Functions}
-
-\begin{df}[Function]
-A \emph{function} from $\mathbf{A}$ to $\mathbf{B}$ is a relation $\mathbf{F}$ between $\mathbf{A}$ and $\mathbf{B}$ such that, for all $x \in \mathbf{A}$, there is only one $y$ such that $x \mathbf{F} y$. We denote this $y$ by $\mathbf{F}(x)$.
-
-A \emph{binary operation} on a class $\mathbf{A}$ is a function $\mathbf{A}^2 \rightarrow \mathbf{A}$.
-\end{df}
-
-\begin{df}[Closed]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{A}$ be a function and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{closed} under $\mathbf{F}$ iff $\forall x \in \mathbf{B}. \mathbf{F}(x) \in \mathbf{B}$.
-\end{df}
-
-\begin{prop}[S]
-For any class $\mathbf{A}$, the following is a theorem:
-
-\[ \mathrm{id}_\mathbf{A} : \mathbf{A} \rightarrow \mathbf{A} \]
-\end{prop}
-
-\begin{proof}
-\pf\ For all $x \in \mathbf{A}$, the only $y$ such that $(x,y) \in \mathrm{id}_\mathbf{A}$ is $y = x$. \qed
-\end{proof}
-
-\begin{props}[S]
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrow \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrow \mathbf{C}$ and, for all $x \in \mathbf{A}$, we have
-\[ (\mathbf{G} \circ \mathbf{F})(x) = \mathbf{G}(\mathbf{F}(x)) \enspace . \]
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{$\forall x \in \mathbf{A}. (x, \mathbf{G}(\mathbf{F}(x))) \in \mathbf{G} \circ \mathbf{F})$}
-\begin{proof}
-	\pf\ Because $(x, \mathbf{F}(x)) \in \mathbf{F}$ and $(\mathbf{F}(x), \mathbf{G}(\mathbf{F}(x))) \in \mathbf{G}$.
-\end{proof}
-\step{2}{If $(x,z) \in \mathbf{F} \circ \mathbf{G}$ then $z = \mathbf{G}(\mathbf{F}(x))$}
-\begin{proof}
-	\step{a}{\pick\ $y \in \mathbf{B}$ such that $x \mathbf{F} y$ and $y \mathbf{G} z$}
-	\step{b}{$y = \mathbf{F}(x)$}
-	\step{c}{$z = \mathbf{G}(y)$}
-	\step{d}{$z = \mathbf{G}(\mathbf{F}(x))$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[SC]
-For any set $A$ there exists a function $F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$ (a \emph{choice function} for $A$) such that, for every nonempty $B \subseteq A$, we have $F(B) \in B$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A$ be a set.}}
-\step{2}{\pflet{$\mathcal{A} = \{ \{ B \} \times B \mid B \in \mathcal{P} A - \{ \emptyset \} \}$}}
-\step{3}{Every member of $\mathcal{A}$ is nonempty.}
-\step{4}{Any two distinct members of $\mathcal{A}$ are disjoint.}
-\step{5}{\pick\ a set $C$ such that, for all $X \in \mathcal{A}$, we have $C \cap X$ is a singleton.}
-\begin{proof}
-	\pf\ Axiom of Choice.
-\end{proof}
-\step{6}{\pflet{$F = C \cap \bigcup \mathcal{A}$}}
-\step{7}{$F : \mathcal{P} A - \{ \emptyset \} \rightarrow A$}
-\begin{proof}
-	\step{a}{$F$ is a function.}
-	\begin{proof}
-		\step{i}{\pflet{$(B,b),(B,b') \in F$}}
-		\step{ii}{$(B,b),(B,b') \in \{B\} \times B$}
-		\begin{proof}
-			\pf\ Since $(B,b),(B,b') \in \bigcup \mathcal{A}$.
-		\end{proof}
-		\step{iii}{$(B,b),(B,b') \in C \cap (\{B\} \times B)$}
-		\step{iv}{$(B,b) = (B,b')$}
-		\begin{proof}
-			\pf\ From \stepref{5}.
-		\end{proof}
-		\step{v}{$b = b'$}
-	\end{proof}
-	\step{b}{$\dom F = \mathcal{P} A - \{ \emptyset \}$}
-	\begin{proof}
-		\pf
-		\begin{align*}
-			& B \in \dom F \\
-			\Leftrightarrow & \exists b. (B,b) \in F \\
-			\Leftrightarrow & \exists b. ((B,b) \in \bigcup \mathcal{A} \wedge (B,b) \in C) \\
-			\Leftrightarrow & \exists b. \exists B' \in \mathcal{P} A - \{ \emptyset \}. ((B,b) \in \{ B' \} \times B' \wedge (B,b) \in C) \\
-			\Leftrightarrow & B \in \mathcal{P} A - \{ \emptyset \} \wedge \exists b \in B. (B,b) \in C \\
-			\Leftrightarrow & B \in \mathcal{P} A - \{ \emptyset \} & (\text{\stepref{5}})
-		\end{align*}
-	\end{proof}
-	\step{c}{$\ran F \subseteq A$}
-\end{proof}
-\step{8}{For every nonempty $B \subseteq A$ we have $F(B) \in B$}
-\qed
-\end{proof}
-
-\begin{prop}[SC]
-\label{prop:AxChoice}
-For any relation $R$ between $A$ and $B$, there exists a function $H : A \rightarrow B$ such that $H \subseteq R$ (i.e. $\forall x \in A. xRH(x)$).
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$R$ be a relation between $A$ and $B$.}}
-\step{2}{\pick\ a choice function $G$ for $B$.}
-\step{3}{Define $H : A \rightarrow B$ by $H(x) = G(\{y \mid xRy\})$}
-\step{4}{$H \subseteq R$}
-\qed
-\end{proof}
-
-\subsection{Injective Functions}
-
-\begin{df}[Injective]
-A function $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{one-to-one}, \emph{injective} or an \emph{injection}, $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$, iff, for all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) = \mathbf{F}(y)$, then $x = y$.
-\end{df}
-
-\begin{prop}[S]
-\label{prop:idinj}
-For any class $\mathbf{A}$, the following is a theorem:
-
-$\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ If $\id{\mathbf{A}}(x) = \id{\mathbf{A}}(y)$ then immediately $x = y$. \qed
-\end{proof}
-
-\begin{props}[S]
-\label{prop:compinj}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$, $\mathbf{G}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \rightarrowtail \mathbf{C}$. Then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{C}$.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$x,y \in \mathbf{A}$}}
-\step{2}{\assume{$(\mathbf{G} \circ \mathbf{F})(x) = (\mathbf{G} \circ \mathbf{F})(y)$}}
-\step{3}{$\mathbf{G}(\mathbf{F}(x)) = \mathbf{G}(\mathbf{F}(y))$}
-\step{4}{$\mathbf{F}(x) = \mathbf{F}(y)$}
-\begin{proof}
-	\pf\ Since $\mathbf{G}$ is injective.
-\end{proof}
-\step{5}{$x = y$}
-\begin{proof}
-	\pf\ Since $\mathbf{F}$ is injective.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[S]
-Let $F : A \rightarrow B$ where $A$ is nonempty. There exists $G : B \rightarrow A$ (a \emph{left inverse}) such that $G \circ F = \id{A}$ if and only if $F$ is one-to-one.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If there exists $G : B \rightarrow A$ such that $G \circ F = \id{A}$ then $F$ is one-to-one.}
-\begin{proof}
-	\step{a}{\assume{$G : B \rightarrow A$ and $G \circ F = I_A$}}
-	\step{b}{\pflet{$x,y \in A$}}
-	\step{c}{\assume{$F(x) = F(y)$}}
-	\step{d}{$x = y$}
-	\begin{proof}
-		\pf\ $x = G(F(x)) = G(F(y)) = y$
-	\end{proof}
-\end{proof}
-\step{2}{If $F$ is one-to-one then there exists $G : B \rightarrow A$ such that $G \circ F = I_A$.}
-\begin{proof}
-	\step{a}{\assume{$F$ is one-to-one.}}
-	\step{b}{\pick\ $a \in A$}
-	\step{c}{\pflet{$G : B \rightarrow A$ be the function defined by: $G(b)$ is the (unique) $x \in A$ such that $F(x) = b$ if there exists such an $x$, $G(b) = a$ otherwise.}}
-	\step{d}{For all $x \in A$ we have $G(F(x)) = x$.}
-\end{proof}
-\qed
-\end{proof}
-
-\subsection{Surjective Functions}
-
-\begin{df}[Surjective]
-Let $F : A \rightarrow B$. We say that $F$ is \emph{surjective}, or maps $A$ \emph{onto} $B$, and write $F : A \twoheadrightarrow B$, iff for all $y \in B$ there exists $x \in A$ such that $F(x) = y$.
-\end{df}
-
-\begin{props}[S]
-\label{prop:idsurj}
-For any class $\mathbf{A}$, the following is a theorem:
-
-$\id{\mathbf{A}} : \mathbf{A} \rightarrow \mathbf{A}$ is surjective.
-\end{props}
-
-\begin{proof}
-\pf\ For any $y \in \mathbf{A}$ we have $\id{\mathbf{A}}(y) = y$. \qed
-\end{proof}
-
-\begin{props}[S]
-\label{prop:compsurj}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
-
-If $\mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \twoheadrightarrow \mathbf{C}$, then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \twoheadrightarrow \mathbf{C}$.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$c \in \mathbf{C}$}}
-\step{2}{\pick\ $b \in \mathbf{B}$ such that $\mathbf{G}(b) = c$.}
-\step{3}{\pick\ $a \in \mathbf{A}$ such that $\mathbf{F}(a) = b$.}
-\step{4}{$(\mathbf{G} \circ \mathbf{F})(a) = c$}
-\qed
-\end{proof}
-
-\begin{prop}[SC]
-Let $F : A \rightarrow B$. There exists $H : B \rightarrow A$ (a \emph{right inverse}) such that $F \circ H = \id{B}$ if and only if $F$ maps $A$ onto $B$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $F$ has a right inverse then $F$ is surjective.}
-\begin{proof}
-	\step{a}{\assume{$F$ has a right inverse $H : B \rightarrow A$.}}
-	\step{b}{\pflet{$y \in B$}}
-	\step{c}{$F(H(y)) = y$}
-	\step{c}{There exists $x \in A$ such that $F(x) = y$}
-\end{proof}
-\step{2}{If $F$ is surjective then $F$ has a right inverse.}
-\begin{proof}
-	\step{a}{\assume{$F$ is surjective.}}
-	\step{b}{\pick\ a function $H : B \rightarrow A$ such that $H \subseteq F^{-1}$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:AxChoice}.
-	\end{proof}
-	\step{d}{$F \circ H = \id{B}$}
-	\begin{proof}
-		\step{i}{\pflet{$y \in B$}}
-		\step{ii}{$(y,H(y)) \in F^{-1}$}
-		\step{iii}{$F(H(y)) = y$}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\subsection{Bijections}
-
-\begin{df}[Bijection]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Then $\mathbf{F}$ is \emph{bijective} or a \emph{bijection}, $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$, iff it is injective and surjective.
-\end{df}
-
-\begin{props}[S]
-\label{prop:idbij}
-For any class $\mathbf{A}$, the following is a theorem:
-
-The identity function $\id{\mathbf{A}} : \mathbf{A} \approx \mathbf{A}$ is a bijection.
-\end{props}
-
-\begin{proof}
-\pf\ Proposition \ref{prop:idinj} and \ref{prop:idsurj}. \qed	
-\end{proof}
-
-\begin{props}[S]
-\label{prop:invbij}
-For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
-
-If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ then $\mathbf{F}^{-1} : \mathbf{B} \approx \mathbf{A}$.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{$\mathbf{F}^{-1} : \mathbf{B} \rightarrow \mathbf{A}$}
-\begin{proof}
-	\step{a}{\pflet{$b \in \mathbf{B}$}}
-	\step{b}{\pick\ $a \in \mathbf{A}$ such that $\mathbf{F}(a) = b$.}
-	\begin{proof}
-		\pf\ Since $\mathbf{F}$ is surjective.
-	\end{proof}
-	\step{c}{$(b,a) \in \mathbf{F}^{-1}$}
-	\step{d}{If $(b,a') \in \mathbf{F}^{-1}$ then $a' = a$.}
-	\begin{proof}
-		\step{i}{\pflet{$a' \in \mathbf{A}$ such that $(b,a') \in \mathbf{F}^{-1}$}}
-		\step{ii}{$\mathbf{F}(a') = \mathbf{F}(a)$}
-		\step{iii}{$a' = a$}
-		\begin{proof}
-			\pf\ Since $\mathbf{F}$ is injective.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\step{2}{$\mathbf{F}^{-1}$ is injective.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in \mathbf{B}$}}
-	\step{b}{\assume{$\mathbf{F}^{-1}(x) = \mathbf{F}^{-1}(y)$}}
-	\step{c}{$x = y$}
-	\begin{proof}
-		\pf\ $x = \mathbf{F}(\mathbf{F}^{-1}(x)) = \mathbf{F}(\mathbf{F}^{-1}(y)) = y$.
-	\end{proof}
-\end{proof}
-\step{3}{$\mathbf{F}^{-1}$ is surjective.}
-\begin{proof}
-	\pf\ For all $a \in \mathbf{A}$ we have $\mathbf{F}^{-1}(\mathbf{F}(a)) = a$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{props}[S]
-\label{prop:compbij}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{F}$ and $\mathbf{G}$, the following is a theorem:
-
-If $\mathbf{F} : \mathbf{A} \approx \mathbf{B}$ and $\mathbf{G} : \mathbf{B} \approx \mathbf{C}$ then $\mathbf{G} \circ \mathbf{F} : \mathbf{A} \approx \mathbf{C}$.
-\end{props}
-
-\begin{proof}
-\pf\ Propositions \ref{prop:compinj} and \ref{prop:compsurj}. \qed
-\end{proof}
-
-\subsection{Restrictions}
-
-\begin{df}[Restriction]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$. Let $\mathbf{C} \subseteq \mathbf{A}$. The \emph{restriction} of $\mathbf{F}$ to $\mathbf{C}$, denoted $\mathbf{F} \restriction \mathbf{C}$, is the function
-\begin{align*}
-\mathbf{F} \restriction \mathbf{C} & : \mathbf{C} \rightarrow \mathbf{B} \\
-(\mathbf{F} \restriction \mathbf{C})(x) & = \mathbf{F}(x) & (x \in \mathbf{C})
-\end{align*}
-\end{df}
-
-\subsection{Images}
-
-\begin{df}[Image]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{A}$. The \emph{image} of $\mathbf{C}$ under $\mathbf{F}$ is the class
-\[ \mathbf{F}(\mathbf{C}) := \{ \mathbf{F}(x) \mid x \in \mathbf{C} \} \enspace . \]
-\end{df}
-
-\begin{props}[S]
-For any classes $\mathbf{F}$, $\mathbf{A}$ and $\mathbf{B}$, the following is a theorem.
-
-If $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$, then for any subset $S \subseteq \mathbf{A}$, the class $\mathbf{F}(S)$ is a set.
-\end{props}
-
-\begin{proof}
-\pf\ By an Axiom of Replacement. \qed
-\end{proof}
-
-\begin{props}[S]
-\label{prop:imgunion}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
-\[ \mathbf{F} \left( \bigcup \mathbf{C} \right) = \{ y \mid \exists X \in \mathbf{C}. y \in \mathbf{F}(X) \} \]
-\end{props}
-
-\begin{proof}
-\pf
-\begin{align*}
-	y \in \mathbf{F} \left( \bigcup \mathbf{C} \right) & \Leftrightarrow \exists x \in \bigcup \mathbf{C}. y = \mathbf{F}(x) \\
-	& \Leftrightarrow \exists x. \exists X. X \in \mathbf{C} \wedge x \in X \wedge y = \mathbf{F}(x) \\
-	& \Leftrightarrow \exists X \in \mathbf{C}. y \in \mathbf{F}(X) & \qed
-\end{align*}
-\end{proof}
-
-\begin{props}[S]
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
-\[ \mathbf{F}(\mathbf{C} \cup \mathbf{D}) = \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) \enspace . \]
-\end{props}
-
-\begin{proof}
-\pf
-\begin{align*}
-	y \in \mathbf{F}(\mathbf{C} \cup \mathbf{D})
-	& \Leftrightarrow \exists x \in \mathbf{C} \cup \mathbf{D}. y = \mathbf{F}(x) \\
-	& \Leftrightarrow \exists x \in \mathbf{C}. y = \mathbf{F}(x) \vee \exists x \in \mathbf{D}. y = \mathbf{F}(x) \\
-	& \Leftrightarrow y \in \mathbf{F}(\mathbf{C}) \cup \mathbf{F}(\mathbf{D}) & \qed
-\end{align*}
-\end{proof}
-
-\begin{prop}[S]
-For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{D}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
-
-\[ \mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B}) \enspace . \]
-
-Equality holds if $\mathbf{F}$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\mathbf{F}(\mathbf{A} \cap \mathbf{B}) \subseteq \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}
-\begin{proof}
-	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}}
-	\step{b}{\pick\ $x \in \mathbf{A} \cap \mathbf{B}$ such that $y = \mathbf{F}(x)$}
-	\step{c}{$y \in \mathbf{F}(\mathbf{A})$}
-	\begin{proof}
-		\pf\ Since $x \in \mathbf{A}$.
-	\end{proof}
-	\step{d}{$y \in \mathbf{F}(\mathbf{B})$}
-	\begin{proof}
-		\pf\ Since $x \in \mathbf{B}$.
-	\end{proof}
-\end{proof}
-\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F}(\mathbf{A} \cap \mathbf{B}) = \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$.}
-\begin{proof}
-	\step{a}{\assume{$\mathbf{F}$ is injective.}}
-	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A}) \cap \mathbf{F}(\mathbf{B})$}}
-	\step{c}{\pick\ $x \in \mathbf{A}$ such that $y = \mathbf{F}(x)$}
-	\step{d}{\pick\ $x' \in \mathbf{B}$ such that $y = \mathbf{F}(x')$}
-	\step{e}{$x = x'$}
-	\begin{proof}
-		\pf\ \stepref{a}
-	\end{proof}
-	\step{f}{$x \in \mathbf{A} \cap \mathbf{B}$}
-	\step{g}{$y \in \mathbf{F}(\mathbf{A} \cap \mathbf{B})$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{props}[S]
-\label{prop:imgint}
-For any classes $\mathbf{F}$, $\mathbf{A}$, $\mathbf{B}$, and $\mathbf{C}$, the following is a theorem:
-
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{A}$. Then
-
-\[ \mathbf{F} \left( \bigcap \mathbf{C} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \} \enspace . \]
-
-Equality holds if $\mathbf{F}$ is injective and $\mathbf{A}$ is nonempty.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{$\mathbf{F} \left( \bigcap \mathbf{A} \right) \subseteq \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
-\begin{proof}
-	\step{a}{\pflet{$y \in \mathbf{F} (\bigcap \mathbf{A})$}}
-	\step{b}{\pick\ $x \in \bigcap \mathbf{A}$ such that $y = \mathbf{F}(x)$}
-	\step{c}{\pflet{$X \in \mathbf{A}$}}
-	\step{d}{$x \in X$}
-	\step{e}{$y \in \mathbf{F}(X)$}
-\end{proof}
-\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F} \left( \bigcap \mathbf{A} \right) = \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}
-\begin{proof}
-	\step{a}{\assume{$\mathbf{F}$ is injective.}}
-	\step{aa}{\assume{$\mathbf{A}$ is nonempty.}}
-	\step{b}{\pflet{$y \in \bigcap \{ \mathbf{F}(X) \mid X \in \mathbf{A} \}$}}
-	\step{c}{\pick\ $X_0 \in \mathbf{A}$}
-	\step{d}{\pick\ $x \in X_0$ such that $(x,y) \in \mathbf{F}$}
-	\step{e}{$x \in \bigcap \mathbf{A}$}
-	\begin{proof}
-		\step{i}{\pflet{$X \in \mathbf{A}$}}
-		\step{ii}{\pick\ $x' \in X$ such that $(x',y) \in \mathbf{F}$.}
-		\step{iii}{$x = x'$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{iv}{$x \in X$}
-	\end{proof}
-	\step{f}{$y \in \mathbf{F}(\bigcap \mathbf{A})$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[S]
-\label{prop:imgdiff}
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{A}$. Then
-\[ \mathbf{F}(\mathbf{C}) - \mathbf{F}(\mathbf{D}) \subseteq \mathbf{F}(\mathbf{C} - \mathbf{D}) \enspace . \]
-Equality holds if $\mathbf{F}$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\mathbf{F}(\mathbf{C}) - \mathbf{F}(\mathbf{D}) \subseteq \mathbf{F}(\mathbf{A} - \mathbf{B})$}
-\begin{proof}
-	\step{a}{\pflet{$y \in \mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B})$}}
-	\step{b}{\pick\ $x \in \mathbf{A}$ such that $y = \mathbf{F}(x)$}
-	\step{c}{$x \notin \mathbf{B}$}
-	\step{d}{$x \in \mathbf{A} - \mathbf{B}$}
-	\step{e}{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}
-\end{proof}
-\step{2}{If $\mathbf{F}$ is injective then $\mathbf{F}(\mathbf{A}) - \mathbf{F}(\mathbf{B}) = \mathbf{F}(\mathbf{A} - \mathbf{B})$}
-\begin{proof}
-	\step{a}{\assume{$\mathbf{F}$ is injective.}}
-	\step{b}{\pflet{$y \in \mathbf{F}(\mathbf{A} - \mathbf{B})$}}
-	\step{c}{\pick\ $x \in \mathbf{A} - \mathbf{B}$ such that $y = \mathbf{F}(x)$}
-	\step{d}{$y \in \mathbf{F}(\mathbf{A})$}
-	\step{e}{$y \notin \mathbf{F}(\mathbf{B})$}
-	\begin{proof}
-		\step{i}{\assume{for a contradiction $y \in \mathbf{F}(\mathbf{B})$}}
-		\step{ii}{\pick\ $x' \in \mathbf{B}$ such that $y = \mathbf{F}(x')$}
-		\step{iii}{$x = x'$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{iv}{$x \in \mathbf{B}$}
-		\qedstep
-		\begin{proof}
-			\pf\ This contradicts \stepref{c}.
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\subsection{Inverse Images}
-
-\begin{df}[Inverse Image]
-Let $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathbf{B}$. Then the \emph{inverse image} of $\mathbf{C}$ under $\mathbf{F}$ is
-\[ \mathbf{F}^{-1}(\mathbf{C}) = \{ x \in \mathbf{A} \mid \mathbf{F}(x) \in \mathbf{C} \} \enspace . \]
-\end{df}
-
-\begin{props}[S]
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$ and $\mathbf{F}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C} \subseteq \mathcal{P} \mathbf{B}$. Then
-\[ \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right) = \bigcap \{ \mathbf{F}^{-1}(X) \mid X \in \mathbf{C} \} \enspace . \]
-\end{props}
-
-\begin{proof}
-\pf
-\begin{align*}
-x \in \mathbf{F}^{-1} \left( \bigcap \mathbf{C} \right)
-& \Leftrightarrow \mathbf{F}(x) \in \bigcap \mathbf{C} \\
-& \Leftrightarrow \forall X \in \mathbf{C}. \mathbf{F}(x) \in X \\
-& \Leftrightarrow \forall X \in \mathbf{C}. x \in \mathbf{F}^{-1}(X) & \qed
-\end{align*}
-\end{proof}
-
-\begin{props}[S]
-For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{C}$, $\mathbf{D}$ and $\mathbf{F}$, the following is a theorem:
-
-Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{C}, \mathbf{D} \subseteq \mathbf{B}$. Then
-\[ \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) = \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) \enspace . \]
-\end{props}
-
-\begin{proof}
-\pf
-\begin{align*}
-x \in \mathbf{F}^{-1}(\mathbf{C} - \mathbf{D}) & \Leftrightarrow \mathbf{F}(x) \in \mathbf{C} - \mathbf{D} \\
-& \Leftrightarrow \mathbf{F}(x) \in \mathbf{C} \wedge \mathbf{F}(x) \notin \mathbf{D} \\
-& \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) \wedge x \in \mathbf{F}^{-1}(\mathbf{D}) \\
-& \Leftrightarrow x \in \mathbf{F}^{-1}(\mathbf{C}) - \mathbf{F}^{-1}(\mathbf{D}) & \qed
-\end{align*}
-\end{proof}
-
-\subsection{Function Sets}
-
-\begin{prop}[SF]
-For any classes $\mathbf{B}$ and $\mathbf{F}$, the following is a theorem:
-
-Let $A$ be a set. If $\mathbf{F} : A \rightarrow \mathbf{B}$ then $\mathbf{F}$ is a set.
-\end{prop}
-
-\begin{proof}
-\pf\ By an Axiom of Replacement, we have $R = \{ \mathbf{F}(x) \mid x \in A \}$ is a set. Hence $\mathbf{F}$ is a set since $\mathbf{F} \subseteq A \times R$. \qed
-\end{proof}
-
-\begin{df}[Dependent Product Class]
-Let $I$ be a set and let $\mathbf{H}(i)$ be a class for all $i \in I$. We write $\prod_{i \in I} \mathbf{H}(i)$ for the class of all functions $f : I \rightarrow \bigcup_{i \in I} \mathbf{H}(i)$ such that $\forall i \in I. f(i) \in \mathbf{H}(i)$.
-
-We write $\mathbf{B}^I$ for $\prod_{i \in I} \mathbf{B}$ where $\mathbf{B}$ does not depend on $I$.
-\end{df}
-
-\begin{props}[SF]
-Let $I$ be a set. Let $H(i)$ be a set for every $i \in I$. Then $\prod_{i \in I} H(i)$ is a set.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{$\{ \mathbf{H}(i) \mid i \in I \}$ is a set.}
-\begin{proof}
-	\pf\ By an Axiom of Replacement.
-\end{proof}
-\step{2}{$\bigcup_{i \in I} \mathbf{H}(i)$ is a set.}
-\step{3}{$\prod_{i \in I} \mathbf{H}(i)$ is a set.}
-\begin{proof}
-	\pf\ It is a subset of $\mathcal{P}\left( I \times \bigcup_{i \in I} \mathbf{H}(i) \right)$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[SFC]
-Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(i) \neq \emptyset$ then $\prod_{i \in I} H(i) \neq \emptyset.$
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$\forall i \in I. H(i) \neq \emptyset$}}
-\step{2}{\pflet{$R = \{ (i,x) \mid i \in I, x \in H(i) \}$}}
-\step{3}{\pick\ a function $f : I \rightarrow \bigcup_{i \in I} H(i)$ such that $f \subseteq R$}
-\begin{proof}
-	\pf\ Proposition \ref{prop:AxChoice}.
-\end{proof}
-\step{4}{$f \in \prod_{i \in I} H(i)$}
-\qed
-\end{proof}
-
-\section{Equinumerosity}
-
-\begin{df}[Equinumerous]
-Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
-\end{df}
-
-\section{Domination}
-
-\begin{df}[Dominate]
-A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
-\end{df}
-
-\begin{prop}[SC]
-Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $A \preccurlyeq B$ iff there exists a surjective function $B \rightarrow A$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $A \preccurlyeq B$ and $A \neq \emptyset$ then there exists a surjective function $B \rightarrow A$.}
-\begin{proof}
-	\step{a}{\assume{$f : A \rightarrow B$ be injective.}}
-	\step{b}{\pick\ $a \in A$}
-	\step{c}{\pflet{$g : B \rightarrow A$ be the function defined by $g(b) = f^{-1}(b)$ if $b \in \ran f$, and $g(b) = a$ otherwise.}}
-	\step{d}{$g$ is surjective.}
-\end{proof}
-\step{2}{If there exists a surjective function $B \rightarrow A$ then $A \preccurlyeq B$.}
-\begin{proof}
-	\step{a}{\assume{there exists a surjective function $g : B \rightarrow A$}}
-	\step{x}{$\forall a \in A. \exists b \in B. g(b) = a$}
-	\step{b}{Choose a function $f : A \rightarrow B$ such that $\forall a \in A. g(f(a)) = a$}
-	\step{c}{$f$ is injective.}
-\end{proof}
-\qed
-\end{proof}
-
 \chapter{Category Theory}
 
 \section{Categories}
@@ -1857,11 +1867,11 @@ A morphism $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff 
 Two objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
 \end{df}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 A function is an isomorphism in $\mathrm{Set}$ iff it is a bijection.
 \end{prop}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 Let $f : A \rightarrow B$ in the category $\mathbf{C}$. Then the following are equivalent.
 \begin{enumerate}
 \item $f$ is an isomorphism.
@@ -1876,7 +1886,7 @@ Let $f : A \rightarrow B$ in the category $\mathbf{C}$. Then the following are e
 An \emph{equivalence relation} on a class $\mathbf{A}$ is a binary relation on $\mathbf{A}$ that is reflexive, symmetric and transitive.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 Equinumerosity is an equivalence relation on the class of all sets.
 \end{prop}
 
@@ -1893,7 +1903,7 @@ Let $\mathbf{R}$ be an equivalence relation on $\mathbf{A}$ and $a \in \mathbf{A
 \[ [a]_{\mathbf{R}} := \{ x \mid a \mathbf{R} x \} \enspace . \]
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:eqclassequal}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem.
 
@@ -1960,7 +1970,7 @@ A \emph{partition} $\Pi$ of a set $A$ is a set of nonempty subsets of $A$ that i
 Let $R$ be an equivalence relation on a set $A$. The \emph{quotient set} $A / R$ is the set of all equivalence classes.
 \end{df}
 
-\begin{thm}[Z]
+\begin{thm}[S without Foundation]
 Let $A$ be a set and $\mathbf{B}$ a class. Let $R$ be an equivalence relation on $A$ and $F : A \rightarrow \mathbf{B}$. Then $F$ respects $R$ if and only if there exists $\hat{F} : A/R \rightarrow \mathbf{B}$ such that
 \[ \forall a \in A. \hat{F}([a]_R) = F(a) \enspace . \]
 In this case, $\hat{F}$ is unique.
@@ -2006,7 +2016,7 @@ In this case, $\hat{F}$ is unique.
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A$.
 \end{prop}
 
@@ -2048,7 +2058,7 @@ Let $R$ be an equivalence relation on a set $A$. Then $A/R$ is a partition of $A
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 For any partition $P$ of a set $A$, there exists a unique equivalence relation $R$ on $A$ such that $A/R = P$, namely $xRy$ iff $\exists X \in P(x \in X \wedge y \in X)$.
 \end{prop}
 
@@ -2070,7 +2080,7 @@ Let $\mathbf{A}$ be a class. A \emph{partial ordering} on $\mathbf{A}$ is a rela
 We often write $\leq$ for a partial ordering, and then write $x < y$ for $x \leq y \wedge x \neq y$.
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:invposet}
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -2100,7 +2110,7 @@ If $\mathbf{R}$ is a partial order on $\mathbf{A}$ then so is $\mathbf{R}^{-1}$.
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:subposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -2128,7 +2138,7 @@ Assume $\mathbf{R}$ is a partial order on $\mathbf{B}$ and $\mathbf{F} : \mathbf
 \qed
 \end{proof}
 
-\begin{cors}[Z]
+\begin{cors}[S without Foundation]
 \label{cor:subposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -2149,7 +2159,7 @@ Let $(A,<_A)$ and $(B, <_B)$ be posets. A function $f : A \rightarrow B$ is \emp
 Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{least} iff for all $x \in \mathbf{A}$ we have $m \leq x$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 A partial order has at most one least element.
 \end{prop}
 
@@ -2161,7 +2171,7 @@ A partial order has at most one least element.
 Let $\leq$ be a partial order on $\mathbf{A}$. An element $m \in \mathbf{A}$ is \emph{greatest} iff for all $x \in A$ we have $x \leq m$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 A poset has at most one greatest element.
 \end{prop}
 
@@ -2201,7 +2211,7 @@ A partial order is \emph{complete} iff every nonempty subset bounded above has a
 Let $A$ and $B$ be posets. An \emph{order isomorphism} between $A$ and $B$, $f : A \cong B$, is a bijection $f : A \approx B$ such that $f$ and $f^{-1}$ are monotone.
 \end{df}
 	
-\begin{thm}[Knaster Fixed-Point Theorem (Z)]
+\begin{thm}[Knaster Fixed-Point Theorem (S without Foundation)]
 Let $A$ be a complete poset with a greatest and least element. Let $\phi : A \rightarrow A$ be monotone. Then there exists $a \in A$ such that $\phi(a) = a$.
 \end{thm}
 
@@ -2233,7 +2243,7 @@ Let $\leq$ be a partial order on $\mathbf{A}$ and
 $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{B}$ is \emph{dense} iff, for all $x,y \in \mathbf{A}$, if $x < y$ then there exists $z \in \mathbf{B}$ such that $x < z < y$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 \label{prop:orderisoid}
 Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense. Let $\theta : A \rightarrow A$ be a monotone map that is the identity on $B$. Then $\theta = \mathrm{id}_A$.
 \end{prop}
@@ -2293,7 +2303,7 @@ Let $A$ be a complete poset with no least element. Let $B \subseteq A$ be dense.
 \qed
 \end{proof}
 
-\begin{thm}[Z]
+\begin{thm}[S without Foundation]
 \label{thm:extendorderiso}
 Let $A$ and $P$ be complete posets with no least or greatest element. Let $B$ be dense in $A$ and $Q$ be dense in $P$. Every order isomorphism $\phi : B \cong Q$ extends uniquely to an order isomorphism $A \cong P$.
 \end{thm}
@@ -2386,7 +2396,7 @@ Let $\mathbf{R}$ be a partial order on $\mathbf{A}$ and $\mathbf{S}$ a partial o
 \[ (a,b) \leq (a',b') \Leftrightarrow (a \mathbf{R} a' \wedge a \neq a') \vee (a = a' \wedge b \mathbf{S} b') \enspace . \]
 \end{df}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:lexicposet}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
@@ -2455,7 +2465,7 @@ Let $\mathbf{A}$ be a class. A \emph{linear ordering} or \emph{total ordering} o
 We often use the symbol $<$ for a linear ordering, and then write $x < y$ for $(x,y) \in <$.
 \end{df}
 
-\begin{props}[Trichotomy (Z)]
+\begin{props}[Trichotomy (S without Foundation)]
 For any classes $\mathbf{A}$ and $\leq$, the following is a theorem:
 
 Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$, exactly one of $x < y$, $x = y$, $y < x$ holds.
@@ -2465,7 +2475,7 @@ Assume $\leq$ be a linear ordering on $\mathbf{A}$. For any $x,y \in \mathbf{A}$
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:linord}
 For any classes $\mathbf{A}$ and $<$, the following is a theorem:
 
@@ -2514,7 +2524,7 @@ Let $<$ be a transitive relation on $\mathbf{A}$ that satisfies trichotomy. Defi
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$ and $\mathbf{R}$, the following is a theorem:
 
 If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is also a linear ordering on $\mathbf{A}$.
@@ -2535,7 +2545,7 @@ If $\mathbf{R}$ is a linear ordering on $\mathbf{A}$ then $\mathbf{R}^{-1}$ is a
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:strictmonotoneinj}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{R}$, $\mathbf{S}$, the following is a theorem:
 
@@ -2557,7 +2567,7 @@ Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$, $\mathbf{S}$ is a partial
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:strictmonotoneinv}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\leq$, $\preccurlyeq$ and $\mathbf{F}$, the following is a theorem:
 
@@ -2581,14 +2591,14 @@ Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear o
 \qed
 \end{proof}
 
-\begin{cors}[Z]
+\begin{cors}[S without Foundation]
 \label{cor:orderiso}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\leq$, $\preccurlyeq$ and $\mathbf{F}$, the following is a theorem:
 
 Assume $\leq$ is a linear order on $\mathbf{A}$ and $\preccurlyeq$ is a linear order on $\mathbf{B}$. Assume $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ and $\mathbf{F}$ is strictly monotone. Then $\mathbf{F}$ is an order isomorphism.
 \end{cors}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:subloset}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
 
@@ -2608,14 +2618,14 @@ Assume $\mathbf{S}$ is a linear order on $\mathbf{B}$ and $\mathbf{F} : \mathbf{
 \qed
 \end{proof}
 
-\begin{cors}[Z]
+\begin{cors}[S without Foundation]
 \label{cor:subloset}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
 Assume $\mathbf{R}$ be a linear order on $\mathbf{A}$ and $\mathbf{B} \subseteq \mathbf{A}$. Then $\mathbf{R} \cap \mathbf{B}^2$ is a linear order on $\mathbf{B}$.
 \end{cors}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:lexicographlinear}
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{R}$ and $\mathbf{S}$, the following is a theorem:
 
@@ -2654,7 +2664,7 @@ Assume $\mathbf{R}$ is a linear order on $\mathbf{A}$ and $\mathbf{S}$ is a line
 A \emph{well ordering} on a class $\mathbf{A}$ is a well-founded linear ordering on $\mathbf{A}$.
 \end{df}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 Let $S$ be a well ordering of the set $B$ and $f : A \rightarrow B$ a function. Define $R$ on $A$ by $xRy$ if and only if $F(x) S F(y)$. Then $R$ well orders $A$.
 \end{prop}
 
@@ -2674,7 +2684,7 @@ Let $S$ be a well ordering of the set $B$ and $f : A \rightarrow B$ a function. 
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 \label{prop:subwoset}
 For any classes $\mathbf{A}$, $\mathbf{B}$ and $\mathbf{R}$, the following is a theorem:
 
@@ -2695,7 +2705,7 @@ Assume $\mathbf{R}$ well orders $\mathbf{B}$ and $\mathbf{A} \subseteq \mathbf{B
 \qed
 \end{proof}
 
-\begin{props}[ZFC]
+\begin{props}[SF without Foundation]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$ and $\mathbf{S}$, the following is a theorem:
 
 Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \rightarrowtail \mathbf{B}$. Define $\mathbf{R}$ on $\mathbf{A}$ by $x \mathbf{R} y$ if and only if $\mathbf{F}(x) \mathbf{S} \mathbf{F}(y)$. Then $\mathbf{R}$ well orders $\mathbf{A}$.
@@ -2736,7 +2746,7 @@ Assume $\mathbf{S}$ well orders $\mathbf{B}$ and $\mathbf{F} : \mathbf{A} \right
 \qed
 \end{proof}
 
-\begin{prop}[Z]
+\begin{prop}[S without Foundation]
 \label{prop:lexicogwellorder}
 For any well ordered sets $A$ and $B$, the lexicographic order well orders $A \times B$.
 \end{prop}
@@ -2765,7 +2775,7 @@ Let $A$ and $B$ be well ordered sets. Then $B$ is an \emph{end extension} of $A$
 \end{itemize}
 \end{df}
 
-\begin{thm}[Z]
+\begin{thm}[S without Foundation]
 Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ such that $\forall t \in A. \seg t \subseteq B \Rightarrow t \in B$, we have $B = A$. Then $\leq$ is a well ordering on $A$.
 \end{thm}
 
@@ -2780,7 +2790,7 @@ Let $\leq$ be a linear ordering on $A$. Assume that, for any $B \subseteq A$ suc
 \qed
 \end{proof}
 
-\begin{props}[Z]
+\begin{props}[S without Foundation]
 For any classes $\mathbf{A}$, $\mathbf{B}$, $\mathbf{F}$, $\mathbf{G}$, $\leq$ and $\preccurlyeq$, the following is a theorem:
 
 Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B}$. Assume $\mathbf{F}$ and $\mathbf{G}$ are order isomorphisms between $\mathbf{A}$ and $\mathbf{B}$. Then $\mathbf{F} = \mathbf{G}$.
@@ -2804,7 +2814,7 @@ Assume $\leq$ well orders $\mathbf{A}$ and $\preccurlyeq$ well orders $\mathbf{B
 \qed
 \end{proof}
 
-\begin{thm}[ZFC]
+\begin{thm}[ZF without Foundation]
 Let $A$ and $B$ be well ordered sets. Then one of the following holds: $A \cong B$; there exists $b \in B$ such that $A \cong \seg b$; there exists $a \in A$ such that $\seg a \cong B$.
 \end{thm}
 
@@ -3359,7 +3369,7 @@ Let $x$ be a set. The \emph{transitive closure} of $x$ is the class
 \[ \mathrm{TC}(x) = \bigcap \{ y \mid y \text{ is a transitive set} \wedge x \in y \} \enspace . \]
 \end{df}
 
-\begin{thm}[ZF]
+\begin{thm}[ZF without Foundation]
 For any set $x$, the transitive closure $\mathrm{TC}(x)$ is a set.
 \end{thm}
 
@@ -3477,7 +3487,7 @@ For any set $x$, the transitive closure $\mathrm{TC}(x)$ is a set.
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[S without Foundation]
 The transitive closure of an ordinal $\alpha$ is $\alpha^+$.
 \end{prop}
 
