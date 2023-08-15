@@ -2865,27 +2865,7 @@ Let $\alpha$ be a set. Then $\alpha$ is an ordinal if and only if $\alpha$ is a 
 \begin{proof}
 	\step{a}{\assume{$\alpha$ is a transitive set.}}
 	\step{b}{\assume{$\forall x,y \in \alpha(x \in y \vee x = y \vee y \in x)$}}
-	\step{c}{\pflet{$E = \{ (x,y) \in \alpha^2 \mid x \in y \}$}}
-	\step{d}{$\forall x,y,z \in \alpha. x E y \wedge y E z \Rightarrow x E z$}
-	\begin{proof}
-		\step{i}{\pflet{$x,y,z \in \alpha$}}
-		\step{ii}{\assume{$xEy$ and $yEz$}}
-		\step{iii}{$x \in z$ or $x = z$ or $z \in x$}
-		\step{iv}{$x \neq z$}
-		\begin{proof}
-			\pf\ We cannot have $x \in y \in x$ by the Axiom of Foundation.
-		\end{proof}
-		\step{v}{$z \notin x$}
-		\begin{proof}
-			\pf\ We cannot have $x \in y \in z \in x$ by the Axiom of Foundation.
-		\end{proof}
-		\step{vi}{$x \in z$}
-	\end{proof}
-	\step{e}{There is no $x \in \alpha$ such that $x E x$.}
-	\begin{proof}
-		\pf\ Axiom of Foundation.
-	\end{proof}
-	\step{f}{Every nonempty subset of $\alpha$ has an $E$-least element.}
+	\step{f}{Every nonempty subset of $\alpha$ has an $\in$-least element.}
 	\begin{proof}
 		\pf\ Axiom of Foundation.
 	\end{proof}
@@ -3040,44 +3020,41 @@ For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \be
 \qed
 \end{proof}
 
-\begin{cor}[Burali-Forti Paradox (S)]
-The class $\mathbf{On}$ is a proper class.
+\begin{cor}[S without Foundation]
+The class $\mathbf{On}$ is well ordered by $<$.
 \end{cor}
 
 \begin{proof}
-\pf\ If $\mathbf{On}$ is a set then it is an ordinal by Propositions \ref{prop:Ontransitive} and \ref{prop:ordtrichotomy}, hence $\mathbf{On} \in \mathbf{On}$ contradicting the Axiom of Foundation. \qed
-\end{proof}
-
-\begin{thm}[S]
-The class $\mathbf{On}$ is well ordered by $\leq$.
-\end{thm}
-
-\begin{proof}
 \pf
-\step{1}{For every ordinal $\alpha$ we have $\alpha \leq \alpha$.}
+\step{2}{For ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha < \beta < \gamma$ then $\alpha < \gamma$.}
 \begin{proof}
-	\pf\ Immediate from definition.
+	\pf\ Because $\gamma$ is a transitive set.
 \end{proof}
-\step{2}{For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\alpha \leq \beta \leq \gamma$ then $\alpha \leq \gamma$.}
+\step{3}{Any nonempty set of ordinals has an $\in$-least element.}
 \begin{proof}
-	\pf\ Since $\gamma$ is a transitive set.
-\end{proof}
-\step{3}{For any ordinals $\alpha$ and $\beta$, if $\alpha \leq \beta \leq \alpha$ then $\alpha = \beta$.}
-\begin{proof}
-	\pf\ If $\alpha \neq \beta$ then $\alpha \in \beta \in \alpha$ contradicting the Axiom of Foundation.
-\end{proof}
-\step{4}{For any ordinals $\alpha$ and $\beta$, either $\alpha \leq \beta$ or $\beta \leq \alpha$.}
-\begin{proof}
-	\pf\ Theorem \ref{thm:ordinaltrichotomy}.
-\end{proof}
-\step{5}{Any set of ordinals $x$ has a least element.}
-\begin{proof}
-	\pf\ Axiom of Foundation.
+	\step{a}{\pflet{$S$ be a nonempty set of ordinals.}}
+	\step{b}{\pick\ $\alpha \in S$}
+	\step{c}{\assume{w.l.o.g. $\alpha$ is not least in $S$.}}
+	\step{d}{$\alpha \cap S$ is a nonempty subset of $\alpha$.}
+	\step{e}{\pflet{$\beta$ be the least element of $\alpha \cap S$.}}
+	\step{f}{$\beta$ is least in $S$.}
 \end{proof}
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{cor}[Burali-Forti Paradox (S without Foundation)]
+The class $\mathbf{On}$ is a proper class.
+\end{cor}
+
+\begin{proof}
+\pf\ If $\mathbf{On}$ is a set then it is an ordinal by Proposition \ref{prop:Ontransitive} and the previous Corollary, hence $\mathbf{On} \in \mathbf{On}$ contradicting the fact that every ordinal is well ordered by $\in$. \qed
+\end{proof}
+
+\begin{cor}[S without Foundation]
+A set is an ordinal if and only if it is a transitive set of ordinals.
+\end{cor}
+
+\begin{prop}[S without Foundation]
 For any nonempty set of ordinals $x$, we have $\bigcap x$ is the infimum of $x$ in $\mathbf{On}$.
 \end{prop}
 
@@ -3086,7 +3063,7 @@ For any nonempty set of ordinals $x$, we have $\bigcap x$ is the infimum of $x$ 
 immediate from definitions. \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 For any nonempty set of ordinals $x$, we have $\bigcup x$ is the supremum of $x$ in $\mathbf{On}$.
 \end{prop}
 
@@ -3098,13 +3075,7 @@ For any nonempty set of ordinals $x$, we have $\bigcup x$ is the supremum of $x$
 	\begin{proof}
 		\pf\ Proposition \ref{prop:uniontransitive}.
 	\end{proof}
-	\step{b}{For all $y,z \in \bigcup x$ we have $y \in z$ or $y = z$ or $z \in y$}
-	\begin{proof}
-		\step{i}{\pick\ $\alpha, \beta \in x$ such that $y \in \alpha$ and $z \in \beta$.}
-		\step{ii}{\assume{w.l.o.g. $\alpha \leq \beta$.}}
-		\step{iii}{$y,z \in \beta$}
-		\step{iv}{$y \in z$ or $y = z$ or $z \in y$.}
-	\end{proof}
+	\step{b}{$\bigcup x$ is a set of ordinals.}
 \end{proof}
 \qed
 \end{proof}
@@ -3181,7 +3152,7 @@ For any set $\alpha$, we have $\alpha$ is an ordinal if and only if $\alpha$ is 
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 $\emptyset$ is an ordinal.
 \end{prop}
 
@@ -3198,7 +3169,7 @@ For any ordinal $\alpha$, the \emph{successor} of $\alpha$ is
 \[ \alpha^+ := \alpha \cup \{ \alpha \} \enspace . \]
 \end{df}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 For any ordinal $\alpha$, the successor $\alpha^+$ is an ordinal.
 \end{prop}
 
@@ -3215,30 +3186,11 @@ For any ordinal $\alpha$, the successor $\alpha^+$ is an ordinal.
 	\end{proof}
 	\step{d}{$x \in \alpha^+$}
 \end{proof}
-\step{2}{For any $x,y \in \alpha^+$, we have $x \in y$ or $x = y$ or $y \in X$.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in \alpha^+$}}
-	\step{b}{\case{$x \in \alpha$ and $y \in \alpha$}}
-	\begin{proof}
-		\pf\ Then $x \in y$ or $x = y$ or $y \in x$ because $\alpha$ is an ordinal.
-	\end{proof}
-	\step{c}{\case{$x \in \alpha$ and $y = \alpha$}}
-	\begin{proof}
-		\pf\ Then $x \in y$.
-	\end{proof}
-	\step{d}{\case{$x = \alpha$ and $y \in \alpha$}}
-	\begin{proof}
-		\pf\ Then $y \in x$.
-	\end{proof}
-	\step{e}{\case{$x = \alpha$ and $y = \alpha$}}
-	\begin{proof}
-		\pf\ Then $x = y$.
-	\end{proof}
-\end{proof}
+\step{2}{$\alpha^+$ is a set of ordinals.}
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 There are no ordinals $\alpha$ and $\beta$ such that $\alpha < \beta < \alpha^+$.
 \end{prop}
 
@@ -3265,7 +3217,7 @@ An ordinal $\alpha$ is a \emph{successor ordinal} iff there exists an ordinal $\
 An ordinal is a \emph{limit ordinal} iff it is neither 0 nor a successor ordinal.
 \end{df}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 The relation $\{ (\alpha, \beta) \in \mathbf{On}^2 \mid \alpha < \beta \}$ is well founded.
 \end{prop}
 
@@ -3273,7 +3225,7 @@ The relation $\{ (\alpha, \beta) \in \mathbf{On}^2 \mid \alpha < \beta \}$ is we
 \pf
 \step{1}{Any nonempty set has an $\in$-minimal element.}
 \begin{proof}
-	\pf\ Axiom of Foundation.
+	\pf\ Since $\mathbf{On}$ is well ordered by $\in$.
 \end{proof}
 \step{2}{For any set $x$, there exists a set $u$ such that $x \in u$ and for all ordinals $\alpha$, $\beta$, if $\beta \in u$ and $\alpha < \beta$ then $\alpha \in u$.}
 \begin{proof}
@@ -3298,7 +3250,7 @@ An ordinal $n$ is a \emph{natural number} iff either it is 0, or it is a success
 We write $\omega$ or $\mathbb{N}$ for the class of natural numbers.
 \end{df}
 
-\begin{thms}[Mathematical Induction (S)]
+\begin{thms}[Mathematical Induction (S without Foundation)]
 For any predicate $P(x)$, the following is a theorem:
 
 Assume $P(0)$. Assume that, for any ordinal $\alpha$, if $P(\alpha)$ then $P(\alpha^+)$. Then, for every natural number $n$, we have $P(n)$.
@@ -3336,7 +3288,7 @@ Assume $P(0)$. Assume that, for any ordinal $\alpha$, if $P(\alpha)$ then $P(\al
 \qed
 \end{proof}
 
-\begin{thm}[Z]
+\begin{thm}[Z without Foundation]
 The class of natural numbers $\omega$ is a set.
 \end{thm}
 
@@ -3357,7 +3309,7 @@ The class of natural numbers $\omega$ is a set.
 \qed
 \end{proof}
 
-\begin{thm}[Z]
+\begin{thm}[Z without Foundation]
 $\omega$ is a limit ordinal.
 \end{thm}
 
@@ -3381,10 +3333,7 @@ $\omega$ is a limit ordinal.
 		\step{iii}{$x = 0$ or $x$ is a successor ordinal.}
 	\end{proof}
 \end{proof}
-\step{2}{For all $m,n \in \omega$, either $m \in n$ or $m = n$ or $n \in m$.}
-\begin{proof}
-	\pf\ Theorem \ref{thm:ordinaltrichotomy}.
-\end{proof}
+\step{2}{$\omega$ is a set of ordinals.}
 \step{3}{$\omega \neq 0$}
 \begin{proof}
 	\pf\ Since $0 \in \omega$.
