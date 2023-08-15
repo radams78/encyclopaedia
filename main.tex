@@ -2990,7 +2990,7 @@ For ordinals $\alpha$ and $\beta$, we have $\alpha \subseteq \beta$ if and only 
 \qed
 \end{proof}
 
-\begin{prop}[S]
+\begin{prop}[S without Foundation]
 \label{prop:intordinal}
 The intersection of any nonempty set of ordinals is an ordinal.
 \end{prop}
@@ -3002,16 +3002,16 @@ The intersection of any nonempty set of ordinals is an ordinal.
 \begin{proof}
 	\pf\ Proposition \ref{prop:inttransitive}.
 \end{proof}
-\step{2}{$\forall y,z \in \bigcap x. y \in z \vee y = z \vee z \in y$}
+\step{2}{$\bigcap x$ is well ordered by $\in$}
 \begin{proof}
 	\step{a}{\pick\ $\alpha \in x$}
-	\step{b}{$y,z \in \alpha$}
-	\step{c}{$y \in z$ or $y = z$ or $z \in y$}
+	\step{b}{$\alpha$ is well ordered by $\in$.}
+	\step{c}{$\bigcap x \subseteq \alpha$}
 \end{proof}
 \qed
 \end{proof}
 
-\begin{thm}[S]
+\begin{thm}[S without Foundation]
 \label{thm:ordinaltrichotomy}
 For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \beta$ or $\beta < \alpha$.
 \end{thm}
@@ -3029,7 +3029,7 @@ For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ or $\alpha = \be
 	\step{c}{$\alpha \cap \beta \in \alpha \cap \beta$}
 	\qedstep
 	\begin{proof}
-		\pf\ This contradicts the Axiom of Foundation.
+		\pf\ This contradicts the fact that $\alpha$ is well ordered by $\in$.
 	\end{proof}
 \end{proof}
 \step{3}{$\alpha \subseteq \beta$ or $\beta \subseteq \alpha$}
