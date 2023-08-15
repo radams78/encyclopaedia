@@ -3459,6 +3459,38 @@ For any set $x$, the transitive closure $\mathrm{TC}(x)$ is a set.
 \qed
 \end{proof}
 
+\begin{prop}
+The transitive closure of an ordinal $\alpha$ is $\alpha^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha^+$ is a transitive set that contains $\alpha$.}
+\step{2}{For any transitive set $x$, if $\alpha \in x$ then $\alpha^+ \subseteq x$.}
+\qed
+\end{proof}
+
+\section{Transfinite Induction}
+
+\begin{props}[ZF]
+For any class $\mathbf{A}$, the following is a theorem:
+
+The relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
+\end{props}
+
+\begin{proof}
+\pf
+\step{1}{Every nonempty set has an $\in$-minimal element.}
+\begin{proof}
+	\pf\ This is the Axiom of Foundation.
+\end{proof}
+\step{2}{For any set $x$, there exists $u$ such that $x \subseteq u$ and for all $w$, $y$, if $y \in u$ and $w,y \in \mathbf{A}$ and $w \in y$ then $w \in u$}
+\begin{proof}
+	\pf\ Take $u = \mathrm{TC}(x)$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}[Z]
 \label{prop:ordisoeq}
 For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.
