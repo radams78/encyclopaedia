@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  16 AUG 2023 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  16 AUG 2023 19:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,6 +630,9 @@ sy/m/n/10 !
 [196] [197] [198] [199] [200] (./main.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B380FA4537BA61471DF0EE18D916DC7A;13876.
