@@ -3252,6 +3252,55 @@ The relation $\{ (\alpha, \beta) \in \mathbf{On}^2 \mid \alpha < \beta \}$ is we
 \qed
 \end{proof}
 
+\begin{prop}[SF without Foundation]
+\label{prop:ordisoeq}
+For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : \alpha \cong \beta$}}
+\step{2}{For all $x \in \alpha$, if $\forall t < x. f(t) = t$ then $f(x) = x$}
+\begin{proof}
+	\step{a}{$f(x) \subseteq x$}
+	\begin{proof}
+		\step{i}{\pflet{$y \in f(x)$}}
+		\step{ii}{$y \in \beta$}
+		\step{iii}{\pick\ $t \in \alpha$ such that $f(t) = y$}
+		\begin{proof}
+			\pf\ $f$ is surjective.
+		\end{proof}
+		\step{iv}{$f(t) \in f(x)$}
+		\step{v}{$t \in x$}
+		\begin{proof}
+			\pf\ Since $f$ is an order isomorphism.
+		\end{proof}
+		\step{vi}{$f(t) = t$}
+		\begin{proof}
+			\pf\ Induction hypothesis.
+		\end{proof}
+		\step{viii}{$y = t$}
+		\step{ix}{$y \in x$}
+	\end{proof}
+	\step{b}{$x \subseteq f(x)$}
+	\begin{proof}
+		\step{i}{\pflet{$t \in x$}}
+		\step{ii}{$f(t) \in f(x)$}
+		\step{iii}{$f(t) = t$}
+		\step{iv}{$t \in f(x)$}
+	\end{proof}
+\end{proof}
+\step{3}{$\forall x \in \alpha. f(x) = x$}
+\begin{proof}
+	\pf\ Transfinite induction.
+\end{proof}
+\step{4}{$\alpha = \beta$}
+\begin{proof}
+	\pf\ Since $\beta = \{ f(t) \mid t \in \alpha \} = \{ t \mid t \in \alpha \} = \alpha$.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Natural Numbers}
 
 \begin{df}[Natural Number]
@@ -3517,54 +3566,6 @@ The relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
 \qed
 \end{proof}
 
-\begin{prop}[Z]
-\label{prop:ordisoeq}
-For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : \alpha \cong \beta$}}
-\step{2}{For all $x \in \alpha$, if $\forall t < x. f(t) = t$ then $f(x) = x$}
-\begin{proof}
-	\step{a}{$f(x) \subseteq x$}
-	\begin{proof}
-		\step{i}{\pflet{$y \in f(x)$}}
-		\step{ii}{$y \in \beta$}
-		\step{iii}{\pick\ $t \in \alpha$ such that $f(t) = y$}
-		\begin{proof}
-			\pf\ $f$ is surjective.
-		\end{proof}
-		\step{iv}{$f(t) \in f(x)$}
-		\step{v}{$t \in x$}
-		\begin{proof}
-			\pf\ Since $f$ is an order isomorphism.
-		\end{proof}
-		\step{vi}{$f(t) = t$}
-		\begin{proof}
-			\pf\ Induction hypothesis.
-		\end{proof}
-		\step{viii}{$y = t$}
-		\step{ix}{$y \in x$}
-	\end{proof}
-	\step{b}{$x \subseteq f(x)$}
-	\begin{proof}
-		\step{i}{\pflet{$t \in x$}}
-		\step{ii}{$f(t) \in f(x)$}
-		\step{iii}{$f(t) = t$}
-		\step{iv}{$t \in f(x)$}
-	\end{proof}
-\end{proof}
-\step{3}{$\forall x \in \alpha. f(x) = x$}
-\begin{proof}
-	\pf\ Transfinite induction.
-\end{proof}
-\step{4}{$\alpha = \beta$}
-\begin{proof}
-	\pf\ Since $\beta = \{ f(t) \mid t \in \alpha \} = \{ t \mid t \in \alpha \} = \alpha$.
-\end{proof}
-\qed
-\end{proof}
 
 \begin{thm}[ZFC]
 Every well-ordered set is isomorphic to a unique ordinal.

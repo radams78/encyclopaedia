@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {6.3}Well Orderings}{53}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Ordinal Numbers}{57}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Ordinals}{57}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Natural Numbers}{62}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Natural Numbers}{63}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Transitive Closure of a Set}{64}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Successors}{74}{section.7.4}%
 \contentsline {section}{\numberline {7.5}The Well-Ordering Theorem and Zorn's Lemma}{76}{section.7.5}%
