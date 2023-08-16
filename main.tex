@@ -3070,6 +3070,7 @@ The class $\mathbf{On}$ is a proper class.
 \end{proof}
 
 \begin{cor}[S without Foundation]
+\label{cor:transords}
 A set is an ordinal if and only if it is a transitive set of ordinals.
 \end{cor}
 
@@ -3833,7 +3834,7 @@ The transitive closure of an ordinal $\alpha$ is $\alpha^+$.
 
 \section{The Well-Ordering Theorem and Zorn's Lemma}
 
-\begin{thm}[Hartogs]
+\begin{thm}[Hartogs (SF without Foundation)]
 For any set $A$, there exists an ordinal not dominated by $A$.
 \end{thm}
 
@@ -3876,7 +3877,7 @@ For any set $A$, there exists an ordinal not dominated by $A$.
 \qed
 \end{proof}
 
-\begin{thm}[Numeration Theorem]
+\begin{thm}[Numeration Theorem (SFC without Foundation)]
 Every set is equinumerous with some ordinal.
 \end{thm}
 
@@ -3911,7 +3912,7 @@ e & \text{if } A - F(\{\delta \mid \delta < \gamma \}) = \emptyset
 \step{8}{$F \restriction \delta : \delta \approx A$}
 \end{proof}
 
-\begin{thm}[Well-Ordering Theorem]
+\begin{thm}[Well-Ordering Theorem (SFC without Foundation)]
 Any set can be well ordered.
 \end{thm}
 
@@ -3923,7 +3924,7 @@ Any set can be well ordered.
 \qed
 \end{proof}
 
-\begin{thm}[Zorn's Lemma]
+\begin{thm}[Zorn's Lemma (SFC without Foundation)]
 Let $\mathcal{A}$ be a set such that, for every chain $\mathcal{B} \subseteq \mathcal{A}$, we have $\bigcup \mathcal{B} \in \mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
 \end{thm}
 
@@ -3960,7 +3961,7 @@ Let $\mathcal{A}$ be a set such that, for every chain $\mathcal{B} \subseteq \ma
 \qed
 \end{proof}
 
-\begin{prop}[Teichm\"{u}ller-Tukey Lemma]
+\begin{prop}[Teichm\"{u}ller-Tukey Lemma (SFC without Foundation)]
 Let $\mathcal{A}$ be a nonempty set such that, for every $B$, we have $B \in \mathcal{A}$ if and only if every finite subset of $B$ is a member of $\mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
 \end{prop}
 
@@ -3986,7 +3987,7 @@ Let $\mathcal{A}$ be a nonempty set such that, for every $B$, we have $B \in \ma
 \qed
 \end{proof}
 
-\begin{thms}
+\begin{thms}[SF without Foundation]
 \label{thms:wellorderclass}
 For any class $\mathbf{A}$, there exists a class $\mathbf{F}$ such that the following is a theorem:
 
@@ -4015,7 +4016,7 @@ If $\mathbf{A}$ is a proper class of ordinals, then $\mathbf{F} : \mathbf{On} \r
 	\end{proof}
 	\step{f}{$\gamma$ is an ordinal.}
 	\begin{proof}
-		\pf\ Proposition \ref{prop:transords}.
+		\pf\ Corollary \ref{cor:transords}.
 	\end{proof}
 	\step{g}{$\mathbf{F}(\gamma) = \alpha$}
 	\begin{proof}
