@@ -1708,6 +1708,15 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between $A$ and $B$.
 \end{df}
 
+\begin{prop}[S without Foundation]
+Let $2$ be any set of the form $\{a,b\}$ where $a \neq b$.
+For any set $A$ we have $\mathcal{P} A \approx 2^A$.
+\end{prop}
+
+\begin{proof}
+\pf\ The function $H : \mathcal{P} A \rightarrow 2^A$ defined by $H(S)(x) = a$ if $x \in S$ and $b$ if $x \notin S$ is a bijection. \qed
+\end{proof}
+
 \section{Domination}
 
 \begin{df}[Dominate]
@@ -3219,6 +3228,28 @@ There are no ordinals $\alpha$ and $\beta$ such that $\alpha < \beta < \alpha^+$
 \qed
 \end{proof}
 
+\begin{prop}[S without Foundation]
+\label{prop:Peano2}
+For ordinals $\alpha$ and $\beta$, if $\alpha^+ = \beta^+$ then $\alpha = \beta$.
+\end{prop}
+
+\begin{proof}
+	\pf\ If $\alpha^+ = \beta^+$ then $\alpha = \bigcup (\alpha^+) = \bigcup (\beta^+) = \beta$. \qed
+\end{proof}
+
+\begin{prop}[S without Foundation]
+\label{prop:succltsucc}
+For ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ if and only if $\alpha^+ < \beta^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\alpha < \beta & \Leftrightarrow \alpha^+ \leq \beta \\
+& \Leftrightarrow \alpha^+ < \beta^+ & \qed
+\end{align*}
+\end{proof}
+
 \begin{df}[Successor Ordinal]
 An ordinal $\alpha$ is a \emph{successor ordinal} iff there exists an ordinal $\beta$ such that $\alpha = \beta^+$.
 \end{df}
@@ -3252,9 +3283,17 @@ The relation $\{ (\alpha, \beta) \in \mathbf{On}^2 \mid \alpha < \beta \}$ is we
 \qed
 \end{proof}
 
+\begin{prop}[S without Foundation]
+If $\lambda$ is a limit ordinal and $\beta < \lambda$ then $\beta^+ < \lambda$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\beta^+ \leq \lambda$ and $\beta^+ \neq \lambda$. \qed
+\end{proof}
+
 \begin{prop}[SF without Foundation]
 \label{prop:ordisoeq}
-For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.
+For any ordinal numbers $\alpha$ and $\beta$, if $(\alpha, \in) \cong (\beta, \in)$ then $\alpha = \beta$.
 \end{prop}
 
 \begin{proof}
@@ -3357,6 +3396,191 @@ Every well-ordered set is isomorphic to a unique ordinal.
 \step{2}{For any ordinals $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.}
 \begin{proof}
 	\pf\ Proposition \ref{prop:ordisoeq}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[SF without Foundation]
+\label{prop:subsetleq}
+Let $\alpha$ be an ordinal and $S \subseteq \alpha$. Then $S$ is well-ordered by $\in$ and the ordinal of $(S, \in)$ is $\leq \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$S$ is well ordered by $\in$.}
+\step{2}{\pflet{$\beta$ be the ordinal of $(S, \in)$}}
+\step{3}{\pflet{$E : S \approx \beta$ be the unique isomorphism.}}
+\step{4}{$\forall \gamma \in S. E(\gamma) \leq \gamma$}
+\begin{proof}
+	\step{o}{\pflet{$\gamma \in S$}}
+	\step{a}{\assume{as transfinite induction hypothesis $\forall \delta < \gamma. E(\delta) \leq \delta$}}
+	\step{b}{$E(\gamma)$ is the least element of $\beta$ that is greater than $E(\delta)$ for all $\delta < \gamma$}
+	\step{c}{$\gamma$ is greater than $E(\delta)$ for all $\delta < \gamma$}
+	\step{d}{$E(\gamma) \leq \gamma$}
+\end{proof}
+\step{5}{$\beta \leq \alpha$}
+\begin{proof}
+	\step{a}{$\forall \gamma < \beta. \gamma < \alpha$}
+	\begin{proof}
+		\step{i}{\pflet{$\gamma < \beta$}}
+		\step{ii}{\pick\ $\delta \in S$ such that $E(\delta) = \gamma$}
+		\step{iii}{$\gamma = E(\delta) \leq \delta < \alpha$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{lm}[SF without Foundation]
+\label{lm:endextleq}
+Let $A$ and $B$ be well-ordered sets. If $B$ is an end extension of $A$ then the ordinal of $A$ is $\leq$ the ordinal of $B$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be the ordinal of $A$ and $\beta$ the ordinal of $B$.}}
+\step{2}{\pflet{$E_A : A \cong \alpha$ and $E_B : B \cong \beta$ be the canonical isomorphisms.}}
+\step{3}{$\forall a \in A. E_A(a) = E_B(a)$}
+\begin{proof}
+	\step{a}{\pflet{$a \in A$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall x < a. E_A(x) = E_B(x)$}}
+	\step{c}{$E_A(a)$ is the least ordinal that is greater than $E_A(x)$ for all $x < a$}
+	\step{d}{$E_B(a)$ is the least ordinal that is greater than $E_B(x)$ for all $x < b$}
+	\step{e}{$\{ x \in A \mid x <_A a \} = \{ x \in B \mid x <_B a \}$}
+	\step{f}{$E_A(a) = E_B(a)$}
+\end{proof}
+\step{4}{$\alpha \subseteq \beta$}
+\step{5}{$\alpha \leq \beta$}
+\qed
+\end{proof}
+
+\begin{lm}[SF without Foundation]
+\label{lm:union_of_end_extensions}
+Let $\mathcal{C}$ be a set of well ordered sets such that, for any $A,B \in \mathcal{C}$, we have that one of $A$ and $B$ is an end extension of the other. Let $W = \bigcup \mathcal{C}$ under $x \leq y$ iff there exists $A \in W$ such that $x,y \in A$ and $x \leq y$. Then $W$ is a well ordered set whose ordinal is the supremum of the ordinals of the members of $\mathcal{C}$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$\leq$ is reflexive on $W$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in W$}}
+	\step{b}{\pick\ $A \in W$ such that $x \in A$.}
+	\step{c}{$x \leq x$}
+\end{proof}
+\step{2}{$\leq$ is antisymmetric on $W$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in W$}}
+	\step{b}{\assume{$x \leq y$ and $y \leq x$}}
+	\step{c}{\pick\ $A \in W$ such that $x,y \in A$ and $x \leq_A y$, and $B \in W$ such that $x,y \in B$ and $y \leq_B x$}
+	\step{d}{\assume{w.l.o.g. $B$ is an end extension of $A$}}
+	\step{e}{$x \leq_B y$ and $y \leq_B x$}
+	\step{f}{$x = y$}
+\end{proof}
+\step{3}{$\leq$ is transitive on $W$.}
+\begin{proof}
+	\step{a}{\assume{$x \leq y \leq z$}}
+	\step{b}{\pick\ $A,B \in W$ such that $x \leq_A y$ and $y \leq_B z$}
+	\step{c}{\case{$A$ is an end extension of $B$.}}
+	\begin{proof}
+		\step{i}{$x \leq_A y$ and $y \leq_A z$}
+		\step{2}{$x \leq_A z$}
+		\step{3}{$x \leq z$}
+	\end{proof}
+	\step{d}{\case{$B$ is an end extension of $A$.}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{4}{$\leq$ is total on $W$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in W$}}
+	\step{b}{\pick\ $A,B \in \mathcal{C}$ such that $x \in A$ and $y \in B$}
+	\step{c}{\assume{w.l.o.g. $B$ is an end extension of $A$}}
+	\step{d}{$x \leq_B y$ or $y \leq_B x$}
+	\step{e}{$x \leq_W y$ or $y \leq_W x$}
+\end{proof}
+\step{5}{Every nonempty subset of $W$ has a least element.}
+\begin{proof}
+	\step{a}{\pflet{$S$ be a nonempty subset of $W$}}
+	\step{b}{\pick\ $s \in S$}
+	\step{c}{\pick\ $A \in \mathcal{C}$ such that $s \in A$}
+	\step{d}{\pflet{$a$ be the $\leq_A$-least element of $S \cap A$} \prove{$a$ is least in $S$}}
+	\step{e}{\pflet{$x \in S$} \prove{$a \leq x$}}
+	\step{f}{\pick\ $B \in \mathcal{C}$ such that $x \in B$}
+	\step{g}{\case{$A$ is an end extension of $B$}}
+	\begin{proof}
+		\step{i}{$a \leq_A x$}
+		\step{ii}{$a \leq x$}
+	\end{proof}
+	\step{h}{\case{$B$ is an end extension of $A$}}
+	\begin{proof}
+		\step{i}{\case{$x \in A$}}
+		\begin{proof}
+			\step{one}{$a \leq_A x$}
+			\step{two}{$a \leq x$}
+		\end{proof}
+		\step{ii}{\case{$x \in B - A$}}
+		\begin{proof}
+			\step{one}{$a \leq_B x$}
+			\step{two}{$a \leq x$}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{6}{For all $A \in \mathcal{C}$, $W$ is an end extension of $A$.}
+\begin{proof}
+	\step{a}{For all $x, y \in A$, we have $x \leq_A y$ if and only if $x \leq_W y$}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in A$}}
+		\step{ii}{If $x \leq_A y$ then $x \leq_W y$}
+		\begin{proof}
+			\pf\ Immediate from definitions.
+		\end{proof}
+		\step{iii}{If $x \leq_W y$ then $x \leq_A y$}
+		\begin{proof}
+			\step{one}{\assume{$x \leq_W y$}}
+			\step{two}{\pick\ $B \in \mathcal{C}$ such that $x \leq_B y$}
+			\step{three}{\case{$A$ is an end extension of $B$}}
+			\begin{proof}
+				\pf\ Then $x \leq_A y$.
+			\end{proof}
+			\step{four}{\case{$B$ is an end extension of $A$}}
+			\begin{proof}
+				\pf\ Then $x \leq_A y$.
+			\end{proof}
+		\end{proof}
+	\end{proof}
+	\step{b}{For all $x \in A$ and $y \in W - A$ we have $x < y$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in A$ and $y \in W - A$}}
+		\step{ii}{\pick\ $B \in \mathcal{C}$ such that $y \in B$}
+		\step{iii}{$B$ is an end extension of $A$}
+		\step{iv}{$x <_B y$}
+		\step{v}{$x <_W y$}
+	\end{proof}
+\end{proof}
+\step{7}{For all $A \in \mathcal{C}$, the ordinal of $A$ is $\leq$ the ordinal of $W$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:endextleq}.
+\end{proof}
+\step{7}{For any ordinal $\alpha$, if for all $A \in \mathcal{C}$ the ordinal of $A$ is $\leq \alpha$, then the ordinal of $W$ is $\leq \alpha$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ be an ordinal.}}
+	\step{b}{\assume{for all $A \in \mathcal{C}$, the ordinal of $A$ is $\leq \alpha$}}
+	\step{c}{\pflet{$\beta$ be the ordinal of $W$}}
+	\step{d}{\pflet{$E : W \approx \beta$ be the canonical isomorphism.}}
+	\step{e}{\assume{for a contradiction $\alpha < \beta$}}
+	\step{f}{\pflet{$a \in W$ be the element with $E(a) = \alpha$}}
+	\step{g}{\pick\ $A \in \mathcal{C}$ such that $a \in A$}
+	\step{h}{\pflet{$\gamma$ be the ordinal of $A$ and $E_A : A \cong \gamma$ be the canonical isomorphism.}}
+	\step{i}{For all $x \in A$ we have $E_A(x) = E(x)$}
+	\begin{proof}
+		\pf\ Transfinite induction on $x$.
+	\end{proof}
+	\step{j}{$E_A(a) = \alpha$}
+	\step{k}{$\alpha < \gamma$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{b}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
@@ -3605,658 +3829,6 @@ The transitive closure of an ordinal $\alpha$ is $\alpha^+$.
 \step{1}{$\alpha^+$ is a transitive set that contains $\alpha$.}
 \step{2}{For any transitive set $x$, if $\alpha \in x$ then $\alpha^+ \subseteq x$.}
 \qed
-\end{proof}
-
-\begin{props}[ZF]
-For any class $\mathbf{A}$, the following is a theorem:
-
-The relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
-\end{props}
-
-\begin{proof}
-\pf
-\step{1}{Every nonempty set has an $\in$-minimal element.}
-\begin{proof}
-	\pf\ This is the Axiom of Foundation.
-\end{proof}
-\step{2}{For any set $x$, there exists $u$ such that $x \subseteq u$ and for all $w$, $y$, if $y \in u$ and $w,y \in \mathbf{A}$ and $w \in y$ then $w \in u$}
-\begin{proof}
-	\pf\ Take $u = \mathrm{TC}(x)$.
-\end{proof}
-\qed
-\end{proof}
-
-
-
-\begin{prop}[Z]
-\label{prop:elordinal}
-The class $\mathbf{On}$ is a transitive class. That is, every element of an ordinal is an ordinal.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\alpha$ be an ordinal.}}
-\step{2}{\pflet{$\beta \in \alpha$}}
-\step{3}{$\beta$ is a transitive set.}
-\begin{proof}
-	\step{a}{\pflet{$x \in y \in \beta$}}
-	\step{b}{$y \in \alpha$}
-	\begin{proof}
-		\pf\ $\alpha$ is transitive.
-	\end{proof}
-	\step{c}{$x \in \alpha$}
-	\begin{proof}
-		\pf\ $\alpha$ is transitive.
-	\end{proof}
-	\step{d}{$x \in \beta$}
-	\begin{proof}
-		\pf\ Since $\{(x,y) \in \alpha^2 \mid x \in y\}$ is transitive.
-	\end{proof}
-\end{proof}
-\step{4}{$\beta$ is well ordered by $\in$.}
-\begin{proof}
-	\pf\ By Proposition \ref{prop:subwoset}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[ZFC]
-\label{prop:ordtrichotomy}
-Given two ordinal numbers $\alpha$, $\beta$, exactly one of $\alpha \in \beta$, $\alpha = \beta$, $\beta \in \alpha$ holds.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{At most one holds.}
-\begin{proof}
-	\pf\ Since every ordinal is a transitive set and we never have $\alpha \in \alpha$.
-\end{proof}
-\step{2}{At least one holds.}
-\begin{proof}
-	\step{a}{Either $\alpha \cong \beta$ or $\exists t \in \beta. \alpha \cong \seg t$ or $\exists t \in \alpha. \seg t \cong \beta$.}
-	\step{b}{\case{$\alpha \cong \beta$}}
-	\begin{proof}
-		\pf\ Then $\alpha = \beta$ by Proposition \ref{prop:ordisoeq}.
-	\end{proof}
-	\step{c}{\case{There exists $t \in \beta$ such that $\alpha \cong \seg t$}}
-	\begin{proof}
-		\step{i}{$t$ is an ordinal number.}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:elordinal}.
-		\end{proof}
-		\step{ii}{$t = \seg t$}
-		\begin{proof}
-			\step{one}{$t \subseteq \seg t$}
-			\begin{proof}
-				\step{A}{\pflet{$s \in t$}}
-				\step{B}{$s \in \beta$}
-				\begin{proof}
-					\pf\ $\beta$ is a transitive set.
-				\end{proof}
-				\step{C}{$s \in \seg t$}
-			\end{proof}
-			\step{two}{$\seg t \subseteq t$}
-			\begin{proof}
-				\pf\ Immediate from definitions.
-			\end{proof}
-		\end{proof}
-		\step{ii}{$\alpha = t$}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:ordisoeq}.
-		\end{proof}
-		\step{iii}{$\alpha \in \beta$}
-	\end{proof}
-	\step{d}{\case{There exists $t \in \alpha$ such that $\seg t \cong \beta$}}
-	\begin{proof}
-		\pf\ $\beta \in \alpha$ similarly.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[Z]
-\label{prop:ordwellord}
-Any nonempty set $S$ of ordinal numbers has a least element.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ $\beta \in S$}
-\step{2}{\case{$\beta \cap S = \emptyset$}}
-\begin{proof}
-	\pf\ Then $\beta$ is least in $S$.
-\end{proof}
-\step{3}{\case{$\beta \cap S \neq \emptyset$}}
-\begin{proof}
-	\pf\ The least element of $\beta \cap S$ is least in $S$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{thm}[ZFC]
-\label{thm:Onwellord}
-The class $\mathbf{On}$ is well ordered by $\in$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\mathbf{E} = \{(x,y) \in \mathbf{On}^2 \mid x \in y \}$}}
-\step{2}{$\mathbf{E}$ is transitive.}
-\begin{proof}
-	\pf\ If $\alpha \in \beta \in \gamma$ then $\alpha \in \gamma$ because every ordinal is a transitive set.
-\end{proof}
-\step{3}{$\mathbf{E}$ satisfies trichotomy.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:ordtrichotomy}.
-\end{proof}
-\step{3a}{$\mathbf{E}$ linearly orders $\mathbf{On}$.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:linord}.
-\end{proof}
-\step{4}{$\mathbf{E}$ is well founded.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:inwellfounded}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}[Burali-Forti Paradox (ZFC)]
-The class $\mathbf{On}$ is a proper class.
-\end{cor}
-
-\begin{proof}
-\pf\ If it were a set, it would be a transitive set well-ordered by $\in$, and hence a member of itself, contradicting Proposition \ref{prop:xnotinx}.
-\end{proof}
-
-\begin{prop}[ZFC]
-\label{prop:transords}
-Any transitive set of ordinal numbers is an ordinal number.
-\end{prop}
-
-\begin{proof}
-\pf\ It is well-ordered by $\in$ by Proposition \ref{prop:subwoset} and Theorem \ref{thm:Onwellord}. \qed
-\end{proof}
-
-\begin{prop}[Z]
-$\emptyset$ is an ordinal number.
-\end{prop}
-
-\begin{proof}
-\pf\ Vacuously, it is a transitive set well-ordered by $\in$.
-\end{proof}
-
-\begin{df}
-We define $0 = \emptyset$.
-\end{df}
-
-\begin{prop}[ZFC]
-If $A$ is a set of ordinal numbers then $\bigcup A$ is an ordinal number.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\bigcup A$ is a transitive set.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:uniontransitive}.
-\end{proof}
-\step{2}{$\bigcup A$ is a set of ordinals.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:elordinal}.
-\end{proof}
-\qedstep
-\begin{proof}
-	\pf\ Proposition \ref{prop:transords}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}[ZFC]
-The poset $\mathbf{On}$ is complete.
-\end{cor}
-
-\begin{proof}
-\pf\ For any nonempty set $A$ of ordinals, $\bigcup A$ is its supremum. \qed
-\end{proof}
-
-\begin{prop}[ZFC]
-\label{prop:subsetleq}
-Let $\alpha$ be an ordinal and $S \subseteq \alpha$. Then $S$ is well-ordered by $\in$ and the ordinal of $(S, \in)$ is $\leq \alpha$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$S$ is well ordered by $\in$.}
-\step{2}{\pflet{$\beta$ be the ordinal of $(S, \in)$}}
-\step{3}{\pflet{$E : S \approx \beta$ be the unique isomorphism.}}
-\step{4}{$\forall \gamma \in S. E(\gamma) \leq \gamma$}
-\begin{proof}
-	\step{o}{\pflet{$\gamma \in S$}}
-	\step{a}{\assume{as transfinite induction hypothesis $\forall \delta < \gamma. E(\delta) \leq \delta$}}
-	\step{b}{$E(\gamma)$ is the least element of $\beta$ that is greater than $E(\delta)$ for all $\delta < \gamma$}
-	\step{c}{$\gamma$ is greater than $E(\delta)$ for all $\delta < \gamma$}
-	\step{d}{$E(\gamma) \leq \gamma$}
-\end{proof}
-\step{5}{$\beta \leq \alpha$}
-\begin{proof}
-	\step{a}{$\forall \gamma < \beta. \gamma < \alpha$}
-	\begin{proof}
-		\step{i}{\pflet{$\gamma < \beta$}}
-		\step{ii}{\pick\ $\delta \in S$ such that $E(\delta) = \gamma$}
-		\step{iii}{$\gamma = E(\delta) \leq \delta < \alpha$}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}[ZFC]
-Let $\alpha$ be a set. Then the following are equivalent.
-\begin{enumerate}
-\item $\alpha$ is an ordinal.
-\item $\alpha$ is a transitive set and, for all $x,y \in \alpha$, either $x = y$ or $x \in y$ or $y \in x$.
-\item $\alpha$ is a transitive set of transitive sets.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$1 \Rightarrow 2$}
-\begin{proof}
-	\pf\ Immediate from definitions.
-\end{proof}
-\step{2}{$2 \Rightarrow 3$}
-\begin{proof}
-	\step{a}{\assume{$\alpha$ is a transitive set and, for all $x,y \in \alpha$, either $x = y$ or $x \in y$ or $y \in x$}}
-	\step{b}{\pflet{$z \in \alpha$} \prove{$z$ is transitive.}}
-	\step{c}{\pflet{$x \in y \in z$}}
-	\step{d}{$y \in \alpha$}
-	\step{e}{$x \in \alpha$}
-	\step{f}{Either $x = z$ or $x \in z$ or $z \in x$}
-	\step{g}{$x \neq z$}
-	\begin{proof}
-		\pf\ We cannot have $x \in y \in x$ by the Axiom of Regularity.
-	\end{proof}
-	\step{h}{$z \notin x$}
-	\begin{proof}
-		\pf\ We cannot have $x \in y \in z \in x$ by the Axiom of Regularity.
-	\end{proof}
-\end{proof}
-\step{3}{$3 \Rightarrow 1$}
-\begin{proof}
-	\step{a}{\pflet{$x$ be a transitive set of transitive sets.}}
-	\step{b}{\assume{as $\in$-induction hypothesis that, for all $y \in x$, if $y$ is a transitive set of transitive sets then $y$ is a transitive set of ordinals.}}
-	\step{c}{Every element of $x$ is an ordinal.}
-	\begin{proof}
-		\step{i}{\pflet{$y \in x$}}
-		\step{ii}{$y$ is transitive.}
-		\step{iii}{Every element of $y$ is transitive.}
-		\begin{proof}
-			\pf\ Since every element of $y$ is an element of $x$, because $x$ is transitive.
-		\end{proof}
-		\step{iv}{$y$ is an ordinal.}
-		\begin{proof}
-			\pf\ \stepref{b}
-		\end{proof}
-	\end{proof}
-	\qedstep
-	\begin{proof}
-		\pf\ Proposition \ref{prop:transords}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{lm}[Z]
-\label{lm:endextleq}
-Let $A$ and $B$ be well-ordered sets. If $B$ is an end extension of $A$ then the ordinal of $A$ is $\leq$ the ordinal of $B$.
-\end{lm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\alpha$ be the ordinal of $A$ and $\beta$ the ordinal of $B$.}}
-\step{2}{\pflet{$E_A : A \cong \alpha$ and $E_B : B \cong \beta$ be the canonical isomorphisms.}}
-\step{3}{$\forall a \in A. E_A(a) = E_B(a)$}
-\begin{proof}
-	\step{a}{\pflet{$a \in A$}}
-	\step{b}{\assume{as transfinite induction hypothesis $\forall x < a. E_A(x) = E_B(x)$}}
-	\step{c}{$E_A(a)$ is the least ordinal that is greater than $E_A(x)$ for all $x < a$}
-	\step{d}{$E_B(a)$ is the least ordinal that is greater than $E_B(x)$ for all $x < b$}
-	\step{e}{$\{ x \in A \mid x <_A a \} = \{ x \in B \mid x <_B a \}$}
-	\step{f}{$E_A(a) = E_B(a)$}
-\end{proof}
-\step{4}{$\alpha \subseteq \beta$}
-\step{5}{$\alpha \leq \beta$}
-\qed
-\end{proof}
-
-\begin{lm}
-\label{lm:union_of_end_extensions}
-Let $\mathcal{C}$ be a set of well ordered sets such that, for any $A,B \in \mathcal{C}$, we have that one of $A$ and $B$ is an end extension of the other. Let $W = \bigcup \mathcal{C}$ under $x \leq y$ iff there exists $A \in W$ such that $x,y \in A$ and $x \leq y$. Then $W$ is a well ordered set whose ordinal is the supremum of the ordinals of the members of $\mathcal{C}$.
-\end{lm}
-
-\begin{proof}
-\pf
-\step{1}{$\leq$ is reflexive on $W$.}
-\begin{proof}
-	\step{a}{\pflet{$x \in W$}}
-	\step{b}{\pick\ $A \in W$ such that $x \in A$.}
-	\step{c}{$x \leq x$}
-\end{proof}
-\step{2}{$\leq$ is antisymmetric on $W$.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in W$}}
-	\step{b}{\assume{$x \leq y$ and $y \leq x$}}
-	\step{c}{\pick\ $A \in W$ such that $x,y \in A$ and $x \leq_A y$, and $B \in W$ such that $x,y \in B$ and $y \leq_B x$}
-	\step{d}{\assume{w.l.o.g. $B$ is an end extension of $A$}}
-	\step{e}{$x \leq_B y$ and $y \leq_B x$}
-	\step{f}{$x = y$}
-\end{proof}
-\step{3}{$\leq$ is transitive on $W$.}
-\begin{proof}
-	\step{a}{\assume{$x \leq y \leq z$}}
-	\step{b}{\pick\ $A,B \in W$ such that $x \leq_A y$ and $y \leq_B z$}
-	\step{c}{\case{$A$ is an end extension of $B$.}}
-	\begin{proof}
-		\step{i}{$x \leq_A y$ and $y \leq_A z$}
-		\step{2}{$x \leq_A z$}
-		\step{3}{$x \leq z$}
-	\end{proof}
-	\step{d}{\case{$B$ is an end extension of $A$.}}
-	\begin{proof}
-		\pf\ Similar.
-	\end{proof}
-\end{proof}
-\step{4}{$\leq$ is total on $W$.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in W$}}
-	\step{b}{\pick\ $A,B \in \mathcal{C}$ such that $x \in A$ and $y \in B$}
-	\step{c}{\assume{w.l.o.g. $B$ is an end extension of $A$}}
-	\step{d}{$x \leq_B y$ or $y \leq_B x$}
-	\step{e}{$x \leq_W y$ or $y \leq_W x$}
-\end{proof}
-\step{5}{Every nonempty subset of $W$ has a least element.}
-\begin{proof}
-	\step{a}{\pflet{$S$ be a nonempty subset of $W$}}
-	\step{b}{\pick\ $s \in S$}
-	\step{c}{\pick\ $A \in \mathcal{C}$ such that $s \in A$}
-	\step{d}{\pflet{$a$ be the $\leq_A$-least element of $S \cap A$} \prove{$a$ is least in $S$}}
-	\step{e}{\pflet{$x \in S$} \prove{$a \leq x$}}
-	\step{f}{\pick\ $B \in \mathcal{C}$ such that $x \in B$}
-	\step{g}{\case{$A$ is an end extension of $B$}}
-	\begin{proof}
-		\step{i}{$a \leq_A x$}
-		\step{ii}{$a \leq x$}
-	\end{proof}
-	\step{h}{\case{$B$ is an end extension of $A$}}
-	\begin{proof}
-		\step{i}{\case{$x \in A$}}
-		\begin{proof}
-			\step{one}{$a \leq_A x$}
-			\step{two}{$a \leq x$}
-		\end{proof}
-		\step{ii}{\case{$x \in B - A$}}
-		\begin{proof}
-			\step{one}{$a \leq_B x$}
-			\step{two}{$a \leq x$}
-		\end{proof}
-	\end{proof}
-\end{proof}
-\step{6}{For all $A \in \mathcal{C}$, $W$ is an end extension of $A$.}
-\begin{proof}
-	\step{a}{For all $x, y \in A$, we have $x \leq_A y$ if and only if $x \leq_W y$}
-	\begin{proof}
-		\step{i}{\pflet{$x,y \in A$}}
-		\step{ii}{If $x \leq_A y$ then $x \leq_W y$}
-		\begin{proof}
-			\pf\ Immediate from definitions.
-		\end{proof}
-		\step{iii}{If $x \leq_W y$ then $x \leq_A y$}
-		\begin{proof}
-			\step{one}{\assume{$x \leq_W y$}}
-			\step{two}{\pick\ $B \in \mathcal{C}$ such that $x \leq_B y$}
-			\step{three}{\case{$A$ is an end extension of $B$}}
-			\begin{proof}
-				\pf\ Then $x \leq_A y$.
-			\end{proof}
-			\step{four}{\case{$B$ is an end extension of $A$}}
-			\begin{proof}
-				\pf\ Then $x \leq_A y$.
-			\end{proof}
-		\end{proof}
-	\end{proof}
-	\step{b}{For all $x \in A$ and $y \in W - A$ we have $x < y$}
-	\begin{proof}
-		\step{i}{\pflet{$x \in A$ and $y \in W - A$}}
-		\step{ii}{\pick\ $B \in \mathcal{C}$ such that $y \in B$}
-		\step{iii}{$B$ is an end extension of $A$}
-		\step{iv}{$x <_B y$}
-		\step{v}{$x <_W y$}
-	\end{proof}
-\end{proof}
-\step{7}{For all $A \in \mathcal{C}$, the ordinal of $A$ is $\leq$ the ordinal of $W$.}
-\begin{proof}
-	\pf\ Lemma \ref{lm:endextleq}.
-\end{proof}
-\step{7}{For any ordinal $\alpha$, if for all $A \in \mathcal{C}$ the ordinal of $A$ is $\leq \alpha$, then the ordinal of $W$ is $\leq \alpha$.}
-\begin{proof}
-	\step{a}{\pflet{$\alpha$ be an ordinal.}}
-	\step{b}{\assume{for all $A \in \mathcal{C}$, the ordinal of $A$ is $\leq \alpha$}}
-	\step{c}{\pflet{$\beta$ be the ordinal of $W$}}
-	\step{d}{\pflet{$E : W \approx \beta$ be the canonical isomorphism.}}
-	\step{e}{\assume{for a contradiction $\alpha < \beta$}}
-	\step{f}{\pflet{$a \in W$ be the element with $E(a) = \alpha$}}
-	\step{g}{\pick\ $A \in \mathcal{C}$ such that $a \in A$}
-	\step{h}{\pflet{$\gamma$ be the ordinal of $A$ and $E_A : A \cong \gamma$ be the canonical isomorphism.}}
-	\step{i}{For all $x \in A$ we have $E_A(x) = E(x)$}
-	\begin{proof}
-		\pf\ Transfinite induction on $x$.
-	\end{proof}
-	\step{j}{$E_A(a) = \alpha$}
-	\step{k}{$\alpha < \gamma$}
-	\qedstep
-	\begin{proof}
-		\pf\ This contradicts \stepref{b}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\section{Successors}
-
-\begin{df}[Successor]
-The \emph{successor} of a set $a$ is the set $a^+ := a \cup \{a\}$.
-\end{df}
-
-\begin{prop}[Z]
-\label{prop:Uaplus}
-A set $a$ is a transitive set if and only if
-\[ \bigcup (a^+) = a \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf
-\step{One}{If $a$ is a transitive set then $\bigcup (a^+) = a$.}
-\begin{proof}
-\step{0}{\assume{$a$ is a transitive set.}}
-\step{1}{$\bigcup (a^+) \subseteq a$}
-\begin{proof}
-	\step{a}{\pflet{$x \in \bigcup (a^+)$} \prove{$x \in a$}}
-	\step{b}{\pick\ $y \in a^+$ such that $x \in y$.}
-	\step{c}{$y \in a$ or $y = a$.}
-	\step{d}{\case{$y \in a$}}
-	\begin{proof}
-		\pf\ Then $x \in a$ because $a$ is a transitive set.
-	\end{proof}
-	\step{e}{\case{$y = a$}}
-	\begin{proof}
-		\pf\ Then $x \in a$ immediately.
-	\end{proof}
-\end{proof}
-\step{2}{$a \subseteq \bigcup (a^+)$}
-\begin{proof}
-	\pf\ Since $a \in a^+$.
-\end{proof}
-\end{proof}
-\step{Two}{If $\bigcup (a^+) = a$ then $a$ is a transitive set.}
-\begin{proof}
-	\step{1}{\assume{$\bigcup (a^+) = a$}}
-	\step{2}{$\bigcup a \subseteq a$}
-	\begin{proof}
-		\pf
-		\begin{align*}
-			\bigcup a & \subseteq \bigcup (a^+) & (\text{Proposition \ref{prop:unionmonotone}}) \\
-			& = a & (\text{\stepref{1}})
-		\end{align*}
-	\end{proof}
-	\step{3}{$a$ is a transitive set.}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:transitiveset}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:successortransitive}
-For any set $a$, we have $a$ is a transitive set if and only if $a^+$ is a transitive set.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $a$ is a transitive set then $a^+$ is a transitiveset.}
-\begin{proof}
-	\pf\ If $a$ is a transitive set then $\bigcup(a^+) = a \subseteq a^+$ by Proposition \ref{prop:Uaplus} and so $a^+$ is a transitive set.
-\end{proof}
-\step{2}{If $a^+$ is a transitive set then $a$ is a transitive set.}
-\begin{proof}
-	\step{a}{\assume{$a^+$ is a transitive set.}}
-	\step{b}{\pflet{$x \in y \in a$}}
-	\step{c}{$x \in y \in a^+$}
-	\step{d}{$x \in a^+$}
-	\begin{proof}
-		\pf\ \stepref{a}
-	\end{proof}
-	\step{e}{$x \neq a$}
-	\begin{proof}
-		\pf\ From \stepref{b} and the Axiom of Regularity.
-	\end{proof}
-	\step{f}{$x \in a$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}
-We write 0 for $\emptyset$, 1 for $\emptyset^+$, 2 for $\emptyset^{++}$, etc.
-\end{df}
-
-\begin{prop}
-For any set $A$ we have $\mathcal{P} A \approx 2^A$.
-\end{prop}
-
-\begin{proof}
-\pf\ The function $H : \mathcal{P} A \rightarrow 2^A$ defined by $H(S)(a) = \{\emptyset\}$ if $a \in S$ and $\emptyset$ if $a \notin S$ is a bijection. \qed
-\end{proof}
-
-\begin{prop}
-For any ordinal number $\alpha$ we have $\alpha^+$ is an ordinal number.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\alpha^+$ is a transitive set.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:successortransitive}.
-\end{proof}
-\step{2}{$\alpha^+$ is well-ordered by $\in$.}
-\begin{proof}
-	\step{x}{For all $x,y,z \in \alpha^+$, if $x \in y \in z$ then $x \in z$}
-	\begin{proof}
-		\step{i}{\case{$z = \alpha$}}
-		\begin{proof}
-			\pf\ Then $x \in \alpha$ since $\alpha$ is a transitive set.
-		\end{proof}
-		\step{ii}{\case{$z \in \alpha$}}
-		\begin{proof}
-			\pf\ Then $x \in z$ since $\alpha$ is well-ordered by $\in$.
-		\end{proof}
-	\end{proof}
-	\step{a}{For all $x,y \in \alpha^+$ we have $x \in y$ or $x = y$ or $y \in x$}
-	\begin{proof}
-		\step{i}{\case{$x,y \in \alpha$}}
-		\begin{proof}
-			\pf\ The result follows because $\alpha$ is well-ordered by $\in$.
-		\end{proof}
-		\step{ii}{\case{$x \in \alpha$, $y = \alpha$}}
-		\begin{proof}
-			\pf\ Then $x \in y$.
-		\end{proof}
-		\step{iii}{\case{$x = \alpha$, $y \in \alpha$}}
-		\begin{proof}
-			\pf\ Then $y \in x$.
-		\end{proof}
-		\step{iv}{\case{$x = \alpha$, $y = \alpha$}}
-		\begin{proof}
-			\pf\ Then $x = y$.
-		\end{proof}
-	\end{proof}
-	\step{b}{Every nonempty subset of $\alpha^+$ has an $\in$-least element.}
-	\begin{proof}
-		\step{i}{\pflet{$S \subseteq \alpha^+$ be nonempty}}
-		\step{ii}{\case{$S = \{\alpha\}$}}
-		\begin{proof}
-			\pf\ $\alpha$ is least in $S$.
-		\end{proof}
-		\step{iii}{\case{$S \neq \{\alpha\}$}}
-		\begin{proof}
-			\step{one}{$S - \{\alpha\}$ is a nonempty subset of $\alpha$}
-			\step{two}{\pflet{$\beta$ be least in $S - \{\alpha\}$}}
-			\step{three}{$\beta$ is least in $S$.}
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:Peano2}
-For ordinals $\alpha$ and $\beta$, if $\alpha^+ = \beta^+$ then $\alpha = \beta$.
-\end{prop}
-
-\begin{proof}
-	\pf\ If $\alpha^+ = \beta^+$ then
-	\begin{align*}
-		\alpha & = \bigcup (\alpha^+) & (\text{Proposition \ref{prop:Uaplus}}) \\
-		& = \bigcup (\beta^+) \\
-		& = \beta & (\text{Proposition \ref{prop:Uaplus}})
-	\end{align*}
-\end{proof}
-
-\begin{prop}
-\label{prop:succltsucc}
-For ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ if and only if $\alpha^+ < \beta^+$.
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-\alpha < \beta & \Leftrightarrow \alpha^+ \leq \beta \\
-& \Leftrightarrow \alpha^+ < \beta^+ & \qed
-\end{align*}
-\end{proof}
-
-\begin{df}[Successor Ordinal]
-An ordinal $\alpha$ is a \emph{successor ordinal} iff $\alpha = \beta^+$ for some $\beta$.
-\end{df}
-
-\begin{df}[Limit Ordinal]
-A \emph{limit ordinal} is an ordinal that is neither 0 nor a successor ordinal.
-\end{df}
-
-\begin{prop}
-If $\lambda$ is a limit ordinal and $\beta < \lambda$ then $\beta^+ < \lambda$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $\beta^+ \leq \lambda$ and $\beta^+ \neq \lambda$. \qed
 \end{proof}
 
 \section{The Well-Ordering Theorem and Zorn's Lemma}
