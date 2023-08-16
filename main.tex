@@ -3301,6 +3301,66 @@ For any ordinal numbers $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alp
 \qed
 \end{proof}
 
+\begin{thm}[SF without Foundation]
+Every well-ordered set is isomorphic to a unique ordinal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any well-ordered set $A$, there exists an ordinal $\alpha$ such that $A \cong \alpha$.}
+\begin{proof}
+	\step{a}{\pflet{$A$ be a well-ordered set.}}
+	\step{b}{Define the function $E$ on $A$ by transfinite recursion thus:
+	\[ E(t) = \{ E(x) \mid x < t \} \qquad (t \in A) \enspace . \]}
+	\step{c}{\pflet{$\alpha = \{ E(x) \mid x \in A \}$}}
+	\step{d}{$\alpha$ is an ordinal.}
+	\begin{proof}
+		\step{i}{$\alpha$ is a transitive set.}
+		\begin{proof}
+			\step{one}{\pflet{$x \in y \in \alpha$}}
+			\step{two}{\pick\ $t \in A$ such that $y = E(t)$}
+			\step{three}{$x \in E(t) = \{ E(s) \mid s < t \}$}
+			\step{four}{\pick\ $s < t$ such that $x = E(s)$}
+			\step{five}{$x \in \alpha$}
+		\end{proof}
+		\step{ii}{For all $x,y \in \alpha$ we have $x \in y$ or $x = y$ or $y \in x$}
+		\begin{proof}
+			\step{a}{\pflet{$x,y \in \alpha$}}
+			\step{b}{\pick\ $a,b \in A$ such that $E(a) = x$ and $E(b) = y$}
+			\step{c}{$a < b$ or $a = b$ or $b < a$}
+			\step{d}{$x \in y$ or $x = y$ or $y \in x$}
+		\end{proof}
+		\step{iii}{Every nonempty subset of $\alpha$ has a least element.}
+		\begin{proof}
+			\step{A}{\pflet{$S$ be a nonempty subset of $\alpha$}}
+			\step{B}{\pflet{$T = \{ x \in A \mid E(x) \in S \}$}}
+			\step{C}{\pflet{$t$ be the least element of $T$.} \prove{$E(t)$ is least in $S$}}
+			\step{D}{\pflet{$y \in S$}}
+			\step{E}{\pick\ $s \in T$ such that $E(s) = y$}
+			\step{F}{$t \leq s$}
+			\step{G}{$x \leq y$}
+		\end{proof}
+	\end{proof}
+	\step{f}{$E$ is surjective.}
+	\begin{proof}
+		\pf\ By definition of $\alpha$.
+	\end{proof}
+	\step{g}{$E$ is strictly monotone.}
+	\begin{proof}
+		\pf\ If $s < t$ then $E(s) \in E(t)$ by definition of $E(t)$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Corollary \ref{cor:orderiso}.
+	\end{proof}
+\end{proof}
+\step{2}{For any ordinals $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ordisoeq}.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Natural Numbers}
 
 \begin{df}[Natural Number]
@@ -3567,101 +3627,6 @@ The relation $\{ (x,y) \in \mathbf{A}^2 \mid x \in y \}$ is well founded.
 \end{proof}
 
 
-\begin{thm}[ZFC]
-Every well-ordered set is isomorphic to a unique ordinal.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{For any well-ordered set $A$, there exists an ordinal $\alpha$ such that $A \cong \alpha$.}
-\begin{proof}
-	\step{a}{\pflet{$A$ be a well-ordered set.}}
-	\step{b}{Define the function $E$ on $A$ by transfinite recursion thus:
-	\[ E(t) = \{ E(x) \mid x < t \} \qquad (t \in A) \enspace . \]}
-	\step{c}{\pflet{$\alpha = \{ E(x) \mid x \in A \}$}}
-	\step{d}{$\alpha$ is an ordinal.}
-	\begin{proof}
-		\step{i}{$\alpha$ is a transitive set.}
-		\begin{proof}
-			\step{one}{\pflet{$x \in y \in \alpha$}}
-			\step{two}{\pick\ $t \in A$ such that $y = E(t)$}
-			\step{three}{$x \in E(t) = \{ E(s) \mid s < t \}$}
-			\step{four}{\pick\ $s < t$ such that $x = E(s)$}
-			\step{five}{$x \in \alpha$}
-		\end{proof}
-		\step{ii}{$\alpha$ is well-ordered by $\in$.}
-		\begin{proof}
-			\step{one}{\pflet{$< = \{(x,y) \in \alpha \mid x \in y \}$}}
-			\step{two}{$<$ is transitive.}
-			\begin{proof}
-				\step{A}{\pflet{$x,y,z \in \alpha$ with $x \in y \in z$}}
-				\step{B}{\pick\ $t \in A$ such that $z = E(t)$}
-				\step{C}{\pick\ $s \in A$ such that $s < t$ and $y = E(s)$}
-				\step{D}{\pick\ $r \in A$ such that $r < s$ and $x = E(r)$}
-				\step{E}{$r < t$}
-				\step{F}{$x \in z$}
-			\end{proof}
-			\step{three}{$<$ satisfies trichotomy.}
-			\begin{proof}
-				\step{A}{\pflet{$x,y \in \alpha$}}
-				\step{B}{\pick\ $s, t \in A$ such that $E(s) = x$ and $E(t) = y$}
-				\step{C}{Exactly one of $s < t$, $s = t$, $t < s$ holds.}
-				\step{D}{\case{$s < t$}}
-				\begin{proof}
-					\step{ONE}{$x \in y$}
-					\step{TWO}{$x \neq y$ and $y \notin x$}
-					\begin{proof}
-						\pf\ Axiom of Regularity.
-					\end{proof}
-				\end{proof}
-				\step{E}{\case{$s = t$}}
-				\begin{proof}
-					\step{ONE}{$x = y$}
-					\step{TWO}{$x \notin y$ and $y \notin x$}
-					\begin{proof}
-						\pf\ Axiom of Regularity.
-					\end{proof}
-				\end{proof}
-				\step{F}{\case{$t < s$}}
-				\begin{proof}
-					\pf\ Similar to \stepref{D}.
-				\end{proof}
-			\end{proof}
-			\step{four}{$\leq$ is a linear order on $\alpha$.}
-			\begin{proof}
-				\pf\ Proposition \ref{prop:linord}.
-			\end{proof}
-			\step{five}{Every nonempty subset of $\alpha$ has a least element.}
-			\begin{proof}
-				\step{A}{\pflet{$S$ be a nonempty subset of $\alpha$}}
-				\step{B}{\pflet{$T = \{ x \in A \mid E(x) \in S \}$}}
-				\step{C}{\pflet{$t$ be the least element of $T$.} \prove{$E(t)$ is least in $S$}}
-				\step{D}{\pflet{$y \in S$}}
-				\step{E}{\pick\ $s \in T$ such that $E(s) = y$}
-				\step{F}{$t \leq s$}
-				\step{G}{$x \leq y$}
-			\end{proof}
-		\end{proof}
-	\end{proof}
-	\step{f}{$E$ is surjective.}
-	\begin{proof}
-		\pf\ By definition of $\alpha$.
-	\end{proof}
-	\step{g}{$E$ is strictly monotone.}
-	\begin{proof}
-		\pf\ If $s < t$ then $E(s) \in E(t)$ by definition of $E(t)$.
-	\end{proof}
-	\qedstep
-	\begin{proof}
-		\pf\ Corollary \ref{cor:orderiso}.
-	\end{proof}
-\end{proof}
-\step{2}{For any ordinals $\alpha$ and $\beta$, if $\alpha \cong \beta$ then $\alpha = \beta$.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:ordisoeq}.
-\end{proof}
-\qed
-\end{proof}
 
 \begin{prop}[Z]
 \label{prop:elordinal}

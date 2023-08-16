@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  16 AUG 2023 17:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.7.5)  16 AUG 2023 19:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -412,38 +412,40 @@ WARNING: proof step "e" (<2>6) already defined
 Chapter 7.
 [57
 
-] [58] [59] [60] [61] [62] [63] [64]
+] [58] [59] [60] [61] [62]
+WARNING: proof step "a" (<4>1) already defined
+WARNING: proof step "b" (<4>2) already defined
+WARNING: proof step "c" (<4>3) already defined
+WARNING: proof step "d" (<4>4) already defined
+[63] [64]
 WARNING: proof step "3" (<1>4) already defined
+[65]
 WARNING: proof step "one" (<6>1) already defined
 WARNING: proof step "one" (<6>1) already defined
 WARNING: proof step "4" (<1>6) already defined
-[65]
 WARNING: proof step "a" (<4>1) already defined
 WARNING: proof step "b" (<4>2) already defined
+[66]
 WARNING: proof step "a" (<4>1) already defined
 WARNING: proof step "b" (<4>2) already defined
 WARNING: proof step "ii" (<4>9) already defined
-[66] [67] [68]
+[67]
 WARNING: proof step "ii" (<3>3) already defined
-[69] [70] [71]
+[68] [69] [70] [71]
 WARNING: proof step "2" (<3>2) already defined
 WARNING: proof step "3" (<3>3) already defined
 [72]
 WARNING: proof step "7" (<1>8) already defined
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [73]
-[74] [75]
-Overfull \hbox (23.77295pt too wide) in paragraph at lines 4297--4297
+[73] [74]
+Overfull \hbox (23.77295pt too wide) in paragraph at lines 4262--4262
 []\OT1/cmr/bx/n/14.4 The Well-Ordering The-o-rem and Zorn's Lemma 
  []
 
-[76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87]
-Underfull \vbox (badness 1360) has occurred while \output is active []
+[75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [88]
-[89] [90
+ [87]
+[88] [89] [90
 
 ]
 Chapter 8.
@@ -468,7 +470,7 @@ Chapter 11.
 [111
 
 ] [112] [113]
-Overfull \hbox (1.70007pt too wide) in paragraph at lines 6729--6730
+Overfull \hbox (1.70007pt too wide) in paragraph at lines 6694--6695
 []\OT1/cmr/bx/n/10 Corollary Schema 11.0.12.1. \OT1/cmr/m/it/10 There ex-ists a
 n in-stance $\OML/cmm/m/it/10 $ \OT1/cmr/m/it/10 of the Ax-iom Schema
  []
@@ -502,7 +504,7 @@ WARNING: proof step "2" (<2>2) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 [130] [131] [132]
-Overfull \hbox (5.89409pt too wide) in paragraph at lines 7822--7823
+Overfull \hbox (5.89409pt too wide) in paragraph at lines 7787--7788
 []\OT1/cmr/bx/n/10 Definition 15.2.7 \OT1/cmr/m/n/10 (Com-plete)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 An or-dered field $\OML/cmm/m/it/10 F$ \OT1/cmr/m/n/10 is \
 OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
@@ -513,12 +515,12 @@ OT1/cmr/m/it/10 com-plete \OT1/cmr/m/n/10 iff ev-ery nonempty
 ]
 Chapter 16.
 [137]
-Overfull \hbox (5.81142pt too wide) detected at line 8140
+Overfull \hbox (5.81142pt too wide) detected at line 8105
 []
  []
 
 [138]
-Overfull \hbox (10.26518pt too wide) detected at line 8155
+Overfull \hbox (10.26518pt too wide) detected at line 8120
 []
  []
 
@@ -532,7 +534,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 WARNING: proof step "two" (<3>3) already defined
 WARNING: proof step "2" (<2>1) already defined
 [154]
-Overfull \hbox (78.98425pt too wide) in paragraph at lines 9305--9305
+Overfull \hbox (78.98425pt too wide) in paragraph at lines 9270--9270
 []$\OML/cmm/m/it/10 y \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q \O
 MS/cmsy/m/n/10 2 \U/msb/m/n/10 Q \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 q \OMS/cms
 y/m/n/10 ^^T \OT1/cmr/m/n/10 0\OMS/cmsy/m/n/10 g [ f\OML/cmm/m/it/10 u[] \OMS/c
@@ -550,17 +552,17 @@ Chapter 18.
 [165
 
 ]
-Overfull \hbox (12.217pt too wide) detected at line 9804
+Overfull \hbox (12.217pt too wide) detected at line 9769
 []
  []
 
 
-Overfull \hbox (26.47981pt too wide) detected at line 9838
+Overfull \hbox (26.47981pt too wide) detected at line 9803
 []
  []
 
 [166]
-Overfull \hbox (3.13248pt too wide) detected at line 9841
+Overfull \hbox (3.13248pt too wide) detected at line 9806
 [] \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 x[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y[
 ]\OMS/cmsy/m/n/10 j[] ^^T [] [][]
  []
@@ -580,7 +582,7 @@ Chapter 21.
 [175] [176] [177] [178] [179] [180]
 WARNING: proof step "3" (<1>5) already defined
 [181] [182] [183]
-Overfull \hbox (76.64789pt too wide) detected at line 10658
+Overfull \hbox (76.64789pt too wide) detected at line 10623
 []
  []
 
@@ -588,25 +590,25 @@ Overfull \hbox (76.64789pt too wide) detected at line 10658
 Underfull \vbox (badness 1112) has occurred while \output is active []
 
  [188]
-Overfull \hbox (9.89566pt too wide) detected at line 11011
+Overfull \hbox (9.89566pt too wide) detected at line 10976
 []
  []
 
 
-Overfull \hbox (12.00586pt too wide) in paragraph at lines 11019--11019
+Overfull \hbox (12.00586pt too wide) in paragraph at lines 10984--10984
 []\OT1/cmr/m/n/10 as in-duc-tion hy-poth-e-sis there ex-ists a se-quence $(\OML
 /cmm/m/it/10 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10 )$
  []
 
 [189] [190]
-Overfull \hbox (2.20624pt too wide) in paragraph at lines 11160--11161
+Overfull \hbox (2.20624pt too wide) in paragraph at lines 11125--11126
 []\OT1/cmr/bx/n/10 Theorem 21.4.49 \OT1/cmr/m/n/10 (Di-ag-o-nal The-o-rem)\OT1/
 cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/it/10 be a n
 ormed space. Let $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )[]$
  []
 
 [191]
-Overfull \hbox (7.6992pt too wide) in paragraph at lines 11178--11178
+Overfull \hbox (7.6992pt too wide) in paragraph at lines 11143--11143
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a strictly in-creas-ing se-quence $(\OM
 L/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )$ and $\OML/cmm/m/it/10 ^^O > \OT1/cmr/m/n/10
  0$ such that $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 i \OMS/cmsy/m/n/10 2 \U/msb/m
@@ -615,12 +617,12 @@ L/cmm/m/it/10 p[]\OT1/cmr/m/n/10 )$ and $\OML/cmm/m/it/10 ^^O > \OT1/cmr/m/n/10
  []
 
 [192] [193] [194] [195]
-Overfull \hbox (16.33922pt too wide) detected at line 11444
+Overfull \hbox (16.33922pt too wide) detected at line 11409
 []
  []
 
 [196] [197] [198] [199] [200] [201]
-Overfull \hbox (3.54703pt too wide) in paragraph at lines 11812--11812
+Overfull \hbox (3.54703pt too wide) in paragraph at lines 11777--11777
 []\OT1/cmr/m/n/10 For any in-creas-ing se-quence of pos-i-tive in-te-gers $(\OM
 L/cmm/m/it/10 q[]\OT1/cmr/m/n/10 )$, we have $[][] \OML/cmm/m/it/10 y[] \OMS/cm
 sy/m/n/10 !
@@ -634,42 +636,38 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CB53C83F8458A1BB86B0947CAB2794DE;13982.
  ) 
 Here is how much of TeX's memory you used:
- 10342 strings out of 476091
- 150303 string characters out of 5794082
+ 10339 strings out of 476091
+ 150282 string characters out of 5794082
  1874330 words of memory out of 5000000
- 29553 multiletter control sequences out of 15000+600000
+ 29551 multiletter control sequences out of 15000+600000
  524014 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,14n,76p,541b,857s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{ax.7.3.18} has been referenced but does not exist, 
-replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (206 pages, 789527 bytes).
+ 75i,14n,76p,541b,759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (206 pages, 788949 bytes).
 PDF statistics:
- 2834 PDF objects out of 2984 (max. 8388607)
- 2410 compressed objects within 25 object streams
- 1077 named destinations out of 1200 (max. 500000)
+ 2832 PDF objects out of 2984 (max. 8388607)
+ 2408 compressed objects within 25 object streams
+ 1076 named destinations out of 1200 (max. 500000)
  841 words of extra memory for PDF output out of 10000 (max. 10000000)
 
