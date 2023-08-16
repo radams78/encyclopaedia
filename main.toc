@@ -45,8 +45,8 @@
 \contentsline {section}{\numberline {7.6}Ordinal Arithmetic}{76}{section.7.6}%
 \contentsline {subsection}{\numberline {7.6.1}Addition}{76}{subsection.7.6.1}%
 \contentsline {subsection}{\numberline {7.6.2}Multiplication}{79}{subsection.7.6.2}%
-\contentsline {subsection}{\numberline {7.6.3}Exponentiation}{80}{subsection.7.6.3}%
-\contentsline {section}{\numberline {7.7}Sequences}{83}{section.7.7}%
+\contentsline {subsection}{\numberline {7.6.3}Exponentiation}{81}{subsection.7.6.3}%
+\contentsline {section}{\numberline {7.7}Sequences}{84}{section.7.7}%
 \contentsline {section}{\numberline {7.8}Strict Supremum}{84}{section.7.8}%
 \contentsline {chapter}{\numberline {8}Cardinal Numbers}{85}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Cardinal Numbers}{85}{section.8.1}%

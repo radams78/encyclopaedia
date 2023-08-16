@@ -4042,7 +4042,7 @@ An ordinal operation $\mathbf{T} : \mathbf{On} \rightarrow \mathbf{On}$ is \emph
 An ordinal operation is \emph{normal} iff it is continuous and strictly monotone.
 \end{df}
 
-\begin{props}
+\begin{props}[S without Foundation]
 \label{prop:normal}
 For any class $\mathbf{T}$, the following is a theorem.
 
@@ -4086,7 +4086,7 @@ If $\mathbf{T}$ is a continuous ordinal operation and $\forall \gamma. \mathbf{T
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[S without Foundation]
 \label{prop:gammaltTgamma}
 For any class $\mathbf{T}$, the following is a theorem:
 
@@ -4105,7 +4105,7 @@ Assume $\mathbf{T}$ is a normal ordinal operation. For every ordinal $\alpha$, w
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[S without Foundation]
 \label{prop:greatestordinal}
 For any class $\mathbf{T}$, the following is a theorem:
 
@@ -4148,7 +4148,7 @@ Assume $\mathbf{T}$ is a normal ordinal operation. For any ordinal $\beta \geq \
 \qed
 \end{proof}
 
-\begin{thms}
+\begin{thms}[S without Foundation]
 \label{thm:normalsup}
 For any class $\mathbf{T}$, the following is a theorem:
 
@@ -4199,7 +4199,7 @@ Assume that $\mathbf{T}$ is a normal ordinal operation. For any nonempty set of 
 \qed
 \end{proof}
 
-\begin{prop}
+\begin{prop}[SF without Foundation]
 \label{prop:enumerationnormal}
 For any classes $\mathbf{A}$ and $\mathbf{T}$, the following is a theorem:
 
@@ -4221,7 +4221,7 @@ Assume $\mathbf{A}$ is a proper class of ordinals such that, for every set $S \s
 \qed
 \end{proof}
 
-\begin{props}
+\begin{props}[S without Foundation]
 For any class $\mathbf{T}$, the following is a theorem:
 
 If $\mathbf{T}$ is a normal ordinal operation, then for any limit ordinal $\lambda$, we have $\mathbf{T}(\lambda)$ is a limit ordinal.
@@ -4260,7 +4260,7 @@ Let $A$ and $B$ be disjoint well-ordered sets. The \emph{concatenation} of $A$ a
 \end{itemize}
 \end{df}
 
-\begin{prop}
+\begin{prop}[S without Foundation]
 If $A$ and $B$ are disjoint well-ordered sets, then their concatenation is well-ordered.
 \end{prop}
 
@@ -4345,11 +4345,11 @@ If $A$ and $B$ are disjoint well-ordered sets, then their concatenation is well-
 \qed
 \end{proof}
 
-\begin{df}[Ordinal Addition]
+\begin{df}[Ordinal Addition (SF without Foundation)]
 Let $\alpha$ and $\beta$ be ordinal numbers. Then $\alpha + \beta$ is the ordinal number of the concatenation of $A$ and $B$, where $A$ is any well ordered set with ordinal $\alpha$ and $B$ is any well ordered set with ordinal $\beta$.
 \end{df}
 
-\begin{thm}[Associative Law for Addition]
+\begin{thm}[Associative Law for Addition (SF without Foundation)]
 For any ordinals $\rho$, $\sigma$ and $\tau$, we have
 \[ \rho + (\sigma + \tau) = (\rho + \sigma) + \tau \enspace . \]
 \end{thm}
@@ -4358,7 +4358,7 @@ For any ordinals $\rho$, $\sigma$ and $\tau$, we have
 \pf\ Given disjoint well ordered sets $A$, $B$ and $C$, the concatenation of $A$ with (the concatenation of $B$ and $C$) is the same as the concatenation of (the concatenation of $A$ and $B$) and $C$. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal $\rho$ we have
 \[ \rho + 0 = 0 + \rho = \rho \enspace . \]
 \end{thm}
@@ -4367,7 +4367,7 @@ For any ordinal $\rho$ we have
 \pf\ For any well ordered set $A$, the concatenation of $A$ with $\emptyset$ is $A$, and the concatenation of $\emptyset$ with $A$ is $A$. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal $\alpha$ we have $\alpha + 1 = \alpha^+$.
 \end{thm}
 
@@ -4375,7 +4375,7 @@ For any ordinal $\alpha$ we have $\alpha + 1 = \alpha^+$.
 \pf\ Since $\alpha^+$ is the concatenation of $\alpha$ and $\{ \alpha \}$. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal $\alpha$, the operation that maps $\beta$ to $\alpha + \beta$ is normal.
 \end{thm}
 
@@ -4401,16 +4401,16 @@ For any ordinal $\alpha$, the operation that maps $\beta$ to $\alpha + \beta$ is
 \qed
 \end{proof}
 
-\begin{cor}
+\begin{cor}[SF without Foundation]
 \label{cor:pluslt}
 For any ordinals $\alpha$, $\beta$, $\gamma$, we have $\beta < \gamma$ if and only if $\alpha + \beta < \alpha + \gamma$.
 \end{cor}
 
-\begin{cor}[Left Cancellation for Addition]
+\begin{cor}[Left Cancellation for Addition (SF without Foundation)]
 For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\alpha + \beta = \alpha + \gamma$ then $\beta = \gamma$.
 \end{cor}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinals $\alpha$, $\beta$, $\gamma$, if $\beta \leq \gamma$ then $\beta + \alpha \leq \gamma + \alpha$.
 \end{thm}
 
@@ -4418,7 +4418,7 @@ For any ordinals $\alpha$, $\beta$, $\gamma$, if $\beta \leq \gamma$ then $\beta
 \pf\ Transfinite induction on $\alpha$. \qed
 \end{proof}
 
-\begin{thm}[Subtraction Theorem]
+\begin{thm}[Subtraction Theorem (SF without Foundation)]
 Let $\alpha$ and $\beta$ be ordinals with $\alpha \leq \beta$. Then there exists a unique ordinal $\delta$ such that $\alpha + \delta = \beta$.
 \end{thm}
 
@@ -4445,13 +4445,13 @@ Let $\alpha$ and $\beta$ be ordinals with $\alpha \leq \beta$. Then there exists
 
 \subsection{Multiplication}
 
-\begin{df}[Ordinal Multiplication]
+\begin{df}[Ordinal Multiplication (SF without Foundation)]
 Let $\alpha$ and $\beta$ be ordinal numbers. Then $\alpha \beta$ is the ordinal number of $A \times B$ under the lexicographic order, where $A$ is any well ordered set with ordinal $\alpha$ and $B$ is any well ordered set with ordinal $\beta$.
 \end{df}
 
 This is well defined by Proposition \ref{prop:lexicogwellorder}.
 
-\begin{thm}[Associative Law]
+\begin{thm}[Associative Law (SF without Foundation)]
 For any ordinals $\rho$, $\sigma$ and $\tau$, we have
 \[ \rho (\sigma \tau) = (\rho \sigma) \tau \enspace . \]
 \end{thm}
@@ -4461,7 +4461,7 @@ For any ordinals $\rho$, $\sigma$ and $\tau$, we have
 \[ (a,b,c) \leq (a',b',c') \Leftrightarrow a \leq a' \vee (a = a' \wedge b \leq b') \vee (a = a' \wedge b = b' \wedge c \leq c') \enspace . \qquad \qed \]
 \end{proof}
 
-\begin{thm}[Left Distributive Law]
+\begin{thm}[Left Distributive Law (SF without Foundation)]
 For any ordinals $\rho$, $\sigma$ and $\tau$, we have
 \[ \rho (\sigma + \tau) = \rho \sigma + \rho \tau \]
 \end{thm}
@@ -4470,7 +4470,7 @@ For any ordinals $\rho$, $\sigma$ and $\tau$, we have
 \pf\ Let $A$, $B$ and $C$ be well ordered sets with ordinals $\rho$, $\sigma$ and $\tau$ and with $B \cap C = \emptyset$. Then both $\rho (\sigma + \tau)$ and $\rho \sigma + \rho \tau$ are the ordinal of $A \times (B \cup C)$ under the lexicographic ordering. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal $\rho$ we have $\rho 0 = 0 \rho = 0$.
 \end{thm}
 
@@ -4478,7 +4478,7 @@ For any ordinal $\rho$ we have $\rho 0 = 0 \rho = 0$.
 \pf\ For any well ordered set $A$ we have $A \times \emptyset = \emptyset \times A = \emptyset$. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal $\rho$ we have $\rho 1 = 1 \rho = \rho$.
 \end{thm}
 
@@ -4486,7 +4486,7 @@ For any ordinal $\rho$ we have $\rho 1 = 1 \rho = \rho$.
 \pf\ Easy. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinals $\rho$ and $\sigma$, if $\rho \sigma = 0$ then $\rho = 0$ or $\sigma = 0$.
 \end{thm}
 
@@ -4494,7 +4494,7 @@ For any ordinals $\rho$ and $\sigma$, if $\rho \sigma = 0$ then $\rho = 0$ or $\
 \pf\ If $A \times B = \emptyset$ then $A = \emptyset$ or $B = \emptyset$. \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 \label{thm:multnormal}
 For any non-zero ordinal $\alpha$, the operation that maps $\beta$ to $\alpha \beta$ is normal.
 \end{thm}
@@ -4513,15 +4513,15 @@ For any non-zero ordinal $\alpha$, the operation that maps $\beta$ to $\alpha \b
 \qed
 \end{proof}
 
-\begin{cor}
+\begin{cor}[SF without Foundation]
 For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \neq 0$ then $\beta < \gamma$ if and only if $\alpha \beta < \alpha \gamma$.
 \end{cor}
 
-\begin{cor}[Left Cancellation for Multiplication]
+\begin{cor}[Left Cancellation for Multiplication (SF without Foundation)]
 For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \neq 0$ and $\alpha \beta = \alpha \gamma$ then $\beta = \gamma$.
 \end{cor}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\beta \alpha \leq \gamma \alpha$.
 \end{thm}
 
@@ -4529,7 +4529,7 @@ For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\b
 \pf\ Transfinite induction on $\alpha$. \qed
 \end{proof}
 
-\begin{thm}[Division Theorem]
+\begin{thm}[Division Theorem (SF without Foundation)]
 Let $\alpha$ and $\delta$ be ordinal numbers with $\delta \neq 0$. Then there exist unique ordinals $\beta$ and $\gamma$ with $\gamma < \delta$ and
 \[ \alpha = \delta \beta + \gamma \enspace . \]
 \end{thm}
@@ -4579,7 +4579,7 @@ Let $\alpha$ and $\delta$ be ordinal numbers with $\delta \neq 0$. Then there ex
 
 \subsection{Exponentiation}
 
-\begin{df}
+\begin{df}[SF without Foundation]
 Given ordinals $\alpha$ and $\beta$, define the ordinal $\alpha^\beta$ as follows:
 \begin{align*}
 0^\alpha & := 0 & (\alpha > 0) \\
@@ -4589,7 +4589,7 @@ Given ordinals $\alpha$ and $\beta$, define the ordinal $\alpha^\beta$ as follow
 \end{align*}
 \end{df}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 Let $\alpha$ be an ordinal $\geq 2$. The operation that maps $\beta$ to $\alpha^\beta$ is normal.
 \end{thm}
 
@@ -4606,15 +4606,15 @@ Let $\alpha$ be an ordinal $\geq 2$. The operation that maps $\beta$ to $\alpha^
 \qed
 \end{proof}
 
-\begin{cor}
+\begin{cor}[SF without Foundation]
 For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \geq 2$ then $\beta < \gamma$ if and only if $\alpha^\beta < \alpha^\gamma$.
 \end{cor}
 
-\begin{cor}[Cancellation for Exponentiation]
+\begin{cor}[Cancellation for Exponentiation (SF without Foundation)]
 For any ordinals $\alpha$, $\beta$, $\gamma$, if $\alpha \geq 2$ and $\alpha^\beta = \alpha^\gamma$ then $\beta = \gamma$.
 \end{cor}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\beta^\alpha \leq \gamma^\alpha$.
 \end{thm}
 
@@ -4622,7 +4622,7 @@ For any ordinals $\alpha$, $\beta$ and $\gamma$, if $\beta \leq \gamma$ then $\b
 \pf\ Transfinite induction on $\alpha$.
 \end{proof}
 
-\begin{thm}[Logarithm Theorem]
+\begin{thm}[Logarithm Theorem (SF without Foundation)]
 Let $\alpha$ and $\beta$ be ordinal numbers with $\alpha \neq 0$ and $\beta > 1$. Then there exist unique ordinals $\gamma$, $\delta$ and $\rho$ such that
 \[ \alpha = \beta^\gamma \delta + \rho, \qquad 0 \neq \delta < \beta, \qquad \rho < \beta^\gamma \enspace . \]
 \end{thm}
@@ -4666,7 +4666,7 @@ Let $\alpha$ and $\beta$ be ordinal numbers with $\alpha \neq 0$ and $\beta > 1$
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal numbers $\alpha$, $\beta$, $\gamma$, we have
 \[ \alpha^{\beta + \gamma} = \alpha^\beta \alpha^\gamma \enspace . \]
 \end{thm}
@@ -4720,7 +4720,7 @@ For any ordinal numbers $\alpha$, $\beta$, $\gamma$, we have
 \qed
 \end{proof}
 
-\begin{thm}
+\begin{thm}[SF without Foundation]
 For any ordinal numbers $\alpha$, $\beta$ and $\gamma$, we have
 \[ (\alpha^\beta)^\gamma = \alpha^{\beta \gamma} \enspace . \]
 \end{thm}
