@@ -4502,33 +4502,6 @@ Let $\alpha$ and $\beta$ be ordinals with $\alpha \leq \beta$. Then there exists
 An infinite ordinal $\alpha$ is \emph{additively indecomposable} iff, whenever $\beta + \gamma = \alpha$, then $\beta = \alpha$ or $\gamma = \alpha$.
 \end{df}
 
-\begin{prop}[ZF without Foundation]
-For any ordinal $\delta > 1$ we have $\delta^\omega$ is additively indecomposable.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$\beta + \gamma = \delta^\omega$}}
-\step{2}{\assume{$\beta < \delta^\omega$}}
-\step{3}{\pick\ $n < \omega$ such that $\beta < \delta^n$}
-\step{4}{$\beta + \delta^\omega \leq \beta + \gamma$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		\beta + \delta^\omega & \leq \delta^n + \delta^\omega \\
-		& \leq \delta^\omega + \delta^\omega \\
-		& = 2 \delta^\omega \\
-		& \leq \delta \delta^\omega \\
-		& = \delta^{1 + \omega} \\
-		& = \delta^\omega \\
-		& = \beta + \gamma
-	\end{align*}
-\end{proof}
-\step{5}{$\delta^\omega \leq \gamma$}
-\step{6}{$\gamma = \delta^\omega$}
-\qed
-\end{proof}
-
 \begin{prop}[SF without Foundation]
 For an infinite ordinal $\alpha$, we have $\alpha$ is additively indecomposable if and only if, for all $\gamma < \alpha$, we have $\gamma + \alpha = \alpha$.
 \end{prop}
@@ -4892,6 +4865,85 @@ For any ordinal numbers $\alpha$, $\beta$ and $\gamma$, we have
 			& = \sup_{\gamma < \lambda} \alpha^{\beta \gamma} \\
 			& = \alpha^{\sup_{\gamma < \lambda} \beta \gamma} \\
 			& = \alpha^{\beta \lambda}
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[ZF without Foundation]
+For any ordinal $\delta > 1$ we have $\delta^\omega$ is additively indecomposable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\beta + \gamma = \delta^\omega$}}
+\step{2}{\assume{for a contradiction $\beta < \delta^\omega$ and $\gamma < \delta^\omega$}}
+\step{3}{\pick\ $m$, $n$ such that $\beta < \delta^m$ and $\gamma < \delta^n$}
+\step{4}{$\beta + \gamma < \delta^{\max(m,n) + 1}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\beta + \gamma & < \delta^m + \delta^n \\
+		& \leq \delta^{\max(m,n)} + \delta^{\max(m,n)} \\
+		& = \delta^{\max(m,n)} 2 \\
+		& \leq \delta^{\max(m,n)} \delta \\
+		& = \delta^{\max(m,n) + 1}
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[ZF without Foundation]
+Let $\alpha$ be an infinite ordinal. Then $\alpha$ is additively indecomposable iff $\alpha = \omega^\delta$ for some $\delta$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha$ is additively indecomposable then there exists $\delta$ such that $\alpha = \omega^\delta$.}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ is additively indecomposable.}}
+	\step{b}{\pflet{$\alpha = \omega^\gamma \delta + \rho$ where $0 \neq \delta < \omega$ and $\rho < \omega^\gamma$}}
+	\step{c}{$\omega^\gamma \delta = \alpha$ \prove{$\delta = 1$}}
+	\step{e}{$\omega^\gamma (\delta - 1) + \omega^\gamma = \alpha$}
+	\step{f}{$\omega^\gamma = \alpha$}
+\end{proof}
+\step{2}{$\omega$ is additively indecomposable.}
+\begin{proof}
+	\pf\ If $m,n < \omega$ then $m+n < \omega$.
+\end{proof}
+\step{3}{For any ordinal $\delta$, if $\omega^\delta$ is additively indecomposable then so is $\omega^{\delta + 1}$}
+\begin{proof}
+	\step{a}{\pflet{$\gamma < \omega^{\delta + 1} = \omega^\delta \omega$}}
+	\step{b}{\pick\ $n < \omega$ such that $\gamma < \omega^\delta n$}
+	\step{c}{$\gamma + \omega^{\delta + 1} = \omega^{\delta + 1}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\gamma + \omega^{\delta + 1} & \leq \omega^\delta n + \omega^\delta \omega \\
+			& = \omega^\delta (n + \omega) \\
+			& = \omega^\delta \omega \\
+			& = \omega^{\delta + 1}
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{For any limit ordinal $\lambda$, if $\forall \delta < \lambda. \omega^\delta$ is additively indecomposable, then $\omega^\lambda$ is additively indecomposable.}
+\begin{proof}
+	\step{a}{\pflet{$beta, \gamma < \omega^\lambda$}}
+	\step{b}{\pick\ $\delta, \epsilon < \lambda$ such that $\beta < \omega^\delta$ and $\gamma < \omega^\epsilon$}
+	\step{c}{$\beta + \gamma < \omega^{\max(\delta, \epsilon) + 1}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\beta + \gamma & < \omega^\delta + \omega^\epsilon \\
+			& \leq \omega^{\max(\delta, \epsilon)} + \omega^{\max(\delta, \epsilon)} \\
+			& = \omega^{\max(\delta, \epsilon)} 2 \\
+			& < \omega^{\max(\delta, \epsilon)} \omega \\
+			& = \omega^{\max(\delta, \epsilon) + 1}
 		\end{align*}
 	\end{proof}
 \end{proof}
