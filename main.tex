@@ -4529,6 +4529,31 @@ For any ordinal $\delta > 1$ we have $\delta^\omega$ is additively indecomposabl
 \qed
 \end{proof}
 
+\begin{prop}[SF without Foundation]
+For an infinite ordinal $\alpha$, we have $\alpha$ is additively indecomposable if and only if, for all $\gamma < \alpha$, we have $\gamma + \alpha = \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha$ is additively indecomposable then, for all $\gamma < \alpha$, we have $\gamma + \alpha = \alpha$.}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ is additively indecomposable.}}
+	\step{b}{\pflet{$\gamma < \alpha$}}
+	\step{c}{\pflet{$\delta$ be the unique ordinal such that $\gamma + \delta = \alpha$}}
+	\step{d}{$\delta = \alpha$}
+	\step{e}{$\gamma + \alpha = \alpha$}
+\end{proof}
+\step{2}{If, for all $\gamma < \alpha$, we have $\gamma + \alpha = \alpha$, then $\alpha$ is additively indecomposable.}
+\begin{proof}
+	\step{a}{\assume{For all $\gamma < \alpha$, we have $\gamma + \alpha = \alpha$.}}
+	\step{b}{\pflet{$\beta + \gamma = \alpha$}}
+	\step{c}{\assume{$\beta < \alpha$}}
+	\step{d}{$\beta + \alpha = \alpha = \beta + \gamma$}
+	\step{e}{$\alpha = \gamma$}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Multiplication}
 
 \begin{df}[Ordinal Multiplication (SF without Foundation)]
