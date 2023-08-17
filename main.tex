@@ -1723,6 +1723,22 @@ For any set $A$ we have $\mathcal{P} A \approx 2^A$.
 A set $A$ is \emph{dominated} by a set $B$, $A \preccurlyeq B$, iff there exists an injection $A \rightarrow B$.
 \end{df}
 
+\begin{prop}[S without Foundation]
+\[ A \preccurlyeq A \]
+\end{prop}
+
+\begin{prop}[S without Foundation]
+If $A \preccurlyeq B$ and $B \preccurlyeq C$ then $A \preccurlyeq C$.
+\end{prop}
+
+\begin{prop}[S without Foundation]
+If $A \subseteq B$ then $A \preccurlyeq B$.
+\end{prop}
+
+\begin{prop}[S without Foundation]
+If $A \approx B$ then $A \preccurlyeq B$.
+\end{prop}
+
 \begin{prop}[SC without Foundation]
 Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $A \preccurlyeq B$ iff there exists a surjective function $B \rightarrow A$.
 \end{prop}
@@ -6080,7 +6096,7 @@ If $\mathbf{T}$ is a normal ordinal operation, then the derived operation is nor
 
 \section{Cantor Normal Form}
 
-\begin{thm}
+\begin{thm}[ZF without Foundation]
 For any ordinal $\alpha$, there exist a unique sequence of nonzero natural numbers $(n_1, \ldots, n_k)$ and sequence of ordinals $(\gamma_1, \ldots, \gamma_k)$ such that
 \[ \gamma_k < \gamma_{k-1} < \cdots < \gamma_1 \]
 and
