@@ -4998,6 +4998,60 @@ For any ordinal $\delta > 1$, we have $\delta^\omega$ is multiplicatively indeco
 \qed
 \end{proof}
 
+\begin{prop}[ZF without Foundation]
+For any infinite ordinal $\alpha$, we have $\alpha$ is multiplicatively indecomposable iff there exists $\delta$ such that $\alpha = \omega^{\omega^\delta}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha$ is multiplicatively indecomposable then there exists $\delta$ such that $\alpha = \omega^{\omega^\delta}$.}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ is multiplicatively indecomposable.}}
+	\step{b}{\pflet{$\alpha = \omega^\beta \gamma + \delta$ where $0 < \gamma < \omega$ and $\delta < \omega^\beta$}}
+	\step{c}{$\omega^\beta \leq \alpha < \omega^\beta (\gamma + 1)$}
+	\step{d}{$\alpha = \omega^\beta$}
+	\begin{proof}
+		\pf\ By multiplicative indecomposability. We cannot have $\gamma + 1 \geq \alpha$ because $\gamma + 1$ is finite.
+	\end{proof}
+	\step{e}{\pflet{$\beta = \omega^\epsilon \phi + \lambda$ where $0 < \phi < \omega$ and $\lambda < \omega^\epsilon$}}
+	\step{f}{$(\omega^{\omega^\epsilon})^\phi \leq \alpha = (\omega^{\omega^\epsilon})^\phi \omega^\lambda $}
+	\step{g}{$\alpha = (\omega^{\omega^\epsilon})^\phi$}
+	\step{h}{$\phi = 1$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $\phi > 1$}}
+		\step{ii}{$\alpha = (\omega^{\omega^\epsilon})^{\phi - 1} \omega^{\omega^\epsilon}$}
+		\step{iii}{$\alpha \leq (\omega^{\omega^\epsilon})^{\phi - 1}$ or $\alpha \leq \omega^{\omega^\epsilon}$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{g} if $\phi > 1$.
+		\end{proof}
+	\end{proof}
+	\step{i}{$\alpha = \omega^{\omega^\epsilon}$}
+\end{proof}
+\step{2}{$\omega$ is multiplicatively indecomposable.}
+\begin{proof}
+	\pf\ If $m,n < \omega$ then $mn < \omega$.
+\end{proof}
+\step{3}{For any ordinal $\delta$, if $\omega^{\omega^\delta}$ is multiplicatively indecomposable, then so is $\omega^{\omega^{\delta + 1}}$.}
+\begin{proof}
+	\step{a}{\pflet{$\delta$ be an ordinal.}}
+	\step{b}{\assume{$\omega^{\omega^\delta}$ is multiplicatively indecomposable.}}
+	\step{c}{\pflet{$\beta, \gamma < \omega^{\omega^{\delta + 1}} = (\omega^{\omega^\delta})^\omega$}}
+	\step{d}{\pick\ $m, n < \omega$ such that $\beta < (\omega^{\omega^\delta})^m$ and $\gamma < (\omega^{\omega^\delta})^n$.}
+	\step{e}{$\beta \gamma < (\omega^{\omega^\delta})^{m+n} < \omega^{\omega^{\delta + 1}}$}
+\end{proof}
+\step{4}{For any limit ordinal $\lambda$, if $\forall \delta < \lambda. \omega^{\omega^\delta}$ is multiplicatively indecomposable, then $\omega^{\omega^\lambda}$ is multiplicatively indecomposable.}
+\begin{proof}
+	\step{a}{\pflet{$\lambda$ be a limit ordinal.}}
+	\step{b}{\assume{$\forall \delta < \lambda. \omega^{\omega^\delta}$ is multiplicatively indecomposable.}}
+	\step{c}{\pflet{$\beta, \gamma < \omega^{\omega^\lambda}$}}
+	\step{d}{\pick\ $\beta_1, \gamma_1 < \omega^\lambda$ such that $\beta < \omega^{\beta_1}$ and $\gamma < \omega^{\gamma_1}$}
+	\step{e}{\pick\ $\beta_2, \gamma_2 < \lambda$ such that $\beta_1 < \omega^{\beta_2}$ and $\gamma_1 < \omega^{\gamma_2}$}
+	\step{f}{$\beta \gamma <  \omega^{\omega^{\max(\beta_2, \gamma_2)}} < \omega^{\omega^\delta}$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Sequences}
 
 \begin{df}[Sequence]
