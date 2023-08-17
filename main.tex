@@ -1818,6 +1818,61 @@ If $\mathbf{F}' : \mathbf{A} \rightarrow \mathbf{V}$ satisfies that, for all $t 
 \qed
 \end{proof}
 
+\begin{thms}[Mostowski's Isomorphism Theorem (SF without Foundation)]
+For any class $\mathbf{R}$, there exist classes $\mathbf{B}$ and $\mathbf{F}$ such that the following is a theorem.
+
+Assume $\mathbf{R}$ is a well-founded relation. Let $\mathbf{A} = \dom \mathbf{R} \cup \ran \mathbf{R}$. Assume that, for all $x,y \in \mathbf{A}$, if $\forall t (t \mathbf{R} x \Leftrightarrow t \mathbf{R} y)$, then $x = y$. Then $\mathbf{B}$ is a transitive class and $\mathbf{F}$ is an isomorphism between $(\mathbf{A}, \mathbf{R})$ and $(\mathbf{B}, \in)$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{Define $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{V}$ by transfinite recursion so that, for all $x \in \mathbf{A}$, we have
+\[ \mathbf{F}(x) = \{ \mathbf{F}(y) \mid y \mathbf{R} x \} \enspace . \]}
+\step{2}{\pflet{$\mathbf{B} = \ran \mathbf{F}$}}
+\step{3}{$\mathbf{B}$ is a transitive class.}
+\begin{proof}
+	\step{a}{\pflet{$u \in v \in \mathbf{B}$}}
+	\step{b}{\pick\ $y$ such that $\mathbf{F}(y) = v$}
+	\step{d}{There exists $x$ such that $x \mathbf{R} y$ and $u = \mathbf{F}$}
+	\step{e}{$u \in \mathbf{B}$}
+\end{proof}
+\step{5}{$\mathbf{F}$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \mathbf{A}$} \prove{$\forall y \in \mathbf{A}. \mathbf{F}(x) = \mathbf{F}(y) \Rightarrow x = y$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall x' \mathbf{R} x. \forall y \in \mathbf{A}. \mathbf{F}(x') = \mathbf{F}(y) \Rightarrow x' = y$}}
+	\step{c}{\pflet{$y \in \mathbf{A}$}}
+	\step{d}{\assume{$\mathbf{F}(x) = \mathbf{F}(y)$}}
+	\step{e}{$\forall t. (t \mathbf{R} x \Leftrightarrow t \mathbf{R} y)$}
+	\begin{proof}
+		\step{i}{\pflet{$t$ be a set.}}
+		\step{ii}{If $t \mathbf{R} x$ then $t \mathbf{R} y$}
+		\begin{proof}
+			\step{one}{\assume{$t \mathbf{R} x$}}
+			\step{two}{$\mathbf{F}(t) \in \mathbf{F}(x)$}
+			\step{three}{$\mathbf{F}(t) \in \mathbf{F}(y)$}
+			\step{four}{\pick\ $t'$ such that $t' \mathbf{R} y$ and $\mathbf{F}(t) = \mathbf{F}(t')$}
+			\step{five}{$t = t'$}
+			\begin{proof}
+				\pf\ \stepref{b}
+			\end{proof}
+			\step{six}{$t \mathbf{R} y$}
+		\end{proof}
+		\step{iii}{If $t \mathbf{R} y$ then $t \mathbf{R} x$}
+		\begin{proof}
+			\pf\ Similar.
+		\end{proof}
+	\end{proof}
+	\step{f}{$x = y$}
+\end{proof}
+\step{7}{For all $x,y \in \mathbf{A}$, if $x \mathbf{R} y$ then $\mathbf{F}(x) \in \mathbf{F}(y)$.}
+\step{8}{For all $x,y \in \mathbf{A}$, if $\mathbf{F}(x) \in \mathbf{F}(y)$ then $x \mathbf{R} y$.}
+\qed
+\end{proof}
+
+\begin{df}[Transitive Collapse]
+For any set $x$, the \emph{transitive collapse} of $x$ is the unique set $y$ such that $(x, \in) \cong (y, \in)$. The unique isomorphism between them is called the \emph{collapsing isomorphism}.
+\end{df}
+
 \chapter{Category Theory}
 
 \section{Categories}
@@ -4443,6 +4498,37 @@ Let $\alpha$ and $\beta$ be ordinals with $\alpha \leq \beta$. Then there exists
 \qed
 \end{proof}
 
+\begin{df}[Additively Indecomposable]
+An infinite ordinal $\alpha$ is \emph{additively indecomposable} iff, whenever $\beta + \gamma = \alpha$, then $\beta = \alpha$ or $\gamma = \alpha$.
+\end{df}
+
+\begin{prop}[ZF without Foundation]
+For any ordinal $\delta > 1$ we have $\delta^\omega$ is additively indecomposable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\beta + \gamma = \delta^\omega$}}
+\step{2}{\assume{$\beta < \delta^\omega$}}
+\step{3}{\pick\ $n < \omega$ such that $\beta < \delta^n$}
+\step{4}{$\beta + \delta^\omega \leq \beta + \gamma$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\beta + \delta^\omega & \leq \delta^n + \delta^\omega \\
+		& \leq \delta^\omega + \delta^\omega \\
+		& = 2 \delta^\omega \\
+		& \leq \delta \delta^\omega \\
+		& = \delta^{1 + \omega} \\
+		& = \delta^\omega \\
+		& = \beta + \gamma
+	\end{align*}
+\end{proof}
+\step{5}{$\delta^\omega \leq \gamma$}
+\step{6}{$\gamma = \delta^\omega$}
+\qed
+\end{proof}
+
 \subsection{Multiplication}
 
 \begin{df}[Ordinal Multiplication (SF without Foundation)]
@@ -4576,6 +4662,10 @@ Let $\alpha$ and $\delta$ be ordinal numbers with $\delta \neq 0$. Then there ex
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Multiplicatively Indecomposable]
+An infinite ordinal $\alpha$ is \emph{multiplicatively indecomposable} iff, whenever $\beta \gamma \geq \alpha$, then either $\beta \geq \alpha$ or $\gamma \geq \alpha$.
+\end{df}
 
 \subsection{Exponentiation}
 
