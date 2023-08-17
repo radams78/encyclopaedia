@@ -4665,6 +4665,42 @@ Let $\alpha$ and $\delta$ be ordinal numbers with $\delta \neq 0$. Then there ex
 An infinite ordinal $\alpha$ is \emph{multiplicatively indecomposable} iff, whenever $\beta \gamma \geq \alpha$, then either $\beta \geq \alpha$ or $\gamma \geq \alpha$.
 \end{df}
 
+\begin{prop}[SF without Foundation]
+Let $\alpha$ be an infinite ordinal. Then $\alpha$ is multiplicatively indecomposable iff, for all $0 < \gamma < \alpha$, we have $\gamma \alpha = \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha$ is multiplicatively indecomposable then, for all $0 < \gamma < \alpha$, we have $\gamma \alpha = \alpha$}
+\begin{proof}
+	\step{a}{\assume{$\alpha$ is multiplicatively indecomposable.}}
+	\step{b}{\pflet{$0 < \gamma < \alpha$}}
+	\step{c}{\pflet{$\alpha = \gamma \delta + \epsilon$ where $\epsilon < \gamma$}}
+	\begin{proof}
+		\pf\ Division Theorem.
+	\end{proof}
+	\step{d}{$\gamma \delta \leq \alpha < \gamma (\delta + 1)$}
+	\step{f}{$\delta \leq \alpha \leq \delta + 1$}
+	\step{g}{$\alpha \neq \delta + 1$}
+	\begin{proof}
+		\pf\ A successor ordinal cannot be multiplicatively indecomposable because we have $\delta + 1 < \delta 2$.
+	\end{proof}
+	\step{h}{$\alpha = \delta$}
+	\step{i}{$\epsilon = 0$}
+	\step{j}{$\alpha = \gamma \alpha$}
+\end{proof}
+\step{2}{If, for all $0 < \gamma < \alpha$, we have $\gamma \alpha = \alpha$, then $\alpha$ is multiplicatively indecomposable.}
+\begin{proof}
+	\step{a}{\assume{For all $0 < \gamma < \alpha$ we have $\gamma \alpha = \alpha$}}
+	\step{b}{\pflet{$\gamma, \delta < \alpha$}}
+	\step{c}{$\gamma \delta < \alpha$}
+	\begin{proof}
+		\pf\ If $\gamma \neq 0$ then $\gamma \delta < \gamma \alpha = \alpha$. If $\gamma = 0$ then $\gamma \delta = 0 < \alpha$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Exponentiation}
 
 \begin{df}[SF without Foundation]
@@ -4950,8 +4986,20 @@ Let $\alpha$ be an infinite ordinal. Then $\alpha$ is additively indecomposable 
 \qed
 \end{proof}
 
+\begin{prop}[ZF without Foundation]
+For any ordinal $\delta > 1$, we have $\delta^\omega$ is multiplicatively indecomposable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\beta, \gamma < \delta^\omega$}}
+\step{2}{\pick\ $m, n < \omega$ such that $\beta < \delta^m$ and $\gamma < \delta^n$}
+\step{3}{$\beta \gamma < \delta^{m+n} < \delta^\omega$}
+\qed
+\end{proof}
+
 \section{Sequences}
-<
+
 \begin{df}[Sequence]
 Given an ordinal $\alpha$ and class $\mathbf{A}$, an \emph{$\alpha$-sequence} in $\mathbf{A}$ is a function $a : \alpha \rightarrow \mathbf{A}$. We write $a_\beta$ for $a(\beta)$, and $(a_\beta)_{\beta < \alpha}$ for $a$.
 \end{df}
