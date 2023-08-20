@@ -5782,6 +5782,43 @@ The union of a set of cardinal numbers is a cardinal number.
 \qed
 \end{proof}
 
+\section{Adjoints}
+
+\begin{df}[Adjoint (SF)]
+Let $\mathfrak{m}$ and $\mathfrak{n}$ be cardinal numbers. Then $\mathfrak{n}$ is an \emph{adjoint} of $\mathfrak{m}$ iff $\mathfrak{m} < \mathfrak{n}$, for every cardinal number $\mathfrak{p}$, if $\mathfrak{m} \leq \mathfrak{p} \leq \mathfrak{n}$ then $\mathfrak{m} = \mathfrak{p}$ or $\mathfrak{n} = \mathfrak{p}$.
+\end{df}
+
+\begin{prop}[SF]
+Let $\mathfrak{n}$ be a cardinal number.
+If $\omega \not\leq \mathfrak{n}$, then $\mathfrak{n+1}$ is an adjoint of $\mathfrak{n}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\mathfrak{n} < \mathfrak{n}+1$}
+\begin{proof}
+	\step{a}{\assume{$\mathfrak{n} = \mathfrak{n} + 1$} \prove{$\omega \leq \mathfrak{n}$}}
+	\step{b}{\pick\ a set $A$ such that $\card A = \mathfrak{n}$ and an object $e \notin A$}
+	\step{c}{\pick\ a bijection $f : A \cup \{e\} \approx A$}
+	\step{d}{Define $g : \mathbb{N} \rightarrowtail A$ recursively by $g(0) = e$ and $g(n+1) = f(g(n))$ for all $n \in \mathbb{N}$.}
+\end{proof}
+\step{2}{For every cardinal number $\mathfrak{p}$, if $\mathfrak{n} \leq \mathfrak{p} \leq \mathfrak{n} + 1$, then $\mathfrak{n} = \mathfrak{p}$ or $\mathfrak{n} + 1 = \mathfrak{p}$.}
+\begin{proof}
+	\step{a}{\assume{$\mathfrak{n} \leq \mathfrak{p} \leq \mathfrak{n} + 1$}}
+	\step{b}{\pick\ sets $A$ with $\card A = \mathfrak{n}$ and $B$ with $\card B = \mathfrak{p}$}
+	\step{c}{\pick\ an object $e \notin A$}
+	\step{d}{\pick\ injections $f : A \rightarrowtail B$ and $g : B \rightarrowtail A \cup \{e\}$}
+	\step{e}{\assume{$\mathfrak{n} \neq \mathfrak{p}$} \prove{$\mathfrak{n} + 1 = \mathfrak{p}$}}
+	\step{f}{\pick\ $b \in B - f(A)$}
+	\step{g}{$A \cup \{e\} \preccurlyeq B$}
+	\step{h}{$B \approx A \cup \{e\}$}
+	\begin{proof}
+		\pf\ Schr\"{o}der-Bernstein
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Inductive Sets}

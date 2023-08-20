@@ -52,6 +52,7 @@
 \contentsline {chapter}{\numberline {8}Cardinal Numbers}{93}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Cardinal Numbers}{93}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Ordering on Cardinal Numbers}{98}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Adjoints}{100}{section.8.3}%
 \contentsline {chapter}{\numberline {9}Natural Numbers}{101}{chapter.9}%
 \contentsline {section}{\numberline {9.1}Inductive Sets}{101}{section.9.1}%
 \contentsline {section}{\numberline {9.2}Cardinality}{102}{section.9.2}%
