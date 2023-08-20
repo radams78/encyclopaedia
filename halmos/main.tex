@@ -299,4 +299,22 @@ For any sets $A$, $B$ and $C$, we have
 \[ x \in A \vee (x \in B \wedge x \in C) \Leftrightarrow (x \in A \vee x \in B) \wedge (x \in A \vee x \in C) \enspace . \qed \]
 \end{proof}
 
+\begin{df}[Intersection]
+For any nonempty set $\mathcal{C}$, the \emph{intersection} of $\mathcal{C}$, $\bigcap \mathcal{C}$, is the set that contains exactly those sets that belong to every element of $\mathcal{C}$.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{C}$ be a nonempty set.}}
+\step{2}{There exists a set $I$ whose elements are exactly the sets that belong to every element of $\mathcal{C}$.}
+\begin{proof}
+	\pf\ Pick $A \in \mathcal{C}$, and take $I = \{ x \in A : \forall X \in \mathcal{C}. x \in X \}$.
+\end{proof}
+\step{3}{For any sets $I$, $J$, if the elements of $I$ and $J$ are exactly the sets that belong to every element of $\mathcal{C}$ then $I = J$.}
+\begin{proof}
+	\pf\ Axiom of Extensionality.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
