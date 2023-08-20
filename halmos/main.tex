@@ -325,4 +325,31 @@ For any nonempty set $\mathcal{C}$, the \emph{intersection} of $\mathcal{C}$, $\
 \qed
 \end{proof}
 
+\chapter{Complements and Powers}
+
+\begin{df}[Relative Complement]
+For any sets $A$ and $B$, the \emph{difference} or \emph{relative complement} $A - B$ is defined to be
+\[ A - B := \{ x \in A : x \notin B \} \enspace . \]
+\end{df}
+
+\begin{prop}
+For any sets $A$ and $E$, if $A \subseteq E$ then
+\[ E - (E - A) = A \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $E$ be sets.}}
+\step{2}{\assume{$A \subseteq E$}}
+\step{3}{$E - (E - A) \subseteq A$}
+\begin{proof}
+	\pf\ If $x \in E$ and $x \notin E - A$ then $x \in A$.
+\end{proof}
+\step{4}{$A \subseteq E - (E - A)$}
+\begin{proof}
+	\pf\ If $x \in A$ then $x \in E$ and $x \notin E - A$.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
