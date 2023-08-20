@@ -299,6 +299,14 @@ For any sets $A$, $B$ and $C$, we have
 \[ x \in A \vee (x \in B \wedge x \in C) \Leftrightarrow (x \in A \vee x \in B) \wedge (x \in A \vee x \in C) \enspace . \qed \]
 \end{proof}
 
+\begin{prop}
+For any sets $A$, $B$ and $C$, we have $C \subseteq A$ if and only if $(A \cap B) \cup C = A \cap (B \cup C)$.
+\end{prop}
+
+\begin{proof}
+\pf\ The statement "if $x \in C$ then $x \in A$" is equivalent to the statement "$((x \in A \wedge x \in B) \vee x \in C) \Leftrightarrow (x \in A \wedge (x \in B \vee x \in C))$". \qed
+\end{proof}
+
 \begin{df}[Intersection]
 For any nonempty set $\mathcal{C}$, the \emph{intersection} of $\mathcal{C}$, $\bigcap \mathcal{C}$, is the set that contains exactly those sets that belong to every element of $\mathcal{C}$.
 \end{df}
