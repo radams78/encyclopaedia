@@ -2,7 +2,22 @@
 \title{Summary of Halmos' Naive Set Theory}
 \author{Robin Adams}
 
-\newtheorem{ax}{Axiom}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
+\usepackage{pf2}
+\usepackage{hyperref}
+
+\newtheorem{ax}{Axiom}[section]
+\newtheorem{prop}[ax]{Proposition}
+\newtheorem{cor}{Corollary}[ax]
+\newtheorem{thm}[ax]{Theorem}
+\newtheorem{lm}[ax]{Lemma}
+\theoremstyle{definition}
+\newtheorem{df}[ax]{Definition}
 
 \begin{document}
 \maketitle
@@ -17,5 +32,9 @@ Let there be a binary relation of \emph{membership}, $\in$. If $x \in A$ we say 
 \begin{ax}[Axiom of extension]
 Two sets are equal if and only if they have the same elements.
 \end{ax}
+
+\begin{df}[Subset]
+Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subset B$ or $B \supset A$, iff every element of $A$ is an element of $B$.
+\end{df}
 
 \end{document}
