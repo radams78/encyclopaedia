@@ -361,6 +361,10 @@ Chapter 5.
 
 ] [7] [8]
 Chapter 6.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
+(Font)              using `OT1/cmr/m/sc' instead on input line 374.
+
 [9
 
 ] (./main.aux)
@@ -368,8 +372,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CF295EAF5AF01FA721380CA9AD9A6F62;931.
  ) 
 Here is how much of TeX's memory you used:
- 8965 strings out of 476091
- 136725 string characters out of 5794081
+ 8966 strings out of 476091
+ 136731 string characters out of 5794081
  1864330 words of memory out of 5000000
  29197 multiletter control sequences out of 15000+600000
  521097 words of font info for 66 fonts, out of 8000000 for 9000
@@ -388,10 +392,10 @@ nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on main.pdf (10 pages, 171312 bytes).
+Output written on main.pdf (10 pages, 171590 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 61 named destinations out of 1000 (max. 500000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 62 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
