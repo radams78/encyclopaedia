@@ -5389,6 +5389,7 @@ For any initial ordinal $\alpha \geq \omega$, we have $\alpha \times \alpha \app
 \end{proof}
 
 \begin{cor}[ZF without Foundation]
+\label{cor:alpha_times_alpha_approx_alpha}
 For any ordinal $\alpha \geq \omega$ we have $\alpha \times \alpha \approx \alpha$.
 \end{cor}
 
@@ -5406,6 +5407,15 @@ For any ordinal $\alpha \geq \omega$ we have $\alpha \times \alpha \approx \alph
 	\end{align*}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}[SF without Foundation]
+\label{prop:alpha_plus_alpha_approx_alpha}
+For any ordinal $\alpha \geq \omega$ we have $\alpha +_o \alpha \approx \alpha$, where $+_o$ denotes ordinal addition.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\alpha +_o \alpha \approx \alpha \times 2 \preccurlyeq \alpha \times \alpha \approx \alpha$. \qed
 \end{proof}
 
 \begin{df}[Cardinality]
@@ -5464,6 +5474,19 @@ For any cardinal numbers $\kappa$ and $\lambda$ we have $\kappa + \lambda = \lam
 
 \begin{proof}
 \pf\ Since $A \cup B = B \cup A$. \qed
+\end{proof}
+
+\begin{prop}[ZF without Foundation]
+For ordinals $\alpha, \beta \geq \omega$ we have $|\alpha| + |\beta| = |\max(\alpha, \beta)|$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since the cardinality of the concatenation of $\alpha$ and $\beta$ is $|\alpha +_o \beta| = |\alpha| + |\beta|$, and we have
+\begin{align*}
+|\alpha| + |\beta| & = |\alpha +_o \beta| \\
+& \leq |\max(\alpha, \beta) +_o \max(\alpha, \beta)| \\
+& = |\max(\alpha,\beta)| & (\text{Proposition \ref{prop:alpha_plus_alpha_approx_alpha}}) \qed
+\end{align*}
 \end{proof}
 
 \begin{df}[Addition of a Family of Cardinals (SFC without Foundation)]
@@ -5527,6 +5550,19 @@ For any cardinal numbers $\kappa$ and $\lambda$, if $\kappa \lambda = 0$ then $\
 
 \begin{proof}
 \pf\ if $A \times B = \emptyset$ then $A = \emptyset$ or $B = \emptyset$. \qed
+\end{proof}
+
+\begin{prop}[SF without Foundation]
+For any ordinals $\alpha, \beta \geq \omega$, we have $|\alpha||\beta| = |\max(\alpha, \beta)|$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+|\alpha||\beta| & = |\alpha \times \beta| \\
+& \leq |\max(\alpha,\beta) \times \max(\alpha, \beta)| \\
+& = |\max(\alpha, \beta)| & (\text{Corollary \ref{cor:alpha_times_alpha_approx_alpha}}) \qed
+\end{align*}
 \end{proof}
 
 \begin{df}[Multiplication (SFC without Foundation)]
