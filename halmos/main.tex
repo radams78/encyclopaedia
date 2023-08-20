@@ -23,22 +23,33 @@
 \maketitle
 \tableofcontents
 
-\chapter{The Axiom of Extension}
+\chapter{Primitive Terms and Axioms}
 
 Let there be \emph{sets}. We assume that everything is a set.
 
-Let there be a binary relation of \emph{membership}, $\in$. If $x \in A$ we say that $x$ \emph{belongs} to $A$, $x$ is an \emph{element} of $A$, or $x$ is \emph{contained} in $A$.
+Let there be a binary relation of \emph{membership}, $\in$. If $x \in A$ we say that $x$ \emph{belongs} to $A$, $x$ is an \emph{element} of $A$, or $x$ is \emph{contained} in $A$. If this does not hold we write $x \notin A$.
 
-\begin{ax}[Axiom of Extension]
+\begin{ax}[Axiom of Extensionality]
 Two sets are equal if and only if they have the same elements.
 \end{ax}
 
+\begin{ax}[Axiom of Specification, Aussonderungsaxiom]
+To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
+\end{ax}
+
+\begin{ax}
+\label{ax:set_exists}
+A set exists.
+\end{ax}
+
+\chapter{The Subset Relation}
+
 \begin{df}[Subset]
-Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subset B$ or $B \supset A$, iff every element of $A$ is an element of $B$.
+Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subseteq B$ or $B \supseteq A$, iff every element of $A$ is an element of $B$.
 \end{df}
 
 \begin{thm}
-For any set $A$, we have $A \subset A$.
+For any set $A$, we have $A \subseteq A$.
 \end{thm}
 
 \begin{proof}
@@ -46,7 +57,7 @@ For any set $A$, we have $A \subset A$.
 \end{proof}
 
 \begin{thm}
-For any sets $A$, $B$ and $C$, if $A \subset B$ and $B \subset C$ then $A \subset C$.
+For any sets $A$, $B$ and $C$, if $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
 \end{thm}
 
 \begin{proof}
@@ -54,15 +65,52 @@ For any sets $A$, $B$ and $C$, if $A \subset B$ and $B \subset C$ then $A \subse
 \end{proof}
 
 \begin{thm}
-For any sets $A$ and $B$, if $A \subset B$ and $B \subset A$ then $A = B$.
+For any sets $A$ and $B$, if $A \subseteq B$ and $B \subseteq A$ then $A = B$.
 \end{thm}
 
 \begin{proof}
-\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $A$, then $A$ and $B$ have the same elements, and therefore are equal by the Axiom of Extension. \qed
+\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $A$, then $A$ and $B$ have the same elements, and therefore are equal by the Axiom of Extensionality. \qed
 \end{proof}
 
 \begin{df}[Proper Subset]
-Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, iff $A \subset B$ and $A \neq B$.
+Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, and write $A \subsetneq B$ or $B \supsetneq A$, iff $A \subseteq B$ and $A \neq B$.
+\end{df}
+
+\chapter{Comprehension Notation}
+
+\begin{df}
+Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Axiom of Specification and is unique by the Axiom of Extensionality. \qed
+\end{proof}
+
+\begin{thm}
+There is no set that contains every set.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.} \prove{There exists a set $B$ such that $B \notin A$.}}
+\step{2}{\pflet{$B = \{ x \in A : x \notin x \}$}}
+\step{3}{If $B \in A$ then we have $B \in B$ if and only if $B \notin B$.}
+\step{4}{$B \notin A$}
+\qed
+\end{proof}
+
+\chapter{Unordered Pairs}
+
+\begin{thm}
+There exists a set with no elements.
+\end{thm}
+
+\begin{proof}
+\pf\ Pick a set $A$ by Axiom \ref{ax:set_exists}. Then the set $\{ x \in A : x \neq x \}$ has no elements. \qed
+\end{proof}
+
+\begin{df}[Empty Set]
+The \emph{empty set} $\emptyset$ is the set with no elements.
 \end{df}
 
 \end{document}
