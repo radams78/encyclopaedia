@@ -488,4 +488,32 @@ For any sets $A$ and $B$, we have
 \pf\ $(x \in A \wedge \neg (x \in A \wedge x \notin B)) \Leftrightarrow x \in A \wedge x \in B$. \qed
 \end{proof}
 
+\begin{prop}
+For any sets $A$, $B$ and $C$, we have
+\[ A \cap (B - C) = (A \cap B) - (A \cap C) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ $(x \in A \wedge x \in B \wedge x \notin C) \Leftrightarrow (x \in A \wedge x \in B \wedge \neg (x \in A \wedge x \in C))$. \qed
+\end{proof}
+
+\begin{prop}
+For any sets $A$, $B$, $C$ and $E$, if $(A \cap B) - C \subseteq E$ then we have
+\[ A \cap B \subseteq (A \cap C) \cup (B \cap (E - C)) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in A \cap B$} \prove{$x \in (A \cap C) \cup (B \cap (E - C))$}}
+\step{3}{\case{$x \in C$}}
+\begin{proof}
+	\pf\ Then $x \in A \cap C$.
+\end{proof}
+\step{4}{\case{$x \notin C$}}
+\begin{proof}
+	\pf\ Then $x \in E$ and so $x \in B \cap (E - C)$.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
