@@ -516,4 +516,64 @@ For any sets $A$, $B$, $C$ and $E$, if $(A \cap B) - C \subseteq E$ then we have
 \qed
 \end{proof}
 
+\begin{prop}
+For any sets $A$, $B$, $C$ and $E$, we have
+\[ (A \cup C) \cap (B \cup (E - C)) \subseteq A \cup B \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ The statement $(x \in A \vee x \in C) \wedge (x \in B \vee (x \in E \wedge x \notin C))$ implies $x \in A \vee x \in B$. \qed
+\end{proof}
+
+\begin{df}[Symmetric Difference]
+For any sets $A$ and $B$, the \emph{symmetric difference} $A + B$ is defined to be
+\[ A + B := (A - B) \cup (B - A) \enspace . \]
+\end{df}
+
+\begin{prop}
+For any sets $A$ and $B$, we have
+\[ A + B = B + A \]
+\end{prop}
+
+\begin{proof}
+\pf\ From the commutativity of union. \qed
+\end{proof}
+
+\begin{prop}
+For any sets $A$, $B$ and $C$, we have
+\[ A + (B + C) = (A + B) + C \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the set of all $x$ that belong to either exactly one or all three of $A$, $B$ and $C$. \qed
+\end{proof}
+
+\begin{prop}
+For any set $A$, we have
+\[ A + \emptyset = A \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+A + \emptyset & = (A - \emptyset) \cup (\emptyset - A) \\
+& = A \cup \emptyset \\
+& = A & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any set $A$ we have
+\[ A + A = \emptyset \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+A + A & = (A - A) \cup (A - A) \\
+& = \emptyset \cup \emptyset \\
+& = \emptyset & \qed
+\end{align*}
+\end{proof}
+
 \end{document}
