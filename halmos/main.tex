@@ -29,7 +29,7 @@ Let there be \emph{sets}. We assume that everything is a set.
 
 Let there be a binary relation of \emph{membership}, $\in$. If $x \in A$ we say that $x$ \emph{belongs} to $A$, $x$ is an \emph{element} of $A$, or $x$ is \emph{contained} in $A$.
 
-\begin{ax}[Axiom of extension]
+\begin{ax}[Axiom of Extension]
 Two sets are equal if and only if they have the same elements.
 \end{ax}
 
@@ -51,6 +51,14 @@ For any sets $A$, $B$ and $C$, if $A \subset B$ and $B \subset C$ then $A \subse
 
 \begin{proof}
 \pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $C$, then every element of $A$ is an element of $C$. \qed
+\end{proof}
+
+\begin{thm}
+For any sets $A$ and $B$, if $A \subset B$ and $B \subset A$ then $A = B$.
+\end{thm}
+
+\begin{proof}
+\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $A$, then $A$ and $B$ have the same elements, and therefore are equal by the Axiom of Extension. \qed
 \end{proof}
 
 \begin{df}[Proper Subset]
