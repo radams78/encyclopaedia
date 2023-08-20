@@ -171,4 +171,57 @@ For any set $A$, we have $\bigcup \{A\} = A$.
 We write $A \cup B$ for $\bigcup \{A,B\}$.
 \end{df}
 
+\begin{prop}
+For any set $A$, we have $A \cup \emptyset = A$.
+\end{prop}
+
+\begin{proof}
+\pf\ $x \in A \cup \emptyset$ iff $x \in A$ or $x \in \emptyset$, iff $x \in A$. \qed
+\end{proof}
+
+\begin{prop}[Commutativity]
+For any sets $A$ and $B$, we have $A \cup B = B \cup A$.
+\end{prop}
+
+\begin{proof}
+\pf\ $x \in A \cup B$ iff $x \in A$ or $x \in B$, iff $x \in B$ or $x \in A$, iff $x \in B \cup A$. \qed
+\end{proof}
+
+\begin{prop}[Associativity]
+For any sets $A$, $B$ and $C$, we have $A \cup (B \cup C) = (A \cup B) \cup C$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the set of all $x$ such that $x \in A$ or $x \in B$ or $x \in C$. \qed
+\end{proof}
+
+\begin{prop}[Idempotence]
+For any set $A$, we have $A \cup A = A$.
+\end{prop}
+
+\begin{proof}
+\pf\ $x \in A$ or $x \in A$ is equivalent to $x \in A$. \qed
+\end{proof}
+
+\begin{prop}
+For any sets $A$ and $B$, we have $A \subseteq B$ if and only if $A \cup B = B$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $x$, the statement "if $x \in A$ then $x \in B$" is equivalent to "$x \in A$ or $x \in B$ if and only if $x \in B$". \qed
+\end{proof}
+
+\begin{prop}
+For any sets $a$ and $b$, we have $\{a\} \cup \{b\} = \{a,b\}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}
+Given sets $a$, $b$ and $c$, let
+\[ \{a,b,c\} := \{a\} \cup \{b\} \cup \{c\} \enspace . \]
+\end{df}
+
 \end{document}
