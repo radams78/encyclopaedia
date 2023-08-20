@@ -25,80 +25,82 @@
 \contentsline {subsection}{\numberline {3.1.5}Images}{31}{subsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.1.6}Inverse Images}{34}{subsection.3.1.6}%
 \contentsline {subsection}{\numberline {3.1.7}Function Sets}{35}{subsection.3.1.7}%
-\contentsline {section}{\numberline {3.2}Equinumerosity}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Domination}{36}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Transfinite Recursion}{36}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Category Theory}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Categories}{39}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Invertible Morphisms}{40}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Equivalence Relations}{41}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Ordering Relations}{45}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Partial Orders}{45}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Linear Orders}{50}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Well Orderings}{53}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Ordinal Numbers}{57}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Ordinals}{57}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Natural Numbers}{67}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Transitive Closure of a Set}{68}{section.7.3}%
-\contentsline {section}{\numberline {7.4}The Well-Ordering Theorem and Zorn's Lemma}{70}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Ordinal Operations}{73}{section.7.5}%
-\contentsline {section}{\numberline {7.6}Ordinal Arithmetic}{76}{section.7.6}%
-\contentsline {subsection}{\numberline {7.6.1}Addition}{76}{subsection.7.6.1}%
-\contentsline {subsection}{\numberline {7.6.2}Multiplication}{79}{subsection.7.6.2}%
-\contentsline {subsection}{\numberline {7.6.3}Exponentiation}{82}{subsection.7.6.3}%
-\contentsline {section}{\numberline {7.7}Sequences}{87}{section.7.7}%
-\contentsline {section}{\numberline {7.8}Strict Supremum}{88}{section.7.8}%
-\contentsline {chapter}{\numberline {8}Cardinal Numbers}{89}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Cardinal Numbers}{89}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Ordering on Cardinal Numbers}{92}{section.8.2}%
-\contentsline {chapter}{\numberline {9}Natural Numbers}{95}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Inductive Sets}{95}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Cardinality}{97}{section.9.2}%
-\contentsline {section}{\numberline {9.3}Countable Sets}{99}{section.9.3}%
-\contentsline {section}{\numberline {9.4}Arithmetic}{99}{section.9.4}%
-\contentsline {section}{\numberline {9.5}Sequences}{101}{section.9.5}%
-\contentsline {section}{\numberline {9.6}Transitive Closure of a Set}{101}{section.9.6}%
-\contentsline {section}{\numberline {9.7}The Veblen Fixed Point Theorem}{102}{section.9.7}%
-\contentsline {section}{\numberline {9.8}Cantor Normal Form}{104}{section.9.8}%
-\contentsline {chapter}{\numberline {10}The Cumulative Hierarchy}{105}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Models of Set Theory}{109}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Infinite Cardinals}{113}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Arithmetic of Infinite Cardinals}{113}{section.12.1}%
-\contentsline {section}{\numberline {12.2}Alephs}{115}{section.12.2}%
-\contentsline {section}{\numberline {12.3}Beths}{115}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Cofinality}{116}{section.12.4}%
-\contentsline {section}{\numberline {12.5}Inaccessible Cardinals}{120}{section.12.5}%
-\contentsline {chapter}{\numberline {13}Group Theory}{123}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Groups}{123}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Abelian Groups}{124}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Ring Theory}{125}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Rings}{125}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Ordered Rings}{125}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Integral Domains}{126}{section.14.3}%
-\contentsline {chapter}{\numberline {15}Field Theory}{127}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Fields}{127}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Ordered Fields}{130}{section.15.2}%
-\contentsline {chapter}{\numberline {16}Number Systems}{135}{chapter.16}%
-\contentsline {section}{\numberline {16.1}The Integers}{135}{section.16.1}%
-\contentsline {section}{\numberline {16.2}The Rationals}{139}{section.16.2}%
-\contentsline {section}{\numberline {16.3}The Real Numbers}{142}{section.16.3}%
-\contentsline {chapter}{\numberline {17}Real Analysis}{157}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Step Functions}{157}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Lebesgue Integration}{161}{section.17.2}%
-\contentsline {chapter}{\numberline {18}Complex Analysis}{163}{chapter.18}%
-\contentsline {chapter}{\numberline {19}Topology}{167}{chapter.19}%
-\contentsline {section}{\numberline {19.1}Topological Spaces}{167}{section.19.1}%
-\contentsline {section}{\numberline {19.2}Continuous Functions}{168}{section.19.2}%
-\contentsline {section}{\numberline {19.3}Convergence}{168}{section.19.3}%
-\contentsline {section}{\numberline {19.4}Homotopy}{169}{section.19.4}%
-\contentsline {section}{\numberline {19.5}Metric Spaces}{169}{section.19.5}%
-\contentsline {chapter}{\numberline {20}Ring Theory}{171}{chapter.20}%
-\contentsline {chapter}{\numberline {21}Linear Algebra}{173}{chapter.21}%
-\contentsline {section}{\numberline {21.1}Vector Spaces}{173}{section.21.1}%
-\contentsline {section}{\numberline {21.2}Subspaces}{174}{section.21.2}%
-\contentsline {section}{\numberline {21.3}Linear Transformations}{176}{section.21.3}%
-\contentsline {section}{\numberline {21.4}Normed Spaces}{177}{section.21.4}%
-\contentsline {subsection}{\numberline {21.4.1}Functionals}{191}{subsection.21.4.1}%
-\contentsline {subsection}{\numberline {21.4.2}Contraction Mappings}{191}{subsection.21.4.2}%
-\contentsline {section}{\numberline {21.5}Banach Spaces}{191}{section.21.5}%
-\contentsline {section}{\numberline {21.6}Inner Product Spaces}{202}{section.21.6}%
+\contentsline {section}{\numberline {3.2}Monotone Functions}{35}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Equinumerosity}{36}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Domination}{36}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Transfinite Recursion}{38}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Category Theory}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Categories}{41}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Invertible Morphisms}{42}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Equivalence Relations}{43}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Ordering Relations}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Partial Orders}{47}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Linear Orders}{52}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Well Orderings}{55}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{59}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Ordinals}{59}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Natural Numbers}{69}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Transitive Closure of a Set}{71}{section.7.3}%
+\contentsline {section}{\numberline {7.4}The Well-Ordering Theorem and Zorn's Lemma}{73}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Ordinal Operations}{76}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ordinal Arithmetic}{79}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Addition}{79}{subsection.7.6.1}%
+\contentsline {subsection}{\numberline {7.6.2}Multiplication}{82}{subsection.7.6.2}%
+\contentsline {subsection}{\numberline {7.6.3}Exponentiation}{85}{subsection.7.6.3}%
+\contentsline {section}{\numberline {7.7}Sequences}{90}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Strict Supremum}{91}{section.7.8}%
+\contentsline {chapter}{\numberline {8}Cardinal Numbers}{93}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Cardinal Numbers}{93}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Ordering on Cardinal Numbers}{98}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Natural Numbers}{101}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Inductive Sets}{101}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Cardinality}{102}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Countable Sets}{103}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Arithmetic}{104}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Sequences}{105}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Transitive Closure of a Set}{105}{section.9.6}%
+\contentsline {section}{\numberline {9.7}The Veblen Fixed Point Theorem}{107}{section.9.7}%
+\contentsline {section}{\numberline {9.8}Cantor Normal Form}{108}{section.9.8}%
+\contentsline {chapter}{\numberline {10}The Cumulative Hierarchy}{111}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Scott Cardinals}{114}{section.10.1}%
+\contentsline {chapter}{\numberline {11}Models of Set Theory}{115}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Infinite Cardinals}{119}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Arithmetic of Infinite Cardinals}{119}{section.12.1}%
+\contentsline {section}{\numberline {12.2}Alephs}{121}{section.12.2}%
+\contentsline {section}{\numberline {12.3}Beths}{121}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Cofinality}{122}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Inaccessible Cardinals}{126}{section.12.5}%
+\contentsline {chapter}{\numberline {13}Group Theory}{129}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Groups}{129}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Abelian Groups}{130}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Ring Theory}{131}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Rings}{131}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Ordered Rings}{131}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Integral Domains}{132}{section.14.3}%
+\contentsline {chapter}{\numberline {15}Field Theory}{133}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Fields}{133}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Ordered Fields}{136}{section.15.2}%
+\contentsline {chapter}{\numberline {16}Number Systems}{141}{chapter.16}%
+\contentsline {section}{\numberline {16.1}The Integers}{141}{section.16.1}%
+\contentsline {section}{\numberline {16.2}The Rationals}{145}{section.16.2}%
+\contentsline {section}{\numberline {16.3}The Real Numbers}{148}{section.16.3}%
+\contentsline {chapter}{\numberline {17}Real Analysis}{163}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Step Functions}{163}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Lebesgue Integration}{167}{section.17.2}%
+\contentsline {chapter}{\numberline {18}Complex Analysis}{169}{chapter.18}%
+\contentsline {chapter}{\numberline {19}Topology}{173}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Topological Spaces}{173}{section.19.1}%
+\contentsline {section}{\numberline {19.2}Continuous Functions}{174}{section.19.2}%
+\contentsline {section}{\numberline {19.3}Convergence}{174}{section.19.3}%
+\contentsline {section}{\numberline {19.4}Homotopy}{175}{section.19.4}%
+\contentsline {section}{\numberline {19.5}Metric Spaces}{175}{section.19.5}%
+\contentsline {chapter}{\numberline {20}Ring Theory}{177}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Linear Algebra}{179}{chapter.21}%
+\contentsline {section}{\numberline {21.1}Vector Spaces}{179}{section.21.1}%
+\contentsline {section}{\numberline {21.2}Subspaces}{180}{section.21.2}%
+\contentsline {section}{\numberline {21.3}Linear Transformations}{182}{section.21.3}%
+\contentsline {section}{\numberline {21.4}Normed Spaces}{183}{section.21.4}%
+\contentsline {subsection}{\numberline {21.4.1}Functionals}{197}{subsection.21.4.1}%
+\contentsline {subsection}{\numberline {21.4.2}Contraction Mappings}{197}{subsection.21.4.2}%
+\contentsline {section}{\numberline {21.5}Banach Spaces}{197}{section.21.5}%
+\contentsline {section}{\numberline {21.6}Inner Product Spaces}{208}{section.21.6}%

@@ -37,6 +37,7 @@
 \newcommand{\ssup}{\ensuremath{\operatorname{ssup}}}
 \newcommand{\supp}{\ensuremath{\operatorname{supp}}}
 \newcommand{\tr}{\ensuremath{\operatorname{tr}}}
+\newcommand{\card}{\ensuremath{\operatorname{card}}}
 
 \begin{document}
 
@@ -1702,6 +1703,55 @@ Let $I$ be a set. Let $H(i)$ be a set for all $i \in I$. If $\forall i \in I. H(
 \qed
 \end{proof}
 
+\section{Monotone Functions}
+
+\begin{df}[Monotone]
+Let $\leq$ be a preorder on $\mathbf{A}$, and $\preccurlyeq$ a preorder on $\mathbf{B}$. Then $\mathbf{F} : \mathbf{A} \rightarrow \mathbf{B}$ is \emph{monotone} iff, whenever $x \leq y$, then $\mathbf{F}(x) \preccurlyeq \mathbf{F}(y)$.
+\end{df}
+
+\begin{prop}[S without Foundation]
+\label{prop:monotone_fixed_point}
+Any monotone function $\mathcal{P} X \rightarrow \mathcal{P} Y$ has a fixed point.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$h : \mathcal{P} X \rightarrow \mathcal{P} Y$ be monotone.}}
+\step{2}{\pflet{$T_0 = \{ Y \in \mathcal{P} X \mid Y \subseteq h(Y) \}$}}
+\step{3}{\pflet{$T = \bigcup T_0$}}
+\step{4}{$T \subseteq h(T)$}
+\begin{proof}
+	\step{a}{For all $Y \in T_0$ we have $Y \subseteq h(T)$}
+	\begin{proof}
+		\step{a}{\pflet{$Y \in T_0$}}
+		\step{c}{$Y \subseteq h(Y)$}
+		\begin{proof}
+			\pf\ \stepref{2}, \stepref{a}
+		\end{proof}
+		\step{d}{$Y \subseteq T$}
+		\begin{proof}
+			\pf\ \stepref{3}, \stepref{a}
+		\end{proof}
+		\step{f}{$h(Y) \subseteq h(T)$}
+		\begin{proof}
+			\pf\ \stepref{1}, \stepref{d}
+		\end{proof}
+		\step{g}{$Y \subseteq h(T)$}
+		\begin{proof}
+			\pf\ \stepref{c}, \stepref{f}
+		\end{proof}
+	\end{proof}
+	\step{b}{$T \subseteq h(T)$}
+\end{proof}
+\step{5}{$h(T) \in T_0$}
+\step{6}{$h(T) \subseteq T$}
+\step{7}{$h(T) = T$}
+\begin{proof}
+	\pf\ \stepref{4}, \stepref{6}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Equinumerosity}
 
 \begin{df}[Equinumerous]
@@ -1762,6 +1812,69 @@ Given sets $A$ and $B$, if $A \neq \emptyset$ or $B = \emptyset$, then we have $
 \qed
 \end{proof}
 
+\begin{thm}[Schr\"{o}der-Bernstein (S without Foundation)]
+If $A \preccurlyeq B$ and $B \preccurlyeq A$ then $A \approx B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail A$ be injective.}}
+\step{2}{\pflet{$h : \mathcal{P} X \rightarrow \mathcal{P} X$ be the function $h(Z) =  X - g(Y - f(Z))$.}}
+\step{3}{$h$ is monotone.}
+\step{4}{\pick\ $T \subseteq X$ such that $h(T) = T$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:monotone_fixed_point}.
+\end{proof}
+\step{5}{\pflet{$k : A \rightarrow B$ be the function
+\[ k(x) = \begin{cases}
+f(x) & \text{if } x \in T \\
+g^{-1}(x) & \text{if } x \notin T
+\end{cases} \]}}
+\begin{proof}
+	\pf\ If $x \notin T = X - g(Y - f(T))$ then $x \in g(Y - f(T))$ and so $x \in \ran g$.
+\end{proof}
+\step{6}{$k$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in A$}}
+	\step{b}{\assume{$k(x) = k(y)$}}
+	\step{c}{\case{$x,y \in T$}}
+	\begin{proof}
+		\pf\ Then $f(x) = f(y)$ so $x = y$ because $f$ is injective.
+	\end{proof}
+	\step{d}{\case{$x \in T$ and $y \notin T$}}
+	\begin{proof}
+		\step{i}{$f(x) = g^{-1}(y)$}
+		\step{ii}{$y = g(f(x))$}
+		\step{iii}{$y \in g(Y - f(T))$}
+		\step{iv}{$f(x) \in Y - f(T)$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{e}{\case{$x \notin T$ and $y \in T$}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{f}{\case{$x,y \notin T$}}
+	\begin{proof}
+		\pf\ Then $x = g(k(x)) = g(k(y)) = y$.
+	\end{proof}
+\end{proof}
+\step{7}{$k$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$y \in Y$}}
+	\step{b}{\case{$y \in f(T)$}}
+	\begin{proof}
+		\pf\ Pick $x \in T$ such that $y = f(x)$. Then $y = k(x)$.
+	\end{proof}
+	\step{c}{\case{$y \notin f(T)$}}
+	\begin{proof}
+		\pf\ $y = k(g(y))$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 \section{Transfinite Recursion}
 
 \begin{thms}[Transfinite Recursion Theorem Schema (SF without Foundation)]
@@ -3413,6 +3526,7 @@ For any ordinal numbers $\alpha$ and $\beta$, if $(\alpha, \in) \cong (\beta, \i
 \end{proof}
 
 \begin{thm}[SF without Foundation]
+\label{thm:unique_ordinal}
 Every well-ordered set is isomorphic to a unique ordinal.
 \end{thm}
 
@@ -3766,6 +3880,68 @@ $\omega$ is a limit ordinal.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Finite]
+A set is \emph{finite} iff it is equinumerous to some natural number; otherwise it is \emph{infinite}.
+\end{df}
+
+\begin{df}[Denumerable]
+A set is \emph{denumerable} iff it is equinumerous with $\mathbb{N}$.
+\end{df}
+
+\begin{thm}[Pigeonhole Principle (S without Foundation)]
+No natural number is equinumerous to a proper subset of itself.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: any one-to-one function $n \rightarrow n$ is surjective.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ The only function $0 \rightarrow 0$ is injective.
+\end{proof}
+\step{3}{For every natural number $n$, if $P(n)$ then $P(n+1)$.}
+\begin{proof}
+	\step{a}{\assume{$P(n)$}}
+	\step{b}{\pflet{$f$ be a one-to-one function $n+1 \rightarrow n+1$}}
+	\step{c}{$f \restriction n$ is a one-to-one function $n \rightarrow n+1$}
+	\step{d}{\case{$n \notin ran f$}}
+	\begin{proof}
+		\step{i}{$f \restriction n : n \rightarrow n$}
+		\step{ii}{$\ran (f \restriction n) = n$}
+		\step{iii}{$f(n) = n$}
+		\begin{proof}
+			\pf\ \stepref{a}.
+		\end{proof}
+		\step{iv}{$\ran f = n+1$}
+	\end{proof}
+	\step{e}{\case{$n \in \ran f$}}
+	\begin{proof}
+		\step{i}{\pick\ $p \in n$ such that $f(p) = n$}
+		\step{ii}{\pflet{$\hat{f} : n \rightarrow n$ be the function
+		\begin{align*}
+		\hat{f}(p) & = f(n) \\
+		\hat{f}(x) & = f(x) & (x \neq p)
+		\end{align*}}}
+		\step{iii}{$\hat{f}$ is one-to-one}
+		\step{iv}{$\ran \hat{f} = n$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{v}{$\ran f = n + 1$}
+	\end{proof}
+\end{proof}
+\step{4}{For every natural number $n$, $P(n)$.}
+\qed
+\end{proof}
+
+\begin{cor}[S without Foundation]
+Let $m$ and $n$ be natural numbers. Then $m \preccurlyeq n$ if and only if $m \leq n$.
+\end{cor}
+
+\begin{cor}
+$\mathbb{N}$ is infinite.
+\end{cor}
 
 \section{Transitive Closure of a Set}
 
@@ -5106,13 +5282,145 @@ For any set $S$ of ordinals, define the \emph{strict supremum} of $S$, $\ssup S$
 
 \section{Cardinal Numbers}
 
-\begin{df}[Cardinality]
-For any set $A$, the \emph{cardinality} or \emph{cardinal number} $|A|$ of $A$ is the least ordinal equinumerous with $A$.
+\begin{df}[Cardinal Number]
+A \emph{cardinal number} or \emph{initial ordinal} is an ordinal $\kappa$ such that, for all $\alpha < \kappa$, we have $\alpha \not\approx \kappa$.
 
 Let $\mathbf{Card}$ be the class of all cardinal numbers.
 \end{df}
 
-\begin{prop}
+\begin{prop}[S without Foundation]
+Every natural number is a cardinal number.
+\end{prop}
+
+\begin{prop}[Z without Foundation]
+$\omega$ is a cardinal number.
+\end{prop}
+
+\begin{df}[Aleph]
+For $x$ a set, define $\aleph(x) = \{ \alpha \in \mathbf{On} \mid \alpha \preccurlyeq x \}$.
+\end{df}
+
+\begin{thm}[SF without Foundation]
+For every set $x$, we have $\aleph(x)$ is a cardinal number.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$ be a set.}}
+\step{2}{$\aleph_x$ is a set.}
+\begin{proof}
+\step{2}{\pflet{$z = \{ r \in \mathcal{P} x^2 \mid \exists y \subseteq x. r \text{ is a well ordering on } y \}$}}
+\step{3}{$\aleph_x = \{ \alpha \mid \exists r \in z. (\dom r \cup \ran r, r) \cong \alpha \}$}
+\step{4}{$\aleph_x$ is a set.}
+\begin{proof}
+	\pf\ By an Axiom of Replacement using Theorem \ref{thm:unique_ordinal}.
+\end{proof}
+\end{proof}
+\step{3}{$\aleph_x$ is an ordinal.}
+\begin{proof}
+	\step{a}{$\aleph_x$ is a transitive set.}
+	\begin{proof}
+		\pf\ If $\alpha < \beta \in \aleph_x$ then we have $\alpha \preccurlyeq \beta \preccurlyeq x$ and so $\alpha \preccurlyeq x$ and $\alpha \in \aleph_x$.
+	\end{proof}
+	\step{b}{$\aleph_x$ is a transitive set of ordinals.}
+	\qedstep
+	\begin{proof}
+		\pf\ Corollary \ref{cor:transords}.
+	\end{proof}
+\end{proof}
+\step{4}{For all $\alpha < \aleph_x$ we have $\alpha \not\approx \aleph_x$.}
+\qed
+\end{proof}
+
+\begin{df}[Aleph (ZF without Foundation)]
+Define the cardinal number $\aleph_\alpha$ for every ordinal $\alpha$ by transfinite recursion as follows:
+\begin{align*}
+\aleph_0 & := \omega \\
+\aleph_{\alpha + 1} & := \aleph(\aleph_\alpha) \\
+\aleph_\lambda & := \bigcup_{\beta < \lambda} \aleph_\beta & (\lambda \text{ a limit ordinal})
+\end{align*}
+\end{df}
+
+\begin{thm}[ZF without Foundation]
+For any initial ordinal $\alpha \geq \omega$, we have $\alpha \times \alpha \approx \alpha$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an initial ordinal.}}
+\step{2}{\assume{as induction hypothesis for every initial ordinal $\beta$ with $\omega \leq \beta < \alpha$ we have $\beta \times \beta \approx \beta$}}
+\step{3}{\pflet{$r$ be the relation on $\alpha \times \alpha$ defined by $(\delta_1, \delta_2) r (\gamma_1, \gamma_2)$ iff $\max(\delta_1, \delta_2) < \max(\gamma_1, \gamma_2)$ or $(\max(\delta_1, \delta_2) = \max(\gamma_1, \gamma_2) \wedge \delta_1 < \gamma_1)$, or $(\max(\delta_1, \delta_2) = \max(\gamma_1, \gamma_2) \wedge \delta_1 = \gamma_1 \wedge \delta_2 < \gamma_2)$}}
+\step{4}{$r$ is a well ordering of $\alpha \times \alpha$}
+\begin{proof}
+	\step{a}{$r$ is transitive.}
+	\step{b}{Every nonempty subset of $\alpha \times \alpha$ has an $r$-least element.}
+\end{proof}
+\step{5}{\pflet{$g : (\alpha \times \alpha, r) \cong (\xi, \in)$ be the isomorphism with an ordinal $\xi$}}
+\begin{proof}
+	\pf\ Mostowski's Isomorphism Theorem.
+\end{proof}
+\step{6}{$\alpha \leq \xi$}
+\step{7}{$\alpha = \xi$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\alpha < \xi$}}
+	\step{b}{\pick\ $\eta, \zeta < \alpha$ such that $\alpha = g(\eta, \zeta)$}
+	\step{c}{\pflet{$\delta = \max(\eta, \zeta)$}}
+	\step{d}{\pflet{$\beta$ be the initial ordinal equinumerous with $\delta$.}}
+	\step{e}{$\omega \leq \beta$}
+	\begin{proof}
+		\pf\ If $\eta$ and $\zeta$ are natural numbers then $g(\eta, \zeta) = \alpha$ is a natural number.
+	\end{proof}
+	\step{f}{$\beta < \alpha$}
+	\begin{proof}
+		\pf\ $\beta \leq \delta < \alpha$
+	\end{proof}
+	\step{g}{\pflet{$y = \{ (\eta', \zeta') \mid (\eta', \zeta') r (\eta, \zeta) \}$}}
+	\step{h}{The image of $y$ under $g$ is $\alpha$}
+	\step{i}{$y \subseteq (\delta + 1) \times (\delta + 1)$}
+	\step{j}{$y \preccurlyeq \beta \times \beta$}
+	\step{k}{$\beta \approx \beta \times \beta$}
+	\begin{proof}
+		\pf\ \stepref{2}
+	\end{proof}
+	\step{l}{$\alpha \preccurlyeq \beta$}
+	\qedstep
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[ZF without Foundation]
+For any ordinal $\alpha \geq \omega$ we have $\alpha \times \alpha \approx \alpha$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha$ be an ordinal.}}
+\step{2}{\pflet{$\kappa$ be the initial ordinal such that $\alpha \approx \kappa$}}
+\step{3}{$\alpha \approx \alpha \times \alpha$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha & \approx \kappa \\
+		& \approx \kappa \times \kappa \\
+		& \approx \alpha \times \alpha
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Cardinality]
+For any set $A$, the \emph{cardinality} or \emph{cardinal number} $|A|$ of $A$ is $\bigcap \{ \alpha \in \mathbf{On} \mid \alpha \approx A \}$.
+\end{df}
+
+\begin{prop}[SFC without Foundation]
+For any set $A$, we have $|A|$ is an initial ordinal.
+\end{prop}
+
+\begin{prop}[S without Foundation]
+For any initial ordinal $\alpha$, we have $|\alpha| = \alpha$.
+\end{prop}
+
+\begin{prop}[SFC without Foundation]
 For any sets $A$ and $B$, we have $A \approx B$ iff $|A| = |B|$.
 \end{prop}
 
@@ -5157,6 +5465,10 @@ For any cardinal numbers $\kappa$ and $\lambda$ we have $\kappa + \lambda = \lam
 \begin{proof}
 \pf\ Since $A \cup B = B \cup A$. \qed
 \end{proof}
+
+\begin{df}[Addition of a Family of Cardinals (SFC without Foundation)]
+Let $\{\kappa_i\}_{i \in I}$ be a family of cardinal numbers. Choose pairwise disjoint sets $A_i$ for $i \in I$ with $|A_i| = \kappa_i$. Then the sum $\sum_{i \in I} \kappa_i$ is defined to be $\left| \bigcup_{i \in I} A_i \right|$.
+\end{df}
 
 \begin{df}[Multiplication]
 For $\kappa$ and $\lambda$ cardinal numbers, we define $\kappa \lambda$ to be the cardinal number of $A \times B$, where $|A| = \kappa$ and $|B| = \lambda$.
@@ -5216,6 +5528,10 @@ For any cardinal numbers $\kappa$ and $\lambda$, if $\kappa \lambda = 0$ then $\
 \begin{proof}
 \pf\ if $A \times B = \emptyset$ then $A = \emptyset$ or $B = \emptyset$. \qed
 \end{proof}
+
+\begin{df}[Multiplication (SFC without Foundation)]
+Let $\{ \kappa_i \}_{i \in I}$ be a family of cardinal numbers. Choose a set $A_i$ with $|A_i| = \kappa_i$ for all $i$. The \emph{product} $\prod_{i \in I} \kappa_i$ is defined to be the cardinality of the Cartesian product of $\{A_i\}_{i \in I}$.
+\end{df}
 
 \begin{df}[Exponentiation]
 Given cardinal numbers $\kappa$ and $\lambda$, we define $\kappa^\lambda$ to be $|A^B|$, where $|A| = \kappa$ and $|B| = \lambda$.
@@ -5434,106 +5750,6 @@ The union of a set of cardinal numbers is a cardinal number.
 
 \section{Inductive Sets}
 
-\begin{df}[Inductive]
-A set $I$ is \emph{inductive} iff $0 \in I$ and $\forall x \in I. x^+ \in I$.
-\end{df}
-
-\begin{df}[Natural Number]
-A \emph{natural number} is a set that belongs to every inductive set.
-\end{df}
-
-\begin{thm}
-The class $\mathbb{N}$ of natural numbers is a set.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ an inductive set $I$.}
-\begin{proof}
-	\pf\ Axiom of Infinity.
-\end{proof}
-\step{2}{$\mathbb{N} \subseteq I$}
-\qed
-\end{proof}
-
-\begin{thm}
-$\mathbb{N}$ is inductive, and is a subset of every other inductive set.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{$\mathbb{N}$ is inductive.}
-\begin{proof}
-	\step{a}{$0 \in \mathbb{N}$}
-	\begin{proof}
-		\pf\ Since $0$ is a member of every inductive set.
-	\end{proof}
-	\step{b}{$\forall n \in \mathbb{N}. n^+ \in \mathbb{N}$}
-	\begin{proof}
-		\step{i}{\pflet{$n \in \mathbb{N}$}}
-		\step{ii}{\pflet{$I$ be any inductive set.} \prove{$n^+ \in I$}}
-		\step{iii}{$n \in I$}
-		\begin{proof}
-			\pf\ \stepref{i}, \stepref{ii}
-		\end{proof}
-		\step{iv}{$n^+ \in I$}
-		\begin{proof}
-			\pf\ \stepref{ii}, \stepref{iii}
-		\end{proof}
-	\end{proof}
-\end{proof}
-\step{2}{$\mathbb{N}$ is a subset of every inductive set.}
-\begin{proof}
-	\pf\ Immediate from definitions.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}[Induction Principle for $\mathbb{N}$]
-Any inductive subset of $\mathbb{N}$ coincides with $\mathbb{N}$.
-\end{cor}
-
-\begin{thm}
-\label{thm:zeroorsucc}
-Every natural number except 0 is the successor of some natural number.
-\end{thm}
-
-\begin{proof}
-\pf\ Trivially by induction. \qed
-\end{proof}
-
-\begin{prop}
-\label{prop:nattrans}
-Every natural number is an ordinal.
-\end{prop}
-
-\begin{proof}
-\pf\ By induction. \qed
-\end{proof}
-
-\begin{prop}
-$\mathbb{N}$ is a transitive set.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$0 \subseteq \mathbb{N}$}
-\step{2}{$\forall n \in \mathbb{N}. n \subseteq \mathbb{N} \Rightarrow n^+ \subseteq \mathbb{N}$}
-\step{3}{$\forall n \in \mathbb{N}. n \subseteq \mathbb{N}$}
-\begin{proof}
-	\pf\ From \stepref{1} and \stepref{2} by induction.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-$\mathbb{N}$ is an ordinal.
-\end{cor}
-
-\begin{df}
-We define $\omega = \mathbb{N}$.
-\end{df}
-
 \begin{prop}[Dependent Choice]
 Let $A$ be a nonempty set and $R$ a relation on $A$ such that $\forall x \in A. \exists y \in A. (y,x) \in R$. Then there exists a function $f : \mathbb{N} \rightarrow A$ such that $\forall n \in \mathbb{N}. (f(n+1),f(n)) \in R$.
 \end{prop}
@@ -5574,55 +5790,6 @@ Assume $\mathbf{R}$ is a relation on $\mathbf{A}$ and, for all $a \in \mathbf{A}
 
 \section{Cardinality}
 
-\begin{df}[Finite]
-A set is \emph{finite} iff it is equinumerous to some natural number; otherwise it is \emph{infinite}.
-\end{df}
-
-\begin{thm}[Pigeonhole Principle]
-No natural number is equinumerous to a proper subset of itself.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$P(n)$ be the property: any one-to-one function $n \rightarrow n$ is surjective.}}
-\step{2}{$P(0)$}
-\begin{proof}
-	\pf\ The only function $0 \rightarrow 0$ is injective.
-\end{proof}
-\step{3}{For every natural number $n$, if $P(n)$ then $P(n+1)$.}
-\begin{proof}
-	\step{a}{\assume{$P(n)$}}
-	\step{b}{\pflet{$f$ be a one-to-one function $n+1 \rightarrow n+1$}}
-	\step{c}{$f \restriction n$ is a one-to-one function $n \rightarrow n+1$}
-	\step{d}{\case{$n \notin ran f$}}
-	\begin{proof}
-		\step{i}{$f \restriction n : n \rightarrow n$}
-		\step{ii}{$\ran (f \restriction n) = n$}
-		\step{iii}{$f(n) = n$}
-		\begin{proof}
-			\pf\ \stepref{a}.
-		\end{proof}
-		\step{iv}{$\ran f = n+1$}
-	\end{proof}
-	\step{e}{\case{$n \in \ran f$}}
-	\begin{proof}
-		\step{i}{\pick\ $p \in n$ such that $f(p) = n$}
-		\step{ii}{\pflet{$\hat{f} : n \rightarrow n$ be the function
-		\begin{align*}
-		\hat{f}(p) & = f(n) \\
-		\hat{f}(x) & = f(x) & (x \neq p)
-		\end{align*}}}
-		\step{iii}{$\hat{f}$ is one-to-one}
-		\step{iv}{$\ran \hat{f} = n$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{v}{$\ran f = n + 1$}
-	\end{proof}
-\end{proof}
-\step{4}{For every natural number $n$, $P(n)$.}
-\qed
-\end{proof}
 
 \begin{cor}
 No finite set is equinumerous to a proper subset of itself.
@@ -6361,6 +6528,21 @@ A set is \emph{hereditarily finite} iff it is in $V_\omega$.
 $V_\omega$ is the smallest set $X$ such that $\emptyset \in X$ and every finite subset of $X$ is an element of $X$.
 \end{prop}
 
+\section{Scott Cardinals}
+
+\begin{df}[Scott Cardinal]
+For any set $A$, the \emph{Scott cardinal} of $A$ is
+\[ \card A := \{ y \mid y \approx x \wedge \forall z (z \approx x \Rightarrow \rank z \geq \rank y) \} \]
+\end{df}
+
+\begin{prop}[SF]
+For any set $A$, we have $\card A$ is a set.
+\end{prop}
+
+\begin{prop}[SF]
+For any sets $A$ and $B$, we have $\card A = \card B$ if and only if $A \approx B$.
+\end{prop}
+
 \chapter{Models of Set Theory}
 
 \begin{df}[Relativization]
@@ -6671,10 +6853,6 @@ Let $\kappa$ and $\lambda$ be nonzero cardinal numbers such that at least one is
 \end{proof}
 
 \section{Alephs}
-
-\begin{df}[Aleph]
-Let $\aleph$ be the unique order isomorphism between $\mathbf{On}$ and the class of infinite cardinals.
-\end{df}
 
 \begin{prop}
 The operation $\aleph$ is normal.
