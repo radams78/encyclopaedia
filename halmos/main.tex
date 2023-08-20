@@ -33,13 +33,17 @@ Let there be a binary relation of \emph{membership}, $\in$. If $x \in A$ we say 
 Two sets are equal if and only if they have the same elements.
 \end{ax}
 
-\begin{ax}[Axiom of Specification, Aussonderungsaxiom]
+\begin{ax}[Axiom of Comprehension, Aussonderungsaxiom]
 To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
 \end{ax}
 
 \begin{ax}
 \label{ax:set_exists}
 A set exists.
+\end{ax}
+
+\begin{ax}[Axiom of Pairing]
+For any two sets, there exists a set that they both belong to.
 \end{ax}
 
 \chapter{The Subset Relation}
@@ -83,7 +87,7 @@ Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the 
 \end{df}
 
 \begin{proof}
-\pf\ This exists by the Axiom of Specification and is unique by the Axiom of Extensionality. \qed
+\pf\ This exists by the Axiom of Comprehension and is unique by the Axiom of Extensionality. \qed
 \end{proof}
 
 \begin{thm}
@@ -119,6 +123,14 @@ For any set $A$ we have $\emptyset \subset A$.
 
 \begin{proof}
 \pf\ Vacuous. \qed
+\end{proof}
+
+\begin{df}[(Unordered) Pair]
+For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Axioms of Pairing and Comprehension, and is unique by the Axiom of Extensionality. \qed
 \end{proof}
 
 \end{document}
