@@ -479,4 +479,13 @@ For any sets $A$ and $B$, we have $A \subseteq B$ if and only if $A - B = \empty
 \pf\ Both are equivalent to the statement that there is no $x$ such that $x \in A$ and $x \notin B$. \qed
 \end{proof}
 
+\begin{prop}
+For any sets $A$ and $B$, we have
+\[ A - (A - B) = A \cap B \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ $(x \in A \wedge \neg (x \in A \wedge x \notin B)) \Leftrightarrow x \in A \wedge x \in B$. \qed
+\end{proof}
+
 \end{document}
