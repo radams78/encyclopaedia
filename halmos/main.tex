@@ -46,6 +46,10 @@ A set exists.
 For any two sets, there exists a set that they both belong to.
 \end{ax}
 
+\begin{ax}[Union Axiom]
+For every set $A$, there exists a set that contains all the elements that belong to at least one element of $A$.
+\end{ax}
+
 \chapter{The Subset Relation}
 
 \begin{df}[Subset]
@@ -132,5 +136,39 @@ For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose
 \begin{proof}
 \pf\ This exists by the Axioms of Pairing and Comprehension, and is unique by the Axiom of Extensionality. \qed
 \end{proof}
+
+\begin{df}[Singleton]
+For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
+\end{df}
+
+\chapter{Unions and Intersections}
+
+\begin{df}[Union]
+For any set $\mathcal{C}$, the \emph{union} of $\mathcal{C}$, $\bigcup \mathcal{C}$, is the set whose elements are the elements of the elements of $\mathcal{C}$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Union Axiom and Comprehension Axiom, and is unique by the Axiom of Extensionality. \qed
+\end{proof}
+
+\begin{prop}
+\[ \bigcup \emptyset = \emptyset \]
+\end{prop}
+
+\begin{proof}
+\pf\ There is no set that is an element of an element of $\emptyset$. \qed
+\end{proof}
+
+\begin{prop}
+For any set $A$, we have $\bigcup \{A\} = A$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $x$, we have $x$ is an element of an element of $\{A\}$ if and only if $x$ is an element of $A$. \qed
+\end{proof}
+
+\begin{df}
+We write $A \cup B$ for $\bigcup \{A,B\}$.
+\end{df}
 
 \end{document}
