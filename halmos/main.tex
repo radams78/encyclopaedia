@@ -379,4 +379,24 @@ For any set $E$ we have
 \pf\ There is no $x$ such that $x \in A$ and $x \in E - A$. \qed
 \end{proof}
 
+\begin{prop}
+Let $A$ and $E$ be sets. If $A \subseteq E$ then
+\[ A \cup (E - A) = E \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $E$ be sets.}}
+\step{2}{\assume{$A \subseteq E$}}
+\step{3}{$A \cup (E - A) \subseteq E$}
+\begin{proof}
+	\pf\ If $x \in A$ or $x \in E - A$ then $x \in E$.
+\end{proof}
+\step{4}{$E \subseteq A \cup (E - A)$}
+\begin{proof}
+	\pf\ If $x \in E$ then either $x \in A$ or $x \notin A$. In the latter case, $x \in E - A$.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
