@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  20 AUG 2023 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  20 AUG 2023 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -291,36 +291,36 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-Package hyperref Info: Link coloring OFF on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+Package hyperref Info: Link coloring OFF on input line 23.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -336,7 +336,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.26 \chapter
+l.27 \chapter
              {Primitive Terms and Axioms} [1
 
 ]
@@ -361,21 +361,20 @@ Chapter 5.
 
 ] [7] [8]
 Chapter 6.
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 374.
-
+WARNING: proof step "2" (<2>1) already defined
 [9
 
-] [10] (./main.aux)
+]
+WARNING: proof step "2" (<2>1) already defined
+[10] [11] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CF295EAF5AF01FA721380CA9AD9A6F62;931.
  ) 
 Here is how much of TeX's memory you used:
- 8975 strings out of 476091
- 136774 string characters out of 5794081
- 1864330 words of memory out of 5000000
- 29203 multiletter control sequences out of 15000+600000
+ 8986 strings out of 476091
+ 136835 string characters out of 5794081
+ 1870330 words of memory out of 5000000
+ 29207 multiletter control sequences out of 15000+600000
  521097 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,76p,254b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -392,10 +391,10 @@ nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on main.pdf (11 pages, 173636 bytes).
+Output written on main.pdf (12 pages, 176404 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 65 named destinations out of 1000 (max. 500000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 72 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -18,6 +18,7 @@
 \newtheorem{lm}[ax]{Lemma}
 \theoremstyle{definition}
 \newtheorem{df}[ax]{Definition}
+\newtheorem{ex}[ax]{Example}
 
 \begin{document}
 \maketitle
@@ -333,21 +334,28 @@ For any sets $A$ and $B$, the \emph{difference} or \emph{relative complement} $A
 \end{df}
 
 \begin{prop}
-For any sets $A$ and $E$, if $A \subseteq E$ then
+For any sets $A$ and $E$, we have $A \subseteq E$ if and only if
 \[ E - (E - A) = A \]
 \end{prop}
 
 \begin{proof}
 \pf
 \step{1}{\pflet{$A$ and $E$ be sets.}}
-\step{2}{\assume{$A \subseteq E$}}
-\step{3}{$E - (E - A) \subseteq A$}
+\step{2}{If $A \subseteq E$ then $E - (E - A) = A$}
 \begin{proof}
-	\pf\ If $x \in E$ and $x \notin E - A$ then $x \in A$.
+	\step{2}{\assume{$A \subseteq E$}}
+	\step{3}{$E - (E - A) \subseteq A$}
+	\begin{proof}
+		\pf\ If $x \in E$ and $x \notin E - A$ then $x \in A$.
+	\end{proof}
+	\step{4}{$A \subseteq E - (E - A)$}
+	\begin{proof}
+		\pf\ If $x \in A$ then $x \in E$ and $x \notin E - A$.
+	\end{proof}
 \end{proof}
-\step{4}{$A \subseteq E - (E - A)$}
+\step{3}{If $E - (E - A) = A$ then $A \subseteq E$.}
 \begin{proof}
-	\pf\ If $x \in A$ then $x \in E$ and $x \notin E - A$.
+	\pf\ Since $E - (E - A) \subseteq E$.
 \end{proof}
 \qed
 \end{proof}
@@ -371,7 +379,7 @@ For any set $E$ we have
 \end{proof}
 
 \begin{prop}
-\pf\ For any sets $A$ and $E$, we have
+For any sets $A$ and $E$, we have
 \[ A \cap (E - A) = \emptyset \enspace . \]
 \end{prop}
 
@@ -380,39 +388,50 @@ For any set $E$ we have
 \end{proof}
 
 \begin{prop}
-Let $A$ and $E$ be sets. If $A \subseteq E$ then
+Let $A$ and $E$ be sets. Then $A \subseteq E$ if and only if
 \[ A \cup (E - A) = E \enspace . \]
 \end{prop}
 
 \begin{proof}
 \pf
 \step{1}{\pflet{$A$ and $E$ be sets.}}
-\step{2}{\assume{$A \subseteq E$}}
-\step{3}{$A \cup (E - A) \subseteq E$}
+\step{2}{If $A \subseteq E$ then $A \cup (E - A) = E$.}
 \begin{proof}
-	\pf\ If $x \in A$ or $x \in E - A$ then $x \in E$.
+	\step{2}{\assume{$A \subseteq E$}}
+	\step{3}{$A \cup (E - A) \subseteq E$}
+	\begin{proof}
+		\pf\ If $x \in A$ or $x \in E - A$ then $x \in E$.
+	\end{proof}
+	\step{4}{$E \subseteq A \cup (E - A)$}
+	\begin{proof}
+		\pf\ If $x \in E$ then either $x \in A$ or $x \notin A$. In the latter case, $x \in E - A$.
+	\end{proof}
 \end{proof}
-\step{4}{$E \subseteq A \cup (E - A)$}
+\step{3}{If $A \cup (E - A) = E$ then $A \subseteq E$}
 \begin{proof}
-	\pf\ If $x \in E$ then either $x \in A$ or $x \notin A$. In the latter case, $x \in E - A$.
+	\pf\ Since $A \subseteq A \cup (E - A)$.
 \end{proof}
 \qed
 \end{proof}
 
 \begin{prop}
-Let $A$, $B$ and $E$ be sets with $A \subseteq E$ and $B \subseteq E$. Then $A \subseteq B$ if and only if $E - B \subseteq E - A$.
+Let $A$, $B$ and $E$ be sets. Then:
+\begin{enumerate}
+\item If $A \subseteq B$ then $E - B \subseteq E - A$.
+\item If $A \subseteq E$ and $E - B \subseteq E - A$ then $A \subseteq B$.
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
 \pf
 \step{1}{\pflet{$A$, $B$ and $E$ be sets.}}
-\step{2}{\assume{$A \subseteq E$ and $B \subseteq E$.}}
 \step{3}{If $A \subseteq B$ then $E - B \subseteq E - A$.}
 \begin{proof}
 	\pf\ If $A \subseteq B$, $x \in E$ and $x \notin B$, then we have $x \in E$ and $x \notin A$.
 \end{proof}
-\step{4}{If $E - B \subseteq E - A$ then $A \subseteq B$.}
+\step{4}{If $A \subseteq E$ and $E - B \subseteq E - A$ then $A \subseteq B$.}
 \begin{proof}
+	\step{x}{\assume{$A \subseteq E$}}
 	\step{a}{\assume{$E - B \subseteq E - A$}}
 	\step{b}{\pflet{$x \in A$}}
 	\step{c}{$x \in E$}
@@ -421,6 +440,35 @@ Let $A$, $B$ and $E$ be sets with $A \subseteq E$ and $B \subseteq E$. Then $A \
 	\step{f}{$x \in B$}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the hypothesis $A \subseteq E$ in item 2 above. Let $E = \emptyset$, $A = \{\emptyset\}$ and $B = \emptyset$. Then $E - B = E - A = \emptyset$ but $A \not\subseteq B$.
+\end{ex}
+
+\begin{prop}[De Morgan's Law]
+For any sets $A$, $B$ and $E$, we have $E - (A \cup B) = (E - A) \cap (E - B)$.
+\end{prop}
+
+\begin{proof}
+\pf\ $(x \in E \wedge \neg (x \in A \vee x \in B)) \Leftrightarrow (x \in E \wedge x \notin A \wedge x \in E \wedge x \notin B)$. \qed
+\end{proof}
+
+\begin{prop}[De Morgan's Law]
+For any sets $A$, $B$ and $E$, we have $E - (A \cap B) = (E - A) \cup (E - B)$.
+\end{prop}
+
+\begin{proof}
+\pf\ $(x \in E \vee \neg (x \in A \wedge x \in B)) \Leftrightarrow (x \in E \wedge x \notin A) \vee (x \in E \wedge x \notin B)$. \qed
+\end{proof}
+
+\begin{prop}
+For any sets $A$, $B$ and $E$, if $A \subseteq E$ then\
+\[ A - B = A \cap (E - B) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ If $A \subseteq E$ then we have $(x \in A \wedge x \notin B) \Leftrightarrow (x \in A \wedge x \in E \wedge x \notin B)$. \qed
 \end{proof}
 
 \end{document}
