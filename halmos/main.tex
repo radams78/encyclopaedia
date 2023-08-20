@@ -399,4 +399,28 @@ Let $A$ and $E$ be sets. If $A \subseteq E$ then
 \qed
 \end{proof}
 
+\begin{prop}
+Let $A$, $B$ and $E$ be sets with $A \subseteq E$ and $B \subseteq E$. Then $A \subseteq B$ if and only if $E - B \subseteq E - A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$, $B$ and $E$ be sets.}}
+\step{2}{\assume{$A \subseteq E$ and $B \subseteq E$.}}
+\step{3}{If $A \subseteq B$ then $E - B \subseteq E - A$.}
+\begin{proof}
+	\pf\ If $A \subseteq B$, $x \in E$ and $x \notin B$, then we have $x \in E$ and $x \notin A$.
+\end{proof}
+\step{4}{If $E - B \subseteq E - A$ then $A \subseteq B$.}
+\begin{proof}
+	\step{a}{\assume{$E - B \subseteq E - A$}}
+	\step{b}{\pflet{$x \in A$}}
+	\step{c}{$x \in E$}
+	\step{d}{$x \notin E - A$}
+	\step{e}{$x \notin E - B$}
+	\step{f}{$x \in B$}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
