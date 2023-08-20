@@ -11,7 +11,7 @@
 \usepackage{pf2}
 \usepackage{hyperref}
 
-\newtheorem{ax}{Axiom}[section]
+\newtheorem{ax}{Axiom}[chapter]
 \newtheorem{prop}[ax]{Proposition}
 \newtheorem{cor}{Corollary}[ax]
 \newtheorem{thm}[ax]{Theorem}
@@ -35,6 +35,26 @@ Two sets are equal if and only if they have the same elements.
 
 \begin{df}[Subset]
 Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subset B$ or $B \supset A$, iff every element of $A$ is an element of $B$.
+\end{df}
+
+\begin{thm}
+For any set $A$, we have $A \subset A$.
+\end{thm}
+
+\begin{proof}
+\pf\ Every element of $A$ is an element of $A$. \qed
+\end{proof}
+
+\begin{thm}
+For any sets $A$, $B$ and $C$, if $A \subset B$ and $B \subset C$ then $A \subset C$.
+\end{thm}
+
+\begin{proof}
+\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $C$, then every element of $A$ is an element of $C$. \qed
+\end{proof}
+
+\begin{df}[Proper Subset]
+Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, iff $A \subset B$ and $A \neq B$.
 \end{df}
 
 \end{document}
