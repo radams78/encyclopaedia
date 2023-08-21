@@ -870,4 +870,24 @@ Let $f : X \rightarrow Y$ and $A \subseteq X$. The \emph{image} of $A$ under $f$
 \[ f(A) := \{ f(x) : x \in A \} \enspace . \]
 \end{df}
 
+\begin{df}[Inclusion Map]
+Let $Y$ be a set and $X \subseteq Y$. Then the \emph{inclusion map} $i : X \hookrightarrow Y$ is the function defined by $i(x) = x$ for all $x \in X$.
+\end{df}
+
+\begin{df}[Identity Map]
+For any set $X$, the \emph{identity map} on $X$ is the inclusion map of $X$ into $X$.
+\end{df}
+
+\begin{df}[Restriction]
+Let $f : Y \rightarrow Z$ and $X \subseteq Y$. The \emph{restriction} of $f$ to $X$ is the function $f \restriction X : X \rightarrow Z$ defined by
+\[ (f \restriction X)(x) = f(x) \qquad (x \in X) \enspace . \]
+
+Given sets $X$, $Y$ and $Z$ with $X \subseteq Y$, if $f : X \rightarrow Z$ and $g : Y \rightarrow Z$, we say $g$ is an \emph{extension} of $f$ to $Y$ iff $f = g \restriction X$.
+\end{df}
+
+\begin{df}[Projection]
+Given sets $X$ and $Y$, the \emph{projection} maps $\pi_1 : X \times Y \rightarrow X$ and $\pi_2 : X \times Y \rightarrow Y$ are defined by
+\[ \pi_1(x,y) = x, \qquad \pi_2(x,y) = y \qquad (x \in X, y \in Y) \enspace . \]
+\end{df}
+
 \end{document}
