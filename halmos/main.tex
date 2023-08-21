@@ -51,11 +51,15 @@ For any two sets, there exists a set that they both belong to.
 For every set $A$, there exists a set that contains all the elements that belong to at least one element of $A$.
 \end{ax}
 
-\chapter{The Subset Relation}
-
 \begin{df}[Subset]
 Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subseteq B$ or $B \supseteq A$, iff every element of $A$ is an element of $B$.
 \end{df}
+
+\begin{ax}[Power Set Axiom]
+For any set $A$, there exists a set that contains all the subsets of $A$.
+\end{ax}
+
+\chapter{The Subset Relation}
 
 \begin{thm}
 For any set $A$, we have $A \subseteq A$.
@@ -574,6 +578,14 @@ A + A & = (A - A) \cup (A - A) \\
 & = \emptyset \cup \emptyset \\
 & = \emptyset & \qed
 \end{align*}
+\end{proof}
+
+\begin{df}[Power Set]
+For any set $A$, the \emph{power set} of $A$, $\mathcal{P} A$, is the set whose elements are exactly the subsets of $A$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Power Set Axiom and Axiom of Comprehension, and is unique by the Axiom of Extensionality. \qed
 \end{proof}
 
 \end{document}
