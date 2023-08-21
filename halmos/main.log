@@ -395,8 +395,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B65102CECF9B62B11809878D34D15DEB;1508.
  ) 
 Here is how much of TeX's memory you used:
- 9046 strings out of 476091
- 137267 string characters out of 5794081
+ 9047 strings out of 476091
+ 137274 string characters out of 5794081
  1870330 words of memory out of 5000000
  29217 multiletter control sequences out of 15000+600000
  521097 words of font info for 66 fonts, out of 8000000 for 9000
@@ -415,10 +415,10 @@ nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (20 pages, 206669 bytes).
+Output written on main.pdf (20 pages, 206917 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 289 compressed objects within 3 object streams
+ 123 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
