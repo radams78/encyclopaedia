@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 AUG 2023 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 AUG 2023 23:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -396,6 +396,13 @@ Chapter 13.
 
 ] [22]
 Chapter 14.
+
+Overfull \hbox (7.97412pt too wide) in paragraph at lines 963--964
+[]\OT1/cmr/bx/n/10 Proposition 14.5 \OT1/cmr/m/n/10 (Gen-er-al-ized Com-mu-ta-t
+ive Law for In-ter-sec-tions)\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\OMS/cmsy
+/m/n/10 f\OML/cmm/m/it/10 I[]\OMS/cmsy/m/n/10 g[]$
+ []
+
 [23
 
 ] (./main.aux)
@@ -403,8 +410,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 503400A2709505DA3267D15565D1149C;1683.
  ) 
 Here is how much of TeX's memory you used:
- 9076 strings out of 476091
- 137501 string characters out of 5794081
+ 9078 strings out of 476091
+ 137515 string characters out of 5794081
  1870330 words of memory out of 5000000
  29219 multiletter control sequences out of 15000+600000
  521097 words of font info for 66 fonts, out of 8000000 for 9000
@@ -425,10 +432,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (24 pages, 235970 bytes).
+Output written on main.pdf (24 pages, 236559 bytes).
 PDF statistics:
- 405 PDF objects out of 1000 (max. 8388607)
- 343 compressed objects within 4 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 408 PDF objects out of 1000 (max. 8388607)
+ 346 compressed objects within 4 object streams
+ 152 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
