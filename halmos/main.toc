@@ -9,3 +9,4 @@
 \contentsline {chapter}{\numberline {9}Symmetric Difference}{14}{chapter.9}%
 \contentsline {chapter}{\numberline {10}Power Sets}{15}{chapter.10}%
 \contentsline {chapter}{\numberline {11}Ordered Pairs}{17}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Relations}{19}{chapter.12}%
