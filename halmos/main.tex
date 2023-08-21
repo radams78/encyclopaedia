@@ -146,7 +146,7 @@ For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose
 For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
 \end{df}
 
-\chapter{Unions and Intersections}
+\chapter{Unions}
 
 \begin{df}[Union]
 For any set $\mathcal{C}$, the \emph{union} of $\mathcal{C}$, $\bigcup \mathcal{C}$, is the set whose elements are the elements of the elements of $\mathcal{C}$.
@@ -226,10 +226,7 @@ For any sets $a$ and $b$, we have $\{a\} \cup \{b\} = \{a,b\}$.
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\begin{df}[(Unordered) Triple]
-Given sets $a_1$, \ldots, $a_n$, define the \emph{(unordered) $n$-tuple} $\{a_1, \ldots, a_n\}$ to be
-\[ \{a_1, \ldots, a_n\} := \{a_1\} \cup \cdots \cup \{a_n\} \enspace . \]
-\end{df}
+\chapter{Intersections}
 
 \begin{df}[Intersection]
 For any sets $A$ and $B$, the \emph{intersection} $A \cap B$ is defined to be $\{ x \in A : x \in B \}$.
@@ -278,13 +275,6 @@ For any sets $A$ and $B$, we have $A \subseteq B$ if and only if $A \cap B = A$.
 \pf\ For any $x$, the statement "if $x \in A$ then $x \in B$" is equivalent to "$x \in A$ and $x \in B$ if and only if $x \in A$". \qed
 \end{proof}
 
-\begin{df}[Disjoint]
-Two sets $A$ and $B$ are \emph{disjoint} if and only if $A \cap B = \emptyset$.
-\end{df}
-
-\begin{df}[Pairwise Disjoint]
-Let $A$ be a set. We say the elements of $A$ are \emph{pairwise disjoint} if and only if, for all $x, y \in A$, if $x \cap y \neq \emptyset$ then $x = y$.
-\end{df}
 
 \begin{prop}[Distributive Law]
 For any sets $A$, $B$ and $C$, we have
@@ -314,6 +304,14 @@ For any sets $A$, $B$ and $C$, we have $C \subseteq A$ if and only if $(A \cap B
 \pf\ The statement "if $x \in C$ then $x \in A$" is equivalent to the statement "$((x \in A \wedge x \in B) \vee x \in C) \Leftrightarrow (x \in A \wedge (x \in B \vee x \in C))$". \qed
 \end{proof}
 
+\begin{df}[Disjoint]
+Two sets $A$ and $B$ are \emph{disjoint} if and only if $A \cap B = \emptyset$.
+\end{df}
+
+\begin{df}[Pairwise Disjoint]
+Let $A$ be a set. We say the elements of $A$ are \emph{pairwise disjoint} if and only if, for all $x, y \in A$, if $x \cap y \neq \emptyset$ then $x = y$.
+\end{df}
+
 \begin{df}[Intersection]
 For any nonempty set $\mathcal{C}$, the \emph{intersection} of $\mathcal{C}$, $\bigcap \mathcal{C}$, is the set that contains exactly those sets that belong to every element of $\mathcal{C}$.
 
@@ -334,7 +332,14 @@ We write $\bigcap_{X \in \mathcal{A}} t[X]$ for $\bigcap \{t[X] \mid X \in \math
 \qed
 \end{proof}
 
-\chapter{Complements and Powers}
+\chapter{Unordered Triples}
+
+\begin{df}[(Unordered) Triple]
+Given sets $a_1$, \ldots, $a_n$, define the \emph{(unordered) $n$-tuple} $\{a_1, \ldots, a_n\}$ to be
+\[ \{a_1, \ldots, a_n\} := \{a_1\} \cup \cdots \cup \{a_n\} \enspace . \]
+\end{df}
+
+\chapter{Relative Complements}
 
 \begin{df}[Relative Complement]
 For any sets $A$ and $B$, the \emph{difference} or \emph{relative complement} $A - B$ is defined to be
@@ -533,6 +538,26 @@ For any sets $A$, $B$, $C$ and $E$, we have
 \pf\ The statement $(x \in A \vee x \in C) \wedge (x \in B \vee (x \in E \wedge x \notin C))$ implies $x \in A \vee x \in B$. \qed
 \end{proof}
 
+\begin{prop}[De Morgan's Law]
+Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
+\[ E - \bigcup \mathcal{C} = \bigcap_{X \in \mathcal{C}} (E - X) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}[De Morgan's Law]
+Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
+\[ E - \bigcap \mathcal{C} = \bigcup_{X \in \mathcal{C}} (E - X) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\chapter{Symmetric Difference}
+
 \begin{df}[Symmetric Difference]
 For any sets $A$ and $B$, the \emph{symmetric difference} $A + B$ is defined to be
 \[ A + B := (A - B) \cup (B - A) \enspace . \]
@@ -584,6 +609,9 @@ A + A & = (A - A) \cup (A - A) \\
 \end{align*}
 \end{proof}
 
+
+\chapter{Power Sets}
+
 \begin{df}[Power Set]
 For any set $A$, the \emph{power set} of $A$, $\mathcal{P} A$, is the set whose elements are exactly the subsets of $A$.
 \end{df}
@@ -616,24 +644,6 @@ For any sets $a$ and $b$, we have
 
 \begin{proof}
 \pf\ The only subsets of $\{a,b\}$ are $\emptyset$, $\{a\}$, $\{b\}$ and $\{a,b\}$. \qed
-\end{proof}
-
-\begin{prop}[De Morgan's Law]
-Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
-\[ E - \bigcup \mathcal{C} = \bigcap_{X \in \mathcal{C}} (E - X) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}[De Morgan's Law]
-Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
-\[ E - \bigcap \mathcal{C} = \bigcup_{X \in \mathcal{C}} (E - X) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
 \end{proof}
 
 \begin{prop}
@@ -677,5 +687,12 @@ For any sets $E$ and $F$, if $E \subseteq F$ then $\mathcal{P} E \subseteq \math
 \begin{proof}
 \pf\ If $E \subseteq F$ and $X \subseteq E$ then $X \subseteq F$. \qed
 \end{proof}
+
+\chapter{Ordered Pairs}
+
+\begin{df}[Ordered Pair]
+For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
+\[ (a,b) := \{ \{ a \}, \{ a, b \} \} \enspace . \]
+\end{df}
 
 \end{document}
