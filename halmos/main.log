@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 AUG 2023 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 AUG 2023 23:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -709,15 +709,19 @@ m/n/10 t\OML/cmm/m/it/10 I[]\U/matha/m/n/10 u[]$
 
 [22
 
-] [23] (./main.aux)
+] [23]
+Chapter 15.
+[24
+
+] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 503400A2709505DA3267D15565D1149C;1683.
+(rerunfilecheck)             Checksum: A2CED1D1E749507415ED85C0FBFB335A;1849.
  ) 
 Here is how much of TeX's memory you used:
- 9744 strings out of 476091
- 144803 string characters out of 5794081
+ 9749 strings out of 476091
+ 144848 string characters out of 5794081
  1868330 words of memory out of 5000000
- 29867 multiletter control sequences out of 15000+600000
+ 29868 multiletter control sequences out of 15000+600000
  527376 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,356b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -737,10 +741,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathb10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb>
-Output written on main.pdf (24 pages, 231885 bytes).
+Output written on main.pdf (25 pages, 233463 bytes).
 PDF statistics:
- 410 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 150 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 423 PDF objects out of 1000 (max. 8388607)
+ 358 compressed objects within 4 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -12,3 +12,4 @@
 \contentsline {chapter}{\numberline {12}Relations}{18}{chapter.12}%
 \contentsline {chapter}{\numberline {13}Functions}{20}{chapter.13}%
 \contentsline {chapter}{\numberline {14}Families}{22}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Inverses and Composites}{24}{chapter.15}%

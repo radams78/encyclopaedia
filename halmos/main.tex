@@ -942,4 +942,21 @@ Let $\{A_i\}_{i \in I}$ and $\{B_j\}_{j \in J}$ be nonempty families of sets. Th
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+Let $f : X \rightarrow Y$. Let $\{A_i\}_{i \in I}$ be a family of subsets of $X$. Then
+\[ f \left( \bigcup_{i \in I} A_i \right) = \bigcup_{i \in I} f(A_i) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{ex}
+It is not true in general that, if $f : X \rightarrow Y$ and $\{A_i\}_{i \in I}$ is a nonempty family of subsets of $X$, then $f \left( \bigcap_{i \in I} A_i \right) = \bigcap_{i \in I} f(A_i)$.
+
+Take $X = \{a,b\}$ and $Y = \{c\}$ where $a \neq b$. Take $I = \{i,j\}$ with $i \neq j$. Let $A_i = \{a\}$ and $A_j = \{b\}$. Let $f$ be the unique function $X \rightarrow Y$. Then $f \left( \bigcap_{i \in I} A_i \right) = f(\emptyset) = \emptyset$ but $\bigcap_{i \in I} f(A_i) = \{c\}$.
+\end{ex}
+
+\chapter{Inverses and Composites}
+
 \end{document}
