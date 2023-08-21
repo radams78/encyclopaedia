@@ -695,4 +695,41 @@ For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
 \[ (a,b) := \{ \{ a \}, \{ a, b \} \} \enspace . \]
 \end{df}
 
+\begin{prop}
+For any sets $a$, $b$, $x$ and $y$, if $(a,b) = (x,y)$ then $a = x$ and $b = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a$, $b$, $x$ and $y$ be sets.}}
+\step{2}{\assume{$(a,b) = (x,y)$}}
+\step{3}{$a = x$}
+\begin{proof}
+	\pf\ $\{a\} = \bigcap (a,b) = \bigcap (x,y) = \{x\}$.
+\end{proof}
+\step{4}{$\{a,b\} = \{x,y\}$}
+\step{5}{\case{$a = b$}}
+\begin{proof}
+	\step{a}{$x = y$}
+	\begin{proof}
+		\pf\ Since $\{x,y\} = \{a,b\}$ is a singleton.
+	\end{proof}
+	\step{b}{$b = y$}
+	\begin{proof}
+		\pf\ $b = a = x = y$
+	\end{proof}
+\end{proof}
+\step{6}{\case{$a \neq b$}}
+\begin{proof}
+	\step{a}{$x \neq y$}
+	\begin{proof}
+		\pf\ Since $\{x,y\} = \{a,b\}$ is not a singleton.
+	\end{proof}
+	\step{b}{$b = y$}
+	\begin{proof}
+		\pf\ $\{b\} = \{a,b\} - \{a\} = \{x,y\} - \{x\} = \{y\}$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 \end{document}
