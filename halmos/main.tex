@@ -918,4 +918,27 @@ Let $X$ be a set and $A \subseteq X$. The \emph{characteristic function} of $A$ 
 \end{cases} \]
 \end{df}
 
-\end{document} 
+\begin{thm}
+Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps a subset $A$ of $X$ to $\chi_A$ is a one-to-one correspondence.
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\chapter{Families}
+
+\begin{df}[Family]
+Let $I$ and $X$ be sets. A \emph{family} of elements of $X$ \emph{indexed} by $I$ is a function $a : I \rightarrow X$. We write $a_i$ for $a(i)$, and $\{a_i\}_{i \in I}$ for $a$.
+\end{df}
+
+\begin{prop}[Generalized Associative Law for Unions]
+Let $\{I_j\}_{j \in J}$ be a family of sets. Let $K = \bigcup_{j \in J} I_j$. Let $\{A_k\}_{k \in K}$ be a family of sets indexed by $K$. Then
+\[ \bigcup_{k \in K} A_k = \bigcup_{j \in J} \bigcup_{i \in I_j} A_i \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\end{document}
