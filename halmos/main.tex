@@ -20,6 +20,9 @@
 \newtheorem{df}[ax]{Definition}
 \newtheorem{ex}[ax]{Example}
 
+\newcommand{\dom}{\ensuremath{\operatorname{dom}}}
+\newcommand{\ran}{\ensuremath{\operatorname{ran}}}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -787,6 +790,16 @@ For any sets $A$, $B$, $X$ and $Y$, if $A \subseteq X$ and $B \subseteq Y$ then 
 A \emph{relation} is a set of ordered pairs.
 
 If $R$ is a relation, we write $xRy$ for $(x,y) \in R$.
+\end{df}
+
+\begin{df}[Domain]
+The \emph{domain} of a relation $R$ is the set
+\[ \dom R := \{ x \in \bigcup \bigcup R : \exists y. (x,y) \in R \} \enspace . \]
+\end{df}
+
+\begin{df}[Range]
+The \emph{range} of a relation $R$ is the set
+\[ \ran R := \{ y \in \bigcup \bigcup R : \exists x. (x,y) \in R \} \enspace . \]
 \end{df}
 
 \end{document}
