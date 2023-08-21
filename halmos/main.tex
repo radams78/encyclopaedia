@@ -190,22 +190,6 @@ For any set $A$, we have $A \cup \emptyset = A$.
 \pf\ $x \in A \cup \emptyset$ iff $x \in A$ or $x \in \emptyset$, iff $x \in A$. \qed
 \end{proof}
 
-\begin{prop}[Commutativity]
-For any sets $A$ and $B$, we have $A \cup B = B \cup A$.
-\end{prop}
-
-\begin{proof}
-\pf\ $x \in A \cup B$ iff $x \in A$ or $x \in B$, iff $x \in B$ or $x \in A$, iff $x \in B \cup A$. \qed
-\end{proof}
-
-\begin{prop}[Associativity]
-For any sets $A$, $B$ and $C$, we have $A \cup (B \cup C) = (A \cup B) \cup C$.
-\end{prop}
-
-\begin{proof}
-\pf\ Each is the set of all $x$ such that $x \in A$ or $x \in B$ or $x \in C$. \qed
-\end{proof}
-
 \begin{prop}[Idempotence]
 For any set $A$, we have $A \cup A = A$.
 \end{prop}
@@ -245,24 +229,6 @@ For any set $A$, we have $A \cap \emptyset = \emptyset$.
 \end{proof}
 
 \begin{prop}
-For any sets $A$ and $B$, we have
-\[ A \cap B = B \cap A \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ $x \in A$ and $x \in B$ if and only if $x \in B$ and $x \in A$. \qed
-\end{proof}
-
-\begin{prop}
-For any sets $A$, $B$ and $C$, we have
-\[ A \cap (B \cap C) = (A \cap B) \cap C \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Each is the set of all $x$ such that $x \in A$ and $x \in B$ and $x \in C$. \qed
-\end{proof}
-
-\begin{prop}
 For any set $A$, we have
 \[ A \cap A = A \enspace . \]
 \end{prop}
@@ -277,27 +243,6 @@ For any sets $A$ and $B$, we have $A \subseteq B$ if and only if $A \cap B = A$.
 
 \begin{proof}
 \pf\ For any $x$, the statement "if $x \in A$ then $x \in B$" is equivalent to "$x \in A$ and $x \in B$ if and only if $x \in A$". \qed
-\end{proof}
-
-
-\begin{prop}[Distributive Law]
-For any sets $A$, $B$ and $C$, we have
-\[ A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \]
-\end{prop}
-
-\begin{proof}
-\pf
-\[ x \in A \wedge (x \in B \vee x \in C) \Leftrightarrow (x \in A \wedge x \in B) \vee (x \in A \wedge x \in C) \enspace . \qed \]
-\end{proof}
-
-\begin{prop}[Distributive Law]
-For any sets $A$, $B$ and $C$, we have
-\[ A \cup (B \cap C) = (A \cup B) \cap (A \cup C) \]
-\end{prop}
-
-\begin{proof}
-\pf
-\[ x \in A \vee (x \in B \wedge x \in C) \Leftrightarrow (x \in A \vee x \in B) \wedge (x \in A \vee x \in C) \enspace . \qed \]
 \end{proof}
 
 \begin{prop}
@@ -741,24 +686,6 @@ For any sets $a$, $b$, $x$ and $y$, if $(a,b) = (x,y)$ then $a = x$ and $b = y$.
 For any sets $A$ and $B$, the \emph{Cartesian product} $A \times B$ is
 \[ A \times B := \{ p \in \mathcal{P} \mathcal{P} (A \cup B) : \exists a \in A. \exists b \in B. p = (a,b) \} \enspace . \]
 \end{df}
-
-\begin{prop}
-For any sets $A$, $B$ and $X$, we have
-\[ (A \cup B) \times X = (A \times X) \cup (B \times X) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-For any sets $A$, $B$, $X$ and $Y$, we have
-\[ (A \cap B) \times (X \cap Y) = (A \times X) \cap (B \times Y) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
 
 \begin{prop}
 For any sets $A$, $B$ and $X$, we have
