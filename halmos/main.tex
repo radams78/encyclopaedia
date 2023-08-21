@@ -10,6 +10,7 @@
 \let\qed\relax
 \usepackage{pf2}
 \usepackage{hyperref}
+\usepackage{mathabx}
 
 \newtheorem{ax}{Axiom}[chapter]
 \newtheorem{prop}[ax]{Proposition}
@@ -857,8 +858,6 @@ Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, a
 
 \begin{df}[Function]
 Let $X$ and $Y$ be sets. A \emph{function, map, mapping, transformation} or \emph{operator $f$ from $X$ to $Y$}, $f : X \rightarrow Y$, is a relation $f$ between $X$ and $Y$ such that, for all $x \in X$, there exists a unique $f(x) \in Y$, called the \emph{value} of $f$ at the \emph{argument} $x$, such that $(x,f(x)) \in f$.
-
-We write $Y^X$ for the set of all functions from $X$ to $Y$.
 \end{df}
 
 \begin{df}[Onto]
@@ -918,14 +917,6 @@ Let $X$ be a set and $A \subseteq X$. The \emph{characteristic function} of $A$ 
 \end{cases} \]
 \end{df}
 
-\begin{thm}
-Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps a subset $A$ of $X$ to $\chi_A$ is a one-to-one correspondence.
-\end{thm}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
 \chapter{Families}
 
 \begin{df}[Family]
@@ -963,6 +954,40 @@ Let $\{I_j\}_{j \in J}$ be a nonempty family of nonempty sets. Let $K = \bigcup_
 Let $\{I_j\}_{j \in J}$ be a nonempty family of sets. Let $f : J \rightarrow J$ be a one-to-one correspondence from $J$ onto $J$. Then
 \[ \bigcap_{j \in J} I_j = \bigcap_{j \in J} I_{f(j)} \enspace . \]
 \end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $B$ be a set and $\{A_i\}_{i \in I}$ a family of sets. Then
+\[ B \cap \bigcup_{i \in I} A_i = \bigcup_{i \in I}
+ (B \cap A_i) \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $B$ be a set and $\{A_i\}_{i \in I}$ a nonempty family of sets. Then
+\[ B \cup \bigcap_{i \in I} A_i = \bigcap_{i \in I}
+ (B \cup A_i) \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Cartesian Product of a Family of Sets]
+Let $\{A_i\}_{i \in I}$ be a family of sets. The \emph{Cartesian product} $\bigtimes_{i \in I} A_i$ is the set of all families $\{a_i\}_{i \in I}$ such that $\forall i \in I. a_i \in A_i$.
+
+We write $A^I$ for $\bigtimes_{i \in I} A$.
+\end{df}
+
+\begin{thm}
+Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps a subset $A$ of $X$ to $\chi_A$ is a one-to-one correspondence.
+\end{thm}
 
 \begin{proof}
 \pf\ Easy. \qed
