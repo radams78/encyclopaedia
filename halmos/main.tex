@@ -618,4 +618,47 @@ For any sets $a$ and $b$, we have
 \pf\ The only subsets of $\{a,b\}$ are $\emptyset$, $\{a\}$, $\{b\}$ and $\{a,b\}$. \qed
 \end{proof}
 
+\begin{prop}[De Morgan's Law]
+Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
+\[ E - \bigcup \mathcal{C} = \bigcap_{X \in \mathcal{C}} (E - X) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}[De Morgan's Law]
+Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
+\[ E - \bigcap \mathcal{C} = \bigcup_{X \in \mathcal{C}} (E - X) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+For any nonempty set $\mathcal{C}$ we have
+\[ \bigcap_{X \in \mathcal{C}} \mathcal{P} X = \mathcal{P} \left( \bigcap \mathcal{C} \right) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x \in \bigcup_{X \in \mathcal{C}} \mathcal{P} X
+& \Leftrightarrow \forall X \in \mathcal{C}. x \subseteq X \\
+& \Leftrightarrow \forall X \in \mathcal{C}. \forall y \in x. y \in X \\
+& \Leftrightarrow \forall y \in x. \forall X \in mathcal{C}. y \in X \\
+& \Leftrightarrow x \subseteq \bigcap \mathcal{C} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any set $\mathcal{C}$ we have
+\[ \bigcup_{X \in \mathcal{C}} \mathcal{P} X \subseteq \mathcal{P} \bigcup \mathcal{C} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ If there exists $X \in \mathcal{C}$ such that $x \subseteq X$ then $x \subseteq \bigcup \mathcal{C}$. \qed
+\end{proof}
+
 \end{document}
