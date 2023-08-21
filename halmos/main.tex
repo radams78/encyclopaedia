@@ -993,4 +993,26 @@ Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps 
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{df}[Projection]
+Let $\{A_i\}_{i \in I}$ be a family of sets and $i \in I$. The \emph{projection} function $\pi_i : \bigtimes_{i \in I} A_i \rightarrow A_i$ is defined by $\pi_i(a) = a_i$.
+\end{df}
+
+\begin{prop}
+Let $\{A_i\}_{i \in I}$ and $\{B_j\}_{j \in J}$ be families of sets. Then
+\[ \left( \bigcup_{i \in I} A_i \right) \times \left( \bigcup_{j \in J} B_j \right) = \bigcup_{i \in I} \bigcup_{j \in J} (A_i \times B_j) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\{A_i\}_{i \in I}$ and $\{B_j\}_{j \in J}$ be nonempty families of sets. Then
+\[ \left( \bigcap_{i \in I} A_i \right) \times \left( \bigcap_{j \in J} B_j \right) = \bigcap_{i \in I} \bigcap_{j \in J} (A_i \times B_j) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \end{document}
