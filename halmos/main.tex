@@ -1450,4 +1450,35 @@ Define \emph{addition} $+$ on $\omega$ by recursion thus:
 \end{align*}
 \end{df}
 
+\begin{prop}
+For all $m,n,p \in \omega$ we have
+\[ m + (n + p) = (m + n) + p \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(p)$ be the property $\forall m,n \in \omega. m + (n + p) = (m + n) + p$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ $m + (n + 0) = m + n = (m + n) + 0$.
+\end{proof}
+\step{3}{$\forall p \in \omega. P(p) \Rightarrow P(p^+)$}
+\begin{proof}
+	\step{a}{\pflet{$p \in \omega$}}
+	\step{b}{\assume{$P(p)$}}
+	\step{c}{\pflet{$m,n \in \omega$}}
+	\step{d}{$m + (n + p^+) = (m + n) + p^+$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			m + (n + p^+) & = m + (n + p)^+ \\
+			& = (m + (n + p))^+ \\
+			& = ((m + n) + p)^+ \\
+			& = (m + n) + p^+
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
