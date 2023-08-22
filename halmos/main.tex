@@ -1700,4 +1700,32 @@ m^{n^+} & = m^n m
 \end{align*}
 \end{df}
 
+\begin{prop}
+For all $m,n,p \in \omega$ we have
+\[ m^{n+p} = m^n m^p \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$m^{n+0} = m^nm^0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m^{n+0} & = m^n \\
+		& = m^n 1 \\
+		& = m^n m^0
+	\end{align*}
+\end{proof}
+\step{2}{If $m^{n+p} = m^nm^p$ then $m^{n+p^+} = m^n m^{p^+}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m^{n+p^+} & = m^{n+p}m \\
+		& = m^n m^p m \\
+		& = m^n m^{p^+}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
