@@ -1753,4 +1753,80 @@ For all $m,n,p \in \omega$ we have
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:succ_in_succ}
+For any natural numbers $m$ and $n$, if $m \in n$ then $m^+ \in n^+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property $\forall m \in n. m^+ \in n^+$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Vacuous.
+\end{proof}
+\step{3}{For any natural number $n$, if $P(n)$ then $P(n^+)$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$m \in n^+$}}
+	\step{d}{$m \in n$ or $m = n$}
+	\step{e}{$m^+ \in n^+$ or $m^+ = n^+$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{f}{\case{$m^+ \in n^{++}$}}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$, either $m \in n$ or $m = n$ or $n \in m$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for all $m \in \omega$, either $m \in n$ or $m = n$ or $n \in m$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\step{a}{\pflet{$Q(m)$ be the property: either $m = 0$ or $0 \in m$}}
+	\step{b}{$Q(0)$}
+	\begin{proof}
+		\pf\ Since $0=0$.
+	\end{proof}
+	\step{c}{For all $m \in \omega$, if $Q(m)$ then $Q(m^+)$}
+	\begin{proof}
+		\pf\ If $m = 0$ or $0 \in m$ then $0 \in m^+$.
+	\end{proof}
+\end{proof}
+\step{3}{For any natural number $n$, if $P(n)$ then $P(n^+)$}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$m \in \omega$}}
+	\step{d}{$m \in n$ or $m = n$ or $n \in m$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{e}{\case{$m \in n$ or $m = n$}}
+	\begin{proof}
+		\pf\ Then $m \in n^+$.
+	\end{proof}
+	\step{f}{\case{$n \in m$}}
+	\begin{proof}
+		\step{i}{\pick\ $p$ such that $m = p^+$}
+		\step{ii}{$n \in p$ or $n = p$}
+		\step{iii}{\case{$n \in p$}}
+		\begin{proof}
+			\pf\ Then $n^+ \in p^+ = m$ by Proposition \ref{prop:succ_in_succ}.
+		\end{proof}
+		\step{iv}{\case{$n = p$}}
+		\begin{proof}
+			\pf\ Then $m = n^+$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
