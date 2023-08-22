@@ -1481,4 +1481,66 @@ For all $m,n,p \in \omega$ we have
 \qed
 \end{proof}
 
+\begin{prop}
+For all $m,n \in \omega$, we have
+\[ m + n = n + m \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(m)$ be the property $\forall n \in \omega. m + n = n + m$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\step{a}{\pflet{$Q(n)$ be the property $0 + n = n + 0$}}
+	\step{b}{$Q(0)$}
+	\begin{proof}
+		\pf\ Trivial.
+	\end{proof}
+	\step{c}{$\forall n \in \omega. Q(n) \Rightarrow Q(n^+)$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \omega$}}
+		\step{ii}{\assume{$Q(n)$}}
+		\step{iii}{$0 + n^+ = n^+ + 0$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+			0 + n^+ & = (0 + n)^+ \\
+			& = (n + 0)^+ & (\text{\stepref{ii}}) \\
+			& = n^+ \\
+			& = n^+ + 0
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{3}{$\forall m \in \omega. P(m) \Rightarrow P(m^+)$}
+\begin{proof}
+	\step{a}{\pflet{$m \in \omega$}}
+	\step{b}{\assume{$P(m)$}}
+	\step{c}{\pflet{$Q(n)$ be the property $m^+ + n = n + m^+$}}
+	\step{d}{$Q(0)$}
+	\begin{proof}
+		\pf\ \stepref{2}
+	\end{proof}
+	\step{e}{$\forall n \in \omega. Q(n) \Rightarrow Q(n^+)$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \omega$}}
+		\step{ii}{\assume{$Q(n)$}}
+		\step{iii}{$Q(n^+)$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				m^+ + n^+ & = (m^+ + n)^+ \\
+				& = (n + m^+)^+ & (\text{\stepref{ii}}) \\
+				& = (n + m)^{++} \\
+				& = (m + n)^{++} & (\text{\stepref{b}}) \\
+				& = (m + n^+)^+ \\
+				& = (n^+ + m)^+ & (\text{\stepref{b}}) \\
+				& = n^+ + m^+
+\end{align*}					
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
