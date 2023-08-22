@@ -42,11 +42,6 @@ Two sets are equal if and only if they have the same elements.
 To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
 \end{ax}
 
-\begin{ax}
-\label{ax:set_exists}
-A set exists.
-\end{ax}
-
 \begin{ax}[Axiom of Pairing]
 For any two sets, there exists a set that they both belong to.
 \end{ax}
@@ -61,6 +56,14 @@ Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph
 
 \begin{ax}[Power Set Axiom]
 For any set $A$, there exists a set that contains all the subsets of $A$.
+\end{ax}
+
+\begin{ax}[Axiom of Infinity]
+There exists a set $I$ such that:
+\begin{itemize}
+\item $I$ has an element that has no elements
+\item for all $x \in I$, there exists $y \in I$ such that the elements of $y$ are exactly $x$ and the elements of $x$.
+\end{itemize}
 \end{ax}
 
 \chapter{The Subset Relation}
@@ -123,7 +126,7 @@ There exists a set with no elements.
 \end{thm}
 
 \begin{proof}
-\pf\ Pick a set $A$ by Axiom \ref{ax:set_exists}. Then the set $\{ x \in A : x \neq x \}$ has no elements. \qed
+\pf\ Immediate from the Axiom of Infinity. \qed
 \end{proof}
 
 \begin{df}[Empty Set]
@@ -918,26 +921,6 @@ Let $X$ be a set and $R$ an equivalence relation on $X$. The \emph{canonical map
 A function $f : X \rightarrow Y$ is \emph{one-to-one}, or a \emph{one-to-one correspondence}, iff, for all $x,y \in X$, if $f(x) = f(y)$ then $x = y$.
 \end{df}
 
-\begin{df}
-\[ 0 = \emptyset \]
-\end{df}
-
-\begin{df}
-\[ 1 = \{ \emptyset \} \]
-\end{df}
-
-\begin{df}
-\[ 2 = \{ \emptyset, \{ \emptyset \} \} \]
-\end{df}
-
-\begin{df}[Characteristic Function]
-Let $X$ be a set and $A \subseteq X$. The \emph{characteristic function} of $A$ is the function $\chi_A : X \rightarrow 2$ defined by
-\[ \chi_A(x) = \begin{cases}
-1 & \text{if } x \in A \\
-0 & \text{if } x \notin A
-\end{cases} \]
-\end{df}
-
 \begin{prop}
 Let $f : X \rightarrow Y$. Then the following are equivalent:
 \begin{enumerate}
@@ -1026,14 +1009,6 @@ Let $\{A_i\}_{i \in I}$ be a family of sets. The \emph{Cartesian product} $\bigt
 
 We write $A^I$ for $\bigtimes_{i \in I} A$.
 \end{df}
-
-\begin{thm}
-Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps a subset $A$ of $X$ to $\chi_A$ is a one-to-one correspondence.
-\end{thm}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
 
 \begin{df}[Projection]
 Let $\{A_i\}_{i \in I}$ be a family of sets and $i \in I$. The \emph{projection} function $\pi_i : \bigtimes_{i \in I} A_i \rightarrow A_i$ is defined by $\pi_i(a) = a_i$.
@@ -1185,5 +1160,31 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is o
 The \emph{successor} of a set $x$, $x^+$, is defined by
 \[ x^+ := x \cup \{x\} \enspace . \]
 \end{df}
+
+\begin{df}
+We define
+\begin{align*}
+0 & = \emptyset \\
+1 & = 0^+ \\
+2 & = 1^+
+\end{align*}
+etc.
+\end{df}
+
+\begin{df}[Characteristic Function]
+Let $X$ be a set and $A \subseteq X$. The \emph{characteristic function} of $A$ is the function $\chi_A : X \rightarrow 2$ defined by
+\[ \chi_A(x) = \begin{cases}
+1 & \text{if } x \in A \\
+0 & \text{if } x \notin A
+\end{cases} \]
+\end{df}
+
+\begin{thm}
+Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps a subset $A$ of $X$ to $\chi_A$ is a one-to-one correspondence.
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \end{document}
