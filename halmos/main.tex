@@ -1219,6 +1219,7 @@ For any subset $S$ of $\omega$, if $0 \in S$ and $\forall n \in S. n^+ \in S$, t
 \end{proof}
 
 \begin{prop}
+\label{prop:natural_number_not_subset}
 \[ \forall n \in \omega. \forall x \in n. n \not\subseteq x \]
 \end{prop}
 
@@ -1252,6 +1253,7 @@ A set $E$ is a \emph{transitive} set iff, whenever $x \in y \in E$, then $x \in 
 \end{df}
 
 \begin{prop}
+\label{prop:natural_number_transitive}
 Every natural number is a transitive set.
 \end{prop}
 
@@ -1286,4 +1288,33 @@ Every natural number is a transitive set.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$, if $m^+ = n^+$ then $m = n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
+\step{2}{\assume{$m^+ = n^+$}}
+\step{3}{$m \in m^+ = n^+$}
+\step{4}{$m \in n$ or $m = n$}
+\step{5}{$n \in n^+ = m^+$}
+\step{6}{$n \in m$ or $n = m$}
+\step{7}{We cannot have $m \in n$ and $n \in m$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $m \in n$ and $n \in m$}}
+	\step{b}{$m \in m$}
+	\begin{proof}
+		\pf\ Since $m$ is a transitive set (Proposition \ref{prop:natural_number_transitive}).
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts Proposition \ref{prop:natural_number_not_subset}.
+	\end{proof}
+\end{proof}
+\step{8}{$m = n$}
+\qed
+\end{proof}
+
 \end{document}
