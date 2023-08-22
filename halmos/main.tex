@@ -1830,7 +1830,7 @@ For any natural numbers $m$ and $n$, either $m \in n$ or $m = n$ or $n \in m$.
 \qed
 \end{proof}
 
-\begin{cor}
+\begin{cor}[Trichotomy]
 For any natural numbers $m$ and $n$, exactly one of $m \in n$, $m = n$, $n \in m$ holds.
 \end{cor}
 
@@ -1847,6 +1847,33 @@ For any natural numbers $m$ and $n$, exactly one of $m \in n$, $m = n$, $n \in m
 \step{3}{We never have $m = n$ and $n \in m$.}
 \begin{proof}
 	\pf\ By Corollary \ref{cor:n_notin_n}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any natural numbers $m$ and $n$, we have $m \in n$ if and only if $m \subsetneq n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
+\step{2}{If $m \in n$ then $m \subsetneq n$.}
+\begin{proof}
+	\pf\ Since $n$ is a transitive set, and $m \neq n$ by Corollary \ref{cor:n_notin_n}.
+\end{proof}
+\step{3}{If $m \subsetneq n$ then $m \in n$.}
+\begin{proof}
+	\step{a}{\assume{$m \subsetneq n$}}
+	\step{b}{$n \notin m$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:natural_number_not_subset}.
+	\end{proof}
+	\step{c}{$m \neq n$}
+	\step{d}{$m \in n$}
+	\begin{proof}
+		\pf\ Trichotomy.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
