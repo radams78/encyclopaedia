@@ -1317,4 +1317,47 @@ For any natural numbers $m$ and $n$, if $m^+ = n^+$ then $m = n$.
 \qed
 \end{proof}
 
+\begin{thm}[Recursion Theorem]
+Let $X$ be a set. Let $a \in X$. Let $f : X \rightarrow X$. There exists a function $u : \omega \rightarrow X$ such that $u(0) = a$ and, for all $n \in \omega$, we have $u(n^+) = f(u(n))$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{C} = \{ A \in \mathcal{P}(\omega \times X) : (0,a) \in A \wedge \forall n \in \omega. \forall x \in X. (n,x) \in A \Rightarrow (n^+,f(x)) \in A \}$}}
+\step{2}{$\mathcal{C} \neq \emptyset$}
+\begin{proof}
+	\pf\ $\omega \times X \in \mathcal{C}$
+\end{proof}
+\step{3}{\pflet{$u = \bigcap \mathcal{C}$}}
+\step{4}{$u \in \mathcal{C}$}
+\step{5}{$u$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$P(n)$ be the property: $\forall x,y \in X. (n,x) \in u \wedge (n,y) \in u \Rightarrow x = y$}}
+	\step{b}{$P(0)$}
+	\begin{proof}
+		\step{i}{$\forall x \in X. (0,x) \in u \Rightarrow x = a$}
+		\begin{proof}
+			\pf\ If $(0,x) \in u$ and $x \neq a$ then $u - \{(0,x)\} \in \mathcal{C}$ and so $u - \{(0,x)\} \subseteq u$, which is impossible.
+		\end{proof}
+	\end{proof}
+	\step{c}{For every natural number $n$, if $P(n)$ then $P(n^+)$.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be a natural number.}}
+		\step{ii}{\assume{$P(n)$}}
+		\step{iii}{\pflet{$x,y \in X$}}
+		\step{iv}{\assume{$(n^+,x),(n^+,y) \in u$}}
+		\step{v}{\pick\ $x',y' \in X$ such that $(n,x') \in u$, $(n,y') \in u$ and $f(x') = x$ and $f(y') = y$}
+		\begin{proof}
+			\pf\ If no such $x'$ exists then $u - \{(n^+,x)\} \in \mathcal{C}$ and so $u - \{(n^+,x)\} \subseteq u$ which is impossible. Similarly for $y'$.
+		\end{proof}
+		\step{vi}{$x' = y'$}
+		\begin{proof}
+			\pf\ \stepref{ii}
+		\end{proof}
+		\step{vii}{$x = y$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
