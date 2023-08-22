@@ -1249,6 +1249,7 @@ For any subset $S$ of $\omega$, if $0 \in S$ and $\forall n \in S. n^+ \in S$, t
 \end{proof}
 
 \begin{cor}
+\label{cor:n_notin_n}
 For any natural number $n$ we have $n \notin n$.
 \end{cor}
 
@@ -1825,6 +1826,27 @@ For any natural numbers $m$ and $n$, either $m \in n$ or $m = n$ or $n \in m$.
 			\pf\ Then $m = n^+$.
 		\end{proof}
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any natural numbers $m$ and $n$, exactly one of $m \in n$, $m = n$, $n \in m$ holds.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{We never have $m \in n$ and $m = n$.}
+\begin{proof}
+	\pf\ By Corollary \ref{cor:n_notin_n}.
+\end{proof}
+\step{2}{We never have $m \in n$ and $n \in m$.}
+\begin{proof}
+	\pf\ Since $m$ is a transitive set this would imply $m \in m$ contradicting Corollary \ref{cor:n_notin_n}.
+\end{proof}
+\step{3}{We never have $m = n$ and $n \in m$.}
+\begin{proof}
+	\pf\ By Corollary \ref{cor:n_notin_n}.
 \end{proof}
 \qed
 \end{proof}
