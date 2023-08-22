@@ -1451,6 +1451,7 @@ Define \emph{addition} $+$ on $\omega$ by recursion thus:
 \end{df}
 
 \begin{prop}
+\label{prop:plus_assoc}
 For all $m,n,p \in \omega$ we have
 \[ m + (n + p) = (m + n) + p \enspace . \]
 \end{prop}
@@ -1538,6 +1539,88 @@ For all $m,n \in \omega$, we have
 				& = n^+ + m^+
 \end{align*}					
 		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Multiplication]
+Define \emph{multiplication} $\cdot$ on $\omega$ by
+\begin{align*}
+	m0 & = 0\\
+	mn^+ & = mn + m
+\end{align*}
+\end{df}
+
+\begin{prop}
+\label{prop:times_plus_distl}
+For all $m,n,p \in \omega$, we have
+\[ m(n+p) = mn + mp \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(p)$ be the statement $\forall m,n \in \omega. m(n+p) = mn+mp$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(n+0) & = mn \\
+		& = mn + 0 \\
+		& = mn + m0
+	\end{align*}
+\end{proof}
+\step{3}{$\forall p \in \omega. P(p) \Rightarrow P(p^+)$}
+\begin{proof}
+	\step{a}{\pflet{$p \in \omega$}}
+	\step{b}{\assume{$P(p)$}}
+	\step{c}{\pflet{$m,n \in \omega$}}
+	\step{d}{$m(n+p^+) = mn+mp^+$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			m(n+p^+) & = m(n+p)^+ \\
+			& = m(n+p) + m \\
+			& = (mn + mp) + m & (\text{\stepref{b}}) \\
+			& = mn + (mp + m) & (\text{Proposition \ref{prop:plus_assoc}}) \\
+			& = mn + mp^+
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For all $m,n,p \in \omega$ we have
+\[ m(np) = (mn)p \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(p)$ be the statement $\forall m,n \in \omega. m(np) = (mn)p$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(n0) & = m0 \\
+		& = 0 \\
+		& = (mn)0
+	\end{align*}
+\end{proof}
+\step{3}{$\forall p \in \omega. P(p) \Rightarrow P(p^+)$}
+\begin{proof}
+	\step{a}{\pflet{$p \in \omega$}}
+	\step{b}{\assume{$P(p)$}}
+	\step{c}{\pflet{$m,n \in \omega$}}
+	\step{d}{$m(np^+) = (mn)p^+$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			m(np^+) & = m(np + n) \\
+			& = m(np) + mn & (\text{Proposition \ref{prop:times_plus_distl}}) \\
+			& = (mn)p + mn & (\text{\stepref{b}}) \\
+			& = (mn)p^+
+		\end{align*}
 	\end{proof}
 \end{proof}
 \qed
