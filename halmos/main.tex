@@ -800,6 +800,14 @@ Let $R$ be a relation between $X$ and $Y$, $S$ a relation between $Y$ and $Z$, a
 Composition of relations is not commutative in general. Let $X = \{a,b\}$ where $a \neq b$. Let $R = \{(a,a),(b,a)\}$ and $S = \{(a,b),(b,b)\}$. Then $SR = S$ but $RS = R \neq S$.
 \end{ex}
 
+\begin{prop}
+A relation $R$ is transitive if and only if $RR \subseteq R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \begin{df}[Inverse]
 Let $R$ be a relation between $X$ and $Y$. The \emph{inverse} or \emph{converse} $R^{-1}$ is the relation between $Y$ and $X$ defined by
 \[ y R^{-1} x \Leftrightarrow x R y \enspace . \]
@@ -832,6 +840,14 @@ Let $R$ be a relation between $X$ and $Y$, and $S$ a relation between $Y$ and $Z
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+A relation $R$ is symmetric if and only if $R \subseteq R^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \begin{df}[Identity Relation]
 For any set $X$, the \emph{identity relation} $I_X$ on $X$ is
 \[ I_X = \{(x,x) : x \in X \} \enspace . \]
@@ -845,6 +861,15 @@ Let $R$ be a relation between $X$ and $Y$. Then
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
+\begin{prop}
+A relation $R$ on a set $X$ is reflexive if and only if $I_X \subseteq R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 
 \chapter{Functions}
 
