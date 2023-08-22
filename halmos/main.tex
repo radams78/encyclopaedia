@@ -1701,6 +1701,7 @@ m^{n^+} & = m^n m
 \end{df}
 
 \begin{prop}
+\label{prop:exp_add}
 For all $m,n,p \in \omega$ we have
 \[ m^{n+p} = m^n m^p \enspace . \]
 \end{prop}
@@ -1723,6 +1724,30 @@ For all $m,n,p \in \omega$ we have
 		m^{n+p^+} & = m^{n+p}m \\
 		& = m^n m^p m \\
 		& = m^n m^{p^+}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For all $m,n,p \in \omega$ we have
+\[ (m^n)^p = m^{np} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$(m^n)^0 = m^{n0}$}
+\begin{proof}
+	\pf\ Both are equal to 1.
+\end{proof}
+\step{2}{If $(m^n)^p = m^{np}$ then $(m^n)^{p^+} = m^{np^+}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(m^n)^{p^+} & = (m^n)^p m^n \\
+		& = m^{np} m^n \\
+		& = m^{np+n} & (\text{Proposition \ref{prop:exp_add}}) \\
+		& = m^{np^+}
 	\end{align*}
 \end{proof}
 \qed
