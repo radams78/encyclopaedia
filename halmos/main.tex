@@ -1041,6 +1041,22 @@ Let $f : X \rightarrow Y$, $g : Y \rightarrow Z$ and $h : Z \rightarrow W$. Then
 \end{prop}
 
 \begin{proof}
+\pf\ Easy. \qed 
+\end{proof}
+
+\begin{ex}
+Function composition is not commutative in general.
+
+Let $X = \{a,b\}$ where $a \neq b$. Define $f : X \rightarrow Y$ by $f(a) = f(b) = a$, and $g$ by $g(a) = g(b) = b$. Then $gf = g$ but $fg = f$.
+\end{ex}
+
+\begin{prop}
+Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then
+\[ (gf)^{-1} = f^{-1}g^{-1} : \mathcal{P} Z \rightarrow \mathcal{P} X \enspace . \]
+\end{prop}
+
+\begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
 \end{document}
