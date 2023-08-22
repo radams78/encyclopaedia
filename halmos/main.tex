@@ -1218,4 +1218,72 @@ For any subset $S$ of $\omega$, if $0 \in S$ and $\forall n \in S. n^+ \in S$, t
 \pf\ From the definition of $\omega$. \qed
 \end{proof}
 
+\begin{prop}
+\[ \forall n \in \omega. \forall x \in n. n \not\subseteq x \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall x \in 0. 0 \not\subseteq x$}
+\begin{proof}
+	\pf\ Vacuous.
+\end{proof}
+\step{2}{For any natural number $n$, if $\forall x \in n. n \not\subseteq x$ then $\forall x \in n^+. n^+ \not\subseteq x$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$\forall x \in n. n \not\subseteq x$}}
+	\step{c}{\pflet{$x \in n^+$}}
+	\step{d}{\assume{for a contradiction $n^+ \subseteq x$}}
+	\step{d}{$x \in n$ or $x = n$}
+	\step{e}{\case{$x \in n$}}
+	\begin{proof}
+		\pf\ Then we have $n \subseteq n^+ \subseteq x$ contradicting \stepref{b}.
+	\end{proof}
+	\step{f}{\case{$x = n$}}
+	\begin{proof}
+		\pf\ Then we have $n \in n^+ \subseteq x = n$ and $n \subseteq n$ contradicting \stepref{b}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Transitive Set]
+A set $E$ is a \emph{transitive} set iff, whenever $x \in y \in E$, then $x \in E$.
+\end{df}
+
+\begin{prop}
+Every natural number is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{0 is a transitive set.}
+\begin{proof}
+	\pf\ Vacuously, if $x \in y \in 0$ then $x \in 0$.
+\end{proof}
+\step{2}{For any natural number $n$, if $n$ is a transitive set, then $n^+$ is a transitive set.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{aa}{\assume{$n$ is a transitive set.}}
+	\step{b}{\pflet{$x \in y \in n^+$}}
+	\step{c}{$y \in n$ or $y = n$}
+	\step{d}{\case{$y \in n$}}
+	\begin{proof}
+		\step{i}{$x \in n$}
+		\begin{proof}
+			\pf\ \stepref{aa}, \stepref{b}, \stepref{d}.
+		\end{proof}
+		\step{ii}{$x \in n^+$}
+	\end{proof}
+	\step{e}{\case{$y = n$}}
+	\begin{proof}
+		\step{i}{$x \in n$}
+		\begin{proof}
+			\pf\ \stepref{b}, \stepref{e}
+		\end{proof}
+		\step{ii}{$x \in n^+$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 \end{document}
