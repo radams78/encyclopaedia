@@ -1187,4 +1187,17 @@ Let $X$ be a set. The function $\chi : \mathcal{P} X \rightarrow 2^X$ that maps 
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{df}
+The set $\omega$ of \emph{natural numbers} is the set such that:
+\begin{itemize}
+\item $0 \in \omega$
+\item For all $n \in \omega$ we have $n^+ \in \omega$
+\item For any set $X$, if $0 \in X$ and $\forall n \in X. n^+ \in X$ then $\omega \subseteq X$
+\end{itemize}
+\end{df}
+
+\begin{proof}
+\pf\ To show this exists, pick a set $A$ such that $0 \in A$ and $\forall n \in A. n^+ \in A$ (by the Axiom of Infinity), and let $\omega = \bigcap \{ X \in \mathcal{P} A : 0 \in X \wedge \forall n \in X. n^+ \in X \}$. \qed
+\end{proof}
+
 \end{document}
