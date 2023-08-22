@@ -832,6 +832,20 @@ Let $R$ be a relation between $X$ and $Y$, and $S$ a relation between $Y$ and $Z
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{df}[Identity Relation]
+For any set $X$, the \emph{identity relation} $I_X$ on $X$ is
+\[ I_X = \{(x,x) : x \in X \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $R$ be a relation between $X$ and $Y$. Then
+\[ I_Y R = R I_X = R \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Functions}
 
 \begin{df}[Function]
@@ -851,9 +865,13 @@ Let $f : X \rightarrow Y$ and $A \subseteq X$. The \emph{image} of $A$ under $f$
 Let $Y$ be a set and $X \subseteq Y$. Then the \emph{inclusion map} $i : X \hookrightarrow Y$ is the function defined by $i(x) = x$ for all $x \in X$.
 \end{df}
 
-\begin{df}[Identity Map]
-For any set $X$, the \emph{identity map} on $X$ is the inclusion map of $X$ into $X$.
-\end{df}
+\begin{prop}
+For any set $X$, the identity relation $I_X$ is a function $X \rightarrow X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \begin{df}[Restriction]
 Let $f : Y \rightarrow Z$ and $X \subseteq Y$. The \emph{restriction} of $f$ to $X$ is the function $f \restriction X : X \rightarrow Z$ defined by
@@ -1077,9 +1095,13 @@ Let $f : X \rightarrow Y$ and $B \subseteq Y$. Then $f^{-1}(Y - B) = X - f^{-1}(
 \pf\ Easy. \qed
 \end{proof}
 
-\begin{df}
-Let $f : X \rightarrow Y$ be one-to-one. Then we write $f^{-1}$ for the function $f^{-1} : \ran f \rightarrow X$ defined by: $f^{-1}(y)$ is the unique $x$ such that $f(x) = y$.
-\end{df}
+\begin{prop}
+Let $f : X \rightarrow Y$ be one-to-one. Then the inverse of $f$ as a relation, $f^{-1}$, is a function $f^{-1} : \ran f \rightarrow X$, and for all $y \in \ran f$, we have $f^{-1}(y)$ is the unique $x$ such that $f(x) = y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \begin{prop}
 Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then $g f : X \rightarrow Z$ and, for all $x \in X$, we have

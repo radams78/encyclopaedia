@@ -10,6 +10,6 @@
 \contentsline {chapter}{\numberline {10}Power Sets}{14}{chapter.10}%
 \contentsline {chapter}{\numberline {11}Ordered Pairs}{16}{chapter.11}%
 \contentsline {chapter}{\numberline {12}Relations}{18}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Functions}{20}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Families}{22}{chapter.14}%
-\contentsline {chapter}{\numberline {15}Inverses and Composites}{24}{chapter.15}%
+\contentsline {chapter}{\numberline {13}Functions}{21}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Families}{23}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Inverses and Composites}{25}{chapter.15}%
