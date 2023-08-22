@@ -1248,6 +1248,14 @@ For any subset $S$ of $\omega$, if $0 \in S$ and $\forall n \in S. n^+ \in S$, t
 \qed
 \end{proof}
 
+\begin{cor}
+For any natural number $n$ we have $n \notin n$.
+\end{cor}
+
+\begin{cor}
+For any natural number $n$ we have $n \neq n^+$.
+\end{cor}
+
 \begin{df}[Transitive Set]
 A set $E$ is a \emph{transitive} set iff, whenever $x \in y \in E$, then $x \in E$.
 \end{df}
@@ -1355,6 +1363,78 @@ Let $X$ be a set. Let $a \in X$. Let $f : X \rightarrow X$. There exists a funct
 			\pf\ \stepref{ii}
 		\end{proof}
 		\step{vii}{$x = y$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any natural number $n$, either $n = 0$ or there exists a natural number $m$ such that $n = m^+$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy induction on $n$. \qed
+\end{proof}
+
+\begin{prop}
+$\omega$ is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property $\forall x \in n. x \in \omega$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Vacuous.
+\end{proof}
+\step{3}{For any natural number $n$, if $P(n)$ then $P(n^+)$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$x \in n^+$}}
+	\step{d}{$x \in n$ or $x = n$}
+	\step{e}{\case{$x \in n$}}
+	\begin{proof}
+		\pf\ Then $x \in \omega$ by \stepref{b}.
+	\end{proof}
+	\step{f}{\case{$x = n$}}
+	\begin{proof}
+		\pf\ Then $x \in \omega$ by \stepref{a}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any natural number $n$ and any nonempty subset $E \subseteq n$, there exists $k \in E$ such that $\forall m \in E. k = m \vee k \in m$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for any nonempty subset $E \subseteq n$, there exists $k \in E$ such that $\forall m \in E. k = m \vee k \in m$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Vacuous as there is no nonempty subset of 0.
+\end{proof}
+\step{3}{For any natural number $n$, if $P(n)$ then $P(n^+)$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$E$ be a nonempty subset of $n^+$}}
+	\step{d}{\case{$E - \{n\} = \emptyset$}}
+	\begin{proof}
+		\pf\ Then $E = \{n\}$ so take $k = n$.
+	\end{proof}
+	\step{e}{\case{$E - \{n\} \neq \emptyset$}}
+	\begin{proof}
+		\step{i}{\pick\ $k \in E - \{n\}$ such that $\forall m \in E - \{n\}. k = m \vee k \in m$}
+		\begin{proof}
+			\pf\ By \stepref{b}.
+		\end{proof}
+		\step{ii}{$\forall m \in E. k = m \vee k \in m$}
+		\begin{proof}
+			\pf\ Since $k \in n$.
+		\end{proof}
 	\end{proof}
 \end{proof}
 \qed
