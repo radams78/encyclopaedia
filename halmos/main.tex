@@ -938,6 +938,27 @@ Let $X$ be a set and $A \subseteq X$. The \emph{characteristic function} of $A$ 
 \end{cases} \]
 \end{df}
 
+\begin{prop}
+Let $f : X \rightarrow Y$. Then the following are equivalent:
+\begin{enumerate}
+\item $f$ is one-to-one.
+\item For all $A,B \subseteq X$, we have $f(A \cap B) = f(A) \cap f(B)$.
+\item For all $A \subseteq X$, we have $f(X-A) \subseteq Y - f(A)$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $f : X \rightarrow Y$. Then $f$ maps $X$ onto $Y$ if and only if, for all $A \subseteq X$, we have $Y - f(A) \subseteq f(X-A)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Families}
 
 \begin{df}[Family]
@@ -1144,6 +1165,14 @@ Example \ref{ex:composition_not_commutative} shows that function composition is 
 \begin{prop}
 Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then
 \[ (gf)^{-1} = f^{-1}g^{-1} : \mathcal{P} Z \rightarrow \mathcal{P} X \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is one-to-one and $g$ maps $Y$ onto $X$.
 \end{prop}
 
 \begin{proof}
