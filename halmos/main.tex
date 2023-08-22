@@ -781,6 +781,57 @@ Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, a
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{df}[Composition]
+Let $R$ be a relation between $X$ and $Y$, and $S$ a relation between $Y$ and $Z$. The \emph{composite} or \emph{relative product} $S \circ R = SR$ is the relation between $X$ and $Z$ defined by
+\[ x (S \circ R) z \Leftrightarrow \exists y \in Y (xRy \wedge ySz) \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $R$ be a relation between $X$ and $Y$, $S$ a relation between $Y$ and $Z$, and $T$ a relation between $Z$ and $W$. Then
+\[ T(SR) = (TS)R \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{ex}
+\label{ex:composition_not_commutative}
+Composition of relations is not commutative in general. Let $X = \{a,b\}$ where $a \neq b$. Let $R = \{(a,a),(b,a)\}$ and $S = \{(a,b),(b,b)\}$. Then $SR = S$ but $RS = R \neq S$.
+\end{ex}
+
+\begin{df}[Inverse]
+Let $R$ be a relation between $X$ and $Y$. The \emph{inverse} or \emph{converse} $R^{-1}$ is the relation between $Y$ and $X$ defined by
+\[ y R^{-1} x \Leftrightarrow x R y \enspace . \]
+\end{df}
+
+\begin{prop}
+For any relation $R$, we have
+\[ \dom R^{-1} = \ran R \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+For any relation $R$, we have
+\[ \ran R^{-1} = \dom R \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a relation between $X$ and $Y$, and $S$ a relation between $Y$ and $Z$. Then
+\[ (SR)^{-1} = R^{-1}S^{-1} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Functions}
 
 \begin{df}[Function]
@@ -1030,24 +1081,17 @@ Let $f : X \rightarrow Y$ and $B \subseteq Y$. Then $f^{-1}(Y - B) = X - f^{-1}(
 Let $f : X \rightarrow Y$ be one-to-one. Then we write $f^{-1}$ for the function $f^{-1} : \ran f \rightarrow X$ defined by: $f^{-1}(y)$ is the unique $x$ such that $f(x) = y$.
 \end{df}
 
-\begin{df}[Composite]
-Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. The \emph{composite} $g \circ f = g f : X \rightarrow Z$ is the function defined by
-\[ (g \circ f)(x) = g(f(x)) \qquad (x \in X) \enspace . \]
-\end{df}
-
 \begin{prop}
-Let $f : X \rightarrow Y$, $g : Y \rightarrow Z$ and $h : Z \rightarrow W$. Then
-\[ h(gf) = (hg)f \enspace . \]
+Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then $g f : X \rightarrow Z$ and, for all $x \in X$, we have
+\[ (g \circ f)(x) = g(f(x)) \enspace . \]
 \end{prop}
 
 \begin{proof}
-\pf\ Easy. \qed 
+\pf\ Easy. \qed
 \end{proof}
 
 \begin{ex}
-Function composition is not commutative in general.
-
-Let $X = \{a,b\}$ where $a \neq b$. Define $f : X \rightarrow Y$ by $f(a) = f(b) = a$, and $g$ by $g(a) = g(b) = b$. Then $gf = g$ but $fg = f$.
+Example \ref{ex:composition_not_commutative} shows that function composition is not commutative in general.
 \end{ex}
 
 \begin{prop}
@@ -1058,33 +1102,5 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
-
-\begin{df}[Inverse]
-Let $R$ be a relation between $X$ and $Y$. The \emph{inverse} or \emph{converse} $R^{-1}$ is the relation between $Y$ and $X$ defined by
-\[ y R^{-1} x \Leftrightarrow x R y \enspace . \]
-\end{df}
-
-\begin{prop}
-For any relation $R$, we have
-\[ \dom R^{-1} = \ran R \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-For any relation $R$, we have
-\[ \ran R^{-1} = \dom R \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{df}[Composition]
-Let $R$ be a relation between $X$ and $Y$, and $S$ a relation between $Y$ and $Z$. The \emph{composite} $S \circ R = SR$ is the relation between $X$ and $Z$ defined by
-\[ x (S \circ R) z \Leftrightarrow \exists y \in Y (xRy \wedge ySz) \enspace . \]
-\end{df}
 
 \end{document}
