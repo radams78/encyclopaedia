@@ -2116,4 +2116,45 @@ Every subset of a finite set is finite.
 For any finite set $E$, the \emph{number of elements} in $E$, $\sharp(E)$, is the unique natural number such that $E \sim \sharp(E)$.
 \end{df}
 
+\begin{prop}
+Let $E$ and $F$ be finite sets. If $E \subseteq F$ then $\sharp(E) \leq \sharp(F)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:subset_finite}. \qed
+\end{proof}
+
+\begin{prop}
+Let $E$ and $F$ be disjoint finite sets. Then $E \cup F$ is finite and $\sharp(E \cup F) = \sharp(E) \cup \sharp(F)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the statement: $n \in \omega$ and for any $m \in \omega$, if $E \sim m$, $F \sim n$ and $E \cap F = \emptyset$, then $E \cup F \sim m + n$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\step{a}{\pflet{$m \in \omega$}}
+	\step{b}{\pflet{$E \sim m$ and $F \sim 0$}}
+	\step{c}{$F = \emptyset$}
+	\step{d}{$E \cup F = E \sim m = m + 0$}
+\end{proof}
+\step{3}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \omega$}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$m \in \omega$}}
+	\step{d}{\pflet{$E \sim m$ and $F \sim n + 1$}}
+	\step{e}{\assume{$E \cap F = \emptyset$}}
+	\step{f}{\pick\ $f \in F$}
+	\step{g}{$F - \{f\} \sim n$}
+	\step{h}{$E \cap (F - \{f\}) = \emptyset$}
+	\step{i}{$E \cup (F - \{f\}) \sim m + n$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{j}{$E \cup F \sim m + n + 1$}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
