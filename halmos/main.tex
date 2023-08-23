@@ -1190,6 +1190,14 @@ A \emph{partial order} on a set $X$ is a relation on $X$ that is reflexive, anti
 A \emph{partially ordered set} or \emph{poset} is a pair $(X, \leq)$ such that $\leq$ is a partial order on $X$.
 \end{df}
 
+\begin{prop}
+For any set $X$, the relation $\subseteq$ is a partial order on $\mathcal{P} X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \begin{df}[Total Order]
 A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
 We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chain}.
@@ -1197,6 +1205,14 @@ We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chai
 
 \begin{prop}
 Let $R$ be a partial order on $X$. Then $R$ is total if and only if $X^2 \subseteq R \cup R^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+For any set $X$, the relation $\subseteq$ is a total order on $X$ iff $X$ is either $\emptyset$ or a singleton.
 \end{prop}
 
 \begin{proof}
