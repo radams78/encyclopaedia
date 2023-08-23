@@ -2268,4 +2268,27 @@ The union of a finite set of finite sets is finite.
 \qed
 \end{proof}
 
+\begin{prop}
+Every nonempty finite set of natural numbers has a greatest element.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for every $E \subseteq \mathbb{N}$, if $E \sim n$ then $E$ has a greatest element.}}
+\step{2}{$P(1)$}
+\begin{proof}
+	\pf\ Since $k$ is the greatest element of $\{k\}$.
+\end{proof}
+\step{3}{$\forall n \geq 1. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n \geq 1$}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\assume{$E \subseteq \omega$ and $E \sim n+1$}}
+	\step{d}{\pick\ $k \in E$}
+	\step{e}{\pflet{$l$ be the greatest element of $E - \{k\}$}}
+	\step{f}{Either $k$ or $l$ is greatest in $E$.}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
