@@ -19,8 +19,9 @@
 \contentsline {section}{\numberline {3.6}Functions}{15}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Families}{17}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{18}{section.3.8}%
-\contentsline {chapter}{\numberline {4}Order}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Natural Numbers}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Natural Numbers}{22}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Arithmetic}{26}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Finite Sets}{35}{section.5.3}%
+\contentsline {chapter}{\numberline {4}Equivalence}{21}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Order}{22}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{23}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{23}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Arithmetic}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Finite Sets}{36}{section.6.3}%
