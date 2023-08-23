@@ -1182,6 +1182,14 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is o
 Sets $E$ and $F$ are \emph{equivalent}, $E \sim F$, iff there exists a one-to-one correspondence between them.
 \end{df}
 
+\begin{prop}
+For any set $X$, equivalence is an equivalence relation on $\mathcal{P} X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+
 \chapter{Order}
 
 \begin{df}[Partial Order]
@@ -1846,72 +1854,82 @@ For all $m,n,p \in \omega$ we have
 \qed
 \end{proof}
 
+\section{Order on the Natural Numbers}
+
+\begin{df}
+Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$.
+
+We write $m \leq n$ iff $m < n \vee m = n$.
+\end{df}
+
 \begin{prop}
-For any natural numbers $m$ and $n$, either $m \in n$ or $m = n$ or $n \in m$.
+The relation $\leq$ is a total order on $\omega$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$P(n)$ be the property: for all $m \in \omega$, either $m \in n$ or $m = n$ or $n \in m$}}
-\step{2}{$P(0)$}
+\step{1}{$\leq$ is reflexive.}
 \begin{proof}
-	\step{a}{\pflet{$Q(m)$ be the property: either $m = 0$ or $0 \in m$}}
-	\step{b}{$Q(0)$}
-	\begin{proof}
-		\pf\ Since $0=0$.
-	\end{proof}
-	\step{c}{For all $m \in \omega$, if $Q(m)$ then $Q(m^+)$}
-	\begin{proof}
-		\pf\ If $m = 0$ or $0 \in m$ then $0 \in m^+$.
-	\end{proof}
+	\pf\ By definition.
 \end{proof}
-\step{3}{For any natural number $n$, if $P(n)$ then $P(n^+)$}
+\step{2}{$\leq$ is antisymmetric.}
 \begin{proof}
-	\step{a}{\pflet{$n$ be a natural number.}}
-	\step{b}{\assume{$P(n)$}}
-	\step{c}{\pflet{$m \in \omega$}}
-	\step{d}{$m \in n$ or $m = n$ or $n \in m$}
+	\step{a}{\assume{$m \leq n$ and $n \leq m$}}
+	\step{b}{We cannot have $m < n$ and $n < m$}
 	\begin{proof}
-		\pf\ \stepref{b}
+		\pf\ Then we would have $m < m$ by Proposition \ref{prop:natural_number_transitive}, contradicting Corollary \ref{cor:n_notin_n}.
 	\end{proof}
-	\step{e}{\case{$m \in n$ or $m = n$}}
+	\step{c}{$m = n$}
+\end{proof}
+\step{3}{$\leq$ is transitive.}
+\begin{proof}
+	\pf\ Follows from Proposition \ref{prop:natural_number_transitive}.
+\end{proof}
+\step{4}{For all $m,n \in \omega$, either $m \leq n$ or $n \leq m$.}
+\begin{proof}
+	\step{a}{\pflet{$P(n)$ be the statement: $\forall m \in \omega. m \leq n \vee n \leq m$}}
+	\step{b}{$P(0)$}
 	\begin{proof}
-		\pf\ Then $m \in n^+$.
-	\end{proof}
-	\step{f}{\case{$n \in m$}}
-	\begin{proof}
-		\step{i}{\pick\ $p$ such that $m = p^+$}
-		\step{ii}{$n \in p$ or $n = p$}
-		\step{iii}{\case{$n \in p$}}
+		\step{i}{\pflet{$Q(m)$ be the statement: $0 \leq m$}}
+		\step{ii}{$Q(0)$}
 		\begin{proof}
-			\pf\ Then $n^+ \in p^+ = m$ by Proposition \ref{prop:succ_in_succ}.
+			\pf\ Since $0 \leq 0$.
 		\end{proof}
-		\step{iv}{\case{$n = p$}}
+		\step{iii}{$\forall m \in \omega. Q(m) \Rightarrow Q(m+1)$}
 		\begin{proof}
-			\pf\ Then $m = n^+$.
+			\pf\ If $0 \leq m$ then $0 < m+1$ by transitivity.
 		\end{proof}
 	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}[Trichotomy]
-For any natural numbers $m$ and $n$, exactly one of $m \in n$, $m = n$, $n \in m$ holds.
-\end{cor}
-
-\begin{proof}
-\pf
-\step{1}{We never have $m \in n$ and $m = n$.}
-\begin{proof}
-	\pf\ By Corollary \ref{cor:n_notin_n}.
-\end{proof}
-\step{2}{We never have $m \in n$ and $n \in m$.}
-\begin{proof}
-	\pf\ Since $m$ is a transitive set this would imply $m \in m$ contradicting Corollary \ref{cor:n_notin_n}.
-\end{proof}
-\step{3}{We never have $m = n$ and $n \in m$.}
-\begin{proof}
-	\pf\ By Corollary \ref{cor:n_notin_n}.
+	\step{c}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \omega$}}
+		\step{ii}{\assume{$P(n)$}}
+		\step{iii}{$P(n+1)$}
+		\begin{proof}
+			\step{one}{\pflet{$Q(m)$ be the property $m \leq n + 1 \vee n + 1 \leq m$}}
+			\step{two}{$Q(0)$}
+			\begin{proof}
+				\pf\ \stepref{b}
+			\end{proof}
+			\step{three}{$\forall m \in \omega. Q(m) \Rightarrow Q(m+1)$}
+			\begin{proof}
+				\step{A}{\pflet{$m \in \omega$}}
+				\step{B}{\assume{$Q(m)$}}
+				\step{C}{\case{$m \leq n$}}
+				\begin{proof}
+					\pf\ Then $m < n+1$
+				\end{proof}
+				\step{D}{\case{$n < m$}}
+				\begin{proof}
+					\pf\ Then $n+1 < m+1$ by Proposition \ref{prop:succ_in_succ}, so $n+1 \leq m$.
+				\end{proof}
+				\step{E}{\case{$n = m$}}
+				\begin{proof}
+					\pf\ Then $n+1 = m+1$.
+				\end{proof}
+			\end{proof}
+		\end{proof}
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
@@ -1941,20 +1959,6 @@ For any natural numbers $m$ and $n$, we have $m \in n$ if and only if $m \subset
 	\end{proof}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{df}
-Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$.
-
-We write $m \leq n$ iff $m < n \vee m = n$.
-\end{df}
-
-\begin{prop}
-For natural numbers $m$ and $n$, if $m \leq n$ and $n \leq m$ then $m = n$.
-\end{prop}
-
-\begin{proof}
-\pf\ We cannot have $m < n$ and $n < m$ by trichotomy. \qed
 \end{proof}
 
 \begin{prop}
@@ -2023,14 +2027,6 @@ For any nonempty set of natural numbers $E$, there exists $k \in E$ such that $\
 	\end{proof}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{prop}
-For any set $X$, equivalence is an equivalence relation on $\mathcal{P} X$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy.
 \end{proof}
 
 \begin{prop}

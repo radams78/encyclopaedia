@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 22:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -683,16 +683,16 @@ WARNING: proof step "d" (<2>5) already defined
 [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 61221C8E05BF91B614D4245E797D8E4B;3623.
+(rerunfilecheck)             Checksum: 159DB9D8CF88FDF2E22E088947617A72;3830.
  ) 
 Here is how much of TeX's memory you used:
- 9911 strings out of 476091
- 146331 string characters out of 5794081
- 1870330 words of memory out of 5000000
- 29917 multiletter control sequences out of 15000+600000
+ 9915 strings out of 476091
+ 146357 string characters out of 5794081
+ 1869330 words of memory out of 5000000
+ 29922 multiletter control sequences out of 15000+600000
  528316 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,356b,711s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,76p,356b,809s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -713,10 +713,10 @@ ts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb>
-Output written on main.pdf (39 pages, 302014 bytes).
+Output written on main.pdf (39 pages, 301766 bytes).
 PDF statistics:
- 750 PDF objects out of 1000 (max. 8388607)
- 606 compressed objects within 7 object streams
- 266 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 753 PDF objects out of 1000 (max. 8388607)
+ 609 compressed objects within 7 object streams
+ 265 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

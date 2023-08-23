@@ -24,4 +24,5 @@
 \contentsline {chapter}{\numberline {6}Natural Numbers}{23}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Natural Numbers}{23}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Arithmetic}{27}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Finite Sets}{36}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Order on the Natural Numbers}{32}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Finite Sets}{35}{section.6.4}%
