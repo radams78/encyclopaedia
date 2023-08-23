@@ -1893,6 +1893,7 @@ For natural numbers $m$ and $n$, if $m \leq n$ and $n \leq m$ then $m = n$.
 \end{proof}
 
 \begin{prop}
+\label{prop:plus_mono}
 For natural numbers $m$, $n$ and $k$, if $m < n$ then $m + k < n + k$.
 \end{prop}
 
@@ -1904,6 +1905,28 @@ For natural numbers $m$, $n$ and $k$, if $m < n$ then $m + k < n + k$.
 \step{4}{$\forall k \in \omega. m + k < n + k \Rightarrow m + k^+ < n + k^+$}
 \begin{proof}
 	\pf\ By Proposition \ref{prop:succ_in_succ}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For natural numbers $m$, $n$ and $k$, if $m < n$ and $k \neq 0$ then $mk < nk$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$m,n \in \omega$}}
+\step{2}{\assume{$m < n$}}
+\step{3}{$m1 < n1$}
+\step{4}{For all $k \in \omega$, if $k \neq 0$ and $mk < nk$ then $m(k+1) < n(k+1)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		m(k+1) & = mk + m \\
+		& < mk + n & (\text{Proposition \ref{prop:plus_mono}}) \\
+		& < nk + n & (\text{Proposition \ref{prop:plus_mono}}) \\
+		& = n(k+1)
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
