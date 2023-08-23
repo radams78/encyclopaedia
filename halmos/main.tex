@@ -1212,11 +1212,31 @@ For any set $X$, the relation $\subseteq$ is a partial order on $\mathcal{P} X$.
 \end{proof}
 
 \begin{prop}
+\label{prop:lt_asym}
 In a poset, we never have $x < y$ and $y < x$.
 \end{prop}
 
 \begin{proof}
 \pf\ We would then have $x \leq y$ and $y \leq x$ hence $x = y$ by antisymmetry. But if $x < y$ or $y < x$ then $x \neq y$. \qed
+\end{proof}
+
+\begin{prop}
+The relation $<$ is transitive.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$x < y$ and $y < z$}}
+\step{2}{$x \leq y$ and $y \leq z$}
+\step{3}{$x \leq z$}
+\begin{proof}
+	\pf\ Since $\leq$ is transitive.
+\end{proof}
+\step{4}{$x \neq z$}
+\begin{proof}
+	\pf\ By Proposition \ref{prop:lt_asym}.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{df}[Total Order]
