@@ -2004,4 +2004,78 @@ Let $n$ be a natural number. Let $X$ be a proper subset of $n$. Then there exist
 \qed
 \end{proof}
 
+\begin{prop}
+For every natural number $n$, we have $n$ is not equivalent to a proper subset of $n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: every one-to-one function $n \rightarrow n$ is onto.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ The only function $0 \rightarrow 0$ is $\emptyset$.
+\end{proof}
+\step{3}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \omega$}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\assume{$f : n+1 \rightarrow n+1$ is one-to-one.}}
+	\step{d}{\pflet{$g : n \rightarrow n$ be the function
+	\[ g(k) = \begin{cases}
+	f(k) & \text{if } f(k) < n \\
+	f(n) & \text{if } f(k) = n
+	\end{cases} \]}}
+	\begin{proof}
+		\pf\ If $k < n$ and $f(k) = n$ then $f(n) < n$ since $f$ is one-to-one.
+	\end{proof}
+	\step{e}{$g$ is one-to-one.}
+	\begin{proof}
+		\step{i}{\pflet{$k,l < n$}}
+		\step{ii}{\assume{$g(k) = g(l)$}}
+		\step{iii}{\case{$f(k) < n$ and $f(l) < n$}}
+		\begin{proof}
+			\pf\ Then $f(k) = g(k) = g(l) = f(l)$ so $k = l$ since $f$ is one-to-one.
+		\end{proof}
+		\step{iv}{\case{$f(k) < n$ and $f(l) = n$}}
+		\begin{proof}
+			\pf\ Then $f(k) = g(k) = g(l) = f(n)$ contradicting the fact that $f$ is one-to-one.
+		\end{proof}
+		\step{v}{\case{$f(k) = n$ and $f(l) < n$}}
+		\begin{proof}
+			\pf\ Similar.
+		\end{proof}
+		\step{vi}{\case{$f(k) = n$ and $f(l) = n$}}
+		\begin{proof}
+			\pf\ Then $k = l$ since $f$ is one-to-one.
+		\end{proof}
+	\end{proof}
+	\step{f}{$g$ maps $n$ onto $n$.}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{g}{$f$ maps $n+1$ onto $n+1$.}
+	\begin{proof}
+		\step{i}{\pflet{$l < n +1$}}
+		\step{ii}{\case{$l < n$}}
+		\begin{proof}
+			\step{one}{\pick\ $k < n$ such that $g(k) = l$}
+			\step{two}{$f(k) = l$ or $f(n) = l$}
+		\end{proof}
+		\step{iii}{\case{$l = n$}}
+		\begin{proof}
+			\step{one}{\case{$f(n) = n$}}
+			\begin{proof}
+				\pf\ Then $l \in \ran f$ as required.
+			\end{proof}
+			\step{two}{\case{$f(n) < n$}}
+			\begin{proof}
+				\step{A}{\pick\ $k < n$ such that $g(k) = f(n)$}
+				\step{B}{$f(k) = n$}
+			\end{proof}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
