@@ -2088,20 +2088,19 @@ A set is \emph{finite} iff it is equivalent to a natural number; otherwise, it i
 \end{df}
 
 \begin{prop}
+No finite set is equivalent to one of its proper subsets.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:pigeonhole}. \qed
+\end{proof}
+
+\begin{prop}
 $\omega$ is infinite.
 \end{prop}
 
 \begin{proof}
-\pf
-\step{1}{\pflet{$f : \omega \rightarrow \omega$ be the function $f(n) = n + 1$}}
-\step{2}{$f$ is a one-to-one correspondence between $\omega$ and $\omega - \{0\}$}
-\step{3}{\assume{for a contradiction $n \in \omega$ and $g$ is a one-to-one correspondence between $\omega$ and $n$.}}
-\step{4}{$g \restriction (\omega - \{0\}) \circ f \circ g^{-1}$ is a one-to-one correspondence between $n$ and $n - \{ g(0) \}$}
-\qedstep
-\begin{proof}
-	\pf\ This contradicts Proposition \ref{prop:pigeonhole}.
-\end{proof}
-\qed
+\pf\ Since the function that maps $n$ to $n+1$ is a one-to-one correspondence between $\omega$ and $\omega - \{0\}$. \qed
 \end{proof}
 
 \end{document}
