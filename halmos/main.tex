@@ -1931,4 +1931,33 @@ For natural numbers $m$, $n$ and $k$, if $m < n$ and $k \neq 0$ then $mk < nk$.
 \qed
 \end{proof}
 
+\begin{prop}
+For any nonempty set of natural numbers $E$, there exists $k \in E$ such that $\forall m \in E. k \leq m$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E \subseteq \omega$}}
+\step{2}{\assume{there is no $k \in E$ such that $\forall m \in E. k \leq m$.} \prove{$E = \emptyset$}}
+\step{3}{$\forall n \in \omega. n \notin E$}
+\begin{proof}
+	\step{a}{\pflet{$P(n)$ be the property: $\forall m < n. m \notin E$}}
+	\step{b}{$P(0)$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{c}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \omega$}}
+		\step{ii}{\assume{$\forall m < n. m \notin E$}}
+		\step{iii}{$n \notin E$}
+		\begin{proof}
+			\pf\ From \stepref{2}.
+		\end{proof}
+		\step{iv}{$\forall m < n + 1. m \notin E$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
