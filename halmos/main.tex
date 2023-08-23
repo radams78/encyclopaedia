@@ -2167,6 +2167,7 @@ The union of two finite sets is finite.
 \end{proof}
 
 \begin{prop}
+\label{prop:size_product}
 If $E$ and $F$ are finite sets then $E \times F$ is finite and $\sharp(E \times F) = \sharp(E) \sharp(F)$.
 \end{prop}
 
@@ -2191,6 +2192,41 @@ If $E$ and $F$ are finite sets then $E \times F$ is finite and $\sharp(E \times 
 	\step{j}{$E \times F \sim mn + m$}
 	\begin{proof}
 		\pf\ Proposition \ref{prop:size_of_union}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any finite sets $E$ and $F$, we have $E^F$ is finite and $\sharp(E^F) = \sharp(E)^{\sharp(F)}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: $n \in \omega$ and for all $m \in \omega$, if $E \sim m$ and $F \sim n$ then $E^F \sim m^n$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Since $E^\emptyset = \{\emptyset\} \sim 1$
+\end{proof}
+\step{3}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \omega$}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$m \in \omega$}}
+	\step{d}{\pflet{$E \sim m$ and $F \sim n + 1$}}
+	\step{e}{\pick\ $f \in F$}
+	\step{f}{$F - \{f\} \sim n$}
+	\step{g}{\pflet{$\phi : E^F \rightarrow E^{F - \{f\}} \times E$ be the function $\phi(g) = (g \restriction (F - \{f\}), g(f))$}}
+	\step{H}{$\phi$ is a one-to-one correspondence}
+	\step{i}{$\sharp(E^F) = m^{n+1}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\sharp(E^F) & = \sharp(E^{F - \{f\}} \times E) \\
+			& = \sharp(E^{F - \{f\}}) \sharp(E) & (\text{Proposition \ref{prop:size_product}}) \\
+			& = m^n m & (\text{\stepref{b}, \stepref{d}}) \\
+			& = m^{n+1}
+		\end{align*}
 	\end{proof}
 \end{proof}
 \qed
