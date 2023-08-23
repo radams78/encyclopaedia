@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 21:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 21:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,9 +731,6 @@ Chapter 19.
 [45
 
 ] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 902DFFDAEA953B3A5CF82F17F8A63C18;2225.
  ) 
@@ -765,7 +762,7 @@ ts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb>
-Output written on main.pdf (46 pages, 300764 bytes).
+Output written on main.pdf (46 pages, 301467 bytes).
 PDF statistics:
  731 PDF objects out of 1000 (max. 8388607)
  581 compressed objects within 6 object streams
