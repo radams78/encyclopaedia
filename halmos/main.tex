@@ -1298,6 +1298,18 @@ A poset has at most one least element.
 \pf\ If $a$ and $b$ are least then $a \leq b$ and $b \leq a$, hence $a = b$. \qed
 \end{proof}
 
+\begin{df}[Greatest]
+Let $X$ be a partial order and $a \in X$. Then $a$ is \emph{greatest} in $X$ iff $\forall x \in X. x \leq a$.
+\end{df}
+
+\begin{prop}
+A poset has at most one greatest element.
+\end{prop}
+
+\begin{proof}
+\pf\ If $a$ and $b$ are greatest then $a \leq b$ and $b \leq a$, hence $a = b$. \qed
+\end{proof}
+
 \begin{df}[Total Order]
 A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
 We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chain}.

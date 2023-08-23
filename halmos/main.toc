@@ -21,8 +21,8 @@
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{18}{section.3.8}%
 \contentsline {chapter}{\numberline {4}Equivalence}{21}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Order}{22}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Natural Numbers}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Natural Numbers}{24}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Arithmetic}{28}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Order on the Natural Numbers}{33}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Finite Sets}{36}{section.6.4}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Arithmetic}{29}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Order on the Natural Numbers}{34}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Finite Sets}{37}{section.6.4}%
