@@ -1164,14 +1164,25 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is o
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a relation on a set $X$. Then $R$ is antisymmetric iff $R \cap R^{-1} \subseteq I_X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Order}
 
 \begin{df}[Partial Order]
 A \emph{partial order} on a set $X$ is a relation on $X$ that is reflexive, antisymmetric and transitive.
+
+A \emph{partially ordered set} or \emph{poset} is a pair $(X, \leq)$ such that $\leq$ is a partial order on $X$.
 \end{df}
 
 \begin{df}[Total Order]
 A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
+We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chain}.
 \end{df}
 
 \chapter{Natural Numbers}
