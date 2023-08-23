@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 21:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 AUG 2023 21:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,18 +678,12 @@ Chapter 5.
 WARNING: proof step "d" (<2>5) already defined
 [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37]
 (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 6F7E6BFC39112BCA735C95238C0B0845;3453
-(rerunfilecheck)             After:  3769D3D3F7BC4A32DF2411AAF0E4944D;3524.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 3769D3D3F7BC4A32DF2411AAF0E4944D;3524.
  ) 
 Here is how much of TeX's memory you used:
- 9905 strings out of 476091
- 146287 string characters out of 5794081
+ 9906 strings out of 476091
+ 146293 string characters out of 5794081
  1870330 words of memory out of 5000000
  29916 multiletter control sequences out of 15000+600000
  528316 words of font info for 87 fonts, out of 8000000 for 9000
@@ -715,10 +709,10 @@ ts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb>
-Output written on main.pdf (38 pages, 300346 bytes).
+Output written on main.pdf (38 pages, 300779 bytes).
 PDF statistics:
- 736 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 261 named destinations out of 1000 (max. 500000)
+ 737 PDF objects out of 1000 (max. 8388607)
+ 595 compressed objects within 6 object streams
+ 262 named destinations out of 1000 (max. 500000)
  209 words of extra memory for PDF output out of 10000 (max. 10000000)
 
