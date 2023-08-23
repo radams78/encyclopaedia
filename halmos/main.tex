@@ -2125,6 +2125,7 @@ Let $E$ and $F$ be finite sets. If $E \subseteq F$ then $\sharp(E) \leq \sharp(F
 \end{proof}
 
 \begin{prop}
+\label{prop:size_of_union}
 Let $E$ and $F$ be disjoint finite sets. Then $E \cup F$ is finite and $\sharp(E \cup F) = \sharp(E) \cup \sharp(F)$.
 \end{prop}
 
@@ -2163,6 +2164,36 @@ The union of two finite sets is finite.
 
 \begin{proof}
 \pf\ Since, if $E$ and $F$ are finite, then $E \cup F = (E - F) \cup (E \cap F) \cup (F - E)$ and these are finite and disjoint. \qed
+\end{proof}
+
+\begin{prop}
+If $E$ and $F$ are finite sets then $E \times F$ is finite and $\sharp(E \times F) = \sharp(E) \sharp(F)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the statement: $n \in \omega$ and for all $m \in \omega$, if $E \sim m$ and $F \sim n$ then $E \times F \sim mn$}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ If $F \sim 0$ then $F = \emptyset$ so $E \times F = \emptyset \sim 0$.
+\end{proof}
+\step{3}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \omega$}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$m \in \omega$}}
+	\step{d}{\assume{$E \sim m$ and $F \sim n + 1$}}
+	\step{e}{\pick\ $f \in F$}
+	\step{f}{$F - \{f\} \sim n$}
+	\step{g}{$E \times (F - \{f\}) \sim mn$}
+	\step{h}{$E \times F = (E \times (F - \{f\})) \cup (E \times \{f\})$}
+	\step{i}{$E \times \{f\} \sim m$}
+	\step{j}{$E \times F \sim mn + m$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:size_of_union}.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \end{document}
