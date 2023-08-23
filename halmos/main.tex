@@ -66,7 +66,9 @@ There exists a set $I$ such that:
 \end{itemize}
 \end{ax}
 
-\chapter{The Subset Relation}
+\chapter{Basic Properties and Operations on Sets}
+
+\section{The Subset Relation}
 
 \begin{thm}
 For any set $A$, we have $A \subseteq A$.
@@ -96,7 +98,7 @@ For any sets $A$ and $B$, if $A \subseteq B$ and $B \subseteq A$ then $A = B$.
 Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, and write $A \subsetneq B$ or $B \supsetneq A$, iff $A \subseteq B$ and $A \neq B$.
 \end{df}
 
-\chapter{Comprehension Notation}
+\section{Comprehension Notation}
 
 \begin{df}
 Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
@@ -119,7 +121,7 @@ There is no set that contains every set.
 \qed
 \end{proof}
 
-\chapter{Unordered Pairs}
+\section{The Empty Set}
 
 \begin{thm}
 There exists a set with no elements.
@@ -141,6 +143,8 @@ For any set $A$ we have $\emptyset \subset A$.
 \pf\ Vacuous. \qed
 \end{proof}
 
+\section{Unordered Pairs}
+
 \begin{df}[(Unordered) Pair]
 For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
 \end{df}
@@ -153,7 +157,7 @@ For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose
 For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
 \end{df}
 
-\chapter{Unions}
+\section{Unions}
 
 \begin{df}[Union]
 For any set $\mathcal{C}$, the \emph{union} of $\mathcal{C}$, $\bigcup \mathcal{C}$, is the set whose elements are the elements of the elements of $\mathcal{C}$.
@@ -217,7 +221,7 @@ For any sets $a$ and $b$, we have $\{a\} \cup \{b\} = \{a,b\}$.
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
-\chapter{Intersections}
+\section{Intersections}
 
 \begin{df}[Intersection]
 For any sets $A$ and $B$, the \emph{intersection} $A \cap B$ is defined to be $\{ x \in A : x \in B \}$.
@@ -284,14 +288,14 @@ We write $\bigcap_{X \in \mathcal{A}} t[X]$ for $\bigcap \{t[X] \mid X \in \math
 \qed
 \end{proof}
 
-\chapter{Unordered Triples}
+\section{Unordered Triples}
 
 \begin{df}[(Unordered) Triple]
 Given sets $a_1$, \ldots, $a_n$, define the \emph{(unordered) $n$-tuple} $\{a_1, \ldots, a_n\}$ to be
 \[ \{a_1, \ldots, a_n\} := \{a_1\} \cup \cdots \cup \{a_n\} \enspace . \]
 \end{df}
 
-\chapter{Relative Complements}
+\section{Relative Complements}
 
 \begin{df}[Relative Complement]
 For any sets $A$ and $B$, the \emph{difference} or \emph{relative complement} $A - B$ is defined to be
@@ -508,7 +512,7 @@ Let $E$ be a set and $\mathcal{C}$ a nonempty set. Then
 \pf\ Easy. \qed
 \end{proof}
 
-\chapter{Symmetric Difference}
+\section{Symmetric Difference}
 
 \begin{df}[Symmetric Difference]
 For any sets $A$ and $B$, the \emph{symmetric difference} $A + B$ is defined to be
@@ -561,8 +565,7 @@ A + A & = (A - A) \cup (A - A) \\
 \end{align*}
 \end{proof}
 
-
-\chapter{Power Sets}
+\section{Power Sets}
 
 \begin{df}[Power Set]
 For any set $A$, the \emph{power set} of $A$, $\mathcal{P} A$, is the set whose elements are exactly the subsets of $A$.
@@ -640,7 +643,9 @@ For any sets $E$ and $F$, if $E \subseteq F$ then $\mathcal{P} E \subseteq \math
 \pf\ If $E \subseteq F$ and $X \subseteq E$ then $X \subseteq F$. \qed
 \end{proof}
 
-\chapter{Ordered Pairs}
+\chapter{Relations and Functions}
+
+\section{Ordered Pairs}
 
 \begin{df}[Ordered Pair]
 For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
@@ -715,7 +720,7 @@ For any sets $A$, $B$, $X$ and $Y$, if $A \subseteq X$ and $B \subseteq Y$ then 
 \pf\ Easy. \qed
 \end{proof}
 
-\chapter{Relations}
+\section{Relations}
 
 \begin{df}[Relation]
 A \emph{relation} is a set of ordered pairs.
@@ -752,6 +757,8 @@ A relation $R$ is \emph{antisymmetric} iff, whenever $xRy$ and $yRx$, then $x = 
 \begin{df}[Transitive]
 Let $R$ be a relation on $X$. Then $R$ is \emph{transitive} iff, whenever $xRy$ and $yRz$, then $xRz$.
 \end{df}
+
+\section{Equivalence Relations}
 
 \begin{df}[Equivalence Relation]
 Let $R$ be a relation on $X$. Then $R$ is an \emph{equivalence relation} iff it is reflexive, symmetric and transitive.
@@ -877,8 +884,7 @@ A relation $R$ on a set $X$ is reflexive if and only if $I_X \subseteq R$.
 \pf\ Easy. \qed
 \end{proof}
 
-
-\chapter{Functions}
+\section{Functions}
 
 \begin{df}[Function]
 Let $X$ and $Y$ be sets. A \emph{function, map, mapping, transformation} or \emph{operator $f$ from $X$ to $Y$}, $f : X \rightarrow Y$, is a relation $f$ between $X$ and $Y$ such that, for all $x \in X$, there exists a unique $f(x) \in Y$, called the \emph{value} of $f$ at the \emph{argument} $x$, such that $(x,f(x)) \in f$.
@@ -946,7 +952,7 @@ Let $f : X \rightarrow Y$. Then $f$ maps $X$ onto $Y$ if and only if, for all $A
 \pf\ Easy. \qed
 \end{proof}
 
-\chapter{Families}
+\section{Families}
 
 \begin{df}[Family]
 Let $I$ and $X$ be sets. A \emph{family} of elements of $X$ \emph{indexed} by $I$ is a function $a : I \rightarrow X$. We write $a_i$ for $a(i)$, and $\{a_i\}_{i \in I}$ for $a$.
@@ -1051,7 +1057,7 @@ It is not true in general that, if $f : X \rightarrow Y$ and $\{A_i\}_{i \in I}$
 Take $X = \{a,b\}$ and $Y = \{c\}$ where $a \neq b$. Take $I = \{i,j\}$ with $i \neq j$. Let $A_i = \{a\}$ and $A_j = \{b\}$. Let $f$ be the unique function $X \rightarrow Y$. Then $f \left( \bigcap_{i \in I} A_i \right) = f(\emptyset) = \emptyset$ but $\bigcap_{i \in I} f(A_i) = \{c\}$.
 \end{ex}
 
-\chapter{Inverses and Composites}
+\section{Inverses and Composites}
 
 \begin{df}[Inverse]
 Given a function $f : X \rightarrow Y$, the \emph{inverse} of $f$ is the function $f^{-1} : \mathcal{P} Y \rightarrow \mathcal{P} X$ defined by
@@ -1164,7 +1170,13 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is o
 A \emph{partial order} on a set $X$ is a relation on $X$ that is reflexive, antisymmetric and transitive.
 \end{df}
 
-\chapter{Numbers}
+\begin{df}[Total Order]
+A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
+\end{df}
+
+\chapter{Natural Numbers}
+
+\section{Natural Numbers}
 
 \begin{df}[Successor]
 The \emph{successor} of a set $x$, $x^+$, is defined by
@@ -1244,8 +1256,6 @@ For any natural numbers $m$ and $n$, if $m \in n$ then $m^+ \in n^+$.
 \end{proof}
 \qed
 \end{proof}
-
-\chapter{The Peano Axioms}
 
 \begin{thm}[Principle of Mathematical Induction]
 For any subset $S$ of $\omega$, if $0 \in S$ and $\forall n \in S. n^+ \in S$, then $S = \omega$.
@@ -1478,7 +1488,7 @@ For any natural number $n$ and any nonempty subset $E \subseteq n$, there exists
 \qed
 \end{proof}
 
-\chapter{Arithmetic}
+\section{Arithmetic}
 
 \begin{df}[Addition]
 Define \emph{addition} $+$ on $\omega$ by recursion thus:
@@ -2093,6 +2103,8 @@ For every natural number $n$, we have $n$ is not equivalent to a proper subset o
 \begin{cor}
 Equivalent natural numbers are equal.
 \end{cor}
+
+\section{Finite Sets}
 
 \begin{df}[Finite]
 A set is \emph{finite} iff it is equivalent to a natural number; otherwise, it is \emph{infinite}.
