@@ -758,42 +758,12 @@ A relation $R$ is \emph{antisymmetric} iff, whenever $xRy$ and $yRx$, then $x = 
 Let $R$ be a relation on $X$. Then $R$ is \emph{transitive} iff, whenever $xRy$ and $yRz$, then $xRz$.
 \end{df}
 
-\section{Equivalence Relations}
-
-\begin{df}[Equivalence Relation]
-Let $R$ be a relation on $X$. Then $R$ is an \emph{equivalence relation} iff it is reflexive, symmetric and transitive.
+\begin{df}[Identity Relation]
+For any set $X$, the \emph{identity relation} $I_X$ on $X$ is
+\[ I_X = \{(x,x) : x \in X \} \enspace . \]
 \end{df}
 
-\begin{df}[Partition]
-Let $X$ be a set. A \emph{partition} of $X$ is a pairwise disjoint set of nonempty subsets of $X$ whose union is $X$.
-\end{df}
-
-%TODO More modern terminology e.g. modulo
-\begin{df}[Equivalence Class]
-Let $R$ be an equivalence relation on $X$. Let $x \in X$. The \emph{equivalence class} of $x$ with respect to $R$ is \[ x / R := \{ y \in X : x R y \} \enspace . \]
-
-We write $X / R$ for the set of all equivalence classes with respect to $R$.
-\end{df}
-
-\begin{df}[Induced]
-Let $P$ be a partition of $X$. The relation \emph{induced} by $P$ is $X/P$ where $x (X/P) y$ iff there exists $X \in P$ such that $x \in X$ and $y \in X$.
-\end{df}
-
-\begin{thm}
-Let $R$ be an equivalence relation on $X$. Then $X / R$ is a partition of $X$ that induces the relation $R$.
-\end{thm}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{thm}
-Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, and $P = X / (X / P)$.
-\end{thm}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
+\section{Composition}
 
 \begin{df}[Composition]
 Let $R$ be a relation between $X$ and $Y$, and $S$ a relation between $Y$ and $Z$. The \emph{composite} or \emph{relative product} $S \circ R = SR$ is the relation between $X$ and $Z$ defined by
@@ -821,6 +791,8 @@ A relation $R$ is transitive if and only if $RR \subseteq R$.
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
+\section{Inverses}
 
 \begin{df}[Inverse]
 Let $R$ be a relation between $X$ and $Y$. The \emph{inverse} or \emph{converse} $R^{-1}$ is the relation between $Y$ and $X$ defined by
@@ -862,11 +834,6 @@ A relation $R$ is symmetric if and only if $R \subseteq R^{-1}$.
 \pf\ Easy. \qed
 \end{proof}
 
-\begin{df}[Identity Relation]
-For any set $X$, the \emph{identity relation} $I_X$ on $X$ is
-\[ I_X = \{(x,x) : x \in X \} \enspace . \]
-\end{df}
-
 \begin{prop}
 Let $R$ be a relation between $X$ and $Y$. Then
 \[ I_Y R = R I_X = R \enspace . \]
@@ -887,6 +854,43 @@ A relation $R$ on a set $X$ is reflexive if and only if $I_X \subseteq R$.
 \begin{prop}
 Let $R$ be a relation on a set $X$. Then $R$ is antisymmetric iff $R \cap R^{-1} \subseteq I_X$.
 \end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Equivalence Relations}
+
+\begin{df}[Equivalence Relation]
+Let $R$ be a relation on $X$. Then $R$ is an \emph{equivalence relation} iff it is reflexive, symmetric and transitive.
+\end{df}
+
+\begin{df}[Partition]
+Let $X$ be a set. A \emph{partition} of $X$ is a pairwise disjoint set of nonempty subsets of $X$ whose union is $X$.
+\end{df}
+
+%TODO More modern terminology e.g. modulo
+\begin{df}[Equivalence Class]
+Let $R$ be an equivalence relation on $X$. Let $x \in X$. The \emph{equivalence class} of $x$ with respect to $R$ is \[ x / R := \{ y \in X : x R y \} \enspace . \]
+
+We write $X / R$ for the set of all equivalence classes with respect to $R$.
+\end{df}
+
+\begin{df}[Induced]
+Let $P$ be a partition of $X$. The relation \emph{induced} by $P$ is $X/P$ where $x (X/P) y$ iff there exists $X \in P$ such that $x \in X$ and $y \in X$.
+\end{df}
+
+\begin{thm}
+Let $R$ be an equivalence relation on $X$. Then $X / R$ is a partition of $X$ that induces the relation $R$.
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}
+Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, and $P = X / (X / P)$.
+\end{thm}
 
 \begin{proof}
 \pf\ Easy. \qed
@@ -1065,7 +1069,7 @@ It is not true in general that, if $f : X \rightarrow Y$ and $\{A_i\}_{i \in I}$
 Take $X = \{a,b\}$ and $Y = \{c\}$ where $a \neq b$. Take $I = \{i,j\}$ with $i \neq j$. Let $A_i = \{a\}$ and $A_j = \{b\}$. Let $f$ be the unique function $X \rightarrow Y$. Then $f \left( \bigcap_{i \in I} A_i \right) = f(\emptyset) = \emptyset$ but $\bigcap_{i \in I} f(A_i) = \{c\}$.
 \end{ex}
 
-\section{Inverses and Composites}
+\section{Inverses and Composites of Functions}
 
 \begin{df}[Inverse]
 Given a function $f : X \rightarrow Y$, the \emph{inverse} of $f$ is the function $f^{-1} : \mathcal{P} Y \rightarrow \mathcal{P} X$ defined by
