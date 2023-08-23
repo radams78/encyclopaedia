@@ -1211,6 +1211,14 @@ For any set $X$, the relation $\subseteq$ is a partial order on $\mathcal{P} X$.
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+In a poset, we never have $x < y$ and $y < x$.
+\end{prop}
+
+\begin{proof}
+\pf\ We would then have $x \leq y$ and $y \leq x$ hence $x = y$ by antisymmetry. But if $x < y$ or $y < x$ then $x \neq y$. \qed
+\end{proof}
+
 \begin{df}[Total Order]
 A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
 We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chain}.
