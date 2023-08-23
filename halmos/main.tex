@@ -1972,4 +1972,36 @@ For any set $X$, equivalence is an equivalence relation on $\mathcal{P} X$.
 \pf\ Easy.
 \end{proof}
 
+\begin{prop}
+Let $n$ be a natural number. Let $X$ be a proper subset of $n$. Then there exists $m < n$ such that $X \sim m$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for every proper subset $X \subsetneq n$, there exists $m < n$ such that $X \sim m$.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Vacuous.
+\end{proof}
+\step{3}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n \in \omega$}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$X$ be a proper subset of $n+1$}}
+	\step{d}{\case{$X - \{n\} = n$}}
+	\begin{proof}
+		\pf\ Then $X = n$ so $X \sim n < n+1$.
+	\end{proof}
+	\step{e}{\case{$X - \{n\} \subsetneq n$}}
+	\begin{proof}
+		\step{i}{\pick\ $m < n$ such that $X - \{n\} \sim m$}
+		\step{ii}{$X \sim m$ or $X \sim m +1$}
+		\begin{proof}
+			\pf\ If $n \in X$ then $X \sim m + 1$. If $n \notin X$ then $X \sim m$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
