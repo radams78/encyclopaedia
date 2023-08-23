@@ -2159,6 +2159,7 @@ Let $E$ and $F$ be disjoint finite sets. Then $E \cup F$ is finite and $\sharp(E
 \end{proof}
 
 \begin{cor}
+\label{cor:union_finite}
 The union of two finite sets is finite.
 \end{cor}
 
@@ -2227,6 +2228,37 @@ For any finite sets $E$ and $F$, we have $E^F$ is finite and $\sharp(E^F) = \sha
 			& = m^n m & (\text{\stepref{b}, \stepref{d}}) \\
 			& = m^{n+1}
 		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The union of a finite set of finite sets is finite.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(n)$ be the property: for any set $E$, if $E \sim n$ and every element of $E$ is finite, then $\bigcup E$ is finite.}}
+\step{2}{$P(0)$}
+\begin{proof}
+	\pf\ Since $\bigcup \emptyset = \emptyset$ is finite.
+\end{proof}
+\step{3}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P(n)$}}
+	\step{c}{\pflet{$E \sim n+1$}}
+	\step{d}{\pick\ $X \in E$}
+	\step{e}{$E - \{X\} \sim n$}
+	\step{f}{$\bigcup(E - \{X\})$ is finite.}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{g}{$\bigcup E = \bigcup (E - \{X\}) \cup X$}
+	\step{h}{$\bigcup E$ is finite.}
+	\begin{proof}
+		\pf\ Corollary \ref{cor:union_finite}.
 	\end{proof}
 \end{proof}
 \qed
