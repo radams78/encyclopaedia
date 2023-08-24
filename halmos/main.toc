@@ -1,0 +1,30 @@
+\contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Basic Properties and Operations on Sets}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}The Subset Relation}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Comprehension Notation}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The Empty Set}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unordered Pairs}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Unions}{6}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Intersections}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Unordered Triples}{7}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Relative Complements}{8}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Symmetric Difference}{10}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Power Sets}{11}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Relations and Functions}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ordered Pairs}{13}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Relations}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Composition}{14}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Inverses}{15}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Equivalence Relations}{15}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Functions}{16}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Families}{17}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{19}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Choice Functions}{20}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Equivalence}{21}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Order}{22}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Well Orderings}{26}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Arithmetic}{31}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Order on the Natural Numbers}{36}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Finite Sets}{39}{section.6.4}%

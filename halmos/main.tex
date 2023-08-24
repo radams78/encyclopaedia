@@ -1510,7 +1510,7 @@ A & \text{if } \hat{A} - A = \emptyset
 \step{17}{$g(A) \subseteq A$}
 \step{18}{$g(A) = A$}
 \step{19}{$\hat{A} - A = \emptyset$}
-\stop{20}{$u \in A$}
+\step{20}{$u \in A$}
 \begin{proof}
 	\pf\ Since $A \cup \{u\}$ is a chain so $u \in \hat{A}$ and therefore $u \in A$.
 \end{proof}
@@ -1524,6 +1524,20 @@ A & \text{if } \hat{A} - A = \emptyset
 	\step{f}{$x = u$}
 \end{proof}
 \qed
+\end{proof}
+
+\section{Well Orderings}
+
+\begin{df}[Well Ordered Set]
+A poset $X$ is \emph{well ordered}, and its ordering is a \emph{well ordering}, iff every nonempty subset of $X$ has a least element.
+\end{df}
+
+\begin{prop}
+Every well ordered set is totally ordered.
+\end{prop}
+
+\begin{proof}
+\pf\ For all $x$ and $y$ we have $\{x,y\}$ has a least element, so $x \leq y$ or $y \leq x$. \qed
 \end{proof}
 
 \chapter{Natural Numbers}
@@ -2162,7 +2176,7 @@ We write $m \leq n$ iff $m < n \vee m = n$.
 \end{df}
 
 \begin{prop}
-The relation $\leq$ is a total order on $\omega$.
+The relation $\leq$ is a well ordering on $\omega$.
 \end{prop}
 
 \begin{proof}
@@ -2179,51 +2193,21 @@ The relation $\leq$ is a total order on $\omega$.
 	\end{proof}
 	\qedstep
 \end{proof}
-\step{4}{For all $m,n \in \omega$, either $m \leq n$ or $n \leq m$.}
+\step{4}{Any nonempty set $E$ of natural numbers has a least element.}
 \begin{proof}
-	\step{a}{\pflet{$P(n)$ be the statement: $\forall m \in \omega. m \leq n \vee n \leq m$}}
-	\step{b}{$P(0)$}
+	\step{a}{\pflet{$E \subseteq \omega$}}
+	\step{b}{\assume{$E$ has no least element.} \prove{$E = \emptyset$}}
+	\step{c}{\pflet{$P(n)$ be the property $\forall m < n. m \notin E$}}
+	\step{d}{$P(0)$}
 	\begin{proof}
-		\step{i}{\pflet{$Q(m)$ be the statement: $0 \leq m$}}
-		\step{ii}{$Q(0)$}
-		\begin{proof}
-			\pf\ Since $0 \leq 0$.
-		\end{proof}
-		\step{iii}{$\forall m \in \omega. Q(m) \Rightarrow Q(m+1)$}
-		\begin{proof}
-			\pf\ If $0 \leq m$ then $0 < m+1$ by transitivity.
-		\end{proof}
+		\pf\ Vacuous.
 	\end{proof}
-	\step{c}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
+	\step{e}{For any natural number $n$, if $P(n)$ then $P(n+1)$}
 	\begin{proof}
-		\step{i}{\pflet{$n \in \omega$}}
-		\step{ii}{\assume{$P(n)$}}
-		\step{iii}{$P(n+1)$}
-		\begin{proof}
-			\step{one}{\pflet{$Q(m)$ be the property $m \leq n + 1 \vee n + 1 \leq m$}}
-			\step{two}{$Q(0)$}
-			\begin{proof}
-				\pf\ \stepref{b}
-			\end{proof}
-			\step{three}{$\forall m \in \omega. Q(m) \Rightarrow Q(m+1)$}
-			\begin{proof}
-				\step{A}{\pflet{$m \in \omega$}}
-				\step{B}{\assume{$Q(m)$}}
-				\step{C}{\case{$m \leq n$}}
-				\begin{proof}
-					\pf\ Then $m < n+1$
-				\end{proof}
-				\step{D}{\case{$n < m$}}
-				\begin{proof}
-					\pf\ Then $n+1 < m+1$ by Proposition \ref{prop:succ_in_succ}, so $n+1 \leq m$.
-				\end{proof}
-				\step{E}{\case{$n = m$}}
-				\begin{proof}
-					\pf\ Then $n+1 = m+1$.
-				\end{proof}
-			\end{proof}
-		\end{proof}
+		\pf\ If $P(n)$ then $n \notin E$ (otherwise $n$ would be the least element of $E$) and so $P(n+1)$.
 	\end{proof}
+	\step{f}{$\forall n \in \omega. P(n)$}
+	\step{g}{$\forall n \in \omega. n \notin E$}
 \end{proof}
 \qed
 \end{proof}
@@ -2290,35 +2274,6 @@ For natural numbers $m$, $n$ and $k$, if $m < n$ and $k \neq 0$ then $mk < nk$.
 		& < nk + n & (\text{Proposition \ref{prop:plus_mono}}) \\
 		& = n(k+1)
 	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-For any nonempty set of natural numbers $E$, there exists $k \in E$ such that $\forall m \in E. k \leq m$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$E \subseteq \omega$}}
-\step{2}{\assume{there is no $k \in E$ such that $\forall m \in E. k \leq m$.} \prove{$E = \emptyset$}}
-\step{3}{$\forall n \in \omega. n \notin E$}
-\begin{proof}
-	\step{a}{\pflet{$P(n)$ be the property: $\forall m < n. m \notin E$}}
-	\step{b}{$P(0)$}
-	\begin{proof}
-		\pf\ Vacuous.
-	\end{proof}
-	\step{c}{$\forall n \in \omega. P(n) \Rightarrow P(n+1)$}
-	\begin{proof}
-		\step{i}{\pflet{$n \in \omega$}}
-		\step{ii}{\assume{$\forall m < n. m \notin E$}}
-		\step{iii}{$n \notin E$}
-		\begin{proof}
-			\pf\ From \stepref{2}.
-		\end{proof}
-		\step{iv}{$\forall m < n + 1. m \notin E$}
-	\end{proof}
 \end{proof}
 \qed
 \end{proof}
