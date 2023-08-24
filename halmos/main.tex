@@ -42,9 +42,25 @@ Two sets are equal if and only if they have the same elements.
 To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
 \end{ax}
 
+\begin{df}
+Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Axiom of Comprehension and is unique by the Axiom of Extensionality. \qed
+\end{proof}
+
 \begin{ax}[Axiom of Pairing]
 For any two sets, there exists a set that they both belong to.
 \end{ax}
+
+\begin{df}[(Unordered) Pair]
+For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Axioms of Pairing and Comprehension, and is unique by the Axiom of Extensionality. \qed
+\end{proof}
 
 \begin{ax}[Union Axiom]
 For every set $A$, there exists a set that contains all the elements that belong to at least one element of $A$.
@@ -58,12 +74,62 @@ Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph
 For any set $A$, there exists a set that contains all the subsets of $A$.
 \end{ax}
 
+\begin{df}[Empty]
+A set is \emph{empty} iff it has no elements; otherwise it is \emph{non-empty}.
+\end{df}
+
 \begin{ax}[Axiom of Infinity]
 There exists a set $I$ such that:
 \begin{itemize}
-\item $I$ has an element that has no elements
+\item $I$ has an element that is empty
 \item for all $x \in I$, there exists $y \in I$ such that the elements of $y$ are exactly $x$ and the elements of $x$.
 \end{itemize}
+\end{ax}
+
+\begin{df}[Ordered Pair]
+For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
+\[ (a,b) := \{ \{ a \}, \{ a, b \} \} \enspace . \]
+\end{df}
+
+\begin{df}[Power Set]
+For any set $A$, the \emph{power set} of $A$, $\mathcal{P} A$, is the set whose elements are exactly the subsets of $A$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Power Set Axiom and Axiom of Comprehension, and is unique by the Axiom of Extensionality. \qed
+\end{proof}
+
+\begin{df}[Cartesian Product]
+For any sets $A$ and $B$, the \emph{Cartesian product} $A \times B$ is
+\[ A \times B := \{ p \in \mathcal{P} \mathcal{P} (A \cup B) : \exists a \in A. \exists b \in B. p = (a,b) \} \enspace . \]
+\end{df}
+
+\begin{df}[Relation]
+A \emph{relation} is a set of ordered pairs.
+
+If $R$ is a relation, we write $xRy$ for $(x,y) \in R$.
+
+Given sets $X$ and $Y$, a relation \emph{between $X$ and $Y$} is a subset of $X \times Y$.
+
+Given a set $X$, a relation \emph{on $X$} is a relation between $X$ and $X$.
+\end{df}
+
+\begin{df}[Function]
+Let $X$ and $Y$ be sets. A \emph{function, map, mapping, transformation} or \emph{operator $f$ from $X$ to $Y$}, $f : X \rightarrow Y$, is a relation $f$ between $X$ and $Y$ such that, for all $x \in X$, there exists a unique $f(x) \in Y$, called the \emph{value} of $f$ at the \emph{argument} $x$, such that $(x,f(x)) \in f$.
+\end{df}
+
+\begin{df}[Family]
+Let $I$ and $X$ be sets. A \emph{family} of elements of $X$ \emph{indexed} by $I$ is a function $a : I \rightarrow X$. We write $a_i$ for $a(i)$, and $\{a_i\}_{i \in I}$ for $a$.
+\end{df}
+
+\begin{df}[Cartesian Product of a Family of Sets]
+Let $\{A_i\}_{i \in I}$ be a family of sets. The \emph{Cartesian product} $\bigtimes_{i \in I} A_i$ is the set of all families $\{a_i\}_{i \in I}$ such that $\forall i \in I. a_i \in A_i$.
+
+We write $A^I$ for $\bigtimes_{i \in I} A$.
+\end{df}
+
+\begin{ax}[Axiom of Choice]
+The Cartesian product of a non-empty family of non-empty sets is non-empty.
 \end{ax}
 
 \chapter{Basic Properties and Operations on Sets}
@@ -99,14 +165,6 @@ Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B
 \end{df}
 
 \section{Comprehension Notation}
-
-\begin{df}
-Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
-\end{df}
-
-\begin{proof}
-\pf\ This exists by the Axiom of Comprehension and is unique by the Axiom of Extensionality. \qed
-\end{proof}
 
 \begin{thm}
 There is no set that contains every set.
@@ -144,14 +202,6 @@ For any set $A$ we have $\emptyset \subset A$.
 \end{proof}
 
 \section{Unordered Pairs}
-
-\begin{df}[(Unordered) Pair]
-For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
-\end{df}
-
-\begin{proof}
-\pf\ This exists by the Axioms of Pairing and Comprehension, and is unique by the Axiom of Extensionality. \qed
-\end{proof}
 
 \begin{df}[Singleton]
 For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
@@ -567,14 +617,6 @@ A + A & = (A - A) \cup (A - A) \\
 
 \section{Power Sets}
 
-\begin{df}[Power Set]
-For any set $A$, the \emph{power set} of $A$, $\mathcal{P} A$, is the set whose elements are exactly the subsets of $A$.
-\end{df}
-
-\begin{proof}
-\pf\ This exists by the Power Set Axiom and Axiom of Comprehension, and is unique by the Axiom of Extensionality. \qed
-\end{proof}
-
 \begin{prop}
 \[ \mathcal{P} \emptyset = \{ \emptyset \} \]
 \end{prop}
@@ -647,11 +689,6 @@ For any sets $E$ and $F$, if $E \subseteq F$ then $\mathcal{P} E \subseteq \math
 
 \section{Ordered Pairs}
 
-\begin{df}[Ordered Pair]
-For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
-\[ (a,b) := \{ \{ a \}, \{ a, b \} \} \enspace . \]
-\end{df}
-
 \begin{prop}
 For any sets $a$, $b$, $x$ and $y$, if $(a,b) = (x,y)$ then $a = x$ and $b = y$.
 \end{prop}
@@ -690,11 +727,6 @@ For any sets $a$, $b$, $x$ and $y$, if $(a,b) = (x,y)$ then $a = x$ and $b = y$.
 \qed
 \end{proof}
 
-\begin{df}[Cartesian Product]
-For any sets $A$ and $B$, the \emph{Cartesian product} $A \times B$ is
-\[ A \times B := \{ p \in \mathcal{P} \mathcal{P} (A \cup B) : \exists a \in A. \exists b \in B. p = (a,b) \} \enspace . \]
-\end{df}
-
 \begin{prop}
 For any sets $A$, $B$ and $X$, we have
 \[ (A - B) \times X = (A \times X) - (B \times X) \enspace . \]
@@ -721,16 +753,6 @@ For any sets $A$, $B$, $X$ and $Y$, if $A \subseteq X$ and $B \subseteq Y$ then 
 \end{proof}
 
 \section{Relations}
-
-\begin{df}[Relation]
-A \emph{relation} is a set of ordered pairs.
-
-If $R$ is a relation, we write $xRy$ for $(x,y) \in R$.
-
-Given sets $X$ and $Y$, a relation \emph{between $X$ and $Y$} is a subset of $X \times Y$.
-
-Given a set $X$, a relation \emph{on $X$} is a relation between $X$ and $X$.
-\end{df}
 
 \begin{df}[Domain]
 The \emph{domain} of a relation $R$ is the set
@@ -898,10 +920,6 @@ Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, a
 
 \section{Functions}
 
-\begin{df}[Function]
-Let $X$ and $Y$ be sets. A \emph{function, map, mapping, transformation} or \emph{operator $f$ from $X$ to $Y$}, $f : X \rightarrow Y$, is a relation $f$ between $X$ and $Y$ such that, for all $x \in X$, there exists a unique $f(x) \in Y$, called the \emph{value} of $f$ at the \emph{argument} $x$, such that $(x,f(x)) \in f$.
-\end{df}
-
 \begin{df}[Onto]
 Let $f : X \rightarrow Y$. We say $f$ maps $X$ \emph{onto} $Y$ iff $\ran f = Y$.
 \end{df}
@@ -966,10 +984,6 @@ Let $f : X \rightarrow Y$. Then $f$ maps $X$ onto $Y$ if and only if, for all $A
 
 \section{Families}
 
-\begin{df}[Family]
-Let $I$ and $X$ be sets. A \emph{family} of elements of $X$ \emph{indexed} by $I$ is a function $a : I \rightarrow X$. We write $a_i$ for $a(i)$, and $\{a_i\}_{i \in I}$ for $a$.
-\end{df}
-
 \begin{prop}[Generalized Associative Law for Unions]
 Let $\{I_j\}_{j \in J}$ be a family of sets. Let $K = \bigcup_{j \in J} I_j$. Let $\{A_k\}_{k \in K}$ be a family of sets indexed by $K$. Then
 \[ \bigcup_{k \in K} A_k = \bigcup_{j \in J} \bigcup_{i \in I_j} A_i \enspace . \]
@@ -1025,12 +1039,6 @@ Let $B$ be a set and $\{A_i\}_{i \in I}$ a nonempty family of sets. Then
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
-
-\begin{df}[Cartesian Product of a Family of Sets]
-Let $\{A_i\}_{i \in I}$ be a family of sets. The \emph{Cartesian product} $\bigtimes_{i \in I} A_i$ is the set of all families $\{a_i\}_{i \in I}$ such that $\forall i \in I. a_i \in A_i$.
-
-We write $A^I$ for $\bigtimes_{i \in I} A$.
-\end{df}
 
 \begin{df}[Projection]
 Let $\{A_i\}_{i \in I}$ be a family of sets and $i \in I$. The \emph{projection} function $\pi_i : \bigtimes_{i \in I} A_i \rightarrow A_i$ is defined by $\pi_i(a) = a_i$.
@@ -1176,6 +1184,19 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is o
 \pf\ Easy. \qed
 \end{proof}
 
+\section{Choice Functions}
+
+\begin{df}[Choice Function]
+A \emph{choice function} for a set $X$ is a function $f : \mathcal{P} X - \{\emptyset \} \rightarrow X$ such that $f(S) \in S$ for all $S$.
+\end{df}
+
+\begin{prop}
+Every set has a choice function.
+\end{prop}
+
+\begin{proof}
+\pf\ Given a nonempty set $X$, apply the Axiom of Choice  to the family $\{ S \}_{S \in \mathcal{P} X - \{\emptyset\}}$. \qed
+\end{proof}
 \chapter{Equivalence}
 
 \begin{df}[Equivalent]
