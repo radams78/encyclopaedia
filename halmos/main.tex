@@ -1197,6 +1197,20 @@ Every set has a choice function.
 \begin{proof}
 \pf\ Given a nonempty set $X$, apply the Axiom of Choice  to the family $\{ S \}_{S \in \mathcal{P} X - \{\emptyset\}}$. \qed
 \end{proof}
+
+\begin{prop}
+For any relation $R$, there exists a function $f \subseteq R$ such that $\dom f = \dom R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a relation.}}
+\step{2}{\pick\ a choice function $g$ for $\ran R$.}
+\step{3}{\pflet{$f : \dom R \rightarrow \ran R$ be the function $f(x) = g(\{y \in \ran R : xRy \})$}}
+\step{4}{$f \subseteq R$ and $\dom f = \dom R$.}
+\qed
+\end{proof}
+
 \chapter{Equivalence}
 
 \begin{df}[Equivalent]
