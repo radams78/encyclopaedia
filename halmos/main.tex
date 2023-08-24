@@ -1402,6 +1402,130 @@ For any set $X$, the relation $\subseteq$ is a total order on $X$ iff $X$ is eit
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{thm}[Zorn's Lemma]
+Let $X$ be a poset such that every chain in $X$ has an upper bound. Then $X$ has a maximal element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{6}{\pick\ a choice function $f$ for $X$.}
+\step{4}{\pflet{$\mathcal{X}$ be the set of chains in $X$.}}
+\step{7}{For all $A \in \mathcal{X}$, \pflet{$\hat{A} = \{x \in X : A \cup \{x\} \in \mathcal{X} \}$}}
+\step{8}{\pflet{$g : \mathcal{X} \rightarrow \mathcal{X}$ be the function
+\[ g(A) = \begin{cases}
+A \cup \{ f(\hat{A} - A) \} & \text{if } \hat{A} - A \neq \emptyset \\
+A & \text{if } \hat{A} - A = \emptyset
+\end{cases} \]}}
+\step{10}{For $\mathcal{T} \subseteq \mathcal{X}$, let us say $\mathcal{T}$ is a \emph{tower} iff:
+\begin{itemize}
+\item $\emptyset \in \mathcal{T}$
+\item $\forall A \in \mathcal{T}. g(A) \in \mathcal{T}$
+\item For every chain $\mathcal{C}$ in $\mathcal{T}$, we have $\bigcup \mathcal{C} \in \mathcal{T}$
+\end{itemize}}
+\step{11}{\pflet{$\mathcal{T}_0$ be the intersection of the set of all towers.}}
+\begin{proof}
+	\pf\ The set of all towers is nonempty since $\mathcal{X}$ is a tower.
+\end{proof}
+\step{12}{\pflet{$A = \bigcup \mathcal{T}_0$}}
+\step{13}{$A$ is a chain in $X$.}
+\begin{proof}
+	\step{a}{$\mathcal{T}_0$ is a chain under $\subseteq$}
+	\begin{proof}
+		\step{12}{Given $C \in \mathcal{T}_0$, let us say that $C$ is \emph{comparable} iff, for all $A \in \mathcal{T}_0$, either $A \subseteq C$ or $C \subseteq A$.}
+		\step{13}{For all $A,C \in \mathcal{T}_0$, if $C$ is comparable and $A \subsetneq C$ then $g(A) \subseteq C$.}
+		\begin{proof}
+			\pf\ Since $g(A) - A$ has at most one element, so if $A \subsetneq C \subseteq g(A)$ then $C = g(A)$.
+		\end{proof}
+		\step{14}{For $C \in \mathcal{T}_0$ comparable, \pflet{$\mathcal{U}_C = \{A \in \mathcal{T}_0 : A \subseteq C \vee g(C) \subseteq A \}$}}
+		\step{15}{For $C \in \mathcal{T}_0$ comparable, $\mathcal{U}_C$ is a tower.}
+		\begin{proof}
+			\step{i}{\pflet{$C \in \mathcal{T}_0$ be comparable}}
+			\step{ii}{$\emptyset \in \mathcal{U}_C$}
+			\begin{proof}
+				\pf\ Since $\emptyset \subseteq C$.
+			\end{proof}
+			\step{iii}{$\forall A \in \mathcal{U}_C. g(A) \in \mathcal{U}_C$}
+			\begin{proof}
+				\pf\ By \stepref{13}.
+			\end{proof}
+			\step{iv}{For every chain $\mathcal{C} \subseteq \mathcal{U}_C$ we have $\bigcup \mathcal{C} \in \mathcal{U}_C$}
+			\begin{proof}
+				\step{one}{\pflet{$\mathcal{C} \subseteq \mathcal{U}_C$ be a chain.}}
+				\step{two}{\case{$\exists A \in \mathcal{C}. g(C) \subseteq A$}}
+				\begin{proof}
+					\pf\ Then $g(C) \subseteq \bigcup \mathcal{C}$
+				\end{proof}
+				\step{three}{\case{$\forall A \in \mathcal{C}. A \subseteq C$}}
+				\begin{proof}
+					\pf\ Then $\bigcup \mathcal{C} \subseteq C$.
+				\end{proof}
+			\end{proof}
+		\end{proof}
+		\step{16}{For $C \in \mathcal{T}_0$ comparable, $\mathcal{U}_C = \mathcal{T}_0$.}
+		\step{17}{For $C \in \mathcal{T}_0$ comparable we have $g(C)$ is comparable.}
+		\begin{proof}
+			\pf\ Since for all $A \in \mathcal{T}_0$ either $A \subseteq C \subseteq g(C)$ or $g(C) \subseteq A$.
+		\end{proof}
+		\step{18}{The set of comparable sets in $\mathcal{T}_0$ is a tower.}
+		\begin{proof}
+			\step{a}{$\emptyset$ is comparable.}
+			\begin{proof}
+				\pf\ $\forall A \in \mathcal{T}_0. \emptyset \subseteq A$
+			\end{proof}
+			\step{b}{For all $C \in \mathcal{T}_0$, if $A$ is comparable then $g(C)$ is comparable.}
+			\begin{proof}
+				\pf\ \stepref{17}
+			\end{proof}
+			\step{c}{For every chain $\mathcal{C} \subseteq \mathcal{T}_0$ of comparable sets, we have $\bigcup \mathcal{C}$ is comparable.}
+			\begin{proof}
+				\step{i}{\pflet{$\mathcal{C} \subseteq \mathcal{T}_0$ be a chain of comparable sets.}}
+				\step{ii}{\pflet{$A \in \mathcal{T}_0$}}
+				\step{iii}{\case{there exists $C \in \mathcal{C}$ such that $A \subseteq C$}}
+				\begin{proof}
+					\pf\ Then $A \subseteq \bigcup \mathcal{C}$.
+				\end{proof}
+				\step{iv}{\case{for all $C \in \mathcal{C}$ we have $C \subseteq A$}}
+				\begin{proof}
+					\pf\ Then $\bigcup \mathcal{C} \subseteq A$.
+				\end{proof}
+			\end{proof}
+		\end{proof}
+		\step{19}{Every set in $\mathcal{T}_0$ is comparable.}
+	\end{proof}
+	\step{b}{\pflet{$x,y \in A$}}
+	\step{c}{\pick\ $A,C \in \mathcal{T}_0$ such that $x \in A$ and $y \in C$}
+	\step{d}{\assume{w.l.o.g. $A \subseteq C$}}
+	\step{e}{$x,y \in C$}
+	\step{f}{$x \leq y$ or $y \leq x$}
+	\begin{proof}
+		\pf\ Since $C \in \mathcal{X}$ so $C$ is a chain.
+	\end{proof}
+\end{proof}
+\step{14}{\pick\ an upper bound $u$ for $A$.}
+\step{15}{$A \in \mathcal{T}_0$}
+\begin{proof}
+	\pf\ Since $\mathcal{T}_0$ is a chain in $\mathcal{T}_0$ so $\bigcup \mathcal{T}_0 \in \mathcal{T}_0$.
+\end{proof}
+\step{16}{$g(A) \in \mathcal{T}_0$}
+\step{17}{$g(A) \subseteq A$}
+\step{18}{$g(A) = A$}
+\step{19}{$\hat{A} - A = \emptyset$}
+\stop{20}{$u \in A$}
+\begin{proof}
+	\pf\ Since $A \cup \{u\}$ is a chain so $u \in \hat{A}$ and therefore $u \in A$.
+\end{proof}
+\step{21}{$u$ is maximal in $X$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in X$}}
+	\step{b}{\assume{$u \leq x$}}
+	\step{c}{$A \cup \{x\}$ is a chain.}
+	\step{d}{$x \in A$}
+	\step{e}{$x \leq u$}
+	\step{f}{$x = u$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Natural Numbers}
@@ -2562,5 +2686,9 @@ Every infinite set has a subset equivalent to $\omega$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+A set is infinite if and only if it is equivalent to a proper subset.
+\end{cor}
 
 \end{document}
