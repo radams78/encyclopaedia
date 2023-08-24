@@ -1211,6 +1211,18 @@ For any relation $R$, there exists a function $f \subseteq R$ such that $\dom f 
 \qed
 \end{proof}
 
+\begin{prop}
+If $\mathcal{C}$ is a set of pairwise disjoint nonempty sets	, then there exists a set $A$ such that, for all $C \in \mathcal{C}$, we have $A \cap C$ is a singleton.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f$ be a choice function for $\bigcup \mathcal{C}$}}
+\step{2}{\pflet{$A = \{ f(C) : C \in \mathcal{C} \}$}}
+\step{3}{For all $C \in \mathcal{C}$ we have $A \cap C = \{f(C)\}$}
+\qed
+\end{proof}
+
 \chapter{Equivalence}
 
 \begin{df}[Equivalent]
