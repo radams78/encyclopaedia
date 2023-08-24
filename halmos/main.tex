@@ -2532,4 +2532,35 @@ Every nonempty finite set of natural numbers has a greatest element.
 \qed
 \end{proof}
 
+\begin{prop}
+Every infinite set has a subset equivalent to $\omega$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be an infinite set.}}
+\step{2}{\pick\ a choice function $f$ for $X$.}
+\step{3}{\pflet{$\mathcal{C}$ be the set of all finite subsets of $X$.}}
+\step{4}{For all $A \in \mathcal{C}$ we have $X - A \in \dom f$.}
+\begin{proof}
+	\pf\ For all $A \in \mathcal{C}$ we have $X - A \neq \emptyset$.
+\end{proof}
+\step{6}{\pflet{$U : \omega \rightarrow \mathcal{C}$ be the function defined recursively by $U(0) = \emptyset$ and $U(n+1) = U(n) \cup \{f(X - U(n))\}$ for all $n \in \omega$.}}
+\step{7}{\pflet{$v : \omega \rightarrow X$ be the function $v(n) = f(X - U(n))$} \prove{$v$ is one-to-one.}}
+\step{8}{$\forall n \in \omega. v(n) \notin U(n)$}
+\begin{proof}
+	\pf\ Since $v(n) = f(X - U(n)) \in X - U(n)$.
+\end{proof}
+\step{9}{$\forall n \in \omega. v(n) \in U(n+1)$}
+\step{10}{$\forall m,n \in \omega. n \leq m \Rightarrow U(n) \subseteq U(m)$}
+\begin{proof}
+	\pf\ Since $U(n) \subseteq U(n+1)$ for all $n$.
+\end{proof}
+\step{11}{$\forall m,n \in \omega. n < m \Rightarrow v(n) \neq v(m)$}
+\begin{proof}
+	\pf\ Since $v(n) \in U(m)$ and $v(m) \notin U(m)$.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
