@@ -1326,6 +1326,14 @@ Let $X$ be a poset. Let $E \subseteq X$ and $a \in X$. Then $a$ is a \emph{lower
 Let $X$ be a poset. Let $E \subseteq X$ and $a \in X$. Then $a$ is an \emph{upper bound} for $E$ iff $\forall x \in E. x \leq a$.
 \end{df}
 
+\begin{df}[Greatest Lower Bound, Infimum]
+Let $X$ be a poset. Let $E \subseteq X$ and $a \in X$. Then $a$ is the \emph{greatest lower bound} or \emph{infimum} for $E$ iff $a$ is the greatest element in the set of lower bounds for $E$.
+\end{df}
+
+\begin{df}[Least Upper Bound, Supremum]
+Let $X$ be a poset. Let $E \subseteq X$ and $a \in X$. Then $a$ is the \emph{least upper bound} or \emph{supremum} for $E$ iff $a$ is the least element in the set of upper bounds for $E$.
+\end{df}
+
 \begin{df}[Total Order]
 A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
 We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chain}.
@@ -2255,6 +2263,18 @@ For every natural number $n$, we have $n$ is not equivalent to a proper subset o
 \begin{cor}
 Equivalent natural numbers are equal.
 \end{cor}
+
+\begin{df}[Lexicographical Order]
+The \emph{lexicographical} order on $\omega \times \omega$ is the relation $S$ defined by $(a,b) S (x,y)$ iff $a < x$ or ($a = x$ and $b < y$).
+\end{df}
+
+\begin{prop}
+The lexicographical order is a partial order on $\omega \times \omega$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \section{Finite Sets}
 
