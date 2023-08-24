@@ -1318,6 +1318,14 @@ Let $X$ be a poset and $a \in X$. Then $a$ is \emph{minimal} iff there is no $x 
 Let $X$ be a poset and $a \in X$. Then $a$ is \emph{maximal} iff there is no $x \in X$ such that $a < x$.
 \end{df}
 
+\begin{df}[Lower Bound]
+Let $X$ be a poset. Let $E \subseteq X$ and $a \in X$. Then $a$ is a \emph{lower bound} for $E$ iff $\forall x \in E. a \leq x$.
+\end{df}
+
+\begin{df}[Upper Bound]
+Let $X$ be a poset. Let $E \subseteq X$ and $a \in X$. Then $a$ is an \emph{upper bound} for $E$ iff $\forall x \in E. x \leq a$.
+\end{df}
+
 \begin{df}[Total Order]
 A partial order $\leq$ on a set $X$ is a \emph{total order}, \emph{simple order} or \emph{linear order} iff, for all $x,y \in X$, either $x \leq y$ or $y \leq x$.
 We then call the poset $(X, \leq)$ a \emph{linearly ordered set} or a \emph{chain}.
