@@ -1696,6 +1696,7 @@ Let $W$ be a well ordered set and $X$ a set. Let $S$ be the set of all functions
 \end{proof}
 
 \begin{prop}
+\label{prop:similar_subset}
 Let $X$ be a well ordered set and $f$ a similarity between $X$ and a subset of $X$. Then, for all $a \in X$, we have $a \leq f(a)$.
 \end{prop}
 
@@ -1715,6 +1716,37 @@ Let $X$ be a well ordered set and $f$ a similarity between $X$ and a subset of $
 \qedstep
 \begin{proof}
 	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ and $Y$ be well ordered sets. Then there is at most one similarity between them.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f,g : X \cong Y$} \prove{$\forall a \in X. f(a) = g(a)$}}
+\step{2}{\pflet{$a \in X$}}
+\step{3}{\assume{as transfinite induction hypothesis $\forall c < a. f(c) = g(c)$}}
+\step{4}{$f(a)$ is the least element of $Y - \{f(c) : c < a \}$}
+\step{5}{$g(a)$ is the least element of $Y - \{g(c) : c < a\}$}
+\step{6}{$f(a) = g(a)$}
+\qed
+\end{proof}
+
+\begin{prop}
+A well ordered set is not similar to any of its initial segments.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a well ordered set.}}
+\step{2}{\assume{for a contradiction $f : X \cong s(a)$ for some $a \in X$}}
+\step{3}{$f(a) < a$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts Proposition \ref{prop:similar_subset}.
 \end{proof}
 \qed
 \end{proof}
