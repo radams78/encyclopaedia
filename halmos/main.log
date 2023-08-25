@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 17:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,15 +691,15 @@ WARNING: proof step "d" (<2>5) already defined
 Chapter 7.
 [47
 
-] [48] (./main.aux)
+] [48] [49] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 34691CCD6C5AB6FCECD82C8F03FE1595;4218.
  ) 
 Here is how much of TeX's memory you used:
- 10000 strings out of 476091
- 147004 string characters out of 5794081
+ 10007 strings out of 476091
+ 147071 string characters out of 5794081
  1870330 words of memory out of 5000000
- 29939 multiletter control sequences out of 15000+600000
+ 29940 multiletter control sequences out of 15000+600000
  528316 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,356b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -723,10 +723,10 @@ ts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb>
-Output written on main.pdf (49 pages, 335911 bytes).
+Output written on main.pdf (50 pages, 338114 bytes).
 PDF statistics:
- 883 PDF objects out of 1000 (max. 8388607)
- 728 compressed objects within 8 object streams
- 333 named destinations out of 1000 (max. 500000)
+ 894 PDF objects out of 1000 (max. 8388607)
+ 738 compressed objects within 8 object streams
+ 339 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

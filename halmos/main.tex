@@ -2924,6 +2924,8 @@ A set is infinite if and only if it is equivalent to a proper subset.
 
 \begin{df}[Ordinal (Number)]
 An \emph{ordinal (number)} is a well ordered set $\alpha$ such that $\forall \xi \in \alpha. s(\xi) = \xi$.
+
+Given ordinals $\alpha$, $\beta$, we write $\alpha < \beta$ iff $\alpha \in \beta$.
 \end{df}
 
 \begin{prop}
@@ -2975,6 +2977,7 @@ Every element of an ordinal is an ordinal.
 \end{proof}
 
 \begin{prop}
+\label{prop:similar_ordinals_equal}
 Similar ordinals are equal.
 \end{prop}
 
@@ -3011,6 +3014,74 @@ Similar ordinals are equal.
 	\step{b}{$\eta = f(\eta) \in f(\xi)$}
 \end{proof}
 \step{7}{$f(\xi) = \xi$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\alpha$ and $\beta$ be ordinals. Then the following are equivalent.
+\begin{enumerate}
+\item $\alpha \in \beta$
+\item $\alpha \subsetneq \beta$
+\item $\beta$ is a continuation of $\alpha$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If $\alpha \in \beta$ then $\alpha = s(\alpha)$.
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\pflet{$\gamma$ be the least element of $\beta$ such that $\gamma \notin \alpha$}}
+	\step{b}{$\alpha \subseteq \gamma$}
+	\begin{proof}
+		\step{i}{\pflet{$\eta \in \alpha$}}
+		\step{ii}{$\eta \subseteq \alpha$}
+		\step{iii}{$\gamma \notin \eta$}
+		\step{iv}{$\eta \in \gamma$ or $\eta = \gamma$}
+		\step{v}{$\eta \neq \gamma$}
+		\begin{proof}
+			\pf\ Since $\eta \in \alpha$ and $\gamma \notin \alpha$.
+		\end{proof}
+		\step{vi}{$\eta \in \gamma$}
+	\end{proof}
+	\step{c}{$\gamma \subseteq \alpha$}
+	\begin{proof}
+		\pf\ For all $\eta \in \gamma$ we have $\eta \in \alpha$ by leastness of $\gamma$.
+	\end{proof}
+	\step{d}{$\gamma = \alpha$}
+	\step{e}{$\alpha \in \beta$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any ordinal numbers $\alpha$ and $\beta$, either $\alpha = \beta$, or $\alpha < \beta$, or $\beta < \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Either $\alpha = \beta$, or $\alpha$ is similar to an initial segment of $\beta$, or $\beta$ is similar to an initial segment of $\alpha$.}
+\step{2}{\case{$\alpha$ is similar to an initial segment of $\beta$.}}
+\begin{proof}
+	\step{a}{\pick\ $\eta \in \beta$ such that $\alpha \sim s(\eta)$}
+	\step{b}{$\alpha \sim \eta$}
+	\step{c}{$\alpha = \eta$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:similar_ordinals_equal}.
+	\end{proof}
+	\step{d}{$\alpha \in \beta$}
+\end{proof}
+\step{3}{\case{$\beta$ is similar to an initial segment of $\alpha$.}}
+\begin{proof}
+	\pf\ Then $\beta \in \alpha$ similarly.
+\end{proof}
 \qed
 \end{proof}
 \end{document}
