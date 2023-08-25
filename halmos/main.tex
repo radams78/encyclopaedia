@@ -3084,4 +3084,24 @@ For any ordinal numbers $\alpha$ and $\beta$, either $\alpha = \beta$, or $\alph
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Every set of ordinals is well ordered by $<$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be a set of ordinals.}}
+\step{2}{\pflet{$A$ be a nonempty subset of $E$.}}
+\step{3}{\pick\ $\alpha \in A$}
+\step{4}{\case{$\alpha \cap A = \emptyset$}}
+\begin{proof}
+	\pf\ Then $\alpha$ is least in $A$.
+\end{proof}
+\step{5}{\case{$\alpha \cap A \neq \emptyset$}}
+\begin{proof}
+	\pf\ Then $\alpha \cap A$ has a least element, which is least in $A$.
+\end{proof}
+\qed
+\end{proof}
 \end{document}
