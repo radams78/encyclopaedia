@@ -3104,4 +3104,72 @@ Every set of ordinals is well ordered by $<$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Limit Ordinal]
+A \emph{limit ordinal} is an ordinal number that is not 0 and not $\alpha^+$ for any ordinal $\alpha$.
+\end{df}
+
+\begin{prop}
+For any set $E$ of ordinal numbers, $\bigcup E$ is an ordinal and is the supremum of $E$.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:union_under_continuation}. \qed
+\end{proof}
+
+\begin{thm}[Burali-Forti Paradox]
+There is no set whose members are exactly the ordinal numbers.
+\end{thm}
+
+\begin{proof}
+\pf\ For any set of ordinals $E$, we have $(\bigcup E)^+$ is an ordinal that is not in $E$. \qed
+\end{proof}
+
+\begin{thm}[Counting Theorem]
+Every well ordered set is similar to a unique ordinal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a well ordered set.}}
+\step{2}{There exists an ordinal $\alpha$ such that $X \cong \alpha$.}
+\begin{proof}
+	\step{a}{For all $a \in X$, there exists a unique ordinal $\alpha$ such that $s(a) \cong \alpha$}
+	\begin{proof}
+		\step{i}{\pflet{$a \in X$}}
+		\step{ii}{\assume{as transfinite induction hypothesis that, for all $b < a$, there exists a unique ordinal $\beta$ such that $s(b) \cong \beta$}}
+		\step{iii}{\pflet{$\alpha = \{ \beta : \beta \text{ is an ordinal } \wedge \exists b < a. s(b) \cong \beta \}$}}
+		\step{iv}{$\alpha$ is an ordinal}
+		\begin{proof}
+			\step{one}{\pflet{$\gamma \in \beta \in \alpha$}}
+			\step{two}{\pick\ $b < a$ and $f : s(b) \cong \beta$}
+			\step{three}{\pick\ $c < b$ such that $f(c) = \gamma$}
+			\step{four}{$f \restriction s(c) : s(c) \cong \gamma$}
+		\end{proof}
+		\step{v}{$s(a) \cong \alpha$}
+		\begin{proof}
+			\pf\ The function $f : s(a) \rightarrow \alpha$ defined by $f(b)$ is the ordinal such that $s(b) \cong f(b)$ is a similarity.
+		\end{proof}
+		\step{vi}{$\alpha$ is unique.}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:similar_ordinals_equal}.
+		\end{proof}
+	\end{proof}
+	\step{b}{\pflet{$\alpha = \{\beta : \beta \text{ is an ordinal } \wedge \exists a \in X. s(a) \cong \beta \}$}}
+	\step{c}{$\alpha$ is an ordinal.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{d}{$X \cong \alpha$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{3}{For any ordinals $\alpha$ and $\beta$, if $X \cong \alpha$ and $X \cong \beta$ then $\alpha = \beta$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:similar_ordinals_equal}.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
