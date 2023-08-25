@@ -1534,6 +1534,43 @@ Let $X$ be a poset and $A \subseteq X$. Then $A$ is \emph{cofinal} iff, for all 
 Two posets $X$ and $Y$ are \emph{similar}, $X \cong Y$ iff there exists an order preserving one-to-one correspondence $f$ between them. We write $f : X \cong Y$ and call $f$ a \emph{similarity}.
 \end{df}
 
+\begin{prop}
+Let $X$ and $Y$ be posets. Let $f$ be a one-to-one correspondence between $X$ and $Y$. Then $f$ is a similarity if and only if, for all $x,y \in X$, we have $x < y$ iff $f(x) < f(y)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+%TODO Duplication - extract concept of category
+\begin{prop}
+For any poset $X$ we have $I_X : X \cong X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $f : X \cong Y$ then $f^{-1} : Y \cong X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $f : X \cong Y$ and $g : Y \cong Z$ then $g \circ f : X \cong Z$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+For any set $E$, similarity is an equivalence relation on the set of all posets that are subsets of $E$.
+\end{cor}
+
 \section{Well Orderings}
 
 \begin{df}[Well Ordered Set]
