@@ -2441,77 +2441,265 @@ For all $m,n,p \in \omega$ we have
 \qed
 \end{proof}
 
-\section{Order on the Natural Numbers}
+\chapter{Ordinal Numbers}
 
-\begin{df}
-Given natural numbers $m$ and $n$, we write $m < n$ iff $m \in n$.
+\begin{df}[Ordinal (Number)]
+An \emph{ordinal (number)} is a well ordered set $\alpha$ such that $\forall \xi \in \alpha. s(\xi) = \xi$.
 
-We write $m \leq n$ iff $m < n \vee m = n$.
+Given ordinals $\alpha$, $\beta$, we write $\alpha < \beta$ iff $\alpha \in \beta$.
 \end{df}
 
 \begin{prop}
-The relation $\leq$ is a well ordering on $\omega$.
+Every natural number is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+$\omega$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $\alpha$ is an ordinal number then so is $\alpha^+$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\alpha$ be an ordinal and $\eta, \xi \in \alpha$. Then $\eta < \xi$ if and only if $\eta \in \xi$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every ordinal is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every element of an ordinal is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:similar_ordinals_equal}
+Similar ordinals are equal.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$\leq$ is a partial order on $\omega$.}
+\step{1}{\pflet{$\alpha, \beta$ be ordinals.}}
+\step{2}{\pflet{$f : \alpha \cong \beta$ be a similarity.} \prove{$\forall \xi \in \alpha. f(\xi) = \xi$}}
+\step{3}{\pflet{$\xi \in \alpha$}}
+\step{4}{\assume{as transfinite induction hypothesis $\forall \eta < \xi. f(\eta) = \eta$}}
+\step{5}{$f(\xi) \subseteq \xi$}
 \begin{proof}
-	\step{a}{$<$ is transitive.}
+	\step{a}{\pflet{$\eta \in f(\xi)$}}
+	\step{b}{\pick\ $\zeta \in \alpha$ such that $f(\zeta) = \eta$}
+	\step{c}{$\zeta \in \xi$}
 	\begin{proof}
-		\pf\ Proposition \ref{prop:natural_number_transitive}.
+		\pf\ Since $f(\zeta) \in f(\xi)$ and $f$ is a similarity.
 	\end{proof}
-	\step{b}{We never have $m < n$ and $n < m$.}
+	\step{d}{$f(\zeta) = \zeta$}
 	\begin{proof}
-		\pf\ If $m < n$ and $n < m$ then $m < m$ by Proposition \ref{prop:natural_number_transitive}, contradicting Corollary \ref{cor:n_notin_n}.
+		\pf\ \stepref{4}
 	\end{proof}
-	\qedstep
+	\step{e}{$\eta = \zeta$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{d}
+	\end{proof}
+	\step{f}{$\eta \in \xi$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{e}
+	\end{proof}
 \end{proof}
-\step{4}{Any nonempty set $E$ of natural numbers has a least element.}
+\step{6}{$\xi \subseteq f(\xi)$}
 \begin{proof}
-	\step{a}{\pflet{$E \subseteq \omega$}}
-	\step{b}{\assume{$E$ has no least element.} \prove{$E = \emptyset$}}
-	\step{c}{\pflet{$P(n)$ be the property $\forall m < n. m \notin E$}}
-	\step{d}{$P(0)$}
+	\step{a}{\pflet{$\eta \in \xi$}}
+	\step{b}{$\eta = f(\eta) \in f(\xi)$}
+\end{proof}
+\step{7}{$f(\xi) = \xi$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\alpha$ and $\beta$ be ordinals. Then the following are equivalent.
+\begin{enumerate}
+\item $\alpha \in \beta$
+\item $\alpha \subsetneq \beta$
+\item $\beta$ is a continuation of $\alpha$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If $\alpha \in \beta$ then $\alpha = s(\alpha)$.
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\pflet{$\gamma$ be the least element of $\beta$ such that $\gamma \notin \alpha$}}
+	\step{b}{$\alpha \subseteq \gamma$}
 	\begin{proof}
-		\pf\ Vacuous.
+		\step{i}{\pflet{$\eta \in \alpha$}}
+		\step{ii}{$\eta \subseteq \alpha$}
+		\step{iii}{$\gamma \notin \eta$}
+		\step{iv}{$\eta \in \gamma$ or $\eta = \gamma$}
+		\step{v}{$\eta \neq \gamma$}
+		\begin{proof}
+			\pf\ Since $\eta \in \alpha$ and $\gamma \notin \alpha$.
+		\end{proof}
+		\step{vi}{$\eta \in \gamma$}
 	\end{proof}
-	\step{e}{For any natural number $n$, if $P(n)$ then $P(n+1)$}
+	\step{c}{$\gamma \subseteq \alpha$}
 	\begin{proof}
-		\pf\ If $P(n)$ then $n \notin E$ (otherwise $n$ would be the least element of $E$) and so $P(n+1)$.
+		\pf\ For all $\eta \in \gamma$ we have $\eta \in \alpha$ by leastness of $\gamma$.
 	\end{proof}
-	\step{f}{$\forall n \in \omega. P(n)$}
-	\step{g}{$\forall n \in \omega. n \notin E$}
+	\step{d}{$\gamma = \alpha$}
+	\step{e}{$\alpha \in \beta$}
 \end{proof}
 \qed
 \end{proof}
 
 \begin{prop}
-For any natural numbers $m$ and $n$, we have $m \in n$ if and only if $m \subsetneq n$.
+For any ordinal numbers $\alpha$ and $\beta$, either $\alpha = \beta$, or $\alpha < \beta$, or $\beta < \alpha$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$m$ and $n$ be natural numbers.}}
-\step{2}{If $m \in n$ then $m \subsetneq n$.}
+\step{1}{Either $\alpha = \beta$, or $\alpha$ is similar to an initial segment of $\beta$, or $\beta$ is similar to an initial segment of $\alpha$.}
+\step{2}{\case{$\alpha$ is similar to an initial segment of $\beta$.}}
 \begin{proof}
-	\pf\ Since $n$ is a transitive set, and $m \neq n$ by Corollary \ref{cor:n_notin_n}.
+	\step{a}{\pick\ $\eta \in \beta$ such that $\alpha \sim s(\eta)$}
+	\step{b}{$\alpha \sim \eta$}
+	\step{c}{$\alpha = \eta$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:similar_ordinals_equal}.
+	\end{proof}
+	\step{d}{$\alpha \in \beta$}
 \end{proof}
-\step{3}{If $m \subsetneq n$ then $m \in n$.}
+\step{3}{\case{$\beta$ is similar to an initial segment of $\alpha$.}}
 \begin{proof}
-	\step{a}{\assume{$m \subsetneq n$}}
-	\step{b}{$n \notin m$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:natural_number_not_subset}.
-	\end{proof}
-	\step{c}{$m \neq n$}
-	\step{d}{$m \in n$}
-	\begin{proof}
-		\pf\ Trichotomy.
-	\end{proof}
+	\pf\ Then $\beta \in \alpha$ similarly.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Every set of ordinals is well ordered by $<$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be a set of ordinals.}}
+\step{2}{\pflet{$A$ be a nonempty subset of $E$.}}
+\step{3}{\pick\ $\alpha \in A$}
+\step{4}{\case{$\alpha \cap A = \emptyset$}}
+\begin{proof}
+	\pf\ Then $\alpha$ is least in $A$.
+\end{proof}
+\step{5}{\case{$\alpha \cap A \neq \emptyset$}}
+\begin{proof}
+	\pf\ Then $\alpha \cap A$ has a least element, which is least in $A$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Limit Ordinal]
+A \emph{limit ordinal} is an ordinal number that is not 0 and not $\alpha^+$ for any ordinal $\alpha$.
+\end{df}
+
+\begin{prop}
+For any set $E$ of ordinal numbers, $\bigcup E$ is an ordinal and is the supremum of $E$.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:union_under_continuation}. \qed
+\end{proof}
+
+\begin{thm}[Burali-Forti Paradox]
+There is no set whose members are exactly the ordinal numbers.
+\end{thm}
+
+\begin{proof}
+\pf\ For any set of ordinals $E$, we have $(\bigcup E)^+$ is an ordinal that is not in $E$. \qed
+\end{proof}
+
+\begin{thm}[Counting Theorem]
+Every well ordered set is similar to a unique ordinal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a well ordered set.}}
+\step{2}{There exists an ordinal $\alpha$ such that $X \cong \alpha$.}
+\begin{proof}
+	\step{a}{For all $a \in X$, there exists a unique ordinal $\alpha$ such that $s(a) \cong \alpha$}
+	\begin{proof}
+		\step{i}{\pflet{$a \in X$}}
+		\step{ii}{\assume{as transfinite induction hypothesis that, for all $b < a$, there exists a unique ordinal $\beta$ such that $s(b) \cong \beta$}}
+		\step{iii}{\pflet{$\alpha = \{ \beta : \beta \text{ is an ordinal } \wedge \exists b < a. s(b) \cong \beta \}$}}
+		\begin{proof}
+			\pf\ This is a set by the Axiom of Substitution.
+		\end{proof}
+		\step{iv}{$\alpha$ is an ordinal}
+		\begin{proof}
+			\step{one}{\pflet{$\gamma \in \beta \in \alpha$}}
+			\step{two}{\pick\ $b < a$ and $f : s(b) \cong \beta$}
+			\step{three}{\pick\ $c < b$ such that $f(c) = \gamma$}
+			\step{four}{$f \restriction s(c) : s(c) \cong \gamma$}
+		\end{proof}
+		\step{v}{$s(a) \cong \alpha$}
+		\begin{proof}
+			\pf\ The function $f : s(a) \rightarrow \alpha$ defined by $f(b)$ is the ordinal such that $s(b) \cong f(b)$ is a similarity.
+		\end{proof}
+		\step{vi}{$\alpha$ is unique.}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:similar_ordinals_equal}.
+		\end{proof}
+	\end{proof}
+	\step{b}{\pflet{$\alpha = \{\beta : \beta \text{ is an ordinal } \wedge \exists a \in X. s(a) \cong \beta \}$}}
+	\begin{proof}
+		\pf\ This is a set by the Axiom of Substitution.
+	\end{proof}
+	\step{c}{$\alpha$ is an ordinal.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{d}{$X \cong \alpha$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{3}{For any ordinals $\alpha$ and $\beta$, if $X \cong \alpha$ and $X \cong \beta$ then $\alpha = \beta$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:similar_ordinals_equal}.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Order on the Natural Numbers}
 
 \begin{prop}
 \label{prop:plus_mono}
@@ -2920,16 +3108,25 @@ Every infinite set has a subset equivalent to $\omega$.
 A set is infinite if and only if it is equivalent to a proper subset.
 \end{cor}
 
-\chapter{Ordinal Numbers}
+\section{Ordinal Arithmetic}
 
-\begin{df}[Ordinal (Number)]
-An \emph{ordinal (number)} is a well ordered set $\alpha$ such that $\forall \xi \in \alpha. s(\xi) = \xi$.
+\begin{df}[Addition]
+Let $I$ be a well ordered set and $(\alpha_i)_{i \in I}$ be a sequence of ordinals. Choose a well ordered set $A_i$ such that $A_i \cong \alpha_i$ for each $i \in I$, and assume the sets $A_i$ are pairwise disjoint. The \emph{sum} $\sum_{i \in I} \alpha_i$ is the ordinal of the well ordered set $\bigcup_{i \in I} A_i$, where:
+\begin{itemize}
+\item for $x,y \in A_i$, we have $x <_{\bigcup_{i \in I} A_i} y$ if and only if $x <_{A_i} y$
+\item for $x \in A_i$ and $y \in A_j$ with $i \neq j$, we have $x <_{\bigcup_{i \in I} A_i} y$ iff $i <_I j$
+\end{itemize}
 
-Given ordinals $\alpha$, $\beta$, we write $\alpha < \beta$ iff $\alpha \in \beta$.
+We write $\alpha + \beta$ for $\sum_{i \in 2} \gamma_i$ where $\gamma_0 = \alpha$ and $\gamma_1 = \beta$.
 \end{df}
 
 \begin{prop}
-Every natural number is an ordinal.
+\begin{align*}
+\alpha + 0 & = \alpha \\
+0 + \alpha & = \alpha \\
+\alpha + 1 & = \alpha^+ \\
+\alpha + (\beta + \gamma) & = (\alpha + \beta) + \gamma
+\end{align*}
 \end{prop}
 
 \begin{proof}
@@ -2937,7 +3134,7 @@ Every natural number is an ordinal.
 \end{proof}
 
 \begin{prop}
-$\omega$ is an ordinal.
+For any ordinals $\alpha$ and $\beta$, we have $\alpha < \beta$ if and only if there exists $\gamma \neq 0$ such that $\beta = \alpha + \gamma$.
 \end{prop}
 
 \begin{proof}
@@ -2945,231 +3142,11 @@ $\omega$ is an ordinal.
 \end{proof}
 
 \begin{prop}
-If $\alpha$ is an ordinal number then so is $\alpha^+$.
+\[ 1 + \omega = \omega \]
 \end{prop}
 
 \begin{proof}
 \pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-Let $\alpha$ be an ordinal and $\eta, \xi \in \alpha$. Then $\eta < \xi$ if and only if $\eta \in \xi$.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-Every ordinal is a transitive set.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-Every element of an ordinal is an ordinal.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
-\label{prop:similar_ordinals_equal}
-Similar ordinals are equal.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\alpha, \beta$ be ordinals.}}
-\step{2}{\pflet{$f : \alpha \cong \beta$ be a similarity.} \prove{$\forall \xi \in \alpha. f(\xi) = \xi$}}
-\step{3}{\pflet{$\xi \in \alpha$}}
-\step{4}{\assume{as transfinite induction hypothesis $\forall \eta < \xi. f(\eta) = \eta$}}
-\step{5}{$f(\xi) \subseteq \xi$}
-\begin{proof}
-	\step{a}{\pflet{$\eta \in f(\xi)$}}
-	\step{b}{\pick\ $\zeta \in \alpha$ such that $f(\zeta) = \eta$}
-	\step{c}{$\zeta \in \xi$}
-	\begin{proof}
-		\pf\ Since $f(\zeta) \in f(\xi)$ and $f$ is a similarity.
-	\end{proof}
-	\step{d}{$f(\zeta) = \zeta$}
-	\begin{proof}
-		\pf\ \stepref{4}
-	\end{proof}
-	\step{e}{$\eta = \zeta$}
-	\begin{proof}
-		\pf\ \stepref{b}, \stepref{d}
-	\end{proof}
-	\step{f}{$\eta \in \xi$}
-	\begin{proof}
-		\pf\ \stepref{c}, \stepref{e}
-	\end{proof}
-\end{proof}
-\step{6}{$\xi \subseteq f(\xi)$}
-\begin{proof}
-	\step{a}{\pflet{$\eta \in \xi$}}
-	\step{b}{$\eta = f(\eta) \in f(\xi)$}
-\end{proof}
-\step{7}{$f(\xi) = \xi$}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $\alpha$ and $\beta$ be ordinals. Then the following are equivalent.
-\begin{enumerate}
-\item $\alpha \in \beta$
-\item $\alpha \subsetneq \beta$
-\item $\beta$ is a continuation of $\alpha$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$1 \Rightarrow 3$}
-\begin{proof}
-	\pf\ If $\alpha \in \beta$ then $\alpha = s(\alpha)$.
-\end{proof}
-\step{2}{$3 \Rightarrow 2$}
-\begin{proof}
-	\pf\ Immediate from definitions.
-\end{proof}
-\step{3}{$2 \Rightarrow 1$}
-\begin{proof}
-	\step{a}{\pflet{$\gamma$ be the least element of $\beta$ such that $\gamma \notin \alpha$}}
-	\step{b}{$\alpha \subseteq \gamma$}
-	\begin{proof}
-		\step{i}{\pflet{$\eta \in \alpha$}}
-		\step{ii}{$\eta \subseteq \alpha$}
-		\step{iii}{$\gamma \notin \eta$}
-		\step{iv}{$\eta \in \gamma$ or $\eta = \gamma$}
-		\step{v}{$\eta \neq \gamma$}
-		\begin{proof}
-			\pf\ Since $\eta \in \alpha$ and $\gamma \notin \alpha$.
-		\end{proof}
-		\step{vi}{$\eta \in \gamma$}
-	\end{proof}
-	\step{c}{$\gamma \subseteq \alpha$}
-	\begin{proof}
-		\pf\ For all $\eta \in \gamma$ we have $\eta \in \alpha$ by leastness of $\gamma$.
-	\end{proof}
-	\step{d}{$\gamma = \alpha$}
-	\step{e}{$\alpha \in \beta$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-For any ordinal numbers $\alpha$ and $\beta$, either $\alpha = \beta$, or $\alpha < \beta$, or $\beta < \alpha$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{Either $\alpha = \beta$, or $\alpha$ is similar to an initial segment of $\beta$, or $\beta$ is similar to an initial segment of $\alpha$.}
-\step{2}{\case{$\alpha$ is similar to an initial segment of $\beta$.}}
-\begin{proof}
-	\step{a}{\pick\ $\eta \in \beta$ such that $\alpha \sim s(\eta)$}
-	\step{b}{$\alpha \sim \eta$}
-	\step{c}{$\alpha = \eta$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:similar_ordinals_equal}.
-	\end{proof}
-	\step{d}{$\alpha \in \beta$}
-\end{proof}
-\step{3}{\case{$\beta$ is similar to an initial segment of $\alpha$.}}
-\begin{proof}
-	\pf\ Then $\beta \in \alpha$ similarly.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Every set of ordinals is well ordered by $<$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$E$ be a set of ordinals.}}
-\step{2}{\pflet{$A$ be a nonempty subset of $E$.}}
-\step{3}{\pick\ $\alpha \in A$}
-\step{4}{\case{$\alpha \cap A = \emptyset$}}
-\begin{proof}
-	\pf\ Then $\alpha$ is least in $A$.
-\end{proof}
-\step{5}{\case{$\alpha \cap A \neq \emptyset$}}
-\begin{proof}
-	\pf\ Then $\alpha \cap A$ has a least element, which is least in $A$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Limit Ordinal]
-A \emph{limit ordinal} is an ordinal number that is not 0 and not $\alpha^+$ for any ordinal $\alpha$.
-\end{df}
-
-\begin{prop}
-For any set $E$ of ordinal numbers, $\bigcup E$ is an ordinal and is the supremum of $E$.
-\end{prop}
-
-\begin{proof}
-\pf\ Proposition \ref{prop:union_under_continuation}. \qed
-\end{proof}
-
-\begin{thm}[Burali-Forti Paradox]
-There is no set whose members are exactly the ordinal numbers.
-\end{thm}
-
-\begin{proof}
-\pf\ For any set of ordinals $E$, we have $(\bigcup E)^+$ is an ordinal that is not in $E$. \qed
-\end{proof}
-
-\begin{thm}[Counting Theorem]
-Every well ordered set is similar to a unique ordinal.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$X$ be a well ordered set.}}
-\step{2}{There exists an ordinal $\alpha$ such that $X \cong \alpha$.}
-\begin{proof}
-	\step{a}{For all $a \in X$, there exists a unique ordinal $\alpha$ such that $s(a) \cong \alpha$}
-	\begin{proof}
-		\step{i}{\pflet{$a \in X$}}
-		\step{ii}{\assume{as transfinite induction hypothesis that, for all $b < a$, there exists a unique ordinal $\beta$ such that $s(b) \cong \beta$}}
-		\step{iii}{\pflet{$\alpha = \{ \beta : \beta \text{ is an ordinal } \wedge \exists b < a. s(b) \cong \beta \}$}}
-		\step{iv}{$\alpha$ is an ordinal}
-		\begin{proof}
-			\step{one}{\pflet{$\gamma \in \beta \in \alpha$}}
-			\step{two}{\pick\ $b < a$ and $f : s(b) \cong \beta$}
-			\step{three}{\pick\ $c < b$ such that $f(c) = \gamma$}
-			\step{four}{$f \restriction s(c) : s(c) \cong \gamma$}
-		\end{proof}
-		\step{v}{$s(a) \cong \alpha$}
-		\begin{proof}
-			\pf\ The function $f : s(a) \rightarrow \alpha$ defined by $f(b)$ is the ordinal such that $s(b) \cong f(b)$ is a similarity.
-		\end{proof}
-		\step{vi}{$\alpha$ is unique.}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:similar_ordinals_equal}.
-		\end{proof}
-	\end{proof}
-	\step{b}{\pflet{$\alpha = \{\beta : \beta \text{ is an ordinal } \wedge \exists a \in X. s(a) \cong \beta \}$}}
-	\step{c}{$\alpha$ is an ordinal.}
-	\begin{proof}
-		\pf\ Similar.
-	\end{proof}
-	\step{d}{$X \cong \alpha$}
-	\begin{proof}
-		\pf\ Similar.
-	\end{proof}
-\end{proof}
-\step{3}{For any ordinals $\alpha$ and $\beta$, if $X \cong \alpha$ and $X \cong \beta$ then $\alpha = \beta$.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:similar_ordinals_equal}.
-\end{proof}
-\qed
 \end{proof}
 
 \end{document}

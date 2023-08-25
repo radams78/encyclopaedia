@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 20:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...berline {7}Ordinal Numbers}{47}{chapter.7}
+l.31 ...berline {7.2}Finite Sets}{46}{section.7.2}
                                                   % [1
 
 ])
@@ -687,22 +687,22 @@ Chapter 6.
 
 ]
 WARNING: proof step "d" (<2>5) already defined
-[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
+[32] [33] [34] [35] [36] [37] [38] [39] [40]
 Chapter 7.
-[47
+[41
 
-] [48] [49] [50] (./main.aux)
+] [42] [43] [44] [45] [46] [47] [48] [49] [50] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 34691CCD6C5AB6FCECD82C8F03FE1595;4218.
+(rerunfilecheck)             Checksum: 4A77781B638BDADCFDB2B85874A4DE95;4366.
  ) 
 Here is how much of TeX's memory you used:
- 10014 strings out of 476091
- 147120 string characters out of 5794081
+ 10017 strings out of 476091
+ 147151 string characters out of 5794081
  1870330 words of memory out of 5000000
- 29941 multiletter control sequences out of 15000+600000
+ 29942 multiletter control sequences out of 15000+600000
  528316 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,76p,356b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,76p,357b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -723,10 +723,10 @@ ts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb>
-Output written on main.pdf (51 pages, 341113 bytes).
+Output written on main.pdf (51 pages, 342046 bytes).
 PDF statistics:
- 907 PDF objects out of 1000 (max. 8388607)
- 750 compressed objects within 8 object streams
- 345 named destinations out of 1000 (max. 500000)
- 249 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 751 compressed objects within 8 object streams
+ 347 named destinations out of 1000 (max. 500000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
