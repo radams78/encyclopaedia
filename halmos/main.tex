@@ -132,6 +132,10 @@ We write $A^I$ for $\bigtimes_{i \in I} A$.
 The Cartesian product of a non-empty family of non-empty sets is non-empty.
 \end{ax}
 
+\begin{ax}[Axiom of substitution]
+If $S(a,b)$ is a sentence such that for each $a$ in $A$ the set $\{ b : S(a,b) \}$ can be formed, then there exists a function $F$ with domain $A$ such that $F(a) = \{ b : S(a,b) \}$ for each $a$ in $A$.
+\end{ax}
+
 \chapter{Basic Properties and Operations on Sets}
 
 \section{The Subset Relation}
@@ -2916,4 +2920,97 @@ Every infinite set has a subset equivalent to $\omega$.
 A set is infinite if and only if it is equivalent to a proper subset.
 \end{cor}
 
+\chapter{Ordinal Numbers}
+
+\begin{df}[Ordinal (Number)]
+An \emph{ordinal (number)} is a well ordered set $\alpha$ such that $\forall \xi \in \alpha. s(\xi) = \xi$.
+\end{df}
+
+\begin{prop}
+Every natural number is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+$\omega$ is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $\alpha$ is an ordinal number then so is $\alpha^+$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\alpha$ be an ordinal and $\eta, \xi \in \alpha$. Then $\eta < \xi$ if and only if $\eta \in \xi$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every ordinal is a transitive set.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every element of an ordinal is an ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Similar ordinals are equal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha, \beta$ be ordinals.}}
+\step{2}{\pflet{$f : \alpha \cong \beta$ be a similarity.} \prove{$\forall \xi \in \alpha. f(\xi) = \xi$}}
+\step{3}{\pflet{$\xi \in \alpha$}}
+\step{4}{\assume{as transfinite induction hypothesis $\forall \eta < \xi. f(\eta) = \eta$}}
+\step{5}{$f(\xi) \subseteq \xi$}
+\begin{proof}
+	\step{a}{\pflet{$\eta \in f(\xi)$}}
+	\step{b}{\pick\ $\zeta \in \alpha$ such that $f(\zeta) = \eta$}
+	\step{c}{$\zeta \in \xi$}
+	\begin{proof}
+		\pf\ Since $f(\zeta) \in f(\xi)$ and $f$ is a similarity.
+	\end{proof}
+	\step{d}{$f(\zeta) = \zeta$}
+	\begin{proof}
+		\pf\ \stepref{4}
+	\end{proof}
+	\step{e}{$\eta = \zeta$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{d}
+	\end{proof}
+	\step{f}{$\eta \in \xi$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{e}
+	\end{proof}
+\end{proof}
+\step{6}{$\xi \subseteq f(\xi)$}
+\begin{proof}
+	\step{a}{\pflet{$\eta \in \xi$}}
+	\step{b}{$\eta = f(\eta) \in f(\xi)$}
+\end{proof}
+\step{7}{$f(\xi) = \xi$}
+\qed
+\end{proof}
 \end{document}

@@ -28,3 +28,4 @@
 \contentsline {section}{\numberline {6.2}Arithmetic}{35}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Order on the Natural Numbers}{40}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Finite Sets}{43}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{47}{chapter.7}%
