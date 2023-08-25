@@ -1526,6 +1526,14 @@ A & \text{if } \hat{A} - A = \emptyset
 \qed
 \end{proof}
 
+\begin{df}[Cofinal]
+Let $X$ be a poset and $A \subseteq X$. Then $A$ is \emph{cofinal} iff, for all $x \in X$, there exists $a \in A$ such that $x \leq a$.
+\end{df}
+
+\begin{df}[Similar]
+Two posets $X$ and $Y$ are \emph{similar}, $X \cong Y$ iff there exists an order preserving one-to-one correspondence $f$ between them. We write $f : X \cong Y$ and call $f$ a \emph{similarity}.
+\end{df}
+
 \section{Well Orderings}
 
 \begin{df}[Well Ordered Set]
@@ -1538,6 +1546,116 @@ Every well ordered set is totally ordered.
 
 \begin{proof}
 \pf\ For all $x$ and $y$ we have $\{x,y\}$ has a least element, so $x \leq y$ or $y \leq x$. \qed
+\end{proof}
+
+\begin{thm}[Transfinite Induction]
+Let $X$ be a well ordered set. Let $S \subseteq X$ satisfy:
+\[ \forall x \in X (\forall y < x. y \in S) \Rightarrow x \in S \enspace . \]
+Then $S = X$.
+\end{thm}
+
+\begin{proof}
+\pf\ We have $X - S$ has no least element, so $X - S = \emptyset$. \qed
+\end{proof}
+
+\begin{df}[Continuation]
+Let $A$ and $B$ be well ordered sets. Then $B$ is a \emph{continuation} of $A$ iff there exists $b \in B$ such that $A = s(b)$ and the order on $A$ is the restriction of the order on $B$ to $A$.
+\end{df}
+
+\begin{prop}
+\label{prop:union_under_continuation}
+Let $\mathcal{C}$ be a set of well ordered sets that is totally ordered under continuation. Then there exists a unique well ordering on $\bigcup \mathcal{C}$ such that $\bigcup \mathcal{C}$ is a continuation of every element of $\mathcal{C}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Define $\leq$ on $\bigcup \mathcal{C}$ by: $x \leq y$ iff there exists $C \in \mathcal{C}$ such that $x, y \in C$ and $x \leq y$ in $C$. \qed
+\end{proof}
+
+\begin{prop}
+Every totally ordered set has a cofinal well ordered subset.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a totally ordered set.}}
+\step{2}{\pflet{$\mathcal{C}$ be the poset of all well ordered subsets of $X$ under continuation.}}
+\step{3}{Every chain in $\mathcal{C}$ has an upper bound.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:union_under_continuation}.
+\end{proof}
+\step{4}{\pick\ a maximal element $C$ of $\mathcal{C}$ \prove{$C$ is cofinal}}
+\begin{proof}
+	\pf\ Zorn's Lemma
+\end{proof}
+\step{5}{\pflet{$x \in X$}}
+\step{6}{We cannot have $\forall c \in C. c < x$}
+\begin{proof}
+	\pf\ Then $C \cup \{x\}$ would be a larger chain.
+\end{proof}
+\step{7}{$\exists c \in C. x \leq c$}
+\qed
+\end{proof}
+
+\begin{thm}[Well Ordering Theorem]
+Every set can be well ordered.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a set.}}
+\step{2}{\pflet{$\mathcal{W}$ be the poset of all well ordered subsets of $X$ under continuation.}}
+\step{3}{Every chain in $\mathcal{W}$ has an upper bound.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:union_under_continuation}.
+\end{proof}
+\step{4}{\pick\ a maximal $M \in \mathcal{W}$}
+\begin{proof}
+	\pf\ Zorn's Lemma
+\end{proof}
+\step{5}{$M = X$}
+\begin{proof}
+	\pf\ If $x \in X - M$ then $M \cup \{x\}$ with $x$ as the greatest element is a continuation of $M$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Transfinite Recursion]
+Let $W$ be a well ordered set and $X$ a set. Let $S$ be the set of all functions $f$ such that $\ran f \subseteq X$, and there exists $a \in W$ such that $\dom f = s(a)$. Then there exists a unique function $U : W \rightarrow X$ such that
+\[ \forall a \in W. U(a) = f(U \restriction s(a)) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Let us say that a subset $A \subseteq W \times X$ is \emph{$f$-closed} iff, whenever $a \in W$ and $t : s(a) \rightarrow X$ satisfies $\forall c < a. (c, t(c)) \in A$, then $(a, f(t)) \in A$.}
+\step{2}{\pflet{$U$ be the intersection of the set of $f$-closed subsets of $W \times X$}}
+\begin{proof}
+	\pf\ This set is nonempty since $W \times X$ is $f$-closed.
+\end{proof}
+\step{3}{$U$ is $f$-closed.}
+\step{4}{$U$ is a function.}
+\begin{proof}
+	\step{i}{\pflet{$P(a)$ be the property: there is at most one $x \in X$ such that $(a,x) \in U$}}
+	\step{ii}{\pflet{$a \in W$}}
+	\step{iii}{\assume{as transfinite induction hypothesis $\forall c < a. P(c)$}}
+	\step{iv}{\pflet{$(a,x),(a,y) \in U$}}
+	\step{v}{$x = f(U \restriction c)$}
+	\begin{proof}
+		\pf\ If not then $U - \{(a,x)\}$ would be $f$-closed.
+	\end{proof}
+	\step{vi}{$y = f(U \restriction c)$}
+	\step{vii}{$x = y$}
+\end{proof}
+\step{5}{$\dom U = W$}
+\begin{proof}
+	\step{i}{\pflet{$a \in W$}}
+	\step{ii}{\assume{as transfinite induction hypothesis $\forall c < a. c \in \dom U$}}
+	\step{iii}{$(a, f(U \restriction s(a))) \in U$}
+\end{proof}
+\step{6}{If $U' : W \rightarrow X$ and $\forall a \in W. U'(a) = f(U' \restriction s(a))$, then $U' = U$.}
+\begin{proof}
+	\pf\ Prove $U'(a) = U(a)$ by transfinite induction on $a$.
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Natural Numbers}
@@ -2395,7 +2513,7 @@ The \emph{lexicographical} order on $\omega \times \omega$ is the relation $S$ d
 \end{df}
 
 \begin{prop}
-The lexicographical order is a partial order on $\omega \times \omega$.
+The lexicographical order is a well ordering on $\omega \times \omega$.
 \end{prop}
 
 \begin{proof}
