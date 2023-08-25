@@ -1700,7 +1700,23 @@ Let $X$ be a well ordered set and $f$ a similarity between $X$ and a subset of $
 \end{prop}
 
 \begin{proof}
-\pf\ Transfinite induction on $a$. \qed
+\pf
+\step{1}{\pflet{$a \in X$}}
+\step{2}{\assume{as transfinite induction hypothesis $\forall c < a. c \leq f(c)$}}
+\step{3}{\assume{for a contradiction $f(a) < a$}}
+\step{4}{$f(a) \leq f(f(a))$}
+\begin{proof}
+	\pf\ \stepref{2}
+\end{proof}
+\step{5}{$f(f(a)) < f(a)$}
+\begin{proof}
+	\pf\ From \stepref{3} since $f$ is a similarity.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Natural Numbers}
