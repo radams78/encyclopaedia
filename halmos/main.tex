@@ -1751,6 +1751,58 @@ A well ordered set is not similar to any of its initial segments.
 \qed
 \end{proof}
 
+\begin{thm}[Comparability Theorem]
+Given well ordered sets $X$ and $Y$, either $X \cong Y$, or $X$ is similar to an initial segment of $Y$, or $Y$ is similar to an initial segment of $X$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X_0 = \{a \in X : \exists b \in Y. s(a) \cong s(b) \}$}}
+\step{2}{\pflet{$U : X_0 \rightarrow Y$ be the function: for $a \in X_0$, we have $U(a)$ is the unique element in $Y$ such that $s(a) \cong s(U(a))$}}
+\step{3}{\pflet{$Y_0 = \ran U$}}
+\step{4}{Either $X_0 = X$ or there exists $a \in X$ such that $X_0 = s(a)$}
+\begin{proof}
+	\step{a}{\assume{$X_0 \neq X$}}
+	\step{b}{\pflet{$a$ be the least element of $X - X_0$}}
+	\step{c}{\pflet{$x \in X_0$} \prove{$x < a$}}
+	\step{d}{\pick\ $f : s(x) \cong s(U(x))$}
+	\step{e}{\assume{for a contradiction $a < x$}}
+	\step{f}{$f \restriction s(a) : s(a) \cong s(f(a))$}
+	\step{g}{$a \in X_0$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{5}{Either $Y_0 = Y$ or there exists $b \in Y$ such that $Y_0 = s(b)$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{4}{\case{$X_0 = X$ and $Y_0 = Y$}}
+\begin{proof}
+	\pf\ Then $U : X \cong Y$.
+\end{proof}
+\step{5}{\case{$X_0 = X$ and $Y_0 \neq Y$}}
+\begin{proof}
+	\pf\ Then $U : X \cong s(b)$ where $Y_0 = s(b)$.
+\end{proof}
+\step{6}{\case{$X_0 \neq X$ and $Y_0 = Y$}}
+\begin{proof}
+	\pf\ Then $U : s(a) \cong Y$ where $X_0 = s(a)$.
+\end{proof}
+\step{7}{\case{$X_0 \neq X$ and $Y_0 \neq Y$}}
+\begin{proof}
+	\step{a}{\pflet{$X_0 = s(a)$ and $Y_0 = s(b)$}}
+	\step{b}{$U : s(a) \cong s(b)$}
+	\step{c}{$a \in X_0$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Natural Numbers}
 
 \section{Natural Numbers}
