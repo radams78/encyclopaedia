@@ -25,8 +25,8 @@
 \contentsline {section}{\numberline {5.1}Well Orderings}{26}{section.5.1}%
 \contentsline {chapter}{\numberline {6}Natural Numbers}{31}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Natural Numbers}{31}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Arithmetic}{35}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Ordinal Numbers}{41}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{44}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Finite Sets}{46}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{50}{section.7.3}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{36}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{39}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Finite Sets}{41}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{45}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{46}{section.7.4}%
