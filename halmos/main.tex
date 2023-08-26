@@ -1284,6 +1284,8 @@ Take $X = \{a,b\}$ and $Y = \{c\}$ where $a \neq b$. Take $I = \{i,j\}$ with $i 
 
 \section{Inverses and Composites of Functions}
 
+\subsection{Inverse Image}
+
 \begin{df}[Inverse Image]
 Let $f : X \rightarrow Y$. Let $B$ be a subset of $Y$. Then the \emph{inverse image} of $B$ under $f$ is
 \[ f^{-1}(B) = \{ x \in X : f(x) \in B \} \enspace . \]
@@ -1502,6 +1504,14 @@ The composite of two injective functions is injective.
 	\pf\ $f$ is injective.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. If $g \circ f$ is injective then $f$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f(x) = f(y)$ then $g(f(x)) = g(f(y))$ and so $x = y$. \qed
 \end{proof}
 
 \begin{prop}
