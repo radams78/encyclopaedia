@@ -942,6 +942,19 @@ Let $f : X \rightarrow Y$ and $A \subseteq X$. The \emph{image} of $A$ under $f$
 \[ f(A) := \{ f(x) : x \in A \} \enspace . \]
 \end{df}
 
+\begin{prop}
+Let $f : X \rightarrow Y$ and $A \subseteq B \subseteq X$. Then $f(A) \subseteq f(B)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$y \in f(A)$}}
+\step{2}{\pick\ $x \in A$ such that $f(x) = y$}
+\step{3}{$x \in B$}
+\step{4}{$y \in f(B)$}
+\qed
+\end{proof}
+
 \begin{df}[Inclusion Map]
 Let $Y$ be a set and $X \subseteq Y$. Then the \emph{inclusion map} $i : X \hookrightarrow Y$ is the function defined by $i(x) = x$ for all $x \in X$.
 \end{df}
@@ -1099,7 +1112,15 @@ Let $f : X \rightarrow Y$. Let $B \subseteq Y$. Then
 \end{prop}
 
 \begin{proof}
-\pf\ Easy. \qed
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$}}
+\step{3}{\pflet{$B \subseteq Y$}}
+\step{4}{\pflet{$y \in f(f^{-1}(B))$}}
+\step{5}{\pick\ $x \in f^{-1}(B)$ such that $f(x) = y$}
+\step{6}{$f(x) \in B$}
+\step{7}{$y \in B$}
+\qed
 \end{proof}
 
 \begin{prop}
