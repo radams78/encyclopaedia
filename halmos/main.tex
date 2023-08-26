@@ -926,7 +926,7 @@ Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, a
 \section{Functions}
 
 \begin{df}[One-to-One]
-A function $f : X \rightarrow Y$ is \emph{one-to-one} or \emph{injective} iff, for all $x,y \in X$, if $f(x) = f(y)$ then $x = y$.
+A function $f : X \rightarrow Y$ is \emph{one-to-one} or 	\emph{injective} iff, for all $x,y \in X$, if $f(x) = f(y)$ then $x = y$.
 \end{df}
 
 \begin{df}[Onto]
@@ -1175,6 +1175,57 @@ Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then $g f : X \rightarrow Z
 \begin{ex}
 Example \ref{ex:composition_not_commutative} shows that function composition is not commutative in general.
 \end{ex}
+
+\begin{prop}
+\label{prop:comp_inj}
+The composite of two injective functions is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : X \rightarrowtail Y$ and $g : Y \rightarrowtail Z$}}
+\step{2}{\pflet{$x,y \in X$}}
+\step{3}{\assume{$(g \circ f)(x) = (g \circ f)(y)$}}
+\step{4}{$g(f(x)) = g(f(y))$}
+\step{5}{$f(x) = f(y)$}
+\begin{proof}
+	\pf\ $g$ is injective.
+\end{proof}
+\step{6}{$x = y$}
+\begin{proof}
+	\pf\ $f$ is injective.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:comp_surj}
+The composite of two surjective functions is surjective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : X \twoheadrightarrow Y$ and $g : Y \twoheadrightarrow Z$}}
+\step{2}{\pflet{$z \in Z$}}
+\step{3}{\pick\ $y \in Y$ such that $g(y) = z$}
+\begin{proof}
+	\pf\ Since $g$ is surjective.
+\end{proof}
+\step{4}{\pick\ $x \in X$ such that $f(x) = y$}
+\begin{proof}
+	\pf\ Since $f$ is surjective.
+\end{proof}
+\step{5}{$(g \circ f)(x) = z$}
+\qed
+\end{proof}
+
+\begin{prop}
+The composite of two bijective functions is bijective.
+\end{prop}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:comp_inj} and \ref{prop:comp_surj}. \qed
+\end{proof}
 
 \begin{prop}
 Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then
