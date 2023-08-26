@@ -1094,14 +1094,6 @@ Let $f : X \rightarrow Y$. Let $B$ be a subset of $Y$. Then the \emph{inverse im
 \end{df}
 
 \begin{prop}
-Let $f : X \rightarrow Y$. Then $f$ maps $X$ onto $Y$ if and only if the inverse image of any nonempty subset of $Y$ is nonempty.
-\end{prop}
-
-\begin{proof}
-\pf\ Easy. \qed
-\end{proof}
-
-\begin{prop}
 Let $f : X \rightarrow Y$. Then $f$ is one-to-one if and only if the inverse image of any singleton subset of $Y$ is a singleton.
 \end{prop}
 
@@ -1155,11 +1147,54 @@ Let $f : X \rightarrow Y$ and $B \subseteq Y$. Then $f^{-1}(Y - B) = X - f^{-1}(
 \end{proof}
 
 \begin{prop}
-Let $f : X \rightarrow Y$ be one-to-one. Then the inverse of $f$ as a relation, $f^{-1}$, is a function $f^{-1} : \ran f \rightarrow X$, and for all $y \in \ran f$, we have $f^{-1}(y)$ is the unique $x$ such that $f(x) = y$.
+Let $f : X \approx Y$. Then $f^{-1}$ is a function, and is a bijection $f^{-1} : Y \approx X$.
 \end{prop}
 
 \begin{proof}
-\pf\ Easy. \qed
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \approx Y$}}
+\step{3}{$f^{-1}$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$(x,y),(x,z) \in f^{-1}$}}
+	\step{b}{$(y,x),(z,x) \in f$}
+	\step{c}{$y = z$}
+	\begin{proof}
+		\pf\ $f$ is injective.
+	\end{proof}
+\end{proof}
+%TODO Extract
+\step{4}{$\dom f^{-1} = Y$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y \in \dom f^{-1} & \Leftrightarrow \exists x. (y,x) \in f^{-1} \\
+		& \Leftrightarrow \exists x. (x,y) \in f \\
+		& \Leftrightarrow x \in \ran f \\
+		& \Leftrightarrow x \in Y
+	\end{align*}
+\end{proof}
+%TODO Extract
+\step{5}{$\ran f^{-1} = X$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		x \in \ran f^{-1} & \Leftrightarrow \exists y. (y,x) \in f^{-1} \\
+		& \Leftrightarrow \exists y. (x,y) \in f \\
+		& \Leftrightarrow x \in \dom f \\
+		& \Leftrightarrow x \in X
+	\end{align*}
+\end{proof}
+\step{6}{$f^{-1}$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$y,y' \in Y$}}
+	\step{b}{\assume{$f^{-1}(y) = f^{-1}(y')$}}
+	\step{c}{$y = y'$}
+	\begin{proof}
+		\pf\ $y = f(f^{-1}(y)) = f(f^{-1}(y')) = y'$.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
