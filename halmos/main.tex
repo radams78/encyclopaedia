@@ -1124,6 +1124,7 @@ Let $f : X \rightarrow Y$. Let $B$ be a subset of $Y$. Then the \emph{inverse im
 \begin{prop}
 Let $f : X \rightarrow Y$. Let $B \subseteq Y$. Then
 \[ f(f^{-1}(B)) \subseteq B \enspace . \]
+Equality holds if $f$ is surjective.
 \end{prop}
 
 \begin{proof}
@@ -1131,10 +1132,30 @@ Let $f : X \rightarrow Y$. Let $B \subseteq Y$. Then
 \step{1}{\pflet{$X$ and $Y$ be sets.}}
 \step{2}{\pflet{$f : X \rightarrow Y$}}
 \step{3}{\pflet{$B \subseteq Y$}}
-\step{4}{\pflet{$y \in f(f^{-1}(B))$}}
-\step{5}{\pick\ $x \in f^{-1}(B)$ such that $f(x) = y$}
-\step{6}{$f(x) \in B$}
-\step{7}{$y \in B$}
+\step{4}{$f(f^{-1}(B)) \subseteq B$}
+\begin{proof}
+	\step{4}{\pflet{$y \in f(f^{-1}(B))$}}
+	\step{5}{\pick\ $x \in f^{-1}(B)$ such that $f(x) = y$}
+	\step{6}{$f(x) \in B$}
+	\step{7}{$y \in B$}
+\end{proof}
+\step{5}{If $f$ is surjective then $f(f^{-1}(B)) = B$}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pflet{$y \in B$}}
+	\step{c}{\pick\ $x \in X$ such that $f(x) = y$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{b}
+	\end{proof}
+	\step{d}{$x \in f^{-1}(B)$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{c}
+	\end{proof}
+	\step{e}{$y \in f(f^{-1}(B))$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{d}
+	\end{proof}
+\end{proof}
 \qed
 \end{proof}
 

@@ -19,7 +19,7 @@
 \contentsline {section}{\numberline {3.6}Functions}{16}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Families}{17}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{19}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Choice Functions}{22}{section.3.9}%
+\contentsline {section}{\numberline {3.9}Choice Functions}{23}{section.3.9}%
 \contentsline {chapter}{\numberline {4}Equivalence}{24}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Order}{26}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Well Orderings}{30}{section.5.1}%
