@@ -955,6 +955,21 @@ Let $f : X \rightarrow Y$ and $A \subseteq B \subseteq X$. Then $f(A) \subseteq 
 \qed
 \end{proof}
 
+\begin{prop}
+Let $f : X \rightarrow Y$. Let $\mathcal{A} \subseteq \mathcal{P} X$. Then $f \left( \bigcup \mathcal{A} \right) = \bigcup_{A \in \mathcal{A}} f(A)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+y \in f \left( \bigcup \mathcal{A} \right)
+& \Leftrightarrow \exists x \in \bigcup \mathcal{A}. y = f(x) \\
+& \Leftrightarrow \exists x. \exists A \in \mathcal{A} (x \in A \wedge y = f(x)) \\
+& \Leftrightarrow \exists A \in \mathcal{A}. \exists x \in A. y = f(x) \\
+& \Leftrightarrow \exists A \in \mathcal{A}. y \in f(A) & \qed
+\end{align*}
+\end{proof}
+
 \begin{df}[Inclusion Map]
 Let $Y$ be a set and $X \subseteq Y$. Then the \emph{inclusion map} $i : X \hookrightarrow Y$ is the function defined by $i(x) = x$ for all $x \in X$.
 \end{df}
