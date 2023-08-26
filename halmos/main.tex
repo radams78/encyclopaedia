@@ -925,8 +925,12 @@ Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, a
 
 \section{Functions}
 
+\begin{df}[One-to-One]
+A function $f : X \rightarrow Y$ is \emph{one-to-one} or -\emph{injective} iff, for all $x,y \in X$, if $f(x) = f(y)$ then $x = y$.
+\end{df}
+
 \begin{df}[Onto]
-Let $f : X \rightarrow Y$. We say $f$ maps $X$ \emph{onto} $Y$ iff $\ran f = Y$.
+Let $f : X \rightarrow Y$. We say $f$ is \emph{surjective}, or $f$ maps $X$ \emph{onto} $Y$ iff $\ran f = Y$.
 \end{df}
 
 \begin{df}[Image]
@@ -960,10 +964,6 @@ Given sets $X$ and $Y$, the \emph{projection} maps $\pi_1 : X \times Y \rightarr
 
 \begin{df}[Canonical Map]
 Let $X$ be a set and $R$ an equivalence relation on $X$. The \emph{canonical map} $\pi : X \rightarrow X / R$ is the map defined by $\pi(x) = x / R$.
-\end{df}
-
-\begin{df}[One-to-One]
-A function $f : X \rightarrow Y$ is \emph{one-to-one}, or a \emph{one-to-one correspondence}, iff, for all $x,y \in X$, if $f(x) = f(y)$ then $x = y$.
 \end{df}
 
 \begin{prop}
