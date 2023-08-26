@@ -1088,10 +1088,9 @@ Take $X = \{a,b\}$ and $Y = \{c\}$ where $a \neq b$. Take $I = \{i,j\}$ with $i 
 
 \section{Inverses and Composites of Functions}
 
-\begin{df}[Inverse]
-Given a function $f : X \rightarrow Y$, the \emph{inverse} of $f$ is the function $f^{-1} : \mathcal{P} Y \rightarrow \mathcal{P} X$ defined by
+\begin{df}[Inverse Image]
+Let $f : X \rightarrow Y$. Let $B$ be a subset of $Y$. Then the \emph{inverse image} of $B$ under $f$ is
 \[ f^{-1}(B) = \{ x \in X : f(x) \in B \} \enspace . \]
-We call $f^{-1}(B)$ the \emph{inverse image} of $B$ under $f$.
 \end{df}
 
 \begin{prop}
@@ -1228,8 +1227,8 @@ The composite of two bijective functions is bijective.
 \end{proof}
 
 \begin{prop}
-Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then
-\[ (gf)^{-1} = f^{-1}g^{-1} : \mathcal{P} Z \rightarrow \mathcal{P} X \enspace . \]
+Let $f : X \approx Y$ and $g : Y \approx Z$. Then
+\[ (gf)^{-1} = f^{-1}g^{-1} : Z \rightarrow X \enspace . \]
 \end{prop}
 
 \begin{proof}
