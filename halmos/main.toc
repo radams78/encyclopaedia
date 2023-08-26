@@ -19,18 +19,18 @@
 \contentsline {section}{\numberline {3.6}Functions}{16}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Families}{17}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{19}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Choice Functions}{21}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Equivalence}{22}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Order}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Well Orderings}{28}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Natural Numbers}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Natural Numbers}{33}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Ordinal Numbers}{38}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{41}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Finite Sets}{43}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{47}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{48}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Countable Sets}{51}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Cardinal Numbers}{53}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{53}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Alephs}{57}{section.9.2}%
+\contentsline {section}{\numberline {3.9}Choice Functions}{22}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Equivalence}{23}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Order}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Well Orderings}{29}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{34}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{34}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{39}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{42}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Finite Sets}{44}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{48}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{49}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Countable Sets}{52}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Cardinal Numbers}{54}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{54}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Alephs}{58}{section.9.2}%

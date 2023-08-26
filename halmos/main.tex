@@ -1271,11 +1271,54 @@ Let $f : X \approx Y$ and $g : Y \approx Z$. Then
 \end{proof}
 
 \begin{prop}
+\label{prop:inverse_injective_surjective}
 Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. If $gf = I_X$ then $f$ is one-to-one and $g$ maps $Y$ onto $X$.
 \end{prop}
 
 \begin{proof}
 \pf\ Easy. \qed
+\end{proof}
+
+\begin{lm}
+Let $f : A \rightarrow B$. If there are functions $g : B \rightarrow A$ and $h : B \rightarrow A$ such that $\forall a \in A. g(f(a)) = a$ and $\forall b \in B.f(h(b)) = b$, then $f$ is bijective and $g = h = f^{-1}$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ and $g,h : B \rightarrow A$}}
+\step{3}{\assume{$\forall a \in A. g(f(a)) = a$}}
+\step{4}{\assume{$\forall b \in B. f(h(b)) = b$}}
+\step{5}{$f$ is injective.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:inverse_injective_surjective}, \stepref{2}, \stepref{3}.
+\end{proof}
+\step{6}{$f$ is surjective.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:inverse_injective_surjective}, \stepref{2}, \stepref{4}.
+\end{proof}
+\step{7}{$g = h$}
+\begin{proof}
+	\step{a}{\pflet{$b \in B$}}
+	\step{b}{$g(b) = h(b)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			g(b) & = g(f(h(b))) & (\text{\stepref{4}, \stepref{a}}) \\
+			& = h(b) & (\text{\stepref{3}, \stepref{2}, \stepref{a}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{8}{$h = f^{-1}$}
+\begin{proof}
+	\step{a}{\pflet{$b \in B$}}
+	\step{b}{$f(h(b)) = b$}
+	\begin{proof}
+		\pf\ \stepref{4}, \stepref{a}
+	\end{proof}
+	\step{c}{$h(b) = f^{-1}(b)$}
+\end{proof}
+\qed
 \end{proof}
 
 \section{Choice Functions}
