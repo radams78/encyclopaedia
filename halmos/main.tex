@@ -1113,6 +1113,22 @@ Equality holds if $f$ is one-to-one.
 \end{proof}
 
 \begin{prop}
+Let $f : X \rightarrow Y$. Let $A \subseteq B \subseteq Y$. Then $f^{-1}(A) \subseteq f^{-1}(B)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$}}
+\step{3}{\pflet{$A \subseteq B \subseteq Y$}}
+\step{4}{\pflet{$x \in f^{-1}(A)$}}
+\step{5}{$f(x) \in A$}
+\step{6}{$f(x) \in B$}
+\step{7}{$x \in f^{-1}(B)$}
+\qed
+\end{proof}
+
+\begin{prop}
 Let $f : X \rightarrow Y$. Let $\{B_i\}_{i \in I}$ be a family of subsets of $Y$. Then
 \[ f^{-1} \left( \bigcup_{i \in I} B_i \right) = \bigcup_{i \in I} f^{-1}(B_i) \enspace . \]
 \end{prop}
