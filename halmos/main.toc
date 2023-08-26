@@ -30,3 +30,7 @@
 \contentsline {section}{\numberline {7.2}Finite Sets}{42}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{46}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{47}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Countable Sets}{50}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Cardinal Numbers}{52}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{52}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Alephs}{56}{section.9.2}%

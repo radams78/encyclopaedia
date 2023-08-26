@@ -23,6 +23,7 @@
 
 \newcommand{\dom}{\ensuremath{\operatorname{dom}}}
 \newcommand{\ran}{\ensuremath{\operatorname{ran}}}
+\newcommand{\card}{\ensuremath{\operatorname{card}}}
 
 \begin{document}
 \maketitle
@@ -1241,6 +1242,7 @@ For any set $X$, equivalence is an equivalence relation on $\mathcal{P} X$.
 \pf\ Easy.
 \end{proof}
 
+%TODO Redundant since we have ordinals
 \begin{thm}[Schr\"{o}der-Bernstein]
 Let $X$ and $Y$ be sets. If there exist injective functions $X \rightarrow Y$ and $Y \rightarrow X$, then $X \sim Y$.
 \end{thm}
@@ -1263,6 +1265,14 @@ Let $X$ and $Y$ be sets. If there exist injective functions $X \rightarrow Y$ an
 \step{11}{Define $h : X \rightarrow Y$ by $h(x) = g^{-1}(x)$ if $x \in X_Y$, and $f(x)$ if not.}
 \step{12}{$h : X \sim Y$}
 \qed
+\end{proof}
+
+\begin{thm}[Cantor]
+For any set $X$ we have $X \not\sim \mathcal{P} X$.
+\end{thm}
+
+\begin{proof}
+\pf\ If $f : X \rightarrow \mathcal{P} X$ then $\{ x \in X : x \notin f(x) \}$ is a subset of $X$ not in $\ran f$. \qed
 \end{proof}
 
 \chapter{Order}
@@ -3056,7 +3066,7 @@ For all $m,n \in \omega$, we have
 				& = (m^+ n + m)^+ \\
 				& = (n m^+ + m)^+ & (\text{\stepref{ii}}) \\
 				& = (nm + n + m)^+ \\
-				& = (mn + m + n)^+ & (\text{\stepref{b}, Proposition \ref{prop:plus_assoc}, Proposition \ref{prop:plus_comm}}) \\
+				& = (mn + m + n)^+ & (\text{\stepref{b}, Proposition \ref{prop:plus_comm}}) \\
 				& = (mn^+ + n)^+ \\
 				& = (n^+ m + n)^+ & (\text{\stepref{b}}) \\
 				& = n^+ m + n^+ \\
@@ -3067,5 +3077,388 @@ For all $m,n \in \omega$, we have
 \end{proof}
 \qed
 \end{proof}
+
+\chapter{Countable Sets}
+
+\begin{df}[Countable]
+A set $A$ is \emph{countable} or \emph{denumerable} iff there exists an injective function $A \rightarrow \omega$.
+\end{df}
+
+\begin{df}[Countably Infinite]
+A set is \emph{countably infinite} iff it is similar to $\omega$.
+\end{df}
+
+\begin{prop}
+Every subset of a countable set is countable.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a set. If there exists a function from $\omega$ onto $X$, then $X$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f$ be a function from $\omega$ onto $X$.}}
+\step{2}{Choose a function $g : X \rightarrow \omega$ such that, for all $x \in X$, we have $f(g(x)) = x$.}
+\step{3}{$g$ is one-to-one.}
+\qed
+\end{proof}
+
+\begin{prop}
+$\omega \times \omega$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf\ The sequence
+\[ (0,0), (0,1), (1,0), (0,2), (1,1), (2,0), \ldots \]
+is an enumeration of $\omega \times \omega$. \qed
+\end{proof}
+
+\begin{cor}
+A countable union of countable sets is countable.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a countable set of countable sets.}}
+\step{2}{\pick\ a surjection $f : \omega \rightarrow A$}
+\step{3}{For $n \in \omega$, \pick\ a surjection $g_n : \omega \rightarrow f(n)$}
+\step{4}{\pick\ a surjection $h : \omega \rightarrow \omega \times \omega$}
+\step{5}{$\lambda n \in \omega. g_{\pi_1(h(n))}(\pi_2(h(n)))$ is a surjection $\omega \rightarrow \bigcup A$}
+\qed
+\end{proof}
+
+\begin{cor}
+The Cartesian product of two countable sets is countable.
+\end{cor}
+
+\begin{cor}
+For any countable set $A$, the set of all finite subsets of $A$ is countable.
+\end{cor}
+
+\begin{proof}
+\pf\ Prove by induction on $n$ that the set of all subsets of size $n$ is countable. The set of all finite subsets is then the union of these. \qed
+\end{proof}
+
+\begin{prop}
+$\mathcal{P} \omega$ is uncountable.
+\end{prop}
+
+\begin{proof}
+\pf\ Cantor's Theorem. \qed
+\end{proof}
+
+\chapter{Cardinal Numbers}
+
+\begin{df}[Cardinal Number]
+A \emph{cardinal number} or \emph{initial ordinal} is an ordinal $\alpha$ such that, for all $\beta < \alpha$, we have $\beta \not\sim \alpha$.
+\end{df}
+
+\begin{df}[Cardinality]
+For any set $X$, the \emph{cardinality} of $X$, $\card X$, is the least ordinal that is equivalent to $X$.
+\end{df}
+
+\begin{prop}
+Given sets $X$ and $Y$, we have $X \sim Y$ if and only if $\card X = \card Y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+For sets $X$ and $Y$, we have $\card X \leq \card Y$ if and only if there exists an injective function $X \rightarrow Y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every natural number is a cardinal. $\omega$ is a cardinal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every inifinite cardinal is a limit ordinal.
+\end{prop}
+
+\begin{proof}
+\pf\ For $\alpha$ infinite we have $f : \alpha^+ \sim \alpha$ where $f(\alpha) = 0$ and $f(\beta) = \beta^+$ for all other $\beta$. \qed
+\end{proof}
+
+\section{Cardinal Arithmetic}
+
+\begin{df}[Addition]
+Given a family of cardinal numbers $\{ \kappa_i \}_{i \in I}$, let $\sum_{i \in I} \kappa_i$ be $\card \bigcup_{i \in I} A_i$, where $\{A_i\}_{i \in I}$ is a pairwise disjoint family of sets with $\card A_i = \kappa_i$ for all $i$.
+
+We write $\kappa + \lambda$ for $\sum_{i \in 2} \kappa_i$ where $\kappa_0 = \kappa$ and $\kappa_1 = \lambda$.
+\end{df}
+
+\begin{prop}
+\begin{align*}
+\kappa + \lambda & = \lambda + \kappa \\
+\kappa + (\lambda + \mu) & = (\kappa + \lambda) + \mu \\
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Cardinal addition agrees with ordinal addition on the natural numbers.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy induction. \qed
+\end{proof}
+
+\begin{prop}
+If $\kappa \leq \kappa'$ then $\kappa + \lambda \leq \kappa' + \lambda$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+If $\kappa$ is an infinite cardinal number then $\kappa + \kappa = \kappa$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be an infinite set.} \prove{$A \times 2 \sim A$}}
+\step{2}{\pflet{$\mathcal{F}$ be the set of all functions $f$ such that there exists $X \subseteq A$ such that $f : X \times 2 \sim X$.}}
+\step{3}{$\mathcal{F}$ is non-empty.}
+\begin{proof}
+	\pf\ Pick a subset $X \subseteq A$ such that $X \sim \omega$, and a bijection $X \times 2 \sim X$.
+\end{proof}
+\step{4}{$\mathcal{F}$ is partially ordered by extension.}
+\step{5}{Every chain in $\mathcal{F}$ has an upper bound.}
+\begin{proof}
+	\pf\ If $\mathcal{C} \subseteq \mathcal{F}$ is a chain then $\bigcup \mathcal{C} \in \mathcal{F}$.
+\end{proof}
+\step{6}{\pick\ $f \in \mathcal{F}$ maximal.}
+\step{7}{\pick\ $X \subseteq A$ such that $f : X \times 2 \sim X$}
+\step{8}{$X - A$ is finite.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $X - A$ is infinite.}}
+	\step{b}{\pick\ $Y \subseteq X - A$ such that $Y \sim \omega$.}
+	\step{c}{\pick\ $g : Y \times 2 \sim Y$}
+	\step{d}{$f \cup g : (X \cup Y) \times 2 \sim X \cup Y$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the maximality of $f$.
+	\end{proof}
+\end{proof}
+\step{9}{$\card A + \card A = \card A$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		2 \card A & = 2 (\card X + \card (A - X)) \\
+		& = 2 \card X + 2 \card (A - X) \\
+		& = \card X + 2 \card (A - X) & (\text{\stepref{7}}) \\
+		& = \card X & (\text{\stepref{8}}) \\
+		& = \card X + \card (A - X) & (\text{\stepref{8}}) \\
+		& = \card A
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+\label{cor:add_card}
+For any cardinals $\kappa$ and $\lambda$ that are not both finite, we have
+\[ \kappa + \lambda = \max(\kappa, \lambda) \enspace . \]
+\end{cor}
+
+\begin{df}[Multiplication]
+Given a family of cardinal numbers $\{ \kappa_i \}_{i \in I}$, let $\prod_{i \in I} \kappa_i = \card \bigtimes_{i \in I} \kappa_i$.
+
+We write $\kappa \lambda$ for $\prod_{i \in 2} \kappa_i$ where $\kappa_0 =\kappa$ and $\kappa_1 = \lambda$.
+\end{df}
+
+\begin{prop}
+\begin{align*}
+\kappa \lambda & = \lambda \kappa \\
+\kappa (\lambda \mu) & = (\kappa \lambda) \mu \\
+\kappa (\lambda + \mu) & = \kappa \lambda + \kappa \mu
+\end{align*}
+\end{prop}
+
+\begin{prop}
+Cardinal multiplication agrees with ordinal multiplication on the natural numbers.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy induction. \qed
+\end{proof}
+
+\begin{prop}
+If $\kappa \leq \kappa'$ then $\kappa \lambda \leq \kappa' \lambda$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:cardinal_inequality}
+Let $\{\kappa_i\}_{i \in I}$ and $\{\lambda_i\}_{i \in I}$ be families of cardinal numbers with the same index set. If $\kappa_i < \lambda_i$ for all $i$, then $\sum_{i \in I} \kappa_i < \prod_{i \in I} \lambda_i$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Choose a one-to-one function $f_i : \kappa_i \rightarrow \lambda_i$ for each $i \in I$}
+\step{2}{$\sum_{i \in I} \kappa_i \leq \prod_{i \in I} \lambda_i$}
+\begin{proof}
+	\pf\ Define $g : \sum_{i \in I} \kappa_i \rightarrow \prod_{i \in I} \lambda_i$ by
+	\begin{align*}
+		g(i,\eta)(j) = \begin{cases}
+		f_i(\eta) & \text{if } i = j \\
+		0 & \text{if } i \neq j
+		\end{cases}
+	\end{align*}
+\end{proof}
+\step{3}{There is no surjective function $\sum_{i \in I} \kappa_i < \prod_{i \in I} \lambda_i$}
+\begin{proof}
+	\step{a}{\pflet{$h : \sum_i \kappa_i \rightarrow \prod_i \lambda_i$}}
+	\step{b}{Choose $t(i) < \lambda_i$ for each $i \in I$ such that, for all $\eta < \kappa_i$, we have $t(i) \neq h(i,\eta)(i)$.}
+	\begin{proof}
+		\pf\ Since the function that maps $\eta$ to $h(i,\eta)(i)$ cannot be surjective $\kappa_i \rightarrow \lambda_i$.
+	\end{proof}
+	\step{c}{For all $i \in I$ and $\eta < \kappa_i$ we have $h \neq t(i,\eta)$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+If $\kappa$ is an infinite cardinal then $\kappa \kappa = \kappa$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be an infinite set.}}
+\step{2}{\pflet{$\mathcal{F}$ be the set of all functions $f$ such that there exists $X \subseteq A$ such that $f : X \times X \sim X$}}
+\step{3}{$\mathcal{F}$ is nonempty.}
+\begin{proof}
+	\pf\ Pick a countably infinite $X \subseteq A$. Then $X \times X \sim X$.
+\end{proof}
+\step{4}{$\mathcal{F}$ is partially ordered by extension.}
+\step{5}{Every chain in $\mathcal{F}$ has an upper bound.}
+\step{6}{\pick\ $f \in \mathcal{F}$ maximal.}
+\step{7}{\pick\ $X \subseteq A$ such that $f : X \times X \sim X$.}
+\step{8}{$\card X = \card A$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $\card X < \card A$}}
+	\step{b}{$\card A = \card (A - X)$}
+	\begin{proof}
+		\pf\ Corollary \ref{cor:add_card}.
+	\end{proof}
+	\step{c}{$\card X < \card (A - X)$}
+	\step{d}{\pick\ $Y \subseteq A - X$ such that $Y \sim X$}
+	\step{e}{\pick\ $g : (X \times Y) \cup (Y \times X) \cup (Y \times Y) \sim Y$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(X \times Y) \cup (Y \times X) \cup (Y \times Y)
+			& \sim 3 \times X \times X & (\text{\stepref{d}}) \\
+			& \sim 3 \times X & (\text{\stepref{7}}) \\
+			& \sim X & (\text{Corollary \ref{cor:add_card}}) \\
+			& \sim Y & (\text{\stepref{d}})
+		\end{align*}
+	\end{proof}
+	\step{f}{$f \cup g : (X \cup Y) \times (X \cup Y) \sim X \cup Y$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the maximality of $f$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+If $\kappa$ and $\lambda$ are non-zero cardinals that are not both finite, then
+\[ \kappa \lambda = \max(\kappa, \lambda) \enspace . \]
+\end{cor}
+
+\begin{df}[Exponentiation]
+Given cardinal numbers $\kappa$ and $\lambda$, let $\kappa^\lambda$ be the cardinality of the set of all functions $\lambda \rightarrow \kappa$.
+\end{df}
+
+\begin{prop}
+\begin{align*}
+\kappa^{\lambda + \mu} & = \kappa^\lambda \kappa^\mu \\
+(\kappa \lambda)^\mu & = \kappa^\mu \lambda^\mu \\
+\kappa^{\lambda \mu} & = (\kappa^\lambda)^\mu
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Cardinal exponentiation and ordinal exponentiation agree on the natural numbers.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+\[ \card \mathcal{P} X = 2^{\card X} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Define $\chi : \mathcal{P} X \sim 2^X$ to be the function that maps $S$ to the function $\chi_S : X \rightarrow 2$ where $\chi_S(x) = 1$ if $x \in S$ and $\chi_S(x) = 0$ if $x \notin S$. \qed
+\end{proof}
+
+\begin{prop}
+For any infinite cardinal $\kappa$ we have $\kappa < 2^\kappa$.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:cardinal_inequality}. \qed
+\end{proof}
+
+\begin{prop}
+If $\kappa \leq \lambda$ then $\kappa^\mu \leq \lambda^\mu$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Alephs}
+
+%TODO Justify this
+\begin{df}[Aleph]
+Define the cardinal $\aleph_\alpha$ for every ordinal $\alpha$ as follows: $\aleph_\alpha$ is the least infinite cardinal greater than $\aleph_\beta$ for all $\beta < \alpha$.
+\end{df}
+
+\begin{prop}
+\[ \aleph_0 = \omega \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Continuum Hypothesis]
+The \emph{continuum hypothesis} is the statement $\aleph_1 = 2^{\aleph_0}$.
+\end{df}
+
+\begin{df}[Generalized Continuum Hypothesis]
+The \emph{generalized continuum hypothesis} is the statement: for every ordinal $\alpha$ we have $\aleph_{\alpha + 1} = 2^{\aleph_\alpha}$.
+\end{df}
 
 \end{document}
