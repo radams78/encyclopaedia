@@ -1469,6 +1469,7 @@ Let $f : X \approx Y$. Then $f^{-1}$ is a function, and is a bijection $f^{-1} :
 \end{proof}
 
 \begin{prop}
+\label{prop:composite}
 Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Then $g f : X \rightarrow Z$ and, for all $x \in X$, we have
 \[ (g \circ f)(x) = g(f(x)) \enspace . \]
 \end{prop}
@@ -1530,6 +1531,34 @@ The composite of two bijective functions is bijective.
 
 \begin{proof}
 \pf\ Propositions \ref{prop:comp_inj} and \ref{prop:comp_surj}. \qed
+\end{proof}
+
+\begin{prop}
+Let $X$, $Y$ and $Z$ be sets. Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. Let $A \subseteq Z$. Then
+\[ (g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A)) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$, $Y$ and $Z$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$ and $g : Y \rightarrow Z$}}
+\step{3}{\pflet{$A \subseteq Z$}}
+\step{4}{$(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))$}
+\begin{proof}
+	\pf
+	\step{a}{\pflet{$x \in X$}}
+	\step{b}{$x \in (g \circ f)^{-1}(A) \Leftrightarrow x \in f^{-1}(g^{-1}(A))$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			x \in (g \circ f)^{-1}(A) & \Leftrightarrow (g \circ f)(x) \in A \\
+			& \Leftrightarrow g(f(x)) \in A & (\text{Proposition \ref{prop:composite}, \stepref{2}, \stepref{a}}) \\
+			& \Leftrightarrow f(x) \in g^{-1}(A) \\
+			& \Leftrightarrow x \in f^{-1}(g^{-1}(A))
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
