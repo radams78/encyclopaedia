@@ -20,6 +20,7 @@
 \contentsline {section}{\numberline {3.7}Families}{19}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{21}{section.3.8}%
 \contentsline {subsection}{\numberline {3.8.1}Inverse Image}{21}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Inverse of a Function}{23}{subsection.3.8.2}%
 \contentsline {section}{\numberline {3.9}Choice Functions}{26}{section.3.9}%
 \contentsline {chapter}{\numberline {4}Equivalence}{27}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Order}{29}{chapter.5}%

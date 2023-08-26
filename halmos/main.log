@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  26 AUG 2023 21:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  26 AUG 2023 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 ...berline {7.2}Finite Sets}{48}{section.7.2}
+l.30 ...berline {7}Ordinal Numbers}{43}{chapter.7}
                                                   % [1
 
 ])
@@ -659,7 +659,7 @@ Chapter 3.
 [13
 
 ] [14] [15]
-Overfull \hbox (0.11781pt too wide) in paragraph at lines 971--972
+Overfull \hbox (0.11781pt too wide) in paragraph at lines 972--973
 []\OT1/cmr/bx/n/10 Proposition 3.35. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 f \
 OT1/cmr/m/n/10 : \OML/cmm/m/it/10 X \U/matha/m/n/10 Ñ \OML/cmm/m/it/10 Y$\OT1/c
 mr/m/it/10 . Let $\OMS/cmsy/m/n/10 A \U/matha/m/n/10 „ \OMS/cmsy/m/n/10 P\OML/c
@@ -669,7 +669,7 @@ T1/cmr/m/it/10 .
  []
 
 [16] [17] [18] [19]
-Overfull \hbox (5.67227pt too wide) in paragraph at lines 1220--1221
+Overfull \hbox (5.67227pt too wide) in paragraph at lines 1221--1222
 []\OT1/cmr/bx/n/10 Proposition 3.48 \OT1/cmr/m/n/10 (Gen-er-al-ized Com-mu-ta-t
 ive Law for In-ter-sec-tions)\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\U/matha/
 m/n/10 t\OML/cmm/m/it/10 I[]\U/matha/m/n/10 u[]$
@@ -715,17 +715,14 @@ Chapter 9.
 [58
 
 ] [59] [60] [61] [62] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 41711FA45D477065151605FCD33795CE;5105.
+(rerunfilecheck)             Checksum: 044BE1FFF9A3669DE735443A29E6F61D;5281.
  ) 
 Here is how much of TeX's memory you used:
- 10099 strings out of 476091
- 147831 string characters out of 5794081
+ 10103 strings out of 476091
+ 147885 string characters out of 5794081
  1872330 words of memory out of 5000000
- 29955 multiletter control sequences out of 15000+600000
+ 29957 multiletter control sequences out of 15000+600000
  528623 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,76p,357b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -751,10 +748,10 @@ blic/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (63 pages, 393168 bytes).
+Output written on main.pdf (63 pages, 393579 bytes).
 PDF statistics:
- 1050 PDF objects out of 1200 (max. 8388607)
- 890 compressed objects within 9 object streams
- 416 named destinations out of 1000 (max. 500000)
- 297 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1057 PDF objects out of 1200 (max. 8388607)
+ 897 compressed objects within 9 object streams
+ 418 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -827,6 +827,7 @@ Let $R$ be a relation between $X$ and $Y$. The \emph{inverse} or \emph{converse}
 \end{df}
 
 \begin{prop}
+\label{prop:dominv}
 For any relation $R$, we have
 \[ \dom R^{-1} = \ran R \enspace . \]
 \end{prop}
@@ -1419,6 +1420,8 @@ Let $f : X \rightarrow Y$ and $B \subseteq Y$. Then $f^{-1}(Y - B) = X - f^{-1}(
 \pf\ Easy. \qed
 \end{proof}
 
+\subsection{Inverse of a Function}
+
 \begin{prop}
 Let $f : X \approx Y$. Then $f^{-1}$ is a function, and is a bijection $f^{-1} : Y \approx X$.
 \end{prop}
@@ -1436,16 +1439,9 @@ Let $f : X \approx Y$. Then $f^{-1}$ is a function, and is a bijection $f^{-1} :
 		\pf\ $f$ is injective.
 	\end{proof}
 \end{proof}
-%TODO Extract
 \step{4}{$\dom f^{-1} = Y$}
 \begin{proof}
-	\pf
-	\begin{align*}
-		y \in \dom f^{-1} & \Leftrightarrow \exists x. (y,x) \in f^{-1} \\
-		& \Leftrightarrow \exists x. (x,y) \in f \\
-		& \Leftrightarrow x \in \ran f \\
-		& \Leftrightarrow x \in Y
-	\end{align*}
+	\pf\ Proposition \ref{prop:dominv}, \stepref{2}
 \end{proof}
 %TODO Extract
 \step{5}{$\ran f^{-1} = X$}
@@ -1587,6 +1583,10 @@ Let $f : X \approx Y$ and $g : Y \approx Z$. Then
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
+\begin{df}[Left Inverse, Right Inverse]
+Let $f : X \rightarrow Y$ and $g : Y \rightarrow X$. Then $g$ is a \emph{left inverse} of $f$, and $f$ is a \emph{right inverse} of $g$, iff $g \circ f = I_X$.
+\end{df}
 
 \begin{prop}
 \label{prop:inverse_injective_surjective}
