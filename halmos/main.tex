@@ -1536,6 +1536,14 @@ The composite of two surjective functions is surjective.
 \end{proof}
 
 \begin{prop}
+Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$. If $g \circ f$ is surjective then $g$ is surjective.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $z \in Z$. Pick $x \in X$ such that $g(f(x)) = z$. Then there exists $y$ such that $g(y) = z$, namely $y = f(x)$. \qed
+\end{proof}
+
+\begin{prop}
 The composite of two bijective functions is bijective.
 \end{prop}
 
