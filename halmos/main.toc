@@ -21,12 +21,12 @@
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{19}{section.3.8}%
 \contentsline {section}{\numberline {3.9}Choice Functions}{20}{section.3.9}%
 \contentsline {chapter}{\numberline {4}Equivalence}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Order}{22}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Well Orderings}{26}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Natural Numbers}{31}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Natural Numbers}{31}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Ordinal Numbers}{36}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{39}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Finite Sets}{41}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{45}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{46}{section.7.4}%
+\contentsline {chapter}{\numberline {5}Order}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Well Orderings}{27}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{32}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{40}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Finite Sets}{42}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{46}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{47}{section.7.4}%

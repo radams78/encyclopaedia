@@ -1241,6 +1241,30 @@ For any set $X$, equivalence is an equivalence relation on $\mathcal{P} X$.
 \pf\ Easy.
 \end{proof}
 
+\begin{thm}[Schr\"{o}der-Bernstein]
+Let $X$ and $Y$ be sets. If there exist injective functions $X \rightarrow Y$ and $Y \rightarrow X$, then $X \sim Y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : X \rightarrow Y$ and $g : Y \rightarrow X$ be one-to-one.}}
+\step{2}{\assume{w.l.o.g. $X \cap Y = \emptyset$}}
+\step{3}{For $x \in X$, let us say that $x$ is the \emph{parent} of $f(x)$; and for $y \in Y$, let us say that $y$ is the \emph{parent} of $g(y)$.}
+\step{4}{For $z \in X \cup Y$, let the set of \emph{descendants} of $z$ be the intersection of all the subsets $S$ of $X \cup Y$ such that $z \in S$ and, if $t \in S$ and $t$ is the parent of $u$ then $u \in S$.}
+\step{5}{\pflet{$X_X$ be the set of all elements of $X$ that are descendants of the elements of $X$ that have no parent.}}
+\step{6}{\pflet{$X_Y$ be the set of all elements of $X$ that are descendants of the elements of $Y$ that have no parent.}}
+\step{7}{\pflet{$X_\infty = X - X_X - X_Y$}}
+\step{8}{\pflet{$Y_X$ be the set of all elements of $Y$ that are descendants of the elements of $X$ that have no parent.}}
+\step{6}{\pflet{$Y_Y$ be the set of all elements of $Y$ that are descendants of the elements of $Y$ that have no parent.}}
+\step{7}{\pflet{$Y_\infty = Y - Y_X - Y_Y$}}
+\step{8}{$f \restriction X_X : X_X \sim Y_X$}
+\step{9}{$g \restriction Y_Y : Y_Y \sim X_Y$}
+\step{10}{$f \restriction X_\infty : X_\infty \sim Y_\infty$}
+\step{11}{Define $h : X \rightarrow Y$ by $h(x) = g^{-1}(x)$ if $x \in X_Y$, and $f(x)$ if not.}
+\step{12}{$h : X \sim Y$}
+\qed
+\end{proof}
+
 \chapter{Order}
 
 \begin{df}[Partial Order]

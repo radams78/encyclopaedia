@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 AUG 2023 20:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  26 AUG 2023 07:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -667,51 +667,57 @@ m/n/10 t\OML/cmm/m/it/10 I[]\U/matha/m/n/10 u[]$
 
 [17] [18] [19] [20]
 Chapter 4.
+WARNING: proof step "6" (<1>9) already defined
+WARNING: proof step "7" (<1>10) already defined
+WARNING: proof step "8" (<1>11) already defined
 [21
 
-]
+] [22]
 Chapter 5.
-[22
+[23
 
-] [23]
+] [24]
 WARNING: proof step "12" (<3>1) already defined
 WARNING: proof step "13" (<3>2) already defined
-[24]
+[25]
 WARNING: proof step "a" (<4>1) already defined
-[25] [26] [27] [28]
+[26] [27] [28] [29]
 WARNING: proof step "4" (<1>6) already defined
 WARNING: proof step "5" (<1>7) already defined
-[29] [30]
+[30] [31]
 Chapter 6.
-[31
+[32
 
 ]
 WARNING: proof step "d" (<2>5) already defined
-[32] [33] [34] [35]
+[33] [34] [35] [36]
 Chapter 7.
-[36
+[37
 
-] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
+] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48]
 
-LaTeX Warning: Reference `prop:plus_assoc' on page 48 undefined on input line 3
-031.
+LaTeX Warning: Reference `prop:plus_assoc' on page 49 undefined on input line 3
+055.
 
 
-LaTeX Warning: Reference `prop:plus_assoc' on page 48 undefined on input line 3
-031.
+LaTeX Warning: Reference `prop:plus_assoc' on page 49 undefined on input line 3
+055.
 
-[48] (./main.aux)
+[49] (./main.aux)
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1155ED69A06238EDF4C79ADDF7DA8936;4493.
  ) 
 Here is how much of TeX's memory you used:
- 10019 strings out of 476091
- 147175 string characters out of 5794081
- 1872330 words of memory out of 5000000
- 29944 multiletter control sequences out of 15000+600000
+ 10020 strings out of 476091
+ 147159 string characters out of 5794081
+ 1871330 words of memory out of 5000000
+ 29943 multiletter control sequences out of 15000+600000
  528935 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,357b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -735,10 +741,10 @@ ts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sfrm1000.pfb>
-Output written on main.pdf (49 pages, 340571 bytes).
+Output written on main.pdf (50 pages, 342746 bytes).
 PDF statistics:
- 868 PDF objects out of 1000 (max. 8388607)
- 741 compressed objects within 8 object streams
- 345 named destinations out of 1000 (max. 500000)
+ 873 PDF objects out of 1000 (max. 8388607)
+ 745 compressed objects within 8 object streams
+ 347 named destinations out of 1000 (max. 500000)
  257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
