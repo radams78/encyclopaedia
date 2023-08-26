@@ -948,10 +948,22 @@ Let $f : X \rightarrow Y$ and $A \subseteq B \subseteq X$. Then $f(A) \subseteq 
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$y \in f(A)$}}
-\step{2}{\pick\ $x \in A$ such that $f(x) = y$}
-\step{3}{$x \in B$}
-\step{4}{$y \in f(B)$}
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$}}
+\step{3}{\pflet{$A,B \in \mathcal{P} X$ with $A \subseteq B$.}}
+\step{4}{\pflet{$y \in f(A)$}}
+\step{5}{\pick\ $x \in A$ such that $f(x) = y$}
+\begin{proof}
+	\pf\ \stepref{4}
+\end{proof}
+\step{6}{$x \in B$}
+\begin{proof}
+	\pf\ \stepref{3}, \stepref{5}
+\end{proof}
+\step{7}{$y \in f(B)$}
+\begin{proof}
+	\pf\ \stepref{5}, \stepref{6}
+\end{proof}
 \qed
 \end{proof}
 
@@ -968,6 +980,161 @@ y \in f \left( \bigcup \mathcal{A} \right)
 & \Leftrightarrow \exists A \in \mathcal{A}. \exists x \in A. y = f(x) \\
 & \Leftrightarrow \exists A \in \mathcal{A}. y \in f(A) & \qed
 \end{align*}
+\end{proof}
+
+\begin{prop}
+Let $f : X \rightarrow Y$. Let $\mathcal{A}$ be a nonempty subset of $\mathcal{P} X$. Then $f \left( \bigcap \mathcal{A} \right) \subseteq \bigcap_{A \in \mathcal{A}} f(A)$. Equality holds if $f$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$}}
+\step{3}{\pflet{$\mathcal{A}$ be a nonempty subset of $\mathcal{P} X$.}}
+\step{4}{$f \left( \bigcap \mathcal{A} \right) \subseteq \bigcap_{A \in \mathcal{A}} f(A)$}
+\begin{proof}
+	\step{a}{\pflet{$y \in f \left( \bigcap \mathcal{A} \right)$}}
+	\step{b}{\pick\ $x \in \bigcap \mathcal{A}$ such that $y = f(x)$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{c}{\pflet{$A \in \mathcal{A}$}}
+	\step{d}{$x \in A$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{c}
+	\end{proof}
+	\step{e}{$y \in f(A)$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{d}
+	\end{proof}
+\end{proof}
+\step{5}{If $f$ is injective then $f \left( \bigcap \mathcal{A} \right) = \bigcap_{A \in \mathcal{A}} f(A)$}
+\begin{proof}
+	\step{a}{\assume{$f$ is injective.}}
+	\step{b}{\pflet{$y \in \bigcap_{A \in \mathcal{A}} f(A)$}}
+	\step{c}{\pick\ $A \in \mathcal{A}$}
+	\begin{proof}
+		\pf\ $\mathcal{A}$ is nonempty by \stepref{3}.
+	\end{proof}
+	\step{d}{$y \in f(A)$}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{c}
+	\end{proof}
+	\step{e}{\pick\ $x \in A$ such that $y = f(x)$}
+	\begin{proof}
+		\pf\ \stepref{d}
+	\end{proof}
+	\step{f}{$x \in \bigcap \mathcal{A}$}
+	\begin{proof}
+		\step{i}{\pflet{$A' \in \mathcal{A}$}}
+		\step{ii}{$y \in f(A')$}
+		\begin{proof}
+			\pf\ \stepref{b}, \stepref{i}
+		\end{proof}
+		\step{iii}{\pick\ $x' \in A'$ such that $y = f(x')$}
+		\begin{proof}
+			\pf\ \stepref{ii}
+		\end{proof}
+		\step{iv}{$x = x'$}
+		\begin{proof}
+			\pf\ \stepref{a}, \stepref{e}, \stepref{iii}
+		\end{proof}
+		\step{v}{$x \in A'$}
+		\begin{proof}
+			\pf\ \stepref{iii}, \stepref{iv}
+		\end{proof}
+	\end{proof}
+	\step{g}{$y \in f \left( \bigcap \mathcal{A} \right)$}
+	\begin{proof}
+		\pf\ \stepref{e}, \stepref{f}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ and $Y$ be sets. Let $f : X \rightarrow Y$. Let $A,B \in \mathcal{P} X$. Then $f(A) - f(B) \subseteq f(A - B)$. Equality holds if $f$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$}}
+\step{3}{\pflet{$A,B \in \mathcal{P} X$}}
+\step{4}{$f(A) - f(B) \subseteq f(A - B)$}
+\begin{proof}
+	\step{a}{\pflet{$y \in f(A) - f(B)$}}
+	\step{b}{$y \in f(A)$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{c}{\pick\ $x \in A$ such that $y = f(x)$.}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{$x \notin B$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $x \in B$}}
+		\step{ii}{$y \in f(B)$}
+		\begin{proof}
+			\pf\ \stepref{c}, \stepref{i}
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ \stepref{a} and \stepref{ii} form a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{e}{$x \in A - B$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{d}
+	\end{proof}
+	\step{f}{$y \in f(A-B)$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{e}
+	\end{proof}
+\end{proof}
+\step{5}{If $f$ is injective then $f(A-B) = f(A) - f(B)$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is injective.}}
+	\step{b}{\pflet{$y \in f(A - B)$}}
+	\step{c}{\pick\ $x \in A - B$ such that $y = f(x)$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{$x \in A$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{e}{$y \in f(A)$}
+	\begin{proof}
+		\pf\ \stepref{c}, \stepref{d}
+	\end{proof}
+	\step{f}{$y \notin f(B)$}
+	\begin{proof}
+		\step{i}{\assume{$y \in f(B)$}}
+		\step{ii}{\pick\ $x' \in B$ such that $y = f(x')$}
+		\begin{proof}
+			\pf\ \stepref{i}
+		\end{proof}
+		\step{iii}{$x = x'$}
+		\begin{proof}
+			\pf\ \stepref{a}, \stepref{c}, \stepref{ii}
+		\end{proof}
+		\step{iv}{$x \in B$}
+		\begin{proof}
+			\pf\ \stepref{ii}, \stepref{iii}
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ \stepref{c} and \stepref{iv} form a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{g}{$y \in f(A) - f(B)$}
+	\begin{proof}
+		\pf\ \stepref{e}, \stepref{f}
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{df}[Inclusion Map]
