@@ -1217,12 +1217,19 @@ Let $f : X \rightarrow Y$. Let $A \subseteq B \subseteq Y$. Then $f^{-1}(A) \sub
 \end{proof}
 
 \begin{prop}
-Let $f : X \rightarrow Y$. Let $\{B_i\}_{i \in I}$ be a family of subsets of $Y$. Then
-\[ f^{-1} \left( \bigcup_{i \in I} B_i \right) = \bigcup_{i \in I} f^{-1}(B_i) \enspace . \]
+Let $f : X \rightarrow Y$. Let $\mathcal{B} \subseteq Y$. Then
+\[ f^{-1} \left( \bigcup \mathcal{B} \right) = \bigcup_{B \in \mathcal{B}} f^{-1}(B) \enspace . \]
 \end{prop}
 
 \begin{proof}
-\pf\ Easy. \qed
+\pf
+\begin{align*}
+x \in f^{-1} \left( \bigcup \mathcal{B} \right)
+& \Leftrightarrow f(x) \in \bigcup \mathcal{B} \\
+& \Leftrightarrow \exists B \in \mathcal{B}. f(x) \in B \\
+& \Leftrightarrow \exists B \in \mathcal{B}. x \in f^{-1}(B) \\
+& \Leftrightarrow x \in \bigcup_{B \in \mathcal{B}} f^{-1}(B) & \qed
+\end{align*}
 \end{proof}
 
 \begin{prop}

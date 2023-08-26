@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  26 AUG 2023 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  26 AUG 2023 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -677,50 +677,53 @@ m/n/10 t\OML/cmm/m/it/10 I[]\U/matha/m/n/10 u[]$
 
 [18]
 WARNING: proof step "4" (<2>1) already defined
-[19] [20] [21] [22] [23]
+[19] [20] [21] [22] [23] [24]
 Chapter 4.
 WARNING: proof step "6" (<1>9) already defined
 WARNING: proof step "7" (<1>10) already defined
 WARNING: proof step "8" (<1>11) already defined
-[24
+[25
 
-] [25]
+] [26]
 Chapter 5.
-[26
+[27
 
-] [27]
+] [28]
 WARNING: proof step "12" (<3>1) already defined
 WARNING: proof step "13" (<3>2) already defined
-[28]
+[29]
 WARNING: proof step "a" (<4>1) already defined
-[29] [30] [31] [32]
+[30] [31] [32] [33]
 WARNING: proof step "4" (<1>6) already defined
 WARNING: proof step "5" (<1>7) already defined
-[33] [34]
+[34] [35]
 Chapter 6.
-[35
+[36
 
 ]
 WARNING: proof step "d" (<2>5) already defined
-[36] [37] [38] [39]
+[37] [38] [39] [40]
 Chapter 7.
-[40
+[41
 
-] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52]
+] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53]
 Chapter 8.
-[53
+[54
 
-] [54]
+] [55]
 Chapter 9.
-[55
+[56
 
-] [56] [57] [58] [59] (./main.aux)
+] [57] [58] [59] [60] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A22CBB332AD4B68DF444685C9B218595;4975.
  ) 
 Here is how much of TeX's memory you used:
- 10086 strings out of 476091
- 147699 string characters out of 5794081
+ 10087 strings out of 476091
+ 147706 string characters out of 5794081
  1872330 words of memory out of 5000000
  29951 multiletter control sequences out of 15000+600000
  528316 words of font info for 87 fonts, out of 8000000 for 9000
@@ -748,10 +751,10 @@ blic/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (60 pages, 386866 bytes).
+Output written on main.pdf (61 pages, 388241 bytes).
 PDF statistics:
- 1017 PDF objects out of 1200 (max. 8388607)
- 867 compressed objects within 9 object streams
- 407 named destinations out of 1000 (max. 500000)
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 871 compressed objects within 9 object streams
+ 408 named destinations out of 1000 (max. 500000)
  289 words of extra memory for PDF output out of 10000 (max. 10000000)
 
