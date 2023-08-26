@@ -1166,7 +1166,38 @@ Equality holds if $f$ is one-to-one.
 \end{prop}
 
 \begin{proof}
-\pf\ Easy. \qed
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$f : X \rightarrow Y$}}
+\step{3}{\pflet{$A \subseteq X$}}
+\step{4}{$A \subseteq f^{-1}(f(A))$}
+\begin{proof}
+	\step{a}{\pflet{$x \in A$}}
+	\step{b}{$f(x) \in f(A)$}
+	\step{c}{$x \in f^{-1}(f(x))$}
+\end{proof}
+\step{5}{If $f$ is injective then $f^{-1}(f(A)) = A$}
+\begin{proof}
+	\step{a}{\assume{$f$ is injective.}}
+	\step{b}{\pflet{$x \in f^{-1}(f(A))$}}
+	\step{c}{$f(x) \in f(A)$}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{d}{\pick\ $x' \in A$ such that $f(x') = f(x)$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{e}{$x' = x$}
+	\begin{proof}
+		\pf\ \stepref{a}, \stepref{d}
+	\end{proof}
+	\step{f}{$x \in A$}
+	\begin{proof}
+		\pf\ \stepref{d}, \stepref{e}
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
