@@ -1773,7 +1773,7 @@ We write $X$ for the poset $(X, \leq)$.
 
 Given a partial order $\leq$, we write $\geq$ for the inverse of $\leq$.
 
-We write $x < y$ or $y > x$ for $x \leq y \wedge x \neq y$. When this holds, we say $x$ is \emph{less than} $y$, \emph{smaller} than $y$, or a \emph{predecessor} of $y$; and $y$ is \emph{greater than} $x$, \emph{larger} than $x$, or a \emph{successor} of $x$.
+We write $x < y$ or $y > x$ for $x \leq y \wedge x \neq y$. When this holds, we say $x$ is \emph{less than} $y$ or \emph{smaller} than $y$; and $y$ is \emph{greater than} $x$, \emph{larger} than $x$.
 \end{df}
 
 \begin{prop}
@@ -1948,7 +1948,7 @@ Let $X$ be a poset and $a \in X$. The \emph{weak initial segment} determined by 
 \end{df}
 
 \begin{df}[Immediate Successor]
-Let $X$ be a poset and $x,y \in X$. Then $y$ is the \emph{immediate successor} of $x$, and $x$ is the \emph{immediate predecessor} of $y$, iff $x < y$ and there is no $z$ such that $x < z < y$.
+Let $X$ be a poset and $x,y \in X$. Then $y$ is the \emph{(immediate) successor} of $x$, and $x$ is the \emph{(immediate) predecessor} of $y$, iff $x < y$ and there is no $z$ such that $x < z < y$.
 \end{df}
 
 \begin{df}[Least]
@@ -2359,6 +2359,11 @@ If $f : X \cong Y$ and $g : Y \cong Z$ then $g \circ f : X \cong Z$.
 \begin{cor}
 For any set $E$, similarity is an equivalence relation on the set of all posets that are subsets of $E$.
 \end{cor}
+
+\begin{df}[Open Interval]
+Let $X$ be a linearly ordered set. Let $a,b \in X$ with $a < b$. The \emph{open interval} $(a,b)$ is
+\[ (a,b) := \{ x \in X : a < x < b \} \enspace . \]
+\end{df}
 
 \section{Well Orderings}
 
