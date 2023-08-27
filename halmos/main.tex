@@ -4347,6 +4347,7 @@ For all $x,y \in \mathbb{R}$, if $x < y$ then there exists $z \in \mathbb{R}$ su
 \section{Consequences of the Axioms}
 
 \begin{thm}
+\label{thm:y_equals_zero}
 For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
 \end{thm}
 
@@ -4365,6 +4366,28 @@ For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
 		& = x + (-x) & (\text{\stepref{2}}) \\
 		& = 0 & (\text{Definition of } -x)
 	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\[ \forall x \in \mathbb{R}. 0x = 0 \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \mathbb{R}$}}
+\step{2}{$xx + 0x = xx$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		xx + 0x & = (x + 0) x & (\text{Distributive Law}) \\
+		& = xx & (\text{Definition of } 0)
+	\end{align*}
+\end{proof}
+\step{3}{$0x = 0$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:y_equals_zero}, \stepref{2}.
 \end{proof}
 \qed
 \end{proof}
