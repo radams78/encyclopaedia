@@ -4636,4 +4636,62 @@ For any real numbers $x$ and $y$, if $y \neq 0$ then $(-x)/y = x/(-y) = -(x/y)$.
 \qed
 \end{proof}
 
+\begin{thm}
+For any real numbers $x$, $y$, $z$ and $w$, if $x > y$ and $w > z$ then $x + w > y + z$.
+\end{thm}
+
+\begin{proof}
+\pf\ We have $y + z < x + z < x + w$ by Monotonicity of Addition twice. \qed
+\end{proof}
+
+\begin{cor}
+For any real numbers $x$ and $y$, if $x > 0$ and $y > 0$ then $x + y > 0$.
+\end{cor}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x > 0$ and $y > 0$ then $xy > 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+	xy & > 0y & (\text{Monotonicity of Multiplication}) \\
+	& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+For any real number $x$, we have $x > 0$ iff $-x < 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $0 < x$ then $-x < 0$}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $-x$ to both sides.
+\end{proof}
+\step{2}{If $-x < 0$ then $0 < x$}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $x$ to both sides.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, we have $x > y$ iff $-x < -y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $y < x$ then $-x < -y$.}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $-x-y$ to both sides.
+\end{proof}
+\step{2}{If $-x < -y$ then $y < x$.}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $x + y$ to both sides.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
