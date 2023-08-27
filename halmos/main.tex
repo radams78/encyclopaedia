@@ -4346,6 +4346,29 @@ For all $x,y \in \mathbb{R}$, if $x < y$ then there exists $z \in \mathbb{R}$ su
 
 \section{Consequences of the Axioms}
 
+\begin{thm}
+For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$}}
+\step{2}{\assume{$x + y = x$}}
+\step{3}{$y = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = y + 0 & (\text{Definition of zero}) \\
+		& = y + (x + (-x)) & (\text{Definition of } -x) \\
+		& = (y + x) + (-x) & (\text{Associativity of Addition}) \\
+		& = (x + y) + (-x) & (\text{Commutativity of Addition}) \\
+		& = x + (-x) & (\text{\stepref{2}}) \\
+		& = 0 & (\text{Definition of } -x)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Negation]
 For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real number such that $x + (-x) = 0$.
 \end{df}
