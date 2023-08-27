@@ -13,6 +13,7 @@
 \usepackage{mathabx}
 
 \newtheorem{ax}{Axiom}[chapter]
+\newtheorem{axs}[ax]{Axiom Schema}
 \newtheorem{prop}[ax]{Proposition}
 \newtheorem{cor}{Corollary}[ax]
 \newtheorem{thm}[ax]{Theorem}
@@ -35,9 +36,57 @@ Let there be \emph{sets}. We assume that everything is a set.
 
 Let there be a binary relation of \emph{membership}, $\in$. If $x \in A$ we say that $x$ \emph{belongs} to $A$, $x$ is an \emph{element} of $A$, or $x$ is \emph{contained} in $A$. If this does not hold we write $x \notin A$.
 
+\begin{df}[Empty]
+A set is \emph{empty} iff it has no elements; otherwise it is \emph{nonempty}.
+\end{df}
+
+\begin{df}[Disjoint]
+Two sets $A$ and $B$ are \emph{disjoint} iff there is no $x$ such that $x \in A$ and $x \in B$.
+\end{df}
+
+\begin{df}[Pairwise Disjoint]
+We say the elements of a set $x$ are \emph{pairwise disjoint} iff, for all $y,z \in x$, either $y$ and $z$ are disjoint or $y = z$.
+\end{df}
+
+\begin{df}[Subset]
+Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subseteq B$ or $B \supseteq A$, iff every element of $A$ is an element of $B$.
+\end{df}
+
 \begin{ax}[Axiom of Extensionality]
-Two sets are equal if and only if they have the same elements.
+If two sets have the same elements then they are equal.
 \end{ax}
+
+\begin{ax}[Axiom of Regularity]
+For any nonempty set $A$, there exists $m \in A$ such that $m$ and $A$ are disjoint.
+\end{ax}
+
+\begin{ax}[Axiom of Union]
+For every set $A$, there exists a set that contains all the elements that belong to at least one element of $A$.
+\end{ax}
+
+\begin{ax}[Axiom of Pairing]
+For any two sets, there exists a set that they both belong to.
+\end{ax}
+
+\begin{axs}[Axiom Schema of Replacement]
+For any property $P(x,y)$, the following is an axiom:
+
+Let $A$ be a set such that, for all $x \in A$, there exists at most one $y$ such that $P(x,y)$. Then there exists a set $B$ whose elements are exactly those sets $y$ such that $\exists x \in A. P(x,y)$.
+\end{axs}
+
+\begin{ax}[Axiom of Infinity]
+There exists a set $I$ that has an empty element and such that, for all $x \in I$, there exists $y \in I$ such that the elements of $y$ are exactly $x$ and the elements of $x$.
+\end{ax}
+
+\begin{ax}[Power Set Axiom]
+For any set $A$, there exists a set $B$ such that every subset of $A$ belongs to $B$.
+\end{ax}
+
+\begin{ax}[Axiom of Choice]
+Let $A$ be a set of nonempty, pairwise disjoint sets. Then there exists a set $C$ such that, for all $x \in A$, there is exactly one $y$ such that $y \in C$ and $y \in x$.
+\end{ax}
+
+\chapter{Basic Properties and Operations on Sets}
 
 \begin{ax}[Axiom of Comprehension, Aussonderungsaxiom]
 To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
@@ -51,9 +100,6 @@ Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the 
 \pf\ This exists by the Axiom of Comprehension and is unique by the Axiom of Extensionality. \qed
 \end{proof}
 
-\begin{ax}[Axiom of Pairing]
-For any two sets, there exists a set that they both belong to.
-\end{ax}
 
 \begin{df}[(Unordered) Pair]
 For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
@@ -62,14 +108,6 @@ For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose
 \begin{proof}
 \pf\ This exists by the Axioms of Pairing and Comprehension, and is unique by the Axiom of Extensionality. \qed
 \end{proof}
-
-\begin{ax}[Union Axiom]
-For every set $A$, there exists a set that contains all the elements that belong to at least one element of $A$.
-\end{ax}
-
-\begin{df}[Subset]
-Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph{includes} $A$, and write $A \subseteq B$ or $B \supseteq A$, iff every element of $A$ is an element of $B$.
-\end{df}
 
 \begin{ax}[Power Set Axiom]
 For any set $A$, there exists a set that contains all the subsets of $A$.
@@ -136,8 +174,6 @@ The Cartesian product of a non-empty family of non-empty sets is non-empty.
 \begin{ax}[Axiom of substitution]
 If $S(a,b)$ is a sentence such that for each $a$ in $A$ the set $\{ b : S(a,b) \}$ can be formed, then there exists a function $F$ with domain $A$ such that $F(a) = \{ b : S(a,b) \}$ for each $a$ in $A$.
 \end{ax}
-
-\chapter{Basic Properties and Operations on Sets}
 
 \section{The Subset Relation}
 

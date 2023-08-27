@@ -1,38 +1,38 @@
 \contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Basic Properties and Operations on Sets}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}The Subset Relation}{5}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Comprehension Notation}{5}{section.2.2}%
-\contentsline {section}{\numberline {2.3}The Empty Set}{6}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Unordered Pairs}{6}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Unions}{6}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Intersections}{7}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Unordered Triples}{7}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Relative Complements}{8}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Symmetric Difference}{10}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Power Sets}{11}{section.2.10}%
-\contentsline {chapter}{\numberline {3}Relations and Functions}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Ordered Pairs}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Relations}{14}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Composition}{14}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Inverses}{15}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Equivalence Relations}{15}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Functions}{16}{section.3.6}%
-\contentsline {section}{\numberline {3.7}Families}{19}{section.3.7}%
-\contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{21}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1}Inverse Image}{21}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2}Inverse of a Function}{23}{subsection.3.8.2}%
-\contentsline {section}{\numberline {3.9}Choice Functions}{26}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Equivalence}{27}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Order}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Well Orderings}{33}{section.5.1}%
-\contentsline {chapter}{\numberline {6}Natural Numbers}{38}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Natural Numbers}{38}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Ordinal Numbers}{43}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{46}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Finite Sets}{48}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{52}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{53}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Countable Sets}{56}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Cardinal Numbers}{58}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{58}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Alephs}{62}{section.9.2}%
+\contentsline {section}{\numberline {2.1}The Subset Relation}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Comprehension Notation}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}The Empty Set}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unordered Pairs}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Unions}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Intersections}{8}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Unordered Triples}{9}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Relative Complements}{9}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Symmetric Difference}{12}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Power Sets}{13}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Relations and Functions}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ordered Pairs}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Relations}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Composition}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Inverses}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Equivalence Relations}{17}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Functions}{18}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Families}{21}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{23}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}Inverse Image}{23}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Inverse of a Function}{25}{subsection.3.8.2}%
+\contentsline {section}{\numberline {3.9}Choice Functions}{28}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Equivalence}{29}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Order}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Well Orderings}{35}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{40}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{40}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{48}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Finite Sets}{50}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{54}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{55}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Countable Sets}{58}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Cardinal Numbers}{60}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{60}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Alephs}{64}{section.9.2}%

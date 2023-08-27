@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  26 AUG 2023 21:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  27 AUG 2023 03:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,38 +593,38 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Info: Command `\dddot' is already robust on input line 28.
-LaTeX Info: Command `\ddddot' is already robust on input line 28.
-Package hyperref Info: Link coloring OFF on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Info: Command `\dddot' is already robust on input line 29.
+LaTeX Info: Command `\ddddot' is already robust on input line 29.
+Package hyperref Info: Link coloring OFF on input line 29.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -636,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...berline {7}Ordinal Numbers}{43}{chapter.7}
+l.30 ...berline {7}Ordinal Numbers}{45}{chapter.7}
                                                   % [1
 
 ])
@@ -645,21 +645,29 @@ l.30 ...berline {7}Ordinal Numbers}{43}{chapter.7}
 
  [2]
 Chapter 1.
+
+Overfull \hbox (4.21648pt too wide) in paragraph at lines 72--73
+[]\OT1/cmr/bx/n/10 Axiom Schema 1.9 \OT1/cmr/m/n/10 (Ax-iom Schema of Re-place-
+ment)\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 For any prop-erty $\OML/cmm/m/it/10 P\
+U/matha/m/n/10 p\OML/cmm/m/it/10 x; y\U/matha/m/n/10 q$\OT1/cmr/m/it/10 ,
+ []
+
 [3
 
 ] [4]
 Chapter 2.
 [5
 
-] [6] [7]
+] [6] [7] [8]
 WARNING: proof step "2" (<2>1) already defined
+[9]
 WARNING: proof step "2" (<2>1) already defined
-[8] [9] [10] [11] [12]
+[10] [11] [12] [13] [14]
 Chapter 3.
-[13
+[15
 
-] [14] [15]
-Overfull \hbox (0.11781pt too wide) in paragraph at lines 972--973
+] [16] [17]
+Overfull \hbox (0.11781pt too wide) in paragraph at lines 1008--1009
 []\OT1/cmr/bx/n/10 Proposition 3.35. \OT1/cmr/m/it/10 Let $\OML/cmm/m/it/10 f \
 OT1/cmr/m/n/10 : \OML/cmm/m/it/10 X \U/matha/m/n/10 Ñ \OML/cmm/m/it/10 Y$\OT1/c
 mr/m/it/10 . Let $\OMS/cmsy/m/n/10 A \U/matha/m/n/10 „ \OMS/cmsy/m/n/10 P\OML/c
@@ -668,61 +676,61 @@ mm/m/it/10 X$\OT1/cmr/m/it/10 . Then $\OML/cmm/m/it/10 f [] \U/matha/m/n/10 ^^P
 T1/cmr/m/it/10 . 
  []
 
-[16] [17] [18] [19]
-Overfull \hbox (5.67227pt too wide) in paragraph at lines 1221--1222
+[18] [19] [20] [21]
+Overfull \hbox (5.67227pt too wide) in paragraph at lines 1257--1258
 []\OT1/cmr/bx/n/10 Proposition 3.48 \OT1/cmr/m/n/10 (Gen-er-al-ized Com-mu-ta-t
 ive Law for In-ter-sec-tions)\OT1/cmr/bx/n/10 . \OT1/cmr/m/it/10 Let $\U/matha/
 m/n/10 t\OML/cmm/m/it/10 I[]\U/matha/m/n/10 u[]$
  []
 
-[20]
+[22]
 WARNING: proof step "4" (<2>1) already defined
-[21] [22] [23] [24] [25] [26]
+[23] [24] [25] [26] [27] [28]
 Chapter 4.
 WARNING: proof step "6" (<1>9) already defined
 WARNING: proof step "7" (<1>10) already defined
 WARNING: proof step "8" (<1>11) already defined
-[27
-
-] [28]
-Chapter 5.
 [29
 
 ] [30]
+Chapter 5.
+[31
+
+] [32]
 WARNING: proof step "12" (<3>1) already defined
 WARNING: proof step "13" (<3>2) already defined
-[31]
+[33]
 WARNING: proof step "a" (<4>1) already defined
-[32] [33] [34] [35]
+[34] [35] [36] [37]
 WARNING: proof step "4" (<1>6) already defined
 WARNING: proof step "5" (<1>7) already defined
-[36] [37]
+[38] [39]
 Chapter 6.
-[38
+[40
 
 ]
 WARNING: proof step "d" (<2>5) already defined
-[39] [40] [41] [42]
+[41] [42] [43] [44]
 Chapter 7.
-[43
+[45
 
-] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
+] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]
 Chapter 8.
-[56
-
-] [57]
-Chapter 9.
 [58
 
-] [59] [60] [61] [62] (./main.aux)
+] [59]
+Chapter 9.
+[60
+
+] [61] [62] [63] [64] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 044BE1FFF9A3669DE735443A29E6F61D;5281.
  ) 
 Here is how much of TeX's memory you used:
- 10103 strings out of 476091
- 147885 string characters out of 5794081
- 1872330 words of memory out of 5000000
- 29957 multiletter control sequences out of 15000+600000
+ 10116 strings out of 476091
+ 147970 string characters out of 5794081
+ 1871330 words of memory out of 5000000
+ 29960 multiletter control sequences out of 15000+600000
  528623 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,76p,357b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -748,10 +756,10 @@ blic/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (63 pages, 393579 bytes).
+Output written on main.pdf (65 pages, 396366 bytes).
 PDF statistics:
- 1057 PDF objects out of 1200 (max. 8388607)
- 897 compressed objects within 9 object streams
- 418 named destinations out of 1000 (max. 500000)
+ 1076 PDF objects out of 1200 (max. 8388607)
+ 913 compressed objects within 10 object streams
+ 428 named destinations out of 1000 (max. 500000)
  305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
