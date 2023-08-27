@@ -4547,4 +4547,25 @@ For any real number $x$, if $x \neq 0$ then $x/x = 1$.
 \qed
 \end{proof}
 
+\begin{thm}
+For any real numbers $x$ and $y$, if $x \neq 0$ and $y \neq 0$ then $xy \neq 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$}}
+\step{2}{\assume{$xy = 0$ and $x \neq 0$} \prove{$y = 0$}}
+\step{3}{$y = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = 1y & (\text{Definition of } 1) \\
+		& = (1/x)xy & (\text{Definition of } 1/x, \text{\stepref{2}}) \\
+		& = (1/x)0 & (\text{\stepref{2}}) \\
+		& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
