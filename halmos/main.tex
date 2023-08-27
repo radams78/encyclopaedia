@@ -1788,15 +1788,6 @@ For any set $X$, the relation $\subseteq$ is a partial order on $\mathcal{P} X$.
 \end{proof}
 
 \begin{prop}
-\label{prop:lt_asym}
-In a poset, we never have $x < y$ and $y < x$.
-\end{prop}
-
-\begin{proof}
-\pf\ We would then have $x \leq y$ and $y \leq x$ hence $x = y$ by antisymmetry. But if $x < y$ or $y < x$ then $x \neq y$. \qed
-\end{proof}
-
-\begin{prop}
 Let $X$ be a set. Let $<$ be a relation on $X$. Then there exists a partial order $\leq$ on $X$ such that
 \[ \forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y) \]
 if and only if $<$ is irreflexive and transitive. In this case, $\leq$ is unique and is defined by
@@ -1938,6 +1929,15 @@ if and only if $<$ is irreflexive and transitive. In this case, $\leq$ is unique
 	\pf\ Trivial.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:lt_asym}
+In a poset, we never have $x < y$ and $y < x$.
+\end{prop}
+
+\begin{proof}
+\pf\ We would then have $x < x$ by transitivity, contradicting the irreflexivity of $<$. \qed
 \end{proof}
 
 \begin{df}[(Strict) Initial Segment]
