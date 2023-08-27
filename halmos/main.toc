@@ -25,7 +25,8 @@
 \contentsline {chapter}{\numberline {4}Equivalence}{29}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Order}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Partial Orders}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Well Orderings}{39}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Linear Orders}{34}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Well Orderings}{39}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Natural Numbers}{44}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Natural Numbers}{44}{section.6.1}%
 \contentsline {chapter}{\numberline {7}Ordinal Numbers}{49}{chapter.7}%
