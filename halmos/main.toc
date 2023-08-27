@@ -40,3 +40,4 @@
 \contentsline {section}{\numberline {9.2}Alephs}{68}{section.9.2}%
 \contentsline {chapter}{\numberline {10}Real Numbers}{69}{chapter.10}%
 \contentsline {section}{\numberline {10.1}Axioms for Real Numbers}{69}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Consequences of the Axioms}{70}{section.10.2}%
