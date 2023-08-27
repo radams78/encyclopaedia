@@ -4406,6 +4406,7 @@ For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real nu
 \end{proof}
 
 \begin{thm}
+\label{thm:minus_minus}
 \[ \forall x \in \mathbb{R}. -(-x) = x \]
 \end{thm}
 
@@ -4428,6 +4429,7 @@ x(-y) + xy & = x((-y)+y) & (\text{Distributive Law}) \\
 \end{proof}
 
 \begin{thm}
+\label{thm:multiply_by_minus_one}
 \[ \forall x \in \mathbb{R}. (-1)x = -x \]
 \end{thm}
 
@@ -4454,6 +4456,35 @@ x (y-z) & = x(y + (-z)) & (\text{Definition of subtraction}) \\
 & = xy + x(-z) & (\text{Distributive Law}) \\
 & = xy + (-(xz)) & (\text{Theorem \ref{thm:multiply_by_negative}}) \\
 & = xy - xz & (\text{Definition of subtraction}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:negate_sum}
+\[ \forall x,y \in \mathbb{R}. -(x+y) = -x-y \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+-(x+y) & = (-1)(x+y) & (\text{Theorem \ref{thm:multiply_by_minus_one}}) \\
+& = (-1)x + (-1)y & (\text{Distributive Law}) \\
+& = -x + (-y) & (\text{Theorem \ref{thm:multiply_by_minus_one}}) \\
+& = -x-y & (\text{Definition of subtraction}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\[ \forall x,y \in \mathbb{R}. -(x-y) = -x+y \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+-(x-y) & = -(x + (-y)) & (\text{Definition of subtraction}) \\
+& = -x-(-y) & (\text{Theorem \ref{thm:negate_sum}}) \\
+& = -x + (-(-y)) & (\text{Definition of subtraction}) \\
+& = -x + y & (\text{Theorem \ref{thm:minus_minus}}) \enspace \qed
 \end{align*}
 \end{proof}
 
