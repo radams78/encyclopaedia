@@ -4273,4 +4273,75 @@ The \emph{continuum hypothesis} is the statement $\aleph_1 = 2^{\aleph_0}$.
 The \emph{generalized continuum hypothesis} is the statement: for every ordinal $\alpha$ we have $\aleph_{\alpha + 1} = 2^{\aleph_\alpha}$.
 \end{df}
 
+\chapter{Real Numbers}
+
+%TODO Construct these instead
+Let there be a set $\mathbb{R}$, whose elements are called \emph{real numbers}.
+
+Let there be two functions $+, \cdot : \mathbb{R}^2 \rightarrow \mathbb{R}$.
+
+Let there be a relation $< \subseteq \mathbb{R}^2$.
+
+\begin{ax}[Associativity of Addition]
+\[ \forall x,y,z \in \mathbb{R}. x + (y + z) = (x + y) + z \]
+\end{ax}
+
+\begin{ax}[Associativity of Multiplication]
+\[ \forall x,y,z \in \mathbb{R}. x(yz) = (xy)z \]
+\end{ax}
+
+\begin{ax}[Commutativity of Addition]
+\[ \forall x,y \in \mathbb{R}. x + y = y + x \]
+\end{ax}
+
+\begin{ax}[Commutativity of Multiplication]
+\[ \forall x,y \in \mathbb{R}. xy = yx \]
+\end{ax}
+
+\begin{ax}[Identity for Addition]
+There exists a unique $z \in \mathbb{R}$ such that $\forall x \in \mathbb{R}. x + z = x$.
+\end{ax}
+
+\begin{df}[Zero]
+The real number \emph{zero}, 0, is the unique real number such that $\forall x \in \mathbb{R}. x + 0 = x$.
+\end{df}
+
+\begin{ax}[Identity for Multiplication]
+There exists a unique $i \in \mathbb{R}$ such that $\forall x \in \mathbb{R}. xi = x$. Further, we have $i \neq 0$.
+\end{ax}
+
+\begin{df}[One]
+The real number \emph{one}, 1, is the unique real number such that $\forall x \in \mathbb{R}. x 1 = x$.
+\end{df}
+
+\begin{ax}[Additive Inverses]
+For all $x \in \mathbb{R}$, there exists a unique $y \in \mathbb{R}$ such that $x + y = 0$.
+\end{ax}
+
+\begin{ax}[Multiplicative Inverses]
+For all $x \in \mathbb{R}$, if $x \neq 0$ then there exists a unique $y \in \mathbb{R}$ such that $xy = 1$.
+\end{ax}
+
+\begin{ax}[Distributive Law]
+\[ \forall x,y,z \in \mathbb{R}. x(y+z) = xy+xz \]
+\end{ax}
+
+\begin{ax}[Monotonicity of Addition]
+For all $x,y,z \in \mathbb{R}$, if $x < y$ then $x + z < y + z$.
+\end{ax}
+
+\begin{ax}[Monotonicity of Multiplication]
+For all $x,y,z \in \mathbb{R}$, if $x < y$ and $0 < z$ then $xz < yz$.
+\end{ax}
+
+\begin{ax}[Least Upper Bound Property]
+The relation $<$ is a strict linear order on $\mathbb{R}$ with the least upper bound property.
+\end{ax}
+
+\begin{ax}[Density]
+For all $x,y \in \mathbb{R}$, if $x < y$ then there exists $z \in \mathbb{R}$ such that $x < z < y$.
+\end{ax}
+
+
+
 \end{document}
