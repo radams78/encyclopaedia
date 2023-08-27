@@ -1794,6 +1794,150 @@ In a poset, we never have $x < y$ and $y < x$.
 \end{proof}
 
 \begin{prop}
+Let $X$ be a set. Let $<$ be a relation on $X$. Then there exists a partial order $\leq$ on $X$ such that
+\[ \forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y) \]
+if and only if $<$ is irreflexive and transitive. In this case, $\leq$ is unique and is defined by
+\[ \forall x,y \in X (x \leq y \Leftrightarrow x < y \vee x = y) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a set.}}
+\step{2}{\pflet{$<$ be a relation on $X$.}}
+\step{3}{If there exists a partial order $\leq$ on $X$ such that $\forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y)$, then $<$ is irreflexive.}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{4}{If there exists a partial order $\leq$ on $X$ such that $\forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y)$, then $<$ is transitive.}
+\begin{proof}
+	\step{a}{\pflet{$\leq$ be a partial order on $X$.}}
+	\step{b}{\assume{$\forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y)$}}
+	\step{c}{\pflet{$x < y$ and $y < z$}}
+	\step{d}{$x \leq y$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{e}{$x \neq y$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{f}{$y \leq z$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{g}{$y \neq z$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+	\step{h}{$x \leq z$}
+	\begin{proof}
+		\pf\ From \stepref{d} and \stepref{f} since $\leq$ is transitive by \stepref{a}.
+	\end{proof}
+	\step{eye}{$x \neq z$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $x = z$}}
+		\step{ii}{$y \leq x$}
+		\begin{proof}
+			\pf\ \stepref{f}, \stepref{i}
+		\end{proof}
+		\step{iii}{$x = y$}
+		\begin{proof}
+			\pf\ From \stepref{d} and \stepref{ii} since $\leq$ is antisymmetric by \stepref{a}.
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ \stepref{e} and \stepref{iii} form a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{j}{$x < z$}
+	\begin{proof}
+		\pf\ \stepref{h}, \stepref{eye}
+	\end{proof}
+\end{proof}
+\step{5}{If there exists a partial order $\leq$ on $X$ such that $\forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y)$, then $\forall x,y \in X (x \leq y \Leftrightarrow x < y \vee x = y)$.}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{6}{If $<$ is irreflexive and transitive, then the relation $\leq$ defined by $\forall x,y \in X (x \leq y \Leftrightarrow x < y \vee x = y)$ is a partial order on $X$.}
+\begin{proof}
+	\step{a}{\assume{$<$ is irreflexive.}}
+	\step{b}{\assume{$<$ is transitive.}}
+	\step{c}{\pflet{$\leq$ be the relation defined by $\forall x,y \in X (x \leq y \Leftrightarrow x < y \vee x = y)$}}
+	\step{d}{$\leq$ is reflexive.}
+	\begin{proof}
+		\pf\ Immediate from \stepref{c}.
+	\end{proof}
+	\step{e}{$\leq$ is transitive.}
+	\begin{proof}
+		\step{i}{\pflet{$x,y,z \in X$}}
+		\step{ii}{\assume{$x \leq y$ and $y \leq z$}}
+		\step{iii}{$x < y$ or $x = y$}
+		\begin{proof}
+			\pf\ \stepref{d}, \stepref{ii}
+		\end{proof}
+		\step{iv}{$y < z$ or $y = z$}
+		\begin{proof}
+			\pf\ \stepref{d}, \stepref{ii}
+		\end{proof}
+		\step{v}{\case{$x < y$ and $y < z$}}
+		\begin{proof}
+			\step{one}{$x < z$}
+			\begin{proof}
+				\pf\ \stepref{b}
+			\end{proof}
+			\step{two}{$x \leq z$}
+			\begin{proof}
+				\pf\ \stepref{d}, \stepref{one}
+			\end{proof}
+		\end{proof}
+		\step{vi}{\case{$x = y$}}
+		\begin{proof}
+			\pf\ Then $x \leq z$ from \stepref{ii}
+		\end{proof}
+		\step{vii}{\case{$y = z$}}
+		\begin{proof}
+			\pf\ Then $x \leq z$ from \stepref{ii}
+		\end{proof}
+	\end{proof}
+	\step{g}{$\leq$ is antisymmetric.}
+	\begin{proof}
+		\step{i}{\pflet{$x,y \in X$}}
+		\step{ii}{\assume{$x \leq y$}}
+		\step{iii}{\assume{$y \leq x$}}
+		\step{iv}{$x < y$ or $x = y$}
+		\begin{proof}
+			\pf\ \stepref{d}, \stepref{ii}
+		\end{proof}
+		\step{v}{$y < x$ or $y = x$}
+		\begin{proof}
+			\pf\ \stepref{d}, \stepref{ii}
+		\end{proof}
+		\step{vi}{$\neg(x < y \wedge y < x)$}
+		\begin{proof}
+			\step{one}{\assume{for a contradiction $x < y$ and $y < x$}}
+			\step{two}{$x < x$}
+			\begin{proof}
+				\pf\ \stepref{b}, \stepref{one}
+			\end{proof}
+			\qedstep
+			\begin{proof}
+				\pf\ \stepref{a} and \stepref{two} form a contradiction.
+			\end{proof}
+		\end{proof}
+		\step{vii}{$x = y$}
+		\begin{proof}
+			\pf\ \stepref{iv}, \stepref{v}, \stepref{vi}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{7}{If $<$ is irreflexive, then the relation $\leq$ defined by $\forall x,y \in X (x \leq y \Leftrightarrow x < y \vee x = y)$ satisfies $\forall x,y \in X (x < y \Leftrightarrow x \leq y \wedge x \neq y)$.}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 The relation $<$ is transitive.
 \end{prop}
 
