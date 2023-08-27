@@ -4346,6 +4346,10 @@ For all $x,y \in \mathbb{R}$, if $x < y$ then there exists $z \in \mathbb{R}$ su
 
 \section{Consequences of the Axioms}
 
+\begin{df}[Negation]
+For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real number such that $x + (-x) = 0$.
+\end{df}
+
 \begin{thm}
 \label{thm:y_equals_zero}
 For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
@@ -4392,10 +4396,6 @@ For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
 \end{proof}
 \qed
 \end{proof}
-
-\begin{df}[Negation]
-For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real number such that $x + (-x) = 0$.
-\end{df}
 
 \begin{thm}
 \[ -0 = 0 \]
@@ -4491,6 +4491,30 @@ x (y-z) & = x(y + (-z)) & (\text{Definition of subtraction}) \\
 \begin{df}[Reciprocal]
 Given $x \in \mathbb{R}$ with $x \neq 0$, the \emph{reciprocal} of $x$, $1/x$, is the unique real number such that $x \cdot 1/x = 1$.
 \end{df}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x \neq 0$ and $xy = x$ then $y = 1$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$}}
+\step{2}{\assume{$x \neq 0$}}
+\step{3}{\assume{$xy = x$}}
+\step{4}{$y = 1$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = y1 & (\text{Definition of } 1) \\
+		& = y (x \cdot 1/x) & (\text{Definition of } 1/x, \text{\stepref{2}}) \\
+		& = (yx) 1/x & (\text{Associativity of Multiplication}) \\
+		& = (xy) 1/x & (\text{Commutativity of Multiplication}) \\
+		& = x \cdot 1/x & (\text{\stepref{3}}) \\
+		& = 1 & (\text{Definition of } 1/x, \text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Quotient]
 Given real numbers $x$ and $y$ with $y \neq 0$, the \emph{quotient} $x/y$ is defined by
