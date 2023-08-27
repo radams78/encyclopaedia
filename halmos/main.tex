@@ -4610,4 +4610,30 @@ For any real numbers $w$, $z$, if $w \neq 0 \neq z$ then $1 / (w / z) = z/w$.
 \pf\ Since $(z/w)(w/z) = (wz)/(wz) = 1$. \qed
 \end{proof}
 
+\begin{thm}
+\label{thm:multiply_quotient}
+For any real numbers $a$, $x$ and $y$, if $y \neq 0$ then $(ax)/y = a(x/y)$
+\end{thm}
+
+\begin{proof}
+\pf\ Since $ya(x/y) = ax$. \qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $y \neq 0$ then $(-x)/y = x/(-y) = -(x/y)$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$(-x)/y = -(x/y)$}
+\begin{proof}
+	\pf\ Take $a = -1$ in Theorem \ref{thm:multiply_quotient}.
+\end{proof}
+\step{2}{$x/(-y) = -(x/y)$}
+\begin{proof}
+	\pf\ Since $(-y)(-(x/y)) = y(x/y) = x$.
+\end{proof}
+\qed
+\end{proof}
+
 \end{document}
