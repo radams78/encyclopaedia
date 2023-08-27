@@ -25,15 +25,15 @@
 \contentsline {chapter}{\numberline {4}Equivalence}{29}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Order}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Partial Orders}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Well Orderings}{40}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Natural Numbers}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Natural Numbers}{44}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Ordinal Numbers}{49}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{52}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Finite Sets}{54}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{58}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{59}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Countable Sets}{62}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Cardinal Numbers}{64}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{64}{section.9.1}%
-\contentsline {section}{\numberline {9.2}Alephs}{68}{section.9.2}%
+\contentsline {section}{\numberline {5.2}Well Orderings}{39}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Natural Numbers}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Natural Numbers}{43}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Ordinal Numbers}{48}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Order on the Natural Numbers}{51}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Finite Sets}{53}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Ordinal Arithmetic}{57}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Arithmetic on the Natural Numbers}{58}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Countable Sets}{61}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Cardinal Numbers}{63}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Cardinal Arithmetic}{63}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Alephs}{67}{section.9.2}%

@@ -1937,58 +1937,6 @@ if and only if $<$ is irreflexive and transitive. In this case, $\leq$ is unique
 \qed
 \end{proof}
 
-\begin{prop}
-The relation $<$ is transitive.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$x < y$ and $y < z$}}
-\step{2}{$x \leq y$ and $y \leq z$}
-\step{3}{$x \leq z$}
-\begin{proof}
-	\pf\ Since $\leq$ is transitive.
-\end{proof}
-\step{4}{$x \neq z$}
-\begin{proof}
-	\pf\ By Proposition \ref{prop:lt_asym}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $<$ be a transitive relation on $X$ such that we never have $x < y$ and $y < x$. Define $\leq$ by: $x \leq y$ iff $x < y$ or $x = y$. Then $\leq$ is a partial order on $X$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\leq$ is reflexive.}
-\begin{proof}
-	\pf\ By definition.
-\end{proof}
-\step{2}{$\leq$ is asymmetric.}
-\begin{proof}
-	\pf\ If $x \leq y$ and $y \leq x$, we must have $x = y$, because otherwise we would have $x < y$ and $y < x$.
-\end{proof}
-\step{3}{$\leq$ is transitive.}
-\begin{proof}
-	\step{a}{\pflet{$x \leq y$ and $y \leq z$}}
-	\step{b}{\case{$x = y$}}
-	\begin{proof}
-		\pf\ We have $y \leq z$ so $x \leq z$.
-	\end{proof}
-	\step{c}{\case{$y = z$}}
-	\begin{proof}
-		\pf\ We have $x \leq y$ so $x \leq z$.
-	\end{proof}
-	\step{d}{\case{$x < y$ and $y < z$}}
-	\begin{proof}
-		\pf\ We have $x < z$ by transitivity, so $x \leq z$.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
 \begin{df}[(Strict) Initial Segment]
 Let $X$ be a poset and $a \in X$. The \emph{(strict) initial segment} determined by $a$ is
 \[ s(a) := \{ x \in X : x < a \} \enspace . \]
