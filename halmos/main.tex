@@ -4371,6 +4371,7 @@ For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
 \end{proof}
 
 \begin{thm}
+\label{thm:multiply_by_zero}
 \[ \forall x \in \mathbb{R}. 0x = 0 \]
 \end{thm}
 
@@ -4410,6 +4411,19 @@ For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real nu
 
 \begin{proof}
 \pf\ Since $-x + x = 0$. \qed
+\end{proof}
+
+\begin{thm}
+\[ \forall x,y \in \mathbb{R}. x(-y) = -(xy) \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+x(-y) + xy & = x((-y)+y) & (\text{Distributive Law}) \\
+& = x0 & (\text{Definition of } -y) \\
+& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}}) \qed
+\end{align*}
 \end{proof}
 
 \begin{df}[Subtraction]
