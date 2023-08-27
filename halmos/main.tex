@@ -178,6 +178,7 @@ If $S(a,b)$ is a sentence such that for each $a$ in $A$ the set $\{ b : S(a,b) \
 \section{The Subset Relation}
 
 \begin{thm}
+\label{thm:subset_ref}
 For any set $A$, we have $A \subseteq A$.
 \end{thm}
 
@@ -186,6 +187,7 @@ For any set $A$, we have $A \subseteq A$.
 \end{proof}
 
 \begin{thm}
+\label{thm:subset_trans}
 For any sets $A$, $B$ and $C$, if $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
 \end{thm}
 
@@ -194,6 +196,7 @@ For any sets $A$, $B$ and $C$, if $A \subseteq B$ and $B \subseteq C$ then $A \s
 \end{proof}
 
 \begin{thm}
+\label{thm:subset_antisym}
 For any sets $A$ and $B$, if $A \subseteq B$ and $B \subseteq A$ then $A = B$.
 \end{thm}
 
@@ -1781,7 +1784,7 @@ For any set $X$, the relation $\subseteq$ is a partial order on $\mathcal{P} X$.
 \end{prop}
 
 \begin{proof}
-\pf\ Easy. \qed
+\pf\ From Theorems \ref{thm:subset_ref}, \ref{thm:subset_trans} and \ref{thm:subset_antisym}. \qed
 \end{proof}
 
 \begin{prop}
