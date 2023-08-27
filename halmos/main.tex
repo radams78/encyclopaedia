@@ -2372,6 +2372,59 @@ The \emph{lexicographical} order on $A \times B$ is the relation $\leq$ defined 
 A linearly ordered set $A$ has the \emph{least upper bound property} iff every nonempty subset of $A$ bounded above has a least upper bound.
 \end{df}
 
+\begin{prop}
+Let $A$ be a linearly ordered set. Then $A$ has the least upper bound property if and only if every nonempty subset of $A$ bounded below has a greatest lower bound.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any linearly ordered set $A$, if $A$ has the least upper bound property then every nonempty subset of $A$ bounded below has a greatest lower bound.}
+\begin{proof}
+	\step{a}{\pflet{$A$ be a linearly ordered set.}}
+	\step{b}{\assume{$A$ has the least upper bound property.}}
+	\step{c}{\pflet{$S$ be a nonempty subset of $A$ bounded below.}}
+	\step{d}{\pflet{$S \downarrow$ be the set of all lower bounds for $S$.}}
+	\step{e}{$S \downarrow \neq \emptyset$}
+	\begin{proof}
+		\pf\ Since $S$ is bounded below by \stepref{c}.
+	\end{proof}
+	\step{f}{$S \downarrow$ is bounded above.}
+	\begin{proof}
+		\step{i}{\pick\ $s \in S$}
+		\begin{proof}
+			\pf\ $S$ is nonempty by \stepref{c}.
+		\end{proof}
+		\step{ii}{$s$ is an upper bound for $S \downarrow$.}
+	\end{proof}
+	\step{g}{\pflet{$l$ be the supremum of $S \downarrow$.}}
+	\begin{proof}
+		\pf\ \stepref{b}, \stepref{e}, \stepref{f}
+	\end{proof}
+	\step{h}{$l$ is a lower bound for $S$.}
+	\begin{proof}
+		\step{i}{\pflet{$s \in S$}}
+		\step{ii}{$s$ is an upper bound for $S \downarrow$}
+		\step{iii}{$l \leq s$}
+		\begin{proof}
+			\pf\ \stepref{g}, \stepref{ii}
+		\end{proof}
+	\end{proof}
+	\step{i}{For any lower bound $l'$ for $S$ we have $l' \leq l$.}
+	\begin{proof}
+		\pf\ Since $l$ is an upper bound for $S \downarrow$ by \stepref{g}.
+	\end{proof}
+\end{proof}
+\step{2}{For any linearly ordered set $A$, if every nonempty subset of $A$ bounded below has a greatest lower bound then $A$ has the least upper bound property.}
+\begin{proof}
+	\step{a}{\pflet{$(A, \leq)$ be a linearly ordered set.}}
+	\step{b}{\assume{Every nonempty subset of $A$ bounded below has a greatest lower bound.}}
+	\step{c}{$(A, \geq)$ has the least upper bound property.}
+	\step{d}{Every nonempty subset of $A$ bounded below with respect to $\geq$ has a greatest lower bound with respect to $\geq$.}
+	\step{e}{Every nonempty subset of $A$ bounded above with respect to $\leq$ has a least upper bound with respect to $\leq$.}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Well Orderings}
 
 \begin{df}[Well Ordered Set]
