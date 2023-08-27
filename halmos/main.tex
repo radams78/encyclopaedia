@@ -2369,6 +2369,11 @@ Let $X$ be a linearly ordered set. Let $a,b \in X$ with $a < b$. The \emph{open 
 \[ (a,b) := \{ x \in X : a < x < b \} \enspace . \]
 \end{df}
 
+\begin{df}[Lexicographical Order]
+Let $A$ and $B$ be linearly ordered sets.
+The \emph{lexicographical} order on $A \times B$ is the relation $\leq$ defined by $(a,b) \leq (x,y)$ iff $a < x$ or ($a = x$ and $b \leq y$).
+\end{df}
+
 \section{Well Orderings}
 
 \begin{df}[Well Ordered Set]
@@ -3341,10 +3346,6 @@ For every natural number $n$, we have $n$ is not equivalent to a proper subset o
 \begin{cor}
 Equivalent natural numbers are equal.
 \end{cor}
-
-\begin{df}[Lexicographical Order]
-The \emph{lexicographical} order on $\omega \times \omega$ is the relation $S$ defined by $(a,b) S (x,y)$ iff $a < x$ or ($a = x$ and $b < y$).
-\end{df}
 
 \begin{prop}
 The lexicographical order is a well ordering on $\omega \times \omega$.
