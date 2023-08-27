@@ -4696,6 +4696,7 @@ For any real numbers $x$ and $y$, we have $x > y$ iff $-x < -y$.
 \end{proof}
 
 \begin{thm}
+\label{thm:multiplication_antitone}
 For any real numbers $x$, $y$ and $z$, if $x > y$ and $z < 0$ then $xz < yz$.
 \end{thm}
 
@@ -4719,6 +4720,23 @@ For any real numbers $x$, $y$ and $z$, if $x > y$ and $z < 0$ then $xz < yz$.
 \step{7}{$xz < yz$}
 \begin{proof}
 	\pf\ Theorem \ref{thm:negation_positive}, \stepref{6}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real number $x$, if $x \neq 0$ then $xx > 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $x > 0$ then $xx > 0$}
+\begin{proof}
+	\pf\ By Monotonicity of Multiplication.
+\end{proof}
+\step{2}{If $x < 0$ then $xx > 0$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:multiplication_antitone}.
 \end{proof}
 \qed
 \end{proof}
