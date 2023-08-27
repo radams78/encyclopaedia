@@ -4661,6 +4661,7 @@ For any real numbers $x$ and $y$, if $x > 0$ and $y > 0$ then $xy > 0$.
 \end{proof}
 
 \begin{thm}
+\label{thm:negation_positive}
 For any real number $x$, we have $x > 0$ iff $-x < 0$.
 \end{thm}
 
@@ -4690,6 +4691,34 @@ For any real numbers $x$ and $y$, we have $x > y$ iff $-x < -y$.
 \step{2}{If $-x < -y$ then $y < x$.}
 \begin{proof}
 	\pf\ By Monotonicity of Addition adding $x + y$ to both sides.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$, $y$ and $z$, if $x > y$ and $z < 0$ then $xz < yz$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$, $y$ and $z$ be real numbers.}}
+\step{2}{\assume{$x > y$}}
+\step{3}{\assume{$z < 0$}}
+\step{4}{$-z > 0$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:negation_positive}, \stepref{3}.
+\end{proof}
+\step{5}{$x(-z) > y(-z)$}
+\begin{proof}
+	\pf\ \stepref{2}, \stepref{4}, Monotonicity of Multiplication.
+\end{proof}
+\step{6}{$-(xz) > -(yz)$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:multiply_by_negative}, \stepref{5}.
+\end{proof}
+\step{7}{$xz < yz$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:negation_positive}, \stepref{6}.
 \end{proof}
 \qed
 \end{proof}
