@@ -4414,6 +4414,7 @@ For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real nu
 \end{proof}
 
 \begin{thm}
+\label{thm:multiply_by_negative}
 \[ \forall x,y \in \mathbb{R}. x(-y) = -(xy) \]
 \end{thm}
 
@@ -4422,13 +4423,39 @@ For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real nu
 \begin{align*}
 x(-y) + xy & = x((-y)+y) & (\text{Distributive Law}) \\
 & = x0 & (\text{Definition of } -y) \\
-& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}}) \qed
+& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\[ \forall x \in \mathbb{R}. (-1)x = -x \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+	(-1)x & = -(1\cdot x) & (\text{Theorem \ref{thm:multiply_by_negative}}) \\
+	& = -x & (\text{Definition of } 1) \enspace \qed
 \end{align*}
 \end{proof}
 
 \begin{df}[Subtraction]
 Define \emph{subtraction} $- : \mathbb{R}^2 \rightarrow \mathbb{R}$ by $x - y = x + (-y)$.
 \end{df}
+
+\begin{thm}
+\[ \forall x,y,z \in \mathbb{R}. x(y-z) = xy-xz \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+x (y-z) & = x(y + (-z)) & (\text{Definition of subtraction}) \\
+& = xy + x(-z) & (\text{Distributive Law}) \\
+& = xy + (-(xz)) & (\text{Theorem \ref{thm:multiply_by_negative}}) \\
+& = xy - xz & (\text{Definition of subtraction}) \enspace \qed
+\end{align*}
+\end{proof}
 
 \begin{df}[Reciprocal]
 Given $x \in \mathbb{R}$ with $x \neq 0$, the \emph{reciprocal} of $x$, $1/x$, is the unique real number such that $x \cdot 1/x = 1$.
