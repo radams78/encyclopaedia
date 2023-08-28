@@ -1,5 +1,5 @@
 \documentclass{report}
-\title{Summary of Halmos' Naive Set Theory}
+\title{Mathematics}
 \author{Robin Adams}
 
 \usepackage{amsmath}
@@ -4872,6 +4872,14 @@ If $A$ is an inductive set of positive integers then $A = \mathbb{Z}_+$.
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\begin{thm}[Well-Ordering Property]
+$\mathbb{Z}_+$ is well ordered.
+\end{thm}
+
+\begin{proof}
+\pf\ Construct the obvious order isomorphism $\omega \cong \mathbb{Z}_+$. \qed
+\end{proof}
+
 \begin{df}[Integer]
 The set $\mathbb{Z}$ of \emph{integers} is
 \[ \mathbb{Z} = \mathbb{Z}_+ \cup \{ 0 \} \cup \{ -x : x \in \mathbb{Z}_+\} \enspace . \]
@@ -4888,6 +4896,46 @@ The sum, difference and product of two integers is an integer.
 \begin{ex}
 $1/2$ is not an integer.
 \end{ex}
+
+\begin{prop}
+For any integer $n$, there is no integer $a$ such that $n < a < n+1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any positive integer $n$, there is no integer $a$ such that $n < a < n+1$.}
+\begin{proof}
+	\step{a}{There is no integer $a$ such that $1 < a < 2$.}
+	\begin{proof}
+		\step{i}{There is no positive integer $a$ such that $1 < a < 2$.}
+		\begin{proof}
+			\step{one}{We do not have $1 < 1 < 2$.}
+			\step{two}{For any positive integer $n$, we do not have $1 < n +1 < 2$.}
+			\begin{proof}
+				\pf\ Since $n \geq 1$ so $n+1 \geq 2$.
+			\end{proof}
+		\end{proof}
+		\step{ii}{We do not have $1 < 0 < 2$.}
+		\step{iii}{For any positive integer $a$, we do not have $1 < -a < 2$.}
+		\begin{proof}
+			\pf\ Since $-a < 0 < 1$.
+		\end{proof}
+	\end{proof}
+	\step{b}{For any positive integer $n$, if there is no integer $a$ such that $n < a < n+1$, then there is no integer $a$ such that $n+1 < a < n+2$.}
+	\begin{proof}
+		\pf\ If $n+1 < a < n+2$ then $n < a-1 < n+1$.
+	\end{proof}
+\end{proof}
+\step{2}{There is no integer $a$ such that $0 < a < 1$.}
+\begin{proof}
+	\pf\ If $0 < a < 1$ then $1 < a+1 < 2$.
+\end{proof}
+\step{3}{For any positive integer $n$, there is no integer $a$ such that $-n < a < -n+1$.}
+\begin{proof}
+	\pf\ If $-n < a < -n+1$ then $n-1 < -a < n$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Rational Number]
 The set $\mathbb{Q}$ of \emph{rational numbers} is the set of all real numbers that are the quotient of two integers.
