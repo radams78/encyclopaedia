@@ -17,6 +17,7 @@
 \newtheorem{prop}[ax]{Proposition}
 \newtheorem{cor}{Corollary}[ax]
 \newtheorem{thm}[ax]{Theorem}
+\newtheorem{thms}[ax]{Theorem Schema}
 \newtheorem{lm}[ax]{Lemma}
 \theoremstyle{definition}
 \newtheorem{df}[ax]{Definition}
@@ -88,42 +89,55 @@ Let $A$ be a set of nonempty, pairwise disjoint sets. Then there exists a set $C
 
 \chapter{Basic Properties and Operations on Sets}
 
-\begin{ax}[Axiom of Comprehension, Aussonderungsaxiom]
-To every set $A$ and to every condition $S(x)$ there corresponds a set $B$ whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
-\end{ax}
-
-\begin{df}
-Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : S(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $S(x)$ holds.
-\end{df}
+\begin{thm}
+There exists a unique empty set.
+\end{thm}
 
 \begin{proof}
-\pf\ This exists by the Axiom of Comprehension and is unique by the Axiom of Extensionality. \qed
+\pf\ Existence follows from the Axiom of Infinity. Uniqueness follows from the Axiom of Extensionality. \qed
 \end{proof}
 
+\begin{df}[Empty Set]
+Let $\emptyset$ be the unique empty set.
+\end{df}
+
+\begin{thms}[Comprehension, Aussonderungsaxiom]
+For any property $P(x)$, the following is a theorem:
+
+For any set $A$, there exists a set $B$ whose elements are exactly those $x \in A$ such that $P(x)$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{For all $x \in A$, there exists at most one $y$ such that $P(x)$ and $x = y$.}
+\step{3}{\pick\ a set $B$ whose elements are exactly those sets $y$ such that $\exists x \in A (P(x) \wedge x = y)$.}
+\begin{proof}
+	\pf\ Axiom Schema of Replacement.
+\end{proof}
+\step{4}{$\forall x (x \in B \Leftrightarrow x \in A \wedge P(x))$}
+\qed
+\end{proof}
+
+\begin{df}
+Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : P(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $P(x)$ holds.
+\end{df}
+
+\begin{thm}
+For any sets $a$ and $b$, there exists a set whose elements are just $a$ and $b$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For all $x \in \mathcal{P} \mathcal{P} \emptyset$, there exists at most one $y$ such that $(x = \emptyset \wedge y = a) \vee (x = \mathcal{P} \emptyset \wedge y = b)$}
+\step{2}{\pick\ a set $B$ whose elements are the sets $y$ such that $\exists x \in \mathcal{P} \mathcal{P} \emptyset ((x = \emptyset \wedge y = a) \vee (x = \mathcal{P} \emptyset \wedge y = b))$}
+\step{3}{The elements of $B$ are exactly $a$ and $b$.}
+\qed
+\end{proof}
 
 \begin{df}[(Unordered) Pair]
 For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
 \end{df}
-
-\begin{proof}
-\pf\ This exists by the Axioms of Pairing and Comprehension, and is unique by the Axiom of Extensionality. \qed
-\end{proof}
-
-\begin{ax}[Power Set Axiom]
-For any set $A$, there exists a set that contains all the subsets of $A$.
-\end{ax}
-
-\begin{df}[Empty]
-A set is \emph{empty} iff it has no elements; otherwise it is \emph{non-empty}.
-\end{df}
-
-\begin{ax}[Axiom of Infinity]
-There exists a set $I$ such that:
-\begin{itemize}
-\item $I$ has an element that is empty
-\item for all $x \in I$, there exists $y \in I$ such that the elements of $y$ are exactly $x$ and the elements of $x$.
-\end{itemize}
-\end{ax}
 
 \begin{df}[Ordered Pair]
 For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
