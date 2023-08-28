@@ -4295,6 +4295,8 @@ A \emph{field} is a triple $(K, +, \cdot)$ such that $K$ is a set, $+$ and $\cdo
 \item For all $x \in K$, if $x \neq 0$ then $\exists ! (1/x) \in K. x\cdot 1/x = 1$
 \item $\forall x,y,z \in K. x(y+z) = xy + xz$
 \end{enumerate}
+
+We call $-x$ the \emph{negation} of $x$.
 \end{df}
 
 \begin{df}[Subtraction]
@@ -4379,10 +4381,6 @@ The relation $<$ is a strict linear order on $\mathbb{R}$ with the least upper b
 \section{Consequences of the Axioms}
 
 \subsection{Negation}
-
-\begin{df}[Negation]
-For any real number $x$, the \emph{negation} of $x$, $-x$, is the unique real number such that $x + (-x) = 0$.
-\end{df}
 
 \begin{thm}
 \label{thm:y_equals_zero}
@@ -4830,6 +4828,132 @@ A real number $x$ is \emph{negative} iff $x < 0$.
 We write $\overline{\mathbb{R}_+}$ for the set of nonnegative reals.
 \end{df}
 
+\begin{thm}
+For every positive real number $a$, there exists a unique positive real $\sqrt{a}$ such that $\sqrt{a}^2 = a$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$a$ be a positive real.}}
+\step{1}{For any real numbers $x$ and $h$, if $0 \leq h < 1$, then
+\[ (x + h)^2 < x^2 + h(2x+1) \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$x$ and $h$ be real numbers.}}
+	\step{c}{\assume{$0 \leq h < 1$}}
+	\step{d}{$(x+h)^2 < x^2 + h(2x+1)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x+h)^2 & = x^2 + 2hx + h^2 \\
+			& < x^2 + 2hx + h & (\text{\stepref{c}}) \\
+			& = x^2 + h(2x+1) 
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For any real numbers $x$ and $h$, if $h > 0$ then
+\[ (x-h)^2 > x^2 - 2hx \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$x$ and $h$ be real numbers.}}
+	\step{c}{\assume{$h > 0$}}
+	\step{d}{$(x-h)^2 > x^2 - 2hx$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x-h)^2 & = x^2 - 2hx + h^2 \\
+			& > x^2 - 2hx & (\text{\stepref{c}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{For any positive real $x$, if $x^2 < a$ then there exists $h > 0$ such that $(x+h)^2 < a$.}
+\begin{proof}
+	\step{a}{\pflet{$x$ be a positive real.}}
+	\step{b}{\assume{$x^2 < a$}}
+	\step{c}{\pflet{$h = \min((a-x^2)/(2x+1),1/2)$}}
+	\step{d}{$0 < h < 1$}
+	\step{e}{$(x+h)^2 < a$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x+h)^2 & < x^2 + h(2x+1) & (\text{\stepref{1}}) \\
+			& \leq a
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{For any positive real $x$, if $x^2 > a$ then there exists $h > 0$ such that $(x-h)^2 > a$.}
+\begin{proof}
+	\step{a}{\pflet{$x$ be a positive real.}}
+	\step{b}{\assume{$x^2 > a$}}
+	\step{c}{\pflet{$h = (x^2 - a)/2x$}}
+	\step{d}{$h > 0$}
+	\step{e}{$(x-h)^2 > a$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x-h)^2 & > x^2 - 2hx \\
+			& = a & (\text{\stepref{c}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{5}{\pflet{$B = \{ x \in \mathbb{R} : x^2 < a \}$}}
+\step{6}{$B$ is bounded above.}
+\begin{proof}
+	\pf\ If $a \geq 1$ then $a$ is an upper bound. If $a < 1$ then 1 is an upper bound.
+\end{proof}
+\step{7}{$B$ contains at least one positive real.}
+\begin{proof}
+	\pf\ If $a \geq 1$ then $1 \in B$. If $a < 1$ then $a \in B$.
+\end{proof}
+\step{8}{\pflet{$b = \sup B$}}
+\step{9}{$b^2 = a$}
+\begin{proof}
+	\step{a}{$b^2 \geq a$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $b^2 < a$}}
+		\step{ii}{\pick\ $h > 0$ such that $(b+h)^2 < a$}
+		\begin{proof}
+			\pf\ \stepref{3}
+		\end{proof}
+		\step{iii}{$b + h \in B$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{8}.
+		\end{proof}
+	\end{proof}
+	\step{b}{$b^2 \leq a$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $b^2 > a$}}
+		\step{ii}{\pick\ $h > 0$ such that $(b-h)^2 > a$}
+		\begin{proof}
+			\pf\ \stepref{4}
+		\end{proof}
+		\step{iii}{\pick\ $x \in B$ such that $b - h < x$}
+		\begin{proof}
+			\pf\ \stepref{8}
+		\end{proof}
+		\step{iv}{$(b-h)^2 < x^2 < a$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{ii}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{10}{For any positive reals $b$ and $c$, if $b^2 = c^2$ then $b = c$.}
+\begin{proof}
+	\step{a}{\pflet{$b$ and $c$ be positive reals.}}
+	\step{b}{\assume{$b^2 = c^2$}}
+	\step{c}{$b^2 - c^2 = 0$}
+	\step{d}{$(b-c)(b+c) = 0$}
+	\step{e}{$b - c = 0$ or $b+c = 0$}
+	\step{f}{$b+c \neq 0$}
+	\begin{proof}
+		\pf\ Since $b + c > 0$
+	\end{proof}
+	\step{g}{$b - c = 0$}
+	\step{h}{$b = c$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Integers and Rationals}
 
 \section{Positive Integers}
@@ -4880,6 +5004,23 @@ $\mathbb{Z}_+$ is well ordered.
 
 \begin{proof}
 \pf\ Construct the obvious order isomorphism $\omega \cong \mathbb{Z}_+$. \qed
+\end{proof}
+
+\begin{thm}[Archimedean Ordering Property]
+The set $\mathbb{Z}_+$ is unbounded above.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\mathbb{Z}_+$ is bounded above.}}
+\step{2}{\pflet\ $s = \sup \mathbb{Z}_+$}
+\step{3}{\pick\ $n \in \mathbb{Z}_+$ such that $s-1 < n$}
+\step{4}{$s < n+1$}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{2} and \stepref{4} form a contradiction.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{df}[Integer]
