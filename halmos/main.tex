@@ -4273,6 +4273,32 @@ The \emph{continuum hypothesis} is the statement $\aleph_1 = 2^{\aleph_0}$.
 The \emph{generalized continuum hypothesis} is the statement: for every ordinal $\alpha$ we have $\aleph_{\alpha + 1} = 2^{\aleph_\alpha}$.
 \end{df}
 
+\chapter{Field Theory}
+
+\begin{df}[Field]
+A \emph{field} is a triple $(K, +, \cdot)$ such that $K$ is a set, $+$ and $\cdot$ are functions $K^2 \rightarrow K$, and:
+\begin{enumerate}
+\item $\forall x,y,z \in K. x + (y + z) = (x + y) + z$
+\item $\forall x,y,z \in K. x(yz) = (xy)z$
+\item $\forall x,y \in K. x+y = y+x$
+\item $\forall x,y \in K. xy = yx$
+\item There exists a unique $0 \in K$ such that $\forall x \in K. x + 0 = x$
+\item There exists a unique $1 \in K$ such that $\forall x \in K. x1= x$
+\item $0 \neq 1$
+\item $\forall x \in K. \exists ! (-x) \in K. x + (-x) = 0$
+\item For all $x \in K$, if $x \neq 0$ then $\exists ! (1/x) \in K. x\cdot 1/x = 1$
+\item $\forall x,y,z \in K. x(y+z) = xy + xz$
+\end{enumerate}
+\end{df}
+
+\begin{df}[Ordered Field]
+An \emph{ordered field} is a quadruple $(K, +, \cdot, \leq)$ such that $(K, +, \cdot)$ is a field and $\leq$ is a linear order on $K$, and:
+\begin{enumerate}
+\item For all $x,y,z \in K$, if $x < y$ then $x + z < y + z$
+\item For all $x,y,z \in K$, if $x < y$ and $0 < z$ then $xz < yz$
+\end{enumerate}
+\end{df}
+
 \chapter{Real Numbers}
 
 \section{Axioms for Real Numbers}
