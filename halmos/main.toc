@@ -42,3 +42,4 @@
 \contentsline {section}{\numberline {10.1}Axioms for Real Numbers}{69}{section.10.1}%
 \contentsline {section}{\numberline {10.2}Consequences of the Axioms}{70}{section.10.2}%
 \contentsline {subsection}{\numberline {10.2.1}Negation}{70}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Subtraction}{71}{subsection.10.2.2}%
