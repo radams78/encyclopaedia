@@ -5108,6 +5108,7 @@ Every nonempty subset of $\mathbb{Z}$ bounded above has a largest element.
 \end{proof}
 
 \begin{thm}
+\label{thm:sandwich}
 For any real number $x$, if $x$ is not an integer then there exists a unique integer $n$ such that $n < x < n + 1$.
 \end{thm}
 
@@ -5139,9 +5140,73 @@ An integer $n$ is \emph{even} iff $n/2$ is an integer; otherwise, $n$ is \emph{o
 If the integer $m$ is odd then there exists an integer $n$ such that $m = 2n+1$.
 \end{thm}
 
+\begin{proof}
+\pf
+\step{1}{\pflet{$n$ be the integer such that $n < m/2 < n+1$}}
+\begin{proof}
+	\pf\ Theorem \ref{thm:sandwich}.
+\end{proof}
+\step{2}{$2n < m < 2n+2$}
+\step{3}{$m = 2n+1$}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:product_odd}
+The product of two odd integers is odd.
+\end{thm}
+
+\begin{proof}
+\pf\ $(2m+1)(2n+1) = 2(2mn + m + n) + 1$. \qed
+\end{proof}
+
+\begin{cor}
+If $p$ is an odd integer and $n$ is a positive integer then $p^n$ is an odd integer.
+\end{cor}
 
 \begin{df}[Rational Number]
-The set $\mathbb{Q}$ of \emph{rational numbers} is the set of all real numbers that are the quotient of two integers.
+The set $\mathbb{Q}$ of \emph{rational numbers} is the set of all real numbers that are the quotient of two integers. A real that is not rational is \emph{irrational}.
 \end{df}
+
+\begin{thm}
+$\sqrt{2}$ is irrational.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any positive rational $a$, there exist positive integers $m$ and $n$ not both even such that $a = m / n$.}
+\begin{proof}
+	\step{a}{\pflet{$a$ be a positive rational.}}
+	\step{b}{\pflet{$n$ be the least positive integer such that $na$ is a positive integer.}}
+	\step{c}{\pflet{$m = na$}}
+	\step{d}{\assume{for a contradiction $m$ and $n$ are both even.}}
+	\step{e}{$m/2 = (n/2)a$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the leastness of $n$ (\stepref{b}).
+	\end{proof}
+\end{proof}
+\step{2}{\assume{for a contradiction $\sqrt{2}$ is rational.}}
+\step{3}{\pick\ positive integers $m$ and $n$ not both even such that $\sqrt{2} = m / n$.}
+\step{4}{$m^2 = 2n^2$}
+\step{5}{$m^2$ is even.}
+\step{6}{$m$ is even.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:product_odd}.
+\end{proof}
+\step{7}{\pflet{$k = m/2$}}
+\step{8}{$4k^2 = 2n^2$}
+\step{9}{$n^2 = 2k^2$}
+\step{10}{$n^2$ is even.}
+\step{11}{$n$ is even.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:product_odd}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{3}, \stepref{6} and \stepref{11} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
 
 \end{document}
