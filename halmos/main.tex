@@ -5107,6 +5107,30 @@ Every nonempty subset of $\mathbb{Z}$ bounded above has a largest element.
 \qed
 \end{proof}
 
+\begin{thm}
+For any real number $x$, if $x$ is not an integer then there exists a unique integer $n$ such that $n < x < n + 1$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\{ n \in \mathbb{Z} : n < x \}$ is a nonempty set of integers bounded above.}
+\begin{proof}
+	\step{a}{\pick\ $m > -x$}
+	\begin{proof}
+		\pf\ Archimedean property.
+	\end{proof}
+	\step{b}{$-m < x$}
+	\step{c}{$\{ n \in \mathbb{Z} : n < x \}$ is nonempty.}
+\end{proof}
+\step{2}{\pflet{$n$ be the greatest integer such that $n < x$}}
+\step{3}{$x < n + 1$}
+\step{4}{If $n'$ is an integer with $n' < x < n' + 1$ then $n' = n$.}
+\begin{proof}
+	\pf\ We have $n' < n+1$ so $n' \leq n$, and $n < n' + 1$ so $n \leq n'$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Even]
 An integer $n$ is \emph{even} iff $n/2$ is an integer; otherwise, $n$ is \emph{odd}.
 \end{df}
