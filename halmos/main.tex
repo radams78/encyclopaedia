@@ -5080,6 +5080,42 @@ For any integer $n$, there is no integer $a$ such that $n < a < n+1$.
 \qed
 \end{proof}
 
+\begin{thm}
+Every nonempty subset of $\mathbb{Z}$ bounded above has a largest element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S$ be a nonempty subset of $\mathbb{Z}$ bounded above.}}
+\step{2}{\pflet{$u$ be an upper bound for $S$.}}
+\step{3}{\pick\ an integer $n > u$}
+\begin{proof}
+	\pf\ Archimedean property.
+\end{proof}
+\step{4}{\pflet{$k$ be the least positive integer such that $n - k \in S$.}}
+\begin{proof}
+	\step{a}{\pick\ $m \in S$}
+	\step{b}{$n - m$ is a positive integer.}
+	\step{c}{There exists a positive integer $k$ such that $n - k \in S$.}
+\end{proof}
+\step{5}{$n - k$ is the greatest element in $S$.}
+\begin{proof}
+	\step{a}{\pflet{$m \in S$}}
+	\step{b}{$n - m \geq k$}
+	\step{c}{$m \leq n - k$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Even]
+An integer $n$ is \emph{even} iff $n/2$ is an integer; otherwise, $n$ is \emph{odd}.
+\end{df}
+
+\begin{thm}
+If the integer $m$ is odd then there exists an integer $n$ such that $m = 2n+1$.
+\end{thm}
+
+
 \begin{df}[Rational Number]
 The set $\mathbb{Q}$ of \emph{rational numbers} is the set of all real numbers that are the quotient of two integers.
 \end{df}
