@@ -45,4 +45,5 @@
 \contentsline {section}{\numberline {11.2}Consequences of the Axioms}{72}{section.11.2}%
 \contentsline {subsection}{\numberline {11.2.1}Negation}{72}{subsection.11.2.1}%
 \contentsline {subsection}{\numberline {11.2.2}Subtraction}{73}{subsection.11.2.2}%
-\contentsline {chapter}{\numberline {12}Integers}{78}{chapter.12}%
+\contentsline {chapter}{\numberline {12}Integers and Rationals}{78}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Positive Integers}{78}{section.12.1}%
