@@ -5023,6 +5023,86 @@ The set $\mathbb{Z}_+$ is unbounded above.
 \qed
 \end{proof}
 
+\subsection{Exponentiation}
+
+\begin{df}
+For $a$ a real number and $n$ a positive integer, define the real number $a^n$ recursively as follows:
+\begin{align*}
+a^1 & = a \\
+a^{n+1} & = a^n a
+\end{align*}
+\end{df}
+
+\begin{thm}
+\label{thm:law_of_exponents_1}
+For all $a \in \mathbb{R}$ and $m,n \in mathbb{Z}_+$, we have
+\[ a^n a^m = a^{n+m} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(m)$ be the property $\forall a \in \mathbb{R}. \forall n \in \mathbb{Z}_+. a^n a^m = a^{n+m}$}}
+\step{2}{$P(1)$}
+\begin{proof}
+	\pf\ $a^n a^1 = a^n a = a^{n+1}$.
+\end{proof}
+\step{3}{$\forall m \in \mathbb{Z}_+. P(m) \Rightarrow P(m+1)$}
+\begin{proof}
+	\step{a}{\pflet{$m$ be a positive integer.}}
+	\step{b}{\assume{$P(m)$}}
+	\step{c}{\pflet{$a \in \mathbb{R}$}}
+	\step{d}{\pflet{$n \in \mathbb{Z}_+$}}
+	\step{e}{$a^n a^{m+1} = a^{n+m+1}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			a^n a^{m+1} & = a^n a^m a \\
+			& = a^{n+m} a & (\text{\stepref{b}}) \\
+			& = a^{n+m+1}
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ By induction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For all $a \in \mathbb{R}$ and $m,n \in \mathbb{Z}_+$,
+\[ (a^n)^m = a^{nm} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(m)$ be the property $\forall a \in \mathbb{R}. \forall n \in \mathbb{Z}_+. (a^n)^m = a^{nm}$.}}
+\step{2}{$P(1)$}
+\begin{proof}
+	\pf\ $(a^n)^1 = a^n = a^{n \cdot 1}$
+\end{proof}
+\step{3}{$\forall m \in \mathbb{Z}_+. P(m) \Rightarrow P(m+1)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(a^n)^{m+1} & = (a^n)^m a^n \\
+		& = a^{nm} a^n \\
+		& = a^{nm+n} & (\text{Theorem \ref{thm:law_of_exponents_1}}) \\
+		& = a^{n(m+1)}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $a$ and $b$ and positive integer $m$,
+\[ a^m b^m = (ab)^m \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ Induction on $m$. \qed
+\end{proof}
+
 \section{Integers}
 
 \begin{df}[Integer]
