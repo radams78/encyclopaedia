@@ -4372,10 +4372,6 @@ For all $x,y,z \in \mathbb{R}$, if $x < y$ and $0 < z$ then $xz < yz$.
 The relation $<$ is a strict linear order on $\mathbb{R}$ with the least upper bound property.
 \end{ax}
 
-\begin{ax}[Density]
-For all $x,y \in \mathbb{R}$, if $x < y$ then there exists $z \in \mathbb{R}$ such that $x < z < y$.
-\end{ax}
-
 \section{Consequences of the Axioms}
 
 \subsection{Negation}
@@ -4823,6 +4819,10 @@ For any real numbers $x$ and $y$, if $x < y$ then $x < (x+y)/2 < y$.
 \begin{proof}
 \pf\ We have $2x < x+y$ and $x + y < 2y$ by Monotonicity of Addition, hence $x < (x+y)/2 < y$ by Monotonicity of Multiplication since $1/2 > 0$. \qed
 \end{proof}
+
+\begin{cor}
+$\mathbb{R}$ is a linear continuum.
+\end{cor}
 
 \begin{df}[Negative]
 A real number $x$ is \emph{negative} iff $x < 0$.
