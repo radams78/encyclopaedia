@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  29 AUG 2023 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  29 AUG 2023 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...berline {6}Natural Numbers}{45}{chapter.6}
+l.31 ...berline {7}Ordinal Numbers}{50}{chapter.7}
                                                   % [1
 
 ])
@@ -733,53 +733,43 @@ Chapter 12.
 [80
 
 ] [81] [82] [83] [84] [85] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 61E8E075A84BCD36CF90CB02E24F0AE2;6989
-(rerunfilecheck)             After:  96734A06E148C5C73F325C30A95662CA;6863.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 96734A06E148C5C73F325C30A95662CA;6863.
  ) 
 Here is how much of TeX's memory you used:
- 10280 strings out of 476091
- 149581 string characters out of 5794081
+ 10279 strings out of 476091
+ 149565 string characters out of 5794081
  1872330 words of memory out of 5000000
- 29995 multiletter control sequences out of 15000+600000
+ 29994 multiletter control sequences out of 15000+600000
  528623 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,16n,76p,357b,762s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.2.9} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm10
-00.pfb>
-Output written on main.pdf (86 pages, 444398 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
+1000.pfb>
+Output written on main.pdf (86 pages, 444426 bytes).
 PDF statistics:
- 1446 PDF objects out of 1728 (max. 8388607)
- 1190 compressed objects within 12 object streams
+ 1442 PDF objects out of 1728 (max. 8388607)
+ 1186 compressed objects within 12 object streams
  557 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 
