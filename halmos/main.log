@@ -733,12 +733,18 @@ Chapter 12.
 [80
 
 ] [81] [82] [83] [84] [85] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 96734A06E148C5C73F325C30A95662CA;6863.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 96734A06E148C5C73F325C30A95662CA;6863
+(rerunfilecheck)             After:  E6DE25591C0C468AF941A4BFD9AF0717;6998.
  ) 
 Here is how much of TeX's memory you used:
- 10279 strings out of 476091
- 149565 string characters out of 5794081
+ 10280 strings out of 476091
+ 149577 string characters out of 5794081
  1872330 words of memory out of 5000000
  29994 multiletter control sequences out of 15000+600000
  528623 words of font info for 88 fonts, out of 8000000 for 9000
@@ -766,10 +772,10 @@ blic/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (86 pages, 444426 bytes).
+Output written on main.pdf (86 pages, 444503 bytes).
 PDF statistics:
- 1442 PDF objects out of 1728 (max. 8388607)
- 1186 compressed objects within 12 object streams
- 557 named destinations out of 1000 (max. 500000)
+ 1443 PDF objects out of 1728 (max. 8388607)
+ 1187 compressed objects within 12 object streams
+ 558 named destinations out of 1000 (max. 500000)
  401 words of extra memory for PDF output out of 10000 (max. 10000000)
 
