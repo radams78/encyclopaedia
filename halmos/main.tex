@@ -151,6 +151,40 @@ For any sets $a$ and $b$, there exists a set whose elements are just $a$ and $b$
 For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
 \end{df}
 
+\begin{df}[Singleton]
+For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
+\end{df}
+
+\begin{thm}
+\[ \forall x . x \notin x \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$ be a set.}}
+\step{2}{\pick\ $m \in \{x\}$ such that $m$ and $\{x\}$ are disjoint.}
+\begin{proof}
+	\pf\ Axiom of Regularity.
+\end{proof}
+\step{3}{$m = x$}
+\begin{proof}
+	\pf\ Since $m \in \{x\}$ (\stepref{2}).
+\end{proof}
+\step{4}{$x \notin m$}
+\begin{proof}
+	\pf\ Since $m$ and $\{x\}$ are disjoint (\stepref{2}).
+\end{proof}
+\step{5}{$x \notin x$}
+\begin{proof}
+	\pf\ \stepref{3}, \stepref{4}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+There is no set that contains every set.
+\end{cor}
+
 \section{The Subset Relation}
 
 \begin{thm}
@@ -183,21 +217,6 @@ For any sets $A$ and $B$, if $A \subseteq B$ and $B \subseteq A$ then $A = B$.
 \begin{df}[Proper Subset]
 Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, and write $A \subsetneq B$ or $B \supsetneq A$, iff $A \subseteq B$ and $A \neq B$.
 \end{df}
-
-\section{Comprehension Notation}
-
-\begin{thm}
-There is no set that contains every set.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A$ be a set.} \prove{There exists a set $B$ such that $B \notin A$.}}
-\step{2}{\pflet{$B = \{ x \in A : x \notin x \}$}}
-\step{3}{If $B \in A$ then we have $B \in B$ if and only if $B \notin B$.}
-\step{4}{$B \notin A$}
-\qed
-\end{proof}
 
 \section{The Empty Set}
 

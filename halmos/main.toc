@@ -1,15 +1,14 @@
 \contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Basic Properties and Operations on Sets}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The Subset Relation}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Comprehension Notation}{6}{section.2.2}%
-\contentsline {section}{\numberline {2.3}The Empty Set}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Unordered Pairs}{7}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Unions}{7}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Intersections}{8}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Unordered Triples}{8}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Relative Complements}{9}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Symmetric Difference}{11}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Power Sets}{12}{section.2.10}%
+\contentsline {section}{\numberline {2.2}The Empty Set}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Unordered Pairs}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unions}{7}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Intersections}{8}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Unordered Triples}{9}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Relative Complements}{9}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Symmetric Difference}{12}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Power Sets}{13}{section.2.9}%
 \contentsline {chapter}{\numberline {3}Relations and Functions}{14}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Ordered Pairs}{14}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Relations}{15}{section.3.2}%
