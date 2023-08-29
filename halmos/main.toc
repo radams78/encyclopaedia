@@ -1,13 +1,12 @@
 \contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Basic Properties and Operations on Sets}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}The Subset Relation}{6}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Unordered Pairs}{7}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Unions}{7}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Intersections}{8}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Unordered Triples}{9}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Relative Complements}{9}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Symmetric Difference}{12}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Power Sets}{12}{section.2.8}%
+\contentsline {section}{\numberline {2.2}Unions}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Intersections}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unordered Triples}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Relative Complements}{9}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Symmetric Difference}{11}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Power Sets}{12}{section.2.7}%
 \contentsline {chapter}{\numberline {3}Relations and Functions}{14}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Ordered Pairs}{14}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Relations}{15}{section.3.2}%
@@ -49,3 +48,4 @@
 \contentsline {section}{\numberline {12.2}Integers}{82}{section.12.2}%
 \contentsline {section}{\numberline {12.3}Rational Numbers}{84}{section.12.3}%
 \contentsline {section}{\numberline {12.4}Euclidean Space}{85}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Algebraic Numbers}{85}{section.12.5}%

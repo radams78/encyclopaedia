@@ -226,12 +226,6 @@ For any set $A$ we have $\emptyset \subset A$.
 \pf\ Vacuous. \qed
 \end{proof}
 
-\section{Unordered Pairs}
-
-\begin{df}[Singleton]
-For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
-\end{df}
-
 \section{Unions}
 
 \begin{df}[Union]
@@ -4971,6 +4965,11 @@ For every positive real number $a$, there exists a unique positive real $\sqrt{a
 \qed
 \end{proof}
 
+%TODO
+\begin{thm}
+The set of real numbers is uncountable.
+\end{thm}
+
 \chapter{Integers and Rationals}
 
 \section{Positive Integers}
@@ -5349,5 +5348,30 @@ $\mathbb{Q}$ is countable.
 \begin{df}[Euclidean $n$-space]
 For $n$ a natural number, \emph{Euclidean $n$-space} is the set $\mathbb{R}^n$.
 \end{df}
+
+\section{Algebraic Numbers}
+
+\begin{df}[Algebraic]
+Let $x$ be a real number. Then $x$ is \emph{algebraic} iff there exists a finite sequence of rational numbers $(a_0, a_1, \ldots, a_{n-1})$ such that
+\[ x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 = 0 \enspace . \]
+Otherwise it is \emph{transcendental}.
+\end{df}
+
+%TODO
+\begin{thm}
+Every real polynomial has finitely many roots.
+\end{thm}
+
+\begin{thm}
+The set of algebraic numbers is countable.
+\end{thm}
+
+\begin{proof}
+\pf\ It is a countable union of finite sets, namely $\bigcup_{p \in \mathbb{R}[x]} \{ x \in \mathbb{R} : p(x) = 0 \}$. \qed
+\end{proof}
+
+\begin{cor}
+The set of transcendental numbers is uncountable.
+\end{cor}
 
 \end{document}
