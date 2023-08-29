@@ -57,16 +57,12 @@ Let $A$ and $B$ be sets. We say that $A$ is a \emph{subset} of $B$, or $B$ \emph
 If two sets have the same elements then they are equal.
 \end{ax}
 
-\begin{ax}[Axiom of Regularity]
-For any nonempty set $A$, there exists $m \in A$ such that $m$ and $A$ are disjoint.
-\end{ax}
-
 \begin{ax}[Axiom of Union]
 For every set $A$, there exists a set that contains all the elements that belong to at least one element of $A$.
 \end{ax}
 
-\begin{ax}[Axiom of Pairing]
-For any two sets, there exists a set that they both belong to.
+\begin{ax}[Power Set Axiom]
+For any set $A$, there exists a set $B$ such that every subset of $A$ belongs to $B$.
 \end{ax}
 
 \begin{axs}[Axiom Schema of Replacement]
@@ -79,8 +75,8 @@ Let $A$ be a set such that, for all $x \in A$, there exists at most one $y$ such
 There exists a set $I$ that has an empty element and such that, for all $x \in I$, there exists $y \in I$ such that the elements of $y$ are exactly $x$ and the elements of $x$.
 \end{ax}
 
-\begin{ax}[Power Set Axiom]
-For any set $A$, there exists a set $B$ such that every subset of $A$ belongs to $B$.
+\begin{ax}[Axiom of Regularity]
+For any nonempty set $A$, there exists $m \in A$ such that $m$ and $A$ are disjoint.
 \end{ax}
 
 \begin{ax}[Axiom of Choice]
@@ -120,8 +116,24 @@ For any set $A$, there exists a set $B$ whose elements are exactly those $x \in 
 \end{proof}
 
 \begin{df}
-Given a set $A$ and a condition $S(x)$, we write $\{ x \in A : P(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $P(x)$ holds.
+Given a set $A$ and a predicate $P(x)$, we write $\{ x \in A : P(x) \}$ for the set whose elements are exactly those elements $x$ of $A$ for which $P(x)$ holds.
 \end{df}
+
+\begin{df}[Union]
+For any set $A$, the \emph{union} $\bigcup A$ is the set whose elements are exactly the elements of the elements of $A$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Axiom of Union, and is unique by the Axiom of Extensionality. \qed
+\end{proof}
+
+\begin{df}[Power Set]
+For any set $A$, the \emph{power set} $\mathcal{P} A$ is the set whose elements are exactly the subsets of $A$.
+\end{df}
+
+\begin{proof}
+\pf\ This exists by the Power Set Axiom, and is unique by the Axiom of Extensionality. \qed
+\end{proof}
 
 \begin{thm}
 For any sets $a$ and $b$, there exists a set whose elements are just $a$ and $b$.
@@ -138,56 +150,6 @@ For any sets $a$ and $b$, there exists a set whose elements are just $a$ and $b$
 \begin{df}[(Unordered) Pair]
 For any sets $a$ and $b$, the \emph{(unordered) pair} $\{a,b\}$ is the set whose elements are just $a$ and $b$.
 \end{df}
-
-\begin{df}[Ordered Pair]
-For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
-\[ (a,b) := \{ \{ a \}, \{ a, b \} \} \enspace . \]
-\end{df}
-
-\begin{df}[Power Set]
-For any set $A$, the \emph{power set} of $A$, $\mathcal{P} A$, is the set whose elements are exactly the subsets of $A$.
-\end{df}
-
-\begin{proof}
-\pf\ This exists by the Power Set Axiom and Axiom of Comprehension, and is unique by the Axiom of Extensionality. \qed
-\end{proof}
-
-\begin{df}[Cartesian Product]
-For any sets $A$ and $B$, the \emph{Cartesian product} $A \times B$ is
-\[ A \times B := \{ p \in \mathcal{P} \mathcal{P} (A \cup B) : \exists a \in A. \exists b \in B. p = (a,b) \} \enspace . \]
-\end{df}
-
-\begin{df}[Relation]
-A \emph{relation} is a set of ordered pairs.
-
-If $R$ is a relation, we write $xRy$ for $(x,y) \in R$.
-
-Given sets $X$ and $Y$, a relation \emph{between $X$ and $Y$} is a subset of $X \times Y$.
-
-Given a set $X$, a relation \emph{on $X$} is a relation between $X$ and $X$.
-\end{df}
-
-\begin{df}[Function]
-Let $X$ and $Y$ be sets. A \emph{function, map, mapping, transformation} or \emph{operator $f$ from $X$ to $Y$}, $f : X \rightarrow Y$, is a relation $f$ between $X$ and $Y$ such that, for all $x \in X$, there exists a unique $f(x) \in Y$, called the \emph{value} of $f$ at the \emph{argument} $x$, such that $(x,f(x)) \in f$.
-\end{df}
-
-\begin{df}[Family]
-Let $I$ and $X$ be sets. A \emph{family} of elements of $X$ \emph{indexed} by $I$ is a function $a : I \rightarrow X$. We write $a_i$ for $a(i)$, and $\{a_i\}_{i \in I}$ for $a$.
-\end{df}
-
-\begin{df}[Cartesian Product of a Family of Sets]
-Let $\{A_i\}_{i \in I}$ be a family of sets. The \emph{Cartesian product} $\bigtimes_{i \in I} A_i$ is the set of all families $\{a_i\}_{i \in I}$ such that $\forall i \in I. a_i \in A_i$.
-
-We write $A^I$ for $\bigtimes_{i \in I} A$.
-\end{df}
-
-\begin{ax}[Axiom of Choice]
-The Cartesian product of a non-empty family of non-empty sets is non-empty.
-\end{ax}
-
-\begin{ax}[Axiom of substitution]
-If $S(a,b)$ is a sentence such that for each $a$ in $A$ the set $\{ b : S(a,b) \}$ can be formed, then there exists a function $F$ with domain $A$ such that $F(a) = \{ b : S(a,b) \}$ for each $a$ in $A$.
-\end{ax}
 
 \section{The Subset Relation}
 
@@ -747,6 +709,11 @@ For any sets $E$ and $F$, if $E \subseteq F$ then $\mathcal{P} E \subseteq \math
 
 \section{Ordered Pairs}
 
+\begin{df}[Ordered Pair]
+For any sets $a$ and $b$, the \emph{ordered pair} $(a,b)$ is defined by
+\[ (a,b) := \{ \{ a \}, \{ a, b \} \} \enspace . \]
+\end{df}
+
 \begin{prop}
 For any sets $a$, $b$, $x$ and $y$, if $(a,b) = (x,y)$ then $a = x$ and $b = y$.
 \end{prop}
@@ -810,7 +777,22 @@ For any sets $A$, $B$, $X$ and $Y$, if $A \subseteq X$ and $B \subseteq Y$ then 
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{df}[Cartesian Product]
+For any sets $A$ and $B$, the \emph{Cartesian product} $A \times B$ is
+\[ A \times B := \{ p \in \mathcal{P} \mathcal{P} (A \cup B) : \exists a \in A. \exists b \in B. p = (a,b) \} \enspace . \]
+\end{df}
+
 \section{Relations}
+
+\begin{df}[Relation]
+A \emph{relation} is a set of ordered pairs.
+
+If $R$ is a relation, we write $xRy$ for $(x,y) \in R$.
+
+Given sets $X$ and $Y$, a relation \emph{between $X$ and $Y$} is a subset of $X \times Y$.
+
+Given a set $X$, a relation \emph{on $X$} is a relation between $X$ and $X$.
+\end{df}
 
 \begin{df}[Domain]
 The \emph{domain} of a relation $R$ is the set
@@ -978,6 +960,20 @@ Let $P$ be a partition of $X$. Then $X / P$ is an equivalence relation on $X$, a
 \end{proof}
 
 \section{Functions}
+
+\begin{df}[Function]
+Let $X$ and $Y$ be sets. A \emph{function, map, mapping, transformation} or \emph{operator $f$ from $X$ to $Y$}, $f : X \rightarrow Y$, is a relation $f$ between $X$ and $Y$ such that, for all $x \in X$, there exists a unique $f(x) \in Y$, called the \emph{value} of $f$ at the \emph{argument} $x$, such that $(x,f(x)) \in f$.
+\end{df}
+
+\begin{df}[Family]
+Let $I$ and $X$ be sets. A \emph{family} of elements of $X$ \emph{indexed} by $I$ is a function $a : I \rightarrow X$. We write $a_i$ for $a(i)$, and $\{a_i\}_{i \in I}$ for $a$.
+\end{df}
+
+\begin{df}[Cartesian Product of a Family of Sets]
+Let $\{A_i\}_{i \in I}$ be a family of sets. The \emph{Cartesian product} $\bigtimes_{i \in I} A_i$ is the set of all families $\{a_i\}_{i \in I}$ such that $\forall i \in I. a_i \in A_i$.
+
+We write $A^I$ for $\bigtimes_{i \in I} A$.
+\end{df}
 
 \begin{df}[Injective]
 A function $f : X \rightarrow Y$ is \emph{one-to-one} or 	\emph{injective} or an \emph{injection} iff, for all $x,y \in X$, if $f(x) = f(y)$ then $x = y$. In this case, we write $f : X \rightarrowtail Y$.

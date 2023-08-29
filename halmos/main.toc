@@ -1,27 +1,27 @@
 \contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Basic Properties and Operations on Sets}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}The Subset Relation}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Comprehension Notation}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.1}The Subset Relation}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Comprehension Notation}{6}{section.2.2}%
 \contentsline {section}{\numberline {2.3}The Empty Set}{7}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Unordered Pairs}{7}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Unions}{8}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Unions}{7}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Intersections}{8}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Unordered Triples}{9}{section.2.7}%
+\contentsline {section}{\numberline {2.7}Unordered Triples}{8}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Relative Complements}{9}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Symmetric Difference}{12}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Power Sets}{13}{section.2.10}%
-\contentsline {chapter}{\numberline {3}Relations and Functions}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Ordered Pairs}{15}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Relations}{16}{section.3.2}%
+\contentsline {section}{\numberline {2.9}Symmetric Difference}{11}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Power Sets}{12}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Relations and Functions}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ordered Pairs}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Relations}{15}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Composition}{16}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Inverses}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Inverses}{16}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Equivalence Relations}{17}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Functions}{18}{section.3.6}%
+\contentsline {section}{\numberline {3.6}Functions}{17}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Families}{21}{section.3.7}%
 \contentsline {section}{\numberline {3.8}Inverses and Composites of Functions}{23}{section.3.8}%
 \contentsline {subsection}{\numberline {3.8.1}Inverse Image}{23}{subsection.3.8.1}%
 \contentsline {subsection}{\numberline {3.8.2}Inverse of a Function}{25}{subsection.3.8.2}%
-\contentsline {section}{\numberline {3.9}Choice Functions}{28}{section.3.9}%
+\contentsline {section}{\numberline {3.9}Choice Functions}{27}{section.3.9}%
 \contentsline {chapter}{\numberline {4}Equivalence}{29}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Order}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Partial Orders}{31}{section.5.1}%
