@@ -1,6 +1,6 @@
 \contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{3}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Basic Properties and Operations on Sets}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}The Subset Relation}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.1}The Subset Relation}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Unions}{7}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Intersections}{8}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Unordered Triples}{8}{section.2.4}%

@@ -85,6 +85,39 @@ Let $A$ be a set of nonempty, pairwise disjoint sets. Then there exists a set $C
 
 \chapter{Basic Properties and Operations on Sets}
 
+\section{The Subset Relation}
+
+\begin{thm}
+\label{thm:subset_ref}
+For any set $A$, we have $A \subseteq A$.
+\end{thm}
+
+\begin{proof}
+\pf\ Every element of $A$ is an element of $A$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:subset_trans}
+For any sets $A$, $B$ and $C$, if $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
+\end{thm}
+
+\begin{proof}
+\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $C$, then every element of $A$ is an element of $C$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:subset_antisym}
+For any sets $A$ and $B$, if $A \subseteq B$ and $B \subseteq A$ then $A = B$.
+\end{thm}
+
+\begin{proof}
+\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $A$, then $A$ and $B$ have the same elements, and therefore are equal by the Axiom of Extensionality. \qed
+\end{proof}
+
+\begin{df}[Proper Subset]
+Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, and write $A \subsetneq B$ or $B \supsetneq A$, iff $A \subseteq B$ and $A \neq B$.
+\end{df}
+
 \begin{thm}
 There exists a unique empty set.
 \end{thm}
@@ -185,38 +218,6 @@ For any set $a$, the \emph{singleton} $\{a\}$ is defined to be $\{a,a\}$.
 There is no set that contains every set.
 \end{cor}
 
-\section{The Subset Relation}
-
-\begin{thm}
-\label{thm:subset_ref}
-For any set $A$, we have $A \subseteq A$.
-\end{thm}
-
-\begin{proof}
-\pf\ Every element of $A$ is an element of $A$. \qed
-\end{proof}
-
-\begin{thm}
-\label{thm:subset_trans}
-For any sets $A$, $B$ and $C$, if $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
-\end{thm}
-
-\begin{proof}
-\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $C$, then every element of $A$ is an element of $C$. \qed
-\end{proof}
-
-\begin{thm}
-\label{thm:subset_antisym}
-For any sets $A$ and $B$, if $A \subseteq B$ and $B \subseteq A$ then $A = B$.
-\end{thm}
-
-\begin{proof}
-\pf\ If every element of $A$ is an element of $B$, and every element of $B$ is an element of $A$, then $A$ and $B$ have the same elements, and therefore are equal by the Axiom of Extensionality. \qed
-\end{proof}
-
-\begin{df}[Proper Subset]
-Let $A$ and $B$ be sets. We say that $A$ is a \emph{proper} subset of $B$, or $B$ \emph{properly} includes $A$, and write $A \subsetneq B$ or $B \supsetneq A$, iff $A \subseteq B$ and $A \neq B$.
-\end{df}
 
 \begin{thm}
 For any set $A$ we have $\emptyset \subset A$.
@@ -2686,6 +2687,22 @@ For any sets $X$ and $Y$, either there exists an injective function $X \rightarr
 
 \begin{proof}
 \pf\ Using the Well Ordering Theorem. \qed
+\end{proof}
+
+\begin{thm}
+Every well-ordered set has the least upper bound property.
+\end{thm}
+
+\begin{proof}
+\pf\ If the set of upper bounds for a subset is nonempty, then it has a least element. \qed
+\end{proof}
+
+\begin{thm}
+In a well-ordered set, every element that is not greatest has an immediate successor.
+\end{thm}
+
+\begin{proof}
+\pf\ The least element of $\{ x : x > a \}$ is the immediate successor of $a$. \qed
 \end{proof}
 
 \chapter{Natural Numbers}
