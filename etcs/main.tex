@@ -125,6 +125,11 @@ If $\pi_1 : P \rightarrow A$ and $\pi_2 : P \rightarrow B$ form a product of $A$
 \qed
 \end{proof}
 
+\begin{df}
+Given functions $f : A \rightarrow B$ and $g : C \rightarrow D$, define $f \times g : A \times C \rightarrow B \times D$ by
+\[ f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle \enspace . \]
+\end{df}
+
 \begin{ax}[Function Sets]
 Let $A$ and $B$ be sets. There exists a set $A^B$ and function $\epsilon : A^B \times B \rightarrow A$ such that, for any set $X$ and function $f : X \times B \rightarrow A$, there exists a unique function $\lambda f : X \rightarrow A^B$ such that
 \[ f = \epsilon \circ \langle \lambda f \circ \pi_1, \pi_2 \rangle \enspace . \]
