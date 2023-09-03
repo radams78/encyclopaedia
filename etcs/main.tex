@@ -66,6 +66,30 @@ The identity function on a set is unique.
 A function $i : A \rightarrow B$ is an \emph{isomorphism}, $i : A \cong B$, iff there exists a function $\inv{i} : B \rightarrow A$, the \emph{inverse} of $i$, such that $\inv{i} \circ i = \id{A}$ and $i \circ \inv{i} = \id{B}$.
 \end{df}
 
+\begin{prop}
+For any set $A$ we have $\id{A} : A \cong A$ and $\inv{\id{A}} = \id{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\id{A} \circ \id{A} = \id{A}$. \qed
+\end{proof}
+
+\begin{prop}
+If $i : A \cong B$ then $\inv{i} : B \cong A$ and $\inv{(\inv{i})} = i$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $i \circ \inv{i} = \id{B}$ and $\inv{i} \circ i = \id{A}$. \qed
+\end{proof}
+
+\begin{prop}
+If $i : A \cong B$ and $j : B \cong C$ then $j \circ i : A \cong C$ and $\inv{(j \circ i)} = \inv{i} \circ \inv{j}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $j \circ i \circ \inv{i} \circ \inv{j} = \id{C}$ and $\inv{i} \circ \inv{j} \circ j \circ i = \id{A}$. \qed
+\end{proof}
+
 \begin{ax}[Terminal Set]
 There exists a set 1 such that, for any set $A$, there exists a unique function $A \rightarrow 1$.
 \end{ax}
@@ -170,62 +194,181 @@ There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s
 For every surjective function $r : X \rightarrow Y$, there exists $s : Y \rightarrow X$ such that $r \circ s$ is an identity function on $X$.
 \end{ax}
 
+\section{Injective and Surjective Functions}
+
+\begin{prop}
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. If $r \circ s = \id{B}$ then $s$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ If $s \circ x = s \circ y$ then $x = r \circ s \circ x = r \circ s \circ y = y$. \qed
+\end{proof}
+
+\section{Products}
+
+\begin{prop}
+Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : B \rightarrow D$. Then
+\[ \langle g, h \rangle \circ f = \langle g \circ f, h \circ f \rangle \]
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the unique $x$ such that $\pi_1 \circ x = g \circ f$ and $\pi_2 \circ x = h \circ f$. \qed
+\end{proof}
+
 \section{Subsets of a Set}
 
 \begin{df}[Subset]
-A \emph{subset} of a set $A$ is a function $A \rightarrow 2$.
+Let $i : X \rightarrow A$. We write '$(X,i)$ is a subset of $A$' for '$i$ is injective'.
+
+Given subsets $i : X \rightarrow A$ and $j : Y \rightarrow A$,
+we write '$(X,i) = (Y,j)$' for 'there exists an isomorphism $k : X \cong Y$ such that $j \circ k = i$.
 \end{df}
 
 \begin{prop}
-Let $i : X \rightarrowtail B$ and $j : Y \rightarrowtail B$ be injective functions. Then $i$ and $j$ have the same characteristic function if and only if there exists an isomorphism $k : X \cong Y$ such that $j \circ k = i$, in which case $k$ is unique.
+Given subsets $(X,i)$, $(Y,j)$ of $A$, if $(X,i) = (Y,j)$ then the isomorphism $k : X \cong Y$ such that $i \circ k = j$ is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $i$ is injective. \qed
+\end{proof}
+
+\begin{prop}
+If $(X,i)$ is a subset of $A$ then $(X,i) = (X,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\id{X} : X \cong X$ and $i \circ \id{X} = i$. \qed
+\end{proof}
+
+\begin{prop}
+Given subsets $(X,i)$, $(Y,j)$ of $A$, if $(X,i) = (Y,j)$ then $(Y,j) = (X,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $k : X \cong Y$ and $j \circ k = i$ then $\inv{k} : Y \cong X$ and $i \circ \inv{k} = j$. \qed
+\end{proof}
+
+\begin{prop}
+Given subsets $(X,i)$, $(Y,j)$, $(Z,k)$ of $A$, if $(X,i) = (Y,j)$ and $(Y,j) = (Z,k)$ then $(X,i) = (Z,k)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : X \cong Y$ satisfies $j \circ f = i$ and $g : Y \cong Z$ satisfies $k \circ g = j$, then $g \circ f : X \cong Z$ and $k \circ g \circ f = i$. \qed
+\end{proof}
+
+\begin{df}[Inclusion]
+Let $(X,i)$ and $(Y,j)$ be subsets of $A$. We say $(X,i)$ is \emph{included} in $(Y,j)$, and write $(X,i) \subseteq (Y,j)$, iff there exists $k : X \rightarrow Y$ such that $j \circ k = i$.
+\end{df}
+
+\begin{prop}
+For any subsets $(X,i)$, $(Y,j)$ of $A$, if $(X,i) = (Y,j)$ then $(X,i) \subseteq (Y,j)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{cor}
+For any subset $(X,i)$ of $A$ we have $(X,i) \subseteq (X,i)$.
+\end{cor}
+
+\begin{prop}
+For any subsets $(X,i)$, $(Y,j)$, $(Z,k)$ of $A$, if $(X,i) \subseteq (Y,j)$ and $(Y,j) \subseteq (Z,k)$, then $(X,i) \subseteq (Z,k)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : X \rightarrow Y$ satisfies $j \circ f = i$ and $g : Y \rightarrow Z$ satisfies $k \circ g = j$, then $g \circ f : X \rightarrow Z$ and $k \circ g \circ f = i$. \qed
+\end{proof}
+
+\begin{cor}
+Inclusion is well defined. That is, if $(X,i) = (X',i')$, $(Y,j) = (Y',j')$ and $(X,i) \subseteq (Y,j)$ then $(X',i') \subseteq (Y',j')$.
+\end{cor}
+
+\begin{prop}
+For any subsets $(X,i)$ and $(Y,j)$ of $A$, if $(X,i) \subseteq (Y,j)$ and $(Y,j) \subseteq (X,i)$ then $(X,i) = (Y,j)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : X \rightarrow Y$ satisfy $j \circ f = i$.}}
+\step{2}{\pflet{$g : Y \rightarrow X$ satisfy $i \circ g = j$.}}
+\step{3}{$g \circ f = \id{X}$}
+\begin{proof}
+	\pf\ Since $i \circ g \circ f = i$ and $i$ is injective.
+\end{proof}
+\step{4}{$f \circ g = \id{Y}$}
+\begin{proof}
+	\pf\ Since $j \circ f \circ g = j$ and $j$ is injective.
+\end{proof}
+\step{5}{$f : X \cong Y$ and $j \circ f = i$.}
+\step{6}{$(X,i) = (Y,j)$}
+\qed
+\end{proof}
+
+\section{Equalizers}
+
+\begin{prop}
+For any set $A$, the function $\langle \id{A}, \id{A} \rangle : A \rightarrow A \times A$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\pi_1 \circ \langle \id{A}, \id{A} \rangle = \id{A}$. \qed
+\end{proof}
+
+\begin{prop}
+Given sets $A$ and $B$ and functions $f,g : A \rightarrow B$, there exists a set $E$ and function $e : E \rightarrow A$, called the \emph{equalizer} of $f$ and $g$, such that:
+\begin{itemize}
+\item $f \circ e = g \circ e$
+\item for any set $X$ and function $x : X \rightarrow A$, if $f \circ x = g \circ x$ then there exists a unique $\overline{x} : X \rightarrow E$ such that $x = e \circ \overline{x}$.
+\end{itemize}
 \end{prop}
 
 \[ \xymatrix{
-X \ar[ddr]_i \ar[drr]^{!} \ar[dr]^k \\
-& Y \ar[d]^j \ar[r]_{!} & 1 \ar[d]^\top \\
-& B \ar[r]_\chi & 2
+X \ar[ddr]_x \ar[drr]^{f \circ x} \ar[dr]^{\overline{x}} \\
+& E \ar[d]_e \ar[r]^m & B \ar[d]_{\langle \id{B}, \id{B} \rangle} \ar[r]^{!} & 1 \ar[d]^{\top} \\
+& A \ar[r]_{\langle f,g \rangle} & B \times B \ar[r]_{eq} & 2
 } \]
 
 \begin{proof}
 \pf
-\step{1}{If $i$ and $j$ have the same characteristic function then there exists a unique isomorphism $k : X \rightarrow Y$ such that $j \circ k = i$.}
+\step{1}{\pflet{$eq : B \times B \rightarrow 2$ be the characteristic function of $\langle \id{B}, \id{B} \rangle : B \rightarrow B \times B$}}
 \begin{proof}
-	\step{a}{\pflet{$\chi : B \rightarrow 2$}}
-	\step{b}{\assume{$\chi$ is the characteristic function of $i$ and $j$.}}
-	\step{c}{\pflet{$k : X \rightarrow Y$ be the unique function such that $j \circ k = i$.}}
-	\step{d}{\pflet{$\inv{k} : Y \rightarrow X$ be the unique function such that $i \circ \inv{k} = j$.}}
-	\step{e}{$k \circ \inv{k} = \id{Y}$}
-	\begin{proof}
-		\pf\ Each is the unique function $x$ such that $j \circ x = x$.
-	\end{proof}
-	\step{f}{$\inv{k} \circ k = \id{X}$}
-	\begin{proof}
-		\pf\ Each is the unique function $x$ such that $i \circ x = x$.
-	\end{proof}
+	\pf\ By the Axiom of the Subset Classifier.
 \end{proof}
-\step{2}{If there exists an isomorphism $k : X \cong Y$ such that $j \circ k = i$ then $i$ and $j$ have the same characteristic function.}
+\step{2}{\pflet{$e : E \rightarrow A$ be the inverse image of $\top$ under $eq \circ \langle f,g \rangle$}}
 \begin{proof}
-	\step{a}{\pflet{$k : X \cong Y$ satisfy $j \circ k = i$.}}
-	\step{b}{\pflet{$\chi : B \rightarrow 2$ be the characteristic function of $j$.} \prove{$\chi$ is the characteristic function of $i$.}}
-	\step{c}{$\chi \circ i = \top \circ !_X$}
+	\pf\ By the Axiom of Inverse Images.
+\end{proof}
+\step{3}{$f \circ e = g \circ e$}
+\begin{proof}
+	\step{a}{$eq \circ \langle f,g \rangle \circ e = \top$}
+	\step{b}{\pflet{$m : E \rightarrow B$ be the unique function such that $\langle \id{B}, \id{B} \rangle \circ m = \langle f,g \rangle \circ e$}}
+	\step{c}{$\langle m, m \rangle = \langle f \circ e, g \circ e \rangle$}
+	\step{d}{$f \circ e = g \circ e = m$}
+\end{proof}
+\step{4}{For any set $X$ and function $x : X \rightarrow A$, if $f \circ x = g \circ x$ then there exists a unique $\overline{x} : X \rightarrow E$ such that $x = e \circ \overline{x}$.}
+\begin{proof}
+	\step{a}{\pflet{$X$ be a set.}}
+	\step{b}{\pflet{$x : X \rightarrow A$}}
+	\step{c}{\assume{$f \circ x = g \circ x$}}
+	\step{d}{$\langle f,g \rangle \circ x = \langle \id{B}, \id{B} \rangle \circ f \circ x$}
+	\step{e}{$eq \circ \langle f,g \rangle \circ x = \top \circ !_X$}
 	\begin{proof}
 		\pf
 		\begin{align*}
-			\chi \circ i & = \chi \circ j \circ k & (\text{\stepref{a}}) \\
-			& = \top \circ !_Y \circ k & (\text{\stepref{b}}) \\
-			& = \top \circ !_X & (\text{Uniqueness of $!_X$})
+			eq \circ \langle f,g \rangle \circ x
+			& = eq \circ \langle \id{B}, \id{B} \rangle \circ f \circ x \\
+			& = \top \circ !_B \circ f \circ x \\
+			& = \top \circ !_X
 		\end{align*}
 	\end{proof}
-	\step{d}{For every set $I$ and function $q : I \rightarrow B$ such that $\chi \circ q = \top \circ !_I$, there exists a unique $\overline{q} : I \rightarrow X$ such that $q = i \circ \overline{q}$.}
+	\step{f}{There exists a unique $\overline{x} : X \rightarrow E$ such that $e \circ \overline{x} = x$}
 	\begin{proof}
-		\step{i}{\pflet{$I$ be a set.}}
-		\step{ii}{\pflet{$q : I \rightarrow B$}}
-		\step{iii}{\assume{$\chi \circ q = \top \circ !_I$}}
-		\step{iv}{\pflet{$r : I \rightarrow Y$ be the unique function such that $q = j \circ r$}}
-		\step{v}{$\inv{k} \circ r$ is unique such that $q = i \circ \inv{k} \circ r$}
+		\pf\ From \stepref{2}.
 	\end{proof}
 \end{proof}
 \qed
 \end{proof}
+
 
 \end{document}
