@@ -88,21 +88,42 @@ The terminal set is unique up to unique isomorphism.
 \end{proof}
 
 \begin{df}[Element]
-For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow A$. We write $a \in A$ for $a : 1 \rightarrow A$.
+For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow A$.
+
+We write $a \in A$ for $a : 1 \rightarrow A$. Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $f \circ a$.
 \end{df}
 
-\begin{ax}[Empty Set]
-There exists a set 0 with no elements.
+\begin{ax}[Extensionality]
+Let $A$ and $B$ be sets. Let $f,g : A \rightarrow B$. If, for all $x \in A$, we have $f(x) = g(x)$, then $f = g$.
 \end{ax}
 
-\begin{ax}[Extensionality]
-Let $A$ and $B$ be sets. Let $f,g : A \rightarrow B$. If, for all $x : 1 \rightarrow A$, we have $f \circ x = g \circ x$, then $f = g$.
+\begin{ax}[Empty Set]
+There exists a set with no elements.
 \end{ax}
 
 \begin{ax}[Products]
-Let $A$ and $B$ be sets. There exists a set $A \times B$ and functions $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$ such that, for every set $X$ and functions $f : X \rightarrow A$, $g : X \rightarrow B$, there exists a unique function $\langle f,g \rangle : X \rightarrow A \times B$ such that
+Let $A$ and $B$ be sets. There exists a set $A \times B$ and functions $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$, the \emph{projections}, such that, for every set $X$ and functions $f : X \rightarrow A$, $g : X \rightarrow B$, there exists a unique function $\langle f,g \rangle : X \rightarrow A \times B$ such that
 \[ \pi_1 \circ \langle f,g \rangle = f, \qquad \pi_2 \circ \langle f,g \rangle = g \enspace . \]
 \end{ax}
+
+\begin{prop}
+If $\pi_1 : P \rightarrow A$ and $\pi_2 : P \rightarrow B$ form a product of $A$ and $B$, and $p_1 : Q \rightarrow A$ and $p_2 : Q \rightarrow B$ form a product of $A$ and $B$, then there exists a unique isomorphism $i : P \cong Q$ such that $p_1 \circ i = \pi_1$ and $p_2 \circ i = \pi_2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : P \rightarrow Q$ be the unique function such that $p_1 \circ i = \pi_1$ and $p_2 \circ i = \pi_2$.}}
+\step{2}{\pflet{$\inv{i} : Q \rightarrow P$ be the unique function such that $\pi_1 \circ \inv{i} = p_1$ and $\pi_2 \circ \inv{i} = p_2$}}
+\step{3}{$i \circ \inv{i} = \id{Q}$}
+\begin{proof}
+	\pf\ Each is the unique $x : Q \rightarrow Q$ such that $p_1 \circ x = p_1$ and $p_2 \circ x = p_2$.
+\end{proof}
+\step{4}{$\inv{i} \circ i = \id{P}$}
+\begin{proof}
+	\pf\ Each is the unique $x : P \rightarrow P$ such that $\pi_1 \circ x = \pi_1$ and $\pi_2 \circ x = \pi_2$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{ax}[Function Sets]
 Let $A$ and $B$ be sets. There exists a set $A^B$ and function $\epsilon : A^B \times B \rightarrow A$ such that, for any set $X$ and function $f : X \times B \rightarrow A$, there exists a unique function $\lambda f : X \rightarrow A^B$ such that
