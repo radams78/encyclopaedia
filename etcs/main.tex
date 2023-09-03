@@ -370,5 +370,38 @@ X \ar[ddr]_x \ar[drr]^{f \circ x} \ar[dr]^{\overline{x}} \\
 \qed
 \end{proof}
 
+\section{Pullbacks}
+
+\begin{prop}
+Let $f : A \rightarrow C$ and $g : B \rightarrow C$. Then there exists a set $P$ and functions $p : P \rightarrow A$, $q : P \rightarrow B$ such that:
+\begin{itemize}
+\item $f \circ p = g \circ q$
+\item For any set $X$ and functions $x : X \rightarrow A$, $y : X \rightarrow B$ such that $f \circ x = g \circ y$, there exists a unique function $(x,y) : X \rightarrow P$ such that $p \circ (x,y) = x$ and $q \circ (x,y) = y$.
+\end{itemize}
+\end{prop}
+
+\[ \xymatrix{
+E \ar[dr]^e \ar[ddr]_q \ar[drr]^p \\
+& A \times B \ar[r]^{\pi_1} \ar[d]_{\pi_2} & A \ar[d]^{f} \\
+& B \ar[r]_{g} & C
+} \]
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$e : P \rightarrow A \times B$ be the equalizer of $f \circ \pi_1, g \circ \pi_2 : A \times B \rightarrow C$.}}
+\step{2}{\pflet{$p = \pi_1 \circ e : E \rightarrow A$ and $q = \pi_2 \circ e : E \rightarrow B$.}}
+\step{3}{$f \circ p = g \circ q$}
+\step{4}{For any set $X$ and functions $x : X \rightarrow A$, $y : X \rightarrow B$ such that $f \circ x = g \circ y$, there exists a unique function $(x,y) : X \rightarrow P$ such that $p \circ (x,y) = x$ and $q \circ (x,y) = y$.}
+\begin{proof}
+	\step{a}{\pflet{$X$ be a set.}}
+	\step{b}{\pflet{$x : X \rightarrow A$ and $y : X \rightarrow B$}}
+	\step{c}{\assume{$f \circ x = g \circ y$}}
+	\step{d}{$f \circ \pi_1 \circ \langle x,y \rangle = g \circ \pi_2 \circ \langle x,y \rangle$}
+	\step{e}{\pflet{$(x,y) : X \rightarrow E$ be the unique morphism such that $e \circ (x,y) = \langle x,y \rangle$}}
+	\step{f}{$(x,y)$ is unique such that $\pi_1 \circ e \circ (x,y) = x$ and $\pi_2 \circ e \circ (x,y) = y$}
+	\step{g}{$(x,y)$ is unique such that $p \circ (x,y) = x$ and $q \circ (x,y) = y$.}
+\end{proof}
+\qed
+\end{proof}
 
 \end{document}
