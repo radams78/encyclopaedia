@@ -326,16 +326,52 @@ Every section is injective.
 \end{proof}
 
 \begin{prop}
-Every retraction is surjective.
+Let $r : A \rightarrow B$. Then the following are equivalent.
+\begin{enumerate}
+\item $r$ is surjective.
+\item $r$ has a section.
+\item For every element $y \in B$, there exists $x \in A$ such that $r(x) = y$.
+\end{enumerate}
 \end{prop}
 
 \begin{proof}
-\pf\ Similar. \qed
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Axiom of Choice.
 \end{proof}
-
-\begin{cor}
-A function is surjective if and only if it has a section.
-\end{cor}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\pflet{$s : A \rightarrow B$ be a section of $r$.}}
+	\step{b}{\pflet{$y \in B$}}
+	\step{c}{\pflet{$x = s(y)$}}
+	\step{d}{$r(x) = y$}
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{$\forall y \in B. \exists x \in A. r(x) = y$}}
+	\step{b}{\pflet{$X$ be a set and $f,g : B \rightarrow X$}}
+	\step{c}{\assume{$fr = gr$}}
+	\step{d}{For all $y \in B$ we have $f(y) = g(y)$.}
+	\begin{proof}
+		\step{i}{\pflet{$y \in B$}}
+		\step{ii}{\pick\ $x \in A$ such that $r(x) = y$.}
+		\step{iii}{$f(y) = g(y)$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				f(y) & = f(r(x)) & (\text{\stepref{ii}}) \\
+				& = g(r(x)) & (\text{\stepref{c}}) \\
+				& = g(y) & (\text{\stepref{ii}})
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{e}{$f = g$}
+	\begin{proof}
+		\pf\ Axiom of Extensionality.
+	\end{proof}
+\end{proof}
+\end{proof}
 
 \section{Subsets of a Set}
 
