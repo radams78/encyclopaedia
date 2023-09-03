@@ -12,6 +12,7 @@
 \usepackage{pf2}
 \usepackage{hyperref}
 \usepackage{mathabx}
+\usepackage[all]{xy}
 
 \newtheorem{ax}{Axiom}[chapter]
 \newtheorem{prop}[ax]{Proposition}
@@ -30,7 +31,9 @@
 \maketitle
 \tableofcontents
 
-\chapter{Primitive Notions and Axioms}
+\chapter{The Foundations}
+
+\section{Primitive Notions and Axioms}
 
 Let there be \emph{sets}.
 
@@ -148,15 +151,15 @@ For any sets $X$ and $Y$, function $f : X \rightarrow Y$ and element $a \in Y$, 
 \end{ax}
 
 \begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
+A function $f : A \rightarrow B$ is \emph{injective}, $f : A \rightarrowtail B$, iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
 \end{df}
 
 \begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective} iff, for every set $X$ and functions $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
+A function $f : A \rightarrow B$ is \emph{surjective}, $f : A \twoheadrightarrow B$, iff, for every set $X$ and functions $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
 \end{df}
 
 \begin{ax}[Subset Classifier]
-There exists a set 2 and function $\top : 1 \rightarrow 2$ such that, for every injective function $f : A \rightarrow X$, there exists a unique function $\chi : X \rightarrow 2$ such that $f$ is the inverse image of $\top$ under $\chi$.
+There exists a set 2 and function $\top : 1 \rightarrow 2$ such that, for any sets $A$ and $X$ and any injective function $f : A \rightarrow X$, there exists a unique function $\chi : X \rightarrow 2$ such that $f$ is the inverse image of $\top$ under $\chi$.
 \end{ax}
 
 \begin{ax}[Natural Numbers]
@@ -166,5 +169,63 @@ There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s
 \begin{ax}[Choice]
 For every surjective function $r : X \rightarrow Y$, there exists $s : Y \rightarrow X$ such that $r \circ s$ is an identity function on $X$.
 \end{ax}
+
+\section{Subsets of a Set}
+
+\begin{df}[Subset]
+A \emph{subset} of a set $A$ is a function $A \rightarrow 2$.
+\end{df}
+
+\begin{prop}
+Let $i : X \rightarrowtail B$ and $j : Y \rightarrowtail B$ be injective functions. Then $i$ and $j$ have the same characteristic function if and only if there exists an isomorphism $k : X \cong Y$ such that $j \circ k = i$, in which case $k$ is unique.
+\end{prop}
+
+\[ \xymatrix{
+X \ar[ddr]_i \ar[drr]^{!} \ar[dr]^k \\
+& Y \ar[d]^j \ar[r]_{!} & 1 \ar[d]^\top \\
+& B \ar[r]_\chi & 2
+} \]
+
+\begin{proof}
+\pf
+\step{1}{If $i$ and $j$ have the same characteristic function then there exists a unique isomorphism $k : X \rightarrow Y$ such that $j \circ k = i$.}
+\begin{proof}
+	\step{a}{\pflet{$\chi : B \rightarrow 2$}}
+	\step{b}{\assume{$\chi$ is the characteristic function of $i$ and $j$.}}
+	\step{c}{\pflet{$k : X \rightarrow Y$ be the unique function such that $j \circ k = i$.}}
+	\step{d}{\pflet{$\inv{k} : Y \rightarrow X$ be the unique function such that $i \circ \inv{k} = j$.}}
+	\step{e}{$k \circ \inv{k} = \id{Y}$}
+	\begin{proof}
+		\pf\ Each is the unique function $x$ such that $j \circ x = x$.
+	\end{proof}
+	\step{f}{$\inv{k} \circ k = \id{X}$}
+	\begin{proof}
+		\pf\ Each is the unique function $x$ such that $i \circ x = x$.
+	\end{proof}
+\end{proof}
+\step{2}{If there exists an isomorphism $k : X \cong Y$ such that $j \circ k = i$ then $i$ and $j$ have the same characteristic function.}
+\begin{proof}
+	\step{a}{\pflet{$k : X \cong Y$ satisfy $j \circ k = i$.}}
+	\step{b}{\pflet{$\chi : B \rightarrow 2$ be the characteristic function of $j$.} \prove{$\chi$ is the characteristic function of $i$.}}
+	\step{c}{$\chi \circ i = \top \circ !_X$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\chi \circ i & = \chi \circ j \circ k & (\text{\stepref{a}}) \\
+			& = \top \circ !_Y \circ k & (\text{\stepref{b}}) \\
+			& = \top \circ !_X & (\text{Uniqueness of $!_X$})
+		\end{align*}
+	\end{proof}
+	\step{d}{For every set $I$ and function $q : I \rightarrow B$ such that $\chi \circ q = \top \circ !_I$, there exists a unique $\overline{q} : I \rightarrow X$ such that $q = i \circ \overline{q}$.}
+	\begin{proof}
+		\step{i}{\pflet{$I$ be a set.}}
+		\step{ii}{\pflet{$q : I \rightarrow B$}}
+		\step{iii}{\assume{$\chi \circ q = \top \circ !_I$}}
+		\step{iv}{\pflet{$r : I \rightarrow Y$ be the unique function such that $q = j \circ r$}}
+		\step{v}{$\inv{k} \circ r$ is unique such that $q = i \circ \inv{k} \circ r$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \end{document}
