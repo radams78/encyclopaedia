@@ -318,6 +318,41 @@ Every surjective function has a section.
 \section{Injective and Surjective Functions}
 
 \begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for any elements $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is injective then, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\step{2}{If, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$, then $f$ is injective.}
+\begin{proof}
+	\step{a}{\assume{For all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.}}
+	\step{b}{\pflet{$X$ be a set and $x,y : X \rightarrow A$}}
+	\step{c}{\assume{$f \circ x = f \circ y$}}
+	\step{d}{For all $t \in X$ we have $x(t) = y(t)$.}
+	\begin{proof}
+		\step{i}{\pflet{$t \in X$}}
+		\step{ii}{$f(x(t)) = f(y(t))$}
+		\begin{proof}
+			\pf\ \stepref{c}
+		\end{proof}
+		\step{iii}{$x(t) = y(t)$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+	\end{proof}
+	\step{e}{$x = y$}
+	\begin{proof}
+		\pf\ Axiom of Extensionality.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Every section is injective.
 \end{prop}
 
