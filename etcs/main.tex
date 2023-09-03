@@ -22,6 +22,9 @@
 \newtheorem{df}[ax]{Definition}
 \newtheorem{ex}[ax]{Example}
 
+\newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
+\newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+
 \begin{document}
 
 \maketitle
@@ -41,23 +44,55 @@ For any functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \right
 \end{ax}
 
 \begin{ax}[Identity]
-For any set $A$, there exists a function $\mathrm{id}_A : A \rightarrow A$, called an \emph{identity} function on $A$, such that:
+For any set $A$, there exists a function $\id{A} : A \rightarrow A$, called an \emph{identity} function on $A$, such that:
 \begin{itemize}
-\item for every set $B$ and function $f : A \rightarrow B$, we have $f \circ \mathrm{id}_A = f$;
-\item for every set $B$ and function $f : B \rightarrow A$, we have $\mathrm{id}_A \circ f = f$.
+\item for every set $B$ and function $f : A \rightarrow B$, we have $f \circ \id{A} = f$;
+\item for every set $B$ and function $f : B \rightarrow A$, we have $\id{A} \circ f = f$.
 \end{itemize}
 \end{ax}
+
+\begin{prop}
+The identity function on a set is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ If $i, j : A \rightarrow A$ are identity functions on $A$ then we have $i = i \circ j = j$. \qed
+\end{proof}
+
+\begin{df}[Isomorphism]
+A function $i : A \rightarrow B$ is an \emph{isomorphism}, $i : A \cong B$, iff there exists a function $\inv{i} : B \rightarrow A$, the \emph{inverse} of $i$, such that $\inv{i} \circ i = \id{A}$ and $i \circ \inv{i} = \id{B}$.
+\end{df}
 
 \begin{ax}[Terminal Set]
 There exists a set 1 such that, for any set $A$, there exists a unique function $A \rightarrow 1$.
 \end{ax}
 
+\begin{prop}
+The terminal set is unique up to unique isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be terminal sets.}}
+\step{2}{\pflet{$i$ be the unique function $A \rightarrow B$.}}
+\step{3}{\pflet{$\inv{i}$ be the unique function $B \rightarrow A$.}}
+\step{4}{$i \circ \inv{i} = \id{B}$}
+\begin{proof}
+	\pf\ Since there is only one function $B \rightarrow B$.
+\end{proof}
+\step{5}{$\inv{i} \circ i = \id{A}$}
+\begin{proof}
+	\pf\ Since there is only one function $A \rightarrow A$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Element]
-For any set $A$, an \emph{element} of $A$ is a function $a : 1 \rightarrow A$. We write $a \in A$.
+For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow A$. We write $a \in A$ for $a : 1 \rightarrow A$.
 \end{df}
 
 \begin{ax}[Empty Set]
-There exists a set 0 such that there is no function $1 \rightarrow 0$.
+There exists a set 0 with no elements.
 \end{ax}
 
 \begin{ax}[Extensionality]
