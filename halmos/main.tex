@@ -2322,6 +2322,60 @@ A & \text{if } \hat{A} - A = \emptyset
 \qed
 \end{proof}
 
+\begin{cor}[Hausdorff Maximal Principle]
+Every poset has a maximal chain.
+\end{cor}
+
+\begin{proof}
+\pf\ For any poset $A$, the set $C$ of chains in $A$ is a poset under inclusion, and for every chain $X$ in $C$, we have $\bigcup X \in C$. \qed
+\end{proof}
+
+\begin{lm}[Kuratowski]
+Let $A$ be a set. Assume that, for every subset $B$ of $A$ that is linearly ordered under $\subseteq$, we have $\bigcup B \in A$. Then $A$ has an element that is not a proper subset of any other element of $A$.
+\end{lm}
+
+\begin{proof}
+\pf\ $A$ is partially ordered under $\subseteq$, and every chain in $A$ has an upper bound. Hence $A$ has a maximal element with respect to $\subseteq$ by Zorn's Lemma. \qed
+\end{proof}
+
+\begin{df}[Finite Type]
+Let $X$ be a set. Let $A \subseteq \mathcal{P} X$. Then $A$ is of \emph{finite type} iff, for all $B \subseteq X$, we have $B \in A$ if and only if every finite subset of $B$ is an element of $A$.
+\end{df}
+
+\begin{lm}[Tukey, 1940]
+Let $X$ be a set. Let $A \subseteq \mathcal{P} X$ have finite type. Then $A$ has an element that is not a proper subset of any other element of $A$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{For every subset $B \subseteq A$ that is linearly ordered under $\subseteq$, we have $\bigcup B \in A$.}
+\begin{proof}
+	\step{a}{\pflet{$B \subseteq A$ be linearly ordered under $\subseteq$.}}
+	\step{b}{Every finite subset of $\bigcup B$ is an element of $A$.}
+	\begin{proof}
+		\step{i}{\pflet{$F$ be a finite subset of $\bigcup B$.}}
+		\step{ii}{\pick\ $X \in B$ such that $F \subseteq X$}
+		\begin{proof}
+			\pf\ Since $B$ is a chain.
+		\end{proof}
+		\step{iii}{$X \in A$}
+		\step{iv}{$F \in A$}
+		\begin{proof}
+			\pf\ $A$ has finite type.
+		\end{proof}
+	\end{proof}
+	\step{c}{$\bigcup B \in A$}
+	\begin{proof}
+		\pf\ $A$ has finite type.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ By the Kuratowski lemma.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Cofinal]
 Let $X$ be a poset and $A \subseteq X$. Then $A$ is \emph{cofinal} iff, for all $x \in X$, there exists $a \in A$ such that $x \leq a$.
 \end{df}
@@ -5391,4 +5445,70 @@ The set of algebraic numbers is countable.
 The set of transcendental numbers is uncountable.
 \end{cor}
 
+\chapter{Linear Algebra}
+
+%TODO Fill this out
+
+\begin{df}[Span]
+Let $V$ be a vector space. Let $A \subseteq V$ and $v \in V$. Then $v$ is in the \emph{span} of $A$ iff $v$ is a linear combination of elements of $A$.
+\end{df}
+
+\begin{df}[Independent]
+Let $V$ be a vector space. Let $A \subseteq V$. Then $A$ is \emph{independent} iff, whenever $v_1, \ldots, v_n \in A$ and $\alpha_1 v_1 + \cdots + \alpha_n v_n = 0$, then $\alpha_1 = \cdots = \alpha_n = 0$.
+\end{df}
+
+\begin{prop}
+\label{prop:extend_independent}
+If $A$ is independent and $v$ is not in the span of $A$, then $A \cup \{v\}$ is independent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\alpha_1 v_1 + \cdots + \alpha_n v_n + \beta v = 0$ where $v_1, \ldots, v_n \in A$.}}
+\step{2}{$\beta = 0$}
+\begin{proof}
+	\pf\ Otherwise $v = (\alpha_1 / \beta) v_1 + \cdots + (\alpha_n / \beta) v_n$ and so $v$ is in the span of $A$.
+\end{proof}
+\step{3}{$\alpha_1 = \cdots = \alpha_n = 0$}
+\begin{proof}
+	\pf\ Since $A$ is independent.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Basis]
+Let $V$ be a vector space. Let $A \subseteq V$. Then $A$ is a \emph{basis} for $V$ iff $A$ is independent and every vector is in the span of $A$.
+\end{df}
+
+\begin{thm}
+Every vector space has a basis.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a vector space.}}
+\step{2}{\pflet{$I$ be the poset of independent sets in $V$ under inclusion.}}
+\step{3}{For any chain $C \subseteq I$, we have $\bigcup C \in I$}
+\begin{proof}
+	\step{a}{\pflet{$C$ be a chain in $I$.}}
+	\step{b}{\pflet{$v_1, \ldots, v_n \in \bigcup C$ with $\alpha_1 v_1 + \cdots + \alpha_n v_n = 0$}}
+	\step{c}{\pick\ $A \in C$ such that $v_1, \ldots, v_n \in A$.}
+	\begin{proof}
+		\pf\ Since $C$ is a chain.
+	\end{proof}
+	\step{d}{$\alpha_1 = \cdots = \alpha_n = 0$}
+	\begin{proof}
+		\pf\ Since $A$ is independent.
+	\end{proof}
+\end{proof}
+\step{4}{\pick\ a maximal element $B$ in $I$.}
+\begin{proof}
+	\pf\ By the Kuratowski lemma.s
+\end{proof}
+\step{5}{$B$ is a basis for $V$.}
+\begin{proof}
+	\pf\ For all $v \in V$ we have $v$ is in the span of $B$ by Proposition \ref{prop:extend_independent} and the maximality of $B$.
+\end{proof}
+\qed
+\end{proof}
 \end{document}

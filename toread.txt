@@ -1,5 +1,65 @@
+GENERAL
+
+Saunders Mac Lane. Mathematics: Form and Function. 1986
+N. Bourbaki. The Architecture of Mathematics. American Mathematical Monthly 57 (1950) 221-232
+L. Corry. Nicolas Bourbaki and the Concept of Mathematical Structure. Synthese 92 (1992) 315-348
+B. Russell. Introduction to Mathematical Philosophy. 1919
+S. Lavine. Understanding the Infinite. 1994
+D. Scott. Constructive Validity. In Symposium on Automatic Demonstration. 1970
+
 SET THEORY
 
 Hausdorff. Set Theory
 Suppes. Axiomatic Set Theory
 R. M. Smullyan. The continuum hypothesis. In The Mathematical Sciences, A Collection of Essays. 1969
+P. J. Campbell. The origin of "Zorn's lemma". Historia Mathematica, 5:77-89, 1978
+G. H. Moore. Zermelo's Axiom of Choice. 1982
+J. Mayberry. On the Consistency Problem for Set Theory: An Essay on the Cantorian Foundations of Classical Mathematics. British Journal for the Philosophy of Science 28 (1977) 1-170
+A. A. Fraenkel, Y. Bar-Hillel, A. L\'{e}vy, D. van Dalen. Foundations of Set Theory. 1973
+J. von Neumann. Eine Axiomatisierung der Mengenlehre. Journal f\"{u}r die Mathematik 154 (1925) 219-240
+J. von Neumann. Die Axiomatisierung der Mengenlehre. Mathematisches Zeitschrift 27 (1928) 669-752
+F. A. Muller. Structures for Everyone: Contemplations and Proofs in the Foundations and Philosophy of Physics and Mathematics. 1998
+N. Bourbaki. Foundations of Mathematics for the Working Mathematician. Journal of Symbolic Logic 14 (1949) 1-8
+P. Maddy. Proper classes. Journal of Symbolic Logic 48 (1983) 113-139
+P. Bernays. Axiomatic Set Theory. 1958
+G. Cantor. Beiträge zur Begr\"{u}ndung der transfinieten Mengenlehre I. Mathematische Annalen 46 (1895) 481-512
+W. Ackermann. Zur Axiomatik der Mengenlehre. Mathematische Annalen 131 (1956) 336-345
+R. Grewe. Natural Models of Ackermann's Set Theory. Journal of Symbolic Logic 34 (1969) 481-488
+A. L\'{e}vy. On Ackermann's set theory. Journal of Symbolic Logic 24 (1959) 154-166
+A. L\'{e}vy, R. Vaught. Principles of Partial Reflection in the Set Theories of Zermelo and Ackermann. Pacific Journal of Mathematics 11 (1961) 1045-1062
+J. Myhill. Constructive Set Theory. J. Symbolic Logic 40 (1975) 347-382
+A. Oberschelp. Set Theory over Classes. Dissertationes Mathematicae 106 (1973) 1-66
+
+CATEGORY THEORY
+
+J. L. Bell. Category Theory and the Foundations of Mathematics. British Journal for the Philosophy of Science 32 (1981) 349-358
+J. L. Bell. From Absolute to Local Mathematics. Synthese 69 (1986) 409-426
+F. W. Lawvere. The category of all categories as a foundation of mathematics. Proceedings of the Conference on Categorial Algebra 1966
+S. Mac Lane. One Universe as a Foundation for Category Theory. Reports of the Midwest Category Seminar III, 1969
+S. Mac Lane. Categories for the Working Mathematician. 1994
+S. Feferman. Set-Theoretical Foundations of Category Theory. Reports of the Midwest Category Seminar III, 1969
+S. Feferman. Categorial Foundations and Foundations of Category Theory. In Logic, Foundations of Mathematics and Computability Theory, 1977
+S. Mac Lane. Categorial Algebra and Set-Theoretical Foundations. Proc. Symposia in Pure Math. XIII 1971
+J. Isbell. Review of F. W. Lawvere. The category of all categories as a foundation of mathematics. Proceedings of the Conference on Categorial Algebra 1966. Mathematical Reviews 34, 1967
+G, Kreisel. Review of S. Mac Lane. Categorial Algebra and Set-Theoretical Foundations. Proc. Symposia in Pure Math. XIII 1971. Mathematical Reviews 44, 1972
+
+TOPOS THEORY
+
+R. Goldblatt. Topoi. The Categorial Analysis of Logic. 1979
+C. McLarty. The Uses and Abuses of the History of Topos Theory. British Journal for the Philosophy of Science 41 (1990) 351-375
+G. Osius. Categorial Set-Theory: A Characterisation of the Category of Sets. Journal for Pure and Applied Algebra 4 (1974) 79-199
+J. L. Bell. Categories, Toposes and Sets.Synthese 51 (1982) 293-337
+A. Joyal, I. Moerdijk. Algebraic Set Theory. 1995
+S. Mac Lane. Sets, Topoi and Internal Logic in Categories. In Logic Colloquium '73, 1975
+
+TYPE THEORY
+
+P. Martin-L\"{o}f. An Intuitionist Theory of Types: Predicative Part. 1974
+
+OTHER FOUNDATIONS
+
+S. Feferman. A Language and Axioms for Explicit Mathemacics. In Algebra and Logic, 1975
+
+ALGEBRAIC TOPOLOGY
+
+S. Eilenberg, N. Steenrod. Foundations of Algebraic Topology. 1952
