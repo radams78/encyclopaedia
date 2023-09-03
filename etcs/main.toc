@@ -1,7 +1,6 @@
 \contentsline {chapter}{\numberline {1}The Foundations}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Primitive Notions and Axioms}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Injective and Surjective Functions}{7}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Products}{8}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Subsets of a Set}{8}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Equalizers}{9}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Pullbacks}{10}{section.1.6}%
+\contentsline {section}{\numberline {1.2}Injective and Surjective Functions}{9}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Subsets of a Set}{9}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Equalizers}{10}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Pullbacks}{12}{section.1.5}%

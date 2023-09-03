@@ -67,6 +67,14 @@ A function $i : A \rightarrow B$ is an \emph{isomorphism}, $i : A \cong B$, iff 
 \end{df}
 
 \begin{prop}
+The inverse of an isomorphism is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ If $j$ and $k$ are inverses of $i$ we have $j = jik = k$. \qed
+\end{proof}
+
+\begin{prop}
 For any set $A$ we have $\id{A} : A \cong A$ and $\inv{\id{A}} = \id{A}$.
 \end{prop}
 
@@ -152,15 +160,59 @@ If $\pi_1 : P \rightarrow A$ and $\pi_2 : P \rightarrow B$ form a product of $A$
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:apply_pair}
+Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : B \rightarrow D$. Then
+\[ \langle g, h \rangle \circ f = \langle g \circ f, h \circ f \rangle \]
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the unique $x$ such that $\pi_1 \circ x = g \circ f$ and $\pi_2 \circ x = h \circ f$. \qed
+\end{proof}
+
 \begin{df}
 Given functions $f : A \rightarrow B$ and $g : C \rightarrow D$, define $f \times g : A \times C \rightarrow B \times D$ by
 \[ f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle \enspace . \]
 \end{df}
 
+\begin{prop}
+Let $f : A \rightarrow B$, $g : C \rightarrow D$, $h : B \rightarrow E$ and $k : D \rightarrow F$. Then
+\[ (h \times k) \circ (f \times g) = (h \circ f) \times (k \circ g) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(h \times k) \circ (f \times g) & = \langle h \circ \pi_1, k \circ \pi_2 \rangle \circ (f \times g) \\
+& = \langle h \circ \pi_1 \circ (f \times g), k \circ \pi_2 \circ (f \times g) \rangle & (\text{Proposition \ref{prop:apply_pair}}) \\
+& = \langle h \circ f \circ \pi_1, k \circ g \circ \pi_2 \rangle \\
+& = (h \circ f) \times (k \circ g) & \qed
+\end{align*}
+\end{proof}
+
 \begin{ax}[Function Sets]
-Let $A$ and $B$ be sets. There exists a set $A^B$ and function $\epsilon : A^B \times B \rightarrow A$ such that, for any set $X$ and function $f : X \times B \rightarrow A$, there exists a unique function $\lambda f : X \rightarrow A^B$ such that
-\[ f = \epsilon \circ \langle \lambda f \circ \pi_1, \pi_2 \rangle \enspace . \]
+Let $A$ and $B$ be sets. There exists a set $A^B$, called the \emph{function set} of $A$ and $B$, and function $\epsilon : A^B \times B \rightarrow A$, the \emph{evaluation map}, such that, for any set $X$ and function $f : X \times B \rightarrow A$, there exists a unique function $\lambda f : X \rightarrow A^B$ such that
+\[ f = \epsilon \circ (\lambda f \times \id{B}) \enspace . \]
 \end{ax}
+
+\begin{prop}
+For any sets $A$ and $B$, if $F$ and $G$ are function sets with evaluation maps $e : F \times B \rightarrow A$ and $e' : G \times B \rightarrow A$, then there exists a unique isomorphism $i : F \cong G$ such that $e' \circ (i \times \id{B}) = e$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : F \rightarrow G$ be the unique function such that $e = e' \circ (i \times \id{B})$.}}
+\step{2}{\pflet{$\inv{i} : G \rightarrow F$ be the unique function such that $e' = e \circ (\inv{i} \times \id{B})$}}
+\step{3}{$i \circ \inv{i} = \id{G}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $e' = e' \circ (x \times \id{B})$.
+\end{proof}
+\step{4}{$\inv{i} \circ i = \id{F}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $e = e \circ (x \times \id{B})$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Inverse Image]
 Let $A$, $X$ and $Y$ be sets. Let $f : X \rightarrow Y$, $a \in Y$ and $j : A \rightarrow X$. Then $j$ is the \emph{inverse image} of $a$ under $f$ if and only if:
@@ -174,46 +226,116 @@ Let $A$, $X$ and $Y$ be sets. Let $f : X \rightarrow Y$, $a \in Y$ and $j : A \r
 For any sets $X$ and $Y$, function $f : X \rightarrow Y$ and element $a \in Y$, there exists a set $f^{-1}(a)$ and function $j : f^{-1}(a) \rightarrow X$ such that $j$ is the inverse image of $a$ under $f$.
 \end{ax}
 
+\begin{prop}
+If $j : A \rightarrow X$ and $k : B \rightarrow X$ are inverse images of $a : 1 \rightarrow Y$ under $f : X \rightarrow Y$, then there exists a unique isomorphism $i : A \cong B$ such that $k \circ i = j$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : A \rightarrow B$ be the unique function such that $j = k \circ i$.}}
+\step{2}{\pflet{$\inv{i} : B \rightarrow A$ be the unique function such that $k = j \circ \inv{i}$}}
+\step{3}{$i \circ \inv{i} = \id{B}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $k = k \circ x$.
+\end{proof}
+\step{4}{$\inv{i} \circ i = \id{A}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $j = j \circ x$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective}, $f : A \rightarrowtail B$, iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
 \end{df}
+
+\begin{prop}
+Any function $a : 1 \rightarrow A$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ If $x,y : X \rightarrow 1$ satisfy $a \circ x = a \circ y$, then $x = y$ because there is only one function $X \rightarrow 1$. \qed
+\end{proof}
 
 \begin{df}[Surjective]
 A function $f : A \rightarrow B$ is \emph{surjective}, $f : A \twoheadrightarrow B$, iff, for every set $X$ and functions $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
 \end{df}
 
 \begin{ax}[Subset Classifier]
-There exists a set 2 and function $\top : 1 \rightarrow 2$ such that, for any sets $A$ and $X$ and any injective function $f : A \rightarrow X$, there exists a unique function $\chi : X \rightarrow 2$ such that $f$ is the inverse image of $\top$ under $\chi$.
+There exists a set 2, a \emph{subset classifier}, and element $\top \in 2$, \emph{truth}, such that, for any sets $A$ and $X$ and any injective function $f : A \rightarrow X$, there exists a unique function $\chi : X \rightarrow 2$ such that $f$ is the inverse image of $\top$ under $\chi$.
 \end{ax}
+
+\begin{prop}
+If $S$ and $S'$ are subobject classifiers with truth elements $t$ and $t'$, then there exists a unique isomorphism $i : S \cong S'$ such that $i(t) = t'$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : S \rightarrow S'$ be the characteristic function of $t$.}}
+\step{2}{\pflet{$\inv{i} : S' \rightarrow S$ be the characteristic function of $t'$.}}
+\step{3}{$i \circ \inv{i} = \id{S'}$}
+\begin{proof}
+	\pf\ Each is the characteristic function of $t'$.
+\end{proof}
+\step{4}{$\inv{i} \circ i = \id{S}$}
+\begin{proof}
+	\pf\ Each is the characteristic function of $t$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{ax}[Natural Numbers]
-There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that, for every set $X$, element $a \in X$ and function $r : X \rightarrow X$, there exists a unique function $x : \mathbb{N} \rightarrow X$ such that $x \circ 0 = a$ and $x \circ s = r \circ x$.
+There exists a set $\mathbb{N}$ of \emph{natural numbers}, an element $0 \in \mathbb{N}$ and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that, for every set $X$, element $a \in X$ and function $r : X \rightarrow X$, there exists a unique function $x : \mathbb{N} \rightarrow X$ such that $x(0) = a$ and $x \circ s = r \circ x$.
 \end{ax}
 
+\begin{prop}
+If $N, 0 \in N, s : N \rightarrow N$ and $N', 0' \in N', s' : N' \rightarrow N'$ are natural number sets, then there exists a unique isomorphism $i: N \cong N'$ such that $i(0) = 0'$ and $s' \circ i = i \circ s$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : N \rightarrow N'$ be the unique function such that $i(0) = 0'$ and $i \circ s = s' \circ i$.}}
+\step{2}{\pflet{$\inv{i} : N' \rightarrow N$ be the unique function such that $\inv{i}(0') = 0$ and $\inv{i} \circ s' = s \circ \inv{i}$}}
+\step{3}{$i \circ \inv{i} = \id{N'}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $x(0') = 0'$ and $s' \circ x = x \circ s'$.
+\end{proof}
+\step{4}{$\inv{i} \circ i = \id{N}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $x(0) = 0$ and $s \circ x = x \circ s$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Retraction, Section]
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $r$, iff $r \circ s = \id{B}$.
+\end{df}
+
 \begin{ax}[Choice]
-For every surjective function $r : X \rightarrow Y$, there exists $s : Y \rightarrow X$ such that $r \circ s$ is an identity function on $X$.
+Every surjective function has a section.
 \end{ax}
 
 \section{Injective and Surjective Functions}
 
 \begin{prop}
-Let $r : A \rightarrow B$ and $s : B \rightarrow A$. If $r \circ s = \id{B}$ then $s$ is injective.
+Every section is injective.
 \end{prop}
 
 \begin{proof}
-\pf\ If $s \circ x = s \circ y$ then $x = r \circ s \circ x = r \circ s \circ y = y$. \qed
+\pf\ Let $r \circ s = \id{}$. If $s \circ x = s \circ y$ then $x = r \circ s \circ x = r \circ s \circ y = y$. \qed
 \end{proof}
-
-\section{Products}
 
 \begin{prop}
-Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : B \rightarrow D$. Then
-\[ \langle g, h \rangle \circ f = \langle g \circ f, h \circ f \rangle \]
+Every retraction is surjective.
 \end{prop}
 
 \begin{proof}
-\pf\ Each is the unique $x$ such that $\pi_1 \circ x = g \circ f$ and $\pi_2 \circ x = h \circ f$. \qed
+\pf\ Similar. \qed
 \end{proof}
+
+\begin{cor}
+A function is surjective if and only if it has a section.
+\end{cor}
 
 \section{Subsets of a Set}
 
