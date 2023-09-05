@@ -31,11 +31,17 @@
 \maketitle
 \tableofcontents
 
+\chapter{Sets and Functions}
+
+\section{Primitive Terms}
+
 Let there be \emph{sets}.
 
 Given sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ iff $f$ is a function from $A$ to $B$, and call $A$ the \emph{domain} of $f$ and $B$ the \emph{codomain}.
 
 Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+
+\section{The Axioms}
 
 \begin{ax}[Associativity]
 Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
@@ -75,6 +81,33 @@ A function $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff 
 \end{df}
 
 \begin{ax}[Terminal Set]
+There exists an \emph{empty} set $\emptyset$ such that, for any set $A$, there exists exists exactly one function $\emptyset \rightarrow A$.
+\end{ax}
+
+\begin{prop}
+If $S$ and $T$ are empty sets then there exists a unique isomorphism $S \cong T$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f$ be the unique function $S \rightarrow T$}}
+\step{2}{\pflet{$f^{-1}$ be the unique function $T \rightarrow S$}}
+\step{3}{$f f^{-1} = \mathrm{id}_T$}
+\begin{proof}
+	\pf\ Each is the unique function $T \rightarrow T$.
+\end{proof}
+\step{4}{$f^{-1} f = \mathrm{id}_S$}
+\begin{proof}
+	\pf\ Each is the unique function $S \rightarrow S$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Empty Set]
+Let $\emptyset$ be the set such that, for any set $A$, there exists exactly one function $\emptyset \rightarrow A$.
+\end{df}
+
+\begin{ax}[Terminal Set]
 There exists a \emph{terminal} set $1$ such that, for any set $A$, there exists exists exactly one function $A \rightarrow 1$.
 \end{ax}
 
@@ -107,6 +140,14 @@ An \emph{element} of a set $A$ is a function $1 \rightarrow A$. We write $a \in 
 Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $fa$.
 \end{df}
 
+\begin{ax}[Extensionality]
+Let $A$ and $B$ be sets. Let $f,g : A \rightarrow B$. If $\forall x \in A. f(x) = g(x)$ then $f = g$.
+\end{ax}
+
+\begin{ax}[Non-degeneracy]
+The empty set $\emptyset$ has no elements.
+\end{ax}
+
 \begin{df}[Surjective]
 A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $b \in B$, there exists $a \in A$ such that $f(a) = b$.
 \end{df}
@@ -118,4 +159,6 @@ A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x, x' \in A$,
 \begin{df}[Bijective]
 A function is \emph{bijective} iff it is injective and surjective.
 \end{df}
+
+%TODO 2 is a coseparator
 \end{document}
