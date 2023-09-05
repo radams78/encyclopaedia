@@ -31,570 +31,91 @@
 \maketitle
 \tableofcontents
 
-\chapter{The Foundations}
-
-\section{Primitive Notions and Axioms}
-
 Let there be \emph{sets}.
 
-Given sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ for '$f$ is a function from $A$ to $B$'. We call $A$ the \emph{domain} of $A$, and $B$ the \emph{codomain}.
+Given sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ iff $f$ is a function from $A$ to $B$, and call $A$ the \emph{domain} of $f$ and $B$ the \emph{codomain}.
 
-Given sets $A$, $B$ and $C$, and functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $gf = g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
 
 \begin{ax}[Associativity]
-For any functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
-\[ h \circ (g \circ f) = (h \circ g) \circ f \enspace . \]
+Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
+\[ h (gf) = (hg) f \enspace . \]
 \end{ax}
 
 \begin{ax}[Identity]
-For any set $A$, there exists a function $\id{A} : A \rightarrow A$, called an \emph{identity} function on $A$, such that:
+For any set $A$, there exists a function $i : A \rightarrow A$ such that:
 \begin{itemize}
-\item for every set $B$ and function $f : A \rightarrow B$, we have $f \circ \id{A} = f$;
-\item for every set $B$ and function $f : B \rightarrow A$, we have $\id{A} \circ f = f$.
+\item for any set $B$ and function $f : A \rightarrow B$, we have $fi = f$
+\item for any set $B$ and function $f : B \rightarrow A$, we have $if = f$.
 \end{itemize}
 \end{ax}
 
 \begin{prop}
-The identity function on a set is unique.
+For any set $A$, there exists a unique function $i : A \rightarrow A$ such that:
+\begin{itemize}
+\item for any set $B$ and function $f : A \rightarrow B$, we have $fi = f$
+\item for any set $B$ and function $f : B \rightarrow A$, we have $if = f$.
+\end{itemize}
 \end{prop}
 
 \begin{proof}
-\pf\ If $i, j : A \rightarrow A$ are identity functions on $A$ then we have $i = i \circ j = j$. \qed
+\pf\ If $i$ and $j$ both satisfy these conditions then $i = ij = j$. \qed
 \end{proof}
+
+\begin{df}[Identity Function]
+For any set $A$, the \emph{identity function} on $A$, $\mathrm{id}_A$, is the unique function $A \rightarrow A$ such that:
+\begin{itemize}
+\item for any set $B$ and function $f : A \rightarrow B$, we have $f \mathrm{id}_A = f$
+\item for any set $B$ and function $f : B \rightarrow A$, we have $\mathrm{id}_B f = f$.
+\end{itemize}
+\end{df}
 
 \begin{df}[Isomorphism]
-A function $i : A \rightarrow B$ is an \emph{isomorphism}, $i : A \cong B$, iff there exists a function $\inv{i} : B \rightarrow A$, the \emph{inverse} of $i$, such that $\inv{i} \circ i = \id{A}$ and $i \circ \inv{i} = \id{B}$.
+A function $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff there exists a function $g : B \rightarrow A$ such that $fg = \mathrm{id}_B$ and $gf = \mathrm{id}_A$.
 \end{df}
-
-\begin{prop}
-The inverse of an isomorphism is unique.
-\end{prop}
-
-\begin{proof}
-\pf\ If $j$ and $k$ are inverses of $i$ we have $j = jik = k$. \qed
-\end{proof}
-
-\begin{prop}
-For any set $A$ we have $\id{A} : A \cong A$ and $\inv{\id{A}} = \id{A}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $\id{A} \circ \id{A} = \id{A}$. \qed
-\end{proof}
-
-\begin{prop}
-If $i : A \cong B$ then $\inv{i} : B \cong A$ and $\inv{(\inv{i})} = i$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $i \circ \inv{i} = \id{B}$ and $\inv{i} \circ i = \id{A}$. \qed
-\end{proof}
-
-\begin{prop}
-If $i : A \cong B$ and $j : B \cong C$ then $j \circ i : A \cong C$ and $\inv{(j \circ i)} = \inv{i} \circ \inv{j}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $j \circ i \circ \inv{i} \circ \inv{j} = \id{C}$ and $\inv{i} \circ \inv{j} \circ j \circ i = \id{A}$. \qed
-\end{proof}
 
 \begin{ax}[Terminal Set]
-There exists a set 1 such that, for any set $A$, there exists a unique function $A \rightarrow 1$.
+There exists a \emph{terminal} set $1$ such that, for any set $A$, there exists exists exactly one function $A \rightarrow 1$.
 \end{ax}
 
 \begin{prop}
-The terminal set is unique up to unique isomorphism.
+If $S$ and $T$ are terminal sets then there exists a unique isomorphism $S \cong T$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$A$ and $B$ be terminal sets.}}
-\step{2}{\pflet{$i$ be the unique function $A \rightarrow B$.}}
-\step{3}{\pflet{$\inv{i}$ be the unique function $B \rightarrow A$.}}
-\step{4}{$i \circ \inv{i} = \id{B}$}
+\step{1}{\pflet{$f$ be the unique function $S \rightarrow T$}}
+\step{2}{\pflet{$f^{-1}$ be the unique function $T \rightarrow S$}}
+\step{3}{$f f^{-1} = \mathrm{id}_T$}
 \begin{proof}
-	\pf\ Since there is only one function $B \rightarrow B$.
+	\pf\ Each is the unique function $T \rightarrow T$.
 \end{proof}
-\step{5}{$\inv{i} \circ i = \id{A}$}
+\step{4}{$f^{-1} f = \mathrm{id}_S$}
 \begin{proof}
-	\pf\ Since there is only one function $A \rightarrow A$.
+	\pf\ Each is the unique function $S \rightarrow S$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Terminal Set]
+Let 1 be the set such that, for any set $A$, there exists exactly one function $A \rightarrow 1$.
+\end{df}
 
 \begin{df}[Element]
-For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow A$.
+An \emph{element} of a set $A$ is a function $1 \rightarrow A$. We write $a \in A$ for $a : 1 \rightarrow A$.
 
-We write $a \in A$ for $a : 1 \rightarrow A$. Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $f \circ a$.
+Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $fa$.
 \end{df}
-
-\begin{ax}[Extensionality]
-Let $A$ and $B$ be sets. Let $f,g : A \rightarrow B$. If, for all $x \in A$, we have $f(x) = g(x)$, then $f = g$.
-\end{ax}
-
-\begin{ax}[Empty Set]
-There exists a set with no elements.
-\end{ax}
-
-\begin{ax}[Products]
-Let $A$ and $B$ be sets. There exists a set $A \times B$ and functions $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$, the \emph{projections}, such that, for every set $X$ and functions $f : X \rightarrow A$, $g : X \rightarrow B$, there exists a unique function $\langle f,g \rangle : X \rightarrow A \times B$ such that
-\[ \pi_1 \circ \langle f,g \rangle = f, \qquad \pi_2 \circ \langle f,g \rangle = g \enspace . \]
-\end{ax}
-
-\begin{prop}
-If $\pi_1 : P \rightarrow A$ and $\pi_2 : P \rightarrow B$ form a product of $A$ and $B$, and $p_1 : Q \rightarrow A$ and $p_2 : Q \rightarrow B$ form a product of $A$ and $B$, then there exists a unique isomorphism $i : P \cong Q$ such that $p_1 \circ i = \pi_1$ and $p_2 \circ i = \pi_2$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$i : P \rightarrow Q$ be the unique function such that $p_1 \circ i = \pi_1$ and $p_2 \circ i = \pi_2$.}}
-\step{2}{\pflet{$\inv{i} : Q \rightarrow P$ be the unique function such that $\pi_1 \circ \inv{i} = p_1$ and $\pi_2 \circ \inv{i} = p_2$}}
-\step{3}{$i \circ \inv{i} = \id{Q}$}
-\begin{proof}
-	\pf\ Each is the unique $x : Q \rightarrow Q$ such that $p_1 \circ x = p_1$ and $p_2 \circ x = p_2$.
-\end{proof}
-\step{4}{$\inv{i} \circ i = \id{P}$}
-\begin{proof}
-	\pf\ Each is the unique $x : P \rightarrow P$ such that $\pi_1 \circ x = \pi_1$ and $\pi_2 \circ x = \pi_2$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:apply_pair}
-Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : B \rightarrow D$. Then
-\[ \langle g, h \rangle \circ f = \langle g \circ f, h \circ f \rangle \]
-\end{prop}
-
-\begin{proof}
-\pf\ Each is the unique $x$ such that $\pi_1 \circ x = g \circ f$ and $\pi_2 \circ x = h \circ f$. \qed
-\end{proof}
-
-\begin{df}
-Given functions $f : A \rightarrow B$ and $g : C \rightarrow D$, define $f \times g : A \times C \rightarrow B \times D$ by
-\[ f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle \enspace . \]
-\end{df}
-
-\begin{prop}
-Let $f : A \rightarrow B$, $g : C \rightarrow D$, $h : B \rightarrow E$ and $k : D \rightarrow F$. Then
-\[ (h \times k) \circ (f \times g) = (h \circ f) \times (k \circ g) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-(h \times k) \circ (f \times g) & = \langle h \circ \pi_1, k \circ \pi_2 \rangle \circ (f \times g) \\
-& = \langle h \circ \pi_1 \circ (f \times g), k \circ \pi_2 \circ (f \times g) \rangle & (\text{Proposition \ref{prop:apply_pair}}) \\
-& = \langle h \circ f \circ \pi_1, k \circ g \circ \pi_2 \rangle \\
-& = (h \circ f) \times (k \circ g) & \qed
-\end{align*}
-\end{proof}
-
-\begin{ax}[Function Sets]
-Let $A$ and $B$ be sets. There exists a set $A^B$, called the \emph{function set} of $A$ and $B$, and function $\epsilon : A^B \times B \rightarrow A$, the \emph{evaluation map}, such that, for any set $X$ and function $f : X \times B \rightarrow A$, there exists a unique function $\lambda f : X \rightarrow A^B$ such that
-\[ f = \epsilon \circ (\lambda f \times \id{B}) \enspace . \]
-\end{ax}
-
-\begin{prop}
-For any sets $A$ and $B$, if $F$ and $G$ are function sets with evaluation maps $e : F \times B \rightarrow A$ and $e' : G \times B \rightarrow A$, then there exists a unique isomorphism $i : F \cong G$ such that $e' \circ (i \times \id{B}) = e$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$i : F \rightarrow G$ be the unique function such that $e = e' \circ (i \times \id{B})$.}}
-\step{2}{\pflet{$\inv{i} : G \rightarrow F$ be the unique function such that $e' = e \circ (\inv{i} \times \id{B})$}}
-\step{3}{$i \circ \inv{i} = \id{G}$}
-\begin{proof}
-	\pf\ Each is the unique $x$ such that $e' = e' \circ (x \times \id{B})$.
-\end{proof}
-\step{4}{$\inv{i} \circ i = \id{F}$}
-\begin{proof}
-	\pf\ Each is the unique $x$ such that $e = e \circ (x \times \id{B})$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Inverse Image]
-Let $A$, $X$ and $Y$ be sets. Let $f : X \rightarrow Y$, $a \in Y$ and $j : A \rightarrow X$. Then $j$ is the \emph{inverse image} of $a$ under $f$ if and only if:
-\begin{itemize}
-\item $f \circ j = a \circ !_A$
-\item for every set $I$ and function $q : I \rightarrow X$ such that $f \circ q = a \circ !_I$, there exists a unique $\overline{q} : I \rightarrow A$ such that $q = j \circ \overline{q}$.
-\end{itemize}
-\end{df}
-
-\begin{ax}[Inverse Images]
-For any sets $X$ and $Y$, function $f : X \rightarrow Y$ and element $a \in Y$, there exists a set $f^{-1}(a)$ and function $j : f^{-1}(a) \rightarrow X$ such that $j$ is the inverse image of $a$ under $f$.
-\end{ax}
-
-\begin{prop}
-If $j : A \rightarrow X$ and $k : B \rightarrow X$ are inverse images of $a : 1 \rightarrow Y$ under $f : X \rightarrow Y$, then there exists a unique isomorphism $i : A \cong B$ such that $k \circ i = j$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$i : A \rightarrow B$ be the unique function such that $j = k \circ i$.}}
-\step{2}{\pflet{$\inv{i} : B \rightarrow A$ be the unique function such that $k = j \circ \inv{i}$}}
-\step{3}{$i \circ \inv{i} = \id{B}$}
-\begin{proof}
-	\pf\ Each is the unique $x$ such that $k = k \circ x$.
-\end{proof}
-\step{4}{$\inv{i} \circ i = \id{A}$}
-\begin{proof}
-	\pf\ Each is the unique $x$ such that $j = j \circ x$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective}, $f : A \rightarrowtail B$, iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
-\end{df}
-
-\begin{prop}
-Any function $a : 1 \rightarrow A$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ If $x,y : X \rightarrow 1$ satisfy $a \circ x = a \circ y$, then $x = y$ because there is only one function $X \rightarrow 1$. \qed
-\end{proof}
 
 \begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective}, $f : A \twoheadrightarrow B$, iff, for every set $X$ and functions $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
+A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $b \in B$, there exists $a \in A$ such that $f(a) = b$.
 \end{df}
 
-\begin{ax}[Subset Classifier]
-There exists a set 2, a \emph{subset classifier}, and element $\top \in 2$, \emph{truth}, such that, for any sets $A$ and $X$ and any injective function $f : A \rightarrow X$, there exists a unique function $\chi : X \rightarrow 2$ such that $f$ is the inverse image of $\top$ under $\chi$.
-\end{ax}
-
-\begin{prop}
-If $S$ and $S'$ are subobject classifiers with truth elements $t$ and $t'$, then there exists a unique isomorphism $i : S \cong S'$ such that $i(t) = t'$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$i : S \rightarrow S'$ be the characteristic function of $t$.}}
-\step{2}{\pflet{$\inv{i} : S' \rightarrow S$ be the characteristic function of $t'$.}}
-\step{3}{$i \circ \inv{i} = \id{S'}$}
-\begin{proof}
-	\pf\ Each is the characteristic function of $t'$.
-\end{proof}
-\step{4}{$\inv{i} \circ i = \id{S}$}
-\begin{proof}
-	\pf\ Each is the characteristic function of $t$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{ax}[Natural Numbers]
-There exists a set $\mathbb{N}$ of \emph{natural numbers}, an element $0 \in \mathbb{N}$ and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that, for every set $X$, element $a \in X$ and function $r : X \rightarrow X$, there exists a unique function $x : \mathbb{N} \rightarrow X$ such that $x(0) = a$ and $x \circ s = r \circ x$.
-\end{ax}
-
-\begin{prop}
-If $N, 0 \in N, s : N \rightarrow N$ and $N', 0' \in N', s' : N' \rightarrow N'$ are natural number sets, then there exists a unique isomorphism $i: N \cong N'$ such that $i(0) = 0'$ and $s' \circ i = i \circ s$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$i : N \rightarrow N'$ be the unique function such that $i(0) = 0'$ and $i \circ s = s' \circ i$.}}
-\step{2}{\pflet{$\inv{i} : N' \rightarrow N$ be the unique function such that $\inv{i}(0') = 0$ and $\inv{i} \circ s' = s \circ \inv{i}$}}
-\step{3}{$i \circ \inv{i} = \id{N'}$}
-\begin{proof}
-	\pf\ Each is the unique $x$ such that $x(0') = 0'$ and $s' \circ x = x \circ s'$.
-\end{proof}
-\step{4}{$\inv{i} \circ i = \id{N}$}
-\begin{proof}
-	\pf\ Each is the unique $x$ such that $x(0) = 0$ and $s \circ x = x \circ s$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Retraction, Section]
-Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $r$, iff $r \circ s = \id{B}$.
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x, x' \in A$, if $f(x) = f(x')$ then $x = x'$.
 \end{df}
 
-\begin{ax}[Choice]
-Every surjective function has a section.
-\end{ax}
-
-\section{Injective and Surjective Functions}
-
-\begin{prop}
-Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for any elements $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $f$ is injective then, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.}
-\begin{proof}
-	\pf\ Immediate from definitions.
-\end{proof}
-\step{2}{If, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$, then $f$ is injective.}
-\begin{proof}
-	\step{a}{\assume{For all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.}}
-	\step{b}{\pflet{$X$ be a set and $x,y : X \rightarrow A$}}
-	\step{c}{\assume{$f \circ x = f \circ y$}}
-	\step{d}{For all $t \in X$ we have $x(t) = y(t)$.}
-	\begin{proof}
-		\step{i}{\pflet{$t \in X$}}
-		\step{ii}{$f(x(t)) = f(y(t))$}
-		\begin{proof}
-			\pf\ \stepref{c}
-		\end{proof}
-		\step{iii}{$x(t) = y(t)$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-	\end{proof}
-	\step{e}{$x = y$}
-	\begin{proof}
-		\pf\ Axiom of Extensionality.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Every section is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ Let $r \circ s = \id{}$. If $s \circ x = s \circ y$ then $x = r \circ s \circ x = r \circ s \circ y = y$. \qed
-\end{proof}
-
-\begin{prop}
-Let $r : A \rightarrow B$. Then the following are equivalent.
-\begin{enumerate}
-\item $r$ is surjective.
-\item $r$ has a section.
-\item For every element $y \in B$, there exists $x \in A$ such that $r(x) = y$.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$1 \Rightarrow 2$}
-\begin{proof}
-	\pf\ Axiom of Choice.
-\end{proof}
-\step{2}{$2 \Rightarrow 3$}
-\begin{proof}
-	\step{a}{\pflet{$s : A \rightarrow B$ be a section of $r$.}}
-	\step{b}{\pflet{$y \in B$}}
-	\step{c}{\pflet{$x = s(y)$}}
-	\step{d}{$r(x) = y$}
-\end{proof}
-\step{3}{$3 \Rightarrow 1$}
-\begin{proof}
-	\step{a}{\assume{$\forall y \in B. \exists x \in A. r(x) = y$}}
-	\step{b}{\pflet{$X$ be a set and $f,g : B \rightarrow X$}}
-	\step{c}{\assume{$fr = gr$}}
-	\step{d}{For all $y \in B$ we have $f(y) = g(y)$.}
-	\begin{proof}
-		\step{i}{\pflet{$y \in B$}}
-		\step{ii}{\pick\ $x \in A$ such that $r(x) = y$.}
-		\step{iii}{$f(y) = g(y)$}
-		\begin{proof}
-			\pf
-			\begin{align*}
-				f(y) & = f(r(x)) & (\text{\stepref{ii}}) \\
-				& = g(r(x)) & (\text{\stepref{c}}) \\
-				& = g(y) & (\text{\stepref{ii}})
-			\end{align*}
-		\end{proof}
-	\end{proof}
-	\step{e}{$f = g$}
-	\begin{proof}
-		\pf\ Axiom of Extensionality.
-	\end{proof}
-\end{proof}
-\end{proof}
-
-\section{Subsets of a Set}
-
-\begin{df}[Subset]
-Let $i : X \rightarrow A$. We write '$(X,i)$ is a subset of $A$' for '$i$ is injective'.
-
-Given subsets $i : X \rightarrow A$ and $j : Y \rightarrow A$,
-we write '$(X,i) = (Y,j)$' for 'there exists an isomorphism $k : X \cong Y$ such that $j \circ k = i$.
+\begin{df}[Bijective]
+A function is \emph{bijective} iff it is injective and surjective.
 \end{df}
-
-\begin{prop}
-Given subsets $(X,i)$, $(Y,j)$ of $A$, if $(X,i) = (Y,j)$ then the isomorphism $k : X \cong Y$ such that $i \circ k = j$ is unique.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $i$ is injective. \qed
-\end{proof}
-
-\begin{prop}
-If $(X,i)$ is a subset of $A$ then $(X,i) = (X,i)$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $\id{X} : X \cong X$ and $i \circ \id{X} = i$. \qed
-\end{proof}
-
-\begin{prop}
-Given subsets $(X,i)$, $(Y,j)$ of $A$, if $(X,i) = (Y,j)$ then $(Y,j) = (X,i)$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $k : X \cong Y$ and $j \circ k = i$ then $\inv{k} : Y \cong X$ and $i \circ \inv{k} = j$. \qed
-\end{proof}
-
-\begin{prop}
-Given subsets $(X,i)$, $(Y,j)$, $(Z,k)$ of $A$, if $(X,i) = (Y,j)$ and $(Y,j) = (Z,k)$ then $(X,i) = (Z,k)$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $f : X \cong Y$ satisfies $j \circ f = i$ and $g : Y \cong Z$ satisfies $k \circ g = j$, then $g \circ f : X \cong Z$ and $k \circ g \circ f = i$. \qed
-\end{proof}
-
-\begin{df}[Inclusion]
-Let $(X,i)$ and $(Y,j)$ be subsets of $A$. We say $(X,i)$ is \emph{included} in $(Y,j)$, and write $(X,i) \subseteq (Y,j)$, iff there exists $k : X \rightarrow Y$ such that $j \circ k = i$.
-\end{df}
-
-\begin{prop}
-For any subsets $(X,i)$, $(Y,j)$ of $A$, if $(X,i) = (Y,j)$ then $(X,i) \subseteq (Y,j)$.
-\end{prop}
-
-\begin{proof}
-\pf\ Immediate from definitions. \qed
-\end{proof}
-
-\begin{cor}
-For any subset $(X,i)$ of $A$ we have $(X,i) \subseteq (X,i)$.
-\end{cor}
-
-\begin{prop}
-For any subsets $(X,i)$, $(Y,j)$, $(Z,k)$ of $A$, if $(X,i) \subseteq (Y,j)$ and $(Y,j) \subseteq (Z,k)$, then $(X,i) \subseteq (Z,k)$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $f : X \rightarrow Y$ satisfies $j \circ f = i$ and $g : Y \rightarrow Z$ satisfies $k \circ g = j$, then $g \circ f : X \rightarrow Z$ and $k \circ g \circ f = i$. \qed
-\end{proof}
-
-\begin{cor}
-Inclusion is well defined. That is, if $(X,i) = (X',i')$, $(Y,j) = (Y',j')$ and $(X,i) \subseteq (Y,j)$ then $(X',i') \subseteq (Y',j')$.
-\end{cor}
-
-\begin{prop}
-For any subsets $(X,i)$ and $(Y,j)$ of $A$, if $(X,i) \subseteq (Y,j)$ and $(Y,j) \subseteq (X,i)$ then $(X,i) = (Y,j)$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : X \rightarrow Y$ satisfy $j \circ f = i$.}}
-\step{2}{\pflet{$g : Y \rightarrow X$ satisfy $i \circ g = j$.}}
-\step{3}{$g \circ f = \id{X}$}
-\begin{proof}
-	\pf\ Since $i \circ g \circ f = i$ and $i$ is injective.
-\end{proof}
-\step{4}{$f \circ g = \id{Y}$}
-\begin{proof}
-	\pf\ Since $j \circ f \circ g = j$ and $j$ is injective.
-\end{proof}
-\step{5}{$f : X \cong Y$ and $j \circ f = i$.}
-\step{6}{$(X,i) = (Y,j)$}
-\qed
-\end{proof}
-
-\section{Equalizers}
-
-\begin{prop}
-For any set $A$, the function $\langle \id{A}, \id{A} \rangle : A \rightarrow A \times A$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $\pi_1 \circ \langle \id{A}, \id{A} \rangle = \id{A}$. \qed
-\end{proof}
-
-\begin{prop}
-Given sets $A$ and $B$ and functions $f,g : A \rightarrow B$, there exists a set $E$ and function $e : E \rightarrow A$, called the \emph{equalizer} of $f$ and $g$, such that:
-\begin{itemize}
-\item $f \circ e = g \circ e$
-\item for any set $X$ and function $x : X \rightarrow A$, if $f \circ x = g \circ x$ then there exists a unique $\overline{x} : X \rightarrow E$ such that $x = e \circ \overline{x}$.
-\end{itemize}
-\end{prop}
-
-\[ \xymatrix{
-X \ar[ddr]_x \ar[drr]^{f \circ x} \ar[dr]^{\overline{x}} \\
-& E \ar[d]_e \ar[r]^m & B \ar[d]_{\langle \id{B}, \id{B} \rangle} \ar[r]^{!} & 1 \ar[d]^{\top} \\
-& A \ar[r]_{\langle f,g \rangle} & B \times B \ar[r]_{eq} & 2
-} \]
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$eq : B \times B \rightarrow 2$ be the characteristic function of $\langle \id{B}, \id{B} \rangle : B \rightarrow B \times B$}}
-\begin{proof}
-	\pf\ By the Axiom of the Subset Classifier.
-\end{proof}
-\step{2}{\pflet{$e : E \rightarrow A$ be the inverse image of $\top$ under $eq \circ \langle f,g \rangle$}}
-\begin{proof}
-	\pf\ By the Axiom of Inverse Images.
-\end{proof}
-\step{3}{$f \circ e = g \circ e$}
-\begin{proof}
-	\step{a}{$eq \circ \langle f,g \rangle \circ e = \top$}
-	\step{b}{\pflet{$m : E \rightarrow B$ be the unique function such that $\langle \id{B}, \id{B} \rangle \circ m = \langle f,g \rangle \circ e$}}
-	\step{c}{$\langle m, m \rangle = \langle f \circ e, g \circ e \rangle$}
-	\step{d}{$f \circ e = g \circ e = m$}
-\end{proof}
-\step{4}{For any set $X$ and function $x : X \rightarrow A$, if $f \circ x = g \circ x$ then there exists a unique $\overline{x} : X \rightarrow E$ such that $x = e \circ \overline{x}$.}
-\begin{proof}
-	\step{a}{\pflet{$X$ be a set.}}
-	\step{b}{\pflet{$x : X \rightarrow A$}}
-	\step{c}{\assume{$f \circ x = g \circ x$}}
-	\step{d}{$\langle f,g \rangle \circ x = \langle \id{B}, \id{B} \rangle \circ f \circ x$}
-	\step{e}{$eq \circ \langle f,g \rangle \circ x = \top \circ !_X$}
-	\begin{proof}
-		\pf
-		\begin{align*}
-			eq \circ \langle f,g \rangle \circ x
-			& = eq \circ \langle \id{B}, \id{B} \rangle \circ f \circ x \\
-			& = \top \circ !_B \circ f \circ x \\
-			& = \top \circ !_X
-		\end{align*}
-	\end{proof}
-	\step{f}{There exists a unique $\overline{x} : X \rightarrow E$ such that $e \circ \overline{x} = x$}
-	\begin{proof}
-		\pf\ From \stepref{2}.
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\section{Pullbacks}
-
-\begin{prop}
-Let $f : A \rightarrow C$ and $g : B \rightarrow C$. Then there exists a set $P$ and functions $p : P \rightarrow A$, $q : P \rightarrow B$ such that:
-\begin{itemize}
-\item $f \circ p = g \circ q$
-\item For any set $X$ and functions $x : X \rightarrow A$, $y : X \rightarrow B$ such that $f \circ x = g \circ y$, there exists a unique function $(x,y) : X \rightarrow P$ such that $p \circ (x,y) = x$ and $q \circ (x,y) = y$.
-\end{itemize}
-\end{prop}
-
-\[ \xymatrix{
-E \ar[dr]^e \ar[ddr]_q \ar[drr]^p \\
-& A \times B \ar[r]^{\pi_1} \ar[d]_{\pi_2} & A \ar[d]^{f} \\
-& B \ar[r]_{g} & C
-} \]
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$e : P \rightarrow A \times B$ be the equalizer of $f \circ \pi_1, g \circ \pi_2 : A \times B \rightarrow C$.}}
-\step{2}{\pflet{$p = \pi_1 \circ e : E \rightarrow A$ and $q = \pi_2 \circ e : E \rightarrow B$.}}
-\step{3}{$f \circ p = g \circ q$}
-\step{4}{For any set $X$ and functions $x : X \rightarrow A$, $y : X \rightarrow B$ such that $f \circ x = g \circ y$, there exists a unique function $(x,y) : X \rightarrow P$ such that $p \circ (x,y) = x$ and $q \circ (x,y) = y$.}
-\begin{proof}
-	\step{a}{\pflet{$X$ be a set.}}
-	\step{b}{\pflet{$x : X \rightarrow A$ and $y : X \rightarrow B$}}
-	\step{c}{\assume{$f \circ x = g \circ y$}}
-	\step{d}{$f \circ \pi_1 \circ \langle x,y \rangle = g \circ \pi_2 \circ \langle x,y \rangle$}
-	\step{e}{\pflet{$(x,y) : X \rightarrow E$ be the unique morphism such that $e \circ (x,y) = \langle x,y \rangle$}}
-	\step{f}{$(x,y)$ is unique such that $\pi_1 \circ e \circ (x,y) = x$ and $\pi_2 \circ e \circ (x,y) = y$}
-	\step{g}{$(x,y)$ is unique such that $p \circ (x,y) = x$ and $q \circ (x,y) = y$.}
-\end{proof}
-\qed
-\end{proof}
-
 \end{document}

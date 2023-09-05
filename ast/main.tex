@@ -1,0 +1,84 @@
+\documentclass{book}
+\title{Mathematics Based on Algebraic Set Theory}
+\author{Robin Adams}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
+\usepackage{pf2}
+\usepackage{hyperref}
+\usepackage{mathabx}
+
+\newtheorem{ax}{Axiom}[chapter]
+
+\begin{document}
+
+\chapter{Sets and Classes}
+
+Let there be \emph{classes}.
+
+Given two classes $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ iff $f$ is a function from $A$ to $B$.
+
+Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $g \circ f = g f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+
+\begin{ax}[Associativity]
+Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have $h(gf) = (hg)f$.
+\end{ax}
+
+\begin{ax}[Identities]
+For any class $A$, there exists a function $\mathrm{id}_A : A \rightarrow A$, the \emph{identity} function on $A$, such that:
+\begin{itemize}
+\item for every class $B$ and function $f : A \rightarrow B$, we have $f \mathrm{id}_A = f$
+\item for every class $B$ and function $f : B \rightarrow A$, we have $\mathrm{id}_A f = f$.
+\end{itemize}
+\end{ax}
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for any class $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x  = y$.
+\end{df}
+
+\begin{df}[Isomorphism]
+A function $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, if and only if there exists a function $f^{-1} : B \rightarrow A$ such that $f f^{-1} = \mathrm{id}_B$ and $f^{-1} f = \mathrm{id}_A$.
+\end{df}
+
+\begin{ax}[Terminal Class]
+There exists a class 1 such that, for any class $A$, there exists a unique function $A \rightarrow 1$.
+\end{ax}
+
+\begin{ax}[Disjoint Union]
+For any classes $A$ and $B$, there exists a class $A + B$, the \emph{disjoint union} of $A$ and $B$, and functions $\kappa_1 : A \rightarrow A + B$, $\kappa_2 : B \rightarrow A + B$, the \emph{injections}, such that, for any class $X$ and functions $f : A \rightarrow X$, $g : B \rightarrow X$, there exists a unique function $[f,g] : A + B \rightarrow X$ such that
+\[ [f,g] \kappa_1 = f, \qquad [f,g] \kappa_2 = g \enspace . \]
+\end{ax}
+
+\begin{ax}[Injections are Injective]
+For any classes $A$ and $B$, the injections $\kappa_1 : A \rightarrow A + B$ and $\kappa_2 : B \rightarrow A + B$ are injective.
+\end{ax}
+
+\begin{df}
+Given $f : A \rightarrow A'$ and $g : B \rightarrow B'$, define $f + g = [\kappa_1 f, \kappa_2 g] : A + B \rightarrow A' + B'$.
+\end{df}
+
+\begin{ax}[Pullback]
+For any classes $A$, $B$ and $C$, and any functions $f : A \rightarrow C$ and $g : B \rightarrow C$, there exists a set $A \times_C B$, the \emph{pullback} of $f$ and $g$, and functions $\pi_1 : A \times_C B \rightarrow A$, $\pi_2 : A \times_C B \rightarrow B$, such that:
+\begin{itemize}
+\item $f \pi_1 = g \pi_2$
+\item for any set $X$ and functions $x : X \rightarrow A$, $y : X \rightarrow B$ such that $fx = gy$, there exists a unique function $(x,y) : X \rightarrow A \times_C B$ such that $\pi_1 \circ (x,y) = x$ and $\pi_2 \circ (x,y) = y$.
+\end{itemize}
+\end{ax}
+
+\begin{ax}[Disjointness of Unions]
+Let $A$ and $B$ be classes. Let $O$ be the pullback of $\kappa_1 : A \rightarrow A + B$ and $\kappa_2 : B \rightarrow A + B$. For any class $X$, there exists a unique function $O \rightarrow X$.
+\end{ax}
+
+\begin{ax}[Disjoint Unions are Stable under Pullback]
+Let $f : A \rightarrow X$, $g : B \rightarrow X$ and $h : C \rightarrow X$. Then the following is a pullback:
+\[ \xymatrix{
+(A \times_X C) + (B \times_X C) \ar[r]^{p + p} \ar[d]_{[q,q]} & A + B \ar[d]^{[f,g]} \\
+C \ar[r]_h & X
+} \]
+\end{ax}
+
+\end{document}
