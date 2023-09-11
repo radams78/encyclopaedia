@@ -51,18 +51,22 @@ Given functions $f : A \rightarrow B$ and $g : A \rightarrow C$, let there be a 
 
 \section{Definitions Used in the Axioms}
 
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
-\end{df}
-
 \begin{df}[Element]
 For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow a$. We write $a \in A$ for $a : 1 \rightarrow A$.
 
 Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $f \circ a : 1 \rightarrow B$.
 \end{df}
 
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
+\end{df}
+
 \begin{df}[Surjective]
 A function $f : A \rightarrow B$ is \emph{surjective} iff, for every element $b \in B$, there exists $a \in A$ such that $f(a) = b$.
+\end{df}
+
+\begin{df}[Retraction, Section]
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $A$, iff $r \circ s = \id{B}$.
 \end{df}
 
 \begin{df}
@@ -134,8 +138,116 @@ There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s
 \end{ax}
 
 \begin{ax}[Choice]
-For any surjective function $r : A \rightarrow B$, there exists $s : B \rightarrow A$ such that $rs = \id{B}$.
+Every surjective function has a section.
 \end{ax}
+
+\section{Isomorphisms}
+
+\begin{df}[Isomorphism]
+Let $f : A \rightarrow B$. Then $f$ is an \emph{isomorphism} or \emph{bijection}, $f : A \cong B$, iff there exists a function $f^{-1} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f^{-1} f = \id{A}$ and $f f^{-1} = \id{B}$.
+\end{df}
+
+%TODO: Inverse is unique, isomorphism is an equivalence relation
+
+\section{Subsets}
+
+\begin{df}[Subset]
+Let $i : U \rightarrow A$. Then we say that $(U,i)$ is a \emph{subset} of $A$ iff $i$ is injective.
+\end{df}
+
+\begin{df}
+Let $(U,i)$ and $(V,j)$ be subsets of $A$. Then we say $(U,i)$ and $(V,j)$ are \emph{equal}, and write $(U,i) = (V,j)$, iff there exists an isomorphism $\phi : U \cong V$ such that $j \phi = i$.
+\end{df}
+
+%TODO This is an equivalence relation
+
+%TODO Inclusion of subsets
+
+\section{Pullbacks}
+
+%TODO Pullbacks are unique up to isomorphism
+
+\section{Functions}
+
+\begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for all $x, y \in A$, if $f(x) = f(y)$ then $x = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is injective then, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.}
+\begin{proof}
+	\pf\ Immediate from the definition of injective.
+\end{proof}
+\step{2}{If $\forall x,y \in A. f(x) = f(y) \Rightarrow x = y$ then $f$ is injective.}
+\begin{proof}
+	\step{a}{\assume{$\forall x,y \in A. f(x) = f(y) \Rightarrow x = y$}}
+	\step{b}{\pflet{$X$ be a set and $s,t : X \rightarrow A$}}
+	\step{c}{\assume{$fs = ft$}}
+	\step{d}{$\forall x \in X. s(x) = t(x)$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in X$}}
+		\step{ii}{$f(s(x)) = f(t(x))$}
+		\begin{proof}
+			\pf\ \stepref{c}
+		\end{proof}
+		\step{iii}{$s(x) = t(x)$}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+	\end{proof}
+	\step{e}{$s = t$}
+	\begin{proof}
+		\pf\ Axiom of Extensionality
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\section{The Internal Logic}
+
+\begin{prop}
+\label{prop:charfun}
+Let $i : U \rightarrowtail A$ be injective. Let $\chi : A \rightarrow 2$ be its characteristic function. Then, for all $a \in A$, we have $\chi(a) = \top$ if and only if there exists $u \in U$ such that $i(u) = a$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\chi(a) = \top$ then there exists $u \in U$ such that $i(u) = a$.}
+\begin{proof}
+	\pf\ If $\chi \circ a = \top = \top \circ !_1$ then there exists a unique $u : 1 \rightarrow U$ such that $i \circ u = a$ and $!_U \circ u = !_1$.
+\end{proof}
+\step{2}{For all $u \in U$ we have $\chi(i(u)) = \top$.}
+\begin{proof}
+	\pf\ Since $\chi \circ i = \top \circ !_U$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Subsets of a set $A$ are equal if and only if they have the same characteristic function.
+\end{prop}
+
+\begin{proof}
+\pf\ Follows from the fact that pullbacks are unique up to isomorphism and the uniqueness of the characteristic function. \qed
+\end{proof}
+
+\begin{prop}
+There are exactly two subsets of 1.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a set $E$ with no elements.}
+\step{2}{$!_E : E \rightarrow 1$ is injective.}
+\begin{proof}
+	\pf\ Vacuously, $\forall x,y \in E. !_E(x) = !_E(y) \Rightarrow x = y$.
+\end{proof}
+\step{3}{$(E, !_E) \neq (1, \id{1})$} %TODO
+\step{4}{For any subset $(U,i)$ of $1$, either $(U,i) = (E, !_E)$ or $(U,i) = (1, \id{1})$}
+\qed
+\end{proof}
+
 
 \section{Functions}
 
@@ -146,6 +258,63 @@ Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $a \in A$. Then
 
 \begin{proof}
 \pf\ Immediate from the Axiom of Associativity. \qed
+\end{proof}
+
+\begin{prop}
+For any set $A$, any function $1 \rightarrow A$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ Since there is only one function $X \rightarrow 1$ for any set $X$. \qed
+\end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$. Then the following are equivalent:
+\begin{enumerate}
+\item $f$ is surjective.
+\item $f$ is a retraction (i.e. $f$ has a section).
+\item For any set $X$ and functions $x,y : B \rightarrow X$, if $xf = yf$ then $x = y$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Immediate from the Axiom of Choice.
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\pflet{$s : B \rightarrow A$ be a section of $f$.}}
+	\step{b}{\pflet{$X$ be a set and $x,y : B \rightarrow X$ satisfy $xf = yf$.}}
+	\step{c}{$x = y$}
+	\begin{proof}
+		\pf\ $x = xfs = yfs = y$
+	\end{proof}
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{3}}
+	\step{b}{\pflet{$b \in B$}}
+	\step{c}{\assume{for a contradiction $\forall a \in A. f(a) \neq b$}}
+	\step{d}{\pflet{$\psi_1 : B \rightarrow 2$ be the characteristic function of $b$.}}
+	\step{e}{\pflet{$\psi_0 = \bot \circ !_B : B \rightarrow 2$}}
+	\step{f}{$\forall x \in A. \psi_1(f(x)) = \psi_2(f(x))$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in A$}}
+		\step{ii}{$\psi_1(f(x)) \neq \top$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:charfun}, \stepref{c}, \stepref{d}.
+		\end{proof}
+		\step{iii}{$\psi_1(f(x)) = \bot$}%TODO
+		\step{iv}{$\psi_1(f(x)) = \psi_2(f(x))$}
+	\end{proof}
+	\step{g}{$\psi_1 \circ f = \psi_2 \circ f$}
+	\step{h}{$\psi_1 = \psi_2$}
+	\step{i}{$\psi_1(a) \neq \psi_2(a)$}
+	\qedstep
+\end{proof}
+\qed
 \end{proof}
 
 \end{document}
