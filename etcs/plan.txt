@@ -1,0 +1,136 @@
+Primitive terms: Set, function, composition,
+id, One, Empty set, x, pi1, pi2, A^B, epsilon, lambda, -1, Omega, Top, N, 0, s
+
+Axiom of Associativity
+Axiom: Unit laws
+Axiom: One is terminal
+Axiom: The empty set has no element
+Axiom of Extensionality
+Axiom: A x B is the product of A and B
+Axiom: A^B is the function set
+Axiom: f-1(x) is the inverse image of x under f
+Axiom: Any injective function has a unique characteristic function
+Axiom: N is a natural numbers set
+Axiom: Every surjection has a section
+
+Proposition: f : A -> B is injective iff, for every set X and functions x,y : X -> A, if fx = fy then x = y.
+
+Proposition:
+1. Every section is injective.
+2. If f : A -> B is injective and A is nonempty then f is a section.
+
+Proposition: For any f : A -> B, the following are equivalent:
+1. f is surjective.
+2. For every set X and functions x,y : B -> X, if xf = yf then x = y.
+3. f is a retraction.
+
+Proposition: f is an isomorphism iff f is injective and surjective.
+
+Define pullback
+
+Pullback Lemma
+
+Proposition: Let f : A -> B and j : V >-> B. Then there exists an inverse image of j under f.
+
+Proof:
+<1>1 Let chi : B -> 2 be the characteristic function of j.
+<1>2 Let i : U >-> A be the inverse image of T under chi o f.
+<1>3 Let g : U -> V be the unique function such that j o g = f o i.
+<1>4 i : U >-> A is the inverse image of j under f.
+
+Proposition: Any two functions f,g : A -> B have an equalizer.
+
+Proof:
+<1>1 Let f,g : A -> B.
+<1>2 Let delta_B = < idB, idB > : B -> B x B
+<1>3 delta_B is injective.
+<1>4 Let i : U >-> A be the inverse image of <f,g> under delta_B.
+<1>5 i is the equalizer of f and g.
+
+Define subset, equality of subsets, inclusion.
+
+Proposition: Subsets are equal if and only if they have the same characteristic function.
+
+Definition: Given two subset i : U >-> X, j : V >-> X of X, the *intersection* is the inverse image of j under i, which is the same as the inverse image of i under j.
+
+Proposition: There are at least two distinct subsets of 1.
+
+Proof: The unique functions 0->1 and 1->1 are both injective, and not equal subsets, otherwise we would have 0 ~= 1 and so 0 would have an element.
+
+Proposition: There are exactly two distinct subsets of 1.
+
+Proof:
+<1>1 Let U be a subset of 1 such that U =/= 0.
+<1>4 Pick x in U such that chi_1(x) =/= chi_0(x)
+<1>5 (1,id 1) = U as subsets of 1.
+QED
+
+Corollary: Omega = 1 + 1
+
+Definition: False is the other element of Omega.
+
+Define and, or, not
+
+Proposition: The characteristic function of U intersection V is and o < chi_U, chi_V >.
+
+--- Universal Quantification
+
+For any set A, we have T o ! : A -> 1 -> 2. Let t_A : 1 -> 2^A be the name of T o !.   (For all a in A, t_A(*)(a) = T.)
+
+Let forall_A : 2^A -> 2 be the characteristic function of t_A.  (Given P in 2^A, we have forall_A(P) = T iff P(a) = T for all a in A, iff P = t_A.)
+
+-- Power Set
+
+Let PX = 2^X
+
+Define phi_2 : X -> 2^(2^X) be the lambda of epsilon : X x 2^X -> 2. (So phi_2(x)(S) = T iff S(x) = T.)
+
+Let psi_1 = pi_1 : 2^(2^X) x X -> 2^(2^X)
+
+Let psi_2 = phi_2 o pi_2 : 2^(2^X) x X -> 2^(2^X)
+
+Form the composite 2^(2^X) x X -<psi_1, psi_2>-> 2^(2^X) x 2^(2^X) ~= (2 x 2)^(2^X) -(imp^(2^X))-> 2^(2^X) -(forall)-> 2
+
+Define Intersection to be its lambda Intersection : 2^(2^X) -> 2^X
+
+-- The Empty Set
+
+Proposition: 0 has no proper subsets.
+
+Proof: A proper subset of 0 would be a proper subset of 1 different from 0.
+
+Theorem: For any set X, there exists exactly one mapping 0 -> X.
+
+Proof:
+<1>1 Let X be a set.
+<1>2 For any functions f,g : 0 -> X, we have f = g.
+  <2>1 Let f,g : 0 -> X
+  <2>2 Let e : E -> 0 be the equalizer of f and g.
+  <2>3 e is an isomorphism.
+    Proof: Otherwise (E,e) would be a proper subset of 0.
+  <2>4 f = g
+<1>3 There exists a function 0 -> X.
+  <2>1 Let t : 1 -> 2^X be the name of the characteristic function of id X : X >-> X
+  <2>2 Let delta : X -> X x X be delta = < id X, id X >
+  <2>3 Let chi_delta : X x X -> 2 be the characteristic function of delta.
+  <2>4 Let sigma = lambda chi_delta : X -> 2^X
+  <2>5 sigma is mono
+  <2>5 Let p : P -> 0 and q : P -> X be the pullback of t o ! : 0 -> 2^X and sigma : X -> 2^X
+  <2>6 p is mono
+  <2>7 p is an isomorphism
+  <2>8 q o p-1 : 0 -> X
+QED
+
+Cor: For any set X we have 0 x X ~= 0.
+
+Proof: There is exactly one map 0 -> 0^X, hence exactly one map 0 x X -> 0.
+
+Cor: For any set X, if there exists a function X -> 0, then X ~= 0.
+
+Proof: We have pi2 o <f, id x> = id X and <f , id X> o pi2 = id (0 x X) by the previous Corollary. Hence <f, id X> : X ~= 0 x X.
+
+Theorem: If X is not isomorphic to 0 then X has an element.
+
+Proof: By the arguments above, if X has no elements then X is initial so X ~= 0.
+
+

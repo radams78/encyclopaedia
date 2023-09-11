@@ -41,6 +41,54 @@ Given sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write 
 
 Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
 
+For any set $A$, let there be a function $\id{A} : A \rightarrow A$, the \emph{identity} function on $A$.
+
+Let there be a set 1, the \emph{terminal} set.
+
+For any sets $A$ and $B$, let there be a set $A \times B$, the \emph{product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$, the \emph{projections}.
+
+Given functions $f : A \rightarrow B$ and $g : A \rightarrow C$, let there be a function $\langle f,g \rangle : A \rightarrow B, C$.
+
+\section{Definitions Used in the Axioms}
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
+\end{df}
+
+\begin{df}[Element]
+For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow a$. We write $a \in A$ for $a : 1 \rightarrow A$.
+
+Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $f \circ a : 1 \rightarrow B$.
+\end{df}
+
+\begin{df}[Surjective]
+A function $f : A \rightarrow B$ is \emph{surjective} iff, for every element $b \in B$, there exists $a \in A$ such that $f(a) = b$.
+\end{df}
+
+\begin{df}
+Given functions $f : A \rightarrow B$ and $g : C \rightarrow D$, let $f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle$.
+\end{df}
+
+\begin{df}[Function Set]
+Let $A$ and $B$ be sets. A \emph{function set} from $A$ to $B$ consists of a set $B^A$ and function $\epsilon : B^A \times A \rightarrow B$ such that, for any set $I$ and function $q : I \times A \rightarrow B$, there exists a unique function $\lambda q : I \rightarrow B^A$ such that $\epsilon \circ (\lambda q \times \id{A}) = q$.
+\end{df}
+
+\begin{df}[Pullback]
+Let $p : A \rightarrow B$, $q : A \rightarrow C$, $f : B \rightarrow D$ and $g : C \rightarrow D$. Then we say that $A$, $p$ and $q$ form the \emph{pullback} of $f$ and $g$ if and only if:
+\begin{itemize}
+\item $fp = gq$
+\item For any set $X$ and functions $x : X \rightarrow B$, $y : X \rightarrow C$ such that $fx = gy$, there exists a unique function $(x,y) : X \rightarrow A$ such that $p (x,y) = x$ and $q(x,y) = y$.
+\end{itemize}
+We also say $p$ is the pullback of $g$ along $f$, or $q$ is the pullback of $f$ along $g$.
+
+In the case $g$ is injective, we also say $A$ and $p$ form the \emph{inverse image} of $g$ under $f$.
+\end{df}
+
+\[ \xymatrix{
+A \ar[r]^p \ar[d]_q & B \ar[d]^f \\
+C \ar[r]_g & D
+} \]
+
 \section{The Axioms}
 
 \begin{ax}[Associativity]
@@ -48,361 +96,56 @@ Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we
 \[ h (gf) = (hg) f \enspace . \]
 \end{ax}
 
-\begin{ax}[Identity]
-For any set $A$, there exists a function $i : A \rightarrow A$ such that:
-\begin{itemize}
-\item for any set $B$ and function $f : A \rightarrow B$, we have $fi = f$
-\item for any set $B$ and function $f : B \rightarrow A$, we have $if = f$.
-\end{itemize}
+\begin{ax}[Unit Laws]
+For any function $f : A \rightarrow B$, we have $\id{B} \circ f = f \circ \id{A} = f$.
 \end{ax}
-
-\begin{prop}
-For any set $A$, there exists a unique function $i : A \rightarrow A$ such that:
-\begin{itemize}
-\item for any set $B$ and function $f : A \rightarrow B$, we have $fi = f$
-\item for any set $B$ and function $f : B \rightarrow A$, we have $if = f$.
-\end{itemize}
-\end{prop}
-
-\begin{proof}
-\pf\ If $i$ and $j$ both satisfy these conditions then $i = ij = j$. \qed
-\end{proof}
-
-\begin{df}[Identity Function]
-For any set $A$, the \emph{identity function} on $A$, $\mathrm{id}_A$, is the unique function $A \rightarrow A$ such that:
-\begin{itemize}
-\item for any set $B$ and function $f : A \rightarrow B$, we have $f \mathrm{id}_A = f$
-\item for any set $B$ and function $f : B \rightarrow A$, we have $\mathrm{id}_B f = f$.
-\end{itemize}
-\end{df}
-
-\begin{df}[Isomorphism]
-A function $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff there exists a function $g : B \rightarrow A$ such that $fg = \mathrm{id}_B$ and $gf = \mathrm{id}_A$.
-\end{df}
 
 \begin{ax}[Terminal Set]
-There exists an \emph{empty} set $\emptyset$ such that, for any set $A$, there exists exists exactly one function $\emptyset \rightarrow A$.
+For any set $X$, there is exactly one function $X \rightarrow 1$.
 \end{ax}
 
-\begin{prop}
-If $S$ and $T$ are empty sets then there exists a unique isomorphism $S \cong T$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f$ be the unique function $S \rightarrow T$}}
-\step{2}{\pflet{$f^{-1}$ be the unique function $T \rightarrow S$}}
-\step{3}{$f f^{-1} = \mathrm{id}_T$}
-\begin{proof}
-	\pf\ Each is the unique function $T \rightarrow T$.
-\end{proof}
-\step{4}{$f^{-1} f = \mathrm{id}_S$}
-\begin{proof}
-	\pf\ Each is the unique function $S \rightarrow S$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Empty Set]
-Let $\emptyset$ be the set such that, for any set $A$, there exists exactly one function $\emptyset \rightarrow A$.
-\end{df}
-
-\begin{ax}[Terminal Set]
-There exists a \emph{terminal} set $1$ such that, for any set $A$, there exists exists exactly one function $A \rightarrow 1$.1
+\begin{ax}[Empty Set]
+There exists a set that has no elements.
 \end{ax}
-
-\begin{prop}
-If $S$ and $T$ are terminal sets then there exists a unique isomorphism $S \cong T$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f$ be the unique function $S \rightarrow T$}}
-\step{2}{\pflet{$f^{-1}$ be the unique function $T \rightarrow S$}}
-\step{3}{$f f^{-1} = \mathrm{id}_T$}
-\begin{proof}
-	\pf\ Each is the unique function $T \rightarrow T$.
-\end{proof}
-\step{4}{$f^{-1} f = \mathrm{id}_S$}
-\begin{proof}
-	\pf\ Each is the unique function $S \rightarrow S$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Terminal Set]
-Let 1 be the set such that, for any set $A$, there exists exactly one function $!_A : A \rightarrow 1$.
-\end{df}
-
-\begin{df}[Element]
-An \emph{element} of a set $A$ is a function $1 \rightarrow A$. We write $a \in A$ for $a : 1 \rightarrow A$.
-
-Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $fa$.
-\end{df}
 
 \begin{ax}[Extensionality]
-Let $A$ and $B$ be sets. Let $f,g : A \rightarrow B$. If $\forall x \in A. f(x) = g(x)$ then $f = g$.
+Let $A$ and $B$ be sets and $f,g : A \rightarrow B$.
+If $\forall a \in A. f(a) = g(a)$ then $f = g$. \end{ax}
+
+\begin{ax}[Products]
+Let $f : A \rightarrow B$ and $g : A \rightarrow C$. Then $\langle f,g \rangle$ is the unique function $A \rightarrow B \times C$ such that
+\[ \pi_1 \circ \langle f,g \rangle = f, \qquad \pi_2 \circ \langle f,g \rangle = g \enspace . \]
 \end{ax}
 
-\begin{ax}[Non-degeneracy]
-The empty set $\emptyset$ has no elements.
+\begin{ax}[Function Sets]
+Any two sets have a function set.
 \end{ax}
 
-\begin{ax}[Disjoint Unions]
-For any sets $A$ and $B$, there exists a set $A + B$, the \emph{disjoint union} of $A$ and $B$, and functions $\kappa_1 : A \rightarrow A + B$, $\kappa_2 : B \rightarrow A + B$, the \emph{injections}, such that, for any set $X$ and functions $f : A \rightarrow X$ and $g : B \rightarrow X$, there exists a unique function $[f,g] : A + B \rightarrow X$ such that
-\[ [f,g] \kappa_1 = f, \qquad [f,g] \kappa_2 = g \enspace . \]
+\begin{ax}[Inverse Images]
+Given any function $f : X \rightarrow Y$ and element $y \in Y$, then there exists a pullback of $f$ and $y$.
 \end{ax}
 
-\begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective}, $f : A \twoheadrightarrow B$, iff, for all $b \in B$, there exists $a \in A$ such that $f(a) = b$.
-\end{df}
-
-\begin{prop}
-If $f : A \twoheadrightarrow B$ and $g : B \twoheadrightarrow C$ are surjective then $gf : A \twoheadrightarrow C$ is surjective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$c \in C$}}
-\step{2}{\pick\ $b \in B$ such that $g(b) = c$.}
-\step{3}{\pick\ $a \in A$ such that $f(a) = b$.}
-\step{4}{$gf(a) = c$}
-\qed
-\end{proof}
-
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective},
-$f : A \rightarrowtail B$, iff, for all $x, x' \in A$, if $f(x) = f(x')$ then $x = x'$.
-\end{df}
-
-\begin{prop}
-If $f : A \rightarrowtail B$ and $g : B \rightarrowtail C$ are injective then $gf : A \rightarrowtail C$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ If $g(f(x)) = g(f(x'))$ then $f(x) = f(x')$ since $g$ is injective, hence $x = x'$ since $f$ is injective. \qed
-\end{proof}
-
-\begin{prop}
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $gf$ is injective then $f$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$x, x' \in A$}}
-\step{2}{\assume{$f(x) = f(x')$}}
-\step{3}{$g(f(x)) = g(f(x'))$}
-\step{4}{$x = x'$}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $f : A \rightarrow B$ be injective. For any set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : A \rightarrow B$}}
-\step{2}{\assume{$f$ is injective.}}
-\step{3}{\pflet{$X$ be a set.}}
-\step{4}{\pflet{$x, y : X \rightarrow A$}}
-\step{5}{\assume{$fx = fy$}}
-\step{6}{\pflet{$t \in X$} \prove{$x(t) = y(t)$}}
-\step{7}{$f(x(t)) = f(y(t))$}
-\begin{proof}
-	\pf\ \stepref{5}
-\end{proof}
-\step{8}{$x(t) = y(t)$}
-\begin{proof}
-	\pf\ \stepref{2}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Any function $f : 1 \rightarrow A$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ For any $x,y \in 1$, if $f(x) = f(y)$ then $x = y$ since $1$ has only one element. \qed
-\end{proof}
-
-\begin{prop}
-For any sets $A$ and $B$, the injections $\kappa_1 : A \rightarrow A + B$ and $\kappa_2 : B \rightarrow A + B$ are injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$\kappa_1$ is injective.}
-\begin{proof}
-	\step{a}{\pflet{$x,y \in A$}}
-	\step{b}{\assume{$\kappa_1(x) = \kappa_1(y)$}}
-	\step{c}{\pflet{$f : A + B \rightarrow A$ be the function $f = [\mathrm{id}_A, x \circ !_B]$}}
-	\step{d}{$x = y$}
-	\begin{proof}
-		\pf\ $x = f(\kappa_1(x)) = f(\kappa_1(y)) = y$.
-	\end{proof}
-\end{proof}
-\step{2}{$\kappa_2$ is injective.}
-\begin{proof}
-	\pf\ Similar.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Bijective]
-A function is \emph{bijective} iff it is injective and surjective.
-\end{df}
-
-\begin{df}[Constant]
-A function $f : A \rightarrow B$ is \emph{constant} iff there exists $b \in B$ such that $f = b \circ !_A$.
-\end{df}
-
-\section{Subsets}
-
-\begin{df}[Subset]
-A \emph{subset} of a set $A$ is a pair $(B,i)$ such that $B$ is a set and $i : B \rightarrowtail A$ is an injective function.
-\end{df}
-
-\begin{df}[Equality of Subsets]
-Given subsets $(U,i)$ and $(V,j)$ of a set $A$, we say $(U,i)$ and $(V,j)$ are \emph{equal}, $(U,i) = (V,j)$, iff there exists an isomorphism $h : U \cong V$ such that $jh = i$.
-\end{df}
-
-\begin{df}[Inclusion]
-Let $(B,i)$ and $(C,j)$ be subsets of $A$. Then $(B,i)$ is \emph{included} in $(C,j)$, $(B,i) \subseteq (C,j)$, iff there exists $k : B \rightarrow C$ such that $jk=i$.
-\end{df}
-
-\begin{prop}
-Let $(U,i)$ and $(V,j)$ be subsets of a set $A$. Then we have $(U,i) = (V,j)$ iff $(U,i) \subseteq (V,j)$ and $(V,j) \subseteq (U,i)$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$(U,i)$ and $(V,j)$ be subsets of a set $A$.}}
-\step{2}{If $(U,i) = (V,j)$ then $(U,i) \subseteq (V,j)$ and $(V,j) \subseteq (U,i)$}
-\begin{proof}
-	\step{a}{\assume{$(U,i) = (V,j)$}}
-	\step{b}{\pick\ an isomorphism $h : U \cong V$ such that $jh = i$.}
-	\step{c}{$(U,i) \subseteq (V,j)$}
-	\begin{proof}
-		\pf\ Since $jh = i$.
-	\end{proof}
-	\step{d}{$(V,j) \subseteq (U,i)$}
-	\begin{proof}
-		\pf\ Since $i \inv{h} = j$.
-	\end{proof}
-\end{proof}
-\step{3}{If $(U,i) \subseteq (V,j)$ and $(V,j) \subseteq (U,i)$ then $(U,i) = (V,j)$.}
-\begin{proof}
-	\step{a}{\assume{$(U,i) \subseteq (V,j)$ and $(V,j) \subseteq (U,i)$}}
-	\step{b}{\pick\ $h : U \rightarrow V$ such that $jh = i$.}
-	\step{c}{\pick\ $\inv{h} : V \rightarrow U$ such that $i \inv{h} = j$.}
-	\step{d}{$h \inv{h} = \id{V}$}
-	\begin{proof}
-		\pf\ $j h \inv{h} = i \inv{h} = j$
-	\end{proof}
-	\step{e}{$\inv{h} h = \id{U}$}
-	\begin{proof}
-		\pf\ $i \inv{h} h = j h = i$
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{df}[Membership]
-Let $(B,i)$ be a subset of $A$ and $a \in A$. Then $a$ is a \emph{member} of $(B,i)$, $a \in (B,i)$, iff there exists $b \in B$ such that $i(b) = a$.
-\end{df}
-
-\begin{prop}
-Let $A$ be a set. Let $a \in A$, and let $S$ and $T$ be subsets of $A$. If $a \in S$ and $S \subseteq T$ then $a \in T$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$S = (B,i)$ and $T = (C,j)$}}
-\step{2}{\pick\ $k : B \rightarrow C$ such that $jk = i$}
-\step{3}{\pick\ $b \in B$ such that $i(b) = a$}
-\step{4}{$j(k(b)) = a$}
-\step{5}{$a \in T$}
-\qed
-\end{proof}
-
-\begin{cor}
-If $a \in S$ and $S = T$ then $a \in T$.
-\end{cor}
-
-%TODO If $\forall x \in S. x \in T$ then $S \subseteq T$
-
-\section{The Subset Classifier}
-
-\begin{df}
-\[ 2 = 1 + 1 \]
-Let $\top = \kappa_1 \in 2$.
-\end{df}
-
-\begin{df}[Characteristic Function]
-Let $i : X \rightarrowtail A$ be an injective function. Then a function $\chi_{(X,i)} : A \rightarrow 2$ is the \emph{characteristic function} of $(X,i)$ if and only if:
-\begin{itemize}
-\item $\chi i = \top !_X$
-\item for every set $T$ and function $a : T \rightarrow A$ such that $\chi_{(X,i)} a = \top !_T$, there exists a unique $\overline{a} : T \rightarrow X$ such that $i \overline{a} = a$.
-\end{itemize}
-\end{df}
-
-\[ \xymatrix{
-T \ar[r]^{\overline{a}} \ar[dr]_a & X \ar[d]^i \ar[r]^{!} & 1 \ar[d]^{\top} \\
-& A \ar[r]_{\chi_{(X,i)}} & 2
-} \]
-
-\begin{ax}[Subset Classifier]$ $
-\begin{enumerate}
-\item For any set $A$ and function $\phi : A \rightarrow 2$, there exists a set $X$ and monomorphism $i : X \rightarrowtail A$ such that $\phi$ is the characteristic function of $(X,i)$.
-\item For any set $A$, every part of $A$ has a characteristic function.
-\end{enumerate}
+\begin{ax}[Subset Classifier]
+There exists a set $2$ and element $\top \in 2$ such that, for any sets $A$ and $X$ and injective function $j : A \rightarrowtail X$, there exists a unique function $\chi : X \rightarrow 2$ such that $j$ and the unique function $A \rightarrow 1$ form the pullback of $\top$ and $\chi$.
 \end{ax}
 
+\begin{ax}[Natural Numbers Set]
+There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that, for any set $A$, element $a \in A$ and function $f : A \rightarrow A$, there exists a unique function $r : \mathbb{N} \rightarrow A$ such that $r(0) = a$ and $f \circ r = r \circ s$.
+\end{ax}
+
+\begin{ax}[Choice]
+For any surjective function $r : A \rightarrow B$, there exists $s : B \rightarrow A$ such that $rs = \id{B}$.
+\end{ax}
+
+\section{Functions}
+
 \begin{prop}
-$\id{2}$ is the characteristic function of $(1,\top)$
+Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $a \in A$. Then
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
 \end{prop}
 
 \begin{proof}
-For any set $T$ and function $a : T \rightarrow 2$ such that $\id{2} a = \top !_T$, then we have $\top !_T = a$. \qed
+\pf\ Immediate from the Axiom of Associativity. \qed
 \end{proof}
 
-\begin{prop}
-Let $A$ be a set. Let $(U,i)$ and $(V,j)$ be subsets of $A$. Then $(U,i) = (V,j)$ if and only if they have the same characteristic function.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $(U,i) = (V,j)$ then $(U,i)$ and $(V,j)$ have the same characteristic function.}
-\begin{proof}
-	\step{a}{\assume{$(U,i) = (V,j)$}}
-	\step{b}{\pflet{$h : U \cong V$ be the isomorphism such that $jh = i$.}}
-	\step{c}{\pflet{$\chi : A \rightarrow 2$ be the characteristic function of $(U,i)$.} \prove{$\chi$ is the characteristic function of $(V,j)$.}}
-	\step{cc}{$\chi j = \top !_V$}
-	\begin{proof}
-		\step{i}{$\chi i = \top !_U$}
-		\step{ii}{$\chi j h = \top !_U$}
-		\step{iii}{$\chi j = \top !_U \inv{h}$}
-		\step{iv}{$\chi j = \top !_V$}
-	\end{proof}
-	\step{d}{\pflet{$T$ be a set and $a : T \rightarrow A$ satisfy $\chi a = \top !_T$}}
-	\step{e}{\pflet{$\overline{a} : T \rightarrow U$ be the unique function such that $i \overline{a} = a$.}}
-	\step{f}{$h \overline{a}$ is the unique function $T \rightarrow V$ such that $j h \overline{a} = a$.}
-\end{proof}
-\step{2}{If $(U,i)$ and $(V,j)$ have the same characteristic function then $(U,i) = (V,j)$.}
-\begin{proof}
-	\step{a}{\assume{$\chi : A \rightarrow 2$ is the characteristic function of $(U,i)$ and of $(V,j)$}}
-	\step{b}{$\chi i = \top !_U$}
-	\step{c}{There exists $h : U \rightarrow V$ such that $jh = i$.}
-	\step{d}{$(U,i) \subseteq (V,j)$}
-	\step{d}{$\chi j = \top !_V$}
-	\step{e}{There exists $k : V \rightarrow U$ such that $ik = j$.}
-	\step{f}{$(V,j) \subseteq (U,i)$}
-	\step{g}{$(U,i) = (V,j)$}
-\end{proof}
-\qed
-\end{proof}
-
-%TODO 2 is a coseparator
 \end{document}

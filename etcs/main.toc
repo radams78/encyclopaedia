@@ -1,5 +1,5 @@
 \contentsline {chapter}{\numberline {1}Sets and Functions}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Primitive Terms}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}The Axioms}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Subsets}{8}{section.1.3}%
-\contentsline {section}{\numberline {1.4}The Subset Classifier}{9}{section.1.4}%
+\contentsline {section}{\numberline {1.2}Definitions Used in the Axioms}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}The Axioms}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Functions}{7}{section.1.4}%
