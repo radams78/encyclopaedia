@@ -163,6 +163,14 @@ Let $(U,i)$ and $(V,j)$ be subsets of $A$. Then we say $(U,i)$ and $(V,j)$ are \
 
 %TODO Inclusion of subsets
 
+\section{Intersections}
+
+\begin{df}[Intersection]
+Let $(U,i)$ and $(V,j)$ be subsets of a set $A$. 
+Let $p : W \rightarrow U$ and $q : W \rightarrow V$ form the pullback of $i$ under $j$. Then
+the \emph{intersection} of $(U,i)$ and $(V,j)$ is defined to be $(W, ip) = (W, jq)$.
+\end{df}
+
 \section{Pullbacks}
 
 %TODO Pullbacks are unique up to isomorphism
@@ -243,11 +251,54 @@ There are exactly two subsets of 1.
 \begin{proof}
 	\pf\ Vacuously, $\forall x,y \in E. !_E(x) = !_E(y) \Rightarrow x = y$.
 \end{proof}
-\step{3}{$(E, !_E) \neq (1, \id{1})$} %TODO
-\step{4}{For any subset $(U,i)$ of $1$, either $(U,i) = (E, !_E)$ or $(U,i) = (1, \id{1})$}
+\step{3}{$(E, !_E) \neq (1, \id{1})$}
+\begin{proof}
+	\pf\ Since there cannot be an isomorphism $1 \cong E$.
+\end{proof}
+\step{4}{For any subsets $(U,i)$ and $(V,j)$ of 1, if $(U,i) \neq (U,i) \cap (V,j)$ then $(U,i) = (1, \id{1})$}
+\begin{proof}
+	\step{i}{\pflet{$(U,i)$ and $(V,j)$ be subsets of 1.}}
+	\step{ii}{\pflet{$p : W \rightarrow U$ and $q : W \rightarrow V$ form the intersection of $(U,i)$ and $(V,j)$}}
+	\step{iii}{\assume{$(U,i) \neq (W,k)$}}
+	\step{iv}{\pflet{$(U, \id{U}) \neq (W, p)$ as subsets of $U$.}}
+	\step{vi}{\pflet{$\chi_U, \chi_W : U \rightarrow 2$ be the characteristic functions of $(U, \id{U})$ and $(W,p)$ respectively.}}
+	\step{v}{$\chi_U \neq \chi_W$}
+	\step{vi}{\pick\ $x \in U$}
+	\begin{proof}
+		\pf\ By the Axiom of Extensionality, there exists $x \in U$ such that $\chi_U(x) \neq \chi_W(x)$.
+	\end{proof}
+	\step{vi}{$ix = \id{1}$}
+	\step{vii}{$x : 1 \cong U$}
+	\step{viii}{$(U,i) = (1, \id{1})$} 
+\end{proof}
+\step{5}{For any subset $(U,i)$ of 1, either $(U,i) = (E, !_E)$ or $(U,i) = (1, \id{1})$.}
+\begin{proof}
+	\step{a}{\pflet{$(U,i)$ be a subset of 1.}}
+	\step{b}{\assume{$(U,i) \neq (E, !_E)$}}
+	\step{c}{$(U,i) \neq (U,i) \cap (E, !_E)$ or $(E, !_E) \neq (U,i) \cap (E, !_E)$}
+	\step{d}{$(U,i) = (1, \id{1})$ or $(E, !_E) = (1, \id{1})$}
+	\begin{proof}
+		\pf\ \stepref{4}
+	\end{proof}
+	\step{e}{$(U,i) = (1, \id{1})$}
+	\begin{proof}
+		\pf\ \stepref{3}
+	\end{proof}
+\end{proof}
 \qed
 \end{proof}
 
+\begin{cor}
+There are exactly two elements of 2.
+\end{cor}
+
+\begin{df}[Falsehood]
+Let \emph{falsehood} $\bot$ be the element of 2 that is not $\top$.
+\end{df}
+
+\begin{cor}
+2 is the coproduct of 1 and 1 with injections $\top$ and $\bot$.
+\end{cor}
 
 \section{Functions}
 
