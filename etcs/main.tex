@@ -349,7 +349,7 @@ Let $f : A \rightarrow B$. Then the following are equivalent:
 	\step{b}{\pflet{$b \in B$}}
 	\step{c}{\assume{for a contradiction $\forall a \in A. f(a) \neq b$}}
 	\step{d}{\pflet{$\psi_1 : B \rightarrow 2$ be the characteristic function of $b$.}}
-	\step{e}{\pflet{$\psi_0 = \bot \circ !_B : B \rightarrow 2$}}
+	\step{e}{\pflet{$\psi_2 = \bot \circ !_B : B \rightarrow 2$}}
 	\step{f}{$\forall x \in A. \psi_1(f(x)) = \psi_2(f(x))$}
 	\begin{proof}
 		\step{i}{\pflet{$x \in A$}}
@@ -357,14 +357,166 @@ Let $f : A \rightarrow B$. Then the following are equivalent:
 		\begin{proof}
 			\pf\ Proposition \ref{prop:charfun}, \stepref{c}, \stepref{d}.
 		\end{proof}
-		\step{iii}{$\psi_1(f(x)) = \bot$}%TODO
+		\step{iii}{$\psi_1(f(x)) = \bot$}
 		\step{iv}{$\psi_1(f(x)) = \psi_2(f(x))$}
 	\end{proof}
 	\step{g}{$\psi_1 \circ f = \psi_2 \circ f$}
+	\begin{proof}
+		\pf\ Axiom of Extensionality
+	\end{proof}
 	\step{h}{$\psi_1 = \psi_2$}
-	\step{i}{$\psi_1(a) \neq \psi_2(a)$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{i}{$\psi_1(b) \neq \psi_2(b)$}
+	\begin{proof}
+		\pf\ Since $\psi_1(b) = \top$ and $\psi_2(b) = \bot$.
+	\end{proof}
 	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction
+	\end{proof}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+A function is bijective iff it is injective and surjective.
+\end{cor}
+
+\section{Equalizers}
+
+\begin{thm}
+Any two functions $f,g : A \rightarrow B$ have an equalizer.
+\end{thm}
+
+\begin{proof}
+\pf\ Take the inverse image of $\delta_B = \langle \id{B}, \id{B} \rangle : B \rightarrowtail B^2$ and $\langle f,g \rangle : A \rightarrow B^2$. \qed
+\end{proof}
+
+\section{The Empty Set}
+
+\begin{thm}
+If $E$ is a set with no elements, then $E$ has no proper subsets.
+\end{thm}
+
+\begin{proof}
+\pf\ A proper subset of $E$ would give a proper subset of $1$ that is different from $(E, !_E)$. \qed
+\end{proof}
+
+\begin{thm}
+If $E$ is a set with no elements, then for any set $X$ there exists exactly one function $E \rightarrow X$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be a set with no elements.}}
+\step{2}{\pflet{$X$ be a set.}}
+\step{3}{There exists a function $E \rightarrow X$.}
+\begin{proof}
+	\step{a}{\pflet{$t : 1 \rightarrow 2^X$ be the name of the characteristic function of $\id{X} : X \rightarrow X$.}}
+	\step{b}{\pflet{$\sigma : X \rightarrow 2^X$ be the lambda of the characteristic function of $\delta = \langle \id{X}, \id{X} \rangle : X \rightarrow X \times X$.}}
+	\step{c}{\pflet{$p : P \rightarrow E$ and $q : P \rightarrow X$ be the pullback of $t \circ !_E$ and $\sigma$.}}
+	\begin{proof}
+		\pf\ $t \circ !_E$ is vacuously injective.
+	\end{proof}
+	\step{d}{$p$ is injective.}
+	\begin{proof}
+		\pf\ It is the pullback of the injective function $\sigma$.
+	\end{proof}
+	\step{e}{$p$ is bijective.}
+	\step{f}{$q \circ p^{-1} : E \rightarrow X$}
+\end{proof}
+\step{4}{For any functions $f,g : E \rightarrow X$ we have $f = g$.}
+\begin{proof}
+	\step{a}{\pflet{$f,g : E \rightarrow X$}}
+	\step{b}{\pflet{$m : M \rightarrow E$ be the pullback of $f$ and $g$.}}
+	\step{c}{$(M,m) = (E, \id{E})$}
+	\begin{proof}
+		\pf\ Since $E$ has no proper subsets.
+	\end{proof}
+	\step{d}{$m : M \cong E$}
+	\step{e}{$f = g$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+If $E$ and $E'$ are sets with no elements then there exists a unique isomorphism $E \cong E'$.
+\end{cor}
+
+\begin{df}[Empty Set]
+Let the \emph{empty set} $\emptyset$ be the set with no elements.
+\end{df}
+
+\begin{thm}
+For any set $A$, if there exists a function $A \rightarrow \emptyset$ then $A \cong \emptyset$.
+\end{thm}
+
+\begin{proof}
+\pf\ If $f : A \rightarrow \emptyset$ then $A$ has no elements, because for any $a \in A$ we have $f(a) \in \emptyset$. \qed
+\end{proof}
+
+\section{Universal Quantification}
+
+\begin{df}
+For any set $A$, let $t_A : 1 \rightarrow 2^A$ be the name of the characteristic function of $\top \circ !_A : A \rightarrow 2$. Define \emph{universal quantification} $\forall_A : 2^A \rightarrow 2$ to be the characteristic function of $t_A$.
+\end{df}
+
+\section{Intersection}
+
+\begin{thm}
+Let $X$ be a set. There exists a function $\bigcap : 2^{2^X} \rightarrow 2^X$ such that, for all $S \in 2^{2^X}$ and $a \in X$, we have
+\[ \epsilon(\bigcap S, a) = \top \Leftrightarrow \forall A \in 2^X. (\epsilon(S,A) = \top \Rightarrow \epsilon(A,a) = \top) \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a set.}}
+\step{2}{\pflet{$\phi_2 : X \rightarrow 2^{2^X}$ be the lambda of $\epsilon : 2^X \times X \rightarrow 2$}}
+\step{3}{\pflet{$F$ be the function
+\[ \xymatrix{
+2^{2^X} \times X \ar[r]^{\langle \id{2^{2^X}}, \phi_2 \rangle} &
+2^{2^X} \times 2^{2^X} \ar[r]^{\cong} &
+(2 \times 2)^{2^X} \ar[r]^{\Rightarrow} &
+2^{2^X} \ar[r]^{\forall} & 2
+} \]}}
+\step{4}{\pflet{$\bigcap$ be the lambda}}
+\qed
+\end{proof}
+
+\section{Union}
+
+\begin{thm}
+Any two subsets of a set have a union.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be subsets of $X$}}
+\step{2}{\pflet{$\chi_A \in 2^X$ be the name of the characteristic function of $A$.}}
+\step{3}{\pflet{$t_X \in 2^X$ be the name of $\top \circ !_X : X \rightarrow 2$}}
+\step{4}{\pflet{$C$ be the pullback of $t_X$ and $\chi_A \Rightarrow - : 2^X \rightarrow 2^X$}}
+\step{5}{\pflet{$D$ be the pullback of $t_X$ and $\chi_B \Rightarrow -$}}
+\step{6}{$\bigcap (C \cap D)$ is the union of $A$ and $B$.}
+\qed
+\end{proof}
+
+\begin{thm}
+Any two sets have a coproduct.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be sets.}}
+\step{2}{\pflet{$\sigma_X : X \rightarrow 2^X$ be the lambda of the characteristic function of $\langle \id{X}, \id{X} \rangle : X \rightarrow X \times X$}}
+\step{3}{\pflet{$\chi_0 : 1 \rightarrow Y$ be the characteristic function of the unique function $\emptyset \rightarrow Y$}}
+\step{4}{\pflet{$i_X = \langle \sigma_X, \chi_0 \circ !_X \rangle : X \rightarrow 2^X \times 2^Y$}}
+\step{5}{\pflet{$i_Y : Y \rightarrow 2^X \times 2^Y$ be defined similarly.}}
+\step{6}{$i_X$ and $i_Y$ are monic.}
+\step{7}{$\emptyset$ is the pullback of $i_X$ and $i_Y$ (i.e. $(X,i_X) \cap (Y, i_Y) = \emptyset)$.}
+\step{8}{\pflet{$j : Z \rightarrow 2^X \times 2^Y$ be the union of $i_X$ and $i_Y$}}
+\step{9}{$Z$ is the coproduct of $X$ and $Y$.}
 \qed
 \end{proof}
 

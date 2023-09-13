@@ -9,3 +9,8 @@
 \contentsline {section}{\numberline {1.8}Functions}{7}{section.1.8}%
 \contentsline {section}{\numberline {1.9}The Internal Logic}{8}{section.1.9}%
 \contentsline {section}{\numberline {1.10}Functions}{9}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Equalizers}{10}{section.1.11}%
+\contentsline {section}{\numberline {1.12}The Empty Set}{10}{section.1.12}%
+\contentsline {section}{\numberline {1.13}Universal Quantification}{11}{section.1.13}%
+\contentsline {section}{\numberline {1.14}Intersection}{11}{section.1.14}%
+\contentsline {section}{\numberline {1.15}Union}{12}{section.1.15}%
