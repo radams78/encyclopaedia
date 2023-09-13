@@ -1,0 +1,229 @@
+\documentclass{book}
+
+\title{Mathematics}
+\author{Robin Adams}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
+\usepackage{pf2}
+\usepackage{hyperref}
+\usepackage{mathabx}
+\usepackage[all]{xy}
+
+\newtheorem{ax}{Axiom}[chapter]
+\newtheorem{axs}[ax]{Axiom Schema}
+\newtheorem{prop}[ax]{Proposition}
+\newtheorem{cor}{Corollary}[ax]
+\newtheorem{thm}[ax]{Theorem}
+\newtheorem{lm}[ax]{Lemma}
+\theoremstyle{definition}
+\newtheorem{df}[ax]{Definition}
+\newtheorem{ex}[ax]{Example}
+
+\newcommand{\El}[1]{\ensuremath{\mathrm{El} \left( {#1} \right)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Primitive Terms and Axioms}
+
+\section{Primitive Terms}
+
+Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
+
+For any set $A$, let there be \emph{elements} of $A$. We write $a: \El{A}$ for: $a$ is an element of $A$.
+
+For any sets $A$ and $B$, let there be \emph{relations} between $A$ and $B$. We write $R : A \looparrowright B$ for: $R$ is a relation between $A$ and $B$.
+
+For any set $A$ and elements $a,b : \El{A}$, let there be a proposition that $a$ and $b$ are \emph{equal}, $a = b$.
+
+For any relation $R : A \looparrowright B$ and elements $a : \El{A}$, $b : \El{B}$, let there be a proposition $aRb$, that $R$ \emph{holds} between $a$ and $b$.
+
+\section{Definitions Used in the Axioms}
+
+\begin{df}[Function]
+Let $A$ and $B$ be sets and $F : A \looparrowright B$. Then $F$ is a \emph{function} from $A$ to $B$, $F : A \rightarrow B$, if and only if, for all $x \in A$, there exists a unique $y \in B$ such that $xFy$.
+We denote this unique $y$ by $F(x)$.
+\end{df}
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
+\end{df}
+
+\begin{df}[Surjective]
+A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
+\end{df}
+
+\begin{df}[Bijective]
+A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
+
+Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
+\end{df}
+
+If we prove there exists a set $X$ such that $P(X)$, and that any two subsets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
+
+\section{Axioms}
+
+\begin{axs}[Comprehension]
+For any formula $\phi[X,Y,x,y]$ where $X$ and $Y$ are set variables and $x \in X$ and $y \in Y$, the following is an axiom:
+
+For any sets $A$ and $B$, there exists a relation $R$ such that, for all $a \in A$ and $b \in B$, we have $aRb$ if and only if $\phi[A,B,a,b]$.
+\end{axs}
+
+\begin{ax}[Tabulations]
+For any sets $A$ and $B$ and relation $R : A \looparrowright B$, there exists a set $|R|$, a \emph{tabulation} of $R$, and functions $p : |R| \rightarrow A$ and $q : |R| \rightarrow B$ such that:
+\begin{itemize}
+\item For all $x: \El{A}$ and $y : \El{B}$, we have $xRy$ if and only if there exists $r : \El{|R|}$ such that $p(r) = x$ and $q(r) = y$
+\item For all $r,s : \El{|R|}$, if $p(r) = p(s)$ and $q(r) = q(s)$ then $r = s$.
+\end{itemize}
+\end{ax}
+
+\begin{ax}[Infinity]
+There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that:
+\begin{itemize}
+\item $\forall n : \El{\mathbb{N}}. s(n) \neq 0$
+\item $\forall m,n : \El{\mathbb{N}}. s(m) = s(n) \Rightarrow m = n$.
+\end{itemize}
+\end{ax}
+
+\section{Consequences of the Axioms}
+
+\subsection{The Empty Set}
+
+\begin{thm}
+There exists a set which has no elements.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a set $A$}
+\begin{proof}
+	\pf\ By the Axiom of Infinity, a set exists.
+\end{proof}
+\step{2}{\pflet{$R : A \looparrowright A$ be the relation such that, for all $x,y \in A$, we have $\neg (xRy)$}}
+\begin{proof}
+	\pf\ By the Axiom of Comprehension.
+\end{proof}
+\step{3}{\pflet{$|R|$ be the tabulation of $R$ with projections $p,q : |R| \rightarrow A$.} \prove{$|R|$ has no elements.}}
+\begin{proof}
+	\pf\ By the Axiom of Tabulations.
+\end{proof}
+\step{4}{\assume{for a contradiction $r : \El{|R|}$}}
+\step{5}{$p(r) R q(r)$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{2}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+If $E$ and $E'$ have no elements then $E \approx E'$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ and $E'$ have no elements.}}
+\step{2}{\pflet{$F : E \looparrowright E'$ be the relation such that, for all $x : \El{E}$ and $y : \El{E'}$, we have $xFy$.}}
+\begin{proof}
+	\pf\ Axiom of Comprehension.
+\end{proof}
+\step{3}{$F$ is a function.}
+\begin{proof}
+	\pf\ Vacuously, for all $x : \El{E}$, there exists a unique $y : \El{E'}$ such that $xFy$.
+\end{proof}
+\step{4}{$F$ is injective.}
+\begin{proof}
+	\pf\ Vacuously, for all $x,y : \El{E}$, if $F(x) = F(y)$ then $x = y$.
+\end{proof}
+\step{5}{$F$ is surjective.}
+\begin{proof}
+	\pf\ Vacuously, for all $y : \El{E}$, there exists $x : \El{E}$ such that $F(x) = y$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Empty Set]
+The \emph{empty set} $\emptyset$ is the set with no elements.
+\end{df}
+
+\subsection{The Singleton}
+
+\begin{thm}
+There exists a set that has exactly one element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a set $A$ that has an element.}
+\begin{proof}
+	\pf\ By the Axiom of Infinity, there exists a set that has an element.
+\end{proof}
+\step{2}{\pick\ $a : \El{A}$}
+\step{3}{\pflet{$R : A \looparrowright A$ be the relation such that, for all $x,y : \El{A}$, we have $xRy$ if and only if $x = y = a$.}}
+\begin{proof}
+	\pf\ By the Axiom of Comprehension.
+\end{proof}
+\step{4}{\pflet{$|R|$ be the tabulation of $R$ with projections $p,q : |R| \rightarrow A$.} \prove{$|R|$ has exactly one element.}}
+\begin{proof}
+	\pf\ By the Axiom of Tabulations.
+\end{proof}
+\step{5}{\pflet{$r : \El{|R|}$ be the element such that $p(r) = q(r) = a$}}
+\begin{proof}
+	\pf\ Since $aRa$ by \stepref{3}.
+\end{proof}
+\step{6}{\pflet{$s : \El{|R|}$} \prove{$s = r$}}
+\step{7}{$p(s) R q(s)$}
+\begin{proof}
+	\pf\ By the Axiom of Tabulations.
+\end{proof}
+\step{8}{$p(s) = q(s) = a$}
+\begin{proof}
+	\pf\ By \stepref{3}.
+\end{proof}
+\step{9}{$p(s) = p(r)$ and $q(s) = q(r)$}
+\begin{proof}
+	\pf\ By \stepref{5}.
+\end{proof}
+\step{10}{$s = r$}
+\begin{proof}
+	\pf\ By the Axiom of Tabulations.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+If $A$ and $B$ both have exactly one element then $A \approx B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ both have exactly one element.}}
+\step{2}{\pflet{$F : A \looparrowright B$ be the relation such that, for all $x : \El{A}$ and $y : \El{B}$, we have $xFy$.}}
+\step{3}{$F$ is a function.}
+\begin{proof}
+	\pf\ If $xFy$ and $xFy'$ then $y = y'$ because $B$ has only one element.
+\end{proof}
+\step{4}{$F$ is injective.}
+\begin{proof}
+	\pf\ If $F(x) = F(x')$ then $x = x'$ because $A$ has only one element.
+\end{proof}
+\step{5}{$F$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$y : \El{B}$}}
+	\step{b}{\pflet{$x$ be the element of $A$.}}
+	\step{c}{$F(x) = y$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Singleton]
+Let 1 be the set that has exactly one element. Let $*$ be its element.
+\end{df}
+
+\end{document}
