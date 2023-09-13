@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {1.4}Consequences of the Axioms}{6}{section.1.4}%
 \contentsline {subsection}{\numberline {1.4.1}The Empty Set}{6}{subsection.1.4.1}%
 \contentsline {subsection}{\numberline {1.4.2}The Singleton}{7}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Subsets}{8}{subsection.1.4.3}%
