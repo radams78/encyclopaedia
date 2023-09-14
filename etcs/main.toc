@@ -1,16 +1,26 @@
 \contentsline {chapter}{\numberline {1}Sets and Functions}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Primitive Terms}{5}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Definitions Used in the Axioms}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}The Axioms}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Isomorphisms}{7}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Subsets}{7}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Intersections}{7}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Pullbacks}{7}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Functions}{7}{section.1.8}%
-\contentsline {section}{\numberline {1.9}The Internal Logic}{8}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Functions}{9}{section.1.10}%
-\contentsline {section}{\numberline {1.11}Equalizers}{10}{section.1.11}%
-\contentsline {section}{\numberline {1.12}The Empty Set}{10}{section.1.12}%
-\contentsline {section}{\numberline {1.13}Universal Quantification}{11}{section.1.13}%
-\contentsline {section}{\numberline {1.14}Intersection}{11}{section.1.14}%
-\contentsline {section}{\numberline {1.15}Union}{12}{section.1.15}%
+\contentsline {section}{\numberline {1.2}Axioms}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Associativity}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Identity Functions}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}The Terminal Set}{6}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}The Empty Set}{7}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Products}{7}{subsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.2.6}Function Sets}{8}{subsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.2.7}Inverse Images}{8}{subsection.1.2.7}%
+\contentsline {subsection}{\numberline {1.2.8}The Subset Classifier}{8}{subsection.1.2.8}%
+\contentsline {subsection}{\numberline {1.2.9}The Natural Numbers}{9}{subsection.1.2.9}%
+\contentsline {subsection}{\numberline {1.2.10}The Axiom of Choice}{10}{subsection.1.2.10}%
+\contentsline {section}{\numberline {1.3}Sections and Retractions}{10}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Isomorphisms}{10}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Subsets}{10}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Intersections}{10}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Pullbacks}{11}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Functions}{11}{section.1.8}%
+\contentsline {section}{\numberline {1.9}The Internal Logic}{11}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Functions}{12}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Equalizers}{13}{section.1.11}%
+\contentsline {section}{\numberline {1.12}The Empty Set}{14}{section.1.12}%
+\contentsline {section}{\numberline {1.13}Universal Quantification}{14}{section.1.13}%
+\contentsline {section}{\numberline {1.14}Intersection}{15}{section.1.14}%
+\contentsline {section}{\numberline {1.15}Union}{15}{section.1.15}%

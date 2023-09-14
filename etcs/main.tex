@@ -39,43 +39,209 @@ Let there be \emph{sets}.
 
 Given sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ iff $f$ is a function from $A$ to $B$, and call $A$ the \emph{domain} of $f$ and $B$ the \emph{codomain}.
 
-Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $gf = g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
 
-For any set $A$, let there be a function $\id{A} : A \rightarrow A$, the \emph{identity} function on $A$.
+\section{Axioms}
 
-Let there be a set 1, the \emph{terminal} set.
+\subsection{Associativity}
+\begin{ax}[Associativity]
+For any functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$ we have
+\[ h (gf) = (hg) f \enspace . \]
+\end{ax}
 
-For any sets $A$ and $B$, let there be a set $A \times B$, the \emph{product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$, the \emph{projections}.
+Thanks to this axiom, we shall often omit parentheses when writing the composite of a sequence of functions.
 
-Given functions $f : A \rightarrow B$ and $g : A \rightarrow C$, let there be a function $\langle f,g \rangle : A \rightarrow B, C$.
+\subsection{Identity Functions}
 
-\section{Definitions Used in the Axioms}
+\begin{df}[Identity Function]
+For any set $A$, an \emph{identity function} on $A$ is a function $i : A \rightarrow A$ such that:
+\begin{itemize}
+\item for every set $B$ and function $f : A \rightarrow B$ we have $fi = f$;
+\item for every set $B$ and function $f : B \rightarrow A$ we have $if = f$.
+\end{itemize}
+\end{df}
+
+\begin{ax}[Identity Functions]
+Every set has an identity function.
+\end{ax}
+
+\begin{prop}
+Every set has a unique identity function.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{$A$ has an identity function.}
+\begin{proof}
+	\pf\ Axiom of Identity Functions
+\end{proof}
+\step{3}{For any identity functions $i$ and $j$ on $A$ we have $i = j$.}
+\begin{proof}
+	\step{a}{\pflet{$i$ and $j$ be identity functions on $A$.}}
+	\step{b}{$i = j$}
+	\begin{proof}
+		\pf\ $i = ij = j$
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Identity Function]
+For any set $A$, let $\id{A}$ be the identity function on $A$.
+\end{df}
+
+\begin{df}[Retraction, Section]
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $r$, iff $rs = \id{B}$.
+\end{df}
+
+\begin{prop}
+\label{prop:retraction_equals_section}
+Let $f : A \rightarrow B$ and $g,h : B \rightarrow A$. If $g$ is a retraction of $f$ and $h$ is a section of $f$ then $g = h$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+g & = g \id{B} \\
+& = gfh \\
+& = \id{A} h \\
+& = h & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Bijection]
+Let $f : A \rightarrow B$ be a function. We say $f$ is a \emph{bijection}, and write $f : A \approx B$, iff there exists a function $\inv{f} : B \rightarrow A$, an \emph{inverse} to $f$, such that $\inv{f} f = \id{A}$ and $f \inv{f} = \id{B}$.
+
+Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
+\end{df}
+
+\begin{prop}
+The inverse to a bijection is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:retraction_equals_section}. \qed
+\end{proof}
+
+\subsection{The Terminal Set}
+
+\begin{df}[Terminal Set]
+A set $T$ is \emph{terminal} iff, for every set $X$, there exists exactly one function $X \rightarrow T$.
+\end{df}
+
+\begin{ax}[Terminal Set]
+There exists a terminal set.
+\end{ax}
+
+\begin{prop}
+If $T$ and $T'$ are terminal sets then there exists a unique bijection $T \approx T'$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i$ be the unique function $T \rightarrow T'$}}
+\step{2}{\pflet{$\inv{i}$ be the unique function $T' \rightarrow T$}}
+\step{3}{$i \inv{i} = \id{T'}$}
+\begin{proof}
+	\pf\ Since there is only one function $T' \rightarrow T'$.
+\end{proof}
+\step{4}{$\inv{i} i = \id{T}$}
+\begin{proof}
+	\pf\ Since there is only one function $T \rightarrow T$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Let 1 be the terminal set. For any set $A$, let $!_A$ be the function $A \rightarrow 1$.
+\end{df}
 
 \begin{df}[Element]
 For any set $A$, an \emph{element} of $A$ is a function $1 \rightarrow a$. We write $a \in A$ for $a : 1 \rightarrow A$.
 
-Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $f \circ a : 1 \rightarrow B$.
+Given $f : A \rightarrow B$ and $a \in A$, we write $f(a)$ for $fa : 1 \rightarrow B$.
 \end{df}
 
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
+\begin{ax}[Extensionality]
+Let $A$ and $B$ be sets and $f,g : A \rightarrow B$.
+If $\forall a \in A. f(a) = g(a)$ then $f = g$. \end{ax}
+
+\subsection{The Empty Set}
+
+\begin{ax}[Empty Set]
+There exists a set that has no elements.
+\end{ax}
+
+\subsection{Products}
+
+\begin{df}[Product]
+Let $A$ and $B$ be sets. A \emph{product} of $A$ and $B$ consists of a set $A \times B$ and functions $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$, the \emph{projections}, such that, for any set $X$ and functions $f : X \rightarrow A$, $g : X \rightarrow B$, there exists a unique function $\langle f,g \rangle : X \rightarrow A \times B$ such that
+\[ \pi_1 \circ \langle f,g \rangle = f, \qquad \pi_2 \circ \langle f,g \rangle = g \enspace . \]
 \end{df}
 
-\begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective} iff, for every element $b \in B$, there exists $a \in A$ such that $f(a) = b$.
-\end{df}
+\begin{ax}[Products]
+Any two sets have a product.
+\end{ax}
 
-\begin{df}[Retraction, Section]
-Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $A$, iff $r \circ s = \id{B}$.
+\begin{prop}
+If $P$ and $Q$ are products of $A$ and $B$ with projections $p_1 : P \rightarrow A$, $p_2 : P \rightarrow B$, $q_1 : Q \rightarrow A$ and $q_2 : Q \rightarrow B$, then there exists a unique isomorphism $i : P \approx Q$ such that $q_1 i = p_1$ and $q_2 i = p_2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : P \rightarrow Q$ be the unique function such that $p_1 i = q_1$ and $p_2 i = q_2$.}}
+\step{2}{\pflet{$\inv{i} : Q \rightarrow P$ be the unique function such that $q_1 \inv{i} = p_1$ and $q_2 \inv{i} = p_2$.}}
+\step{3}{$\inv{i} i = \id{P}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $p_1 x = p_1$ and $p_2 x = p_2$.
+\end{proof}
+\step{4}{$i \inv{i} = \id{Q}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $q_1 x = q_1$ and $q_2 x = q_2$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+For any sets $A$ and $B$, we write $A \times B$ for the product of $A$ and $B$, and $\pi_1 : A \times B \rightarrow A$, $\pi_2 : A \times B \rightarrow B$ for the projections. Given $f : X \rightarrow A$ and $g : X \rightarrow B$, we write $\langle f,g \rangle$ for the unique function $X \rightarrow A \times B$ such that
+\[ \pi_1 \langle f,g \rangle = f, \qquad \pi_2 \langle f,g \rangle = g \enspace . \]
 \end{df}
 
 \begin{df}
-Given functions $f : A \rightarrow B$ and $g : C \rightarrow D$, let $f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle$.
+Given functions $f : A \rightarrow B$ and $g : C \rightarrow D$, let $f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle : A \times C \rightarrow B \times D$.
 \end{df}
 
+\subsection{Function Sets}
+
 \begin{df}[Function Set]
-Let $A$ and $B$ be sets. A \emph{function set} from $A$ to $B$ consists of a set $B^A$ and function $\epsilon : B^A \times A \rightarrow B$ such that, for any set $I$ and function $q : I \times A \rightarrow B$, there exists a unique function $\lambda q : I \rightarrow B^A$ such that $\epsilon \circ (\lambda q \times \id{A}) = q$.
+Let $A$ and $B$ be sets. A \emph{function set} from $A$ to $B$ consists of a set $B^A$ and function $\epsilon : B^A \times A \rightarrow B$, the \emph{evaluation} map, such that, for any set $I$ and function $q : I \times A \rightarrow B$, there exists a unique function $\lambda q : I \rightarrow B^A$ such that $\epsilon \circ (\lambda q \times \id{A}) = q$.
 \end{df}
+
+\begin{ax}[Function Sets]
+Any two sets have a function set.
+\end{ax}
+
+\begin{prop}
+If $F$ and $G$ are function sets of $A$ and $B$ with evaluation maps $e : F \times A \rightarrow B$ and $e' : G \times A \rightarrow B$, then there exists a unique isomorphism $i : F \cong G$ such that $e'(i \times \id{A}) = e$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : F \rightarrow G$ be the unique function such that $e'(i \times \id{A}) = e$.}}
+\step{2}{\pflet{$\inv{i} : G \rightarrow F$ be the unique function such that $e(\inv{i} \times \id{A}) = e'$}}
+\step{3}{$i \inv{i} = \id{G}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $e'(x \times \id{A}) = e'$.
+\end{proof}
+\step{4}{$\inv{i} i = \id{F}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $e(x \times \id{B}) = e$.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Inverse Images}
 
 \begin{df}[Pullback]
 Let $p : A \rightarrow B$, $q : A \rightarrow C$, $f : B \rightarrow D$ and $g : C \rightarrow D$. Then we say that $A$, $p$ and $q$ form the \emph{pullback} of $f$ and $g$ if and only if:
@@ -84,8 +250,6 @@ Let $p : A \rightarrow B$, $q : A \rightarrow C$, $f : B \rightarrow D$ and $g :
 \item For any set $X$ and functions $x : X \rightarrow B$, $y : X \rightarrow C$ such that $fx = gy$, there exists a unique function $(x,y) : X \rightarrow A$ such that $p (x,y) = x$ and $q(x,y) = y$.
 \end{itemize}
 We also say $p$ is the pullback of $g$ along $f$, or $q$ is the pullback of $f$ along $g$.
-
-In the case $g$ is injective, we also say $A$ and $p$ form the \emph{inverse image} of $g$ under $f$.
 \end{df}
 
 \[ \xymatrix{
@@ -93,61 +257,127 @@ A \ar[r]^p \ar[d]_q & B \ar[d]^f \\
 C \ar[r]_g & D
 } \]
 
-\section{The Axioms}
-
-\begin{ax}[Associativity]
-Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
-\[ h (gf) = (hg) f \enspace . \]
-\end{ax}
-
-\begin{ax}[Unit Laws]
-For any function $f : A \rightarrow B$, we have $\id{B} \circ f = f \circ \id{A} = f$.
-\end{ax}
-
-\begin{ax}[Terminal Set]
-For any set $X$, there is exactly one function $X \rightarrow 1$.
-\end{ax}
-
-\begin{ax}[Empty Set]
-There exists a set that has no elements.
-\end{ax}
-
-\begin{ax}[Extensionality]
-Let $A$ and $B$ be sets and $f,g : A \rightarrow B$.
-If $\forall a \in A. f(a) = g(a)$ then $f = g$. \end{ax}
-
-\begin{ax}[Products]
-Let $f : A \rightarrow B$ and $g : A \rightarrow C$. Then $\langle f,g \rangle$ is the unique function $A \rightarrow B \times C$ such that
-\[ \pi_1 \circ \langle f,g \rangle = f, \qquad \pi_2 \circ \langle f,g \rangle = g \enspace . \]
-\end{ax}
-
-\begin{ax}[Function Sets]
-Any two sets have a function set.
-\end{ax}
-
 \begin{ax}[Inverse Images]
 Given any function $f : X \rightarrow Y$ and element $y \in Y$, then there exists a pullback of $f$ and $y$.
 \end{ax}
 
+\subsection{The Subset Classifier}
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
+\end{df}
+
+\begin{df}[Subset Classifier]
+A \emph{subset classifier} consists of a set $2$ and an element $\top \in 2$ such that, for any sets $A$ and $X$ and injective function $j : A \rightarrowtail X$, there exists a unique function $\chi : X \rightarrow 2$, the \emph{classifying function} of $j$, such that $j$ and $!_A : A \rightarrow 1$ form the pullback of $\top$ and $\chi$.
+\end{df}
+
+\[ \xymatrix{
+A \ar[r]^{!_A} \ar[d]_j & 1 \ar[d]^{\top} \\
+X \ar[r]_\chi & 2
+} \]
+
 \begin{ax}[Subset Classifier]
-There exists a set $2$ and element $\top \in 2$ such that, for any sets $A$ and $X$ and injective function $j : A \rightarrowtail X$, there exists a unique function $\chi : X \rightarrow 2$ such that $j$ and the unique function $A \rightarrow 1$ form the pullback of $\top$ and $\chi$.
+There exists a subset classifier.
 \end{ax}
 
-\begin{ax}[Natural Numbers Set]
-There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that, for any set $A$, element $a \in A$ and function $f : A \rightarrow A$, there exists a unique function $r : \mathbb{N} \rightarrow A$ such that $r(0) = a$ and $f \circ r = r \circ s$.
+\begin{prop}
+If $\top \in 2$ and $\top' \in 2'$ are subset classifiers, then there exists a unique isomorphism $i : 2 \approx 2'$ such that $i(\top) = \top'$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : 2 \rightarrow 2'$ be the unique function such that $\top$ and $\id{1}$ form the pullback of $\top'$ and $i$}}
+\step{2}{\pflet{$\inv{i} : 2' \rightarrow 2$ be the unique function such that $\top'$ and $\id{1}$ form the pullback of $\top$ and $\inv{i}$}}
+\step{3}{$i \inv{i} = \id{2'}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $\top'$ and $\id{1}$ form the pullback of $\top'$ and $x$.
+\end{proof}
+\step{4}{$\inv{i} i = \id{2}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $\top$ and $\id{1}$ form the pullback of $\top$ and $x$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Let $2$ and $\top \in 2$ be the subset classifier.
+\end{df}
+
+\subsection{The Natural Numbers}
+
+\begin{df}[Natural Numbers Set]
+A \emph{natural numbers set} consists of a set $\mathbb{N}$, an element $0 \in \mathbb{N}$ and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that, for any set $A$, element $a \in A$ and function $f : A \rightarrow A$, there exists a unique function $r : \mathbb{N} \rightarrow A$ such that $r(0) = a$ and $f \circ r = r \circ s$.
+\end{df}
+
+\begin{ax}[Infinity]
+There exists a natural numbers set.
 \end{ax}
+
+\begin{prop}
+If $N$, $0 \in N$, $s : N \rightarrow N$ and $N'$, $0' \in N'$, $s' : N' \rightarrow N'$ are two natural numbers sets, then there exists a unique isomorphism $i : N \approx N'$ such that $i(0) = 0'$ and $s'i = is$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : N \rightarrow N'$ be the unique function such that $i(0) = 0'$ and $s'i = is$.}}
+\step{2}{\pflet{$\inv{i} : N' \rightarrow N$ be the unique function such that $\inv{i}(0') = 0$ and $s \inv{i} = \inv{i} s'$.}}
+\step{3}{$i \inv{i} = \id{N'}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $x(0') = 0'$ and $s'x = xs'$.
+\end{proof}
+\step{4}{$\inv{i} i = \id{N}$}
+\begin{proof}
+	\pf\ Each is the unique $x$ such that $x(0) = 0$ and $sx = xs$.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{The Axiom of Choice}
+
+\begin{df}[Surjective]
+A function $f : A \rightarrow B$ is \emph{surjective} iff, for every element $b \in B$, there exists $a \in A$ such that $f(a) = b$.
+\end{df}
 
 \begin{ax}[Choice]
 Every surjective function has a section.
 \end{ax}
 
+\section{Sections and Retractions}
+
+\begin{prop}
+\label{prop:comp_section}
+Let $r : A \rightarrow B$, $r' : B \rightarrow C$, $s : B \rightarrow A$ and $s' : C \rightarrow B$. If $s$ is a section of $r$ and $s'$ is a section of $r'$, then $ss'$ is a section of $r'r$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $r'rss' = r' \id{B} s' = r's' = \id{C}$. \qed
+\end{proof}
+
 \section{Isomorphisms}
 
-\begin{df}[Isomorphism]
-Let $f : A \rightarrow B$. Then $f$ is an \emph{isomorphism} or \emph{bijection}, $f : A \cong B$, iff there exists a function $f^{-1} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f^{-1} f = \id{A}$ and $f f^{-1} = \id{B}$.
-\end{df}
+\begin{prop}
+For any set $A$ we have $\id{A} : A \approx A$ and $\inv{\id{A}} = \id{A}$.
+\end{prop}
 
-%TODO: Inverse is unique, isomorphism is an equivalence relation
+\begin{proof}
+\pf\ Immediate from the fact that $\id{A} \id{A} = \id{A}$. \qed
+\end{proof}
+
+\begin{prop}
+If $f : A \approx B$ then $\inv{f} : B \approx A$ and $\inv{(\inv{f})} = f$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $f \inv{f} = \id{B}$ and $\inv{f} f = \id{A}$. \qed
+\end{proof}
+
+\begin{prop}
+If $f : A \approx B$ and $g : B \approx C$ then $gf : A \approx C$ and $\inv{(gf)} = \inv{f} \inv{g}$.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:comp_section}. \qed
+\end{proof}
 
 \section{Subsets}
 
