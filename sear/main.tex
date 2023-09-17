@@ -83,7 +83,19 @@ Let $R : A \looparrowright B$ be a relation such that $\forall a : \El{A}. \exis
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions Used in the Axioms} %CHECKED
+\subsection{Definitions Used in the Axioms}
+
+\begin{df}[Equality of Relations]
+Let $R,S : A \looparrowright B$. We say that $R$ and $S$ are \emph{equal}, $R = S$, iff $\forall a : \El{A}. \forall b : \El{B}. aRb \Leftrightarrow aSb$.
+\end{df}
+
+\begin{prop}
+Let $f,g : A \rightarrow B$. If $\forall x : \El{A}. f(x) = g(x)$ then $f = g$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $xfy \Leftrightarrow y = f(x) \Leftrightarrow y = g(x) \Leftrightarrow xgy$. \qed
+\end{proof}
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
