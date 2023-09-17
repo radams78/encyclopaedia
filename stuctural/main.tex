@@ -1,0 +1,59 @@
+\documentclass{book}
+
+\title{Mathematics}
+\author{Robin Adams}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
+\usepackage{pf2}
+\usepackage{hyperref}
+\usepackage{mathabx}
+\usepackage[all]{xy}
+
+\newtheorem{ax}{Axiom}[chapter]
+\newtheorem{axs}[ax]{Axiom Schema}
+\newtheorem{prop}[ax]{Proposition}
+\newtheorem{cor}{Corollary}[ax]
+\newtheorem{thm}[ax]{Theorem}
+\newtheorem{lm}[ax]{Lemma}
+\theoremstyle{definition}
+\newtheorem{df}[ax]{Definition}
+\newtheorem{ex}[ax]{Example}
+
+\newcommand{\El}[1]{\ensuremath{\mathrm{El} \left( {#1} \right)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Primitive Terms and Axioms}
+
+\section{Primitive Terms}
+
+Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
+
+For any set $A$, let there be \emph{elements} of $A$. We write $a: \El{A}$ for: $a$ is an element of $A$.
+
+For any sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ for: $f$ is a function from $A$ to $B$.
+
+For any function $f : A \rightarrow B$ and element $a : \El{A}$, let there be an element $f(a) : \El{B}$, the \emph{value} of $f$ at the \emph{argument} $a$.
+
+For any sets $A$ and $B$, let there be \emph{relations} between $A$ and $B$. We write $R : A \looparrowright B$ for: $R$ is a relation between $A$ and $B$.
+
+For any set $A$ and elements $a,b : \El{A}$, let there be a proposition that $a$ and $b$ are \emph{equal}, $a = b$.
+
+For any relation $R : A \looparrowright B$ and elements $a : \El{A}$, $b : \El{B}$, let there be a proposition $aRb$, that $R$ \emph{holds} between $a$ and $b$.
+
+\section{Axioms}
+
+\begin{ax}[Equality Preservation]
+Let $f : A \rightarrow B$ and $x,y : \El{A}$. If $x = y$ then $f(x) = f(y)$.
+\end{ax}
+
+\begin{ax}[Functions as Relations]
+For any function $f : A \rightarrow B$, there exists a relation $R_f : A \looparrowright B$ such that, for all $a \in A$ and $b \in B$, 
+\end{document}

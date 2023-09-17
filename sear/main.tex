@@ -19,12 +19,16 @@
 \newtheorem{prop}[ax]{Proposition}
 \newtheorem{cor}{Corollary}[ax]
 \newtheorem{thm}[ax]{Theorem}
+\newtheorem{thms}[ax]{Theorem Schema}
 \newtheorem{lm}[ax]{Lemma}
 \theoremstyle{definition}
 \newtheorem{df}[ax]{Definition}
 \newtheorem{ex}[ax]{Example}
 
 \newcommand{\El}[1]{\ensuremath{\mathrm{El} \left( {#1} \right)}}
+\newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
+\newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+
 \begin{document}
 
 \maketitle
@@ -32,7 +36,7 @@
 
 \chapter{Primitive Terms and Axioms}
 
-\section{Primitive Terms}
+\section{Primitive Terms} %CHECKED FORMALIZED
 
 Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
 
@@ -44,35 +48,17 @@ For any set $A$ and elements $a,b : \El{A}$, let there be a proposition that $a$
 
 For any relation $R : A \looparrowright B$ and elements $a : \El{A}$, $b : \El{B}$, let there be a proposition $aRb$, that $R$ \emph{holds} between $a$ and $b$.
 
-\section{Definitions Used in the Axioms}
+\section{Axioms} %CHECKED
 
 \begin{df}[Function]
 Let $A$ and $B$ be sets and $F : A \looparrowright B$. Then $F$ is a \emph{function} from $A$ to $B$, $F : A \rightarrow B$, if and only if, for all $x \in A$, there exists a unique $y \in B$ such that $xFy$.
 We denote this unique $y$ by $F(x)$.
 \end{df}
 
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
-\end{df}
-
-\begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
-\end{df}
-
-\begin{df}[Bijective]
-A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
-
-Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
-\end{df}
-
-If we prove there exists a set $X$ such that $P(X)$, and that any two subsets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
-
-\section{Axioms}
-
 \begin{axs}[Comprehension]
-For any formula $\phi[X,Y,x,y]$ where $X$ and $Y$ are set variables and $x \in X$ and $y \in Y$, the following is an axiom:
+For any formula $\phi[X,Y,x,y]$ where $X$ and $Y$ are set variables and $x : \El{X}$ and $y : \El{Y}$, the following is an axiom:
 
-For any sets $A$ and $B$, there exists a relation $R$ such that, for all $a \in A$ and $b \in B$, we have $aRb$ if and only if $\phi[A,B,a,b]$.
+For any sets $A$ and $B$, there exists a relation $R : A \looparrowright B$ such that, for all $a : \El{A}$ and $b : \El{B}$, we have $aRb$ if and only if $\phi[A,B,a,b]$.
 \end{axs}
 
 \begin{ax}[Tabulations]
@@ -91,7 +77,85 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 \end{itemize}
 \end{ax}
 
+\begin{ax}[Choice]
+Let $R : A \looparrowright B$ be a relation such that $\forall a : \El{A}. \exists b : \El{B}. aRb$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. a R f(a)$.
+\end{ax}
+
 \section{Consequences of the Axioms}
+
+\subsection{Definitions Used in the Axioms} %CHECKED
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
+\end{df}
+
+\begin{df}[Surjective]
+A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
+\end{df}
+
+\begin{df}[Bijective]
+A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
+
+Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
+\end{df}
+
+If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
+
+\subsection{Tabulations}
+
+\begin{thm}
+Let $R : A \looparrowright B$. Let $p : T \rightarrow A$ and $q : T \rightarrow B$ form a tabulation of $R$. Let $p' : T' \rightarrow A$ and $q' : T' \rightarrow B$ form a tabulation of $R$. Then there exists a unique bijection $f : T \approx T'$ such that $\forall t : \El{T}. p'(f(t)) = p(t)$ and $\forall t : \El{T}. q'(f(t)) = q(t)$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : T \looparrowright T'$ be the relation such that $tft'$ iff $p(t) = p'(t')$ and $q(t) = q'(t')$}}
+\begin{proof}
+	\pf\ Axiom of Comprehension
+\end{proof}
+\step{2}{$f$ is a function.}
+\begin{proof}
+	\step{a}{\pflet{$x : \El{T}$}}
+	\step{b}{$p(x)Rq(x)$}
+	\begin{proof}
+		\pf\ Since $T$ is a tabulation of $R$.
+	\end{proof}
+	\step{b}{There exists a unique $y : \El{T'}$ such that $p'(y) = p(x)$ and $q'(y) = q(x)$.}
+	\begin{proof}
+		\pf\ Since $T'$ is a tabulation of $R$.
+	\end{proof}
+\end{proof}
+\step{3}{$f$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x,y : \El{T}$}}
+	\step{b}{\assume{$f(x) = f(y)$}}
+	\step{c}{$p'(f(x)) = p'(f(y))$ and $q'(f(x)) = q'(f(y))$}
+	\step{d}{$p(x) = p(y)$ and $q(x) = q(y)$}
+	\step{e}{$x = y$}
+	\begin{proof}
+		\pf\ Since $T$ is a tabulation of $R$.
+	\end{proof}
+\end{proof}
+\step{4}{$f$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$y : \El{T'}$}}
+	\step{b}{$p'(y)Rq'(y)$}
+	\begin{proof}
+		\pf\ Since $T'$ is a tabulation of $R$.
+	\end{proof}
+	\step{c}{There exists $x : \El{T}$ such that $p(x) = p'(y)$ and $q(x) = q'(y)$.}
+	\begin{proof}
+		\pf\ Since $T$ is a tabulation of $R$.
+	\end{proof}
+\end{proof}
+\step{5}{If $g : T \approx T'$ satisfies $\forall t : \El{T}. p'(g(t)) = p(t)$ and $\forall t : \El{T}. q'(g(t)) = q(t)$.}
+\begin{proof}
+	\step{a}{\pflet{$g : T \approx T'$ satisfy $\forall t : \El{T}. p'(g(t)) = p(t)$ and $\forall t : \El{T}. q'(g(t)) = q(t)$.}}
+	\step{b}{For all $t : \El{T}$ we have $p'(f(t)) = p'(g(t))$ and $q'(f(t)) = q'(g(t))$.}
+	\step{c}{For all $t : \El{T}$ we have $f(t) = g(t)$.}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{The Empty Set}
 
@@ -233,5 +297,402 @@ A \emph{subset} of a set $A$ is a relation $1 \looparrowright S$.
 
 Given $S : 1 \looparrowright S$ and $a : \El{A}$, we write $a \in S$ for $*Sa$.
 \end{df}
+
+\begin{thms}
+For any property $P[X,x]$ where $X$ is a set variable and $x : \El{X}$, the following is a theorem:
+
+For any set $A$, there exists a set $B$ and injection $i : B \rightarrow A$ such that, for all $x : \El{A}$, we have $P[A,x]$ if and only if there exists $b : \El{B}$ such that $i(b) = x$.
+\end{thms}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S : 1 \looparrowright A$ be the relation such that, for all $e : \El{1}$ and $a : \El{A}$, we have $eSa$ if and only if $P[A,a]$.}}
+\begin{proof}
+	\pf\ Axiom of Comprehension.
+\end{proof}
+\step{2}{\pflet{$B$ be the tabulation of $S$ with projections $p : B \rightarrow 1$ and $i : B \rightarrow A$.}}
+\begin{proof}
+	\pf\ Axiom of Tabulations.
+\end{proof}
+\step{3}{$i$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$r,s : \El{B}$}}
+	\step{b}{\assume{$i(r) = i(s)$}}
+	\step{c}{$p(r) = p(s)$}
+	\begin{proof}
+		\pf\ Since 1 has only one element.
+	\end{proof}
+	\step{d}{$r = s$}
+	\begin{proof}
+		\pf\ Axiom of Tabulations.
+	\end{proof}
+\end{proof}
+\step{4}{For all $x : \El{A}$, we have $P[A,x]$ if and only if there exists $b : \El{B}$ such that $i(b) = x$.}
+\begin{proof}
+	\step{a}{\pflet{$x : \El{A}$}}
+	\step{b}{If $P[A,x]$ then there exists $b : \El{B}$ such that $i(b) = x$}
+	\begin{proof}
+		\step{i}{\assume{$P[A,x]$}}
+		\step{ii}{$*Sx$}
+		\begin{proof}
+			\pf\ \stepref{1}
+		\end{proof}
+		\step{iii}{There exists $b : \El{B}$ such that $p(b) = *$ and $i(b) = x$}
+		\begin{proof}
+			\pf\ Axiom of Tabulations.
+		\end{proof}
+	\end{proof}
+	\step{c}{For all $b : \El{B}$ we have $P[A,i(b)]$}
+	\begin{proof}
+		\step{i}{\pflet{$b : \El{B}$}}
+		\step{ii}{$p(b)Si(b)$}
+		\begin{proof}
+			\pf\ Axiom of Tabulations.
+		\end{proof}
+		\step{iii}{$P[A,i(b)]$}
+		\begin{proof}
+			\pf\ \stepref{1}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Composition}
+
+\begin{df}[Composite]
+Let $\phi : A \looparrowright B$ and $\psi : B \looparrowright C$. The \emph{composite} $\psi \circ \phi : A \looparrowright C$ is the relation such that $a (\psi \circ \phi) c$ iff there exists $b$ such that $a \phi b$ and $b \psi c$.
+\end{df}
+
+\begin{df}[Identity]
+For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
+\end{df}
+
+\begin{thm}
+Composition of relations is associative, and the identity function is an identity for composition. The composite of functions is a function. The composite of injective functions is injective. The composite of surjective functions is surjective. The composite of bijections is a bijection. A function $f : A \rightarrow B$ is a bijection iff there exists a function $\inv{f} : B \rightarrow A$ such that $\inv{f} f = \id{A}$ and $f \inv{f} = \id{B}$, in which case $\inv{f}$ is unique.
+\end{thm}
+
+\section{Axioms Part Two}
+
+\begin{ax}[Power Set]
+For any set $A$, there exists a set $\mathcal{P} A$, the \emph{power set} of $A$, and a relation $\in : A \looparrowright \mathcal{P} A$, called \emph{membership}, such that, for any subset $S$ of $A$, there exists a unique $\overline{S} \in \mathcal{P} A$ such that, for all $x \in A$, we have $x \in \overline{S}$ if and only if $x \in S$.
+
+We usually write just $S$ for $\overline{S}$.
+\end{ax}
+
+\begin{axs}[Collection]
+Let $P[X,Y,x]$ be a formula with set variables $X$ and $Y$ and an element variable $x \in X$. Then the following is an axiom.
+
+For any set $A$, there exists a set $B$, a function $p : B \rightarrow A$, a set $Y$ and a relation $M : B \looparrowright Y$ such that:
+\begin{itemize}
+\item $\forall b \in B. P[A, \{ y \in Y : bMy \}, p(b)]$
+\item For all $a \in A$, if $\exists Y. P[A,Y,a]$, then there exists $b \in B$ such that $a = p(b)$.
+\end{itemize}
+\end{axs}
+
+\begin{df}[Universe]
+Let $E : U \looparrowright X$ be a relation. Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $A \approx \{ x \in X : uEx \}$.
+
+Then $(U,X,E)$ form a \emph{universe} if and only if:
+\begin{itemize}
+\item $\mathbb{N}$ is $U$-small.
+\item For any $U$-small sets $A$ and $B$ and relation $R : A \looparrowright B$, the tabulation of $R$ is $U$-small.
+\item If $A$ is $U$-small then so is $\mathcal{P} A$
+\item Let $f : A \rightarrow B$ be a function. If $B$ is $U$-small and $f^{-1}(b)$ is $U$-small for all $b \in B$, then $A$ is $U$-small.
+\item If $p : B \twoheadrightarrow A$ is a surjective function such that $A$ is $U$-small, then there exists a $U$-small set $C$, a surjection $q : C \twoheadrightarrow A$, and a function $f : C \rightarrow B$ such that $q = pf$.
+\end{itemize}
+\end{df}
+
+\begin{ax}[Universe]
+There exists a universe.
+\end{ax}
+
+Let $E : U \looparrowright X$ be a universe. We shall say a set is \emph{small} iff it is $U$-small, and \emph{large} otherwise.
+
+\section{Cartesian Product}
+
+\begin{df}[Cartesian Product]
+Let $A$ and $B$ be sets. The \emph{Cartesian product} of $A$ and $B$, $A \times B$, is the tabulation of the relation $A \looparrowright B$ that holds for all $a \in A$ and $b \in B$. The associated functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ are called the \emph{projections}.
+
+Given $a \in A$ and $b \in B$, we write $(a,b)$ for the unique element of $A \times B$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
+\end{df}
+
+\chapter{Topology}
+
+\section{Topological Spaces}
+
+\begin{df}[Topological Space]
+Let $X$ be a set and $\mathcal{O} \subseteq \mathcal{P} X$. Then we say $(X, \mathcal{O})$ is a \emph{topological space} iff:
+\begin{itemize}
+\item For any $\mathcal{U} \subseteq \mathcal{O}$ we have $\bigcup \mathcal{U} \in \mathcal{O}$.
+\item For any $U, V \in \mathcal{O}$ we have $U \cap V \in \mathcal{O}$.
+\item $X \in \mathcal{O}$
+\end{itemize}
+We call $\mathcal{O}$ the \emph{topology} of the toplogical space, and call its elements \emph{open} sets. We shall often write $X$ for the topological space $(X, \mathcal{O})$.
+\end{df}
+
+\begin{df}[Closed Set]
+Let $X$ be a topological space and $A \subseteq X$. Then $A$ is \emph{closed} iff $X - A$ is open.
+\end{df}
+
+\begin{prop}
+A set $B$ is open if and only if $X - B$ is closed.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a set and $\mathcal{C} \subseteq \mathcal{P} X$. Then there exists a topology $\mathcal{O}$ on $X$ such that $\mathcal{C}$ is the set of closed sets if and only if:
+\begin{itemize}
+\item For any $\mathcal{D} \subseteq \mathcal{C}$ we have $\bigcap \mathcal{D} \in \mathcal{C}$
+\item For any $C, D \in \mathcal{C}$ we have $C \cup D \in \mathcal{C}$.
+\item $\emptyset \in \mathcal{C}$
+\end{itemize}
+In this case, $\mathcal{O}$ is unique and is given by $\mathcal{O} = \{ X - C : C \in \mathcal{C} \}$.
+\end{prop}
+
+\begin{df}[Neighbourhood]
+Let $X$ be a topological space, $Sx \in X$ and $U \subseteq X$. Then $U$ is a \emph{neighbourhood} of $x$, and $x$ is an \emph{interior} point of $U$, iff there exists an open set $V$ such that $x \in V \subseteq U$.
+\end{df}
+
+\begin{prop}
+A set $B$ is open if and only if it is a neighbourhood of each of its points.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a set and $\mathcal{N} : X \rightarrow \mathcal{P} X$. Then there exists a topology $\mathcal{O}$ on $X$ such that, for all $x \in X$, we have $\mathcal{N}_x$ is the set of neighbourhoods of $x$, if and only if:
+\begin{itemize}
+\item For all $x \in X$ and $N \in \mathcal{N}_x$ we have $x \in N$
+\item For all $x \in X$ we have $X \in \mathcal{N}_x$
+\item For all $x \in X$, $N \in \mathcal{N}_x$ and $V \subseteq \mathcal{P} X$, if $N \subseteq V$ then $V \in \mathcal{N}_x$
+\item For all $x \in X$ and $M, N \in \mathcal{N}_x$ we have $M \cap N \in \mathcal{N}_x$
+\item For all $x \in X$ and $N \in \mathcal{N}_x$, there exists $M \in \mathcal{N}_x$ such that $M \subseteq N$ and $\forall y \in M. M \in \mathcal{N}_y$.
+\end{itemize}
+In this case, $\mathcal{O}$ is unique and is given by $\mathcal{O} = \{ U : \forall x \in U. U \in \mathcal{N}_x \}$.
+\end{prop}
+
+\begin{df}[Exterior Point]
+Let $X$ be a topological space, $x \in X$ and $B \subseteq X$. Then $x$ is an \emph{exterior point} of $B$ iff $B - X$ is a neighbourhood of $x$.
+\end{df}
+
+\begin{df}[Boundary Point]
+Let $X$ be a topological space, $x \in X$ and $B \subseteq X$. Then $x$ is a \emph{boundary point} of $B$ iff it is neither an interior point nor an exterior point of $B$.
+\end{df}
+
+\begin{df}[Interior]
+Let $X$ be a topological space and $B \subseteq X$. The \emph{interior} of $B$, $B^\circ$, is the set of all interior points of $B$.
+\end{df}
+
+\begin{prop}
+The interior of $B$ is the union of all the open sets included in $B$.
+\end{prop}
+
+\begin{df}[Closure]
+Let $X$ be a topological space and $B \subseteq X$. The \emph{closure} of $B$, $\overline{B}$, is the set of all points that are not exterior points of $B$.
+\end{df}
+
+\begin{prop}
+The closure of $B$ is the intersection of all the closed sets that include $B$.
+\end{prop}
+
+\begin{prop}
+A set $B$ is open iff $X - B = \overline{X - B}$.
+\end{prop}
+
+\begin{prop}[Kuratowski Closure Axioms]
+Let $X$ be a set and $\overline{\ } : \mathcal{P} X \rightarrow \mathcal{P} X$. Then there exists a topology $\mathcal{O}$ such that, for all $B \subseteq X$, $\overline{B}$ is the closure of $B$, if and only if:
+\begin{itemize}
+\item $\overline{\emptyset} = \emptyset$
+\item For all $A \subseteq X$ we have $A \subseteq \overline{A}$
+\item For all $A \subseteq X$ we have $\overline{\overline{A}} = \overline{A}$
+\item For all $A, B \subseteq X$ we have $\overline{A \cup B} = \overline{A} \cup \overline{B}$
+\end{itemize}
+In this case, $\mathcal{O}$ is unique and is defined by $\mathcal{O} = \{ U : X - U = \overline{X - U} \}$.
+\end{prop}
+
+\subsection{Subspaces}
+
+\begin{df}[Subspace]
+Let $X$ be a topological space and $X_0 \subseteq X$. The \emph{subspace topology} on $X_0$ is $\{ U \cap X_0 : U \text{ is open in } X \}$.
+\end{df}
+
+\subsection{Topological Disjoint Union}
+
+\begin{df}
+Let $X$ and $Y$ be topological spaces. The \emph{disjoint union} is $X + Y$ where $U \subseteq X + Y$ is open if and only if $\inv{\kappa_1}(U)$ is open in $X$ and $\inv{\kappa_2}(U)$ is open in $Y$.
+\end{df}
+
+\subsection{Product Topology}
+
+\begin{df}
+Let $X$ and $Y$ be topological spaces. The \emph{product topology} on $X \times Y$ is the set of all subsets $W \subseteq X \times Y$ such that, for all $(x,y) \in W$, there exist neighbourhoods $U$ of $x$ in $X$ and $V$ of $y$ in $Y$ such that $U \times V \subseteq W$.
+\end{df}
+
+\subsection{Bases}
+
+\begin{df}[Basis]
+Let $X$ be a topological space. A \emph{basis} for the topology on $X$ is a set of open sets $\mathcal{B}$ such that every open set is the union of a subset of $\mathcal{B}$.
+\end{df}
+
+\subsection{Subbases}
+
+\begin{df}[Subbasis]
+Let $X$ be a topological space. A \emph{subbasis} for the topology on $X$ is a subset $\mathcal{S} \subseteq \mathcal{P} X$ such that every open set is a union of finite intersections of $\mathcal{S}$.
+\end{df}
+
+\section{Continuous Functions}
+
+\begin{df}[Continuous]
+Let $X$ and $Y$ be topological spaces. A function $f : X \rightarrow Y$ is \emph{continuous} iff, for every open set $V$ in $Y$, the inverse image $\inv{f}(V)$ is open in $X$.
+\end{df}
+
+\begin{prop}
+\begin{enumerate}
+\item $\id{X}$ is continuous
+\item The composite of two continuous functions is continuous.
+\item If $f : X \rightarrow Y$ is continuous and $X_0 \subseteq X$ then $f \restriction X_0 : X_0 \rightarrow Y$ is continuous.
+\item If $f : X + Y \rightarrow Z$, then $f$ is continuous iff $f \circ \kappa_1 : X \rightarrow Z$ and $f \circ \kappa_2 : Y \rightarrow Z$ are continuous.
+\item If $f : Z \rightarrow X \times Y$, then $f$ is continuous iff $\pi_1 \circ f$ and $\pi_2 \circ f$ are continuous.
+\end{enumerate}
+\end{prop}
+
+\begin{df}[Homeomorphism]
+Let $X$ and $Y$ be topological spaces. A \emph{homeomorphism} between $X$ and $Y$ is a bijection $f : X \approx Y$ such that $f$ and $\inv{f}$ are continuous.
+\end{df}
+
+\section{Convergence}
+
+\begin{df}[Convergence]
+Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$. A point $a : \El{X}$ is a \emph{limit} of the sequence iff, for every neighbourhood $U$ of $a$, there exists $n_0$ such that $\forall n \geq n_0. x_n \in U$.
+\end{df}
+
+\section{Connected Spaces}
+
+\begin{df}[Connected]
+A topological space is \emph{connected} iff it is not the union of two nonempty open disjoint subsets.
+\end{df}
+
+\begin{prop}
+The continuous image of a connected space is connected.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are connected, then $X$ is connected.
+\end{prop}
+
+\begin{prop}
+If $X$ and $Y$ are nonempty topological spaces, then
+$X \times Y$ is connected if and only if $X$ and $Y$ are connected.
+\end{prop}
+
+\begin{df}[Path-connected]
+A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
+\end{df}
+
+\begin{prop}
+The continuous image of a path connected space is path connected.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are path connected, then $X$ is path connected.
+\end{prop}
+
+\begin{prop}
+If $X$ and $Y$ are nonempty topological spaces, then
+$X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
+\end{prop}
+
+\section{Hausdorff Spaces}
+
+\begin{df}[Hausdorff]
+A topological space is a \emph{Hausdorff} space or a \emph{$T_2$} space iff any two distinct points have disjoint neighbourhoods.
+\end{df}
+
+\begin{prop}
+In a Hausdorff space, a sequence has at most one limit.
+\end{prop}
+
+\begin{prop}
+\begin{enumerate}
+\item Every subspace of a Hausdorff space is Hausdorff.
+\item The disjoint union of two Hausdorff spaces is Hausdorff.
+\item The product of two Hausdorff spaces is Hausdorff.
+\end{enumerate}
+\end{prop}
+
+\section{Compactness}
+
+\begin{df}[Compact]
+A topological space is \emph{compact} iff every open cover has a finite subcover.
+\end{df}
+
+\begin{prop}
+Let $X$ be a compact topological space. Let $P$ be a set of open sets such that, for all $U,V \in P$, we have $U \cup V \in P$. Assume that every point has an open neighbourhood in $P$. Then $X \in P$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$P$ is an open cover of $X$}
+\step{2}{\pick\ a finite subcover $U_1, \ldots, U_n \in P$}
+\step{3}{$X = U_1 \cup \cdots \cup U_n \in P$}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $f$ be a compact space and $f : X \rightarrow \mathbb{R}$ be locally bounded. Then $f$ is bounded.
+\end{cor}
+
+\begin{proof}
+\pf\ Take $P = \{ U \text{ open in } X : f \text{ is bounded on } U \}$. \qed
+\end{proof}
+
+\begin{prop}
+The continuous image of a compact space is compact.
+\end{prop}
+
+\begin{prop}
+A closed subspace of a compact space is compact.
+\end{prop}
+
+\begin{prop}
+Let $X$ and $Y$ be nonempty spaces. Then the following are equivalent.
+\begin{enumerate}
+\item $X$ and $Y$ are compact.
+\item $X + Y$ is compact.
+\item $X \times Y$ is compact.
+\end{enumerate}
+\end{prop}
+
+\begin{prop}
+A compact subspace of a Hausdorff space is closed.
+\end{prop}
+
+\begin{prop}
+A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
+\end{prop}
+
+\section{Metric Spaces}
+
+%TODO Define real numbers
+\begin{df}[Metric Space]
+Let $X$ be a set and $d : X^2 \rightarrow \mathbb{R}$. We say $(X,d)$ is a \emph{metric space} iff:
+\begin{itemize}
+\item For all $x,y \in X$ we have $d(x,y) \geq 0$
+\item For all $x,y \in X$ we have $d(x,y) = 0$ iff $x = y$
+\item For all $x,y \in X$ we have $d(x,y) = d(y,x)$
+\item (\emph{Triangle Inequality}) For all $x,y,z \in X$ we have $d(x,z) \leq d(x,y) + d(y,z)$
+\end{itemize}
+We call $d$ the \emph{metric} of the metric space $(X,d)$. We often write $X$ for the metric space $(X,d)$.
+\end{df}
+
+\begin{df}[Topology of a Metric Space]
+Let $(X,d)$ be a metric space. The topology \emph{induced} by the metric $d$ is defined by: for $V \subseteq X$, we have $V$ is open if and only if, for all $x \in V$, there exists $\epsilon > 0$ such that $\{ y \in X : d(x,y) < \epsilon \} \subseteq V$.
+\end{df}
+
+\begin{df}[Metrizable]
+A topological space is \emph{metrizable} iff there exists a metric that induces its topology.
+\end{df}
+
+\begin{prop}
+Every metrizable space is Hausdorff.
+\end{prop}
 
 \end{document}

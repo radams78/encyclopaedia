@@ -264,7 +264,7 @@ Given any function $f : X \rightarrow Y$ and element $y \in Y$, then there exist
 \subsection{The Subset Classifier}
 
 \begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} iff, for every set $X$ and functions $x,y : X \rightarrow A$, if $fx = fy$ then $x = y$.
+A function $f : A \rightarrow B$ is \emph{injective} iff, for every $x,y \in A$, if $fx = fy$ then $x = y$.
 \end{df}
 
 \begin{df}[Subset Classifier]
@@ -332,6 +332,10 @@ If $N$, $0 \in N$, $s : N \rightarrow N$ and $N'$, $0' \in N'$, $s' : N' \righta
 \qed
 \end{proof}
 
+\begin{df}
+Let $\mathbb{N}$, $0 \in \mathbb{N}$, $s : \mathbb{N} \rightarrow \mathbb{N}$ be the natural numbers set.
+\end{df}
+
 \subsection{The Axiom of Choice}
 
 \begin{df}[Surjective]
@@ -353,7 +357,45 @@ Let $r : A \rightarrow B$, $r' : B \rightarrow C$, $s : B \rightarrow A$ and $s'
 \pf\ Since $r'rss' = r' \id{B} s' = r's' = \id{C}$. \qed
 \end{proof}
 
-\section{Isomorphisms}
+\section{Injective Functions}
+
+\begin{prop}
+Let $f : A \rightarrow B$ be injective. Let $x,y : X \rightarrow A$. If $fx = fy$ then $x = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\forall t \in X. x(t) = y(t)$}
+\begin{proof}
+	\step{i}{\pflet{$t \in X$}}
+	\step{ii}{$f(x(t)) = f(y(t))$}
+	\step{iii}{$x(t) = y(t)$}
+	\begin{proof}
+		\pf\ $f$ is injective.
+	\end{proof}
+\end{proof}
+\step{2}{$x = y$}
+\begin{proof}
+	\pf\ Axiom of Extensionality
+\end{proof}
+\qed
+\end{proof}
+
+The composite if two injective functions is injective.
+
+If $gf$ is injective then $f$ is injective.
+
+Every section is injective.
+
+\section{Surjective Functions}
+
+The composite of two surjective functions is surjective.
+
+If $gf$ is surjective then $g$ is surjective.
+
+A function is surjective iff it has a section.
+
+\section{Bijections}
 
 \begin{prop}
 For any set $A$ we have $\id{A} : A \approx A$ and $\inv{\id{A}} = \id{A}$.
@@ -379,6 +421,23 @@ If $f : A \approx B$ and $g : B \approx C$ then $gf : A \approx C$ and $\inv{(gf
 \pf\ From Proposition \ref{prop:comp_section}. \qed
 \end{proof}
 
+A function is bijective iff it is injective and surjective.
+
+\section{Function Sets}
+
+\begin{prop}
+Let $f : A \times B \rightarrow C$. Let $a \in A$ and $b \in B$. Then
+\[ \epsilon((\lambda f)(a), b) = f(a,b) \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\epsilon((\lambda f)(a),b) & = \epsilon (\lambda f \times \id{B}) (a,b) \\
+& = f(a,b) & \qed
+\end{align*}
+\end{proof}
+
 \section{Subsets}
 
 \begin{df}[Subset]
@@ -386,61 +445,145 @@ Let $i : U \rightarrow A$. Then we say that $(U,i)$ is a \emph{subset} of $A$ if
 \end{df}
 
 \begin{df}
-Let $(U,i)$ and $(V,j)$ be subsets of $A$. Then we say $(U,i)$ and $(V,j)$ are \emph{equal}, and write $(U,i) = (V,j)$, iff there exists an isomorphism $\phi : U \cong V$ such that $j \phi = i$.
+Let $(U,i)$ and $(V,j)$ be subsets of $A$. Then we say $(U,i)$ and $(V,j)$ are \emph{equal}, and write $(U,i) = (V,j)$, iff there exists an bijection $\phi : U \approx V$ such that $j \phi = i$.
 \end{df}
 
-%TODO This is an equivalence relation
+\begin{prop}
+For any subset $(U,i)$ of $A$ we have $(U,i) = (U,i)$.
+\end{prop}
 
-%TODO Inclusion of subsets
+\begin{proof}
+\pf\ Since $\id{U} : U \approx U$ and $i \id{U} = i$. \qed
+\end{proof}
+
+\begin{prop}
+For any subsets $(U,i)$ and $(V,j)$ of $A$, if $(U,i) = (V,j)$ then $(V,j) = (U,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : U \approx V$ and $j \phi = i$ then $\inv{\phi} : V \approx U$ and $i \inv{\phi} = j$. \qed
+\end{proof}
+
+\begin{prop}
+For any subsets $(U,i)$, $(V,j)$ and $(W,k)$ of $A$, if $(U,i) = (V,j) = (W,k)$ then $(U,i) = (W,k)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : U \approx V$, $j \phi = i$, $\psi : V \approx W$ and $k \psi = j$ then $\psi \phi : U \approx W$ and $k \psi \phi = i$. \qed
+\end{proof}
+
+\begin{df}[Inclusion]
+Let $(U,i)$ and $(V,j)$ be subsets of $A$. We say that $(U,i)$ is \emph{included} in $(V,j)$ and write $(U,i) \subseteq (V,j)$ iff there exists $f : U \rightarrow V$ such that $if = j$.
+\end{df}
+
+\begin{prop}
+If $(U,i) \subseteq (V,j)$, $(U,i) = (U',i')$ and $(V,j) = (V',j')$ then $(U',i') \subseteq (V',j')$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : U \rightarrow V$ satisfies $jf = i$, $\phi : U \approx U'$ satisfies $i' \phi = i$, and $\psi : V \approx V'$ satisfies $j' \psi = j$, then we have $\psi f \inv{\phi} : U' \rightarrow V'$ and $j' \psi f \inv{\phi} = i'$. \qed
+\end{proof}
+
+\begin{prop}
+For any subset $(U,i)$ of $A$ we have $(U,i) \subseteq (U,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\id{U} : U \rightarrow U$ and $i \id{U} = i$. \qed
+\end{proof}
+
+\begin{prop}
+If $(U,i) \subseteq (V,j) \subseteq (W,k)$ then $(U,i) \subseteq (W,k)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : U \rightarrow V$ satisfies $jf=i$ and $g : V \rightarrow W$ satisfies $kg=j$ then $gf : U \rightarrow W$ and $kgf=i$. \qed
+\end{proof}
+
+\begin{prop}
+If $(U,i) \subseteq (V,j)$ and $(V,j) \subseteq (U,i)$ then $(U,i) = (V,j)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $f : U \rightarrow V$ satisfies $jf=i$ and $g : V \rightarrow U$ satisfies $ig=j$ then we have
+\begin{align*}
+igf & = i \\
+\therefore gf & = \id{U} & (i \text{ is injective}) \\
+jfg & = j \\
+\therefore fg & = \id{V} & (j \text{ is injective})
+\end{align*}
+Thus $f : U \approx V$ and $jf = i$. So there exists an isomorphism $\phi : U \approx V$ such that $j \phi = i$ as required. \qed
+\end{proof}
+
+\section{Pullbacks and Equalizers}
+
+
+\begin{prop}
+Let $f : A \rightarrow C$ and $g : B \rightarrow D$. Let $p : P \rightarrow A$ and $q : P \rightarrow B$ form a pullback of $f$ and $g$, and let $p' : P' \rightarrow A$ and $q' : P' \rightarrow B$ form another pullback. Then there exists a unique isomorphism $\phi : P \approx P'$ such that $p' \phi = p$ and $q' \phi = q$.
+\end{prop}
+
+\begin{proof}
+\pf\ By the now familiar pattern. \qed
+\end{proof}
+
+State and prove the Pullback Lemma.
+
+\begin{prop}
+Let $f : X \rightarrow Y$ and $i : V \rightarrow Y$. Assume $i$ is injective. Then there exists a pullback of $f$ and $i$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\chi : Y \rightarrow 2$ be the characteristic function of $i$.}}
+\step{2}{\pflet{$j : U \rightarrow X$ be the pullback of $\chi f$ and $\top$}}
+\begin{proof}
+	\pf\ Axiom of Inverse Images.
+\end{proof}
+\step{3}{\pflet{$g : U \rightarrow V$ be the unique function such that $ig = fj$ and $!_V g = !_U$}}
+\begin{proof}
+	\step{a}{$\chi f j = \top !_U$}
+	\begin{proof}
+		\pf\ \stepref{2}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ \stepref{1}
+	\end{proof}
+\end{proof}
+\step{4}{$g$ and $j$ form the pullback of $f$ and $i$.}
+\begin{proof}
+	\pf\ By the Pullback Lemma.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Any two functions $f,g : A \rightarrow B$ have an equalizer.
+\end{thm}
+
+\begin{proof}
+\pf\ Take the inverse image of $\delta_B = \langle \id{B}, \id{B} \rangle : B \rightarrowtail B^2$ and $\langle f,g \rangle : A \rightarrow B^2$. \qed
+\end{proof}
+
+\begin{thm}
+Any two functions $f : A \rightarrow C$ and $g : B \rightarrow C$ have a pullback.
+\end{thm}
+
+\begin{proof}
+\pf\ Take the pullback of $f \pi_1 : A \times B \rightarrow C$ and $g \pi_2 : A \times B \rightarrow C$. \qed
+\end{proof}
 
 \section{Intersections}
 
 \begin{df}[Intersection]
 Let $(U,i)$ and $(V,j)$ be subsets of a set $A$. 
 Let $p : W \rightarrow U$ and $q : W \rightarrow V$ form the pullback of $i$ under $j$. Then
-the \emph{intersection} of $(U,i)$ and $(V,j)$ is defined to be $(W, ip) = (W, jq)$.
+the \emph{intersection} of $(U,i)$ and $(V,j)$ is defined to be $(U,i) \cap (V,j) = (W, ip) = (W, jq)$.
 \end{df}
 
-\section{Pullbacks}
+$S \cap T \subseteq S$ and $S \cap T \subseteq T$.
 
-%TODO Pullbacks are unique up to isomorphism
-
-\section{Functions}
-
-\begin{prop}
-Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for all $x, y \in A$, if $f(x) = f(y)$ then $x = y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $f$ is injective then, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.}
-\begin{proof}
-	\pf\ Immediate from the definition of injective.
-\end{proof}
-\step{2}{If $\forall x,y \in A. f(x) = f(y) \Rightarrow x = y$ then $f$ is injective.}
-\begin{proof}
-	\step{a}{\assume{$\forall x,y \in A. f(x) = f(y) \Rightarrow x = y$}}
-	\step{b}{\pflet{$X$ be a set and $s,t : X \rightarrow A$}}
-	\step{c}{\assume{$fs = ft$}}
-	\step{d}{$\forall x \in X. s(x) = t(x)$}
-	\begin{proof}
-		\step{i}{\pflet{$x \in X$}}
-		\step{ii}{$f(s(x)) = f(t(x))$}
-		\begin{proof}
-			\pf\ \stepref{c}
-		\end{proof}
-		\step{iii}{$s(x) = t(x)$}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-	\end{proof}
-	\step{e}{$s = t$}
-	\begin{proof}
-		\pf\ Axiom of Extensionality
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
+If $R \subseteq S$ and $R \subseteq T$ then $R \subseteq S \cap T$.
 
 \section{The Internal Logic}
 
@@ -477,6 +620,9 @@ There are exactly two subsets of 1.
 \begin{proof}
 \pf
 \step{1}{\pick\ a set $E$ with no elements.}
+\begin{proof}
+	\pf\ Axiom of the Empty Set.
+\end{proof}
 \step{2}{$!_E : E \rightarrow 1$ is injective.}
 \begin{proof}
 	\pf\ Vacuously, $\forall x,y \in E. !_E(x) = !_E(y) \Rightarrow x = y$.
@@ -530,52 +676,27 @@ Let \emph{falsehood} $\bot$ be the element of 2 that is not $\top$.
 2 is the coproduct of 1 and 1 with injections $\top$ and $\bot$.
 \end{cor}
 
-\section{Functions}
-
 \begin{prop}
-Let $f : A \rightarrow B$, $g : B \rightarrow C$ and $a \in A$. Then
-\[ (g \circ f)(a) = g(f(a)) \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Immediate from the Axiom of Associativity. \qed
-\end{proof}
-
-\begin{prop}
-For any set $A$, any function $1 \rightarrow A$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf\ Since there is only one function $X \rightarrow 1$ for any set $X$. \qed
-\end{proof}
-
-\begin{prop}
-Let $f : A \rightarrow B$. Then the following are equivalent:
-\begin{enumerate}
-\item $f$ is surjective.
-\item $f$ is a retraction (i.e. $f$ has a section).
-\item For any set $X$ and functions $x,y : B \rightarrow X$, if $xf = yf$ then $x = y$.
-\end{enumerate}
+A function $f : A \rightarrow B$ is surjective if and only if, for any set $X$ and functions $x,y : B \rightarrow X$, if $xf = yf$ then $x = y$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$1 \Rightarrow 2$}
-\begin{proof}
-	\pf\ Immediate from the Axiom of Choice.
-\end{proof}
-\step{2}{$2 \Rightarrow 3$}
+\step{2}{If $f$ is surjective then, for any set $X$ and functions $x,y : B \rightarrow X$, if $xf = yf$ then $x = y$.}
 \begin{proof}
 	\step{a}{\pflet{$s : B \rightarrow A$ be a section of $f$.}}
+	\begin{proof}
+		\pf\ Axiom of Choice.
+	\end{proof}
 	\step{b}{\pflet{$X$ be a set and $x,y : B \rightarrow X$ satisfy $xf = yf$.}}
 	\step{c}{$x = y$}
 	\begin{proof}
 		\pf\ $x = xfs = yfs = y$
 	\end{proof}
 \end{proof}
-\step{3}{$3 \Rightarrow 1$}
+\step{3}{If, for any set $X$ and functions $x,y : B \rightarrow X$, if $xf = yf$ then $x = y$, then $f$ is surjective.}
 \begin{proof}
-	\step{a}{\assume{3}}
+	\step{a}{\assume{For any set $X$ and functions $x,y : B \rightarrow X$, if $xf = yf$ then $x = y$.}}
 	\step{b}{\pflet{$b \in B$}}
 	\step{c}{\assume{for a contradiction $\forall a \in A. f(a) \neq b$}}
 	\step{d}{\pflet{$\psi_1 : B \rightarrow 2$ be the characteristic function of $b$.}}
@@ -608,20 +729,6 @@ Let $f : A \rightarrow B$. Then the following are equivalent:
 	\end{proof}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{cor}
-A function is bijective iff it is injective and surjective.
-\end{cor}
-
-\section{Equalizers}
-
-\begin{thm}
-Any two functions $f,g : A \rightarrow B$ have an equalizer.
-\end{thm}
-
-\begin{proof}
-\pf\ Take the inverse image of $\delta_B = \langle \id{B}, \id{B} \rangle : B \rightarrowtail B^2$ and $\langle f,g \rangle : A \rightarrow B^2$. \qed
 \end{proof}
 
 \section{The Empty Set}
@@ -687,6 +794,7 @@ For any set $A$, if there exists a function $A \rightarrow \emptyset$ then $A \c
 \pf\ If $f : A \rightarrow \emptyset$ then $A$ has no elements, because for any $a \in A$ we have $f(a) \in \emptyset$. \qed
 \end{proof}
 
+
 \section{Universal Quantification}
 
 \begin{df}
@@ -704,14 +812,17 @@ Let $X$ be a set. There exists a function $\bigcap : 2^{2^X} \rightarrow 2^X$ su
 \pf
 \step{1}{\pflet{$X$ be a set.}}
 \step{2}{\pflet{$\phi_2 : X \rightarrow 2^{2^X}$ be the lambda of $\epsilon : 2^X \times X \rightarrow 2$}}
-\step{3}{\pflet{$F$ be the function
-\[ \xymatrix{
-2^{2^X} \times X \ar[r]^{\langle \id{2^{2^X}}, \phi_2 \rangle} &
-2^{2^X} \times 2^{2^X} \ar[r]^{\cong} &
-(2 \times 2)^{2^X} \ar[r]^{\Rightarrow} &
-2^{2^X} \ar[r]^{\forall} & 2
-} \]}}
-\step{4}{\pflet{$\bigcap$ be the lambda}}
+\step{3}{For all $x \in X$ and $S \in 2^X$ we have $\epsilon(\phi_2(x), S) = \epsilon(S,x)$.}
+\step{4}{\pflet{$F_1 = \langle \id{2^{2^X}}, \phi_2 \rangle : 2^{2^X} \times X \rightarrow 2^{2^X} \times 2^{2^X}$}}
+\step{5}{For all $S \in 2^{2^X}$ and $x \in X$ we have $F_1(S,x) = \langle S, \phi_2(x) \rangle$}
+\step{6}{\pflet{$F_2 : 2^{2^X} \times X \rightarrow (2 \times 2)^{2^X}$ be the composition of $F_1$ with the bijection $2^{2^X} \times 2^{2^X} \approx (2 \times 2)^{2^X}$}}
+\step{7}{For all $S \in 2^{2^X}$, $T \in 2^X$ and $x \in X$ we have $\epsilon(F_2(S,x),T) = \langle \epsilon(S,T), \epsilon(\phi_2(x),T) \rangle = \langle \epsilon(S,T), \epsilon(S,x) \rangle$}
+\step{8}{\pflet{$F_3 = (\Rightarrow)^{2^X} \circ F_2$}}
+\step{9}{For all $S \in 2^{2^X}$, $T \in 2^X$ and $x \in X$ we have $\epsilon(F_3(S,x),T) = \epsilon(S,T) \Rightarrow \epsilon(S,x)$}
+\step{10}{\pflet{$F_4 = \forall \circ F_3$}}
+\step{11}{For all $S \in 2^{2^X}$ and $x \in X$ we have $F_4(S,x) = \top$ iff, for all $T \in 2^X$, if $\epsilon(S,T) = \top$ then $\epsilon(S,x) = \top$}
+\step{12}{\pflet{$\bigcap = \lambda F_4 : 2^{2^X} \rightarrow 2^X$}}
+\step{13}{For all $S \in 2^{2^X}$ and $x \in X$, we have $\epsilon(\bigcap S,x) = \top$ iff, for all $T \in 2^X$, if $\epsilon(S,T) = \top$ then $\epsilon(T,x) = \top$}
 \qed
 \end{proof}
 

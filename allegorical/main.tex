@@ -1,0 +1,45 @@
+\documentclass{book}
+
+\title{Mathematics}
+\author{Robin Adams}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
+\usepackage{pf2}
+\usepackage{hyperref}
+\usepackage{mathabx}
+\usepackage[all]{xy}
+
+\newtheorem{ax}{Axiom}[chapter]
+\newtheorem{axs}[ax]{Axiom Schema}
+\newtheorem{prop}[ax]{Proposition}
+\newtheorem{cor}{Corollary}[ax]
+\newtheorem{thm}[ax]{Theorem}
+\newtheorem{lm}[ax]{Lemma}
+\theoremstyle{definition}
+\newtheorem{df}[ax]{Definition}
+\newtheorem{ex}[ax]{Example}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Primitive Terms and Axioms}
+
+Let there be \emph{sets}. We write $A : Set$ for: $A$ is a set.
+
+For any set $A$, let there be \emph{elements} of $A$. We write $a : El(A)$ for: $a$ is an element of $A$.
+
+For any set $A$, let there be \emph{subsets} of $A$. We write $S : Sub(A)$ for: $S$ is a subset of $A$.
+
+Given a set $A : Set$, an element $a : El(A)$ and a subset $S : Sub(A)$, let there be a proposition $a \in S$ or $S \ni a$. When this holds, we say $a$ is a \emph{member} or \emph{element} of $S$. We write $a \notin S$ when it does not hold.
+
+For any sets $A, B : Set$, let there be a set $A \times B : Set$, the \emph{Cartesian product} of $A$ and $B$.
+
+
+\end{document}
