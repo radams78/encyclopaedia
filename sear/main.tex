@@ -1,9 +1,9 @@
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
 % READ
 
 \documentclass{book}
@@ -564,6 +564,31 @@ In a Hausdorff space, a sequence has at most one limit.
 \item The product of two Hausdorff spaces is Hausdorff.
 \end{enumerate}
 \end{prop}
+
+\begin{prop}
+Let $A$ be a topological space and $B$ a Hausdorff space. Let $f,g : A \rightarrow B$ be continuous. Let $X \subseteq A$ be dense. If $f$ and $g$ agree on $X$, then $f = g$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $a \in A$ and $f(a) \neq g(a)$.}}
+\step{2}{\pick\ disjoint neighbourhoods $U$ and $V$ of $f(a)$ and $g(a)$ respectively.}
+\step{3}{\pick\ $x \in \inv{f}(U) \cap \inv{g}(V)$}
+\step{4}{$f(x) = g(x) \in U \cap V$}
+\qedstep
+\begin{proof}
+\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$ be uniformly continuous. Let $\hat{X}$ and $\hat{Y}$ be the completions of $X$ and $Y$. Then $f$ extends uniquely to a continuous map $\hat{X} \rightarrow \hat{Y}$.
+\end{prop}
+
+\begin{proof}
+\pf\ The extension maps $\lim_{n \rightarrow \infty} x_n$ to $\lim_{n \rightarrow \infty} f(x_n)$. \qed
+\end{proof}
 
 \section{Compactness}
 

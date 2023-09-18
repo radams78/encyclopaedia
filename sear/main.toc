@@ -22,10 +22,10 @@
 \contentsline {section}{\numberline {2.4}Connected Spaces}{14}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Hausdorff Spaces}{14}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Compactness}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Quotient Spaces}{15}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Gluing}{16}{section.2.8}%
+\contentsline {section}{\numberline {2.7}Quotient Spaces}{16}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Gluing}{17}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Metric Spaces}{17}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Complete Metric Spaces}{17}{section.2.10}%
+\contentsline {section}{\numberline {2.10}Complete Metric Spaces}{18}{section.2.10}%
 \contentsline {chapter}{\numberline {3}Topological Groups}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Continuous Actions}{19}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Topological Vector Spaces}{21}{chapter.4}%
