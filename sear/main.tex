@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 
 \documentclass{book}
 
@@ -668,6 +668,42 @@ A quotient of a path connected space is path connected.
 Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. If $X / \sim$ is Hausdorff then every equivalence class of $\sim$ is closed in $X$.
 \end{prop}
 
+\begin{df}
+Let $X$ be a topological space and $A_1, \ldots, A_r \subseteq X$. Then $X / A_1, \ldots, A_r$ is the quotient space of $X$ with respect to $\sim$ where $x \sim y$ iff $x = y$ or $\exists i (x \in A_i \wedge y \in A_i)$.
+\end{df}
+
+\begin{df}[Cone]
+Let $X$ be a topological space. The \emph{cone over $X$} is the space $(X \times [0,1]) / (X \times \{1\})$.
+\end{df}
+
+\begin{df}[Suspension]
+Let $X$ be a topological space. The \emph{suspension} of $X$ is the space
+\[ \Sigma X := (X \times [-1,1]) / (X \times \{-1\}),(X \times \{1\}) \]
+\end{df}
+
+\begin{df}[Wedge Product]
+Let $x_0 \in X$ and $y_0 \in Y$. The \emph{wedge product} $X \vee Y$ is $(X \times \{y_0\}) \cup (\{x_0\} \times Y)$ as a subspace of $X \times Y$.
+\end{df}
+
+\begin{df}[Smash Product]
+Let $x_0 \in X$ and $y_0 \in Y$. The \emph{smash product} $X \wedge Y$ is $(X \times Y) / (X \vee Y)$.
+\end{df}
+
+\begin{ex}
+$D^n / S^{n-1} \cong S^n$
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : D^n / S^{n-1} \rightarrow S^n$ be the function induced by the map $D^n \rightarrow S^n$ that maps the radii of $D^n$ onto the meridians of $S^n$ from the north to the south pole.}}
+\step{2}{$\phi$ is a bijection.}
+\step{3}{$\phi$ is a homeomorphism.}
+\begin{proof}
+	\pf\ Since $D^n / S^{n-1}$ is compact and $S^n$ is Hausdorff.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Metric Spaces}
 
 %TODO Define real numbers
@@ -937,5 +973,9 @@ Let $E$ be an infinite dimensional Hilbert space. Let $E'$ be the same vector sp
 
 Proof: See Dieudonne, J. A., Treatise on Analysis, Vol. II, New York and London: Academic Press, 1970, p. 76.
 \end{ex}
+
+\begin{df}[Thom Space]
+Let $E$ be a vector bundle with a Riemannian metric, $DE = \{ x : \El{E} \mid \| x \| \leq 1 \}$ its disc bundle and $SE := \{ v : \El{E} \mid \| v \| = 1 \}$ its sphere bundle. The \emph{Thom space} of $E$ is the quotient space $DE / SE$.
+\end{df}
 
 \end{document}
