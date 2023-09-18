@@ -1,9 +1,9 @@
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 
 \documentclass{book}
@@ -97,22 +97,10 @@ Let $R$ be a set and $i : R \rightarrow A \times B$ an injection. Assume $\foral
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions Used in the Axioms}
+\subsection{Definitions} %CHECKED
 
-\begin{df}[Equality of Relations]
-Let $R,S : A \looparrowright B$. We say that $R$ and $S$ are \emph{equal}, $R = S$, iff $\forall a : \El{A}. \forall b : \El{B}. aRb \Leftrightarrow aSb$.
-\end{df}
-
-\begin{prop}
-Let $f,g : A \rightarrow B$. If $\forall x : \El{A}. f(x) = g(x)$ then $f = g$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $xfy \Leftrightarrow y = f(x) \Leftrightarrow y = g(x) \Leftrightarrow xgy$. \qed
-\end{proof}
-
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
+\begin{df}
+Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
 \end{df}
 
 \begin{df}[Surjective]
@@ -709,6 +697,28 @@ A continuous bijection from a compact space to a Hausdorff space is a homeomorph
 Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. The \emph{quotient topology} on $X / \sim$ is defined by: $U : \El{\mathcal{P} X}$ is open in $X / \sim$ if and only if $\inv{\pi}(U)$ is open in $X$.
 \end{df}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $\sim$ be an equivalence relation on $X$. Let $f : X / \sim \rightarrow Y$. Then $f$ is continuous if and only if $f \circ \pi$ is continuous.
+\end{prop}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $\sim$ be an equivalence relation on $X$. Let $\phi : Y \rightarrow X / \sim$.
+
+Assume that, for all $y \in Y$, there exists a neighbourhood $U$ of $y$ and a continuous function $\Phi : U \rightarrow X$ such that $\pi \circ \Phi = \phi \restriction U$. Then $\phi$ is continuous.
+\end{prop}
+
+\begin{prop}
+A quotient of a connected space is connected.
+\end{prop}
+
+\begin{prop}
+A quotient of a path connected space is path connected.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. If $X / \sim$ is Hausdorff then every equivalence class of $\sim$ is closed in $X$.
+\end{prop}
+
 \section{Metric Spaces}
 
 %TODO Define real numbers
@@ -735,6 +745,32 @@ A topological space is \emph{metrizable} iff there exists a metric that induces 
 Every metrizable space is Hausdorff.
 \end{prop}
 
+\chapter{Topological Groups}
+
+\begin{df}[Topological Group]
+A \emph{topological group} is a group $G$ with a topology such that the function $G^2 \rightarrow G$ that maps $(x,y)$ to $x\inv{y}$ is continuous.
+\end{df}
+
+\begin{ex}
+$GL(n,\mathbb{R})$ and $GL(n,\mathbb{C})$ are topological groups.
+\end{ex}
+
+\begin{prop}
+Any subgroup of a topological group is a topological group under the subspace topology.
+\end{prop}
+
+\begin{df}[Homogeneous Space]
+A \emph{homogeneous space} is a topological space of the form $G/H$, where $G$ is a topological group and $H$ is a normal subgroup of $G$, under the quotient topology.
+\end{df}
+
+\begin{prop}
+Let $G$ be a topological group and $H$ a normal subgroup of $G$. Then $G/H$ is Hausdorff if and only if $H$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ See Bourbaki, N., General Topology. III.12 \qed
+\end{proof}
+
 \chapter{Topological Vector Spaces}
 
 \begin{df}[Topological Vector Space]
@@ -745,6 +781,14 @@ Let $K$ be either $\mathbb{R}$ or $\mathbb{C}$. A \emph{topological vector space
 \end{itemize}
 \end{df}
 
+\begin{prop}
+Every topological vector space is a topological group under addition.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from the definition. \qed
+\end{proof}
+
 \begin{thm}
 The usual topology on a finite dimensional vector space over $K$ is the only one that makes it into a Hausdorff topological vector space.
 \end{thm}
@@ -752,6 +796,14 @@ The usual topology on a finite dimensional vector space over $K$ is the only one
 \begin{proof}
 \pf\ See Bourbaki. Elements de Mathematique, Livre V: Espaces Vectoriels Topologiques, Th. 2, p. 18 \qed
 \end{proof}
+
+\begin{prop}
+Let $E$ be a topological vector space and $E_0$ a subspace of $E$. Then $\overline{E_0}$ is a subspace of $E$.
+\end{prop}
+
+\begin{df}
+Let $E$ be a topological vector space. The topological space \emph{associated} with $E$ is $E / \overline{\{0\}}$.
+\end{df}
 
 \section{Cauchy Sequences}
 
@@ -813,6 +865,10 @@ A \emph{normed space} consists of a vector space with a norm.
 
 \begin{prop}
 If $E$ is a normed space then $d(x,y) = \| x - y \|$ is a metric on $E$ that makes $E$ into a topological vector space. The two definitions of Cauchy sequence agree on $E$.
+\end{prop}
+
+\begin{prop}
+Let $\|\ \|$ be a seminorm on the vector space $E$. Then $\|\ \|$ defines a norm on $E / \overline{\{0\}}$.
 \end{prop}
 
 \section{Inner Product Spaces}
