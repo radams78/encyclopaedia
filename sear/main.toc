@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1.2}Axioms}{5}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Consequences of the Axioms}{6}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}Definitions Used in the Axioms}{6}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Tabulations}{6}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}Tabulations}{7}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}The Empty Set}{7}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}The Singleton}{8}{subsection.1.3.4}%
 \contentsline {subsection}{\numberline {1.3.5}Subsets}{9}{subsection.1.3.5}%

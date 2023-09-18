@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -58,25 +58,29 @@ For any sets $A$ and $B$, let there be a set $A \times B$, the \emph{Cartesian p
 
 For any elements $a : \El{A}$ and $b : \El{B}$, let there be an element $(a,b) : \El{A \times B}$, the \emph{ordered pair} of $a$ and $b$.
 
-\section{Axioms}
+\section{Axioms} %CHECKED
 
-\begin{df}[Function]
-Let $A$ and $B$ be sets and $F : A \looparrowright B$. Then $F$ is a \emph{function} from $A$ to $B$, $F : A \rightarrow B$, if and only if, for all $x : \El{A}$, there exists a unique $y : \El{B}$ such that $xFy$.
-We denote this unique $y$ by $F(x)$.
+\begin{ax}[Strong Extensionality]
+Let $i : A \rightarrow B$. Suppose that, for every $y: \El{B}$, there exists a unique $x : \El{A}$ such that $i(x) = y$. Then there exists a function $\inv{i} : B \rightarrow A$ such that $\forall x : \El{A}. \inv{i}(i(x)) = x$ and $\forall y : \El{B}. i(\inv{i}(y)) = y$.
+\end{ax}
+
+\begin{ax}[Pairing]$ $
+\begin{itemize}
+\item $\forall x : \El{A}. \forall y : \El{B}. \pi_1(x,y) = x$
+\item $\forall x : \El{A}. \forall y : \El{B}. \pi_2(x,y) = y$
+\item $\forall p : \El{A \times B}. p = (\pi_1(p), \pi_2(p))$
+\end{itemize}
+\end{ax}
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
 \end{df}
 
-\begin{axs}[Comprehension]
-For any formula $\phi[X,Y,x,y]$ where $X$ and $Y$ are set variables and $x : \El{X}$ and $y : \El{Y}$, the following is an axiom:
+\begin{ax}[Separation]
+For every property $P[X,x]$ where $X$ is a set variable and $x : \El{X}$, the following is an axiom:
 
-For any sets $A$ and $B$, there exists a relation $R : A \looparrowright B$ such that, for all $a : \El{A}$ and $b : \El{B}$, we have $aRb$ if and only if $\phi[A,B,a,b]$.
-\end{axs}
-
-\begin{ax}[Tabulations]
-For any sets $A$ and $B$ and relation $R : A \looparrowright B$, there exists a set $|R|$, a \emph{tabulation} of $R$, and functions $p : |R| \rightarrow A$ and $q : |R| \rightarrow B$ such that:
-\begin{itemize}
-\item For all $x: \El{A}$ and $y : \El{B}$, we have $xRy$ if and only if there exists $r : \El{|R|}$ such that $p(r) = x$ and $q(r) = y$
-\item For all $r,s : \El{|R|}$, if $p(r) = p(s)$ and $q(r) = q(s)$ then $r = s$.
-\end{itemize}
+For every set $A$, there exists a set $S = \{ x : \El{A} \mid P[A,x] \}$ and an injection $i : S \rightarrow A$ such that, for all $x : \El{A}$, we have
+\[ (\exists y : S. i(y) = x) \Leftrightarrow P[A,x] \enspace . \]
 \end{ax}
 
 \begin{ax}[Infinity]
@@ -88,7 +92,7 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 \end{ax}
 
 \begin{ax}[Choice]
-Let $R : A \looparrowright B$ be a relation such that $\forall a : \El{A}. \exists b : \El{B}. aRb$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. a R f(a)$.
+Let $R$ be a set and $i : R \rightarrow A \times B$ an injection. Assume $\forall a : \El{A}. \exists r : \El{R}. \pi_1(i(r)) = a$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. \exists r : \El{R}.i(r) = (a, f(a))$.
 \end{ax}
 
 \section{Consequences of the Axioms}
