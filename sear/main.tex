@@ -480,6 +480,10 @@ In this case, $\mathcal{O}$ is unique and is defined by $\mathcal{O} = \{ U : X 
 Let $X$ be a topological space and $X_0 \subseteq X$. The \emph{subspace topology} on $X_0$ is $\{ U \cap X_0 : U \text{ is open in } X \}$.
 \end{df}
 
+\begin{ex}
+The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a subspace of $\mathbb{R}^3$.
+\end{ex}
+
 \subsection{Topological Disjoint Union}
 
 \begin{df}
@@ -642,6 +646,7 @@ Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. The \e
 \end{df}
 
 \begin{prop}
+\label{prop:map_from_quotient_continuous}
 Let $X$ and $Y$ be topological spaces. Let $\sim$ be an equivalence relation on $X$. Let $f : X / \sim \rightarrow Y$. Then $f$ is continuous if and only if $f \circ \pi$ is continuous.
 \end{prop}
 
@@ -732,6 +737,51 @@ Let $X$ be a $G$-space and $x \in X$. The \emph{orbit} of $x$ is $\{ gx : g \in 
 
 The \emph{orbit space} $X / G$ is the set of all orbits under the quotient topology.
 \end{df}
+
+\begin{prop}
+Define an action of $SO(2)$ on $S^2$ by $g(x_1, x_2, x_3) = (g(x_1, x_2), x_3)$. Then $S^2 / SO(2) \cong [-1,1]$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f_3 : S^2 / SO(2) \rightarrow [-1,1]$ be the function induced by $\pi_3 : S^2 \rightarrow [-1,1]$}}
+\step{2}{$f_3$ is bijective.}
+\step{3}{$S^2 / SO(2)$ is compact.}
+\begin{proof}
+	\pf\ It is the continuous image of $S^2$ which is compact.
+\end{proof}
+\step{4}{$[-1,1]$ is Hausdorff.}
+\step{5}{$f_3$ is a homeomorphism.}
+\qed
+\end{proof}
+
+\begin{df}[Stabilizer]
+Let $X$ be a $G$-space and $x \in X$. The \emph{stabilizer} of $x$ is $G_x := \{ g : \El{G} \mid gx = x \}$.
+\end{df}
+
+\begin{prop}
+The function that maps $gG_x$ to $gx$ is a continuous bijection from $G / G_x$ to $Gx$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $gG_x = hG_x$ then $gx = hx$.}
+\begin{proof}
+	\step{a}{\assume{$gG_x = hG_x$}}
+	\step{b}{$\inv{g}h \in G_x$}
+	\step{c}{$\inv{g}h x = x$}
+	\step{d}{$gx = hx$}
+\end{proof}
+\step{2}{If $gx = hx$ then $gG_x = hG_x$.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{3}{The function is continuous.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:map_from_quotient_continuous}.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Topological Vector Spaces}
 
