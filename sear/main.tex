@@ -443,6 +443,14 @@ Let $A$ and $B$ be sets. The \emph{Cartesian product} of $A$ and $B$, $A \times 
 Given $a \in A$ and $b \in B$, we write $(a,b)$ for the unique element of $A \times B$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
 \end{df}
 
+\section{Quotient Sets}
+
+\begin{prop}
+Let $\sim$ be an equivalence relation on $X$. Then there exists a set $X/\sim$, the \emph{quotient set} of $X$ with respect to $\sim$, and a surjective function $\pi : X \twoheadrightarrow X / \sim$, the \emph{canonical projection}, such that, for all $x,y : \El{X}$, we have $x \sim y$ if and only if $\pi(x) = \pi(y)$.
+
+Further, if $p : X \twoheadrightarrow Q$ is another quotient with respect to $\sim$, then there exists a unique bijection $\phi : X / \sim \approx Q$ such that $\phi \circ \pi = p$.
+\end{prop}
+
 \chapter{Topology}
 
 \section{Topological Spaces}
@@ -695,6 +703,11 @@ A compact subspace of a Hausdorff space is closed.
 A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
 \end{prop}
 
+\section{Quotient Spaces}
+
+\begin{df}[Quotient Space]
+Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. The \emph{quotient topology} on $X / \sim$ is defined by: $U : \El{\mathcal{P} X}$ is open in $X / \sim$ if and only if $\inv{\pi}(U)$ is open in $X$.
+\end{df}
 
 \section{Metric Spaces}
 
