@@ -1,10 +1,10 @@
+% READ
+% CHECK
+% READ
+% READ
+% CHECK
 % FORMALIZE
 % READ
-% READ
-% CHECK
-% READ
-% READ
-% CHECK
 
 \documentclass{book}
 
@@ -814,11 +814,20 @@ If $E$ is an inner product space then $\| x \| = \sqrt{\langle x,x \rangle}$ is 
 A \emph{Banach space} is a complete normed space.
 \end{df}
 
+\begin{ex}
+For any topological space $X$, the set $C(X)$ of bounded continuous functions $X \rightarrow \mathbb{R}$ is a Banach space under $\| f \| = \sup_{x \in X} |f(x)|$.
+\end{ex}
+
 \section{Hilbert Spaces}
 
 \begin{df}[Hilbert Space]
 A \emph{Hilbert space} is a complete inner product space.
 \end{df}
+
+\begin{ex}
+The set of \emph{square-integrable functions} is the set of Lebesgue integrable functions $[-\pi,\pi] \rightarrow \mathbb{R}$ quotiented by: $f \sim g$ iff $\{ x \in [-\pi,\pi] : f(x) \neq g(x) \}$ has measure 0. This is a Hilbert space under
+\[ \langle f,g \rangle = \frac{1}{\pi} \int_{- \pi}{\pi} f(x) g(x) dx \enspace . \]
+\end{ex}
 
 \section{Locally Convex Spaces}
 
@@ -841,5 +850,11 @@ A locally convex topological vector space is a pre-Fr\'{e}chet space if and only
 \begin{proof}
 \pf\ See K\"{o}the, G. Topological Vector Spaces 1. Section 18. \qed
 \end{proof}
+
+\begin{ex}
+Let $E$ be an infinite dimensional Hilbert space. Let $E'$ be the same vector space under the \emph{weak topology}, the coarsest topology such that every continuous linear map $E \rightarrow \mathbb{R}$ is continuous as a map $E' \rightarrow \mathbb{R}$. Then $E$ is locally convex Hausdorff but not metrizable.
+
+Proof: See Dieudonne, J. A., Treatise on Analysis, Vol. II, New York and London: Academic Press, 1970, p. 76.
+\end{ex}
 
 \end{document}
