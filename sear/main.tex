@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 % READ
 
 \documentclass{book}
@@ -97,7 +97,7 @@ Let $R$ be a set and $i : R \rightarrow A \times B$ an injection. Assume $\foral
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions} %CHECKED
+\subsection{Definitions}
 
 \begin{df}
 Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
@@ -127,20 +127,11 @@ There exists a set which has no elements.
 \begin{proof}
 	\pf\ By the Axiom of Infinity, a set exists.
 \end{proof}
-\step{2}{\pflet{$R : A \looparrowright A$ be the relation such that, for all $x,y \in A$, we have $\neg (xRy)$}}
+\step{2}{\pflet{$S = \{ x : \El{A} \mid \bot \}$ with injection $i : S \rightarrow A$}}
 \begin{proof}
-	\pf\ By the Axiom of Comprehension.
+	\pf\ Axiom of Separation.
 \end{proof}
-\step{3}{\pflet{$|R|$ be the tabulation of $R$ with projections $p,q : |R| \rightarrow A$.} \prove{$|R|$ has no elements.}}
-\begin{proof}
-	\pf\ By the Axiom of Tabulations.
-\end{proof}
-\step{4}{\assume{for a contradiction $r : \El{|R|}$}}
-\step{5}{$p(r) R q(r)$}
-\qedstep
-\begin{proof}
-	\pf\ This contradicts \stepref{2}.
-\end{proof}
+\step{3}{$S$ has no elements.}
 \qed
 \end{proof}
 
@@ -151,13 +142,9 @@ If $E$ and $E'$ have no elements then $E \approx E'$.
 \begin{proof}
 \pf
 \step{1}{\pflet{$E$ and $E'$ have no elements.}}
-\step{2}{\pflet{$F : E \looparrowright E'$ be the relation such that, for all $x : \El{E}$ and $y : \El{E'}$, we have $xFy$.}}
+\step{2}{\pick\ a function $F : E \rightarrow E'$.}
 \begin{proof}
-	\pf\ Axiom of Comprehension.
-\end{proof}
-\step{3}{$F$ is a function.}
-\begin{proof}
-	\pf\ Vacuously, for all $x : \El{E}$, there exists a unique $y : \El{E'}$ such that $xFy$.
+	\pf\ Axiom of Choice since vacuously $\forall x : \El{E}. \exists y : \El{E'}. \top$.
 \end{proof}
 \step{4}{$F$ is injective.}
 \begin{proof}
