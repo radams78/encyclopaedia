@@ -1,10 +1,10 @@
+% READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
-% READ
 
 \documentclass{book}
 
@@ -44,7 +44,7 @@
 
 \chapter{Primitive Terms and Axioms}
 
-\section{Primitive Terms} %CHECKED
+\section{Primitive Terms} %CHECKED FORMALIZED
 
 Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
 
@@ -58,7 +58,7 @@ For any sets $A$ and $B$, let there be a set $A \times B$, the \emph{Cartesian p
 
 For any elements $a : \El{A}$ and $b : \El{B}$, let there be an element $(a,b) : \El{A \times B}$, the \emph{ordered pair} of $a$ and $b$.
 
-\section{Axioms} %CHECKED
+\section{Axioms} %CHECKED FORMALIZED
 
 \begin{ax}[Strong Extensionality]
 Let $i : A \rightarrow B$. Suppose that, for every $y: \El{B}$, there exists a unique $x : \El{A}$ such that $i(x) = y$. Then there exists a function $\inv{i} : B \rightarrow A$ such that $\forall x : \El{A}. \inv{i}(i(x)) = x$ and $\forall y : \El{B}. i(\inv{i}(y)) = y$.
@@ -714,6 +714,16 @@ Let $G$ be a topological group and $H$ a normal subgroup of $G$. Then $G/H$ is H
 \begin{proof}
 \pf\ See Bourbaki, N., General Topology. III.12 \qed
 \end{proof}
+
+\section{Continuous Actions}
+
+\begin{df}[Continuous Action]
+Let $G$ be a topological group and $X$ a topological space. A \emph{continuous action} of $G$ on $X$ is a continuous function $\cdot : G \times X \rightarrow X$ such that:
+\begin{itemize}
+\item $\forall x : \El{X}. ex = x$
+\item $\forall g,h : \El{G}. \forall x : \El{X}. g(hx) = (gh)x$
+\end{itemize}
+\end{df}
 
 \chapter{Topological Vector Spaces}
 
