@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -44,7 +44,7 @@
 
 \chapter{Primitive Terms and Axioms}
 
-\section{Primitive Terms} %CHECKED FORMALIZED
+\section{Primitive Terms}
 
 Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
 
@@ -54,34 +54,28 @@ For any sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We writ
 
 For any function $f : A \rightarrow B$ and element $a : \El{A}$, let there be an element $f(a) : \El{B}$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-For any sets $A$ and $B$, let there be a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$, the \emph{projections}.
-
-For any elements $a : \El{A}$ and $b : \El{B}$, let there be an element $(a,b) : \El{A \times B}$, the \emph{ordered pair} of $a$ and $b$.
-
 \section{Axioms} %CHECKED FORMALIZED
 
-\begin{ax}[Strong Extensionality]
-Let $i : A \rightarrow B$. Suppose that, for every $y: \El{B}$, there exists a unique $x : \El{A}$ such that $i(x) = y$. Then there exists a function $\inv{i} : B \rightarrow A$ such that $\forall x : \El{A}. \inv{i}(i(x)) = x$ and $\forall y : \El{B}. i(\inv{i}(y)) = y$.
-\end{ax}
+\begin{axs}[Choice]
+Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
 
-\begin{ax}[Pairing]$ $
-\begin{itemize}
-\item $\forall x : \El{A}. \forall y : \El{B}. \pi_1(x,y) = x$
-\item $\forall x : \El{A}. \forall y : \El{B}. \pi_2(x,y) = y$
-\item $\forall p : \El{A \times B}. p = (\pi_1(p), \pi_2(p))$
-\end{itemize}
+Let $A$ and $B$ be sets. Assume that, for all $a : \El{A}$, there exists $b : \El{B}$ such that $P[A,B,a,b]$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. P[A,B,a,f(a)]$.
+\end{axs}
+
+\begin{ax}[Pairing]
+For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a : \El{A}$ and $b : \El{B}$, there exists a unique $(a,b) : \El{A \times B}$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
 \end{ax}
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
 \end{df}
 
-\begin{ax}[Separation]
+\begin{axs}[Separation]
 For every property $P[X,x]$ where $X$ is a set variable and $x : \El{X}$, the following is an axiom:
 
 For every set $A$, there exists a set $S = \{ x : \El{A} \mid P[A,x] \}$ and an injection $i : S \rightarrow A$ such that, for all $x : \El{A}$, we have
 \[ (\exists y : S. i(y) = x) \Leftrightarrow P[A,x] \enspace . \]
-\end{ax}
+\end{axs}
 
 \begin{ax}[Infinity]
 There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that:
@@ -89,10 +83,6 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 \item $\forall n : \El{\mathbb{N}}. s(n) \neq 0$
 \item $\forall m,n : \El{\mathbb{N}}. s(m) = s(n) \Rightarrow m = n$.
 \end{itemize}
-\end{ax}
-
-\begin{ax}[Choice]
-Let $R$ be a set and $i : R \rightarrow A \times B$ an injection. Assume $\forall a : \El{A}. \exists r : \El{R}. \pi_1(i(r)) = a$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. \exists r : \El{R}.i(r) = (a, f(a))$.
 \end{ax}
 
 \section{Consequences of the Axioms}
