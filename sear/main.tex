@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -114,62 +114,6 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 \end{df}
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
-
-\subsection{Tabulations}
-
-\begin{thm}
-Let $R : A \looparrowright B$. Let $p : T \rightarrow A$ and $q : T \rightarrow B$ form a tabulation of $R$. Let $p' : T' \rightarrow A$ and $q' : T' \rightarrow B$ form a tabulation of $R$. Then there exists a unique bijection $f : T \approx T'$ such that $\forall t : \El{T}. p'(f(t)) = p(t)$ and $\forall t : \El{T}. q'(f(t)) = q(t)$.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : T \looparrowright T'$ be the relation such that $tft'$ iff $p(t) = p'(t')$ and $q(t) = q'(t')$}}
-\begin{proof}
-	\pf\ Axiom of Comprehension
-\end{proof}
-\step{2}{$f$ is a function.}
-\begin{proof}
-	\step{a}{\pflet{$x : \El{T}$}}
-	\step{b}{$p(x)Rq(x)$}
-	\begin{proof}
-		\pf\ Since $T$ is a tabulation of $R$.
-	\end{proof}
-	\step{b}{There exists a unique $y : \El{T'}$ such that $p'(y) = p(x)$ and $q'(y) = q(x)$.}
-	\begin{proof}
-		\pf\ Since $T'$ is a tabulation of $R$.
-	\end{proof}
-\end{proof}
-\step{3}{$f$ is injective.}
-\begin{proof}
-	\step{a}{\pflet{$x,y : \El{T}$}}
-	\step{b}{\assume{$f(x) = f(y)$}}
-	\step{c}{$p'(f(x)) = p'(f(y))$ and $q'(f(x)) = q'(f(y))$}
-	\step{d}{$p(x) = p(y)$ and $q(x) = q(y)$}
-	\step{e}{$x = y$}
-	\begin{proof}
-		\pf\ Since $T$ is a tabulation of $R$.
-	\end{proof}
-\end{proof}
-\step{4}{$f$ is surjective.}
-\begin{proof}
-	\step{a}{\pflet{$y : \El{T'}$}}
-	\step{b}{$p'(y)Rq'(y)$}
-	\begin{proof}
-		\pf\ Since $T'$ is a tabulation of $R$.
-	\end{proof}
-	\step{c}{There exists $x : \El{T}$ such that $p(x) = p'(y)$ and $q(x) = q'(y)$.}
-	\begin{proof}
-		\pf\ Since $T$ is a tabulation of $R$.
-	\end{proof}
-\end{proof}
-\step{5}{If $g : T \approx T'$ satisfies $\forall t : \El{T}. p'(g(t)) = p(t)$ and $\forall t : \El{T}. q'(g(t)) = q(t)$.}
-\begin{proof}
-	\step{a}{\pflet{$g : T \approx T'$ satisfy $\forall t : \El{T}. p'(g(t)) = p(t)$ and $\forall t : \El{T}. q'(g(t)) = q(t)$.}}
-	\step{b}{For all $t : \El{T}$ we have $p'(f(t)) = p'(g(t))$ and $q'(f(t)) = q'(g(t))$.}
-	\step{c}{For all $t : \El{T}$ we have $f(t) = g(t)$.}
-\end{proof}
-\qed
-\end{proof}
 
 \subsection{The Empty Set}
 
