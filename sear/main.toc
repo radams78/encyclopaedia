@@ -31,3 +31,4 @@
 \contentsline {section}{\numberline {3.5}Inner Product Spaces}{20}{section.3.5}%
 \contentsline {section}{\numberline {3.6}Banach Spaces}{20}{section.3.6}%
 \contentsline {section}{\numberline {3.7}Hilbert Spaces}{21}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Locally Convex Spaces}{21}{section.3.8}%
