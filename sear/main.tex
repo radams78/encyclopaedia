@@ -1001,6 +1001,17 @@ If $E$ is a normed space then $d(x,y) = \| x - y \|$ is a metric on $E$ that mak
 Let $\|\ \|$ be a seminorm on the vector space $E$. Then $\|\ \|$ defines a norm on $E / \overline{\{0\}}$.
 \end{prop}
 
+\begin{prop}
+Let $E$ and $F$ be normed spaces. Any continuous linear map $E \rightarrow F$ is uniformly continuous.
+\end{prop}
+
+\begin{df}
+For $p \geq 1$. let $\mathcal{L}^p(\mathbb{R}^n)$ be the vector space of all Lebesgue-measurable functions $f : \mathbb{R}^n \rightarrow \mathbb{R}$ such that $|f|^p$ is Lebesgue-integrable. Then
+\[ \| f \|_p := \sqrt{p}{\int_{\mathbb{R}^n} |f(x)|^p dx} \]
+defines a seminorm on $\mathcal{L}^p(\mathbb{R}^n)$. Let
+\[ L^p(\mathbb{R}^n) := \mathcal{L}^p(\mathbb{R}^n) / \overline{\{0\}} \enspace . \]
+\end{df}
+
 \section{Inner Product Spaces}
 
 \begin{prop}
@@ -1017,6 +1028,18 @@ A \emph{Banach space} is a complete normed space.
 For any topological space $X$, the set $C(X)$ of bounded continuous functions $X \rightarrow \mathbb{R}$ is a Banach space under $\| f \| = \sup_{x \in X} |f(x)|$.
 \end{ex}
 
+\begin{prop}
+The completion of a normed space is a Banach space.
+\end{prop}
+
+\begin{prop}
+Let $E$ and $F$ be normed spaces. Let $f : E \rightarrow F$ be a continuous linear map. Then the extension to the completions $\hat{E} \rightarrow \hat{F}$ is linear.
+\end{prop}
+
+\begin{prop}
+$L^p(\mathbb{R}^n)$ is a Banach space.
+\end{prop}
+
 \section{Hilbert Spaces}
 
 \begin{df}[Hilbert Space]
@@ -1027,6 +1050,10 @@ A \emph{Hilbert space} is a complete inner product space.
 The set of \emph{square-integrable functions} is the set of Lebesgue integrable functions $[-\pi,\pi] \rightarrow \mathbb{R}$ quotiented by: $f \sim g$ iff $\{ x \in [-\pi,\pi] : f(x) \neq g(x) \}$ has measure 0. This is a Hilbert space under
 \[ \langle f,g \rangle = \frac{1}{\pi} \int_{- \pi}{\pi} f(x) g(x) dx \enspace . \]
 \end{ex}
+
+\begin{prop}
+The completion of an inner product space is a Hilbert space.
+\end{prop}
 
 \section{Locally Convex Spaces}
 
