@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -151,7 +151,7 @@ If $E$ and $E'$ have no elements then $E \approx E'$.
 The \emph{empty set} $\emptyset$ is the set with no elements.
 \end{df}
 
-\subsection{The Singleton}
+\subsection{The Singleton} %CHECKED
 
 \begin{thm}
 There exists a set that has exactly one element.
@@ -607,7 +607,7 @@ If $f_n \rightarrow f$ then $i(f_n) \rightarrow i(f)$ --- Lebesgue convergence t
 
 We prove that $i$ is not continuous.
 
-Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in $X$ such that $\forall \phi \in K _\epsilon. \int \phi^2 < 1/2$. Let $K = \prod_{\lambda \in [0,1]} U_\lambda$ where $U_\lambda = [-1,1]$ except for $\lambda = \lambda_1, \ldots, \lambda_n$. Let $\phi$ be the function that is 0 at $\lamda_1$, \ldots, $\lambda_n$ and 1 everywhere else. Then $\phi \in K$ but $\int \phi^2 = 1$.
+Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in $X$ such that $\forall \phi \in K _\epsilon. \int \phi^2 < 1/2$. Let $K = \prod_{\lambda \in [0,1]} U_\lambda$ where $U_\lambda = [-1,1]$ except for $\lambda = \lambda_1, \ldots, \lambda_n$. Let $\phi$ be the function that is 0 at $\lambda_1$, \ldots, $\lambda_n$ and 1 everywhere else. Then $\phi \in K$ but $\int \phi^2 = 1$.
 \end{ex}
 
 \begin{prop}
