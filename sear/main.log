@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 SEP 2023 07:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 SEP 2023 07:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -768,15 +768,23 @@ Chapter 2.
 
 ]
 Chapter 3.
-[13] [14] [15] [16] [17] [18] [19] [20]
+[13] [14
+
+]
 Chapter 4.
-[21
+[15] [16
 
-] [22]
+]
 Chapter 5.
+[17] [18] [19] [20] [21] [22] [23] [24]
+Chapter 6.
+[25
 
-Overfull \hbox (19.70996pt too wide) in paragraph at lines 949--950
-[]\OT1/cmr/bx/n/10 Proposition 5.8. \OT1/cmr/m/it/10 De-fine an ac-tion of $\OM
+] [26]
+Chapter 7.
+
+Overfull \hbox (19.70996pt too wide) in paragraph at lines 977--978
+[]\OT1/cmr/bx/n/10 Proposition 7.8. \OT1/cmr/m/it/10 De-fine an ac-tion of $\OM
 L/cmm/m/it/10 SO\U/matha/m/n/10 p\OT1/cmr/m/n/10 2\U/matha/m/n/10 q$ \OT1/cmr/m
 /it/10 on $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/it/10 by $\OML/cmm/m/it/10 g\U/math
 a/m/n/10 p\OML/cmm/m/it/10 x[]; x[]; x[]\U/matha/m/n/10 q ^^P p\OML/cmm/m/it/10
@@ -784,147 +792,50 @@ a/m/n/10 p\OML/cmm/m/it/10 x[]; x[]; x[]\U/matha/m/n/10 q ^^P p\OML/cmm/m/it/10
  x[]\U/matha/m/n/10 q$\OT1/cmr/m/it/10 .
  []
 
-[23
+[27
 
-] [24]
-Chapter 6.
-[25
+] [28]
+Chapter 8.
+[29
 
-] [26] [27] [28] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 5076FD60218BA8A0ABF48F435257040A;5528
-(rerunfilecheck)             After:  211AC68D6FF140744777829F8B769B3C;5755.
+] [30] [31] [32] (./main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 6446964F17716815E497FE589B11776A;5979.
  ) 
 Here is how much of TeX's memory you used:
- 12598 strings out of 476091
- 179999 string characters out of 5794081
+ 12596 strings out of 476091
+ 179903 string characters out of 5794081
  1867330 words of memory out of 5000000
- 32530 multiletter control sequences out of 15000+600000
- 530425 words of font info for 98 fonts, out of 8000000 for 9000
+ 32536 multiletter control sequences out of 15000+600000
+ 531044 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,76p,3215b,642s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{ax.2.48} has been referenced but does not exist, re
-placed by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.8} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.7} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.6} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.5} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.4} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.3} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.5.2} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.10} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.9} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.8} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.7} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.3} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.2.2} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.1.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.1.4} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.1.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.1.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.2.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfrm1000.pfb>
-Output written on main.pdf (28 pages, 309002 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/mathabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfrm1000.pfb>
+Output written on main.pdf (32 pages, 312145 bytes).
 PDF statistics:
- 705 PDF objects out of 1000 (max. 8388607)
- 624 compressed objects within 7 object streams
- 266 named destinations out of 1000 (max. 500000)
- 337 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 722 PDF objects out of 1000 (max. 8388607)
+ 637 compressed objects within 7 object streams
+ 256 named destinations out of 1000 (max. 500000)
+ 369 words of extra memory for PDF output out of 10000 (max. 10000000)
 
