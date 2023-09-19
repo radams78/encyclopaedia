@@ -87,7 +87,7 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions} %CHECKED FORMALIZED
+\subsection{Definitions}
 
 \begin{df}
 Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
@@ -104,6 +104,10 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 \end{df}
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
+
+\begin{df}[Composition]
+Given $f : A \rightarrow B$ and $g : B \rightarrow C$, let $g \circ f$ be the function such that $\forall a : \El{A}. (g \circ f)(a) = g(f(a))$.
+\end{df}
 
 \subsection{The Empty Set} %CHECKED
 
@@ -188,70 +192,14 @@ Let 1 be the set that has exactly one element. Let $*$ be its element.
 \subsection{Subsets}
 
 \begin{df}[Subset]
-A \emph{subset} of a set $A$ is a relation $1 \looparrowright S$.
+A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) : \mathrm{Sub}(A)$.
 
-Given $S : 1 \looparrowright S$ and $a : \El{A}$, we write $a \in S$ for $*Sa$.
+We say two subsets $(S,i)$ and $(T,j)$ are \emph{equal}, $(S,i) = (T,j)$, iff there exists a bijection $\phi : S \approx T$ such that $j \circ \phi = i$.
 \end{df}
 
-\begin{thms}
-For any property $P[X,x]$ where $X$ is a set variable and $x : \El{X}$, the following is a theorem:
-
-For any set $A$, there exists a set $B$ and injection $i : B \rightarrow A$ such that, for all $x : \El{A}$, we have $P[A,x]$ if and only if there exists $b : \El{B}$ such that $i(b) = x$.
-\end{thms}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$S : 1 \looparrowright A$ be the relation such that, for all $e : \El{1}$ and $a : \El{A}$, we have $eSa$ if and only if $P[A,a]$.}}
-\begin{proof}
-	\pf\ Axiom of Comprehension.
-\end{proof}
-\step{2}{\pflet{$B$ be the tabulation of $S$ with projections $p : B \rightarrow 1$ and $i : B \rightarrow A$.}}
-\begin{proof}
-	\pf\ Axiom of Tabulations.
-\end{proof}
-\step{3}{$i$ is injective.}
-\begin{proof}
-	\step{a}{\pflet{$r,s : \El{B}$}}
-	\step{b}{\assume{$i(r) = i(s)$}}
-	\step{c}{$p(r) = p(s)$}
-	\begin{proof}
-		\pf\ Since 1 has only one element.
-	\end{proof}
-	\step{d}{$r = s$}
-	\begin{proof}
-		\pf\ Axiom of Tabulations.
-	\end{proof}
-\end{proof}
-\step{4}{For all $x : \El{A}$, we have $P[A,x]$ if and only if there exists $b : \El{B}$ such that $i(b) = x$.}
-\begin{proof}
-	\step{a}{\pflet{$x : \El{A}$}}
-	\step{b}{If $P[A,x]$ then there exists $b : \El{B}$ such that $i(b) = x$}
-	\begin{proof}
-		\step{i}{\assume{$P[A,x]$}}
-		\step{ii}{$*Sx$}
-		\begin{proof}
-			\pf\ \stepref{1}
-		\end{proof}
-		\step{iii}{There exists $b : \El{B}$ such that $p(b) = *$ and $i(b) = x$}
-		\begin{proof}
-			\pf\ Axiom of Tabulations.
-		\end{proof}
-	\end{proof}
-	\step{c}{For all $b : \El{B}$ we have $P[A,i(b)]$}
-	\begin{proof}
-		\step{i}{\pflet{$b : \El{B}$}}
-		\step{ii}{$p(b)Si(b)$}
-		\begin{proof}
-			\pf\ Axiom of Tabulations.
-		\end{proof}
-		\step{iii}{$P[A,i(b)]$}
-		\begin{proof}
-			\pf\ \stepref{1}
-		\end{proof}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
+\begin{df}[Membership]
+Given $(S,i) : \mathrm{Sub}(A)$ and $a : \El{A}$, we write $a \in S$ for $\exists s : \El{S}. i(s) = a$.
+\end{df}
 
 \section{Composition}
 
