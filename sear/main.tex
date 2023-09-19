@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 
 \documentclass{book}
 
@@ -359,6 +359,28 @@ Let $\sim$ be an equivalence relation on $X$. Then there exists a set $X/\sim$, 
 
 Further, if $p : X \twoheadrightarrow Q$ is another quotient with respect to $\sim$, then there exists a unique bijection $\phi : X / \sim \approx Q$ such that $\phi \circ \pi = p$.
 \end{prop}
+
+\chapter{Category Theory}
+
+\section{Categories}
+
+\begin{df}
+A \emph{category} $\mathcal{C}$ consists of:
+\begin{itemize}
+\item a set $\mathrm{Ob}(\mathcal{C})$ of \emph{objects}
+\item for any objects $X$ and $Y$, a set $\mathrm{Mor}(X,Y)$ of \emph{morphisms} from $X$ to $Y$. We write $f : X \rightarrow Y$ for $f : \El{\mathrm{Mor}(X,Y)}$.
+\item for any objects $X$, $Y$ and $Z$, a function $\circ : \mathrm{Mor}(Y,Z) \times \mathrm{Mor}(X,Y) \rightarrow \mathrm{Mor}(X,Z)$, called \emph{composition}.
+\end{itemize}
+such that:
+\begin{itemize}
+\item Given $f : X \rightarrow Y$, $g : Y \rightarrow Z$ and $h : Z \rightarrow W$, we have $h \circ (g \circ f) = (h \circ g) \circ f$
+\item For any object $X$, there exists a morphism $\id{X} : X \rightarrow X$, the \emph{identity morphism} on $X$, such that:
+\begin{itemize}
+\item for any object $Y$ and morphism $f : Y \rightarrow X$ we have $\id{X} \circ f = f$
+\item for any object $Y$ and morphism $f : X \rightarrow Y$ we have $f \circ \id{X} = f$
+\end{itemize} 
+\end{itemize}
+\end{df}
 
 \chapter{Topology}
 
