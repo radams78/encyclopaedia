@@ -1004,6 +1004,21 @@ An \emph{$n$-cell} is a topological space homeomorphic to $\mathbb{R}^n$.
 Let $X$ be a topological space. A \emph{cell decomposition} of $X$ is a partition of $X$ into subspaces that are $n$-cells.
 \end{df}
 
+\begin{df}[$n$-skeleton]
+Given a cell decomposition of $X$, the \emph{$n$-skeleton} $X^n$ is the union of all the cells of dimension $\leq n$.
+\end{df}
+
+\section{CW-complexes}
+
+\begin{df}[CW-Complex]
+A \emph{CW-complex} consists of a topological space $X$ and a cell decomposition $\mathcal{E}$ of $X$ such that:
+\begin{enumerate}
+\item \emph{Characteristic Maps} For every $n$-cell $e \in \mathcal{E}$, there exists a continuous map $\Phi_e : D^n \rightarrow X$ such that $\Phi((D^n)^\circ) = e$, the corestriction $\Phi_e : (D^n)^\circ \approx e$ is a homeomorphism, and $\Phi_e(S^n)$ is the union of all the cells in $\mathcal{E}$ of dimension $< n$.
+\item \emph{Closure Finiteness} For all $e \in \mathcal{E}$, we have $\overline{e}$ intersects only finitely many other cells in $\mathcal{E}$.
+\item \emph{Weak Topology} Given $A \subseteq X$, we have $A$ is closed iff for all $e \in \mathcal{E}$, $A \cap \overline{e}$ is closed.
+\end{enumerate}
+\end{df}
+
 \chapter{Topological Groups}
 
 \begin{df}[Topological Group]
