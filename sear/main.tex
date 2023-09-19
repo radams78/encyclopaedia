@@ -1,9 +1,9 @@
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 
 \documentclass{book}
@@ -44,7 +44,7 @@
 
 \chapter{Primitive Terms and Axioms}
 
-\section{Primitive Terms}
+\section{Primitive Terms} % CHECKED
 
 Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
 
@@ -505,6 +505,10 @@ Let $X$ and $Y$ be topological spaces. A function $f : X \rightarrow Y$ is \emph
 Let $X$ and $Y$ be topological spaces. A \emph{homeomorphism} between $X$ and $Y$ is a bijection $f : X \approx Y$ such that $f$ and $\inv{f}$ are continuous.
 \end{df}
 
+\begin{df}[Retraction]
+Let $X$ be a topological space and $A$ a subspace of $X$. A continuous function $\rho : X \rightarrow A$ is a \emph{retraction} iff $\rho \restriction A = \id{A}$. We say $A$ is a \emph{retract} of $X$ iff there exists a retraction.
+\end{df}
+
 \section{Convergence}
 
 \begin{df}[Convergence]
@@ -812,6 +816,42 @@ Every metric space has a completion.
 \pf\ Let $\hat{X}$ be the set of Cauchy sequences in $X$ quotiented by $\sim$ where $(x_n) \sim (y_n)$ if and only if $d(x_n, y_n) \rightarrow 0$. \qed
 \end{proof}
 
+\chapter{Homotopy Theory}
+
+\section{Homotopies}
+
+\begin{df}[Homotopy]
+Let $X$ and $Y$ be topological spaces. Let $f,g : X \rightarrow Y$ be continuous. A \emph{homotopy} between $f$ and $g$ is a continuous function $h : X \times [0,1] \rightarrow Y$ such that
+\begin{itemize}
+\item $\forall x : \El{X}. h(x,0) = f(x)$
+\item $\forall x : \El{X}. h(x,1) = g(x)$
+\end{itemize}
+We say $f$ and $g$ are \emph{homotopic}, $f \simeq g$, iff there exists a homotopy between them.
+
+Let $[X,Y]$ be the set of all homotopy classes of functions $X \rightarrow Y$.
+\end{df}
+
+\begin{prop}
+Let $f,f' : X \rightarrow Y$ and $g,g' : Y \rightarrow Z$ be continuous. If $f \simeq f'$ and $g \simeq g'$ then $g \circ f \simeq g' \circ f'$.
+\end{prop}
+
+\section{Homotopy Equivalence}
+
+\begin{df}[Homotopy Equivalence]
+Let $X$ and $Y$ be topological spaces. A \emph{homotopy equivalence} between $X$ and $Y$, $f : X \simeq Y$, is a continuous function $f : X \rightarrow Y$ such that there exists a continuous function $g : Y \rightarrow X$, the \emph{homotopy inverse} to $f$, such that $g \circ f \simeq \id{X}$ and $f \circ g \simeq \id{Y}$.
+\end{df}
+
+\begin{df}[Contractible]
+A topological space $X$ is \emph{contractible} iff $X \simeq 1$.
+\end{df}
+
+\begin{ex}
+$\mathbb{R}^n$ is contractible.
+\end{ex}
+
+\begin{df}[Deformation Retract]
+Let $X$ be a topological space and $A$ a subspace of $X$. A retraction $\rho : X \rightarrow A$ is a \emph{deformation retraction} iff $i \circ \rho \simeq \id{X}$, where $i$ is the inclusion $A \rightarrowtail X$. We say $A$ is a \emph{deformation retract} of $X$ iff there exists a deformation retraction.
+\end{df}
 \chapter{Topological Groups}
 
 \begin{df}[Topological Group]
