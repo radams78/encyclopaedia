@@ -38,14 +38,15 @@
 \contentsline {chapter}{\numberline {6}Homotopy Theory}{27}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Homotopies}{27}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Homotopy Equivalence}{27}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Topological Groups}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Continuous Actions}{29}{section.7.1}%
-\contentsline {chapter}{\numberline {8}Topological Vector Spaces}{31}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Cauchy Sequences}{31}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Seminorms}{32}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Fr\'{e}chet Spaces}{32}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Normed Spaces}{32}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Inner Product Spaces}{33}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Banach Spaces}{33}{section.8.6}%
-\contentsline {section}{\numberline {8.7}Hilbert Spaces}{33}{section.8.7}%
-\contentsline {section}{\numberline {8.8}Locally Convex Spaces}{34}{section.8.8}%
+\contentsline {chapter}{\numberline {7}Simplicial Complexes}{29}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Topological Groups}{31}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Continuous Actions}{31}{section.8.1}%
+\contentsline {chapter}{\numberline {9}Topological Vector Spaces}{33}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Cauchy Sequences}{33}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Seminorms}{34}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Fr\'{e}chet Spaces}{34}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Normed Spaces}{34}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Inner Product Spaces}{35}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Banach Spaces}{35}{section.9.6}%
+\contentsline {section}{\numberline {9.7}Hilbert Spaces}{35}{section.9.7}%
+\contentsline {section}{\numberline {9.8}Locally Convex Spaces}{36}{section.9.8}%

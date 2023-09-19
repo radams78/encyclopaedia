@@ -1,9 +1,9 @@
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
 % READ
 
 \documentclass{book}
@@ -87,7 +87,7 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions} %CHECKED
+\subsection{Definitions} %CHECKED FORMALIZED
 
 \begin{df}
 Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
@@ -1018,6 +1018,27 @@ $S^{n-1}$ is a strong deformation retract of $D^n - \{0\}$.
 \begin{ex}
 For any topological space $X$, the singleton consisting of the vertex is a strong deformation retract of the cone over $X$.
 \end{ex}
+
+\chapter{Simplicial Complexes}
+
+\begin{df}[Simplex]
+A \emph{$k$-dimensional simplex} or \emph{$k$-simplex} in $\mathbb{R}^n$ is the convex hull $s(x_0, \ldots, x_k)$ of $k+1$ points in general position.
+\end{df}
+
+\begin{df}[Face]
+A \emph{sub-simplex} or \emph{face} of $s(x_0, \ldots, x_k)$ is the convex hull of a subset of $\{x_0, \ldots, x_k\}$.
+\end{df}
+
+\begin{df}[Simplicial Complex]
+A \emph{simplicial complex} in $\mathbb{R}^n$ is a set $K$ of simplices such that:
+\begin{itemize}
+\item for every simplex $s$ in $K$, every face of $s$ is in $K$.
+\item The intersection of two simplices $s_1, s_2 \in K$ is either empty or is a face of both $s_1$ and $s_2$.
+\item $K$ is locally finite, i.e. every point of $\mathbb{R}^n$ has a neighbourhood that only intersects finitely many elements of $K$.
+\end{itemize}
+
+The topological space \emph{underlying} $K$ is $|K| = \bigcup K$ as a subspace of $\mathbb{R}^n$.
+\end{df}
 
 \chapter{Topological Groups}
 
