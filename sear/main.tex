@@ -1,9 +1,9 @@
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 
 \documentclass{book}
@@ -54,7 +54,7 @@ For any sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We writ
 
 For any function $f : A \rightarrow B$ and element $a : \El{A}$, let there be an element $f(a) : \El{B}$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms} % CHECKED
+\section{Axioms} % CHECKED FORMALIZED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -87,7 +87,7 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions}
+\subsection{Definitions} %CHECKED
 
 \begin{df}
 Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
@@ -105,7 +105,7 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
-\subsection{The Empty Set}
+\subsection{The Empty Set} %CHECKED
 
 \begin{thm}
 There exists a set which has no elements.
@@ -164,35 +164,8 @@ There exists a set that has exactly one element.
 	\pf\ By the Axiom of Infinity, there exists a set that has an element.
 \end{proof}
 \step{2}{\pick\ $a : \El{A}$}
-\step{3}{\pflet{$R : A \looparrowright A$ be the relation such that, for all $x,y : \El{A}$, we have $xRy$ if and only if $x = y = a$.}}
-\begin{proof}
-	\pf\ By the Axiom of Comprehension.
-\end{proof}
-\step{4}{\pflet{$|R|$ be the tabulation of $R$ with projections $p,q : |R| \rightarrow A$.} \prove{$|R|$ has exactly one element.}}
-\begin{proof}
-	\pf\ By the Axiom of Tabulations.
-\end{proof}
-\step{5}{\pflet{$r : \El{|R|}$ be the element such that $p(r) = q(r) = a$}}
-\begin{proof}
-	\pf\ Since $aRa$ by \stepref{3}.
-\end{proof}
-\step{6}{\pflet{$s : \El{|R|}$} \prove{$s = r$}}
-\step{7}{$p(s) R q(s)$}
-\begin{proof}
-	\pf\ By the Axiom of Tabulations.
-\end{proof}
-\step{8}{$p(s) = q(s) = a$}
-\begin{proof}
-	\pf\ By \stepref{3}.
-\end{proof}
-\step{9}{$p(s) = p(r)$ and $q(s) = q(r)$}
-\begin{proof}
-	\pf\ By \stepref{5}.
-\end{proof}
-\step{10}{$s = r$}
-\begin{proof}
-	\pf\ By the Axiom of Tabulations.
-\end{proof}
+\step{3}{\pick\ a set $S$ and injection $i : S \rightarrowtail A$ such that, for all $x : \El{A}$, there exists $s : \El{S}$ such that $s = x$ if and only if $x = a$}
+\step{4}{$S$ has exactly one element.}
 \qed
 \end{proof}
 
@@ -202,22 +175,9 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$A$ and $B$ both have exactly one element.}}
-\step{2}{\pflet{$F : A \looparrowright B$ be the relation such that, for all $x : \El{A}$ and $y : \El{B}$, we have $xFy$.}}
-\step{3}{$F$ is a function.}
-\begin{proof}
-	\pf\ If $xFy$ and $xFy'$ then $y = y'$ because $B$ has only one element.
-\end{proof}
-\step{4}{$F$ is injective.}
-\begin{proof}
-	\pf\ If $F(x) = F(x')$ then $x = x'$ because $A$ has only one element.
-\end{proof}
-\step{5}{$F$ is surjective.}
-\begin{proof}
-	\step{a}{\pflet{$y : \El{B}$}}
-	\step{b}{\pflet{$x$ be the element of $A$.}}
-	\step{c}{$F(x) = y$}
-\end{proof}
+\step{1}{\pflet{$A$ and $B$ both have exactly one element $a$ and $b$ respectively.}}
+\step{2}{\pflet{$F : A \rightarrow B$ be the function such that, for all $x : \El{A}$, we have $(x = a \wedge F(x) = b)$}}
+\step{3}{$F$ is a bijection.}
 \qed
 \end{proof}
 
@@ -386,6 +346,27 @@ such that:
 Let $\mathbf{Set}$ be the category of small sets and functions.
 \end{df}
 
+Define the opposite category.
+
+\section{Functors}
+
+\begin{df}[Functor]
+Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
+\begin{itemize}
+\item a function $F : \mathrm{Ob}(\mathcal{C}) \rightarrow \mathrm{Ob}(\mathcal{D})$
+\item for every morphism $f : A \rightarrow B$ in $\mathcal{C}$, a morphism $Ff : FA \rightarrow FB$ in $\mathcal{D}$
+\end{itemize}
+such that:
+\begin{itemize}
+\item for all $A : \El{\mathrm{Ob}(C)}$ we have $F \id{A} = \id{FA}$
+\item for any morphism $f : A \rightarrow B$ and $g : B \rightarrow C$ in $\mathcal{C}$, we have $F(g \circ f) = Fg \circ Ff$
+\end{itemize}
+\end{df}
+
+Define the identity functor, constant functors.
+
+Functors preserve isomorphisms.
+
 \chapter{Group Theory}
 
 \begin{df}
@@ -401,6 +382,8 @@ We identify any group $G$ with the category with one object whose morphisms are 
 \begin{df}
 For any field $K$, let $\mathbf{Vect}_K$ be the category of small vector spaces over $K$ and linear transformations.
 \end{df}
+
+Dual space functor $\mathbf{Vect}_K^{\mathrm{op}} \rightarrow \mathbf{Vect}_K$.
 
 \chapter{Topology}
 
@@ -511,8 +494,8 @@ Let $X$ and $Y$ be topological spaces. The \emph{disjoint union} is $X + Y$ wher
 
 \subsection{Product Topology}
 
-\begin{df}
-Let $X$ and $Y$ be topological spaces. The \emph{product topology} on $X \times Y$ is the set of all subsets $W \subseteq X \times Y$ such that, for all $(x,y) \in W$, there exist neighbourhoods $U$ of $x$ in $X$ and $V$ of $y$ in $Y$ such that $U \times V \subseteq W$.
+\begin{df}[Product Topology]
+Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces. The \emph{product topology} on $\prod_{\lambda \in \Lambda} X_\lambda$ is the coarsest topology such that every projection onto $X_\lambda$ is continuous.
 \end{df}
 
 \subsection{Bases}
@@ -526,6 +509,52 @@ Let $X$ be a topological space. A \emph{basis} for the topology on $X$ is a set 
 \begin{df}[Subbasis]
 Let $X$ be a topological space. A \emph{subbasis} for the topology on $X$ is a subset $\mathcal{S} \subseteq \mathcal{P} X$ such that every open set is a union of finite intersections of $\mathcal{S}$.
 \end{df}
+
+\begin{df}[Space with Basepoint]
+A \emph{space with basepoint} is a pair $(X,x)$ where $X$ is a topological space and $x : \El{X}$.
+\end{df}
+
+\subsection{Countability Axioms}
+
+\begin{df}[Neighbourhood Basis]
+Let $X$ be a topological space and $x_0 : \El{X}$. A \emph{neighbourhood basis} of $x_0$ is a set $\mathcal{U}$ of neighbourhoods of $x_0$ such that every neighbourhood of $x_0$ includes an element of $\mathcal{U}$.
+\end{df}
+
+\begin{df}[First Countable]
+A topological space is \emph{first countable} iff every point has a countable neighbourhood basis.
+\end{df}
+
+\begin{df}[Second Countable]
+A topological space is \emph{second countable} iff it has a countable basis.
+\end{df}
+
+Every second countable space is first countable.
+
+A subspace of a first countable space is first countable.
+
+A subspace of a second countable space is second countable.
+
+$\mathbb{R}^n$ is second countable.
+
+An uncountable discrete space is first countable but not second countable.
+
+\begin{prop}
+Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces such that no $X_\lambda$ is indiscrete. If $\Lambda$ is uncountable, then $\prod_{\lambda \in \Lambda} X_\lambda$ is not first countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $\lambda : \El{\Lambda}$, \pick\ $U_\lambda$ open in $X_\lambda$ such that $\emptyset \neq U_\lambda \neq X_\lambda$.}
+\step{2}{For all $\lambda : \El{\lambda}$, \pick\ $x_\lambda \in U_\lambda$.}
+\step{3}{\assume{for a contradiction $B$ is a countable neighbourhood basis for $(x_\lambda)_{\lambda \in \Lambda}$.}}
+\step{4}{\pick\ $\lambda \in \Lambda$ such that, for all $U \in B$, we have $\pi_\lambda(U) = X_\lambda$}
+\step{5}{There is no $U \in \lambda$ such that $U \subseteq \pi_\lambda^{-1}(U_\lambda)$}
+\qedstep
+\begin{proof}
+\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Continuous Functions}
 
@@ -555,11 +584,35 @@ Let $X$ be a topological space and $A$ a subspace of $X$. A continuous function 
 Let $\mathbf{Top}$ be the category of small topological spaces and continuous functions.
 \end{df}
 
+Forgetful functor $\mathbf{Top} \rightarrow \mathbf{Set}$.
+
+Basepoint preserving continuous functor.
+
 \section{Convergence}
 
 \begin{df}[Convergence]
 Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$. A point $a : \El{X}$ is a \emph{limit} of the sequence iff, for every neighbourhood $U$ of $a$, there exists $n_0$ such that $\forall n \geq n_0. x_n \in U$.
 \end{df}
+
+Convergence in a product space is pointwise convergence.
+
+If $f : X \rightarrow Y$ is continuous and $x_n \rightarrow l$ in $X$ then $f(x_n) \rightarrow f(l)$ in $Y$.
+
+\begin{ex}
+The converse does not hold.
+
+Let $X$ be the set of all continuous functions $[0,1] \rightarrow [-1,1]$ under the product topology. Let $i : X \rightarrow L^2([0,1])$ be the inclusion.
+
+If $f_n \rightarrow f$ then $i(f_n) \rightarrow i(f)$ --- Lebesgue convergence theorem.
+
+We prove that $i$ is not continuous.
+
+Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in $X$ such that $\forall \phi \in K _\epsilon. \int \phi^2 < 1/2$. Let $K = \prod_{\lambda \in [0,1]} U_\lambda$ where $U_\lambda = [-1,1]$ except for $\lambda = \lambda_1, \ldots, \lambda_n$. Let $\phi$ be the function that is 0 at $\lamda_1$, \ldots, $\lambda_n$ and 1 everywhere else. Then $\phi \in K$ but $\int \phi^2 = 1$.
+\end{ex}
+
+\begin{prop}
+The converse does hold for first countable spaces. If $f : X \rightarrow Y$ where $X$ is first countable, and $Y$ is a topological space, and whenever $x_n \rightarrow x$ then $f(x_n) \rightarrow f(x)$, then $f$ is continuous.
+\end{prop}
 
 \section{Connected Spaces}
 
@@ -640,6 +693,20 @@ Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$ be uniformly continu
 \pf\ The extension maps $\lim_{n \rightarrow \infty} x_n$ to $\lim_{n \rightarrow \infty} f(x_n)$. \qed
 \end{proof}
 
+\section{Separable Spaces}
+
+\begin{df}[Separable]
+A topological space is \emph{separable} iff it has a countable dense subset.
+\end{df}
+
+Every second countable space is separable.
+
+\section{Sequential Compactness}
+
+\begin{df}[Sequentially Compact]
+A topological space is \emph{sequentially compact} iff every sequence has a convergent subsequence.
+\end{df}
+
 \section{Compactness}
 
 \begin{df}[Compact]
@@ -690,6 +757,11 @@ A compact subspace of a Hausdorff space is closed.
 \begin{prop}
 A continuous bijection from a compact space to a Hausdorff space is a homeomorphism.
 \end{prop}
+
+\begin{prop}
+A first countable compact space is sequentially compact.
+\end{prop}
+
 
 \section{Quotient Spaces}
 
@@ -816,6 +888,12 @@ A topological space is \emph{metrizable} iff there exists a metric that induces 
 Every metrizable space is Hausdorff.
 \end{prop}
 
+Every metrizable space is first countable.
+
+A metric space is compact if and only if it is sequentially compact.
+
+A metric space is separable if and only if it is second countable.
+
 \section{Complete Metric Spaces}
 
 \begin{df}[Complete]
@@ -862,6 +940,12 @@ Every metric space has a completion.
 \pf\ Let $\hat{X}$ be the set of Cauchy sequences in $X$ quotiented by $\sim$ where $(x_n) \sim (y_n)$ if and only if $d(x_n, y_n) \rightarrow 0$. \qed
 \end{proof}
 
+\section{Manifolds}
+
+\begin{df}[Manifold]
+An \emph{$n$-dimensional manifold} is a second countable Hausdorff space locally homeomorphic to $\mathbb{R}^n$.
+\end{df}
+
 \chapter{Homotopy Theory}
 
 \section{Homotopies}
@@ -884,6 +968,12 @@ Let $f,f' : X \rightarrow Y$ and $g,g' : Y \rightarrow Z$ be continuous. If $f \
 \begin{df}
 Let $\mathbf{HTop}$ be the category whose objects are the small topological spaces and whose morphisms are the homotopy classes of continuous functions.
 \end{df}
+
+\begin{df}
+A functor $F : \mathbf{Top} \rightarrow \mathcal{C}$ is \emph{homotopy invariant} iff, for any topological spaces $X$, $Y$ and continuous functions $f,g : X \rightarrow Y$, if $f \simeq g$ then $Hf = Hg$.
+\end{df}
+
+Basepoint-preserving homotopy.
 
 \section{Homotopy Equivalence}
 
@@ -1157,6 +1247,16 @@ Let $E$ and $F$ be normed spaces. Let $f : E \rightarrow F$ be a continuous line
 $L^p(\mathbb{R}^n)$ is a Banach space.
 \end{prop}
 
+\begin{prop}
+$C(\mathbb{R})$ is first countable but not second countable.
+\end{prop}
+
+\begin{proof}
+\pf\ For every sequence of 0s and 1s $s = (s_n)$, let $f_s$ be a continuous bounded function whose value at $n$ is $s_n$. Then the set of all $f_s$ is an uncountable discrete set in $C(\mathbb{R})$. Hence $C(\mathbb{R})$ is not second countable.
+
+It is first countable because it is metrizable. \qed
+\end{proof}
+
 \section{Hilbert Spaces}
 
 \begin{df}[Hilbert Space]
@@ -1171,6 +1271,8 @@ The set of \emph{square-integrable functions} is the set of Lebesgue integrable 
 \begin{prop}
 The completion of an inner product space is a Hilbert space.
 \end{prop}
+
+An infinite dimensional Hilbert space with the weak topology is not first countable.
 
 \section{Locally Convex Spaces}
 

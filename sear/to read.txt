@@ -3,3 +3,8 @@ Bourbaki, N., Elements de Mathematique. 1966
 Kothe, G. Topological Vector Spaces. 1966.
 Dieudonne, J. A., Treatise on Analysis. 1970.
 Milnor, J., Morse Theory. 1963
+Hilton, P. J., An Introduction to Homotopy Theory. 1953.
+Thorn, R., Quelques proprietes globales des variet6s differentiates, Comm. Math. Helv., 28 (1954), 17-86.
+Neumann, J. v., Zur Algebra der Funktionaloperationen und Theorie der Normalen Operatoren, Math. Annalen, 102 (1930), 370-427.
+Steen, L. A. and Seebach, J. A., Counterexamples in Topology. 1978.
+Grauert, H. and Remmert, R., Theory of Stein Spaces. 1979.

@@ -5,13 +5,14 @@
 \contentsline {subsection}{\numberline {1.3.1}Definitions}{6}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {1.3.2}The Empty Set}{6}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}The Singleton}{7}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Subsets}{8}{subsection.1.3.4}%
-\contentsline {section}{\numberline {1.4}Composition}{9}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Axioms Part Two}{9}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Cartesian Product}{10}{section.1.6}%
+\contentsline {subsection}{\numberline {1.3.4}Subsets}{7}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Composition}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Axioms Part Two}{8}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Cartesian Product}{9}{section.1.6}%
 \contentsline {section}{\numberline {1.7}Quotient Sets}{10}{section.1.7}%
 \contentsline {chapter}{\numberline {2}Category Theory}{11}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Categories}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Functors}{11}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Group Theory}{13}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Linear Algebra}{15}{chapter.4}%
 \contentsline {chapter}{\numberline {5}Topology}{17}{chapter.5}%
@@ -21,26 +22,30 @@
 \contentsline {subsection}{\numberline {5.1.3}Product Topology}{19}{subsection.5.1.3}%
 \contentsline {subsection}{\numberline {5.1.4}Bases}{19}{subsection.5.1.4}%
 \contentsline {subsection}{\numberline {5.1.5}Subbases}{19}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5.2}Continuous Functions}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Convergence}{20}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Connected Spaces}{20}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Hausdorff Spaces}{20}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Compactness}{21}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Quotient Spaces}{22}{section.5.7}%
-\contentsline {section}{\numberline {5.8}Gluing}{23}{section.5.8}%
-\contentsline {section}{\numberline {5.9}Metric Spaces}{23}{section.5.9}%
-\contentsline {section}{\numberline {5.10}Complete Metric Spaces}{24}{section.5.10}%
-\contentsline {chapter}{\numberline {6}Homotopy Theory}{25}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Homotopies}{25}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Homotopy Equivalence}{25}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Topological Groups}{27}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Continuous Actions}{27}{section.7.1}%
-\contentsline {chapter}{\numberline {8}Topological Vector Spaces}{29}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Cauchy Sequences}{29}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Seminorms}{30}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Fr\'{e}chet Spaces}{30}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Normed Spaces}{30}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Inner Product Spaces}{31}{section.8.5}%
-\contentsline {section}{\numberline {8.6}Banach Spaces}{31}{section.8.6}%
-\contentsline {section}{\numberline {8.7}Hilbert Spaces}{31}{section.8.7}%
-\contentsline {section}{\numberline {8.8}Locally Convex Spaces}{32}{section.8.8}%
+\contentsline {subsection}{\numberline {5.1.6}Countability Axioms}{19}{subsection.5.1.6}%
+\contentsline {section}{\numberline {5.2}Continuous Functions}{20}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Convergence}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Connected Spaces}{21}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Hausdorff Spaces}{22}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Separable Spaces}{22}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Sequential Compactness}{22}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Compactness}{22}{section.5.8}%
+\contentsline {section}{\numberline {5.9}Quotient Spaces}{23}{section.5.9}%
+\contentsline {section}{\numberline {5.10}Gluing}{24}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Metric Spaces}{25}{section.5.11}%
+\contentsline {section}{\numberline {5.12}Complete Metric Spaces}{25}{section.5.12}%
+\contentsline {section}{\numberline {5.13}Manifolds}{26}{section.5.13}%
+\contentsline {chapter}{\numberline {6}Homotopy Theory}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Homotopies}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Homotopy Equivalence}{27}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Topological Groups}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Continuous Actions}{29}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Topological Vector Spaces}{31}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Cauchy Sequences}{31}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Seminorms}{32}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Fr\'{e}chet Spaces}{32}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Normed Spaces}{32}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Inner Product Spaces}{33}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Banach Spaces}{33}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Hilbert Spaces}{33}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Locally Convex Spaces}{34}{section.8.8}%
