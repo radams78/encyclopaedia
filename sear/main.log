@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 SEP 2023 20:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 SEP 2023 20:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -782,6 +782,10 @@ Chapter 6.
 
 ] [28]
 Chapter 7.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 1049.
+
 [29
 
 ] [30
@@ -789,7 +793,7 @@ Chapter 7.
 ]
 Chapter 8.
 
-Overfull \hbox (19.70996pt too wide) in paragraph at lines 1088--1089
+Overfull \hbox (19.70996pt too wide) in paragraph at lines 1104--1105
 []\OT1/cmr/bx/n/10 Proposition 8.8. \OT1/cmr/m/it/10 De-fine an ac-tion of $\OM
 L/cmm/m/it/10 SO\U/matha/m/n/10 p\OT1/cmr/m/n/10 2\U/matha/m/n/10 q$ \OT1/cmr/m
 /it/10 on $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/it/10 by $\OML/cmm/m/it/10 g\U/math
@@ -804,13 +808,13 @@ Chapter 9.
 
 ] [34] [35] [36] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B6342C5DB4981F35163A3719A51CB264;6790.
+(rerunfilecheck)             Checksum: 621A2C98D86E0429A914AAB85D096F46;7053.
  ) 
 Here is how much of TeX's memory you used:
- 12625 strings out of 476091
- 180197 string characters out of 5794081
+ 12632 strings out of 476091
+ 180274 string characters out of 5794081
  1866330 words of memory out of 5000000
- 32538 multiletter control sequences out of 15000+600000
+ 32540 multiletter control sequences out of 15000+600000
  531044 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,76p,3215b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -836,10 +840,10 @@ pe1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfrm1000.pfb>
-Output written on main.pdf (36 pages, 323948 bytes).
+Output written on main.pdf (36 pages, 324718 bytes).
 PDF statistics:
- 791 PDF objects out of 1000 (max. 8388607)
- 701 compressed objects within 8 object streams
- 283 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 804 PDF objects out of 1000 (max. 8388607)
+ 714 compressed objects within 8 object streams
+ 288 named destinations out of 1000 (max. 500000)
+ 433 words of extra memory for PDF output out of 10000 (max. 10000000)
 

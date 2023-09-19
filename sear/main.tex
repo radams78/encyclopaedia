@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 % READ
 
 \documentclass{book}
@@ -319,6 +319,12 @@ Let $\sim$ be an equivalence relation on $X$. Then there exists a set $X/\sim$, 
 
 Further, if $p : X \twoheadrightarrow Q$ is another quotient with respect to $\sim$, then there exists a unique bijection $\phi : X / \sim \approx Q$ such that $\phi \circ \pi = p$.
 \end{prop}
+
+\section{Partitions}
+
+\begin{df}[Partition]
+A \emph{partition} of a set $X$ is a set of pairwise disjoint subsets of $X$ whose union is $X$.
+\end{df}
 
 \chapter{Category Theory}
 
@@ -1038,6 +1044,16 @@ A \emph{simplicial complex} in $\mathbb{R}^n$ is a set $K$ of simplices such tha
 \end{itemize}
 
 The topological space \emph{underlying} $K$ is $|K| = \bigcup K$ as a subspace of $\mathbb{R}^n$.
+\end{df}
+
+\subsection{Cell Decompositions}
+
+\begin{df}[$n$-cell]
+An \emph{$n$-cell} is a topological space homeomorphic to $\mathbb{R}^n$.
+\end{df}
+
+\begin{df}[Cell Decomposition]
+Let $X$ be a topological space. A \emph{cell decomposition} of $X$ is a partition of $X$ into subspaces that are $n$-cells.
 \end{df}
 
 \chapter{Topological Groups}
