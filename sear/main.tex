@@ -1,10 +1,10 @@
 % READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
 
 \documentclass{book}
 
@@ -44,7 +44,7 @@
 
 \chapter{Primitive Terms and Axioms}
 
-\section{Primitive Terms} % CHECKED
+\section{Primitive Terms} % CHECKED FORMALIZED
 
 Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
 
@@ -54,7 +54,7 @@ For any sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We writ
 
 For any function $f : A \rightarrow B$ and element $a : \El{A}$, let there be an element $f(a) : \El{B}$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms} %CHECKED FORMALIZED
+\section{Axioms} % CHECKED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -849,9 +849,36 @@ A topological space $X$ is \emph{contractible} iff $X \simeq 1$.
 $\mathbb{R}^n$ is contractible.
 \end{ex}
 
+\begin{ex}
+$D^n$ is contractible.
+\end{ex}
+
 \begin{df}[Deformation Retract]
 Let $X$ be a topological space and $A$ a subspace of $X$. A retraction $\rho : X \rightarrow A$ is a \emph{deformation retraction} iff $i \circ \rho \simeq \id{X}$, where $i$ is the inclusion $A \rightarrowtail X$. We say $A$ is a \emph{deformation retract} of $X$ iff there exists a deformation retraction.
 \end{df}
+
+\begin{df}[Strong Deformation Retract]
+Let $X$ be a topological space and $A$ a subspace of $X$. A \emph{strong deformation retraction} $\rho : X \rightarrow A$ is a continuous function such that there exists a homotopy $h : X \times [0,1] \rightarrow X$ between $i \circ \rho$ and $\id{X}$ such that, for all $a : \El{X}$ and $t : \El{[0,1]}$, we have $h(a,t) = a$.
+
+We say $A$ is a \emph{strong deformation retract} of $X$ iff a strong deformation retraction exists.
+\end{df}
+
+\begin{ex}
+$\{0\}$ is a strong deformation retract of $\mathbb{R}^n$ and of $D^n$.
+\end{ex}
+
+\begin{ex}
+$S^1$ is a strong deformation retract of the torus $S^1 \times D^2$.
+\end{ex}
+
+\begin{ex}
+$S^{n-1}$ is a strong deformation retract of $D^n - \{0\}$.
+\end{ex}
+
+\begin{ex}
+For any topological space $X$, the singleton consisting of the vertex is a strong deformation retract of the cone over $X$.
+\end{ex}
+
 \chapter{Topological Groups}
 
 \begin{df}[Topological Group]
