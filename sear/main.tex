@@ -1019,6 +1019,32 @@ A \emph{CW-complex} consists of a topological space $X$ and a cell decomposition
 \end{enumerate}
 \end{df}
 
+\begin{prop}
+If a cell decomposition $\mathcal{E}$ satisfies the Characteristic Maps axiom, then for every $n$-cell $e \in \mathcal{E}$ we have $\overline{e} = \Phi_e(D^n)$. Therefore $\overline{e}$ is compact and $\overline{e} - e = \Phi_e(S^{n-1}) \subseteq X^{n-1}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$e \subseteq \Phi_e(D^n) \subseteq \overline{e}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+	e & = \Phi_e((D^n)^\circ) \\
+	& \subseteq \Phi_e(D^n) \\
+	& = \Phi_e(\overline{(D^n)^\circ}) \\
+	& \subseteq \overline{\Phi_e((D^n)^\circ)} \\
+	& = \overline{e}
+	\end{align*}
+\end{proof}
+\step{2}{$\Phi_e(D^n)$ is compact.}
+\begin{proof}
+	\pf\ Because $D^n$ is compact.
+\end{proof}
+\step{3}{$\Phi_e(D^n)$ is closed.}
+\step{4}{$\Phi_e(D^n) = \overline{e}$}
+\qed
+\end{proof}
+
 \chapter{Topological Groups}
 
 \begin{df}[Topological Group]
