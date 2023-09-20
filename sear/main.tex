@@ -36,6 +36,7 @@
 \newcommand{\El}[1]{\ensuremath{\mathrm{El} \left( {#1} \right)}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+\newcommand{\Ob}[1]{\ensuremath{\mathrm{Ob} \left( {#1} \right)}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 
 \begin{document}
@@ -282,9 +283,9 @@ A \emph{partition} of a set $X$ is a set of pairwise disjoint subsets of $X$ who
 \begin{df}
 A \emph{category} $\mathcal{C}$ consists of:
 \begin{itemize}
-\item a set $\mathrm{Ob}(\mathcal{C})$ of \emph{objects}
-\item for any objects $X$ and $Y$, a set $\mathrm{Mor}(X,Y)$ of \emph{morphisms} from $X$ to $Y$. We write $f : X \rightarrow Y$ for $f : \El{\mathrm{Mor}(X,Y)}$.
-\item for any objects $X$, $Y$ and $Z$, a function $\circ : \mathrm{Mor}(Y,Z) \times \mathrm{Mor}(X,Y) \rightarrow \mathrm{Mor}(X,Z)$, called \emph{composition}.
+\item a set $\Ob{\mathcal{C}}$ of \emph{objects}. We write $A \in \mathcal{C}$ for $A \in \Ob{\mathcal{C}}$.
+\item for any objects $X$ and $Y$, a set $\mathcal{C}[X,Y]$ of \emph{morphisms} from $X$ to $Y$. We write $f : X \rightarrow Y$ for $f \in \mathcal{C}[X,Y]$.
+\item for any objects $X$, $Y$ and $Z$, a function $\circ : \mathcal{C}[Y,Z] \times \mathcal{C}[X,Y] \rightarrow \mathcal{C}[X,Z]$, called \emph{composition}.
 \end{itemize}
 such that:
 \begin{itemize}
@@ -297,15 +298,84 @@ such that:
 \end{itemize}
 \end{df}
 
-The identity morphism on an object is unique.
+We write the composite of morphism $f_1$, \ldots, $f_n$ as $f_n \circ \cdots \circ f_1$. This is unambiguous thanks to Associativity.
 
 \begin{df}
 Let $\Set$ be the category of small sets and functions.
 \end{df}
 
-Section.
+\begin{prop}
+The identity morphism on an object is unique.
+\end{prop}
 
-Retraction.
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{C}$ be a category.}}
+\step{2}{\pflet{$A \in \mathcal{C}$}}
+\step{3}{\pflet{$i,j : A \rightarrow A$ be identity morphisms on $A$.}}
+\step{4}{$i = j$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		i & = i \circ j & (j \text{ is an identity on } A) \\
+		& = j & (i \text{ is an identity on } A)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Given $f : A \rightarrow B$ and an object $C$, define the function $f^* : \mathcal{C}[B,C] \rightarrow \mathcal{C}[A,C]$ by $f^*(g) = g \circ f$.
+\end{df}
+
+\begin{df}
+Given $f : A \rightarrow B$ and an object $C$, define the function $f_* : \mathcal{C}[C,A] \rightarrow \mathcal{C}[C,B]$ by $f_*(g) = f \circ g$.
+\end{df}
+
+\subsection{Sections and Retractions}
+
+\begin{df}[Section, Retraction]
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $r$, iff $rs = \id{B}$.
+\end{df}
+
+\begin{prop}
+\label{prop:section_is_retraction}
+Let $f : A \rightarrow B$ and $r,s : B \rightarrow A$. If $r$ is a retraction of $f$ and $s$ is a section of $f$ then $r = s$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+r & = r \id{B} & (\text{Unit Law}) \\
+& = r f s & (\text{$s$ is a section of $f$}) \\
+& = \id{A} s & (\text{$r$ is a retraction of $f$}) \\
+& = s & (\text{Unit Law}) & \qed
+\end{align*}
+\end{proof}
+
+\subsection{Isomorphisms}
+
+\begin{df}[Isomorphism]
+A morphism $f : A \rightarrow B$ is an \emph{isomorphism}, $f : A \cong B$, iff there exists a morphism $\inv{f} : B \rightarrow A$ that is both a retraction and section of $f$.
+
+Objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
+\end{df}
+
+\begin{prop}
+The inverse of an isomorphism is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:section_is_retraction}. \qed
+\end{proof}
+
+\begin{prop}
+If $f : A \cong B$ then $\inv{f} : B \cong A$ and $\inv{(\inv{f})} = f$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $f\inv{f} = \id{B}$ and $\inv{f}f = \id{A}$. \qed
+\end{proof}
 
 Isomorphism.
 
@@ -316,6 +386,10 @@ Initial object.
 Terminal object.
 
 Zero object.
+
+\begin{df}[Zero Morphism]
+In a category with a zero object $O$, for any objects $A$ and $B$, the composite $A \rightarrow O \rightarrow B$ is called the \emph{zero morphism} from $A$ to $B$.
+\end{df}
 
 \begin{prop}
 The empty set is initial in $\Set$.
@@ -341,6 +415,22 @@ There is no zero object in $\Set$.
 \pf\ Since $\emptyset \not\approx 1$. \qed
 \end{proof}
 
+Slice categories
+
+\begin{df}
+Let $\mathcal{C}$ be a category and $B \in \mathcal{C}$. The category $\mathcal{C}_B^B$ of objects \emph{over and under} $B$ is the category with:
+\begin{itemize}
+\item objects all triples $(X,u,p)$ such that $u : B \rightarrow X$ and $p : X \rightarrow B$
+\item morphisms $f : (X,u,p) \rightarrow (Y,u',p')$ all morphisms $f : X \rightarrow Y$ such that $fu=u'$ and $p'f=p$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+\[ \mathcal{C}_B^B \cong (\mathcal{C} / B) \backslash \id{B} \cong (\mathcal{C} \backslash B) / \id{B} \]
+\end{prop}
+
+$(B, \id{B}, \id{B})$ is the zero object in $\mathcal{C}_B^B$.
+
 \section{Functors}
 
 \begin{df}[Functor]
@@ -360,6 +450,32 @@ Define the identity functor, constant functors.
 
 Functors preserve isomorphisms.
 
+Isomorphism of categories.
+
+Natural transformation.
+
+Pullback
+
+Pushout
+
+Product
+
+Coproduct
+
+Adjunction
+
+\section{Bifunctors}
+
+\begin{df}[Commutative]
+A bifunctor $\Box : \mathcal{C}^2 \rightarrow \mathcal{C}$ is \emph{commutative} iff $\Box \cong \Box \circ T$, where $T : \mathcal{C}^2 \rightarrow \mathcal{C}^2$ is the swap functor.
+\end{df}
+
+\begin{df}[Associative]
+A bifunctor $\Box$ is \emph{associative} iff $\Box \circ (\Box \times \id{}) \cong \Box \circ (\id{} \times \Box)$.
+\end{df}
+
+Product and coproduct are commutative and associative.
+
 \chapter{Group Theory}
 
 \begin{df}
@@ -369,6 +485,16 @@ Let $\mathbf{Grp}$ be the category of small groups and group homomorphisms.
 \begin{df}
 We identify any group $G$ with the category with one object whose morphisms are the elements of $G$ with composition given by the multiplication in $G$.
 \end{df}
+
+\begin{prop}
+The trivial group is a zero object in $\mathbf{Grp}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+The zero morphism $G \rightarrow H$ maps every element in $G$ to $e$.
 
 \chapter{Linear Algebra}
 
