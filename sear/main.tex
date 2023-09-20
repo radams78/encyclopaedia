@@ -36,6 +36,7 @@
 \newcommand{\El}[1]{\ensuremath{\mathrm{El} \left( {#1} \right)}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+\newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 
 \begin{document}
 
@@ -299,7 +300,7 @@ such that:
 The identity morphism on an object is unique.
 
 \begin{df}
-Let $\mathbf{Set}$ be the category of small sets and functions.
+Let $\Set$ be the category of small sets and functions.
 \end{df}
 
 Section.
@@ -317,7 +318,7 @@ Terminal object.
 Zero object.
 
 \begin{prop}
-The empty set is initial in $\mathbf{Set}$.
+The empty set is initial in $\Set$.
 \end{prop}
 
 \begin{proof}
@@ -325,11 +326,19 @@ The empty set is initial in $\mathbf{Set}$.
 \end{proof}
 
 \begin{prop}
-1 is terminal in $\mathbf{Set}$.
+1 is terminal in $\Set$.
 \end{prop}
 
 \begin{proof}
 \pf\ For any set $A$, the constant function to $*$ is the only function $A \rightarrow 1$. \qed
+\end{proof}
+
+\begin{prop}
+There is no zero object in $\Set$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\emptyset \not\approx 1$. \qed
 \end{proof}
 
 \section{Functors}
