@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 
 \documentclass{book}
 
@@ -1044,6 +1044,12 @@ If a cell decomposition $\mathcal{E}$ satisfies the Characteristic Maps axiom, t
 \step{4}{$\Phi_e(D^n) = \overline{e}$}
 \qed
 \end{proof}
+
+\subsection{Subcomplexes}
+
+\begin{df}[Subcomplex]
+Let $(X, \mathcal{E})$ be a CW-complex and $\mathcal{E}' \subseteq \mathcal{E}$. Let $X' = \bigcup \mathcal{E}'$. Then $(X', \mathcal{E}')$ is a \emph{subcomplex} of $(X, \mathcal{E})$ iff $(X', \mathcal{E}')$ is a CW-complex, $X'$ is closed in $X$, and for all $e \in \mathcal{E}'$ we have $\overline{e} \subseteq X'$.
+\end{df}
 
 \chapter{Topological Groups}
 
