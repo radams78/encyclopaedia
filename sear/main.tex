@@ -382,40 +382,6 @@ Isomorphism.
 
 Define the opposite category.
 
-Initial object.
-
-Terminal object.
-
-Zero object.
-
-\begin{df}[Zero Morphism]
-In a category with a zero object $O$, for any objects $A$ and $B$, the composite $A \rightarrow O \rightarrow B$ is called the \emph{zero morphism} from $A$ to $B$.
-\end{df}
-
-\begin{prop}
-The empty set is initial in $\Set$.
-\end{prop}
-
-\begin{proof}
-\pf\ For any set $A$, the nowhere-defined function is the unique function $\emptyset \rightarrow A$. \qed
-\end{proof}
-
-\begin{prop}
-1 is terminal in $\Set$.
-\end{prop}
-
-\begin{proof}
-\pf\ For any set $A$, the constant function to $*$ is the only function $A \rightarrow 1$. \qed
-\end{proof}
-
-\begin{prop}
-There is no zero object in $\Set$.
-\end{prop}
-
-\begin{proof}
-\pf\ Since $\emptyset \not\approx 1$. \qed
-\end{proof}
-
 Slice categories
 
 \begin{df}
@@ -437,6 +403,14 @@ $(B, \id{B}, \id{B})$ is the zero object in $\mathcal{C}_B^B$.
 \begin{df}[Initial Object]
 An object $I$ is \emph{initial} iff, for any object $X$, there exists exactly one morphism $I \rightarrow X$.
 \end{df}
+
+\begin{prop}
+The empty set is initial in $\Set$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any set $A$, the nowhere-defined function is the unique function $\emptyset \rightarrow A$. \qed
+\end{proof}
 
 \begin{prop}
 If $I$ and $I'$ are initial objects, then there exists a unique isomorphism $I \cong I'$.
@@ -463,10 +437,47 @@ If $I$ and $I'$ are initial objects, then there exists a unique isomorphism $I \
 An object $T$ is \emph{terminal} iff, for any object $X$, there exists exactly one morphism $X \rightarrow T$.
 \end{df}
 
+\begin{prop}
+1 is terminal in $\Set$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any set $A$, the constant function to $*$ is the only function $A \rightarrow 1$. \qed
+\end{proof}
+
 \subsection{Zero Objects}
 
 \begin{df}[Zero Object]
 An object $Z$ is a \emph{zero object} iff it is an initial object and a terminal object.
+\end{df}
+
+\begin{df}[Zero Morphism]
+Let $\mathcal{C}$ be a category with a zero object $Z$. Let $A,B \in \mathcal{C}$. The \emph{zero morphism} $A \rightarrow B$ is the unique morphism $A \rightarrow Z \rightarrow B$.
+\end{df}
+
+\begin{prop}
+There is no zero object in $\Set$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\emptyset \not\approx 1$. \qed
+\end{proof}
+
+\subsection{Subcategories}
+
+\begin{df}[Subcategory]
+A \emph{subcategory} $\mathcal{C}'$ of a category $\mathcal{C}$ consists of:
+\begin{itemize}
+\item a subset $\Ob{\mathcal{C}'}$ of $\mathcal{C}$
+\item for all $A,B \in \Ob{\mathcal{C}'}$, a subset $\mathcal{C}'[A,B] \subseteq \mathcal{C}[A,B]$
+\end{itemize}
+such that:
+\begin{itemize}
+\item for all $A \in \Ob{\mathcal{C}'}$, we have $\id{A} \in \mathcal{C}'[A,A]$
+\item for all $f \in \mathcal{C}'[A,B]$ and $g \in \mathcal{C}'[B,C]$, we have $g \circ f \in \mathcal{C}'[A,C]$.
+\end{itemize}
+
+It is a \emph{full} subcategory iff, for all $A,B \in \Ob{\mathcal{C}'}$, we have $\mathcal{C}'[A,B] = \mathcal{C}[A,B]$.
 \end{df}
 
 \subsection{Opposite Category}
@@ -499,23 +510,6 @@ An object is terminal in $\mathcal{C}$ iff it is initial in $\op{\mathcal{C}}$.
 \begin{cor}
 If $T$ and $T'$ are terminal objects in $\mathcal{C}$ then there exists a unique isomorphism $T \cong T'$.
 \end{cor}
-
-\subsection{Subcategories}
-
-\begin{df}[Subcategory]
-A \emph{subcategory} $\mathcal{C}'$ of a category $\mathcal{C}$ consists of:
-\begin{itemize}
-\item a subset $\Ob{\mathcal{C}'}$ of $\mathcal{C}$
-\item for all $A,B \in \Ob{\mathcal{C}'}$, a subset $\mathcal{C}'[A,B] \subseteq \mathcal{C}[A,B]$
-\end{itemize}
-such that:
-\begin{itemize}
-\item for all $A \in \Ob{\mathcal{C}'}$, we have $\id{A} \in \mathcal{C}'[A,A]$
-\item for all $f \in \mathcal{C}'[A,B]$ and $g \in \mathcal{C}'[B,C]$, we have $g \circ f \in \mathcal{C}'[A,C]$.
-\end{itemize}
-
-It is a \emph{full} subcategory iff, for all $A,B \in \Ob{\mathcal{C}'}$, we have $\mathcal{C}'[A,B] = \mathcal{C}[A,B]$.
-\end{df}
 
 \subsection{Groupoids}
 
@@ -559,6 +553,92 @@ Let $\mathcal{C}$ be a category. The \emph{arrow category} $\mathcal{C}^\rightar
 \end{itemize}
 \end{df}
 
+\subsection{Slice Category}
+
+\begin{df}[Slice Category]
+Let $\mathcal{C}$ be a category and $A \in \mathcal{C}$. The \emph{slice category under $A$}, $\mathcal{C} \backslash A$, is the category with:
+\begin{itemize}
+\item objects all pairs $(B,f)$ where $B \in \mathcal{C}$ and $f : A \rightarrow B$
+\item morphisms $(B,f) \rightarrow (C,g)$ are morphisms $u : B \rightarrow C$ such that $uf=g$.
+\end{itemize}
+
+We identify this with the subcategory of $\mathcal{C}^\rightarrow$ formed by mapping $(B,f)$ to $(A,B,f)$ and $u$ to $(\id{A},u)$.
+\end{df}
+
+\begin{prop}
+\label{prop:retraction_in_slice}
+If $s : (B,f) \rightarrow (C,g)$ in $\mathcal{C} \backslash A$, then any retraction of $s$ in $\mathcal{C}$ is a retraction of $s$ in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r : C \rightarrow B$ be a retraction of $s$ in $\mathcal{C}$.}}
+\step{2}{$rg = f$}
+\begin{proof}
+	\pf\ $rg = rsf = f$.
+\end{proof}
+\step{3}{$r : (C,g) \rightarrow (B,f)$ in $\mathcal{C} \backslash A$}
+\step{4}{$rs = \id{(B,f)}$}
+\begin{proof}
+	\pf\ Because composition is inherited from $\mathcal{C}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:initial_in_slice}
+$\id{A}$ is the initial object in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $(B,f) \in \mathcal{C} \backslash A$, we have $f$ is the only morphism $A \rightarrow B$ such that $f \id{A} = f$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:zero_in_slice}
+If $A$ is terminal in $\mathcal{C}$ then $\id{A}$ is the zero object in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $(B,f) \in \mathcal{C} \backslash A$, the unique morphism $! : B \rightarrow A$ is the unique morphism such that $!f = \id{A}$. \qed
+\end{proof}
+
+\begin{df}[Pointed Sets]
+The \emph{category of pointed sets} is $\Set \backslash 1$.
+\end{df}
+
+\begin{df}
+Let $\mathcal{C}$ be a category and $A \in \mathcal{C}$. The \emph{slice category over $A$}, $\mathcal{C} / A$, is the category with:
+\begin{itemize}
+\item objects all pairs $(B,f)$ with $f : B \rightarrow A$
+\item morphisms $u : (B,f) \rightarrow (C,g)$ all morphisms $u : B \rightarrow C$ such that $gu=f$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+Let $u : (B,f) \rightarrow (C,g) : \mathcal{C} / A$. Any section of $u$ in $\mathcal{C}$ is a section of $u$ in $\mathcal{C} / A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:retraction_in_slice}. \qed
+\end{proof}
+
+\begin{prop}
+$\id{A}$ is terminal in $\mathcal{C} / A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:initial_in_slice}. \qed
+\end{proof}
+
+\begin{prop}
+If $A$ is initial in $\mathcal{C}$ then $\id{A}$ is the zero object in $\mathcal{C} / A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:zero_in_slice}. \qed
+\end{proof}
+
 \section{Functors}
 
 \begin{df}[Functor]
@@ -579,6 +659,30 @@ Define the identity functor, constant functors.
 Functors preserve isomorphisms.
 
 Isomorphism of categories.
+
+\begin{prop}
+If $A$ is initial in $\mathcal{C}$ then $\mathcal{C} \backslash A \cong \mathcal{C}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define $F : \mathcal{C} \backslash A \rightarrow \mathcal{C}$ by
+\begin{align*}
+F (B,f) & = B \\
+F (u : (B,f) \rightarrow (C,g)) & = u
+\end{align*}}
+\step{2}{Define $G : \mathcal{C} \rightarrow \mathcal{C} \backslash A$ by
+\begin{align*}
+G B & = (B, !_B) & \text{where $!_B$ is the unique morphism $A \rightarrow B$} \\
+G (u : B \rightarrow C) & = u : (B, !_B) \rightarrow (C, !_C)
+\end{align*}}
+\step{3}{$FG = \id{\mathcal{C}}$}
+\step{4}{$GF = \id{\mathcal{C} \backslash A}$}
+\begin{proof}
+	\pf\ Since $GF(B,f) = (B, !_B) = (B,f)$ because the morphism $A \rightarrow B$ is unique.
+\end{proof}
+\qed
+\end{proof}
 
 Natural transformation.
 
