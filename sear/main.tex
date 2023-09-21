@@ -639,6 +639,23 @@ If $A$ is initial in $\mathcal{C}$ then $\id{A}$ is the zero object in $\mathcal
 \pf\ Dual to Proposition \ref{prop:zero_in_slice}. \qed
 \end{proof}
 
+\begin{df}
+Let $A \in \mathcal{C}$.
+The category of objects \emph{over and under} $A$, written $\mathcal{C}_A^A$, is the category with:
+\begin{itemize}
+\item objects all triples $(X,u,p)$ where $u : A \rightarrow X$, $p : X \rightarrow A$ and $pu = \id{A}$
+\item morphism $f : (X,u,p) \rightarrow (Y,v,q)$ all morphisms $f : X \rightarrow Y$ such that $fu = v$ and $qf = p$
+\end{itemize}
+\end{df}
+
+\begin{prop}
+$(A, \id{A}, \id{A})$ is the zero object in $\mathcal{C}_A^A$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any object $(X,u,p)$, we have $p$ is the unique morphism $(X,u,p) \rightarrow (A, \id{A}, \id{A})$, and $u$ is the unique morphism $(A, \id{A}, \id{A}) \rightarrow (X,u,p)$. \qed
+\end{proof}
+
 \section{Functors}
 
 \begin{df}[Functor]
@@ -654,7 +671,21 @@ such that:
 \end{itemize}
 \end{df}
 
-Define the identity functor, constant functors.
+\begin{df}[Identity Functor]
+For any category $\mathcal{C}$, the \emph{identity} functor on $\mathcal{C}$ is the functor $I_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ defined by
+\begin{align*}
+I_\mathcal{C} A & := A & (A \in \mathcal{C}) \\
+I_\mathcal{C} f & := f & (f : A \rightarrow B \text{ in } \mathcal{C})
+\end{align*}
+\end{df}
+
+\begin{df}[Composition of Functors]
+Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$, the \emph{composite} functor $GF : \mathcal{C} \rightarrow \mathcal{E}$ is defined by
+\begin{align*}
+(GF)A & = G(FA) & (A \in \mathcal{C}) \\
+(GF)f & = G(Ff) & (f : A \rightarrow B : \mathcal{C})
+\end{align*}
+\end{df}
 
 Functors preserve isomorphisms.
 
@@ -681,6 +712,31 @@ G (u : B \rightarrow C) & = u : (B, !_B) \rightarrow (C, !_C)
 \begin{proof}
 	\pf\ Since $GF(B,f) = (B, !_B) = (B,f)$ because the morphism $A \rightarrow B$ is unique.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+If $A$ is terminal in $\mathcal{C}$ then $\mathcal{C} / A \cong \mathcal{C}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual. \qed
+\end{proof}
+
+\begin{prop}
+\[ \mathcal{C}_A^A \cong (\mathcal{C} / A) \backslash (A, \id{A}) \cong (\mathcal{C} \backslash A) / (A, \id{A}) \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define a functor $F : \mathcal{C}_A^A \rightarrow (\mathcal{C} / A) \backslash (A, \id{A})$.}
+\begin{proof}
+	\step{a}{Given $A \stackrel{u}{\rightarrow} X \stackrel{p}{\rightarrow} A$ in $\mathcal{C}_A^A$, let $F(X,u,p) = ((X,p),u)$}
+	\step{b}{Given $f : (A \stackrel{u}{\rightarrow} X \stackrel{p}{\rightarrow} A) \rightarrow (A \stackrel{v}{\rightarrow} Y \stackrel{q}{\rightarrow} A)$, let $Ff = f$.}
+\end{proof}
+\step{2}{Define a functor $G : (\mathcal{C} / A) \backslash (A, \id{A}) \rightarrow \mathcal{C}_A^A$.}
+\step{3}{Define a functor $H : \mathcal{C}_A^A \rightarrow (\mathcal{C} \backslash A) / (A, \id{A})$.}
+\step{4}{Define a functor $K : (\mathcal{C} \backslash A) / (A, \id{A}) \rightarrow \mathcal{C}_A^A$.}
 \qed
 \end{proof}
 
