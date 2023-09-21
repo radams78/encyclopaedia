@@ -679,12 +679,33 @@ I_\mathcal{C} f & := f & (f : A \rightarrow B \text{ in } \mathcal{C})
 \end{align*}
 \end{df}
 
+\begin{prop}
+Let $F : \mathcal{C} \rightarrow \mathcal{D}$. If $r : A \rightarrow B$ is a retraction of $s : B \rightarrow A$ in $\mathcal{C}$ then $Fr$ is a retraction of $Fs$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+Fr \circ Fs & = F(r \circ s) \\
+& = F \id{B} \\
+& = \id{FB} & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+Let $F : \mathcal{C} \rightarrow \mathcal{D}$. If $\phi : A \cong B$ is an isomorphism in $\mathcal{C}$ then $F \phi : FA \cong FB$ is an isomorphism in $\mathcal{D}$ with $\inv{(F \phi)} = F \inv{\phi}$.
+\end{cor}
+
 \begin{df}[Composition of Functors]
 Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$, the \emph{composite} functor $GF : \mathcal{C} \rightarrow \mathcal{E}$ is defined by
 \begin{align*}
 (GF)A & = G(FA) & (A \in \mathcal{C}) \\
 (GF)f & = G(Ff) & (f : A \rightarrow B : \mathcal{C})
 \end{align*}
+\end{df}
+
+\begin{df}[Category of Categories]
+Let $\mathbf{Cat}$ be the category of small categories and functors.
 \end{df}
 
 Functors preserve isomorphisms.
