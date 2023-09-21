@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 SEP 2023 07:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 SEP 2023 07:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -801,12 +801,18 @@ Chapter 11.
 [41
 
 ] [42] [43] [44] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4D5C4E1DAE427F0738E7BAA9CB8CC786;8940.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 4D5C4E1DAE427F0738E7BAA9CB8CC786;8940
+(rerunfilecheck)             After:  98FD0FAB57B55165A17B6A7DADCDA49D;9066.
  ) 
 Here is how much of TeX's memory you used:
- 12710 strings out of 476091
- 181114 string characters out of 5794081
+ 12712 strings out of 476091
+ 181138 string characters out of 5794081
  1865330 words of memory out of 5000000
  32556 multiletter control sequences out of 15000+600000
  531044 words of font info for 100 fonts, out of 8000000 for 9000
@@ -835,10 +841,10 @@ lic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (44 pages, 353871 bytes).
+Output written on main.pdf (44 pages, 354389 bytes).
 PDF statistics:
- 970 PDF objects out of 1000 (max. 8388607)
- 869 compressed objects within 9 object streams
- 350 named destinations out of 1000 (max. 500000)
+ 972 PDF objects out of 1000 (max. 8388607)
+ 871 compressed objects within 9 object streams
+ 352 named destinations out of 1000 (max. 500000)
  545 words of extra memory for PDF output out of 10000 (max. 10000000)
 
