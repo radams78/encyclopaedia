@@ -783,6 +783,23 @@ U f & = f
 \end{align*}
 \end{df}
 
+\section{Natural Transformations}
+
+\begin{df}[Natural Transformation]
+Let $F,G : \mathcal{C} \rightarrow \mathcal{D}$. A \emph{natural transformation} $\tau : F \Rightarrow G$ is a family of morphisms $\{ \tau_X : F X \rightarrow G X \}_{X \in \mathcal{C}}$ such that, for every morphism $f : X \rightarrow Y : \mathcal{C}$, we have $Gf \circ \tau_X = \tau_Y \circ Ff$.
+\end{df}
+
+\[ \xymatrix{
+FX \ar[r]^{Ff} \ar[d]_{\tau_X} & FY \ar[d]^{\tau_Y} \\
+GX \ar[r]_{Gf} & GY
+} \]
+
+\begin{df}[Natural Isomorphism]
+A natural transformation $\tau : F \Rightarrow G : \mathcal{C} \rightarrow \mathcal{D}$ is a \emph{natural isomorphism}, $\tau : F \cong G$, iff for all $X \in \mathcal{C}$, $\tau_X$ is an isomorphism $F X \cong G X$.
+
+Functors $F$ and $G$ are \emph{naturally isomorphic}, $F \cong G$, iff there exists a natural isomorphism between them.
+\end{df}
+
 \section{Bifunctors}
 
 \begin{df}[Commutative]
