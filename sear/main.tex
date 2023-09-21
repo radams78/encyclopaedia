@@ -708,9 +708,11 @@ Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \r
 Let $\mathbf{Cat}$ be the category of small categories and functors.
 \end{df}
 
-Functors preserve isomorphisms.
+\begin{df}[Isomorphism of Categories]
+Let $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor. Then $F$ is an \emph{isomorphism of categories} iff there exists a functor $\inv{F} : \mathcal{D} \rightarrow \mathcal{C}$, the \emph{inverse} of $F$, such that $F \inv{F} = I_{\mathcal{D}}$ and $\inv{F} F = I_{\mathcal{C}}$.
 
-Isomorphism of categories.
+Categories $\mathcal{C}$ and $\mathcal{D}$ are \emph{isomorphic}, $\mathcal{C} \cong \mathcal{D}$, iff there exists an isomorphism between them.
+\end{df}
 
 \begin{prop}
 If $A$ is initial in $\mathcal{C}$ then $\mathcal{C} \backslash A \cong \mathcal{C}$.
@@ -772,6 +774,14 @@ Product
 Coproduct
 
 Adjunction
+
+\begin{df}[Forgetful Functor]
+For any concrete category $\mathcal{C}$, define the \emph{forgetful} functor $U : \mathcal{C} \rightarrow \Set$ by:
+\begin{align*}
+U A & = |A| \\
+U f & = f
+\end{align*}
+\end{df}
 
 \section{Bifunctors}
 
