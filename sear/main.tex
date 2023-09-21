@@ -38,6 +38,7 @@
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\Ob}[1]{\ensuremath{\mathrm{Ob} \left( {#1} \right)}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
+\newcommand{\op}[1]{\ensuremath{{#1}^{\mathrm{op}}}}
 
 \begin{document}
 
@@ -431,6 +432,104 @@ Let $\mathcal{C}$ be a category and $B \in \mathcal{C}$. The category $\mathcal{
 
 $(B, \id{B}, \id{B})$ is the zero object in $\mathcal{C}_B^B$.
 
+\subsection{Initial Objects}
+
+\begin{df}[Initial Object]
+An object $I$ is \emph{initial} iff, for any object $X$, there exists exactly one morphism $I \rightarrow X$.
+\end{df}
+
+\subsection{Terminal Objects}
+
+\begin{df}[Terminal Object]
+An object $T$ is \emph{terminal} iff, for any object $X$, there exists exactly one morphism $X \rightarrow T$.
+\end{df}
+
+\subsection{Opposite Category}
+
+\begin{df}[Opposite Category]
+For any category $\mathcal{C}$, the \emph{opposite} category $\op{\mathcal{C}}$ is the category with
+\begin{itemize}
+\item $\Ob{\op{\mathcal{C}}} = \Ob{\mathcal{C}}$
+\item $\op{\mathcal{C}}[A,B] = \mathcal{C}[B,A]$
+\item Given $f \in \op{\mathcal{C}}[A,B]$ and $g \in \op{\mathcal{C}}[B,C]$, their composite in $\op{\mathcal{C}}$ is $f \circ g$, where $\circ$ is composition in $\mathcal{C}$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+An object is initial in $\mathcal{C}$ iff it is terminal in $\op{\mathcal{C}}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+An object is terminal in $\mathcal{C}$ iff it is initial in $\op{\mathcal{C}}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\subsection{Subcategories}
+
+\begin{df}[Subcategory]
+A \emph{subcategory} $\mathcal{C}'$ of a category $\mathcal{C}$ consists of:
+\begin{itemize}
+\item a subset $\Ob{\mathcal{C}'}$ of $\mathcal{C}$
+\item for all $A,B \in \Ob{\mathcal{C}'}$, a subset $\mathcal{C}'[A,B] \subseteq \mathcal{C}[A,B]$
+\end{itemize}
+such that:
+\begin{itemize}
+\item for all $A \in \Ob{\mathcal{C}'}$, we have $\id{A} \in \mathcal{C}'[A,A]$
+\item for all $f \in \mathcal{C}'[A,B]$ and $g \in \mathcal{C}'[B,C]$, we have $g \circ f \in \mathcal{C}'[A,C]$.
+\end{itemize}
+
+It is a \emph{full} subcategory iff, for all $A,B \in \Ob{\mathcal{C}'}$, we have $\mathcal{C}'[A,B] = \mathcal{C}[A,B]$.
+\end{df}
+
+\subsection{Groupoids}
+
+\begin{df}[Groupoid]
+A \emph{groupoid} is a category in which every morphism is an isomorphism.
+\end{df}
+
+\subsection{Concrete Categories}
+
+\begin{df}[Concrete Category]
+A \emph{concrete category} $\mathcal{C}$ consists of:
+\begin{itemize}
+\item a set $\Ob{\mathcal{C}}$ of \emph{objects}
+\item for any object $A \in \Ob{\mathcal{C}}$, a set $|A|$
+\item for any objects $A,B \in \Ob{\mathcal{C}}$, a set of functions $\mathcal{C}[A,B] \subseteq |B|^{|A|}$
+\end{itemize}
+such that:
+\begin{itemize}
+\item for any $f \in \mathcal{C}[A,B]$ and $g \in \mathcal{C}[B,C]$, we have $g \circ f \in \mathcal{C}[A,C]$
+\item for any object $A$ we have $\id{|A|} \in \mathcal{C}[A,A]$.
+\end{itemize}
+\end{df}
+
+\subsection{Power of Categories}
+
+\begin{df}
+Let $\mathcal{C}$ be a category and $J$ a set. The category $\mathcal{C}^J$ is the category with:
+\begin{itemize}
+\item objects all $J$-indexed families of objects of $\mathcal{C}$
+\item morphisms $\{X_j\}_{j \in J} \rightarrow \{Y_j\}_{j \in J}$ all families $\{f_j\}_{j \in J}$ where $f_j : X_j \rightarrow Y_j$
+\end{itemize}
+\end{df}
+
+\subsection{Arrow Category}
+
+\begin{df}[Arrow Category]
+Let $\mathcal{C}$ be a category. The \emph{arrow category} $\mathcal{C}^\rightarrow$ is the category with:
+\begin{itemize}
+\item objects all triples $(A,B,f)$ where $f : A \rightarrow B$ in $\mathcal{C}$
+\item morphisms $(A,B,f) \rightarrow (C,D,g)$ all pairs $(u : A \rightarrow C, v : B \rightarrow D)$ such that $vf=gu$.
+\end{itemize}
+\end{df}
+
 \section{Functors}
 
 \begin{df}[Functor]
@@ -476,6 +575,16 @@ A bifunctor $\Box$ is \emph{associative} iff $\Box \circ (\Box \times \id{}) \co
 
 Product and coproduct are commutative and associative.
 
+\chapter{Monoid Theory}
+
+\begin{df}[Monoid]
+A \emph{monoid} is a category with one object.
+\end{df}
+
+\begin{df}
+Let $\mathcal{C}$ be a category and $X \in \mathcal{C}$. The monoid $\mathrm{End}_\mathcal{C}(X)$ is the set of all morphisms $X \rightarrow X$ under composition.
+\end{df}
+
 \chapter{Group Theory}
 
 \begin{df}
@@ -496,10 +605,20 @@ The trivial group is a zero object in $\mathbf{Grp}$.
 
 The zero morphism $G \rightarrow H$ maps every element in $G$ to $e$.
 
+\begin{df}
+Let $\mathcal{C}$ be a category and $X \in \mathcal{C}$. We write $\mathrm{Aut}_\mathcal{C}(X)$ for the set of all isomorphisms $X \cong X$ under composition.
+\end{df}
+
+\chapter{Ring Theory}
+
+\begin{df}
+Let $\mathbf{Ring}$ be the concrete category of rings and ring homomorphisms.
+\end{df}
+
 \chapter{Linear Algebra}
 
 \begin{df}
-For any field $K$, let $\mathbf{Vect}_K$ be the category of small vector spaces over $K$ and linear transformations.
+For any field $K$, let $\mathbf{Vect}_K$ be the concrete category of small vector spaces over $K$ and linear transformations.
 \end{df}
 
 Dual space functor $\mathbf{Vect}_K^{\mathrm{op}} \rightarrow \mathbf{Vect}_K$.
