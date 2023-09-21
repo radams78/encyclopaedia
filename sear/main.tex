@@ -783,6 +783,14 @@ U f & = f
 \end{align*}
 \end{df}
 
+\begin{df}[Switching Functor]
+For any category $\mathcal{C}$, define the \emph{switching functor} $T : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C} \times \mathcal{C}$ by
+\begin{align*}
+T(A,B) & = (B,A) \\
+T(f,g) & = (g,f)
+\end{align*}
+\end{df}
+
 \section{Natural Transformations}
 
 \begin{df}[Natural Transformation]
@@ -798,6 +806,10 @@ GX \ar[r]_{Gf} & GY
 A natural transformation $\tau : F \Rightarrow G : \mathcal{C} \rightarrow \mathcal{D}$ is a \emph{natural isomorphism}, $\tau : F \cong G$, iff for all $X \in \mathcal{C}$, $\tau_X$ is an isomorphism $F X \cong G X$.
 
 Functors $F$ and $G$ are \emph{naturally isomorphic}, $F \cong G$, iff there exists a natural isomorphism between them.
+\end{df}
+
+\begin{df}[Inverse]
+Let $\tau : F \cong G$. The \emph{inverse} natural isomorphism $\inv{\tau} : G \cong F$ is defined by $(\inv{\tau})_X = \inv{\tau_X}$.
 \end{df}
 
 \section{Bifunctors}
