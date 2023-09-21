@@ -795,6 +795,14 @@ A \emph{monoid} is a category with one object.
 Let $\mathcal{C}$ be a category and $X \in \mathcal{C}$. The monoid $\mathrm{End}_\mathcal{C}(X)$ is the set of all morphisms $X \rightarrow X$ under composition.
 \end{df}
 
+\begin{prop}
+For any functor $F : \mathcal{C} \rightarrow \mathcal{D}$ and $X \in \mathcal{C}$, we have that $F : \mathrm{End}_\mathcal{C}(X) \rightarrow \mathrm{End}_\mathcal{D}(FX)$ is a monoid homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $F \id{X} = \id{FX}$ and $F(g \circ f) = Fg \circ Ff$. \qed
+\end{proof}
+
 \chapter{Group Theory}
 
 \begin{df}
@@ -818,6 +826,14 @@ The zero morphism $G \rightarrow H$ maps every element in $G$ to $e$.
 \begin{df}
 Let $\mathcal{C}$ be a category and $X \in \mathcal{C}$. We write $\mathrm{Aut}_\mathcal{C}(X)$ for the set of all isomorphisms $X \cong X$ under composition.
 \end{df}
+
+\begin{prop}
+Let $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor and $X \in \mathcal{C}$. Then $F : \mathrm{Aut}_\mathcal{C}(X) \rightarrow \mathrm{Aut}_\mathcal{D}(FX)$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $F \id{X} = \id{FX}$, $F(g \circ f) = Fg \circ Ff$, and $F \inv{f} = \inv{(Ff)}$. \qed
+\end{proof}
 
 \chapter{Ring Theory}
 
