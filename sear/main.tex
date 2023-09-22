@@ -484,7 +484,106 @@ W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
 Y \ar[r]_\beta & M
 } \]
 is a \emph{pullback} iff, for every object $Z$ and morphism $f : Z \rightarrow X$ and $g : Z \rightarrow Y$ such that $\alpha f = \beta g$, there exists a unique $h : Z \rightarrow W$ such that $\xi h = f$ and $\eta h = g$.
+
+In this case we also say that $\eta$ is the \emph{pullback} of $\beta$ along $\alpha$.
 \end{df}
+
+\begin{prop}
+\label{prop:pullback_iso}
+The pullback of an isomorphism is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+be a pullback diagram.}}
+\step{2}{\assume{$\beta$ is an isomorphism.}}
+\step{3}{\pflet{$\inv{\xi}$ be the unique morphism $X \rightarrow W$ such that $\xi \inv{\xi} = \id{X}$ and $\eta \inv{\xi} = \inv{\beta} \alpha$.}}
+\begin{proof}
+	\pf\ This exists since $\alpha \id{X} = \beta \inv{\beta} \alpha = \alpha$.
+\end{proof}
+\step{4}{$\inv{\xi} \xi = \id{W}$}
+\begin{proof}
+	\pf\ Each is the unique $x : W \rightarrow W$ such that $\xi x = \xi$ and $\eta x = \eta$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:pullback_slice_under}
+Let $\beta : (Y,y) \rightarrow (M,m)$ and $\alpha : (X,x) \rightarrow (M,m)$ in $\mathcal{C} \backslash A$. Let
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+be a pullback in $\mathcal{C}$. Let $w : A \rightarrow W$ be the unique morphism such that $\xi w = x$ and $\eta w = y$. Then $\xi : (W,w) \rightarrow (X,x)$ and $\eta : (W,w) \rightarrow (Y,y)$ is the pullback of $\beta$ and $\alpha$ in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(Z,z) \in \mathcal{C} \backslash A$}}
+\step{2}{\pflet{$f : (Z,z) \rightarrow (X,x)$ and $g : (Z,z) \rightarrow (Y,y)$ satisfy $\alpha f = \beta g$.}}
+\step{3}{\pflet{$h : Z \rightarrow W$ be the unique morphism such that $\xi h = f$ and $\eta h = g$.}}
+\step{4}{$hz=w$}
+\begin{proof}
+	\step{a}{$\xi h z = \xi w$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\xi h z & = f z & (\text{\stepref{3}}) \\
+			& = x & (\text{\stepref{2}}) \\
+			& = \xi w
+		\end{align*}
+	\end{proof}
+	\step{b}{$\eta h z = \eta w$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{4}{$h : (Z,z) \rightarrow (W,w)$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:pullback_slice_over}
+Let $\beta : (Y,y) \rightarrow (M,m)$ and $\alpha : (X,x) \rightarrow (M,m)$ in $\mathcal{C} / A$. Let
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+be a pullback in $\mathcal{C}$. Let $w = x\xi : W \rightarrow A$. Then $\xi : (W,w) \rightarrow (X,x)$ and $\eta : (W,w) \rightarrow (Y,y)$ form a pullback of $\alpha$ and $\beta$ in $\mathcal{C} / A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\eta : (W,w) \rightarrow (Y,y)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y \eta & = m \beta \eta \\
+		& = m \alpha \xi \\
+		& = x \xi \\
+		& = w
+	\end{align*}
+\end{proof}
+\step{2}{\pflet{$(Z,z) \in \mathcal{C} / A$}}
+\step{3}{\pflet{$f : (Z,z) \rightarrow (X,x)$ and $g : (Z,z) \rightarrow (Y,y)$ satisfy $\alpha f = \beta g$.}}
+\step{4}{\pflet{$h : Z \rightarrow W$ be the unique morphism such that $\xi h = f$ and $\eta h = g$.}}
+\step{5}{$h : (Z,z) \rightarrow (W,w)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		w h & = x \xi h \\
+		& = xf & (\text{\stepref{4}}) \\
+		& = z & (\text{\stepref{3}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Pushouts}
 
@@ -495,6 +594,8 @@ W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
 Y \ar[r]_\beta & M
 } \]
 is a \emph{pushout} iff, for every object $Z$ and morphism $f : X \rightarrow Z$ and $g : Y \rightarrow Z$ such that $f \xi = g \eta$, there exists a unique $h : M \rightarrow Z$ such that $h \alpha = f$ and $h \beta = g$.
+
+We also say that $\beta$ is the \emph{pushout} of $\xi$ along $\eta$.
 \end{df}
 
 \begin{prop}
@@ -503,6 +604,40 @@ The diagram above is a pushout in $\mathcal{C}$ iff it is a pullback in $\mathca
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+The pushout of an isomorphism is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:pullback_iso}. \qed
+\end{proof}
+
+\begin{prop}
+Let $\xi : (W,w) \rightarrow (X,x)$ and $\eta : (W,w) \rightarrow (Y,y)$ in $\mathcal{C} \backslash A$. Let
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+be a pushout in $\mathcal{C}$. Let $m : = \alpha x : A \rightarrow M$. Then $\alpha : (X,x) \rightarrow (M,m)$ and $\beta : (Y,y) \rightarrow (M,m)$ is the pushout of $\xi$ and $\eta$ in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:pullback_slice_over}. \qed
+\end{proof}
+
+\begin{prop}
+Let $\xi : (W,w) \rightarrow (X,x)$ and $\eta : (W,w) \rightarrow (Y,y)$ in $\mathcal{C} / A$. Let
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+be a pushout in $\mathcal{C}$. Let $m : M \rightarrow A$ be the unique morphism such that $m \alpha = x$ and $m \beta = y$. Then $\alpha : (X,x) \rightarrow (M,m)$ and $\beta : (Y,y) \rightarrow (M,m)$ is the pushout of $\xi$ and $\eta$ in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:pullback_slice_under}. \qed
 \end{proof}
 
 \subsection{Subcategories}
