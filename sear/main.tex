@@ -463,6 +463,48 @@ There is no zero object in $\Set$.
 \pf\ Since $\emptyset \not\approx 1$. \qed
 \end{proof}
 
+\subsection{Triads}
+
+\begin{df}[Triad]
+Let $\mathcal{C}$ be a category. A \emph{triad} consists of objects $X$, $Y$, $M$ and morphisms $\alpha : X \rightarrow M$, $\beta : Y \rightarrow M$. We call $M$ the \emph{codomain} of the triad.
+\end{df}
+
+\subsection{Cotriads}
+
+\begin{df}[Cotriad]
+Let $\mathcal{C}$ be a category. A \emph{cotriad} consists of objects $X$, $Y$, $W$ and morphisms $\xi : W \rightarrow X$, $\eta : W \rightarrow Y$. We call $W$ the \emph{domain} of the triad.
+\end{df}
+
+\subsection{Pullbacks}
+
+\begin{df}[Pullback]
+A diagram
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+is a \emph{pullback} iff, for every object $Z$ and morphism $f : Z \rightarrow X$ and $g : Z \rightarrow Y$ such that $\alpha f = \beta g$, there exists a unique $h : Z \rightarrow W$ such that $\xi h = f$ and $\eta h = g$.
+\end{df}
+
+\subsection{Pushouts}
+
+\begin{df}[Pushout]
+A diagram
+\[ \xymatrix{
+W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
+Y \ar[r]_\beta & M
+} \]
+is a \emph{pushout} iff, for every object $Z$ and morphism $f : X \rightarrow Z$ and $g : Y \rightarrow Z$ such that $f \xi = g \eta$, there exists a unique $h : M \rightarrow Z$ such that $h \alpha = f$ and $h \beta = g$.
+\end{df}
+
+\begin{prop}
+The diagram above is a pushout in $\mathcal{C}$ iff it is a pullback in $\mathcal{C}^\mathrm{op}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
 \subsection{Subcategories}
 
 \begin{df}[Subcategory]
