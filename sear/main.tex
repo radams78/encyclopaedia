@@ -489,6 +489,25 @@ In this case we also say that $\eta$ is the \emph{pullback} of $\beta$ along $\a
 \end{df}
 
 \begin{prop}
+If $\xi : W \rightarrow X$ and $\eta : W \rightarrow Y$ form a pullback of $\alpha : X \rightarrow M$ and $\beta : Y \rightarrow M$, and $\xi' : W' \rightarrow X$ and $\eta' : W' \rightarrow Y$ also form the pullback of $\alpha$ and $\beta$, then there exists a unique isomorphism $\phi : W \cong W'$ such that $\eta' \phi = \eta$ and $\xi' \phi = \xi$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : W \rightarrow W'$ be the unique morphism such that $\eta' \phi = \eta$ and $\xi' \phi = \xi$.}}
+\step{2}{\pflet{$\inv{\phi} : W' \rightarrow W$ be the unique morphism such that $\eta \inv{\phi} = \eta'$ and $\xi \inv{\phi} = \xi'$.}}
+\step{3}{$\phi \inv{\phi} = \id{W'}$}
+\begin{proof}
+	\pf\ Each is the unique $x : W' \rightarrow W'$ such that $\eta' x = \eta'$ and $\xi' x = \xi'$.
+\end{proof}
+\step{4}{$\inv{\phi} \phi = \id{W}$}
+\begin{proof}
+	\pf\ Each is the unique $x : W \rightarrow W$ such that $\eta x = \eta$ and $\xi x = \xi$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 \label{prop:pullback_iso}
 The pullback of an isomorphism is an isomorphism.
 \end{prop}
