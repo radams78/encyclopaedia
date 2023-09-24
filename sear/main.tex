@@ -483,7 +483,7 @@ A diagram
 W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
 Y \ar[r]_\beta & M
 } \]
-is a \emph{pullback} iff, for every object $Z$ and morphism $f : Z \rightarrow X$ and $g : Z \rightarrow Y$ such that $\alpha f = \beta g$, there exists a unique $h : Z \rightarrow W$ such that $\xi h = f$ and $\eta h = g$.
+is a \emph{pullback} iff $\alpha \xi = \beta \eta$ and, for every object $Z$ and morphism $f : Z \rightarrow X$ and $g : Z \rightarrow Y$ such that $\alpha f = \beta g$, there exists a unique $h : Z \rightarrow W$ such that $\xi h = f$ and $\eta h = g$.
 
 In this case we also say that $\eta$ is the \emph{pullback} of $\beta$ along $\alpha$.
 \end{df}
@@ -505,6 +505,23 @@ If $\xi : W \rightarrow X$ and $\eta : W \rightarrow Y$ form a pullback of $\alp
 \begin{proof}
 	\pf\ Each is the unique $x : W \rightarrow W$ such that $\eta x = \eta$ and $\xi x = \xi$.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:pullback_id}
+For any morphism $h : A \rightarrow B$, the following diagram is a pullback diagram.
+\[ \xymatrix{
+A \ar[r]^h \ar@{=}[d] & B \ar@{=}[d] \\
+A \ar[r]_h & B
+} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$Z$ be an object.}}
+\step{2}{\pflet{$f : Z \rightarrow B$ and $g : Z \rightarrow A$ satisfy $\id{B} f = hg$}}
+\step{3}{$g : Z \rightarrow B$ is the unique morphism such that $\id{A} g = g$ and $hg = f$.}
 \qed
 \end{proof}
 
@@ -605,15 +622,35 @@ be a pullback in $\mathcal{C}$. Let $w = x\xi : W \rightarrow A$. Then $\xi : (W
 \qed
 \end{proof}
 
+\begin{prop}
+In $\Set$, let $\alpha : X \rightarrow M$ and $\beta : Y \rightarrow M$. Let $W = \{ (x,y) \in X \times Y : \alpha(x) = \beta(y) \}$ with inclusion $i : W \rightarrow X \times Y$. Let $\xi = \pi_1 i : W \rightarrow X$ and $\eta : \pi_2 i : W \rightarrow Y$. Then $\xi$ and $\eta$ form the pullback of $\alpha$ and $\beta$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha \xi = \beta \eta$}
+\begin{proof}
+	\pf\ For $w \in W$, if $i(w) = (x,y)$ then then $\alpha(\xi(w)) = \alpha(x) = \beta(y) = \beta(\eta(w))$.
+\end{proof}
+\step{2}{For every set $Z$ and functions $f : Z \rightarrow X$, $g : Z \rightarrow Y$ such that $\alpha f = \beta g$, there exists a unique $h : Z \rightarrow W$ such that $\xi h = f$ and $\eta h = g$}
+\begin{proof}
+	\pf\ For $z \in Z$, let $h(z)$ be the unique element of $W$ such that $i(h(z)) = (f(z),g(z))$.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Pushouts}
 
 \begin{df}[Pushout]
 A diagram
-\[ \xymatrix{
+\begin{equation}
+\label{eq:pushout}
+\xymatrix{
 W \ar[r]^\xi \ar[d]_\eta & X \ar[d]^\alpha \\
 Y \ar[r]_\beta & M
-} \]
-is a \emph{pushout} iff, for every object $Z$ and morphism $f : X \rightarrow Z$ and $g : Y \rightarrow Z$ such that $f \xi = g \eta$, there exists a unique $h : M \rightarrow Z$ such that $h \alpha = f$ and $h \beta = g$.
+}
+\end{equation}
+is a \emph{pushout} iff $\alpha \xi = \beta \eta$ and, for every object $Z$ and morphism $f : X \rightarrow Z$ and $g : Y \rightarrow Z$ such that $f \xi = g \eta$, there exists a unique $h : M \rightarrow Z$ such that $h \alpha = f$ and $h \beta = g$.
 
 We also say that $\beta$ is the \emph{pushout} of $\xi$ along $\eta$.
 \end{df}
@@ -627,7 +664,19 @@ If $\alpha : X \rightarrow M$ and $\beta : Y \rightarrow M$ form a pushout of $\
 \end{proof}
 
 \begin{prop}
-The diagram above is a pushout in $\mathcal{C}$ iff it is a pullback in $\mathcal{C}^\mathrm{op}$.
+For any morphism $h : A \rightarrow B$, the following diagram is a pushout diagram.
+\[ \xymatrix{
+A \ar[r]^h \ar@{=}[d] & B \ar@{=}[d] \\
+A \ar[r]_h & B
+} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:pullback_id}.
+\end{proof}
+
+\begin{prop}
+The diagram (\ref{eq:pushout}) is a pushout in $\mathcal{C}$ iff it is a pullback in $\mathcal{C}^\mathrm{op}$.
 \end{prop}
 
 \begin{proof}

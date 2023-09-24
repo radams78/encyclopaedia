@@ -21,16 +21,16 @@
 \contentsline {subsection}{\numberline {2.1.6}Triads}{16}{subsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.1.7}Cotriads}{16}{subsection.2.1.7}%
 \contentsline {subsection}{\numberline {2.1.8}Pullbacks}{16}{subsection.2.1.8}%
-\contentsline {subsection}{\numberline {2.1.9}Pushouts}{18}{subsection.2.1.9}%
-\contentsline {subsection}{\numberline {2.1.10}Subcategories}{19}{subsection.2.1.10}%
+\contentsline {subsection}{\numberline {2.1.9}Pushouts}{19}{subsection.2.1.9}%
+\contentsline {subsection}{\numberline {2.1.10}Subcategories}{20}{subsection.2.1.10}%
 \contentsline {subsection}{\numberline {2.1.11}Opposite Category}{20}{subsection.2.1.11}%
-\contentsline {subsection}{\numberline {2.1.12}Groupoids}{20}{subsection.2.1.12}%
-\contentsline {subsection}{\numberline {2.1.13}Concrete Categories}{20}{subsection.2.1.13}%
-\contentsline {subsection}{\numberline {2.1.14}Power of Categories}{20}{subsection.2.1.14}%
+\contentsline {subsection}{\numberline {2.1.12}Groupoids}{21}{subsection.2.1.12}%
+\contentsline {subsection}{\numberline {2.1.13}Concrete Categories}{21}{subsection.2.1.13}%
+\contentsline {subsection}{\numberline {2.1.14}Power of Categories}{21}{subsection.2.1.14}%
 \contentsline {subsection}{\numberline {2.1.15}Arrow Category}{21}{subsection.2.1.15}%
 \contentsline {subsection}{\numberline {2.1.16}Slice Category}{21}{subsection.2.1.16}%
-\contentsline {section}{\numberline {2.2}Functors}{22}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Natural Transformations}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Functors}{23}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Natural Transformations}{25}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Bifunctors}{25}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Monoid Theory}{27}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Group Theory}{29}{chapter.4}%
