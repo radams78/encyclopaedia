@@ -1015,6 +1015,23 @@ Y \ar[r] & X \vee_B Y
 } \]
 \end{df}
 
+\begin{df}[Fibre Smash]
+Let $X, Y \in \Set_B^B$. Let $\xi : X \vee_B Y \rightarrow X$ be the unique morphism such that the following diagram commutes.
+\[ \xymatrix{
+1 \ar[r] \ar[d] & X \ar[d] \ar@{=}@/^/[ddr] \\
+Y \ar[r] \ar@/_/[drr]_0 & X \vee_B Y \ar[dr]^\xi \\
+& & X
+} \]
+Let $\eta : X \vee_B Y \rightarrow Y$ be the unique morphism such that the following diagram commutes.
+\[ \xymatrix{
+1 \ar[r] \ar[d] & X \ar[d] \ar@/^/[ddr]^0 \\
+Y \ar[r] \ar@{=}@/_/[drr] & X \vee_B Y \ar[dr]^\eta \\
+& & Y
+} \]
+Let $\zeta = \langle \xi, \eta \rangle : X \vee_B Y \rightarrow X \times Y$. The \emph{fibre smash} of $X$ and $Y$, $X \wedge_B Y$, is the result of collapsing $X \times Y$ with respect to $\zeta$.
+\end{df}
+
+
 \section{Functors}
 
 \begin{df}[Functor]
@@ -1184,6 +1201,10 @@ For $(X, u : B \rightarrow X, p : X \rightarrow B) \in \Set_B^B$, let $\Phi_B^B(
 Extend $\vee_B$ to a functor $\Set_B^B \times \Set_B^B \rightarrow \Set_B^B$.
 \end{df}
 
+\begin{df}
+Extend $\wedge_B$ to a functor $\Set_B^B \times \Set_B^B \rightarrow \Set_B^B$.
+\end{df}
+
 \section{Natural Transformations}
 
 \begin{df}[Natural Transformation]
@@ -1231,6 +1252,10 @@ $\wedge : \Set_* \times \Set_* \rightarrow \Set_*$ is commutative.
 $\vee_B : \Set_B^B \times \Set_B^B \rightarrow \Set_B^B$ is commutative.
 \end{prop}
 
+\begin{prop}
+$\wedge_B : \Set_B^B \times \Set_B^B \rightarrow \Set_B^B$ is commutative.
+\end{prop}
+
 \begin{df}[Associative]
 A bifunctor $\Box$ is \emph{associative} iff $\Box \circ (\Box \times \id{}) \cong \Box \circ (\id{} \times \Box)$.
 \end{df}
@@ -1255,6 +1280,10 @@ Product and coproduct are commutative and associative.
 
 \begin{prop}
 $\vee_B : \Set_B^B \times \Set_B^B \rightarrow \Set_B^B$ is associative.
+\end{prop}
+
+\begin{prop}
+$\wedge_B : \Set_B^B \times \Set_B^B \rightarrow \Set_B^B$ is associative.
 \end{prop}
 
 \chapter{Monoid Theory}
