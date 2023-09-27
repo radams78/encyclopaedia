@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -639,6 +639,8 @@ In $\Set$, let $\alpha : X \rightarrow M$ and $\beta : Y \rightarrow M$. Let $W 
 \qed
 \end{proof}
 
+Pullback lemma
+
 \subsection{Pushouts}
 
 \begin{df}[Pushout]
@@ -804,6 +806,8 @@ Y \ar[r] \ar@{=}@/_/[drr] & X \vee Y \ar[dr]^\eta \\
 } \]
 Let $\zeta = \langle \xi, \eta \rangle : X \vee Y \rightarrow X \times Y$. The \emph{smash} of $X$ and $Y$, $X \wedge Y$, is the result of collapsing $X \times Y$ with respect to $\zeta$.
 \end{df}
+
+Pushout lemma
 
 \subsection{Subcategories}
 
@@ -1031,6 +1035,13 @@ Y \ar[r] \ar@{=}@/_/[drr] & X \vee_B Y \ar[dr]^\eta \\
 Let $\zeta = \langle \xi, \eta \rangle : X \vee_B Y \rightarrow X \times Y$. The \emph{fibre smash} of $X$ and $Y$, $X \wedge_B Y$, is the result of collapsing $X \times Y$ with respect to $\zeta$.
 \end{df}
 
+\begin{prop}
+A product in $\mathcal{C}$ constitutes a product in $\mathcal{C} \backslash A$.
+\end{prop}
+
+\begin{prop}
+A coproduct in $\mathcal{C}$ constitutes a product in $\mathcal{C} / A$.
+\end{prop}
 
 \section{Functors}
 
@@ -1286,6 +1297,32 @@ $\vee_B : \Set_B^B \times \Set_B^B \rightarrow \Set_B^B$ is associative.
 $\wedge_B : \Set_B^B \times \Set_B^B \rightarrow \Set_B^B$ is associative.
 \end{prop}
 
+\begin{prop}
+Let $\mathcal{C}$ be a category with binary coproducts. Let $\Box : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ be a bifunctor. Then $\Box$ \emph{distributes} over $+$ iff the canonical morphism
+\[ (X \Box Z) + (Y \Box Z) \rightarrow (X + Y) \Box Z \]
+is an isomorphism for all $X$, $Y$, $Z$.
+\end{prop}
+
+\begin{prop}
+In a category with binary products and binary coproducts, then $\times$ distributes over $+$.
+\end{prop}
+
+\begin{prop}
+In $\Set / *$, we have $\times$ does not distribute over $\vee$.
+\end{prop}
+
+\begin{prop}
+In $\Set / *$, we have $\wedge$ distributes over $\vee$.
+\end{prop}
+
+\begin{prop}
+In $\Set/ B$, we have $\times_B$ distributes over $+_B$.
+\end{prop}
+
+\begin{prop}
+In $\Set / B^B$, we have $\wedge_B$ distributes over $\vee_B$.
+\end{prop}
+
 \chapter{Monoid Theory}
 
 \begin{df}[Monoid]
@@ -1364,6 +1401,22 @@ Let $X$ be a set and $\mathcal{O} \subseteq \mathcal{P} X$. Then we say $(X, \ma
 We call $\mathcal{O}$ the \emph{topology} of the toplogical space, and call its elements \emph{open} sets. We shall often write $X$ for the topological space $(X, \mathcal{O})$.
 \end{df}
 
+\begin{df}[Discrete Topology]
+For any set $X$, the power set $\mathcal{P} X$ is called the \emph{discrete} topology on $X$.
+\end{df}
+
+\begin{prop}
+For any set $X$, the discrete topology on $X$ is a topology on $X$.
+\end{prop}
+
+\begin{df}[Indiscrete Topology]
+For any set $X$, the \emph{indiscrete} or \emph{trivial} topology on $X$ is  $\{ \emptyset, X \}$.
+\end{df}
+
+\begin{prop}
+For any set $X$, the indiscrete topology on $X$ is a topology on $X$.
+\end{prop}
+
 \begin{df}[Closed Set]
 Let $X$ be a topological space and $A \subseteq X$. Then $A$ is \emph{closed} iff $X - A$ is open.
 \end{df}
@@ -1441,6 +1494,10 @@ Let $X$ be a set and $\overline{\ } : \mathcal{P} X \rightarrow \mathcal{P} X$. 
 In this case, $\mathcal{O}$ is unique and is defined by $\mathcal{O} = \{ U : X - U = \overline{X - U} \}$.
 \end{prop}
 
+\begin{df}[Finer, Coarser]
+Let $\mathcal{T}$ and $\mathcal{T}'$ be topologies on the set $X$. Then $\mathcal{T}$ is \emph{coarser}, \emph{smaller} or \emph{weaker} than $\mathcal{T}'$, or $\mathcal{T}'$ is \emph{finer}, \emph{larger} or \emph{weaker} than $\mathcal{T}$, iff $\mathcal{T} \subseteq \mathcal{T}'$.
+\end{df}
+
 \subsection{Subspaces}
 
 \begin{df}[Subspace]
@@ -1466,8 +1523,17 @@ Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces. T
 \subsection{Bases}
 
 \begin{df}[Basis]
-Let $X$ be a topological space. A \emph{basis} for the topology on $X$ is a set of open sets $\mathcal{B}$ such that every open set is the union of a subset of $\mathcal{B}$.
+Let $X$ be a topological space. A \emph{basis} for the topology on $X$ is a set of open sets $\mathcal{B}$ such that every open set is the union of a subset of $\mathcal{B}$. The elements of $\mathcal{B}$ are called \emph{basic open neighbourhoods} of their elements.
 \end{df}
+
+\begin{prop}
+Let $X$ be a topological space and $\mathcal{B} \subseteq \mathcal{P} X$. Then $\mathcal{B}$ is a basis for a topology on $X$ if and only if:
+\begin{enumerate}
+\item $\bigcup \mathcal{B} = X$
+\item For all $A, B \in \mathcal{B}$ and $x \in A \cap B$, there exists $C \in \mathcal{B}$ such that $x \in C \subseteq A \cap B$.
+\end{enumerate}
+In this case, the topology is unique and is the set of all unions of subsets of $\mathcal{B}$. We call it the topology \emph{generated} by $\mathcal{B}$.
+\end{prop}
 
 \subsection{Subbases}
 
@@ -1841,8 +1907,13 @@ Let $X$ be a set and $d : X^2 \rightarrow \mathbb{R}$. We say $(X,d)$ is a \emph
 We call $d$ the \emph{metric} of the metric space $(X,d)$. We often write $X$ for the metric space $(X,d)$.
 \end{df}
 
-\begin{df}[Topology of a Metric Space]
-Let $(X,d)$ be a metric space. The topology \emph{induced} by the metric $d$ is defined by: for $V \subseteq X$, we have $V$ is open if and only if, for all $x \in V$, there exists $\epsilon > 0$ such that $\{ y \in X : d(x,y) < \epsilon \} \subseteq V$.
+\begin{df}[Ball]
+Let $X$ be a metric space. Let $x \in X$ and $r > 0$. The \emph{ball} with \emph{centre} $x$ and \emph{radius} $r$ is
+\[ B(x,r) = \{ y \in X \mid d(x,y) < r \} \enspace . \]
+\end{df}
+
+\begin{df}[Metric Topology]
+Let $(X,d)$ be a metric space. The \emph{metric topology} on $X$ is the topology generated by the basis consisting of the balls.
 \end{df}
 
 \begin{df}[Metrizable]
