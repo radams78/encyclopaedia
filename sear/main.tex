@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 % READ
 
 \documentclass{book}
@@ -199,6 +199,30 @@ A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \righ
 
 We say two subsets $(S,i)$ and $(T,j)$ are \emph{equal}, $(S,i) = (T,j)$, iff there exists a bijection $\phi : S \approx T$ such that $j \circ \phi = i$.
 \end{df}
+
+\begin{prop}
+For any subset $(S,i)$ of $A$ we have $(S,i) = (S,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $\id{S} : S \approx S$ and $i \circ \id{S} = i$.
+\end{proof}
+
+\begin{prop}
+If $(S,i) = (T,j)$ then $(T,j) = (S,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : S \approx T$ and $j \circ \phi = i$ then $\inv{\phi} : T \approx S$ and $i \circ \inv{\phi} = j$. \qed
+\end{proof}
+
+\begin{prop}
+If $(R,i) = (S,j)$ and $(S,j) = (T,k)$ then $(R,i) = (T,k)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : R \approx S$ and $j \circ \phi = i$, and $\psi : S \approx T$ and $k \circ \psi = j$, then $\psi \circ \phi : R \approx T$ and $k \circ \psi \circ \phi = i$. \qed
+\end{proof}
 
 \begin{df}[Membership]
 Given $(S,i) : \mathrm{Sub}(A)$ and $a : \El{A}$, we write $a \in S$ for $\exists s : \El{S}. i(s) = a$.
