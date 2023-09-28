@@ -429,6 +429,22 @@ r & = r \id{B} & (\text{Unit Law}) \\
 \end{align*}
 \end{proof}
 
+\begin{prop}
+Every section is monic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$s : B \rightarrow A$ be a section of $r : A \rightarrow B$.}}
+\step{2}{\pflet{$X$ be an object and $x,y : X \rightarrow B$}}
+\step{3}{\assume{$s \circ x = s \circ y$}}
+\step{4}{$x = y$}
+\begin{proof}
+	\pf\ $x = r \circ s \circ x = r \circ s \circ y = y$.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Isomorphisms}
 
 \begin{df}[Isomorphism]

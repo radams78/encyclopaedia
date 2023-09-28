@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {2.1.3}Isomorphisms}{14}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Initial Objects}{15}{subsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.1.5}Terminal Objects}{15}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Zero Objects}{15}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.6}Zero Objects}{16}{subsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.1.7}Triads}{16}{subsection.2.1.7}%
 \contentsline {subsection}{\numberline {2.1.8}Cotriads}{16}{subsection.2.1.8}%
 \contentsline {subsection}{\numberline {2.1.9}Pullbacks}{16}{subsection.2.1.9}%
