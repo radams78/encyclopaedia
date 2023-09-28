@@ -1,10 +1,10 @@
-% CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
+% CHECK
 
 \documentclass{book}
 
@@ -22,7 +22,7 @@
 \usepackage{mathabx}
 \usepackage[all]{xy}
 
-\newtheorem{ax}{Axiom}[chapter]
+\newtheorem{ax}{Axiom}[section]
 \newtheorem{axs}[ax]{Axiom Schema}
 \newtheorem{prop}[ax]{Proposition}
 \newtheorem{cor}{Corollary}[ax]
@@ -192,7 +192,7 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
 
-\subsection{Subsets}
+\subsection{Subsets} % CHECKED
 
 \begin{df}[Subset]
 A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) : \mathrm{Sub}(A)$.
@@ -225,8 +225,16 @@ If $(R,i) = (S,j)$ and $(S,j) = (T,k)$ then $(R,i) = (T,k)$.
 \end{proof}
 
 \begin{df}[Membership]
-Given $(S,i) : \mathrm{Sub}(A)$ and $a : \El{A}$, we write $a \in S$ for $\exists s : \El{S}. i(s) = a$.
+Given $(S,i) : \mathrm{Sub}(A)$ and $a \in A$, we write $a \in (S,i)$ for $\exists s : \El{S}. i(s) = a$.
 \end{df}
+
+\begin{prop}
+If $a \in (S,i)$ and $(S,i) = (T,j)$ then $a \in (T,j)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $i(s) = a$ then $j(\phi(s)) = a$. \qed
+\end{proof}
 
 \section{Composition}
 
@@ -1379,6 +1387,100 @@ In $\Set/ B$, we have $\times_B$ distributes over $+_B$.
 \begin{prop}
 In $\Set / B^B$, we have $\wedge_B$ distributes over $\vee_B$.
 \end{prop}
+
+\section{Functor Categories}
+
+\begin{df}[Functor Category]
+Given categories $\mathcal{C}$ and $\mathcal{D}$, define the \emph{functor category} $\mathcal{C}^\mathcal{D}$ to be the category with objects the functors from $\mathcal{D}$ to $\mathcal{C}$ and morphisms the natural transformations.
+\end{df}
+
+\begin{df}[Yoneda Embedding]
+Let $\mathcal{C}$ be a category. The \emph{Yoneda embedding} $Y : \mathcal{C} \rightarrow \Set^{\op{\mathcal{C}}}$ is the functor that maps an object $A$ to $\mathcal{C}[-,A]$ and morphisms similarly.
+\end{df}
+
+\begin{thm}[Yoneda Lemma]
+Let $\mathcal{C}$ be a category. There exists a natural isomorphism
+\[ \phi_{XF} : \Set^{\op{\mathcal{C}}}[\mathcal{C}[-,X],F] \cong FX \]
+that maps $\tau : \mathcal{C}[-,X] \Rightarrow F$ to $\tau_X(\id{X})$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\phi$ is natural in $X$.}
+\begin{proof}
+	\pf
+	\step{a}{\pflet{$f : X \rightarrow Y : \mathcal{C}$}}
+	\step{b}{\pflet{$\tau : \mathcal{C}[-,X] \Rightarrow F$}}
+	\step{c}{$Ff(\phi(\tau)) = \phi(\tau \circ \mathcal{C}[-,f])$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\phi(\tau \circ \mathcal{C}[-,f])
+			& = \tau_Y(\id{Y} \circ f) \\
+			& = \tau_Y(f) \\
+			& = \tau_Y(f \circ \id{X}) \\
+			& = Ff(\tau_X(\id{X})) & (\text{$\tau$ natural}) \\
+			& = Ff(\phi(\tau))
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{$\phi$ is natural in $F$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha : F \Rightarrow G : \op{\mathcal{C}} \rightarrow \Set$}}
+	\step{b}{\pflet{$\tau : \mathcal{C}[-,X] \Rightarrow F$}}
+	\step{c}{$\alpha_X(\phi(\tau)) = \phi(\alpha \bullet \tau)$}
+	\begin{proof}
+		\pf\ $\phi(\alpha \bullet \tau) = \alpha_X(\tau_X(\id{X})) = \alpha_X(\phi(\tau))$
+	\end{proof}
+\end{proof}
+\step{3}{Each $\phi_{XF}$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$\sigma, \tau : \mathcal{C}[-,X] \Rightarrow F$}}
+	\step{b}{\assume{$\phi(\sigma) = \phi(\tau)$}}
+	\step{c}{\pflet{$f : Y \rightarrow X$}}
+	\step{d}{$\sigma_Y(f) = \tau_Y(f)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\sigma_Y(f) & = \sigma_Y(\id{X} \circ f) \\
+			& = Ff(\sigma_X(\id{X})) & (\text{$\sigma$ is natural}) \\
+			& = Ff(\tau_X(\id{X})) & (\text{\stepref{b}}) \\
+			& = \tau_Y(\id{X} \circ f) & (\text{$\tau$ is natural}) \\
+			& = \tau_Y(f)
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{Each $\phi_{XF}$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$X \in \mathcal{C}$ and $F : \mathcal{C} \rightarrow \mathcal{D}$}}
+	\step{b}{\pflet{$a \in FX$}}
+	\step{c}{\pflet{$\tau : \mathcal{C}[-,X] \Rightarrow F$ be given by $\tau_Y(g) = Fg(a)$ for $g : Y \rightarrow X$}}
+	\step{d}{$\tau$ is natural.}
+	\begin{proof}
+		\step{i}{\pflet{$h : Y \rightarrow Z : \mathcal{C}$} \prove{$Fh \circ \tau_Z = \tau_Y \circ \mathcal{C}[h, \id{X}]$}}
+		\step{ii}{\pflet{$g : Z \rightarrow X$}}
+		\step{iii}{$Fh(\tau_Z(g)) = \tau_Y(g \circ h)$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				\tau_Y(g \circ h) & = F(g \circ h)(a) \\
+				& = Fh(Fg(a)) \\
+				& = Fh(\tau_Z(g))
+			\end{align*}
+		\end{proof}
+	\end{proof}
+	\step{e}{$\phi(\tau) = a$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\phi_X(\tau) & = \tau_X(\id{X}) \\
+			& = F \id{X}(a) \\
+			& = a
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Monoid Theory}
 
