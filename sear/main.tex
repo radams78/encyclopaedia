@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 
 \documentclass{book}
 
@@ -246,9 +246,46 @@ Let $\phi : A \looparrowright B$ and $\psi : B \looparrowright C$. The \emph{com
 For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
 \end{df}
 
+\begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is injective then, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is injective.}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$x,y : X \rightarrow A$}}
+	\step{d}{\assume{$f \circ x = f \circ y$}}
+	\step{e}{\pflet{$t \in X$} \prove{$x(t) = y(t)$}}
+	\step{f}{$f(x(t)) = f(y(t))$}
+	\step{g}{$x(t) = y(t)$}
+\end{proof}
+\step{2}{If, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$, then $f$ is injective.}
+\begin{proof}
+	\pf\ Take $X = 1$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{thm}
 Composition of relations is associative, and the identity function is an identity for composition. The composite of functions is a function. The composite of injective functions is injective. The composite of surjective functions is surjective. The composite of bijections is a bijection. A function $f : A \rightarrow B$ is a bijection iff there exists a function $\inv{f} : B \rightarrow A$ such that $\inv{f} f = \id{A}$ and $f \inv{f} = \id{B}$, in which case $\inv{f}$ is unique.
 \end{thm}
+
+\begin{prop}
+For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is injective then $f$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$g \circ f$ is injective.}}
+\step{2}{\pflet{$x,y \in A$}}
+\step{3}{\assume{$f(x) = f(y)$}}
+\step{4}{$g(f(x)) = g(f(y))$}
+\step{5}{$x = y$}
+\qed
+\end{proof}
 
 \section{Axioms Part Two}
 
