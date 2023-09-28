@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -192,61 +192,68 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
 
-\subsection{Subsets} % CHECKED
-
-\begin{df}[Subset]
-A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) : \mathrm{Sub}(A)$.
-
-We say two subsets $(S,i)$ and $(T,j)$ are \emph{equal}, $(S,i) = (T,j)$, iff there exists a bijection $\phi : S \approx T$ such that $j \circ \phi = i$.
-\end{df}
-
-\begin{prop}
-For any subset $(S,i)$ of $A$ we have $(S,i) = (S,i)$.
-\end{prop}
-
-\begin{proof}
-\pf\ We have $\id{S} : S \approx S$ and $i \circ \id{S} = i$.
-\end{proof}
-
-\begin{prop}
-If $(S,i) = (T,j)$ then $(T,j) = (S,i)$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $\phi : S \approx T$ and $j \circ \phi = i$ then $\inv{\phi} : T \approx S$ and $i \circ \inv{\phi} = j$. \qed
-\end{proof}
-
-\begin{prop}
-If $(R,i) = (S,j)$ and $(S,j) = (T,k)$ then $(R,i) = (T,k)$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $\phi : R \approx S$ and $j \circ \phi = i$, and $\psi : S \approx T$ and $k \circ \psi = j$, then $\psi \circ \phi : R \approx T$ and $k \circ \psi \circ \phi = i$. \qed
-\end{proof}
-
-\begin{df}[Membership]
-Given $(S,i) : \mathrm{Sub}(A)$ and $a \in A$, we write $a \in (S,i)$ for $\exists s : \El{S}. i(s) = a$.
-\end{df}
-
-\begin{prop}
-If $a \in (S,i)$ and $(S,i) = (T,j)$ then $a \in (T,j)$.
-\end{prop}
-
-\begin{proof}
-\pf\ If $i(s) = a$ then $j(\phi(s)) = a$. \qed
-\end{proof}
-
 \section{Composition}
 
 \begin{df}[Composite]
-Let $\phi : A \looparrowright B$ and $\psi : B \looparrowright C$. The \emph{composite} $\psi \circ \phi : A \looparrowright C$ is the relation such that $a (\psi \circ \phi) c$ iff there exists $b$ such that $a \phi b$ and $b \psi c$.
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
 \end{df}
+
+\begin{prop}
+Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
+\[ h \circ (g \circ f) = (h \circ g) \circ f \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the function that maps $a \in A$ to $h(g(f(a)))$. \qed
+\end{proof}
+
+\begin{prop}
+The composite of injective functions is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail C$ be injective.}}
+\step{2}{\pflet{$x,y \in A$ satisfy $(g \circ f)(x) = (g \circ f)(y)$}}
+\step{3}{$g(f(x)) = g(f(y))$}
+\step{4}{$f(x) = f(y)$}
+\step{5}{$x = y$}
+\qed
+\end{proof}
+
+\begin{prop}
+The composite of surjective functions is surjective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \twoheadrightarrow B$ and $g : B \twoheadrightarrow C$ be injective.}}
+\step{2}{\pflet{$c \in C$}}
+\step{3}{\pick\ $b \in B$ such that $g(b) = c$.}
+\step{4}{\pick\ $a \in A$ such that $f(a) = b$.}
+\step{5}{$(g \circ f)(a) = c$}
+\qed
+\end{proof}
+
+\begin{cor}
+The composite of bijections is a bijection.
+\end{cor}
 
 \begin{df}[Identity]
 For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
 \end{df}
 
 \begin{prop}
+Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the function that maps $a$ to $f(a)$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:injective}
 Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
 \end{prop}
 
@@ -269,10 +276,6 @@ Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for any set $X$
 \qed
 \end{proof}
 
-\begin{thm}
-Composition of relations is associative, and the identity function is an identity for composition. The composite of functions is a function. The composite of injective functions is injective. The composite of surjective functions is surjective. The composite of bijections is a bijection. A function $f : A \rightarrow B$ is a bijection iff there exists a function $\inv{f} : B \rightarrow A$ such that $\inv{f} f = \id{A}$ and $f \inv{f} = \id{B}$, in which case $\inv{f}$ is unique.
-\end{thm}
-
 \begin{prop}
 For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is injective then $f$ is injective.
 \end{prop}
@@ -288,6 +291,7 @@ For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is
 \end{proof}
 
 \begin{prop}
+\label{prop:surjective}
 Let $f : A \rightarrow B$. Then the following are equivalent.
 \begin{enumerate}
 \item $f$ is surjective.
@@ -355,6 +359,88 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjectiv
 \step{2}{There exists $a \in A$ such that $g(f(a)) = c$.}
 \step{3}{There exists $b \in B$ such that $g(b) = c$.}
 \qed
+\end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a function $\inv{f} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, in which case the inverse is unique.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is bijective then there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is bijective.}}
+	\step{b}{\pick\ $g : B \rightarrow A$ such that $f \circ g = \id{B}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:surjective}.
+	\end{proof}
+	\step{c}{$f \circ g \circ f = f$}
+	\step{d}{$g \circ f = \id{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:injective}.
+	\end{proof}
+\end{proof}
+\step{2}{If there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, then $f$ is bijective.}
+\begin{proof}
+	\step{a}{\pflet{$\inv{f} : B \rightarrow A$ satisfy $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$}}
+	\step{b}{$f$ is injective.}
+	\begin{proof}
+		\pf\ If $f(x) = f(y)$ then $x = \inv{f}(f(x)) = \inv{f}(f(y)) = y$.
+	\end{proof}
+	\step{c}{$f$ is surjective.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:surjective}.
+	\end{proof}
+\end{proof}
+\step{3}{If $g, h : B \rightarrow A$ satisfy $f \circ g = \id{B}$ and $g \circ f = \id{A}$ and $f \circ h = \id{B}$ and $h \circ f = \id{A}$ then $g = h$.}
+\begin{proof}
+	\pf\ We have $g = g \circ f \circ h = h$.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Subsets} % CHECKED
+
+\begin{df}[Subset]
+A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) : \mathrm{Sub}(A)$.
+
+We say two subsets $(S,i)$ and $(T,j)$ are \emph{equal}, $(S,i) = (T,j)$, iff there exists a bijection $\phi : S \approx T$ such that $j \circ \phi = i$.
+\end{df}
+
+\begin{prop}
+For any subset $(S,i)$ of $A$ we have $(S,i) = (S,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $\id{S} : S \approx S$ and $i \circ \id{S} = i$.
+\end{proof}
+
+\begin{prop}
+If $(S,i) = (T,j)$ then $(T,j) = (S,i)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : S \approx T$ and $j \circ \phi = i$ then $\inv{\phi} : T \approx S$ and $i \circ \inv{\phi} = j$. \qed
+\end{proof}
+
+\begin{prop}
+If $(R,i) = (S,j)$ and $(S,j) = (T,k)$ then $(R,i) = (T,k)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : R \approx S$ and $j \circ \phi = i$, and $\psi : S \approx T$ and $k \circ \psi = j$, then $\psi \circ \phi : R \approx T$ and $k \circ \psi \circ \phi = i$. \qed
+\end{proof}
+
+\begin{df}[Membership]
+Given $(S,i) : \mathrm{Sub}(A)$ and $a \in A$, we write $a \in (S,i)$ for $\exists s : \El{S}. i(s) = a$.
+\end{df}
+
+\begin{prop}
+If $a \in (S,i)$ and $(S,i) = (T,j)$ then $a \in (T,j)$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $i(s) = a$ then $j(\phi(s)) = a$. \qed
 \end{proof}
 
 \section{Axioms Part Two}
