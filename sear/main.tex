@@ -287,6 +287,64 @@ For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is
 \qed
 \end{proof}
 
+\begin{prop}
+Let $f : A \rightarrow B$. Then the following are equivalent.
+\begin{enumerate}
+\item $f$ is surjective.
+\item For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
+\item There exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$g, h : B \rightarrow X$}}
+	\step{d}{\assume{$g \circ f = h \circ f$}}
+	\step{e}{\pflet{$b \in B$} \prove{$g(b) = h(b)$}}
+	\step{f}{\pick\ $a \in A$ such that $f(a) = b$}
+	\step{g}{$g(b) = h(b)$}
+	\begin{proof}
+		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
+	\end{proof}
+\end{proof}
+\step{2}{$1 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pick\ $g : B \rightarrow A$ such that, for all $b \in B$, we have $f(g(b)) = b$.}
+	\begin{proof}
+		\pf\ Axiom of Choice.
+	\end{proof}
+	\step{c}{$f \circ g = \id{B}$.}
+\end{proof}
+\step{3}{$3 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\pflet{$g : B \rightarrow A$ such that $f \circ g = \id{B}$}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$h,k : B \rightarrow X$}}
+	\step{d}{\assume{$h \circ f = k \circ f$}}
+	\step{e}{$h = k$}
+	\begin{proof}
+		\pf\ $h = h \circ f \circ g = k \circ f \circ g = k$
+	\end{proof}
+\end{proof}
+\step{4}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{2}}
+	\step{b}{\pflet{$b \in B$}}
+	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
+	\step{d}{\pflet{$k : B \rightarrow 2$ be the function that maps $b$ to 0 and everything else to 1.}}
+	\step{e}{$h \neq k$}
+	\step{f}{$h \circ f \neq k \circ f$}
+	\step{g}{\pick\ $a \in A$ such that $h(f(a)) \neq k(f(a))$}
+	\step{h}{$f(a) = b$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Axioms Part Two}
 
 \begin{ax}[Power Set]

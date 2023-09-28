@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  28 SEP 2023 20:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  28 SEP 2023 20:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -760,74 +760,74 @@ Package xypdf Info: Line width: 0.39998pt on input line 43.
 
 ]
 Chapter 1.
-[7] [8] [9] [10] [11] [12]
-Chapter 2.
-[13
+[7] [8] [9] [10] [11] [12] [13] [14
 
-] [14] [15] <xymatrix 2x2 182> [16] <xymatrix 2x2 168> <xymatrix 2x2 182>
-<xymatrix 2x2 182> [17]
+]
+Chapter 2.
+[15] [16] [17] <xymatrix 2x2 182> [18] <xymatrix 2x2 168> <xymatrix 2x2 182>
+<xymatrix 2x2 182> [19]
 WARNING: proof step "4" (<1>5) already defined
-<xymatrix 2x2 182> [18] <xymatrix 2x2 182> <xymatrix 2x2 168> <xymatrix 2x2
-182> [19] <xymatrix 2x2 182> [20] <xymatrix 2x2 168> <xymatrix 3x3 296>
-<xymatrix 3x3 296> [21] [22] [23] <xymatrix 2x2 182> [24]
-Overfull \hbox (27.76573pt too wide) in paragraph at lines 1106--1107
+<xymatrix 2x2 182> [20] <xymatrix 2x2 182> <xymatrix 2x2 168> <xymatrix 2x2
+182> [21] <xymatrix 2x2 182> [22] <xymatrix 2x2 168> <xymatrix 3x3 296>
+<xymatrix 3x3 296> [23] [24] [25] <xymatrix 2x2 182> [26]
+Overfull \hbox (27.76573pt too wide) in paragraph at lines 1164--1165
 []\OT1/cmr/bx/n/10 Definition 2.1.64 \OT1/cmr/m/n/10 (Fi-bre Wedge)\OT1/cmr/bx/
 n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 B$ \OT1/cmr/m/n/10 be a small set.
  Let $\U/matha/m/n/10 p\OML/cmm/m/it/10 X; u[]; p[]\U/matha/m/n/10 q\OML/cmm/m/
 it/10 ; \U/matha/m/n/10 p\OML/cmm/m/it/10 Y; u[]; p[]\U/matha/m/n/10 q P
  []
 
-<xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [25] [26]
-Overfull \hbox (33.82704pt too wide) detected at line 1239
+<xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [27] [28]
+Overfull \hbox (33.82704pt too wide) detected at line 1297
 []
  []
 
-[27] <xymatrix 3x3 361> <xymatrix 3x4 464> [28] <xymatrix 2x2 182> [29]
-[30] [31] [32]
+[29] <xymatrix 3x3 361> <xymatrix 3x4 464> [30] <xymatrix 2x2 182> [31]
+[32] [33] [34]
 Chapter 3.
-[33
+[35
 
-] [34
+] [36
 
 ]
 Chapter 4.
-[35] [36
-
-]
-Chapter 5.
 [37] [38
 
 ]
-Chapter 6.
+Chapter 5.
 [39] [40
 
 ]
+Chapter 6.
+[41] [42
+
+]
 Chapter 7.
-[41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52
+[43] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54
 
 ]
 Chapter 8.
-[53] [54]
+[55] [56]
 Chapter 9.
-[55
-
-] [56]
-Chapter 10.
 [57
 
 ] [58]
-Chapter 11.
+Chapter 10.
 [59
 
-] [60] [61] [62] (./main.aux)
+] [60]
+Chapter 11.
+[61
+
+] [62] [63] [64] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CE857DB4A747475E367365DC5B7D735C;10058.
  ) 
 Here is how much of TeX's memory you used:
- 12909 strings out of 476091
- 183250 string characters out of 5794081
+ 12916 strings out of 476091
+ 183297 string characters out of 5794081
  1872330 words of memory out of 5000000
- 32625 multiletter control sequences out of 15000+600000
+ 32626 multiletter control sequences out of 15000+600000
  531044 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -856,10 +856,10 @@ nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (62 pages, 431033 bytes).
+Output written on main.pdf (64 pages, 432959 bytes).
 PDF statistics:
- 1246 PDF objects out of 1440 (max. 8388607)
- 1118 compressed objects within 12 object streams
- 480 named destinations out of 1000 (max. 500000)
+ 1259 PDF objects out of 1440 (max. 8388607)
+ 1129 compressed objects within 12 object streams
+ 486 named destinations out of 1000 (max. 500000)
  617 words of extra memory for PDF output out of 10000 (max. 10000000)
 
