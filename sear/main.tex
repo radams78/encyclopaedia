@@ -1058,6 +1058,35 @@ such that:
 \end{itemize}
 \end{df}
 
+\begin{prop}
+Functors preserve isomorphisms.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor.}}
+\step{2}{\pflet{$f : A \cong B$ in $\mathcal{C}$}}
+\step{3}{$F \inv{f} \circ Ff = \id{FA}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		F \inv{f} \circ Ff & = F(\inv{f} \circ f) \\
+		& = F \id{A} \\
+		& = \id{FA}
+	\end{align*}
+\end{proof}
+\step{4}{$Ff \circ F \inv{f} = \id{FB}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		Ff \circ F \inv{f} & = F(f \circ \inv{f}) \\
+		& = F \id{B} \\
+		& = \id{FB}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Identity Functor]
 For any category $\mathcal{C}$, the \emph{identity} functor on $\mathcal{C}$ is the functor $I_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ defined by
 \begin{align*}
