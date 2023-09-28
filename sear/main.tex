@@ -345,6 +345,18 @@ Let $f : A \rightarrow B$. Then the following are equivalent.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjective then $g$ is surjective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$c \in C$}}
+\step{2}{There exists $a \in A$ such that $g(f(a)) = c$.}
+\step{3}{There exists $b \in B$ such that $g(b) = c$.}
+\qed
+\end{proof}
+
 \section{Axioms Part Two}
 
 \begin{ax}[Power Set]
