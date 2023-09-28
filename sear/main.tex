@@ -1208,6 +1208,14 @@ Extend $\wedge_B$ to a functor $\Set_B^B \times \Set_B^B \rightarrow \Set_B^B$.
 A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{faithful} iff, for any objects $A,B \in \mathcal{C}$ and morphisms $f,g : A \rightarrow B : \mathcal{C}$, if $Ff = Fg$ then $f = g$.
 \end{df}
 
+\begin{df}[Full]
+A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{full} iff, for any objects $A, B \in \mathcal{C}$ and morphism $g : FA \rightarrow FB : \mathcal{D}$, there exists $f : A \rightarrow B : \mathcal{C}$ such that $Ff = g$.
+\end{df}
+
+\begin{df}[Fully Faithful]
+A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{fully faithful} iff it is full and faithful.
+\end{df}
+
 \section{Natural Transformations}
 
 \begin{df}[Natural Transformation]

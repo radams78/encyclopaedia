@@ -30,7 +30,7 @@
 \contentsline {subsection}{\numberline {2.1.15}Arrow Category}{23}{subsection.2.1.15}%
 \contentsline {subsection}{\numberline {2.1.16}Slice Category}{23}{subsection.2.1.16}%
 \contentsline {section}{\numberline {2.2}Functors}{26}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Natural Transformations}{28}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Natural Transformations}{29}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Bifunctors}{29}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Monoid Theory}{31}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Group Theory}{33}{chapter.4}%
