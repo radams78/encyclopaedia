@@ -1,9 +1,9 @@
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
 % READ
 
 \documentclass{book}
@@ -90,7 +90,7 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 
 \section{Consequences of the Axioms}
 
-\subsection{Definitions}
+\subsection{Definitions} % CHECKED FORMALIZED
 
 \begin{df}
 Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
@@ -1150,18 +1150,6 @@ If $A$ is terminal in $\mathcal{C}$ then $\mathcal{C} / A \cong \mathcal{C}$.
 \qed
 \end{proof}
 
-Natural transformation.
-
-Pullback
-
-Pushout
-
-Product
-
-Coproduct
-
-Adjunction
-
 \begin{df}[Forgetful Functor]
 For any concrete category $\mathcal{C}$, define the \emph{forgetful} functor $U : \mathcal{C} \rightarrow \Set$ by:
 \begin{align*}
@@ -1214,6 +1202,10 @@ Extend $\vee_B$ to a functor $\Set_B^B \times \Set_B^B \rightarrow \Set_B^B$.
 
 \begin{df}
 Extend $\wedge_B$ to a functor $\Set_B^B \times \Set_B^B \rightarrow \Set_B^B$.
+\end{df}
+
+\begin{df}[Faithful]
+A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{faithful} iff, for any objects $A,B \in \mathcal{C}$ and morphisms $f,g : A \rightarrow B : \mathcal{C}$, if $Ff = Fg$ then $f = g$.
 \end{df}
 
 \section{Natural Transformations}
@@ -1377,6 +1369,10 @@ Let $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor and $X \in \mathcal{C
 
 \begin{df}
 Let $\mathbf{Ring}$ be the concrete category of rings and ring homomorphisms.
+\end{df}
+
+\begin{df}
+For any ring $R$, let $R-\mathbf{Mod}$ be the category of small $R$-modules and $R$-module homomorphisms.
 \end{df}
 
 \chapter{Linear Algebra}
