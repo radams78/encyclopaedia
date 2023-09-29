@@ -1,10 +1,10 @@
+% READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
-% READ
 
 \documentclass{book}
 
@@ -49,21 +49,25 @@
 
 \section{Primitive Terms} % CHECKED FORMALIZED
 
-Let there be \emph{sets}. We write $A : \mathrm{Set}$ for: $A$ is a set.
+Let there be \emph{sets}.
 
-For any set $A$, let there be \emph{elements} of $A$. We write $a: \El{A}$ for: $a$ is an element of $A$.
+For any set $A$, let there be \emph{elements} of $A$. We write $a \in A$ for: $a$ is an element of $A$.
 
-For any sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ iff $f$ is a function from $A$ to $B$.
+For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ for $f \in B^A$.
 
-For any function $f : A \rightarrow B$ and element $a : \El{A}$, let there be an element $f(a) : \El{B}$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
+For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms} % CHECKED FORMALIZED
+\section{Axioms}
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
 
 Let $A$ and $B$ be sets. Assume that, for all $a : \El{A}$, there exists $b : \El{B}$ such that $P[A,B,a,b]$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. P[A,B,a,f(a)]$.
 \end{axs}
+
+\begin{ax}[Extensionality]
+Let $f, g : A \rightarrow B$. If, for all $x \in A$, we have $f(x) = g(x)$, then $f = g$.
+\end{ax}
 
 \begin{ax}[Pairing]
 For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a : \El{A}$ and $b : \El{B}$, there exists a unique $(a,b) : \El{A \times B}$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
@@ -674,6 +678,7 @@ The empty set is initial in $\Set$.
 \end{proof}
 
 \begin{prop}
+\label{prop:initial_unique}
 If $I$ and $I'$ are initial objects, then there exists a unique isomorphism $I \cong I'$.
 \end{prop}
 
@@ -704,6 +709,14 @@ An object $T$ is \emph{terminal} iff, for any object $X$, there exists exactly o
 
 \begin{proof}
 \pf\ For any set $A$, the constant function to $*$ is the only function $A \rightarrow 1$. \qed
+\end{proof}
+
+\begin{prop}
+If $T$ and $T'$ are terminal objects, then there exists a unique isomorphism $T \cong T'$.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual to Proposition \ref{prop:initial_unique}. \qed
 \end{proof}
 
 \subsection{Zero Objects}
