@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
 
 \documentclass{book}
@@ -92,17 +92,17 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 \end{itemize}
 \end{ax}
 
-\section{Consequences of the Axioms}
+\chapter{Sets and Functions}
 
-\subsection{Definitions} % CHECKED FORMALIZED
+\section{Injective Functions}
 
-\begin{df}
-Let $f,g : A \rightarrow B$. We say $f$ and $g$ are \emph{equal}, $f = g$, iff $\forall x : \El{A}. f(x) = g(x)$.
-\end{df}
+\section{Surjective Functions}
 
 \begin{df}[Surjective]
 A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
 \end{df}
+
+\section{Bijections}
 
 \begin{df}[Bijective]
 A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
@@ -112,9 +112,212 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
-\begin{df}[Composition]
-Given $f : A \rightarrow B$ and $g : B \rightarrow C$, let $g \circ f$ be the function such that $\forall a : \El{A}. (g \circ f)(a) = g(f(a))$.
+\section{Identity Function}
+
+\begin{df}[Identity]
+For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
 \end{df}
+
+\section{Composition} % CHECKED
+
+\begin{df}[Composite]
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
+\end{df}
+
+\begin{prop}
+Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
+\[ h \circ (g \circ f) = (h \circ g) \circ f \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the function that maps $a \in A$ to $h(g(f(a)))$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:comp_inj}
+The composite of injective functions is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail C$ be injective.}}
+\step{2}{\pflet{$x,y \in A$ satisfy $(g \circ f)(x) = (g \circ f)(y)$}}
+\step{3}{$g(f(x)) = g(f(y))$}
+\step{4}{$f(x) = f(y)$}
+\step{5}{$x = y$}
+\qed
+\end{proof}
+
+\begin{prop}
+For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is injective then $f$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$g \circ f$ is injective.}}
+\step{2}{\pflet{$x,y \in A$}}
+\step{3}{\assume{$f(x) = f(y)$}}
+\step{4}{$g(f(x)) = g(f(y))$}
+\step{5}{$x = y$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:comp_surj}
+The composite of surjective functions is surjective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \twoheadrightarrow B$ and $g : B \twoheadrightarrow C$ be injective.}}
+\step{2}{\pflet{$c \in C$}}
+\step{3}{\pick\ $b \in B$ such that $g(b) = c$.}
+\step{4}{\pick\ $a \in A$ such that $f(a) = b$.}
+\step{5}{$(g \circ f)(a) = c$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:surjective}
+Let $f : A \rightarrow B$. Then the following are equivalent.
+\begin{enumerate}
+\item $f$ is surjective.
+\item For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
+\item There exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$g, h : B \rightarrow X$}}
+	\step{d}{\assume{$g \circ f = h \circ f$}}
+	\step{e}{\pflet{$b \in B$} \prove{$g(b) = h(b)$}}
+	\step{f}{\pick\ $a \in A$ such that $f(a) = b$}
+	\step{g}{$g(b) = h(b)$}
+	\begin{proof}
+		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
+	\end{proof}
+\end{proof}
+\step{2}{$1 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pick\ $g : B \rightarrow A$ such that, for all $b \in B$, we have $f(g(b)) = b$.}
+	\begin{proof}
+		\pf\ Axiom of Choice.
+	\end{proof}
+	\step{c}{$f \circ g = \id{B}$.}
+\end{proof}
+\step{3}{$3 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\pflet{$g : B \rightarrow A$ such that $f \circ g = \id{B}$}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$h,k : B \rightarrow X$}}
+	\step{d}{\assume{$h \circ f = k \circ f$}}
+	\step{e}{$h = k$}
+	\begin{proof}
+		\pf\ $h = h \circ f \circ g = k \circ f \circ g = k$
+	\end{proof}
+\end{proof}
+\step{4}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{2}}
+	\step{b}{\pflet{$b \in B$}}
+	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
+	\step{d}{\pflet{$k : B \rightarrow 2$ be the function that maps $b$ to 0 and everything else to 1.}}
+	\step{e}{$h \neq k$}
+	\step{f}{$h \circ f \neq k \circ f$}
+	\step{g}{\pick\ $a \in A$ such that $h(f(a)) \neq k(f(a))$}
+	\step{h}{$f(a) = b$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjective then $g$ is surjective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$c \in C$}}
+\step{2}{There exists $a \in A$ such that $g(f(a)) = c$.}
+\step{3}{There exists $b \in B$ such that $g(b) = c$.}
+\qed
+\end{proof}
+
+\begin{prop}
+The composite of bijections is a bijection.
+\end{prop}
+
+\begin{proof}
+\pf\ Propositions \ref{prop:comp_inj} and \ref{prop:comp_surj}. \qed
+\end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a function $\inv{f} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, in which case the inverse is unique.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is bijective then there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is bijective.}}
+	\step{b}{\pick\ $g : B \rightarrow A$ such that $f \circ g = \id{B}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:surjective}.
+	\end{proof}
+	\step{c}{$f \circ g \circ f = f$}
+	\step{d}{$g \circ f = \id{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:injective}.
+	\end{proof}
+\end{proof}
+\step{2}{If there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, then $f$ is bijective.}
+\begin{proof}
+	\step{a}{\pflet{$\inv{f} : B \rightarrow A$ satisfy $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$}}
+	\step{b}{$f$ is injective.}
+	\begin{proof}
+		\pf\ If $f(x) = f(y)$ then $x = \inv{f}(f(x)) = \inv{f}(f(y)) = y$.
+	\end{proof}
+	\step{c}{$f$ is surjective.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:surjective}.
+	\end{proof}
+\end{proof}
+\step{3}{If $g, h : B \rightarrow A$ satisfy $f \circ g = \id{B}$ and $g \circ f = \id{A}$ and $f \circ h = \id{B}$ and $h \circ f = \id{A}$ then $g = h$.}
+\begin{proof}
+	\pf\ We have $g = g \circ f \circ h = h$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each is the function that maps $a$ to $f(a)$. \qed
+\end{proof}
+
+\begin{prop}
+\[ (A \times B)^C \approx A^C \times B^C \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $f$ to $(\pi_1 \circ f, \pi_2 \circ f)$ is a bijection. \qed
+\end{proof}
+
+\begin{prop}
+\[ A^{B \times C} \approx (A^B)^C \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function $\Phi$ such that $\Phi(f)(c)(b) = f(b,c)$ is a bijection. \qed
+\end{proof}
 
 \subsection{The Empty Set} %CHECKED
 
@@ -195,221 +398,6 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 \begin{df}[Singleton]
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
-
-\section{Composition}
-
-\begin{df}[Composite]
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
-\[ (g \circ f)(a) = g(f(a)) \enspace . \]
-\end{df}
-
-\begin{prop}
-Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
-\[ h \circ (g \circ f) = (h \circ g) \circ f \enspace . \]
-\end{prop}
-
-\begin{proof}
-\pf\ Each is the function that maps $a \in A$ to $h(g(f(a)))$. \qed
-\end{proof}
-
-\begin{prop}
-The composite of injective functions is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail C$ be injective.}}
-\step{2}{\pflet{$x,y \in A$ satisfy $(g \circ f)(x) = (g \circ f)(y)$}}
-\step{3}{$g(f(x)) = g(f(y))$}
-\step{4}{$f(x) = f(y)$}
-\step{5}{$x = y$}
-\qed
-\end{proof}
-
-\begin{prop}
-The composite of surjective functions is surjective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$f : A \twoheadrightarrow B$ and $g : B \twoheadrightarrow C$ be injective.}}
-\step{2}{\pflet{$c \in C$}}
-\step{3}{\pick\ $b \in B$ such that $g(b) = c$.}
-\step{4}{\pick\ $a \in A$ such that $f(a) = b$.}
-\step{5}{$(g \circ f)(a) = c$}
-\qed
-\end{proof}
-
-\begin{cor}
-The composite of bijections is a bijection.
-\end{cor}
-
-\begin{df}[Identity]
-For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
-\end{df}
-
-\begin{prop}
-Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
-\end{prop}
-
-\begin{proof}
-\pf\ Each is the function that maps $a$ to $f(a)$. \qed
-\end{proof}
-
-\begin{prop}
-\label{prop:injective}
-Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $f$ is injective then, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.}
-\begin{proof}
-	\step{a}{\assume{$f$ is injective.}}
-	\step{b}{\pflet{$X$ be a set.}}
-	\step{c}{\pflet{$x,y : X \rightarrow A$}}
-	\step{d}{\assume{$f \circ x = f \circ y$}}
-	\step{e}{\pflet{$t \in X$} \prove{$x(t) = y(t)$}}
-	\step{f}{$f(x(t)) = f(y(t))$}
-	\step{g}{$x(t) = y(t)$}
-\end{proof}
-\step{2}{If, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$, then $f$ is injective.}
-\begin{proof}
-	\pf\ Take $X = 1$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is injective then $f$ is injective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$g \circ f$ is injective.}}
-\step{2}{\pflet{$x,y \in A$}}
-\step{3}{\assume{$f(x) = f(y)$}}
-\step{4}{$g(f(x)) = g(f(y))$}
-\step{5}{$x = y$}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:surjective}
-Let $f : A \rightarrow B$. Then the following are equivalent.
-\begin{enumerate}
-\item $f$ is surjective.
-\item For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
-\item There exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$1 \Rightarrow 2$}
-\begin{proof}
-	\step{a}{\assume{$f$ is surjective.}}
-	\step{b}{\pflet{$X$ be a set.}}
-	\step{c}{\pflet{$g, h : B \rightarrow X$}}
-	\step{d}{\assume{$g \circ f = h \circ f$}}
-	\step{e}{\pflet{$b \in B$} \prove{$g(b) = h(b)$}}
-	\step{f}{\pick\ $a \in A$ such that $f(a) = b$}
-	\step{g}{$g(b) = h(b)$}
-	\begin{proof}
-		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
-	\end{proof}
-\end{proof}
-\step{2}{$1 \Rightarrow 3$}
-\begin{proof}
-	\step{a}{\assume{$f$ is surjective.}}
-	\step{b}{\pick\ $g : B \rightarrow A$ such that, for all $b \in B$, we have $f(g(b)) = b$.}
-	\begin{proof}
-		\pf\ Axiom of Choice.
-	\end{proof}
-	\step{c}{$f \circ g = \id{B}$.}
-\end{proof}
-\step{3}{$3 \Rightarrow 2$}
-\begin{proof}
-	\step{a}{\pflet{$g : B \rightarrow A$ such that $f \circ g = \id{B}$}}
-	\step{b}{\pflet{$X$ be a set.}}
-	\step{c}{\pflet{$h,k : B \rightarrow X$}}
-	\step{d}{\assume{$h \circ f = k \circ f$}}
-	\step{e}{$h = k$}
-	\begin{proof}
-		\pf\ $h = h \circ f \circ g = k \circ f \circ g = k$
-	\end{proof}
-\end{proof}
-\step{4}{$2 \Rightarrow 1$}
-\begin{proof}
-	\step{a}{\assume{2}}
-	\step{b}{\pflet{$b \in B$}}
-	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
-	\step{d}{\pflet{$k : B \rightarrow 2$ be the function that maps $b$ to 0 and everything else to 1.}}
-	\step{e}{$h \neq k$}
-	\step{f}{$h \circ f \neq k \circ f$}
-	\step{g}{\pick\ $a \in A$ such that $h(f(a)) \neq k(f(a))$}
-	\step{h}{$f(a) = b$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjective then $g$ is surjective.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$c \in C$}}
-\step{2}{There exists $a \in A$ such that $g(f(a)) = c$.}
-\step{3}{There exists $b \in B$ such that $g(b) = c$.}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a function $\inv{f} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, in which case the inverse is unique.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $f$ is bijective then there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$.}
-\begin{proof}
-	\step{a}{\assume{$f$ is bijective.}}
-	\step{b}{\pick\ $g : B \rightarrow A$ such that $f \circ g = \id{B}$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:surjective}.
-	\end{proof}
-	\step{c}{$f \circ g \circ f = f$}
-	\step{d}{$g \circ f = \id{A}$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:injective}.
-	\end{proof}
-\end{proof}
-\step{2}{If there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, then $f$ is bijective.}
-\begin{proof}
-	\step{a}{\pflet{$\inv{f} : B \rightarrow A$ satisfy $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$}}
-	\step{b}{$f$ is injective.}
-	\begin{proof}
-		\pf\ If $f(x) = f(y)$ then $x = \inv{f}(f(x)) = \inv{f}(f(y)) = y$.
-	\end{proof}
-	\step{c}{$f$ is surjective.}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:surjective}.
-	\end{proof}
-\end{proof}
-\step{3}{If $g, h : B \rightarrow A$ satisfy $f \circ g = \id{B}$ and $g \circ f = \id{A}$ and $f \circ h = \id{B}$ and $h \circ f = \id{A}$ then $g = h$.}
-\begin{proof}
-	\pf\ We have $g = g \circ f \circ h = h$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\[ (A \times B)^C \approx A^C \times B^C \]
-\end{prop}
-
-\begin{prop}
-\[ A^{B \times C} \approx (A^B)^C \]
-\end{prop}
 
 \subsection{Subsets} % CHECKED
 
