@@ -1,10 +1,10 @@
 % READ
-% READ
-% CHECK
-% READ
-% READ
 % CHECK
 % FORMALIZE
+% READ
+% READ
+% CHECK
+% READ
 
 \documentclass{book}
 
@@ -57,7 +57,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms}
+\section{Axioms} % CHECKED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -402,6 +402,14 @@ Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a f
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+\[ (A \times B)^C \approx A^C \times B^C \]
+\end{prop}
+
+\begin{prop}
+\[ A^{B \times C} \approx (A^B)^C \]
+\end{prop}
 
 \subsection{Subsets} % CHECKED
 
@@ -1310,6 +1318,20 @@ Let $\zeta = \langle \xi, \eta \rangle : X \vee_B Y \rightarrow X \times Y$. The
 \end{df}
 
 \begin{prop}
+$\mathbf{Set}$ has products and coproducts.
+\end{prop}
+
+\begin{prop}
+Let $\mathcal{C}$ be a category. Let $\{X_\alpha\}_{\alpha \in I}$ be a family of objects in $\mathcal{C}$ and $Z \in \mathcal{C}$. Let $\coprod_{\alpha \in I} X_\alpha$ be the coproduct of $\{ X_\alpha \}_{\alpha \in I}$. Then
+\[ \mathcal{C}[\coprod_{\alpha \in I} X_\alpha, Z] \approx \prod_{\alpha \in I} \mathcal{C}[X_\alpha, Z] \enspace . \]
+\end{prop}
+
+\begin{prop}
+Let $\mathcal{C}$ be a category. Let $\{X_\alpha\}_{\alpha \in I}$ be a family of objects in $\mathcal{C}$ and $Z \in \mathcal{C}$. Let $\prod_{\alpha \in I} X_\alpha$ be the product of $\{ X_\alpha \}_{\alpha \in I}$. Then
+\[ \mathcal{C}[Z, \prod_{\alpha \in I} X_\alpha] \approx \prod_{\alpha \in I} \mathcal{C}[Z, X_\alpha] \enspace . \]
+\end{prop}
+
+\begin{prop}
 A product in $\mathcal{C}$ constitutes a product in $\mathcal{C} \backslash A$.
 \end{prop}
 
@@ -1782,6 +1804,18 @@ Let $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor and $X \in \mathcal{C
 \pf\ Since $F \id{X} = \id{FX}$, $F(g \circ f) = Fg \circ Ff$, and $F \inv{f} = \inv{(Ff)}$. \qed
 \end{proof}
 
+\begin{prop}
+$\mathbf{Grp}$ has products.
+\end{prop}
+
+\begin{df}[Free Product]
+The product of a family of groups in $\mathbf{Grp}$ is called the \emph{free product}.
+\end{df}
+
+\begin{prop}
+$\mathbf{Ab}$ has products given by direct sums.
+\end{prop}
+
 \chapter{Ring Theory}
 
 \begin{df}
@@ -1792,10 +1826,24 @@ Let $\mathbf{Ring}$ be the concrete category of rings and ring homomorphisms.
 For any ring $R$, let $R-\mathbf{Mod}$ be the category of small $R$-modules and $R$-module homomorphisms.
 \end{df}
 
+\begin{prop}
+$R-\mathbf{Mod}$ has products and coproducts.
+\end{prop}
+
+\chapter{Field Theory}
+
+\begin{prop}
+$\mathbf{Field}$ does not have binary products.
+\end{prop}
+
+\begin{proof}
+\pf\ There cannot be a field $K$ with field homomorphisms $K \rightarrow \mathbb{Z}_2$ and $K \rightarrow \mathbb{Z}_3$, because its characteristic would be both 2 and 3. \qed
+\end{proof}
+
 \chapter{Linear Algebra}
 
 \begin{df}
-For any field $K$, let $\mathbf{Vect}_K$ be the concrete category of small vector spaces over $K$ and linear transformations.
+For any field $K$, we write $\mathbf{Vect}_K$ for $K-\mathbf{Mod}$.
 \end{df}
 
 Dual space functor $\mathbf{Vect}_K^{\mathrm{op}} \rightarrow \mathbf{Vect}_K$.
