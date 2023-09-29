@@ -1,11 +1,11 @@
+% READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
-% READ
-
+ 
 \documentclass{book}
 
 \title{Mathematics}
@@ -57,7 +57,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms} % CHECKED
+\section{Axioms} % CHECKED FORMALIZED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -502,6 +502,28 @@ Further, if $p : X \twoheadrightarrow Q$ is another quotient with respect to $\s
 A \emph{partition} of a set $X$ is a set of pairwise disjoint subsets of $X$ whose union is $X$.
 \end{df}
 
+\chapter{Order Theory}
+
+\section{Relations}
+
+\begin{df}[Reflexive]
+A relation $R \subseteq A \times A$ is \emph{reflexive} iff, for all $a \in A$, we have $(a,a) \in R$.
+\end{df}
+
+\begin{df}[Antisymmetric]
+A relation $R \subseteq A \times A$ is \emph{antisymmetric} iff, for all $a,b \in A$, if $(a,b) \in R$ and $(b,a) \in R$ then $a = b$.
+\end{df}
+
+\begin{df}[Transitive]
+A relation $R \subseteq A \times A$ is \emph{transitive} iff, for all $a,b,c \in A$, if $(a,b) \in R$ and $(b,c) \in R$ then $(a,c) \in R$.
+\end{df}
+
+\begin{df}[Partial Order]
+A \emph{partial order} on a set $A$ is a relation on $A$ that is reflexive, antisymmetric and transitive.
+
+We say $(A, \leq)$ is a \emph{partially ordered set} or \emph{poset} iff $\leq$ is a partial order on $A$.
+\end{df}
+
 \chapter{Category Theory}
 
 \section{Categories}
@@ -529,6 +551,18 @@ We write the composite of morphism $f_1$, \ldots, $f_n$ as $f_n \circ \cdots \ci
 \begin{df}
 Let $\Set$ be the category of small sets and functions.
 \end{df}
+
+\begin{df}
+We identify a poset $(A, \leq)$ with the category with:
+\begin{itemize}
+\item set of objects $A$
+\item for $a,b \in A$, the set of homomorphisms is $\{ x \in 1 : a \leq b \}$
+\end{itemize}
+\end{df}
+
+\begin{prop}
+A category is a poset iff, for any two objects, there exists at most one morphism between them.
+\end{prop}
 
 \begin{prop}
 The identity morphism on an object is unique.
