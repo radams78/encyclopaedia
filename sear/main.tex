@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -2085,6 +2085,27 @@ Let $X$ and $Y$ be topological spaces. A function $f : X \rightarrow Y$ is \emph
 \item If $f : Z \rightarrow X \times Y$, then $f$ is continuous iff $\pi_1 \circ f$ and $\pi_2 \circ f$ are continuous.
 \end{enumerate}
 \end{prop}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{B}$ be a basis for $Y$. Then $f$ is continuous if and only if, for all $B \in \mathcal{B}$, we have $\inv{f}(B)$ is open in $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then, for all $B \in \mathcal{B}$, we have $\inv{f}(B)$ is open in $X$.}
+\begin{proof}
+	\pf\ Since every element of $\mathcal{B}$ is open in $Y$.
+\end{proof}
+\step{2}{If, for all $B \in \mathcal{B}$, we have $\inv{f}(B)$ is open in $X$, then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For all $B \in \mathcal{B}$, we have $\inv{f}(B)$ is open in $X$.}}
+	\step{b}{\pflet{$U$ be open in $Y$.}}
+	\step{c}{\pflet{$x \in \inv{f}(U)$}}
+	\step{d}{\pick\ $B \in \mathcal{B}$ such that $f(x) \in B \subseteq U$.}
+	\step{e}{$x \in \inv{f}(B) \subseteq \inv{f}(U)$}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Homeomorphism]
 Let $X$ and $Y$ be topological spaces. A \emph{homeomorphism} between $X$ and $Y$ is a bijection $f : X \approx Y$ such that $f$ and $\inv{f}$ are continuous.
