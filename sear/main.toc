@@ -53,6 +53,8 @@
 \contentsline {subsection}{\numberline {10.1.5}Subbases}{55}{subsection.10.1.5}%
 \contentsline {subsection}{\numberline {10.1.6}Countability Axioms}{55}{subsection.10.1.6}%
 \contentsline {section}{\numberline {10.2}Continuous Functions}{56}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Paths}{57}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Loops}{57}{subsection.10.2.2}%
 \contentsline {section}{\numberline {10.3}Convergence}{57}{section.10.3}%
 \contentsline {section}{\numberline {10.4}Connected Spaces}{58}{section.10.4}%
 \contentsline {section}{\numberline {10.5}Hausdorff Spaces}{58}{section.10.5}%
@@ -61,7 +63,7 @@
 \contentsline {section}{\numberline {10.8}Compactness}{59}{section.10.8}%
 \contentsline {section}{\numberline {10.9}Quotient Spaces}{60}{section.10.9}%
 \contentsline {section}{\numberline {10.10}Gluing}{61}{section.10.10}%
-\contentsline {section}{\numberline {10.11}Metric Spaces}{61}{section.10.11}%
+\contentsline {section}{\numberline {10.11}Metric Spaces}{62}{section.10.11}%
 \contentsline {section}{\numberline {10.12}Complete Metric Spaces}{62}{section.10.12}%
 \contentsline {section}{\numberline {10.13}Manifolds}{63}{section.10.13}%
 \contentsline {chapter}{\numberline {11}Homotopy Theory}{65}{chapter.11}%
