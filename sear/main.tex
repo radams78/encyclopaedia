@@ -2374,7 +2374,7 @@ The converse does hold for first countable spaces. If $f : X \rightarrow Y$ wher
 \section{Subspaces}
 
 \begin{df}[Subspace]
-Let $X$ be a topological space and $(Y,i)$ a subset of $X$. The \emph{subspace topology} on $Y$ is $\mathcal{T} = \{ \inv{i}(U) : U \text{ is open in } X \}$.
+Let $X$ be a topological space, $Y$ a set, and $f : Y \rightarrow X$. The \emph{subspace topology} on $Y$ induced by $f$ is $\mathcal{T} = \{ \inv{i}(U) : U \text{ is open in } X \}$.
 
 We prove this is a topology.
 \end{df}
@@ -2383,19 +2383,33 @@ We prove this is a topology.
 \pf
 \step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$}
 \begin{proof}
-	\pf\ Since $\bigcup \mathcal{U} = \inv{i}(\bigcup \{ V : \inv{i}(V) \in \mathcal{U}\})$.
+	\pf\ Since $\bigcup \mathcal{U} = \inv{f}(\bigcup \{ V : \inv{f}(V) \in \mathcal{U}\})$.
 \end{proof}
 \step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$}
 \begin{proof}
-	\pf\ Since $\inv{i}(U) \cap \inv{i}(V) = \inv{i}(U 
+	\pf\ Since $\inv{f}(U) \cap \inv{f}(V) = \inv{f}(U 
 \cap V)$.
 \end{proof}
 \step{3}{$Y \in \mathcal{T}$}
 \begin{proof}
-	\pf\ Since $Y = \inv{i}(X)$.
+	\pf\ Since $Y = \inv{f}(X)$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Let $X$ be a topological space, $Y$ a set and $f : Y \rightarrow X$ a function. Then the subspace topology on $Y$ is the coarsest topology such that $f$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definition. \qed
+\end{proof}
+
+\section{Embedding}
+
+\begin{df}[Embedding]
+Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is an \emph{embedding} iff $f$ is injective and the topology on $X$ is the subspace induced by $f$.
+\end{df}
 
 \section{Connected Spaces}
 
