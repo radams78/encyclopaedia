@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
  
 \documentclass{book}
 
@@ -2370,6 +2370,32 @@ Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in
 \begin{prop}
 The converse does hold for first countable spaces. If $f : X \rightarrow Y$ where $X$ is first countable, and $Y$ is a topological space, and whenever $x_n \rightarrow x$ then $f(x_n) \rightarrow f(x)$, then $f$ is continuous.
 \end{prop}
+
+\section{Subspaces}
+
+\begin{df}[Subspace]
+Let $X$ be a topological space and $(Y,i)$ a subset of $X$. The \emph{subspace topology} on $Y$ is $\mathcal{T} = \{ \inv{i}(U) : U \text{ is open in } X \}$.
+
+We prove this is a topology.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$}
+\begin{proof}
+	\pf\ Since $\bigcup \mathcal{U} = \inv{i}(\bigcup \{ V : \inv{i}(V) \in \mathcal{U}\})$.
+\end{proof}
+\step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$}
+\begin{proof}
+	\pf\ Since $\inv{i}(U) \cap \inv{i}(V) = \inv{i}(U 
+\cap V)$.
+\end{proof}
+\step{3}{$Y \in \mathcal{T}$}
+\begin{proof}
+	\pf\ Since $Y = \inv{i}(X)$.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Connected Spaces}
 

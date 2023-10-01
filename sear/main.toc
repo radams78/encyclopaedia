@@ -56,16 +56,17 @@
 \contentsline {subsection}{\numberline {10.2.1}Paths}{57}{subsection.10.2.1}%
 \contentsline {subsection}{\numberline {10.2.2}Loops}{57}{subsection.10.2.2}%
 \contentsline {section}{\numberline {10.3}Convergence}{57}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Connected Spaces}{58}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Hausdorff Spaces}{58}{section.10.5}%
-\contentsline {section}{\numberline {10.6}Separable Spaces}{59}{section.10.6}%
-\contentsline {section}{\numberline {10.7}Sequential Compactness}{59}{section.10.7}%
-\contentsline {section}{\numberline {10.8}Compactness}{59}{section.10.8}%
-\contentsline {section}{\numberline {10.9}Quotient Spaces}{60}{section.10.9}%
-\contentsline {section}{\numberline {10.10}Gluing}{61}{section.10.10}%
-\contentsline {section}{\numberline {10.11}Metric Spaces}{62}{section.10.11}%
-\contentsline {section}{\numberline {10.12}Complete Metric Spaces}{62}{section.10.12}%
-\contentsline {section}{\numberline {10.13}Manifolds}{63}{section.10.13}%
+\contentsline {section}{\numberline {10.4}Subspaces}{58}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Connected Spaces}{58}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Hausdorff Spaces}{59}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Separable Spaces}{59}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Sequential Compactness}{59}{section.10.8}%
+\contentsline {section}{\numberline {10.9}Compactness}{60}{section.10.9}%
+\contentsline {section}{\numberline {10.10}Quotient Spaces}{60}{section.10.10}%
+\contentsline {section}{\numberline {10.11}Gluing}{61}{section.10.11}%
+\contentsline {section}{\numberline {10.12}Metric Spaces}{62}{section.10.12}%
+\contentsline {section}{\numberline {10.13}Complete Metric Spaces}{63}{section.10.13}%
+\contentsline {section}{\numberline {10.14}Manifolds}{63}{section.10.14}%
 \contentsline {chapter}{\numberline {11}Homotopy Theory}{65}{chapter.11}%
 \contentsline {section}{\numberline {11.1}Homotopies}{65}{section.11.1}%
 \contentsline {section}{\numberline {11.2}Homotopy Equivalence}{65}{section.11.2}%
