@@ -1,10 +1,10 @@
-% CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
+% CHECK
  
 \documentclass{book}
 
@@ -40,6 +40,7 @@
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\op}[1]{\ensuremath{{#1}^{\mathrm{op}}}}
 \newcommand{\spec}{\ensuremath{\operatorname{spec}}}
+\newcommand{\Top}{\ensuremath{\mathbf{Top}}}
 
 \begin{document}
 
@@ -95,9 +96,7 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 
 \chapter{Sets and Functions}
 
-\section{Injective Functions}
-
-\section{Surjective Functions}
+\section{Surjective Functions} % CHECKED
 
 \begin{df}[Surjective]
 A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
@@ -1983,6 +1982,10 @@ For any set $X$, the discrete topology on $X$ is a topology on $X$.
 For any set $X$, the \emph{indiscrete} or \emph{trivial} topology on $X$ is  $\{ \emptyset, X \}$.
 \end{df}
 
+\begin{prop}
+For any set $X$, the indiscrete topology on $X$ is a topology on $X$.
+\end{prop}
+
 \begin{df}[Cofinite Topology]
 For any set $X$, the \emph{cofinite} topology is $\{ X - U : U \subseteq X \text{ is finite} \}$.
 \end{df}
@@ -1991,9 +1994,9 @@ For any set $X$, the \emph{cofinite} topology is $\{ X - U : U \subseteq X \text
 For any set $X$, the \emph{cocountable} topology is $\{ X - U : U \subseteq X \text{ is countable} \}$.
 \end{df}
 
-\begin{prop}
-For any set $X$, the indiscrete topology on $X$ is a topology on $X$.
-\end{prop}
+\begin{df}[Sierpi\'{n}ski Two-Point Space]
+The \emph{Sierpi\'{n}ski two-point space} is $\{0,1\}$ under the topology $\{ \emptyset, \{1\}, \{0,1\} \}$.
+\end{df}
 
 \begin{df}[Closed Set]
 Let $X$ be a topological space and $A \subseteq X$. Then $A$ is \emph{closed} iff $X - A$ is open.
@@ -2304,6 +2307,31 @@ $1$ is terminal in $\mathbf{Top}$.
 Forgetful functor $\mathbf{Top} \rightarrow \mathbf{Set}$.
 
 Basepoint preserving continuous functor.
+
+\begin{prop}
+Let $(X, \mathcal{T})$ be a topological space. Let $S$ be the Sierpi\'{n}ski two-point space. Define $\Phi : \mathcal{T} \rightarrow \Top[X,S]$ by $\Phi(U)(x) = 1$ iff $x \in U$. Then $\Phi$ is a bijection.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $U \in \mathcal{T}$ we have $\Phi(U)$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$U \in \mathcal{T}$}}
+	\step{b}{$\Phi(U)(\{1\})$ is open.}
+	\begin{proof}
+		\pf\ Since $\Phi(U)(\{1\}) = U$.
+	\end{proof}
+\end{proof}
+\step{2}{$\Phi$ is injective.}
+\begin{proof}
+	\pf\ If $\Phi(U) = \Phi(V)$ then we have $\forall x (x \in U \Leftrightarrow \Phi(U)(x) = 1 \Leftrightarrow \Phi(V)(x) = 1 \Leftrightarrow x \in V)$.
+\end{proof}
+\step{3}{$\Phi$ is surjective.}
+\begin{proof}
+	\pf\ Given $f : X \rightarrow S$ continuous we have $\Phi(\inv{f}(1)) = f$.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Convergence}
 
