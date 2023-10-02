@@ -1,10 +1,10 @@
 % READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
  
 \documentclass{book}
 
@@ -96,13 +96,13 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 
 \chapter{Sets and Functions}
 
-\section{Surjective Functions} % CHECKED
+\section{Surjective Functions} % CHECKED FORMALIZED
 
 \begin{df}[Surjective]
 A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
 \end{df}
 
-\section{Bijections}
+\section{Bijections} % CHECKED
 
 \begin{df}[Bijective]
 A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
@@ -2159,6 +2159,42 @@ Let $X$ be a topological space and $X_0 \subseteq X$. The \emph{subspace topolog
 \begin{ex}
 The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a subspace of $\mathbb{R}^3$.
 \end{ex}
+
+\begin{thm}
+Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace topology on $Y$ is the unique topology such that, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f : Z \rightarrow X$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If we give $Y$ the subspace topology then, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}
+\begin{proof}
+	\step{a}{Given $Y$ the subspace topology.}
+	\step{b}{\pflet{$Z$ be a topological space.}}
+	\step{c}{\pflet{$f : Z \rightarrow Y$}}
+	\step{d}{If $f$ is continuous then $i \circ f$ is continuous.}
+	\begin{proof}
+		\pf\ Since $i$ is continuous.
+	\end{proof}
+	\step{e}{If $i \circ f$ is continuous then $f$ is continuous.}
+	\begin{proof}
+		\step{i}{\assume{$i \circ f$ is continuous.}}
+		\step{ii}{\pflet{$U$ be open in $Y$.}}
+		\step{iii}{$\inv{f}(\inv{i}(i(U))$ is open in $Z$.}
+		\step{iv}{$\inv{f}(U)$ is open in $Z$.}
+	\end{proof}
+\end{proof}
+\step{2}{If, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}}
+	\step{b}{$i$ is continuous.}
+	\step{c}{For every open set $U$ in $X$, we have $\inv{i}(X)$ is open in $Y$}
+	\step{b}{\pflet{$Z$ be the set $Y$ under the subspace topology and $f : Z \rightarrow Y$ the identity function.}}
+	\step{c}{$i \circ f$ is continuous.}
+	\step{d}{$f$ is continuous.}
+	\step{e}{Every set open in $Y$ is open in $Z$.}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Topological Disjoint Union}
 
