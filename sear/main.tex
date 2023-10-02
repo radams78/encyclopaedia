@@ -2531,6 +2531,22 @@ Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadright
 \qed
 \end{proof}
 
+\begin{cor}
+Let $\pi : X \twoheadrightarrow S$ be a quotient map. Let $Z$ be a topological space. Let $f : X \rightarrow Z$ be continuous. Then there exists a continuous map $g : S \rightarrow Z$ such that $f = g \circ \pi$ if and only if, for all $s \in S$, we have $f$ is constant on $\inv{\pi}(s)$.
+\end{cor}
+
+\begin{prop}
+Let $Z$ be a topological space. Define $\pi : [0,1] \rightarrow S^1$ by $\pi(t) = (\cos 2 \pi t, \sin 2 \pi t)$. Given any continuous function $f : S^1 \rightarrow Z$, we have $f \circ \pi$ is a loop in $Z$. This defines a bijection between $\Top[S^1,Z]$ and the set of loops in $Z$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\pi$ is a quotient map. \qed
+\end{proof}
+
+\begin{df}[Projective Space]
+The \emph{projective space} $\mathbb{RP}^n$ is the quotient of $\mathbb{R}^{n+1} - \{0\}$ by $\sim$ where $x \sim \lambda x$ for all $x \in \mathbb{R}^{n+1} - \{0\}$ and $\lambda \in \mathbb{R}$.
+\end{df}
+
 \section{Connected Spaces}
 
 \begin{df}[Connected]
