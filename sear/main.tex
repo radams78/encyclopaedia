@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -2446,6 +2446,31 @@ Let $X$ be a topological space, $Y$ a set and $f : Y \rightarrow X$ a function. 
 \begin{df}[Embedding]
 Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is an \emph{embedding} iff $f$ is injective and the topology on $X$ is the subspace induced by $f$.
 \end{df}
+
+\section{Quotient Spaces}
+
+\begin{df}[Quotient Topology]
+Let $X$ be a topological space, $S$ a set, and $\pi : X \twoheadrightarrow S$ be a surjection. The \emph{quotient topology} on $S$ induced by $\pi$ is $\mathcal{T} = \{ U \in \mathcal{P} S : \inv{\pi}(U) \text{ is open in } X \}$.
+
+We prove this is a topology.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$.}
+\begin{proof}
+	\pf\ Since $\inv{\pi}(\bigcup \mathcal{U}) = \bigcup \{ \inv{\pi}(U) : U \in \mathcal{U} \}$.
+\end{proof}
+\step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$.}
+\begin{proof}
+	\pf\ Since $\inv{\pi}(U \cap V) = \inv{\pi}(U) \cap \inv{\pi}(V)$.
+\end{proof}
+\step{3}{$X \in \mathcal{T}$}
+\begin{proof}
+	\pf\ Since $X = \inv{\pi}(Y)$.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Connected Spaces}
 
