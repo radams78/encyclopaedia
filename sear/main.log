@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  3 OCT 2023 18:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  3 OCT 2023 21:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -789,7 +789,7 @@ Underfull \vbox (badness 1019) has occurred while \output is active []
  [27]
 <xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [28] [29] [30]
 <xymatrix 2x2 182> [31]
-Overfull \hbox (27.76573pt too wide) in paragraph at lines 1364--1365
+Overfull \hbox (27.76573pt too wide) in paragraph at lines 1360--1361
 []\OT1/cmr/bx/n/10 Definition 4.1.69 \OT1/cmr/m/n/10 (Fi-bre Wedge)\OT1/cmr/bx/
 n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 B$ \OT1/cmr/m/n/10 be a small set.
  Let $\U/matha/m/n/10 p\OML/cmm/m/it/10 X; u[]; p[]\U/matha/m/n/10 q\OML/cmm/m/
@@ -797,7 +797,7 @@ it/10 ; \U/matha/m/n/10 p\OML/cmm/m/it/10 Y; u[]; p[]\U/matha/m/n/10 q P
  []
 
 <xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [32] [33]
-Overfull \hbox (33.82704pt too wide) detected at line 1511
+Overfull \hbox (33.82704pt too wide) detected at line 1507
 []
  []
 
@@ -827,7 +827,7 @@ Chapter 9.
 ]
 Chapter 10.
 [51]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 2042--2042
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 2038--2038
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -840,7 +840,7 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 2238--2239
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 2234--2235
 []\OT1/cmr/bx/n/10 Proposition 10.1.29. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
@@ -851,7 +851,7 @@ ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
 ]
 Chapter 11.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 3149--3150
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 3145--3146
 []\OT1/cmr/bx/n/10 Definition 11.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -870,18 +870,18 @@ Chapter 14.
 [77
 
 ] [78]
-Overfull \hbox (113.19771pt too wide) detected at line 3484
+Overfull \hbox (113.19771pt too wide) detected at line 3480
 []
  []
 
 WARNING: proof step "4" undefined
 [79] [80] [81] [82] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B27809D34D1635CEC18BF0DEB81AF01D;11399.
+(rerunfilecheck)             Checksum: 063781E1F645968F962618D5910E713B;11366.
  ) 
 Here is how much of TeX's memory you used:
- 13041 strings out of 476091
- 184717 string characters out of 5794081
+ 13040 strings out of 476091
+ 184708 string characters out of 5794081
  1871330 words of memory out of 5000000
  32654 multiletter control sequences out of 15000+600000
  531742 words of font info for 102 fonts, out of 8000000 for 9000
@@ -912,10 +912,10 @@ nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (82 pages, 485117 bytes).
+Output written on main.pdf (82 pages, 484464 bytes).
 PDF statistics:
- 1489 PDF objects out of 1728 (max. 8388607)
- 1339 compressed objects within 14 object streams
- 582 named destinations out of 1000 (max. 500000)
+ 1488 PDF objects out of 1728 (max. 8388607)
+ 1338 compressed objects within 14 object streams
+ 581 named destinations out of 1000 (max. 500000)
  713 words of extra memory for PDF output out of 10000 (max. 10000000)
 

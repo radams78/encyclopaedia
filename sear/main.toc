@@ -10,8 +10,8 @@
 \contentsline {subsection}{\numberline {2.4.2}The Singleton}{13}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Subsets}{14}{subsection.2.4.3}%
 \contentsline {section}{\numberline {2.5}Relations}{14}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Axioms Part Two}{14}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Cartesian Product}{15}{section.2.7}%
+\contentsline {section}{\numberline {2.6}Power Set}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Cartesian Product}{14}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Quotient Sets}{15}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Partitions}{15}{section.2.9}%
 \contentsline {chapter}{\numberline {3}Order Theory}{17}{chapter.3}%

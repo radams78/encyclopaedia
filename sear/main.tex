@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
  
 \documentclass{book}
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms} % CHECKED FORMALIZED
+\section{Axioms}
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -94,6 +94,35 @@ There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a functio
 \end{itemize}
 \end{ax}
 
+\begin{axs}[Collection]
+Let $P[X,Y,x]$ be a formula with set variables $X$ and $Y$ and an element variable $x \in X$. Then the following is an axiom.
+
+For any set $A$, there exists a set $B$, a function $p : B \rightarrow A$, a set $Y$ and a relation $M : B \looparrowright Y$ such that:
+\begin{itemize}
+\item $\forall b \in B. P[A, \{ y \in Y : bMy \}, p(b)]$
+\item For all $a \in A$, if $\exists Y. P[A,Y,a]$, then there exists $b \in B$ such that $a = p(b)$.
+\end{itemize}
+\end{axs}
+
+\begin{df}[Composite]
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
+\end{df}
+
+\begin{ax}[Universe]
+There exists a set $E$, a set $U$ and a function $el : E \rightarrow U$ such that the following holds.
+
+Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $A \approx \{ e \in E : el(e) = u \}$.
+
+\begin{itemize}
+\item $\mathbb{N}$ is small.
+\item For any $U$-small sets $A$ and $B$, the set $B^A$ is small.
+\item For any $U$-small sets $A$ and $B$, the set $A \times B$ is small.
+\item Let $f : A \rightarrow B$ be a function. If $B$ is small and $f^{-1}(b)$ is $U$-small for all $b \in B$, then $A$ is small.
+\item If $p : B \twoheadrightarrow A$ is a surjective function such that $A$ is small, then there exists a $U$-small set $C$, a surjection $q : C \twoheadrightarrow A$, and a function $f : C \rightarrow B$ such that $q = p \circ f$.
+\end{itemize}
+\end{ax}
+
 \chapter{Sets and Functions}
 
 \section{Surjective Functions} % CHECKED FORMALIZED
@@ -119,11 +148,6 @@ For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the 
 \end{df}
 
 \section{Composition} % CHECKED
-
-\begin{df}[Composite]
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
-\[ (g \circ f)(a) = g(f(a)) \enspace . \]
-\end{df}
 
 \begin{prop}
 Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
@@ -488,42 +512,14 @@ Let $A$ and $B$ be sets. A \emph{relation} $R$ between $A$ and $B$, $R : A \loop
 Given $a \in A$ and $b \in B$, we write $aRb$ for $(a,b) \in R$.
 \end{df}
 
-\section{Axioms Part Two}
+\section{Power Set}
 
-\begin{ax}[Power Set]
-For any set $A$, there exists a set $\mathcal{P} A$, the \emph{power set} of $A$, and a relation $\in : A \looparrowright \mathcal{P} A$, called \emph{membership}, such that, for any subset $S$ of $A$, there exists a unique $\overline{S} \in \mathcal{P} A$ such that, for all $x \in A$, we have $x \in \overline{S}$ if and only if $x \in S$.
+\begin{df}[Power Set]
+The \emph{power set} of a set $A$ is $\mathcal{P} A := 2^A$.
 
-We usually write just $S$ for $\overline{S}$.
-\end{ax}
-
-\begin{axs}[Collection]
-Let $P[X,Y,x]$ be a formula with set variables $X$ and $Y$ and an element variable $x \in X$. Then the following is an axiom.
-
-For any set $A$, there exists a set $B$, a function $p : B \rightarrow A$, a set $Y$ and a relation $M : B \looparrowright Y$ such that:
-\begin{itemize}
-\item $\forall b \in B. P[A, \{ y \in Y : bMy \}, p(b)]$
-\item For all $a \in A$, if $\exists Y. P[A,Y,a]$, then there exists $b \in B$ such that $a = p(b)$.
-\end{itemize}
-\end{axs}
-
-\begin{df}[Universe]
-Let $E : U \looparrowright X$ be a relation. Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $A \approx \{ x \in X : uEx \}$.
-
-Then $(U,X,E)$ form a \emph{universe} if and only if:
-\begin{itemize}
-\item $\mathbb{N}$ is $U$-small.
-\item For any $U$-small sets $A$ and $B$ and relation $R : A \looparrowright B$, the tabulation of $R$ is $U$-small.
-\item If $A$ is $U$-small then so is $\mathcal{P} A$
-\item Let $f : A \rightarrow B$ be a function. If $B$ is $U$-small and $f^{-1}(b)$ is $U$-small for all $b \in B$, then $A$ is $U$-small.
-\item If $p : B \twoheadrightarrow A$ is a surjective function such that $A$ is $U$-small, then there exists a $U$-small set $C$, a surjection $q : C \twoheadrightarrow A$, and a function $f : C \rightarrow B$ such that $q = pf$.
-\end{itemize}
+Given $S \in \mathcal{P} A$ and $a \in A$, we write $a \in A$ for $S(a) = 1$.
 \end{df}
 
-\begin{ax}[Universe]
-There exists a universe.
-\end{ax}
-
-Let $E : U \looparrowright X$ be a universe. We shall say a set is \emph{small} iff it is $U$-small, and \emph{large} otherwise.
 
 \section{Cartesian Product}
 
