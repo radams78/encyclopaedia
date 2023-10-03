@@ -2210,7 +2210,37 @@ Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace to
 Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The \emph{coproduct topology} on $\coprod_{\alpha \in A} X_\alpha$ is 
 
 \[ \left\{ \coprod_{\alpha \in A} U_\alpha : \{ U_\alpha \}_{\alpha \in A} \text{ is a family with $U_\alpha$ open in $X_\alpha$ for all $\alpha$} \right\} \enspace . \]
+
+We prove this is a topology.
 \end{df}
+
+\begin{prop}
+The coproduct topology is the finest topology on $\coprod_{\alpha \in A} X_\alpha$ such that every injection $\kappa_\alpha : X_\alpha \rightarrow \coprod_{\alpha \in A} X_\alpha$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$P = \coprod_{\alpha \in A} X_\alpha$}}
+\step{1}{\pflet{$\mathcal{T}_c$ be the coproduct topology.}}
+\step{2}{\pflet{$\mathcal{T}$ be any topology on $P$}}
+\step{3}{For all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T}_c)$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha \in A$}}
+	\step{b}{\pflet{$\{ U_\alpha \}_{\alpha \in A}$ be a family with each $U_\alpha$ open in $X_\alpha$.}}
+	\step{c}{For all $\alpha \in A$, we have $\inv{\kappa_\alpha}(\coprod_{\alpha \in A} U_\alpha)$ is open in $X_\alpha$.}
+	\begin{proof}
+		\pf\ Since $\inv{\kappa_\alpha}(\coprod_{\alpha \in A} U_\alpha) = U_\alpha$.
+	\end{proof}
+\end{proof}
+\step{4}{If, for all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T})$ is continuous, then $\mathcal{T} \subseteq \mathcal{T}_c$.}
+\begin{proof}
+	\step{a}{\assume{For all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T})$ is continuous.}}
+	\step{b}{\pflet{$U \in \mathcal{T}$}}
+	\step{c}{For all $\alpha \in a$, we have $\inv{\kappa_\alpha}(U)$ is open in $X_\alpha$.}
+	\step{d}{$U = \coprod_{\alpha \in A} \inv{\kappa_\alpha}(U) \in \mathcal{T}_c$}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Product Topology}
 
