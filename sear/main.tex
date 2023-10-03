@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -2206,8 +2206,10 @@ Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace to
 
 \subsection{Topological Disjoint Union}
 
-\begin{df}
-Let $X$ and $Y$ be topological spaces. The \emph{disjoint union} is $X + Y$ where $U \subseteq X + Y$ is open if and only if $\inv{\kappa_1}(U)$ is open in $X$ and $\inv{\kappa_2}(U)$ is open in $Y$.
+\begin{df}[Coproduct Topology]
+Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The \emph{coproduct topology} on $\coprod_{\alpha \in A} X_\alpha$ is 
+
+\[ \left\{ \coprod_{\alpha \in A} U_\alpha : \{ U_\alpha \}_{\alpha \in A} \text{ is a family with $U_\alpha$ open in $X_\alpha$ for all $\alpha$} \right\} \enspace . \]
 \end{df}
 
 \subsection{Product Topology}
@@ -2298,6 +2300,17 @@ Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. Then the 
 \end{proof}
 \qed
 \end{proof}
+
+\begin{ex}
+It is not true that, for any function $f : \prod_{\alpha \in A} X_\alpha \rightarrow Y$, if $f$ is continuous in every variable separately then $f$ is continuous.
+
+Define $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ by
+\[ f(x,y) = \begin{cases}
+\frac{xy}{x^2 + y^2} & \text{if } (x,y) \neq (0,0) \\
+0 & \text{if } x = y = 0
+\end{cases} \]
+Then $f$ is continuous in $x$ and in $y$, but is not continuous.
+\end{ex}
 
 \subsection{Bases}
 
