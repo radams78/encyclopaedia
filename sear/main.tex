@@ -2209,10 +2209,29 @@ Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace to
 \begin{df}[Coproduct Topology]
 Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The \emph{coproduct topology} on $\coprod_{\alpha \in A} X_\alpha$ is 
 
-\[ \left\{ \coprod_{\alpha \in A} U_\alpha : \{ U_\alpha \}_{\alpha \in A} \text{ is a family with $U_\alpha$ open in $X_\alpha$ for all $\alpha$} \right\} \enspace . \]
+\[ \mathcal{T} = \left\{ \coprod_{\alpha \in A} U_\alpha : \{ U_\alpha \}_{\alpha \in A} \text{ is a family with $U_\alpha$ open in $X_\alpha$ for all $\alpha$} \right\} \enspace . \]
 
 We prove this is a topology.
 \end{df}
+
+\begin{proof}
+\pf
+\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$}
+\begin{proof}
+	\pf
+	\[ \bigcup_{i \in I} \coprod_{\alpha \in A} U_{i\alpha} = \coprod_{\alpha \in A} \bigcup_{i \in I} U_{i \alpha} \]
+\end{proof}
+\step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$}
+\begin{proof}
+	\pf
+	\[ \coprod_{\alpha \in A} U_\alpha \cap \coprod_{\alpha \in A} V_\alpha = \coprod_{\alpha \in A} (U_\alpha \cap V_\alpha) \]
+\end{proof}
+\step{3}{$\coprod_{\alpha \in A} X_\alpha \in \mathcal{T}$}
+\begin{proof}
+	\pf\ Since every $X_\alpha$ is open in $X_\alpha$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 The coproduct topology is the finest topology on $\coprod_{\alpha \in A} X_\alpha$ such that every injection $\kappa_\alpha : X_\alpha \rightarrow \coprod_{\alpha \in A} X_\alpha$ is continuous.

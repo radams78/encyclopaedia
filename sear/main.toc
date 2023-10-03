@@ -50,7 +50,7 @@
 \contentsline {subsection}{\numberline {10.1.1}Subspaces}{54}{subsection.10.1.1}%
 \contentsline {subsection}{\numberline {10.1.2}Topological Disjoint Union}{55}{subsection.10.1.2}%
 \contentsline {subsection}{\numberline {10.1.3}Product Topology}{56}{subsection.10.1.3}%
-\contentsline {subsection}{\numberline {10.1.4}Bases}{57}{subsection.10.1.4}%
+\contentsline {subsection}{\numberline {10.1.4}Bases}{58}{subsection.10.1.4}%
 \contentsline {subsection}{\numberline {10.1.5}Subbases}{58}{subsection.10.1.5}%
 \contentsline {subsection}{\numberline {10.1.6}Countability Axioms}{58}{subsection.10.1.6}%
 \contentsline {section}{\numberline {10.2}Continuous Functions}{59}{section.10.2}%
@@ -62,11 +62,11 @@
 \contentsline {section}{\numberline {10.6}Quotient Spaces}{61}{section.10.6}%
 \contentsline {section}{\numberline {10.7}Connected Spaces}{63}{section.10.7}%
 \contentsline {section}{\numberline {10.8}Hausdorff Spaces}{64}{section.10.8}%
-\contentsline {section}{\numberline {10.9}Separable Spaces}{64}{section.10.9}%
-\contentsline {section}{\numberline {10.10}Sequential Compactness}{64}{section.10.10}%
-\contentsline {section}{\numberline {10.11}Compactness}{64}{section.10.11}%
-\contentsline {section}{\numberline {10.12}Quotient Spaces}{65}{section.10.12}%
-\contentsline {section}{\numberline {10.13}Gluing}{66}{section.10.13}%
+\contentsline {section}{\numberline {10.9}Separable Spaces}{65}{section.10.9}%
+\contentsline {section}{\numberline {10.10}Sequential Compactness}{65}{section.10.10}%
+\contentsline {section}{\numberline {10.11}Compactness}{65}{section.10.11}%
+\contentsline {section}{\numberline {10.12}Quotient Spaces}{66}{section.10.12}%
+\contentsline {section}{\numberline {10.13}Gluing}{67}{section.10.13}%
 \contentsline {section}{\numberline {10.14}Metric Spaces}{67}{section.10.14}%
 \contentsline {section}{\numberline {10.15}Complete Metric Spaces}{68}{section.10.15}%
 \contentsline {section}{\numberline {10.16}Manifolds}{68}{section.10.16}%
