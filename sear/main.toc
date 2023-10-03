@@ -9,10 +9,11 @@
 \contentsline {subsection}{\numberline {2.4.1}The Empty Set}{13}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}The Singleton}{13}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Subsets}{14}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Axioms Part Two}{14}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Cartesian Product}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Quotient Sets}{15}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Partitions}{15}{section.2.8}%
+\contentsline {section}{\numberline {2.5}Relations}{14}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Axioms Part Two}{14}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Cartesian Product}{15}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Quotient Sets}{15}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Partitions}{15}{section.2.9}%
 \contentsline {chapter}{\numberline {3}Order Theory}{17}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Relations}{17}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Category Theory}{19}{chapter.4}%
@@ -49,40 +50,40 @@
 \contentsline {subsection}{\numberline {10.1.1}Subspaces}{54}{subsection.10.1.1}%
 \contentsline {subsection}{\numberline {10.1.2}Topological Disjoint Union}{55}{subsection.10.1.2}%
 \contentsline {subsection}{\numberline {10.1.3}Product Topology}{55}{subsection.10.1.3}%
-\contentsline {subsection}{\numberline {10.1.4}Bases}{55}{subsection.10.1.4}%
-\contentsline {subsection}{\numberline {10.1.5}Subbases}{56}{subsection.10.1.5}%
-\contentsline {subsection}{\numberline {10.1.6}Countability Axioms}{56}{subsection.10.1.6}%
-\contentsline {section}{\numberline {10.2}Continuous Functions}{57}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Paths}{58}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}Loops}{58}{subsection.10.2.2}%
-\contentsline {section}{\numberline {10.3}Convergence}{58}{section.10.3}%
-\contentsline {section}{\numberline {10.4}Subspaces}{59}{section.10.4}%
-\contentsline {section}{\numberline {10.5}Embedding}{59}{section.10.5}%
-\contentsline {section}{\numberline {10.6}Quotient Spaces}{59}{section.10.6}%
-\contentsline {section}{\numberline {10.7}Connected Spaces}{61}{section.10.7}%
-\contentsline {section}{\numberline {10.8}Hausdorff Spaces}{62}{section.10.8}%
-\contentsline {section}{\numberline {10.9}Separable Spaces}{62}{section.10.9}%
-\contentsline {section}{\numberline {10.10}Sequential Compactness}{62}{section.10.10}%
-\contentsline {section}{\numberline {10.11}Compactness}{62}{section.10.11}%
-\contentsline {section}{\numberline {10.12}Quotient Spaces}{63}{section.10.12}%
-\contentsline {section}{\numberline {10.13}Gluing}{64}{section.10.13}%
-\contentsline {section}{\numberline {10.14}Metric Spaces}{65}{section.10.14}%
-\contentsline {section}{\numberline {10.15}Complete Metric Spaces}{66}{section.10.15}%
-\contentsline {section}{\numberline {10.16}Manifolds}{66}{section.10.16}%
-\contentsline {chapter}{\numberline {11}Homotopy Theory}{67}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Homotopies}{67}{section.11.1}%
-\contentsline {section}{\numberline {11.2}Homotopy Equivalence}{67}{section.11.2}%
-\contentsline {chapter}{\numberline {12}Simplicial Complexes}{69}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Cell Decompositions}{69}{section.12.1}%
-\contentsline {section}{\numberline {12.2}CW-complexes}{69}{section.12.2}%
-\contentsline {chapter}{\numberline {13}Topological Groups}{71}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Continuous Actions}{71}{section.13.1}%
-\contentsline {chapter}{\numberline {14}Topological Vector Spaces}{73}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Cauchy Sequences}{73}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Seminorms}{74}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Fr\'{e}chet Spaces}{74}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Normed Spaces}{74}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Inner Product Spaces}{76}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Banach Spaces}{77}{section.14.6}%
-\contentsline {section}{\numberline {14.7}Hilbert Spaces}{77}{section.14.7}%
-\contentsline {section}{\numberline {14.8}Locally Convex Spaces}{77}{section.14.8}%
+\contentsline {subsection}{\numberline {10.1.4}Bases}{57}{subsection.10.1.4}%
+\contentsline {subsection}{\numberline {10.1.5}Subbases}{57}{subsection.10.1.5}%
+\contentsline {subsection}{\numberline {10.1.6}Countability Axioms}{57}{subsection.10.1.6}%
+\contentsline {section}{\numberline {10.2}Continuous Functions}{58}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Paths}{59}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Loops}{59}{subsection.10.2.2}%
+\contentsline {section}{\numberline {10.3}Convergence}{59}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Subspaces}{60}{section.10.4}%
+\contentsline {section}{\numberline {10.5}Embedding}{60}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Quotient Spaces}{60}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Connected Spaces}{62}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Hausdorff Spaces}{63}{section.10.8}%
+\contentsline {section}{\numberline {10.9}Separable Spaces}{64}{section.10.9}%
+\contentsline {section}{\numberline {10.10}Sequential Compactness}{64}{section.10.10}%
+\contentsline {section}{\numberline {10.11}Compactness}{64}{section.10.11}%
+\contentsline {section}{\numberline {10.12}Quotient Spaces}{65}{section.10.12}%
+\contentsline {section}{\numberline {10.13}Gluing}{66}{section.10.13}%
+\contentsline {section}{\numberline {10.14}Metric Spaces}{66}{section.10.14}%
+\contentsline {section}{\numberline {10.15}Complete Metric Spaces}{67}{section.10.15}%
+\contentsline {section}{\numberline {10.16}Manifolds}{67}{section.10.16}%
+\contentsline {chapter}{\numberline {11}Homotopy Theory}{69}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Homotopies}{69}{section.11.1}%
+\contentsline {section}{\numberline {11.2}Homotopy Equivalence}{69}{section.11.2}%
+\contentsline {chapter}{\numberline {12}Simplicial Complexes}{71}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Cell Decompositions}{71}{section.12.1}%
+\contentsline {section}{\numberline {12.2}CW-complexes}{71}{section.12.2}%
+\contentsline {chapter}{\numberline {13}Topological Groups}{73}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Continuous Actions}{73}{section.13.1}%
+\contentsline {chapter}{\numberline {14}Topological Vector Spaces}{75}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Cauchy Sequences}{75}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Seminorms}{76}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Fr\'{e}chet Spaces}{76}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Normed Spaces}{76}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Inner Product Spaces}{78}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Banach Spaces}{79}{section.14.6}%
+\contentsline {section}{\numberline {14.7}Hilbert Spaces}{79}{section.14.7}%
+\contentsline {section}{\numberline {14.8}Locally Convex Spaces}{79}{section.14.8}%
