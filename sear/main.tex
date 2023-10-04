@@ -1,10 +1,10 @@
+% READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
-% READ
  
 \documentclass{book}
 
@@ -3055,6 +3055,95 @@ Every metrizable space is first countable.
 A metric space is compact if and only if it is sequentially compact.
 
 A metric space is separable if and only if it is second countable.
+
+\subsection{Products}
+
+\begin{df}[Euclidean Metric]
+Let $X$ and $Y$ be metric spaces. The \emph{Euclidean metric} on $X \times Y$ is
+\[ d((x_1, y_1), (x_2, y_2)) = \sqrt{d(x_1,x_2)^2 + d(y_1,y_2)^2} \enspace .\]
+We write $X \times Y$ for the set $X \times Y$ under this metric.
+
+We prove this is a metric.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$d((x_1,y_1),(x_2,y_2)) \geq 0$}
+\begin{proof}
+	\pf\ Immediate from definition.
+\end{proof}
+\step{2}{$d((x_1,y_1),(x_2,y_2)) = 0$ iff $(x_1,y_1) = (x_2,y_2)$}
+\begin{proof}
+	\pf\ $\sqrt{d(x_1,x_2)^2 + d(y_1,y_2)^2} = 0$ iff $d(x_1,x_2) = d(y_1,y_2) = 0$ iff $x_1 = x_2$ and $y_1 = y_2$.
+\end{proof}
+\step{3}{$d((x_1,y_1),(x_2,y_2)) = d((x_2,y_2),(x_1,y_1))$}
+\begin{proof}
+	\pf\ Since $\sqrt{d(x_1,x_2)^2 + d(y_1,y_2)^2} = \sqrt{d(x_2,x_1)^2 + d(y_2,y_1)^2}$.
+\end{proof}
+\step{4}{The triangle inequality holds.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		& (d((x_1,y_1),(x_2,y_2)) + d((x_2,y_2),(x_3,y_3)))^2 \\
+		= & d((x_1,y_1),(x_2,y_2))^2 + 2 d((x_1,y_1),(x_2,y_2)) d((x_2,y_2),(x_3,y_3)) + d((x_2,y_2),(x_3,y_3))^2 \\
+		= & d(x_1,x_2)^2 + d(y_1,y_2)^2 + 2 \sqrt{(d(x_1,x_2)^2 + d(y_1,y_2)^2)(d(x_2,x_3)^2 + d(y_2,y_3)^2)} + d(x_2,x_3)^2 + d(y_2,y_3)^2\\
+		\geq & d(x_1,x_2)^2 + d(x_2,x_3)^2 + d(y_1,y_2)^2 + d(y_2,y_3)^ + 2(d(x_1,x_2)d(x_2,x_3) + d(y_1,y_2) d(y_2,y_3)) \\
+		& (\text{Cauchy-Schwarz}) \\
+		= & (d(x_1,x_2) + d(x_2,x_3))^2 + (d(y_1,y_2) + d(y_2,y_3))^2 \\
+		\geq & d(x_1,x_3)^2 + d(y_1,y_3)^2 \\
+		= & d((x_1,y_1),(x_3,y_3))^2
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ and $Y$ be metric spaces. The Euclidean metric on $X \times Y$ induces the product topology on $X \times Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every open ball is open in the product topology.}
+\begin{proof}
+	\step{a}{\pflet{$(x,y) \in B((a,b),\epsilon)$} \prove{$B(x, \sqrt{\epsilon}) \times B(y, \sqrt{\epsilon}) \subseteq B((a,b),\epsilon)$}}
+	\step{b}{\pflet{$x' \in B(x, \sqrt{(\epsilon - d((x,y),(a,b)))^2/2})$ and $y' \in B(y, \sqrt{(\epsilon - d((x,y),(a,b)))^2/2})$} \prove{$d((x',y'),(a,b)) < \epsilon$}}
+	\step{c}{$d((x',y'),(x,y)) < \epsilon - d((x,y),(a,b))$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d((x',y'),(x,y)) & = \sqrt{d(x',x)^2 + d(y',y)^2} \\
+			& < \sqrt{(\epsilon - d((x,y),(a,b)))^2/2 + (\epsilon - d((x,y),(a,b))^2/2} \\
+			& = \epsilon - d((x,y),(a,b))
+		\end{align*}
+	\end{proof}
+	\step{d}{$d((x',y'),(a,b)) < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d((x',y'),(a,b)) & \leq d((x',y'),(x,y)) + d((x,y),(a,b)) & (\text{Triangle Inequality}) \\
+			& < \epsilon & (\text{\stepref{c}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If $U$ is open in $X$ and $V$ is open in $Y$ then $U \times V$ is open under the Euclidean metric.}
+\begin{proof}
+	\step{a}{\pflet{$(x,y) \in U \times V$}}
+	\step{b}{\pick\ $\delta, \epsilon > 0$ such that $B(x,\delta) \subseteq U$ and $B(y,\epsilon) \subseteq V$ \prove{$(B((x,y),\min(\delta, \epsilon)) \subseteq U \times V$}}
+	\step{c}{\pflet{$(x',y') \in B((x,y),\min(\delta, \epsilon))$}}
+	\step{d}{$d(x',x) < \delta$}
+	\begin{proof}
+		\step{i}{$d((x',y'),(x,y)) < \min(\delta, \epsilon)$}
+		\step{ii}{$d(x',x)^2 + d(y',y)^2 < \delta^2$}
+		\step{iii}{$d(x',x)^2 < \delta^2$}
+	\end{proof}
+	\step{e}{$d(y',y) < \epsilon$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{f}{$(x',y') \in U \times V$}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Complete Metric Spaces}
 
