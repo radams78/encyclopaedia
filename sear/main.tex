@@ -1,10 +1,10 @@
-% READ
-% READ
-% CHECK
-% READ
-% READ
 % CHECK
 % FORMALIZE
+% READ
+% READ
+% CHECK
+% READ
+% READ
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms}
+\section{Axioms} % CHECKED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -463,7 +463,7 @@ Let 1 be the set that has exactly one element. Let $*$ be its element.
 \subsection{Subsets} % CHECKED
 
 \begin{df}[Subset]
-A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) : \mathrm{Sub}(A)$.
+A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) \subseteq A$.
 
 We say two subsets $(S,i)$ and $(T,j)$ are \emph{equal}, $(S,i) = (T,j)$, iff there exists a bijection $\phi : S \approx T$ such that $j \circ \phi = i$.
 \end{df}
@@ -493,7 +493,7 @@ If $(R,i) = (S,j)$ and $(S,j) = (T,k)$ then $(R,i) = (T,k)$.
 \end{proof}
 
 \begin{df}[Membership]
-Given $(S,i) : \mathrm{Sub}(A)$ and $a \in A$, we write $a \in (S,i)$ for $\exists s : \El{S}. i(s) = a$.
+Given $(S,i) \subseteq A$ and $a \in A$, we write $a \in (S,i)$ for $\exists s \in S. i(s) = a$.
 \end{df}
 
 \begin{prop}
@@ -503,6 +503,38 @@ If $a \in (S,i)$ and $(S,i) = (T,j)$ then $a \in (T,j)$.
 \begin{proof}
 \pf\ If $i(s) = a$ then $j(\phi(s)) = a$. \qed
 \end{proof}
+
+\begin{df}[Union]
+Given subsets $S$ and $T$ of $A$, the \emph{union} is the subset $\{ x \in A : x \in S \vee x \in T \}$.
+\end{df}
+
+\begin{df}[Intersection]
+Given subsets $S$ and $T$ of $A$, the \emph{intersection} is the subset $\{ x \in A : x \in S \wedge x \in T \}$.
+\end{df}
+
+\begin{df}
+Given a set $A$, we write $\emptyset$ for the subset $(\emptyset, !)$ where $!$ is the unique function $\emptyset \rightarrow A$.
+\end{df}
+
+\begin{prop}
+\[ S \cup \emptyset = S \]
+\end{prop}
+
+\begin{prop}
+\[ S \cap \emptyset = S \]
+\end{prop}
+
+\begin{df}[Inclusion]
+Given subsets $(S,i)$ and $(T,j)$ of a set $A$, we write $(S,i) \subseteq (T,j)$ iff there exists $f : S \rightarrow T$ such that $j \circ f = i$.
+\end{df}
+
+\begin{prop}
+\[ \emptyset \subseteq S \]
+\end{prop}
+
+\begin{df}[Disjoint]
+Subsets $S$ and $T$ of $A$ are \emph{disjoint} iff $S \cap T = \emptyset$.
+\end{df}
 
 \section{Relations} % CHECKED
 
@@ -541,6 +573,21 @@ Further, if $p : X \twoheadrightarrow Q$ is another quotient with respect to $\s
 
 \begin{df}[Partition]
 A \emph{partition} of a set $X$ is a set of pairwise disjoint subsets of $X$ whose union is $X$.
+\end{df}
+
+\section{Disjoint Union}
+
+\begin{thm}
+For any sets $A$ and $B$, there exists a set $A + B$, the \emph{disjoint union} of $A$ and $B$, and functions $\kappa_1 : A \rightarrow A + B$ and $\kappa_2 : B \rightarrow A + B$, the \emph{injections}, such that, for every set $X$ and functions $f : A \rightarrow X$ and $g : B \rightarrow X$, there exists a unique function $[f,g] : A + B \rightarrow X$ such that $[f,g] \circ \kappa_1 = f$ and $[f,g] \circ \kappa_2 = g$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A + B := \{ p \in \mathcal{P} A \times \mathcal{P} B : \exists a \in A. p = (\{a\},\emptyset) \vee \exists b \in B. p = (\emptyset, \{b\}) \}$}}
+% TODO
+\end{proof}
+
+\begin{df}
 \end{df}
 
 \chapter{Order Theory}
@@ -2797,6 +2844,26 @@ $\mathbb{RP}^2$ is the quotient of $[0,1]^2$ by $\sim$ where $(x,0) \sim (1-x,1)
 
 \begin{proof}
 \pf TODO
+\end{proof}
+
+\begin{ex}
+Let $\{X_i\}_{i \in I}$ be a family of topological spaces and $\{Y_i\}_{i \in I}$ a family of sets. Let $q_i : X_i \twoheadrightarrow Y_i$ be a surjective function for all $i \in I$. Give each $Y_i$ the quotient topology. It is not true in general that the product topology on $\prod_{i \in I} Y_i$ is the same as the quotient topology induced by $\prod_{i \in I} q_i : \prod_{i \in I} X_i \twoheadrightarrow \prod_{i \in I} Y_i$.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X^* = \mathbb{R} - \mathbb{Z}_+ + \{b\}$ be the quotient space obtained from $\mathbb{R}$ by identifying the subset $\mathbb{Z}_+$ to the point $b$.}}
+\step{2}{\pflet{$p : \mathbb{R} \rightarrow X^*$ be the quotient map.} \prove{$p \times \id{\mathbb{Q}} : \mathbb{R} \times \mathbb{Q} \rightarrow X^* \times \mathbb{Q}$ is not a quotient map.}}
+\step{3}{For $n \in \mathbb{Z}_+$, \pflet{$c_n = \sqrt{2} / n$}}
+\step{4}{For $n \in \mathbb{Z}_+$, \pflet{$U_n = \{ (x,y) \in \mathbb{Q} \times \mathbb{R} : n-1/4 < x < n+1/4 \text{ and } ((y > x + c_n - n \text{ and } y > -x + c_n + n) \text{ or } (y < x + c_n - n \text{ and } y < -x + c_n + n))\}$}}
+\step{5}{For all $n \in \mathbb{Z}_+$, $U_n$ is open in $\mathbb{R} \times \mathbb{Q}$}
+\step{6}{For all $n \in \mathbb{Z}_+$ we have $\{n\} \times \mathbb{Q} \subseteq U_n$}
+\step{7}{\pflet{$U = \bigcup_{n \in \mathbb{Z}_+} U_n$}}
+\step{8}{$U$ is open in $\mathbb{R} \times \mathbb{Q}$.}
+\step{9}{$U$ is saturated with respect to $p \times \id{\mathbb{Q}}$.}
+\step{10}{\pflet{$U' = (p \times \id{\mathbb{Q}})(U)$}}
+\step{11}{\assume{for a contradiction $U'$ is open in $X^* \times \mathbb{Q}$.}}
+%TODO
 \end{proof}
 
 \section{Connected Spaces}
