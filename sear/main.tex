@@ -2165,6 +2165,7 @@ The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a su
 \end{ex}
 
 \begin{thm}
+\label{thm:subspace_universal}
 Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace topology on $Y$ is the unique topology such that, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f : Z \rightarrow X$ is continuous.
 \end{thm}
 
@@ -2345,6 +2346,7 @@ Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The produ
 \end{proof}
 
 \begin{thm}
+\label{thm:product_universal}
 Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. Then the product topology on $\prod_{\alpha \in A} X_\alpha$ is the unique topology such that, for every topological space $Z$ and function $f : Z \rightarrow \prod_{\alpha \in A} X_\alpha$, we have $f$ is continuous if and only if, for all $\alpha \in A$, we have $\pi_\alpha \circ f : Z \rightarrow X_\alpha$ is continuous.
 \end{thm}
 
@@ -2411,6 +2413,32 @@ Define $f : \mathbb{R}^2 \rightarrow \mathbb{R}$ by
 \end{cases} \]
 Then $f$ is continuous in $x$ and in $y$, but is not continuous.
 \end{ex}
+
+\begin{prop}
+Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $Y_i$ be a subspace of $X_i$ for all $i \in I$. Then the product topology on $\prod_{i \in I} Y_i$ is the same as the subspace topology on $\prod_{i \in I} Y_i$ as a subspace of $\prod_{i \in I} X_i$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Given $\prod_{i \in I} Y_i$ the subspace topology.}
+\step{11}{\pflet{$\iota : \prod_{i \in I} Y_i$ be the inclusion.}}
+\step{2}{\pflet{$Z$ be any topological space.}}
+\step{3}{\pflet{$f : Z \rightarrow \prod_{i \in I} Y_i$}}
+\step{4}{$f$ is continuous if and only if, for all $i \in I$, we have $\pi_i \circ f$ is continuous.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		f \text{ is continuous}
+		& \Leftrightarrow \iota \circ f : Z \rightarrow \prod_{i \in I} X_i \text{ is continuous} & (\text{Theorem \ref{thm:subspace_universal}}) \\
+		& \Leftrightarrow \forall i \in I. \pi_i \circ \iota \circ f : Z \rightarrow X_i \text{ is continuous}  (\text{Theorem \ref{thm:product_universal}}) \\
+		& \Leftrightarrow \forall i \in I. \iota_i \circ \pi_i \circ f : Z \rightarrow X_i \text{ is continuous} \\
+		& \Leftrightarrow \forall i \in I. \pi_i \circ f : Z \rightarrow Y_i \text{ is continuous}
+		& (\text{Theorem \ref{thm:subspace_universal}})
+	\end{align*}
+	where $\iota_i$ is the inclusion $Y_i \rightarrow X_i$.
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Bases}
 
