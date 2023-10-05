@@ -1,10 +1,10 @@
 % READ
-% CHECK
-% READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
+% READ
+% CHECK
  
 \documentclass{book}
 
@@ -512,6 +512,14 @@ Given subsets $S$ and $T$ of $A$, the \emph{union} is the subset $\{ x \in A : x
 Given subsets $S$ and $T$ of $A$, the \emph{intersection} is the subset $\{ x \in A : x \in S \wedge x \in T \}$.
 \end{df}
 
+\begin{prop}[Distributive Law]
+\[ R \cap (S \cup T) = (R \cap S) \cup (R \cap T) \]
+\end{prop}
+
+\begin{prop}[Distributive Law]
+\[ R \cup (S \cap T) = (R \cup S) \cap (R \cup T) \]
+\end{prop}
+
 \begin{df}
 Given a set $A$, we write $\emptyset$ for the subset $(\emptyset, !)$ where $!$ is the unique function $\emptyset \rightarrow A$.
 \end{df}
@@ -539,6 +547,14 @@ Subsets $S$ and $T$ of $A$ are \emph{disjoint} iff $S \cap T = \emptyset$.
 \begin{df}[Difference]
 Given subsets $S$ and $T$ of $A$, the \emph{difference} of $S$ and $T$ is $S - T = \{ x \in A : x \in S \wedge x \notin T \}$.
 \end{df}
+
+\begin{prop}[De Morgan's Law]
+\[ R - (S \cup T) = (R - S) \cap (R - T) \]
+\end{prop}
+
+\begin{prop}[De Morgan's Law]
+\[ R - (S \cap T) = (R - S) \cup (R - T) \]
+\end{prop}
 
 \section{Relations} % CHECKED
 
