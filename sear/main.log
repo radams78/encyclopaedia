@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  5 OCT 2023 23:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  5 OCT 2023 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -760,74 +760,74 @@ Package xypdf Info: Line width: 0.39998pt on input line 45.
 
 ]
 Chapter 1.
-[7] [8]
+[7] [8] [9] [10
+
+]
 Chapter 2.
-[9
-
-] [10] [11] [12] [13] [14] [15] [16]
+[11] [12] [13] [14] [15] [16] [17] [18]
 Chapter 3.
-[17
+[19
 
-] [18
+] [20
 
 ]
 Chapter 4.
-[19] [20] [21] <xymatrix 2x2 182> [22] <xymatrix 2x2 168> <xymatrix 2x2 182>
-[23] <xymatrix 2x2 182>
+[21] [22] [23] <xymatrix 2x2 182> [24] <xymatrix 2x2 168> <xymatrix 2x2 182>
+[25] <xymatrix 2x2 182>
 WARNING: proof step "4" (<1>5) already defined
 <xymatrix 2x2 182>
 Underfull \vbox (badness 1895) has occurred while \output is active []
 
- [24]
+ [26]
 <xymatrix 2x2 182>
 Underfull \vbox (badness 3271) has occurred while \output is active []
 
- [25]
-<xymatrix 2x2 168> <xymatrix 2x2 182> <xymatrix 2x2 182> [26]
+ [27]
+<xymatrix 2x2 168> <xymatrix 2x2 182> <xymatrix 2x2 182> [28]
 Underfull \vbox (badness 1019) has occurred while \output is active []
 
- [27]
-<xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [28] [29] [30]
-<xymatrix 2x2 182> [31]
-Overfull \hbox (27.76573pt too wide) in paragraph at lines 1427--1428
+ [29]
+<xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [30] [31] [32]
+<xymatrix 2x2 182> [33]
+Overfull \hbox (27.76573pt too wide) in paragraph at lines 1425--1426
 []\OT1/cmr/bx/n/10 Definition 4.1.69 \OT1/cmr/m/n/10 (Fi-bre Wedge)\OT1/cmr/bx/
 n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 B$ \OT1/cmr/m/n/10 be a small set.
  Let $\U/matha/m/n/10 p\OML/cmm/m/it/10 X; u[]; p[]\U/matha/m/n/10 q\OML/cmm/m/
 it/10 ; \U/matha/m/n/10 p\OML/cmm/m/it/10 Y; u[]; p[]\U/matha/m/n/10 q P
  []
 
-<xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [32] [33]
-Overfull \hbox (33.82704pt too wide) detected at line 1574
+<xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [34] [35]
+Overfull \hbox (33.82704pt too wide) detected at line 1572
 []
  []
 
-[34] <xymatrix 3x3 361> <xymatrix 3x4 464> [35] <xymatrix 2x2 182> [36]
-[37] [38] [39] [40
+[36] <xymatrix 3x3 361> <xymatrix 3x4 464> [37] <xymatrix 2x2 182> [38]
+[39] [40] [41] [42
 
 ]
 Chapter 5.
-[41] [42
-
-]
-Chapter 6.
 [43] [44
 
 ]
-Chapter 7.
-[45] [46]
-Chapter 8.
-[47
+Chapter 6.
+[45] [46
 
-] [48
+]
+Chapter 7.
+[47] [48]
+Chapter 8.
+[49
+
+] [50
 
 ]
 Chapter 9.
-[49] [50
+[51] [52
 
 ]
 Chapter 10.
-[51]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 2105--2105
+[53]
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 2103--2103
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -836,27 +836,27 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
  S\U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q „
  []
 
-[52] [53] [54]
+[54] [55] [56]
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 2302--2303
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 2300--2301
 []\OT1/cmr/bx/n/10 Proposition 10.1.29. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
 
-[55] [56] [57]
-Overfull \hbox (86.28078pt too wide) detected at line 2504
+[57] [58] [59]
+Overfull \hbox (86.28078pt too wide) detected at line 2502
 []
  []
 
-[58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]
-Overfull \hbox (108.65958pt too wide) detected at line 3210
+[60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71]
+Overfull \hbox (108.65958pt too wide) detected at line 3208
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 3224--3224
+Overfull \hbox (47.883pt too wide) in paragraph at lines 3222--3222
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -864,80 +864,125 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 3240
+Overfull \hbox (0.90187pt too wide) detected at line 3238
 []
  []
 
-[70] [71] [72]
+[72] [73] [74]
 Chapter 11.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 3349--3350
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 3347--3348
 []\OT1/cmr/bx/n/10 Definition 11.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
  []
 
-[73
-
-] [74]
-Chapter 12.
 [75
 
 ] [76]
-Chapter 13.
+Chapter 12.
 [77
 
 ] [78]
-Chapter 14.
+Chapter 13.
 [79
 
 ] [80]
-Overfull \hbox (113.19771pt too wide) detected at line 3684
+Chapter 14.
+[81
+
+] [82]
+Overfull \hbox (113.19771pt too wide) detected at line 3682
 []
  []
 
 WARNING: proof step "4" undefined
-[81] [82] [83] [84] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1C3A4831E8BA483E0611E2020F83F10F;11601.
+[83] [84] [85] [86] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 1C3A4831E8BA483E0611E2020F83F10F;11601
+(rerunfilecheck)             After:  CE64122D65011D70F5AB7A0F3F41F45B;11591.
  ) 
 Here is how much of TeX's memory you used:
- 13067 strings out of 476091
- 185008 string characters out of 5794081
- 1871330 words of memory out of 5000000
+ 13077 strings out of 476091
+ 185111 string characters out of 5794081
+ 1872330 words of memory out of 5000000
  32658 multiletter control sequences out of 15000+600000
  531742 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
-athabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (84 pages, 499067 bytes).
+
+pdfTeX warning (dest): name{ax.2.4.4} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.2.4.6} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.2.4.5} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.2.4.2} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.2.10} has been referenced but does not exis
+t, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{section.2.9} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.2.4.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.2.4.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.2.4.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
+habx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on main.pdf (86 pages, 499799 bytes).
 PDF statistics:
- 1553 PDF objects out of 1728 (max. 8388607)
- 1380 compressed objects within 14 object streams
- 604 named destinations out of 1000 (max. 500000)
+ 1573 PDF objects out of 1728 (max. 8388607)
+ 1398 compressed objects within 14 object streams
+ 614 named destinations out of 1000 (max. 500000)
  729 words of extra memory for PDF output out of 10000 (max. 10000000)
 

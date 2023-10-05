@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 % READ
 % CHECK
+% FORMALIZE
  
 \documentclass{book}
 
@@ -59,6 +59,24 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
+\section{Injections, Surjections and Bijections}
+
+\begin{df}[Injective]
+A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
+\end{df}
+
+\begin{df}[Surjective]
+A function $f : A \rightarrow B$ is \emph{surjective} or a \emph{surjection} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
+\end{df}
+
+\begin{df}[Bijective]
+A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
+
+Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
+\end{df}
+
+If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
+
 \section{Axioms} % CHECKED FORMALIZED
 
 \begin{axs}[Choice]
@@ -74,10 +92,6 @@ Let $f, g : A \rightarrow B$. If, for all $x \in A$, we have $f(x) = g(x)$, then
 \begin{ax}[Pairing]
 For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a : \El{A}$ and $b : \El{B}$, there exists a unique $(a,b) : \El{A \times B}$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
 \end{ax}
-
-\begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
-\end{df}
 
 \begin{axs}[Separation]
 For every property $P[X,x]$ where $X$ is a set variable and $x : \El{X}$, the following is an axiom:
@@ -124,22 +138,6 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 \end{ax}
 
 \chapter{Sets and Functions}
-
-\section{Surjective Functions} % CHECKED FORMALIZED
-
-\begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
-\end{df}
-
-\section{Bijections} % CHECKED FORMALIZED
-
-\begin{df}[Bijective]
-A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
-
-Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
-\end{df}
-
-If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
 \section{Identity Function} % CHECKED
 
@@ -460,7 +458,7 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
 
-\subsection{Subsets}
+\subsection{Subsets} % CHECKED
 
 \begin{df}[Subset]
 A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) \subseteq A$.
