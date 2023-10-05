@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
  
 \documentclass{book}
 
@@ -59,14 +59,14 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections}
+\section{Injections, Surjections and Bijections} % CHECKED
 
 \begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y : \El{A}$, if $f(x) = f(y)$ then $x = y$.
+A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
 \end{df}
 
 \begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective} or a \emph{surjection} iff, for all $y : \El{B}$, there exists $x : \El{A}$ such that $f(x) = y$.
+A function $f : A \rightarrow B$ is \emph{surjective} or a \emph{surjection} iff, for all $y \in B$, there exists $x \in A$ such that $f(x) = y$.
 \end{df}
 
 \begin{df}[Bijective]
