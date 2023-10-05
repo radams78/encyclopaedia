@@ -1,9 +1,9 @@
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
 % READ
  
 \documentclass{book}
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Axioms} % CHECKED
+\section{Axioms} % CHECKED FORMALIZED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -460,7 +460,7 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
 
-\subsection{Subsets} % CHECKED
+\subsection{Subsets}
 
 \begin{df}[Subset]
 A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) \subseteq A$.
@@ -534,6 +534,10 @@ Given subsets $(S,i)$ and $(T,j)$ of a set $A$, we write $(S,i) \subseteq (T,j)$
 
 \begin{df}[Disjoint]
 Subsets $S$ and $T$ of $A$ are \emph{disjoint} iff $S \cap T = \emptyset$.
+\end{df}
+
+\begin{df}[Difference]
+Given subsets $S$ and $T$ of $A$, the \emph{difference} of $S$ and $T$ is $S - T = \{ x \in A : x \in S \wedge x \notin T \}$.
 \end{df}
 
 \section{Relations} % CHECKED
