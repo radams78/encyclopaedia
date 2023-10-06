@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  6 OCT 2023 20:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  6 OCT 2023 20:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,32 +802,41 @@ Overfull \hbox (33.82704pt too wide) detected at line 1768
 
 ]
 Chapter 5.
-[47] [48
+[47]
 
-]
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 2204.
+
+[48] [49] [50] [51] [52] [53] [54]
 Chapter 6.
-[49] [50
+[55
 
-]
+] [56] [57] [58] [59] [60]
 Chapter 7.
-[51] [52
+[61
+
+] [62
 
 ]
 Chapter 8.
-[53] [54]
-Chapter 9.
-[55
-
-] [56
+[63] [64
 
 ]
+Chapter 9.
+[65] [66]
 Chapter 10.
-[57] [58
+[67
+
+] [68
 
 ]
 Chapter 11.
-[59]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 2323--2323
+[69] [70
+
+]
+Chapter 12.
+[71]
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 3273--3273
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -836,27 +845,27 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
  S\U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q „
  []
 
-[60] [61] [62]
+[72] [73] [74]
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 2520--2521
-[]\OT1/cmr/bx/n/10 Proposition 11.1.29. \OT1/cmr/m/it/10 The co-prod-uct topol-
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 3470--3471
+[]\OT1/cmr/bx/n/10 Proposition 12.1.29. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
 
-[63] [64] [65]
-Overfull \hbox (86.28078pt too wide) detected at line 2722
+[75] [76] [77]
+Overfull \hbox (86.28078pt too wide) detected at line 3672
 []
  []
 
-[66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77]
-Overfull \hbox (108.65958pt too wide) detected at line 3428
+[78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89]
+Overfull \hbox (108.65958pt too wide) detected at line 4378
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 3442--3442
+Overfull \hbox (47.883pt too wide) in paragraph at lines 4392--4392
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -864,233 +873,80 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 3458
+Overfull \hbox (0.90187pt too wide) detected at line 4408
 []
  []
 
-[78] [79] [80]
-Chapter 12.
+[90] [91] [92]
+Chapter 13.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 3567--3568
-[]\OT1/cmr/bx/n/10 Definition 12.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 4517--4518
+[]\OT1/cmr/bx/n/10 Definition 13.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
  []
 
-[81
+[93
 
-] [82]
-Chapter 13.
-[83
-
-] [84]
+] [94]
 Chapter 14.
-[85
+[95
 
-] [86]
+] [96]
 Chapter 15.
-[87
+[97
 
-] [88]
-Overfull \hbox (113.19771pt too wide) detected at line 3902
+] [98]
+Chapter 16.
+[99
+
+] [100]
+Overfull \hbox (113.19771pt too wide) detected at line 4852
 []
  []
 
 WARNING: proof step "4" undefined
-[89] [90] [91] [92] (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 477B5EEDF2D71E33C131CF24C2CB129B;12467
-(rerunfilecheck)             After:  6A1E3F089E220ABFA1D6E1FE7D027DE9;12598.
+[101] [102] [103] [104] (./main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: E3DBFB00B5967C70F43FC2C6C6A187AA;13387.
  ) 
 Here is how much of TeX's memory you used:
- 13177 strings out of 476091
- 186174 string characters out of 5794081
- 1872330 words of memory out of 5000000
- 32667 multiletter control sequences out of 15000+600000
+ 13247 strings out of 476091
+ 186839 string characters out of 5794081
+ 1871330 words of memory out of 5000000
+ 32688 multiletter control sequences out of 15000+600000
  531742 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{ax.10.12.2} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.10.1.33} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.10.1.27} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{ax.10.1.29} has been referenced but does not exist,
- replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.8} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.7} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.6} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.5} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.4} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.3} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.14.2} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.16} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.15} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.14.1} has been referenced but does no
-t exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.14} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.13} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.12} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.11} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.10} has been referenced but does not exi
-st, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.9} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.8} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.7} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.6} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.5} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.4} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.3} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.2.2} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.2.1} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.2} has been referenced but does not exis
-t, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1.6} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1.5} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1.4} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1.3} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1.2} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.10.1.1} has been referenced but does not
- exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{section.10.1} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
-habx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (92 pages, 514428 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/mathabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/mathabx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/mathabx-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/mathabx-type1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
+athabx-type1/mathx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on main.pdf (104 pages, 546798 bytes).
 PDF statistics:
- 1727 PDF objects out of 1728 (max. 8388607)
- 1544 compressed objects within 16 object streams
- 705 named destinations out of 1000 (max. 500000)
- 777 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1943 PDF objects out of 2073 (max. 8388607)
+ 1677 compressed objects within 17 object streams
+ 754 named destinations out of 1000 (max. 500000)
+ 833 words of extra memory for PDF output out of 10000 (max. 10000000)
 

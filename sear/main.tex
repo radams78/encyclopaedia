@@ -2102,6 +2102,956 @@ The following hold in the real numbers:
 \end{thm}
 
 %TODO Prove these
+
+\begin{df}[Subtraction]
+We write $x - y$ for $x + (-y)$.
+\end{df}
+
+\begin{df}
+Given real numbers $x$ and $y$ with $y \neq 0$, we write $x/y$ for $x \inv{y}$.
+\end{df}
+\begin{thm}
+\label{thm:y_equals_zero}
+For any real numbers $x$ and $y$, if $x + y = x$ then $y = 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$}}
+\step{2}{\assume{$x + y = x$}}
+\step{3}{$y = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = y + 0 & (\text{Definition of zero}) \\
+		& = y + (x + (-x)) & (\text{Definition of } -x) \\
+		& = (y + x) + (-x) & (\text{Associativity of Addition}) \\
+		& = (x + y) + (-x) & (\text{Commutativity of Addition}) \\
+		& = x + (-x) & (\text{\stepref{2}}) \\
+		& = 0 & (\text{Definition of } -x)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:multiply_by_zero}
+\[ \forall x \in \mathbb{R}. 0x = 0 \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \mathbb{R}$}}
+\step{2}{$xx + 0x = xx$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		xx + 0x & = (x + 0) x & (\text{Distributive Law}) \\
+		& = xx & (\text{Definition of } 0)
+	\end{align*}
+\end{proof}
+\step{3}{$0x = 0$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:y_equals_zero}, \stepref{2}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\[ -0 = 0 \]
+\end{thm}
+
+\begin{proof}
+\pf\ Since $0 + 0 = 0$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:minus_minus}
+\[ \forall x \in \mathbb{R}. -(-x) = x \]
+\end{thm}
+
+\begin{proof}
+\pf\ Since $-x + x = 0$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:multiply_by_negative}
+\[ \forall x,y \in \mathbb{R}. x(-y) = -(xy) \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+x(-y) + xy & = x((-y)+y) & (\text{Distributive Law}) \\
+& = x0 & (\text{Definition of } -y) \\
+& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:multiply_by_minus_one}
+\[ \forall x \in \mathbb{R}. (-1)x = -x \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+	(-1)x & = -(1\cdot x) & (\text{Theorem \ref{thm:multiply_by_negative}}) \\
+	& = -x & (\text{Definition of } 1) \enspace \qed
+\end{align*}
+\end{proof}
+
+\subsection{Subtraction}
+
+\begin{thm}
+\[ \forall x,y,z \in \mathbb{R}. x(y-z) = xy-xz \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+x (y-z) & = x(y + (-z)) & (\text{Definition of subtraction}) \\
+& = xy + x(-z) & (\text{Distributive Law}) \\
+& = xy + (-(xz)) & (\text{Theorem \ref{thm:multiply_by_negative}}) \\
+& = xy - xz & (\text{Definition of subtraction}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:negate_sum}
+\[ \forall x,y \in \mathbb{R}. -(x+y) = -x-y \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+-(x+y) & = (-1)(x+y) & (\text{Theorem \ref{thm:multiply_by_minus_one}}) \\
+& = (-1)x + (-1)y & (\text{Distributive Law}) \\
+& = -x + (-y) & (\text{Theorem \ref{thm:multiply_by_minus_one}}) \\
+& = -x-y & (\text{Definition of subtraction}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\[ \forall x,y \in \mathbb{R}. -(x-y) = -x+y \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+-(x-y) & = -(x + (-y)) & (\text{Definition of subtraction}) \\
+& = -x-(-y) & (\text{Theorem \ref{thm:negate_sum}}) \\
+& = -x + (-(-y)) & (\text{Definition of subtraction}) \\
+& = -x + y & (\text{Theorem \ref{thm:minus_minus}}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Reciprocal]
+Given $x \in \mathbb{R}$ with $x \neq 0$, the \emph{reciprocal} of $x$, $1/x$, is the unique real number such that $x \cdot 1/x = 1$.
+\end{df}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x \neq 0$ and $xy = x$ then $y = 1$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$}}
+\step{2}{\assume{$x \neq 0$}}
+\step{3}{\assume{$xy = x$}}
+\step{4}{$y = 1$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = y1 & (\text{Definition of } 1) \\
+		& = y (x \cdot 1/x) & (\text{Definition of } 1/x, \text{\stepref{2}}) \\
+		& = (yx) 1/x & (\text{Associativity of Multiplication}) \\
+		& = (xy) 1/x & (\text{Commutativity of Multiplication}) \\
+		& = x \cdot 1/x & (\text{\stepref{3}}) \\
+		& = 1 & (\text{Definition of } 1/x, \text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Quotient]
+Given real numbers $x$ and $y$ with $y \neq 0$, the \emph{quotient} $x/y$ is defined by
+\[ x/y = x \cdot 1/y \enspace . \]
+\end{df}
+
+\begin{thm}
+For any real number $x$, if $x \neq 0$ then $x/x = 1$.
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{thm}
+\[ \forall x \in \mathbb{R}. x/1 = x \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \mathbb{R}$}}
+\step{2}{$1/1 = 1$}
+\begin{proof}
+	\pf\ Since $1 \cdot 1 = 1$.
+\end{proof}
+\step{3}{$x/1 = x$}
+\begin{proof}
+	\pf\ Since $x/1 = x \cdot 1/1 = x \cdot 1 = x$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x \neq 0$ and $y \neq 0$ then $xy \neq 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$}}
+\step{2}{\assume{$xy = 0$ and $x \neq 0$} \prove{$y = 0$}}
+\step{3}{$y = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y & = 1y & (\text{Definition of } 1) \\
+		& = (1/x)xy & (\text{Definition of } 1/x, \text{\stepref{2}}) \\
+		& = (1/x)0 & (\text{\stepref{2}}) \\
+		& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $y$ and $z$, if $y \neq 0$ and $z \neq 0$ then $(1/y)(1/z) = 1/(yz)$.
+\end{thm}
+
+\begin{proof}
+\pf\ Since $yz(1/y)(1/z) = 1 \cdot 1 = 1$. \qed
+\end{proof}
+
+\begin{cor}
+For any real numbers $x$, $y$, $z$, $w$ with $y \neq 0 \neq w$, we have $(x/y)(z/w) = (xz)/(yw)$.
+\end{cor}
+
+\begin{thm}
+For any real numbers $x$, $y$, $z$, $w$ with $y \neq 0 \neq w$, we have
+\[ \frac{x}{y} + \frac{z}{w} = \frac{xw + yz}{yw} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+yw \left( \frac{x}{y} + \frac{z}{w} \right)
+& = y w \frac{x}{y} + yw \frac{z}{w} \\
+& = wx + yz & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+For any real number $x$, if $x \neq 0$ then $1/x \neq 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ Since $x \cdot 1/x = 1 \neq 0$. \qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $w$, $z$, if $w \neq 0 \neq z$ then $1 / (w / z) = z/w$.
+\end{thm}
+
+\begin{proof}
+\pf\ Since $(z/w)(w/z) = (wz)/(wz) = 1$. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:multiply_quotient}
+For any real numbers $a$, $x$ and $y$, if $y \neq 0$ then $(ax)/y = a(x/y)$
+\end{thm}
+
+\begin{proof}
+\pf\ Since $ya(x/y) = ax$. \qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $y \neq 0$ then $(-x)/y = x/(-y) = -(x/y)$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$(-x)/y = -(x/y)$}
+\begin{proof}
+	\pf\ Take $a = -1$ in Theorem \ref{thm:multiply_quotient}.
+\end{proof}
+\step{2}{$x/(-y) = -(x/y)$}
+\begin{proof}
+	\pf\ Since $(-y)(-(x/y)) = y(x/y) = x$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$, $y$, $z$ and $w$, if $x > y$ and $w > z$ then $x + w > y + z$.
+\end{thm}
+
+\begin{proof}
+\pf\ We have $y + z < x + z < x + w$ by Monotonicity of Addition twice. \qed
+\end{proof}
+
+\begin{cor}
+For any real numbers $x$ and $y$, if $x > 0$ and $y > 0$ then $x + y > 0$.
+\end{cor}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x > 0$ and $y > 0$ then $xy > 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+	xy & > 0y & (\text{Monotonicity of Multiplication}) \\
+	& = 0 & (\text{Theorem \ref{thm:multiply_by_zero}}) \enspace \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:negation_positive}
+For any real number $x$, we have $x > 0$ iff $-x < 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $0 < x$ then $-x < 0$}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $-x$ to both sides.
+\end{proof}
+\step{2}{If $-x < 0$ then $0 < x$}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $x$ to both sides.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, we have $x > y$ iff $-x < -y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $y < x$ then $-x < -y$.}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $-x-y$ to both sides.
+\end{proof}
+\step{2}{If $-x < -y$ then $y < x$.}
+\begin{proof}
+	\pf\ By Monotonicity of Addition adding $x + y$ to both sides.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:multiplication_antitone}
+For any real numbers $x$, $y$ and $z$, if $x > y$ and $z < 0$ then $xz < yz$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x$, $y$ and $z$ be real numbers.}}
+\step{2}{\assume{$x > y$}}
+\step{3}{\assume{$z < 0$}}
+\step{4}{$-z > 0$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:negation_positive}, \stepref{3}.
+\end{proof}
+\step{5}{$x(-z) > y(-z)$}
+\begin{proof}
+	\pf\ \stepref{2}, \stepref{4}, Monotonicity of Multiplication.
+\end{proof}
+\step{6}{$-(xz) > -(yz)$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:multiply_by_negative}, \stepref{5}.
+\end{proof}
+\step{7}{$xz < yz$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:negation_positive}, \stepref{6}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:square_positive}
+For any real number $x$, if $x \neq 0$ then $xx > 0$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $x > 0$ then $xx > 0$}
+\begin{proof}
+	\pf\ By Monotonicity of Multiplication.
+\end{proof}
+\step{2}{If $x < 0$ then $xx > 0$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:multiplication_antitone}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\[ 0 < 1 \]
+\end{thm}
+
+\begin{proof}
+\pf\ By Theorem \ref{thm:square_positive} since $1 = 1 \cdot 1$. \qed
+\end{proof}
+
+\begin{df}[Positive]
+A real number $x$ is \emph{positive} iff $x > 0$.
+
+We write $\mathbb{R}_+$ for the set of positive reals.
+\end{df}
+
+\begin{thm}
+For any real numbers $x$ and $y$, we have $xy$ is positive if and only if $x$ and $y$ are both positive or both negative.
+\end{thm}
+
+\begin{proof}
+\pf\ By the Monotonicity of Multiplication and Theorem \ref{thm:multiplication_antitone}. \qed
+\end{proof}
+
+\begin{cor}
+For any real number $x$, if $x > 0$ then $1/x > 0$.
+\end{cor}
+
+\begin{proof}
+\pf\ Since $x \cdot 1/x = 1$ is positive. \qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x > y > 0$ then $1/x < 1/y$.
+\end{thm}
+
+\begin{proof}
+\pf\ If $1/y \leq 1/x$ then $1 < 1$ by Monotonicity of Multiplication. \qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $x$ and $y$, if $x < y$ then $x < (x+y)/2 < y$.
+\end{thm}
+
+\begin{proof}
+\pf\ We have $2x < x+y$ and $x + y < 2y$ by Monotonicity of Addition, hence $x < (x+y)/2 < y$ by Monotonicity of Multiplication since $1/2 > 0$. \qed
+\end{proof}
+
+\begin{cor}
+$\mathbb{R}$ is a linear continuum.
+\end{cor}
+
+\begin{df}[Negative]
+A real number $x$ is \emph{negative} iff $x < 0$.
+
+We write $\overline{\mathbb{R}_+}$ for the set of nonnegative reals.
+\end{df}
+
+\begin{thm}
+For every positive real number $a$, there exists a unique positive real $\sqrt{a}$ such that $\sqrt{a}^2 = a$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$a$ be a positive real.}}
+\step{1}{For any real numbers $x$ and $h$, if $0 \leq h < 1$, then
+\[ (x + h)^2 < x^2 + h(2x+1) \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$x$ and $h$ be real numbers.}}
+	\step{c}{\assume{$0 \leq h < 1$}}
+	\step{d}{$(x+h)^2 < x^2 + h(2x+1)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x+h)^2 & = x^2 + 2hx + h^2 \\
+			& < x^2 + 2hx + h & (\text{\stepref{c}}) \\
+			& = x^2 + h(2x+1) 
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{For any real numbers $x$ and $h$, if $h > 0$ then
+\[ (x-h)^2 > x^2 - 2hx \enspace . \]}
+\begin{proof}
+	\step{a}{\pflet{$x$ and $h$ be real numbers.}}
+	\step{c}{\assume{$h > 0$}}
+	\step{d}{$(x-h)^2 > x^2 - 2hx$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x-h)^2 & = x^2 - 2hx + h^2 \\
+			& > x^2 - 2hx & (\text{\stepref{c}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{For any positive real $x$, if $x^2 < a$ then there exists $h > 0$ such that $(x+h)^2 < a$.}
+\begin{proof}
+	\step{a}{\pflet{$x$ be a positive real.}}
+	\step{b}{\assume{$x^2 < a$}}
+	\step{c}{\pflet{$h = \min((a-x^2)/(2x+1),1/2)$}}
+	\step{d}{$0 < h < 1$}
+	\step{e}{$(x+h)^2 < a$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x+h)^2 & < x^2 + h(2x+1) & (\text{\stepref{1}}) \\
+			& \leq a
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{For any positive real $x$, if $x^2 > a$ then there exists $h > 0$ such that $(x-h)^2 > a$.}
+\begin{proof}
+	\step{a}{\pflet{$x$ be a positive real.}}
+	\step{b}{\assume{$x^2 > a$}}
+	\step{c}{\pflet{$h = (x^2 - a)/2x$}}
+	\step{d}{$h > 0$}
+	\step{e}{$(x-h)^2 > a$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(x-h)^2 & > x^2 - 2hx \\
+			& = a & (\text{\stepref{c}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{5}{\pflet{$B = \{ x \in \mathbb{R} : x^2 < a \}$}}
+\step{6}{$B$ is bounded above.}
+\begin{proof}
+	\pf\ If $a \geq 1$ then $a$ is an upper bound. If $a < 1$ then 1 is an upper bound.
+\end{proof}
+\step{7}{$B$ contains at least one positive real.}
+\begin{proof}
+	\pf\ If $a \geq 1$ then $1 \in B$. If $a < 1$ then $a \in B$.
+\end{proof}
+\step{8}{\pflet{$b = \sup B$}}
+\step{9}{$b^2 = a$}
+\begin{proof}
+	\step{a}{$b^2 \geq a$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $b^2 < a$}}
+		\step{ii}{\pick\ $h > 0$ such that $(b+h)^2 < a$}
+		\begin{proof}
+			\pf\ \stepref{3}
+		\end{proof}
+		\step{iii}{$b + h \in B$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{8}.
+		\end{proof}
+	\end{proof}
+	\step{b}{$b^2 \leq a$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $b^2 > a$}}
+		\step{ii}{\pick\ $h > 0$ such that $(b-h)^2 > a$}
+		\begin{proof}
+			\pf\ \stepref{4}
+		\end{proof}
+		\step{iii}{\pick\ $x \in B$ such that $b - h < x$}
+		\begin{proof}
+			\pf\ \stepref{8}
+		\end{proof}
+		\step{iv}{$(b-h)^2 < x^2 < a$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{ii}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{10}{For any positive reals $b$ and $c$, if $b^2 = c^2$ then $b = c$.}
+\begin{proof}
+	\step{a}{\pflet{$b$ and $c$ be positive reals.}}
+	\step{b}{\assume{$b^2 = c^2$}}
+	\step{c}{$b^2 - c^2 = 0$}
+	\step{d}{$(b-c)(b+c) = 0$}
+	\step{e}{$b - c = 0$ or $b+c = 0$}
+	\step{f}{$b+c \neq 0$}
+	\begin{proof}
+		\pf\ Since $b + c > 0$
+	\end{proof}
+	\step{g}{$b - c = 0$}
+	\step{h}{$b = c$}
+\end{proof}
+\qed
+\end{proof}
+
+%TODO
+\begin{thm}
+The set of real numbers is uncountable.
+\end{thm}
+
+\chapter{Integers and Rationals}
+
+\section{Positive Integers}
+
+\begin{df}[Inductive]
+A set of real numbers $A$ is \emph{inductive} iff $1 \in A$ and $\forall x \in A. x + 1 \in A$.
+\end{df}
+
+\begin{df}[Positive Integer]
+The set $\mathbb{Z}_+$ of \emph{positive integers} is the intersection of the set of inductive sets.
+\end{df}
+
+\begin{prop}
+Every positive integer is positive.
+\end{prop}
+
+\begin{proof}
+\pf\ The set of positive reals is inductive. \qed
+\end{proof}
+
+\begin{prop}
+1 is the least element of $\mathbb{Z}_+$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\{ x \in \mathbb{R} : x \geq 1 \}$ is inductive. \qed
+\end{proof}
+
+\begin{prop}
+$\mathbb{Z}_+$ is inductive.
+\end{prop}
+
+\begin{proof}
+\pf\ 1 is an element of every inductive set, and for all $x \in \mathbb{R}$, if $x$ is an element of every inductive set then so is $x + 1$. \qed
+\end{proof}
+
+\begin{thm}[Principle of Induction]
+If $A$ is an inductive set of positive integers then $A = \mathbb{Z}_+$.
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{thm}[Well-Ordering Property]
+$\mathbb{Z}_+$ is well ordered.
+\end{thm}
+
+\begin{proof}
+\pf\ Construct the obvious order isomorphism $\omega \cong \mathbb{Z}_+$. \qed
+\end{proof}
+
+\begin{thm}[Archimedean Ordering Property]
+The set $\mathbb{Z}_+$ is unbounded above.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $\mathbb{Z}_+$ is bounded above.}}
+\step{2}{\pflet\ $s = \sup \mathbb{Z}_+$}
+\step{3}{\pick\ $n \in \mathbb{Z}_+$ such that $s-1 < n$}
+\step{4}{$s < n+1$}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{2} and \stepref{4} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Exponentiation}
+
+\begin{df}
+For $a$ a real number and $n$ a positive integer, define the real number $a^n$ recursively as follows:
+\begin{align*}
+a^1 & = a \\
+a^{n+1} & = a^n a
+\end{align*}
+\end{df}
+
+\begin{thm}
+\label{thm:law_of_exponents_1}
+For all $a \in \mathbb{R}$ and $m,n \in mathbb{Z}_+$, we have
+\[ a^n a^m = a^{n+m} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(m)$ be the property $\forall a \in \mathbb{R}. \forall n \in \mathbb{Z}_+. a^n a^m = a^{n+m}$}}
+\step{2}{$P(1)$}
+\begin{proof}
+	\pf\ $a^n a^1 = a^n a = a^{n+1}$.
+\end{proof}
+\step{3}{$\forall m \in \mathbb{Z}_+. P(m) \Rightarrow P(m+1)$}
+\begin{proof}
+	\step{a}{\pflet{$m$ be a positive integer.}}
+	\step{b}{\assume{$P(m)$}}
+	\step{c}{\pflet{$a \in \mathbb{R}$}}
+	\step{d}{\pflet{$n \in \mathbb{Z}_+$}}
+	\step{e}{$a^n a^{m+1} = a^{n+m+1}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			a^n a^{m+1} & = a^n a^m a \\
+			& = a^{n+m} a & (\text{\stepref{b}}) \\
+			& = a^{n+m+1}
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ By induction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For all $a \in \mathbb{R}$ and $m,n \in \mathbb{Z}_+$,
+\[ (a^n)^m = a^{nm} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P(m)$ be the property $\forall a \in \mathbb{R}. \forall n \in \mathbb{Z}_+. (a^n)^m = a^{nm}$.}}
+\step{2}{$P(1)$}
+\begin{proof}
+	\pf\ $(a^n)^1 = a^n = a^{n \cdot 1}$
+\end{proof}
+\step{3}{$\forall m \in \mathbb{Z}_+. P(m) \Rightarrow P(m+1)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(a^n)^{m+1} & = (a^n)^m a^n \\
+		& = a^{nm} a^n \\
+		& = a^{nm+n} & (\text{Theorem \ref{thm:law_of_exponents_1}}) \\
+		& = a^{n(m+1)}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real numbers $a$ and $b$ and positive integer $m$,
+\[ a^m b^m = (ab)^m \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ Induction on $m$. \qed
+\end{proof}
+
+\section{Integers}
+
+\begin{df}[Integer]
+The set $\mathbb{Z}$ of \emph{integers} is
+\[ \mathbb{Z} = \mathbb{Z}_+ \cup \{ 0 \} \cup \{ -x : x \in \mathbb{Z}_+\} \enspace . \]
+\end{df}
+
+\begin{prop}
+The sum, difference and product of two integers is an integer.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{ex}
+$1/2$ is not an integer.
+\end{ex}
+
+\begin{prop}
+For any integer $n$, there is no integer $a$ such that $n < a < n+1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any positive integer $n$, there is no integer $a$ such that $n < a < n+1$.}
+\begin{proof}
+	\step{a}{There is no integer $a$ such that $1 < a < 2$.}
+	\begin{proof}
+		\step{i}{There is no positive integer $a$ such that $1 < a < 2$.}
+		\begin{proof}
+			\step{one}{We do not have $1 < 1 < 2$.}
+			\step{two}{For any positive integer $n$, we do not have $1 < n +1 < 2$.}
+			\begin{proof}
+				\pf\ Since $n \geq 1$ so $n+1 \geq 2$.
+			\end{proof}
+		\end{proof}
+		\step{ii}{We do not have $1 < 0 < 2$.}
+		\step{iii}{For any positive integer $a$, we do not have $1 < -a < 2$.}
+		\begin{proof}
+			\pf\ Since $-a < 0 < 1$.
+		\end{proof}
+	\end{proof}
+	\step{b}{For any positive integer $n$, if there is no integer $a$ such that $n < a < n+1$, then there is no integer $a$ such that $n+1 < a < n+2$.}
+	\begin{proof}
+		\pf\ If $n+1 < a < n+2$ then $n < a-1 < n+1$.
+	\end{proof}
+\end{proof}
+\step{2}{There is no integer $a$ such that $0 < a < 1$.}
+\begin{proof}
+	\pf\ If $0 < a < 1$ then $1 < a+1 < 2$.
+\end{proof}
+\step{3}{For any positive integer $n$, there is no integer $a$ such that $-n < a < -n+1$.}
+\begin{proof}
+	\pf\ If $-n < a < -n+1$ then $n-1 < -a < n$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Every nonempty subset of $\mathbb{Z}$ bounded above has a largest element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S$ be a nonempty subset of $\mathbb{Z}$ bounded above.}}
+\step{2}{\pflet{$u$ be an upper bound for $S$.}}
+\step{3}{\pick\ an integer $n > u$}
+\begin{proof}
+	\pf\ Archimedean property.
+\end{proof}
+\step{4}{\pflet{$k$ be the least positive integer such that $n - k \in S$.}}
+\begin{proof}
+	\step{a}{\pick\ $m \in S$}
+	\step{b}{$n - m$ is a positive integer.}
+	\step{c}{There exists a positive integer $k$ such that $n - k \in S$.}
+\end{proof}
+\step{5}{$n - k$ is the greatest element in $S$.}
+\begin{proof}
+	\step{a}{\pflet{$m \in S$}}
+	\step{b}{$n - m \geq k$}
+	\step{c}{$m \leq n - k$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:sandwich}
+For any real number $x$, if $x$ is not an integer then there exists a unique integer $n$ such that $n < x < n + 1$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\{ n \in \mathbb{Z} : n < x \}$ is a nonempty set of integers bounded above.}
+\begin{proof}
+	\step{a}{\pick\ $m > -x$}
+	\begin{proof}
+		\pf\ Archimedean property.
+	\end{proof}
+	\step{b}{$-m < x$}
+	\step{c}{$\{ n \in \mathbb{Z} : n < x \}$ is nonempty.}
+\end{proof}
+\step{2}{\pflet{$n$ be the greatest integer such that $n < x$}}
+\step{3}{$x < n + 1$}
+\step{4}{If $n'$ is an integer with $n' < x < n' + 1$ then $n' = n$.}
+\begin{proof}
+	\pf\ We have $n' < n+1$ so $n' \leq n$, and $n < n' + 1$ so $n \leq n'$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Even]
+An integer $n$ is \emph{even} iff $n/2$ is an integer; otherwise, $n$ is \emph{odd}.
+\end{df}
+
+\begin{thm}
+If the integer $m$ is odd then there exists an integer $n$ such that $m = 2n+1$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$n$ be the integer such that $n < m/2 < n+1$}}
+\begin{proof}
+	\pf\ Theorem \ref{thm:sandwich}.
+\end{proof}
+\step{2}{$2n < m < 2n+2$}
+\step{3}{$m = 2n+1$}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:product_odd}
+The product of two odd integers is odd.
+\end{thm}
+
+\begin{proof}
+\pf\ $(2m+1)(2n+1) = 2(2mn + m + n) + 1$. \qed
+\end{proof}
+
+\begin{cor}
+If $p$ is an odd integer and $n$ is a positive integer then $p^n$ is an odd integer.
+\end{cor}
+
+\begin{df}[Exponentiation]
+Extend the definition of exponentiation so $a^n$ is defined for:
+\begin{itemize}
+\item all real numbers $a$ and non-negative integers $n$
+\item all non-zero real numbers $a$ and integers $n$
+\end{itemize}
+as follows:
+\begin{align*}
+a^0 & = 1 \\
+a^{-n} & = 1/a^n & (n \text{ a positive integer})
+\end{align*}
+\end{df}
+
+\begin{thm}[Laws of Exponents]
+For all non-zero reals $a$ and $b$ and integers $m$ and $n$,
+\begin{align*}
+a^n a^m & = a^{n+m} \\
+(a^n)^m & = a^{nm} \\
+a^m b^m & = (ab)^m
+\end{align*}
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Rational Numbers}
+
+\begin{df}[Rational Number]
+The set $\mathbb{Q}$ of \emph{rational numbers} is the set of all real numbers that are the quotient of two integers. A real that is not rational is \emph{irrational}.
+\end{df}
+
+\begin{thm}
+$\sqrt{2}$ is irrational.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any positive rational $a$, there exist positive integers $m$ and $n$ not both even such that $a = m / n$.}
+\begin{proof}
+	\step{a}{\pflet{$a$ be a positive rational.}}
+	\step{b}{\pflet{$n$ be the least positive integer such that $na$ is a positive integer.}}
+	\step{c}{\pflet{$m = na$}}
+	\step{d}{\assume{for a contradiction $m$ and $n$ are both even.}}
+	\step{e}{$m/2 = (n/2)a$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the leastness of $n$ (\stepref{b}).
+	\end{proof}
+\end{proof}
+\step{2}{\assume{for a contradiction $\sqrt{2}$ is rational.}}
+\step{3}{\pick\ positive integers $m$ and $n$ not both even such that $\sqrt{2} = m / n$.}
+\step{4}{$m^2 = 2n^2$}
+\step{5}{$m^2$ is even.}
+\step{6}{$m$ is even.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:product_odd}.
+\end{proof}
+\step{7}{\pflet{$k = m/2$}}
+\step{8}{$4k^2 = 2n^2$}
+\step{9}{$n^2 = 2k^2$}
+\step{10}{$n^2$ is even.}
+\step{11}{$n$ is even.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:product_odd}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{3}, \stepref{6} and \stepref{11} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Monoid Theory}
 
 \begin{df}[Monoid]
