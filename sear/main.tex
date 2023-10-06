@@ -1,9 +1,9 @@
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
  
 \documentclass{book}
@@ -561,7 +561,7 @@ Given $\mathcal{A} \in \mathcal{P} \mathcal{P} X$, its \emph{union} is
 \[ \bigcup \mathcal{A} := \{ x \in X : \exists S \in \mathcal{A}. x \in S \} \in \mathcal{P} X \enspace . \]
 \end{df}
 
-\subsection{Intersection}
+\subsection{Intersection} % CHECKED
 
 \begin{df}[Intersection]
 Given $\mathcal{A} \in \mathcal{P} \mathcal{P} X$, its \emph{intersection} is
@@ -2078,6 +2078,30 @@ The Yoneda embedding is fully faithful.
 Given objects $A$ and $B$ in $\mathcal{C}$, we have $A \cong B$ if and only if $\mathcal{C}[-,A] \cong \mathcal{C}[-,B]$.
 \end{cor}
 
+\chapter{The Real Numbers}
+
+% TODO Define the real numbers
+
+\begin{thm}
+The following hold in the real numbers:
+\begin{enumerate}
+\item $x + (y + z) = (x + y) + z$
+\item $x(yz) = (xy)z$
+\item $x + y = y + x$
+\item $xy = yx$
+\item $x + 0 = x$
+\item $x1 = x$
+\item $x + (-x) = 0$
+\item If $x \neq 0$ then $x \cdot (1/x) = 1$
+\item $x(y+z) = xy+xz$
+\item If $x > y$ then $x + z > y + z$.
+\item If $x > y$ and $z > 0$ then $xz > yz$.
+\item $\mathbb{R}$ has the least upper bound property.
+\item If $x < y$ then there exists $z$ such that $x < z < y$.
+\end{enumerate}
+\end{thm}
+
+%TODO Prove these
 \chapter{Monoid Theory}
 
 \begin{df}[Monoid]
