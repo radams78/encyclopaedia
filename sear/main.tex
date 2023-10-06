@@ -731,6 +731,75 @@ A \emph{partial order} on a set $A$ is a relation on $A$ that is reflexive, anti
 We say $(A, \leq)$ is a \emph{partially ordered set} or \emph{poset} iff $\leq$ is a partial order on $A$.
 \end{df}
 
+\begin{df}[Greatest]
+Let $A$ be a poset and $a \in A$. Then $a$ is the \emph{greatest} element iff $\forall x \in A. x \leq a$.
+\end{df}
+
+\begin{df}[Least]
+Let $A$ be a poset and $a \in A$. Then $a$ is the \emph{least} element iff $\forall x \in A. a \leq x$.
+\end{df}
+
+\begin{df}[Upper Bound]
+Let $A$ be a poset, $S \subseteq A$, and $u \in A$. Then $u$ is an \emph{upper bound} for $S$ iff $\forall x \in S. x \leq u$. We say $S$ is \emph{bounded above} iff it has an upper bound.
+\end{df}
+
+\begin{df}[Lower Bound]
+Let $A$ be a poset, $S \subseteq A$, and $l \in A$. Then $l$ is a \emph{lower bound} for $S$ iff $\forall x \in S. l \leq x$. We say $S$ is \emph{bounded below} iff it has a lower bound.
+\end{df}
+
+\begin{df}[Supremum]
+Let $A$ be a poset, $S \subseteq A$ and $s \in A$. Then $s$ is the \emph{supremum} or \emph{least upper bound} for $S$ iff $s$ is the least element in the sub-poset of upper bounds for $A$.
+\end{df}
+
+\begin{df}[Supremum]
+Let $A$ be a poset, $S \subseteq A$ and $i \in A$. Then $i$ is the \emph{infimum} or \emph{greatest lower bound} for $S$ iff $i$ is the greatest element in the sub-poset of lower bounds for $A$.
+\end{df}
+
+\begin{df}[Least Upper Bound Property]
+A poset $A$ has the \emph{least upper bound property} iff every nonempty subset of $A$ that is bounded above has a least upper bound.
+\end{df}
+
+\begin{prop}
+Let $A$ be a poset. Then $A$ has the least upper bound property if and only if every nonempty subset of $A$ that is bounded below has a greatest lower bound.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $A$ has the least upper bound property then every subset of $A$ that is bounded below has a greatest lower bound.}
+\begin{proof}
+	\step{a}{\assume{$A$ has the least upper bound property.}}
+	\step{b}{\pflet{$S \subseteq A$ be nonempty and bounded below.}}
+	\step{c}{\pflet{$L$ be the set of lower bounds of $S$.}}
+	\step{d}{$L$ is nonempty.}
+	\begin{proof}
+		\pf\ Because $S$ is bounded below.
+	\end{proof}
+	\step{e}{$L$ is bounded above.}
+	\begin{proof}
+		\pf\ Pick an element $s \in S$. Then $s$ is an upper bound for $L$.
+	\end{proof}
+	\step{f}{\pflet{$s$ be the supremum of $L$.}}
+	\step{g}{$s$ is the greatest lower bound of $S$.}
+	\begin{proof}
+		\step{i}{$s$ is a lower bound of $S$.}
+		\begin{proof}
+			\step{one}{\pflet{$x \in S$}}
+			\step{two}{$x$ is an upper bound for $L$.}
+			\step{three}{$s \leq x$}
+		\end{proof}
+		\step{ii}{For any lower bound $l$ of $S$ we have $l \leq s$.}
+		\begin{proof}
+			\pf\ Immediate from \stepref{f}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{If every subset of $A$ that is bounded below has a greatest lower bound, then $A$ has the least upper bound property.}
+\begin{proof}
+	\pf\ Dual.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Linear Orders}
 
 \begin{df}[Linear Order]
@@ -746,6 +815,11 @@ Let $X$ be a linearly ordered set and $a,b \in X$. The \emph{open interval} $(a,
 
 \begin{df}[Immediate Predecessor, Immediate Successor]
 Let $X$ be a linearly ordered set and $a,b \in X$. Then $b$ is the \emph{(immediate) successor} of $a$, and $a$ is the \emph{(immediate) predecessor} of $b$, iff $a < B$ and there is no $x$ such that $a < x < b$.
+\end{df}
+
+\begin{df}[Dictionary Order]
+Let $A$ and $B$ be linearly ordered sets. The \emph{dictionary order} on $A \times B$ is the order defined by
+\[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
 \end{df}
 
 \chapter{Category Theory}
@@ -774,6 +848,10 @@ We write the composite of morphism $f_1$, \ldots, $f_n$ as $f_n \circ \cdots \ci
 
 \begin{df}
 Let $\Set$ be the category of small sets and functions.
+\end{df}
+
+\begin{df}
+Let $\mathbf{LPos}$ be the category of linearly ordered sets and monotone functions.
 \end{df}
 
 \begin{df}
