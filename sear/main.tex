@@ -575,12 +575,39 @@ Let $f : A \rightarrow B$. Let $S$ be a subset of $A$. The \emph{(direct) image}
 \[ f(S) := \{ f(a) : a \in S \} \enspace . \]
 \end{df}
 
+\begin{prop}
+\begin{enumerate}
+\item If $S \subseteq T$ then $f(S) \subseteq f(T)$
+\item $f(\bigcup \mathcal{S}) = \bigcup_{S \in \mathcal{S}} f(S)$
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+It is not true in general that $f(\bigcap \mathcal{S}) = \bigcap_{S \in \mathcal{S}} f(S)$. Take $f$ to be the only function $\{0,1\} \rightarrow \{0\}$, and $\mathcal{S} = \{\{0\},\{1\}\}$. Then $f(\bigcap \mathcal{S}) = \emptyset$ but $\bigcap_{S \in \mathcal{S}} f(S) = \{0\}$.
+\end{ex}
+
+\begin{ex}
+It is not true in general that $f(S - T) = f(S) - f(T)$. Take $f$ to be the only function $\{0,1\} \rightarrow \{0\}$, $S = \{0\}$ and $T = \{1\}$. Then $f(S-T) = \{0\}$ but $f(S) - f(T) = \emptyset$.
+\end{ex}
+
 \subsection{Inverse Image}
 
 \begin{df}[Inverse Image]
 Let $f : A \rightarrow B$. Let $S$ be a subset of $B$. The \emph{inverse image} or \emph{preimage} of $S$ under $f$ is the subset of $A$ given by
 \[ \inv{f}(S) := \{ x \in A : f(x) \in S \} \enspace . \]
 \end{df}
+
+\begin{prop}
+\begin{enumerate}
+\item If $S \subseteq T$ then $\inv{f}(S) \subseteq \inv{f}(T)$
+\item $\inv{f}(\bigcup \mathcal{S}) = \bigcup_{S \in \mathcal{S}} \inv{f}(S)$
+\item $\inv{f}(\bigcap \mathcal{S}) = \bigcap_{S \in \mathcal{S}} \inv{f}(S)$
+\item $\inv{f}(S - T) = \inv{f}(S) - \inv{f}(T)$
+\item $S \subseteq \inv{f}(f(S))$. Equality holds if $f$ is injective.
+\item $f(\inv{f}(T)) \subseteq T$. Equality holds if $f$ is surjective.
+\item $\inv{(g \circ f)}(S) = \inv{f}(\inv{g}(S))$
+\end{enumerate}
+\end{prop}
 
 \section{Relations} % CHECKED
 
