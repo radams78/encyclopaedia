@@ -1,10 +1,10 @@
 % READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections} % CHECKED
+\section{Injections, Surjections and Bijections} % CHECKED FORMALIZED
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
@@ -554,7 +554,7 @@ Given subsets $S$ and $T$ of $A$, the \emph{difference} of $S$ and $T$ is $S - T
 \[ R - (S \cap T) = (R - S) \cup (R - T) \]
 \end{prop}
 
-\subsection{Union}
+\subsection{Union} % CHECKED
 
 \begin{df}[Union]
 Given $\mathcal{A} \in \mathcal{P} \mathcal{P} X$, its \emph{union} is
@@ -609,12 +609,14 @@ Let $f : A \rightarrow B$. Let $S$ be a subset of $B$. The \emph{inverse image} 
 \end{enumerate}
 \end{prop}
 
-\section{Relations} % CHECKED
+\section{Relations}
 
 \begin{df}[Relation]
 Let $A$ and $B$ be sets. A \emph{relation} $R$ between $A$ and $B$, $R : A \looparrowright B$, is a subset of $A \times B$.
 
 Given $a \in A$ and $b \in B$, we write $aRb$ for $(a,b) \in R$.
+
+A relation \emph{on} a set $A$ is a relation between $A$ and $A$.
 \end{df}
 
 \section{Power Set}
