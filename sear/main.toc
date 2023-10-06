@@ -20,6 +20,7 @@
 \contentsline {section}{\numberline {2.6}Quotient Sets}{19}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Partitions}{19}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Disjoint Union}{19}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Finite and Infinite Sets}{19}{section.2.9}%
 \contentsline {chapter}{\numberline {3}Order Theory}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Relations}{21}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Linear Orders}{22}{subsection.3.1.1}%
