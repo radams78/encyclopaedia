@@ -10,11 +10,13 @@
 \contentsline {subsection}{\numberline {2.2.3}Subsets}{15}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Union}{17}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Intersection}{17}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Direct Image}{17}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Inverse Image}{17}{subsection.2.2.7}%
 \contentsline {section}{\numberline {2.3}Relations}{17}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Power Set}{17}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Cartesian Product}{17}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Quotient Sets}{17}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Partitions}{17}{section.2.7}%
+\contentsline {section}{\numberline {2.6}Quotient Sets}{18}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Partitions}{18}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Disjoint Union}{18}{section.2.8}%
 \contentsline {chapter}{\numberline {3}Order Theory}{19}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Relations}{19}{section.3.1}%

@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
  
 \documentclass{book}
 
@@ -568,6 +568,20 @@ Given $\mathcal{A} \in \mathcal{P} \mathcal{P} X$, its \emph{intersection} is
 \[ \bigcap \mathcal{A} := \{ x \in X : \forall S \in \mathcal{A}. x \in S \} \in \mathcal{P} X \enspace . \]
 \end{df}
 
+\subsection{Direct Image}
+
+\begin{df}[Direct Image]
+Let $f : A \rightarrow B$. Let $S$ be a subset of $A$. The \emph{(direct) image} of $S$ under $f$ is the subset of $B$ given by
+\[ f(S) := \{ f(a) : a \in S \} \enspace . \]
+\end{df}
+
+\subsection{Inverse Image}
+
+\begin{df}[Inverse Image]
+Let $f : A \rightarrow B$. Let $S$ be a subset of $B$. The \emph{inverse image} or \emph{preimage} of $S$ under $f$ is the subset of $A$ given by
+\[ \inv{f}(S) := \{ x \in A : f(x) \in S \} \enspace . \]
+\end{df}
+
 \section{Relations} % CHECKED
 
 \begin{df}[Relation]
@@ -619,8 +633,10 @@ For any sets $A$ and $B$, there exists a set $A + B$, the \emph{disjoint union} 
 % TODO
 \end{proof}
 
-\begin{df}
+\begin{df}[Restriction]
+Let $f : A \rightarrow B$ and let $(S,i)$ be a subset of $A$. The \emph{restriction} of $f$ to $S$ is the function $f \restriction S : S \rightarrow B$ defined by $f \restriction S = f \circ i$.
 \end{df}
+
 
 \chapter{Order Theory}
 
