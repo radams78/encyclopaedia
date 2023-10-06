@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 % READ
 % CHECK
+% FORMALIZE
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections} % CHECKED FORMALIZED
+\section{Injections, Surjections and Bijections}
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
@@ -77,7 +77,12 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
-\section{Axioms} % CHECKED FORMALIZED
+\begin{df}[Composition]
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
+\end{df}
+
+\section{Axioms}
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
@@ -118,11 +123,6 @@ For any set $A$, there exists a set $B$, a function $p : B \rightarrow A$, a set
 \end{itemize}
 \end{axs}
 
-\begin{df}[Composite]
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
-\[ (g \circ f)(a) = g(f(a)) \enspace . \]
-\end{df}
-
 \begin{ax}[Universe]
 There exists a set $E$, a set $U$ and a function $el : E \rightarrow U$ such that the following holds.
 
@@ -139,13 +139,7 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 
 \chapter{Sets and Functions}
 
-\section{Identity Function} % CHECKED FORMALIZED
-
-\begin{df}[Identity]
-For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
-\end{df}
-
-\section{Composition} % CHECKED
+\section{Composition}
 
 \begin{prop}
 Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
@@ -155,6 +149,8 @@ Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightar
 \begin{proof}
 \pf\ Each is the function that maps $a \in A$ to $h(g(f(a)))$. \qed
 \end{proof}
+
+\subsection{Injections}
 
 \begin{prop}
 \label{prop:comp_inj}
@@ -377,6 +373,12 @@ Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
 \begin{proof}
 \pf\ The function $\Phi$ such that $\Phi(f)(c)(b) = f(b,c)$ is a bijection. \qed
 \end{proof}
+
+\section{Identity Function}
+
+\begin{df}[Identity]
+For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
+\end{df}
 
 \subsection{The Empty Set} %CHECKED
 
@@ -610,7 +612,7 @@ Let $f : A \rightarrow B$. Let $S$ be a subset of $B$. The \emph{inverse image} 
 \end{enumerate}
 \end{prop}
 
-\section{Relations}
+\section{Relations} % CHECKED
 
 \begin{df}[Relation]
 Let $A$ and $B$ be sets. A \emph{relation} $R$ between $A$ and $B$, $R : A \looparrowright B$, is a subset of $A \times B$.
