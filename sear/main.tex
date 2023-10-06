@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -619,6 +619,34 @@ Given $a \in A$ and $b \in B$, we write $aRb$ for $(a,b) \in R$.
 A relation \emph{on} a set $A$ is a relation between $A$ and $A$.
 \end{df}
 
+\begin{df}[Reflexive]
+A relation $R$ on a set $A$ is \emph{reflexive} iff $\forall a \in A. aRa$.
+\end{df}
+
+\begin{df}[Symmetric]
+A relation $R$ on a set $A$ is \emph{symmetric} iff, whenever $xRy$, then $yRx$.
+\end{df}
+
+\begin{df}[Transitive]
+A relation $R$ on a set $A$ is \emph{transitive} iff, whenever $xRy$ and $yRz$, then $xRz$.
+\end{df}
+
+\subsection{Equivalence Relations}
+
+\begin{df}[Equivalence Relation]
+A relation $R$ on a set $A$ is an \emph{equivalence relation} iff it is reflexive, symmetric and transitive.
+\end{df}
+
+\begin{df}[Equivalence Class]
+Let $R$ be an equivalence relation on a set $A$ and $a \in A$. The \emph{equivalence class} of $a$ with respect to $R$ is
+\[ \{ x \in A : xRa \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Two equivalence classes are either disjoint or equal.
+\end{prop}
+
+
 \section{Power Set}
 
 \begin{df}[Power Set]
@@ -627,6 +655,20 @@ The \emph{power set} of a set $A$ is $\mathcal{P} A := 2^A$.
 Given $S \in \mathcal{P} A$ and $a \in A$, we write $a \in A$ for $S(a) = 1$.
 \end{df}
 
+\begin{df}[Pairwise Disjoint]
+Let $P \subseteq \mathcal{P} A$. We say the members of $P$ are \emph{pairwise disjoint} iff, for all $S,T \in P$, if $S \neq T$ then $S \cap T = \emptyset$.
+\end{df}
+
+\subsection{Partitions}
+
+\begin{df}[Partition]
+Let $A$ be a set. A \emph{partition} of $A$ is a set $P \in \mathcal{P} \mathcal{P} A$ such that:
+\begin{itemize}
+\item $\bigcup P = A$
+\item Every member of $P$ is nonempty.
+\item The members of $P$ are pairwise disjoint.
+\end{itemize}
+\end{df}
 
 \section{Cartesian Product}
 
