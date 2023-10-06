@@ -731,6 +731,23 @@ A \emph{partial order} on a set $A$ is a relation on $A$ that is reflexive, anti
 We say $(A, \leq)$ is a \emph{partially ordered set} or \emph{poset} iff $\leq$ is a partial order on $A$.
 \end{df}
 
+\subsection{Linear Orders}
+
+\begin{df}[Linear Order]
+A \emph{linear order} on a set $A$ is a partial order $\leq$ on $A$ such that, for all $x,y \in A$, we have $x \leq y$ or $y \leq x$.
+
+A \emph{linearly ordered set} is a pair $(X, \leq)$ such that $X$ is a set and $\leq$ is a linear order on $X$.
+\end{df}
+
+\begin{df}[Open Interval]
+Let $X$ be a linearly ordered set and $a,b \in X$. The \emph{open interval} $(a,b)$ is the set
+\[ \{ x \in X : a < x < b \} \enspace . \]
+\end{df}
+
+\begin{df}[Immediate Predecessor, Immediate Successor]
+Let $X$ be a linearly ordered set and $a,b \in X$. Then $b$ is the \emph{(immediate) successor} of $a$, and $a$ is the \emph{(immediate) predecessor} of $b$, iff $a < B$ and there is no $x$ such that $a < x < b$.
+\end{df}
+
 \chapter{Category Theory}
 
 \section{Categories}

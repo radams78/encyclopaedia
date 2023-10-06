@@ -22,6 +22,7 @@
 \contentsline {section}{\numberline {2.8}Disjoint Union}{19}{section.2.8}%
 \contentsline {chapter}{\numberline {3}Order Theory}{21}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Relations}{21}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Linear Orders}{21}{subsection.3.1.1}%
 \contentsline {chapter}{\numberline {4}Category Theory}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Categories}{23}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Monomorphisms}{24}{subsection.4.1.1}%
