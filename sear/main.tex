@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -372,6 +372,76 @@ Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
 
 \begin{proof}
 \pf\ The function $\Phi$ such that $\Phi(f)(c)(b) = f(b,c)$ is a bijection. \qed
+\end{proof}
+
+\begin{prop}
+Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Pick $a_0 \in A$. Define $g : B \rightarrow A$ by: $g(b)$ is the unique element in $A$ such that $f(a) = b$ if there is such an $a$, otherwise $g(b) = a_0$. \qed
+\end{proof}
+
+\begin{thm}[Schroeder-Bernstein]
+Let $A$ and $B$ be sets. If there exist injections $A \rightarrow B$ and $B \rightarrow A$, then $A \approx B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail A$ be injections.}}
+\step{2}{Define the subsets $A_n$ of $A$ by
+\begin{align*}
+A_0 & := A - g(B) \\
+A_{n+1} & := g(f(A_n))
+\end{align*}}
+\step{3}{Define $h : A \rightarrow B$ by
+\[ h(x) = \begin{cases}
+f(x) & \text{if } \exists n. x \in A_n \\
+\inv{g}(x) & \text{otherwise}
+\end{cases} \]}
+\step{4}{$h$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in A$}}
+	\step{b}{\assume{$h(x) = h(y)$}}
+	\step{c}{\case{$x \in A_m$ and $y \in A_n$.}}
+	\begin{proof}
+		\pf\ Then $f(x) = f(y)$ so $x = y$ since $f$ is injective.
+	\end{proof}
+	\step{d}{\case{$x \in A_m$ and there is no $y$ such that $y \in A_n$.}}
+	\begin{proof}
+		\step{i}{$f(x) = \inv{g}(y)$}
+		\step{ii}{$y = g(f(x))$}
+		\step{iii}{$y \in A_{m+1}$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{e}{\case{$y \in A_n$ and there is no $m$ such that $x \in A_m$.}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{f}{\case{There is no $m$ such that $x \in A_m$ and there is no $n$ such that $y \in A_n$.}}
+	\begin{proof}
+		\pf\ Then $\inv{g}(x) = \inv{g}(y)$ and so $x = y$.
+	\end{proof}
+\end{proof}
+\step{5}{$h$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$y \in B$}}
+	\step{b}{\case{$g(y) \in A_n$}}
+	\begin{proof}
+		\step{i}{$n \neq 0$}
+		\step{ii}{\pick\ $x \in A_{n-1}$ such that $g(y) = g(f(x))$}
+		\step{iii}{$y = f(x)$}
+		\step{iv}{$y = h(x)$}
+	\end{proof}
+	\step{c}{\case{There is no $n$ such that $g(y) \in A_n$.}}
+	\begin{proof}
+		\pf\ Then $h(g(y)) = y$.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \section{Identity Function}
@@ -932,14 +1002,6 @@ $2^\mathbb{N}$ is uncountable.
 \step{3}{For all $n \in \mathbb{N}$ we have $g(n) \neq f(n)(n)$.}
 \step{4}{For all $n \in \mathbb{N}$ we have $g \neq f(n)$.}
 \qed
-\end{proof}
-
-\begin{prop}
-Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
-\end{prop}
-
-\begin{proof}
-\pf\ Pick $a_0 \in A$. Define $g : B \rightarrow A$ by: $g(b)$ is the unique element in $A$ such that $f(a) = b$ if there is such an $a$, otherwise $g(b) = a_0$. \qed
 \end{proof}
 
 \begin{thm}
@@ -3319,6 +3381,28 @@ $\mathbb{Q}$ is countably infinite.
 \begin{proof}
 \pf\ The function $\mathbb{Z} \times \mathbb{N} \rightarrow \mathbb{Q}$ that maps $(m,n)$ to $m/(n+1)$ is a surjection. \qed
 \end{proof}
+
+\section{Algebraic Numbers}
+
+%TODO A polynomial has only finitely many roots
+
+\begin{df}[Algebraic Number]
+A real number $r$ is \emph{algebraic} iff there exists a natural number $n$ and rational numbers $a_0$, $a_1$, \ldots, $a_{n-1}$ such that
+\[ r^n + a_{n-1} r^{n-1} + \cdots + a_1 r + a_0 = 0 \]
+Otherwise, $r$ is \emph{transcendental}.
+\end{df}
+
+\begin{prop}
+The set of algebraic numbers is countably infinite.
+\end{prop}
+
+\begin{proof}
+\pf\ There are countably many finite sequences of rational numbers, and each corresponding polynomial has only finitely many roots. \qed
+\end{proof}
+
+\begin{cor}
+The set of transcendental numbers is uncountable.
+\end{cor}
 
 \chapter{Monoid Theory}
 
