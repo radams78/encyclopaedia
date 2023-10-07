@@ -795,6 +795,88 @@ A finite union of finite sets is finite.
 A finite Cartesian product of finite sets is finite.
 \end{cor}
 
+\section{Countable Sets}
+
+\begin{df}[Countable]
+A set $A$ is \emph{countably infinite} iff $A \approx \mathbb{N}$.
+\end{df}
+
+\begin{prop}
+$\mathbb{N} \times \mathbb{N}$ is countably infinite.
+\end{prop}
+
+\begin{proof}
+\pf\ Define $f : \mathbb{N} \times \mathbb{N} \approx \{ (x,y) \in \mathbb{N} \times \mathbb{N} : y \leq x \}$ by
+\[ f(x,y) = (x+y,y) \]
+Define $g : \{ (x,y) \in \mathbb{N} \times \mathbb{N} : y \leq x \} \approx \mathbb{N}$ by
+\[ g(x,y) = x(x-1)/2 + y \enspace . \qed \]
+\end{proof}
+
+\begin{prop}
+Every infinite subset of $\mathbb{N}$ is countably infinite.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C$ be an infinite subset of $\mathbb{N}$}}
+\step{2}{Define $h : \mathbb{Z} \rightarrow C$ by recursion thus: $h(n)$ is the smallest element of $C - \{ h(m) : m < n \}$.}
+\step{3}{$h$ is injective.}
+\begin{proof}
+	\pf\ If $m < n$ then $h(m) \neq h(n)$ because $h(n) \in C - \{ h(m) : m < n \}$.
+\end{proof}
+\step{4}{$h$ is surjective.}
+\begin{proof}
+	\step{a}{For all $n \in \mathbb{N}$ we have $n \leq h(n)$.}
+	\step{b}{\pflet{$c \in C$}}
+	\step{c}{$c \leq h(c)$}
+	\step{d}{\pflet{$n$ be least such that $c \leq h(n)$}}
+	\step{e}{$c \in C - \{ h(m) : m < n \}$}
+	\step{f}{$h(n) \leq c$}
+	\step{g}{$h(n) = c$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Countable]
+A set is \emph{countable} iff it is either finite or countably infinite; otherwise it is \emph{uncountable}.
+\end{df}
+
+\begin{prop}
+Let $B$ be a nonempty set. Then the following are equivalent.
+\begin{enumerate}
+\item $B$ is countable.
+\item There exists a surjection $\mathbb{N} \twoheadrightarrow B$.
+\item There exists an injection $B \rightarrowtail \mathbb{N}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$B$ is countable.}}
+	\step{b}{\case{$B$ is finite.}}
+	\begin{proof}
+		\step{i}{\pick\ a natural number $n$ and bijection $f : \{ m \in \mathbb{N} : m < n \} \approx B$}
+		\step{ii}{\pick\ $b \in B$}
+		\step{iii}{Extend $f$ to a surjection $g : \mathbb{N} \twoheadrightarrow B$ by setting $g(m) = b$ for $m \geq n$.}
+	\end{proof}
+	\step{c}{\case{$B$ is countably infinite.}}
+	\begin{proof}
+		\pf\ Then there exists a bijection $\mathbb{N} \approx B$.
+	\end{proof}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Given a surjection $f : \mathbb{N} \twoheadrightarrow B$, define $g : B \rightarrowtail \mathbb{N}$ by $g(b)$ is the smallest number such that $f(g(b)) = b$.
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	%TODO
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Order Theory}
 
 \section{Relations}
@@ -3089,6 +3171,14 @@ a^m b^m & = (ab)^m
 
 \begin{proof}
 \pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}
+$\mathbb{Z}$ is countable.
+\end{thm}
+
+\begin{proof}
+\pf\ The function that maps an integer $n$ to $2n$ if $n \geq 0$ and $-1-2n$ if $n < 0$ is a bijection $\mathbb{Z} \approx \mathbb{N}$. \qed
 \end{proof}
 
 \section{Rational Numbers}
