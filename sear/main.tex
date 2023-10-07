@@ -711,6 +711,15 @@ For any sets $A$ and $B$, there exists a set $A + B$, the \emph{disjoint union} 
 Let $f : A \rightarrow B$ and let $(S,i)$ be a subset of $A$. The \emph{restriction} of $f$ to $S$ is the function $f \restriction S : S \rightarrow B$ defined by $f \restriction S = f \circ i$.
 \end{df}
 
+\section{Natural Numbers}
+
+\begin{thm}[Principle of Recursive Definition]
+Let $A$ be a set. Let $f : \mathcal{P} A \rightarrow A$. Then there exists a unique $g : \mathbb{N} \rightarrow A$ such that, for all $n \in \mathbb{N}$, we have
+\[ g(n) = f(\{ g(m) : m < n \}) \enspace . \]
+\end{thm}
+
+%TODO
+
 \section{Finite and Infinite Sets}
 
 \begin{df}[Finite]
@@ -877,6 +886,34 @@ Let $B$ be a nonempty set. Then the following are equivalent.
 	\step{c}{$B \approx f(B)$}
 	\step{d}{$B$ is countable.}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+A subset of a countable set is countable.
+\end{cor}
+
+\begin{cor}
+$\mathbb{N} \times \mathbb{N}$ is countably infinite.
+\end{cor}
+
+\begin{proof}
+\pf\ The function that maps $(m,n)$ to $2^m 3^n$ is injective. \qed
+\end{proof}
+
+\begin{thm}
+A countable union of countable sets is countable.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{\pflet{$\mathcal{B} \subseteq \mathcal{P} A$ be a countable set of countable sets such that $\bigcup \mathcal{B} = A$}}
+\step{3}{\pick\ a surjection $B : \mathbb{N} \twoheadrightarrow \mathcal{B}$}
+\step{4}{\assume{w.l.o.g. each $B(n)$ is nonempty.}}
+\step{5}{For $n \in \mathbb{N}$, \pick\ a surjective function $g_n : \mathbb{N} \twoheadrightarrow B(n)$}
+\step{6}{\pflet{$h : \mathbb{N} \times \mathbb{N} \rightarrow A$ be the function $h(m,n) = g_m(n)$}}
+\step{7}{$h$ is surjective.}
 \qed
 \end{proof}
 
@@ -3229,6 +3266,14 @@ $\sqrt{2}$ is irrational.
 	\pf\ \stepref{3}, \stepref{6} and \stepref{11} form a contradiction.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{thm}
+$\mathbb{Q}$ is countably infinite.
+\end{thm}
+
+\begin{proof}
+\pf\ The function $\mathbb{Z} \times \mathbb{N} \rightarrow \mathbb{Q}$ that maps $(m,n)$ to $m/(n+1)$ is a surjection. \qed
 \end{proof}
 
 \chapter{Monoid Theory}
