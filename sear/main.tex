@@ -934,6 +934,33 @@ $2^\mathbb{N}$ is uncountable.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Pick $a_0 \in A$. Define $g : B \rightarrow A$ by: $g(b)$ is the unique element in $A$ such that $f(a) = b$ if there is such an $a$, otherwise $g(b) = a_0$. \qed
+\end{proof}
+
+\begin{thm}
+For any set $A$, there is no surjective function $A \rightarrow \mathcal{P} A$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrow \mathcal{P} A$}}
+\step{2}{\pflet{$S = \{ x \in A : x \notin f(x) \}$}}
+\step{3}{For all $a \in A$ we have $S \neq f(a)$}
+\begin{proof}
+	\pf\ We have $a \in S$ if and only if $a \notin f(a)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any set $A$, there is no injective function $\mathcal{P} A \rightarrow A$.
+\end{cor}
+
 \chapter{Order Theory}
 
 \section{Relations}

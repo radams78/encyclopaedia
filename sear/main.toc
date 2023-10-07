@@ -24,85 +24,85 @@
 \contentsline {section}{\numberline {2.9}Natural Numbers}{19}{section.2.9}%
 \contentsline {section}{\numberline {2.10}Finite and Infinite Sets}{20}{section.2.10}%
 \contentsline {section}{\numberline {2.11}Countable Sets}{21}{section.2.11}%
-\contentsline {chapter}{\numberline {3}Order Theory}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Relations}{23}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Linear Orders}{24}{subsection.3.1.1}%
-\contentsline {chapter}{\numberline {4}Category Theory}{27}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Categories}{27}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Monomorphisms}{28}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Epimorphisms}{28}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Sections and Retractions}{28}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Isomorphisms}{29}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Initial Objects}{29}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Terminal Objects}{30}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Zero Objects}{30}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Triads}{30}{subsection.4.1.8}%
-\contentsline {subsection}{\numberline {4.1.9}Cotriads}{31}{subsection.4.1.9}%
-\contentsline {subsection}{\numberline {4.1.10}Pullbacks}{31}{subsection.4.1.10}%
-\contentsline {subsection}{\numberline {4.1.11}Pushouts}{34}{subsection.4.1.11}%
-\contentsline {subsection}{\numberline {4.1.12}Subcategories}{37}{subsection.4.1.12}%
-\contentsline {subsection}{\numberline {4.1.13}Opposite Category}{37}{subsection.4.1.13}%
-\contentsline {subsection}{\numberline {4.1.14}Groupoids}{37}{subsection.4.1.14}%
-\contentsline {subsection}{\numberline {4.1.15}Concrete Categories}{38}{subsection.4.1.15}%
-\contentsline {subsection}{\numberline {4.1.16}Power of Categories}{38}{subsection.4.1.16}%
-\contentsline {subsection}{\numberline {4.1.17}Arrow Category}{38}{subsection.4.1.17}%
-\contentsline {subsection}{\numberline {4.1.18}Slice Category}{38}{subsection.4.1.18}%
-\contentsline {section}{\numberline {4.2}Functors}{41}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Natural Transformations}{44}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Bifunctors}{45}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Functor Categories}{46}{section.4.5}%
-\contentsline {chapter}{\numberline {5}The Real Numbers}{49}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Subtraction}{51}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {6}Integers and Rationals}{57}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Positive Integers}{57}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Exponentiation}{58}{subsection.6.1.1}%
-\contentsline {section}{\numberline {6.2}Integers}{59}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Rational Numbers}{61}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Monoid Theory}{63}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Group Theory}{65}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Ring Theory}{67}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Field Theory}{69}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Linear Algebra}{71}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Topology}{73}{chapter.12}%
-\contentsline {section}{\numberline {12.1}Topological Spaces}{73}{section.12.1}%
-\contentsline {subsection}{\numberline {12.1.1}Subspaces}{76}{subsection.12.1.1}%
-\contentsline {subsection}{\numberline {12.1.2}Topological Disjoint Union}{77}{subsection.12.1.2}%
-\contentsline {subsection}{\numberline {12.1.3}Product Topology}{79}{subsection.12.1.3}%
-\contentsline {subsection}{\numberline {12.1.4}Bases}{81}{subsection.12.1.4}%
-\contentsline {subsection}{\numberline {12.1.5}Subbases}{81}{subsection.12.1.5}%
-\contentsline {subsection}{\numberline {12.1.6}Countability Axioms}{81}{subsection.12.1.6}%
-\contentsline {section}{\numberline {12.2}Continuous Functions}{82}{section.12.2}%
-\contentsline {subsection}{\numberline {12.2.1}Paths}{83}{subsection.12.2.1}%
-\contentsline {subsection}{\numberline {12.2.2}Loops}{84}{subsection.12.2.2}%
-\contentsline {section}{\numberline {12.3}Convergence}{84}{section.12.3}%
-\contentsline {section}{\numberline {12.4}Subspaces}{84}{section.12.4}%
-\contentsline {section}{\numberline {12.5}Embedding}{85}{section.12.5}%
-\contentsline {section}{\numberline {12.6}Quotient Spaces}{85}{section.12.6}%
-\contentsline {section}{\numberline {12.7}Connected Spaces}{87}{section.12.7}%
-\contentsline {section}{\numberline {12.8}Hausdorff Spaces}{88}{section.12.8}%
-\contentsline {section}{\numberline {12.9}Separable Spaces}{88}{section.12.9}%
-\contentsline {section}{\numberline {12.10}Sequential Compactness}{88}{section.12.10}%
-\contentsline {section}{\numberline {12.11}Compactness}{88}{section.12.11}%
-\contentsline {section}{\numberline {12.12}Quotient Spaces}{89}{section.12.12}%
-\contentsline {section}{\numberline {12.13}Gluing}{90}{section.12.13}%
-\contentsline {section}{\numberline {12.14}Metric Spaces}{91}{section.12.14}%
-\contentsline {subsection}{\numberline {12.14.1}Products}{92}{subsection.12.14.1}%
-\contentsline {section}{\numberline {12.15}Complete Metric Spaces}{93}{section.12.15}%
-\contentsline {section}{\numberline {12.16}Manifolds}{94}{section.12.16}%
-\contentsline {chapter}{\numberline {13}Homotopy Theory}{95}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Homotopies}{95}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Homotopy Equivalence}{95}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Simplicial Complexes}{97}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Cell Decompositions}{97}{section.14.1}%
-\contentsline {section}{\numberline {14.2}CW-complexes}{97}{section.14.2}%
-\contentsline {chapter}{\numberline {15}Topological Groups}{99}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Continuous Actions}{99}{section.15.1}%
-\contentsline {chapter}{\numberline {16}Topological Vector Spaces}{101}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Cauchy Sequences}{101}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Seminorms}{102}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{102}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Normed Spaces}{102}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Inner Product Spaces}{104}{section.16.5}%
-\contentsline {section}{\numberline {16.6}Banach Spaces}{105}{section.16.6}%
-\contentsline {section}{\numberline {16.7}Hilbert Spaces}{105}{section.16.7}%
-\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{105}{section.16.8}%
+\contentsline {chapter}{\numberline {3}Order Theory}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Relations}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Linear Orders}{26}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {4}Category Theory}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Categories}{29}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Monomorphisms}{30}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Epimorphisms}{30}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Sections and Retractions}{30}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Isomorphisms}{31}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Initial Objects}{31}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Terminal Objects}{32}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Zero Objects}{32}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Triads}{32}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Cotriads}{33}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.10}Pullbacks}{33}{subsection.4.1.10}%
+\contentsline {subsection}{\numberline {4.1.11}Pushouts}{36}{subsection.4.1.11}%
+\contentsline {subsection}{\numberline {4.1.12}Subcategories}{39}{subsection.4.1.12}%
+\contentsline {subsection}{\numberline {4.1.13}Opposite Category}{39}{subsection.4.1.13}%
+\contentsline {subsection}{\numberline {4.1.14}Groupoids}{39}{subsection.4.1.14}%
+\contentsline {subsection}{\numberline {4.1.15}Concrete Categories}{40}{subsection.4.1.15}%
+\contentsline {subsection}{\numberline {4.1.16}Power of Categories}{40}{subsection.4.1.16}%
+\contentsline {subsection}{\numberline {4.1.17}Arrow Category}{40}{subsection.4.1.17}%
+\contentsline {subsection}{\numberline {4.1.18}Slice Category}{40}{subsection.4.1.18}%
+\contentsline {section}{\numberline {4.2}Functors}{43}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Natural Transformations}{46}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Bifunctors}{47}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Functor Categories}{48}{section.4.5}%
+\contentsline {chapter}{\numberline {5}The Real Numbers}{51}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Subtraction}{53}{subsection.5.0.1}%
+\contentsline {chapter}{\numberline {6}Integers and Rationals}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Positive Integers}{59}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Exponentiation}{60}{subsection.6.1.1}%
+\contentsline {section}{\numberline {6.2}Integers}{61}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Rational Numbers}{63}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Monoid Theory}{65}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Group Theory}{67}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Ring Theory}{69}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Field Theory}{71}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Linear Algebra}{73}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Topology}{75}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Topological Spaces}{75}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}Subspaces}{78}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}Topological Disjoint Union}{79}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}Product Topology}{81}{subsection.12.1.3}%
+\contentsline {subsection}{\numberline {12.1.4}Bases}{83}{subsection.12.1.4}%
+\contentsline {subsection}{\numberline {12.1.5}Subbases}{83}{subsection.12.1.5}%
+\contentsline {subsection}{\numberline {12.1.6}Countability Axioms}{83}{subsection.12.1.6}%
+\contentsline {section}{\numberline {12.2}Continuous Functions}{84}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Paths}{85}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Loops}{86}{subsection.12.2.2}%
+\contentsline {section}{\numberline {12.3}Convergence}{86}{section.12.3}%
+\contentsline {section}{\numberline {12.4}Subspaces}{86}{section.12.4}%
+\contentsline {section}{\numberline {12.5}Embedding}{87}{section.12.5}%
+\contentsline {section}{\numberline {12.6}Quotient Spaces}{87}{section.12.6}%
+\contentsline {section}{\numberline {12.7}Connected Spaces}{89}{section.12.7}%
+\contentsline {section}{\numberline {12.8}Hausdorff Spaces}{90}{section.12.8}%
+\contentsline {section}{\numberline {12.9}Separable Spaces}{90}{section.12.9}%
+\contentsline {section}{\numberline {12.10}Sequential Compactness}{90}{section.12.10}%
+\contentsline {section}{\numberline {12.11}Compactness}{90}{section.12.11}%
+\contentsline {section}{\numberline {12.12}Quotient Spaces}{91}{section.12.12}%
+\contentsline {section}{\numberline {12.13}Gluing}{92}{section.12.13}%
+\contentsline {section}{\numberline {12.14}Metric Spaces}{93}{section.12.14}%
+\contentsline {subsection}{\numberline {12.14.1}Products}{94}{subsection.12.14.1}%
+\contentsline {section}{\numberline {12.15}Complete Metric Spaces}{95}{section.12.15}%
+\contentsline {section}{\numberline {12.16}Manifolds}{96}{section.12.16}%
+\contentsline {chapter}{\numberline {13}Homotopy Theory}{97}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Homotopies}{97}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Homotopy Equivalence}{97}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Simplicial Complexes}{99}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Cell Decompositions}{99}{section.14.1}%
+\contentsline {section}{\numberline {14.2}CW-complexes}{99}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Topological Groups}{101}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Continuous Actions}{101}{section.15.1}%
+\contentsline {chapter}{\numberline {16}Topological Vector Spaces}{103}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Cauchy Sequences}{103}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Seminorms}{104}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{104}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Normed Spaces}{104}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Inner Product Spaces}{106}{section.16.5}%
+\contentsline {section}{\numberline {16.6}Banach Spaces}{107}{section.16.6}%
+\contentsline {section}{\numberline {16.7}Hilbert Spaces}{107}{section.16.7}%
+\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{107}{section.16.8}%
