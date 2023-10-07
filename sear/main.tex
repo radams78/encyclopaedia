@@ -901,6 +901,10 @@ $\mathbb{N} \times \mathbb{N}$ is countably infinite.
 \pf\ The function that maps $(m,n)$ to $2^m 3^n$ is injective. \qed
 \end{proof}
 
+\begin{cor}
+The Cartesian product of two countable sets is countable.
+\end{cor}
+
 \begin{thm}
 A countable union of countable sets is countable.
 \end{thm}
@@ -914,6 +918,19 @@ A countable union of countable sets is countable.
 \step{5}{For $n \in \mathbb{N}$, \pick\ a surjective function $g_n : \mathbb{N} \twoheadrightarrow B(n)$}
 \step{6}{\pflet{$h : \mathbb{N} \times \mathbb{N} \rightarrow A$ be the function $h(m,n) = g_m(n)$}}
 \step{7}{$h$ is surjective.}
+\qed
+\end{proof}
+
+\begin{thm}
+$2^\mathbb{N}$ is uncountable.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : \mathbb{N} \rightarrow 2^\mathbb{N}$} \prove{$f$ is not surjective.}}
+\step{2}{Define $g : \mathbb{N} \rightarrow 2$ by $g(n) = 1 - f(n)(n)$.}
+\step{3}{For all $n \in \mathbb{N}$ we have $g(n) \neq f(n)(n)$.}
+\step{4}{For all $n \in \mathbb{N}$ we have $g \neq f(n)$.}
 \qed
 \end{proof}
 
