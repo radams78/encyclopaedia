@@ -1,10 +1,10 @@
 % READ
-% CHECK
-% READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
+% READ
+% CHECK
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections}
+\section{Injections, Surjections and Bijections} % CHECKED
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
@@ -784,11 +784,41 @@ Let $f : A \rightarrow B$ and let $(S,i)$ be a subset of $A$. The \emph{restrict
 \section{Natural Numbers}
 
 \begin{thm}[Principle of Recursive Definition]
-Let $A$ be a set. Let $f : \mathcal{P} A \rightarrow A$. Then there exists a unique $g : \mathbb{N} \rightarrow A$ such that, for all $n \in \mathbb{N}$, we have
-\[ g(n) = f(\{ g(m) : m < n \}) \enspace . \]
+Let $A$ be a set. Let $F$ be the set of all functions $\{ m \in \mathbb{N} : m < n \} \rightarrow A$ for some $n$. Let $\rho : F \rightarrow A$. Then there exists a unique $g : \mathbb{N} \rightarrow A$ such that, for all $n \in \mathbb{N}$, we have
+\[ g(n) = \rho(g \restriction \{ m \in \mathbb{N} : m < n \}) \enspace . \]
 \end{thm}
 
-%TODO
+\begin{proof}
+\pf
+\step{1}{Given a subset $B \subseteq \mathbb{N}$, let us say that a function $g : B \rightarrow A$ is \emph{acceptable} iff, for all $n \in B$, we have
+\[ \forall m < n. m \in B \]
+and
+\[ g(n) = \rho(g \restriction \{ m \in \mathbb{N} : m < n \}) \enspace . \]}
+\step{2}{For all $n \in \mathbb{N}$, there exists an acceptable function $\{ m \in \mathbb{N} : m < n \} \rightarrow A$.}
+\begin{proof}
+	\step{a}{\pflet{$P[n]$ be the property: There exists an acceptable function $\{ m \in \mathbb{N} : m < n \} \rightarrow A$.}}
+	\step{b}{$P[0]$}
+	\begin{proof}
+		\pf\ The unique function $\emptyset \rightarrow A$ is acceptable.
+	\end{proof}
+	\step{c}{For any natural number $n$, if $P[n]$ then $P[n+1]$.}
+	\begin{proof}
+		\step{i}{\assume{$P[n]$}}
+		\step{ii}{\pick\ an acceptable $f : \{ m \in \mathbb{N} : m < n \} \rightarrow A$.}
+		\step{iii}{\pflet{$g : \{ m \in \mathbb{N} : m < n + 1 \} \rightarrow A$ be the function
+		\[ g(m) = \begin{cases}
+		f(m) & \text{if } m < n \\
+		\rho(f) & \text{if } m = n
+		\end{cases} \]}}
+		\step{iv}{$g$ is acceptable.}
+	\end{proof}
+\end{proof}
+\step{3}{If $g : B \rightarrow A$ and $h : C \rightarrow A$ are acceptable, then $g$ and $h$ agree on $B \cap C$.}
+\step{4}{Define $g : \mathbb{N} \rightarrow A$ by: $g(n) = a$ iff there exists an acceptable $h : \{ m \in \mathbb{N} : m < n + 1 \}$ such that $h(n) = a$.}
+\step{5}{$g$ is acceptable.}
+\step{6}{If $g' : \mathbb{N} \rightarrow A$ is acceptable then $g' = g$.}
+\qed
+\end{proof}
 
 \section{Finite and Infinite Sets}
 
