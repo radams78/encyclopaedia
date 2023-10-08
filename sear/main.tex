@@ -1376,6 +1376,14 @@ Every countable subset of $\Omega$ is bounded above.
 \qed
 \end{proof}
 
+\begin{prop}
+$\Omega$ has no greatest element.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $\alpha \in \Omega$ we have $(- \infty, \alpha]$ is countable and hence not the whole of $\Omega$. \qed
+\end{proof}
+
 \begin{df}
 We identify a poset $(A, \leq)$ with the category with:
 \begin{itemize}
@@ -1428,6 +1436,10 @@ Let $A$ be a linearly ordered set. Then $A$ is well ordered if and only if it do
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+Let $A$ be a linearly ordered set. If every countable subset of $A$ is well ordered, then $A$ is well ordered.
+\end{cor}
 
 \begin{df}
 Given $f : A \rightarrow B$ and an object $C$, define the function $f^* : \mathcal{C}[B,C] \rightarrow \mathcal{C}[A,C]$ by $f^*(g) = g \circ f$.

@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {4.1.6}Terminal Objects}{36}{subsection.4.1.6}%
 \contentsline {subsection}{\numberline {4.1.7}Zero Objects}{36}{subsection.4.1.7}%
 \contentsline {subsection}{\numberline {4.1.8}Triads}{36}{subsection.4.1.8}%
-\contentsline {subsection}{\numberline {4.1.9}Cotriads}{36}{subsection.4.1.9}%
+\contentsline {subsection}{\numberline {4.1.9}Cotriads}{37}{subsection.4.1.9}%
 \contentsline {subsection}{\numberline {4.1.10}Pullbacks}{37}{subsection.4.1.10}%
 \contentsline {subsection}{\numberline {4.1.11}Pushouts}{40}{subsection.4.1.11}%
 \contentsline {subsection}{\numberline {4.1.12}Subcategories}{43}{subsection.4.1.12}%
