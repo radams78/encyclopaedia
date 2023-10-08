@@ -1209,6 +1209,26 @@ Any subset of a well ordered set is well ordered.
 The product of two well ordered sets is well ordered under the dictionary order.
 \end{prop}
 
+\begin{thm}[Well Ordering Theorem]
+Every set has a well ordering.
+\end{thm}
+
+%TODO
+
+\begin{prop}
+There exists a well-ordered set with a largest element $\Omega$ such that $(-\infty, \Omega)$ is uncountable but, for all $\alpha < \Omega$, we have $(-\infty, \alpha)$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ an uncountable well ordered set $B$.}
+\step{2}{\pflet{$C = 2 \times B$ under the dictionary order.}}
+\step{3}{\pflet{$\Omega$ be the least element of $C$ such that $(-\infty, \Omega)$ is uncountable.}}
+\step{4}{\pflet{$A = (-\infty, \Omega]$}}
+\step{5}{$A$ is a well ordered set with largest element $\Omega$ such that $(-\infty, \Omega)$ is uncountable but, for all $\alpha < \Omega$, we have $(-\infty, \alpha)$ is countable.}
+\qed
+\end{proof}
+
 \chapter{Category Theory}
 
 \section{Categories}
@@ -1240,6 +1260,105 @@ Let $\Set$ be the category of small sets and functions.
 \begin{df}
 Let $\mathbf{LPos}$ be the category of linearly ordered sets and monotone functions.
 \end{df}
+
+\begin{prop}
+Any finite linearly ordered set is isomorphic to $\{ m \in \mathbb{N} : m < n \}$ for some $n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every finite nonempty linearly ordered set has a greatest element.}
+\begin{proof}
+	\step{a}{\pflet{$P[n]$ be the property: for any linearly ordered set $A$, if there exists a bijection $A \approx \{ m \in \mathbb{N} : m < n \}$ and $A$ is nonempty then $A$ has a greatest element.}}
+	\step{b}{$P[0]$}
+	\begin{proof}
+		\pf\ Vacuous.
+	\end{proof}
+	\step{c}{$\forall n \in \mathbb{N}. P[n] \Rightarrow P[n+1]$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{N}$}}
+		\step{ii}{\assume{$P[n]$}}
+		\step{iii}{\pflet{$A$ be a nonempty linearly ordered set.}}
+		\step{iv}{\pflet{$f : A \approx \{ m \in \mathbb{N} : m < n+1\}$}}
+		\step{v}{\pflet{$a = \inv{f}(n)$}}
+		\step{vi}{$f \restriction (A - \{a\}) : A - \{a\} \approx \{ m \in \mathbb{N} : m < n \}$}
+		\step{vii}{\assume{w.l.o.g. $a$ is not greatest in $A$.}}
+		\step{viii}{\pflet{$b$ be greatest in $A - \{a\}$}}
+		\begin{proof}
+			\pf\ \stepref{ii}
+		\end{proof}
+		\step{ix}{$b$ is greatest in $A$.}
+	\end{proof}
+\end{proof}
+\step{2}{\pflet{$P[n]$ be the property: for any linearly ordered set $A$, if there exists a bijection $A \approx \{ m \in \mathbb{N} : m < n \}$ then there exists an isomorphism in $\mathbf{LPos}$ $A \cong \{ m \in \mathbb{N} : m < n \}$.}}
+\step{3}{$P[0]$}
+\begin{proof}
+	\pf\ If there exists a bijection $A \approx \emptyset$ then $A$ is empty and so the unique function $A \rightarrow \emptyset$ is an order isomorphism.
+\end{proof}
+\step{4}{For every natural number $n$, if $P[n]$ then $P[n+1]$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be a natural number.}}
+	\step{b}{\assume{$P[n]$}}
+	\step{c}{\pflet{$A$ be a linearly ordered set.}}
+	\step{d}{\assume{$A$ has $n+1$ elements.}}
+	\step{e}{\pflet{$a$ be the greatest element in $A$.}}
+	\step{f}{\pflet{$f : A - \{a\} \cong \{m \in \mathbb{N} : m < n \}$ be an order isomorphism.}}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\step{g}{Define $g : A \rightarrow \{ m \in \mathbb{N} : m < n + 1 \}$ by
+	\[ g(x) = \begin{cases}
+	f(x) & \text{if } x \neq a \\
+	n & \text{if } x = a
+	\end{cases} \]}
+	\step{h}{$g$ is an order isomorphism.}
+\end{proof}
+\step{5}{$\forall n \in \mathbb{N}. P[n]$}
+\qed
+\end{proof}
+
+\begin{cor}
+Any finite linearly ordered set is well ordered.
+\end{cor}
+
+\begin{thm}
+There exists a well ordered set, unique up to order isomorphism, that is uncountable but such that every section is countable.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{There exists a well ordered set that is uncountable but such that every section is countable.}
+\begin{proof}
+	\step{a}{\pick\ a well ordered set $A$ with an element $\Omega \in A$ such that $(-\infty, \Omega)$ is uncountable but $\forall \alpha < \Omega. (-\infty, \alpha)$ is countable.}
+	\step{b}{\pflet{$(-\infty, Omega)$ is uncountable but every section is countable.}}
+\end{proof}
+\step{2}{If $A$ and $B$ are uncountable well ordered sets such that every section is countable, then $A \cong B$.}
+\begin{proof}
+	\pf\ Since it cannot be that one of $A$ and $B$ is isomorphic to a section of the other.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Minimal Uncountable Well Ordered Set]
+The \emph{minimal uncountable well ordered set} $\Omega$ is the well ordered set that is uncountable but such that every section is countable.
+
+We write $\overline{\Omega}$ for the well ordered set $\Omega \cup \{ \Omega \}$ where $\Omega$ is greatest.
+\end{df}
+
+\begin{prop}
+Every countable subset of $\Omega$ is bounded above.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a countable subset of $\Omega$.}}
+\step{2}{For all $a \in A$ we have $(-\infty, a)$ is countable.}
+\step{3}{$\bigcup_{a \in A} (- \infty, a)$ is countable.}
+\step{4}{$\bigcup_{a \in A} (-\infty, a) \neq \Omega$}
+\step{5}{\pick\ $x \in \Omega - \bigcup_{a \in A} (-\infty, a)$}
+\step{6}{$x$ is an upper bound for $A$.}
+\qed
+\end{proof}
 
 \begin{df}
 We identify a poset $(A, \leq)$ with the category with:
