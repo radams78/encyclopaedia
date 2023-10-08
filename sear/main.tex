@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 % READ
 % CHECK
+% FORMALIZE
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections} % CHECKED
+\section{Injections, Surjections and Bijections}
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
@@ -77,11 +77,6 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
-\begin{df}[Composition]
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
-\[ (g \circ f)(a) = g(f(a)) \enspace . \]
-\end{df}
-
 \section{Axioms}
 
 \begin{axs}[Choice]
@@ -93,6 +88,11 @@ Let $A$ and $B$ be sets. Assume that, for all $a : \El{A}$, there exists $b : \E
 \begin{ax}[Extensionality]
 Let $f, g : A \rightarrow B$. If, for all $x \in A$, we have $f(x) = g(x)$, then $f = g$.
 \end{ax}
+
+\begin{df}[Composition]
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
+\end{df}
 
 \begin{ax}[Pairing]
 For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a : \El{A}$ and $b : \El{B}$, there exists a unique $(a,b) : \El{A \times B}$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
@@ -868,6 +868,7 @@ Let $A$ be a set. Suppose that $A \approx \{ m \in \mathbb{N} : m < n \}$. Let $
 \end{proof}
 
 \begin{cor}
+\label{cor:Dedekind_infinite}
 If $A$ is finite then there is no bijection between $A$ and a proper subset of $A$.
 \end{cor}
 
@@ -903,6 +904,34 @@ A finite union of finite sets is finite.
 \begin{cor}
 A finite Cartesian product of finite sets is finite.
 \end{cor}
+
+\begin{thm}
+Let $A$ be a set. The following are equivalent:
+\begin{enumerate}
+\item There exists an injective function $\mathbb{N} \rightarrowtail A$.
+\item There exists a bijection between $A$ and a proper subset of $A$.
+\item $A$ is infinite.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\pflet{$f : \mathbb{N} \rightarrowtail A$ be injective.}}
+	\step{b}{\pflet{$s : \mathbb{N} \approx \mathbb{N} - \{0\}$ be the function $s(n) = n + 1$.}}
+	\step{c}{$f \circ s \circ \inv{f} : A \approx A - \{f(0)\}$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:Dedekind_infinite}.
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Choose a function $f : \mathbb{N} \rightarrow A$ such that $f(n) \in A - \{ f(m) : m < n \}$ for all $n$.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Countable Sets}
 
