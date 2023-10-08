@@ -1408,6 +1408,27 @@ The identity morphism on an object is unique.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $A$ be a linearly ordered set. Then $A$ is well ordered if and only if it does not contain a subset of order type $\mathbb{N}^\mathrm{op}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $A$ is well ordered then it does not contain a subset of order type $\mathbb{N}^\mathrm{op}$.}
+\begin{proof}
+	\pf\ A subset of order type $\mathbb{N}^\mathrm{op}$ would be a subset with no least element.
+\end{proof}
+\step{2}{If $A$ is not well ordered then it contains a subset of order type $\mathbb{N}^\mathrm{op}$.}
+\begin{proof}
+	\step{a}{\assume{$A$ is not well ordered.}}
+	\step{b}{\pick\ a nonempty subset $S$ with no least element.}
+	\step{c}{\pick\ $a_0 \in S$}
+	\step{d}{Extend to a sequence $(a_n)$ in $S$ such that $a_{n+1} < a_n$ for all $n$.}
+	\step{e}{$\{ a_n : n \in \mathbb{N} \}$ has order type $\mathbb{N}^\mathrm{op}$.}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}
 Given $f : A \rightarrow B$ and an object $C$, define the function $f^* : \mathcal{C}[B,C] \rightarrow \mathcal{C}[A,C]$ by $f^*(g) = g \circ f$.
 \end{df}

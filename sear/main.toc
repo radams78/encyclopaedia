@@ -33,25 +33,25 @@
 \contentsline {subsection}{\numberline {4.1.1}Monomorphisms}{34}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Epimorphisms}{34}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {4.1.3}Sections and Retractions}{34}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Isomorphisms}{34}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.4}Isomorphisms}{35}{subsection.4.1.4}%
 \contentsline {subsection}{\numberline {4.1.5}Initial Objects}{35}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Terminal Objects}{35}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.6}Terminal Objects}{36}{subsection.4.1.6}%
 \contentsline {subsection}{\numberline {4.1.7}Zero Objects}{36}{subsection.4.1.7}%
 \contentsline {subsection}{\numberline {4.1.8}Triads}{36}{subsection.4.1.8}%
 \contentsline {subsection}{\numberline {4.1.9}Cotriads}{36}{subsection.4.1.9}%
-\contentsline {subsection}{\numberline {4.1.10}Pullbacks}{36}{subsection.4.1.10}%
-\contentsline {subsection}{\numberline {4.1.11}Pushouts}{39}{subsection.4.1.11}%
-\contentsline {subsection}{\numberline {4.1.12}Subcategories}{42}{subsection.4.1.12}%
-\contentsline {subsection}{\numberline {4.1.13}Opposite Category}{42}{subsection.4.1.13}%
+\contentsline {subsection}{\numberline {4.1.10}Pullbacks}{37}{subsection.4.1.10}%
+\contentsline {subsection}{\numberline {4.1.11}Pushouts}{40}{subsection.4.1.11}%
+\contentsline {subsection}{\numberline {4.1.12}Subcategories}{43}{subsection.4.1.12}%
+\contentsline {subsection}{\numberline {4.1.13}Opposite Category}{43}{subsection.4.1.13}%
 \contentsline {subsection}{\numberline {4.1.14}Groupoids}{43}{subsection.4.1.14}%
-\contentsline {subsection}{\numberline {4.1.15}Concrete Categories}{43}{subsection.4.1.15}%
-\contentsline {subsection}{\numberline {4.1.16}Power of Categories}{43}{subsection.4.1.16}%
+\contentsline {subsection}{\numberline {4.1.15}Concrete Categories}{44}{subsection.4.1.15}%
+\contentsline {subsection}{\numberline {4.1.16}Power of Categories}{44}{subsection.4.1.16}%
 \contentsline {subsection}{\numberline {4.1.17}Arrow Category}{44}{subsection.4.1.17}%
 \contentsline {subsection}{\numberline {4.1.18}Slice Category}{44}{subsection.4.1.18}%
-\contentsline {section}{\numberline {4.2}Functors}{46}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Functors}{47}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Natural Transformations}{50}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Bifunctors}{50}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Functor Categories}{51}{section.4.5}%
+\contentsline {section}{\numberline {4.4}Bifunctors}{51}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Functor Categories}{52}{section.4.5}%
 \contentsline {chapter}{\numberline {5}The Real Numbers}{55}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Subtraction}{57}{subsection.5.0.1}%
 \contentsline {chapter}{\numberline {6}Integers and Rationals}{63}{chapter.6}%
