@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections}
+\section{Injections, Surjections and Bijections} % CHECKED
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
@@ -1194,6 +1194,20 @@ Let $X$ be a linearly ordered set and $a,b \in X$. Then $b$ is the \emph{(immedi
 Let $A$ and $B$ be linearly ordered sets. The \emph{dictionary order} on $A \times B$ is the order defined by
 \[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
 \end{df}
+
+\section{Well Orders}
+
+\begin{df}[Well Ordered Set]
+A \emph{well ordered set} is a linearly ordered set such that every nonempty subset has a least element.
+\end{df}
+
+\begin{prop}
+Any subset of a well ordered set is well ordered.
+\end{prop}
+
+\begin{prop}
+The product of two well ordered sets is well ordered under the dictionary order.
+\end{prop}
 
 \chapter{Category Theory}
 
