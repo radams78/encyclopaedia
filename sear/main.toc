@@ -32,18 +32,18 @@
 \contentsline {section}{\numberline {4.1}Categories}{31}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Monomorphisms}{34}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Epimorphisms}{34}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Sections and Retractions}{34}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.3}Sections and Retractions}{35}{subsection.4.1.3}%
 \contentsline {subsection}{\numberline {4.1.4}Isomorphisms}{35}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Initial Objects}{35}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.5}Initial Objects}{36}{subsection.4.1.5}%
 \contentsline {subsection}{\numberline {4.1.6}Terminal Objects}{36}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Zero Objects}{36}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Triads}{36}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.7}Zero Objects}{37}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Triads}{37}{subsection.4.1.8}%
 \contentsline {subsection}{\numberline {4.1.9}Cotriads}{37}{subsection.4.1.9}%
 \contentsline {subsection}{\numberline {4.1.10}Pullbacks}{37}{subsection.4.1.10}%
 \contentsline {subsection}{\numberline {4.1.11}Pushouts}{40}{subsection.4.1.11}%
 \contentsline {subsection}{\numberline {4.1.12}Subcategories}{43}{subsection.4.1.12}%
 \contentsline {subsection}{\numberline {4.1.13}Opposite Category}{43}{subsection.4.1.13}%
-\contentsline {subsection}{\numberline {4.1.14}Groupoids}{43}{subsection.4.1.14}%
+\contentsline {subsection}{\numberline {4.1.14}Groupoids}{44}{subsection.4.1.14}%
 \contentsline {subsection}{\numberline {4.1.15}Concrete Categories}{44}{subsection.4.1.15}%
 \contentsline {subsection}{\numberline {4.1.16}Power of Categories}{44}{subsection.4.1.16}%
 \contentsline {subsection}{\numberline {4.1.17}Arrow Category}{44}{subsection.4.1.17}%

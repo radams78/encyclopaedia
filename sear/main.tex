@@ -1384,6 +1384,25 @@ $\Omega$ has no greatest element.
 \pf\ For any $\alpha \in \Omega$ we have $(- \infty, \alpha]$ is countable and hence not the whole of $\Omega$. \qed
 \end{proof}
 
+\begin{prop}
+There are uncountably many elements of $\Omega$ that have no predecessor.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be the set of all elements of $\Omega$ that have no predecessor.}}
+\step{2}{\pflet{$f : A \times \mathbb{N} \rightarrow \Omega$ be the function that maps $(a,n)$ to the $n$th successor of $a$.}}
+\step{3}{$f$ is surjective.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $x \in \Omega$ and there is no element $a \in A$ and $n \in \mathbb{N}$ such that $x$ is the $n$th successor of $a$.}}
+	\step{b}{\pflet{$x_n$ be the $n$th predecessor of $x$ for $n \in \mathbb{N}$.}}
+	\step{c}{$\{x_n : n \in \mathbb{N} \}$ is a nonempty subset of $\Omega$ with no least element.}
+\end{proof}
+\step{4}{$A \times \mathbb{N}$ is uncountable.}
+\step{5}{$A$ is uncountable.}
+\qed
+\end{proof}
+
 \begin{df}
 We identify a poset $(A, \leq)$ with the category with:
 \begin{itemize}
