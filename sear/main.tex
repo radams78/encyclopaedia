@@ -41,6 +41,7 @@
 \newcommand{\spec}{\ensuremath{\operatorname{spec}}}
 \newcommand{\Top}{\ensuremath{\mathbf{Top}}}
 \newcommand{\dom}{\ensuremath{\operatorname{dom}}}
+\newcommand{\spn}{\ensuremath{\operatorname{span}}}
 
 \begin{document}
 
@@ -3991,6 +3992,24 @@ Let $V$ be a vector space and $A \subseteq V$. Then $A$ is \emph{linearly indepe
 where $v_1, \ldots, v_n \in A$, then
 \[ \alpha_1 = \cdots = \alpha_n = 0 \enspace . \]
 \end{df}
+
+\begin{prop}
+Let $V$ be a vector space, $A \subseteq V$ and $v \in V$. If $A$ is linearly independent and $v \notin \spn A$, then $A \cup \{ v \}$ is independent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha_1 v_1 + \cdots + \alpha_n v_n + \beta v = 0$ where $v_1, \ldots, v_n \in A$}}
+\step{2}{$\beta = 0$}
+\begin{proof}
+	\pf\ Otherwise $v = (\alpha_1 / \beta) v_1 + \cdots + (\alpha_n / \beta) v_n \in \spn A$.
+\end{proof}
+\step{3}{$\alpha_1 = \cdots = \alpha_n = 0$}
+\begin{proof}
+	\pf\ Since $A$ is linearly independent.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}
 For any field $K$, we write $\mathbf{Vect}_K$ for $K-\mathbf{Mod}$.
