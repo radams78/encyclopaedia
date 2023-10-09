@@ -1247,6 +1247,32 @@ If every linearly ordered subset of $A$ is bounded above, then $A$ has a maximal
 Let $\mathcal{A} \subseteq \mathcal{P} X$. Suppose that, for every subset $\mathcal{B} \subseteq \mathcal{A}$ that is linearly ordered by inclusion, we have $\bigcup \mathcal{B} \in \mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
 \end{cor}
 
+\subsection{Sets of Finite Type}
+
+\begin{df}[Finite Type]
+Let $X$ be a set. Let $\mathcal{A} \subseteq \mathcal{P} X$. Then $\mathcal{A}$ is of \emph{finite type} if and only if, for any $B \subseteq X$, we have $B \in \mathcal{A}$ if and only if every finite subset of $B$ is in $\mathcal{A}$.
+\end{df}
+
+\begin{prop}[Tukey's Lemma]
+Let $X$ be a set. Let $\mathcal{A} \subseteq \mathcal{P} X$. If $\mathcal{A}$ is of finite type, then $\mathcal{A}$ has a maximal element.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For every subset $\mathcal{B} \subseteq \mathcal{A}$ that is linearly ordered by inclusion, we have $\bigcup \mathcal{B} \in \mathcal{A}$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{B} \subseteq \mathcal{A}$}}
+	\step{b}{\assume{$\mathcal{B}$ is linearly ordered by inclusion.}}
+	\step{c}{Every finite subset of $\bigcup \mathcal{B}$ is in $\mathcal{A}$}
+	\step{d}{$\bigcup \mathcal{B} \in \mathcal{A}$}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Kuratowski's Lemma.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Well Orders}
 
 \begin{df}[Well Ordered Set]
