@@ -3994,6 +3994,7 @@ where $v_1, \ldots, v_n \in A$, then
 \end{df}
 
 \begin{prop}
+\label{prop:extend_linearly_independent}
 Let $V$ be a vector space, $A \subseteq V$ and $v \in V$. If $A$ is linearly independent and $v \notin \spn A$, then $A \cup \{ v \}$ is independent.
 \end{prop}
 
@@ -4007,6 +4008,24 @@ Let $V$ be a vector space, $A \subseteq V$ and $v \in V$. If $A$ is linearly ind
 \step{3}{$\alpha_1 = \cdots = \alpha_n = 0$}
 \begin{proof}
 	\pf\ Since $A$ is linearly independent.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Every vector space has a basis.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a vector space.}}
+\step{2}{\pick\ a maximal linearly independent set $\mathcal{B}$.}
+\begin{proof}
+	\pf\ By Tukey's Lemma.
+\end{proof}
+\step{3}{$\spn \mathcal{B} = V$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:extend_linearly_independent}.
 \end{proof}
 \qed
 \end{proof}
