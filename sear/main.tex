@@ -1344,20 +1344,20 @@ Let $I$ be a well ordered set. Let $\{A_i\}_{i \in I}$ be a family of well order
 \pf\ Easy. \qed
 \end{proof}
 
-\begin{thm}
-Let $J$ and $C$ be well ordered sets. Assume there is no surjective function mapping a section of $J$ onto $C$. Then there exists a unique function $h : J \rightarrow C$ such that, for all $x \in J$, we have
-$h(x)$ is the least element of $C - h((-\infty, x))$.
+\begin{thm}[Principle of Transfinite Recursion]
+Let $J$ be a well ordered set. Let $C$ be a set. Let $\mathcal{F}$ be the set of all functions from a section of $J$ into $C$. Let $\rho : \mathcal{F} \rightarrow C$. Then there exists a unique function $h : J \rightarrow C$ such that, for all $\alpha \in J$, we have
+\[ h(\alpha) = \rho(h \restriction (-\infty, \alpha)) \enspace . \]
 \end{thm}
 
 \begin{proof}
 \pf
-\step{1}{For a function $h$ mapping either a section of $J$ or all of $J$ into $C$, let us say $h$ is \emph{acceptable} iff, for all $x \in \dom h$, we have $(-\infty, x) \subseteq \dom h$ and $h(x)$ is the least element of $C - h((-\infty,x))$.}
+\step{1}{For a function $h$ mapping either a section of $J$ or all of $J$ into $C$, let us say $h$ is \emph{acceptable} iff, for all $x \in \dom h$, we have $(-\infty, x) \subseteq \dom h$ and $h(x) = \rho(h \restriction (-\infty, x))$.}
 \step{1}{If $h$ and $k$ are acceptable functions then $h(x) = k(x)$ for all $x$ in both domains.}
 \begin{proof}
 	\step{a}{\pflet{$x \in J$}}
 	\step{b}{\assume{as transfinite induction hypothesis that, for all $y < x$ and any acceptable functions $h$ and $k$ with $y \in \dom h \cap \dom k$, we have $h(y) = k(y)$}}
 	\step{c}{\pflet{$h$ and $k$ be acceptable functions with $x \in \dom h \cap \dom k$}}
-	\step{d}{$C - h((\infty,x)) = C - k((-\infty,x))$}
+	\step{d}{$h \restriction (-\infty, x) = k \restriction (-\infty, x)$}
 	\begin{proof}
 		\pf\ By \stepref{b}.
 	\end{proof}
@@ -1374,7 +1374,7 @@ $h(x)$ is the least element of $C - h((-\infty, x))$.
 	\[ g(x) = 
 	\begin{cases}
 	f(x) & \text{if } x < \alpha \\
-	\text{the least element of } C - f((-\infty, \alpha)) & \text{if } x = \alpha
+	\rho(f) & \text{if } x = \alpha
 	\end{cases} \]}}
 	\step{d}{$g$ is acceptable.}
 \end{proof}
