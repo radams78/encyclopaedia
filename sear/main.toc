@@ -26,7 +26,8 @@
 \contentsline {section}{\numberline {2.11}Countable Sets}{23}{section.2.11}%
 \contentsline {chapter}{\numberline {3}Order Theory}{27}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Relations}{27}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Linear Orders}{28}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.1}Strict Partial Orders}{28}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Linear Orders}{29}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Well Orders}{29}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Category Theory}{33}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Categories}{33}{section.4.1}%

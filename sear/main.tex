@@ -1,10 +1,10 @@
+% READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
-% READ
  
 \documentclass{book}
 
@@ -59,7 +59,7 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections} % CHECKED
+\section{Injections, Surjections and Bijections} % CHECKED FORMALIZED
 
 \begin{df}[Injective]
 A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
@@ -1174,6 +1174,20 @@ Let $A$ be a poset. Then $A$ has the least upper bound property if and only if e
 \qed
 \end{proof}
 
+\subsection{Strict Partial Orders}
+
+\begin{df}[Strict Partial Order]
+A \emph{strict partial order} on a set $A$ is a relation on $A$ that is irreflexive and transitive.
+\end{df}
+
+\begin{prop}
+\begin{enumerate}
+\item If $\leq$ is a partial order on $A$ then $<$ is a strict partial order on $A$, where $x < y$ iff $x \leq y \wedge x \neq y$.
+\item If $<$ is a strict partial order on $A$ then $\leq$ is a partial order on $A$, where $x \leq y$ iff $x < y \vee x = y$.
+\item These two relations are inverses of one another.
+\end{enumerate}
+\end{prop}
+
 \subsection{Linear Orders}
 
 \begin{df}[Linear Order]
@@ -1195,6 +1209,39 @@ Let $X$ be a linearly ordered set and $a,b \in X$. Then $b$ is the \emph{(immedi
 Let $A$ and $B$ be linearly ordered sets. The \emph{dictionary order} on $A \times B$ is the order defined by
 \[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
 \end{df}
+
+\begin{thm}[Maximal Principle]
+Every poset has a maximal linearly ordered subset.
+\end{thm}
+
+%TODO
+
+\begin{thm}[Zorn's Lemma]
+Let $A$ be a poset.
+If every linearly ordered subset of $A$ is bounded above, then $A$ has a maximal element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a maximal linearly ordered subset $B$ of $A$.}
+\begin{proof}
+	\pf\ Maximal Principle
+\end{proof}
+\step{2}{\pick\ an upper bound $c$ for $B$. \prove{$c$ is maximal.}}
+\step{3}{\pflet{$x \in A$}}
+\step{4}{\assume{$c \leq x$} \prove{$x = c$}}
+\step{5}{$x$ is an upper bound for $B$.}
+\step{6}{$x \in B$}
+\begin{proof}
+	\pf\ By the maximality of $B$, since $B \cup \{x\}$ is linearly ordered.
+\end{proof}
+\step{7}{$x \leq c$}
+\begin{proof}
+	\pf\ \stepref{2}
+\end{proof}
+\step{8}{$x = c$}
+\qed
+\end{proof}
 
 \section{Well Orders}
 
