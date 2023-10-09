@@ -41,6 +41,7 @@
 \newcommand{\op}[1]{\ensuremath{{#1}^{\mathrm{op}}}}
 \newcommand{\spec}{\ensuremath{\operatorname{spec}}}
 \newcommand{\Top}{\ensuremath{\mathbf{Top}}}
+\newcommand{\dom}{\ensuremath{\operatorname{dom}}}
 
 \begin{document}
 
@@ -1243,6 +1244,100 @@ In a well ordered set, every element that is not greatest has a successor.
 
 \begin{proof}
 \pf\ If $a$ is not greatest, then $\{ x : x > a \}$ is nonempty, hence has a least element. \qed
+\end{proof}
+
+\begin{thm}[Transfinite Induction]
+Let $J$ be a well ordered set. Let $S \subseteq J$. Assume that, for every $\alpha \in J$, if $\forall x < \alpha. x \in S$ then $\alpha in S$. Then $S = J$.
+\end{thm}
+
+\begin{proof}
+\pf\ Otherwise $J - S$ would be a nonempty subset of $J$ with no least element. \qed
+\end{proof}
+
+\begin{prop}
+Let $I$ be a well ordered set. Let $\{A_i\}_{i \in I}$ be a family of well ordered sets. Define $<$ on $\coprod_{i \in I} A_i$ by: $\kappa_i(a) < \kappa_j(b)$ iff either $i < j$, or $i = j$ and $a < b$ in $A_i$. Then $<$ well orders $\coprod_{i \in I} A_i$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}
+Let $J$ and $C$ be well ordered sets. Assume there is no surjective function mapping a section of $J$ onto $C$. Then there exists a unique function $h : J \rightarrow C$ such that, for all $x \in J$, we have
+$h(x)$ is the least element of $C - h((-\infty, x))$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For a function $h$ mapping either a section of $J$ or all of $J$ into $C$, let us say $h$ is \emph{acceptable} iff, for all $x \in \dom h$, we have $(-\infty, x) \subseteq \dom h$ and $h(x)$ is the least element of $C - h((-\infty,x))$.}
+\step{1}{If $h$ and $k$ are acceptable functions then $h(x) = k(x)$ for all $x$ in both domains.}
+\begin{proof}
+	\step{a}{\pflet{$x \in J$}}
+	\step{b}{\assume{as transfinite induction hypothesis that, for all $y < x$ and any acceptable functions $h$ and $k$ with $y \in \dom h \cap \dom k$, we have $h(y) = k(y)$}}
+	\step{c}{\pflet{$h$ and $k$ be acceptable functions with $x \in \dom h \cap \dom k$}}
+	\step{d}{$C - h((\infty,x)) = C - k((-\infty,x))$}
+	\begin{proof}
+		\pf\ By \stepref{b}.
+	\end{proof}
+	\step{d}{$h(x) = k(x)$}
+	\begin{proof}
+		\pf\ By \stepref{c}, each is the least element of the set in \stepref{d}.
+	\end{proof}
+\end{proof}
+\step{2}{For $\alpha \in J$, if there exists an acceptable function $(- \infty, \alpha) \rightarrow C$, then there exists an acceptable function $(-\infty, \alpha] \rightarrow C$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha \in J$}}
+	\step{b}{\pflet{$f : (-\infty, \alpha) \rightarrow C$ be acceptable.}}
+	\step{c}{\pflet{$g : (-\infty, \alpha] \rightarrow C$ be the function given by
+	\[ g(x) = 
+	\begin{cases}
+	f(x) & \text{if } x < \alpha \\
+	\text{the least element of } C - f((-\infty, \alpha)) & \text{if } x = \alpha
+	\end{cases} \]}}
+	\step{d}{$g$ is acceptable.}
+\end{proof}
+\step{3}{Let $K \subseteq J$. Assume that, for all $\alpha \in K$, there exists an acceptable function $(-\infty, \alpha) \rightarrow C$. Then there exists an acceptable function $\bigcup_{\alpha \in K} (-\infty, \alpha) \rightarrow C$.}
+\begin{proof}
+	\step{a}{Define $f : \bigcup_{\alpha \in K} (-\infty, \alpha) \rightarrow C$ by: $f(x) = y$ iff there exists $\alpha \in K$ and $g : (-\infty, \alpha) \rightarrow C$ acceptable such that $g(x) = y$.}
+\end{proof}
+\step{4}{For every $\beta \in J$, there exists an acceptable function $(-\infty, \beta) \rightarrow C$}
+\begin{proof}
+	\step{a}{\pflet{$\beta \in J$}}
+	\step{b}{\assume{as transfinite induction hypothesis that, for all $\alpha < \beta$, there exists an acceptable function $(-\infty, \alpha) \rightarrow C$}}
+	\step{c}{\case{$\beta$ has a predecessor}}
+	\begin{proof}
+		\step{i}{\pflet{$\alpha$ be the predecessor of $\beta$.}}
+		\step{ii}{There exists an acceptable function $(-\infty, \alpha) \rightarrow C$.}
+		\step{iii}{There exists an acceptable function $(-\infty, \beta) \rightarrow C$.}
+		\begin{proof}
+			\pf\ By \stepref{2} since $(-\infty, \beta) = (-\infty, \alpha]$.
+		\end{proof}
+	\end{proof}
+	\step{d}{\case{$\beta$ has no predecessor.}}
+	\begin{proof}
+		\pf\ The result follows by \stepref{3} since $(-\infty, \beta) = \bigcup_{\alpha < \beta} (-\infty, \alpha)$.
+	\end{proof}
+\end{proof}
+\step{5}{There exists an acceptable function $J \rightarrow C$.}
+\begin{proof}
+	\step{a}{\case{$J$ has a greatest element.}}
+	\begin{proof}
+		\step{i}{\pflet{$g$ be greatest.}}
+		\step{ii}{There exists an acceptable function $(-\infty, g) \rightarrow C$.}
+		\begin{proof}
+			\pf\ \stepref{4}
+		\end{proof}
+		\step{iii}{There exists an acceptable function $J \rightarrow C$.}
+		\begin{proof}
+			\pf\ By \stepref{2} since $J = (-\infty, g]$.
+		\end{proof}
+	\end{proof}
+	\step{b}{\case{$J$ has no greatest element.}}
+	\begin{proof}
+		\pf\ By \stepref{3} since $J = \bigcup_{\alpha \in J} (-\infty, \alpha)$.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Category Theory}
