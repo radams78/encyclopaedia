@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
  
 \documentclass{book}
@@ -33,7 +33,6 @@
 \newtheorem{df}[ax]{Definition}
 \newtheorem{ex}[ax]{Example}
 
-\newcommand{\El}[1]{\ensuremath{\mathrm{El} \left( {#1} \right)}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\Ob}[1]{\ensuremath{\mathrm{Ob} \left( {#1} \right)}}
@@ -78,12 +77,12 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
-\section{Axioms}
+\section{Axioms} % CHECKED
 
 \begin{axs}[Choice]
-Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x : \El{X}$ and $y : \El{Y}$. Then the following is an axiom.
+Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x \in X$ and $y \in Y$. Then the following is an axiom.
 
-Let $A$ and $B$ be sets. Assume that, for all $a : \El{A}$, there exists $b : \El{B}$ such that $P[A,B,a,b]$. Then there exists a function $f : A \rightarrow B$ such that $\forall a : \El{A}. P[A,B,a,f(a)]$.
+Let $A$ and $B$ be sets. Assume that, for all $a \in A$, there exists $b \in B$ such that $P[A,B,a,b]$. Then there exists a function $f : A \rightarrow B$ such that $\forall a \in A. P[A,B,a,f(a)]$.
 \end{axs}
 
 \begin{ax}[Extensionality]
@@ -96,30 +95,31 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \ci
 \end{df}
 
 \begin{ax}[Pairing]
-For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a : \El{A}$ and $b : \El{B}$, there exists a unique $(a,b) : \El{A \times B}$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
+For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a \in A$ and $b \in B$, there exists a unique $(a,b) \in A \times B$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
 \end{ax}
 
 \begin{axs}[Separation]
-For every property $P[X,x]$ where $X$ is a set variable and $x : \El{X}$, the following is an axiom:
+For every property $P[X,x]$ where $X$ is a set variable and $x \in X$, the following is an axiom:
 
-For every set $A$, there exists a set $S = \{ x : \El{A} \mid P[A,x] \}$ and an injection $i : S \rightarrow A$ such that, for all $x : \El{A}$, we have
-\[ (\exists y : S. i(y) = x) \Leftrightarrow P[A,x] \enspace . \]
+For every set $A$, there exists a set $S = \{ x \in A : P[A,x] \}$ and an injection $i : S \rightarrow A$ such that, for all $x \in A$, we have
+\[ (\exists y \in S. i(y) = x) \Leftrightarrow P[A,x] \enspace . \]
 \end{axs}
 
 \begin{ax}[Infinity]
-There exists a set $\mathbb{N}$, an element $0 : \El{\mathbb{N}}$, and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that:
+There exists a set $\mathbb{N}$, an element $0 \in \mathbb{N}$, and a function $s : \mathbb{N} \rightarrow \mathbb{N}$ such that:
 \begin{itemize}
-\item $\forall n : \El{\mathbb{N}}. s(n) \neq 0$
-\item $\forall m,n : \El{\mathbb{N}}. s(m) = s(n) \Rightarrow m = n$.
+\item $\forall n \in \mathbb{N}. s(n) \neq 0$
+\item $\forall m,n \in \mathbb{N}. s(m) = s(n) \Rightarrow m = n$.
 \end{itemize}
 \end{ax}
 
 \begin{axs}[Collection]
 Let $P[X,Y,x]$ be a formula with set variables $X$ and $Y$ and an element variable $x \in X$. Then the following is an axiom.
 
-For any set $A$, there exists a set $B$, a function $p : B \rightarrow A$, a set $Y$ and a relation $M : B \looparrowright Y$ such that:
+For any set $A$, there exist sets $B$ and $Y$ and functions $p : B \rightarrow A$, and $m : B \times Y \Rightarrow \mathbb{N}$ such that:
 \begin{itemize}
-\item $\forall b \in B. P[A, \{ y \in Y : bMy \}, p(b)]$
+\item $m$ is injective.
+\item $\forall b \in B. P[A, \{ y \in Y : m(b,y) = 0 \}, p(b)]$
 \item For all $a \in A$, if $\exists Y. P[A,Y,a]$, then there exists $b \in B$ such that $a = p(b)$.
 \end{itemize}
 \end{axs}
@@ -133,7 +133,7 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 \item $\mathbb{N}$ is small.
 \item For any $U$-small sets $A$ and $B$, the set $B^A$ is small.
 \item For any $U$-small sets $A$ and $B$, the set $A \times B$ is small.
-\item Let $f : A \rightarrow B$ be a function. If $B$ is small and $f^{-1}(b)$ is $U$-small for all $b \in B$, then $A$ is small.
+\item Let $f : A \rightarrow B$ be a function. If $B$ is small and $\{ a \in A : f(a) = b \}$ is small for all $b \in B$, then $A$ is small.
 \item If $p : B \twoheadrightarrow A$ is a surjective function such that $A$ is small, then there exists a $U$-small set $C$, a surjection $q : C \twoheadrightarrow A$, and a function $f : C \rightarrow B$ such that $q = p \circ f$.
 \end{itemize}
 \end{ax}
@@ -451,7 +451,7 @@ f(x) & \text{if } \exists n. x \in A_n \\
 For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
 \end{df}
 
-\subsection{The Empty Set} %CHECKED
+\subsection{The Empty Set}
 
 \begin{thm}
 There exists a set which has no elements.
@@ -463,7 +463,7 @@ There exists a set which has no elements.
 \begin{proof}
 	\pf\ By the Axiom of Infinity, a set exists.
 \end{proof}
-\step{2}{\pflet{$S = \{ x : \El{A} \mid \bot \}$ with injection $i : S \rightarrow A$}}
+\step{2}{\pflet{$S = \{ x \in A : \bot \}$ with injection $i : S \rightarrow A$}}
 \begin{proof}
 	\pf\ Axiom of Separation.
 \end{proof}
@@ -480,15 +480,15 @@ If $E$ and $E'$ have no elements then $E \approx E'$.
 \step{1}{\pflet{$E$ and $E'$ have no elements.}}
 \step{2}{\pick\ a function $F : E \rightarrow E'$.}
 \begin{proof}
-	\pf\ Axiom of Choice since vacuously $\forall x : \El{E}. \exists y : \El{E'}. \top$.
+	\pf\ Axiom of Choice since vacuously $\forall x \in E. \exists y \in E'. \top$.
 \end{proof}
 \step{4}{$F$ is injective.}
 \begin{proof}
-	\pf\ Vacuously, for all $x,y : \El{E}$, if $F(x) = F(y)$ then $x = y$.
+	\pf\ Vacuously, for all $x,y \in E$, if $F(x) = F(y)$ then $x = y$.
 \end{proof}
 \step{5}{$F$ is surjective.}
 \begin{proof}
-	\pf\ Vacuously, for all $y : \El{E}$, there exists $x : \El{E}$ such that $F(x) = y$.
+	\pf\ Vacuously, for all $y \in E$, there exists $x \in E$ such that $F(x) = y$.
 \end{proof}
 \qed
 \end{proof}
@@ -497,7 +497,7 @@ If $E$ and $E'$ have no elements then $E \approx E'$.
 The \emph{empty set} $\emptyset$ is the set with no elements.
 \end{df}
 
-\subsection{The Singleton} %CHECKED
+\subsection{The Singleton}
 
 \begin{thm}
 There exists a set that has exactly one element.
@@ -509,8 +509,8 @@ There exists a set that has exactly one element.
 \begin{proof}
 	\pf\ By the Axiom of Infinity, there exists a set that has an element.
 \end{proof}
-\step{2}{\pick\ $a : \El{A}$}
-\step{3}{\pick\ a set $S$ and injection $i : S \rightarrowtail A$ such that, for all $x : \El{A}$, there exists $s : \El{S}$ such that $s = x$ if and only if $x = a$}
+\step{2}{\pick\ $a \in A$}
+\step{3}{\pick\ a set $S$ and injection $i : S \rightarrowtail A$ such that, for all $x \in A$, there exists $s \in S$ such that $s = x$ if and only if $x = a$}
 \step{4}{$S$ has exactly one element.}
 \qed
 \end{proof}
@@ -522,7 +522,7 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 \begin{proof}
 \pf
 \step{1}{\pflet{$A$ and $B$ both have exactly one element $a$ and $b$ respectively.}}
-\step{2}{\pflet{$F : A \rightarrow B$ be the function such that, for all $x : \El{A}$, we have $(x = a \wedge F(x) = b)$}}
+\step{2}{\pflet{$F : A \rightarrow B$ be the function such that, for all $x \in A$, we have $(x = a \wedge F(x) = b)$}}
 \step{3}{$F$ is a bijection.}
 \qed
 \end{proof}
@@ -755,7 +755,7 @@ Given $a \in A$ and $b \in B$, we write $(a,b)$ for the unique element of $A \ti
 \section{Quotient Sets}
 
 \begin{prop}
-Let $\sim$ be an equivalence relation on $X$. Then there exists a set $X/\sim$, the \emph{quotient set} of $X$ with respect to $\sim$, and a surjective function $\pi : X \twoheadrightarrow X / \sim$, the \emph{canonical projection}, such that, for all $x,y : \El{X}$, we have $x \sim y$ if and only if $\pi(x) = \pi(y)$.
+Let $\sim$ be an equivalence relation on $X$. Then there exists a set $X/\sim$, the \emph{quotient set} of $X$ with respect to $\sim$, and a surjective function $\pi : X \twoheadrightarrow X / \sim$, the \emph{canonical projection}, such that, for all $x,y \in X$, we have $x \sim y$ if and only if $\pi(x) = \pi(y)$.
 
 Further, if $p : X \twoheadrightarrow Q$ is another quotient with respect to $\sim$, then there exists a unique bijection $\phi : X / \sim \approx Q$ such that $\phi \circ \pi = p$.
 \end{prop}
@@ -2350,7 +2350,7 @@ Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathca
 \end{itemize}
 such that:
 \begin{itemize}
-\item for all $A : \El{\mathrm{Ob}(C)}$ we have $F \id{A} = \id{FA}$
+\item for all $A \in \mathrm{Ob}(C)$ we have $F \id{A} = \id{FA}$
 \item for any morphism $f : A \rightarrow B$ and $g : B \rightarrow C$ in $\mathcal{C}$, we have $F(g \circ f) = Fg \circ Ff$
 \end{itemize}
 \end{df}
@@ -4420,13 +4420,13 @@ Let $X$ be a topological space. A \emph{subbasis} for the topology on $X$ is a s
 \end{df}
 
 \begin{df}[Space with Basepoint]
-A \emph{space with basepoint} is a pair $(X,x)$ where $X$ is a topological space and $x : \El{X}$.
+A \emph{space with basepoint} is a pair $(X,x)$ where $X$ is a topological space and $x \in X$.
 \end{df}
 
 \subsection{Countability Axioms}
 
 \begin{df}[Neighbourhood Basis]
-Let $X$ be a topological space and $x_0 : \El{X}$. A \emph{neighbourhood basis} of $x_0$ is a set $\mathcal{U}$ of neighbourhoods of $x_0$ such that every neighbourhood of $x_0$ includes an element of $\mathcal{U}$.
+Let $X$ be a topological space and $x_0 \in X$. A \emph{neighbourhood basis} of $x_0$ is a set $\mathcal{U}$ of neighbourhoods of $x_0$ such that every neighbourhood of $x_0$ includes an element of $\mathcal{U}$.
 \end{df}
 
 \begin{df}[First Countable]
@@ -4453,8 +4453,8 @@ Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces su
 
 \begin{proof}
 \pf
-\step{1}{For all $\lambda : \El{\Lambda}$, \pick\ $U_\lambda$ open in $X_\lambda$ such that $\emptyset \neq U_\lambda \neq X_\lambda$.}
-\step{2}{For all $\lambda : \El{\lambda}$, \pick\ $x_\lambda \in U_\lambda$.}
+\step{1}{For all $\lambda \in \Lambda$, \pick\ $U_\lambda$ open in $X_\lambda$ such that $\emptyset \neq U_\lambda \neq X_\lambda$.}
+\step{2}{For all $\lambda \in \Lambda$, \pick\ $x_\lambda \in U_\lambda$.}
 \step{3}{\assume{for a contradiction $B$ is a countable neighbourhood basis for $(x_\lambda)_{\lambda \in \Lambda}$.}}
 \step{4}{\pick\ $\lambda \in \Lambda$ such that, for all $U \in B$, we have $\pi_\lambda(U) = X_\lambda$}
 \step{5}{There is no $U \in \lambda$ such that $U \subseteq \pi_\lambda^{-1}(U_\lambda)$}
@@ -4566,7 +4566,7 @@ A \emph{loop} in a topological space $X$ is a path $\alpha : [0,1] \rightarrow X
 \section{Convergence}
 
 \begin{df}[Convergence]
-Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$. A point $a : \El{X}$ is a \emph{limit} of the sequence iff, for every neighbourhood $U$ of $a$, there exists $n_0$ such that $\forall n \geq n_0. x_n \in U$.
+Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$. A point $a \in X$ is a \emph{limit} of the sequence iff, for every neighbourhood $U$ of $a$, there exists $n_0$ such that $\forall n \geq n_0. x_n \in U$.
 \end{df}
 
 Convergence in a product space is pointwise convergence.
@@ -4921,7 +4921,7 @@ A first countable compact space is sequentially compact.
 \section{Quotient Spaces}
 
 \begin{df}[Quotient Space]
-Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. The \emph{quotient topology} on $X / \sim$ is defined by: $U : \El{\mathcal{P} X}$ is open in $X / \sim$ if and only if $\inv{\pi}(U)$ is open in $X$.
+Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. The \emph{quotient topology} on $X / \sim$ is defined by: $U \in \mathcal{P} X$ is open in $X / \sim$ if and only if $\inv{\pi}(U)$ is open in $X$.
 \end{df}
 
 \begin{prop}
@@ -4986,7 +4986,7 @@ $D^n / S^{n-1} \cong S^n$
 \section{Gluing}
 
 \begin{df}[Gluing]
-Let $X$ and $Y$ be topological spaces, $X_0 \subseteq X$ and $\phi : X_0 \rightarrow Y$ a continuous map. Then $Y \cup_\phi X$ is the quotient space $(X + Y)/ \sim$, where $\sim$ is the equivalence relation generated by $x \sim \phi(x)$ for all $x : \El{X}$.
+Let $X$ and $Y$ be topological spaces, $X_0 \subseteq X$ and $\phi : X_0 \rightarrow Y$ a continuous map. Then $Y \cup_\phi X$ is the quotient space $(X + Y)/ \sim$, where $\sim$ is the equivalence relation generated by $x \sim \phi(x)$ for all $x \in X$.
 \end{df}
 
 \begin{prop}
@@ -4994,7 +4994,7 @@ $Y$ is a subspace of $Y \cup_\phi X$.
 \end{prop}
 
 \begin{df}
-Let $X$ be a topological space and $\alpha : X \cong X$ a homeomorphism. Then $(X \times [0,1]) / \alpha$ is the quotient space of $X \times [0,1]$ by the equivalence relation generated by $(x,0) \sim (\alpha(x),1)$ for all $x : \El{X}$.
+Let $X$ be a topological space and $\alpha : X \cong X$ a homeomorphism. Then $(X \times [0,1]) / \alpha$ is the quotient space of $X \times [0,1]$ by the equivalence relation generated by $(x,0) \sim (\alpha(x),1)$ for all $x \in X$.
 \end{df}
 
 \begin{df}[M\"{o}bius Strip]
@@ -5202,8 +5202,8 @@ An \emph{$n$-dimensional manifold} is a second countable Hausdorff space locally
 \begin{df}[Homotopy]
 Let $X$ and $Y$ be topological spaces. Let $f,g : X \rightarrow Y$ be continuous. A \emph{homotopy} between $f$ and $g$ is a continuous function $h : X \times [0,1] \rightarrow Y$ such that
 \begin{itemize}
-\item $\forall x : \El{X}. h(x,0) = f(x)$
-\item $\forall x : \El{X}. h(x,1) = g(x)$
+\item $\forall x \in X. h(x,0) = f(x)$
+\item $\forall x \in X. h(x,1) = g(x)$
 \end{itemize}
 We say $f$ and $g$ are \emph{homotopic}, $f \simeq g$, iff there exists a homotopy between them.
 
@@ -5249,7 +5249,7 @@ Let $X$ be a topological space and $A$ a subspace of $X$. A retraction $\rho : X
 \end{df}
 
 \begin{df}[Strong Deformation Retract]
-Let $X$ be a topological space and $A$ a subspace of $X$. A \emph{strong deformation retraction} $\rho : X \rightarrow A$ is a continuous function such that there exists a homotopy $h : X \times [0,1] \rightarrow X$ between $i \circ \rho$ and $\id{X}$ such that, for all $a : \El{X}$ and $t : \El{[0,1]}$, we have $h(a,t) = a$.
+Let $X$ be a topological space and $A$ a subspace of $X$. A \emph{strong deformation retraction} $\rho : X \rightarrow A$ is a continuous function such that there exists a homotopy $h : X \times [0,1] \rightarrow X$ between $i \circ \rho$ and $\id{X}$ such that, for all $a \in X$ and $t \in [0,1]$, we have $h(a,t) = a$.
 
 We say $A$ is a \emph{strong deformation retract} of $X$ iff a strong deformation retraction exists.
 \end{df}
@@ -5373,8 +5373,8 @@ Let $G$ be a topological group and $H$ a normal subgroup of $G$. Then $G/H$ is H
 \begin{df}[Continuous Action]
 Let $G$ be a topological group and $X$ a topological space. A \emph{continuous action} of $G$ on $X$ is a continuous function $\cdot : G \times X \rightarrow X$ such that:
 \begin{itemize}
-\item $\forall x : \El{X}. ex = x$
-\item $\forall g,h : \El{G}. \forall x : \El{X}. g(hx) = (gh)x$
+\item $\forall x \in X. ex = x$
+\item $\forall g,h \in G. \forall x \in X. g(hx) = (gh)x$
 \end{itemize}
 
 A \emph{$G$-space} consists of a topological space $X$ and a continuous action of $G$ on $X$.
@@ -5405,7 +5405,7 @@ Define an action of $SO(2)$ on $S^2$ by
 \end{proof}
 
 \begin{df}[Stabilizer]
-Let $X$ be a $G$-space and $x \in X$. The \emph{stabilizer} of $x$ is $G_x := \{ g : \El{G} \mid gx = x \}$.
+Let $X$ be a $G$-space and $x \in X$. The \emph{stabilizer} of $x$ is $G_x := \{ g \in G : gx = x \}$.
 \end{df}
 
 \begin{prop}
@@ -5481,9 +5481,9 @@ A topological vector space is \emph{complete} iff every Cauchy sequence converge
 \begin{df}[Seminorm]
 Let $E$ be a vector space over $K$. A \emph{seminorm} on $E$ is a function $\|\ \| : E \rightarrow \mathbb{R}$ such that:
 \begin{enumerate}
-\item $\forall x : \El{E}. \| x \| \geq 0$
-\item $\forall \alpha : \El{K}. \forall x : \El{E}. \| \alpha x \| = |\alpha| \|x\|$
-\item \emph{Triangle Inequality} $\forall x,y : \El{E}. \| x + y \| \leq \| x \| + \| y \|$
+\item $\forall x \in E. \| x \| \geq 0$
+\item $\forall \alpha \in K. \forall x \in E. \| \alpha x \| = |\alpha| \|x\|$
+\item \emph{Triangle Inequality} $\forall x,y : \in E. \| x + y \| \leq \| x \| + \| y \|$
 \end{enumerate}
 \end{df}
 
@@ -5493,11 +5493,11 @@ The function that maps $(x_1, \ldots, x_n)$ to $|x_i|$ is a seminorm on $\mathbb
 
 \begin{df}
 Let $E$ be a vector space over $K$.
-Let $\Lambda$ be a set of seminorms on $E$. The topology \emph{generated} by $\Lambda$ is the topology generated by the subbasis consisting of all sets of the form $B_\epsilon^\lambda(x) = \{ y \in E : \lambda(y-x) < \epsilon \}$ for $\epsilon > 0$, $\lambda \in \Lambda$ and $x : \El{E}$.
+Let $\Lambda$ be a set of seminorms on $E$. The topology \emph{generated} by $\Lambda$ is the topology generated by the subbasis consisting of all sets of the form $B_\epsilon^\lambda(x) = \{ y \in E : \lambda(y-x) < \epsilon \}$ for $\epsilon > 0$, $\lambda \in \Lambda$ and $x \in E$.
 \end{df}
 
 \begin{prop}
-$E$ is a topological vector space under this topology. It is Hausdorff iff, for all $x : \El{E}$, if $\forall \lambda \in \Lambda. \lambda(x) = 0$ then $x = 0$.
+$E$ is a topological vector space under this topology. It is Hausdorff iff, for all $x \in E$, if $\forall \lambda \in \Lambda. \lambda(x) = 0$ then $x = 0$.
 \end{prop}
 
 \section{Fr\'{e}chet Spaces}
@@ -5712,7 +5712,7 @@ Proof: See Dieudonne, J. A., Treatise on Analysis, Vol. II, New York and London:
 \end{ex}
 
 \begin{df}[Thom Space]
-Let $E$ be a vector bundle with a Riemannian metric, $DE = \{ x : \El{E} \mid \| x \| \leq 1 \}$ its disc bundle and $SE := \{ v : \El{E} \mid \| v \| = 1 \}$ its sphere bundle. The \emph{Thom space} of $E$ is the quotient space $DE / SE$.
+Let $E$ be a vector bundle with a Riemannian metric, $DE = \{ x \in E : \| x \| \leq 1 \}$ its disc bundle and $SE := \{ v \in E : \| v \| = 1 \}$ its sphere bundle. The \emph{Thom space} of $E$ is the quotient space $DE / SE$.
 \end{df}
 
 \end{document}
