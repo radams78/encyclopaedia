@@ -1427,7 +1427,82 @@ Let $A$ and $B$ be sets. Then either $A \preccurlyeq B$ or $B \preccurlyeq A$.
 \end{cor}
 
 \begin{proof}
-\pf\ Choose well orderings of $A$ and $B$. Then either there exists a surjection $A \twoheadrightarrow B$, or there exists an injective function $A \rightarrowtail B$. \qed
+\pf\ Choose well orderings of $A$ and $B$. Then either there exists a surjection $A \twoheadrightarrow B$, or there exists an injective function $h : A \rightarrowtail B$ defined by transfinite recursion by $h(x)$ is the least element of $B - h((-\infty, x))$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:order_preserving_maps}
+Let $J$ and $E$ be well ordered sets. Let $h : J \rightarrow E$. Then the following are equivalent.
+\begin{enumerate}
+\item $h$ is strictly monotone and $h(J)$ is either $E$ or a section of $E$.
+\item For all $\alpha \in J$, we have $h(\alpha)$ is the least element of $E - h((-\infty, \alpha))$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{1}}
+	\step{b}{$h(J)$ is closed downwards.}
+	\step{c}{\pflet{$\alpha \in J$}}
+	\step{d}{$h(\alpha) \in E - h((-\infty, \alpha))$}
+	\begin{proof}
+		\pf\ If $\beta < \alpha$ then $h(\beta) < h(\alpha)$.
+	\end{proof}
+	\step{e}{For all $y \in E - h((-\infty, \alpha))$ we have $h(\alpha) \leq y$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $y < h(\alpha)$}}
+		\step{ii}{$y \in h(J)$}
+		\step{iii}{\pick\ $\beta \in J$ such that $h(\beta) = y$}
+		\step{iv}{$h(\beta) < h(\alpha)$}
+		\step{v}{$\beta < \alpha$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts the fact that $y \notin h((-\infty, \alpha))$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{2}}
+	\step{b}{$h$ is strictly monotone.}
+	\begin{proof}
+		\step{i}{\pflet{$\alpha, \beta \in J$ with $\alpha < \beta$}}
+		\step{ii}{$h(\alpha) \neq h(\beta)$}
+		\begin{proof}
+			\pf\ Because $h(\beta) \in E - h((-\infty, \beta))$.
+		\end{proof}
+		\step{iii}{$h(\alpha) \leq h(\beta)$}
+		\begin{proof}
+			\pf Because $h(\alpha)$ is least in $E - h((-\infty, \alpha))$.
+		\end{proof}
+		\step{iv}{$h(\alpha) < h(\beta)$}
+	\end{proof}
+	\step{c}{$h(J)$ is either $E$ or a section of $E$.}
+	\begin{proof}
+		\step{i}{\assume{$h(J) \neq E$}}
+		\step{ii}{\pflet{$e$ be least in $E - h(J)$} \prove{$h(J) = (-\infty, e)$}}
+		\step{iii}{$h(J) \subseteq (-\infty, e)$}
+		\begin{proof}
+			\step{one}{\pflet{$\alpha \in J$}}
+			\step{two}{$h(\alpha) \neq e$}
+			\begin{proof}
+				\pf\ $e \notin h(J)$
+			\end{proof}
+			\step{three}{$h(\alpha) \leq e$}
+			\begin{proof}
+				\pf\ Since $h(\alpha)$ is least in $E - h((-\infty, \alpha))$.
+			\end{proof}
+			\step{four}{$h(\alpha) < e$}
+		\end{proof}
+		\step{iv}{$(-\infty, e) \subseteq h(J)$}
+		\begin{proof}
+			\pf\ If $e' < e$ then $e' \in h(J)$ by leastness of $e$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Category Theory}
@@ -1521,6 +1596,81 @@ Any finite linearly ordered set is isomorphic to $\{ m \in \mathbb{N} : m < n \}
 \begin{cor}
 Any finite linearly ordered set is well ordered.
 \end{cor}
+
+\begin{prop}
+Let $J$ and $E$ be well ordered sets. Suppose there is a strictly monotone map $J \rightarrow E$. Then $J$ is isomorphic either to $E$ or a section of $E$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$k : J \rightarrow E$ be strictly monotone.}}
+\step{2}{\assume{w.l.o.g. $E$ is nonempty.}}
+\step{3}{\pick\ $e_0 \in E$}
+\step{4}{\pflet{$h : J \rightarrow E$ be the function defined by transfinite recursion thus:
+\[ h(\alpha) = \begin{cases}
+\text{the least element in } E - h((-\infty, \alpha)) & \text{if } h((-\infty, \alpha)) \neq E \\
+e_0 & \text{if } h((-\infty, \alpha)) = E
+\end{cases} \]}}
+\step{5}{$\forall \alpha \in J. h(\alpha) \leq k(\alpha)$}
+\begin{proof}
+	\step{a}{\pflet{$\alpha \in J$}}
+	\step{b}{\assume{as transfinite induction hypothesis $\forall \beta < \alpha. h(\beta) \leq k(\beta)$.}}
+	\step{c}{$\forall \beta < \alpha. h(\beta) < k(\alpha)$}
+	\step{d}{$h((-\infty, \alpha)) \neq E$}
+	\step{e}{$h(\alpha)$ is the least element in $E - h((-\infty, \alpha))$.}
+	\step{f}{$k(\alpha) \in E - h((-\infty, \alpha))$}
+	\step{g}{$h(\alpha) \leq k(\alpha)$}
+\end{proof}
+\step{6}{$\forall \alpha \in J. h((-\infty, \alpha)) \neq E$}
+\begin{proof}
+	\pf\ For $\beta < \alpha$ we have $h(\beta) \leq k(\beta) < k(\alpha)$ so $k(\alpha) \notin h((-\infty, \alpha))$.
+\end{proof}
+\step{7}{For all $\alpha \in J$, we have $h(\alpha)$ is the least element of $E - h((-\infty, \alpha))$.}
+\step{8}{$h$ is strictly monotone and $h(J)$ is either $E$ or a section of $E$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:order_preserving_maps}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+If $A$ and $B$ are well ordered sets, then exactly one of the following conditions hold: $A \cong B$, or $A$ is isomorphic to a section of $B$, or $B$ is isomorphic to a section of $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{At least one of the conditions holds.}
+\begin{proof}
+	\step{a}{$B$ is isomorphic to either $A + B$ or a section of $A + B$.}
+	\step{b}{\case{$B \cong A + B$}}
+	\begin{proof}
+		\step{i}{\pflet{$\phi$ be the isomorphism $B \cong A + B$}}
+		\step{ii}{\pflet{$b_0$ be the least element in $B$.}}
+		\step{iii}{$A$ is isomorphic to the section $(-\infty, \inv{\phi}(\kappa_2(b_0)))$ of $B$.}
+	\end{proof}
+	\step{c}{\case{$a \in A$ and $B \cong (-\infty, \kappa_1(a))$}}
+	\begin{proof}
+		\pf\ Then $B$ is isomorphic to the section $(-\infty, a)$ of $A$.
+	\end{proof}
+	\step{d}{\case{$b \in B$ and $\phi : B \cong (-\infty, \kappa_2(b))$}}
+	\begin{proof}
+		\step{i}{\case{$b$ is least in $B$.}}
+		\begin{proof}
+			\pf\ Then $A \cong B$.
+		\end{proof}
+		\step{ii}{\case{$b$ is not least in $B$.}}
+		\begin{proof}
+			\step{one}{\pflet{$b_0$ be least in $B$.}}
+			\step{two}{$A$ is isomorphic to the section $(-\infty, \inv{\phi}(\kappa_2(b_0)))$ of $B$.}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{At most one of the conditions holds.}
+\begin{proof}
+	\pf\ Since a well ordered set cannot be isomorphic to a section of itself.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{thm}
 There exists a well ordered set, unique up to order isomorphism, that is uncountable but such that every section is countable.
