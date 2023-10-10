@@ -1215,11 +1215,38 @@ Let $A$ and $B$ be linearly ordered sets. The \emph{dictionary order} on $A \tim
 \[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
 \end{df}
 
-\begin{thm}[Maximal Principle]
+\begin{thm}[Maximum Principle]
 Every poset has a maximal linearly ordered subset.
 \end{thm}
 
-%TODO
+\begin{proof}
+\pf
+\step{1}{\pflet{$(A, \leq)$ be a poset.}}
+\step{2}{\pick\ a well ordering $\preccurlyeq$ of $A$.}
+\begin{proof}
+	\pf\ Well Ordering Theorem.
+\end{proof}
+\step{3}{\pflet{$h : A \rightarrow 2$ be the function defined by $\preccurlyeq$-recursion thus:
+\[ h(a) =
+\begin{cases}
+1 & \text{if $a$ is $\leq$-comparable with every $b \prec a$ such that $h(b) = 1$} \\
+0 & \text{otherwise}
+\end{cases} \]}}
+\step{4}{\pflet{$B = \{x \in A : h(x) = 1\}$} \prove{$B$ is a maximal subset linearly ordered by $\leq$.}}
+\step{5}{$B$ is linearly ordered by $\leq$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in B$}}
+	\step{b}{\assume{w.l.o.g. $x \preccurlyeq y$}}
+	\step{c}{$y$ is $\leq$-comparable with $x$}
+\end{proof}
+\step{6}{For any subset $C \subseteq A$ linearly ordered by $\leq$, if $B \subseteq C$ then $B = C$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in C$}}
+	\step{b}{$x$ is comparable with every $y \preccurlyeq x$ such that $h(x) = 1$}
+	\step{c}{$x \in B$}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{thm}[Zorn's Lemma]
 Let $A$ be a poset.

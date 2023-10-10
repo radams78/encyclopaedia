@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  10 OCT 2023 03:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  10 OCT 2023 07:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -769,20 +769,26 @@ Chapter 2.
 
 ]
 Chapter 3.
-[27] [28] [29] [30]
-WARNING: proof step "1" (<1>2) already defined
-WARNING: proof step "d" (<2>5) already defined
-[31] [32] [33] [34
+[27] [28]
+Overfull \hbox (11.47084pt too wide) detected at line 1234
+\OML/cmm/m/it/10 h\U/matha/m/n/10 p\OML/cmm/m/it/10 a\U/matha/m/n/10 q ^^P []
+ []
 
-]
+[29] [30]
+WARNING: proof step "1" (<1>2) already defined
+[31]
+WARNING: proof step "d" (<2>5) already defined
+[32] [33] [34]
 Chapter 4.
-[35] [36] [37] [38] [39] [40] [41] <xymatrix 2x2 182> [42] <xymatrix 2x2 168>
+[35
+
+] [36] [37] [38] [39] [40] [41] <xymatrix 2x2 182> [42] <xymatrix 2x2 168>
 <xymatrix 2x2 182> <xymatrix 2x2 182> [43]
 WARNING: proof step "4" (<1>5) already defined
 <xymatrix 2x2 182> [44] <xymatrix 2x2 182> <xymatrix 2x2 168> <xymatrix 2x2
 182> [45] <xymatrix 2x2 182> [46] <xymatrix 2x2 168> <xymatrix 3x3 296>
 <xymatrix 3x3 296> [47] [48] [49] <xymatrix 2x2 182> [50]
-Overfull \hbox (27.76573pt too wide) in paragraph at lines 2530--2531
+Overfull \hbox (27.76573pt too wide) in paragraph at lines 2557--2558
 []\OT1/cmr/bx/n/10 Definition 4.1.79 \OT1/cmr/m/n/10 (Fi-bre Wedge)\OT1/cmr/bx/
 n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 B$ \OT1/cmr/m/n/10 be a small set.
  Let $\U/matha/m/n/10 p\OML/cmm/m/it/10 X; u[]; p[]\U/matha/m/n/10 q\OML/cmm/m/
@@ -790,7 +796,7 @@ it/10 ; \U/matha/m/n/10 p\OML/cmm/m/it/10 Y; u[]; p[]\U/matha/m/n/10 q P
  []
 
 <xymatrix 2x2 168> <xymatrix 3x3 296> <xymatrix 3x3 296> [51] [52]
-Overfull \hbox (33.82704pt too wide) detected at line 2677
+Overfull \hbox (33.82704pt too wide) detected at line 2704
 []
  []
 
@@ -802,7 +808,7 @@ Chapter 5.
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 3113.
+(hyperref)                than one, level fixed on input line 3140.
 
 [60] [61] [62] [63] [64] [65] [66]
 Chapter 6.
@@ -833,7 +839,7 @@ Chapter 11.
 ]
 Chapter 12.
 [83]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 4268--4268
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 4295--4295
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -846,23 +852,23 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 4465--4466
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 4492--4493
 []\OT1/cmr/bx/n/10 Proposition 12.1.29. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
 
 [87] [88] [89]
-Overfull \hbox (86.28078pt too wide) detected at line 4667
+Overfull \hbox (86.28078pt too wide) detected at line 4694
 []
  []
 
 [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
-Overfull \hbox (108.65958pt too wide) detected at line 5373
+Overfull \hbox (108.65958pt too wide) detected at line 5400
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 5387--5387
+Overfull \hbox (47.883pt too wide) in paragraph at lines 5414--5414
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -870,14 +876,14 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 5403
+Overfull \hbox (0.90187pt too wide) detected at line 5430
 []
  []
 
 [102] [103] [104]
 Chapter 13.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 5512--5513
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 5539--5540
 []\OT1/cmr/bx/n/10 Definition 13.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -898,7 +904,7 @@ Chapter 16.
 [111
 
 ] [112]
-Overfull \hbox (113.19771pt too wide) detected at line 5847
+Overfull \hbox (113.19771pt too wide) detected at line 5874
 []
  []
 
@@ -910,7 +916,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  13367 strings out of 476091
  188063 string characters out of 5794081
- 1872330 words of memory out of 5000000
+ 1871330 words of memory out of 5000000
  32706 multiletter control sequences out of 15000+600000
  531742 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -940,7 +946,7 @@ nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (116 pages, 591062 bytes).
+Output written on main.pdf (116 pages, 592156 bytes).
 PDF statistics:
  2149 PDF objects out of 2487 (max. 8388607)
  1869 compressed objects within 19 object streams
