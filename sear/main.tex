@@ -1,10 +1,10 @@
 % READ
-% CHECK
-% READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
+% READ
+% CHECK
  
 \documentclass{book}
 
@@ -141,6 +141,16 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 
 \chapter{Sets and Functions}
 
+\section{Injections and Surjections}
+
+\begin{prop}
+Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Pick $a_0 \in A$. Define $g : B \rightarrow A$ by: $g(b)$ is the unique element in $A$ such that $f(a) = b$ if there is such an $a$, otherwise $g(b) = a_0$. \qed
+\end{proof}
+
 \section{Composition}
 
 \begin{prop}
@@ -271,7 +281,7 @@ Let $f : A \rightarrow B$ be injective. For every set $X$ and functions $x,y : X
 \qed
 \end{proof}
 
-\subsection{Surjections}
+\subsection{Surjections} % CHECKED
 
 \begin{prop}
 \label{prop:comp_surj}
@@ -289,40 +299,6 @@ The composite of surjective functions is surjective.
 \end{proof}
 
 \begin{prop}
-\label{prop:surjective}
-Let $f : A \rightarrow B$. Then $f$ is surjective if and only if, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $f$ is surjective then, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}
-\begin{proof}
-	\step{a}{\assume{$f$ is surjective.}}
-	\step{b}{\pflet{$X$ be a set.}}
-	\step{c}{\pflet{$g, h : B \rightarrow X$}}
-	\step{d}{\assume{$g \circ f = h \circ f$}}
-	\step{e}{\pflet{$b \in B$} \prove{$g(b) = h(b)$}}
-	\step{f}{\pick\ $a \in A$ such that $f(a) = b$}
-	\step{g}{$g(b) = h(b)$}
-	\begin{proof}
-		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
-	\end{proof}
-\end{proof}
-\step{4}{If, for any set $X$ and functions $g, h : B \rightarrow x$, if $g \circ f = h \circ f$ then $g = h$, then $f$ is surjective.}
-\begin{proof}
-	\step{a}{\assume{For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}}
-	\step{b}{\pflet{$b \in B$}}
-	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
-	\step{d}{\pflet{$k : B \rightarrow 2$ be the function that maps $b$ to 0 and everything else to 1.}}
-	\step{e}{$h \neq k$}
-	\step{f}{$h \circ f \neq k \circ f$}
-	\step{g}{\pick\ $a \in A$ such that $h(f(a)) \neq k(f(a))$}
-	\step{h}{$f(a) = b$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
 Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjective then $g$ is surjective.
 \end{prop}
 
@@ -332,14 +308,6 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjectiv
 \step{2}{There exists $a \in A$ such that $g(f(a)) = c$.}
 \step{3}{There exists $b \in B$ such that $g(b) = c$.}
 \qed
-\end{proof}
-
-\begin{prop}
-Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
-\end{prop}
-
-\begin{proof}
-\pf\ Pick $a_0 \in A$. Define $g : B \rightarrow A$ by: $g(b)$ is the unique element in $A$ such that $f(a) = b$ if there is such an $a$, otherwise $g(b) = a_0$. \qed
 \end{proof}
 
 \subsection{Bijections}
@@ -598,6 +566,42 @@ Let $f : A \rightarrow B$. Assume that, for every set $X$ and functions $x,y : X
 
 \begin{proof}
 \pf\ Take $X = 1$. \qed
+\end{proof}
+
+\subsection{The Set Two}
+
+\begin{prop}
+\label{prop:surjective}
+Let $f : A \rightarrow B$. Then $f$ is surjective if and only if, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is surjective then, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$g, h : B \rightarrow X$}}
+	\step{d}{\assume{$g \circ f = h \circ f$}}
+	\step{e}{\pflet{$b \in B$} \prove{$g(b) = h(b)$}}
+	\step{f}{\pick\ $a \in A$ such that $f(a) = b$}
+	\step{g}{$g(b) = h(b)$}
+	\begin{proof}
+		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
+	\end{proof}
+\end{proof}
+\step{4}{If, for any set $X$ and functions $g, h : B \rightarrow x$, if $g \circ f = h \circ f$ then $g = h$, then $f$ is surjective.}
+\begin{proof}
+	\step{a}{\assume{For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}}
+	\step{b}{\pflet{$b \in B$}}
+	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
+	\step{d}{\pflet{$k : B \rightarrow 2$ be the function that maps $b$ to 0 and everything else to 1.}}
+	\step{e}{$h \neq k$}
+	\step{f}{$h \circ f \neq k \circ f$}
+	\step{g}{\pick\ $a \in A$ such that $h(f(a)) \neq k(f(a))$}
+	\step{h}{$f(a) = b$}
+\end{proof}
+\qed
 \end{proof}
 
 \subsection{Subsets} % CHECKED
@@ -4887,6 +4891,12 @@ Let $\mathcal{B}$ be a basis for the topology on $X$.
 Then the topology on $X$ is the coarsest topology that includes $\mathcal{B}$.
 \end{prop}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $\mathcal{B}$ be a basis for the topology on $X$ and $\mathcal{C}$ a basis for the topology on $Y$. Then
+\[ \{ B \times C : B \in \mathcal{B}, C \in \mathcal{C} \} \]
+is a basis for the product topology on $X \times Y$.
+\end{prop}
+
 \begin{df}[Order Topology]
 Let $X$ be a linearly ordered set. The \emph{order topology} on $X$ is the topology generated by the open interval $(a,b)$ as well as the open rays $(a, + \infty)$ and $(-\infty, b)$ for $a,b \in X$.
 
@@ -4946,7 +4956,7 @@ The topologies of $\mathbb{R}_l$ and $\mathbb{R}_K$ are strictly finer than the 
 \subsection{Subbases}
 
 \begin{df}[Subbasis]
-Let $X$ be a topological space. A \emph{subbasis} for the topology on $X$ is a subset $\mathcal{S} \subseteq \mathcal{P} X$ such that every open set is a union of finite intersections of $\mathcal{S}$.
+Let $X$ be a topological space. A \emph{subbasis} for the topology on $X$ is a set $\mathcal{S}$ of open sets such that every open set is a union of finite intersections of $\mathcal{S}$.
 \end{df}
 
 \begin{prop}
@@ -4958,6 +4968,26 @@ Let $X$ be a topological space.
 Let $\mathcal{S}$ be a subbasis for the topology on $X$.
 Then the topology on $X$ is the coarsest topology that includes $\mathcal{S}$.
 \end{prop}
+
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Then
+\[ \mathcal{S} = \{ \inv{\pi_1}(U) : U \text{ is open in } X \} \cup \{ \inv{\pi_2}(V) : V \text{ is open in } Y \} \]
+is a subbasis for the product topology on $X \times Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every element of $\mathcal{S}$ is open.}
+\begin{proof}
+	\pf\ Since $\inv{\pi_1}(U) = U \times Y$ and $\inv{\pi_2}(V) = X \times V$.
+\end{proof}
+\step{2}{Every open set is a union of finite intersections of elements of $\mathcal{S}$.}
+\begin{proof}
+	\pf\ Since, for $U$ open in $X$ and $V$ open in $Y$, we have $U \times V = \inv{\pi_1}(U) \cap \inv{\pi_2}(V)$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Space with Basepoint]
 A \emph{space with basepoint} is a pair $(X,x)$ where $X$ is a topological space and $x \in X$.
