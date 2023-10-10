@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -1342,6 +1342,19 @@ If every linearly ordered subset of $A$ is bounded above, then $A$ has a maximal
 \begin{cor}[Kuratowski's Lemma]
 Let $\mathcal{A} \subseteq \mathcal{P} X$. Suppose that, for every subset $\mathcal{B} \subseteq \mathcal{A}$ that is linearly ordered by inclusion, we have $\bigcup \mathcal{B} \in \mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
 \end{cor}
+
+\begin{df}[Closed Interval]
+Let $X$ be a linearly ordered set. Let $a,b \in X$ with $a < b$. The \emph{closed interval} $[a,b]$ is
+\[ [a,b] := \{ x \in X : a \leq x \leq b \} \enspace . \]
+\end{df}
+
+\begin{df}[Half-Open Interval]
+Let $X$ be a linearly ordered set. Let $a,b \in X$ with $a < b$. The \emph{half-open intervals} $(a,b]$ and $[a,b)$ are defined by
+\begin{align*}
+(a,b] & := \{ x \in X : a < x \leq b \} \\
+[a,b) & := \{ x \in X : a \leq x < b \}
+\end{align*}
+\end{df}
 
 \subsection{Sets of Finite Type}
 
