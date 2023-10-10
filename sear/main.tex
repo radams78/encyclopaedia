@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
-% FORMALIZE
 % READ
 % READ
 % CHECK
+% FORMALIZE
  
 \documentclass{book}
 
@@ -149,10 +149,30 @@ Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightar
 \end{prop}
 
 \begin{proof}
-\pf\ Each is the function that maps $a \in A$ to $h(g(f(a)))$. \qed
+\pf
+\step{1}{For all $x \in A$ we have $(h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in A$}}
+	\step{b}{$(h \circ (g \circ f))(x) = ((h \circ g) \circ f)(x)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(h \circ (g \circ f))(x)
+			& = h ((g \circ f)(x)) & (\text{Definition of composition}) \\
+			& = h(g(f(x))) & (\text{Definition of composition}) \\
+			& = (h \circ g)(f(x)) & (\text{Definition of composition}) \\
+			& = ((h \circ g) \circ f)(x) & (\text{Definition of composition})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ By the Axiom of Extensionality.
+\end{proof}
+\qed
 \end{proof}
 
-\subsection{Injections} % CHECKED
+\subsection{Injections} % CHECKED FORMALIZED
 
 \begin{prop}
 \label{prop:comp_inj}
@@ -161,11 +181,30 @@ The composite of injective functions is injective.
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail C$ be injective.}}
-\step{2}{\pflet{$x,y \in A$ satisfy $(g \circ f)(x) = (g \circ f)(y)$}}
-\step{3}{$g(f(x)) = g(f(y))$}
-\step{4}{$f(x) = f(y)$}
-\step{5}{$x = y$}
+\step{1}{\pflet{$A$, $B$ and $C$ be sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$}}
+\step{3}{\pflet{$g : B \rightarrow C$}}
+\step{4}{\assume{$g$ is injective.}}
+\step{5}{\assume{$f$ is injective.}}
+\step{6}{\pflet{$x,y \in A$}}
+\step{7}{\assume{$(g \circ f)(x) = (g \circ f)(y)$} \prove{$x = y$}}
+\step{8}{$g(f(x)) = g(f(y))$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		g(f(x)) & = (g \circ f)(x) & (\text{definition of composition}) \\
+		& = (g \circ f)(y) & (\text{\stepref{7}}) \\
+		& = g(f(y))& (\text{definition of composition})
+	\end{align*}
+\end{proof}
+\step{9}{$f(x) = f(y)$}
+\begin{proof}
+	\pf\ \stepref{4}, \stepref{8}
+\end{proof}
+\step{10}{$x = y$}
+\begin{proof}
+	\pf\ \stepref{5}, \stepref{9}
+\end{proof}
 \qed
 \end{proof}
 
@@ -175,23 +214,35 @@ For functions $f : A \rightarrow B$ and $g : B \rightarrow C$, if $g \circ f$ is
 
 \begin{proof}
 \pf
-\step{1}{\assume{$g \circ f$ is injective.}}
-\step{2}{\pflet{$x,y \in A$}}
-\step{3}{\assume{$f(x) = f(y)$}}
-\step{4}{$g(f(x)) = g(f(y))$}
-\step{5}{$x = y$}
+\step{1}{\pflet{$A$, $B$ and $C$ be sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$}}
+\step{3}{\pflet{$g : B \rightarrow C$}}
+\step{4}{\assume{$g \circ f$ is injective.}}
+\step{5}{\pflet{$x,y \in A$}}
+\step{6}{\assume{$f(x) = f(y)$}}
+\step{7}{$(g \circ f)(x) = (g \circ f)(y)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(g \circ f)(x) & = g(f(x)) & (\text{definition of composition}) \\
+		& = g(f(y)) & (\text{\stepref{6}}) \\
+		& = (g \circ f)(y) & (\text{definition of composition})
+	\end{align*}
+\end{proof}
+\step{8}{$x = y$}
+\begin{proof}
+	\pf\ \stepref{4}, \stepref{7}
+\end{proof}
 \qed
 \end{proof}
 
 \begin{prop}
 \label{prop:injective}
-Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
+Let $f : A \rightarrow B$ be injective. For every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{If $f$ is injective then, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.}
-\begin{proof}
 	\step{a}{\assume{$f$ is injective.}}
 	\step{b}{\pflet{$X$ be a set.}}
 	\step{c}{\pflet{$x,y : X \rightarrow A$}}
@@ -201,22 +252,22 @@ Let $f : A \rightarrow B$. Then $f$ is injective if and only if, for every set $
 		\step{i}{\pflet{$t \in X$}}
 		\step{ii}{$f(x(t)) = f(y(t))$}
 		\begin{proof}
-			\pf\ \stepref{d}
+			\pf
+			\begin{align*}
+				f(x(t)) & = (f \circ x)(t) & (\text{definition of composition}) \\
+				& = (f \circ y)(t) & (\text{\stepref{d}}) \\
+				& = f(y(t)) & (\text{definition of composition})
+			\end{align*}
 		\end{proof}
 		\step{iii}{$x(t) = y(t)$}
 		\begin{proof}
-			\pf\ \stepref{a}
+			\pf\ \stepref{a}, \stepref{ii}
 		\end{proof}
 	\end{proof}
 	\step{f}{$x = y$}
 	\begin{proof}
-		\pf\ Axiom of Extensionality.
+		\pf\ Axiom of Extensionality, \stepref{e}
 	\end{proof}
-\end{proof}
-\step{2}{If, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.}
-\begin{proof}
-	\pf\ Take $X = 1$.
-\end{proof}
 \qed
 \end{proof}
 
@@ -239,17 +290,12 @@ The composite of surjective functions is surjective.
 
 \begin{prop}
 \label{prop:surjective}
-Let $f : A \rightarrow B$. Then the following are equivalent.
-\begin{enumerate}
-\item $f$ is surjective.
-\item For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
-\item There exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$
-\end{enumerate}
+Let $f : A \rightarrow B$. Then $f$ is surjective if and only if, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$1 \Rightarrow 2$}
+\step{1}{If $f$ is surjective then, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}
 \begin{proof}
 	\step{a}{\assume{$f$ is surjective.}}
 	\step{b}{\pflet{$X$ be a set.}}
@@ -262,29 +308,9 @@ Let $f : A \rightarrow B$. Then the following are equivalent.
 		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
 	\end{proof}
 \end{proof}
-\step{2}{$1 \Rightarrow 3$}
+\step{4}{If, for any set $X$ and functions $g, h : B \rightarrow x$, if $g \circ f = h \circ f$ then $g = h$, then $f$ is surjective.}
 \begin{proof}
-	\step{a}{\assume{$f$ is surjective.}}
-	\step{b}{\pick\ $g : B \rightarrow A$ such that, for all $b \in B$, we have $f(g(b)) = b$.}
-	\begin{proof}
-		\pf\ Axiom of Choice.
-	\end{proof}
-	\step{c}{$f \circ g = \id{B}$.}
-\end{proof}
-\step{3}{$3 \Rightarrow 2$}
-\begin{proof}
-	\step{a}{\pflet{$g : B \rightarrow A$ such that $f \circ g = \id{B}$}}
-	\step{b}{\pflet{$X$ be a set.}}
-	\step{c}{\pflet{$h,k : B \rightarrow X$}}
-	\step{d}{\assume{$h \circ f = k \circ f$}}
-	\step{e}{$h = k$}
-	\begin{proof}
-		\pf\ $h = h \circ f \circ g = k \circ f \circ g = k$
-	\end{proof}
-\end{proof}
-\step{4}{$2 \Rightarrow 1$}
-\begin{proof}
-	\step{a}{\assume{2}}
+	\step{a}{\assume{For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}}
 	\step{b}{\pflet{$b \in B$}}
 	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
 	\step{d}{\pflet{$k : B \rightarrow 2$ be the function that maps $b$ to 0 and everything else to 1.}}
@@ -456,6 +482,35 @@ Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
 \pf\ Each is the function that maps $a$ to $f(a)$. \qed
 \end{proof}
 
+\begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is surjective if and only if there exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{2}{$1 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$f$ is surjective.}}
+	\step{b}{\pick\ $g : B \rightarrow A$ such that, for all $b \in B$, we have $f(g(b)) = b$.}
+	\begin{proof}
+		\pf\ Axiom of Choice.
+	\end{proof}
+	\step{c}{$f \circ g = \id{B}$.}
+\end{proof}
+\step{3}{$3 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\pflet{$g : B \rightarrow A$ such that $f \circ g = \id{B}$}}
+	\step{b}{\pflet{$X$ be a set.}}
+	\step{c}{\pflet{$h,k : B \rightarrow X$}}
+	\step{d}{\assume{$h \circ f = k \circ f$}}
+	\step{e}{$h = k$}
+	\begin{proof}
+		\pf\ $h = h \circ f \circ g = k \circ f \circ g = k$
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{The Empty Set}
 
 \begin{thm}
@@ -535,6 +590,15 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 \begin{df}[Singleton]
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
+
+%TODO This is the converse to an earlier proposition
+\begin{prop}
+Let $f : A \rightarrow B$. Assume that, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$. Then $f$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ Take $X = 1$. \qed
+\end{proof}
 
 \subsection{Subsets} % CHECKED
 
@@ -1323,7 +1387,80 @@ The product of two well ordered sets is well ordered under the dictionary order.
 Every set has a well ordering.
 \end{thm}
 
-%TODO
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a set.}}
+\step{2}{\pick\ a choice function $c : \mathcal{P} X - \{ \emptyset \} \rightarrow X$}
+\step{3}{Define a \emph{tower} to be a pair $(T,<)$ where $T \subseteq X$, $<$ is a well ordering of $T$, and
+\[ \forall x \in T. x = c(X - \{ y \in T : y < x \}) \enspace . \]}
+\step{4}{Given two towers, either they are equal or one is a section of the other.}
+\begin{proof}
+	\step{a}{\pflet{$(T_1,<_1)$ and $(T_2,<_2)$ be towers.}}
+	\step{b}{\assume{w.l.o.g. there exists a strictly monotone function $h : T_1 \rightarrow T_2$}}
+	\step{c}{$h(T_1)$ is either $T_2$ or a section of $T_2$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:order_preserving_maps}.
+	\end{proof}
+	\step{d}{$\forall x \in T_1. h(x) = x$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in T_1$}}
+		\step{ii}{\assume{as transfinite induction hypothesis $\forall y < x. h(y) = y$}}
+		\step{iii}{$h(x)$ is the least element of $T_2 - \{ h(y) \in T_1 : y < x \}$}
+		\step{iv}{$h(x)$ is the least element of $T_2 - \{ y \in T_1 : y < x \}$}
+		\begin{proof}
+			\pf\ \stepref{ii}
+		\end{proof}
+		\step{v}{$h(x) = x$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				h(x) & = c(X - \{y \in T_2 : y < h(x)\}) & (\text{\stepref{3}}) \\
+				& = c(X - \{y \in T_2 : y < x \}) & (\text{\stepref{iv}}) \\
+				& = c(X - \{ y \in T_1 : y < x \}) & (\text{\stepref{ii}}) \\
+				& = x & (\text{\stepref{3}})
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{5}{If $(T,<)$ is a tower and $T \neq X$, then there exists a tower of which $(T,<)$ is a section.}
+\begin{proof}
+	\pf\ Let $T_1 = T \cup \{c(T)\}$ and $<_1$ be the extension of $<$ such that $x < c(T)$ for all $x \in T$.
+\end{proof}
+\step{6}{\pflet{$\mathbf{T} = \bigcup \{ T : \exists R. (T,R) \text{ is a tower} \}$ and $\mathbf{R} = \bigcup \{ R : \exists T. (T,R) \text{ is a tower} \}$}}
+\step{7}{$(\mathbf{T},\mathbf{R})$ is a tower.}
+\begin{proof}
+	\step{a}{$\mathbf{R}$ is irreflexive.}
+	\begin{proof}
+		\pf\ Since for every tower $(T,<)$ we have $<$ is irreflexive.
+	\end{proof}
+	\step{b}{$\mathbf{R}$ is transitive.}
+	\begin{proof}
+		\step{i}{\assume{$x \mathbf{R} y$ and $y \mathbf{R} z$}}
+		\step{ii}{\pick\ towers $(T_1,<_1)$ and $(T_2,<_2)$ such that $x <_1 y$ and $y <_2 z$}
+		\step{iii}{\assume{w.l.o.g. $(T_1,<_1)$ is either $(T_2,<_2)$ or a section of $(T_2,<_2)$}}
+		\step{iv}{$x <_2 y <_2 z$}
+		\step{v}{$x <_2 z$}
+		\step{vi}{$x \mathbf{R} z$}
+	\end{proof}
+	\step{c}{For all $x,y \in \mathbf{T}$, either $x\mathbf{R}y$ or $x= y$ or $y\mathbf{R}x$}
+	\begin{proof}
+		\pf\ There exists a tower that has both $x$ and $y$.
+	\end{proof}
+	\step{d}{Every nonempty subset of $\mathbf{T}$ has an $\mathbf{R}$-least element.}
+	\begin{proof}
+		\step{i}{\pflet{$A \subseteq \mathbf{T}$ be nonempty.}}
+		\step{ii}{\pick\ $a \in A$}
+		\step{iii}{\pick\ a tower $(T,<)$ such that $a \in T$.}
+		\step{iv}{\pflet{$b$ be the $<$-least element of $A \cap T$} \prove{$b$ is $\mathbf{R}$-least in $A$.}}
+		\step{vi}{\pflet{$x \in A$}}
+		\step{vii}{Etc.}
+	\end{proof}
+	\step{e}{$\forall x \in \mathbf{T}. x = c(X - \{y \in \mathbf{T} : y\mathbf{R}x \})$}
+\end{proof}
+\step{8}{$\mathbf{T} = X$}
+\step{9}{$\mathbf{R}$ is a well ordering of $X$.}
+\qed
+\end{proof}
 
 \begin{prop}
 There exists a well-ordered set with a largest element $\Omega$ such that $(-\infty, \Omega)$ is uncountable but, for all $\alpha < \Omega$, we have $(-\infty, \alpha)$ is countable.
