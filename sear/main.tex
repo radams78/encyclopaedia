@@ -1,10 +1,10 @@
 % READ
+% READ
+% CHECK
+% READ
+% READ
 % CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
  
 \documentclass{book}
 
@@ -78,7 +78,7 @@ Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bije
 
 If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
 
-\section{Axioms} % CHECKED
+\section{Axioms} % CHECKED FORMALIZED
 
 \begin{axs}[Choice]
 Let $P[X,Y,x,y]$ be a formula where $X$ and $Y$ are set variables, $x \in X$ and $y \in Y$. Then the following is an axiom.
@@ -141,7 +141,24 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 
 \chapter{Sets and Functions}
 
-\section{Injections and Surjections}
+\section{Injections and Surjections} % CHECKED
+
+\begin{prop}
+Let $A$ and $B$ be sets. If there exists a surjective function $B \rightarrow A$, then there exists an injective function $A \rightarrow B$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$f : B \twoheadrightarrow A$ is surjective.}}
+\step{2}{\pick\ a function $g : A \rightarrow B$ such that, for all $x \in A$, we have $f(g(x)) = x$.}
+\step{3}{\pflet{$x,y \in A$}}
+\step{4}{\assume{$g(x) = g(y)$}}
+\step{5}{$x = y$}
+\begin{proof}
+	\pf\ $x = f(g(x)) = f(g(y)) = y$
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
@@ -4527,6 +4544,32 @@ Furstenberg's proof:
 \step{8}{$\bigcup_{p \text{ prime}} S(p,0)$ is not closed.}
 \step{9}{The union of finitely many closed sets is closed.}
 \step{10}{There are infinitely many primes.}
+\qed
+\end{proof}
+
+\begin{prop}
+In a discrete topological space, every set is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+In a linearly ordered set under the order topology, every closed interval and closed ray is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a linearly ordered set under the order topology.}}
+\step{2}{Every closed interval in $X$ is closed.}
+\begin{proof}
+	\pf\ Since $X - [a,b] = (-\infty, a) \cup (b, +\infty)$.
+\end{proof}
+\step{3}{Every closed ray in $X$ is closed.}
+\begin{proof}
+	\pf\ Since $X - [a,+\infty) = (-\infty,a)$ and $X - (-\infty,a] = (a,+\infty)$.
+\end{proof}
 \qed
 \end{proof}
 
