@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 % READ
  
 \documentclass{book}
@@ -327,7 +327,7 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjectiv
 \qed
 \end{proof}
 
-\subsection{Bijections}
+\subsection{Bijections} % CHECKED
 
 \begin{prop}
 The composite of bijections is a bijection.
@@ -335,44 +335,6 @@ The composite of bijections is a bijection.
 
 \begin{proof}
 \pf\ Propositions \ref{prop:comp_inj} and \ref{prop:comp_surj}. \qed
-\end{proof}
-
-\begin{prop}
-Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a function $\inv{f} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, in which case the inverse is unique.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{If $f$ is bijective then there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$.}
-\begin{proof}
-	\step{a}{\assume{$f$ is bijective.}}
-	\step{b}{\pick\ $g : B \rightarrow A$ such that $f \circ g = \id{B}$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:surjective}.
-	\end{proof}
-	\step{c}{$f \circ g \circ f = f$}
-	\step{d}{$g \circ f = \id{A}$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:injective}.
-	\end{proof}
-\end{proof}
-\step{2}{If there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, then $f$ is bijective.}
-\begin{proof}
-	\step{a}{\pflet{$\inv{f} : B \rightarrow A$ satisfy $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$}}
-	\step{b}{$f$ is injective.}
-	\begin{proof}
-		\pf\ If $f(x) = f(y)$ then $x = \inv{f}(f(x)) = \inv{f}(f(y)) = y$.
-	\end{proof}
-	\step{c}{$f$ is surjective.}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:surjective}.
-	\end{proof}
-\end{proof}
-\step{3}{If $g, h : B \rightarrow A$ satisfy $f \circ g = \id{B}$ and $g \circ f = \id{A}$ and $f \circ h = \id{B}$ and $h \circ f = \id{A}$ then $g = h$.}
-\begin{proof}
-	\pf\ We have $g = g \circ f \circ h = h$.
-\end{proof}
-\qed
 \end{proof}
 
 \begin{thm}[Schroeder-Bernstein]
@@ -492,6 +454,44 @@ Let $f : A \rightarrow B$. Then $f$ is surjective if and only if there exists $g
 	\begin{proof}
 		\pf\ $h = h \circ f \circ g = k \circ f \circ g = k$
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a function $\inv{f} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, in which case the inverse is unique.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is bijective then there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is bijective.}}
+	\step{b}{\pick\ $g : B \rightarrow A$ such that $f \circ g = \id{B}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:surjective}.
+	\end{proof}
+	\step{c}{$f \circ g \circ f = f$}
+	\step{d}{$g \circ f = \id{A}$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:injective}.
+	\end{proof}
+\end{proof}
+\step{2}{If there exists $\inv{f} : B \rightarrow A$ such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, then $f$ is bijective.}
+\begin{proof}
+	\step{a}{\pflet{$\inv{f} : B \rightarrow A$ satisfy $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$}}
+	\step{b}{$f$ is injective.}
+	\begin{proof}
+		\pf\ If $f(x) = f(y)$ then $x = \inv{f}(f(x)) = \inv{f}(f(y)) = y$.
+	\end{proof}
+	\step{c}{$f$ is surjective.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:surjective}.
+	\end{proof}
+\end{proof}
+\step{3}{If $g, h : B \rightarrow A$ satisfy $f \circ g = \id{B}$ and $g \circ f = \id{A}$ and $f \circ h = \id{B}$ and $h \circ f = \id{A}$ then $g = h$.}
+\begin{proof}
+	\pf\ We have $g = g \circ f \circ h = h$.
 \end{proof}
 \qed
 \end{proof}
