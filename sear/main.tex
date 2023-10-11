@@ -4694,6 +4694,29 @@ Let $X$ be a topological space, $Y$ a subspace of $X$ and $U \subseteq Y$. If $Y
 \end{proof}
 
 \begin{prop}
+Let $Y$ be a subspace of $X$ and $A \subseteq Y$. Then the subspace topology on $A$ as a subspace of $Y$ is the same as the subspace topology on $A$ as a subspace of $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{T}_Y$ be the subspace topology on $A$ as a subspace of $Y$.}}
+\step{2}{\pflet{$\mathcal{T}_X$ be the subspace topology on $A$ as a subspace of $X$.}}
+\step{3}{\pflet{$U \subseteq A$}}
+\step{4}{$U \in \mathcal{T}_Y \Leftrightarrow U \in \mathcal{T}_X$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		U \in \mathcal{T}_Y & \Leftrightarrow \exists V \text{ open in } Y. U = V \cap A \\
+		& \Leftrightarrow \exists V. \exists W \text{ open in } X. (V = Y \cap W \wedge U = V \cap A) \\
+		& \Leftrightarrow \exists W \text{ open in } X. U = Y \cap W \cap A \\
+		& \Leftrightarrow \exists W \text{ open in } X. U = W \cap A \\
+		& \Leftrightarrow U \in \mathcal{T}_X
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Let $Y \subseteq X$. Then $\mathcal{B}' = \{ B \cap Y : B \in \mathcal{B} \}$ is a basis for the topology on $Y$.
 \end{prop}
 
