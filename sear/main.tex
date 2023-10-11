@@ -5290,6 +5290,20 @@ Let $X$ be a topological space. Let $A \subseteq X$. The \emph{closure} of $A$, 
 \end{df}
 
 \begin{prop}
+Let $X$ be a topological space, $A \subseteq X$ and $x \in X$. Then $x \in \overline{A}$ if and only if every open set that contains $x$ intersects $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x \in \overline{A} & \Leftrightarrow \text{for every closed set $C$, if $A \subseteq C$ then $x \in C$} \\
+& \Leftrightarrow \text{for every open set $U$, if $A \subseteq X - U$ then $x \in X - U$} \\
+& \Leftrightarrow \text{for every open set $U$, if $A \cap U = \emptyset$ then $x \notin U$} \\
+& \Leftrightarrow \text{for every open set $U$, if $x \in U$ then $A$ intersects $U$} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
 Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $A \subseteq Y$. Let $\overline{A}$ be the closure of $A$ in $X$. Then the closure of $A$ in $Y$ is $\overline{A} \cap Y$.
 \end{prop}
 

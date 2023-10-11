@@ -85,10 +85,10 @@
 \contentsline {subsection}{\numberline {12.4.1}Paths}{101}{subsection.12.4.1}%
 \contentsline {subsection}{\numberline {12.4.2}Loops}{101}{subsection.12.4.2}%
 \contentsline {section}{\numberline {12.5}Convergence}{101}{section.12.5}%
-\contentsline {section}{\numberline {12.6}Subspaces}{101}{section.12.6}%
+\contentsline {section}{\numberline {12.6}Subspaces}{102}{section.12.6}%
 \contentsline {section}{\numberline {12.7}Embedding}{102}{section.12.7}%
 \contentsline {section}{\numberline {12.8}Open Maps}{102}{section.12.8}%
-\contentsline {section}{\numberline {12.9}Quotient Spaces}{102}{section.12.9}%
+\contentsline {section}{\numberline {12.9}Quotient Spaces}{103}{section.12.9}%
 \contentsline {section}{\numberline {12.10}Connected Spaces}{105}{section.12.10}%
 \contentsline {section}{\numberline {12.11}Hausdorff Spaces}{105}{section.12.11}%
 \contentsline {section}{\numberline {12.12}Separable Spaces}{106}{section.12.12}%
