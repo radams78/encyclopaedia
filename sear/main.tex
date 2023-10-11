@@ -5289,6 +5289,28 @@ Let $X$ be a topological space. Let $A \subseteq X$. The \emph{interior} of $A$,
 Let $X$ be a topological space. Let $A \subseteq X$. The \emph{closure} of $A$, $\overline{A}$, is the intersection of all the closed sets that include $A$.
 \end{df}
 
+\begin{prop}
+Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $A \subseteq Y$. Let $\overline{A}$ be the closure of $A$ in $X$. Then the closure of $A$ in $Y$ is $\overline{A} \cap Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\overline{A} \cap Y$ is the closed in $Y$.}
+\begin{proof}
+	\pf\ Since $\overline{A}$ is closed in $X$.
+\end{proof}
+\step{2}{For any closed set $B$ in $Y$, if $A \subseteq B$ then $\overline{A} \cap Y \subseteq B$.}
+\begin{proof}
+	\step{a}{\pflet{$B$ be closed in $Y$.}}
+	\step{b}{\assume{$A \subseteq B$}}
+	\step{c}{\pick\ $C$ closed in $X$ such that $B = C \cap Y$.}
+	\step{d}{$A \subseteq C$}
+	\step{e}{$\overline{A} \subseteq C$}
+	\step{f}{$\overline{A} \cap Y \subseteq B$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Continuous Functions}
 
 \begin{df}[Continuous]
