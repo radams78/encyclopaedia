@@ -5356,6 +5356,33 @@ Let $X$ be a topological space, $Y$ a set and $f : Y \rightarrow X$ a function. 
 Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is an \emph{embedding} iff $f$ is injective and the topology on $X$ is the subspace induced by $f$.
 \end{df}
 
+\section{Open Maps}
+
+\begin{df}[Open Map]
+Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is an \emph{open map} iff, for all $U$ open in $X$, we have $f(U)$ is open in $Y$.
+\end{df}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. The projections $\pi_1 : X \times Y \rightarrow X$ and $\pi_2 : X \times Y \rightarrow Y$ are open maps.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\pi_1$ is an open map.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be open in $X \times Y$.}}
+	\step{b}{\pflet{$x \in \pi_1(U)$}}
+	\step{c}{\pick\ $y$ such that $(x,y) \in U$}
+	\step{d}{\pick\ $V$ and $W$ open in $X$ and $Y$ respectively such that $(x,y) \in V \times W \subseteq U$}
+	\step{e}{$x \in V \subseteq \pi_1(U)$}
+\end{proof}
+\step{2}{$\pi_2$ is an open map.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Quotient Spaces}
 
 \begin{df}[Quotient Topology]
