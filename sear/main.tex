@@ -4939,7 +4939,7 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $Y_i$ be a subspa
 	\begin{align*}
 		f \text{ is continuous}
 		& \Leftrightarrow \iota \circ f : Z \rightarrow \prod_{i \in I} X_i \text{ is continuous} & (\text{Theorem \ref{thm:subspace_universal}}) \\
-		& \Leftrightarrow \forall i \in I. \pi_i \circ \iota \circ f : Z \rightarrow X_i \text{ is continuous}  (\text{Theorem \ref{thm:product_universal}}) \\
+		& \Leftrightarrow \forall i \in I. \pi_i \circ \iota \circ f : Z \rightarrow X_i \text{ is continuous} & (\text{Theorem \ref{thm:product_universal}}) \\
 		& \Leftrightarrow \forall i \in I. \iota_i \circ \pi_i \circ f : Z \rightarrow X_i \text{ is continuous} \\
 		& \Leftrightarrow \forall i \in I. \pi_i \circ f : Z \rightarrow Y_i \text{ is continuous}
 		& (\text{Theorem \ref{thm:subspace_universal}})
@@ -5001,6 +5001,12 @@ Let $K = \{ 1/n : n \in \mathbb{Z}_+ \}$. The \emph{$K$-topology} on $\mathbb{R}
 
 We write $\mathbb{R}_K$ for $\mathbb{R}$ under the $K$ -topology.
 \end{df}
+
+\begin{ex}
+The subspace topology on a subset of a linearly ordered set under the order topology is not necessarily the order topology induced by the restriction of the order.
+
+Let $X = \mathbb{R}$ and $Y = [0,1) \cup \{2\}$. Then $\{2\}$ is open in the subspace topology but not in the order topology on $Y$.
+\end{ex}
 
 \begin{prop}
 Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$ and $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $B \in \mathcal{B}$ such that $x \in B \subseteq U$.
