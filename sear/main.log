@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  11 OCT 2023 20:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  11 OCT 2023 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,7 +847,7 @@ Chapter 11.
 ]
 Chapter 12.
 [85]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 4494--4494
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 4507--4507
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -859,25 +859,27 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
 [86] [87] [88] [89]
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
-[90]
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 4814--4815
-[]\OT1/cmr/bx/n/10 Proposition 12.1.36. \OT1/cmr/m/it/10 The co-prod-uct topol-
+
+Underfull \vbox (badness 1655) has occurred while \output is active []
+
+ [90]
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 4827--4828
+[]\OT1/cmr/bx/n/10 Proposition 12.1.37. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
 
-[91] [92] [93]
-Overfull \hbox (9.02847pt too wide) detected at line 5016
+[91] [92] [93] [94]
+Overfull \hbox (9.02847pt too wide) detected at line 5029
 []
  []
 
-[94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
-[107]
-Overfull \hbox (108.65958pt too wide) detected at line 5890
+[95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106] [107]
+Overfull \hbox (108.65958pt too wide) detected at line 5903
 []
  []
 
-
-Overfull \hbox (47.883pt too wide) in paragraph at lines 5904--5904
+[108]
+Overfull \hbox (47.883pt too wide) in paragraph at lines 5917--5917
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -885,14 +887,14 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 5920
+Overfull \hbox (0.90187pt too wide) detected at line 5933
 []
  []
 
-[108] [109] [110]
+[109] [110]
 Chapter 13.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 6029--6030
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 6042--6043
 []\OT1/cmr/bx/n/10 Definition 13.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -913,7 +915,7 @@ Chapter 16.
 [117
 
 ] [118]
-Overfull \hbox (113.19771pt too wide) detected at line 6364
+Overfull \hbox (113.19771pt too wide) detected at line 6377
 []
  []
 
@@ -926,9 +928,9 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6C6E2A2973A7F5AE38EAC939C6EAD14C;15204.
  ) 
 Here is how much of TeX's memory you used:
- 13409 strings out of 476091
- 188501 string characters out of 5794081
- 1871330 words of memory out of 5000000
+ 13413 strings out of 476091
+ 188532 string characters out of 5794081
+ 1873330 words of memory out of 5000000
  32709 multiletter control sequences out of 15000+600000
  531742 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -958,10 +960,10 @@ nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (122 pages, 613797 bytes).
+Output written on main.pdf (122 pages, 614111 bytes).
 PDF statistics:
- 2230 PDF objects out of 2487 (max. 8388607)
- 1943 compressed objects within 20 object streams
- 895 named destinations out of 1000 (max. 500000)
+ 2234 PDF objects out of 2487 (max. 8388607)
+ 1947 compressed objects within 20 object streams
+ 899 named destinations out of 1000 (max. 500000)
  937 words of extra memory for PDF output out of 10000 (max. 10000000)
 
