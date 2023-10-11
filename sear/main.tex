@@ -5290,6 +5290,7 @@ Let $X$ be a topological space. Let $A \subseteq X$. The \emph{closure} of $A$, 
 \end{df}
 
 \begin{prop}
+\label{prop:closure}
 Let $X$ be a topological space, $A \subseteq X$ and $x \in X$. Then $x \in \overline{A}$ if and only if every open set that contains $x$ intersects $A$.
 \end{prop}
 
@@ -5301,6 +5302,30 @@ x \in \overline{A} & \Leftrightarrow \text{for every closed set $C$, if $A \subs
 & \Leftrightarrow \text{for every open set $U$, if $A \cap U = \emptyset$ then $x \notin U$} \\
 & \Leftrightarrow \text{for every open set $U$, if $x \in U$ then $A$ intersects $U$} & \qed
 \end{align*}
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space, $A \subseteq X$ and $x \in X$. Let $\mathcal{B}$ be a basis for the topology on $X$. Then $x \in \overline{A}$ if and only if, for all $B \in \mathcal{B}$, if $x \in B$ then $B$ intersects $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $x \in \overline{A}$ then, for all $B \in \mathcal{B}$, if $x \in B$ then $B$ intersects $A$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:closure} since every element of $\mathcal{B}$ is open.
+\end{proof}
+\step{2}{If, for all $B \in \mathcal{B}$, if $x \in B$ then $B$ intersects $A$, then $x \in \overline{A}$.}
+\begin{proof}
+	\step{a}{\assume{For all $B \in \mathcal{B}$, if $x \in B$ then $B$ intersects $A$.}}
+	\step{b}{\pflet{$U$ be an open set that contains $x$.}}
+	\step{c}{\pick\ $B \in \mathcal{B}$ such that $x \in B \subseteq U$.}
+	\step{d}{$B$ intersects $A$.}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\step{e}{$U$ intersects $A$.}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
