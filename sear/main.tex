@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
  
 \documentclass{book}
 
@@ -4592,8 +4592,47 @@ Let $\mathcal{T}$ and $\mathcal{T}'$ be topologies on the set $X$. Then $\mathca
 \subsection{Subspaces}
 
 \begin{df}[Subspace]
-Let $X$ be a topological space and $X_0 \subseteq X$. The \emph{subspace topology} on $X_0$ is $\{ U \cap X_0 : U \text{ is open in } X \}$.
+Let $X$ be a topological space and $X_0 \subseteq X$. The \emph{subspace topology} on $X_0$ is $\mathcal{T}_0 = \{ U \cap X_0 : U \text{ is open in } X \}$.
+
+We prove this is a topology.
 \end{df}
+
+\begin{proof}
+\pf
+\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}_0$ we have $\bigcup \mathcal{U} \in \mathcal{T}_0$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{U} \subseteq \mathcal{T}_0$}}
+	\step{b}{\pflet{$\mathcal{V} = \{ U \text{ open in } X : U \cap X_0 \in \mathcal{U} \}$.}}
+	\step{c}{$\bigcup \mathcal{V}$ is open in $X$. \prove{$\bigcup \mathcal{U} = \bigcup \mathcal{V} \cap X_0$}}
+	\step{d}{$\bigcup \mathcal{U} \subseteq \bigcup \mathcal{V} \cap X_0$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in \bigcup \mathcal{U}$}}
+		\step{ii}{\pick\ $U \in \mathcal{U}$ such that $x \in U$}
+		\step{iii}{\pick\ $V$ open in $X$ such that $U = V \cap X_0$}
+		\step{iv}{$x \in V \in \mathcal{V}$}
+		\step{v}{$x \in \bigcup \mathcal{V}$}
+	\end{proof}
+	\step{e}{$\bigcup \mathcal{V} \cap X_0 \subseteq \bigcup \mathcal{U}$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in \bigcup \mathcal{V} \cap X_0$}}
+		\step{ii}{\pick\ $V \in \mathcal{V}$ such that $x \in V$}
+		\step{iii}{$x \in V \cap X_0 \in \mathcal{U}$}
+		\step{iv}{$x \in \bigcup \mathcal{U}$}
+	\end{proof}
+\end{proof}
+\step{2}{For all $U,V \in \mathcal{T}_0$ we have $U \cap V \in \mathcal{T}_0$.}
+\begin{proof}
+	\step{a}{\pflet{$U,V \in \mathcal{T}_0$}}
+	\step{b}{\pick\ $U'$, $V'$ open in $X$ such that $U = U' \cap X_0$ and $V = V' \cap X_0$}
+	\step{c}{$U \cap V = (U' \cap V') \cap X_0$}
+	\step{d}{$U \cap V \in \mathcal{T}_0$}
+\end{proof}
+\step{3}{$X_0 \in \mathcal{T}_0$}
+\begin{proof}
+	\pf\ Because $X_0 = X \cap X_0$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{ex}
 The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a subspace of $\mathbb{R}^3$.
@@ -4632,6 +4671,27 @@ Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace to
 	\step{c}{$i \circ f$ is continuous.}
 	\step{d}{$f$ is continuous.}
 	\step{e}{Every set open in $Y$ is open in $Z$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Let $Y \subseteq X$. Then $\mathcal{B}' = \{ B \cap Y : B \in \mathcal{B} \}$ is a basis for the topology on $Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every element of $\mathcal{B}'$ is open.}
+\begin{proof}
+	\pf\ For all $B \in \mathcal{B}$, we have $B$ is open in $X$, so $B \cap Y$ is open in $Y$.
+\end{proof}
+\step{2}{For any open set $V$ in $Y$ and $y \in V$, there exists $B' \in \mathcal{B}'$ such that $y \in B' \subseteq V$}
+\begin{proof}
+	\step{a}{\pflet{$V$ be open in $Y$.}}
+	\step{b}{\pflet{$y \in V$}}
+	\step{c}{\pick\ $U$ open in $X$ such that $V = U \cap Y$.}
+	\step{d}{\pick\ $B \in \mathcal{B}$ such that $y \in B \subseteq U$}
+	\step{e}{$B \cap Y \in \mathcal{B}'$ and $y \in B \cap Y \subseteq V$}
 \end{proof}
 \qed
 \end{proof}
