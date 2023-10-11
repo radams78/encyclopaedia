@@ -4587,6 +4587,34 @@ In a linearly ordered set under the order topology, every closed interval and cl
 \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a topological space and $Y$ a subspace of $X$. Let $A \subseteq Y$. Then $A$ is closed in $Y$ if and only if there exists a closed set $B$ in $X$ such that $A = B \cap Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+A \text{ is closed in } Y & \Leftrightarrow Y - A \text{ is open in } Y \\
+& \Leftrightarrow \exists U \text{ open in } X. Y - A = U \cap Y \\
+& \Leftrightarrow \exists C \text{ closed in } X. Y - A = Y - C \\
+& \Leftrightarrow \exists C \text{ closed in } X. A = Y \cap C & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space and $Y$ a subspace of $X$. Let $A \subseteq Y$. If $A$ is closed in $Y$ and $Y$ is closed in $X$ then $A$ is closed in $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $C$ closed in $X$ such that $A = C \cap Y$.}
+\step{2}{$A$ is closed in $X$.}
+\begin{proof}
+	\pf\ It is the intersection of two closed sets in $X$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Neighbourhood]
 Let $X$ be a topological space, $Sx \in X$ and $U \subseteq X$. Then $U$ is a \emph{neighbourhood} of $x$, and $x$ is an \emph{interior} point of $U$, iff there exists an open set $V$ such that $x \in V \subseteq U$.
 \end{df}
