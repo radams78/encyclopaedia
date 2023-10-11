@@ -77,9 +77,9 @@
 \contentsline {subsection}{\numberline {12.1.2}Topological Disjoint Union}{90}{subsection.12.1.2}%
 \contentsline {subsection}{\numberline {12.1.3}Product Topology}{92}{subsection.12.1.3}%
 \contentsline {subsection}{\numberline {12.1.4}Bases}{94}{subsection.12.1.4}%
-\contentsline {subsection}{\numberline {12.1.5}Subbases}{95}{subsection.12.1.5}%
+\contentsline {subsection}{\numberline {12.1.5}Subbases}{96}{subsection.12.1.5}%
 \contentsline {subsection}{\numberline {12.1.6}Countability Axioms}{96}{subsection.12.1.6}%
-\contentsline {section}{\numberline {12.2}Continuous Functions}{96}{section.12.2}%
+\contentsline {section}{\numberline {12.2}Continuous Functions}{97}{section.12.2}%
 \contentsline {subsection}{\numberline {12.2.1}Paths}{98}{subsection.12.2.1}%
 \contentsline {subsection}{\numberline {12.2.2}Loops}{98}{subsection.12.2.2}%
 \contentsline {section}{\numberline {12.3}Convergence}{98}{section.12.3}%
@@ -93,7 +93,7 @@
 \contentsline {section}{\numberline {12.11}Compactness}{103}{section.12.11}%
 \contentsline {section}{\numberline {12.12}Quotient Spaces}{104}{section.12.12}%
 \contentsline {section}{\numberline {12.13}Gluing}{105}{section.12.13}%
-\contentsline {section}{\numberline {12.14}Metric Spaces}{105}{section.12.14}%
+\contentsline {section}{\numberline {12.14}Metric Spaces}{106}{section.12.14}%
 \contentsline {subsection}{\numberline {12.14.1}Products}{106}{subsection.12.14.1}%
 \contentsline {section}{\numberline {12.15}Complete Metric Spaces}{108}{section.12.15}%
 \contentsline {section}{\numberline {12.16}Manifolds}{108}{section.12.16}%

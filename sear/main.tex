@@ -4676,6 +4676,20 @@ Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace to
 \end{proof}
 
 \begin{prop}
+Let $X$ be a topological space, $Y$ a subspace of $X$ and $U \subseteq Y$. If $Y$ is open in $X$ and $U$ is open in $Y$ then $U$ is open in $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $V$ open in $X$ such that $U = V \cap Y$}
+\step{2}{$U$ is open in $X$.}
+\begin{proof}
+	\pf\ It is the intersection of two open sets in $X$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Let $Y \subseteq X$. Then $\mathcal{B}' = \{ B \cap Y : B \in \mathcal{B} \}$ is a basis for the topology on $Y$.
 \end{prop}
 
