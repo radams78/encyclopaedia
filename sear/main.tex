@@ -4476,17 +4476,18 @@ Let $X$ be a set and $\mathcal{C} \subseteq \mathcal{P} X$. Then there exists a 
 In this case, $\mathcal{O}$ is unique and is given by $\mathcal{O} = \{ X - C : C \in \mathcal{C} \}$.
 \end{prop}
 
-\begin{prop}
-In any topological space $X$, we have:
+\begin{thm}
+Let $X$ be a set. Let $\mathcal{C} \subseteq \mathcal{P} X$. Then there exists a topology on $X$ such that $\mathcal{C}$ is the set of closed sets if and only if:
 \begin{enumerate}
-\item $\emptyset$ and $X$ are closed.
-\item The intersection of a set of closed sets is closed.
-\item The union of two closed sets is closed.
+\item $\emptyset \in \mathcal{C}$
+\item $\forall \mathcal{A} \subseteq \mathcal{C}. \bigcap \mathcal{A} \in \mathcal{C}$
+\item $\forall C,D \in \mathcal{C}. C \cup D \in \mathcal{C}$
 \end{enumerate}
-\end{prop}
+In this case, the topology is unique, and is $\{ X - C : C \in \mathcal{C} \}$.
+\end{thm}
 
 \begin{proof}
-\pf\ Immediate from definitions. \qed
+\pf\ Straightforward.
 \end{proof}
 
 \begin{thm}
