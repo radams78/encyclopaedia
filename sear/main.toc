@@ -94,27 +94,27 @@
 \contentsline {section}{\numberline {12.12}Hausdorff Spaces}{106}{section.12.12}%
 \contentsline {section}{\numberline {12.13}Separable Spaces}{107}{section.12.13}%
 \contentsline {section}{\numberline {12.14}Sequential Compactness}{107}{section.12.14}%
-\contentsline {section}{\numberline {12.15}Compactness}{107}{section.12.15}%
+\contentsline {section}{\numberline {12.15}Compactness}{108}{section.12.15}%
 \contentsline {section}{\numberline {12.16}Quotient Spaces}{108}{section.12.16}%
 \contentsline {section}{\numberline {12.17}Gluing}{109}{section.12.17}%
 \contentsline {section}{\numberline {12.18}Metric Spaces}{110}{section.12.18}%
-\contentsline {subsection}{\numberline {12.18.1}Products}{110}{subsection.12.18.1}%
+\contentsline {subsection}{\numberline {12.18.1}Products}{111}{subsection.12.18.1}%
 \contentsline {section}{\numberline {12.19}Complete Metric Spaces}{112}{section.12.19}%
-\contentsline {section}{\numberline {12.20}Manifolds}{112}{section.12.20}%
-\contentsline {chapter}{\numberline {13}Homotopy Theory}{113}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Homotopies}{113}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Homotopy Equivalence}{113}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Simplicial Complexes}{115}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Cell Decompositions}{115}{section.14.1}%
-\contentsline {section}{\numberline {14.2}CW-complexes}{115}{section.14.2}%
-\contentsline {chapter}{\numberline {15}Topological Groups}{117}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Continuous Actions}{117}{section.15.1}%
-\contentsline {chapter}{\numberline {16}Topological Vector Spaces}{119}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Cauchy Sequences}{119}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Seminorms}{120}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{120}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Normed Spaces}{120}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Inner Product Spaces}{122}{section.16.5}%
-\contentsline {section}{\numberline {16.6}Banach Spaces}{123}{section.16.6}%
-\contentsline {section}{\numberline {16.7}Hilbert Spaces}{123}{section.16.7}%
-\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{123}{section.16.8}%
+\contentsline {section}{\numberline {12.20}Manifolds}{113}{section.12.20}%
+\contentsline {chapter}{\numberline {13}Homotopy Theory}{115}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Homotopies}{115}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Homotopy Equivalence}{115}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Simplicial Complexes}{117}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Cell Decompositions}{117}{section.14.1}%
+\contentsline {section}{\numberline {14.2}CW-complexes}{117}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Topological Groups}{119}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Continuous Actions}{119}{section.15.1}%
+\contentsline {chapter}{\numberline {16}Topological Vector Spaces}{121}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Cauchy Sequences}{121}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Seminorms}{122}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{122}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Normed Spaces}{122}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Inner Product Spaces}{124}{section.16.5}%
+\contentsline {section}{\numberline {16.6}Banach Spaces}{125}{section.16.6}%
+\contentsline {section}{\numberline {16.7}Hilbert Spaces}{125}{section.16.7}%
+\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{125}{section.16.8}%

@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
  
 \documentclass{book}
 
@@ -5788,6 +5788,20 @@ Let $A$ be a topological space and $B$ a Hausdorff space. Let $f,g : A \rightarr
 \begin{proof}
 \pf\ This is a contradiction.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+In a Hausdorff space, every one-point set is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a Hausdorff space.}}
+\step{2}{\pflet{$a \in X$} \prove{$X - \{a\}$ is open.}}
+\step{3}{\pflet{$x \in X - \{a\}$}}
+\step{4}{\pick\ disjoint open sets $U$ and $V$ with $a \in U$ and $x \in V$}
+\step{5}{$x \in V \subseteq X - U \subseteq X - \{a\}$}
 \qed
 \end{proof}
 
