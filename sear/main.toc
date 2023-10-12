@@ -98,9 +98,9 @@
 \contentsline {section}{\numberline {12.16}Compactness}{108}{section.12.16}%
 \contentsline {section}{\numberline {12.17}Quotient Spaces}{109}{section.12.17}%
 \contentsline {section}{\numberline {12.18}Gluing}{110}{section.12.18}%
-\contentsline {section}{\numberline {12.19}Metric Spaces}{110}{section.12.19}%
+\contentsline {section}{\numberline {12.19}Metric Spaces}{111}{section.12.19}%
 \contentsline {subsection}{\numberline {12.19.1}Products}{111}{subsection.12.19.1}%
-\contentsline {section}{\numberline {12.20}Complete Metric Spaces}{112}{section.12.20}%
+\contentsline {section}{\numberline {12.20}Complete Metric Spaces}{113}{section.12.20}%
 \contentsline {section}{\numberline {12.21}Manifolds}{113}{section.12.21}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{115}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{115}{section.13.1}%

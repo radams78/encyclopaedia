@@ -5770,6 +5770,32 @@ A topological space is $T_1$ iff every finite set is closed.
 \pf\ Since the union of finitely many closed sets is closed. \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a $T_1$ space. Let $A \subseteq X$ and $l \in X$. Then $l$ is a limit point of $A$ if and only if every neighbourhood of $l$ contains infinitely many points of $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $l$ is a limit point of $A$ then every neighbourhood of $l$ contains infinitely many points of $A$.}
+\begin{proof}
+	\step{a}{\assume{$l$ is a limit point of $A$.}}
+	\step{b}{\pflet{$U$ be a neighbourhood of $l$.}}
+	\step{c}{\assume{for a contradiction $U \cap A - \{l\}$ is finite.}}
+	\step{d}{$U \cap A - \{l\}$ is closed.}
+	\begin{proof}
+		\pf\ Since $X$ is $T_1$.
+	\end{proof}
+	\step{d}{$U - (A - \{l\})$ is a neighbourhood of $l$.}
+	\step{e}{$U - (A - \{l\})$ intersects $A$.}
+	\qedstep
+\end{proof}
+\step{2}{If every neighbourhood of $l$ contains infinitely many points of $A$ then $l$ is a limit point of $A$.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Hausdorff Spaces}
 
 \begin{df}[Hausdorff]
