@@ -5847,12 +5847,36 @@ Any linearly ordered set is Hausdorff under the order topology.
 \end{proof}
 
 \begin{prop}
-\begin{enumerate}
-\item Every subspace of a Hausdorff space is Hausdorff.
-\item The disjoint union of two Hausdorff spaces is Hausdorff.
-\item The product of two Hausdorff spaces is Hausdorff.
-\end{enumerate}
+A subspace of a Hausdorff space is Hausdorff.
 \end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a Hausdorff space.}}
+\step{2}{\pflet{$Y$ be a subspace of $X$.}}
+\step{3}{\pflet{$a,b \in Y$ with $a \neq b$.}}
+\step{4}{\pick\ disjoint open sets $U$ and $V$ in $X$ with $a \in U$ and $b \in V$.}
+\step{5}{$U \cap Y$ and $V \cap Y$ are disjoint open sets in $Y$ with $a \in U \cap Y$ and $b \in V \cap Y$.}
+\qed
+\end{proof}
+
+\begin{prop}
+The disjoint union of two Hausdorff spaces is Hausdorff.
+\end{prop}
+
+\begin{prop}
+The product of two Hausdorff spaces is Hausdorff.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be Hausdorff spaces.}}
+\step{2}{\pflet{$(x_1,y_1),(x_2,y_2) \in X \times Y$ with $(x_1,y_1) \neq (x_2,y_2)$}}
+\step{3}{\assume{w.l.o.g. $x_1 \neq x_2$}}
+\step{4}{\pick\ disjoint open sets $U$, $V$ in $X$ with $x_1 \in U$ and $x_2 \in V$.}
+\step{5}{$U \times Y$ and $V \times Y$ are disjoint open sets in $X \times Y$ with $(x_1,y_1) \in U \times Y$ and $(x_2,y_2) \in V \times Y$.}
+\qed
+\end{proof}
 
 \begin{prop}
 Let $A$ be a topological space and $B$ a Hausdorff space. Let $f,g : A \rightarrow B$ be continuous. Let $X \subseteq A$ be dense. If $f$ and $g$ agree on $X$, then $f = g$.
