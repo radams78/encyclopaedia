@@ -97,7 +97,7 @@
 \contentsline {section}{\numberline {12.13}Hausdorff Spaces}{108}{section.12.13}%
 \contentsline {section}{\numberline {12.14}Separable Spaces}{110}{section.12.14}%
 \contentsline {section}{\numberline {12.15}Sequential Compactness}{110}{section.12.15}%
-\contentsline {section}{\numberline {12.16}Compactness}{110}{section.12.16}%
+\contentsline {section}{\numberline {12.16}Compactness}{111}{section.12.16}%
 \contentsline {section}{\numberline {12.17}Quotient Spaces}{111}{section.12.17}%
 \contentsline {section}{\numberline {12.18}Gluing}{112}{section.12.18}%
 \contentsline {section}{\numberline {12.19}Metric Spaces}{113}{section.12.19}%
