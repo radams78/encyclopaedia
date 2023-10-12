@@ -5806,6 +5806,22 @@ A topological space is a \emph{Hausdorff} space or a \emph{$T_2$} space iff any 
 In a Hausdorff space, a sequence has at most one limit.
 \end{prop}
 
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a Hausdorff space.}}
+\step{2}{\pflet{$(a_n)$ be a sequence in $X$ and $l,m \in X$}}
+\step{3}{\assume{$a_n \rightarrow l$ and $a_n \rightarrow m$}}
+\step{4}{\assume{for a contradiction $l \neq m$}}
+\step{5}{\pick\ disjoint open sets $U$ and $V$ with $l \in U$ and $m \in V$}
+\step{6}{\pick\ $M$, $N$ such that $\forall n \geq M. a_n \in U$ and $\forall n \geq N. a_n \in V$}
+\step{7}{$a_{\max(M,N)} \in U \cap V$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the fact that $U \cap V = \emptyset$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}
 \begin{enumerate}
 \item Every subspace of a Hausdorff space is Hausdorff.
