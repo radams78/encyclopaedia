@@ -5313,6 +5313,32 @@ x \in \overline{A} & \Leftrightarrow \text{for every closed set $C$, if $A \subs
 \end{proof}
 
 \begin{prop}
+\label{prop:closure_monotone}
+Let $X$ be a topological space. Let $A \subseteq B \subseteq X$. Then $\overline{A} \subseteq \overline{B}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since every closed set that includes $B$ is a closed set that includes $A$. \qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $A,B \subseteq X$. Then $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\overline{A \cup B} \subseteq \overline{A} \cup \overline{B}$}
+\begin{proof}
+\pf\ Since $\overline{A} \cup \overline{B}$ is a closed set that includes $A \cup B$.
+\end{proof}
+\step{2}{$\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$}
+\begin{proof}
+	\pf\ Since $\overline{A} \subseteq \overline{A \cup B}$ and $\overline{B} \subseteq \overline{A \cup B}$ by Proposition \ref{prop:closure_monotone}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Let $X$ be a topological space, $A \subseteq X$ and $x \in X$. Let $\mathcal{B}$ be a basis for the topology on $X$. Then $x \in \overline{A}$ if and only if, for all $B \in \mathcal{B}$, if $x \in B$ then $B$ intersects $A$.
 \end{prop}
 
