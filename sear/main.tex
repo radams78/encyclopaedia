@@ -6007,6 +6007,21 @@ Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$ be uniformly continu
 \pf\ The extension maps $\lim_{n \rightarrow \infty} x_n$ to $\lim_{n \rightarrow \infty} f(x_n)$. \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a topological space. Then $X$ is Hausdorff if and only if the diagonal $\Delta = \{ (x,x) : x \in X \}$ is closed in $X^2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+& \Delta \text{ is closed} \\
+\Leftrightarrow & X^2 - \Delta \text{ is open} \\
+\Leftrightarrow & \forall x,y \in X ((x,y) \notin \Delta \Rightarrow \exists V,W \text{ open in } X (x \in V \wedge y \in W \wedge V \times W \subseteq X^2 - \Delta)) \\
+\Leftrightarrow & \forall x,y \in X (x \neq y \Rightarrow \exists V,W \text{ open in } X (x \in V \wedge y \in W \wedge V \cap W = \emptyset)) \\
+\Leftrightarrow & X \text{ is Hausdorff} & \qed
+\end{align*}
+\end{proof}
+
 \section{Separable Spaces}
 
 \begin{df}[Separable]
