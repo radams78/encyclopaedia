@@ -5823,6 +5823,30 @@ In a Hausdorff space, a sequence has at most one limit.
 \end{proof}
 
 \begin{prop}
+Any linearly ordered set is Hausdorff under the order topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a linearly ordered set under the order topology.}}
+\step{2}{\pflet{$a,b \in X$ with $a \neq b$.}}
+\step{3}{\assume{w.l.o.g. $a < b$.}}
+\step{4}{\case{There exists $c \in X$ such that $a < c < b$.}}
+\begin{proof}
+	\step{i}{\pflet{$U = (-\infty, c)$}}
+	\step{ii}{\pflet{$V = (c, + \infty)$}}
+	\step{iii}{$U$ and $V$ are disjoint open sets with $a \in U$ and $b \in V$}
+\end{proof}
+\step{5}{\case{There is no $c \in X$ such that $a < c < b$.}}
+\begin{proof}
+	\step{i}{\pflet{$U = (-\infty, b)$}}
+	\step{ii}{\pflet{$V = (a, + \infty)$}}
+	\step{iii}{$U$ and $V$ are disjoint open sets with $a \in U$ and $b \in V$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 \begin{enumerate}
 \item Every subspace of a Hausdorff space is Hausdorff.
 \item The disjoint union of two Hausdorff spaces is Hausdorff.
