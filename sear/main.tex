@@ -4941,6 +4941,7 @@ Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces. T
 \end{df}
 
 \begin{prop}
+\label{prop:closed_product}
 Let $X$ and $Y$ be topological spaces. Let $A$ be a closed set in $X$ and $B$ a closed set in $Y$. Then $A \times B$ is closed in $X \times Y$.
 \end{prop}
 
@@ -5339,6 +5340,32 @@ Let $X$ be a topological space. Let $A,B \subseteq X$. Then $\overline{A \cup B}
 \end{proof}
 
 \begin{prop}
+Let $X$ be a topological space. Let $\mathcal{A} \subseteq \mathcal{P} X$. Then
+\[ \bigcup \{ \overline{A} : A \in \mathcal{A} \} \subseteq \overline{\bigcup \mathcal{A}} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+For all $A \in \mathcal{A}$ we have $\overline{A} \subseteq \overline{\bigcup \mathcal{A}}$ by Proposition \ref{prop:closure_monotone}. \qed
+\end{proof}
+
+\begin{ex}
+The converse does not always hold. In $\mathbb{R}$, let $\mathcal{A} = \{ \{ x \} : 0 < x < 1 \}$. Then $\bigcup \{ \overline{A} : A \in \mathcal{A} \} = (0,1)$ but $\overline{\bigcup \mathcal{A}} = [0,1]$.
+\end{ex}
+
+\begin{prop}
+Let $X$ be a topological space. Let $\mathcal{A} \subseteq \mathcal{P} X$. Then $\overline{\bigcap \mathcal{A}} \subseteq \bigcap \{ \overline{A} : A \in \mathcal{A} \}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\overline{\bigcap \mathcal{A}} \subseteq \overline{A}$ for all $A \in \mathcal{A}$ by Proposition \ref{prop:closure_monotone}. \qed
+\end{proof}
+
+\begin{ex}
+The converse does not always hold. In $\mathbb{R}$, if $A$ is the set of all rational numbers and $B$ is the set of all irrational numbers then $\bigcap{A \cap B} = \emptyset$ but $\bigcap{A} \cap \bigcap{B} = \mathbb{R}$.
+\end{ex}
+
+\begin{prop}
 Let $X$ be a topological space, $A \subseteq X$ and $x \in X$. Let $\mathcal{B}$ be a basis for the topology on $X$. Then $x \in \overline{A}$ if and only if, for all $B \in \mathcal{B}$, if $x \in B$ then $B$ intersects $A$.
 \end{prop}
 
@@ -5362,6 +5389,8 @@ Let $X$ be a topological space, $A \subseteq X$ and $x \in X$. Let $\mathcal{B}$
 \qed
 \end{proof}
 
+\subsection{Subspaces}
+
 \begin{prop}
 Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $A \subseteq Y$. Let $\overline{A}$ be the closure of $A$ in $X$. Then the closure of $A$ in $Y$ is $\overline{A} \cap Y$.
 \end{prop}
@@ -5380,6 +5409,29 @@ Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $A \subseteq Y
 	\step{d}{$A \subseteq C$}
 	\step{e}{$\overline{A} \subseteq C$}
 	\step{f}{$\overline{A} \cap Y \subseteq B$}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Product Topology}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $A \subseteq X$ and $B \subseteq Y$. Then $\overline{A \times B} = \overline{A} \times \overline{B}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\overline{A \times B} \subseteq \overline{A} \times \overline{B}$}
+\begin{proof}
+	\pf\ Since $\overline{A} \times \overline{B}$ is a closed set that includes $A \times B$ by Proposition \ref{prop:closed_product}.
+\end{proof}
+\step{2}{$\overline{A} \times \overline{B} \subseteq \overline{A \times B}$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \overline{A}$ and $y \in \overline{B}$.}}
+	\step{b}{\pflet{$U$ be an open set that contains $(x,y)$.}}
+	\step{c}{\pick\ open sets $V$ in $X$ and $W$ in $Y$ such that $(x,y) \in V \times W \subseteq U$.}
+	\step{d}{$V$ intersects $A$ and $W$ intersects $B$.}
+	\step{e}{$U$ intersects $A \times B$.}
 \end{proof}
 \qed
 \end{proof}
