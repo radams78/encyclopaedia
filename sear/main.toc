@@ -91,16 +91,17 @@
 \contentsline {section}{\numberline {12.9}Open Maps}{103}{section.12.9}%
 \contentsline {section}{\numberline {12.10}Quotient Spaces}{104}{section.12.10}%
 \contentsline {section}{\numberline {12.11}Connected Spaces}{106}{section.12.11}%
-\contentsline {section}{\numberline {12.12}Hausdorff Spaces}{106}{section.12.12}%
-\contentsline {section}{\numberline {12.13}Separable Spaces}{107}{section.12.13}%
-\contentsline {section}{\numberline {12.14}Sequential Compactness}{108}{section.12.14}%
-\contentsline {section}{\numberline {12.15}Compactness}{108}{section.12.15}%
-\contentsline {section}{\numberline {12.16}Quotient Spaces}{108}{section.12.16}%
-\contentsline {section}{\numberline {12.17}Gluing}{109}{section.12.17}%
-\contentsline {section}{\numberline {12.18}Metric Spaces}{110}{section.12.18}%
-\contentsline {subsection}{\numberline {12.18.1}Products}{111}{subsection.12.18.1}%
-\contentsline {section}{\numberline {12.19}Complete Metric Spaces}{112}{section.12.19}%
-\contentsline {section}{\numberline {12.20}Manifolds}{113}{section.12.20}%
+\contentsline {section}{\numberline {12.12}$T_1$ Spaces}{106}{section.12.12}%
+\contentsline {section}{\numberline {12.13}Hausdorff Spaces}{107}{section.12.13}%
+\contentsline {section}{\numberline {12.14}Separable Spaces}{108}{section.12.14}%
+\contentsline {section}{\numberline {12.15}Sequential Compactness}{108}{section.12.15}%
+\contentsline {section}{\numberline {12.16}Compactness}{108}{section.12.16}%
+\contentsline {section}{\numberline {12.17}Quotient Spaces}{109}{section.12.17}%
+\contentsline {section}{\numberline {12.18}Gluing}{110}{section.12.18}%
+\contentsline {section}{\numberline {12.19}Metric Spaces}{110}{section.12.19}%
+\contentsline {subsection}{\numberline {12.19.1}Products}{111}{subsection.12.19.1}%
+\contentsline {section}{\numberline {12.20}Complete Metric Spaces}{112}{section.12.20}%
+\contentsline {section}{\numberline {12.21}Manifolds}{113}{section.12.21}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{115}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{115}{section.13.1}%
 \contentsline {section}{\numberline {13.2}Homotopy Equivalence}{115}{section.13.2}%

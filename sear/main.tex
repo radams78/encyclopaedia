@@ -5756,6 +5756,20 @@ If $X$ and $Y$ are nonempty topological spaces, then
 $X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
 \end{prop}
 
+\section{$T_1$ Spaces}
+
+\begin{df}[$T_1$]
+A topological space is $T_1$ iff every one-point set is closed.
+\end{df}
+
+\begin{prop}
+A topological space is $T_1$ iff every finite set is closed.
+\end{prop}
+
+\begin{proof}
+\pf\ Since the union of finitely many closed sets is closed. \qed
+\end{proof}
+
 \section{Hausdorff Spaces}
 
 \begin{df}[Hausdorff]
@@ -5792,7 +5806,7 @@ Let $A$ be a topological space and $B$ a Hausdorff space. Let $f,g : A \rightarr
 \end{proof}
 
 \begin{prop}
-In a Hausdorff space, every one-point set is closed.
+Every Hausdorff space is $T_1$.
 \end{prop}
 
 \begin{proof}
@@ -5805,12 +5819,8 @@ In a Hausdorff space, every one-point set is closed.
 \qed
 \end{proof}
 
-\begin{cor}
-In a Hausdorff space, every finite set is closed.
-\end{cor}
-
 \begin{ex}
-The converse does not hold. If $X$ is an infinite set under the cofinite topology, then every one-point set is closed, but $X$ is not Hausdorff.
+The converse does not hold. If $X$ is an infinite set under the cofinite topology, then $X$ is $T_1$ but not Hausdorff.
 \end{ex}
 
 \begin{prop}
