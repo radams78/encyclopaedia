@@ -5356,6 +5356,35 @@ Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $A \subseteq Y
 Let $X$ be a topological space, $x \in X$ and $A \subseteq X$. Then $x$ is a \emph{limit point}, \emph{cluster point} or \emph{point of accumulation} of $A$ iff every neighbourhood of $x$ intersects $A - \{x\}$.
 \end{df}
 
+\begin{prop}
+Let $X$ be a topological space. Let $A \subseteq X$. Let $A'$ be the set of limit points of $A$. Then
+\[ \overline{A} = A \cup A' \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\overline{A} \subseteq A \cup A'$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \overline{A}$}}
+	\step{b}{\assume{$x \notin A$} \prove{$x \in A'$}}
+	\step{c}{\pflet{$U$ be a neighbourhood of $x$.}}
+	\step{d}{\pick\ $y \in U \cap A$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:closure}.
+	\end{proof}
+	\step{e}{$y \neq x$}
+\end{proof}
+\step{2}{$A \subseteq \overline{A}$}
+\begin{proof}
+	\pf\ Immediate from the definition of $\overline{A}$.
+\end{proof}
+\step{3}{$A' \subseteq \overline{A}$}
+\begin{proof}
+	\pf\ From Proposition \ref{prop:closure}.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Continuous Functions}
 
 \begin{df}[Continuous]
