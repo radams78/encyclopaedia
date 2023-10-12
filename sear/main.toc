@@ -94,15 +94,16 @@
 \contentsline {section}{\numberline {12.10}Quotient Spaces}{105}{section.12.10}%
 \contentsline {section}{\numberline {12.11}Connected Spaces}{107}{section.12.11}%
 \contentsline {section}{\numberline {12.12}$T_1$ Spaces}{107}{section.12.12}%
-\contentsline {section}{\numberline {12.13}Hausdorff Spaces}{108}{section.12.13}%
-\contentsline {section}{\numberline {12.14}Separable Spaces}{110}{section.12.14}%
-\contentsline {section}{\numberline {12.15}Sequential Compactness}{110}{section.12.15}%
+\contentsline {subsection}{\numberline {12.12.1}Limit Points}{108}{subsection.12.12.1}%
+\contentsline {section}{\numberline {12.13}Hausdorff Spaces}{109}{section.12.13}%
+\contentsline {section}{\numberline {12.14}Separable Spaces}{111}{section.12.14}%
+\contentsline {section}{\numberline {12.15}Sequential Compactness}{111}{section.12.15}%
 \contentsline {section}{\numberline {12.16}Compactness}{111}{section.12.16}%
-\contentsline {section}{\numberline {12.17}Quotient Spaces}{111}{section.12.17}%
-\contentsline {section}{\numberline {12.18}Gluing}{112}{section.12.18}%
+\contentsline {section}{\numberline {12.17}Quotient Spaces}{112}{section.12.17}%
+\contentsline {section}{\numberline {12.18}Gluing}{113}{section.12.18}%
 \contentsline {section}{\numberline {12.19}Metric Spaces}{113}{section.12.19}%
 \contentsline {subsection}{\numberline {12.19.1}Products}{114}{subsection.12.19.1}%
-\contentsline {section}{\numberline {12.20}Complete Metric Spaces}{115}{section.12.20}%
+\contentsline {section}{\numberline {12.20}Complete Metric Spaces}{116}{section.12.20}%
 \contentsline {section}{\numberline {12.21}Manifolds}{116}{section.12.21}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{117}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{117}{section.13.1}%

@@ -5857,6 +5857,33 @@ A topological space is $T_1$ iff every finite set is closed.
 \end{proof}
 
 \begin{prop}
+Let $X$ be a topological space. Then $X$ is $T_1$ if and only if, for all $x,y \in X$, if $x \neq y$ then there exists a neighbourhood of $x$ that does not contain $y$, and there exists a neighbourhood of $y$ that does not contain $x$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $X$ is $T_1$ then, for all $x,y \in X$, if $x \neq y$ then there exists a neighbourhood of $x$ that does not contain $y$, and there exists a neighbourhood of $y$ that does not contain $x$.}
+\begin{proof}
+	\step{a}{\assume{$X$ is $T_1$.}}
+	\step{b}{\pflet{$x,y \in X$}}
+	\step{c}{\assume{$x \neq y$}}
+	\step{d}{$X - \{y\}$ is a neighbourhood of $x$ that does not contain $y$.}
+	\step{e}{$X - \{x\}$ is a neighbourhood of $y$ that does not contain $x$.}
+\end{proof}
+\step{2}{If, for all $x,y \in X$, if $x \neq y$ then there exists a neighbourhood of $x$ that does not contain $y$, and there exists a neighbourhood of $y$ that does not contain $x$, then $X$ is $T_1$.}
+\begin{proof}
+	\step{a}{\assume{For all $x,y \in X$, if $x \neq y$ then there exists a neighbourhood of $x$ that does not contain $y$, and there exists a neighbourhood of $y$ that does not contain $x$.}}
+	\step{b}{\pflet{$x \in X$} \prove{$\{x\}$ is closed.}}
+	\step{c}{\pflet{$y \in X - \{x\}$}}
+	\step{d}{\pick\ a neighbourhood $U$ of $y$ that does not contain $x$.}
+	\step{e}{$y \in U \subseteq X - \{x\}$}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Limit Points}
+
+\begin{prop}
 Let $X$ be a $T_1$ space. Let $A \subseteq X$ and $l \in X$. Then $l$ is a limit point of $A$ if and only if every neighbourhood of $l$ contains infinitely many points of $A$.
 \end{prop}
 
