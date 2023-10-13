@@ -5710,6 +5710,50 @@ Let $f : X \rightarrow Y$. Let $\mathcal{S}$ be a subbasis for the topology on $
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:continuous_subbasis}
+Let $f : \mathbb{R} \rightarrow \mathbb{R}$. Then $f$ is continuous if and only if, for all $x \in \mathbb{R}$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in \mathbb{R}$, if $|y-x| < \delta$ then $|f(y) - f(x)| < \epsilon$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then, for all $x \in \mathbb{R}$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in \mathbb{R}$, if $|y-x| < \delta$ then $|f(y) - f(x)| < \epsilon$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$x \in \mathbb{R}$}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{$f^{-1}((f(x) - \epsilon, f(x) + \epsilon))$ is open in $X$.}
+	\step{e}{\pick\ $a$, $b$ such that $x \in (a,b) \subseteq f^{-1}((f(x) - \epsilon, f(x) + \epsilon))$.}
+	\step{f}{\pflet{$\delta = \min(x - a, b - x)$}}
+	\step{g}{\pflet{$y \in \mathbb{R}$}}
+	\step{h}{\assume{$|y-x| < \delta$}}
+	\step{i}{$y \in (a,b)$}
+	\step{j}{$f(y) \in (f(x) - \epsilon, f(x) + \epsilon)$}
+	\step{k}{$|f(y) - f(x)| < \epsilon$}
+\end{proof}
+\step{2}{If, for all $x \in \mathbb{R}$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in \mathbb{R}$, if $|y-x| < \delta$ then $|f(y) - f(x)| < \epsilon$, then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For all $x \in \mathbb{R}$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in \mathbb{R}$, if $|y-x| < \delta$ then $|f(y) - f(x)| < \epsilon$.}}
+	\step{b}{For all $a \in \mathbb{R}$ we have $\inv{f}((a, +\infty))$ is open.}
+	\begin{proof}
+		\step{i}{\pflet{$a \in \mathbb{R}$}}
+		\step{ii}{\pflet{$x \in \inv{f}((a, +\infty))$}}
+		\step{iii}{\pflet{$\epsilon = f(x) - a$}}
+		\step{iv}{\pick\ $\delta > 0$ such that, for all $y \in \mathbb{R}$, if $|y-x| < \delta$ then $|f(y) - f(x)| < \epsilon$}
+		\step{v}{$x \in (x - \delta, x + \delta) \subseteq \inv{f}((a,+\infty))$}
+	\end{proof}
+	\step{c}{For all $a \in \mathbb{R}$ we have $\inv{f}((-\infty, a))$ is open.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Proposition \ref{prop:continuous_subbasis}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Homeomorphism]
 Let $X$ and $Y$ be topological spaces. A \emph{homeomorphism} between $X$ and $Y$ is a bijection $f : X \approx Y$ such that $f$ and $\inv{f}$ are continuous.
 \end{df}
