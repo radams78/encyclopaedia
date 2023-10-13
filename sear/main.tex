@@ -5542,6 +5542,32 @@ Let $X$ be a topological space. Let $A \subseteq X$. Then $\partial A = \emptyse
 \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a topological space. Let $U \subseteq X$. Then $U$ is open if and only if $\partial U = \overline{U} - U$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $U$ is open then $\partial U = \overline{U} - U$}
+\begin{proof}
+	\pf\ If $U$ is open then
+	\begin{align*}
+		\partial U & = \overline{U} \cap \overline{X-U} \\
+		& = \overline{U} \cap (X - U^\circ) \\
+		& = \overline{U} - U^\circ \\
+		& = \overline{U} - U 
+	\end{align*}
+\end{proof}
+\step{2}{If $\partial U = \overline{U} - U$ then $U$ is open.}
+\begin{proof}
+	\step{a}{\assume{$\partial U = \overline{U} - U$}}
+	\step{b}{$\overline{U} - U^\circ = \overline{U} - U$}
+	\step{c}{$U \subseteq U^\circ$}
+	\step{d}{$U = U^\circ$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Limit Points}
 
 \begin{df}[Limit Point]
