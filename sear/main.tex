@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
 % READ
  
 \documentclass{book}
@@ -535,24 +535,14 @@ Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a f
 \qed
 \end{proof}
 
-\subsection{The Empty Set}
+\section{The Empty Set} % CHECKED
 
 \begin{thm}
 There exists a set which has no elements.
 \end{thm}
 
 \begin{proof}
-\pf
-\step{1}{\pick\ a set $A$}
-\begin{proof}
-	\pf\ By the Axiom of Infinity, a set exists.
-\end{proof}
-\step{2}{\pflet{$S = \{ x \in A : \bot \}$ with injection $i : S \rightarrow A$}}
-\begin{proof}
-	\pf\ Axiom of Separation.
-\end{proof}
-\step{3}{$S$ has no elements.}
-\qed
+\pf\ Take $\{ x \in \mathbb{N} : \bot \}$. \qed
 \end{proof}
 
 \begin{thm}
