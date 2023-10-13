@@ -5484,6 +5484,7 @@ Let $X$ be a topological space. Let $A \subseteq X$. Then
 \end{proof}
 
 \begin{prop}
+\label{prop:closure_boundary}
 Let $X$ be a topological space. Let $A \subseteq X$. Then
 \[ \overline{A} = A^\circ \cup \partial A \]
 \end{prop}
@@ -5509,6 +5510,34 @@ Let $X$ be a topological space. Let $A \subseteq X$. Then
 	\begin{proof}
 		\pf\ Since $\partial A = \overline{A} \cap \overline{X-A}$.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $A \subseteq X$. Then $\partial A = \emptyset$ if and only if $A$ is both open and closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\partial A = \emptyset$ then $A$ is open and closed.}
+\begin{proof}
+	\step{a}{\assume{$\partial A = \emptyset$}}
+	\step{b}{$\overline{A} = A^\circ$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:closure_boundary}.
+	\end{proof}
+	\step{c}{$\overline{A} = A = A^\circ$}
+\end{proof}
+\step{2}{If $A$ is open and closed then $\partial A = \emptyset$.}
+\begin{proof}
+	\pf\ If $A$ is open and closed then
+	\begin{align*}
+	\partial A & = \overline{A} \cap \overline{X-A} \\
+	& = \overline{A} \cap (X - A^\circ) \\
+	& = A \cap (X - A) \\
+	& = \emptyset
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
