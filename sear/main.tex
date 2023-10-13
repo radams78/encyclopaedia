@@ -1,9 +1,10 @@
-% FORMALIZE
 % READ
 % READ
 % CHECK
 % READ
 % READ
+% CHECK
+% FORMALIZE
  
 \documentclass{book}
 
@@ -5662,6 +5663,7 @@ Let $X$ and $Y$ be topological spaces. A function $f : X \rightarrow Y$ is \emph
 \end{prop}
 
 \begin{prop}
+\label{prop:continuous_basis}
 Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{B}$ be a basis for $Y$. Then $f$ is continuous if and only if, for all $B \in \mathcal{B}$, we have $\inv{f}(B)$ is open in $X$.
 \end{prop}
 
@@ -5678,6 +5680,32 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{
 	\step{c}{\pflet{$x \in \inv{f}(U)$}}
 	\step{d}{\pick\ $B \in \mathcal{B}$ such that $f(x) \in B \subseteq U$.}
 	\step{e}{$x \in \inv{f}(B) \subseteq \inv{f}(U)$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces.
+Let $f : X \rightarrow Y$. Let $\mathcal{S}$ be a subbasis for the topology on $Y$. Then $f$ is continuous if and only if, for all $V \in \mathcal{S}$, we have $\inv{f}(V)$ is open in $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then, for all $V \in \mathcal{S}$, we have $\inv{f}(V)$ is open in $X$.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\step{2}{If, for all $V \in \mathcal{S}$, we have $\inv{f}(V)$ is open in $X$, then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For all $V \in \mathcal{S}$, we have $\inv{f}(V)$ is open in $X$.}}
+	\step{b}{For all $V_1, \ldots, V_n \in \mathcal{S}$ we have $\inv{f}(V_1 \cap \cdots \cap V_n)$ is open in $X$.}
+	\begin{proof}
+		\pf\ Since $\inv{f}(V_1 \cap \cdots \cap V_n) = \inv{f}(V_1) \cap \cdots \cap \inv{f}(V_n)$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ By Proposition \ref{prop:continuous_basis} since the set of all finite intersections of elements of $\mathcal{S}$ forms a basis for the topology on $Y$.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
