@@ -140,7 +140,7 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 
 \chapter{Sets and Functions}
 
-\section{Composition}
+\section{Composition} % CHECKED
 
 \begin{prop}
 Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
@@ -279,11 +279,28 @@ The composite of surjective functions is surjective.
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$f : A \twoheadrightarrow B$ and $g : B \twoheadrightarrow C$ be injective.}}
-\step{2}{\pflet{$c \in C$}}
-\step{3}{\pick\ $b \in B$ such that $g(b) = c$.}
-\step{4}{\pick\ $a \in A$ such that $f(a) = b$.}
-\step{5}{$(g \circ f)(a) = c$}
+\step{1}{\pflet{$A$, $B$ and $C$ be sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ and $g : B \rightarrow C$}}
+\step{3}{\assume{$g$ is surjective.}}
+\step{4}{\assume{$f$ is surjective.}}
+\step{5}{\pflet{$c \in C$}}
+\step{6}{\pick\ $b \in B$ such that $g(b) = c$.}
+\begin{proof}
+	\pf\ \stepref{3}
+\end{proof}
+\step{7}{\pick\ $a \in A$ such that $f(a) = b$.}
+\begin{proof}
+	\pf\ \stepref{4}
+\end{proof}
+\step{8}{$(g \circ f)(a) = c$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(g \circ f)(a) & = g(f(a)) & (\text{definition of composition}) \\
+		& = g(b) & (\text{\stepref{7}}) \\
+		& = c & (\text{\stepref{6}})
+	\end{align*}
+\end{proof}
 \qed
 \end{proof}
 
@@ -293,9 +310,22 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjectiv
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$c \in C$}}
-\step{2}{There exists $a \in A$ such that $g(f(a)) = c$.}
-\step{3}{There exists $b \in B$ such that $g(b) = c$.}
+\step{1}{\pflet{$A$, $B$ and $C$ be sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ and $g : B \rightarrow C$.}}
+\step{3}{\assume{$g \circ f$ is surjective.}}
+\step{4}{\pflet{$c \in C$}}
+\step{5}{\pick\ $a \in A$ such that $(g \circ f)(a) = c$}
+\begin{proof}
+	\pf\ \stepref{3}
+\end{proof}
+\step{6}{$g(f(a)) = c$}
+\begin{proof}
+	\pf\ From \stepref{5} and the definition of composition.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ There exists $b \in B$ such that $g(b) = c$, namely $b = f(a)$.
+\end{proof}
 \qed
 \end{proof}
 
