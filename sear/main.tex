@@ -5841,6 +5841,18 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is co
 Let $X$ and $Y$ be topological spaces. A \emph{homeomorphism} between $X$ and $Y$ is a bijection $f : X \approx Y$ such that $f$ and $\inv{f}$ are continuous.
 \end{df}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is a homeomorphism iff $f$ is bijective and, for all $U \subseteq X$, we have $f(U)$ is open if and only if $U$ is open.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}[Topological Property]
+A property $P$ of topological spaces is a \emph{topological} property iff, for any topological spaces $X$ and $Y$, if $P[X]$ and $X \cong Y$ then $P[Y]$.
+\end{df}
+
 \begin{df}[Retraction]
 Let $X$ be a topological space and $A$ a subspace of $X$. A continuous function $\rho : X \rightarrow A$ is a \emph{retraction} iff $\rho \restriction A = \id{A}$. We say $A$ is a \emph{retract} of $X$ iff there exists a retraction.
 \end{df}
@@ -5957,6 +5969,10 @@ Let $X$ be a topological space, $Y$ a set and $f : Y \rightarrow X$ a function. 
 \begin{proof}
 \pf\ Immediate from definition. \qed
 \end{proof}
+
+\begin{df}[Unit Circle]
+The \emph{unit circle} $S^1$ is $\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1 \}$ as a subspace of $\mathbb{R}^2$.
+\end{df}
 
 \section{Embedding}
 
