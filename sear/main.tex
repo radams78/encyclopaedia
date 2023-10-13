@@ -5663,6 +5663,73 @@ Let $X$ and $Y$ be topological spaces. A function $f : X \rightarrow Y$ is \emph
 \end{prop}
 
 \begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then the following are equivalent.
+\begin{enumerate}
+\item $f$ is continuous.
+\item For all $A \subseteq X$ we have $f(\overline{A}) \subseteq \overline{f(A)}$.
+\item For every closed $B$ in $Y$, we have $\inv{f}(B)$ is closed in $X$.
+\item For all $x \in X$ and neighbourhood $V$ of $f(x)$, there exists a neighbourhood $U$ of $x$ such that $f(U) \subseteq V$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$A \subseteq X$}}
+	\step{c}{\pflet{$x \in \overline{A}$} \prove{$f(x) \in \overline{f(A)}$}}
+	\step{d}{\pflet{$V$ be a neighbourhood of $f(x)$.} \prove{$V$ intersects $f(A)$.}}
+	\step{e}{$\inv{f}(V)$ is a neighbourhood of $x$.}
+	\step{f}{\pick\ $y \in \inv{f}(V) \cap A$}
+	\step{g}{$f(y) \in V \cap f(A)$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{2}}
+	\step{b}{\pflet{$B$ be closed in $Y$}}
+	\step{c}{\pflet{$A = \inv{f}(B)$} \prove{$\overline{A} = A$}}
+	\step{d}{$f(A) \subseteq B$}
+	\step{e}{$\overline{A} \subseteq A$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in \overline{A}$}}
+		\step{ii}{$f(x) \in B$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				f(x) & \in f(\overline{A}) \\
+				& \subseteq \overline{f(A)} & (\text{\stepref{a}}) \\
+				& \subseteq \overline{B} & (\text{\stepref{d}}) \\
+				& = B & (\text{\stepref{b}})
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{3}}
+	\step{b}{\pflet{$V$ be open in $Y$.}}
+	\step{c}{$\inv{f}(Y - V)$ is closed in $X$.}
+	\step{d}{$X - \inv{f}(V)$ is closed in $X$.}
+	\step{e}{$\inv{f}(V)$ is open in $X$.}
+\end{proof}
+\step{4}{$1 \Rightarrow 4$}
+\begin{proof}
+	\pf\ Take $U = \inv{f}(V)$.
+\end{proof}
+\step{5}{$4 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{4}}
+	\step{b}{\pflet{$V$ be open in $Y$.}}
+	\step{c}{\pflet{$x \in \inv{f}(V)$}}
+	\step{d}{$V$ is a neighbourhood of $f(x)$}
+	\step{e}{\pick\ a neighbourhood $U$ of $x$ such that $f(U) \subseteq V$}
+	\step{f}{$x \in U \subseteq \inv{f}(V)$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 \label{prop:continuous_basis}
 Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{B}$ be a basis for $Y$. Then $f$ is continuous if and only if, for all $B \in \mathcal{B}$, we have $\inv{f}(B)$ is open in $X$.
 \end{prop}
