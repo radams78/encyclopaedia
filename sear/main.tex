@@ -5668,7 +5668,6 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then the follo
 \item $f$ is continuous.
 \item For all $A \subseteq X$ we have $f(\overline{A}) \subseteq \overline{f(A)}$.
 \item For every closed $B$ in $Y$, we have $\inv{f}(B)$ is closed in $X$.
-\item For all $x \in X$ and neighbourhood $V$ of $f(x)$, there exists a neighbourhood $U$ of $x$ such that $f(U) \subseteq V$.
 \end{enumerate}
 \end{prop}
 
@@ -5712,19 +5711,6 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then the follo
 	\step{c}{$\inv{f}(Y - V)$ is closed in $X$.}
 	\step{d}{$X - \inv{f}(V)$ is closed in $X$.}
 	\step{e}{$\inv{f}(V)$ is open in $X$.}
-\end{proof}
-\step{4}{$1 \Rightarrow 4$}
-\begin{proof}
-	\pf\ Take $U = \inv{f}(V)$.
-\end{proof}
-\step{5}{$4 \Rightarrow 1$}
-\begin{proof}
-	\step{a}{\assume{4}}
-	\step{b}{\pflet{$V$ be open in $Y$.}}
-	\step{c}{\pflet{$x \in \inv{f}(V)$}}
-	\step{d}{$V$ is a neighbourhood of $f(x)$}
-	\step{e}{\pick\ a neighbourhood $U$ of $x$ such that $f(U) \subseteq V$}
-	\step{f}{$x \in U \subseteq \inv{f}(V)$}
 \end{proof}
 \qed
 \end{proof}
@@ -5817,6 +5803,36 @@ Let $f : \mathbb{R} \rightarrow \mathbb{R}$. Then $f$ is continuous if and only 
 	\begin{proof}
 		\pf\ Proposition \ref{prop:continuous_subbasis}.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Continuity at a Point]
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $a \in X$. Then $f$ is \emph{continuous at $a$} iff, for every neighbourhood $V$ of $f(a)$, there exists a neighbourhood $U$ of $a$ such that $f(U) \subseteq V$.
+\end{df}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if $f$ is continuous at every point in $X$.
+\end{prop}
+
+\begin{proof}
+\step{4}{If $f$ is continuous then $f$ is continuous at every point in $X$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$a \in X$}}
+	\step{c}{\pflet{$V$ be a neighbourhood of $f(a)$}}
+	\step{d}{\pflet{$U = \inv{f}(V)$}}
+	\step{e}{$U$ is a neighbourhood of $a$.}
+	\step{f}{$f(U) \subseteq V$}
+\end{proof}
+\step{5}{If $f$ is continuous at every point in $X$ then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous at every point in $X$.}}
+	\step{b}{\pflet{$V$ be open in $Y$.}}
+	\step{c}{\pflet{$x \in \inv{f}(V)$}}
+	\step{d}{$V$ is a neighbourhood of $f(x)$}
+	\step{e}{\pick\ a neighbourhood $U$ of $x$ such that $f(U) \subseteq V$}
+	\step{f}{$x \in U \subseteq \inv{f}(V)$}
 \end{proof}
 \qed
 \end{proof}
