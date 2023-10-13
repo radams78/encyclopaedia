@@ -1,9 +1,8 @@
-% READ
-% CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
  
 \documentclass{book}
@@ -140,33 +139,6 @@ Let us say that a set $A$ is \emph{small} iff there exists $u \in U$ such that $
 \end{ax}
 
 \chapter{Sets and Functions}
-
-\section{Injections and Surjections} % CHECKED
-
-\begin{prop}
-Let $A$ and $B$ be sets. If there exists a surjective function $B \rightarrow A$, then there exists an injective function $A \rightarrow B$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\assume{$f : B \twoheadrightarrow A$ is surjective.}}
-\step{2}{\pick\ a function $g : A \rightarrow B$ such that, for all $x \in A$, we have $f(g(x)) = x$.}
-\step{3}{\pflet{$x,y \in A$}}
-\step{4}{\assume{$g(x) = g(y)$}}
-\step{5}{$x = y$}
-\begin{proof}
-	\pf\ $x = f(g(x)) = f(g(y)) = y$
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $A$ and $B$ be sets. If there exists an injective function $f : A \rightarrow B$, and $A$ is nonempty, then there exists a surjective function $B \rightarrow A$.
-\end{prop}
-
-\begin{proof}
-\pf\ Pick $a_0 \in A$. Define $g : B \rightarrow A$ by: $g(b)$ is the unique element in $A$ such that $f(a) = b$ if there is such an $a$, otherwise $g(b) = a_0$. \qed
-\end{proof}
 
 \section{Composition}
 
@@ -421,6 +393,8 @@ f(x) & \text{if } \exists n. x \in A_n \\
 For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
 \end{df}
 
+\subsection{Composition} % CHECKED
+
 \begin{prop}
 Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
 \end{prop}
@@ -430,12 +404,38 @@ Let $f : A \rightarrow B$. Then $\id{B} \circ f = f = f \circ \id{A}$.
 \end{proof}
 
 \begin{prop}
+Let $f : A \rightarrow B$.
+\begin{enumerate}
+\item If there exists $g : B \rightarrow A$ such that $g \circ f = \id{A}$ then $f$ is injective.
+\item If $f$ is injective and $A$ is nonempty, then there exists $g : B \rightarrow A$ such that $g \circ f = \id{A}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If there exists $g : B \rightarrow A$ such that $g \circ f = \id{A}$ then $f$ is injective.}
+\begin{proof}
+	\pf\ If $f(x) = f(y)$ then $x = g(f(x)) = g(f(y)) = y$.
+\end{proof}
+\step{2}{If $f$ is injective and $A$ is nonempty, then there exists $g : B \rightarrow A$ such that $g \circ f = \id{A}$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is injective and $A$ is nonempty.}}
+	\step{b}{\pick\ $a \in A$}
+	\step{c}{Choose a function $g : B \rightarrow A$ such that $f(g(x)) = x$ if there exists $y \in A$ such that $f(y) = x$, otherwise $g(x) = a$.}
+	\step{d}{\pflet{$x \in A$} \prove{$g(f(x)) = x$}}
+	\step{e}{$f(g(f(x))) = f(x)$}
+	\step{f}{$g(f(x)) = x$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Let $f : A \rightarrow B$. Then $f$ is surjective if and only if there exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{2}{$1 \Rightarrow 3$}
+\step{2}{If $f$ is surjective then there exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$.}
 \begin{proof}
 	\step{a}{\assume{$f$ is surjective.}}
 	\step{b}{\pick\ $g : B \rightarrow A$ such that, for all $b \in B$, we have $f(g(b)) = b$.}
@@ -444,7 +444,7 @@ Let $f : A \rightarrow B$. Then $f$ is surjective if and only if there exists $g
 	\end{proof}
 	\step{c}{$f \circ g = \id{B}$.}
 \end{proof}
-\step{3}{$3 \Rightarrow 2$}
+\step{3}{If there exists $g : B \rightarrow A$ such that $f \circ g = \id{B}$ then $f$ is surjective.}
 \begin{proof}
 	\step{a}{\pflet{$g : B \rightarrow A$ such that $f \circ g = \id{B}$}}
 	\step{b}{\pflet{$X$ be a set.}}
@@ -457,6 +457,14 @@ Let $f : A \rightarrow B$. Then $f$ is surjective if and only if there exists $g
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+Let $A$ and $B$ be sets.
+\begin{enumerate}
+\item If there exists a surjective function $A \rightarrow B$ then there exists an injective function $B \rightarrow A$.
+\item If there exists an injective function $A \rightarrow B$ and $A$ is nonempty then there exists a surjective function $B \rightarrow A$.
+\end{enumerate}
+\end{cor}
 
 \begin{prop}
 Let $f : A \rightarrow B$. Then $f$ is bijective if and only if there exists a function $\inv{f} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ \inv{f} = \id{B}$ and $\inv{f} \circ f = \id{A}$, in which case the inverse is unique.
