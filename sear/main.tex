@@ -5436,6 +5436,83 @@ Let $X$ and $Y$ be topological spaces. Let $A \subseteq X$ and $B \subseteq Y$. 
 \qed
 \end{proof}
 
+\subsection{Interior}
+
+\begin{prop}
+Let $X$ be a topological space and $A \subseteq X$. Then
+\[ X - A^\circ = \overline{X - A} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+X - A^\circ & = X - \bigcup \{ U \text{ open in } X : U \subseteq A \} \\
+& = \bigcap \{ X - U : U \text{ open in } X, U \subseteq A \} & (\text{De Morgan's Law}) \\
+& = \bigcap \{ C : C \text{ closed in } X, X - A \subseteq C \} \\
+& = \overline{X-A} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space and $A \subseteq X$. Then
+\[ X - \overline{A} = (X - A)^\circ \]
+\end{prop}
+
+\begin{proof}
+\pf\ Dual. \qed
+\end{proof}
+
+\section{Boundary}
+
+\begin{df}[Boundary]
+Let $X$ be a topological space. Let $A \subseteq X$. The \emph{boundary} of $A$ is
+\[ \partial A := \overline{A} \cap \overline{X - A} \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $X$ be a topological space. Let $A \subseteq X$. Then
+\[ A^\circ \cap \partial A = \emptyset \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$A^\circ \subseteq A$}
+\step{2}{$X - A \subseteq X - A^\circ$}
+\step{3}{$\overline{X - A} \subseteq X - A^\circ$}
+\step{4}{$\partial A \subseteq X - A^\circ$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $A \subseteq X$. Then
+\[ \overline{A} = A^\circ \cup \partial A \]
+\end{prop}
+
+\begin{proof}
+\step{1}{$A^\circ \subseteq \overline{A}$}
+\begin{proof}
+	\pf\ Since $A^\circ \subseteq A \subseteq \overline{A}$.
+\end{proof}
+\step{2}{$\partial A \subseteq \overline{A}$}
+\begin{proof}
+	\pf\ Definition of $\partial A$.
+\end{proof}
+\step{3}{$\overline{A} \subseteq A^\circ \cup \partial A$}
+\begin{proof}
+	\step{a}{\pflet{$x \in \overline{A}$}}
+	\step{b}{\assume{$x \notin A^\circ$} \prove{$x \in \partial A$}}
+	\step{c}{$x \in \overline{X-A}$}
+	\begin{proof}
+		\pf\ Since $\overline{X-A} = X - A^\circ$.
+	\end{proof}
+	\step{d}{$x \in \partial A$}
+	\begin{proof}
+		\pf\ Since $\partial A = \overline{A} \cap \overline{X-A}$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Limit Points}
 
 \begin{df}[Limit Point]
