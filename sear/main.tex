@@ -1,10 +1,10 @@
-% CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
+% CHECK
  
 \documentclass{book}
 
@@ -5643,9 +5643,21 @@ Let $X$ and $Y$ be topological spaces. A function $f : X \rightarrow Y$ is \emph
 \end{df}
 
 \begin{prop}
+The composite of two continuous functions is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : X \rightarrow Y$ and $g : Y \rightarrow Z$ be continuous.}}
+\step{2}{\pflet{$U$ be open in $Z$.}}
+\step{3}{$\inv{g}(U)$ is open in $Y$.}
+\step{4}{$\inf{f}(\inv{g}(U))$ is open in $X$.}
+\qed
+\end{proof}
+
+\begin{prop}
 \begin{enumerate}
 \item $\id{X}$ is continuous
-\item The composite of two continuous functions is continuous.
 \item If $f : X \rightarrow Y$ is continuous and $X_0 \subseteq X$ then $f \restriction X_0 : X_0 \rightarrow Y$ is continuous.
 \item If $f : X + Y \rightarrow Z$, then $f$ is continuous iff $f \circ \kappa_1 : X \rightarrow Z$ and $f \circ \kappa_2 : Y \rightarrow Z$ are continuous.
 \item If $f : Z \rightarrow X \times Y$, then $f$ is continuous iff $\pi_1 \circ f$ and $\pi_2 \circ f$ are continuous.
@@ -5702,6 +5714,20 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then the follo
 	\step{d}{$X - \inv{f}(V)$ is closed in $X$.}
 	\step{e}{$\inv{f}(V)$ is open in $X$.}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Any constant function $X \rightarrow Y$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$b \in Y$}}
+\step{2}{\pflet{$f : X \rightarrow Y$ be the constant function with value $b$.}}
+\step{3}{\pflet{$V \subseteq Y$ be open.}}
+\step{4}{$\inv{f}(V)$ is either $\emptyset$ or $X$.}
+\step{5}{$\inv{f}(V)$ is open.}
 \qed
 \end{proof}
 
@@ -5925,7 +5951,6 @@ Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in
 \begin{prop}
 The converse does hold for first countable spaces. If $f : X \rightarrow Y$ where $X$ is first countable, and $Y$ is a topological space, and whenever $x_n \rightarrow x$ then $f(x_n) \rightarrow f(x)$, then $f$ is continuous.
 \end{prop}
-
 \section{Subspaces}
 
 \begin{df}[Subspace]
@@ -5960,6 +5985,20 @@ Let $X$ be a topological space, $Y$ a set and $f : Y \rightarrow X$ a function. 
 \pf\ Immediate from definition. \qed
 \end{proof}
 
+\begin{prop}[Local Formulation of Continuity]
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{U}$ be a set of open subspaces of $X$ such that $X = \bigcup \mathcal{U}$. If $f \restriction U : U \rightarrow Y$ is continuous for all $U \in \mathcal{U}$, then $f$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in X$} \prove{$f$ is continuous at $x$.}}
+\step{2}{\pflet{$V$ be a neighbourhood of $f(x)$.}}
+\step{3}{\pick\ $U \in \mathcal{U}$ such that $x \in U$.}
+\step{4}{\pick\ $W$ open in $U$ such that $x \in W$ and $f(W) \subseteq V$.}
+\step{5}{$W$ is open in $X$.}
+\qed
+\end{proof}
+
 \begin{df}[Unit Circle]
 The \emph{unit circle} $S^1$ is $\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1 \}$ as a subspace of $\mathbb{R}^2$.
 \end{df}
@@ -5969,6 +6008,14 @@ The \emph{unit circle} $S^1$ is $\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1 \}$ a
 \begin{df}[Embedding]
 Let $X$ and $Y$ be topological spaces and $f : X \rightarrow Y$. Then $f$ is an \emph{embedding} iff $f$ is injective and the topology on $X$ is the subspace induced by $f$.
 \end{df}
+
+\begin{prop}
+Every embedding is continuous.
+\end{prop}
+
+\begin{proof}
+\pf\ Theorem \ref{thm:subspace_universal}. \qed
+\end{proof}
 
 \section{Open Maps}
 
