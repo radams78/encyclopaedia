@@ -5999,6 +5999,18 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{
 \qed
 \end{proof}
 
+\begin{thm}[Pasting Lemma]
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $A$ and $B$ be closed subspaces of $X$ such that $X = A \cup B$. If $f \restriction A : A \rightarrow Y$ and $f \restriction B : B \rightarrow Y$ are continuous then $f$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C$ be closed in $Y$.}}
+\step{2}{$\inv{f}(C) = \inv{f \restriction A}(C) \cup \inv{f \restriction B}(C)$}
+\step{3}{$\inv{f}(C)$ is closed in $X$.}
+\qed
+\end{proof}
+
 \begin{df}[Unit Circle]
 The \emph{unit circle} $S^1$ is $\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1 \}$ as a subspace of $\mathbb{R}^2$.
 \end{df}
