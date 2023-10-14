@@ -6073,6 +6073,33 @@ Let $X$ and $Y$ be topological spaces. The projections $\pi_1 : X \times Y \righ
 \qed
 \end{proof}
 
+\section{Locally Finite}
+
+\begin{df}[Locally Finite]
+Let $X$ be a topological space. Let $\{A_i\}_{i \in I}$ be a family of subsets of $X$. Then $\{A_i\}_{i \in I}$ is \emph{locally finite} iff, for every $x \in X$, there exist only finitely many $i \in I$ such that $x \in A_i$.
+\end{df}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\{A_i\}_{i \in I}$ be a locally finite family of closed subspaces of $X$ such that $X = \bigcup_{i \in I} A_i$. If $f \restriction A_i : A_i \rightarrow Y$ is continuous for all $i \in I$, then $f$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B$ be closed in $Y$.}}
+\step{2}{\pflet{$A = \inv{f}(B)$} \prove{$A$ is closed in $X$.}}
+\step{3}{$A = \bigcup_{i \in I} \inv{f \restriction A_i}(B)$}
+\step{4}{\pflet{$x \in X - A$} \prove{There exists a neighbourhood $U'$ of $x$ such that $U' \subseteq X - A$.}}
+\step{5}{\pick\ a neighbourhood $U$ of $x$ such that $U$ intersects $A_i$ for only finitely many $i \in I$.}
+\step{6}{\pflet{$i_1$, \ldots, $i_n$ be the elements of $I$ such that $U$ intersects $A_{i_1}$, \ldots, $A_{i_n}$.}}
+\step{7}{For $j = 1, \ldots, n$, \pflet{$S_j = \inv{f \restriction A_{i_j}}(B)$}}
+\step{8}{For $j = 1, \ldots, n$, we have $S_j$ is closed in $X$.}
+\step{9}{For $j = 1, \ldots, n$, we have $x \notin S_j$.}
+\step{10}{\pflet{$U' = U \cap \bigcap_{j=1}^n (X - S_j)$}}
+\step{11}{$U'$ is a neighbourhood of $x$.}
+\step{12}{$U' \subseteq X - A$}
+\qed
+\end{proof}
+
 \section{Quotient Spaces}
 
 \begin{df}[Quotient Topology]
