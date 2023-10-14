@@ -6029,6 +6029,23 @@ Every embedding is continuous.
 \pf\ Theorem \ref{thm:subspace_universal}. \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $b \in Y$. The function $\kappa : X \rightarrow X \times Y$ that maps $x$ to $(x,b)$ is an embedding.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $U$ open in $X$, we have $U = \inv{\kappa}(V)$ for some $V$ open in $X \times Y$.}
+\begin{proof}
+	\pf\ Take $V = U \times Y$.
+\end{proof}
+\step{2}{For all $V$ open in $X \times Y$ we have $\inv{\kappa}(V)$ is open in $X$.}
+\begin{proof}
+	\pf\ Since $\pi_1 \circ \kappa = \id{X}$ and $\pi_2 \circ \kappa$ (which is the constant function with value $b$) are both continuous, hence $\kappa$ is continuous.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Open Maps}
 
 \begin{df}[Open Map]
