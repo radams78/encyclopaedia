@@ -6289,6 +6289,30 @@ On a finite family of topological spaces, the box topology and the product topol
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\subsection{Bases}
+
+\begin{prop}
+Let $\{X_i\}_{i \in I}$ be a family of topological spaces. For all $i \in I$, let $\mathcal{B}_i$ be a basis for the topology on $X_i$. Then $\mathcal{B} = \left\{ \prod_{i \in I} B_i : \forall i \in I. B_i \in \mathcal{B}_i \right\}$ is a basis for the box topology on $\prod_{i \in I} X_i$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For every family $\{B_i\}_{i \in I}$ where $\forall i \in I. B_i \in \mathcal{B}_i$, we have $\prod_{i \in I} B_i$ is open in the box topology.}
+\begin{proof}
+	\pf\ Since each $B_i$ is open in $X_i$.
+\end{proof}
+\step{2}{For any open set $U$ in the box topology and $x \in U$, there exists $B \in \mathcal{B}$ such that $x \in B \subseteq U$.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be a set open in the box topology.}}
+	\step{b}{\pflet{$x \in U$}}
+	\step{c}{\pick\ a family $\{U_i\}_{i \in I}$ where each $U_i$ is open in $X_i$ such that $x \in \prod_{i \in I} U_i \subseteq U$}
+	\step{d}{For $i \in I$, choose $B_i \in \mathcal{B}_i$ such that $x_i \in B_i \subseteq U_i$.}
+	\step{e}{$\prod_{i \in I} B_i \in \mathcal{B}$}
+	\step{f}{$x \in \prod_{i \in I} B_i \subseteq \prod_{i \in I} U_i \subseteq U$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Connected Spaces}
 
 \begin{df}[Connected]
