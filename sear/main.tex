@@ -6957,6 +6957,40 @@ We prove this is a basis for a topology.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $U$ is open then, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.}
+\begin{proof}
+	\step{a}{\assume{$U$ is open.}}
+	\step{b}{\pflet{$x \in U$}}
+	\step{c}{\pick\ a ball $B(a, \delta)$ such that $x \in B(a, \delta) \subseteq U$}
+	\step{d}{\pflet{$\epsilon = \delta - d(a,x)$} \prove{$B(x, \epsilon) \subseteq U$}}
+	\step{e}{\pflet{$y \in B(x, \epsilon)$}}
+	\step{f}{$y \in B(a, \delta)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d(a,y) & \leq d(a,x) + d(x,y) & (\text{Triangle Inequality}) \\
+			& < d(a,x) + \epsilon & (\text{\stepref{e}}) \\
+			& = \delta
+		\end{align*}
+	\end{proof}
+	\step{g}{$y \in U$}
+	\begin{proof}
+		\pf\ \stepref{c}
+	\end{proof}
+\end{proof}
+\step{2}{If, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$, then $U$ is open.}
+\begin{proof}
+	\pf\ Immediate from definition of the metric topology.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Metrizable]
 A topological space is \emph{metrizable} iff there exists a metric that induces its topology.
 \end{df}

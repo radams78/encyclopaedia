@@ -119,7 +119,7 @@
 \contentsline {section}{\numberline {12.25}Gluing}{125}{section.12.25}%
 \contentsline {section}{\numberline {12.26}Metric Spaces}{126}{section.12.26}%
 \contentsline {subsection}{\numberline {12.26.1}Products}{127}{subsection.12.26.1}%
-\contentsline {section}{\numberline {12.27}Complete Metric Spaces}{128}{section.12.27}%
+\contentsline {section}{\numberline {12.27}Complete Metric Spaces}{129}{section.12.27}%
 \contentsline {section}{\numberline {12.28}Manifolds}{129}{section.12.28}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{131}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{131}{section.13.1}%
