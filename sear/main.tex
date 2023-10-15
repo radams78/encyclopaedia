@@ -4707,151 +4707,7 @@ In this case, $\mathcal{O}$ is unique and is defined by $\mathcal{O} = \{ U : X 
 Let $\mathcal{T}$ and $\mathcal{T}'$ be topologies on the set $X$. Then $\mathcal{T}$ is \emph{coarser}, \emph{smaller} or \emph{weaker} than $\mathcal{T}'$, or $\mathcal{T}'$ is \emph{finer}, \emph{larger} or \emph{weaker} than $\mathcal{T}$, iff $\mathcal{T} \subseteq \mathcal{T}'$.
 \end{df}
 
-\subsection{Subspaces}
-
-\begin{df}[Subspace]
-Let $X$ be a topological space and $X_0 \subseteq X$. The \emph{subspace topology} on $X_0$ is $\mathcal{T}_0 = \{ U \cap X_0 : U \text{ is open in } X \}$.
-
-We prove this is a topology.
-\end{df}
-
-\begin{proof}
-\pf
-\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}_0$ we have $\bigcup \mathcal{U} \in \mathcal{T}_0$.}
-\begin{proof}
-	\step{a}{\pflet{$\mathcal{U} \subseteq \mathcal{T}_0$}}
-	\step{b}{\pflet{$\mathcal{V} = \{ U \text{ open in } X : U \cap X_0 \in \mathcal{U} \}$.}}
-	\step{c}{$\bigcup \mathcal{V}$ is open in $X$. \prove{$\bigcup \mathcal{U} = \bigcup \mathcal{V} \cap X_0$}}
-	\step{d}{$\bigcup \mathcal{U} \subseteq \bigcup \mathcal{V} \cap X_0$}
-	\begin{proof}
-		\step{i}{\pflet{$x \in \bigcup \mathcal{U}$}}
-		\step{ii}{\pick\ $U \in \mathcal{U}$ such that $x \in U$}
-		\step{iii}{\pick\ $V$ open in $X$ such that $U = V \cap X_0$}
-		\step{iv}{$x \in V \in \mathcal{V}$}
-		\step{v}{$x \in \bigcup \mathcal{V}$}
-	\end{proof}
-	\step{e}{$\bigcup \mathcal{V} \cap X_0 \subseteq \bigcup \mathcal{U}$}
-	\begin{proof}
-		\step{i}{\pflet{$x \in \bigcup \mathcal{V} \cap X_0$}}
-		\step{ii}{\pick\ $V \in \mathcal{V}$ such that $x \in V$}
-		\step{iii}{$x \in V \cap X_0 \in \mathcal{U}$}
-		\step{iv}{$x \in \bigcup \mathcal{U}$}
-	\end{proof}
-\end{proof}
-\step{2}{For all $U,V \in \mathcal{T}_0$ we have $U \cap V \in \mathcal{T}_0$.}
-\begin{proof}
-	\step{a}{\pflet{$U,V \in \mathcal{T}_0$}}
-	\step{b}{\pick\ $U'$, $V'$ open in $X$ such that $U = U' \cap X_0$ and $V = V' \cap X_0$}
-	\step{c}{$U \cap V = (U' \cap V') \cap X_0$}
-	\step{d}{$U \cap V \in \mathcal{T}_0$}
-\end{proof}
-\step{3}{$X_0 \in \mathcal{T}_0$}
-\begin{proof}
-	\pf\ Because $X_0 = X \cap X_0$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{ex}
-The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a subspace of $\mathbb{R}^3$.
-\end{ex}
-
-\begin{thm}
-\label{thm:subspace_universal}
-Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace topology on $Y$ is the unique topology such that, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f : Z \rightarrow X$ is continuous.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{If we give $Y$ the subspace topology then, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}
-\begin{proof}
-	\step{a}{Given $Y$ the subspace topology.}
-	\step{b}{\pflet{$Z$ be a topological space.}}
-	\step{c}{\pflet{$f : Z \rightarrow Y$}}
-	\step{d}{If $f$ is continuous then $i \circ f$ is continuous.}
-	\begin{proof}
-		\pf\ Since $i$ is continuous.
-	\end{proof}
-	\step{e}{If $i \circ f$ is continuous then $f$ is continuous.}
-	\begin{proof}
-		\step{i}{\assume{$i \circ f$ is continuous.}}
-		\step{ii}{\pflet{$U$ be open in $Y$.}}
-		\step{iii}{$\inv{f}(\inv{i}(i(U))$ is open in $Z$.}
-		\step{iv}{$\inv{f}(U)$ is open in $Z$.}
-	\end{proof}
-\end{proof}
-\step{2}{If, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}
-\begin{proof}
-	\step{a}{\assume{For every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}}
-	\step{b}{$i$ is continuous.}
-	\step{c}{For every open set $U$ in $X$, we have $\inv{i}(X)$ is open in $Y$}
-	\step{b}{\pflet{$Z$ be the set $Y$ under the subspace topology and $f : Z \rightarrow Y$ the identity function.}}
-	\step{c}{$i \circ f$ is continuous.}
-	\step{d}{$f$ is continuous.}
-	\step{e}{Every set open in $Y$ is open in $Z$.}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $X$ be a topological space, $Y$ a subspace of $X$ and $U \subseteq Y$. If $Y$ is open in $X$ and $U$ is open in $Y$ then $U$ is open in $X$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ $V$ open in $X$ such that $U = V \cap Y$}
-\step{2}{$U$ is open in $X$.}
-\begin{proof}
-	\pf\ It is the intersection of two open sets in $X$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $Y$ be a subspace of $X$ and $A \subseteq Y$. Then the subspace topology on $A$ as a subspace of $Y$ is the same as the subspace topology on $A$ as a subspace of $X$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\mathcal{T}_Y$ be the subspace topology on $A$ as a subspace of $Y$.}}
-\step{2}{\pflet{$\mathcal{T}_X$ be the subspace topology on $A$ as a subspace of $X$.}}
-\step{3}{\pflet{$U \subseteq A$}}
-\step{4}{$U \in \mathcal{T}_Y \Leftrightarrow U \in \mathcal{T}_X$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		U \in \mathcal{T}_Y & \Leftrightarrow \exists V \text{ open in } Y. U = V \cap A \\
-		& \Leftrightarrow \exists V. \exists W \text{ open in } X. (V = Y \cap W \wedge U = V \cap A) \\
-		& \Leftrightarrow \exists W \text{ open in } X. U = Y \cap W \cap A \\
-		& \Leftrightarrow \exists W \text{ open in } X. U = W \cap A \\
-		& \Leftrightarrow U \in \mathcal{T}_X
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Let $Y \subseteq X$. Then $\mathcal{B}' = \{ B \cap Y : B \in \mathcal{B} \}$ is a basis for the topology on $Y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{Every element of $\mathcal{B}'$ is open.}
-\begin{proof}
-	\pf\ For all $B \in \mathcal{B}$, we have $B$ is open in $X$, so $B \cap Y$ is open in $Y$.
-\end{proof}
-\step{2}{For any open set $V$ in $Y$ and $y \in V$, there exists $B' \in \mathcal{B}'$ such that $y \in B' \subseteq V$}
-\begin{proof}
-	\step{a}{\pflet{$V$ be open in $Y$.}}
-	\step{b}{\pflet{$y \in V$}}
-	\step{c}{\pick\ $U$ open in $X$ such that $V = U \cap Y$.}
-	\step{d}{\pick\ $B \in \mathcal{B}$ such that $y \in B \subseteq U$}
-	\step{e}{$B \cap Y \in \mathcal{B}'$ and $y \in B \cap Y \subseteq V$}
-\end{proof}
-\qed
-\end{proof}
-
-\subsection{Topological Disjoint Union}
+\section{Topological Disjoint Union}
 
 \begin{df}[Coproduct Topology]
 Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The \emph{coproduct topology} on $\coprod_{\alpha \in A} X_\alpha$ is 
@@ -5251,6 +5107,30 @@ Let $\mathcal{B}$ and $\mathcal{B}'$ be bases for the topologies $\mathcal{T}$ a
 \begin{cor}
 The topologies of $\mathbb{R}_l$ and $\mathbb{R}_K$ are strictly finer than the standard topology on $\mathbb{R}$ but are not comparable to one another.
 \end{cor}
+
+\subsection{Subspaces}
+
+\begin{prop}
+\label{prop:basis_subspace}
+Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $\mathcal{B}$ be a basis for the topology on $X$. Then $\{ B \cap Y : B \in \mathcal{B} \}$ is a basis for the topology on $Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $B \in \mathcal{B}$ we have $B \cap Y$ is open in $Y$.}
+\begin{proof}
+	\pf\ Since $B$ is open in $X$.
+\end{proof}
+\step{2}{For any open set $V$ in $Y$ and $y \in V$, there exists $B \in \mathcal{B}$ such that $y \in B \cap Y \subseteq V$.}
+\begin{proof}
+	\step{a}{\pflet{$V$ be open in $Y$.}}
+	\step{b}{\pflet{$y \in V$}}
+	\step{c}{\pick\ $U$ open in $X$ such that $V = U \cap Y$.}
+	\step{d}{\pick\ $B \in \mathcal{B}$ such that $y \in B \subseteq U$.}
+	\step{e}{$y \in B \cap Y \subseteq V$}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Product Topology}
 
@@ -5994,6 +5874,7 @@ Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in
 \begin{prop}
 The converse does hold for first countable spaces. If $f : X \rightarrow Y$ where $X$ is first countable, and $Y$ is a topological space, and whenever $x_n \rightarrow x$ then $f(x_n) \rightarrow f(x)$, then $f$ is continuous.
 \end{prop}
+
 \section{Subspaces}
 
 \begin{df}[Subspace]
@@ -6045,6 +5926,105 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{
 \begin{df}[Unit Circle]
 The \emph{unit circle} $S^1$ is $\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1 \}$ as a subspace of $\mathbb{R}^2$.
 \end{df}
+
+\begin{ex}
+The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a subspace of $\mathbb{R}^3$.
+\end{ex}
+
+\begin{thm}
+\label{thm:subspace_universal}
+Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace topology on $Y$ is the unique topology such that, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f : Z \rightarrow X$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If we give $Y$ the subspace topology then, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}
+\begin{proof}
+	\step{a}{Given $Y$ the subspace topology.}
+	\step{b}{\pflet{$Z$ be a topological space.}}
+	\step{c}{\pflet{$f : Z \rightarrow Y$}}
+	\step{d}{If $f$ is continuous then $i \circ f$ is continuous.}
+	\begin{proof}
+		\pf\ Since $i$ is continuous.
+	\end{proof}
+	\step{e}{If $i \circ f$ is continuous then $f$ is continuous.}
+	\begin{proof}
+		\step{i}{\assume{$i \circ f$ is continuous.}}
+		\step{ii}{\pflet{$U$ be open in $Y$.}}
+		\step{iii}{$\inv{f}(\inv{i}(i(U))$ is open in $Z$.}
+		\step{iv}{$\inv{f}(U)$ is open in $Z$.}
+	\end{proof}
+\end{proof}
+\step{2}{If, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f$ is continuous.}}
+	\step{b}{$i$ is continuous.}
+	\step{c}{For every open set $U$ in $X$, we have $\inv{i}(X)$ is open in $Y$}
+	\step{b}{\pflet{$Z$ be the set $Y$ under the subspace topology and $f : Z \rightarrow Y$ the identity function.}}
+	\step{c}{$i \circ f$ is continuous.}
+	\step{d}{$f$ is continuous.}
+	\step{e}{Every set open in $Y$ is open in $Z$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space, $Y$ a subspace of $X$ and $U \subseteq Y$. If $Y$ is open in $X$ and $U$ is open in $Y$ then $U$ is open in $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $V$ open in $X$ such that $U = V \cap Y$}
+\step{2}{$U$ is open in $X$.}
+\begin{proof}
+	\pf\ It is the intersection of two open sets in $X$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $Y$ be a subspace of $X$ and $A \subseteq Y$. Then the subspace topology on $A$ as a subspace of $Y$ is the same as the subspace topology on $A$ as a subspace of $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{T}_Y$ be the subspace topology on $A$ as a subspace of $Y$.}}
+\step{2}{\pflet{$\mathcal{T}_X$ be the subspace topology on $A$ as a subspace of $X$.}}
+\step{3}{\pflet{$U \subseteq A$}}
+\step{4}{$U \in \mathcal{T}_Y \Leftrightarrow U \in \mathcal{T}_X$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		U \in \mathcal{T}_Y & \Leftrightarrow \exists V \text{ open in } Y. U = V \cap A \\
+		& \Leftrightarrow \exists V. \exists W \text{ open in } X. (V = Y \cap W \wedge U = V \cap A) \\
+		& \Leftrightarrow \exists W \text{ open in } X. U = Y \cap W \cap A \\
+		& \Leftrightarrow \exists W \text{ open in } X. U = W \cap A \\
+		& \Leftrightarrow U \in \mathcal{T}_X
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on $X$. Let $Y \subseteq X$. Then $\mathcal{B}' = \{ B \cap Y : B \in \mathcal{B} \}$ is a basis for the topology on $Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every element of $\mathcal{B}'$ is open.}
+\begin{proof}
+	\pf\ For all $B \in \mathcal{B}$, we have $B$ is open in $X$, so $B \cap Y$ is open in $Y$.
+\end{proof}
+\step{2}{For any open set $V$ in $Y$ and $y \in V$, there exists $B' \in \mathcal{B}'$ such that $y \in B' \subseteq V$}
+\begin{proof}
+	\step{a}{\pflet{$V$ be open in $Y$.}}
+	\step{b}{\pflet{$y \in V$}}
+	\step{c}{\pick\ $U$ open in $X$ such that $V = U \cap Y$.}
+	\step{d}{\pick\ $B \in \mathcal{B}$ such that $y \in B \subseteq U$}
+	\step{e}{$B \cap Y \in \mathcal{B}'$ and $y \in B \cap Y \subseteq V$}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Embedding}
 
@@ -6335,6 +6315,22 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. For all $i \in I$, le
 	\step{f}{$x \in \prod_{i \in I} B_i \subseteq \prod_{i \in I} U_i \subseteq U$}
 \end{proof}
 \qed
+\end{proof}
+
+\subsection{Subspaces}
+
+\begin{prop}
+Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $Y_i$ be a subspace of $X_i$ for all $i \in I$. Then the box topology on $\prod_{i \in I} Y_i$ is the same as the subspace topology that $\prod_{i \in I} Y_i$ inherits as a subspace of $\prod_{i \in I} X_i$ under the box topology.
+\end{prop}
+
+\begin{proof}
+\pf\ A basis for the box topology is
+\begin{align*}
+& \{ \prod_{i \in I} V_i : V_i \text{ open in } Y_i \} \\
+= & \{ \prod_{i \in I} (U_i \cap Y_i) : U_i \text{ open in } X_i \} \\
+& = \{ \prod_{i \in I} U_i \cap \prod_{i \in I} Y_i : U_i \text{ open in } X_i \}
+\end{align*}
+which is a basis for the subspace topology by Proposition \ref{prop:basis_subspace}. \qed
 \end{proof}
 
 \section{Connected Spaces}
