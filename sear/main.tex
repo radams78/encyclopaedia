@@ -1,9 +1,9 @@
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
 % READ
  
 \documentclass{book}
@@ -418,11 +418,31 @@ f(x) & \text{if } \exists n. x \in A_n \\
 \pf\ The function $\Phi$ such that $\Phi(f)(c)(b) = f(b,c)$ is a bijection. \qed
 \end{proof}
 
-\section{Identity Function}
+\section{Identity Function} % CHECKED
 
 \begin{df}[Identity]
 For any set $A$, the \emph{identity} function $\id{A} : A \rightarrow A$ is the function defined by $\id{A}(a) = a$.
 \end{df}
+
+\subsection{Injections, Surjections, Bijections} % CHECKED
+
+\begin{prop}
+For any set $A$, the identity function $\id{A}$ is a bijection.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{$\id{A}$ is injective.}
+\begin{proof}
+	\pf\ If $\id{A}(x) = \id{A}(y)$ then $x = y$.
+\end{proof}
+\step{3}{$\id{A}$ is surjective.}
+\begin{proof}
+	\pf\ For any $y \in A$, there exists $x \in A$ such that $\id{A}(x) = y$, namely $x = y$.
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Composition} % CHECKED
 
