@@ -99,7 +99,7 @@
 \contentsline {section}{\numberline {12.14}Connected Spaces}{114}{section.12.14}%
 \contentsline {section}{\numberline {12.15}$T_1$ Spaces}{114}{section.12.15}%
 \contentsline {subsection}{\numberline {12.15.1}Limit Points}{115}{subsection.12.15.1}%
-\contentsline {section}{\numberline {12.16}Hausdorff Spaces}{115}{section.12.16}%
+\contentsline {section}{\numberline {12.16}Hausdorff Spaces}{116}{section.12.16}%
 \contentsline {section}{\numberline {12.17}Separable Spaces}{118}{section.12.17}%
 \contentsline {section}{\numberline {12.18}Sequential Compactness}{118}{section.12.18}%
 \contentsline {section}{\numberline {12.19}Compactness}{118}{section.12.19}%
@@ -107,7 +107,7 @@
 \contentsline {section}{\numberline {12.21}Gluing}{120}{section.12.21}%
 \contentsline {section}{\numberline {12.22}Metric Spaces}{120}{section.12.22}%
 \contentsline {subsection}{\numberline {12.22.1}Products}{121}{subsection.12.22.1}%
-\contentsline {section}{\numberline {12.23}Complete Metric Spaces}{122}{section.12.23}%
+\contentsline {section}{\numberline {12.23}Complete Metric Spaces}{123}{section.12.23}%
 \contentsline {section}{\numberline {12.24}Manifolds}{123}{section.12.24}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{125}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{125}{section.13.1}%
