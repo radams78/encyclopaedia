@@ -4948,31 +4948,6 @@ Let $\{X_i\}_{i \in I}$ be a nonempty family of topological spaces. The product 
 \qed
 \end{proof}
 
-\begin{prop}
-Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $Y_i$ be a subspace of $X_i$ for all $i \in I$. Then the product topology on $\prod_{i \in I} Y_i$ is the same as the subspace topology on $\prod_{i \in I} Y_i$ as a subspace of $\prod_{i \in I} X_i$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{Given $\prod_{i \in I} Y_i$ the subspace topology.}
-\step{11}{\pflet{$\iota : \prod_{i \in I} Y_i$ be the inclusion.}}
-\step{2}{\pflet{$Z$ be any topological space.}}
-\step{3}{\pflet{$f : Z \rightarrow \prod_{i \in I} Y_i$}}
-\step{4}{$f$ is continuous if and only if, for all $i \in I$, we have $\pi_i \circ f$ is continuous.}
-\begin{proof}
-	\pf
-	\begin{align*}
-		f \text{ is continuous}
-		& \Leftrightarrow \iota \circ f : Z \rightarrow \prod_{i \in I} X_i \text{ is continuous} & (\text{Theorem \ref{thm:subspace_universal}}) \\
-		& \Leftrightarrow \forall i \in I. \pi_i \circ \iota \circ f : Z \rightarrow X_i \text{ is continuous} & (\text{Theorem \ref{thm:product_universal}}) \\
-		& \Leftrightarrow \forall i \in I. \iota_i \circ \pi_i \circ f : Z \rightarrow X_i \text{ is continuous} \\
-		& \Leftrightarrow \forall i \in I. \pi_i \circ f : Z \rightarrow Y_i \text{ is continuous}
-		& (\text{Theorem \ref{thm:subspace_universal}})
-	\end{align*}
-	where $\iota_i$ is the inclusion $Y_i \rightarrow X_i$.
-\end{proof}
-\qed
-\end{proof}
 
 \section{Bases}
 
@@ -6022,6 +5997,34 @@ Let $X$ be a topological space. Let $\mathcal{B}$ be a basis for the topology on
 	\step{c}{\pick\ $U$ open in $X$ such that $V = U \cap Y$.}
 	\step{d}{\pick\ $B \in \mathcal{B}$ such that $y \in B \subseteq U$}
 	\step{e}{$B \cap Y \in \mathcal{B}'$ and $y \in B \cap Y \subseteq V$}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Product Topology}
+
+\begin{prop}
+Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $Y_i$ be a subspace of $X_i$ for all $i \in I$. Then the product topology on $\prod_{i \in I} Y_i$ is the same as the subspace topology on $\prod_{i \in I} Y_i$ as a subspace of $\prod_{i \in I} X_i$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Given $\prod_{i \in I} Y_i$ the subspace topology.}
+\step{11}{\pflet{$\iota : \prod_{i \in I} Y_i$ be the inclusion.}}
+\step{2}{\pflet{$Z$ be any topological space.}}
+\step{3}{\pflet{$f : Z \rightarrow \prod_{i \in I} Y_i$}}
+\step{4}{$f$ is continuous if and only if, for all $i \in I$, we have $\pi_i \circ f$ is continuous.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		f \text{ is continuous}
+		& \Leftrightarrow \iota \circ f : Z \rightarrow \prod_{i \in I} X_i \text{ is continuous} & (\text{Theorem \ref{thm:subspace_universal}}) \\
+		& \Leftrightarrow \forall i \in I. \pi_i \circ \iota \circ f : Z \rightarrow X_i \text{ is continuous} & (\text{Theorem \ref{thm:product_universal}}) \\
+		& \Leftrightarrow \forall i \in I. \iota_i \circ \pi_i \circ f : Z \rightarrow X_i \text{ is continuous} \\
+		& \Leftrightarrow \forall i \in I. \pi_i \circ f : Z \rightarrow Y_i \text{ is continuous}
+		& (\text{Theorem \ref{thm:subspace_universal}})
+	\end{align*}
+	where $\iota_i$ is the inclusion $Y_i \rightarrow X_i$.
 \end{proof}
 \qed
 \end{proof}
