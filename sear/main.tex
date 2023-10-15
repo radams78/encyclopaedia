@@ -6514,20 +6514,6 @@ The disjoint union of two Hausdorff spaces is Hausdorff.
 \end{prop}
 
 \begin{prop}
-The product of a family of Hausdorff spaces is Hausdorff.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\{X_i\}_{i \in I}$ be a family of Hausdorff spaces.}}
-\step{2}{\pflet{$x,y \in \prod_{i \in I} X_i$ with $x \neq y$.}}
-\step{3}{\pick\ $i \in I$ such that $\pi_i(x) \neq \pi_i(y)$}
-\step{4}{\pick\ disjoint open sets $U$ and $V$ in $X_i$ such that $\pi_i(x) \in U$ and $\pi_i(y) \in V$.}
-\step{5}{$x \in \inv{\pi_i}(U)$ and $y \in \inv{\pi_i}(V)$.}
-\qed
-\end{proof}
-
-\begin{prop}
 Let $A$ be a topological space and $B$ a Hausdorff space. Let $f,g : A \rightarrow B$ be continuous. Let $X \subseteq A$ be dense. If $f$ and $g$ agree on $X$, then $f = g$.
 \end{prop}
 
@@ -6543,6 +6529,40 @@ Let $A$ be a topological space and $B$ a Hausdorff space. Let $f,g : A \rightarr
 \end{proof}
 \qed
 \end{proof}
+
+\subsection{Product Topology}
+
+\begin{prop}
+The product of a family of Hausdorff spaces is Hausdorff.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\{X_i\}_{i \in I}$ be a family of Hausdorff spaces.}}
+\step{2}{\pflet{$x,y \in \prod_{i \in I} X_i$ with $x \neq y$.}}
+\step{3}{\pick\ $i \in I$ such that $\pi_i(x) \neq \pi_i(y)$}
+\step{4}{\pick\ disjoint open sets $U$ and $V$ in $X_i$ such that $\pi_i(x) \in U$ and $\pi_i(y) \in V$.}
+\step{5}{$x \in \inv{\pi_i}(U)$ and $y \in \inv{\pi_i}(V)$.}
+\qed
+\end{proof}
+
+\subsection{Box Topology}
+
+\begin{prop}
+The box product of a family of Hausdorff spaces is Hausdorff.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\{X_i\}_{i \in I}$ be a family of Hausdorff spaces.}}
+\step{2}{\pflet{$x,y \in \prod_{i \in I} X_i$ with $x \neq y$.}}
+\step{3}{\pick\ $i \in I$ such that $\pi_i(x) \neq \pi_i(y)$}
+\step{4}{\pick\ disjoint open sets $U$ and $V$ in $X_i$ such that $\pi_i(x) \in U$ and $\pi_i(y) \in V$.}
+\step{5}{$x \in \inv{\pi_i}(U)$ and $y \in \inv{\pi_i}(V)$.}
+\qed
+\end{proof}
+
+\subsection{$T_1$ Spaces}
 
 \begin{prop}
 Every Hausdorff space is $T_1$.

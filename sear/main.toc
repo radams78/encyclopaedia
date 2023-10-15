@@ -104,29 +104,32 @@
 \contentsline {section}{\numberline {12.19}$T_1$ Spaces}{116}{section.12.19}%
 \contentsline {subsection}{\numberline {12.19.1}Limit Points}{116}{subsection.12.19.1}%
 \contentsline {section}{\numberline {12.20}Hausdorff Spaces}{117}{section.12.20}%
+\contentsline {subsection}{\numberline {12.20.1}Product Topology}{118}{subsection.12.20.1}%
+\contentsline {subsection}{\numberline {12.20.2}Box Topology}{118}{subsection.12.20.2}%
+\contentsline {subsection}{\numberline {12.20.3}$T_1$ Spaces}{119}{subsection.12.20.3}%
 \contentsline {section}{\numberline {12.21}Separable Spaces}{119}{section.12.21}%
 \contentsline {section}{\numberline {12.22}Sequential Compactness}{119}{section.12.22}%
-\contentsline {section}{\numberline {12.23}Compactness}{119}{section.12.23}%
+\contentsline {section}{\numberline {12.23}Compactness}{120}{section.12.23}%
 \contentsline {section}{\numberline {12.24}Quotient Spaces}{120}{section.12.24}%
 \contentsline {section}{\numberline {12.25}Gluing}{121}{section.12.25}%
 \contentsline {section}{\numberline {12.26}Metric Spaces}{122}{section.12.26}%
-\contentsline {subsection}{\numberline {12.26.1}Products}{122}{subsection.12.26.1}%
+\contentsline {subsection}{\numberline {12.26.1}Products}{123}{subsection.12.26.1}%
 \contentsline {section}{\numberline {12.27}Complete Metric Spaces}{124}{section.12.27}%
-\contentsline {section}{\numberline {12.28}Manifolds}{124}{section.12.28}%
-\contentsline {chapter}{\numberline {13}Homotopy Theory}{125}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Homotopies}{125}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Homotopy Equivalence}{125}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Simplicial Complexes}{127}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Cell Decompositions}{127}{section.14.1}%
-\contentsline {section}{\numberline {14.2}CW-complexes}{127}{section.14.2}%
-\contentsline {chapter}{\numberline {15}Topological Groups}{129}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Continuous Actions}{129}{section.15.1}%
-\contentsline {chapter}{\numberline {16}Topological Vector Spaces}{131}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Cauchy Sequences}{131}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Seminorms}{132}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{132}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Normed Spaces}{132}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Inner Product Spaces}{134}{section.16.5}%
-\contentsline {section}{\numberline {16.6}Banach Spaces}{135}{section.16.6}%
-\contentsline {section}{\numberline {16.7}Hilbert Spaces}{135}{section.16.7}%
-\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{135}{section.16.8}%
+\contentsline {section}{\numberline {12.28}Manifolds}{125}{section.12.28}%
+\contentsline {chapter}{\numberline {13}Homotopy Theory}{127}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Homotopies}{127}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Homotopy Equivalence}{127}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Simplicial Complexes}{129}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Cell Decompositions}{129}{section.14.1}%
+\contentsline {section}{\numberline {14.2}CW-complexes}{129}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Topological Groups}{131}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Continuous Actions}{131}{section.15.1}%
+\contentsline {chapter}{\numberline {16}Topological Vector Spaces}{133}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Cauchy Sequences}{133}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Seminorms}{134}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{134}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Normed Spaces}{134}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Inner Product Spaces}{136}{section.16.5}%
+\contentsline {section}{\numberline {16.6}Banach Spaces}{137}{section.16.6}%
+\contentsline {section}{\numberline {16.7}Hilbert Spaces}{137}{section.16.7}%
+\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{137}{section.16.8}%
