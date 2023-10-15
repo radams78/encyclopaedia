@@ -5703,9 +5703,12 @@ A \emph{loop} in a topological space $X$ is a path $\alpha : [0,1] \rightarrow X
 Let $X$ be a topological space. Let $(x_n)$ be a sequence in $X$. A point $a \in X$ is a \emph{limit} of the sequence iff, for every neighbourhood $U$ of $a$, there exists $n_0$ such that $\forall n \geq n_0. x_n \in U$.
 \end{df}
 
-Convergence in a product space is pointwise convergence.
-
+\begin{prop}
+\label{prop:continuous_converge}
 If $f : X \rightarrow Y$ is continuous and $x_n \rightarrow l$ in $X$ then $f(x_n) \rightarrow f(l)$ in $Y$.
+\end{prop}
+
+%TODO
 
 \begin{ex}
 The converse does not hold.
@@ -6151,6 +6154,30 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $A_i \subseteq X_
 	\step{d}{$\inv{\pi_i}(U)$ is a neighbourhood of $x$ in $\prod_{i \in I} X_i$}
 	\step{e}{\pick\ $y \in \inv{\pi_i}(U) \cap \prod_{i \in I} A_i$}
 	\step{f}{$\pi_i(y) \in U \cap A_i$}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Convergence}
+
+\begin{prop}
+Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $(x_n)$ be a sequence of points in $\prod_{i \in I} X_i$ and $l \in \prod_{i \in I} X_i$. Then $x_n \rightarrow l$ as $n \rightarrow \infty$ if and only if, for all $i \in I$, we have $\pi_i(x_n) \rightarrow \pi_i(l)$ as $n \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $x_n \rightarrow l$ as $n \rightarrow \infty$ then, for all $i \in I$, we have $\pi_i(x_n) \rightarrow \pi_i(l)$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:continuous_converge}.
+\end{proof}
+\step{2}{If, for all $i \in I$, we have $\pi_i(x_n) \rightarrow \pi_i(l)$ as $n \rightarrow \infty$, then $x_n \rightarrow l$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\step{a}{\assume{For all $i \in I$ we have $\pi_i(x_n) \rightarrow \pi_i(l)$ as $n \rightarrow \infty$.}}
+	\step{b}{\pflet{$U$ be a neighbourhood of $l$.}}
+	\step{c}{\pick\ $i_1, \ldots, i_n \in I$ and open sets $U_j$ in $X_{i_j}$ for $j = 1, \ldots, n$ such that $l \in \inv{\pi_{i_1}}(U_1) \cap \cdots \cap \inv{\pi_{i_n}}(U_n) \subseteq U$}
+	\step{d}{For $j=1, \ldots, n$ we have $\pi_{i_j}(l) \in U_j$}
+	\step{e}{\pick\ $N$ such that, for all $m \geq N$, we have $\pi_{i_j}(x_m) \in U_j$}
+	\step{f}{$\forall m \geq N. x_m \in U$}
 \end{proof}
 \qed
 \end{proof}

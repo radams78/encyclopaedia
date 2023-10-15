@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 OCT 2023 07:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 OCT 2023 18:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -867,7 +867,7 @@ en $\OMS/cmsy/m/n/10 B \U/matha/m/n/10 ^^P []$
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 [106]
-Overfull \hbox (9.02847pt too wide) detected at line 5899
+Overfull \hbox (9.02847pt too wide) detected at line 5902
 []
  []
 
@@ -876,43 +876,43 @@ WARNING: proof step "d" (<2>6) already defined
 [115] [116]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6455.
+(hyperref)                removing `math shift' on input line 6482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 6455.
+(hyperref)                removing `subscript' on input line 6482.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6455.
+(hyperref)                removing `math shift' on input line 6482.
 
 [117]
 WARNING: proof step "d" (<2>5) already defined
 [118] [119]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6645.
+(hyperref)                removing `math shift' on input line 6672.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 6645.
+(hyperref)                removing `subscript' on input line 6672.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6645.
+(hyperref)                removing `math shift' on input line 6672.
 
-
-Overfull \hbox (24.67375pt too wide) detected at line 6685
+[120]
+Overfull \hbox (24.67375pt too wide) detected at line 6712
 []
  []
 
-[120] [121] [122] [123]
-Overfull \hbox (108.65958pt too wide) detected at line 6930
+[121] [122] [123] [124]
+Overfull \hbox (108.65958pt too wide) detected at line 6957
 []
  []
 
-[124]
-Overfull \hbox (47.883pt too wide) in paragraph at lines 6944--6944
+
+Overfull \hbox (47.883pt too wide) in paragraph at lines 6971--6971
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -920,92 +920,82 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 6960
+Overfull \hbox (0.90187pt too wide) detected at line 6987
 []
  []
 
-[125] [126]
+[125] [126] [127] [128
+
+]
 Chapter 13.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 7069--7070
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 7096--7097
 []\OT1/cmr/bx/n/10 Definition 13.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
  []
 
-[127
-
-] [128]
+[129] [130]
 Chapter 14.
-[129
-
-] [130]
-Chapter 15.
 [131
 
 ] [132]
-Chapter 16.
+Chapter 15.
 [133
 
 ] [134]
-Overfull \hbox (113.19771pt too wide) detected at line 7404
+Chapter 16.
+[135
+
+] [136]
+Overfull \hbox (113.19771pt too wide) detected at line 7431
 []
  []
 
 WARNING: proof step "4" undefined
-[135] [136] [137] [138] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 80429015EB73B3D3096FA986EC55EB1E;17660
-(rerunfilecheck)             After:  62C3E69981E62E5DF557604459D30661;17558.
+[137] [138] [139] [140] (./main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 39ACCD39718176F338031B62BA345FB3;17680.
  ) 
 Here is how much of TeX's memory you used:
- 13562 strings out of 476091
- 190394 string characters out of 5794081
- 1873330 words of memory out of 5000000
- 32753 multiletter control sequences out of 15000+600000
+ 13567 strings out of 476091
+ 190456 string characters out of 5794081
+ 1871330 words of memory out of 5000000
+ 32754 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.12.17.4} has been referenced but does no
-t exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
-habx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathab
-x-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-ty
-pe1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/
-mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mat
-hx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
-m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
-.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (138 pages, 681273 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
+athabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/math
+abx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-
+type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type
+1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/m
+athx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on main.pdf (140 pages, 683833 bytes).
 PDF statistics:
- 2523 PDF objects out of 2984 (max. 8388607)
- 2213 compressed objects within 23 object streams
- 1002 named destinations out of 1200 (max. 500000)
+ 2536 PDF objects out of 2984 (max. 8388607)
+ 2224 compressed objects within 23 object streams
+ 1006 named destinations out of 1200 (max. 500000)
  1113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
