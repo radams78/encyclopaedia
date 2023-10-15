@@ -6915,6 +6915,14 @@ Let $X$ be a set and $d : X^2 \rightarrow \mathbb{R}$. We say $(X,d)$ is a \emph
 We call $d$ the \emph{metric} of the metric space $(X,d)$. We often write $X$ for the metric space $(X,d)$.
 \end{df}
 
+\begin{df}[Discrete Metric]
+On any set $X$, define the \emph{discrete} metric by $d(x,y) = 0$ if $x = y$, 1 if $x \neq y$.
+\end{df}
+
+\begin{df}[Standard Metric]
+The \emph{standard metric} on $\mathbb{R}$ is defined by $d(x,y) = |x-y|$.
+\end{df}
+
 \begin{df}[Ball]
 Let $X$ be a metric space. Let $x \in X$ and $r > 0$. The \emph{ball} with \emph{centre} $x$ and \emph{radius} $r$ is
 \[ B(x,r) = \{ y \in X \mid d(x,y) < r \} \enspace . \]
@@ -6953,6 +6961,31 @@ We prove this is a basis for a topology.
 	\begin{proof}
 		\pf\ Similar.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The discrete metric on a set $X$ induces the discrete topology.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $B(x, 1/2) = \{x\}$ for all $x \in X$. \qed
+\end{proof}
+
+\begin{prop}
+The standard metric on $\mathbb{R}$ induces the standard topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every ball is open in the standard topology.}
+\begin{proof}
+	\pf\ Since $B(a, \epsilon) = (a - \epsilon, a + \epsilon)$.
+\end{proof}
+\step{2}{Every open ray is open in the metric topology.}
+\begin{proof}
+	\pf\ If $x \in (a, +\infty)$ then $x \in B(x,x-a) \subseteq (a, + \infty)$. Similarly for $(-\infty, a)$.
 \end{proof}
 \qed
 \end{proof}
