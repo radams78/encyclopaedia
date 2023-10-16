@@ -7233,6 +7233,58 @@ We prove this is a metric.
 \qed
 \end{proof}
 
+\begin{prop}
+The uniform topology is finer than the product topology. It is strictly finer iff $J$ is infinite.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{The uniform topology is finer than the product topology.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be open in $\mathbb{R}$ and $j \in J$} \prove{$\inv{\pi_j}(U)$ is open in the uniform topology.}}
+	\step{b}{\pflet{$x \in \inv{\pi_j}(U)$}}
+	\step{c}{$\pi_j(x) \in U$}
+	\step{d}{\pick\ $\epsilon > 0$ such that $B_{\overline{d}}(\pi_j(x), \epsilon) \subseteq U$}
+	\step{e}{$B_{\overline{\rho}}(x, \epsilon) \subseteq \inv{\pi_j}(U)$}
+\end{proof}
+\step{2}{If $J$ is finite then the uniform topology is equal to the product topology.}
+\begin{proof}
+	\pf\ In $\mathbb{R}^n$, the uniform topology is the square topology.
+\end{proof}
+\step{3}{If $J$ is infinite then the uniform topology is not equal to the product topology.}
+\begin{proof}
+	\pf\ If $J$ is infinite then $B(0,1)$ is not open in the product topology.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The uniform topology is coarser than the box topology. It is strictly coarser iff $J$ is infinite.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{The uniform topology is coarser than the box topology.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be open in the uniform topology.} \prove{$U$ is open in the box topology.}}
+	\step{b}{\pflet{$x \in U$}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$}
+	\step{d}{$\prod_{j \in J} (x_j - \epsilon, x_j + \epsilon) \subseteq U$}
+\end{proof}
+\step{2}{If $J$ is finite then the uniform topology is equal to the box topology.}
+\begin{proof}
+	\pf\ On $\mathbb{R}^n$, the uniform metric is the square metric.
+\end{proof}
+\step{3}{If $J$ is infinite then the uniform topology is not equal to the box topology.}
+\begin{proof}
+	\step{a}{\assume{$J$ is infinite.}}
+	\step{b}{\pick\ a sequence $(j_n)$ of distinct elements in $J$.}
+	\step{c}{\pflet{$U = \prod_j U_j$ where $J_{j_n} = (-1/(n+1),1/(n+1))$ for $n \in \mathbb{N}$ and $J_j = (-1,1)$ for all other $j$.}}
+	\step{d}{$U$ is not open in the uniform topology.}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Products}
 
 \begin{df}[Euclidean Metric]
