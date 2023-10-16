@@ -7877,6 +7877,43 @@ We prove this is a norm.
 \qed
 \end{proof}
 
+\begin{prop}
+The $p$-norm on $\mathbb{R}^n$ induces the product topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$d$ be the metric induced by the $p$-norm and $\rho$ the square metric on $\mathbb{R}^n$.}}
+\step{1}{The metric topology is finer than the product topology.}
+\begin{proof}
+	\step{a}{\pflet{$\vec{x} \in \mathbb{R}^n$ and $\epsilon > 0$}} 
+	\step{b}{\pflet{$\delta = \epsilon / n^{\frac{1}{p}}$}\prove{$B_\rho(\vec{x}, \delta) \subseteq B_d(\vec{x}, \epsilon)$}}
+	\step{c}{\pflet{$\vec{y} \in B_\rho(\vec{x}, \delta)$}}
+	\step{d}{$\forall i. |x_i - y_i| < \delta$}
+	\step{e}{$d(\vec{x}, \vec{y}) < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d(\vec{x}, \vec{y}) & = \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{\frac{1}{p}} \\
+			& < \left( \sum_{i=1}^n \delta^p \right)^{\frac{1}{p}} & (\text{\stepref{d}}) \\
+			& = n^{\frac{1}{p}} \delta \\
+			& = \epsilon & (\text{\stepref{b}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{The product topology is finer than the metric topology.}
+\begin{proof}
+	\step{a}{\pflet{$\vec{x} \in \mathbb{R}^n$ and $\epsilon > 0$}}
+	\step{c}{\pflet{$\vec{y} \in B_d(\vec{x}, \epsilon)$}}
+	\step{d}{$d(\vec{x}, \vec{y}) < \epsilon$}
+	\step{e}{$\sum_{i=1}^n |x_i - y_i|^p < \epsilon^p$}
+	\step{f}{$\forall i. |x_i - y_i|^p < \epsilon^p$}
+	\step{g}{$\forall i. |x_i - y_i| < \epsilon$}
+	\step{h}{$\rho(\vec{x},\vec{y}) < \epsilon$}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Sup-norm]
 The \emph{sup-norm} on $\mathbb{R}^n$ is defined by
 \[ \| (x_1, \ldots, x_n) \|_\infty := \max(|x_1|, \ldots, |x_n|) \enspace . \]

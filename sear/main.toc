@@ -137,7 +137,7 @@
 \contentsline {section}{\numberline {16.2}Seminorms}{144}{section.16.2}%
 \contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{144}{section.16.3}%
 \contentsline {section}{\numberline {16.4}Normed Spaces}{144}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Inner Product Spaces}{146}{section.16.5}%
+\contentsline {section}{\numberline {16.5}Inner Product Spaces}{147}{section.16.5}%
 \contentsline {section}{\numberline {16.6}Banach Spaces}{147}{section.16.6}%
-\contentsline {section}{\numberline {16.7}Hilbert Spaces}{147}{section.16.7}%
-\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{147}{section.16.8}%
+\contentsline {section}{\numberline {16.7}Hilbert Spaces}{148}{section.16.7}%
+\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{148}{section.16.8}%
