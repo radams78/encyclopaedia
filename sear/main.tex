@@ -7180,9 +7180,12 @@ The standard bounded metric associated with $d$ induces the same topology as $d$
 \subsection{Uniform Metric}
 
 \begin{df}[Uniform Metric]
-The \emph{uniform metric} $\overline{\rho}$ on $\mathbb{R}^\omega$ is defined by
-\[ \overline{\rho}((x_n),(y_n)) = \sup_{n \in \mathbb{N}} \overline{d}(x_n,y_n) \]
+Let $J$ be a nonempty set.
+The \emph{uniform metric} $\overline{\rho}$ on $\mathbb{R}^J$ is defined by
+\[ \overline{\rho}(x,y) = \sup_{j \in J} \overline{d}(x_j,y_j) \]
 where $\overline{d}$ is the standard bounded metric associated with the standard metric on $\mathbb{R}$.
+
+The topology it induces is called the \emph{uniform topology}.
 
 We prove this is a metric.
 \end{df}
@@ -7191,10 +7194,10 @@ We prove this is a metric.
 \pf
 \step{1}{For all $x,y \in \mathbb{R}^\omega$ we have $\overline{\rho}(x,y) \geq 0$.}
 \begin{proof}
-	\pf
+	\pf\ Pick $j_0 \in J$. Then
 	\begin{align*}
-		\overline{\rho}(x,y) & = \sup_n \overline{d}(x_n,y_n) \\
-		& \geq \overline{d}(x_0,y_0) \\
+		\overline{\rho}(x,y) & = \sup_j \overline{d}(x_j,y_j) \\
+		& \geq \overline{d}(x_{j_0},y_{j_0}) \\
 		& \geq 0
 	\end{align*}
 \end{proof}
@@ -7202,9 +7205,9 @@ We prove this is a metric.
 \begin{proof}
 	\pf
 	\begin{align*}
-		\overline{\rho}(x,y) = 0 & \Leftrightarrow \sup_n \overline{d}(x_n,y_n) = 0 \\
-		& \Leftrightarrow \forall n. \overline{d}(x_n,y_n) = 0 \\
-		& \Leftrightarrow \forall n. x_n = y_n \\
+		\overline{\rho}(x,y) = 0 & \Leftrightarrow \sup_j \overline{d}(x_j,y_j) = 0 \\
+		& \Leftrightarrow \forall j. \overline{d}(x_j,y_j) = 0 \\
+		& \Leftrightarrow \forall j. x_j = y_j \\
 		& \Leftrightarrow x = y
 	\end{align*}
 \end{proof}
@@ -7212,8 +7215,8 @@ We prove this is a metric.
 \begin{proof}
 	\pf
 	\begin{align*}
-		\overline{\rho}(x,y) & = \sup_n \overline{d}(x_n,y_n) \\
-		& = \sup_n \overline{d}(y_n,x_n) \\
+		\overline{\rho}(x,y) & = \sup_j \overline{d}(x_j,y_j) \\
+		& = \sup_j \overline{d}(y_j,x_j) \\
 		& = \overline{\rho}(y,x)
 	\end{align*}
 \end{proof}
@@ -7221,10 +7224,10 @@ We prove this is a metric.
 \begin{proof}
 	\pf
 	\begin{align*}
-		\overline{\rho}(x,z) & = \sup_n \overline{d}(x_n,z_n) \\
-		& \leq \sup_n (\overline{d}(x_n,y_n) + \overline{d}(y_n,z_n)) \\
-		& \leq \sup_n \overline{d}(x_n,y_n) + \sup_n \overline{d}(y_n,z_n) \\
-		& = \overline{rho}(x,y) + \overline{\rho}(y,z)
+		\overline{\rho}(x,z) & = \sup_j \overline{d}(x_j,z_j) \\
+		& \leq \sup_j (\overline{d}(x_j,y_j) + \overline{d}(y_j,z_j)) \\
+		& \leq \sup_j \overline{d}(x_j,y_j) + \sup_j \overline{d}(y_j,z_j) \\
+		& = \overline{\rho}(x,y) + \overline{\rho}(y,z)
 	\end{align*}
 \end{proof}
 \qed
