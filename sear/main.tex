@@ -7067,6 +7067,7 @@ Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if,
 \end{proof}
 
 \begin{prop}
+\label{prop:metric_finer}
 Let $d$ and $d'$ be two metrics on the same set $X$. Let $\mathcal{T}$ and $\mathcal{T}'$ be the topologies they induce. Then $\mathcal{T} \subseteq \mathcal{T}'$ if and only if, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that
 \[ B_{d'}(x, \delta) \subseteq B_d(x, \epsilon) \enspace . \]
 \end{prop}
@@ -7242,6 +7243,28 @@ Let $X$ and $Y$ be metric spaces. The Euclidean metric on $X \times Y$ induces t
 		\pf\ Similar.
 	\end{proof}
 	\step{f}{$(x',y') \in U \times V$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The square metric on $\mathbb{R}^n$ induces the product topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$d$ be the Euclidean metric on $\mathbb{R}^n$ and $\rho$ the square metric.}}
+\step{2}{For all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that $B_d(x, \delta) \subseteq B_\rho(x, \epsilon)$}
+\begin{proof}
+	\pf\ If $d(x,y) < \epsilon$ then $\rho(x,y) < \epsilon$.
+\end{proof}
+\step{3}{For all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that $B_\rho(x, \delta) \subseteq B_d(x, \epsilon)$}
+\begin{proof}
+	\pf\ If $\rho(x,y) < \epsilon / \sqrt{n}$ then $d(x,y) < \epsilon$.
+\end{proof}
+\step{4}{$d$ and $\rho$ induce the same topology.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:metric_finer}.
 \end{proof}
 \qed
 \end{proof}
