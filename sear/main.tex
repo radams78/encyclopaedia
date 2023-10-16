@@ -42,6 +42,7 @@
 \newcommand{\Top}{\ensuremath{\mathbf{Top}}}
 \newcommand{\dom}{\ensuremath{\operatorname{dom}}}
 \newcommand{\spn}{\ensuremath{\operatorname{span}}}
+\newcommand{\diam}{\ensuremath{\operatorname{diam}}}
 
 \begin{document}
 
@@ -7037,6 +7038,41 @@ Every metrizable space is first countable.
 A metric space is compact if and only if it is sequentially compact.
 
 A metric space is separable if and only if it is second countable.
+
+\subsection{Bounded Sets}
+
+\begin{df}[Bounded]
+Let $X$ be a metric space. Let $A \subseteq X$. Then $A$ is \emph{bounded} iff there exists $M$ such that $\forall x,y \in A. d(x,y) \leq M$. Its \emph{diameter} is then defined to be
+\[ \diam A := \sup \{ d(x,y) : x,y \in A \} \enspace . \]
+\end{df}
+
+\begin{prop}
+The standard bounded metric associated with $d$ induces the same topology as $d$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$(X,d)$ be a metric space.}}
+\step{1}{Every $d$-ball is open under the topology induced by $\overline{d}$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in X$ and $\epsilon > 0$}}
+	\step{b}{\pflet{$x \in B_d(a, \epsilon)$}}
+	\step{c}{\pflet{$\delta = \min(\epsilon - d(a,x), 1/2)$}}
+	\step{d}{$B_{\overline{d}}(x, \delta) \subseteq B_d(a, \epsilon)$}
+\end{proof}
+\step{2}{Every $\overline{d}$-ball is open under the topology induced by $d$.}
+\begin{proof}
+	\pf\ Since $B_{\overline{d}}(a, \epsilon) = B_d(a, \epsilon)$ if $\epsilon \leq 1$, and $X$ if $\epsilon > 1$.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Standard Bounded Metric}
+
+\begin{df}[Standard Bounded Metric]
+Let $(X,d)$ be a metric space. The \emph{standard bounded metric} corresponding to $d$ is
+\[ \overline{d}(x,y) := \min(d(x,y),1) \enspace . \]
+\end{df}
 
 \subsection{Products}
 
