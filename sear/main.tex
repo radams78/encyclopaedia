@@ -7032,6 +7032,7 @@ The standard metric on $\mathbb{R}$ induces the standard topology.
 \end{proof}
 
 \begin{prop}
+\label{prop:metric_open}
 Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.
 \end{prop}
 
@@ -7061,6 +7062,48 @@ Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if,
 \step{2}{If, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$, then $U$ is open.}
 \begin{proof}
 	\pf\ Immediate from definition of the metric topology.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $d$ and $d'$ be two metrics on the same set $X$. Let $\mathcal{T}$ and $\mathcal{T}'$ be the topologies they induce. Then $\mathcal{T} \subseteq \mathcal{T}'$ if and only if, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that
+\[ B_{d'}(x, \delta) \subseteq B_d(x, \epsilon) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\mathcal{T} \subseteq \mathcal{T}'$ then, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that $B_{d'}(x, \delta) \subseteq B_d(x, \epsilon)$.}
+\begin{proof}
+	\step{a}{\assume{$\mathcal{T} \subseteq \mathcal{T}'$}}
+	\step{b}{\pflet{$x \in X$ and $\epsilon > 0$}}
+	\step{c}{$x \in B_d(x, \epsilon) \in \mathcal{T}'$}
+	\step{d}{There exists $\delta > 0$ such that $B_{d'}(x, \delta) \subseteq B_d(x, \epsilon)$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:metric_open}.
+	\end{proof}
+\end{proof}
+\step{2}{If, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that $B_{d'}(x, \delta) \subseteq B_d(x, \epsilon)$, then $\mathcal{T} \subseteq \mathcal{T}'$.}
+\begin{proof}
+	\step{a}{\assume{For all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that $B_{d'}(x, \delta) \subseteq B_d(x, \epsilon)$.}}
+	\step{b}{\pflet{$U \in \mathcal{T}$}}
+	\step{c}{For all $x \in U$, there exists $\delta > 0$ such that $B_{d'}(x, \delta) \subseteq U$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in U$}}
+		\step{ii}{\pick\ $\epsilon > 0$ such that $B_d(x, \epsilon) \subseteq U$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:metric_open}.
+		\end{proof}
+		\step{iii}{\pick\ $\delta > 0$ such that $B_{d'}(x, \delta) \subseteq B_d(x, \epsilon)$.}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iv}{$B_{d'}(x, \delta) \subseteq U$}
+	\end{proof}
+	\step{d}{$U \in \mathcal{T}'$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:metric_open}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
