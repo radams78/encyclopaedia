@@ -6913,6 +6913,77 @@ defines a seminorm on $\mathcal{L}^p(\mathbb{R}^n)$. Let
 
 \section{Inner Product Spaces}
 
+\begin{df}[Inner Product]
+Given $\vec{x}, \vec{y} \in \mathbb{R}^n$, define
+\[ \vec{x} \cdot \vec{y} = x_1 y_1 + \cdots + x_n y_n \enspace . \]
+\end{df}
+
+\begin{prop}
+\[ \vec{x} \cdot (\vec{y} + \vec{z}) = \vec{x} \cdot \vec{y} + \vec{x} \cdot \vec{z} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	\vec{x} \cdot (\vec{y} + \vec{z}) & = x_1 (y_1 + z_1) + \cdots + x_n (y_n + z_n) \\
+	& = x_1 y_1 + x_1 z_1 + \cdots + x_n y_n + x_n z_n \\
+	& = \vec{x} \cdot \vec{y} + \vec{x} \cdot \vec{z} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:dot_leq_norms}
+For all $\vec{x}, \vec{y} \in \mathbb{R}^n$ we have
+\[ | \vec{x} \cdot \vec{y} | \leq \| \vec{x} \| \| \vec{y} \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $\vec{x} \neq \vec{0} \neq \vec{y}$}}
+\step{2}{\pflet{$a = 1 / \|x\|$}}
+\step{3}{\pflet{$b = 1 / \|y\|$}}
+\step{4}{$\| a\vec{x} + b\vec{y} \| \geq 0$}
+\step{5}{$a^2 \| \vec{x}\|^2 + 2 ab \vec{x} \cdot \vec{y} + b^2 \| \vec{y}\|^2 \geq 0$}
+\step{6}{$ab \vec{x} \cdot \vec{y} \geq -1$}
+\step{7}{$\| a \vec{x} - b \vec{y} \| \geq 0$}
+\step{8}{$ab \vec{x} \cdot \vec{y} \leq 1$}
+\step{9}{$|\vec{x} \cdot \vec{y}| \leq 1/ab$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $(x_n)$, $(y_n)$ be sequences of real numbers. If $\sum_{n=0}^\infty x_n^2$ and $\sum_{n=0}^\infty y_n^2$ converge then $\sum_{n=0}^\infty |x_n y_n|$ converges.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\sum_{n=0}^N |x_n y_n| & \leq \sqrt{\sum_{n=0}^N x_n^2 \sum_{n=0}^N y_n^2} & (\text{Proposition \ref{prop:dot_leq_norms}}) \\
+& \leq \sqrt{\sum_{n=0}^\infty x_n^2 \sum_{n=0}^\infty y_n^2} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+$\{ (x_n) \in \mathbb{R}^\omega : \sum_{n=0}^\infty x_n^2 \text{ converges} \}$ is a vector subspace of $\mathbb{R}^\omega$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X = \{ (x_n) \in \mathbb{R}^\omega : \sum_{n=0}^\infty x_n^2 \text{ converges} \}$}}
+\step{2}{For all $(x_n), (y_n) \in X$ we have $(x_n + y_n) \in X$.}
+\begin{proof}
+\pf
+For all $N$ we have
+\[ \sum_{n=0}^N (x_n + y_n)^2 \leq \sum_{n=0}^N x_n^2 + 2 \sum_{n=0}^N |x_n y_n| + \sum_{n=0}^N y_n^2 \]
+and the right-hand side is bounded.
+\end{proof}
+\step{3}{For all $(x_n) \in X$ we have $(cx_n) \in X$.}
+\begin{proof}
+\pf\ Since $\sum_{n=0}^N (c x_n)^2 = c^2 \sum_{n=0}^N x_n^2$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}
 If $E$ is an inner product space then $\| x \| = \sqrt{\langle x,x \rangle}$ is a norm on $E$.
 \end{prop}

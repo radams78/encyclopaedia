@@ -140,6 +140,6 @@
 \contentsline {section}{\numberline {16.3}Fr\'{e}chet Spaces}{150}{section.16.3}%
 \contentsline {section}{\numberline {16.4}Normed Spaces}{150}{section.16.4}%
 \contentsline {section}{\numberline {16.5}Inner Product Spaces}{153}{section.16.5}%
-\contentsline {section}{\numberline {16.6}Banach Spaces}{153}{section.16.6}%
-\contentsline {section}{\numberline {16.7}Hilbert Spaces}{154}{section.16.7}%
-\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{154}{section.16.8}%
+\contentsline {section}{\numberline {16.6}Banach Spaces}{154}{section.16.6}%
+\contentsline {section}{\numberline {16.7}Hilbert Spaces}{155}{section.16.7}%
+\contentsline {section}{\numberline {16.8}Locally Convex Spaces}{155}{section.16.8}%
