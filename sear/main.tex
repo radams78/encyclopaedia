@@ -7133,6 +7133,66 @@ A topological space is \emph{metrizable} iff there exists a metric that induces 
 \end{df}
 
 \begin{prop}
+$\mathbb{R}^2$ under the dictionary order is metrizable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$d : (\mathbb{R}^2)^2 \rightarrow \mathbb{R}$ be defined by
+\[ d((x_1,y_1),(x_2,y_2)) = \begin{cases}
+\min(|y_2 - y_1|,1) & \text{if } x_1 = x_2 \\
+1 & \text{if } x_1 \neq x_2
+\end{cases} \]}}
+\step{2}{$d$ is a metric.}
+\begin{proof}
+	\step{a}{For all $x,y \in \mathbb{R}^2$ we have $d(x,y) \geq 0$.}
+	\begin{proof}
+		\pf\ Immediate from definition.
+	\end{proof}
+	\step{b}{For all $x,y \in \mathbb{R}^2$ we have $d(x,y) = 0$ iff $x=y$.}
+	\begin{proof}
+		\pf\ Immediate from definition.
+	\end{proof}
+	\step{c}{For all $x,y \in \mathbb{R}^2$ we have $d(x,y) = d(y,x)$.}
+	\begin{proof}
+		\pf\ Immediate from definition.
+	\end{proof}
+	\step{d}{For all $x,y,z \in \mathbb{R}^2$ we have $d(x,z) \leq d(x,y) + d(y,z)$.}
+	\begin{proof}
+		\pf\ Easy.
+	\end{proof}
+\end{proof}
+\step{3}{The metric topology induced by $d$ is finer than the order topology.}
+\begin{proof}
+	\step{a}{\pflet{$a,b \in \mathbb{R}^2$}}
+	\step{b}{\pflet{$x \in (a,b)$}}
+	\step{c}{\case{$\pi_1(x) = \pi_1(a) = \pi_1(b)$}}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon = \min(\pi_2(x) - \pi_2(a), \pi_2(b) - \pi_2(x))$}}
+		\step{ii}{$B(x,\epsilon) \subseteq (a,b)$}
+	\end{proof}
+	\step{d}{\case{$\pi_1(a) = \pi_1(x) < \pi_1(b)$}}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon = \pi_2(x) - \pi_2(a)$}}
+		\step{ii}{$B(x,\epsilon) \subseteq (a,b)$}
+	\end{proof}
+	\step{dd}{\case{$\pi_1(a) < \pi_1(x) = \pi_1(b)$}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{e}{\case{$\pi_1(a) < \pi_1(x) < \pi_1(b)$}}
+	\begin{proof}
+		\pf\ Then $B(x,\epsilon) \subseteq (a,b)$.
+	\end{proof}
+\end{proof}
+\step{4}{The order topology is finer than the metric topology.}
+\begin{proof}
+	\pf\ Since $B((a,b),\epsilon) = ((a,b-\epsilon),(a,b+\epsilon))$ if $\epsilon \leq 1$, and $\mathbb{R}^2$ if $\epsilon > 1$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Every metrizable space is Hausdorff.
 \end{prop}
 

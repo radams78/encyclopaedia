@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 OCT 2023 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  17 OCT 2023 07:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -906,15 +906,15 @@ Overfull \hbox (24.67375pt too wide) detected at line 6733
 []
  []
 
-[123] [124] [125] [126] [127] [128] [129]
+[123] [124] [125] [126] [127] [128] [129] [130]
 WARNING: proof step "1" (<3>1) already defined
-[130] [131] [132]
-Overfull \hbox (108.65958pt too wide) detected at line 7374
+[131] [132]
+Overfull \hbox (108.65958pt too wide) detected at line 7434
 []
  []
 
-
-Overfull \hbox (47.883pt too wide) in paragraph at lines 7388--7388
+[133]
+Overfull \hbox (47.883pt too wide) in paragraph at lines 7448--7448
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -922,16 +922,16 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 7404
+Overfull \hbox (0.90187pt too wide) detected at line 7464
 []
  []
 
-[133] [134] [135] [136
+[134] [135] [136
 
 ]
 Chapter 13.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 7535--7536
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 7595--7596
 []\OT1/cmr/bx/n/10 Definition 13.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -950,20 +950,23 @@ Chapter 16.
 [143
 
 ] [144]
-Overfull \hbox (113.19771pt too wide) detected at line 7870
+Overfull \hbox (113.19771pt too wide) detected at line 7930
 []
  []
 
 WARNING: proof step "4" undefined
 [145] [146] [147] [148] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9E43465A33C073C8B6EDB0D89AF46255;18382.
  ) 
 Here is how much of TeX's memory you used:
- 13604 strings out of 476091
- 190901 string characters out of 5794081
- 1873330 words of memory out of 5000000
- 32761 multiletter control sequences out of 15000+600000
+ 13606 strings out of 476091
+ 190917 string characters out of 5794081
+ 1872330 words of memory out of 5000000
+ 32762 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -994,10 +997,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (148 pages, 704203 bytes).
+Output written on main.pdf (148 pages, 706071 bytes).
 PDF statistics:
- 2618 PDF objects out of 2984 (max. 8388607)
- 2298 compressed objects within 23 object streams
- 1036 named destinations out of 1200 (max. 500000)
+ 2619 PDF objects out of 2984 (max. 8388607)
+ 2299 compressed objects within 23 object streams
+ 1037 named destinations out of 1200 (max. 500000)
  1145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
