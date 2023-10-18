@@ -1,5 +1,4 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
@@ -2692,6 +2691,14 @@ For every positive real number $a$, there exists a unique positive real $\sqrt{a
 The set of real numbers is uncountable.
 \end{thm}
 
+\begin{df}
+We write $\mathbb{R}^\infty$ for the set of sequences in $\mathbb{R}^\omega$ that are eventually zero.
+\end{df}
+
+\begin{df}[Hilbert Cube]
+The \emph{Hilbert cube} is $\prod_{n=0}^\infty [0,1/(n+1)]$.
+\end{df}
+
 \chapter{Integers and Rationals}
 
 \section{Positive Integers}
@@ -5213,6 +5220,14 @@ On a finite family of topological spaces, the box topology and the product topol
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\begin{prop}
+The box topology is strictly finer than the product topology on the Hilbert cube.
+\end{prop}
+
+\begin{proof}
+\pf\ The set $\prod_{n=0}^\infty (0, 1/(n+1)^2)$ is open in the box topology but not in the product topology. \qed
+\end{proof}
+
 \subsection{Bases}
 
 \begin{prop}
@@ -6278,6 +6293,38 @@ The uniform topology is coarser than the box topology. It is strictly coarser if
 \qed
 \end{proof}
 
+\begin{prop}
+The uniform topology on $\mathbb{R}^\infty$ is strictly finer than the product topology.
+\end{prop}
+
+\begin{proof}
+\pf\ The set of all sequences $(x_n) \in \mathbb{R}^\infty$ such that $\forall n. |x_n| < 1$ is open in the uniform topology but not in the product topology. \qed
+\end{proof}
+
+\begin{prop}
+The uniform topology on $\mathbb{R}^\infty$ is strictly coarser than the box topology.
+\end{prop}
+
+\begin{proof}
+\pf\ The set of sequences $(x_n) \in \mathbb{R}^\infty$ such that $\forall n. |x_n| < 1/n$ is open in the box topology but not in the uniform topology. \qed
+\end{proof}
+
+\begin{prop}
+The uniform topology on the Hilbert cube is the same as the product topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(x_n)$ be in the Hilbert cube $H$ and $\epsilon > 0$.} \prove{$B((x_n), \epsilon) \cap H$ is open in the product topology.}}
+\step{2}{\pick\ $N$ such that $1/N < \epsilon$}
+\step{3}{$B((x_n), \epsilon) = (\prod_{n=0}^N (x_n - \epsilon, x_n + \epsilon) \times \prod_{n=N+1}^\infty [0,1/(n+1)]) \cap H$}
+\qed
+\end{proof}
+
+\begin{cor}
+The uniform topology on the Hilbert cube is strictly finer than the box topology.
+\end{cor}
+
 \subsection{Products}
 
 \begin{df}[Euclidean Metric]
@@ -6885,6 +6932,164 @@ infinite-dimensional banach spaces. Functional Analysis and Its Applications 1 (
 http://dx.doi.org/10.1007/BF01075865.
 \end{proof}
 
+\begin{prop}
+The metric topology on $l_2$ is strictly finer than the uniform topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{o}{\pflet{$d$ be the metric induced by the $l^2$-norm and $\overline{\rho}$ the uniform topology.}}
+\step{1}{The metric topology is finer than the uniform topology.}
+\begin{proof}
+	\step{a}{\pflet{$x \in l_2$}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pflet{$\delta = \epsilon / 2$}}
+	\step{d}{\pflet{$y \in B_d(x, \delta)$}}
+	\step{e}{$\sum_{n=0}^\infty (x_n - y_n)^2 < \delta^2$}
+	\step{f}{$\forall n. (x_n - y_n)^2 < \delta^2$}
+	\step{g}{$\forall n. |x_n - y_n| < \delta$}
+	\step{h}{$\forall n. \overline{d}(x_n,y_n) < \delta$}
+	\step{i}{$\overline{\rho}(x,y) \leq \delta$}
+	\step{j}{$\overline{\rho}(x,y) < \epsilon$}
+	\step{k}{$y \in B_{\overline{\rho}}(x, \epsilon)$}
+\end{proof}
+\step{2}{The metric topology is not the same as the uniform topology.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $B_d(0,1)$ is open in the uniform topology.}}
+	\step{b}{\pick\ $\epsilon > 0$ such that $B_{\overline{\rho}}(0, \epsilon) \subseteq B_d(0,1)$}
+	\step{c}{\pick\ an integer $N$ such that $1/N < \epsilon^2/4$}
+	\step{d}{\pflet{$(x_n)$ be the sequence with $x_n = \epsilon / 2$ for $n < N$ and $x_n = 0$ for $n \geq N$}}
+	\step{e}{$(x_n) \in l_2$}
+	\step{f}{$(x_n) \in B_{\overline{\rho}}(0, \epsilon)$}
+	\begin{proof}
+		\pf\ Since $\overline{\rho}((x_n),0) = \epsilon / 2$.
+	\end{proof}
+	\step{g}{$d((x_n),0) > 1$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d((x_n),0)^2 & = \sum_{n=0}^\infty x_n^2 \\
+			& = N \epsilon^2 / 4 \\
+			& > 1 
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The metric topology on $l_2$ is strictly coarser than the box topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{The box topology is finer than the metric topology.}
+\begin{proof}
+	\step{a}{\pflet{$(x_n) \in l_2$ and $\epsilon > 0$.}}
+	\step{b}{\pflet{$(y_n) \in B((x_n), \epsilon)$}}
+	\step{c}{\pick\ a sequence of real numbers $(\delta_n)$ such that $\sum_{n=0}^\infty \delta_n^2 < (\epsilon - d((x_n),(y_n)))^2$}
+	\step{d}{\pflet{$U = \prod_n (y_n - \delta_n, y_n + \delta_n)$} \prove{$U \subseteq B((x_n),\epsilon)$}}
+	\step{e}{\pflet{$(z_n) \in U$}}
+	\step{f}{$d((z_n),(y_n)) < \epsilon - d((x_n),(y_n))$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d((z_n),(y_n))^2 & = \sum_{n=0}^\infty (z_n - y_n)^2 \\
+			& < \sum_{n=0}^\infty \delta_n^2 \\
+			& < (\epsilon - d((x_n),(y_n)))^2
+		\end{align*}
+	\end{proof}
+	\step{g}{$d((z_n),(x_n)) < \epsilon$}
+\end{proof}
+\step{2}{The box topology is not equal to the metric topology.}
+\begin{proof}
+	\step{a}{\pflet{$U = \prod_n (-1/n,1/n)$}}
+	\step{b}{\assume{for a contradiction $U$ is open in the metric topology.}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B(0,\epsilon) \subseteq U$}
+	\step{d}{\pick\ $N$ such that $1/N < \epsilon/2$.}
+	\step{e}{\pflet{$(x_n)$ be the sequence with $x_N = \epsilon/2$ and $x_n = 0$ for all other $n$.}}
+	\step{f}{$d((x_n),0) = \epsilon / 2$}
+	\step{g}{$(x_n) \notin U$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The $l^2$-topology on $\mathbb{R}^\infty$ is strictly finer than the uniform topology.
+\end{prop}
+
+\begin{proof}
+\pf
+	\step{a}{\assume{for a contradiction $B_d(0,1) \cap \mathbb{R}^\infty$ is open in the uniform topology.}}
+	\step{b}{\pick\ $\epsilon > 0$ such that $B_{\overline{\rho}}(0, \epsilon) \cap \mathbb{R}^\infty \subseteq B_d(0,1) \cap \mathbb{R}^\infty$}
+	\step{c}{\pick\ an integer $N$ such that $1/N < \epsilon^2/4$}
+	\step{d}{\pflet{$(x_n)$ be the sequence with $x_n = \epsilon / 2$ for $n < N$ and $x_n = 0$ for $n \geq N$}}
+	\step{e}{$(x_n) \in \mathbb{R}^\infty$}
+	\step{f}{$(x_n) \in B_{\overline{\rho}}(0, \epsilon)$}
+	\begin{proof}
+		\pf\ Since $\overline{\rho}((x_n),0) = \epsilon / 2$.
+	\end{proof}
+	\step{g}{$d((x_n),0) > 1$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d((x_n),0)^2 & = \sum_{n=0}^\infty x_n^2 \\
+			& = N \epsilon^2 / 4 \\
+			& > 1 
+		\end{align*}
+	\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+The $l^2$-topology on $\mathbb{R}^\infty$ is strictly coarser than the box topology.
+\end{prop}
+
+\begin{proof}
+	\step{a}{\pflet{$U = \prod_n (-1/n,1/n) \cap \mathbb{R}^\infty$}}
+	\step{b}{\assume{for a contradiction $U$ is open in the metric topology.}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B(0,\epsilon) \cap \mathbb{R}^\infty \subseteq U \cap \mathbb{R}^\infty$}
+	\step{d}{\pick\ $N$ such that $1/N < \epsilon/2$.}
+	\step{e}{\pflet{$(x_n)$ be the sequence with $x_N = \epsilon/2$ and $x_n = 0$ for all other $n$.}}
+	\step{f}{$d((x_n),0) = \epsilon / 2$}
+	\step{g}{$(x_n) \notin U$}
+	\qed
+\end{proof}
+
+\begin{prop}
+The $l^2$-topology on the Hilbert cube the same as the product topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For every $(x_n) \in H$ and $\epsilon > 0$, there exists a neighbourhood $U$ of $(x_n)$ in the product topology such that $U \subseteq B((x_n),\epsilon)$.}
+\begin{proof}
+	\step{a}{\pflet{$(x_n) \in H$}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $N$ such that $\sum_{i=N+1}^\infty 1/i^2 < \epsilon^2 / 2$}
+	\step{d}{\pflet{$B' = (\prod_{i=0}^N (x_i - \epsilon / \sqrt{2N}, x_i + \epsilon / \sqrt{2N}) \times \prod_{i=N+1}^\infty [0, 1/(i+1)]) \cap H$} \prove{$B' \subseteq B((x_n), \epsilon)$}}
+	\step{e}{\pflet{$(y_n) \in B'$}}
+	\step{f}{$d((x_n),(y_n)) < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d((x_n),(y_n))^2 & = \sum_{i=0}^\infty |x_n - y_n|^2 \\
+			& < \sum_{i=0}^N \epsilon^2 / 2N + \sum_{i=N+1}^\infty 1/(i+1) 1/(i+1)^2 \\
+			& < \epsilon^2 / 2 + \epsilon^2 / 2 \\
+			& = \epsilon^2
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{The product topology is finer than the $l^2$-topology.}
+\begin{proof}
+	\step{a}{\pflet{$(x_n) \in H$ and $\epsilon > 0$} \prove{$B((x_n), \epsilon) \cap H$ is open in the product topology.}}
+	\step{b}{\pflet{$(y_n) \in B((x_n), \epsilon)$}}
+	\step{c}{\pick\ a neighbourhood $U$ of $(y_n)$ in the product topology such that $U \subseteq B((y_n), \epsilon - d((x_n),(y_n)))$}
+	\step{d}{$U \subseteq B((x_n), \epsilon)$}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}
 Let $l_\infty$ be the set of all bounded sequences in $\mathbb{R}$ under
 \[ \| (x_n) \| := \sup_n |x_n| \]
@@ -6963,26 +7168,6 @@ Let $(x_n)$, $(y_n)$ be sequences of real numbers. If $\sum_{n=0}^\infty x_n^2$ 
 \end{align*}
 \end{proof}
 
-\begin{prop}
-$\{ (x_n) \in \mathbb{R}^\omega : \sum_{n=0}^\infty x_n^2 \text{ converges} \}$ is a vector subspace of $\mathbb{R}^\omega$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$X = \{ (x_n) \in \mathbb{R}^\omega : \sum_{n=0}^\infty x_n^2 \text{ converges} \}$}}
-\step{2}{For all $(x_n), (y_n) \in X$ we have $(x_n + y_n) \in X$.}
-\begin{proof}
-\pf
-For all $N$ we have
-\[ \sum_{n=0}^N (x_n + y_n)^2 \leq \sum_{n=0}^N x_n^2 + 2 \sum_{n=0}^N |x_n y_n| + \sum_{n=0}^N y_n^2 \]
-and the right-hand side is bounded.
-\end{proof}
-\step{3}{For all $(x_n) \in X$ we have $(cx_n) \in X$.}
-\begin{proof}
-\pf\ Since $\sum_{n=0}^N (c x_n)^2 = c^2 \sum_{n=0}^N x_n^2$.
-\end{proof}
-\qed
-\end{proof}
 
 \begin{prop}
 If $E$ is an inner product space then $\| x \| = \sqrt{\langle x,x \rangle}$ is a norm on $E$.
