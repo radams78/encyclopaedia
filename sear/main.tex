@@ -6100,6 +6100,34 @@ A metric space is compact if and only if it is sequentially compact.
 
 A metric space is separable if and only if it is second countable.
 
+\subsection{Subspaces}
+
+\begin{prop}
+Let $(X,d)$ be a metric space and $Y \subseteq X$. Then $d \restriction Y^2$ is a metric on $Y$ that induces the subspace topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$d' = d \restriction Y^2 : Y^2 \rightarrow \mathbb{R}$}}
+\step{2}{$d'$ is a metric.}
+\begin{proof}
+	\pf\ Each of the axioms follows from the axiom in $X$.
+\end{proof}
+\step{3}{The metric topology induced by $d'$ is finer than the subspace topology.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be open in $X$} \prove{$U \cap Y$ is open in the $d'$-topology.}}
+	\step{b}{\pflet{$y \in U \cap Y$}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B_d(y, \epsilon) \subseteq U$}
+	\step{d}{$B_{d'}(y, \epsilon) \subseteq U \cap Y$}
+\end{proof}
+\step{4}{The subspace topology is finer than the metric topology induced by $d'$.}
+\begin{proof}
+	\step{a}{\pflet{$y \in Y$ and $\epsilon > 0$} \prove{$B_{d'}(y, \epsilon)$ is open in the subspace topology.}}
+	\step{b}{$B_{d'}(y, \epsilon) = B_d(y, \epsilon) \cap Y$}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Bounded Sets}
 
 \begin{df}[Bounded]

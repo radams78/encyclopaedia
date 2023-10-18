@@ -120,11 +120,12 @@
 \contentsline {section}{\numberline {12.24}Quotient Spaces}{132}{section.12.24}%
 \contentsline {section}{\numberline {12.25}Gluing}{133}{section.12.25}%
 \contentsline {section}{\numberline {12.26}Metric Spaces}{134}{section.12.26}%
-\contentsline {subsection}{\numberline {12.26.1}Bounded Sets}{139}{subsection.12.26.1}%
-\contentsline {subsection}{\numberline {12.26.2}Standard Bounded Metric}{139}{subsection.12.26.2}%
-\contentsline {subsection}{\numberline {12.26.3}Uniform Metric}{140}{subsection.12.26.3}%
-\contentsline {subsection}{\numberline {12.26.4}Products}{143}{subsection.12.26.4}%
-\contentsline {section}{\numberline {12.27}Complete Metric Spaces}{144}{section.12.27}%
+\contentsline {subsection}{\numberline {12.26.1}Subspaces}{139}{subsection.12.26.1}%
+\contentsline {subsection}{\numberline {12.26.2}Bounded Sets}{139}{subsection.12.26.2}%
+\contentsline {subsection}{\numberline {12.26.3}Standard Bounded Metric}{140}{subsection.12.26.3}%
+\contentsline {subsection}{\numberline {12.26.4}Uniform Metric}{141}{subsection.12.26.4}%
+\contentsline {subsection}{\numberline {12.26.5}Products}{143}{subsection.12.26.5}%
+\contentsline {section}{\numberline {12.27}Complete Metric Spaces}{145}{section.12.27}%
 \contentsline {section}{\numberline {12.28}Manifolds}{145}{section.12.28}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{147}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{147}{section.13.1}%
