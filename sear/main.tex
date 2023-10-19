@@ -4601,20 +4601,6 @@ Let $X$ be a topological space. Let $A \subseteq X$. Let $(a_n)$ be a sequence i
 \qed
 \end{proof}
 
-\begin{prop}[Sequence Lemma]
-Let $X$ be a first countable space. Let $A \subseteq X$. Let $l \in \overline{A}$. Then there exists a sequence in $A$ that converges to $l$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ a countable basis $\{ U_n : n \in \mathbb{N} \}$ at $l$.}
-\step{2}{For $n \in \mathbb{N}$, \pick\ $x_n \in U_0 \cap \cdots \cap U_n \cap A$. \prove{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
-\step{3}{\pflet{$V$ be a neighbourhood of $l$.}}
-\step{4}{\pick\ $N$ such that $U_N \subseteq V$.}
-\step{5}{$\forall n \geq N. x_n \in V$}
-\qed
-\end{proof}
-
 \subsection{Continuous Functions}
 
 \begin{prop}
@@ -4626,20 +4612,6 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$ be continuous. 
 \step{1}{\pflet{$V$ be a neighbourhood of $f(x)$.}}
 \step{2}{\pick\ $N$ such that $\forall n \geq N. x_n \in \inv{f}(V)$}
 \step{3}{$\forall n \geq N. f(x_n) \in V$}
-\qed
-\end{proof}
-
-\begin{prop}
-Let $X$ be a first countable space and $Y$ a topological space. Let $f : X \rightarrow Y$. Assume that, whenever $x_n \rightarrow l$ as $n \rightarrow \infty$ in $X$, then $f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$ in $Y$. Then $f$ is continuous.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$A \subseteq X$} \prove{$f(\overline{A}) \subseteq \overline{f(A)}$}}
-\step{2}{\pflet{$l \in \overline{A}$}}
-\step{3}{\pick\ a sequence $(x_n)$ in $A$ that converges to $l$.}
-\step{4}{$f(x_n) \rightarrow f(l)$}
-\step{5}{$f(l) \in \overline{f(A)}$}
 \qed
 \end{proof}
 
@@ -6240,6 +6212,16 @@ Let $X$ be a metrizable space and $Y$ a topological space. Let $f : X \rightarro
 \step{4}{$f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$.}
 \step{5}{$f(l) \in \overline{f(A)}$}
 \qed
+\end{proof}
+
+\subsection{First Countable Spaces}
+
+\begin{prop}
+Every metrizable space is first countable.
+\end{prop}
+
+\begin{proof}
+\pf\ For any point $x$, the set $\{ B(x, 1/n) : n \in \mathbb{Z}_+ \}$ is a countable basis at $x$. \qed
 \end{proof}
 
 \subsection{Hausdorff Spaces}
