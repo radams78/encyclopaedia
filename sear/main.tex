@@ -5929,6 +5929,28 @@ The square metric on $\mathbb{R}^n$ induces the product topology.
 \end{proof}
 
 \begin{prop}
+Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(x,y) \in \mathbb{R}^2$ and $\epsilon > 0$}}
+\step{2}{\pflet{$\delta = \epsilon / 2$}}
+\step{3}{\pflet{$(x',y') \in \mathbb{R}^2$ with $\rho((x,y),(x',y')) < \delta$}}
+\step{4}{$|x-x'|,|y-y'| < \delta$}
+\step{5}{$|(x+y)-(x'+y')| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|(x+y)-(x'+y')| & \leq |x-x'| + |y-y'| \\
+		& < \delta + \delta & (\text{\stepref{4}}) \\
+		& = \epsilon & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 \label{prop:metric_open}
 Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.
 \end{prop}

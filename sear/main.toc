@@ -130,7 +130,7 @@
 \contentsline {subsection}{\numberline {12.29.4}Continuous Functions}{140}{subsection.12.29.4}%
 \contentsline {subsection}{\numberline {12.29.5}First Countable Spaces}{141}{subsection.12.29.5}%
 \contentsline {subsection}{\numberline {12.29.6}Hausdorff Spaces}{141}{subsection.12.29.6}%
-\contentsline {subsection}{\numberline {12.29.7}Bounded Sets}{141}{subsection.12.29.7}%
+\contentsline {subsection}{\numberline {12.29.7}Bounded Sets}{142}{subsection.12.29.7}%
 \contentsline {subsection}{\numberline {12.29.8}Standard Bounded Metric}{142}{subsection.12.29.8}%
 \contentsline {subsection}{\numberline {12.29.9}Product Spaces}{142}{subsection.12.29.9}%
 \contentsline {subsection}{\numberline {12.29.10}Uniform Metric}{143}{subsection.12.29.10}%
