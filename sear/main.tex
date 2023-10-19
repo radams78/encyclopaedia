@@ -5778,7 +5778,7 @@ Let $M$ be the M\"{o}bius strip and $K$ the Klein bottle. Then $M \cup_{\id{\par
 \qed
 \end{proof}
 
-\section{Metric Spaces}
+\chapter{Metric Spaces}
 
 %TODO Define real numbers
 \begin{df}[Metric Space]
@@ -6757,6 +6757,36 @@ The square metric on $\mathbb{R}^n$ induces the product topology.
 \step{4}{$d$ and $\rho$ induce the same topology.}
 \begin{proof}
 	\pf\ Proposition \ref{prop:metric_finer}.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Isometric Embeddings}
+
+\begin{df}[Isometric Embedding]
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is an \emph{isometric embedding} of $X$ in $Y$ iff, for all $x,y \in X$, we have $d(f(x),f(y)) = d(x,y)$.
+\end{df}
+
+\begin{prop}
+Every isometric embedding is an embedding.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be metric spaces.}}
+\step{2}{\pflet{$f : X \rightarrow Y$ be an isometric embedding.}}
+\step{3}{$f$ is injective.}
+\step{4}{The subspace topology induced by $f$ is finer than the metric topology.}
+\begin{proof}
+	\step{a}{\pflet{$x \in X$ and $\epsilon > 0$} \prove{$B(x,\epsilon)$ is open in the subspace topology.}}
+	\step{b}{$B(x, \epsilon) = \inv{f}(B(f(x),\epsilon))$}
+\end{proof}
+\step{5}{The metric topology is finer than the subspace topology induced by $f$.}
+\begin{proof}
+	\step{a}{\pflet{$V$ be open in $Y$} \prove{$\inv{f}(V)$ is open in $X$}}
+	\step{b}{\pflet{$x \in \inv{f}(V)$}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B(f(x), \epsilon) \subseteq V$}
+	\step{d}{$B(x, \epsilon) \subseteq \inv{f}(V)$}
 \end{proof}
 \qed
 \end{proof}
