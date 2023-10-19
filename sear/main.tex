@@ -4583,6 +4583,34 @@ Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in
 The converse does hold for first countable spaces. If $f : X \rightarrow Y$ where $X$ is first countable, and $Y$ is a topological space, and whenever $x_n \rightarrow x$ then $f(x_n) \rightarrow f(x)$, then $f$ is continuous.
 \end{prop}
 
+\subsection{Closure}
+
+\begin{prop}
+Let $X$ be a topological space. Let $A \subseteq X$. Let $(a_n)$ be a sequence in $A$ and $l \in X$. If $a_n \rightarrow l$ as $n \rightarrow \infty$, then $l \in \overline{A}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ be a neighbourhood of $l$.}}
+\step{2}{\pick\ $N$ such that $\forall n \in N. a_n \in U$}
+\step{3}{$a_N \in A \cap U$}
+\qed
+\end{proof}
+
+\subsection{Continuous Functions}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$ be continuous. Let $x_n \rightarrow x$ as $n \rightarrow \infty$ in $X$. Then $f(x_n) \rightarrow f(x)$ as $n \rightarrow \infty$ in $Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be a neighbourhood of $f(x)$.}}
+\step{2}{\pick\ $N$ such that $\forall n \geq N. x_n \in \inv{f}(V)$}
+\step{3}{$\forall n \geq N. f(x_n) \in V$}
+\qed
+\end{proof}
+
 \section{Subspaces}
 
 \begin{df}[Subspace]
@@ -6127,6 +6155,19 @@ Let $(X,d)$ be a metric space and $Y \subseteq X$. Then $d \restriction Y^2$ is 
 \qed
 \end{proof}
 
+\subsection{Convergence}
+
+\begin{prop}[Sequence Lemma]
+Let $X$ be a metric space. Let $A \subseteq X$. Let $l \in \overline{A}$. Then there exists a sequence in $A$ that converges to $l$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For $n \in \mathbb{N}$, \pick\ $a_n \in B(l, 1/(n+1)) \cap A$.}
+\step{2}{$a_n \rightarrow l$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
 \subsection{Continuous Functions}
 
 \begin{prop}
@@ -6152,6 +6193,20 @@ Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continu
 	\step{e}{\pick\ $\delta > 0$ such that, for all $y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$.}
 	\step{f}{$B(x,\delta) \subseteq \inv{f}(V)$}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a metrizable space and $Y$ a topological space. Let $f : X \rightarrow Y$. Assume that, for every sequence $(x_n)$ in $X$ and $l \in X$, if $x_n \rightarrow l$ as $n \rightarrow \infty$ then $f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$. Then $f$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A \subseteq X$} \prove{$f(\overline{A}) \subseteq \overline{f(A)}$}}
+\step{2}{\pflet{$l \in \overline{A}$} \prove{$f(l) \in \overline{f(A)}$}}
+\step{3}{\pick\ a sequence $(x_n)$ in $A$ such that $x_n \rightarrow l$ as $n \rightarrow \infty$.}
+\step{4}{$f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$.}
+\step{5}{$f(l) \in \overline{f(A)}$}
 \qed
 \end{proof}
 
