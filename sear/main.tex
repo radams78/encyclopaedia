@@ -3908,6 +3908,20 @@ Let $X$ be a topological space and $x_0 \in X$. A \emph{neighbourhood basis} of 
 A topological space is \emph{first countable} iff every point has a countable neighbourhood basis.
 \end{df}
 
+\begin{prop}[Sequence Lemma]
+Let $X$ be a first countable space. Let $A \subseteq X$. Let $l \in \overline{A}$. Then there exists a sequence in $A$ that converges to $l$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a countable basis $\{ U_n : n \in \mathbb{N} \}$ at $l$.}
+\step{2}{For $n \in \mathbb{N}$, \pick\ $x_n \in U_0 \cap \cdots \cap U_n \cap A$. \prove{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
+\step{3}{\pflet{$V$ be a neighbourhood of $l$.}}
+\step{4}{\pick\ $N$ such that $U_N \subseteq V$.}
+\step{5}{$\forall n \geq N. x_n \in V$}
+\qed
+\end{proof}
+
 \begin{df}[Second Countable]
 A topological space is \emph{second countable} iff it has a countable basis.
 \end{df}
