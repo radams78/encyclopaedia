@@ -3898,29 +3898,19 @@ is a subbasis for the product topology on $X \times Y$.
 A \emph{space with basepoint} is a pair $(X,x)$ where $X$ is a topological space and $x \in X$.
 \end{df}
 
-\subsection{Countability Axioms}
+\section{Neighbourhood Bases}
 
 \begin{df}[Neighbourhood Basis]
 Let $X$ be a topological space and $x_0 \in X$. A \emph{neighbourhood basis} of $x_0$ is a set $\mathcal{U}$ of neighbourhoods of $x_0$ such that every neighbourhood of $x_0$ includes an element of $\mathcal{U}$.
 \end{df}
 
+\section{First Countable Spaces}
+
 \begin{df}[First Countable]
 A topological space is \emph{first countable} iff every point has a countable neighbourhood basis.
 \end{df}
 
-\begin{prop}[Sequence Lemma]
-Let $X$ be a first countable space. Let $A \subseteq X$. Let $l \in \overline{A}$. Then there exists a sequence in $A$ that converges to $l$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pick\ a countable basis $\{ U_n : n \in \mathbb{N} \}$ at $l$.}
-\step{2}{For $n \in \mathbb{N}$, \pick\ $x_n \in U_0 \cap \cdots \cap U_n \cap A$. \prove{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
-\step{3}{\pflet{$V$ be a neighbourhood of $l$.}}
-\step{4}{\pick\ $N$ such that $U_N \subseteq V$.}
-\step{5}{$\forall n \geq N. x_n \in V$}
-\qed
-\end{proof}
+\section{Second Countable Spaces}
 
 \begin{df}[Second Countable]
 A topological space is \emph{second countable} iff it has a countable basis.
@@ -4611,6 +4601,20 @@ Let $X$ be a topological space. Let $A \subseteq X$. Let $(a_n)$ be a sequence i
 \qed
 \end{proof}
 
+\begin{prop}[Sequence Lemma]
+Let $X$ be a first countable space. Let $A \subseteq X$. Let $l \in \overline{A}$. Then there exists a sequence in $A$ that converges to $l$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a countable basis $\{ U_n : n \in \mathbb{N} \}$ at $l$.}
+\step{2}{For $n \in \mathbb{N}$, \pick\ $x_n \in U_0 \cap \cdots \cap U_n \cap A$. \prove{$x_n \rightarrow l$ as $n \rightarrow \infty$.}}
+\step{3}{\pflet{$V$ be a neighbourhood of $l$.}}
+\step{4}{\pick\ $N$ such that $U_N \subseteq V$.}
+\step{5}{$\forall n \geq N. x_n \in V$}
+\qed
+\end{proof}
+
 \subsection{Continuous Functions}
 
 \begin{prop}
@@ -4622,6 +4626,20 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$ be continuous. 
 \step{1}{\pflet{$V$ be a neighbourhood of $f(x)$.}}
 \step{2}{\pick\ $N$ such that $\forall n \geq N. x_n \in \inv{f}(V)$}
 \step{3}{$\forall n \geq N. f(x_n) \in V$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a first countable space and $Y$ a topological space. Let $f : X \rightarrow Y$. Assume that, whenever $x_n \rightarrow l$ as $n \rightarrow \infty$ in $X$, then $f(x_n) \rightarrow f(l)$ as $n \rightarrow \infty$ in $Y$. Then $f$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A \subseteq X$} \prove{$f(\overline{A}) \subseteq \overline{f(A)}$}}
+\step{2}{\pflet{$l \in \overline{A}$}}
+\step{3}{\pick\ a sequence $(x_n)$ in $A$ that converges to $l$.}
+\step{4}{$f(x_n) \rightarrow f(l)$}
+\step{5}{$f(l) \in \overline{f(A)}$}
 \qed
 \end{proof}
 
