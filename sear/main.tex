@@ -6181,56 +6181,6 @@ The standard bounded metric associated with $d$ induces the same topology as $d$
 \qed
 \end{proof}
 
-\begin{prop}
-Let $\overline{d}$ be the standard bounded metric on $\mathbb{R}$. Define $D : (\mathbb{R}^\omega)^2 \rightarrow \mathbb{R}$ by
-\[ D(\vec{x}, \vec{y}) = \sup_{n \in \mathbb{N}} \frac{\overline{d}(x_n,y_n)}{n+1} \enspace . \]
-Then $D$ is a metric that induces the product topology on $\mathbb{R}^\omega$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$D$ is a metric.}
-\begin{proof}
-	\step{a}{For all $\vec{x}, \vec{y} \in \mathbb{R}^\omega$ we have $D(\vec{x}, \vec{y}) \geq 0$.}
-	\begin{proof}
-		\pf\ Immediate from definition.
-	\end{proof}
-	\step{b}{For all $\vec{x}, \vec{y} \in \mathbb{R}^\omega$ we have $D(\vec{x}, \vec{y}) = 0$ if and only if $\vec{x} = \vec{y}$.}
-	\begin{proof}
-		\pf\ Immediate from definition.
-	\end{proof}
-	\step{c}{For all $\vec{x}, \vec{y} \in \mathbb{R}^\omega$ we have $D(\vec{x}, \vec{y}) = D(\vec{y}, \vec{x})$.}
-	\begin{proof}
-		\pf\ Immediate from definition.
-	\end{proof}
-	\step{d}{For all $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^\omega$ we have $D(\vec{x}, \vec{z}) \leq D(\vec{x}, \vec{y}) + D(\vec{y}, \vec{z})$.}
-	\begin{proof}
-		\step{1}{\pflet{$\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^\omega$}}
-		\step{2}{For all $n \in \mathbb{N}$ we have
-		\[ \frac{\overline{d}(x_n,z_n)}{n+1} \leq D(\vec{x}, \vec{y}) + D(\vec{y}, \vec{z}) \enspace . \]}
-		\step{3}{\[ \sup_{n \in \mathbb{N}} \frac{\overline{d}(x_n, z_n)}{n+1} \leq D(\vec{x}, \vec{y}) + D(\vec{y}, \vec{z}) \]}
-	\end{proof}
-\end{proof}
-\step{2}{The metric topology is coarser than the product topology.}
-\begin{proof}
-	\step{a}{\pflet{$U$ be open in the metric topology.}}
-	\step{b}{\pflet{$\vec{x} \in U$}}
-	\step{c}{\pick\ $\epsilon > 0$ such that $B(\vec{x}, \epsilon) \subseteq U$}
-	\step{d}{\pick\ $N > 0$ such that $1/N < \epsilon$}
-	\step{e}{\pflet{$V = \prod_{n \in \mathbb{N}} V_n$ where $V_n = (x_n - \epsilon, x_n + \epsilon)$ for $n \leq N$ and $V_n = \mathbb{R}$ for $n > N$.}}
-	\step{f}{$\vec{x} \in V \subseteq B(\vec{x}, \epsilon)$}
-\end{proof}
-\step{3}{The metric topology is finer than the product topology.}
-\begin{proof}
-	\step{a}{\pflet{$U = \prod_{n \in \mathbb{N}} U_n$ where each $U_n$ is open in $\mathbb{R}$ and $U_n = \mathbb{R}$ for $n > N$.}}
-	\step{b}{\pflet{$\vec{x} \in U$}}
-	\step{c}{For $n \leq N$, \pick\ $\epsilon_n > 0$ such that $(x_n - \epsilon_n, x_n + \epsilon_n) \subseteq U_n$}
-	\step{d}{\pflet{$\epsilon = \min \{ \epsilon_n / (n+1) : n \leq N \}$}}
-	\step{e}{$B(\vec{x}, \epsilon) \subseteq U$}
-\end{proof}
-\qed
-\end{proof}
-
 \subsection{Product Spaces}
 
 \begin{prop}
