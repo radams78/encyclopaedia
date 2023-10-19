@@ -3918,6 +3918,34 @@ $\mathbb{R}_l$ is first countable.
 \pf\ For any $x \in \mathbb{R}$ we have $\{ [x, x + 1/n) : n \in \mathbb{Z}_+ \}$ is a countable local basis. \qed
 \end{proof}
 
+\begin{prop}
+The ordered square is first countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every point $(a,b)$ with $0 < b < 1$ has a countable local basis.}
+\begin{proof}
+	\pf\ The set of all intervals $((a,q),(a,r))$ where $q$ and $r$ are rational and $0 \leq q < b < r \leq 1$ is a countable local basis.
+\end{proof}
+\step{2}{Every point $(a,0)$ has a countable local basis with $a > 0$.}
+\begin{proof}
+	\pf\ The set of all intervals $((q,0),(a,r))$ where $q$ and $r$ are rational with $0 \leq q < a$ and $0 < r \leq 1$ is a countable local basis.
+\end{proof}
+\step{3}{Every point $(a,1)$ has a countable local basis with $a < 1$.}
+\begin{proof}
+	\pf\ The set of all intervals $((a,q),(r,1))$ with $q$ and $r$ rational and $0 \leq q < 1$, $a < r \leq 1$ is a countable local basis.
+\end{proof}
+\step{4}{$(0,0)$ has a countable local basis.}
+\begin{proof}
+	\pf\ The set of all intervals $[(0,0),(0,r))$ with $r$ rational and $0 < r \leq 1$ is a countable local basis.
+\end{proof}
+\step{5}{$(1,1)$ has a countable local basis.}
+\begin{proof}
+	\pf\ The set of all intervals $((1,q),(1,1)]$ with $q$ rational and $0 \leq q < 1$ is a countable local basis.
+\end{proof}
+\qed
+\end{proof}
 \section{Second Countable Spaces}
 
 \begin{df}[Second Countable]
