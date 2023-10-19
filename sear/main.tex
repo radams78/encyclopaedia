@@ -5951,6 +5951,32 @@ Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \end{proof}
 
 \begin{prop}
+Multiplication is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(x,y) \in \mathbb{R}^2$ and $\epsilon > 0$}}
+\step{2}{\pflet{$\delta = \min(\epsilon / (|x| + |y| + 1), 1)$}}
+\step{3}{\pflet{$(x',y') \in \mathbb{R}^2$ with $\rho((x,y),(x',y')) < \delta$}}
+\step{4}{$|x-x'|,|y-y'| < \delta$}
+\step{5}{$|xy-x'y'| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|xy - x'y'| & = |xy - xy' + xy - x'y - xy + x'y + xy' - x'y'| \\
+		& \leq |xy-xy'| + |xy-x'y| + |xy-x'y-xy'+xy'y|
+		& = |x||y-y'| + |x-x'||y| + |x-x'||y-y'| \\
+		& < |x|\delta + |y|\delta + \delta^2 & (\text{\stepref{4}}) \\
+		& \leq |x|\delta + |y|\delta + \delta & (\text{\stepref{2}}) \\
+		& = (|x| + |y| + 1) \delta \\
+		& \leq \epsilon & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 \label{prop:metric_open}
 Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.
 \end{prop}
@@ -6236,6 +6262,52 @@ Let $X$ be a metrizable space and $Y$ a topological space. Let $f : X \rightarro
 \qed
 \end{proof}
 
+\begin{prop}
+The function $i : \mathbb{R} - \{0\} \rightarrow \mathbb{R}$ that maps $x$ to $\inv{x}$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a,b \in \mathbb{R}$ with $a < b$} \prove{$\inv{i}((a,b))$ is open.}}
+\step{2}{\case{$0 < a$}}
+\begin{proof}
+	\pf\ $\inv{i}((a,b)) = (\inv{b}, \inv{a})$
+\end{proof}
+\step{3}{\case{$a = 0$}}
+\begin{proof}
+	\pf\ $\inv{i}((a,b)) = (\inv{b}, + \infty)$
+\end{proof}
+\step{4}{\case{$a < 0 < b$}}
+\begin{proof}
+	\pf\ $\inv{i}((a,b)) = (-\infty, \inv{a}) \cup (\inv{b}, +\infty)$
+\end{proof}
+\step{5}{\case{$b = 0$}}
+\begin{proof}
+	\pf\ $\inv{i}((a,b)) = (-\infty, \inv{a})$
+\end{proof}
+\step{6}{\case{$b < 0$}}
+\begin{proof}
+	\pf\ $\inv{i}((a,b)) = (\inv{b}, \inv{a})$
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Subtraction is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $a-b$ = $a + (-1)b$ and both addition and multiplication are continuous. \qed
+\end{proof}
+
+\begin{prop}
+Division is a continuous function $\mathbb{R} \times (\mathbb{R} - \{0\}) \rightarrow \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since both multiplication and the function that maps $x$ to $\inv{x}$ are continuous. \qed
+\end{proof}
+
 \subsection{First Countable Spaces}
 
 \begin{prop}
@@ -6266,6 +6338,13 @@ Every metric space is Hausdorff.
 \begin{df}[Bounded]
 Let $X$ be a metric space. Let $A \subseteq X$. Then $A$ is \emph{bounded} iff there exists $M$ such that $\forall x,y \in A. d(x,y) \leq M$. Its \emph{diameter} is then defined to be
 \[ \diam A := \sup \{ d(x,y) : x,y \in A \} \enspace . \]
+\end{df}
+
+\subsection{Uniform Convergence}
+
+\begin{df}[Uniform Convergence]
+Let $X$ be a set and $Y$ a metric space. Let $(f_n)$ be a sequence of functions $X \rightarrow Y$, and $f : X \rightarrow Y$. Then $(f_n)$ \emph{converges uniformly} to $f$ iff, for all $\epsilon > 0$, there exists $N$ such that
+\[ \forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon \enspace . \]
 \end{df}
 
 \subsection{Standard Bounded Metric}
