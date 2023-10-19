@@ -5807,6 +5807,8 @@ We prove this is a metric.
 \qed
 \end{proof}
 
+\subsection{Balls}
+
 \begin{df}[Ball]
 Let $X$ be a metric space. Let $x \in X$ and $r > 0$. The \emph{ball} with \emph{centre} $x$ and \emph{radius} $r$ is
 \[ B(x,r) = \{ y \in X \mid d(x,y) < r \} \enspace . \]
@@ -6128,6 +6130,22 @@ Let $(X,d)$ be a metric space and $Y \subseteq X$. Then $d \restriction Y^2$ is 
 \qed
 \end{proof}
 
+
+\subsection{Hausdorff Spaces}
+
+\begin{prop}
+Every metric space is Hausdorff.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a metric space.}}
+\step{2}{\pflet{$x,y \in X$ with $x \neq y$.}}
+\step{3}{\pflet{$\epsilon = d(x,y)$}}
+\step{4}{$B(x,\epsilon / 2)$ and $B(y, \epsilon / 2)$ are disjoint neighbourhoods of $x$ and $y$.}
+\qed
+\end{proof}
+
 \subsection{Bounded Sets}
 
 \begin{df}[Bounded]
@@ -6209,6 +6227,43 @@ Then $D$ is a metric that induces the product topology on $\mathbb{R}^\omega$.
 	\step{c}{For $n \leq N$, \pick\ $\epsilon_n > 0$ such that $(x_n - \epsilon_n, x_n + \epsilon_n) \subseteq U_n$}
 	\step{d}{\pflet{$\epsilon = \min \{ \epsilon_n / (n+1) : n \leq N \}$}}
 	\step{e}{$B(\vec{x}, \epsilon) \subseteq U$}
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Product Spaces}
+
+\begin{prop}
+The product of a countable family of metrizable spaces is metrizable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(X_n, d_n)$ be a sequence of metric spaces.}}
+\step{2}{For $n \in \mathbb{N}$, \pflet{$\overline{d_n}$ be the standard bounded metric associated with $d_n$.}}
+\step{3}{\pflet{$X = \prod_{n \in \mathbb{N}} X_n$}}
+\step{4}{Define $D : X^2 \rightarrow \mathbb{R}$ by $D(x,y) = \sup_{n \in \mathbb{N}} \overline{d_n}(\pi_n(x), \pi_n(y)) / (n+1)$.}
+\step{5}{$D$ is a metric on $X$.}
+\begin{proof}
+	\step{a}{For all $x,y \in X$ we have $D(x,y) \geq 0$.}
+	\step{b}{For all $x,y \in X$ we have $D(x,y) = 0$ iff $x = y$.}
+	\step{c}{For all $x,y \in X$ we have $D(x,y) = D(y,x)$.}
+	\step{d}{For all $x,y,z \in X$ we have $D(x,z) \leq D(x,y) + D(y,z)$.}
+\end{proof}
+\step{6}{The product topology is finer than the metric topology induced by $D$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in X$ and $\epsilon > 0$.}}
+	\step{b}{\pflet{$x \in B(a, \epsilon)$}}
+	\step{c}{\pflet{$\delta = \epsilon - D(a,x)$}}
+	\step{c}{\pick\ $N \in \mathbb{N}$ such that $1 / (N+1) < \delta$}
+	\step{d}{$x \in \prod_{n=0}^N B_{\overline{d_n}}(\pi_n(a), n \delta) \times \prod_{n=N+1}^\infty \subseteq B(a, \epsilon)$}
+\end{proof}
+\step{7}{The metric topology induced by $D$ is finer than the product topology.}
+\begin{proof}
+	\step{a}{\pflet{$n \in \mathbb{N}$ and $U$ be an open set in $X_n$.} \prove{$\inv{\pi_n}(U)$ is open in the metric topology.}}
+	\step{b}{\pflet{$x \in \inv{\pi_n}(U)$}}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B_{\overline{d_n}}(\pi_n(x),\epsilon) \subseteq U$}
+	\step{d}{$B(x, \epsilon / (n+1)) \subseteq \inv{\pi_n}(U)$}
 \end{proof}
 \qed
 \end{proof}
