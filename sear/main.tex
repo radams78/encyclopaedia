@@ -6220,6 +6220,43 @@ Let $X$ be a metric space. Let $A \subseteq X$. Let $l \in \overline{A}$. Then t
 \qed
 \end{proof}
 
+\begin{cor}
+$\mathbb{R}^\omega$ under the box topology is not first countable.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be the set of all sequences of positive reals.}}
+\step{2}{$0 \in \overline{A}$}
+\step{3}{\pflet{$(a_n)$ be a sequence in $A$} \prove{$(a_n)$ does not converge to 0.}}
+\step{4}{For all $n \in \mathbb{N}$, \pflet{$a_n = (x_{nm})$}}
+\step{5}{\pflet{$B' = \prod_{n=0}^\infty (-x_{nn},x_{nn})$}}
+\step{6}{$B'$ is open in the box topology.}
+\step{6}{$0 \in B'$}
+\step{7}{For all $n$ we have $a_n \notin B'$}
+\qed
+\end{proof}
+
+\begin{cor}
+If $J$ is an uncountable set then $\mathbb{R}^J$ under the product topology is not first countable.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A = \{ x \in \mathbb{R}^J : \pi_j(x) = 1 \text{ for all but finitely many } j \in J \}$}}
+\step{2}{$0 \in \overline{A}$}
+\step{3}{\pflet{$(a_n)$ be a sequence in $A$.} \prove{$(a_n)$ does not converge to 0.}}
+\step{4}{For $n \in \mathbb{N}$, \pflet{$J_n = \{ j \in J : \pi_j(a_n) \neq 1 \}$}}
+\step{5}{$\bigcup_{n \in \mathbb{N}} J_n$ is countable.}
+\step{6}{\pick\ $\beta \in J - \bigcup_{n \in \mathbb{N}} J_n$}
+\step{7}{$\forall n \in \mathbb{N}. \pi_\beta(a_n) = 1$}
+\step{8}{\pflet{$U = \inv{\pi_\beta}((-1,1))$}}
+\step{9}{$0 \in U$}
+\step{10}{$\forall n \in \mathbb{N}. a_n \notin U$}
+\step{11}{$(a_n)$ does not converge to 0.}
+\qed
+\end{proof}
+
 \subsection{Continuous Functions}
 
 \begin{prop}
@@ -6317,6 +6354,10 @@ Every metrizable space is first countable.
 \begin{proof}
 \pf\ For any point $x$, the set $\{ B(x, 1/n) : n \in \mathbb{Z}_+ \}$ is a countable basis at $x$. \qed
 \end{proof}
+
+\begin{cor}
+$\mathbb{R}^\omega$ under the box topology is not metrizable.
+\end{cor}
 
 \subsection{Hausdorff Spaces}
 

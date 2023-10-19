@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 OCT 2023 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 OCT 2023 18:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -962,24 +962,25 @@ Overfull \hbox (27.79453pt too wide) detected at line 6053
 []
  []
 
-[140] [141] [142] [143] [144]
-Overfull \hbox (4.95183pt too wide) detected at line 6370
+[140] [141] [142]
+WARNING: proof step "6" (<1>7) already defined
+[143] [144] [145]
+Overfull \hbox (4.95183pt too wide) detected at line 6411
 []
  []
 
-[145]
+[146]
 WARNING: proof step "c" (<2>4) already defined
-
-Underfull \vbox (badness 4859) has occurred while \output is active []
-
- [146]
-[147] [148]
-Overfull \hbox (108.65958pt too wide) detected at line 6644
+[147] [148] [149]
+Overfull \hbox (108.65958pt too wide) detected at line 6685
 []
  []
 
-[149]
-Overfull \hbox (47.883pt too wide) in paragraph at lines 6658--6658
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [150]
+Overfull \hbox (47.883pt too wide) in paragraph at lines 6699--6699
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -987,22 +988,22 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 6674
+Overfull \hbox (0.90187pt too wide) detected at line 6715
 []
  []
 
-[150] [151] [152
-
-]
+[151] [152]
 Chapter 13.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 6805--6806
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 6846--6847
 []\OT1/cmr/bx/n/10 Definition 13.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
  []
 
-[153] [154]
+[153
+
+] [154]
 Chapter 14.
 [155
 
@@ -1015,13 +1016,13 @@ Chapter 16.
 [159
 
 ] [160]
-Overfull \hbox (113.19771pt too wide) detected at line 7140
+Overfull \hbox (113.19771pt too wide) detected at line 7181
 []
  []
 
 WARNING: proof step "4" undefined
 [161] [162]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 7270--7270
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 7311--7311
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1035,8 +1036,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FEE1E33B5206883F1358811416B3133B;20497.
  ) 
 Here is how much of TeX's memory you used:
- 13694 strings out of 476091
- 192015 string characters out of 5794081
+ 13697 strings out of 476091
+ 192057 string characters out of 5794081
  1874330 words of memory out of 5000000
  32781 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
@@ -1069,10 +1070,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (168 pages, 737007 bytes).
+Output written on main.pdf (168 pages, 739248 bytes).
 PDF statistics:
- 2837 PDF objects out of 2984 (max. 8388607)
- 2481 compressed objects within 25 object streams
- 1104 named destinations out of 1200 (max. 500000)
+ 2841 PDF objects out of 2984 (max. 8388607)
+ 2485 compressed objects within 25 object streams
+ 1107 named destinations out of 1200 (max. 500000)
  1257 words of extra memory for PDF output out of 10000 (max. 10000000)
 
