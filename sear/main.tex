@@ -6347,6 +6347,35 @@ Let $X$ be a set and $Y$ a metric space. Let $(f_n)$ be a sequence of functions 
 \[ \forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon \enspace . \]
 \end{df}
 
+\begin{thm}[Uniform Limit Theorem]
+Let $X$ be a topological space and $Y$ a metric space. Let $(f_n)$ be a sequence of functions $X \rightarrow Y$, and $f : X \rightarrow Y$. If every $f_n$ is continuous and $(f_n)$ converges uniformly to $f$, then $f$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be open in $Y$.}}
+\step{2}{\pflet{$x_0 \in \inv{f}(V)$} \prove{There exists a neighbourhood $U$ of $x_0$ such that $f(U) \subseteq V$.}}
+\step{3}{\pflet{$y_0 = f(x_0)$}}
+\step{4}{\pick\ $\epsilon > 0$ such that $B(y_0, \epsilon) \subseteq V$.}
+\step{5}{\pick\ $N$ such that $\forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon / 3$.}
+\step{7}{\pick\ a neighbourhood $U$ of $x_0$ such that $f_N(U_2) \subseteq B(f_N(x_0), \epsilon / 3)$. \prove{$f(U) \subseteq V$}}
+\step{9}{\pflet{$y \in U$}}
+\step{10}{$d(f(y),y_0) < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		d(f(y),y_0) & \leq d(f(y),f_N(y)) + d(f_N(y),f_N(x_0)) + d(f_N(x_0),y_0) \\
+		& < \epsilon / 3 + \epsilon / 3 + \epsilon / 3 & (\text{\stepref{5}, \stepref{7}}) l\\
+		& = \epsilon
+	\end{align*}
+\end{proof}
+\step{11}{$f(y) in V$}
+\begin{proof}
+	\pf\ \stepref{4}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Standard Bounded Metric}
 
 \begin{df}[Standard Bounded Metric]
