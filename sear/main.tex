@@ -4,6 +4,7 @@
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -6130,6 +6131,33 @@ Let $(X,d)$ be a metric space and $Y \subseteq X$. Then $d \restriction Y^2$ is 
 \qed
 \end{proof}
 
+\subsection{Continuous Functions}
+
+\begin{prop}
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$x \in X$}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{$x \in \inv{f}(B(f(x),\epsilon)$}
+	\step{e}{There exists $\delta > 0$ such that $B(x, \delta) \subseteq \inv{f}(B(f(x),\epsilon)$.}
+\end{proof}
+\step{2}{If, for all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$, then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For all $x \in X$ and $\epsilon > 0$, there exists $\delta > 0$ such that, for all $y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$.}}
+	\step{b}{\pflet{$V$ be open in $Y$}}
+	\step{c}{\pflet{$x \in \inv{f}(V)$}}
+	\step{d}{\pick\ $\epsilon > 0$ such that $B(f(x),\epsilon) \subseteq V$}
+	\step{e}{\pick\ $\delta > 0$ such that, for all $y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$.}
+	\step{f}{$B(x,\delta) \subseteq \inv{f}(V)$}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Hausdorff Spaces}
 

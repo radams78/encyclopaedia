@@ -122,14 +122,15 @@
 \contentsline {section}{\numberline {12.26}Metric Spaces}{134}{section.12.26}%
 \contentsline {subsection}{\numberline {12.26.1}Balls}{135}{subsection.12.26.1}%
 \contentsline {subsection}{\numberline {12.26.2}Subspaces}{139}{subsection.12.26.2}%
-\contentsline {subsection}{\numberline {12.26.3}Hausdorff Spaces}{139}{subsection.12.26.3}%
-\contentsline {subsection}{\numberline {12.26.4}Bounded Sets}{140}{subsection.12.26.4}%
-\contentsline {subsection}{\numberline {12.26.5}Standard Bounded Metric}{140}{subsection.12.26.5}%
-\contentsline {subsection}{\numberline {12.26.6}Product Spaces}{140}{subsection.12.26.6}%
-\contentsline {subsection}{\numberline {12.26.7}Uniform Metric}{141}{subsection.12.26.7}%
-\contentsline {subsection}{\numberline {12.26.8}Products}{143}{subsection.12.26.8}%
+\contentsline {subsection}{\numberline {12.26.3}Continuous Functions}{139}{subsection.12.26.3}%
+\contentsline {subsection}{\numberline {12.26.4}Hausdorff Spaces}{140}{subsection.12.26.4}%
+\contentsline {subsection}{\numberline {12.26.5}Bounded Sets}{140}{subsection.12.26.5}%
+\contentsline {subsection}{\numberline {12.26.6}Standard Bounded Metric}{140}{subsection.12.26.6}%
+\contentsline {subsection}{\numberline {12.26.7}Product Spaces}{141}{subsection.12.26.7}%
+\contentsline {subsection}{\numberline {12.26.8}Uniform Metric}{141}{subsection.12.26.8}%
+\contentsline {subsection}{\numberline {12.26.9}Products}{144}{subsection.12.26.9}%
 \contentsline {section}{\numberline {12.27}Complete Metric Spaces}{145}{section.12.27}%
-\contentsline {section}{\numberline {12.28}Manifolds}{145}{section.12.28}%
+\contentsline {section}{\numberline {12.28}Manifolds}{146}{section.12.28}%
 \contentsline {chapter}{\numberline {13}Homotopy Theory}{147}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Homotopies}{147}{section.13.1}%
 \contentsline {section}{\numberline {13.2}Homotopy Equivalence}{147}{section.13.2}%
