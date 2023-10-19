@@ -85,16 +85,16 @@
 \contentsline {section}{\numberline {12.6}First Countable Spaces}{107}{section.12.6}%
 \contentsline {section}{\numberline {12.7}Second Countable Spaces}{107}{section.12.7}%
 \contentsline {section}{\numberline {12.8}Interior}{107}{section.12.8}%
-\contentsline {section}{\numberline {12.9}Closure}{107}{section.12.9}%
-\contentsline {subsection}{\numberline {12.9.1}Bases}{108}{subsection.12.9.1}%
+\contentsline {section}{\numberline {12.9}Closure}{108}{section.12.9}%
+\contentsline {subsection}{\numberline {12.9.1}Bases}{109}{subsection.12.9.1}%
 \contentsline {subsection}{\numberline {12.9.2}Subspaces}{109}{subsection.12.9.2}%
 \contentsline {subsection}{\numberline {12.9.3}Product Topology}{109}{subsection.12.9.3}%
 \contentsline {subsection}{\numberline {12.9.4}Interior}{110}{subsection.12.9.4}%
 \contentsline {section}{\numberline {12.10}Boundary}{110}{section.12.10}%
-\contentsline {section}{\numberline {12.11}Limit Points}{111}{section.12.11}%
+\contentsline {section}{\numberline {12.11}Limit Points}{112}{section.12.11}%
 \contentsline {section}{\numberline {12.12}Continuous Functions}{112}{section.12.12}%
 \contentsline {subsection}{\numberline {12.12.1}Paths}{116}{subsection.12.12.1}%
-\contentsline {subsection}{\numberline {12.12.2}Loops}{116}{subsection.12.12.2}%
+\contentsline {subsection}{\numberline {12.12.2}Loops}{117}{subsection.12.12.2}%
 \contentsline {section}{\numberline {12.13}Convergence}{117}{section.12.13}%
 \contentsline {subsection}{\numberline {12.13.1}Closure}{117}{subsection.12.13.1}%
 \contentsline {subsection}{\numberline {12.13.2}Continuous Functions}{117}{subsection.12.13.2}%
