@@ -6581,6 +6581,30 @@ The uniform topology on the Hilbert cube is the same as the product topology.
 The uniform topology on the Hilbert cube is strictly finer than the box topology.
 \end{cor}
 
+\begin{prop}
+Let $X$ be a set and $Y$ a metric space. Let $(f_n)$ be a sequence of functions $X \rightarrow Y$, and $f : X \rightarrow Y$. Then $(f_n)$ converges uniformly to $f$ iff $(f_n)$ converges to $f$ in $Y^X$ under the uniform topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $(f_n)$ converges uniformly to $f$ then $(f_n)$ converges to $f$ in $Y^X$ under the uniform topology.}
+\begin{proof}
+	\step{a}{\assume{$(f_n)$ converges uniformly to $f$.}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $N$ such that $\forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon / 2$}
+	\step{d}{$\forall n \geq N. \overline{\rho}(f_n,f) \leq \epsilon / 2$}
+	\step{e}{$\forall n \geq N. \overline{\rho}(f_n,f) < \epsilon$}
+\end{proof}
+\step{2}{If $(f_n)$ converges to $f$ in $Y^X$ under the uniform topology then $(f_n)$ converges uniformly to $f$.}
+\begin{proof}
+	\step{a}{\assume{$(f_n)$ converges to $f$ in $Y^X$ under the uniform topology.}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $N$ such that $\forall n \geq N. \overline{\rho}(f_n,f) < \epsilon$}
+	\step{d}{$\forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon$}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Products}
 
 \begin{df}[Euclidean Metric]
