@@ -5199,6 +5199,49 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is a 
 \pf\ Immediate from definition. \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $p : X \twoheadrightarrow Y$ be surjective. Then the following are equivalent.
+\begin{enumerate}
+\item $p$ is a quotient map.
+\item $p$ is continuous and maps saturated open sets to open sets.
+\item $p$ is continuous and maps saturated closed sets to closed sets.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$p$ is a quotient map.}}
+	\step{b}{$p$ is continuous.}
+	\step{c}{$p$ maps saturated open sets to open sets.}
+	\begin{proof}
+		\step{i}{\pflet{$U \subseteq X$ be a saturated open set.}}
+		\step{2}{$\inv{p}(p(U)) = U$}
+		\step{3}{$\inv{p}(p(U))$ is open in $X$.}
+		\step{4}{$p(U)$ is open in $Y$.}
+	\end{proof}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$p$ is continuous and maps saturated open sets to open sets.}}
+	\step{b}{\pflet{$C$ be a saturated closed set in $X$.}}
+	\step{c}{$X - C$ is a saturated open set.}
+	\step{d}{$Y - p(C)$ is open.}
+	\step{e}{$p(C)$ is closed.}
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{$p$ is continuous and maps closed sets to closed sets.}}
+	\step{b}{\pflet{$C \subseteq Y$}}
+	\step{c}{\assume{$\inv{p}(C)$ is closed in $X$.} \prove{$C$ is closed in $Y$.}}
+	\step{d}{$\inv{p}(C)$ is saturated.}
+	\step{e}{$p(\inv{p}(C))$ is closed.}
+	\step{f}{$C$ is closed.}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{thm}
 Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
 \end{thm}
