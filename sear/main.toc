@@ -20,18 +20,19 @@
 \contentsline {section}{\numberline {2.8}Union}{24}{section.2.8}%
 \contentsline {subsection}{\numberline {2.8.1}Intersection}{24}{subsection.2.8.1}%
 \contentsline {subsection}{\numberline {2.8.2}Direct Image}{24}{subsection.2.8.2}%
-\contentsline {subsection}{\numberline {2.8.3}Inverse Image}{24}{subsection.2.8.3}%
-\contentsline {section}{\numberline {2.9}Relations}{25}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Equivalence Relations}{25}{subsection.2.9.1}%
-\contentsline {section}{\numberline {2.10}Power Set}{25}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Partitions}{25}{subsection.2.10.1}%
-\contentsline {section}{\numberline {2.11}Cartesian Product}{26}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Quotient Sets}{26}{section.2.12}%
-\contentsline {section}{\numberline {2.13}Partitions}{26}{section.2.13}%
-\contentsline {section}{\numberline {2.14}Disjoint Union}{26}{section.2.14}%
-\contentsline {section}{\numberline {2.15}Natural Numbers}{26}{section.2.15}%
-\contentsline {section}{\numberline {2.16}Finite and Infinite Sets}{27}{section.2.16}%
-\contentsline {section}{\numberline {2.17}Countable Sets}{29}{section.2.17}%
+\contentsline {section}{\numberline {2.9}Inverse Image}{24}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Saturated Sets}{25}{subsection.2.9.1}%
+\contentsline {section}{\numberline {2.10}Relations}{25}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Equivalence Relations}{26}{subsection.2.10.1}%
+\contentsline {section}{\numberline {2.11}Power Set}{26}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Partitions}{26}{subsection.2.11.1}%
+\contentsline {section}{\numberline {2.12}Cartesian Product}{26}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Quotient Sets}{26}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Partitions}{27}{section.2.14}%
+\contentsline {section}{\numberline {2.15}Disjoint Union}{27}{section.2.15}%
+\contentsline {section}{\numberline {2.16}Natural Numbers}{27}{section.2.16}%
+\contentsline {section}{\numberline {2.17}Finite and Infinite Sets}{28}{section.2.17}%
+\contentsline {section}{\numberline {2.18}Countable Sets}{29}{section.2.18}%
 \contentsline {chapter}{\numberline {3}Order Theory}{33}{chapter.3}%
 \contentsline {part}{II\hspace {1em}Category Theory}{35}{part.2}%
 \contentsline {section}{\numberline {3.1}Relations}{37}{section.3.1}%
