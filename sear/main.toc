@@ -114,6 +114,7 @@
 \contentsline {subsection}{\numberline {12.20.2}Closure}{126}{subsection.12.20.2}%
 \contentsline {subsection}{\numberline {12.20.3}Convergence}{126}{subsection.12.20.3}%
 \contentsline {section}{\numberline {12.21}Quotient Spaces}{127}{section.12.21}%
+\contentsline {subsection}{\numberline {12.21.1}Quotient Maps}{127}{subsection.12.21.1}%
 \contentsline {section}{\numberline {12.22}Box Topology}{130}{section.12.22}%
 \contentsline {subsection}{\numberline {12.22.1}Bases}{131}{subsection.12.22.1}%
 \contentsline {subsection}{\numberline {12.22.2}Subspaces}{131}{subsection.12.22.2}%
