@@ -100,32 +100,33 @@
 \contentsline {subsection}{\numberline {12.13.1}Closure}{118}{subsection.12.13.1}%
 \contentsline {subsection}{\numberline {12.13.2}Continuous Functions}{118}{subsection.12.13.2}%
 \contentsline {subsection}{\numberline {12.13.3}Infinite Series}{118}{subsection.12.13.3}%
-\contentsline {section}{\numberline {12.14}Subspaces}{119}{section.12.14}%
-\contentsline {subsection}{\numberline {12.14.1}Product Topology}{121}{subsection.12.14.1}%
-\contentsline {section}{\numberline {12.15}Embedding}{121}{section.12.15}%
-\contentsline {section}{\numberline {12.16}Open Maps}{122}{section.12.16}%
-\contentsline {section}{\numberline {12.17}Locally Finite}{122}{section.12.17}%
-\contentsline {section}{\numberline {12.18}Product Topology}{123}{section.12.18}%
-\contentsline {subsection}{\numberline {12.18.1}Closed Sets}{123}{subsection.12.18.1}%
-\contentsline {subsection}{\numberline {12.18.2}Closure}{125}{subsection.12.18.2}%
-\contentsline {subsection}{\numberline {12.18.3}Convergence}{126}{subsection.12.18.3}%
-\contentsline {section}{\numberline {12.19}Quotient Spaces}{126}{section.12.19}%
-\contentsline {section}{\numberline {12.20}Box Topology}{128}{section.12.20}%
-\contentsline {subsection}{\numberline {12.20.1}Bases}{129}{subsection.12.20.1}%
-\contentsline {subsection}{\numberline {12.20.2}Subspaces}{130}{subsection.12.20.2}%
-\contentsline {subsection}{\numberline {12.20.3}Closure}{130}{subsection.12.20.3}%
-\contentsline {section}{\numberline {12.21}Connected Spaces}{131}{section.12.21}%
-\contentsline {section}{\numberline {12.22}$T_1$ Spaces}{131}{section.12.22}%
-\contentsline {subsection}{\numberline {12.22.1}Limit Points}{132}{subsection.12.22.1}%
-\contentsline {section}{\numberline {12.23}Hausdorff Spaces}{132}{section.12.23}%
-\contentsline {subsection}{\numberline {12.23.1}Product Topology}{134}{subsection.12.23.1}%
-\contentsline {subsection}{\numberline {12.23.2}Box Topology}{134}{subsection.12.23.2}%
-\contentsline {subsection}{\numberline {12.23.3}$T_1$ Spaces}{134}{subsection.12.23.3}%
-\contentsline {section}{\numberline {12.24}Separable Spaces}{135}{section.12.24}%
-\contentsline {section}{\numberline {12.25}Sequential Compactness}{135}{section.12.25}%
-\contentsline {section}{\numberline {12.26}Compactness}{135}{section.12.26}%
-\contentsline {section}{\numberline {12.27}Quotient Spaces}{136}{section.12.27}%
-\contentsline {section}{\numberline {12.28}Gluing}{137}{section.12.28}%
+\contentsline {section}{\numberline {12.14}Strong Continuity}{119}{section.12.14}%
+\contentsline {section}{\numberline {12.15}Subspaces}{119}{section.12.15}%
+\contentsline {subsection}{\numberline {12.15.1}Product Topology}{121}{subsection.12.15.1}%
+\contentsline {section}{\numberline {12.16}Embedding}{122}{section.12.16}%
+\contentsline {section}{\numberline {12.17}Open Maps}{122}{section.12.17}%
+\contentsline {section}{\numberline {12.18}Locally Finite}{122}{section.12.18}%
+\contentsline {section}{\numberline {12.19}Product Topology}{123}{section.12.19}%
+\contentsline {subsection}{\numberline {12.19.1}Closed Sets}{123}{subsection.12.19.1}%
+\contentsline {subsection}{\numberline {12.19.2}Closure}{125}{subsection.12.19.2}%
+\contentsline {subsection}{\numberline {12.19.3}Convergence}{126}{subsection.12.19.3}%
+\contentsline {section}{\numberline {12.20}Quotient Spaces}{126}{section.12.20}%
+\contentsline {section}{\numberline {12.21}Box Topology}{129}{section.12.21}%
+\contentsline {subsection}{\numberline {12.21.1}Bases}{129}{subsection.12.21.1}%
+\contentsline {subsection}{\numberline {12.21.2}Subspaces}{130}{subsection.12.21.2}%
+\contentsline {subsection}{\numberline {12.21.3}Closure}{130}{subsection.12.21.3}%
+\contentsline {section}{\numberline {12.22}Connected Spaces}{131}{section.12.22}%
+\contentsline {section}{\numberline {12.23}$T_1$ Spaces}{131}{section.12.23}%
+\contentsline {subsection}{\numberline {12.23.1}Limit Points}{132}{subsection.12.23.1}%
+\contentsline {section}{\numberline {12.24}Hausdorff Spaces}{133}{section.12.24}%
+\contentsline {subsection}{\numberline {12.24.1}Product Topology}{134}{subsection.12.24.1}%
+\contentsline {subsection}{\numberline {12.24.2}Box Topology}{134}{subsection.12.24.2}%
+\contentsline {subsection}{\numberline {12.24.3}$T_1$ Spaces}{135}{subsection.12.24.3}%
+\contentsline {section}{\numberline {12.25}Separable Spaces}{135}{section.12.25}%
+\contentsline {section}{\numberline {12.26}Sequential Compactness}{135}{section.12.26}%
+\contentsline {section}{\numberline {12.27}Compactness}{136}{section.12.27}%
+\contentsline {section}{\numberline {12.28}Quotient Spaces}{136}{section.12.28}%
+\contentsline {section}{\numberline {12.29}Gluing}{137}{section.12.29}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{139}{chapter.13}%
 \contentsline {subsection}{\numberline {13.0.1}Balls}{140}{subsection.13.0.1}%
 \contentsline {subsection}{\numberline {13.0.2}Subspaces}{145}{subsection.13.0.2}%

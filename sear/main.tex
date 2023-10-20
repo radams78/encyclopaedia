@@ -1,10 +1,10 @@
-% CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
+% CHECK
  
 \documentclass{book}
 
@@ -4677,6 +4677,12 @@ Let $(a_n)$ be a sequence of real numbers. We say that the infinite series $\sum
 iff $\sum_{n=0}^N a_n \rightarrow s$ as $N \rightarrow \infty$.
 \end{df}
 
+\section{Strong Continuity}
+
+\begin{df}[Strong Continuity]
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is \emph{strongly continuous} iff, for every $V \subseteq Y$, we have $V$ is open in $Y$ if and only if $\inv{f}(V)$ is open in $X$.
+\end{df}
+
 \section{Subspaces}
 
 \begin{df}[Subspace]
@@ -5171,6 +5177,14 @@ Let $X$ be a topological space, $S$ a set and $\pi : X \twoheadrightarrow S$ a s
 \begin{df}[Quotient Map]
 Let $X$ and $S$ be topological spaces and $\pi : X \rightarrow S$. Then $\pi$ is a \emph{quotient map} iff $\pi$ is surjective and the topology on $S$ is the quotient topology induced by $\pi$.
 \end{df}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is a quotient map if and only if $f$ is surjective and strongly continuous.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definition. \qed
+\end{proof}
 
 \begin{thm}
 Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
