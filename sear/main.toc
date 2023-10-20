@@ -12,24 +12,25 @@
 \contentsline {subsection}{\numberline {2.2.1}Injections, Surjections, Bijections}{19}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Composition}{19}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}The Empty Set}{21}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}The Singleton}{21}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}The Set Two}{22}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Subsets}{22}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Union}{23}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Intersection}{24}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Direct Image}{24}{subsection.2.3.6}%
-\contentsline {subsection}{\numberline {2.3.7}Inverse Image}{24}{subsection.2.3.7}%
-\contentsline {section}{\numberline {2.4}Relations}{25}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Equivalence Relations}{25}{subsection.2.4.1}%
-\contentsline {section}{\numberline {2.5}Power Set}{25}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Partitions}{25}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}Cartesian Product}{26}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Quotient Sets}{26}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Partitions}{26}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Disjoint Union}{26}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Natural Numbers}{26}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Finite and Infinite Sets}{27}{section.2.11}%
-\contentsline {section}{\numberline {2.12}Countable Sets}{29}{section.2.12}%
+\contentsline {section}{\numberline {2.4}The Singleton}{21}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Injections}{21}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}The Set Two}{21}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Subsets}{22}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Union}{23}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Intersection}{24}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}Direct Image}{24}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Inverse Image}{24}{subsection.2.5.5}%
+\contentsline {section}{\numberline {2.6}Relations}{25}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Equivalence Relations}{25}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Power Set}{25}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Partitions}{25}{subsection.2.7.1}%
+\contentsline {section}{\numberline {2.8}Cartesian Product}{26}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Quotient Sets}{26}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Partitions}{26}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Disjoint Union}{26}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Natural Numbers}{26}{section.2.12}%
+\contentsline {section}{\numberline {2.13}Finite and Infinite Sets}{27}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Countable Sets}{29}{section.2.14}%
 \contentsline {chapter}{\numberline {3}Order Theory}{33}{chapter.3}%
 \contentsline {part}{II\hspace {1em}Category Theory}{35}{part.2}%
 \contentsline {section}{\numberline {3.1}Relations}{37}{section.3.1}%

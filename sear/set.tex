@@ -222,6 +222,8 @@ Let $f : A \rightarrow B$ be injective. For every set $X$ and functions $x,y : X
 \qed
 \end{proof}
 
+We will prove the converse as Proposition \ref{prop:injection2}.
+
 \subsection{Surjections} % CHECKED FORMALIZED
 
 \begin{prop}
@@ -542,22 +544,14 @@ If $E$ and $E'$ have no elements then $E \approx E'$.
 The \emph{empty set} $\emptyset$ is the set with no elements.
 \end{df}
 
-\subsection{The Singleton}
+\section{The Singleton} % CHECKED
 
 \begin{thm}
 There exists a set that has exactly one element.
 \end{thm}
 
 \begin{proof}
-\pf
-\step{1}{\pick\ a set $A$ that has an element.}
-\begin{proof}
-	\pf\ By the Axiom of Infinity, there exists a set that has an element.
-\end{proof}
-\step{2}{\pick\ $a \in A$}
-\step{3}{\pick\ a set $S$ and injection $i : S \rightarrowtail A$ such that, for all $x \in A$, there exists $s \in S$ such that $s = x$ if and only if $x = a$}
-\step{4}{$S$ has exactly one element.}
-\qed
+\pf\ The set $\{ x \in \mathbb{N} : x = 0 \}$ has exactly one element. \qed
 \end{proof}
 
 \begin{thm}
@@ -576,8 +570,10 @@ If $A$ and $B$ both have exactly one element then $A \approx B$.
 Let 1 be the set that has exactly one element. Let $*$ be its element.
 \end{df}
 
-%TODO This is the converse to an earlier proposition
+\subsection{Injections}
+
 \begin{prop}
+\label{prop:injection2}
 Let $f : A \rightarrow B$. Assume that, for every set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$. Then $f$ is injective.
 \end{prop}
 
@@ -585,7 +581,7 @@ Let $f : A \rightarrow B$. Assume that, for every set $X$ and functions $x,y : X
 \pf\ Take $X = 1$. \qed
 \end{proof}
 
-\subsection{The Set Two}
+\section{The Set Two}
 
 \begin{prop}
 \label{prop:surjective}
