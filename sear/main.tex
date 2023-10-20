@@ -4683,6 +4683,19 @@ iff $\sum_{n=0}^N a_n \rightarrow s$ as $N \rightarrow \infty$.
 Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is \emph{strongly continuous} iff, for every $V \subseteq Y$, we have $V$ is open in $Y$ if and only if $\inv{f}(V)$ is open in $X$.
 \end{df}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is strongly continuous if and only if, for all $C \subseteq Y$, we have $C$ is closed in $Y$ if and only if $\inv{f}(C)$ is closed in $X$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+f \text{ is continuous} & \Leftrightarrow \forall V \subseteq Y ( V \text{ is open in } Y \Leftrightarrow \inv{f}(V) \text{ is open in } X) \\
+& \Leftrightarrow \forall C \subseteq Y (Y - C \text{ is open in } Y \Leftrightarrow \inv{f}(Y - C) \text{ is open in } X) \\
+& \Leftrightarrow \forall C \subseteq Y (C \text{ is closed in } Y \Leftrightarrow \inv{f}(C) \text{ is closed in } X) & \qed
+\end{align*}
+\end{proof}
+
 \section{Subspaces}
 
 \begin{df}[Subspace]
