@@ -6571,6 +6571,41 @@ Let $X$ be a topological space. Let $Y$ be a metric space. Let $f_n$ be a sequen
 \qed
 \end{proof}
 
+\begin{thm}[Weierstrass $M$-Test]
+Let $X$ be a set. Let $(f_n)$ be a sequence of functions $X \rightarrow \mathbb{R}$. Let $(M_n)$ be a sequence of real numbers. For $n \in \mathbb{N}$, let
+\[ s_n(x) = \sum_{i=0}^n f_i(x) \enspace . \]
+Assume that $\forall n \in \mathbb{N}. \forall x \in X. |f_n(x)| \leq M_n$. Assume that $\sum_{n=0}^\infty M_n$ converges. Then $(s_n)$ uniformly converges to $s$ where $s(x) = \sum_{n=0}^\infty f_n(x)$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{0}{For all $x \in X$ we have $\sum_{n=0}^\infty f_n(x)$ converges.}
+\begin{proof}
+	\pf\ By the Comparison Test.
+\end{proof}
+\step{1}{For $n \in \mathbb{N}$, \pflet{$r_n = \sum_{i=n+1}^\infty M_i$.}}
+\step{2}{For all $k,n \in \mathbb{N}$ and $x \in X$, if $k > n$ then $|s_k(x) - s_n(x)| \leq r_n$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|s_k(x) - s_n(x)| & = \left| \sum_{i=n+1}^k f_i(x) \right| \\
+		& \leq \sum_{i=n+1}^k |f_i(x)| \\
+		& \leq \sum_{i=n+1}^k M_i \\
+		& \leq \sum_{i=n+1}^\infty M_i \\
+		& = r_n
+	\end{align*}
+\end{proof}
+\step{4}{For all $n \in \mathbb{N}$ we have $|s(x) - s_n(x)| \leq r_n$.}
+\begin{proof}
+	\pf\ Taking the limit $k \rightarrow \infty$ in \stepref{2}.
+\end{proof}
+\step{5}{$(s_n)$ converges uniformly to $s$.}
+\begin{proof}
+	\pf\ We have $\overline{\rho}(s_n,s) \leq r_n$ and so $\overline{\rho}(s_n,s) \rightarrow 0$ as $n \rightarrow \infty$ by the Sandwich Theorem.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Standard Bounded Metric}
 
 \begin{df}[Standard Bounded Metric]
