@@ -617,7 +617,7 @@ Let $f : A \rightarrow B$. Then $f$ is surjective if and only if, for any set $X
 \qed
 \end{proof}
 
-\subsection{Subsets} % CHECKED
+\section{Subsets} % CHECKED
 
 \begin{df}[Subset]
 A \emph{subset} of a set $A$ consists of a set $S$ and an injection $i : S \rightarrowtail A$. We write $(S,i) \subseteq A$.
@@ -713,7 +713,14 @@ Given subsets $S$ and $T$ of $A$, the \emph{difference} of $S$ and $T$ is $S - T
 \[ R - (S \cap T) = (R - S) \cup (R - T) \]
 \end{prop}
 
-\subsection{Union} % CHECKED
+\section{Saturated Set}
+
+\begin{df}[Saturated]
+Let $A$ and $B$ be sets. Let $f : A \rightarrow B$ be surjective. Let $C \subseteq A$. Then $C$ is \emph{saturated} with respect to $f$ iff, for all $x \in C$ and $y \in A$, if $f(x) = f(y)$ then $y \in C$.
+\end{df}
+
+
+\section{Union} % CHECKED
 
 \begin{df}[Union]
 Given $\mathcal{A} \in \mathcal{P} \mathcal{P} X$, its \emph{union} is
