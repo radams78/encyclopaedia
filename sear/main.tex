@@ -4627,6 +4627,20 @@ Assume for a contradiction $i$ is continuous. Choose a neighbourhood $K$ of 0 in
 The converse does hold for first countable spaces. If $f : X \rightarrow Y$ where $X$ is first countable, and $Y$ is a topological space, and whenever $x_n \rightarrow x$ then $f(x_n) \rightarrow f(x)$, then $f$ is continuous.
 \end{prop}
 
+\begin{prop}
+If $(s_n)$ is an increasing sequence of real numbers bounded above, then $(s_n)$ converges.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$s$ be the supremum of $\{ s_n : n \in \mathbb{N} \}$.} \prove{$s_n \rightarrow s$ as $n \rightarrow \infty$.}}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $N$ such that $s_N > s - \epsilon$.}
+\step{4}{$\forall n \geq N. s - \epsilon \leq s_n \leq s$}
+\step{5}{$\forall n \geq N. |s_n - s| < \epsilon$}
+\qed
+\end{proof}
+
 \subsection{Closure}
 
 \begin{prop}
@@ -4654,6 +4668,14 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$ be continuous. 
 \step{3}{$\forall n \geq N. f(x_n) \in V$}
 \qed
 \end{proof}
+
+\subsection{Infinite Series}
+
+\begin{df}[Series]
+Let $(a_n)$ be a sequence of real numbers. We say that the infinite series $\sum_{n=0}^\infty a_n$ \emph{converges} to $s$, and write
+\[ \sum_{n=0}^\infty a_n = s \]
+iff $\sum_{n=0}^N a_n \rightarrow s$ as $N \rightarrow \infty$.
+\end{df}
 
 \section{Subspaces}
 
