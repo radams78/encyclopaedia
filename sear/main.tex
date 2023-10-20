@@ -6057,6 +6057,40 @@ The unit ball $B^2$ is a closed subset of $\mathbb{R}^2$.
 \end{proof}
 
 \begin{prop}
+Let $(a_n)$ and $(b_n)$ be sequences of real numbers. Let $c,s,t \in \mathbb{R}$. Assume
+\[ \sum_{n=0}^\infty a_n = s \text{ and } \sum_{n=0}^\infty b_n = t \enspace . \]
+Then
+\[ \sum_{n=0}^\infty (c a_n + b_n) = cs + t \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\[ \sum_{n=0}^N (c a_n + b_n) = c \sum_{n=0}^N a_n + \sum_{n=0}^N b_n \rightarrow cs + t \text{ as } n \rightarrow \infty \qquad \qed \]
+\end{proof}
+
+\begin{prop}[Comparison Test]
+Let $(a_n)$ and $(b_n)$ be sequences of real numbers. Assume $|a_n| \leq b_n$ for all $n$. Assume $\sum_{n=0}^\infty b_n$ converges. Then $\sum_{n=0}^\infty a_n$ converges.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $n$, \pflet{$c_n = |a_n| + a_n$}}
+\step{2}{$\sum_{n=0}^\infty |a_n|$ converges.}
+\begin{proof}
+	\pf\ Since $(\sum_{n=0}^N |a_n|)_N$ is an increasing sequence of real numbers bounded above by $\sum_{n=0}^\infty b_n$.
+\end{proof}
+\step{3}{$\sum_{n=0}^\infty c_n$ converges.}
+\begin{proof}
+	\pf\ Since $(\sum_{n=0}^N c_n)_N$ is an increasing sequence of real numbers bounded above by $2 \sum_{n=0}^\infty a_n$.
+\end{proof}
+\step{4}{$\sum_{n=0}^\infty a_n$ converges.}
+\begin{proof}
+	\pf\ Since $a_n = c_n - |a_n|$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 \label{prop:metric_open}
 Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.
 \end{prop}
