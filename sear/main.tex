@@ -2700,6 +2700,10 @@ We write $\mathbb{R}^\infty$ for the set of sequences in $\mathbb{R}^\omega$ tha
 The \emph{Hilbert cube} is $\prod_{n=0}^\infty [0,1/(n+1)]$.
 \end{df}
 
+\begin{df}[Unit Ball]
+The \emph{unit ball} is $B^2 := \{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 \leq 1 \}$.
+\end{df}
+
 \chapter{Integers and Rationals}
 
 \section{Positive Integers}
@@ -4921,6 +4925,8 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\{A_i\}_{
 Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces. The \emph{product topology} on $\prod_{\lambda \in \Lambda} X_\lambda$ is the coarsest topology such that every projection onto $X_\lambda$ is continuous.
 \end{df}
 
+\subsection{Closed Sets}
+
 \begin{prop}
 \label{prop:closed_product}
 Let $X$ and $Y$ be topological spaces. Let $A$ be a closed set in $X$ and $B$ a closed set in $Y$. Then $A \times B$ is closed in $X \times Y$.
@@ -6012,6 +6018,22 @@ Multiplication is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \qed
 \end{proof}
 
+\begin{cor}
+The unit circle $S^1$ is a closed subset of $\mathbb{R}^2$.
+\end{cor}
+
+\begin{proof}
+\pf\ The function $f$ that maps $(x,y)$ to $x^2 + y^2$ is continuous, and $S^1 = \inv{f}(\{1\})$. \qed
+\end{proof}
+
+\begin{cor}
+The unit ball $B^2$ is a closed subset of $\mathbb{R}^2$.
+\end{cor}
+
+\begin{proof}
+\pf\ The function $f$ that maps $(x,y)$ to $x^2 + y^2$ is continuous, and $B^2 = \inv{f}([0,1])$. \qed
+\end{proof}
+
 \begin{prop}
 \label{prop:metric_open}
 Let $X$ be a metric space. Let $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$.
@@ -6428,6 +6450,20 @@ Let $X$ be a set and $Y$ a metric space. Let $(f_n)$ be a sequence of functions 
 \[ \forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon \enspace . \]
 \end{df}
 
+\begin{ex}
+For $n \in \mathbb{N}$ define $f_n : [0,1] \rightarrow \mathbb{R}$ by $f_n(x) = x^n$. Define $f : [0,1] \rightarrow \mathbb{R}$ by $f(x) = 0$ for $x < 1$, $f(1) = 1$. Then $f_n$ converges pointwise to $f$, but does not converge uniformly to $f$.
+
+We prove that, for all $N$, there exists $n \geq N$ and $x \in [0,1]$ such that $|x^n - f(x)| \geq 1/2$. Take $n = N$ and $x$ to be the $N$th root of $3/4$.
+\end{ex}
+
+\begin{ex}
+For $n \in \mathbb{N}$, define $f_n : \mathbb{R} \rightarrow \mathbb{R}$ by
+\[ f_n(x) = \frac{1}{n^3[x-(1/n)]^2 + 1} \enspace . \]
+Then for all $x \in \mathbb{R}$ we have $f_n(x) \rightarrow 0$ as $n \rightarrow \infty$, but $(f_n)$ does not converge uniformly to 0.
+
+We prove that, for all $N$, there exists $n \geq N$ and $x \in \mathbb{R}$ such that $|f_n(x)| \geq 1/2$. Take $n = N$ and $x = 1/N$. We have $f_N(1/N) = 1$.
+\end{ex}
+
 \begin{thm}[Uniform Limit Theorem]
 Let $X$ be a topological space and $Y$ a metric space. Let $(f_n)$ be a sequence of functions $X \rightarrow Y$, and $f : X \rightarrow Y$. If every $f_n$ is continuous and $(f_n)$ converges uniformly to $f$, then $f$ is continuous.
 \end{thm}
@@ -6453,6 +6489,28 @@ Let $X$ be a topological space and $Y$ a metric space. Let $(f_n)$ be a sequence
 \step{11}{$f(y) in V$}
 \begin{proof}
 	\pf\ \stepref{4}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $Y$ be a metric space. Let $f_n$ be a sequence of functions $X \rightarrow Y$ and $f : X \rightarrow Y$. Let $x_n$ be a sequence of points in $X$ and $l \in X$. If $f_n$ converges uniformly to $f$, $x_n$ converges to $l$, and $f$ is continuous, then $f_n(x_n)$ converges to $f(l)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{$f$ is continuous.}
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $\delta > 0$ such that $\forall y \in X. d(y,l) < \delta \Rightarrow d(f(y),f(l)) < \epsilon / 2$}
+\step{2}{\pick\ $N$ such that $\forall n \geq N. \forall x \in X. d(f_n(x),f(x)) < \epsilon / 2$ and $\forall n \geq N. d(x_n,l) < \delta$}
+\step{3}{For all $n \geq N$ we have $d(f_n(x_n),f(l)) < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		d(f_n(x_n),f(l)) & \leq d(f_n(x_n),f(x_n)) + d(f(x_n),f(l)) \\
+		& < \epsilon / 2 + \epsilon / 2 \\
+		& = \epsilon
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
