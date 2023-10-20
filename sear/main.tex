@@ -4960,6 +4960,12 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\{A_i\}_{
 \qed
 \end{proof}
 
+\section{Closed Maps}
+
+\begin{df}[Closed Map]
+Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Then $f$ is a \emph{closed map} iff, for every closed set $C$ in $X$, we have $f(C)$ is closed in $Y$.
+\end{df}
+
 \section{Product Topology}
 
 \begin{df}[Product Topology]
@@ -5241,6 +5247,10 @@ Let $X$ and $Y$ be topological spaces. Let $p : X \twoheadrightarrow Y$ be surje
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+Let $X$ and $Y$ be topological spaces. Let $p : X \rightarrow Y$ be continuous and surjective. If $p$ is either an open map or a closed map, then $p$ is a quotient map.
+\end{cor}
 
 \begin{thm}
 Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
