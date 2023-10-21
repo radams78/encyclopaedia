@@ -5254,6 +5254,44 @@ Let $X$ and $Y$ be topological spaces. Let $p : X \twoheadrightarrow Y$ be surje
 Let $X$ and $Y$ be topological spaces. Let $p : X \rightarrow Y$ be continuous and surjective. If $p$ is either an open map or a closed map, then $p$ is a quotient map.
 \end{cor}
 
+\begin{ex}
+The converse does not hold.
+
+Let $A = \{ (x,y) \in \mathbb{R}^2 : x \geq 0 \vee y = 0 \}$. Then the first projection $\pi_1 : A \rightarrow \mathbb{R}$ is a quotient map that is neither open nor closed.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{$\pi_1$ is a quotient map.}
+\begin{proof}
+	\step{a}{\pflet{$U \subseteq \mathbb{R}$}}
+	\step{b}{If $U$ is open then $\inv{\pi_1}(U)$ is open.}
+	\begin{proof}
+		\pf\ Since $\inv{\pi_1}(U) = (U \times \mathbb{R}) \cap A$.
+	\end{proof}
+	\step{c}{If $\inv{\pi_1}(U)$ is open then $U$ is open.}
+	\begin{proof}
+		\step{i}{\assume{$\inv{\pi_1}(U)$ is open.}}
+		\step{ii}{\pflet{$x \in U$}}
+		\step{iii}{$(x,0) \in \inv{\pi_1}(U)$}
+		\step{iv}{\pick\ open neighbourhoods $V$ of $x$ and $W$ of $0$ such that $V \times W \subseteq \inv{\pi_1}(U)$}
+		\step{v}{$V \subseteq U$}
+		\begin{proof}
+			\pf\ For all $x' \in V$ we have $(x',0) \in V \times W \subseteq \inv{\pi_1}(U)$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{$\pi_1$ is not an open map.}
+\begin{proof}
+	\pf\ $\pi_1(((-1,1) \times (1,2)) \cap A) = [0,1)$ which is not open in $\mathbb{R}$.
+\end{proof}
+\step{3}{$\pi_1$ is not a closed map.}
+\begin{proof}
+	\pf\ $\pi_1(\{(x,1/x) \in \mathbb{R}^2 : x > 0 \}) = (0, + \infty)$ is not closed in $\mathbb{R}$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{thm}
 Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
 \end{thm}
