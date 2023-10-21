@@ -117,21 +117,21 @@
 \contentsline {section}{\numberline {12.21}Quotient Spaces}{127}{section.12.21}%
 \contentsline {subsection}{\numberline {12.21.1}Quotient Maps}{128}{subsection.12.21.1}%
 \contentsline {section}{\numberline {12.22}Box Topology}{131}{section.12.22}%
-\contentsline {subsection}{\numberline {12.22.1}Bases}{131}{subsection.12.22.1}%
+\contentsline {subsection}{\numberline {12.22.1}Bases}{132}{subsection.12.22.1}%
 \contentsline {subsection}{\numberline {12.22.2}Subspaces}{132}{subsection.12.22.2}%
-\contentsline {subsection}{\numberline {12.22.3}Closure}{132}{subsection.12.22.3}%
+\contentsline {subsection}{\numberline {12.22.3}Closure}{133}{subsection.12.22.3}%
 \contentsline {section}{\numberline {12.23}Connected Spaces}{133}{section.12.23}%
-\contentsline {section}{\numberline {12.24}$T_1$ Spaces}{133}{section.12.24}%
+\contentsline {section}{\numberline {12.24}$T_1$ Spaces}{134}{section.12.24}%
 \contentsline {subsection}{\numberline {12.24.1}Limit Points}{134}{subsection.12.24.1}%
 \contentsline {section}{\numberline {12.25}Hausdorff Spaces}{135}{section.12.25}%
 \contentsline {subsection}{\numberline {12.25.1}Product Topology}{136}{subsection.12.25.1}%
-\contentsline {subsection}{\numberline {12.25.2}Box Topology}{136}{subsection.12.25.2}%
-\contentsline {subsection}{\numberline {12.25.3}$T_1$ Spaces}{136}{subsection.12.25.3}%
+\contentsline {subsection}{\numberline {12.25.2}Box Topology}{137}{subsection.12.25.2}%
+\contentsline {subsection}{\numberline {12.25.3}$T_1$ Spaces}{137}{subsection.12.25.3}%
 \contentsline {section}{\numberline {12.26}Separable Spaces}{137}{section.12.26}%
-\contentsline {section}{\numberline {12.27}Sequential Compactness}{137}{section.12.27}%
-\contentsline {section}{\numberline {12.28}Compactness}{137}{section.12.28}%
-\contentsline {section}{\numberline {12.29}Quotient Spaces}{138}{section.12.29}%
-\contentsline {section}{\numberline {12.30}Gluing}{139}{section.12.30}%
+\contentsline {section}{\numberline {12.27}Sequential Compactness}{138}{section.12.27}%
+\contentsline {section}{\numberline {12.28}Compactness}{138}{section.12.28}%
+\contentsline {section}{\numberline {12.29}Quotient Spaces}{139}{section.12.29}%
+\contentsline {section}{\numberline {12.30}Gluing}{140}{section.12.30}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{141}{chapter.13}%
 \contentsline {subsection}{\numberline {13.0.1}Balls}{142}{subsection.13.0.1}%
 \contentsline {subsection}{\numberline {13.0.2}Subspaces}{147}{subsection.13.0.2}%
