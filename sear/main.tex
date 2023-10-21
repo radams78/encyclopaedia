@@ -5216,6 +5216,7 @@ Let $X$ be a topological space, $S$ a set and $\pi : X \twoheadrightarrow S$ a s
 \end{proof}
 
 \begin{thm}
+\label{thm:quotient_topology_universal}
 Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
 \end{thm}
 
@@ -5261,10 +5262,6 @@ Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadright
 \end{proof}
 \qed
 \end{proof}
-
-\begin{cor}
-Let $\pi : X \twoheadrightarrow S$ be a quotient map. Let $Z$ be a topological space. Let $f : X \rightarrow Z$ be continuous. Then there exists a continuous map $g : S \rightarrow Z$ such that $f = g \circ \pi$ if and only if, for all $s \in S$, we have $f$ is constant on $\inv{\pi}(s)$.
-\end{cor}
 
 \subsection{Quotient Maps}
 
@@ -5363,6 +5360,14 @@ Let $A = \{ (x,y) \in \mathbb{R}^2 : x \geq 0 \vee y = 0 \}$. Then the first pro
 	\pf\ $\pi_1(\{(x,1/x) \in \mathbb{R}^2 : x > 0 \}) = (0, + \infty)$ is not closed in $\mathbb{R}$.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+Let $\pi : X \twoheadrightarrow S$ be a quotient map. Let $Z$ be a topological space. Let $f : X \rightarrow Z$ be continuous. Then there exists a continuous map $g : S \rightarrow Z$ such that $f = g \circ \pi$ if and only if, for all $s \in S$, we have $f$ is constant on $\inv{\pi}(s)$.
+\end{prop}
+
+\begin{proof}
+\pf\ From Theorem \ref{thm:quotient_topology_universal}. \qed
 \end{proof}
 
 \begin{prop}
