@@ -4790,6 +4790,7 @@ Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace to
 \end{proof}
 
 \begin{prop}
+\label{prop:open_in_open}
 Let $X$ be a topological space, $Y$ a subspace of $X$ and $U \subseteq Y$. If $Y$ is open in $X$ and $U$ is open in $Y$ then $U$ is open in $X$.
 \end{prop}
 
@@ -4929,6 +4930,27 @@ Let $X$ and $Y$ be topological spaces. The projections $\pi_1 : X \times Y \righ
 \step{2}{$\pi_2$ is an open map.}
 \begin{proof}
 	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Subspaces}
+
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $p : X \rightarrow Y$ be an open map. Let $A$ be an open set in $X$. Then $p \restriction A : A \rightarrow p(A)$ is an open map.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ be open in $A$.}}
+\step{2}{$U$ is open in $X$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:open_in_open}.
+\end{proof}
+\step{3}{$p(U)$ is open in $Y$.}
+\step{5}{$p(U)$ is open in $p(A)$.}
+\begin{proof}
+	\pf\ Since $p(U) = p(U) \cap p(A)$.
 \end{proof}
 \qed
 \end{proof}

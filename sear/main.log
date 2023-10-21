@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 OCT 2023 20:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 OCT 2023 21:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,7 +902,7 @@ Overfull \hbox (6.78658pt too wide) detected at line 4696
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 [120]
-Overfull \hbox (9.02847pt too wide) detected at line 4872
+Overfull \hbox (9.02847pt too wide) detected at line 4873
 []
  []
 
@@ -911,61 +911,61 @@ WARNING: proof step "d" (<2>6) already defined
 [131] [132]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5563.
+(hyperref)                removing `math shift' on input line 5585.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 5563.
+(hyperref)                removing `subscript' on input line 5585.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5563.
+(hyperref)                removing `math shift' on input line 5585.
 
 [133]
 WARNING: proof step "d" (<2>5) already defined
 [134] [135]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5753.
+(hyperref)                removing `math shift' on input line 5775.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 5753.
+(hyperref)                removing `subscript' on input line 5775.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5753.
+(hyperref)                removing `math shift' on input line 5775.
 
 [136]
-Overfull \hbox (24.67375pt too wide) detected at line 5793
+Overfull \hbox (24.67375pt too wide) detected at line 5815
 []
  []
 
-[137] [138] [139] [140
+[137] [138] [139] [140]
+Chapter 13.
+[141
 
 ]
-Chapter 13.
-[141]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 6027.
+(hyperref)                than one, level fixed on input line 6049.
 
 [142]
-Overfull \hbox (125.21025pt too wide) detected at line 6158
+Overfull \hbox (125.21025pt too wide) detected at line 6180
 []
  []
 
 [143] [144]
 WARNING: proof step "1" (<2>1) already defined
 
-Overfull \hbox (22.79451pt too wide) detected at line 6287
+Overfull \hbox (22.79451pt too wide) detected at line 6309
 []
  []
 
 [145] [146] [147]
 WARNING: proof step "6" (<1>7) already defined
 [148] [149] [150]
-Overfull \hbox (4.95183pt too wide) detected at line 6663
+Overfull \hbox (4.95183pt too wide) detected at line 6685
 []
  []
 
@@ -974,12 +974,12 @@ WARNING: proof step "3" (<1>5) already defined
 [152]
 WARNING: proof step "c" (<2>4) already defined
 [153] [154] [155] [156]
-Overfull \hbox (108.65958pt too wide) detected at line 6994
+Overfull \hbox (108.65958pt too wide) detected at line 7016
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 7008--7008
+Overfull \hbox (47.883pt too wide) in paragraph at lines 7030--7030
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -987,7 +987,7 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 7024
+Overfull \hbox (0.90187pt too wide) detected at line 7046
 []
  []
 
@@ -996,7 +996,7 @@ Overfull \hbox (0.90187pt too wide) detected at line 7024
 ]
 Chapter 14.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 7185--7186
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 7207--7208
 []\OT1/cmr/bx/n/10 Definition 14.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1015,13 +1015,13 @@ Chapter 17.
 [167
 
 ] [168]
-Overfull \hbox (113.19771pt too wide) detected at line 7520
+Overfull \hbox (113.19771pt too wide) detected at line 7542
 []
  []
 
 WARNING: proof step "4" undefined
 [169] [170]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 7650--7650
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 7672--7672
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1032,13 +1032,13 @@ m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 
 [171] [172] [173] [174] [175] [176] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B3BB132A86624686F977696C78F7304;21695.
+(rerunfilecheck)             Checksum: 292BA7DE90950723A7CFF5F302683626;21807.
  ) 
 Here is how much of TeX's memory you used:
- 13752 strings out of 476091
- 192580 string characters out of 5794081
+ 13756 strings out of 476091
+ 192647 string characters out of 5794081
  1873330 words of memory out of 5000000
- 32791 multiletter control sequences out of 15000+600000
+ 32793 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1069,10 +1069,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (176 pages, 759750 bytes).
+Output written on main.pdf (176 pages, 760953 bytes).
 PDF statistics:
- 2958 PDF objects out of 2984 (max. 8388607)
- 2593 compressed objects within 26 object streams
- 1152 named destinations out of 1200 (max. 500000)
- 1329 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2968 PDF objects out of 2984 (max. 8388607)
+ 2602 compressed objects within 27 object streams
+ 1154 named destinations out of 1200 (max. 500000)
+ 1337 words of extra memory for PDF output out of 10000 (max. 10000000)
 
