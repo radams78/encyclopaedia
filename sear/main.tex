@@ -5193,6 +5193,57 @@ Let $X$ be a topological space, $S$ a set and $\pi : X \twoheadrightarrow S$ a s
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\begin{thm}
+Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $S$ is given the quotient topology, then for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.}
+\begin{proof}
+	\step{a}{Give $S$ the quotient topology.}
+	\step{b}{\pflet{$Z$ be a topological space.}}
+	\step{c}{\pflet{$f : S \rightarrow Z$}}
+	\step{d}{If $f$ is continuous then $f \circ \pi$ is continuous.}
+	\begin{proof}
+		\pf\ The composite of two continuous functions is continuous.
+	\end{proof}
+	\step{e}{If $f \circ \pi$ is continuous then $f$ is continuous.}
+	\begin{proof}
+		\step{i}{\assume{$f \circ \pi$ is continuous.}}
+		\step{ii}{\pflet{$U$ be open in $Z$.}}
+		\step{iii}{$\inv{\pi}(\inv{f}(U))$ is open in $X$.}
+		\step{iv}{$\inv{f}(U)$ is open in $S$.}
+	\end{proof}
+\end{proof}
+\step{2}{If $S$ is given a topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous, then that topology is the quotient topology.}
+\begin{proof}
+	\step{a}{Give $S$ a topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.}
+	\step{b}{\pflet{$U \subseteq S$}}
+	\step{c}{If $\inv{\pi}(U)$ is open in $X$ then $U$ is open in $S$.}
+	\begin{proof}
+		\step{i}{\pflet{$Z$ be $S$ under the quotient topology induced by $\pi$.}}
+		\step{ii}{\pflet{$f : S \rightarrow Z$ be the identity function.}}
+		\step{iii}{$f \circ \pi$ is continuous.}
+		\step{iv}{$f$ is continuous.}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{v}{$U$ is open in $Z$.}
+		\step{vi}{$U$ is open in $X$.}
+	\end{proof}
+	\step{d}{If $U$ is open in $S$ then $\inv{\pi}(U)$ is open in $X$.}
+	\begin{proof}
+		\pf\ Since $\pi$ is continuous (taking $Z = S$ and $f = \id{S}$ in \stepref{a}).
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $\pi : X \twoheadrightarrow S$ be a quotient map. Let $Z$ be a topological space. Let $f : X \rightarrow Z$ be continuous. Then there exists a continuous map $g : S \rightarrow Z$ such that $f = g \circ \pi$ if and only if, for all $s \in S$, we have $f$ is constant on $\inv{\pi}(s)$.
+\end{cor}
+
 \subsection{Quotient Maps}
 
 \begin{df}[Quotient Map]
@@ -5291,57 +5342,6 @@ Let $A = \{ (x,y) \in \mathbb{R}^2 : x \geq 0 \vee y = 0 \}$. Then the first pro
 \end{proof}
 \qed
 \end{proof}
-
-\begin{thm}
-Let $X$ be a topological space, let $S$ be a set, and let $\pi : X \twoheadrightarrow S$ be surjective. Then the quotient topology on $S$ is the unique topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{If $S$ is given the quotient topology, then for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.}
-\begin{proof}
-	\step{a}{Give $S$ the quotient topology.}
-	\step{b}{\pflet{$Z$ be a topological space.}}
-	\step{c}{\pflet{$f : S \rightarrow Z$}}
-	\step{d}{If $f$ is continuous then $f \circ \pi$ is continuous.}
-	\begin{proof}
-		\pf\ The composite of two continuous functions is continuous.
-	\end{proof}
-	\step{e}{If $f \circ \pi$ is continuous then $f$ is continuous.}
-	\begin{proof}
-		\step{i}{\assume{$f \circ \pi$ is continuous.}}
-		\step{ii}{\pflet{$U$ be open in $Z$.}}
-		\step{iii}{$\inv{\pi}(\inv{f}(U))$ is open in $X$.}
-		\step{iv}{$\inv{f}(U)$ is open in $S$.}
-	\end{proof}
-\end{proof}
-\step{2}{If $S$ is given a topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous, then that topology is the quotient topology.}
-\begin{proof}
-	\step{a}{Give $S$ a topology such that, for every topological space $Z$ and function $f : S \rightarrow Z$, we have $f$ is continuous if and only if $f \circ \pi$ is continuous.}
-	\step{b}{\pflet{$U \subseteq S$}}
-	\step{c}{If $\inv{\pi}(U)$ is open in $X$ then $U$ is open in $S$.}
-	\begin{proof}
-		\step{i}{\pflet{$Z$ be $S$ under the quotient topology induced by $\pi$.}}
-		\step{ii}{\pflet{$f : S \rightarrow Z$ be the identity function.}}
-		\step{iii}{$f \circ \pi$ is continuous.}
-		\step{iv}{$f$ is continuous.}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{v}{$U$ is open in $Z$.}
-		\step{vi}{$U$ is open in $X$.}
-	\end{proof}
-	\step{d}{If $U$ is open in $S$ then $\inv{\pi}(U)$ is open in $X$.}
-	\begin{proof}
-		\pf\ Since $\pi$ is continuous (taking $Z = S$ and $f = \id{S}$ in \stepref{a}).
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-Let $\pi : X \twoheadrightarrow S$ be a quotient map. Let $Z$ be a topological space. Let $f : X \rightarrow Z$ be continuous. Then there exists a continuous map $g : S \rightarrow Z$ such that $f = g \circ \pi$ if and only if, for all $s \in S$, we have $f$ is constant on $\inv{\pi}(s)$.
-\end{cor}
 
 \begin{prop}
 Let $Z$ be a topological space. Define $\pi : [0,1] \rightarrow S^1$ by $\pi(t) = (\cos 2 \pi t, \sin 2 \pi t)$. Given any continuous function $f : S^1 \rightarrow Z$, we have $f \circ \pi$ is a loop in $Z$. This defines a bijection between $\Top[S^1,Z]$ and the set of loops in $Z$.
