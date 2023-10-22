@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 OCT 2023 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 OCT 2023 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,13 +1016,13 @@ Chapter 16.
 ]
 Chapter 17.
 [169] [170]
-Overfull \hbox (113.19771pt too wide) detected at line 7643
+Overfull \hbox (113.19771pt too wide) detected at line 7651
 []
  []
 
 WARNING: proof step "4" undefined
 [171] [172]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 7773--7773
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 7781--7781
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1036,8 +1036,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1E33BBDE90EC0D87585C046C22C534B2;22068.
  ) 
 Here is how much of TeX's memory you used:
- 13772 strings out of 476091
- 192890 string characters out of 5794081
+ 13773 strings out of 476091
+ 192900 string characters out of 5794081
  1874330 words of memory out of 5000000
  32799 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
@@ -1070,10 +1070,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (178 pages, 765989 bytes).
+Output written on main.pdf (178 pages, 766279 bytes).
 PDF statistics:
- 2998 PDF objects out of 3580 (max. 8388607)
- 2630 compressed objects within 27 object streams
- 1164 named destinations out of 1200 (max. 500000)
+ 3000 PDF objects out of 3580 (max. 8388607)
+ 2632 compressed objects within 27 object streams
+ 1165 named destinations out of 1200 (max. 500000)
  1353 words of extra memory for PDF output out of 10000 (max. 10000000)
 
