@@ -6167,6 +6167,7 @@ The square metric on $\mathbb{R}^n$ induces the product topology.
 \end{proof}
 
 \begin{prop}
+\label{prop:addition_continuous}
 Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \end{prop}
 
@@ -6189,6 +6190,7 @@ Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \end{proof}
 
 \begin{prop}
+\label{prop:multiply_continuous}
 Multiplication is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \end{prop}
 
@@ -7351,11 +7353,31 @@ If a cell decomposition $\mathcal{E}$ satisfies the Characteristic Maps axiom, t
 
 \chapter{Topological Groups}
 
-\subsection{Topological Groups}
+\section{Topological Groups}
 
 \begin{df}[Topological Group]
 A \emph{topological group} is a group $G$ with a topology such that the function $G^2 \rightarrow G$ that maps $(x,y)$ to $x\inv{y}$ is continuous.
 \end{df}
+
+\subsection{Real Numbers}
+
+\begin{ex}
+$\mathbb{R}$ is a topological group under addition.
+\end{ex}
+
+\begin{proof}
+\pf\ From Propositions \ref{prop:addition_continuous} and \ref{prop:multiply_continuous}. \qed
+\end{proof}
+
+\subsection{Integers}
+
+\begin{ex}
+$\mathbb{Z}$ is a topological group under addition.
+\end{ex}
+
+\begin{proof}
+\pf\ The function that sends $(x,y)$ to $x \inv{y}$ is continuous because the topology on $\mathbb{Z}$ is discrete. \qed
+\end{proof}
 
 \begin{ex}
 $GL(n,\mathbb{R})$ and $GL(n,\mathbb{C})$ are topological groups.
