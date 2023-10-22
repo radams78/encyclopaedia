@@ -6590,6 +6590,7 @@ Let $X$ be a metrizable space and $Y$ a topological space. Let $f : X \rightarro
 \end{proof}
 
 \begin{prop}
+\label{prop:inverse_continuous}
 The function $i : \mathbb{R} - \{0\} \rightarrow \mathbb{R}$ that maps $x$ to $\inv{x}$ is continuous.
 \end{prop}
 
@@ -7359,7 +7360,13 @@ If a cell decomposition $\mathcal{E}$ satisfies the Characteristic Maps axiom, t
 A \emph{topological group} is a group $G$ with a topology such that the function $G^2 \rightarrow G$ that maps $(x,y)$ to $x\inv{y}$ is continuous.
 \end{df}
 
-\subsection{Real Numbers}
+\begin{ex}
+$\mathbb{Z}$ is a topological group under addition.
+\end{ex}
+
+\begin{proof}
+\pf\ The function that sends $(x,y)$ to $x \inv{y}$ is continuous because the topology on $\mathbb{Z}$ is discrete. \qed
+\end{proof}
 
 \begin{ex}
 $\mathbb{R}$ is a topological group under addition.
@@ -7369,14 +7376,12 @@ $\mathbb{R}$ is a topological group under addition.
 \pf\ From Propositions \ref{prop:addition_continuous} and \ref{prop:multiply_continuous}. \qed
 \end{proof}
 
-\subsection{Integers}
-
 \begin{ex}
-$\mathbb{Z}$ is a topological group under addition.
+$\mathbb{R}_+$ is a topological group under multiplication.
 \end{ex}
 
 \begin{proof}
-\pf\ The function that sends $(x,y)$ to $x \inv{y}$ is continuous because the topology on $\mathbb{Z}$ is discrete. \qed
+\pf\ From Propositions \ref{prop:multiply_continuous} and \ref{prop:inverse_continuous}. \qed
 \end{proof}
 
 \begin{ex}
@@ -7403,6 +7408,8 @@ Let $G$ be a group with a topology. Then $G$ is a topological group if and only 
 \end{proof}
 \qed
 \end{proof}
+
+\subsection{Subgroups}
 
 \begin{prop}
 Any subgroup of a topological group is a topological group under the subspace topology.
