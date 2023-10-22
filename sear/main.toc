@@ -155,7 +155,8 @@
 \contentsline {section}{\numberline {15.1}Cell Decompositions}{163}{section.15.1}%
 \contentsline {section}{\numberline {15.2}CW-complexes}{163}{section.15.2}%
 \contentsline {chapter}{\numberline {16}Topological Groups}{165}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Continuous Actions}{165}{section.16.1}%
+\contentsline {subsection}{\numberline {16.0.1}Topological Groups}{165}{subsection.16.0.1}%
+\contentsline {section}{\numberline {16.1}Continuous Actions}{166}{section.16.1}%
 \contentsline {chapter}{\numberline {17}Topological Vector Spaces}{167}{chapter.17}%
 \contentsline {section}{\numberline {17.1}Cauchy Sequences}{167}{section.17.1}%
 \contentsline {section}{\numberline {17.2}Seminorms}{168}{section.17.2}%

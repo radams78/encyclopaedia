@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % FORMALIZE
 % READ
 % READ
 % CHECK
+% READ
  
 \documentclass{book}
 
@@ -7351,6 +7351,8 @@ If a cell decomposition $\mathcal{E}$ satisfies the Characteristic Maps axiom, t
 
 \chapter{Topological Groups}
 
+\subsection{Topological Groups}
+
 \begin{df}[Topological Group]
 A \emph{topological group} is a group $G$ with a topology such that the function $G^2 \rightarrow G$ that maps $(x,y)$ to $x\inv{y}$ is continuous.
 \end{df}
@@ -7358,6 +7360,27 @@ A \emph{topological group} is a group $G$ with a topology such that the function
 \begin{ex}
 $GL(n,\mathbb{R})$ and $GL(n,\mathbb{C})$ are topological groups.
 \end{ex}
+
+\begin{prop}
+Let $G$ be a group with a topology. Then $G$ is a topological group if and only if the functions $m : G^2 \rightarrow G$ that sends $(x,y)$ to $xy$ and the function $i : G \rightarrow G$ that sends $x$ to $\inv{x}$ are continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $G$ is a topological group then $i$ is continuous.}
+\begin{proof}
+	\pf\ Since $\inv{x} = e \inv{x}$.
+\end{proof}
+\step{2}{If $G$ is a topological group then $m$ is continuous.}
+\begin{proof}
+	\pf\ Since $xy = x\inv{(\inv{y})}$.
+\end{proof}
+\step{3}{If $m$ and $i$ are continuous then $G$ is a topological group.}
+\begin{proof}
+	\pf\ Since $x\inv{y} = m(x,i(y))$.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 Any subgroup of a topological group is a topological group under the subspace topology.
