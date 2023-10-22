@@ -7385,6 +7385,23 @@ $\mathbb{R}_+$ is a topological group under multiplication.
 \end{proof}
 
 \begin{ex}
+$S^1$ as a subgroup of $\mathbb{C}$ is a topological group under multiplication.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : S^1 \rightarrow S^1$ be the function $f(x,y) = x\inv{y}$}}
+\step{2}{\pflet{$U$ be an open set in $S^1$} \prove{$\inv{f}(U)$ is open in $(S^1)^2$}}
+\step{3}{\pflet{$(x,y) \in \inv{f}(U)$}}
+\step{4}{$x\inv{y} \in U$}
+\step{5}{\pflet{$x = e^{i\phi}$ and $y = e^{i\psi}$}}
+\step{6}{$x\inv{y} = e^{i(\phi - \psi)} \in U$}
+\step{7}{\pick\ $\epsilon > 0$ such that, for all $t$, if $|\phi - \psi - t| < \epsilon$ then $e^{it} \in U$}
+\step{8}{$(x,y) \in \{e^{it} : |\phi - t| < \epsilon / 2 \} \times \{e^{it} : |\psi - t | < \epsilon / 2 \} \subseteq \inv{f}(U)$}
+\qed
+\end{proof}
+
+\begin{ex}
 $GL(n,\mathbb{R})$ and $GL(n,\mathbb{C})$ are topological groups.
 \end{ex}
 
