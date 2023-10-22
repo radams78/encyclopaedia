@@ -132,6 +132,7 @@
 \contentsline {section}{\numberline {12.28}Compactness}{138}{section.12.28}%
 \contentsline {section}{\numberline {12.29}Quotient Spaces}{139}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{140}{section.12.30}%
+\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{140}{section.12.31}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{141}{chapter.13}%
 \contentsline {subsection}{\numberline {13.0.1}Balls}{142}{subsection.13.0.1}%
 \contentsline {subsection}{\numberline {13.0.2}Subspaces}{147}{subsection.13.0.2}%
@@ -157,6 +158,7 @@
 \contentsline {chapter}{\numberline {16}Topological Groups}{165}{chapter.16}%
 \contentsline {section}{\numberline {16.1}Topological Groups}{165}{section.16.1}%
 \contentsline {subsection}{\numberline {16.1.1}Subgroups}{166}{subsection.16.1.1}%
+\contentsline {subsection}{\numberline {16.1.2}Homogeneous Spaces}{167}{subsection.16.1.2}%
 \contentsline {section}{\numberline {16.2}Continuous Actions}{167}{section.16.2}%
 \contentsline {chapter}{\numberline {17}Topological Vector Spaces}{169}{chapter.17}%
 \contentsline {section}{\numberline {17.1}Cauchy Sequences}{169}{section.17.1}%

@@ -6016,6 +6016,12 @@ Let $M$ be the M\"{o}bius strip and $K$ the Klein bottle. Then $M \cup_{\id{\par
 \qed
 \end{proof}
 
+\section{Homogeneous Spaces}
+
+\begin{df}[Homogeneous]
+A topological space $X$ is \emph{homogeneous} iff, for any $x,y \in X$, there exists a homeomorphism $f : X \cong X$ such that $f(x) = y$.
+\end{df}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
@@ -7434,6 +7440,35 @@ Let $G$ be a group with a topology. Then $G$ is a topological group if and only 
 \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a topological group. Let $\alpha \in G$. The function that maps $x$ to $\alpha x$ is a homeomorphism between $G$ and itself.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any $\alpha \in G$, the function that maps $x$ to $\alpha x$ is continuous.}
+\begin{proof}
+	\pf\ From the definition of topological group.
+\end{proof}
+\step{2}{For any $\alpha \in G$, the function that maps $x$ to $\alpha x$ is a homeomorphism between $G$ and itself.}
+\begin{proof}
+	\pf\ Its inverse is the function that maps $x$ to $\inv{\alpha} x$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Every topological group is homogeneous.
+\end{cor}
+
+\begin{prop}
+Let $G$ be a topological group. Let $\alpha \in G$. The function that maps $x$ to $x \alpha$ is a homeomorphism between $G$ and itself.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
 \subsection{Subgroups}
 
 \begin{prop}
@@ -7459,6 +7494,8 @@ Let $G$ be a topological group and $H$ a subgroup of $G$. Then $\overline{H}$ is
 \step{7}{$x'\inv{y'} \in U \cap H$}
 \qed
 \end{proof}
+
+\subsection{Homogeneous Spaces}
 
 \begin{df}[Homogeneous Space]
 A \emph{homogeneous space} is a topological space of the form $G/H$, where $G$ is a topological group and $H$ is a normal subgroup of $G$, under the quotient topology.
