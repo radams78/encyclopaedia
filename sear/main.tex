@@ -7440,6 +7440,26 @@ Let $G$ be a group with a topology. Then $G$ is a topological group if and only 
 Any subgroup of a topological group is a topological group under the subspace topology.
 \end{prop}
 
+\begin{proof}
+\pf\ Since the restriction of continuous functions is continuous. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a topological group and $H$ a subgroup of $G$. Then $\overline{H}$ is a topological group under the subspace topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \overline{H}$} \prove{$x\inv{y} \in \overline{H}$}}
+\step{2}{\pflet{$U$ be a neighbourhood of $x \inv{y}$.} \prove{$U$ intersects $H$.}}
+\step{3}{\pflet{$f : G^2 \rightarrow G$ be the function that maps $(x,y)$ to $x \inv{y}$.}}
+\step{4}{$\inv{f}(U)$ is a neighbourhood of $(x,y)$}
+\step{5}{\pick\ neighbourhoods $V$ of $x$ and $W$ of $y$ such that $V \times W \subseteq \inv{f}(U)$.}
+\step{6}{\pick\ elements $x' \in V \cap H$ and $y' \in W \cap H$}
+\step{7}{$x'\inv{y'} \in U \cap H$}
+\qed
+\end{proof}
+
 \begin{df}[Homogeneous Space]
 A \emph{homogeneous space} is a topological space of the form $G/H$, where $G$ is a topological group and $H$ is a normal subgroup of $G$, under the quotient topology.
 \end{df}

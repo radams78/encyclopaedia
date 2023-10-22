@@ -157,7 +157,7 @@
 \contentsline {chapter}{\numberline {16}Topological Groups}{165}{chapter.16}%
 \contentsline {section}{\numberline {16.1}Topological Groups}{165}{section.16.1}%
 \contentsline {subsection}{\numberline {16.1.1}Subgroups}{166}{subsection.16.1.1}%
-\contentsline {section}{\numberline {16.2}Continuous Actions}{166}{section.16.2}%
+\contentsline {section}{\numberline {16.2}Continuous Actions}{167}{section.16.2}%
 \contentsline {chapter}{\numberline {17}Topological Vector Spaces}{169}{chapter.17}%
 \contentsline {section}{\numberline {17.1}Cauchy Sequences}{169}{section.17.1}%
 \contentsline {section}{\numberline {17.2}Seminorms}{170}{section.17.2}%
