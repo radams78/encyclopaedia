@@ -74,6 +74,7 @@
 \contentsline {section}{\numberline {6.4}Algebraic Numbers}{86}{section.6.4}%
 \contentsline {chapter}{\numberline {7}Monoid Theory}{87}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Group Theory}{89}{chapter.8}%
+\contentsline {subsection}{\numberline {8.0.1}Category of Small Groups}{89}{subsection.8.0.1}%
 \contentsline {chapter}{\numberline {9}Ring Theory}{91}{chapter.9}%
 \contentsline {chapter}{\numberline {10}Field Theory}{93}{chapter.10}%
 \contentsline {chapter}{\numberline {11}Linear Algebra}{95}{chapter.11}%

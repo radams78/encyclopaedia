@@ -3127,6 +3127,8 @@ For any functor $F : \mathcal{C} \rightarrow \mathcal{D}$ and $X \in \mathcal{C}
 
 \chapter{Group Theory}
 
+\subsection{Category of Small Groups}
+
 \begin{df}
 Let $\mathbf{Grp}$ be the category of small groups and group homomorphisms.
 \end{df}
@@ -3168,6 +3170,29 @@ The product of a family of groups in $\mathbf{Grp}$ is called the \emph{free pro
 \begin{prop}
 $\mathbf{Ab}$ has products given by direct sums.
 \end{prop}
+
+\begin{df}[Left Coset]
+Let $G$ be a group and $H$ a subgroup of $G$. The \emph{left cosets} of $H$ are the sets of the form
+\[ xH := \{ xh : h \in H \} \]
+We write $G/H$ for the set of left cosets of $H$ in $G$.
+\end{df}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $G/H$ is a partition of $G$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcup (G / H) = G$}
+\begin{proof}
+	\pf\ Since $x = xe$ and so $x \in xH$.
+\end{proof}
+\step{2}{Any two distinct left cosets of $H$ are disjoint.}
+\begin{proof}
+	\pf\ Since if $z \in xH$ and $z \in yH$ then $xH = yH = zH$.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Ring Theory}
 
