@@ -5686,6 +5686,7 @@ Let $X$ be a topological space. A \emph{separation} of $X$ is a pair $(U,V)$ of 
 \subsubsection{Subspaces}
 
 \begin{prop}
+\label{prop:separation_limit_points}
 Let $X$ be a topological space and $Y$ a subspace of $X$. Then a separation of $Y$ is a pair $(A,B)$ of disjoint nonempty subsets of $Y$, neither of which contains a limit point of the other, such that $A \cup B = Y$.
 \end{prop}
 
@@ -5762,6 +5763,27 @@ Let $X$ be a topological space. The union of a set of connected subspaces of $X$
 	\pf\ Proposition \ref{prop:connected_subspace}.
 \end{proof}
 \step{5}{$B = \emptyset$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space. Let $A$ be a connected subspace of $X$. Let $B$ be a subspace of $X$. If $A \subseteq B \subseteq \overline{A}$ then $B$ is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $(C,D)$ is a separation of $B$.}}
+\step{2}{\assume{w.l.o.g. $A \subseteq C$}}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_subspace}.
+\end{proof}
+\step{3}{$\overline{A} \subseteq \overline{C}$}
+\step{4}{$\overline{C} \cap D = \emptyset$}
+\step{5}{$B \cap D = \emptyset$}
 \qedstep
 \begin{proof}
 	\pf\ This is a contradiction.
