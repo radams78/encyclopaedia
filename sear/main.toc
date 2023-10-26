@@ -126,8 +126,8 @@
 \contentsline {section}{\numberline {12.23}Separations}{134}{section.12.23}%
 \contentsline {subsubsection}{Subspaces}{134}{section*.2}%
 \contentsline {section}{\numberline {12.24}Connected Spaces}{135}{section.12.24}%
-\contentsline {subsection}{\numberline {12.24.1}Subspaces}{135}{subsection.12.24.1}%
-\contentsline {subsection}{\numberline {12.24.2}Continuous Functions}{135}{subsection.12.24.2}%
+\contentsline {subsection}{\numberline {12.24.1}Continuous Functions}{135}{subsection.12.24.1}%
+\contentsline {subsection}{\numberline {12.24.2}Subspaces}{135}{subsection.12.24.2}%
 \contentsline {section}{\numberline {12.25}$T_1$ Spaces}{136}{section.12.25}%
 \contentsline {subsection}{\numberline {12.25.1}Limit Points}{137}{subsection.12.25.1}%
 \contentsline {section}{\numberline {12.26}Hausdorff Spaces}{137}{section.12.26}%
@@ -138,8 +138,8 @@
 \contentsline {section}{\numberline {12.28}Sequential Compactness}{140}{section.12.28}%
 \contentsline {section}{\numberline {12.29}Compactness}{140}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{141}{section.12.30}%
-\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{141}{section.12.31}%
-\contentsline {section}{\numberline {12.32}Regular Spaces}{141}{section.12.32}%
+\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{142}{section.12.31}%
+\contentsline {section}{\numberline {12.32}Regular Spaces}{142}{section.12.32}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{143}{chapter.13}%
 \contentsline {subsection}{\numberline {13.0.1}Balls}{144}{subsection.13.0.1}%
 \contentsline {subsection}{\numberline {13.0.2}Subspaces}{149}{subsection.13.0.2}%

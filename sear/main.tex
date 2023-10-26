@@ -5721,6 +5721,21 @@ A topological space $X$ is connected if and only if the only sets that are both 
 \pf\ Since $(U,V)$ is a separation of $X$ iff $U$ is both open and closed and $V = X - U$. \qed
 \end{proof}
 
+\subsection{Continuous Functions}
+
+\begin{prop}
+The continuous image of a connected space is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be topological spaces.}}
+\step{2}{\pflet{$f : X \twoheadrightarrow Y$ be a surjective continuous function.}}
+\step{3}{\pflet{$(C,D)$ be a separation of $Y$.}}
+\step{4}{$(\inv{f}(C), \inv{f}(D))$ is a separation of $X$.}
+\qed
+\end{proof}
+
 \subsection{Subspaces}
 
 \begin{prop}
@@ -5753,12 +5768,6 @@ Let $X$ be a topological space. The union of a set of connected subspaces of $X$
 \end{proof}
 \qed
 \end{proof}
-
-\subsection{Continuous Functions}
-
-\begin{prop}
-The continuous image of a connected space is connected.
-\end{prop}
 
 \begin{prop}
 Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are connected, then $X$ is connected.
