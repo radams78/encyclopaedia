@@ -5484,6 +5484,60 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces and $\{Y_i\}_{i \in I}
 \end{proof}
 
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $\sim$ be an equivalence relation on $X$. Let $\phi : Y \rightarrow X / \sim$.
+
+Assume that, for all $y \in Y$, there exists a neighbourhood $U$ of $y$ and a continuous function $\Phi : U \rightarrow X$ such that $\pi \circ \Phi = \phi \restriction U$. Then $\phi$ is continuous.
+\end{prop}
+
+\begin{prop}
+A quotient of a connected space is connected.
+\end{prop}
+
+\begin{prop}
+A quotient of a path connected space is path connected.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. If $X / \sim$ is Hausdorff then every equivalence class of $\sim$ is closed in $X$.
+\end{prop}
+
+\begin{df}
+Let $X$ be a topological space and $A_1, \ldots, A_r \subseteq X$. Then $X / A_1, \ldots, A_r$ is the quotient space of $X$ with respect to $\sim$ where $x \sim y$ iff $x = y$ or $\exists i (x \in A_i \wedge y \in A_i)$.
+\end{df}
+
+\begin{df}[Cone]
+Let $X$ be a topological space. The \emph{cone over $X$} is the space $(X \times [0,1]) / (X \times \{1\})$.
+\end{df}
+
+\begin{df}[Suspension]
+Let $X$ be a topological space. The \emph{suspension} of $X$ is the space
+\[ \Sigma X := (X \times [-1,1]) / (X \times \{-1\}),(X \times \{1\}) \]
+\end{df}
+
+\begin{df}[Wedge Product]
+Let $x_0 \in X$ and $y_0 \in Y$. The \emph{wedge product} $X \vee Y$ is $(X \times \{y_0\}) \cup (\{x_0\} \times Y)$ as a subspace of $X \times Y$.
+\end{df}
+
+\begin{df}[Smash Product]
+Let $x_0 \in X$ and $y_0 \in Y$. The \emph{smash product} $X \wedge Y$ is $(X \times Y) / (X \vee Y)$.
+\end{df}
+
+\begin{ex}
+$D^n / S^{n-1} \cong S^n$
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : D^n / S^{n-1} \rightarrow S^n$ be the function induced by the map $D^n \rightarrow S^n$ that maps the radii of $D^n$ onto the meridians of $S^n$ from the north to the south pole.}}
+\step{2}{$\phi$ is a bijection.}
+\step{3}{$\phi$ is a homeomorphism.}
+\begin{proof}
+	\pf\ Since $D^n / S^{n-1}$ is compact and $S^n$ is Hausdorff.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Box Topology}
 
 \begin{df}[Box Topology]
@@ -5950,72 +6004,6 @@ A continuous bijection from a compact space to a Hausdorff space is a homeomorph
 \begin{prop}
 A first countable compact space is sequentially compact.
 \end{prop}
-
-
-\section{Quotient Spaces}
-
-\begin{df}[Quotient Space]
-Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. The \emph{quotient topology} on $X / \sim$ is defined by: $U \in \mathcal{P} X$ is open in $X / \sim$ if and only if $\inv{\pi}(U)$ is open in $X$.
-\end{df}
-
-\begin{prop}
-\label{prop:map_from_quotient_continuous}
-Let $X$ and $Y$ be topological spaces. Let $\sim$ be an equivalence relation on $X$. Let $f : X / \sim \rightarrow Y$. Then $f$ is continuous if and only if $f \circ \pi$ is continuous.
-\end{prop}
-
-\begin{prop}
-Let $X$ and $Y$ be topological spaces. Let $\sim$ be an equivalence relation on $X$. Let $\phi : Y \rightarrow X / \sim$.
-
-Assume that, for all $y \in Y$, there exists a neighbourhood $U$ of $y$ and a continuous function $\Phi : U \rightarrow X$ such that $\pi \circ \Phi = \phi \restriction U$. Then $\phi$ is continuous.
-\end{prop}
-
-\begin{prop}
-A quotient of a connected space is connected.
-\end{prop}
-
-\begin{prop}
-A quotient of a path connected space is path connected.
-\end{prop}
-
-\begin{prop}
-Let $X$ be a topological space and $\sim$ an equivalence relation on $X$. If $X / \sim$ is Hausdorff then every equivalence class of $\sim$ is closed in $X$.
-\end{prop}
-
-\begin{df}
-Let $X$ be a topological space and $A_1, \ldots, A_r \subseteq X$. Then $X / A_1, \ldots, A_r$ is the quotient space of $X$ with respect to $\sim$ where $x \sim y$ iff $x = y$ or $\exists i (x \in A_i \wedge y \in A_i)$.
-\end{df}
-
-\begin{df}[Cone]
-Let $X$ be a topological space. The \emph{cone over $X$} is the space $(X \times [0,1]) / (X \times \{1\})$.
-\end{df}
-
-\begin{df}[Suspension]
-Let $X$ be a topological space. The \emph{suspension} of $X$ is the space
-\[ \Sigma X := (X \times [-1,1]) / (X \times \{-1\}),(X \times \{1\}) \]
-\end{df}
-
-\begin{df}[Wedge Product]
-Let $x_0 \in X$ and $y_0 \in Y$. The \emph{wedge product} $X \vee Y$ is $(X \times \{y_0\}) \cup (\{x_0\} \times Y)$ as a subspace of $X \times Y$.
-\end{df}
-
-\begin{df}[Smash Product]
-Let $x_0 \in X$ and $y_0 \in Y$. The \emph{smash product} $X \wedge Y$ is $(X \times Y) / (X \vee Y)$.
-\end{df}
-
-\begin{ex}
-$D^n / S^{n-1} \cong S^n$
-\end{ex}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\phi : D^n / S^{n-1} \rightarrow S^n$ be the function induced by the map $D^n \rightarrow S^n$ that maps the radii of $D^n$ onto the meridians of $S^n$ from the north to the south pole.}}
-\step{2}{$\phi$ is a bijection.}
-\step{3}{$\phi$ is a homeomorphism.}
-\begin{proof}
-	\pf\ Since $D^n / S^{n-1}$ is compact and $S^n$ is Hausdorff.
-\end{proof}
-\qed
-\end{proof}
 
 \section{Gluing}
 
