@@ -283,7 +283,7 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjectiv
 \qed
 \end{proof}
 
-\subsection{Bijections} % CHECKED
+\subsection{Bijections}
 
 \begin{prop}
 The composite of bijections is a bijection.
@@ -326,8 +326,32 @@ The composite of bijections is a bijection.
 \qed
 \end{proof}
 
+\subsection{Equinumerosity}
+
+\begin{prop}
+\[ (A \times B)^C \approx A^C \times B^C \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $f$ to $(\pi_1 \circ f, \pi_2 \circ f)$ is a bijection. \qed
+\end{proof}
+
+\begin{prop}
+\[ A^{B \times C} \approx (A^B)^C \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function $\Phi$ such that $\Phi(f)(c)(b) = f(b,c)$ is a bijection. \qed
+\end{proof}
+
+\section{Domination}
+
+\begin{df}[Dominate]
+Let $A$ and $B$ be sets. We say that $B$ \emph{dominates} $A$, and write $A \preccurlyeq B$, iff there exists an injective function $A \rightarrow B$.
+\end{df}
+
 \begin{thm}[Schroeder-Bernstein]
-Let $A$ and $B$ be sets. If there exist injections $A \rightarrow B$ and $B \rightarrow A$, then $A \approx B$.
+Let $A$ and $B$ be sets. If $A \preccurlyeq B$ and $B \preccurlyeq A$ then $A \approx B$.
 \end{thm}
 
 \begin{proof}
@@ -386,22 +410,6 @@ f(x) & \text{if } \exists n. x \in A_n \\
 	\end{proof}
 \end{proof}
 \qed
-\end{proof}
-
-\begin{prop}
-\[ (A \times B)^C \approx A^C \times B^C \]
-\end{prop}
-
-\begin{proof}
-\pf\ The function that maps $f$ to $(\pi_1 \circ f, \pi_2 \circ f)$ is a bijection. \qed
-\end{proof}
-
-\begin{prop}
-\[ A^{B \times C} \approx (A^B)^C \]
-\end{prop}
-
-\begin{proof}
-\pf\ The function $\Phi$ such that $\Phi(f)(c)(b) = f(b,c)$ is a bijection. \qed
 \end{proof}
 
 \section{Identity Function} % CHECKED

@@ -1,10 +1,10 @@
+% READ
+% READ
+% CHECK
+% READ
+% READ
+% CHECK
 % FORMALIZE
-% READ
-% READ
-% CHECK
-% READ
-% READ
-% CHECK
  
 \documentclass{book}
 
@@ -5679,8 +5679,14 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Give $\prod_{i \in I}
 
 \section{Connected Spaces}
 
+\subsection{Separations}
+
+\begin{df}[Separation]
+Let $X$ be a topological space. A \emph{separation} of $X$ is a pair $(U,V)$ of disjoint nonempty oped subsets in $X$ such that $U \cup V = X$.
+\end{df}
+
 \begin{df}[Connected]
-A topological space is \emph{connected} iff it is not the union of two nonempty open disjoint subsets.
+A topological space is \emph{connected} iff it has no separation.
 \end{df}
 
 \begin{prop}
