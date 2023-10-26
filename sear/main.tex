@@ -5714,6 +5714,10 @@ Any indiscrete space is connected.
 The rationals are disconnected. For any irrational $a$, we have $(- \infty, a) \cap \mathbb{Q}$ and $(a, +\infty) \cap \mathbb{Q}$ form a separation of $\mathbb{Q}$.
 \end{ex}
 
+\begin{ex}
+$\mathbb{R}^\omega$ under the box topology is not connected. The set of bounded sequences and the set of unbounded sequences form a separation.
+\end{ex}
+
 \begin{prop}
 A topological space $X$ is connected if and only if the only sets that are both open and closed are $\emptyset$ and $X$.
 \end{prop}
@@ -5749,6 +5753,7 @@ Let $X$ be a topological space. Let $(C,D)$ be a separation of $X$. Let $Y$ be a
 \end{proof}
 
 \begin{prop}
+\label{prop:connected_union}
 Let $X$ be a topological space. The union of a set of connected subspaces of $X$ that have a point in common is connected.
 \end{prop}
 
@@ -5791,9 +5796,35 @@ Let $X$ be a topological space. Let $A$ be a connected subspace of $X$. Let $B$ 
 \qed
 \end{proof}
 
+\subsection{Product Topology}
+
 \begin{prop}
-Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are connected, then $X$ is connected.
+The product of two connected spaces is connected.
 \end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be connected topological spaces.}}
+\step{3}{\assume{w.l.o.g. $X$ and $Y$ are nonempty.}}
+\step{3}{\pick\ $(a,b) \in X \times Y$}
+\step{4}{$X \times \{b\}$ is connected.}
+\begin{proof}
+	\pf\ It is homeomorphic to $X$.
+\end{proof}
+\step{5}{For all $x \in X$ we have $\{x\} \times Y$ is connected.}
+\begin{proof}
+	\pf\ It is homeomorphic to $Y$.
+\end{proof}
+\step{6}{For all $x \in X$ we have $(X \times \{b\}) \cup (\{x\} \times Y)$ is connected.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_union}.
+\end{proof}
+\step{7}{$X \cup Y$ is connected.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_union} since $X \cup Y = \bigcup_{x \in X} ((X \times \{b\}) \cup (\{x\} \times Y))$ and the subspaces all have the point $(a,b)$ in common.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{prop}
 If $X$ and $Y$ are nonempty topological spaces, then
