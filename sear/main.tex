@@ -5387,6 +5387,42 @@ Let $A = \{ (x,y) \in \mathbb{R}^2 : x \geq 0 \vee y = 0 \}$. Then the first pro
 \qed
 \end{proof}
 
+\begin{cor}
+\label{cor:product_quotient_maps}
+Let $\{ X_i \}_{i \in I}$ and $\{ Y_i \}_{i \in I}$ be families of topological spaces and $p_i : X_i \rightarrow Y_i$ for all $i \in I$.
+\begin{enumerate}
+\item If every $p_i$ is an open quotient map, then $\prod_{i \in I} p_i : \prod_{i \in I} X_i \twoheadrightarrow \prod_{i \in I} Y_i$ is an open quotient map.
+\item If every $p_i$ is a closed quotient map, then $\prod_{i \in I} p_i : \prod_{i \in I} X_i \twoheadrightarrow \prod_{i \in I} Y_i$ is a closed quotient map.
+\end{enumerate}
+\end{cor}
+
+\begin{ex}
+The product of two quotient maps is not necessarily a quotient map.
+
+Let $Y$ be the quotient space of $\mathbb{R}_K$ obtained by collapsing the set $K$ to a point. Let $p : \mathbb{R}_K \twoheadrightarrow Y$ be the quotient map. Then $q \times q : \mathbb{R}_K^2 \rightarrow Y^2$ is not a quotient map.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\Delta = \{(y,y) : y \in Y\}$}}
+\step{2}{$Y$ is not Hausdorff.}
+\begin{proof}
+	\step{a}{\pflet{$*_K \in Y$ be the point such thta $q(K) = \{*_K\}$}}
+	\step{a}{\assume{for a contradiction $U$ and $V$ are disjoint neighbourhoods of 0 and $*_K$}}
+	\step{b}{$\inv{q}(U)$ and $\inv{q}(V)$ are disjoint open sets with $0 \in \inv{q}(U)$ and $K \subseteq \inv{q}(V)$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{3}{$\Delta$ is not closed in $Y^2$.}
+\step{4}{$\inv{(q \times q)}(\Delta)$ is closed in $\mathbb{R}_K^2$}
+\begin{proof}
+	\pf\ It is $\{ (x,x) : x \in \mathbb{R} \} \cup K^2$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}
 Let $\pi : X \twoheadrightarrow S$ be a quotient map. Let $Z$ be a topological space. Let $f : X \rightarrow Z$ be continuous. Then there exists a continuous map $g : S \rightarrow Z$ such that $f = g \circ \pi$ if and only if, for all $s \in S$, we have $f$ is constant on $\inv{\pi}(s)$.
 \end{prop}
@@ -5447,32 +5483,6 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces and $\{Y_i\}_{i \in I}
 %TODO
 \end{proof}
 
-\begin{ex}
-The product of two quotient maps is not necessarily a quotient map.
-
-Let $Y$ be the quotient space of $\mathbb{R}_K$ obtained by collapsing the set $K$ to a point. Let $p : \mathbb{R}_K \twoheadrightarrow Y$ be the quotient map. Then $q \times q : \mathbb{R}_K^2 \rightarrow Y^2$ is not a quotient map.
-\end{ex}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$\Delta = \{(y,y) : y \in Y\}$}}
-\step{2}{$Y$ is not Hausdorff.}
-\begin{proof}
-	\step{a}{\pflet{$*_K \in Y$ be the point such thta $q(K) = \{*_K\}$}}
-	\step{a}{\assume{for a contradiction $U$ and $V$ are disjoint neighbourhoods of 0 and $*_K$}}
-	\step{b}{$\inv{q}(U)$ and $\inv{q}(V)$ are disjoint open sets with $0 \in \inv{q}(U)$ and $K \subseteq \inv{q}(V)$}
-	\qedstep
-	\begin{proof}
-		\pf\ This is a contradiction.
-	\end{proof}
-\end{proof}
-\step{3}{$\Delta$ is not closed in $Y^2$.}
-\step{4}{$\inv{(q \times q)}(\Delta)$ is closed in $\mathbb{R}_K^2$}
-\begin{proof}
-	\pf\ It is $\{ (x,x) : x \in \mathbb{R} \} \cup K^2$.
-\end{proof}
-\qed
-\end{proof}
 
 \section{Box Topology}
 
@@ -7586,6 +7596,7 @@ Let $G$ be a $T_1$ topological group and $H$ a closed subgroup of $G$. Then $G/H
 \end{proof}
 
 \begin{prop}
+\label{prop:pi_open_map}
 Let $G$ be a topological group and $H$ a subgroup of $G$. Then the canonical map $\pi : G \twoheadrightarrow G / H$ is an open map.
 \end{prop}
 
@@ -7613,6 +7624,34 @@ Let $G$ be a topological group and $H$ a subgroup of $G$. Then the canonical map
 \end{proof}
 \step{5}{$\inv{\pi}(\pi(U))$ is open in $G$.}
 \step{6}{$\pi(U)$ is open in $G/H$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a topological group. Let $H$ be a normal subgroup of $G$. Then $G / H$ is a topological group.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : G^2 \rightarrow G$ be the map $f(x,y) = x \inv{y}$}}
+\step{2}{\pflet{$g : (G/H)^2 \rightarrow G/H$ be the map $g(xH,yH) = x \inv{y} H$}}
+\step{3}{$g \circ (\pi \times \pi) = \pi \circ f : G^2 \rightarrow G / H$}
+\step{4}{$g \circ (\pi \times \pi)$ is continuous.}
+\begin{proof}
+	\pf\ Since $\pi$ and $f$ are continuous.
+\end{proof}
+\step{5}{$\pi$ is an open quotient map.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:pi_open_map}.
+\end{proof}
+\step{6}{$\pi \times \pi$ is an open quotient map.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:product_quotient_maps}.
+\end{proof}
+\step{7}{$g$ is continuous.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:quotient_topology_universal}.
+\end{proof}
 \qed
 \end{proof}
 
