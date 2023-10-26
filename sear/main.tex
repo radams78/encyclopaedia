@@ -6055,6 +6055,12 @@ Let $M$ be the M\"{o}bius strip and $K$ the Klein bottle. Then $M \cup_{\id{\par
 A topological space $X$ is \emph{homogeneous} iff, for any $x,y \in X$, there exists a homeomorphism $f : X \cong X$ such that $f(x) = y$.
 \end{df}
 
+\section{Regular Spaces}
+
+\begin{df}[Regular]
+A topological space $X$ is \emph{regular} iff it is $T_1$ and, for every closed set $A$ and point $x \notin A$, there exist disjoint open sets $U$ and $V$ with $A \subseteq U$ and $x \in V$.
+\end{df}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
@@ -7672,6 +7678,74 @@ Let $G$ be a topological group and $H$ a normal subgroup of $G$. Then $G/H$ is H
 \begin{df}[Symmetric Neighbourhood]
 Let $G$ be a topological group. Let $V$ be a neighbourhood of $e$. Then $V$ is \emph{symmetric} iff $V = \inv{V}$.
 \end{df}
+
+\begin{prop}
+Let $G$ be a topological group. Let $U$ be a neighbourhood of $e$. Then there exists a symmetric neighbourhood $V$ of $e$ such that $VV \subseteq U$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a neighbourhood $V'$ of $e$ such that $V' V' \subseteq U$.}
+\begin{proof}
+	\step{a}{\pflet{$m : G^2 \rightarrow G$ be the function $m(x,y) = xy$}}
+	\step{b}{$\inv{m}(U)$ is open in $G^2$}
+	\step{c}{$(e,e) \in \inv{m}(U)$}
+	\step{d}{\pick\ neighbourhoods $V_1$, $V_2$ of $e$ such that $V_1 \times V_2 \subseteq \inv{m}(U)$}
+	\step{e}{\pflet{$V' = V_1 \cap V_2$}}
+\end{proof}
+\step{2}{\pick\ a neighbourhood $W$ of $e$ such that $W \inv{W} \subseteq V'$}
+\begin{proof}
+	\step{a}{\pflet{$f : G^2 \rightarrow G$ be the function $m(x,y) = x\inv{y}$}}
+	\step{b}{$\inv{f}(V')$ is open in $G^2$}
+	\step{c}{$(e,e) \in \inv{m}(V')$}
+	\step{d}{\pick\ neighbourhoods $W_1$, $W_2$ of $e$ such that $W_1 \times W_2 \subseteq \inv{f}(V')$}
+	\step{e}{\pflet{$W = W_1 \cap W_2$}}
+\end{proof}
+\step{3}{\pflet{$V = W \inv{W}$}}
+\step{4}{$V$ is a neighbourhood of $e$.}
+\step{5}{$V$ is symmetric.}
+\step{6}{$VV \subseteq U$}
+\qed
+\end{proof}
+
+\begin{prop}
+Every $T_1$ topological group is regular.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a $T_1$ topological group.}}
+\step{2}{\pflet{$A$ be a closed set in $G$ and $x \in G - A$.}}
+\step{3}{$G - A \inv{x}$ is a neighbourhood of $e$.}
+\step{4}{\pick\ a symmetric neighbourhood $V$ of $e$ such that $VV \subseteq G - A \inv{x}$.}
+\step{5}{\pflet{$U = VA$ and $U' = Vx$}}
+\step{6}{$U$ and $U'$ are disjoint open sets with $A \subseteq U$ and $x \in U'$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a $T_1$ topological group. Let $H$ be a closed subgroup of $G$. Then $G/H$ is regular.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a closed set in $G/H$ and $xH \in G/H - A$.}}
+\step{2}{$G - \inv{\pi}(A)\inv{x}$ is a neighbourhood of $e$.}
+\step{3}{\pick\ a symmetric neighbourhood $V$ of $e$ such that $VV \subseteq G - \inv{\pi}(A) \inv{x}$.}
+\step{4}{\pflet{$U = \pi(V) A$ and $U' = \pi(V) (xH)$.}}
+\step{5}{$U$ and $U'$ are disjoint open sets with $A \subseteq U$ and $xH \in U'$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $U \cap U' \neq \emptyset$.}}
+	\step{b}{\pick\ $v_1, v_2 \in V$ and $a \in G$ such that $aH \in A$ and $v_1 a H = v_2 x H$.}
+	\step{c}{$\inv{a} \inv{v_1} v2 x \in H$}
+	\step{d}{$\inv{v_1} v_2 \in \inv{\pi}(A) \inv{x}$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{3}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Continuous Actions}
 
