@@ -7416,7 +7416,7 @@ $\mathbb{R}_+$ is a topological group under multiplication.
 \end{proof}
 
 \begin{ex}
-$S^1$ as a subgroup of $\mathbb{C}$ is a topological group under multiplication.
+$S^1$ as a subspace of $\mathbb{C}$ is a topological group under multiplication.
 \end{ex}
 
 \begin{proof}
@@ -7517,6 +7517,102 @@ Let $G$ be a topological group and $H$ a subgroup of $G$. Then $\overline{H}$ is
 \step{5}{\pick\ neighbourhoods $V$ of $x$ and $W$ of $y$ such that $V \times W \subseteq \inv{f}(U)$.}
 \step{6}{\pick\ elements $x' \in V \cap H$ and $y' \in W \cap H$}
 \step{7}{$x'\inv{y'} \in U \cap H$}
+\qed
+\end{proof}
+
+\subsection{Left Cosets}
+
+\begin{prop}
+Let $G$ be a topological group and $H$ a subgroup of $G$. Give $G/H$ the quotient topology. Let $\alpha \in G$. Define $f_\alpha : G/H \rightarrow G/H$ by
+\[ f_\alpha(xH) = \alpha x H \enspace . \]
+Then $f_\alpha$ is a homeomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $\alpha \in G$ we have $f_\alpha$ is well defined.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in G$}}
+	\step{b}{\assume{$xH = yH$} \prove{$\alpha x H = \alpha y H$}}
+	\step{c}{$\inv{x}y \in H$}
+	\step{d}{$\inv{x}\inv{\alpha}\alpha y \in H$}
+	\step{e}{$\alpha x H = \alpha y H$}
+\end{proof}
+\step{2}{For all $\alpha \in G$ we have $f_\alpha$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in G$}}
+	\step{b}{\assume{$\alpha x H = \alpha y H$} \prove{$xH = yH$}}
+	\step{c}{$\inv{\alpha x} \alpha y \in H$}
+	\step{d}{$\inv{x} y \in H$}
+	\step{e}{$xH = yH$}
+\end{proof}
+\step{3}{For all $\alpha \in G$ we have $f_\alpha$ is surjective.}
+\begin{proof}
+	\pf\ For all $x \in G$ we have $xH = f_\alpha(\inv{\alpha} x H)$.
+\end{proof}
+\step{4}{For all $\alpha \in G$ we have $f_\alpha$ is continuous.}
+\begin{proof}
+	\step{b}{\pflet{$V$ be open in $G/H$}}
+	\step{c}{$\inv{\pi}(\inv{f_\alpha}(V))$ is open in $G$.}
+	\begin{proof}
+		\pf\ It is $\inv{g_\alpha}(\inv{\pi}(V))$ where $g_\alpha : V \rightarrow V$ is the homeomorphism $g_\alpha(x) = \alpha x$.
+	\end{proof}
+	\step{d}{$\inv{f_\alpha}(V)$ is open in $G/H$.}
+\end{proof}
+\step{5}{For all $\alpha \in G$ we have $\inv{f_\alpha}$ is continuous.}
+\begin{proof}
+	\pf\ It is $f_{\inv{\alpha}}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a topological group and $H$ a subgroup of $G$. Then $G/H$ is a homogeneous space.
+\end{cor}
+
+\begin{prop}
+Let $G$ be a $T_1$ topological group and $H$ a closed subgroup of $G$. Then $G/H$ is $T_1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in G$} \prove{$xH$ is closed.}}
+\step{2}{$\inv{\pi}(xH)$ is closed in $G$.}
+\begin{proof}
+	\pf\ It is $f_x(H)$ and $f_x$ is a homeomorphism.
+\end{proof}
+\step{3}{$xH$ is closed in $G/H$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a topological group and $H$ a subgroup of $G$. Then the canonical map $\pi : G \twoheadrightarrow G / H$ is an open map.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ be open in $G$.}}
+\step{2}{$\forall h \in H. Uh$ is open in $G$.}
+\begin{proof}
+	\pf\ Since the function that maps $g$ to $gh$ is an automorphism of $G$.
+\end{proof}
+\step{3}{$UH$ is open in $G$}
+\begin{proof}
+	\pf\ It is $\bigcup_{h \in H} Uh$.
+\end{proof}
+\step{4}{$UH = \inv{\pi}(\pi(U))$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\inv{\pi}(\pi(U)) & = \{ x \in G : \exists y \in U. xH = yH \} \\
+		& = \{ x \in G : \exists y \in U. \inv{x} y \in H \} \\
+		& = \{ x \in G : \exists y \in U. \exists h \in H. \inv{y} x= h \} \\
+		& = \{ x \in G : \exists y \in U. \exists h \in H. x = yh \} \\
+		& = UH
+	\end{align*}
+\end{proof}
+\step{5}{$\inv{\pi}(\pi(U))$ is open in $G$.}
+\step{6}{$\pi(U)$ is open in $G/H$.}
 \qed
 \end{proof}
 
