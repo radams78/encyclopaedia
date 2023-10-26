@@ -126,7 +126,7 @@ Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightar
 \subsection{Injections} % CHECKED FORMALIZED
 
 \begin{prop}
-\label{prop:comp_inj}
+\label{prop:inj_comp}
 The composite of injective functions is injective.
 \end{prop}
 
@@ -227,7 +227,7 @@ We will prove the converse as Proposition \ref{prop:injection2}.
 \subsection{Surjections} % CHECKED FORMALIZED
 
 \begin{prop}
-\label{prop:comp_surj}
+\label{prop:surj_comp}
 The composite of surjective functions is surjective.
 \end{prop}
 
@@ -290,7 +290,40 @@ The composite of bijections is a bijection.
 \end{prop}
 
 \begin{proof}
-\pf\ Propositions \ref{prop:comp_inj} and \ref{prop:comp_surj}. \qed
+\pf
+\step{1}{\pflet{$A$, $B$ and $C$ be sets.}}
+\step{2}{\pflet{$f : A \rightarrow B$ and $g : B \rightarrow C$}}
+\step{3}{\assume{$g$ is bijective.}}
+\step{4}{\assume{$f$ is bijective.}}
+\step{5}{$g$ is injective.}
+\begin{proof}
+	\pf\ From \stepref{3}.
+\end{proof}
+\step{6}{$g$ is surjective.}
+\begin{proof}
+	\pf\ From \stepref{3}.
+\end{proof}
+\step{7}{$f$ is injective.}
+\begin{proof}
+	\pf\ From \stepref{4}.
+\end{proof}
+\step{8}{$f$ is surjective.}
+\begin{proof}
+	\pf\ From \stepref{4}.
+\end{proof}
+\step{9}{$g \circ f$ is injective.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:inj_comp}, \stepref{5}, \stepref{7}.
+\end{proof}
+\step{10}{$g \circ f$ is surjective.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:surj_comp}, \stepref{6}, \stepref{8}.
+\end{proof}
+\step{11}{$g \circ f$ is bijective.}
+\begin{proof}
+	\pf\ \stepref{9}, \stepref{10}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{thm}[Schroeder-Bernstein]
