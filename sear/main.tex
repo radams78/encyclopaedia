@@ -5677,19 +5677,41 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Give $\prod_{i \in I}
 \qed
 \end{proof}
 
-\section{Connected Spaces}
-
-\subsection{Separations}
+\section{Separations}
 
 \begin{df}[Separation]
 Let $X$ be a topological space. A \emph{separation} of $X$ is a pair $(U,V)$ of disjoint nonempty oped subsets in $X$ such that $U \cup V = X$.
 \end{df}
 
-\subsection{Connected Spaces}
+\subsubsection{Subspaces}
+
+\begin{prop}
+Let $X$ be a topological space and $Y$ a subspace of $X$. Then a separation of $Y$ is a pair $(A,B)$ of disjoint nonempty subsets of $Y$, neither of which contains a limit point of the other, such that $A \cup B = Y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since the following are equivalent:
+\begin{itemize}
+\item Neither of $A$ and $B$ contains a limit point of the other.
+\item $A$ contains all its own limit points in $Y$, and $B$ contains all its own limit points in $Y$.
+\item $A$ and $B$ are closed in $Y$.
+\end{itemize}
+\qed
+\end{proof}
+
+\section{Connected Spaces}
 
 \begin{df}[Connected]
 A topological space is \emph{connected} iff it has no separation.
 \end{df}
+
+\begin{ex}
+Any indiscrete space is connected.
+\end{ex}
+
+\begin{ex}
+The rationals are disconnected. For any irrational $a$, we have $(- \infty, a) \cap \mathbb{Q}$ and $(a, +\infty) \cap \mathbb{Q}$ form a separation of $\mathbb{Q}$.
+\end{ex}
 
 \begin{prop}
 A topological space $X$ is connected if and only if the only sets that are both open and closed are $\emptyset$ and $X$.
