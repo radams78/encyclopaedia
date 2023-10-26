@@ -5685,9 +5685,19 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Give $\prod_{i \in I}
 Let $X$ be a topological space. A \emph{separation} of $X$ is a pair $(U,V)$ of disjoint nonempty oped subsets in $X$ such that $U \cup V = X$.
 \end{df}
 
+\subsection{Connected Spaces}
+
 \begin{df}[Connected]
 A topological space is \emph{connected} iff it has no separation.
 \end{df}
+
+\begin{prop}
+A topological space $X$ is connected if and only if the only sets that are both open and closed are $\emptyset$ and $X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $(U,V)$ is a separation of $X$ iff $U$ is both open and closed and $V = X - U$. \qed
+\end{proof}
 
 \begin{prop}
 The continuous image of a connected space is connected.

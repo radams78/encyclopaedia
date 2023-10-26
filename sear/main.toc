@@ -125,10 +125,11 @@
 \contentsline {subsection}{\numberline {12.22.3}Closure}{134}{subsection.12.22.3}%
 \contentsline {section}{\numberline {12.23}Connected Spaces}{134}{section.12.23}%
 \contentsline {subsection}{\numberline {12.23.1}Separations}{134}{subsection.12.23.1}%
+\contentsline {subsection}{\numberline {12.23.2}Connected Spaces}{134}{subsection.12.23.2}%
 \contentsline {section}{\numberline {12.24}$T_1$ Spaces}{135}{section.12.24}%
 \contentsline {subsection}{\numberline {12.24.1}Limit Points}{136}{subsection.12.24.1}%
 \contentsline {section}{\numberline {12.25}Hausdorff Spaces}{136}{section.12.25}%
-\contentsline {subsection}{\numberline {12.25.1}Product Topology}{137}{subsection.12.25.1}%
+\contentsline {subsection}{\numberline {12.25.1}Product Topology}{138}{subsection.12.25.1}%
 \contentsline {subsection}{\numberline {12.25.2}Box Topology}{138}{subsection.12.25.2}%
 \contentsline {subsection}{\numberline {12.25.3}$T_1$ Spaces}{138}{subsection.12.25.3}%
 \contentsline {section}{\numberline {12.26}Separable Spaces}{139}{section.12.26}%
