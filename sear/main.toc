@@ -126,13 +126,14 @@
 \contentsline {section}{\numberline {12.23}Separations}{134}{section.12.23}%
 \contentsline {subsubsection}{Subspaces}{134}{section*.2}%
 \contentsline {section}{\numberline {12.24}Connected Spaces}{135}{section.12.24}%
-\contentsline {subsection}{\numberline {12.24.1}The Indiscrete Topology}{135}{subsection.12.24.1}%
-\contentsline {subsection}{\numberline {12.24.2}Finer and Coarser}{135}{subsection.12.24.2}%
-\contentsline {subsection}{\numberline {12.24.3}Boundary}{135}{subsection.12.24.3}%
-\contentsline {subsection}{\numberline {12.24.4}Continuous Functions}{136}{subsection.12.24.4}%
-\contentsline {subsection}{\numberline {12.24.5}Subspaces}{136}{subsection.12.24.5}%
-\contentsline {subsection}{\numberline {12.24.6}Product Topology}{137}{subsection.12.24.6}%
-\contentsline {subsection}{\numberline {12.24.7}Quotient Spaces}{138}{subsection.12.24.7}%
+\contentsline {subsection}{\numberline {12.24.1}The Real Numbers}{135}{subsection.12.24.1}%
+\contentsline {subsection}{\numberline {12.24.2}The Indiscrete Topology}{135}{subsection.12.24.2}%
+\contentsline {subsection}{\numberline {12.24.3}Finer and Coarser}{135}{subsection.12.24.3}%
+\contentsline {subsection}{\numberline {12.24.4}Boundary}{136}{subsection.12.24.4}%
+\contentsline {subsection}{\numberline {12.24.5}Continuous Functions}{136}{subsection.12.24.5}%
+\contentsline {subsection}{\numberline {12.24.6}Subspaces}{136}{subsection.12.24.6}%
+\contentsline {subsection}{\numberline {12.24.7}Product Topology}{137}{subsection.12.24.7}%
+\contentsline {subsection}{\numberline {12.24.8}Quotient Spaces}{138}{subsection.12.24.8}%
 \contentsline {section}{\numberline {12.25}$T_1$ Spaces}{138}{section.12.25}%
 \contentsline {subsection}{\numberline {12.25.1}Limit Points}{139}{subsection.12.25.1}%
 \contentsline {section}{\numberline {12.26}Hausdorff Spaces}{139}{section.12.26}%
@@ -143,8 +144,8 @@
 \contentsline {section}{\numberline {12.28}Sequential Compactness}{142}{section.12.28}%
 \contentsline {section}{\numberline {12.29}Compactness}{142}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{143}{section.12.30}%
-\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{143}{section.12.31}%
-\contentsline {section}{\numberline {12.32}Regular Spaces}{143}{section.12.32}%
+\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{144}{section.12.31}%
+\contentsline {section}{\numberline {12.32}Regular Spaces}{144}{section.12.32}%
 \contentsline {section}{\numberline {12.33}Totally Disconnected Spaces}{144}{section.12.33}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{145}{chapter.13}%
 \contentsline {subsection}{\numberline {13.0.1}Balls}{146}{subsection.13.0.1}%
