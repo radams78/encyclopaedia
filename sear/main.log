@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  27 OCT 2023 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  27 OCT 2023 21:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -984,12 +984,12 @@ WARNING: proof step "3" (<1>5) already defined
 [156]
 WARNING: proof step "c" (<2>4) already defined
 [157] [158] [159] [160]
-Overfull \hbox (108.65958pt too wide) detected at line 7336
+Overfull \hbox (108.65958pt too wide) detected at line 7337
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 7350--7350
+Overfull \hbox (47.883pt too wide) in paragraph at lines 7351--7351
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -997,7 +997,7 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 7366
+Overfull \hbox (0.90187pt too wide) detected at line 7367
 []
  []
 
@@ -1006,7 +1006,7 @@ Overfull \hbox (0.90187pt too wide) detected at line 7366
 ]
 Chapter 14.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 7527--7528
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 7534--7535
 []\OT1/cmr/bx/n/10 Definition 14.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1025,13 +1025,13 @@ Chapter 16.
 ]
 Chapter 17.
 [177] [178]
-Overfull \hbox (113.19771pt too wide) detected at line 8186
+Overfull \hbox (113.19771pt too wide) detected at line 8193
 []
  []
 
 WARNING: proof step "4" undefined
 [179] [180]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 8316--8316
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 8323--8323
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1042,56 +1042,61 @@ m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 
 [181] [182] [183] [184] [185] [186] (./main.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
 Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 868D40C36DEEF08279CE979C421B9C77;24448
-(rerunfilecheck)             After:  F3A5120093EC898E55A983EAA4910164;24601.
+(rerunfilecheck)             Before: F3A5120093EC898E55A983EAA4910164;24601
+(rerunfilecheck)             After:  CA8CF35ED0721B5B47AF5C3E4DC59F78;24730.
  ) 
 Here is how much of TeX's memory you used:
- 13859 strings out of 476091
- 194025 string characters out of 5794081
+ 13864 strings out of 476091
+ 194091 string characters out of 5794081
  1874330 words of memory out of 5000000
- 32819 multiletter control sequences out of 15000+600000
+ 32820 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
-athabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/math
-abx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-
-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type
-1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/m
-athx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (186 pages, 793109 bytes).
+
+pdfTeX warning (dest): name{subsection.13.0.12} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.0.11} has been referenced but does no
+t exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
+habx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathab
+x-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-ty
+pe1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/
+mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mat
+hx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
+m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on main.pdf (186 pages, 793812 bytes).
 PDF statistics:
- 3181 PDF objects out of 3580 (max. 8388607)
- 2803 compressed objects within 29 object streams
- 1231 named destinations out of 1440 (max. 500000)
- 1481 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3189 PDF objects out of 3580 (max. 8388607)
+ 2811 compressed objects within 29 object streams
+ 1235 named destinations out of 1440 (max. 500000)
+ 1489 words of extra memory for PDF output out of 10000 (max. 10000000)
 
