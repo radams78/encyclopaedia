@@ -128,10 +128,11 @@
 \contentsline {section}{\numberline {12.24}Connected Spaces}{135}{section.12.24}%
 \contentsline {subsection}{\numberline {12.24.1}The Indiscrete Topology}{135}{subsection.12.24.1}%
 \contentsline {subsection}{\numberline {12.24.2}Finer and Coarser}{135}{subsection.12.24.2}%
-\contentsline {subsection}{\numberline {12.24.3}Continuous Functions}{136}{subsection.12.24.3}%
-\contentsline {subsection}{\numberline {12.24.4}Subspaces}{136}{subsection.12.24.4}%
-\contentsline {subsection}{\numberline {12.24.5}Product Topology}{137}{subsection.12.24.5}%
-\contentsline {subsection}{\numberline {12.24.6}Quotient Spaces}{138}{subsection.12.24.6}%
+\contentsline {subsection}{\numberline {12.24.3}Boundary}{135}{subsection.12.24.3}%
+\contentsline {subsection}{\numberline {12.24.4}Continuous Functions}{136}{subsection.12.24.4}%
+\contentsline {subsection}{\numberline {12.24.5}Subspaces}{136}{subsection.12.24.5}%
+\contentsline {subsection}{\numberline {12.24.6}Product Topology}{137}{subsection.12.24.6}%
+\contentsline {subsection}{\numberline {12.24.7}Quotient Spaces}{138}{subsection.12.24.7}%
 \contentsline {section}{\numberline {12.25}$T_1$ Spaces}{138}{section.12.25}%
 \contentsline {subsection}{\numberline {12.25.1}Limit Points}{139}{subsection.12.25.1}%
 \contentsline {section}{\numberline {12.26}Hausdorff Spaces}{139}{section.12.26}%
