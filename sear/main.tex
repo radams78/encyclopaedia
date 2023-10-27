@@ -5707,6 +5707,22 @@ Any indiscrete space is connected.
 \end{ex}
 
 \begin{ex}
+Any infinite set under the cofinite topology is connected.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be an infinite set under the cofinite topology.}}
+\step{2}{\assume{for a contradiction $(C,D)$ is a separation of $X$.}}
+\step{3}{$X = (X - C) \cup (X - D) \cup (C \cap D)$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction since $X$ is infinite, $X - C$ and $X - D$ are finite, and $C \cap D = \emptyset$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
 The rationals are disconnected. For any irrational $a$, we have $(- \infty, a) \cap \mathbb{Q}$ and $(a, +\infty) \cap \mathbb{Q}$ form a separation of $\mathbb{Q}$.
 \end{ex}
 
