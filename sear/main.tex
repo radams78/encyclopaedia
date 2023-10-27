@@ -5810,6 +5810,35 @@ $\mathbb{R}^\omega$ under the product topology is connected.
 \pf\ It is the closure of $\mathbb{R}^\infty$, which is connected because it is the union of the connected subspaces $\mathbb{R}^n$. \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a topological space. Let $(A_n)$ be a sequence of connected subspaces of $X$ such that, for all $n$, we have $A_n \cap A_{n+1} \neq \emptyset$. Then $\bigcup_n A_n$ is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $(C,D)$ is a separation of $\bigcup_n A_n$}}
+\step{2}{\assume{w.l.o.g. $A_0 \subseteq C$}}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_subspace}.
+\end{proof}
+\step{3}{$\forall n. A_n \subseteq C$}
+\begin{proof}
+	\step{a}{\assume{as induction hypothesis $A_n \subseteq C$}}
+	\step{b}{\pick\ $x \in A_n \cap A_{n+1}$}
+	\step{c}{$x \in C$}
+	\step{d}{$A_{n+1} \subseteq C$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:connected_subspace}.
+	\end{proof}
+\end{proof}
+\step{4}{$\bigcup_n A_n \subseteq C$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Product Topology}
 
 \begin{prop}

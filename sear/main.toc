@@ -129,17 +129,17 @@
 \contentsline {subsection}{\numberline {12.24.1}Finer and Coarser}{135}{subsection.12.24.1}%
 \contentsline {subsection}{\numberline {12.24.2}Continuous Functions}{135}{subsection.12.24.2}%
 \contentsline {subsection}{\numberline {12.24.3}Subspaces}{135}{subsection.12.24.3}%
-\contentsline {subsection}{\numberline {12.24.4}Product Topology}{136}{subsection.12.24.4}%
+\contentsline {subsection}{\numberline {12.24.4}Product Topology}{137}{subsection.12.24.4}%
 \contentsline {subsection}{\numberline {12.24.5}Quotient Spaces}{137}{subsection.12.24.5}%
-\contentsline {section}{\numberline {12.25}$T_1$ Spaces}{137}{section.12.25}%
+\contentsline {section}{\numberline {12.25}$T_1$ Spaces}{138}{section.12.25}%
 \contentsline {subsection}{\numberline {12.25.1}Limit Points}{138}{subsection.12.25.1}%
-\contentsline {section}{\numberline {12.26}Hausdorff Spaces}{138}{section.12.26}%
+\contentsline {section}{\numberline {12.26}Hausdorff Spaces}{139}{section.12.26}%
 \contentsline {subsection}{\numberline {12.26.1}Product Topology}{140}{subsection.12.26.1}%
 \contentsline {subsection}{\numberline {12.26.2}Box Topology}{140}{subsection.12.26.2}%
-\contentsline {subsection}{\numberline {12.26.3}$T_1$ Spaces}{140}{subsection.12.26.3}%
+\contentsline {subsection}{\numberline {12.26.3}$T_1$ Spaces}{141}{subsection.12.26.3}%
 \contentsline {section}{\numberline {12.27}Separable Spaces}{141}{section.12.27}%
 \contentsline {section}{\numberline {12.28}Sequential Compactness}{141}{section.12.28}%
-\contentsline {section}{\numberline {12.29}Compactness}{141}{section.12.29}%
+\contentsline {section}{\numberline {12.29}Compactness}{142}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{142}{section.12.30}%
 \contentsline {section}{\numberline {12.31}Homogeneous Spaces}{143}{section.12.31}%
 \contentsline {section}{\numberline {12.32}Regular Spaces}{143}{section.12.32}%
