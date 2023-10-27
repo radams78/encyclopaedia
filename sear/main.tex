@@ -5760,20 +5760,21 @@ Let $X$ be a topological space. Let $(C,D)$ be a separation of $X$. Let $Y$ be a
 
 \begin{prop}
 \label{prop:connected_union}
-Let $X$ be a topological space. The union of a set of connected subspaces of $X$ that have a point in common is connected.
+Let $X$ be a topological space. Let $\mathcal{A}$ be a set of connected subspaces of $X$ and $B$ a connected subspace of $X$. Assume that, for all $A \in \mathcal{A}$, we have $A \cap B \neq \emptyset$. Then $\bigcup \mathcal{A} \cup B$ is connected.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$\mathcal{A}$ be a set of connected subspaces of $X$ that have a point in common.}}
-\step{2}{\pick\ $a$ such that $a \in \bigcap \mathcal{A}$}
-\step{3}{\assume{for a contradiction $(A,B)$ is a separation of $\bigcup \mathcal{A}$.}}
-\step{3}{\assume{w.l.o.g. $a \in A$}}
-\step{4}{For all $Y \in \mathcal{A}$ we have $Y \subseteq A$}
+\step{1}{\assume{for a contradiction $(C,D)$ is a separation of $\bigcup \mathcal{A} \cup B$.}}
+\step{2}{\assume{w.l.o.g. $B \subseteq C$}}
 \begin{proof}
 	\pf\ Proposition \ref{prop:connected_subspace}.
 \end{proof}
-\step{5}{$B = \emptyset$}
+\step{4}{For all $A \in \mathcal{A}$ we have $A \subseteq C$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_subspace}.
+\end{proof}
+\step{5}{$D = \emptyset$}
 \qedstep
 \begin{proof}
 	\pf\ This is a contradiction.
