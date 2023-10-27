@@ -5501,10 +5501,6 @@ Assume that, for all $y \in Y$, there exists a neighbourhood $U$ of $y$ and a co
 \end{prop}
 
 \begin{prop}
-A quotient of a connected space is connected.
-\end{prop}
-
-\begin{prop}
 A quotient of a path connected space is path connected.
 \end{prop}
 
@@ -5726,6 +5722,16 @@ A topological space $X$ is connected if and only if the only sets that are both 
 \pf\ Since $(U,V)$ is a separation of $X$ iff $U$ is both open and closed and $V = X - U$. \qed
 \end{proof}
 
+\subsection{Finer and Coarser}
+
+\begin{prop}
+Let $\mathcal{T}$ and $\mathcal{T}'$ be topologies on the same set $X$. Assume $\mathcal{T} \subseteq \mathcal{T}'$. If $\mathcal{T}'$ is connected then $\mathcal{T}$ is connected.
+\end{prop}
+
+\begin{proof}
+\pf\ If $(C,D)$ is a separation of $(X, \mathcal{T})$ then it is a separation of $(X, \mathcal{T}')$. \qed
+\end{proof}
+
 \subsection{Continuous Functions}
 
 \begin{prop}
@@ -5796,6 +5802,14 @@ Let $X$ be a topological space. Let $A$ be a connected subspace of $X$. Let $B$ 
 \qed
 \end{proof}
 
+\begin{cor}
+$\mathbb{R}^\omega$ under the product topology is connected.
+\end{cor}
+
+\begin{proof}
+\pf\ It is the closure of $\mathbb{R}^\infty$, which is connected because it is the union of the connected subspaces $\mathbb{R}^n$. \qed
+\end{proof}
+
 \subsection{Product Topology}
 
 \begin{prop}
@@ -5847,6 +5861,19 @@ Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap
 If $X$ and $Y$ are nonempty topological spaces, then
 $X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
 \end{prop}
+
+\subsection{Quotient Spaces}
+
+\begin{prop}
+A quotient of a connected space is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p : X \twoheadrightarrow Y$ be a quotient map.}}
+\step{2}{If $(C,D)$ is a separation of $Y$ then $(\inv{p}(C), \inv{p}(D))$ is a separation of $X$.}
+\qed
+\end{proof}
 
 \section{$T_1$ Spaces}
 

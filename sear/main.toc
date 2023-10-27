@@ -126,56 +126,58 @@
 \contentsline {section}{\numberline {12.23}Separations}{134}{section.12.23}%
 \contentsline {subsubsection}{Subspaces}{134}{section*.2}%
 \contentsline {section}{\numberline {12.24}Connected Spaces}{135}{section.12.24}%
-\contentsline {subsection}{\numberline {12.24.1}Continuous Functions}{135}{subsection.12.24.1}%
-\contentsline {subsection}{\numberline {12.24.2}Subspaces}{135}{subsection.12.24.2}%
-\contentsline {subsection}{\numberline {12.24.3}Product Topology}{136}{subsection.12.24.3}%
+\contentsline {subsection}{\numberline {12.24.1}Finer and Coarser}{135}{subsection.12.24.1}%
+\contentsline {subsection}{\numberline {12.24.2}Continuous Functions}{135}{subsection.12.24.2}%
+\contentsline {subsection}{\numberline {12.24.3}Subspaces}{135}{subsection.12.24.3}%
+\contentsline {subsection}{\numberline {12.24.4}Product Topology}{136}{subsection.12.24.4}%
+\contentsline {subsection}{\numberline {12.24.5}Quotient Spaces}{137}{subsection.12.24.5}%
 \contentsline {section}{\numberline {12.25}$T_1$ Spaces}{137}{section.12.25}%
-\contentsline {subsection}{\numberline {12.25.1}Limit Points}{137}{subsection.12.25.1}%
+\contentsline {subsection}{\numberline {12.25.1}Limit Points}{138}{subsection.12.25.1}%
 \contentsline {section}{\numberline {12.26}Hausdorff Spaces}{138}{section.12.26}%
-\contentsline {subsection}{\numberline {12.26.1}Product Topology}{139}{subsection.12.26.1}%
+\contentsline {subsection}{\numberline {12.26.1}Product Topology}{140}{subsection.12.26.1}%
 \contentsline {subsection}{\numberline {12.26.2}Box Topology}{140}{subsection.12.26.2}%
 \contentsline {subsection}{\numberline {12.26.3}$T_1$ Spaces}{140}{subsection.12.26.3}%
-\contentsline {section}{\numberline {12.27}Separable Spaces}{140}{section.12.27}%
+\contentsline {section}{\numberline {12.27}Separable Spaces}{141}{section.12.27}%
 \contentsline {section}{\numberline {12.28}Sequential Compactness}{141}{section.12.28}%
 \contentsline {section}{\numberline {12.29}Compactness}{141}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{142}{section.12.30}%
-\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{142}{section.12.31}%
-\contentsline {section}{\numberline {12.32}Regular Spaces}{142}{section.12.32}%
-\contentsline {chapter}{\numberline {13}Metric Spaces}{143}{chapter.13}%
-\contentsline {subsection}{\numberline {13.0.1}Balls}{144}{subsection.13.0.1}%
-\contentsline {subsection}{\numberline {13.0.2}Subspaces}{149}{subsection.13.0.2}%
-\contentsline {subsection}{\numberline {13.0.3}Convergence}{150}{subsection.13.0.3}%
-\contentsline {subsection}{\numberline {13.0.4}Continuous Functions}{151}{subsection.13.0.4}%
-\contentsline {subsection}{\numberline {13.0.5}First Countable Spaces}{152}{subsection.13.0.5}%
-\contentsline {subsection}{\numberline {13.0.6}Hausdorff Spaces}{152}{subsection.13.0.6}%
-\contentsline {subsection}{\numberline {13.0.7}Bounded Sets}{152}{subsection.13.0.7}%
-\contentsline {subsection}{\numberline {13.0.8}Uniform Convergence}{153}{subsection.13.0.8}%
-\contentsline {subsection}{\numberline {13.0.9}Standard Bounded Metric}{155}{subsection.13.0.9}%
-\contentsline {subsection}{\numberline {13.0.10}Product Spaces}{155}{subsection.13.0.10}%
-\contentsline {subsection}{\numberline {13.0.11}Uniform Metric}{156}{subsection.13.0.11}%
-\contentsline {subsection}{\numberline {13.0.12}Products}{158}{subsection.13.0.12}%
-\contentsline {section}{\numberline {13.1}Isometric Embeddings}{160}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Complete Metric Spaces}{161}{section.13.2}%
-\contentsline {section}{\numberline {13.3}Manifolds}{161}{section.13.3}%
-\contentsline {chapter}{\numberline {14}Homotopy Theory}{163}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Homotopies}{163}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Homotopy Equivalence}{163}{section.14.2}%
-\contentsline {chapter}{\numberline {15}Simplicial Complexes}{165}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Cell Decompositions}{165}{section.15.1}%
-\contentsline {section}{\numberline {15.2}CW-complexes}{165}{section.15.2}%
-\contentsline {chapter}{\numberline {16}Topological Groups}{167}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Topological Groups}{167}{section.16.1}%
-\contentsline {subsection}{\numberline {16.1.1}Subgroups}{168}{subsection.16.1.1}%
-\contentsline {subsection}{\numberline {16.1.2}Left Cosets}{169}{subsection.16.1.2}%
-\contentsline {subsection}{\numberline {16.1.3}Homogeneous Spaces}{171}{subsection.16.1.3}%
-\contentsline {section}{\numberline {16.2}Symmetric Neighbourhoods}{171}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Continuous Actions}{172}{section.16.3}%
-\contentsline {chapter}{\numberline {17}Topological Vector Spaces}{175}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Cauchy Sequences}{175}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Seminorms}{176}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Fr\'{e}chet Spaces}{176}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Normed Spaces}{176}{section.17.4}%
-\contentsline {section}{\numberline {17.5}Inner Product Spaces}{182}{section.17.5}%
-\contentsline {section}{\numberline {17.6}Banach Spaces}{183}{section.17.6}%
-\contentsline {section}{\numberline {17.7}Hilbert Spaces}{183}{section.17.7}%
-\contentsline {section}{\numberline {17.8}Locally Convex Spaces}{183}{section.17.8}%
+\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{143}{section.12.31}%
+\contentsline {section}{\numberline {12.32}Regular Spaces}{143}{section.12.32}%
+\contentsline {chapter}{\numberline {13}Metric Spaces}{145}{chapter.13}%
+\contentsline {subsection}{\numberline {13.0.1}Balls}{146}{subsection.13.0.1}%
+\contentsline {subsection}{\numberline {13.0.2}Subspaces}{151}{subsection.13.0.2}%
+\contentsline {subsection}{\numberline {13.0.3}Convergence}{152}{subsection.13.0.3}%
+\contentsline {subsection}{\numberline {13.0.4}Continuous Functions}{153}{subsection.13.0.4}%
+\contentsline {subsection}{\numberline {13.0.5}First Countable Spaces}{154}{subsection.13.0.5}%
+\contentsline {subsection}{\numberline {13.0.6}Hausdorff Spaces}{154}{subsection.13.0.6}%
+\contentsline {subsection}{\numberline {13.0.7}Bounded Sets}{154}{subsection.13.0.7}%
+\contentsline {subsection}{\numberline {13.0.8}Uniform Convergence}{155}{subsection.13.0.8}%
+\contentsline {subsection}{\numberline {13.0.9}Standard Bounded Metric}{157}{subsection.13.0.9}%
+\contentsline {subsection}{\numberline {13.0.10}Product Spaces}{157}{subsection.13.0.10}%
+\contentsline {subsection}{\numberline {13.0.11}Uniform Metric}{158}{subsection.13.0.11}%
+\contentsline {subsection}{\numberline {13.0.12}Products}{160}{subsection.13.0.12}%
+\contentsline {section}{\numberline {13.1}Isometric Embeddings}{162}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Complete Metric Spaces}{163}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Manifolds}{163}{section.13.3}%
+\contentsline {chapter}{\numberline {14}Homotopy Theory}{165}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Homotopies}{165}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Homotopy Equivalence}{165}{section.14.2}%
+\contentsline {chapter}{\numberline {15}Simplicial Complexes}{167}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Cell Decompositions}{167}{section.15.1}%
+\contentsline {section}{\numberline {15.2}CW-complexes}{167}{section.15.2}%
+\contentsline {chapter}{\numberline {16}Topological Groups}{169}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Topological Groups}{169}{section.16.1}%
+\contentsline {subsection}{\numberline {16.1.1}Subgroups}{170}{subsection.16.1.1}%
+\contentsline {subsection}{\numberline {16.1.2}Left Cosets}{171}{subsection.16.1.2}%
+\contentsline {subsection}{\numberline {16.1.3}Homogeneous Spaces}{173}{subsection.16.1.3}%
+\contentsline {section}{\numberline {16.2}Symmetric Neighbourhoods}{173}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Continuous Actions}{174}{section.16.3}%
+\contentsline {chapter}{\numberline {17}Topological Vector Spaces}{177}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Cauchy Sequences}{177}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Seminorms}{178}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Fr\'{e}chet Spaces}{178}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Normed Spaces}{178}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Inner Product Spaces}{184}{section.17.5}%
+\contentsline {section}{\numberline {17.6}Banach Spaces}{185}{section.17.6}%
+\contentsline {section}{\numberline {17.7}Hilbert Spaces}{185}{section.17.7}%
+\contentsline {section}{\numberline {17.8}Locally Convex Spaces}{185}{section.17.8}%
