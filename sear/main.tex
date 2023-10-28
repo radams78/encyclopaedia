@@ -5926,6 +5926,45 @@ If $X$ and $Y$ are nonempty topological spaces, then
 $X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
 \end{prop}
 
+\begin{prop}
+Let $X$ and $Y$ be topological spaces. Let $A$ be a proper subset of $X$ and $B$ a proper subset of $Y$. Then $(X \times Y) - (A \times B)$ is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $x_0 \in X - A$}
+\step{2}{\pick\ $y_0 \in Y - B$}
+\step{3}{\pflet{$C = ((X - A) \times Y) \cup (X \times \{y_0\})$}}
+\step{4}{\pflet{$D = (\{x_0\} \times Y) \cup (X \times (Y - B))$}}
+\step{5}{$C$ is connected.}
+\begin{proof}
+	\step{a}{$C = \bigcup_{x \in X - A} (\{x\} \times Y) \cup (X \times \{y_0\})$}
+	\step{b}{For all $x \in X - A$ we have $\{x\} \times Y$ is connected.}
+	\begin{proof}
+		\pf\ It is homeomorphic to $Y$.
+	\end{proof}
+	\step{c}{$X \times \{y_0\}$ is connected.}
+	\begin{proof}
+		\pf\ It is homeomorphic to $X$.
+	\end{proof}
+	\step{d}{For all $x \in X - A$ we have $(x,y_0) \in (\{x\} \times Y) \cap (X \times \{y_0\})$}
+	\step{e}{$C$ is connected.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:connected_union}.
+	\end{proof}
+\end{proof}
+\step{6}{$D$ is connected.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{7}{$(X \times Y) - (A \times B) = C \cup D$}
+\step{8}{$(X \times Y) - (A \times B)$ is connected.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_union} since $(x_0,y_0) \in C \cap D$.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Quotient Spaces}
 
 \begin{prop}
