@@ -5817,6 +5817,7 @@ Let $X$ be a topological space. Let $\mathcal{A}$ be a set of connected subspace
 \end{proof}
 
 \begin{prop}
+\label{prop:connected_closure}
 Let $X$ be a topological space. Let $A$ be a connected subspace of $X$. Let $B$ be a subspace of $X$. If $A \subseteq B \subseteq \overline{A}$ then $B$ is connected.
 \end{prop}
 
@@ -5877,9 +5878,12 @@ Let $X$ be a topological space. Let $(A_n)$ be a sequence of connected subspaces
 \subsection{Product Topology}
 
 \begin{prop}
-The product of two connected spaces is connected.
+The product of a family of connected spaces is connected.
 \end{prop}
 
+\begin{proof}
+\pf
+\step{0}{The product of two connected spaces is connected.}
 \begin{proof}
 \pf
 \step{1}{\pflet{$X$ and $Y$ be connected topological spaces.}}
@@ -5901,13 +5905,35 @@ The product of two connected spaces is connected.
 \begin{proof}
 	\pf\ Proposition \ref{prop:connected_union} since $X \cup Y = \bigcup_{x \in X} ((X \times \{b\}) \cup (\{x\} \times Y))$ and the subspaces all have the point $(a,b)$ in common.
 \end{proof}
+\end{proof}
+\step{1}{\pflet{$\{X_i\}_{i \in I}$ be a family of connected spaces.}}
+\step{2}{\pflet{$X = \prod_{i \in I} X_i$}}
+\step{3}{\assume{w.l.o.g. each $X_i$ is nonempty.}}
+\step{4}{\pick\ $a \in X$}
+\step{5}{For every finite $K \subseteq I$, \pflet{$X_K = \{x \in X : \forall i \notin K. \pi_i(x) = \pi_i(a) \}$}}
+\step{6}{For every finite $K \subseteq I$, we have $X_K$ is connected.}
+\begin{proof}
+	\pf\ It is homeomorphic to $\prod_{i \in K} X_i$ which is connected by \stepref{0}.
+\end{proof}
+\step{7}{\pflet{$Y = \bigcup_{K \text{ a finite subset of } I} X_K$}}
+\step{8}{$Y$ is connected.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_union} since $a \in X_K$ for all $K$.
+\end{proof}
+\step{9}{$X = \overline{Y}$}
+\begin{proof}
+	\step{a}{\pflet{$x \in X$}}
+	\step{b}{\pflet{$U$ be a neighbourhood of $x$.} \prove{$U$ intersects $Y$.}}
+	\step{c}{\pick\ a finite subset $K$ of $I$ and $U_i$ open in each $X_i$ such that $U_i = X_i$ for all $i \notin K$, and $x \in \prod_i U_i \subseteq U$}
+	\step{d}{\pflet{$y \in X$ be the point with $\pi_i(y) = \pi_i(x)$ for $i \in K$ and $\pi_i(y) = \pi_i(a)$ for $i \notin K$}}
+	\step{e}{$y \in U \cap Y$}
+\end{proof}
+\step{10}{$X$ is connected.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_closure}.
+\end{proof}
 \qed
 \end{proof}
-
-\begin{prop}
-If $X$ and $Y$ are nonempty topological spaces, then
-$X \times Y$ is connected if and only if $X$ and $Y$ are connected.
-\end{prop}
 
 \begin{df}[Path-connected]
 A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
