@@ -1,10 +1,10 @@
 % READ
-% READ
 % CHECK
 % READ
 % READ
 % CHECK
 % FORMALIZE
+% READ
  
 \documentclass{book}
 
@@ -3603,118 +3603,6 @@ In this case, $\mathcal{O}$ is unique and is defined by $\mathcal{O} = \{ U : X 
 Let $\mathcal{T}$ and $\mathcal{T}'$ be topologies on the set $X$. Then $\mathcal{T}$ is \emph{coarser}, \emph{smaller} or \emph{weaker} than $\mathcal{T}'$, or $\mathcal{T}'$ is \emph{finer}, \emph{larger} or \emph{weaker} than $\mathcal{T}$, iff $\mathcal{T} \subseteq \mathcal{T}'$.
 \end{df}
 
-\section{Topological Disjoint Union}
-
-\begin{df}[Coproduct Topology]
-Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The \emph{coproduct topology} on $\coprod_{\alpha \in A} X_\alpha$ is 
-
-\[ \mathcal{T} = \left\{ \coprod_{\alpha \in A} U_\alpha : \{ U_\alpha \}_{\alpha \in A} \text{ is a family with $U_\alpha$ open in $X_\alpha$ for all $\alpha$} \right\} \enspace . \]
-
-We prove this is a topology.
-\end{df}
-
-\begin{proof}
-\pf
-\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$}
-\begin{proof}
-	\pf
-	\[ \bigcup_{i \in I} \coprod_{\alpha \in A} U_{i\alpha} = \coprod_{\alpha \in A} \bigcup_{i \in I} U_{i \alpha} \]
-\end{proof}
-\step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$}
-\begin{proof}
-	\pf
-	\[ \coprod_{\alpha \in A} U_\alpha \cap \coprod_{\alpha \in A} V_\alpha = \coprod_{\alpha \in A} (U_\alpha \cap V_\alpha) \]
-\end{proof}
-\step{3}{$\coprod_{\alpha \in A} X_\alpha \in \mathcal{T}$}
-\begin{proof}
-	\pf\ Since every $X_\alpha$ is open in $X_\alpha$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-\label{prop:coproduct_finest}
-The coproduct topology is the finest topology on $\coprod_{\alpha \in A} X_\alpha$ such that every injection $\kappa_\alpha : X_\alpha \rightarrow \coprod_{\alpha \in A} X_\alpha$ is continuous.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{0}{\pflet{$P = \coprod_{\alpha \in A} X_\alpha$}}
-\step{1}{\pflet{$\mathcal{T}_c$ be the coproduct topology.}}
-\step{2}{\pflet{$\mathcal{T}$ be any topology on $P$}}
-\step{3}{For all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T}_c)$ is continuous.}
-\begin{proof}
-	\step{a}{\pflet{$\alpha \in A$}}
-	\step{b}{\pflet{$\{ U_\alpha \}_{\alpha \in A}$ be a family with each $U_\alpha$ open in $X_\alpha$.}}
-	\step{c}{For all $\alpha \in A$, we have $\inv{\kappa_\alpha}(\coprod_{\alpha \in A} U_\alpha)$ is open in $X_\alpha$.}
-	\begin{proof}
-		\pf\ Since $\inv{\kappa_\alpha}(\coprod_{\alpha \in A} U_\alpha) = U_\alpha$.
-	\end{proof}
-\end{proof}
-\step{4}{If, for all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T})$ is continuous, then $\mathcal{T} \subseteq \mathcal{T}_c$.}
-\begin{proof}
-	\step{a}{\assume{For all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T})$ is continuous.}}
-	\step{b}{\pflet{$U \in \mathcal{T}$}}
-	\step{c}{For all $\alpha \in a$, we have $\inv{\kappa_\alpha}(U)$ is open in $X_\alpha$.}
-	\step{d}{$U = \coprod_{\alpha \in A} \inv{\kappa_\alpha}(U) \in \mathcal{T}_c$}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{thm}
-Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The coproduct topology is the unique topology on $\coprod_{\alpha \in A} X_\alpha$ such that, for every topological space $Z$ and function $f : \coprod_{\alpha \in A} X_\alpha \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$X = \coprod_{\alpha \in A} X_\alpha$}}
-\step{2}{\pflet{$\mathcal{T}_c$ be the coproduct topology.}}
-\step{3}{For every topological space $Z$ and function $f : (X, \mathcal{T}_c) \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}
-\begin{proof}
-	\step{a}{\pflet{$Z$ be a topological space.}}
-	\step{b}{\pflet{$f : X \rightarrow Z$}}
-	\step{c}{If $f$ is continuous then $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}
-	\begin{proof}
-		\pf\ Because the composite of two continuous functions is continuous.
-	\end{proof}
-	\step{d}{If $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous then $f$ is continuous.}
-	\begin{proof}
-		\step{i}{\assume{$\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}}
-		\step{ii}{\pflet{$U$ be open in $Z$}}
-		\step{iii}{For all $\alpha \in A$ we have $\inv{\kappa_\alpha}(\inv{f}(U))$ is open in $X_\alpha$}
-		\step{iv}{$\inv{f}(U) = \coprod_{\alpha \in A} \inv{\kappa_\alpha}(\inv{f}(U))$}
-		\step{v}{$\inv{f}(U)$ is open in $X$}
-	\end{proof}
-\end{proof}
-\step{4}{For any topology $\mathcal{T}$ on $X$, if for every topological space $Z$ and function $f : (X, \mathcal{T}) \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous, then $\mathcal{T} = \mathcal{T}_c$.}
-\begin{proof}
-	\step{a}{\pflet{$\mathcal{T}$ be a topology on $X$.}}
-	\step{b}{\assume{For every topological space $Z$ and function $f : (X, \mathcal{T}) \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}}
-	\step{c}{$\mathcal{T} \subseteq \mathcal{T}_c$}
-	\begin{proof}
-		\step{i}{For all $\alpha \in A$ we have $\kappa_\alpha : X_\alpha \rightarrow (X, \mathcal{T})$ is continuous.}
-		\begin{proof}
-			\pf\ From \stepref{a} since $\id{X}$ is continuous.
-		\end{proof}
-		\step{ii}{$\mathcal{T} \subseteq \mathcal{T}_c$}
-		\begin{proof}
-			\pf\ Proposition \ref{prop:coproduct_finest}.
-		\end{proof}
-	\end{proof}
-	\step{d}{$\mathcal{T}_c \subseteq \mathcal{T}$}
-	\begin{proof}
-		\step{i}{\pflet{$f : (X, \mathcal{T}) \rightarrow (X, \mathcal{T}_c)$ be the identity function.}}
-		\step{ii}{$f \circ \kappa_\alpha$ is continuous for all $\alpha$.}
-		\step{iii}{$f$ is continuous.}
-		\begin{proof}
-			\pf\ \stepref{a}
-		\end{proof}
-		\step{iv}{$\mathcal{T}_c \subseteq \mathcal{T}$}
-	\end{proof}
-\end{proof}
-\qed
-\end{proof}
-
 \section{Bases}
 
 \begin{df}[Basis]
@@ -5213,6 +5101,118 @@ Let $\{X_i\}_{i \in I}$ be a family of topological spaces. Let $(x_n)$ be a sequ
 	\step{d}{For $j=1, \ldots, n$ we have $\pi_{i_j}(l) \in U_j$}
 	\step{e}{\pick\ $N$ such that, for all $m \geq N$, we have $\pi_{i_j}(x_m) \in U_j$}
 	\step{f}{$\forall m \geq N. x_m \in U$}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Topological Disjoint Union}
+
+\begin{df}[Coproduct Topology]
+Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The \emph{coproduct topology} on $\coprod_{\alpha \in A} X_\alpha$ is 
+
+\[ \mathcal{T} = \left\{ \coprod_{\alpha \in A} U_\alpha : \{ U_\alpha \}_{\alpha \in A} \text{ is a family with $U_\alpha$ open in $X_\alpha$ for all $\alpha$} \right\} \enspace . \]
+
+We prove this is a topology.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$}
+\begin{proof}
+	\pf
+	\[ \bigcup_{i \in I} \coprod_{\alpha \in A} U_{i\alpha} = \coprod_{\alpha \in A} \bigcup_{i \in I} U_{i \alpha} \]
+\end{proof}
+\step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$}
+\begin{proof}
+	\pf
+	\[ \coprod_{\alpha \in A} U_\alpha \cap \coprod_{\alpha \in A} V_\alpha = \coprod_{\alpha \in A} (U_\alpha \cap V_\alpha) \]
+\end{proof}
+\step{3}{$\coprod_{\alpha \in A} X_\alpha \in \mathcal{T}$}
+\begin{proof}
+	\pf\ Since every $X_\alpha$ is open in $X_\alpha$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:coproduct_finest}
+The coproduct topology is the finest topology on $\coprod_{\alpha \in A} X_\alpha$ such that every injection $\kappa_\alpha : X_\alpha \rightarrow \coprod_{\alpha \in A} X_\alpha$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$P = \coprod_{\alpha \in A} X_\alpha$}}
+\step{1}{\pflet{$\mathcal{T}_c$ be the coproduct topology.}}
+\step{2}{\pflet{$\mathcal{T}$ be any topology on $P$}}
+\step{3}{For all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T}_c)$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha \in A$}}
+	\step{b}{\pflet{$\{ U_\alpha \}_{\alpha \in A}$ be a family with each $U_\alpha$ open in $X_\alpha$.}}
+	\step{c}{For all $\alpha \in A$, we have $\inv{\kappa_\alpha}(\coprod_{\alpha \in A} U_\alpha)$ is open in $X_\alpha$.}
+	\begin{proof}
+		\pf\ Since $\inv{\kappa_\alpha}(\coprod_{\alpha \in A} U_\alpha) = U_\alpha$.
+	\end{proof}
+\end{proof}
+\step{4}{If, for all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T})$ is continuous, then $\mathcal{T} \subseteq \mathcal{T}_c$.}
+\begin{proof}
+	\step{a}{\assume{For all $\alpha \in A$, the injection $\kappa_\alpha : X_\alpha \rightarrow (P, \mathcal{T})$ is continuous.}}
+	\step{b}{\pflet{$U \in \mathcal{T}$}}
+	\step{c}{For all $\alpha \in a$, we have $\inv{\kappa_\alpha}(U)$ is open in $X_\alpha$.}
+	\step{d}{$U = \coprod_{\alpha \in A} \inv{\kappa_\alpha}(U) \in \mathcal{T}_c$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $\{ X_\alpha \}_{\alpha \in A}$ be a family of topological spaces. The coproduct topology is the unique topology on $\coprod_{\alpha \in A} X_\alpha$ such that, for every topological space $Z$ and function $f : \coprod_{\alpha \in A} X_\alpha \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X = \coprod_{\alpha \in A} X_\alpha$}}
+\step{2}{\pflet{$\mathcal{T}_c$ be the coproduct topology.}}
+\step{3}{For every topological space $Z$ and function $f : (X, \mathcal{T}_c) \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$Z$ be a topological space.}}
+	\step{b}{\pflet{$f : X \rightarrow Z$}}
+	\step{c}{If $f$ is continuous then $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}
+	\begin{proof}
+		\pf\ Because the composite of two continuous functions is continuous.
+	\end{proof}
+	\step{d}{If $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous then $f$ is continuous.}
+	\begin{proof}
+		\step{i}{\assume{$\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}}
+		\step{ii}{\pflet{$U$ be open in $Z$}}
+		\step{iii}{For all $\alpha \in A$ we have $\inv{\kappa_\alpha}(\inv{f}(U))$ is open in $X_\alpha$}
+		\step{iv}{$\inv{f}(U) = \coprod_{\alpha \in A} \inv{\kappa_\alpha}(\inv{f}(U))$}
+		\step{v}{$\inv{f}(U)$ is open in $X$}
+	\end{proof}
+\end{proof}
+\step{4}{For any topology $\mathcal{T}$ on $X$, if for every topological space $Z$ and function $f : (X, \mathcal{T}) \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous, then $\mathcal{T} = \mathcal{T}_c$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{T}$ be a topology on $X$.}}
+	\step{b}{\assume{For every topological space $Z$ and function $f : (X, \mathcal{T}) \rightarrow Z$, we have $f$ is continuous if and only if $\forall \alpha \in A. f \circ \kappa_\alpha$ is continuous.}}
+	\step{c}{$\mathcal{T} \subseteq \mathcal{T}_c$}
+	\begin{proof}
+		\step{i}{For all $\alpha \in A$ we have $\kappa_\alpha : X_\alpha \rightarrow (X, \mathcal{T})$ is continuous.}
+		\begin{proof}
+			\pf\ From \stepref{a} since $\id{X}$ is continuous.
+		\end{proof}
+		\step{ii}{$\mathcal{T} \subseteq \mathcal{T}_c$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:coproduct_finest}.
+		\end{proof}
+	\end{proof}
+	\step{d}{$\mathcal{T}_c \subseteq \mathcal{T}$}
+	\begin{proof}
+		\step{i}{\pflet{$f : (X, \mathcal{T}) \rightarrow (X, \mathcal{T}_c)$ be the identity function.}}
+		\step{ii}{$f \circ \kappa_\alpha$ is continuous for all $\alpha$.}
+		\step{iii}{$f$ is continuous.}
+		\begin{proof}
+			\pf\ \stepref{a}
+		\end{proof}
+		\step{iv}{$\mathcal{T}_c \subseteq \mathcal{T}$}
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
