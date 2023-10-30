@@ -5935,23 +5935,6 @@ The product of a family of connected spaces is connected.
 \qed
 \end{proof}
 
-\begin{df}[Path-connected]
-A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
-\end{df}
-
-\begin{prop}
-The continuous image of a path connected space is path connected.
-\end{prop}
-
-\begin{prop}
-Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are path connected, then $X$ is path connected.
-\end{prop}
-
-\begin{prop}
-If $X$ and $Y$ are nonempty topological spaces, then
-$X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
-\end{prop}
-
 \begin{prop}
 Let $X$ and $Y$ be topological spaces. Let $A$ be a proper subset of $X$ and $B$ a proper subset of $Y$. Then $(X \times Y) - (A \times B)$ is connected.
 \end{prop}
@@ -6365,6 +6348,25 @@ Every discrete space is totally disconnected.
 \begin{ex}
 The rationals are totally disconnected.
 \end{ex}
+
+\section{Path Connected Spaces}
+
+\begin{df}[Path-connected]
+A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
+\end{df}
+
+\begin{prop}
+The continuous image of a path connected space is path connected.
+\end{prop}
+
+\begin{prop}
+Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are path connected, then $X$ is path connected.
+\end{prop}
+
+\begin{prop}
+If $X$ and $Y$ are nonempty topological spaces, then
+$X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
+\end{prop}
 
 \chapter{Metric Spaces}
 

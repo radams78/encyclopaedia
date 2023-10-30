@@ -137,16 +137,17 @@
 \contentsline {section}{\numberline {12.25}$T_1$ Spaces}{139}{section.12.25}%
 \contentsline {subsection}{\numberline {12.25.1}Limit Points}{140}{subsection.12.25.1}%
 \contentsline {section}{\numberline {12.26}Hausdorff Spaces}{140}{section.12.26}%
-\contentsline {subsection}{\numberline {12.26.1}Product Topology}{142}{subsection.12.26.1}%
+\contentsline {subsection}{\numberline {12.26.1}Product Topology}{141}{subsection.12.26.1}%
 \contentsline {subsection}{\numberline {12.26.2}Box Topology}{142}{subsection.12.26.2}%
 \contentsline {subsection}{\numberline {12.26.3}$T_1$ Spaces}{142}{subsection.12.26.3}%
 \contentsline {section}{\numberline {12.27}Separable Spaces}{143}{section.12.27}%
 \contentsline {section}{\numberline {12.28}Sequential Compactness}{143}{section.12.28}%
 \contentsline {section}{\numberline {12.29}Compactness}{143}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{144}{section.12.30}%
-\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{145}{section.12.31}%
-\contentsline {section}{\numberline {12.32}Regular Spaces}{145}{section.12.32}%
-\contentsline {section}{\numberline {12.33}Totally Disconnected Spaces}{145}{section.12.33}%
+\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{144}{section.12.31}%
+\contentsline {section}{\numberline {12.32}Regular Spaces}{144}{section.12.32}%
+\contentsline {section}{\numberline {12.33}Totally Disconnected Spaces}{144}{section.12.33}%
+\contentsline {section}{\numberline {12.34}Path Connected Spaces}{145}{section.12.34}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{147}{chapter.13}%
 \contentsline {subsection}{\numberline {13.0.1}Balls}{148}{subsection.13.0.1}%
 \contentsline {subsection}{\numberline {13.0.2}Subspaces}{153}{subsection.13.0.2}%
