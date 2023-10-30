@@ -5987,6 +5987,22 @@ A quotient of a connected space is connected.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $p : X \twoheadrightarrow Y$ be a quotient map. Assume that $Y$ is connected, for all $y \in Y$, we have $\inv{p}(y)$ is connected. Then $X$ is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $(A,B)$ is a separation of $X$.}}
+\step{2}{For all $y \in Y$, either $\inv{p}(y) \subseteq A$ or $\inv{p}(y) \subseteq B$.}
+\step{3}{$(\{y \in Y : \inv{p}(y) \subseteq A\}, \{y \in Y : \inv{p}(y) \subseteq B\})$ form a separation of $Y$.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \section{$T_1$ Spaces}
 
 \begin{df}[$T_1$]
