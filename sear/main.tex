@@ -5838,14 +5838,6 @@ Let $X$ be a topological space. Let $A$ be a connected subspace of $X$. Let $B$ 
 \qed
 \end{proof}
 
-\begin{cor}
-$\mathbb{R}^\omega$ under the product topology is connected.
-\end{cor}
-
-\begin{proof}
-\pf\ It is the closure of $\mathbb{R}^\infty$, which is connected because it is the union of the connected subspaces $\mathbb{R}^n$. \qed
-\end{proof}
-
 \begin{prop}
 Let $X$ be a topological space. Let $(A_n)$ be a sequence of connected subspaces of $X$ such that, for all $n$, we have $A_n \cap A_{n+1} \neq \emptyset$. Then $\bigcup_n A_n$ is connected.
 \end{prop}
@@ -5871,6 +5863,33 @@ Let $X$ be a topological space. Let $(A_n)$ be a sequence of connected subspaces
 \qedstep
 \begin{proof}
 	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a connected topological space. Let $Y \subseteq X$ be connected. Let $(A,B)$ be a separation of $X - Y$. Then $Y \cup A$ and $Y \cup B$ are connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$Y \cup A$ is connected.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $(C,D)$ is a separation of $Y \cup A$}}
+	\step{b}{\assume{w.l.o.g. $Y \subseteq C$}}
+	\step{c}{\pick\ $C'$ and $D'$ open in $X$ such that $C = C' \cap (Y \cup A)$ and $D = D' \cap (Y \cup A)$}
+	\step{d}{$D = D' \cap A$}
+	\step{e}{$C' \cap D' \cap A = \emptyset$}
+	\step{f}{$A \subseteq C' \cup D'$}
+	\step{g}{\pick\ $A'$ and $B'$ open in $X$ such that $A = A' - Y$ and $B = B' - Y$}
+	\step{h}{$A' \cap B' \subseteq Y$}
+	\step{i}{$X - Y \subseteq A' \cup B'$}
+	\step{j}{$A' \subseteq C' \cup D'$}
+	\step{k}{$(D' \cap A', B' \cup C')$ is a separation of $X$.}
+\end{proof}
+\step{2}{$Y \cup B$ is connected.}
+\begin{proof}
+	\pf\ Similar.
 \end{proof}
 \qed
 \end{proof}
