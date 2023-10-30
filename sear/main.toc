@@ -41,7 +41,8 @@
 \contentsline {subsection}{\numberline {3.1.1}Strict Partial Orders}{38}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Linear Orders}{38}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Sets of Finite Type}{40}{subsection.3.1.3}%
-\contentsline {section}{\numberline {3.2}Well Orders}{41}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Linear Continuua}{41}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Well Orders}{41}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Category Theory}{47}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Categories}{47}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Monomorphisms}{51}{subsection.4.1.1}%
