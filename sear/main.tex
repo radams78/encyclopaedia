@@ -308,6 +308,18 @@ Let $X$ be a set. Let $\mathcal{A} \subseteq \mathcal{P} X$. If $\mathcal{A}$ is
 A \emph{linear continuum} is a linearly ordered set with more than one element that is dense and has the least upper bound property.
 \end{df}
 
+\begin{prop}
+Every convex subset of a linear continuum with more than one element is a linear continuum.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+Every interval and ray in a linear continuum is a linear continuum.
+\end{cor}
+
 \section{Well Orders}
 
 \begin{df}[Well Ordered Set]
@@ -5899,6 +5911,48 @@ Let $X$ be a connected topological space. Let $Y \subseteq X$ be connected. Let 
 \step{2}{$Y \cup B$ is connected.}
 \begin{proof}
 	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Order Topology}
+
+\begin{prop}
+Every linear continuum is connected under the order topology.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$L$ be a linear continuum.}}
+\step{2}{\assume{for a contradiction $(A,B)$ is a separation of $L$.}}
+\step{3}{\pick\ $a \in A$ and $b \in B$.}
+\step{4}{\assume{w.l.o.g. $a < b$}}
+\step{5}{\pflet{$c = \sup \{ x \in A : x < b \}$}}
+\step{6}{$c \notin A$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $c \in A$.}}
+	\step{b}{\pick\ $e > c$ such that $[c,e) \subseteq A$.}
+	\step{c}{\pick\ $z$ such that $c < z < e$.}
+	\step{d}{$z \in A$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{5}.
+	\end{proof}
+\end{proof}
+\step{7}{$c \notin B$}
+\begin{proof}
+	\step{a}{\assume{for a contradictis $c \in B$.}}
+	\step{b}{\pick\ $d < c$ such that $(d,c] \subseteq B$.}
+	\step{c}{\pick\ $z$ such that $d < z < c$}
+	\step{d}{$z$ is an upper bound for $\{ x \in A : x < b \}$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{5}.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
 \end{proof}
 \qed
 \end{proof}
