@@ -147,8 +147,8 @@
 \contentsline {section}{\numberline {12.28}Sequential Compactness}{144}{section.12.28}%
 \contentsline {section}{\numberline {12.29}Compactness}{144}{section.12.29}%
 \contentsline {section}{\numberline {12.30}Gluing}{145}{section.12.30}%
-\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{145}{section.12.31}%
-\contentsline {section}{\numberline {12.32}Regular Spaces}{145}{section.12.32}%
+\contentsline {section}{\numberline {12.31}Homogeneous Spaces}{146}{section.12.31}%
+\contentsline {section}{\numberline {12.32}Regular Spaces}{146}{section.12.32}%
 \contentsline {section}{\numberline {12.33}Totally Disconnected Spaces}{146}{section.12.33}%
 \contentsline {section}{\numberline {12.34}Path Connected Spaces}{146}{section.12.34}%
 \contentsline {chapter}{\numberline {13}Metric Spaces}{147}{chapter.13}%
