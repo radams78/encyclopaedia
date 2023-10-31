@@ -5925,6 +5925,29 @@ The rationals are totally disconnected.
 A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
 \end{df}
 
+\subsection{The Ordered Square}
+
+\begin{prop}
+The ordered square is not path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $p : [a,b] \rightarrow I_o^2$ is a path from $(0,0)$ to $(1,1)$.}}
+\step{2}{$p$ is surjective.}
+\begin{proof}
+	\pf\ Intermediate Value Theorem.
+\end{proof}
+\step{3}{For all $x \in [0,1]$, the set $\inv{p}(\{x\} \times (0,1))$ is a nonempty open set in $[0,1]$.}
+\step{4}{For all $x \in [0,1]$ choose a rational $q_x \in \inv{p}(\{x\} \times (0,1))$.}
+\step{5}{The mapping that maps $x$ to $q_x$ is an injective function $[0,1] \rightarrow \mathbb{Q}$}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the fact that $[0,1]$ is uncountable and $\mathbb{Q}$ is countable.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Punctured Euclidean Space}
 
 \begin{prop}
