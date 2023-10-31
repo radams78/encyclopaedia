@@ -5448,6 +5448,23 @@ Let $X$ be a connected space. Let $Y$ be a linearly ordered set under the order 
 \pf\ Otherwise $\{ x \in X : f(x) < r \}$ and $\{x \in X : f(x) > r \}$ would form a separation of $X$. \qed
 \end{proof}
 
+\begin{cor}
+Every continuous function $[0,1] \rightarrow [0,1]$ has a fixed point.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : [0,1] \rightarrow [0,1]$ be continuous.}}
+\step{2}{\pflet{$g : [0,1] \rightarrow [-1,1]$ be the function $g(x) = f(x) - x$.}}
+\step{3}{$g(0) \geq 0$}
+\step{4}{$g(1) \leq 0$}
+\step{5}{There exists $x \in [0,1]$ such that $g(x) = 0$.}
+\begin{proof}
+	\pf\ Intermediate Value Theorem.
+\end{proof}
+\step{6}{There exists $x \in [0,1]$ such that $f(x) = x$.}
+\qed
+\end{proof}
 \subsection{Product Topology}
 
 \begin{prop}
