@@ -2204,6 +2204,13 @@ The ordered square is a linear continuum.
 Let $n$ be a positive integer. The \emph{punctured Euclidean space} is $\mathbb{R}^n - \{\vec{0}\}$.
 \end{df}
 
+\section{Topologist's Sine Curve}
+
+\begin{df}[Topologist's Sine Curve]
+The \emph{topologist's sine curve} is
+\[ (\{ 0 \} \times [-1,1]) \cup \{ (x, \sin 1/x) : 0 < x \leq 1 \} \enspace . \]
+\end{df}
+
 \chapter{Integers and Rationals}
 
 \section{Positive Integers}
@@ -5198,6 +5205,8 @@ The space $\mathbb{R}_l$ is disconnected. The sets $(-\infty, 0)$ and $[0, +\inf
 Any indiscrete space is connected.
 \end{ex}
 
+\subsection{The Cofinite Topology}
+
 \begin{ex}
 Any infinite set under the cofinite topology is connected.
 \end{ex}
@@ -5320,6 +5329,14 @@ Let $X$ be a topological space. Let $A$ be a connected subspace of $X$. Let $B$ 
 	\pf\ This is a contradiction.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{cor}
+The topologist's sine curve is connected.
+\end{cor}
+
+\begin{proof}
+\pf\ The set $\{ (x, \sin 1/x) : 0 < x \leq 1 \}$ is connected, since it is the continuous image of the connected set $(0,1]$. The topologist's sine curve is its closure, hence connected by Proposition \ref{prop:connected_closure}. \qed
 \end{proof}
 
 \begin{prop}
