@@ -161,16 +161,16 @@
 \contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{157}{subsection.14.0.4}%
 \contentsline {subsection}{\numberline {14.0.5}First Countable Spaces}{158}{subsection.14.0.5}%
 \contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{158}{subsection.14.0.6}%
-\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{158}{subsection.14.0.7}%
+\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{159}{subsection.14.0.7}%
 \contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{159}{subsection.14.0.8}%
 \contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{161}{subsection.14.0.9}%
 \contentsline {subsection}{\numberline {14.0.10}Product Spaces}{161}{subsection.14.0.10}%
 \contentsline {section}{\numberline {14.1}Uniform Metric}{162}{section.14.1}%
 \contentsline {subsection}{\numberline {14.1.1}Products}{165}{subsection.14.1.1}%
 \contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{166}{subsection.14.1.2}%
-\contentsline {section}{\numberline {14.2}Isometric Embeddings}{166}{section.14.2}%
+\contentsline {section}{\numberline {14.2}Isometric Embeddings}{167}{section.14.2}%
 \contentsline {section}{\numberline {14.3}Complete Metric Spaces}{167}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Manifolds}{167}{section.14.4}%
+\contentsline {section}{\numberline {14.4}Manifolds}{168}{section.14.4}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{169}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{169}{section.15.1}%
 \contentsline {section}{\numberline {15.2}Homotopy Equivalence}{169}{section.15.2}%
@@ -190,7 +190,7 @@
 \contentsline {section}{\numberline {18.3}Fr\'{e}chet Spaces}{182}{section.18.3}%
 \contentsline {section}{\numberline {18.4}Normed Spaces}{182}{section.18.4}%
 \contentsline {section}{\numberline {18.5}Unit Ball}{188}{section.18.5}%
-\contentsline {section}{\numberline {18.6}Inner Product Spaces}{188}{section.18.6}%
+\contentsline {section}{\numberline {18.6}Inner Product Spaces}{189}{section.18.6}%
 \contentsline {section}{\numberline {18.7}Banach Spaces}{189}{section.18.7}%
 \contentsline {section}{\numberline {18.8}Hilbert Spaces}{190}{section.18.8}%
 \contentsline {section}{\numberline {18.9}Locally Convex Spaces}{190}{section.18.9}%
