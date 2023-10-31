@@ -5941,6 +5941,17 @@ For $n > 1$, the punctured Euclidean space $\mathbb{R}^n - \{0\}$ is path connec
 The continuous image of a path connected space is path connected.
 \end{prop}
 
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a path connected space and $Y$ a topological space.}}
+\step{2}{\pflet{$f : X \twoheadrightarrow Y$ be a surjective continuous function.} \prove{$Y$ is path connected.}}
+\step{3}{\pflet{$a,b \in Y$}}
+\step{4}{\pick\ $x, y \in X$ with $f(x) = a$ and $f(y) = b$.}
+\step{5}{\pick\ a path $p : [0,1] \rightarrow X$ from $x$ to $y$.}
+\step{6}{$f \circ p$ is a path from $a$ to $b$.}
+\qed
+\end{proof}
+
 \begin{prop}
 Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are path connected, then $X$ is path connected.
 \end{prop}
@@ -8195,6 +8206,14 @@ Every closed ball $B(\vec{x}, \epsilon)$ in $\mathbb{R}^n$ is path connected.
 Let $n$ be a positive integer. The \emph{unit sphere} $S^{n-1}$ is
 \[ S^{n-1} := \{ \vec{x} \in \mathbb{R}^n : \| \vec{x} \| = 1 \} \enspace . \]
 \end{df}
+
+\begin{prop}
+For $n > 1$. the unit sphere $S^{n-1}$ is path connected.
+\end{prop}
+
+\begin{proof}
+\pf\ The map $g : \mathbb{R}^n - \{\vec{0}\} \twoheadrightarrow S^{n-1}$ defined by $g(\vec{x}) = \vec{x} / \| \vec{x}\|$ is continuous and surjective. Hence $S^{n-1}$ is the continuous image of a path connected space. \qed
+\end{proof}
 
 \section{Inner Product Spaces}
 
