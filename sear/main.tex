@@ -8126,7 +8126,25 @@ For any positive integer $n$, the unit ball $B^n$ is path connected.
 \end{prop}
 
 \begin{proof}
-\pf\ For any $\vec{x}, \vec{y} \in B^n$, define the path $\vec{p} : [0,1] \rightarrow B^n$ by $\vec{p}(t) = (1-t)\vec{x} + t \vec{y}$. \qed
+\pf
+\step{1}{\pflet{$\vec{x}, \vec{y} \in B^n$}}
+\step{2}{\pflet{$\vec{p} : [0,1] \rightarrow B^n$ be the path $\vec{p}(t) = (1-t) \vec{x} + t \vec{y}$.}}
+\begin{proof}
+	\step{a}{\pflet{$t \in [0,1]$} \prove{$\vec{p}(t) \in B^n$}}
+	\step{b}{$\| \vec{p}(t) \| \leq 1$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \vec{p}(t) \|
+			& = \| (1-t) \vec{x} + t \vec{y} \| \\
+			& \leq (1-t) \| \vec{x} \| + t \| \vec{y} \| \\
+			& \leq 1 - t + t \\
+			& = 1
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{$\vec{p}$ is a path from $\vec{x}$ to $\vec{y}$.}
+\qed
 \end{proof}
 
 \section{Inner Product Spaces}
