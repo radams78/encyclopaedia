@@ -5975,6 +5975,27 @@ For $n > 1$, the punctured Euclidean space $\mathbb{R}^n - \{0\}$ is path connec
 \pf\ Given points $x$ and $y$, take the straight line from $x$ to $y$ if this does not pass through 0. Otherwise pick a point $z$ not on this line, and take the two straight lines from $x$ to $z$ then from $z$ to $y$. \qed
 \end{proof}
 
+\subsection{The Topologist's Sine Curve}
+
+\begin{prop}
+The topologist's sine curve is not path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S = \{ (x, \sin 1/x) : 0 < x \leq 1\}$}}
+\step{2}{\assume{for a contradiction $p : [0,1] \rightarrow \overline{S}$ is a path from $(0,0)$ to $(1, \sin 1)$.}}
+\step{3}{\pflet{$b$ be the largest element of $\inv{p}(\{0\} \times [-1,1])$}}
+\step{4}{For $n$ a positive integer, choose $t_n$ such that $b < t_n < ((n-1)b+1)/n$ and $\pi_2(p(t_t)) = (-1)^n$}
+\step{5}{$t_n \rightarrow b$ as $n \rightarrow \infty$}
+\step{6}{$(p(t_n))$ does not converge.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Continuous Functions}
 
 \begin{prop}
