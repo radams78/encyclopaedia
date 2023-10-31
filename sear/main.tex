@@ -5387,6 +5387,7 @@ Let $X$ be a connected topological space. Let $Y \subseteq X$ be connected. Let 
 \subsection{Order Topology}
 
 \begin{prop}
+\label{prop:continuum_connected}
 Every linear continuum is connected under the order topology.
 \end{prop}
 
@@ -5930,6 +5931,8 @@ The rationals are totally disconnected.
 A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
 \end{df}
 
+\subsection{Continuous Functions}
+
 \begin{prop}
 The continuous image of a path connected space is path connected.
 \end{prop}
@@ -5946,6 +5949,26 @@ $X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
 \begin{prop}
 A quotient of a path connected space is path connected.
 \end{prop}
+
+\subsection{Connected Spaces}
+
+\begin{prop}
+Every path connected space is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a path connected space.}}
+\step{2}{\assume{for a contradiction $(A,B)$ is a separation of $X$.}}
+\step{3}{\pick\ $a \in A$ and $b \in B$}
+\step{4}{\pick\ a path $p : [0,1] \rightarrow X$ from $a$ to $b$.}
+\step{5}{$(\inv{p}(A), \inv{p}(B))$ is a separation of $[0,1]$.}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts Proposition \ref{prop:continuum_connected}.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Metric Spaces}
 
