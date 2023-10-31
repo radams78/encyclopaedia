@@ -1268,4 +1268,570 @@ For any set $A$, there is no surjective function $A \rightarrow \mathcal{P} A$.
 For any set $A$, there is no injective function $\mathcal{P} A \rightarrow A$.
 \end{cor}
 
+\chapter{Relations}
+
+\begin{df}[Reflexive]
+A relation $R \subseteq A \times A$ is \emph{reflexive} iff, for all $a \in A$, we have $(a,a) \in R$.
+\end{df}
+
+\begin{df}[Antisymmetric]
+A relation $R \subseteq A \times A$ is \emph{antisymmetric} iff, for all $a,b \in A$, if $(a,b) \in R$ and $(b,a) \in R$ then $a = b$.
+\end{df}
+
+\begin{df}[Transitive]
+A relation $R \subseteq A \times A$ is \emph{transitive} iff, for all $a,b,c \in A$, if $(a,b) \in R$ and $(b,c) \in R$ then $(a,c) \in R$.
+\end{df}
+
+\begin{df}[Partial Order]
+A \emph{partial order} on a set $A$ is a relation on $A$ that is reflexive, antisymmetric and transitive.
+
+We say $(A, \leq)$ is a \emph{partially ordered set} or \emph{poset} iff $\leq$ is a partial order on $A$.
+\end{df}
+
+\begin{df}[Greatest]
+Let $A$ be a poset and $a \in A$. Then $a$ is the \emph{greatest} element iff $\forall x \in A. x \leq a$.
+\end{df}
+
+\begin{df}[Least]
+Let $A$ be a poset and $a \in A$. Then $a$ is the \emph{least} element iff $\forall x \in A. a \leq x$.
+\end{df}
+
+\begin{df}[Upper Bound]
+Let $A$ be a poset, $S \subseteq A$, and $u \in A$. Then $u$ is an \emph{upper bound} for $S$ iff $\forall x \in S. x \leq u$. We say $S$ is \emph{bounded above} iff it has an upper bound.
+\end{df}
+
+\begin{df}[Lower Bound]
+Let $A$ be a poset, $S \subseteq A$, and $l \in A$. Then $l$ is a \emph{lower bound} for $S$ iff $\forall x \in S. l \leq x$. We say $S$ is \emph{bounded below} iff it has a lower bound.
+\end{df}
+
+\begin{df}[Supremum]
+Let $A$ be a poset, $S \subseteq A$ and $s \in A$. Then $s$ is the \emph{supremum} or \emph{least upper bound} for $S$ iff $s$ is the least element in the sub-poset of upper bounds for $A$.
+\end{df}
+
+\begin{df}[Supremum]
+Let $A$ be a poset, $S \subseteq A$ and $i \in A$. Then $i$ is the \emph{infimum} or \emph{greatest lower bound} for $S$ iff $i$ is the greatest element in the sub-poset of lower bounds for $A$.
+\end{df}
+
+\begin{df}[Least Upper Bound Property]
+A poset $A$ has the \emph{least upper bound property} iff every nonempty subset of $A$ that is bounded above has a least upper bound.
+\end{df}
+
+\begin{prop}
+Let $A$ be a poset. Then $A$ has the least upper bound property if and only if every nonempty subset of $A$ that is bounded below has a greatest lower bound.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $A$ has the least upper bound property then every subset of $A$ that is bounded below has a greatest lower bound.}
+\begin{proof}
+	\step{a}{\assume{$A$ has the least upper bound property.}}
+	\step{b}{\pflet{$S \subseteq A$ be nonempty and bounded below.}}
+	\step{c}{\pflet{$L$ be the set of lower bounds of $S$.}}
+	\step{d}{$L$ is nonempty.}
+	\begin{proof}
+		\pf\ Because $S$ is bounded below.
+	\end{proof}
+	\step{e}{$L$ is bounded above.}
+	\begin{proof}
+		\pf\ Pick an element $s \in S$. Then $s$ is an upper bound for $L$.
+	\end{proof}
+	\step{f}{\pflet{$s$ be the supremum of $L$.}}
+	\step{g}{$s$ is the greatest lower bound of $S$.}
+	\begin{proof}
+		\step{i}{$s$ is a lower bound of $S$.}
+		\begin{proof}
+			\step{one}{\pflet{$x \in S$}}
+			\step{two}{$x$ is an upper bound for $L$.}
+			\step{three}{$s \leq x$}
+		\end{proof}
+		\step{ii}{For any lower bound $l$ of $S$ we have $l \leq s$.}
+		\begin{proof}
+			\pf\ Immediate from \stepref{f}.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{If every subset of $A$ that is bounded below has a greatest lower bound, then $A$ has the least upper bound property.}
+\begin{proof}
+	\pf\ Dual.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Order Theory}
+
+\section{Strict Partial Orders}
+
+\begin{df}[Strict Partial Order]
+A \emph{strict partial order} on a set $A$ is a relation on $A$ that is irreflexive and transitive.
+\end{df}
+
+\begin{prop}
+\begin{enumerate}
+\item If $\leq$ is a partial order on $A$ then $<$ is a strict partial order on $A$, where $x < y$ iff $x \leq y \wedge x \neq y$.
+\item If $<$ is a strict partial order on $A$ then $\leq$ is a partial order on $A$, where $x \leq y$ iff $x < y \vee x = y$.
+\item These two relations are inverses of one another.
+\end{enumerate}
+\end{prop}
+
+\subsection{Linear Orders}
+
+\begin{df}[Linear Order]
+A \emph{linear order} on a set $A$ is a partial order $\leq$ on $A$ such that, for all $x,y \in A$, we have $x \leq y$ or $y \leq x$.
+
+A \emph{linearly ordered set} is a pair $(X, \leq)$ such that $X$ is a set and $\leq$ is a linear order on $X$.
+\end{df}
+
+\begin{df}[Open Interval]
+Let $X$ be a linearly ordered set and $a,b \in X$. The \emph{open interval} $(a,b)$ is the set
+\[ \{ x \in X : a < x < b \} \enspace . \]
+\end{df}
+
+\begin{df}[Immediate Predecessor, Immediate Successor]
+Let $X$ be a linearly ordered set and $a,b \in X$. Then $b$ is the \emph{(immediate) successor} of $a$, and $a$ is the \emph{(immediate) predecessor} of $b$, iff $a < B$ and there is no $x$ such that $a < x < b$.
+\end{df}
+
+\begin{df}[Dictionary Order]
+Let $A$ and $B$ be linearly ordered sets. The \emph{dictionary order} on $A \times B$ is the order defined by
+\[ (a,b) < (a',b') \Leftrightarrow a < a' \vee (a = a' \wedge b < b') \enspace . \]
+\end{df}
+
+\begin{thm}[Maximum Principle]
+Every poset has a maximal linearly ordered subset.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(A, \leq)$ be a poset.}}
+\step{2}{\pick\ a well ordering $\preccurlyeq$ of $A$.}
+\begin{proof}
+	\pf\ Well Ordering Theorem.
+\end{proof}
+\step{3}{\pflet{$h : A \rightarrow 2$ be the function defined by $\preccurlyeq$-recursion thus:
+\[ h(a) =
+\begin{cases}
+1 & \text{if $a$ is $\leq$-comparable with every $b \prec a$ such that $h(b) = 1$} \\
+0 & \text{otherwise}
+\end{cases} \]}}
+\step{4}{\pflet{$B = \{x \in A : h(x) = 1\}$} \prove{$B$ is a maximal subset linearly ordered by $\leq$.}}
+\step{5}{$B$ is linearly ordered by $\leq$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in B$}}
+	\step{b}{\assume{w.l.o.g. $x \preccurlyeq y$}}
+	\step{c}{$y$ is $\leq$-comparable with $x$}
+\end{proof}
+\step{6}{For any subset $C \subseteq A$ linearly ordered by $\leq$, if $B \subseteq C$ then $B = C$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in C$}}
+	\step{b}{$x$ is comparable with every $y \preccurlyeq x$ such that $h(x) = 1$}
+	\step{c}{$x \in B$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Zorn's Lemma]
+Let $A$ be a poset.
+If every linearly ordered subset of $A$ is bounded above, then $A$ has a maximal element.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a maximal linearly ordered subset $B$ of $A$.}
+\begin{proof}
+	\pf\ Maximal Principle
+\end{proof}
+\step{2}{\pick\ an upper bound $c$ for $B$. \prove{$c$ is maximal.}}
+\step{3}{\pflet{$x \in A$}}
+\step{4}{\assume{$c \leq x$} \prove{$x = c$}}
+\step{5}{$x$ is an upper bound for $B$.}
+\step{6}{$x \in B$}
+\begin{proof}
+	\pf\ By the maximality of $B$, since $B \cup \{x\}$ is linearly ordered.
+\end{proof}
+\step{7}{$x \leq c$}
+\begin{proof}
+	\pf\ \stepref{2}
+\end{proof}
+\step{8}{$x = c$}
+\qed
+\end{proof}
+
+\begin{cor}[Kuratowski's Lemma]
+Let $\mathcal{A} \subseteq \mathcal{P} X$. Suppose that, for every subset $\mathcal{B} \subseteq \mathcal{A}$ that is linearly ordered by inclusion, we have $\bigcup \mathcal{B} \in \mathcal{A}$. Then $\mathcal{A}$ has a maximal element.
+\end{cor}
+
+\begin{df}[Closed Interval]
+Let $X$ be a linearly ordered set. Let $a,b \in X$ with $a < b$. The \emph{closed interval} $[a,b]$ is
+\[ [a,b] := \{ x \in X : a \leq x \leq b \} \enspace . \]
+\end{df}
+
+\begin{df}[Half-Open Interval]
+Let $X$ be a linearly ordered set. Let $a,b \in X$ with $a < b$. The \emph{half-open intervals} $(a,b]$ and $[a,b)$ are defined by
+\begin{align*}
+(a,b] & := \{ x \in X : a < x \leq b \} \\
+[a,b) & := \{ x \in X : a \leq x < b \}
+\end{align*}
+\end{df}
+
+\begin{df}[Open Ray]
+Let $X$ be a linearly ordered set and $a \in X$. The \emph{open rays} $(a, +\infty)$ and $(-\infty, a)$ are defined by:
+\begin{align*}
+(a, +\infty) & := \{ x \in X : a < x \} \\
+(-\infty, a) & := \{ x \in X : x < a \}
+\end{align*}
+\end{df}
+
+\begin{df}[Closed Ray]
+Let $X$ be a linearly ordered set and $a \in X$. The \emph{closed rays} $[a, +\infty)$ and $(-\infty, a]$ are defined by:
+\begin{align*}
+[a, +\infty) & := \{ x \in X : a \leq x \} \\
+(-\infty, a] & := \{ x \in X : x \leq a \}
+\end{align*}
+\end{df}
+
+\begin{df}[Convex]
+Let $X$ be a linearly ordered set and $Y \subseteq X$. Then $Y$ is \emph{convex} iff, for all $a,b \in Y$ and $c \in X$, if $a < c < b$ then $c \in Y$.
+\end{df}
+
+\subsection{Sets of Finite Type}
+
+\begin{df}[Finite Type]
+Let $X$ be a set. Let $\mathcal{A} \subseteq \mathcal{P} X$. Then $\mathcal{A}$ is of \emph{finite type} if and only if, for any $B \subseteq X$, we have $B \in \mathcal{A}$ if and only if every finite subset of $B$ is in $\mathcal{A}$.
+\end{df}
+
+\begin{prop}[Tukey's Lemma]
+Let $X$ be a set. Let $\mathcal{A} \subseteq \mathcal{P} X$. If $\mathcal{A}$ is of finite type, then $\mathcal{A}$ has a maximal element.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For every subset $\mathcal{B} \subseteq \mathcal{A}$ that is linearly ordered by inclusion, we have $\bigcup \mathcal{B} \in \mathcal{A}$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{B} \subseteq \mathcal{A}$}}
+	\step{b}{\assume{$\mathcal{B}$ is linearly ordered by inclusion.}}
+	\step{c}{Every finite subset of $\bigcup \mathcal{B}$ is in $\mathcal{A}$}
+	\step{d}{$\bigcup \mathcal{B} \in \mathcal{A}$}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Kuratowski's Lemma.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Linear Continuua}
+
+\begin{df}[Linear Continuum]
+A \emph{linear continuum} is a linearly ordered set with more than one element that is dense and has the least upper bound property.
+\end{df}
+
+\begin{prop}
+Every convex subset of a linear continuum with more than one element is a linear continuum.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+Every interval and ray in a linear continuum is a linear continuum.
+\end{cor}
+
+\section{Well Orders}
+
+\begin{df}[Well Ordered Set]
+A \emph{well ordered set} is a linearly ordered set such that every nonempty subset has a least element.
+\end{df}
+
+\begin{prop}
+Any subset of a well ordered set is well ordered.
+\end{prop}
+
+\begin{prop}
+The product of two well ordered sets is well ordered under the dictionary order.
+\end{prop}
+
+\begin{thm}[Well Ordering Theorem]
+Every set has a well ordering.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a set.}}
+\step{2}{\pick\ a choice function $c : \mathcal{P} X - \{ \emptyset \} \rightarrow X$}
+\step{3}{Define a \emph{tower} to be a pair $(T,<)$ where $T \subseteq X$, $<$ is a well ordering of $T$, and
+\[ \forall x \in T. x = c(X - \{ y \in T : y < x \}) \enspace . \]}
+\step{4}{Given two towers, either they are equal or one is a section of the other.}
+\begin{proof}
+	\step{a}{\pflet{$(T_1,<_1)$ and $(T_2,<_2)$ be towers.}}
+	\step{b}{\assume{w.l.o.g. there exists a strictly monotone function $h : T_1 \rightarrow T_2$}}
+	\step{c}{$h(T_1)$ is either $T_2$ or a section of $T_2$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:order_preserving_maps}.
+	\end{proof}
+	\step{d}{$\forall x \in T_1. h(x) = x$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in T_1$}}
+		\step{ii}{\assume{as transfinite induction hypothesis $\forall y < x. h(y) = y$}}
+		\step{iii}{$h(x)$ is the least element of $T_2 - \{ h(y) \in T_1 : y < x \}$}
+		\step{iv}{$h(x)$ is the least element of $T_2 - \{ y \in T_1 : y < x \}$}
+		\begin{proof}
+			\pf\ \stepref{ii}
+		\end{proof}
+		\step{v}{$h(x) = x$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				h(x) & = c(X - \{y \in T_2 : y < h(x)\}) & (\text{\stepref{3}}) \\
+				& = c(X - \{y \in T_2 : y < x \}) & (\text{\stepref{iv}}) \\
+				& = c(X - \{ y \in T_1 : y < x \}) & (\text{\stepref{ii}}) \\
+				& = x & (\text{\stepref{3}})
+			\end{align*}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{5}{If $(T,<)$ is a tower and $T \neq X$, then there exists a tower of which $(T,<)$ is a section.}
+\begin{proof}
+	\pf\ Let $T_1 = T \cup \{c(T)\}$ and $<_1$ be the extension of $<$ such that $x < c(T)$ for all $x \in T$.
+\end{proof}
+\step{6}{\pflet{$\mathbf{T} = \bigcup \{ T : \exists R. (T,R) \text{ is a tower} \}$ and $\mathbf{R} = \bigcup \{ R : \exists T. (T,R) \text{ is a tower} \}$}}
+\step{7}{$(\mathbf{T},\mathbf{R})$ is a tower.}
+\begin{proof}
+	\step{a}{$\mathbf{R}$ is irreflexive.}
+	\begin{proof}
+		\pf\ Since for every tower $(T,<)$ we have $<$ is irreflexive.
+	\end{proof}
+	\step{b}{$\mathbf{R}$ is transitive.}
+	\begin{proof}
+		\step{i}{\assume{$x \mathbf{R} y$ and $y \mathbf{R} z$}}
+		\step{ii}{\pick\ towers $(T_1,<_1)$ and $(T_2,<_2)$ such that $x <_1 y$ and $y <_2 z$}
+		\step{iii}{\assume{w.l.o.g. $(T_1,<_1)$ is either $(T_2,<_2)$ or a section of $(T_2,<_2)$}}
+		\step{iv}{$x <_2 y <_2 z$}
+		\step{v}{$x <_2 z$}
+		\step{vi}{$x \mathbf{R} z$}
+	\end{proof}
+	\step{c}{For all $x,y \in \mathbf{T}$, either $x\mathbf{R}y$ or $x= y$ or $y\mathbf{R}x$}
+	\begin{proof}
+		\pf\ There exists a tower that has both $x$ and $y$.
+	\end{proof}
+	\step{d}{Every nonempty subset of $\mathbf{T}$ has an $\mathbf{R}$-least element.}
+	\begin{proof}
+		\step{i}{\pflet{$A \subseteq \mathbf{T}$ be nonempty.}}
+		\step{ii}{\pick\ $a \in A$}
+		\step{iii}{\pick\ a tower $(T,<)$ such that $a \in T$.}
+		\step{iv}{\pflet{$b$ be the $<$-least element of $A \cap T$} \prove{$b$ is $\mathbf{R}$-least in $A$.}}
+		\step{vi}{\pflet{$x \in A$}}
+		\step{vii}{Etc.}
+	\end{proof}
+	\step{e}{$\forall x \in \mathbf{T}. x = c(X - \{y \in \mathbf{T} : y\mathbf{R}x \})$}
+\end{proof}
+\step{8}{$\mathbf{T} = X$}
+\step{9}{$\mathbf{R}$ is a well ordering of $X$.}
+\qed
+\end{proof}
+
+\begin{prop}
+There exists a well-ordered set with a largest element $\Omega$ such that $(-\infty, \Omega)$ is uncountable but, for all $\alpha < \Omega$, we have $(-\infty, \alpha)$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ an uncountable well ordered set $B$.}
+\step{2}{\pflet{$C = 2 \times B$ under the dictionary order.}}
+\step{3}{\pflet{$\Omega$ be the least element of $C$ such that $(-\infty, \Omega)$ is uncountable.}}
+\step{4}{\pflet{$A = (-\infty, \Omega]$}}
+\step{5}{$A$ is a well ordered set with largest element $\Omega$ such that $(-\infty, \Omega)$ is uncountable but, for all $\alpha < \Omega$, we have $(-\infty, \alpha)$ is countable.}
+\qed
+\end{proof}
+
+\begin{prop}
+Every well ordered set has the least upper bound property.
+\end{prop}
+
+\begin{proof}
+\pf\ For any subset that is bounded above, the set of upper bounds is nonempty, hence has a least element. \qed
+\end{proof}
+
+\begin{prop}
+In a well ordered set, every element that is not greatest has a successor.
+\end{prop}
+
+\begin{proof}
+\pf\ If $a$ is not greatest, then $\{ x : x > a \}$ is nonempty, hence has a least element. \qed
+\end{proof}
+
+\begin{thm}[Transfinite Induction]
+Let $J$ be a well ordered set. Let $S \subseteq J$. Assume that, for every $\alpha \in J$, if $\forall x < \alpha. x \in S$ then $\alpha in S$. Then $S = J$.
+\end{thm}
+
+\begin{proof}
+\pf\ Otherwise $J - S$ would be a nonempty subset of $J$ with no least element. \qed
+\end{proof}
+
+\begin{prop}
+Let $I$ be a well ordered set. Let $\{A_i\}_{i \in I}$ be a family of well ordered sets. Define $<$ on $\coprod_{i \in I} A_i$ by: $\kappa_i(a) < \kappa_j(b)$ iff either $i < j$, or $i = j$ and $a < b$ in $A_i$. Then $<$ well orders $\coprod_{i \in I} A_i$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}[Principle of Transfinite Recursion]
+Let $J$ be a well ordered set. Let $C$ be a set. Let $\mathcal{F}$ be the set of all functions from a section of $J$ into $C$. Let $\rho : \mathcal{F} \rightarrow C$. Then there exists a unique function $h : J \rightarrow C$ such that, for all $\alpha \in J$, we have
+\[ h(\alpha) = \rho(h \restriction (-\infty, \alpha)) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For a function $h$ mapping either a section of $J$ or all of $J$ into $C$, let us say $h$ is \emph{acceptable} iff, for all $x \in \dom h$, we have $(-\infty, x) \subseteq \dom h$ and $h(x) = \rho(h \restriction (-\infty, x))$.}
+\step{1}{If $h$ and $k$ are acceptable functions then $h(x) = k(x)$ for all $x$ in both domains.}
+\begin{proof}
+	\step{a}{\pflet{$x \in J$}}
+	\step{b}{\assume{as transfinite induction hypothesis that, for all $y < x$ and any acceptable functions $h$ and $k$ with $y \in \dom h \cap \dom k$, we have $h(y) = k(y)$}}
+	\step{c}{\pflet{$h$ and $k$ be acceptable functions with $x \in \dom h \cap \dom k$}}
+	\step{d}{$h \restriction (-\infty, x) = k \restriction (-\infty, x)$}
+	\begin{proof}
+		\pf\ By \stepref{b}.
+	\end{proof}
+	\step{d}{$h(x) = k(x)$}
+	\begin{proof}
+		\pf\ By \stepref{c}, each is the least element of the set in \stepref{d}.
+	\end{proof}
+\end{proof}
+\step{2}{For $\alpha \in J$, if there exists an acceptable function $(- \infty, \alpha) \rightarrow C$, then there exists an acceptable function $(-\infty, \alpha] \rightarrow C$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha \in J$}}
+	\step{b}{\pflet{$f : (-\infty, \alpha) \rightarrow C$ be acceptable.}}
+	\step{c}{\pflet{$g : (-\infty, \alpha] \rightarrow C$ be the function given by
+	\[ g(x) = 
+	\begin{cases}
+	f(x) & \text{if } x < \alpha \\
+	\rho(f) & \text{if } x = \alpha
+	\end{cases} \]}}
+	\step{d}{$g$ is acceptable.}
+\end{proof}
+\step{3}{Let $K \subseteq J$. Assume that, for all $\alpha \in K$, there exists an acceptable function $(-\infty, \alpha) \rightarrow C$. Then there exists an acceptable function $\bigcup_{\alpha \in K} (-\infty, \alpha) \rightarrow C$.}
+\begin{proof}
+	\step{a}{Define $f : \bigcup_{\alpha \in K} (-\infty, \alpha) \rightarrow C$ by: $f(x) = y$ iff there exists $\alpha \in K$ and $g : (-\infty, \alpha) \rightarrow C$ acceptable such that $g(x) = y$.}
+\end{proof}
+\step{4}{For every $\beta \in J$, there exists an acceptable function $(-\infty, \beta) \rightarrow C$}
+\begin{proof}
+	\step{a}{\pflet{$\beta \in J$}}
+	\step{b}{\assume{as transfinite induction hypothesis that, for all $\alpha < \beta$, there exists an acceptable function $(-\infty, \alpha) \rightarrow C$}}
+	\step{c}{\case{$\beta$ has a predecessor}}
+	\begin{proof}
+		\step{i}{\pflet{$\alpha$ be the predecessor of $\beta$.}}
+		\step{ii}{There exists an acceptable function $(-\infty, \alpha) \rightarrow C$.}
+		\step{iii}{There exists an acceptable function $(-\infty, \beta) \rightarrow C$.}
+		\begin{proof}
+			\pf\ By \stepref{2} since $(-\infty, \beta) = (-\infty, \alpha]$.
+		\end{proof}
+	\end{proof}
+	\step{d}{\case{$\beta$ has no predecessor.}}
+	\begin{proof}
+		\pf\ The result follows by \stepref{3} since $(-\infty, \beta) = \bigcup_{\alpha < \beta} (-\infty, \alpha)$.
+	\end{proof}
+\end{proof}
+\step{5}{There exists an acceptable function $J \rightarrow C$.}
+\begin{proof}
+	\step{a}{\case{$J$ has a greatest element.}}
+	\begin{proof}
+		\step{i}{\pflet{$g$ be greatest.}}
+		\step{ii}{There exists an acceptable function $(-\infty, g) \rightarrow C$.}
+		\begin{proof}
+			\pf\ \stepref{4}
+		\end{proof}
+		\step{iii}{There exists an acceptable function $J \rightarrow C$.}
+		\begin{proof}
+			\pf\ By \stepref{2} since $J = (-\infty, g]$.
+		\end{proof}
+	\end{proof}
+	\step{b}{\case{$J$ has no greatest element.}}
+	\begin{proof}
+		\pf\ By \stepref{3} since $J = \bigcup_{\alpha \in J} (-\infty, \alpha)$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Cardinal Comparability]
+Let $A$ and $B$ be sets. Then either $A \preccurlyeq B$ or $B \preccurlyeq A$.
+\end{cor}
+
+\begin{proof}
+\pf\ Choose well orderings of $A$ and $B$. Then either there exists a surjection $A \twoheadrightarrow B$, or there exists an injective function $h : A \rightarrowtail B$ defined by transfinite recursion by $h(x)$ is the least element of $B - h((-\infty, x))$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:order_preserving_maps}
+Let $J$ and $E$ be well ordered sets. Let $h : J \rightarrow E$. Then the following are equivalent.
+\begin{enumerate}
+\item $h$ is strictly monotone and $h(J)$ is either $E$ or a section of $E$.
+\item For all $\alpha \in J$, we have $h(\alpha)$ is the least element of $E - h((-\infty, \alpha))$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{1}}
+	\step{b}{$h(J)$ is closed downwards.}
+	\step{c}{\pflet{$\alpha \in J$}}
+	\step{d}{$h(\alpha) \in E - h((-\infty, \alpha))$}
+	\begin{proof}
+		\pf\ If $\beta < \alpha$ then $h(\beta) < h(\alpha)$.
+	\end{proof}
+	\step{e}{For all $y \in E - h((-\infty, \alpha))$ we have $h(\alpha) \leq y$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $y < h(\alpha)$}}
+		\step{ii}{$y \in h(J)$}
+		\step{iii}{\pick\ $\beta \in J$ such that $h(\beta) = y$}
+		\step{iv}{$h(\beta) < h(\alpha)$}
+		\step{v}{$\beta < \alpha$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts the fact that $y \notin h((-\infty, \alpha))$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{2}}
+	\step{b}{$h$ is strictly monotone.}
+	\begin{proof}
+		\step{i}{\pflet{$\alpha, \beta \in J$ with $\alpha < \beta$}}
+		\step{ii}{$h(\alpha) \neq h(\beta)$}
+		\begin{proof}
+			\pf\ Because $h(\beta) \in E - h((-\infty, \beta))$.
+		\end{proof}
+		\step{iii}{$h(\alpha) \leq h(\beta)$}
+		\begin{proof}
+			\pf Because $h(\alpha)$ is least in $E - h((-\infty, \alpha))$.
+		\end{proof}
+		\step{iv}{$h(\alpha) < h(\beta)$}
+	\end{proof}
+	\step{c}{$h(J)$ is either $E$ or a section of $E$.}
+	\begin{proof}
+		\step{i}{\assume{$h(J) \neq E$}}
+		\step{ii}{\pflet{$e$ be least in $E - h(J)$} \prove{$h(J) = (-\infty, e)$}}
+		\step{iii}{$h(J) \subseteq (-\infty, e)$}
+		\begin{proof}
+			\step{one}{\pflet{$\alpha \in J$}}
+			\step{two}{$h(\alpha) \neq e$}
+			\begin{proof}
+				\pf\ $e \notin h(J)$
+			\end{proof}
+			\step{three}{$h(\alpha) \leq e$}
+			\begin{proof}
+				\pf\ Since $h(\alpha)$ is least in $E - h((-\infty, \alpha))$.
+			\end{proof}
+			\step{four}{$h(\alpha) < e$}
+		\end{proof}
+		\step{iv}{$(-\infty, e) \subseteq h(J)$}
+		\begin{proof}
+			\pf\ If $e' < e$ then $e' \in h(J)$ by leastness of $e$.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
