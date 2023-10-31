@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  31 OCT 2023 19:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  31 OCT 2023 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -858,10 +858,12 @@ Chapter 11.
 Chapter 12.
 [99] [100
 
-]
+] [101] [102]
 Chapter 13.
-[101]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 2944--2944
+[103
+
+]
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 2946--2946
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -870,131 +872,131 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
  S\U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q „
  []
 
-[102] [103] [104] [105] [106]
-Overfull \hbox (224.35663pt too wide) in paragraph at lines 3274--3275
+[104] [105] [106] [107] [108]
+Overfull \hbox (224.35663pt too wide) in paragraph at lines 3276--3277
 \OML/cmm/m/it/10 I$\OT1/cmr/m/it/10 , let $\OMS/cmsy/m/n/10 B[]$ \OT1/cmr/m/it/
 10 be a ba-sis for the topol-ogy on $\OML/cmm/m/it/10 X[]$\OT1/cmr/m/it/10 . Th
 en $\OMS/cmsy/m/n/10 B \U/matha/m/n/10 ^^P []$
  []
 
-[107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117]
-Overfull \hbox (3.73152pt too wide) in paragraph at lines 3971--3972
+[109] [110] [111] [112] [113] [114] [115] [116] [117] [118] [119]
+Overfull \hbox (3.73152pt too wide) in paragraph at lines 3973--3974
 []\OT1/cmr/bx/n/10 Definition 13.11.13 \OT1/cmr/m/n/10 (Topo-log-i-cal Prop-ert
 y)\OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 A prop-erty $\OML/cmm/m/it/10 P$ \OT1/cmr/
 m/n/10 of topo-log-i-cal spaces
  []
 
 
-Overfull \hbox (2.89607pt too wide) in paragraph at lines 3995--3996
+Overfull \hbox (2.89607pt too wide) in paragraph at lines 3997--3998
 []\OT1/cmr/bx/n/10 Proposition 13.11.18. \OT1/cmr/m/it/10 Let $\U/matha/m/n/10 
 p\OML/cmm/m/it/10 X; \OMS/cmsy/m/n/10 T\U/matha/m/n/10 q$ \OT1/cmr/m/it/10 be a
  topo-log-i-cal space. Let $\OML/cmm/m/it/10 S$ \OT1/cmr/m/it/10 be the Sierpi^
 ^Snski
  []
 
-[118] [119] [120]
-Overfull \hbox (6.78658pt too wide) detected at line 4126
+[120] [121] [122]
+Overfull \hbox (6.78658pt too wide) detected at line 4128
 []
  []
 
-[121]
+[123]
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
-[122]
-Overfull \hbox (9.02847pt too wide) detected at line 4295
+[124]
+Overfull \hbox (9.02847pt too wide) detected at line 4297
 []
  []
 
-[123] [124] [125] [126] [127] [128]
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 4638--4639
+[125] [126] [127] [128] [129] [130]
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 4640--4641
 []\OT1/cmr/bx/n/10 Proposition 13.20.2. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
 
-[129] [130] [131] [132] [133]
+[131] [132] [133] [134] [135]
 WARNING: proof step "a" (<2>2) already defined
-[134] [135]
+[136] [137]
 WARNING: proof step "d" (<2>6) already defined
-[136] [137] [138] [139] [140]
+[138] [139] [140] [141] [142]
 WARNING: proof step "1" (<2>1) already defined
-[141] [142]
-WARNING: proof step "3" (<2>3) already defined
 [143] [144]
+WARNING: proof step "3" (<2>3) already defined
+[145] [146]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5656.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 5656.
+(hyperref)                removing `math shift' on input line 5658.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5656.
+(hyperref)                removing `subscript' on input line 5658.
 
-[145]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5658.
+
+[147]
 WARNING: proof step "d" (<2>5) already defined
-[146] [147]
+[148] [149]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5846.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 5846.
+(hyperref)                removing `math shift' on input line 5848.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5846.
+(hyperref)                removing `subscript' on input line 5848.
 
 
-Overfull \hbox (24.67375pt too wide) detected at line 5886
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 5848.
+
+
+Overfull \hbox (24.67375pt too wide) detected at line 5888
 []
  []
 
-[148] [149] [150] [151] [152]
+[150] [151] [152] [153] [154]
 Chapter 14.
-[153
+[155
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 6198.
+(hyperref)                than one, level fixed on input line 6200.
 
-[154]
-Overfull \hbox (125.21025pt too wide) detected at line 6336
+[156]
+Overfull \hbox (125.21025pt too wide) detected at line 6338
 []
  []
 
-[155] [156]
+[157] [158]
 WARNING: proof step "1" (<2>1) already defined
 
-Overfull \hbox (22.79451pt too wide) detected at line 6465
+Overfull \hbox (22.79451pt too wide) detected at line 6467
 []
  []
 
-[157] [158] [159]
+[159] [160] [161]
 WARNING: proof step "6" (<1>7) already defined
-[160] [161] [162]
-Overfull \hbox (4.95183pt too wide) detected at line 6842
+[162] [163] [164]
+Overfull \hbox (4.95183pt too wide) detected at line 6844
 []
  []
 
-[163]
+[165]
 WARNING: proof step "3" (<1>5) already defined
 
 Underfull \vbox (badness 3769) has occurred while \output is active []
 
- [164]
-[165]
+ [166]
+[167]
 WARNING: proof step "c" (<2>4) already defined
-[166] [167] [168]
-Overfull \hbox (108.65958pt too wide) detected at line 7178
+[168] [169] [170]
+Overfull \hbox (108.65958pt too wide) detected at line 7180
 []
  []
 
-[169]
-Overfull \hbox (47.883pt too wide) in paragraph at lines 7192--7192
+[171]
+Overfull \hbox (47.883pt too wide) in paragraph at lines 7194--7194
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -1002,41 +1004,41 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 7208
+Overfull \hbox (0.90187pt too wide) detected at line 7210
 []
  []
 
-[170] [171] [172]
+[172] [173] [174]
 Chapter 15.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 7375--7376
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 7377--7378
 []\OT1/cmr/bx/n/10 Definition 15.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
  []
 
-[173
-
-] [174]
-Chapter 16.
 [175
 
 ] [176]
-Chapter 17.
+Chapter 16.
 [177
 
-] [178] [179] [180] [181] [182] [183] [184
+] [178]
+Chapter 17.
+[179
+
+] [180] [181] [182] [183] [184] [185] [186
 
 ]
 Chapter 18.
-[185] [186]
-Overfull \hbox (113.19771pt too wide) detected at line 8034
+[187] [188]
+Overfull \hbox (113.19771pt too wide) detected at line 8036
 []
  []
 
 WARNING: proof step "4" undefined
-[187] [188]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 8164--8164
+[189] [190]
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 8166--8166
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1045,13 +1047,22 @@ m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 
  []
 
-[189] [190] [191] [192] [193] [194] [195] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3859A24535BCE26696D82A3A2D848093;27428.
+[191] [192] [193] [194] [195] [196] [197] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 3859A24535BCE26696D82A3A2D848093;27428
+(rerunfilecheck)             After:  E5BEA93C5328EABA9BA173861D13CF0C;27529.
  ) 
 Here is how much of TeX's memory you used:
- 13931 strings out of 476091
- 194868 string characters out of 5794081
+ 13934 strings out of 476091
+ 194890 string characters out of 5794081
  1872330 words of memory out of 5000000
  32842 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
@@ -1084,10 +1095,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (195 pages, 818229 bytes).
+Output written on main.pdf (197 pages, 818664 bytes).
 PDF statistics:
- 3355 PDF objects out of 3580 (max. 8388607)
- 2967 compressed objects within 30 object streams
- 1280 named destinations out of 1440 (max. 500000)
+ 3364 PDF objects out of 3580 (max. 8388607)
+ 2974 compressed objects within 30 object streams
+ 1283 named destinations out of 1440 (max. 500000)
  1641 words of extra memory for PDF output out of 10000 (max. 10000000)
 
