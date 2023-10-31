@@ -4163,14 +4163,6 @@ Let $X$ and $Y$ be topological spaces. Let $f : X \rightarrow Y$. Let $\mathcal{
 \qed
 \end{proof}
 
-\begin{df}[Unit Circle]
-The \emph{unit circle} $S^1$ is $\{ (x,y) \in \mathbb{R}^2 : x^2 + y^2 = 1 \}$ as a subspace of $\mathbb{R}^2$.
-\end{df}
-
-\begin{ex}
-The \emph{unit sphere} $S^2$ is $\{ x \in \mathbb{R}^3 : \| x \| = 1 \}$ as a subspace of $\mathbb{R}^3$.
-\end{ex}
-
 \begin{thm}
 \label{thm:subspace_universal}
 Let $X$ be a topological space and $(Y,i)$ a subset of $X$. Then the subspace topology on $Y$ is the unique topology such that, for every topological space $Z$ and function $f : Z \rightarrow Y$, we have $f$ is continuous if and only if $i \circ f : Z \rightarrow X$ is continuous.
@@ -8196,6 +8188,13 @@ Every closed ball $B(\vec{x}, \epsilon)$ in $\mathbb{R}^n$ is path connected.
 \step{3}{$\vec{p}$ is a path from $\vec{x}$ to $\vec{y}$.}
 \qed
 \end{proof}
+
+\section{Unit Sphere}
+
+\begin{df}[Unit Sphere]
+Let $n$ be a positive integer. The \emph{unit sphere} $S^{n-1}$ is
+\[ S^{n-1} := \{ \vec{x} \in \mathbb{R}^n : \| \vec{x} \| = 1 \} \enspace . \]
+\end{df}
 
 \section{Inner Product Spaces}
 
