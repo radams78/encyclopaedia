@@ -2198,6 +2198,12 @@ The ordered square is a linear continuum.
 \qed
 \end{proof}
 
+\section{Punctured Euclidean Space}
+
+\begin{df}[Punctured Euclidean Space]
+Let $n$ be a positive integer. The \emph{punctured Euclidean space} is $\mathbb{R}^n - \{\vec{0}\}$.
+\end{df}
+
 \chapter{Integers and Rationals}
 
 \section{Positive Integers}
@@ -5926,6 +5932,16 @@ The rationals are totally disconnected.
 \begin{df}[Path-connected]
 A topological space $X$ is \emph{path-connected} iff, for any points $a,b \in X$, there exists a continuous function $\alpha : [0,1] \rightarrow X$, called a \emph{path}, such that $\alpha(0) = a$ and $\alpha(1) = b$.
 \end{df}
+
+\subsection{Punctured Euclidean Space}
+
+\begin{prop}
+For $n > 1$, the punctured Euclidean space $\mathbb{R}^n - \{0\}$ is path connected.
+\end{prop}
+
+\begin{proof}
+\pf\ Given points $x$ and $y$, take the straight line from $x$ to $y$ if this does not pass through 0. Otherwise pick a point $z$ not on this line, and take the two straight lines from $x$ to $z$ then from $z$ to $y$. \qed
+\end{proof}
 
 \subsection{Continuous Functions}
 
