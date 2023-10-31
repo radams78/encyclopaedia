@@ -69,7 +69,8 @@
 \contentsline {section}{\numberline {4.4}Bifunctors}{68}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Functor Categories}{69}{section.4.5}%
 \contentsline {chapter}{\numberline {5}The Real Numbers}{71}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Subtraction}{73}{subsection.5.0.1}%
+\contentsline {section}{\numberline {5.1}Subtraction}{73}{section.5.1}%
+\contentsline {section}{\numberline {5.2}The Ordered Square}{79}{section.5.2}%
 \contentsline {chapter}{\numberline {6}Integers and Rationals}{81}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Positive Integers}{81}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}Exponentiation}{82}{subsection.6.1.1}%
@@ -90,14 +91,14 @@
 \contentsline {section}{\numberline {12.3}Subbases}{104}{section.12.3}%
 \contentsline {section}{\numberline {12.4}Neighbourhood Bases}{105}{section.12.4}%
 \contentsline {section}{\numberline {12.5}First Countable Spaces}{105}{section.12.5}%
-\contentsline {section}{\numberline {12.6}Second Countable Spaces}{106}{section.12.6}%
+\contentsline {section}{\numberline {12.6}Second Countable Spaces}{105}{section.12.6}%
 \contentsline {section}{\numberline {12.7}Interior}{106}{section.12.7}%
 \contentsline {section}{\numberline {12.8}Closure}{106}{section.12.8}%
 \contentsline {subsection}{\numberline {12.8.1}Bases}{107}{subsection.12.8.1}%
-\contentsline {subsection}{\numberline {12.8.2}Subspaces}{108}{subsection.12.8.2}%
+\contentsline {subsection}{\numberline {12.8.2}Subspaces}{107}{subsection.12.8.2}%
 \contentsline {subsection}{\numberline {12.8.3}Product Topology}{108}{subsection.12.8.3}%
 \contentsline {subsection}{\numberline {12.8.4}Interior}{108}{subsection.12.8.4}%
-\contentsline {section}{\numberline {12.9}Boundary}{109}{section.12.9}%
+\contentsline {section}{\numberline {12.9}Boundary}{108}{section.12.9}%
 \contentsline {section}{\numberline {12.10}Limit Points}{110}{section.12.10}%
 \contentsline {section}{\numberline {12.11}Continuous Functions}{111}{section.12.11}%
 \contentsline {subsection}{\numberline {12.11.1}Paths}{115}{subsection.12.11.1}%
@@ -105,7 +106,7 @@
 \contentsline {section}{\numberline {12.12}Convergence}{115}{section.12.12}%
 \contentsline {subsection}{\numberline {12.12.1}Closure}{116}{subsection.12.12.1}%
 \contentsline {subsection}{\numberline {12.12.2}Continuous Functions}{116}{subsection.12.12.2}%
-\contentsline {subsection}{\numberline {12.12.3}Infinite Series}{117}{subsection.12.12.3}%
+\contentsline {subsection}{\numberline {12.12.3}Infinite Series}{116}{subsection.12.12.3}%
 \contentsline {section}{\numberline {12.13}Strong Continuity}{117}{section.12.13}%
 \contentsline {section}{\numberline {12.14}Subspaces}{117}{section.12.14}%
 \contentsline {subsection}{\numberline {12.14.1}Product Topology}{119}{subsection.12.14.1}%
@@ -117,24 +118,24 @@
 \contentsline {section}{\numberline {12.19}Product Topology}{122}{section.12.19}%
 \contentsline {subsection}{\numberline {12.19.1}Closed Sets}{122}{subsection.12.19.1}%
 \contentsline {subsection}{\numberline {12.19.2}Closure}{124}{subsection.12.19.2}%
-\contentsline {subsection}{\numberline {12.19.3}Convergence}{125}{subsection.12.19.3}%
+\contentsline {subsection}{\numberline {12.19.3}Convergence}{124}{subsection.12.19.3}%
 \contentsline {section}{\numberline {12.20}Topological Disjoint Union}{125}{section.12.20}%
 \contentsline {section}{\numberline {12.21}Quotient Spaces}{127}{section.12.21}%
 \contentsline {subsection}{\numberline {12.21.1}Quotient Maps}{128}{subsection.12.21.1}%
 \contentsline {section}{\numberline {12.22}Box Topology}{132}{section.12.22}%
 \contentsline {subsection}{\numberline {12.22.1}Bases}{133}{subsection.12.22.1}%
 \contentsline {subsection}{\numberline {12.22.2}Subspaces}{133}{subsection.12.22.2}%
-\contentsline {subsection}{\numberline {12.22.3}Closure}{134}{subsection.12.22.3}%
+\contentsline {subsection}{\numberline {12.22.3}Closure}{133}{subsection.12.22.3}%
 \contentsline {section}{\numberline {12.23}Separations}{134}{section.12.23}%
 \contentsline {subsubsection}{Subspaces}{134}{section*.2}%
-\contentsline {section}{\numberline {12.24}Connected Spaces}{135}{section.12.24}%
+\contentsline {section}{\numberline {12.24}Connected Spaces}{134}{section.12.24}%
 \contentsline {subsection}{\numberline {12.24.1}The Real Numbers}{135}{subsection.12.24.1}%
 \contentsline {subsection}{\numberline {12.24.2}The Indiscrete Topology}{135}{subsection.12.24.2}%
 \contentsline {subsection}{\numberline {12.24.3}Finer and Coarser}{135}{subsection.12.24.3}%
-\contentsline {subsection}{\numberline {12.24.4}Boundary}{136}{subsection.12.24.4}%
+\contentsline {subsection}{\numberline {12.24.4}Boundary}{135}{subsection.12.24.4}%
 \contentsline {subsection}{\numberline {12.24.5}Continuous Functions}{136}{subsection.12.24.5}%
 \contentsline {subsection}{\numberline {12.24.6}Subspaces}{136}{subsection.12.24.6}%
-\contentsline {subsection}{\numberline {12.24.7}Order Topology}{138}{subsection.12.24.7}%
+\contentsline {subsection}{\numberline {12.24.7}Order Topology}{137}{subsection.12.24.7}%
 \contentsline {subsection}{\numberline {12.24.8}Product Topology}{138}{subsection.12.24.8}%
 \contentsline {subsection}{\numberline {12.24.9}Quotient Spaces}{140}{subsection.12.24.9}%
 \contentsline {section}{\numberline {12.25}$T_1$ Spaces}{140}{section.12.25}%
