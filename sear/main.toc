@@ -142,26 +142,26 @@
 \contentsline {subsection}{\numberline {13.24.6}Continuous Functions}{139}{subsection.13.24.6}%
 \contentsline {subsection}{\numberline {13.24.7}Subspaces}{140}{subsection.13.24.7}%
 \contentsline {subsection}{\numberline {13.24.8}Order Topology}{141}{subsection.13.24.8}%
-\contentsline {subsection}{\numberline {13.24.9}Product Topology}{142}{subsection.13.24.9}%
-\contentsline {subsection}{\numberline {13.24.10}Quotient Spaces}{144}{subsection.13.24.10}%
-\contentsline {section}{\numberline {13.25}$T_1$ Spaces}{144}{section.13.25}%
-\contentsline {subsection}{\numberline {13.25.1}Limit Points}{145}{subsection.13.25.1}%
+\contentsline {subsection}{\numberline {13.24.9}Product Topology}{143}{subsection.13.24.9}%
+\contentsline {subsection}{\numberline {13.24.10}Quotient Spaces}{145}{subsection.13.24.10}%
+\contentsline {section}{\numberline {13.25}$T_1$ Spaces}{145}{section.13.25}%
+\contentsline {subsection}{\numberline {13.25.1}Limit Points}{146}{subsection.13.25.1}%
 \contentsline {section}{\numberline {13.26}Hausdorff Spaces}{146}{section.13.26}%
-\contentsline {subsection}{\numberline {13.26.1}Product Topology}{147}{subsection.13.26.1}%
-\contentsline {subsection}{\numberline {13.26.2}Box Topology}{147}{subsection.13.26.2}%
-\contentsline {subsection}{\numberline {13.26.3}$T_1$ Spaces}{147}{subsection.13.26.3}%
-\contentsline {section}{\numberline {13.27}Separable Spaces}{148}{section.13.27}%
-\contentsline {section}{\numberline {13.28}Sequential Compactness}{148}{section.13.28}%
-\contentsline {section}{\numberline {13.29}Compactness}{148}{section.13.29}%
-\contentsline {section}{\numberline {13.30}Gluing}{149}{section.13.30}%
+\contentsline {subsection}{\numberline {13.26.1}Product Topology}{148}{subsection.13.26.1}%
+\contentsline {subsection}{\numberline {13.26.2}Box Topology}{148}{subsection.13.26.2}%
+\contentsline {subsection}{\numberline {13.26.3}$T_1$ Spaces}{148}{subsection.13.26.3}%
+\contentsline {section}{\numberline {13.27}Separable Spaces}{149}{section.13.27}%
+\contentsline {section}{\numberline {13.28}Sequential Compactness}{149}{section.13.28}%
+\contentsline {section}{\numberline {13.29}Compactness}{149}{section.13.29}%
+\contentsline {section}{\numberline {13.30}Gluing}{150}{section.13.30}%
 \contentsline {section}{\numberline {13.31}Homogeneous Spaces}{150}{section.13.31}%
 \contentsline {section}{\numberline {13.32}Regular Spaces}{150}{section.13.32}%
-\contentsline {section}{\numberline {13.33}Totally Disconnected Spaces}{150}{section.13.33}%
-\contentsline {section}{\numberline {13.34}Path Connected Spaces}{150}{section.13.34}%
-\contentsline {subsection}{\numberline {13.34.1}The Ordered Square}{150}{subsection.13.34.1}%
+\contentsline {section}{\numberline {13.33}Totally Disconnected Spaces}{151}{section.13.33}%
+\contentsline {section}{\numberline {13.34}Path Connected Spaces}{151}{section.13.34}%
+\contentsline {subsection}{\numberline {13.34.1}The Ordered Square}{151}{subsection.13.34.1}%
 \contentsline {subsection}{\numberline {13.34.2}Punctured Euclidean Space}{151}{subsection.13.34.2}%
 \contentsline {subsection}{\numberline {13.34.3}The Topologist's Sine Curve}{151}{subsection.13.34.3}%
-\contentsline {subsection}{\numberline {13.34.4}Continuous Functions}{151}{subsection.13.34.4}%
+\contentsline {subsection}{\numberline {13.34.4}Continuous Functions}{152}{subsection.13.34.4}%
 \contentsline {subsection}{\numberline {13.34.5}Connected Spaces}{152}{subsection.13.34.5}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{153}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Balls}{154}{subsection.14.0.1}%

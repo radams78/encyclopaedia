@@ -5403,41 +5403,99 @@ Let $X$ be a connected topological space. Let $Y \subseteq X$ be connected. Let 
 
 \begin{prop}
 \label{prop:continuum_connected}
-Every linear continuum is connected under the order topology.
+Let $L$ be a linearly ordered set under the order topology. Then $L$ is connected if and only if $X$ is a linear continuum.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$L$ be a linear continuum.}}
-\step{2}{\assume{for a contradiction $(A,B)$ is a separation of $L$.}}
-\step{3}{\pick\ $a \in A$ and $b \in B$.}
-\step{4}{\assume{w.l.o.g. $a < b$}}
-\step{5}{\pflet{$c = \sup \{ x \in A : x < b \}$}}
-\step{6}{$c \notin A$}
+\step{1}{If $L$ is a linear continuum then $L$ is connected.}
 \begin{proof}
-	\step{a}{\assume{for a contradiction $c \in A$.}}
-	\step{b}{\pick\ $e > c$ such that $[c,e) \subseteq A$.}
-	\step{c}{\pick\ $z$ such that $c < z < e$.}
-	\step{d}{$z \in A$}
+	\step{1}{\pflet{$L$ be a linear continuum.}}
+	\step{2}{\assume{for a contradiction $(A,B)$ is a 	separation of $L$.}}
+	\step{3}{\pick\ $a \in A$ and $b \in B$.}
+	\step{4}{\assume{w.l.o.g. $a < b$}}
+	\step{5}{\pflet{$c = \sup \{ x \in A : x < b \}$}}
+	\step{6}{$c \notin A$}
+	\begin{proof}
+		\step{a}{\assume{for a contradiction $c \in A$.}}
+		\step{b}{\pick\ $e > c$ such that $[c,e) \subseteq A$.}
+		\step{c}{\pick\ $z$ such that $c < z < e$.}
+		\step{d}{$z \in A$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{5}.
+		\end{proof}
+	\end{proof}
+	\step{7}{$c \notin B$}
+	\begin{proof}
+		\step{a}{\assume{for a contradictis $c \in B$.}}
+		\step{b}{\pick\ $d < c$ such that $(d,c] \subseteq B$.}
+		\step{c}{\pick\ $z$ such that $d < z < c$}
+		\step{d}{$z$ is an upper bound for $\{ x \in A : x < b \}$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{5}.
+		\end{proof}
+	\end{proof}
 	\qedstep
 	\begin{proof}
-		\pf\ This contradicts \stepref{5}.
+		\pf\ This is a contradiction.
 	\end{proof}
 \end{proof}
-\step{7}{$c \notin B$}
+\step{2}{If $L$ is connected then $L$ is a linear continuum.}
 \begin{proof}
-	\step{a}{\assume{for a contradictis $c \in B$.}}
-	\step{b}{\pick\ $d < c$ such that $(d,c] \subseteq B$.}
-	\step{c}{\pick\ $z$ such that $d < z < c$}
-	\step{d}{$z$ is an upper bound for $\{ x \in A : x < b \}$}
-	\qedstep
+	\step{a}{\assume{$L$ is connected.}}
+	\step{b}{$L$ is dense.}
 	\begin{proof}
-		\pf\ This contradicts \stepref{5}.
+		\step{i}{\pflet{$a,b \in L$ with $a < b$.}}
+		\step{ii}{\assume{for a contradiction there is no $c$ such that $a < c < b$.}}
+		\step{iii}{$((-\infty, b),(a, + \infty))$ is a separation of $L$.}
 	\end{proof}
-\end{proof}
-\qedstep
-\begin{proof}
-	\pf\ This is a contradiction.
+	\step{c}{$L$ has the least upper bound property.}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $S \subseteq L$ is a nonempty set bounded above with no least upper bound.}}
+		\step{ii}{\pflet{$S \uparrow$ be the set of upper bounds for $S$.}}
+		\step{iii}{\pflet{$S \uparrow \downarrow$ be the set of lower bounds for $S \uparrow$.} \prove{$(S \uparrow \downarrow, S \uparrow)$ is a separation of $L$.}}
+		\step{iv}{$S \uparrow \neq \emptyset$}
+		\begin{proof}
+			\pf\ Since $S$ is bounded above.
+		\end{proof}
+		\step{v}{$S \uparrow \downarrow \neq \emptyset$}
+		\begin{proof}
+			\pf\ Since $\emptyset \neq S \subseteq S \uparrow \downarrow$.
+		\end{proof}
+		\step{vi}{$S \uparrow$ is open.}
+		\begin{proof}
+			\step{one}{\pflet{$u \in S \uparrow$}}
+			\step{two}{\pick\ $v \in S \uparrow$ such that $v < u$}
+			\begin{proof}
+				\pf\ Since $u$ is not the least upper bound for $S$.
+			\end{proof}
+			\step{three}{$u \in (v, +\infty) \subseteq S \uparrow$}
+		\end{proof}
+		\step{vii}{$S \uparrow \downarrow$ is open.}
+		\begin{proof}
+			\step{one}{\pflet{$l \in S \uparrow \downarrow$}}
+			\step{two}{$l \notin S \uparrow$}
+			\begin{proof}
+				\pf\ Since $l$ is not the least upper bound for $S$.
+			\end{proof}
+			\step{three}{\pick\ $s \in S$ such that $l < s$}
+			\step{four}{$l \in (-\infty, s) \subseteq S \uparrow \downarrow$}
+		\end{proof}
+		\step{viii}{$S \uparrow \cap S \uparrow \downarrow \neq \emptyset$}
+		\begin{proof}
+			\pf\ An element of both would be a least upper bound for $S$.
+		\end{proof}
+		\step{ix}{$S \uparrow \cup S \uparrow \downarrow = L$}
+		\begin{proof}
+			\step{one}{\pflet{$x \in L$}}
+			\step{two}{\assume{$x \notin S \uparrow$}}
+			\step{three}{There exists $s \in S$ such that $x < s$.}
+			\step{four}{$\forall u \in S \uparrow. x < u$}
+			\step{five}{$x \in S \uparrow \downarrow$}
+		\end{proof}
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
