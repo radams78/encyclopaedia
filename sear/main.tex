@@ -8114,10 +8114,20 @@ defines a seminorm on $\mathcal{L}^p(\mathbb{R}^n)$. Let
 \[ L^p(\mathbb{R}^n) := \mathcal{L}^p(\mathbb{R}^n) / \overline{\{0\}} \enspace . \]
 \end{df}
 
+\section{Unit Ball}
+
 \begin{df}[Unit Ball]
 For any positive integer $n$,
 the \emph{unit ball} $B^n$ is $\{ \vec{x} \in \mathbb{R}^n : \| x \| \leq 1 \}$.
 \end{df}
+
+\begin{prop}
+For any positive integer $n$, the unit ball $B^n$ is path connected.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $\vec{x}, \vec{y} \in B^n$, define the path $\vec{p} : [0,1] \rightarrow B^n$ by $\vec{p}(t) = (1-t)\vec{x} + t \vec{y}$. \qed
+\end{proof}
 
 \section{Inner Product Spaces}
 
