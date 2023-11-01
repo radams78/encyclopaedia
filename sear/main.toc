@@ -1,209 +1,208 @@
 \contentsline {part}{I\hspace {1em}Set Theory}{9}{part.1}%
-\contentsline {part}{II\hspace {1em}Set Theory}{11}{part.2}%
-\contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{13}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Primitive Terms}{13}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Injections, Surjections and Bijections}{13}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Axioms}{14}{section.1.3}%
-\contentsline {chapter}{\numberline {2}Sets and Functions}{17}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Composition}{17}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Injections}{17}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Surjections}{19}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Bijections}{19}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Equinumerosity}{20}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Domination}{20}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Identity Function}{21}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Injections, Surjections, Bijections}{21}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Composition}{22}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}The Empty Set}{23}{section.2.4}%
-\contentsline {section}{\numberline {2.5}The Singleton}{24}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Injections}{24}{subsection.2.5.1}%
-\contentsline {section}{\numberline {2.6}The Set Two}{24}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Subsets}{25}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Saturated Set}{26}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Union}{26}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Intersection}{27}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Direct Image}{27}{subsection.2.9.2}%
-\contentsline {section}{\numberline {2.10}Inverse Image}{27}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Saturated Sets}{28}{subsection.2.10.1}%
-\contentsline {section}{\numberline {2.11}Relations}{28}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Equivalence Relations}{29}{subsection.2.11.1}%
-\contentsline {section}{\numberline {2.12}Power Set}{29}{section.2.12}%
-\contentsline {subsection}{\numberline {2.12.1}Partitions}{29}{subsection.2.12.1}%
-\contentsline {section}{\numberline {2.13}Cartesian Product}{29}{section.2.13}%
-\contentsline {section}{\numberline {2.14}Quotient Sets}{29}{section.2.14}%
-\contentsline {section}{\numberline {2.15}Partitions}{30}{section.2.15}%
-\contentsline {section}{\numberline {2.16}Disjoint Union}{30}{section.2.16}%
-\contentsline {section}{\numberline {2.17}Natural Numbers}{30}{section.2.17}%
-\contentsline {section}{\numberline {2.18}Finite and Infinite Sets}{31}{section.2.18}%
-\contentsline {section}{\numberline {2.19}Countable Sets}{32}{section.2.19}%
-\contentsline {section}{\numberline {2.20}Fixed Points}{34}{section.2.20}%
-\contentsline {chapter}{\numberline {3}Relations}{35}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Order Theory}{37}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Strict Partial Orders}{37}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Linear Orders}{37}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Sets of Finite Type}{39}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Linear Continuua}{39}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Well Orders}{40}{section.4.3}%
-\contentsline {part}{III\hspace {1em}Category Theory}{45}{part.3}%
-\contentsline {chapter}{\numberline {5}Category Theory}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Categories}{47}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Monomorphisms}{51}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Epimorphisms}{51}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Sections and Retractions}{52}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Isomorphisms}{52}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Initial Objects}{53}{subsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.1.6}Terminal Objects}{53}{subsection.5.1.6}%
-\contentsline {subsection}{\numberline {5.1.7}Zero Objects}{54}{subsection.5.1.7}%
-\contentsline {subsection}{\numberline {5.1.8}Triads}{54}{subsection.5.1.8}%
-\contentsline {subsection}{\numberline {5.1.9}Cotriads}{54}{subsection.5.1.9}%
-\contentsline {subsection}{\numberline {5.1.10}Pullbacks}{54}{subsection.5.1.10}%
-\contentsline {subsection}{\numberline {5.1.11}Pushouts}{57}{subsection.5.1.11}%
-\contentsline {subsection}{\numberline {5.1.12}Subcategories}{60}{subsection.5.1.12}%
-\contentsline {subsection}{\numberline {5.1.13}Opposite Category}{60}{subsection.5.1.13}%
-\contentsline {subsection}{\numberline {5.1.14}Groupoids}{61}{subsection.5.1.14}%
-\contentsline {subsection}{\numberline {5.1.15}Concrete Categories}{61}{subsection.5.1.15}%
-\contentsline {subsection}{\numberline {5.1.16}Power of Categories}{61}{subsection.5.1.16}%
-\contentsline {subsection}{\numberline {5.1.17}Arrow Category}{61}{subsection.5.1.17}%
-\contentsline {subsection}{\numberline {5.1.18}Slice Category}{61}{subsection.5.1.18}%
-\contentsline {section}{\numberline {5.2}Functors}{64}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Natural Transformations}{67}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Bifunctors}{68}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Functor Categories}{69}{section.5.5}%
-\contentsline {part}{IV\hspace {1em}Number Systems}{71}{part.4}%
-\contentsline {chapter}{\numberline {6}The Real Numbers}{73}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Subtraction}{75}{section.6.1}%
-\contentsline {section}{\numberline {6.2}The Ordered Square}{81}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Punctured Euclidean Space}{81}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Topologist's Sine Curve}{81}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Integers and Rationals}{83}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Positive Integers}{83}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Exponentiation}{84}{subsection.7.1.1}%
-\contentsline {section}{\numberline {7.2}Integers}{85}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Rational Numbers}{87}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Algebraic Numbers}{88}{section.7.4}%
-\contentsline {part}{V\hspace {1em}Algebra}{89}{part.5}%
-\contentsline {chapter}{\numberline {8}Monoid Theory}{91}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Group Theory}{93}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Category of Small Groups}{93}{section.9.1}%
-\contentsline {chapter}{\numberline {10}Ring Theory}{95}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Field Theory}{97}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Linear Algebra}{99}{chapter.12}%
-\contentsline {part}{VI\hspace {1em}Topology}{101}{part.6}%
-\contentsline {chapter}{\numberline {13}Topology}{103}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Topological Spaces}{103}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Bases}{107}{section.13.2}%
-\contentsline {section}{\numberline {13.3}Order Topology}{108}{section.13.3}%
-\contentsline {subsection}{\numberline {13.3.1}Subspaces}{109}{subsection.13.3.1}%
-\contentsline {subsection}{\numberline {13.3.2}Product Topology}{110}{subsection.13.3.2}%
-\contentsline {section}{\numberline {13.4}Subbases}{110}{section.13.4}%
-\contentsline {section}{\numberline {13.5}Neighbourhood Bases}{111}{section.13.5}%
-\contentsline {section}{\numberline {13.6}First Countable Spaces}{111}{section.13.6}%
-\contentsline {section}{\numberline {13.7}Second Countable Spaces}{112}{section.13.7}%
-\contentsline {section}{\numberline {13.8}Interior}{112}{section.13.8}%
-\contentsline {section}{\numberline {13.9}Closure}{112}{section.13.9}%
-\contentsline {subsection}{\numberline {13.9.1}Bases}{113}{subsection.13.9.1}%
-\contentsline {subsection}{\numberline {13.9.2}Subspaces}{114}{subsection.13.9.2}%
-\contentsline {subsection}{\numberline {13.9.3}Product Topology}{114}{subsection.13.9.3}%
-\contentsline {subsection}{\numberline {13.9.4}Interior}{114}{subsection.13.9.4}%
-\contentsline {section}{\numberline {13.10}Boundary}{115}{section.13.10}%
-\contentsline {section}{\numberline {13.11}Limit Points}{116}{section.13.11}%
-\contentsline {section}{\numberline {13.12}Continuous Functions}{117}{section.13.12}%
-\contentsline {subsection}{\numberline {13.12.1}Order Topology}{121}{subsection.13.12.1}%
-\contentsline {subsection}{\numberline {13.12.2}Paths}{122}{subsection.13.12.2}%
-\contentsline {subsection}{\numberline {13.12.3}Loops}{122}{subsection.13.12.3}%
-\contentsline {section}{\numberline {13.13}Convergence}{122}{section.13.13}%
-\contentsline {subsection}{\numberline {13.13.1}Closure}{123}{subsection.13.13.1}%
-\contentsline {subsection}{\numberline {13.13.2}Continuous Functions}{123}{subsection.13.13.2}%
-\contentsline {subsection}{\numberline {13.13.3}Infinite Series}{123}{subsection.13.13.3}%
-\contentsline {section}{\numberline {13.14}Strong Continuity}{123}{section.13.14}%
-\contentsline {section}{\numberline {13.15}Subspaces}{124}{section.13.15}%
-\contentsline {subsection}{\numberline {13.15.1}Product Topology}{126}{subsection.13.15.1}%
-\contentsline {section}{\numberline {13.16}Embedding}{126}{section.13.16}%
-\contentsline {section}{\numberline {13.17}Open Maps}{127}{section.13.17}%
-\contentsline {subsection}{\numberline {13.17.1}Subspaces}{127}{subsection.13.17.1}%
-\contentsline {section}{\numberline {13.18}Locally Finite}{127}{section.13.18}%
-\contentsline {section}{\numberline {13.19}Closed Maps}{128}{section.13.19}%
-\contentsline {section}{\numberline {13.20}Product Topology}{128}{section.13.20}%
-\contentsline {subsection}{\numberline {13.20.1}Closed Sets}{128}{subsection.13.20.1}%
-\contentsline {subsection}{\numberline {13.20.2}Closure}{130}{subsection.13.20.2}%
-\contentsline {subsection}{\numberline {13.20.3}Convergence}{131}{subsection.13.20.3}%
-\contentsline {section}{\numberline {13.21}Topological Disjoint Union}{131}{section.13.21}%
-\contentsline {section}{\numberline {13.22}Quotient Spaces}{133}{section.13.22}%
-\contentsline {subsection}{\numberline {13.22.1}Quotient Maps}{135}{subsection.13.22.1}%
-\contentsline {section}{\numberline {13.23}Box Topology}{139}{section.13.23}%
-\contentsline {subsection}{\numberline {13.23.1}Bases}{139}{subsection.13.23.1}%
-\contentsline {subsection}{\numberline {13.23.2}Subspaces}{140}{subsection.13.23.2}%
-\contentsline {subsection}{\numberline {13.23.3}Closure}{140}{subsection.13.23.3}%
-\contentsline {section}{\numberline {13.24}Separations}{141}{section.13.24}%
-\contentsline {subsubsection}{Subspaces}{141}{section*.2}%
-\contentsline {section}{\numberline {13.25}Connected Spaces}{141}{section.13.25}%
-\contentsline {subsection}{\numberline {13.25.1}The Real Numbers}{141}{subsection.13.25.1}%
-\contentsline {subsection}{\numberline {13.25.2}The Indiscrete Topology}{141}{subsection.13.25.2}%
-\contentsline {subsection}{\numberline {13.25.3}The Cofinite Topology}{142}{subsection.13.25.3}%
-\contentsline {subsection}{\numberline {13.25.4}Finer and Coarser}{142}{subsection.13.25.4}%
-\contentsline {subsection}{\numberline {13.25.5}Boundary}{142}{subsection.13.25.5}%
-\contentsline {subsection}{\numberline {13.25.6}Continuous Functions}{142}{subsection.13.25.6}%
-\contentsline {subsection}{\numberline {13.25.7}Subspaces}{143}{subsection.13.25.7}%
-\contentsline {subsection}{\numberline {13.25.8}Order Topology}{144}{subsection.13.25.8}%
-\contentsline {subsection}{\numberline {13.25.9}Product Topology}{146}{subsection.13.25.9}%
-\contentsline {subsection}{\numberline {13.25.10}Quotient Spaces}{148}{subsection.13.25.10}%
-\contentsline {section}{\numberline {13.26}$T_1$ Spaces}{148}{section.13.26}%
-\contentsline {subsection}{\numberline {13.26.1}Limit Points}{149}{subsection.13.26.1}%
-\contentsline {section}{\numberline {13.27}Hausdorff Spaces}{149}{section.13.27}%
-\contentsline {subsection}{\numberline {13.27.1}Product Topology}{151}{subsection.13.27.1}%
-\contentsline {subsection}{\numberline {13.27.2}Box Topology}{151}{subsection.13.27.2}%
-\contentsline {subsection}{\numberline {13.27.3}$T_1$ Spaces}{151}{subsection.13.27.3}%
-\contentsline {section}{\numberline {13.28}Separable Spaces}{152}{section.13.28}%
-\contentsline {section}{\numberline {13.29}Sequential Compactness}{152}{section.13.29}%
-\contentsline {section}{\numberline {13.30}Compactness}{152}{section.13.30}%
-\contentsline {section}{\numberline {13.31}Gluing}{153}{section.13.31}%
-\contentsline {section}{\numberline {13.32}Homogeneous Spaces}{153}{section.13.32}%
-\contentsline {section}{\numberline {13.33}Regular Spaces}{153}{section.13.33}%
-\contentsline {section}{\numberline {13.34}Totally Disconnected Spaces}{154}{section.13.34}%
-\contentsline {section}{\numberline {13.35}Path Connected Spaces}{154}{section.13.35}%
-\contentsline {subsection}{\numberline {13.35.1}The Ordered Square}{154}{subsection.13.35.1}%
-\contentsline {subsection}{\numberline {13.35.2}Punctured Euclidean Space}{154}{subsection.13.35.2}%
-\contentsline {subsection}{\numberline {13.35.3}The Topologist's Sine Curve}{154}{subsection.13.35.3}%
-\contentsline {subsection}{\numberline {13.35.4}Continuous Functions}{155}{subsection.13.35.4}%
-\contentsline {subsection}{\numberline {13.35.5}Connected Spaces}{155}{subsection.13.35.5}%
-\contentsline {chapter}{\numberline {14}Metric Spaces}{157}{chapter.14}%
-\contentsline {subsection}{\numberline {14.0.1}Balls}{158}{subsection.14.0.1}%
-\contentsline {subsection}{\numberline {14.0.2}Subspaces}{163}{subsection.14.0.2}%
-\contentsline {subsection}{\numberline {14.0.3}Convergence}{164}{subsection.14.0.3}%
-\contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{165}{subsection.14.0.4}%
-\contentsline {subsection}{\numberline {14.0.5}First Countable Spaces}{166}{subsection.14.0.5}%
-\contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{166}{subsection.14.0.6}%
-\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{167}{subsection.14.0.7}%
-\contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{167}{subsection.14.0.8}%
-\contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{169}{subsection.14.0.9}%
-\contentsline {subsection}{\numberline {14.0.10}Product Spaces}{169}{subsection.14.0.10}%
-\contentsline {section}{\numberline {14.1}Uniform Metric}{170}{section.14.1}%
-\contentsline {subsection}{\numberline {14.1.1}Products}{173}{subsection.14.1.1}%
-\contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{174}{subsection.14.1.2}%
-\contentsline {section}{\numberline {14.2}Isometric Embeddings}{175}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{175}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Manifolds}{176}{section.14.4}%
-\contentsline {chapter}{\numberline {15}Homotopy Theory}{177}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Homotopies}{177}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Homotopy Equivalence}{177}{section.15.2}%
-\contentsline {chapter}{\numberline {16}Simplicial Complexes}{179}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Cell Decompositions}{179}{section.16.1}%
-\contentsline {section}{\numberline {16.2}CW-complexes}{179}{section.16.2}%
-\contentsline {chapter}{\numberline {17}Topological Groups}{181}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Topological Groups}{181}{section.17.1}%
-\contentsline {subsection}{\numberline {17.1.1}Subgroups}{182}{subsection.17.1.1}%
-\contentsline {subsection}{\numberline {17.1.2}Left Cosets}{183}{subsection.17.1.2}%
-\contentsline {subsection}{\numberline {17.1.3}Homogeneous Spaces}{185}{subsection.17.1.3}%
-\contentsline {section}{\numberline {17.2}Symmetric Neighbourhoods}{185}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Continuous Actions}{186}{section.17.3}%
-\contentsline {chapter}{\numberline {18}Topological Vector Spaces}{189}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Cauchy Sequences}{189}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Seminorms}{190}{section.18.2}%
-\contentsline {section}{\numberline {18.3}Fr\'{e}chet Spaces}{190}{section.18.3}%
-\contentsline {section}{\numberline {18.4}Normed Spaces}{190}{section.18.4}%
-\contentsline {section}{\numberline {18.5}Unit Ball}{196}{section.18.5}%
-\contentsline {section}{\numberline {18.6}Unit Sphere}{197}{section.18.6}%
-\contentsline {section}{\numberline {18.7}Inner Product Spaces}{197}{section.18.7}%
-\contentsline {section}{\numberline {18.8}Banach Spaces}{198}{section.18.8}%
-\contentsline {section}{\numberline {18.9}Hilbert Spaces}{198}{section.18.9}%
-\contentsline {section}{\numberline {18.10}Locally Convex Spaces}{199}{section.18.10}%
+\contentsline {chapter}{\numberline {1}Primitive Terms and Axioms}{11}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Primitive Terms}{11}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Injections, Surjections and Bijections}{11}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Axioms}{12}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Sets and Functions}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Composition}{15}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Injections}{15}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Surjections}{17}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Bijections}{17}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Equinumerosity}{18}{subsection.2.1.4}%
+\contentsline {section}{\numberline {2.2}Domination}{18}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Identity Function}{19}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Injections, Surjections, Bijections}{19}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Composition}{20}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}The Empty Set}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.5}The Singleton}{22}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Injections}{22}{subsection.2.5.1}%
+\contentsline {section}{\numberline {2.6}The Set Two}{22}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Subsets}{23}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Saturated Set}{24}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Union}{24}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Intersection}{25}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Direct Image}{25}{subsection.2.9.2}%
+\contentsline {section}{\numberline {2.10}Inverse Image}{25}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Saturated Sets}{26}{subsection.2.10.1}%
+\contentsline {section}{\numberline {2.11}Relations}{26}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Equivalence Relations}{27}{subsection.2.11.1}%
+\contentsline {section}{\numberline {2.12}Power Set}{27}{section.2.12}%
+\contentsline {subsection}{\numberline {2.12.1}Partitions}{27}{subsection.2.12.1}%
+\contentsline {section}{\numberline {2.13}Cartesian Product}{27}{section.2.13}%
+\contentsline {section}{\numberline {2.14}Quotient Sets}{27}{section.2.14}%
+\contentsline {section}{\numberline {2.15}Partitions}{28}{section.2.15}%
+\contentsline {section}{\numberline {2.16}Disjoint Union}{28}{section.2.16}%
+\contentsline {section}{\numberline {2.17}Natural Numbers}{28}{section.2.17}%
+\contentsline {section}{\numberline {2.18}Finite and Infinite Sets}{29}{section.2.18}%
+\contentsline {section}{\numberline {2.19}Countable Sets}{30}{section.2.19}%
+\contentsline {section}{\numberline {2.20}Fixed Points}{32}{section.2.20}%
+\contentsline {chapter}{\numberline {3}Relations}{33}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Order Theory}{35}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Strict Partial Orders}{35}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Linear Orders}{35}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Sets of Finite Type}{37}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Linear Continuua}{37}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Well Orders}{38}{section.4.3}%
+\contentsline {part}{II\hspace {1em}Category Theory}{43}{part.2}%
+\contentsline {chapter}{\numberline {5}Category Theory}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Categories}{45}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Monomorphisms}{49}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Epimorphisms}{49}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Sections and Retractions}{50}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Isomorphisms}{50}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Initial Objects}{51}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}Terminal Objects}{51}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7}Zero Objects}{52}{subsection.5.1.7}%
+\contentsline {subsection}{\numberline {5.1.8}Triads}{52}{subsection.5.1.8}%
+\contentsline {subsection}{\numberline {5.1.9}Cotriads}{52}{subsection.5.1.9}%
+\contentsline {subsection}{\numberline {5.1.10}Pullbacks}{52}{subsection.5.1.10}%
+\contentsline {subsection}{\numberline {5.1.11}Pushouts}{55}{subsection.5.1.11}%
+\contentsline {subsection}{\numberline {5.1.12}Subcategories}{58}{subsection.5.1.12}%
+\contentsline {subsection}{\numberline {5.1.13}Opposite Category}{58}{subsection.5.1.13}%
+\contentsline {subsection}{\numberline {5.1.14}Groupoids}{59}{subsection.5.1.14}%
+\contentsline {subsection}{\numberline {5.1.15}Concrete Categories}{59}{subsection.5.1.15}%
+\contentsline {subsection}{\numberline {5.1.16}Power of Categories}{59}{subsection.5.1.16}%
+\contentsline {subsection}{\numberline {5.1.17}Arrow Category}{59}{subsection.5.1.17}%
+\contentsline {subsection}{\numberline {5.1.18}Slice Category}{59}{subsection.5.1.18}%
+\contentsline {section}{\numberline {5.2}Functors}{62}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Natural Transformations}{65}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Bifunctors}{66}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Functor Categories}{67}{section.5.5}%
+\contentsline {part}{III\hspace {1em}Number Systems}{69}{part.3}%
+\contentsline {chapter}{\numberline {6}The Real Numbers}{71}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Subtraction}{73}{section.6.1}%
+\contentsline {section}{\numberline {6.2}The Ordered Square}{79}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Punctured Euclidean Space}{79}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Topologist's Sine Curve}{79}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Integers and Rationals}{81}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Positive Integers}{81}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Exponentiation}{82}{subsection.7.1.1}%
+\contentsline {section}{\numberline {7.2}Integers}{83}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Rational Numbers}{85}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Algebraic Numbers}{86}{section.7.4}%
+\contentsline {part}{IV\hspace {1em}Algebra}{87}{part.4}%
+\contentsline {chapter}{\numberline {8}Monoid Theory}{89}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Group Theory}{91}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Category of Small Groups}{91}{section.9.1}%
+\contentsline {chapter}{\numberline {10}Ring Theory}{93}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Field Theory}{95}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Linear Algebra}{97}{chapter.12}%
+\contentsline {part}{V\hspace {1em}Topology}{99}{part.5}%
+\contentsline {chapter}{\numberline {13}Topology}{101}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Topological Spaces}{101}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Bases}{105}{section.13.2}%
+\contentsline {section}{\numberline {13.3}Order Topology}{106}{section.13.3}%
+\contentsline {subsection}{\numberline {13.3.1}Subspaces}{107}{subsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.3.2}Product Topology}{108}{subsection.13.3.2}%
+\contentsline {section}{\numberline {13.4}Subbases}{108}{section.13.4}%
+\contentsline {section}{\numberline {13.5}Neighbourhood Bases}{109}{section.13.5}%
+\contentsline {section}{\numberline {13.6}First Countable Spaces}{109}{section.13.6}%
+\contentsline {section}{\numberline {13.7}Second Countable Spaces}{110}{section.13.7}%
+\contentsline {section}{\numberline {13.8}Interior}{110}{section.13.8}%
+\contentsline {section}{\numberline {13.9}Closure}{110}{section.13.9}%
+\contentsline {subsection}{\numberline {13.9.1}Bases}{111}{subsection.13.9.1}%
+\contentsline {subsection}{\numberline {13.9.2}Subspaces}{112}{subsection.13.9.2}%
+\contentsline {subsection}{\numberline {13.9.3}Product Topology}{112}{subsection.13.9.3}%
+\contentsline {subsection}{\numberline {13.9.4}Interior}{112}{subsection.13.9.4}%
+\contentsline {section}{\numberline {13.10}Boundary}{113}{section.13.10}%
+\contentsline {section}{\numberline {13.11}Limit Points}{114}{section.13.11}%
+\contentsline {section}{\numberline {13.12}Continuous Functions}{115}{section.13.12}%
+\contentsline {subsection}{\numberline {13.12.1}Order Topology}{119}{subsection.13.12.1}%
+\contentsline {subsection}{\numberline {13.12.2}Paths}{120}{subsection.13.12.2}%
+\contentsline {subsection}{\numberline {13.12.3}Loops}{120}{subsection.13.12.3}%
+\contentsline {section}{\numberline {13.13}Convergence}{120}{section.13.13}%
+\contentsline {subsection}{\numberline {13.13.1}Closure}{121}{subsection.13.13.1}%
+\contentsline {subsection}{\numberline {13.13.2}Continuous Functions}{121}{subsection.13.13.2}%
+\contentsline {subsection}{\numberline {13.13.3}Infinite Series}{121}{subsection.13.13.3}%
+\contentsline {section}{\numberline {13.14}Strong Continuity}{121}{section.13.14}%
+\contentsline {section}{\numberline {13.15}Subspaces}{122}{section.13.15}%
+\contentsline {subsection}{\numberline {13.15.1}Product Topology}{124}{subsection.13.15.1}%
+\contentsline {section}{\numberline {13.16}Embedding}{124}{section.13.16}%
+\contentsline {section}{\numberline {13.17}Open Maps}{125}{section.13.17}%
+\contentsline {subsection}{\numberline {13.17.1}Subspaces}{125}{subsection.13.17.1}%
+\contentsline {section}{\numberline {13.18}Locally Finite}{125}{section.13.18}%
+\contentsline {section}{\numberline {13.19}Closed Maps}{126}{section.13.19}%
+\contentsline {section}{\numberline {13.20}Product Topology}{126}{section.13.20}%
+\contentsline {subsection}{\numberline {13.20.1}Closed Sets}{126}{subsection.13.20.1}%
+\contentsline {subsection}{\numberline {13.20.2}Closure}{128}{subsection.13.20.2}%
+\contentsline {subsection}{\numberline {13.20.3}Convergence}{129}{subsection.13.20.3}%
+\contentsline {section}{\numberline {13.21}Topological Disjoint Union}{129}{section.13.21}%
+\contentsline {section}{\numberline {13.22}Quotient Spaces}{131}{section.13.22}%
+\contentsline {subsection}{\numberline {13.22.1}Quotient Maps}{133}{subsection.13.22.1}%
+\contentsline {section}{\numberline {13.23}Box Topology}{137}{section.13.23}%
+\contentsline {subsection}{\numberline {13.23.1}Bases}{137}{subsection.13.23.1}%
+\contentsline {subsection}{\numberline {13.23.2}Subspaces}{138}{subsection.13.23.2}%
+\contentsline {subsection}{\numberline {13.23.3}Closure}{138}{subsection.13.23.3}%
+\contentsline {section}{\numberline {13.24}Separations}{139}{section.13.24}%
+\contentsline {subsubsection}{Subspaces}{139}{section*.2}%
+\contentsline {section}{\numberline {13.25}Connected Spaces}{139}{section.13.25}%
+\contentsline {subsection}{\numberline {13.25.1}The Real Numbers}{139}{subsection.13.25.1}%
+\contentsline {subsection}{\numberline {13.25.2}The Indiscrete Topology}{139}{subsection.13.25.2}%
+\contentsline {subsection}{\numberline {13.25.3}The Cofinite Topology}{140}{subsection.13.25.3}%
+\contentsline {subsection}{\numberline {13.25.4}Finer and Coarser}{140}{subsection.13.25.4}%
+\contentsline {subsection}{\numberline {13.25.5}Boundary}{140}{subsection.13.25.5}%
+\contentsline {subsection}{\numberline {13.25.6}Continuous Functions}{140}{subsection.13.25.6}%
+\contentsline {subsection}{\numberline {13.25.7}Subspaces}{141}{subsection.13.25.7}%
+\contentsline {subsection}{\numberline {13.25.8}Order Topology}{142}{subsection.13.25.8}%
+\contentsline {subsection}{\numberline {13.25.9}Product Topology}{144}{subsection.13.25.9}%
+\contentsline {subsection}{\numberline {13.25.10}Quotient Spaces}{146}{subsection.13.25.10}%
+\contentsline {section}{\numberline {13.26}$T_1$ Spaces}{146}{section.13.26}%
+\contentsline {subsection}{\numberline {13.26.1}Limit Points}{147}{subsection.13.26.1}%
+\contentsline {section}{\numberline {13.27}Hausdorff Spaces}{147}{section.13.27}%
+\contentsline {subsection}{\numberline {13.27.1}Product Topology}{149}{subsection.13.27.1}%
+\contentsline {subsection}{\numberline {13.27.2}Box Topology}{149}{subsection.13.27.2}%
+\contentsline {subsection}{\numberline {13.27.3}$T_1$ Spaces}{149}{subsection.13.27.3}%
+\contentsline {section}{\numberline {13.28}Separable Spaces}{150}{section.13.28}%
+\contentsline {section}{\numberline {13.29}Sequential Compactness}{150}{section.13.29}%
+\contentsline {section}{\numberline {13.30}Compactness}{150}{section.13.30}%
+\contentsline {section}{\numberline {13.31}Gluing}{151}{section.13.31}%
+\contentsline {section}{\numberline {13.32}Homogeneous Spaces}{151}{section.13.32}%
+\contentsline {section}{\numberline {13.33}Regular Spaces}{151}{section.13.33}%
+\contentsline {section}{\numberline {13.34}Totally Disconnected Spaces}{152}{section.13.34}%
+\contentsline {section}{\numberline {13.35}Path Connected Spaces}{152}{section.13.35}%
+\contentsline {subsection}{\numberline {13.35.1}The Ordered Square}{152}{subsection.13.35.1}%
+\contentsline {subsection}{\numberline {13.35.2}Punctured Euclidean Space}{152}{subsection.13.35.2}%
+\contentsline {subsection}{\numberline {13.35.3}The Topologist's Sine Curve}{152}{subsection.13.35.3}%
+\contentsline {subsection}{\numberline {13.35.4}Continuous Functions}{153}{subsection.13.35.4}%
+\contentsline {subsection}{\numberline {13.35.5}Connected Spaces}{153}{subsection.13.35.5}%
+\contentsline {chapter}{\numberline {14}Metric Spaces}{155}{chapter.14}%
+\contentsline {subsection}{\numberline {14.0.1}Balls}{156}{subsection.14.0.1}%
+\contentsline {subsection}{\numberline {14.0.2}Subspaces}{161}{subsection.14.0.2}%
+\contentsline {subsection}{\numberline {14.0.3}Convergence}{162}{subsection.14.0.3}%
+\contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{163}{subsection.14.0.4}%
+\contentsline {subsection}{\numberline {14.0.5}First Countable Spaces}{164}{subsection.14.0.5}%
+\contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{164}{subsection.14.0.6}%
+\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{165}{subsection.14.0.7}%
+\contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{165}{subsection.14.0.8}%
+\contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{167}{subsection.14.0.9}%
+\contentsline {subsection}{\numberline {14.0.10}Product Spaces}{167}{subsection.14.0.10}%
+\contentsline {section}{\numberline {14.1}Uniform Metric}{168}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Products}{171}{subsection.14.1.1}%
+\contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{172}{subsection.14.1.2}%
+\contentsline {section}{\numberline {14.2}Isometric Embeddings}{173}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{173}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Manifolds}{174}{section.14.4}%
+\contentsline {chapter}{\numberline {15}Homotopy Theory}{175}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Homotopies}{175}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Homotopy Equivalence}{175}{section.15.2}%
+\contentsline {chapter}{\numberline {16}Simplicial Complexes}{177}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Cell Decompositions}{177}{section.16.1}%
+\contentsline {section}{\numberline {16.2}CW-complexes}{177}{section.16.2}%
+\contentsline {chapter}{\numberline {17}Topological Groups}{179}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Topological Groups}{179}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Subgroups}{180}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}Left Cosets}{181}{subsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.1.3}Homogeneous Spaces}{183}{subsection.17.1.3}%
+\contentsline {section}{\numberline {17.2}Symmetric Neighbourhoods}{183}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Continuous Actions}{184}{section.17.3}%
+\contentsline {chapter}{\numberline {18}Topological Vector Spaces}{187}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Cauchy Sequences}{187}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Seminorms}{188}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Fr\'{e}chet Spaces}{188}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Normed Spaces}{188}{section.18.4}%
+\contentsline {section}{\numberline {18.5}Unit Ball}{194}{section.18.5}%
+\contentsline {section}{\numberline {18.6}Unit Sphere}{195}{section.18.6}%
+\contentsline {section}{\numberline {18.7}Inner Product Spaces}{195}{section.18.7}%
+\contentsline {section}{\numberline {18.8}Banach Spaces}{196}{section.18.8}%
+\contentsline {section}{\numberline {18.9}Hilbert Spaces}{196}{section.18.9}%
+\contentsline {section}{\numberline {18.10}Locally Convex Spaces}{197}{section.18.10}%
