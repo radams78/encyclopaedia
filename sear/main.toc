@@ -164,7 +164,8 @@
 \contentsline {subsection}{\numberline {13.35.2}Punctured Euclidean Space}{152}{subsection.13.35.2}%
 \contentsline {subsection}{\numberline {13.35.3}The Topologist's Sine Curve}{152}{subsection.13.35.3}%
 \contentsline {subsection}{\numberline {13.35.4}Continuous Functions}{153}{subsection.13.35.4}%
-\contentsline {subsection}{\numberline {13.35.5}Connected Spaces}{153}{subsection.13.35.5}%
+\contentsline {subsection}{\numberline {13.35.5}Product Topology}{153}{subsection.13.35.5}%
+\contentsline {subsection}{\numberline {13.35.6}Connected Spaces}{153}{subsection.13.35.6}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{155}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Balls}{156}{subsection.14.0.1}%
 \contentsline {subsection}{\numberline {14.0.2}Subspaces}{161}{subsection.14.0.2}%

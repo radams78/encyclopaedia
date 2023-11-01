@@ -6141,6 +6141,21 @@ $X \times Y$ is path connected if and only if $X$ and $Y$ are path connected.
 A quotient of a path connected space is path connected.
 \end{prop}
 
+\subsection{Product Topology}
+
+\begin{prop}
+The product of a family of path connected spaces is path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\{X_i\}_{i \in I}$ be a family of path connected spaces.}}
+\step{2}{\pflet{$x,y \in \prod_{i \in I} X_i$}}
+\step{3}{For $i \in I$, \pick\ a path $p_i : [0,1] \rightarrow X_i$ from $\pi_i(x)$ to $\pi_i(y)$}
+\step{4}{$\lambda t \in [0,1]. \lambda i \in I. p_i(t)$ is a path from $x$ to $y$ in $\prod_{i \in I} X_i$.}
+\qed
+\end{proof}
+
 \subsection{Connected Spaces}
 
 \begin{prop}
