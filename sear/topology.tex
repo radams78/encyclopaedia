@@ -3359,6 +3359,43 @@ For $n > 1$, we have $\mathbb{R}^n$ and $\mathbb{R}$ are not homeomorphic.
 \pf\ Removing a point from $\mathbb{R}$ gives a disconnected space. \qed
 \end{proof}
 
+\begin{prop}
+Every open connected subspace of $\mathbb{R}^2$ is path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ be an open connected subspace of $\mathbb{R}^2$.}}
+\step{2}{\assume{w.l.o.g. $U \neq \emptyset$}}
+\step{3}{\pick\ $x_0 \in U$}
+\step{4}{\pflet{$V = \{ x \in U : \text{there exists a path from $x_0$ to $x$} \}$}}
+\step{5}{$V$ is open in $U$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in V$}}
+	\step{b}{\pick\ $\epsilon > 0$ such that $B(x, \epsilon) \subseteq U$}
+	\step{c}{$B(x, \epsilon) \subseteq V$}
+	\begin{proof}
+		\pf\ For all $y \in B(x,\epsilon)$, take a path from $x_0$ to $x$ and then a straight line from $x$ to $y$.
+	\end{proof}
+\end{proof}
+\step{6}{$V$ is closed in $U$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in U - V$}}
+	\step{b}{\pick\ $\epsilon > 0$ such that $B(x,\epsilon) \subseteq U$}
+	\step{c}{$B(x, \epsilon) \subseteq U - V$}
+	\begin{proof}
+		\step{i}{\pflet{$y \in B(x, \epsilon)$}}
+		\step{ii}{There is a path from $y$ to $x$.}
+		\step{iii}{There is no path from $x_0$ to $y$.}
+	\end{proof}
+\end{proof}
+\step{7}{$V = U$}
+\begin{proof}
+	\pf\ $U$ is connected.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
