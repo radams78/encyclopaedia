@@ -74,6 +74,7 @@
 \contentsline {section}{\numberline {6.2}The Ordered Square}{79}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Punctured Euclidean Space}{79}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Topologist's Sine Curve}{79}{section.6.4}%
+\contentsline {section}{\numberline {6.5}The Long Line}{80}{section.6.5}%
 \contentsline {chapter}{\numberline {7}Integers and Rationals}{81}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Positive Integers}{81}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Exponentiation}{82}{subsection.7.1.1}%
