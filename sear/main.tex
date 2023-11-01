@@ -6163,6 +6163,21 @@ The product of a family of path connected spaces is path connected.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $A \subseteq \mathbb{R}^2$. If $A$ is countable then $\mathbb{R}^2 - A$ is path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}^2 - A$}}
+\step{2}{\pick\ two non-parallel lines $L$ through $x$ and $L'$ through $y$ that do not pass through any points in $A$.}
+\begin{proof}
+	\pf\ These exist since uncountably many lines pass through any point.
+\end{proof}
+\step{3}{There exists a path from $x$ to $y$ that follows $L$ from $x$ to the point of intersection of $L$ and $L'$, and then follows $L'$ to $y$.}
+\qed
+\end{proof}
+
 \subsection{Connected Spaces}
 
 \begin{prop}
