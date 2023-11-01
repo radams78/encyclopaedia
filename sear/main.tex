@@ -6128,9 +6128,21 @@ The continuous image of a path connected space is path connected.
 \qed
 \end{proof}
 
+\subsection{Subspaces}
+
 \begin{prop}
-Let $X$ be a topological space and $A,B \subseteq X$. If $X = A \cup B$, $A \cap B \neq \emptyset$, and $A$ and $B$ are path connected, then $X$ is path connected.
+Let $\{X\}$ be a topological space. Let $\mathcal{A}$ be a set of connected subspaces of $X$. If $\bigcap \mathcal{A} \neq \emptyset$ then $\bigcup \mathcal{A}$ is connected.
 \end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a \in \bigcap \mathcal{A}$}
+\step{2}{\pick\ $x,y \in \bigcup \mathcal{A}$}
+\step{3}{\pick\ $A, B \in \mathcal{A}$ with $x \in A$ and $y \in B$.}
+\step{4}{\pick\ a path $p$ from $x$ to $a$ in $A$, and a path $q$ from $a$ to $y$ in $B$.}
+\step{5}{The concatenation of $p$ and $q$ is a path from $x$ to $y$ in $\bigcup \mathcal{A}$.}
+\qed
+\end{proof}
 
 \begin{prop}
 If $X$ and $Y$ are nonempty topological spaces, then
