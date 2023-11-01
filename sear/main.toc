@@ -72,8 +72,8 @@
 \contentsline {chapter}{\numberline {6}The Real Numbers}{71}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Subtraction}{73}{section.6.1}%
 \contentsline {section}{\numberline {6.2}The Ordered Square}{79}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Punctured Euclidean Space}{79}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Topologist's Sine Curve}{79}{section.6.4}%
+\contentsline {section}{\numberline {6.3}Punctured Euclidean Space}{80}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Topologist's Sine Curve}{80}{section.6.4}%
 \contentsline {section}{\numberline {6.5}The Long Line}{80}{section.6.5}%
 \contentsline {chapter}{\numberline {7}Integers and Rationals}{81}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Positive Integers}{81}{section.7.1}%

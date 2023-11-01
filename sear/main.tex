@@ -182,6 +182,27 @@ x(-y) + xy & = x((-y)+y) & (\text{Distributive Law}) \\
 \end{align*}
 \end{proof}
 
+\begin{prop}
+Let $X$ be a linearly ordered set. Let $a,b,c \in X$ with $a < b < c$. Then $[a,c) \cong [0,1)$ if and only if $[a,b) \cong [0,1)$ and $[b,c) \cong [0,1)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $x \in (0,1)$ we have $[0,x) \cong [0,1)$.}
+\begin{proof}
+	\pf\ The function that maps $t$ to $t/x$ is an order isomorphism.
+\end{proof}
+\step{2}{For all $x \in (0,1)$ we have $[x,1) \cong [0,1)$.}
+\begin{proof}
+	\pf\ The function that maps $t$ to $(t-x)/(1-x)$ is an order isomorphism.
+\end{proof}
+\step{3}{We have $[0,2) \cong [0,1)$.}
+\begin{proof}
+	\pf\ The function that maps $t$ to $t/2$ is an order isomorphism.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Subtraction}
 
 \begin{thm}
