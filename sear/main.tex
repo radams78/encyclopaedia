@@ -179,6 +179,7 @@ x(-y) + xy & = x((-y)+y) & (\text{Distributive Law}) \\
 \end{proof}
 
 \begin{prop}
+\label{prop:01_join_01}
 Let $X$ be a linearly ordered set. Let $a,b,c \in X$ with $a < b < c$. Then $[a,c) \cong [0,1)$ if and only if $[a,b) \cong [0,1)$ and $[b,c) \cong [0,1)$.
 \end{prop}
 
@@ -195,6 +196,24 @@ Let $X$ be a linearly ordered set. Let $a,b,c \in X$ with $a < b < c$. Then $[a,
 \step{3}{We have $[0,2) \cong [0,1)$.}
 \begin{proof}
 	\pf\ The function that maps $t$ to $t/2$ is an order isomorphism.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:seq_of_01s}
+Let $X$ be a linearly ordered set. Let $(a_n)$ be a strictly increasing sequence in $X$. Let $b$ be its supremum. Then $[a_0,b) \cong [0,1)$ if and only if, for all $n$, we have $[a_n,a_{n+1}) \cong [0,1)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $x,y \in [0,1)$ with $x < y$ we have $[x,y) \cong [0,1)$.}
+\begin{proof}
+	\pf\ The function that maps $t$ to $(t-x)/(y-x)$ is an order isomorphism.
+\end{proof}
+\step{2}{We have $[0,1) \cong [0,+\infty)$.}
+\begin{proof}
+	\pf\ The function that maps $t$ to $1/(1-t)-1$ is an order isomorphism.
 \end{proof}
 \qed
 \end{proof}
@@ -759,6 +778,15 @@ The \emph{topologist's sine curve} is
 \begin{df}[Long Line]
 The \emph{long line} is $S_\Omega \times [0,1)$ in the dictionary order.
 \end{df}
+
+\begin{prop}
+\label{prop:long_line_01}
+For any $a \in S_\Omega$ with $a \neq 0$ we have $[(0,0),(a,0)) \cong [0,1)$.
+\end{prop}
+
+\begin{proof}
+\pf\ By transfinite induction on $a$ using Propositions \ref{prop:01_join_01} and \ref{prop:seq_of_01s}. \qed
+\end{proof}
 
 \chapter{Integers and Rationals}
 

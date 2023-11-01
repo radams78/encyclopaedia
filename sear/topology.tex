@@ -571,6 +571,14 @@ Let $\{ X_\lambda \}_{\lambda \in \Lambda}$ be a family of topological spaces su
 \qed
 \end{proof}
 
+\begin{prop}
+The long line cannot be embedded in $\mathbb{R}^n$ for any $n$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since the long line is not second countable but $\mathbb{R}^n$ is. \qed
+\end{proof}
+
 \section{Interior}
 
 \begin{df}[Interior]
@@ -3264,6 +3272,25 @@ The topologist's sine curve is not path connected.
 \qed
 \end{proof}
 
+\subsection{The Long Line}
+
+\begin{prop}
+The long line is path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$L = S_\Omega \times [0,1)$ be the long line.}}
+\step{2}{\pflet{$(a,b),(c,d) \in L$}}
+\step{3}{\pick\ $e$ such that $a < e$ and $c < e$}
+\step{4}{$(a,b),(c,d) \in [(0,0),(e,0)) \cong [0,1)$}
+\begin{proof}
+	\pf\ Using Proposition \ref{prop:long_line_01}.
+\end{proof}
+\step{5}{There is a path from $(a,b)$ to $(c,d)$.}
+\qed
+\end{proof}
+
 \subsection{Continuous Functions}
 
 \begin{prop}
@@ -3394,6 +3421,22 @@ Every open connected subspace of $\mathbb{R}^2$ is path connected.
 	\pf\ $U$ is connected.
 \end{proof}
 \qed
+\end{proof}
+
+\section{Locally Homeomorphic}
+
+\begin{df}
+Let $X$ and $Y$ be topological spaces. Then $X$ is \emph{locally homeomorphic} to $Y$ if and only if every point in $X$ has a neighbourhood that is homeomorphic to an open set in $Y$.
+\end{df}
+
+\subsection{The Long Line}
+
+\begin{prop}
+The long line is locally homeomorphic to $[0,1)$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:long_line_01}. \qed
 \end{proof}
 
 \chapter{Metric Spaces}

@@ -164,10 +164,13 @@
 \contentsline {subsection}{\numberline {13.35.1}The Ordered Square}{152}{subsection.13.35.1}%
 \contentsline {subsection}{\numberline {13.35.2}Punctured Euclidean Space}{152}{subsection.13.35.2}%
 \contentsline {subsection}{\numberline {13.35.3}The Topologist's Sine Curve}{152}{subsection.13.35.3}%
-\contentsline {subsection}{\numberline {13.35.4}Continuous Functions}{153}{subsection.13.35.4}%
-\contentsline {subsection}{\numberline {13.35.5}Subspaces}{153}{subsection.13.35.5}%
-\contentsline {subsection}{\numberline {13.35.6}Product Topology}{153}{subsection.13.35.6}%
-\contentsline {subsection}{\numberline {13.35.7}Connected Spaces}{154}{subsection.13.35.7}%
+\contentsline {subsection}{\numberline {13.35.4}The Long Line}{153}{subsection.13.35.4}%
+\contentsline {subsection}{\numberline {13.35.5}Continuous Functions}{153}{subsection.13.35.5}%
+\contentsline {subsection}{\numberline {13.35.6}Subspaces}{153}{subsection.13.35.6}%
+\contentsline {subsection}{\numberline {13.35.7}Product Topology}{154}{subsection.13.35.7}%
+\contentsline {subsection}{\numberline {13.35.8}Connected Spaces}{154}{subsection.13.35.8}%
+\contentsline {section}{\numberline {13.36}Locally Homeomorphic}{155}{section.13.36}%
+\contentsline {subsection}{\numberline {13.36.1}The Long Line}{155}{subsection.13.36.1}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{157}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Balls}{158}{subsection.14.0.1}%
 \contentsline {subsection}{\numberline {14.0.2}Subspaces}{163}{subsection.14.0.2}%
