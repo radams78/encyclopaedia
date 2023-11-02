@@ -21,50 +21,11 @@ For any set $X$, the power set $\mathcal{P} X$ is called the \emph{discrete} top
 For any set $X$, the \emph{indiscrete} or \emph{trivial} topology on $X$ is  $\{ \emptyset, X \}$.
 \end{ex}
 
-\section{Cofinite Topology}
-
-\begin{df}[Cofinite Topology]
+\begin{ex}[Cofinite Topology]
 For any set $X$, the \emph{cofinite} topology is $\mathcal{T} = \{\emptyset\} \cup \{ X - U : U \subseteq X \text{ is finite} \}$.
 
 We prove this is a topology.
-\end{df}
-
-\begin{proof}
-\pf
-\step{1}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$.}
-\begin{proof}
-	\step{a}{\pflet{$\mathcal{U} \subseteq \mathcal{T}$}}
-	\step{b}{\case{$\mathcal{U} \subseteq \{ \emptyset\}$}}
-	\begin{proof}
-		\pf\ Then $\bigcup \mathcal{U} = \emptyset \in \mathcal{T}$.
-	\end{proof}
-	\step{c}{\case{$\mathcal{U} \nsubseteq \{\emptyset\}$}}
-	\begin{proof}
-		\step{i}{\pick\ a nonempty $U \in \mathcal{U}$}
-		\step{ii}{$X - \bigcup \mathcal{U} \subseteq X - U$}
-		\step{iii}{$X - U$ is finite.}
-		\step{iv}{$X - \bigcup \mathcal{U}$ is finite.}
-		\step{v}{$\bigcup \mathcal{U} \in \mathcal{T}$}
-	\end{proof}
-\end{proof}
-\step{2}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$.}
-\begin{proof}
-	\step{a}{\pflet{$U,V \in \mathcal{T}$}}
-	\step{b}{\case{$U = \emptyset$ or $V = \emptyset$}}
-	\begin{proof}
-		\pf\ Then $U \cap V = \emptyset \in \mathcal{T}$
-	\end{proof}
-	\step{c}{\case{$U \neq \emptyset \neq V$}}
-	\begin{proof}
-		\pf\ Then $X - (U \cap V) = (X - U) \cup (X - V)$ is finite so $U \cap V \in \mathcal{T}$.
-	\end{proof}
-\end{proof}
-\step{3}{$X \in \mathcal{T}$}
-\begin{proof}
-	\pf\ Since $X - X = \emptyset$ is finite.
-\end{proof}
-\qed
-\end{proof}
+\end{ex}
 
 \begin{df}[Cocountable Topology]
 For any set $X$, the \emph{cocountable} topology is $\{ X - U : U \subseteq X \text{ is countable} \}$.
