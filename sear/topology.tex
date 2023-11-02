@@ -3473,6 +3473,26 @@ We prove this is an equivalence relation.
 \qed
 \end{proof}
 
+\begin{prop}
+Every component of a topological space is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C$ be a component of the topological space $X$.}}
+\step{2}{\assume{for a contradiction $(A,B)$ is a separation of $C$.}}
+\step{3}{\pick\ $a \in A$ and $b \in B$.}
+\step{4}{$a \sim b$}
+\step{5}{\pick\ a connected subspace $D$ of $X$ such that $a \in D$ and $b \in D$.}
+\step{6}{$D \subseteq C$}
+\step{7}{$(A \cap D, B \cap D)$ is a separation of $D$.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
