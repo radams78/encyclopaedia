@@ -31,9 +31,9 @@ We prove this is a topology.
 For any set $X$, the \emph{cocountable} topology is $\{ X - U : U \subseteq X \text{ is countable} \}$.
 \end{df}
 
-\begin{df}[Sierpi\'{n}ski Two-Point Space]
+\begin{ex}[Sierpi\'{n}ski Two-Point Space]
 The \emph{Sierpi\'{n}ski two-point space} is $\{0,1\}$ under the topology $\{ \emptyset, \{1\}, \{0,1\} \}$.
-\end{df}
+\end{ex}
 
 \begin{prop}
 Let $X$ be a topological space and $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists an open set $V$ such that $x \in V \subseteq U$.
@@ -3686,6 +3686,14 @@ Let $X$ be a topological space. Then $X$ is locally connected if and only if, fo
 \qed
 \end{proof}
 
+\begin{prop}
+The ordered square is locally connected.
+\end{prop}
+
+\begin{proof}
+\pf\ Since every basic open set is connected because it is a linear continuum. \qed
+\end{proof}
+
 \section{Local Path Connectedness}
 
 \begin{df}[Locally Path Connected]
@@ -3747,6 +3755,25 @@ In a locally path connected space, the components are the same as the path compo
 \begin{ex}
 The converse does not hold. In $\mathbb{Q}$, the components are the same as the path components, namely the one-point sets, but $\mathbb{Q}$ is not locally path connected.
 \end{ex}
+
+\begin{ex}
+The ordered square is not locally path connected.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $I_o^2$ is locally path connected at $(0,1)$.}}
+\step{2}{\pick\ a path connected neighbourhood $U$ of $(0,1)$.}
+\step{3}{\pick\ $a > 0$ such that $[(0,1),(a,0)] \subseteq U$}
+\step{4}{\pick\ a path $p : [0,1] \rightarrow I_o^2$ from $(0,1)$ to $(a,0)$.}
+\step{5}{For every $x \in (0,a)$, \pick\ a rational $q_x \in [0,1]$ such that $q_x \in ((x,0),(x,1))$}
+\step{6}{$\{ q_x : x \in (0,a) \}$ is an uncountable set of rationals.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Metric Spaces}
 
