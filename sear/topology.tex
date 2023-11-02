@@ -3702,6 +3702,33 @@ The topologist's sine curve is connected but not locally connected.
 The rationals $\mathbb{Q}$ are neither connected nor locally connected.
 \end{ex}
 
+\begin{ex}
+For $n$ a positive integer, let $a_n = (1/n,0)$. Let $p = (0,0)$. Let the infinite broom $X$ be the union of all the line segments joining $(a_{n+1},q)$ to $(a_n,0)$ for $n$ any positive integer and $q$ any rational in $[0,1/n]$. Then $X$ is weakly locally connected at $p$ but not locally connected at $p$.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{$X$ is weakly locally connected at $p$.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be any neighbourhood of $p$.}}
+	\step{b}{\pick\ $N$ such that, for all $n \geq N$ and every rational $q \in [0,1/n]$, the line segment joining $(a_{n+1},q)$ to $(a_n,0)$ is included in $U$.}
+	\step{c}{\pflet{$Y$ be the union of all these line segments.}}
+	\step{d}{$Y$ is connected.}
+	\step{e}{\pflet{$V = B(p,1/n) \cap X$}}
+	\step{f}{$V \subseteq Y \subseteq U$}
+\end{proof}
+\step{2}{$X$ is not locally connected at $p$.}
+\begin{proof}
+	\step{a}{\pflet{$U = B(p,1/2) \cap X$}}
+	\step{b}{\pflet{$V$ be a neighbourhood of $p$ with $V \subseteq U$} \prove{$V$ is disconnected.}}
+	\step{c}{\pflet{$n$ be least such that $(a_n,0) \in V$}}
+	\step{d}{$(a_{n-1},0) \notin V$}
+	\step{e}{Some part of a line segment joining some $(a_n,q)$ to $(a_{n-1},0)$ is in $V$}
+	\step{f}{$V$ is disconnected.}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{thm}
 \label{thm:locally_connected}
 Let $X$ be a topological space. Then $X$ is locally connected if and only if, for every open set $U$ in $X$, every component of $U$ is open in $X$.
