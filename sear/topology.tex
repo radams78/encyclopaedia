@@ -3797,6 +3797,28 @@ The ordered square is not locally path connected.
 \qed
 \end{proof}
 
+\begin{prop}
+Every connected open subspace of a locally path connected space is path connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a locally path connected space.}}
+\step{2}{\pflet{$U$ be a connected open subspace.}}
+\step{3}{\pflet{$P$ be a path component of $U$.} \prove{$P = U$}}
+\step{4}{\pflet{$Q$ be the union of the path components of $U$ that are not $P$.}}
+\step{5}{$P$ and $Q$ are open.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:locally_path_connected_path_components_open}.
+\end{proof}
+\step{6}{$Q = \emptyset$}
+\begin{proof}
+	\pf\ Otherwise $(P,Q)$ would be a separation of $U$.
+\end{proof}
+\step{7}{$P = U$}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
