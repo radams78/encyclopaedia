@@ -3535,6 +3535,7 @@ Every component of a topological space is connected.
 \end{proof}
 
 \begin{prop}
+\label{prop:connected_in_component}
 Let $X$ be a topological space. Let $A$ be a nonempty connected subspace of $X$. Then there exists a unique component $C$ of $X$ such that $A \subseteq C$.
 \end{prop}
 
@@ -3550,6 +3551,26 @@ Let $X$ be a topological space. Let $A$ be a nonempty connected subspace of $X$.
 \begin{proof}
 	\pf\ Since the components are pairwise disjoint.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every component of a topological space is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a topological space.}}
+\step{2}{\pflet{$C$ be a component of $X$.}}
+\step{3}{$\overline{C}$ is connected.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_closure}.
+\end{proof}
+\step{4}{$\overline{C} \subseteq C$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:connected_in_component}.
+\end{proof}
+\step{5}{$C = \overline{C}$}
 \qed
 \end{proof}
 
