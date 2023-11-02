@@ -3701,6 +3701,32 @@ The topologist's sine curve is connected but not locally connected.
 The rationals $\mathbb{Q}$ are neither connected nor locally connected.
 \end{ex}
 
+\begin{thm}
+Let $X$ be a topological space. Then $X$ is locally connected if and only if, for every open set $U$ in $X$, every component of $U$ is open in $X$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $X$ is locally connected then, for every open set $U$ in $X$, every component of $U$ is open in $X$.}
+\begin{proof}
+	\step{a}{\assume{$X$ is locally connected.}}
+	\step{b}{\pflet{$U$ be an open set in $X$.}}
+	\step{c}{\pflet{$C$ be a component of $U$.}}
+	\step{d}{\pflet{$x \in C$}}
+	\step{e}{\pick\ a connected neighbourhood $V$ of $x$ in $X$ such that $V \subseteq U$}
+	\step{f}{$x \in V \subseteq C$}
+\end{proof}
+\step{2}{If, for every open set $U$ in $X$, every component of $U$ is open in $X$, then $X$ is locally connected.}
+\begin{proof}
+	\step{a}{\assume{For every open set $U$ in $X$, every component of $U$ is open in $X$.}}
+	\step{b}{\pflet{$x \in X$}}
+	\step{c}{\pflet{$U$ be a neighbourhood of $x$.}}
+	\step{d}{\pflet{$V$ be the component of $U$ that contains $x$.}}
+	\step{e}{$V$ is a connected neighbourhood of $x$ and $V \subseteq U$.}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Local Path Connectedness}
 
 \begin{df}[Locally Path Connected]
