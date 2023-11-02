@@ -223,7 +223,7 @@ Let $f : A \rightarrow B$ be injective. For every set $X$ and functions $x,y : X
 
 We will prove the converse as Proposition \ref{prop:injection2}.
 
-\subsection{Surjections} % CHECKED FORMALIZED
+\subsection{Surjections} % CHECKED
 
 \begin{prop}
 \label{prop:surj_comp}
@@ -281,6 +281,25 @@ Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is surjectiv
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Let $f : A \rightarrow B$ be a surjection. For any set $X$ and functions $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$b \in B$}}
+\step{2}{\pick\ $a \in A$ such that $f(a) = b$}
+\step{3}{$x(f(a)) = y(f(a))$}
+\step{4}{$x(b) = y(b)$}
+\qedstep
+\begin{proof}
+	\pf\ Axiom of Extensionality.
+\end{proof}
+\qed
+\end{proof}
+
+We will prove the converse as Proposition \ref{prop:surjective}.
 
 \subsection{Bijections}
 
@@ -629,26 +648,11 @@ Let $2 = \{ x \in \mathbb{N} : x = 0 \vee x = 1 \}$.
 
 \begin{prop}
 \label{prop:surjective}
-Let $f : A \rightarrow B$. Then $f$ is surjective if and only if, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.
+Let $f : A \rightarrow B$. Assume that, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$. Then $f$ is surjective.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{If $f$ is surjective then, for any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}
-\begin{proof}
-	\step{a}{\assume{$f$ is surjective.}}
-	\step{b}{\pflet{$X$ be a set.}}
-	\step{c}{\pflet{$g, h : B \rightarrow X$}}
-	\step{d}{\assume{$g \circ f = h \circ f$}}
-	\step{e}{\pflet{$b \in B$} \prove{$g(b) = h(b)$}}
-	\step{f}{\pick\ $a \in A$ such that $f(a) = b$}
-	\step{g}{$g(b) = h(b)$}
-	\begin{proof}
-		\pf\ $g(b) = g(f(a)) = h(f(a)) = h(b)$
-	\end{proof}
-\end{proof}
-\step{4}{If, for any set $X$ and functions $g, h : B \rightarrow x$, if $g \circ f = h \circ f$ then $g = h$, then $f$ is surjective.}
-\begin{proof}
 	\step{a}{\assume{For any set $X$ and functions $g,h : B \rightarrow X$, if $g \circ f = h \circ f$ then $g = h$.}}
 	\step{b}{\pflet{$b \in B$}}
 	\step{c}{\pflet{$h : B \rightarrow 2$ be the function that maps everything to 1.}}
@@ -657,7 +661,6 @@ Let $f : A \rightarrow B$. Then $f$ is surjective if and only if, for any set $X
 	\step{f}{$h \circ f \neq k \circ f$}
 	\step{g}{\pick\ $a \in A$ such that $h(f(a)) \neq k(f(a))$}
 	\step{h}{$f(a) = b$}
-\end{proof}
 \qed
 \end{proof}
 

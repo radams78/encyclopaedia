@@ -7,30 +7,30 @@
 \contentsline {section}{\numberline {2.1}Composition}{15}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Injections}{15}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Surjections}{17}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Bijections}{17}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.3}Bijections}{18}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Equinumerosity}{18}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Domination}{18}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Identity Function}{19}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Injections, Surjections, Bijections}{19}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.2}Domination}{19}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Identity Function}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Injections, Surjections, Bijections}{20}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Composition}{20}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}The Empty Set}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.4}The Empty Set}{22}{section.2.4}%
 \contentsline {section}{\numberline {2.5}The Singleton}{22}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Injections}{22}{subsection.2.5.1}%
 \contentsline {section}{\numberline {2.6}The Set Two}{22}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Subsets}{23}{section.2.7}%
 \contentsline {section}{\numberline {2.8}Saturated Set}{24}{section.2.8}%
 \contentsline {section}{\numberline {2.9}Union}{24}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Intersection}{25}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.1}Intersection}{24}{subsection.2.9.1}%
 \contentsline {subsection}{\numberline {2.9.2}Direct Image}{25}{subsection.2.9.2}%
 \contentsline {section}{\numberline {2.10}Inverse Image}{25}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Saturated Sets}{26}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.1}Saturated Sets}{25}{subsection.2.10.1}%
 \contentsline {section}{\numberline {2.11}Relations}{26}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Equivalence Relations}{27}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.1}Equivalence Relations}{26}{subsection.2.11.1}%
 \contentsline {section}{\numberline {2.12}Power Set}{27}{section.2.12}%
 \contentsline {subsection}{\numberline {2.12.1}Partitions}{27}{subsection.2.12.1}%
 \contentsline {section}{\numberline {2.13}Cartesian Product}{27}{section.2.13}%
 \contentsline {section}{\numberline {2.14}Quotient Sets}{27}{section.2.14}%
-\contentsline {section}{\numberline {2.15}Partitions}{28}{section.2.15}%
+\contentsline {section}{\numberline {2.15}Partitions}{27}{section.2.15}%
 \contentsline {section}{\numberline {2.16}Disjoint Union}{28}{section.2.16}%
 \contentsline {section}{\numberline {2.17}Natural Numbers}{28}{section.2.17}%
 \contentsline {section}{\numberline {2.18}Finite and Infinite Sets}{29}{section.2.18}%
