@@ -36,6 +36,7 @@ The \emph{Sierpi\'{n}ski two-point space} is $\{0,1\}$ under the topology $\{ \e
 \end{ex}
 
 \begin{prop}
+\label{prop:open}
 Let $X$ be a topological space and $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists an open set $V$ such that $x \in V \subseteq U$.
 \end{prop}
 
@@ -3702,6 +3703,7 @@ The rationals $\mathbb{Q}$ are neither connected nor locally connected.
 \end{ex}
 
 \begin{thm}
+\label{thm:locally_connected}
 Let $X$ be a topological space. Then $X$ is locally connected if and only if, for every open set $U$ in $X$, every component of $U$ is open in $X$.
 \end{thm}
 
@@ -3738,6 +3740,42 @@ The ordered square is locally connected.
 \begin{ex}
 Let $T$ be the union of all line segments connecting a point $(q,0)$ to $(0,1)$ where $q \in [0,1]$ is rational, and all line segments connecting a point $(q,1)$ to $(1,0)$ where $q \in [0,1]$ is rational. Then $T$ is path connected but is locally connected at no point.
 \end{ex}
+
+\begin{prop}
+If a topological space is weakly locally connected at every point then it is locally connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a topological space that is weakly locally connected at every point.}}
+\step{2}{For every open set $U$ in $X$, every component of $U$ is open in $X$.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be an open set in $X$.}}
+	\step{b}{\pflet{$C$ be a component of $U$.}}
+	\step{c}{For all $x \in C$, there exists a neighbourhood $V$ of $x$ such that $V \subseteq C$.}
+	\begin{proof}
+		\step{i}{\pflet{$x \in C$}}
+		\step{ii}{\pick\ a connected $Y \subseteq X$ and a neighbourhood $V$ of $x$ such that $V \subseteq Y \subseteq U$}
+		\begin{proof}
+			\pf\ \stepref{1}
+		\end{proof}
+		\step{iii}{$Y \subseteq C$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:connected_in_component}.
+		\end{proof}
+		\step{iv}{$V \subseteq C$}
+	\end{proof}
+	\step{d}{$C$ is open.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:open}.
+	\end{proof}
+\end{proof}
+\step{3}{$X$ is locally connected.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:locally_connected}.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Local Path Connectedness}
 
