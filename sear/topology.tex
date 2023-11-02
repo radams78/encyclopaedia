@@ -3635,6 +3635,28 @@ In $\mathbb{R}^\omega$ under the box topology, $\vec{x}$ and $\vec{y}$ are in th
 \qed
 \end{proof}
 
+\begin{ex}
+The path components of $I_o^2$ are $\{ \{x\} \times [0,1] : 0 \leq x \leq 1 \}$.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{For all $x \in [0,1]$ we have $\{x\} \times [0,1]$ is path connected.}
+\begin{proof}
+	\pf\ It is homeomorphic to $[0,1]$.
+\end{proof}
+\step{2}{Given $x,y,s,t \in [0,1]$ with $x \neq y$, there is no path from $(x,s)$ to $(y,t)$.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $p : [0,1] \rightarrow I_o^2$ is a path from $(x,s)$ to $(y,t)$.}}
+	\step{b}{For $z$ between $x$ and $y$, \pick\ a rational $q_z \in [0,1]$ such that $p(q_z) \in \{z\} \times [0,1]$.}
+	\step{c}{$\{ q_z : z \text{ is between } x \text{ and } y \}$ is an uncountable set of rationals.}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Local Connectedness}
 
