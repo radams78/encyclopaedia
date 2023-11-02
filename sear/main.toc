@@ -189,9 +189,9 @@
 \contentsline {subsection}{\numberline {14.0.10}Product Spaces}{173}{subsection.14.0.10}%
 \contentsline {section}{\numberline {14.1}Uniform Metric}{174}{section.14.1}%
 \contentsline {subsection}{\numberline {14.1.1}Products}{177}{subsection.14.1.1}%
-\contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{178}{subsection.14.1.2}%
+\contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{179}{subsection.14.1.2}%
 \contentsline {section}{\numberline {14.2}Isometric Embeddings}{179}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{179}{section.14.3}%
+\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{180}{section.14.3}%
 \contentsline {section}{\numberline {14.4}Manifolds}{180}{section.14.4}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{181}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{181}{section.15.1}%

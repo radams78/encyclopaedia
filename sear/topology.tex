@@ -3524,6 +3524,10 @@ We prove this is an equivalence relation.
 The components of $\mathbb{Q}$ are the singleton subsets.
 \end{ex}
 
+\begin{ex}
+The components of $\mathbb{R}_l$ are the singleton subsets.
+\end{ex}
+
 \begin{prop}
 Every component of a topological space is connected.
 \end{prop}
@@ -3755,6 +3759,10 @@ In a locally path connected space, the components are the same as the path compo
 \step{8}{$P = C$}
 \qed
 \end{proof}
+
+\begin{ex}
+The converse does not hold. In $\mathbb{Q}$, the components are the same as the path components, namely the one-point sets, but $\mathbb{Q}$ is not locally path connected.
+\end{ex}
 
 \chapter{Metric Spaces}
 
@@ -4761,6 +4769,45 @@ Let $X$ be a set and $Y$ a metric space. Let $(f_n)$ be a sequence of functions 
 \qed
 \end{proof}
 
+\begin{prop}
+In $\mathbb{R}^\omega$ under the uniform topology, $\vec{x}$ and $\vec{y}$ lie in the same component if and only if $\vec{x} - \vec{y}$ is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{The set of bounded sequences form a component of $\mathbb{R}^\omega$.}
+\begin{proof}
+	\step{a}{\pflet{$B$ be the set of bounded sequences.}}
+	\step{b}{$B$ is connected.}
+	\begin{proof}
+		\step{i}{\pflet{$\vec{x} \in B$} \prove{The straight line path $p : [0,1] \rightarrow \mathbb{R}^\omega$ from 0 to $\vec{x}$ is continuous.}}
+		\step{ii}{\pflet{$t \in [0,1]$ and $\epsilon > 0$}}
+		\step{iii}{\pick\ $B > 0$ such that $\forall n. |x_n| < B$}
+		\step{iv}{\pflet{$\delta = \epsilon / B$}}
+		\step{v}{\pflet{$s \in [0,1]$ with $|s-t| < \delta$}}
+		\step{vi}{For all $n$ we have $|p(s)_n - p(t)_n| < \epsilon / 2$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				|p(s)_n - p(t)_n| & = |s-t||x_n| \\
+				& < \delta B \\
+				& = \epsilon
+			\end{align*}
+		\end{proof}
+		\step{vii}{$\overline{\rho}(p(s),p(t)) \leq \epsilon / 2$}
+		\step{viii}{$\overline{\rho}(p(s),p(t)) < \epsilon$}
+	\end{proof}
+	\step{c}{$B$ is maximally connected.}
+	\begin{proof}
+		\pf\ Since $(B, \mathbb{R}^\omega - B)$ form a separation of $\mathbb{R}^\omega$.
+	\end{proof}
+\end{proof}
+\step{2}{For any $\vec{y} \in \mathbb{R}^\omega$, the component containing $\vec{y}$ is $\{ \vec{x} \in \mathbb{R}^\omega : \vec{x} - \vec{y} \text{ is bounded} \}$.}
+\begin{proof}
+	\pf\ Since the function that maps $\vec{x}$ to $\vec{x} + \vec{y}$ is a homeomorphism between $\mathbb{R}^\omega$ and itself.
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Products}
 
