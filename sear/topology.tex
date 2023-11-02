@@ -3731,6 +3731,32 @@ Let $X$ be a topological space and $x \in X$. Then $X$ is \emph{locally path con
 The space $X$ is \emph{locally path connected} iff it is locally connected at every point.
 \end{df}
 
+\begin{thm}
+Let $X$ be a topological space. Then $X$ is locally path connected if and only if, for every open set $U$ in $X$, every path component of $U$ is open in $X$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $X$ is locally path connected then, for every open set $U$ in $X$, every path component of $U$ is open in $X$.}
+\begin{proof}
+	\step{a}{\assume{$X$ is locally path connected.}}
+	\step{b}{\pflet{$U$ be an open set in $X$.}}
+	\step{c}{\pflet{$C$ be a path component of $U$.}}
+	\step{d}{\pflet{$x \in C$}}
+	\step{e}{\pick\ a path connected neighbourhood $V$ of $x$ in $X$ such that $V \subseteq U$}
+	\step{f}{$x \in V \subseteq C$}
+\end{proof}
+\step{2}{If, for every open set $U$ in $X$, every path component of $U$ is open in $X$, then $X$ is locally path connected.}
+\begin{proof}
+	\step{a}{\assume{For every open set $U$ in $X$, every path component of $U$ is open in $X$.}}
+	\step{b}{\pflet{$x \in X$}}
+	\step{c}{\pflet{$U$ be a neighbourhood of $x$.}}
+	\step{d}{\pflet{$V$ be the path component of $U$ that contains $x$.}}
+	\step{e}{$V$ is a path connected neighbourhood of $x$ and $V \subseteq U$.}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
