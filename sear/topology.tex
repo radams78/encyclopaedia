@@ -39,6 +39,19 @@ The \emph{Sierpi\'{n}ski two-point space} is $\{0,1\}$ under the topology $\{ \e
 Let $X$ be a topological space and $U \subseteq X$. Then $U$ is open if and only if, for all $x \in U$, there exists an open set $V$ such that $x \in V \subseteq U$.
 \end{prop}
 
+\begin{proof}
+\pf
+\step{1}{If $U$ is open then, for all $x \in U$, there exists an open set $V$ such that $x \in V \subseteq U$.}
+\begin{proof}
+	\pf\ Take $V = U$.
+\end{proof}
+\step{2}{If, for all $x \in U$, there exists an open set $V$ such that $x \in V \subseteq U$, then $U$ is open.}
+\begin{proof}
+	\pf\ Since then $U$ is the union of all the open subsets of $U$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}
 The intersection of a set of topologies on a set $X$ is a topology on $X$.
 \end{prop}
@@ -3715,6 +3728,10 @@ The ordered square is locally connected.
 \begin{proof}
 \pf\ Since every basic open set is connected because it is a linear continuum. \qed
 \end{proof}
+
+\begin{ex}
+Let $T$ be the union of all line segments connecting a point $(q,0)$ to $(0,1)$ where $q \in [0,1]$ is rational, and all line segments connecting a point $(q,1)$ to $(1,0)$ where $q \in [0,1]$ is rational. Then $T$ is path connected but is locally connected at no point.
+\end{ex}
 
 \section{Local Path Connectedness}
 
