@@ -3493,6 +3493,25 @@ Every component of a topological space is connected.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a topological space. Let $A$ be a nonempty connected subspace of $X$. Then there exists a unique component $C$ of $X$ such that $A \subseteq C$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a \in A$}
+\step{2}{\pflet{$C$ be the $\sim$-equivalence class of $a$.}}
+\step{3}{$A \subseteq C$}
+\begin{proof}
+	\pf\ For all $x \in A$ we have $a \sim x$ hence $x \in C$.
+\end{proof}
+\step{4}{For any component $C'$, if $A \subseteq C'$ then $C' = C$.}
+\begin{proof}
+	\pf\ Since the components are pairwise disjoint.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
