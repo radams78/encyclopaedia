@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  2 NOV 2023 09:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  2 NOV 2023 09:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,31 +956,31 @@ Overfull \hbox (24.67375pt too wide) detected at line 3124
 []
  []
 
-[150] [151] [152] [153] [154] [155] [156] [157] [158
+[150] [151] [152] [153] [154] [155] [156] [157] [158]
+Chapter 14.
+[159
 
 ]
-Chapter 14.
-[159]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 3649.
+(hyperref)                than one, level fixed on input line 3668.
 
 [160]
-Overfull \hbox (125.21025pt too wide) detected at line 3787
+Overfull \hbox (125.21025pt too wide) detected at line 3806
 []
  []
 
 [161] [162]
 WARNING: proof step "1" (<2>1) already defined
 
-Overfull \hbox (22.79451pt too wide) detected at line 3916
+Overfull \hbox (22.79451pt too wide) detected at line 3935
 []
  []
 
 [163] [164] [165]
 WARNING: proof step "6" (<1>7) already defined
 [166] [167] [168]
-Overfull \hbox (4.95183pt too wide) detected at line 4293
+Overfull \hbox (4.95183pt too wide) detected at line 4312
 []
  []
 
@@ -993,12 +993,12 @@ Underfull \vbox (badness 3769) has occurred while \output is active []
 [171]
 WARNING: proof step "c" (<2>4) already defined
 [172] [173] [174]
-Overfull \hbox (108.65958pt too wide) detected at line 4629
+Overfull \hbox (108.65958pt too wide) detected at line 4648
 []
  []
 
 [175]
-Overfull \hbox (47.883pt too wide) in paragraph at lines 4643--4643
+Overfull \hbox (47.883pt too wide) in paragraph at lines 4662--4662
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -1006,14 +1006,14 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 4659
+Overfull \hbox (0.90187pt too wide) detected at line 4678
 []
  []
 
 [176] [177] [178]
 Chapter 15.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 4826--4827
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 4845--4846
 []\OT1/cmr/bx/n/10 Definition 15.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1034,13 +1034,13 @@ Chapter 17.
 ]
 Chapter 18.
 [191] [192]
-Overfull \hbox (113.19771pt too wide) detected at line 5485
+Overfull \hbox (113.19771pt too wide) detected at line 5504
 []
  []
 
 WARNING: proof step "4" undefined
 [193] [194]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 5615--5615
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 5634--5634
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1054,8 +1054,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 864D8155D43AB1CD480E75DD3F169500;29072.
  ) 
 Here is how much of TeX's memory you used:
- 14000 strings out of 476091
- 195765 string characters out of 5794081
+ 14001 strings out of 476091
+ 195775 string characters out of 5794081
  1873330 words of memory out of 5000000
  32863 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
@@ -1088,10 +1088,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (201 pages, 834000 bytes).
+Output written on main.pdf (201 pages, 834719 bytes).
 PDF statistics:
- 3478 PDF objects out of 3580 (max. 8388607)
- 3083 compressed objects within 31 object streams
- 1319 named destinations out of 1440 (max. 500000)
+ 3479 PDF objects out of 3580 (max. 8388607)
+ 3084 compressed objects within 31 object streams
+ 1320 named destinations out of 1440 (max. 500000)
  1737 words of extra memory for PDF output out of 10000 (max. 10000000)
 
