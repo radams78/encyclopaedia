@@ -1238,6 +1238,22 @@ For $n$ a positive integer, the $n$th root function $\overline{\mathbb{R}_+} \ri
 A \emph{path} in a topological space $X$ is a continuous function $[0,1] \rightarrow X$.
 \end{df}
 
+\begin{df}[Constant Path]
+Let $X$ be a topological space and $a \in X$. The \emph{constant} path at $a$ is the path $p : [0,1] \rightarrow X$ with $p(t) = a$ for all $t \in [0,1]$.
+\end{df}
+
+\begin{df}[Reverse Path]
+Let $X$ be a topological space and $p : [0,1] \rightarrow X$. The \emph{reverse} of $p$ is the path $q : [0,1] \rightarrow X$ with $q(t) = p(1-t)$ for all $t \in [0,1]$.
+\end{df}
+
+\begin{df}[Concatenation]
+Let $X$ be a topological space and $p, q : [0,1] \rightarrow X$ be paths in $X$ with $p(1) = q(0)$. The \emph{concatenation} of $p$ and $q$ is the path $r : [0,1] \rightarrow X$ with
+\[ r(t) = \begin{cases}
+p(2t) & \text{if } 0 \leq t \leq 1/2 \\
+q(2t-1) & \text{if } 1/2 \leq t \leq 1
+\end{cases} \]
+\end{df}
+
 \subsection{Loops}
 
 \begin{df}[Loop]
@@ -3525,6 +3541,31 @@ Let $X$ be a topological space. Let $A$ be a nonempty connected subspace of $X$.
 \step{4}{For any component $C'$, if $A \subseteq C'$ then $C' = C$.}
 \begin{proof}
 	\pf\ Since the components are pairwise disjoint.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Path Components}
+
+\begin{df}[Path Component]
+Let $X$ be a topological space. Define the equivalence relation $\sim$ on $X$ by: $x \sim y$ iff there exists a path from $x$ to $y$. The \emph{path components} of $X$ are the equivalence classes with respect to $\sim$.
+
+We prove $\sim$ is an equivalence relation.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ For any $a \in X$ the constant path at $a$ is a path from $a$ to $a$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ If $p$ is a path from $a$ to $b$ then the reverse of $p$ is a path from $b$ to $a$.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\pf\ If $p$ is a path from $a$ to $b$ and $q$ is a path from $b$ to $c$ then the concatenation of $p$ and $q$ is a path from $a$ to $c$.
 \end{proof}
 \qed
 \end{proof}
