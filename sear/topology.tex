@@ -3652,6 +3652,29 @@ Let $X$ be a topological space. Let $A$ be a nonempty path connected subspace of
 \qed
 \end{proof}
 
+\begin{ex}
+In $\mathbb{R}^\omega$ under the box topology, $\vec{x}$ and $\vec{y}$ are in the same component if and only if $\vec{x} - \vec{y}$ is eventually zero.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B$ be the set of sequences that are eventually zero.}}
+\step{2}{$B$ is connected.}
+\begin{proof}
+	\pf\ For $\vec{x} \in B$, the straight line path from 0 to $\vec{x}$ is continuous.
+\end{proof}
+\step{3}{$B$ is maximally connected.}
+\begin{proof}
+	\pf\ Since $(B, \mathbb{R}^\omega - B)$ form a separation of $\mathbb{R}^\omega$.
+\end{proof}
+\step{4}{For all $\vec{y} \in \mathbb{R}^\omega$, the component that contains $\vec{y}$ is $\{ \vec{x} \in \mathbb{R}^\omega : \vec{x} - \vec{y} \text{ is eventually zero} \}$.}
+\begin{proof}
+	\pf\ Since the function that maps $\vec{x}$ to $\vec{x} + \vec{y}$ is a homeomorphism of $\mathbb{R}^\omega$ with itself.
+\end{proof}
+\qed
+\end{proof}
+
+
 \section{Local Connectedness}
 
 \begin{df}[Locally Connected]
