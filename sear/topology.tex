@@ -3439,6 +3439,38 @@ The long line is locally homeomorphic to $[0,1)$.
 \pf\ By Proposition \ref{prop:long_line_01}. \qed
 \end{proof}
 
+\section{Components}
+
+\begin{df}[(Connected) Component]
+Let $X$ be a topological space. Define the equivalence relation $\sim$ on $X$ by: $x \sim y$ iff there exists a connected $C \subseteq X$ such that $x \in C$ and $y \in C$. The \emph{components} of $X$ are the equivalence classes with respect to $\sim$.
+
+We prove this is an equivalence relation.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ For any $x \in X$, we have $\{x\}$ is connected and $x \in \{x\}$, hence $x \sim x$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ Immediate from definition.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$x \sim y$ and $y \sim z$}}
+	\step{b}{\pick\ connected subspaces $C$ and $D$ of $X$ with $x \in C$, $y \in C$, $y \in D$ and $z \in D$.}
+	\step{c}{$C \cup D$ is connected.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:connected_union}.
+	\end{proof}
+	\step{d}{$x \in C \cup D$ and $z \in C \cup D$.}
+	\step{e}{$x \sim z$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
