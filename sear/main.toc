@@ -94,7 +94,7 @@
 \contentsline {section}{\numberline {13.2}Discrete Topology}{101}{section.13.2}%
 \contentsline {section}{\numberline {13.3}Bases}{105}{section.13.3}%
 \contentsline {section}{\numberline {13.4}Order Topology}{106}{section.13.4}%
-\contentsline {subsection}{\numberline {13.4.1}Subspaces}{107}{subsection.13.4.1}%
+\contentsline {subsection}{\numberline {13.4.1}Subspaces}{108}{subsection.13.4.1}%
 \contentsline {subsection}{\numberline {13.4.2}Product Topology}{108}{subsection.13.4.2}%
 \contentsline {section}{\numberline {13.5}Subbases}{108}{section.13.5}%
 \contentsline {section}{\numberline {13.6}Neighbourhood Bases}{109}{section.13.6}%
@@ -105,7 +105,7 @@
 \contentsline {subsection}{\numberline {13.10.1}Bases}{111}{subsection.13.10.1}%
 \contentsline {subsection}{\numberline {13.10.2}Subspaces}{112}{subsection.13.10.2}%
 \contentsline {subsection}{\numberline {13.10.3}Product Topology}{112}{subsection.13.10.3}%
-\contentsline {subsection}{\numberline {13.10.4}Interior}{112}{subsection.13.10.4}%
+\contentsline {subsection}{\numberline {13.10.4}Interior}{113}{subsection.13.10.4}%
 \contentsline {section}{\numberline {13.11}Boundary}{113}{section.13.11}%
 \contentsline {section}{\numberline {13.12}Limit Points}{114}{section.13.12}%
 \contentsline {section}{\numberline {13.13}Continuous Functions}{115}{section.13.13}%
@@ -116,20 +116,20 @@
 \contentsline {subsection}{\numberline {13.14.1}Closure}{121}{subsection.13.14.1}%
 \contentsline {subsection}{\numberline {13.14.2}Continuous Functions}{121}{subsection.13.14.2}%
 \contentsline {subsection}{\numberline {13.14.3}Infinite Series}{121}{subsection.13.14.3}%
-\contentsline {section}{\numberline {13.15}Strong Continuity}{121}{section.13.15}%
+\contentsline {section}{\numberline {13.15}Strong Continuity}{122}{section.13.15}%
 \contentsline {section}{\numberline {13.16}Subspaces}{122}{section.13.16}%
 \contentsline {subsection}{\numberline {13.16.1}Product Topology}{124}{subsection.13.16.1}%
-\contentsline {section}{\numberline {13.17}Embedding}{124}{section.13.17}%
+\contentsline {section}{\numberline {13.17}Embedding}{125}{section.13.17}%
 \contentsline {section}{\numberline {13.18}Open Maps}{125}{section.13.18}%
-\contentsline {subsection}{\numberline {13.18.1}Subspaces}{125}{subsection.13.18.1}%
-\contentsline {section}{\numberline {13.19}Locally Finite}{125}{section.13.19}%
-\contentsline {section}{\numberline {13.20}Closed Maps}{126}{section.13.20}%
-\contentsline {section}{\numberline {13.21}Product Topology}{126}{section.13.21}%
-\contentsline {subsection}{\numberline {13.21.1}Closed Sets}{126}{subsection.13.21.1}%
-\contentsline {subsection}{\numberline {13.21.2}Closure}{128}{subsection.13.21.2}%
+\contentsline {subsection}{\numberline {13.18.1}Subspaces}{126}{subsection.13.18.1}%
+\contentsline {section}{\numberline {13.19}Locally Finite}{126}{section.13.19}%
+\contentsline {section}{\numberline {13.20}Closed Maps}{127}{section.13.20}%
+\contentsline {section}{\numberline {13.21}Product Topology}{127}{section.13.21}%
+\contentsline {subsection}{\numberline {13.21.1}Closed Sets}{127}{subsection.13.21.1}%
+\contentsline {subsection}{\numberline {13.21.2}Closure}{129}{subsection.13.21.2}%
 \contentsline {subsection}{\numberline {13.21.3}Convergence}{129}{subsection.13.21.3}%
-\contentsline {section}{\numberline {13.22}Topological Disjoint Union}{129}{section.13.22}%
-\contentsline {section}{\numberline {13.23}Quotient Spaces}{131}{section.13.23}%
+\contentsline {section}{\numberline {13.22}Topological Disjoint Union}{130}{section.13.22}%
+\contentsline {section}{\numberline {13.23}Quotient Spaces}{132}{section.13.23}%
 \contentsline {subsection}{\numberline {13.23.1}Quotient Maps}{133}{subsection.13.23.1}%
 \contentsline {section}{\numberline {13.24}Box Topology}{137}{section.13.24}%
 \contentsline {subsection}{\numberline {13.24.1}Bases}{137}{subsection.13.24.1}%
@@ -139,7 +139,7 @@
 \contentsline {subsubsection}{Subspaces}{139}{section*.2}%
 \contentsline {section}{\numberline {13.26}Connected Spaces}{139}{section.13.26}%
 \contentsline {subsection}{\numberline {13.26.1}The Real Numbers}{139}{subsection.13.26.1}%
-\contentsline {subsection}{\numberline {13.26.2}The Indiscrete Topology}{139}{subsection.13.26.2}%
+\contentsline {subsection}{\numberline {13.26.2}The Indiscrete Topology}{140}{subsection.13.26.2}%
 \contentsline {subsection}{\numberline {13.26.3}The Cofinite Topology}{140}{subsection.13.26.3}%
 \contentsline {subsection}{\numberline {13.26.4}Finer and Coarser}{140}{subsection.13.26.4}%
 \contentsline {subsection}{\numberline {13.26.5}Boundary}{140}{subsection.13.26.5}%
