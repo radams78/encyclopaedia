@@ -4053,6 +4053,7 @@ Every finite topological space is compact.
 \end{ex}
 
 \begin{lm}
+\label{lm:subspace_compact}
 Let $X$ be a topological space and $Y$ a subspace of $X$. Then $Y$ is compact if and only if every covering of $Y$ by sets open in $X$ contains a finite subcollection that covers $Y$.
 \end{lm}
 
@@ -4073,6 +4074,28 @@ Let $X$ be a topological space and $Y$ a subspace of $X$. Then $Y$ is compact if
 	\step{c}{$\{ U \text{ open in } X : U \cap Y \in \mathcal{A} \}$ covers $Y$.}
 	\step{d}{\pick\ a finite subcollection $\{ U_1, \ldots, U_n \}$ that covers $Y$.}
 	\step{e}{$\{ U_1 \cap Y, \ldots, U_n \cap Y \}$ is a finite subcollection of $\mathcal{A}$ that covers $Y$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Every closed subspace of a compact space is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a compact space.}}
+\step{2}{\pflet{$C$ be a closed subspace of $X$.}}
+\step{3}{Every covering of $C$ by sets open in $X$ contains a finite subcollection that covers $C$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{A}$ be a covering of $C$ by sets open in $X$.}}
+	\step{b}{$\mathcal{A} \cup \{ X - C \}$ is an open covering of $X$.}
+	\step{c}{\pick\ a finite subcover $\mathcal{B}$}
+	\step{d}{$\mathcal{B} - \{ X- C \}$ is a finite subcollection of $\mathcal{A}$ that covers $C$.}
+\end{proof}
+\step{4}{$C$ is compact.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:subspace_compact}.
 \end{proof}
 \qed
 \end{proof}
