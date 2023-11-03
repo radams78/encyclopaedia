@@ -57,6 +57,27 @@ Let $X$ be a topological space and $U \subseteq X$. Then $U$ is open if and only
 The intersection of a set of topologies on a set $X$ is a topology on $X$.
 \end{prop}
 
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{T}$ be a set of topologies on $X$.}}
+\step{2}{For all $\mathcal{U} \subseteq \bigcap \mathcal{T}$ we have $\bigcup \mathcal{U} \in \bigcap \mathcal{T}$.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{U} \subseteq \bigcap \mathcal{T}$}}
+	\step{b}{\pflet{$T \in \mathcal{T}$}}
+	\step{c}{$\mathcal{U} \subseteq T$}
+	\step{d}{$\bigcup \mathcal{U} \in T$}
+\end{proof}
+\step{3}{For all $U,V \in \bigcap \mathcal{T}$ we have $U \cap T \in \bigcap \mathcal{T}$.}
+\begin{proof}
+	\step{a}{\pflet{$U,V \in \bigcap \mathcal{T}$}}
+	\step{b}{\pflet{$T \in \mathcal{T}$}}
+	\step{c}{$U,V \in T$}
+	\step{d}{$U \cap V \in T$}
+\end{proof}
+\step{4}{$X \in \bigcap \mathcal{T}$.}
+\qed
+\end{proof}
+
 \begin{df}[Closed Set]
 Let $X$ be a topological space and $A \subseteq X$. Then $A$ is \emph{closed} iff $X - A$ is open.
 \end{df}
