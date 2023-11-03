@@ -3966,6 +3966,45 @@ Every connected open subspace of a locally path connected space is path connecte
 \qed
 \end{proof}
 
+\section{Quasicomponents}
+
+\begin{df}[Quasicomponent]
+Let $X$ be a topological space. Define the equivalence relation $\sim$ on $X$ by: $x \sim y$ iff there is no separation $(U,V)$ of $X$ with $x \in U$ and $y \in V$. The \emph{quasicomponents} of $X$ are the equivalence classes with respect to $\sim$.
+
+We prove this is an equivalence relation.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ For any $x \in X$, there cannot exist a separation $(U,V)$ of $X$ with $x \in U$ and $x \in V$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ Immediate from definition.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\step{a}{\assume{$x \sim y$ and $y \sim z$}}
+	\step{b}{\assume{for a contradiction $(U,V)$ is a separation of $X$ with $x \in U$ and $z \in V$.}}
+	\step{c}{$y \in U$ or $y \in V$}
+	\step{d}{$y \notin U$}
+	\begin{proof}
+		\pf\ $y \in U$ would contradict the fact that $y \sim z$.
+	\end{proof}
+	\step{e}{$y \notin V$}
+	\begin{proof}
+		\pf\ $y \in V$ would contradict the fact that $x \sim y$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
