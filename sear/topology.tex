@@ -4100,6 +4100,33 @@ Every closed subspace of a compact space is compact.
 \qed
 \end{proof}
 
+\begin{thm}
+Every compact subspace of a Hausdorff space is closed.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a Hausdorff space.}}
+\step{2}{\pflet{$Y$ be a compact subspace of $X$.}}
+\step{3}{For any $x \in X - Y$ there exists an open set $U$ such that $x \in U \subseteq X - Y$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in X - Y$}}
+	\step{b}{For every $y \in Y$ there exist disjoint open sets $U$ and $V$ with $x \in U$ and $y \in V$}
+	\step{c}{$\{ V \text{ open in } X : \exists U \text{ open in } X. x \in U \wedge U \cap V = \emptyset \}$ is an open cover of $Y$.}
+	\step{d}{\pick\ a finite subcover $\{ V_1, \ldots, V_n \}$.}
+	\step{e}{For $i = 1, \ldots, n$, \pick\ an open set $U_i$ with $U_i \cap V_i = \emptyset$ and $x \in U_i$}
+	\step{f}{\pflet{$U = U_1 \cap \cdots \cap U_n$}}
+	\step{g}{$U$ is open.}
+	\step{h}{$x \in U \subseteq X - Y$}
+\end{proof}
+\step{4}{$X - Y$ is open.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:open}.
+\end{proof}
+\step{5}{$Y$ is closed.}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
