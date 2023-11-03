@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  3 NOV 2023 14:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  3 NOV 2023 14:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -753,7 +753,7 @@ Package xypdf Info: Line width: 0.39998pt on input line 47.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] (./main.toc [3] [4] [5]
-Overfull \hbox (3.55565pt too wide) detected at line 149
+Overfull \hbox (3.55565pt too wide) detected at line 150
 \OT1/cmr/m/n/10 13.25.10 
  []
 
@@ -957,20 +957,20 @@ Overfull \hbox (24.67375pt too wide) detected at line 3131
  []
 
 [150] [151] [152] [153] [154] [155] [156] [157]
-Overfull \hbox (4.625pt too wide) in paragraph at lines 3620--3621
+Overfull \hbox (4.625pt too wide) in paragraph at lines 3621--3622
 []\OT1/cmr/bx/n/10 Example 13.38.2. \OT1/cmr/m/n/10 The topol-o-gist's sine cur
 ve has two path com-po-nents, namely
  []
 
 
-Overfull \hbox (33.53456pt too wide) in paragraph at lines 3669--3669
+Overfull \hbox (33.53456pt too wide) in paragraph at lines 3670--3670
 []\OT1/cmr/m/n/10 For all $[] \U/matha/m/n/10 P \U/msb/m/n/10 R[]$\OT1/cmr/m/n/
 10 , the com-po-nent that con-tains $[]$ is $\U/matha/m/n/10 t[] P \U/msb/m/n/1
 0 R[] \OT1/cmr/m/n/10 : [] \U/matha/m/n/10 ^^A [][]u$\OT1/cmr/m/n/10 . 
  []
 
 [158] [159] [160] [161] [162]
-Overfull \hbox (0.11937pt too wide) in paragraph at lines 3940--3940
+Overfull \hbox (0.11937pt too wide) in paragraph at lines 3941--3941
 []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 x \U/matha/m/n/10 P p\OT1/cmr/m/
 n/10 0\OML/cmm/m/it/10 ; a\U/matha/m/n/10 q$\OT1/cmr/m/n/10 , \OT1/cmr/m/sc/10 
 Pick \OT1/cmr/m/n/10 a ra-tio-nal $\OML/cmm/m/it/10 q[] \U/matha/m/n/10 P r\OT1
@@ -980,31 +980,36 @@ T1/cmr/m/n/10 0\U/matha/m/n/10 q\OML/cmm/m/it/10 ; \U/matha/m/n/10 p\OML/cmm/m/
 it/10 x; \OT1/cmr/m/n/10 1\U/matha/m/n/10 qq$ 
  []
 
-[163] [164]
+[163]
+
+LaTeX Warning: Reference `prop:component_connected' on page 164 undefined on in
+put line 4024.
+
+[164]
 Chapter 14.
 [165
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4072.
+(hyperref)                than one, level fixed on input line 4091.
 
 [166]
-Overfull \hbox (125.21025pt too wide) detected at line 4210
+Overfull \hbox (125.21025pt too wide) detected at line 4229
 []
  []
 
 [167] [168]
 WARNING: proof step "1" (<2>1) already defined
 
-Overfull \hbox (22.79451pt too wide) detected at line 4339
+Overfull \hbox (22.79451pt too wide) detected at line 4358
 []
  []
 
 [169] [170] [171]
 WARNING: proof step "6" (<1>7) already defined
 [172] [173] [174]
-Overfull \hbox (4.95183pt too wide) detected at line 4716
+Overfull \hbox (4.95183pt too wide) detected at line 4735
 []
  []
 
@@ -1017,12 +1022,12 @@ Underfull \vbox (badness 3769) has occurred while \output is active []
 [177]
 WARNING: proof step "c" (<2>4) already defined
 [178] [179] [180] [181]
-Overfull \hbox (108.65958pt too wide) detected at line 5091
+Overfull \hbox (108.65958pt too wide) detected at line 5110
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 5105--5105
+Overfull \hbox (47.883pt too wide) in paragraph at lines 5124--5124
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -1030,14 +1035,14 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 5121
+Overfull \hbox (0.90187pt too wide) detected at line 5140
 []
  []
 
 [182] [183] [184]
 Chapter 15.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 5288--5289
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 5307--5308
 []\OT1/cmr/bx/n/10 Definition 15.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1062,13 +1067,13 @@ Underfull \vbox (badness 2189) has occurred while \output is active []
 ]
 Chapter 18.
 [197] [198]
-Overfull \hbox (113.19771pt too wide) detected at line 5982
+Overfull \hbox (113.19771pt too wide) detected at line 6001
 []
  []
 
 WARNING: proof step "4" undefined
 [199] [200]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 6112--6112
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 6131--6131
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1079,19 +1084,19 @@ m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 
 [201] [202] [203] [204] [205] [206]) [207] (./main.aux)
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 730D017A0D2235890AA1F2814CFF592C;29421
-(rerunfilecheck)             After:  FB65B93FFDECE8BA6849AEC046105D85;29544.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: FB65B93FFDECE8BA6849AEC046105D85;29544.
  ) 
 Here is how much of TeX's memory you used:
- 14044 strings out of 476091
- 196303 string characters out of 5794081
+ 14047 strings out of 476091
+ 196358 string characters out of 5794081
  1873330 words of memory out of 5000000
- 32870 multiletter control sequences out of 15000+600000
+ 32872 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1122,10 +1127,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (207 pages, 855983 bytes).
+Output written on main.pdf (207 pages, 856600 bytes).
 PDF statistics:
- 3560 PDF objects out of 3580 (max. 8388607)
- 3158 compressed objects within 32 object streams
- 1356 named destinations out of 1440 (max. 500000)
- 1753 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3566 PDF objects out of 3580 (max. 8388607)
+ 3164 compressed objects within 32 object streams
+ 1357 named destinations out of 1440 (max. 500000)
+ 1761 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -3528,6 +3528,7 @@ The components of $\mathbb{R}_l$ are the singleton subsets.
 \end{ex}
 
 \begin{prop}
+\label{prop:component_connected}
 Every component of a topological space is connected.
 \end{prop}
 
@@ -4003,6 +4004,24 @@ We prove this is an equivalence relation.
 	\begin{proof}
 		\pf\ This is a contradiction.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every component of a topological space is a subset of a quasicomponent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a topological space.}}
+\step{2}{\pflet{$C$ be a component of $X$.} \prove{$\forall x,y \in C. x \sim y$}}
+\step{3}{\pflet{$x, y \in C$}}
+\step{4}{\assume{for a contradiction $(U,V)$ is a separation of $X$ with $x \in U$ and $y \in V$}}
+\step{5}{$(U \cap C, V \cap C)$ is a separation of $C$.}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the fact that $C$ is connected (Proposition \ref{prop:component_connected}).
 \end{proof}
 \qed
 \end{proof}
