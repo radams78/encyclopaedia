@@ -91,6 +91,7 @@
 \contentsline {part}{V\hspace {1em}Topology}{99}{part.5}%
 \contentsline {chapter}{\numberline {13}Topology}{101}{chapter.13}%
 \contentsline {section}{\numberline {13.1}Topological Spaces}{101}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}Closed Sets}{102}{subsection.13.1.1}%
 \contentsline {section}{\numberline {13.2}Bases}{106}{section.13.2}%
 \contentsline {section}{\numberline {13.3}Order Topology}{106}{section.13.3}%
 \contentsline {subsection}{\numberline {13.3.1}Subspaces}{108}{subsection.13.3.1}%
