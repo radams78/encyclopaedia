@@ -179,6 +179,7 @@
 \contentsline {section}{\numberline {13.40}Local Connectedness}{159}{section.13.40}%
 \contentsline {section}{\numberline {13.41}Local Path Connectedness}{162}{section.13.41}%
 \contentsline {section}{\numberline {13.42}Quasicomponents}{163}{section.13.42}%
+\contentsline {section}{\numberline {13.43}Compact Spaces}{164}{section.13.43}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{165}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Balls}{166}{subsection.14.0.1}%
 \contentsline {subsection}{\numberline {14.0.2}Subspaces}{171}{subsection.14.0.2}%
