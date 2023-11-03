@@ -107,20 +107,6 @@ In this case, the topology is unique, and is $\{ X - C : C \in \mathcal{C} \}$.
 \end{proof}
 
 \begin{prop}
-Let $X$ be a topological space and $Y$ a subspace of $X$. Let $A \subseteq Y$. Then $A$ is closed in $Y$ if and only if there exists a closed set $B$ in $X$ such that $A = B \cap Y$.
-\end{prop}
-
-\begin{proof}
-\pf
-\begin{align*}
-A \text{ is closed in } Y & \Leftrightarrow Y - A \text{ is open in } Y \\
-& \Leftrightarrow \exists U \text{ open in } X. Y - A = U \cap Y \\
-& \Leftrightarrow \exists C \text{ closed in } X. Y - A = Y - C \\
-& \Leftrightarrow \exists C \text{ closed in } X. A = Y \cap C & \qed
-\end{align*}
-\end{proof}
-
-\begin{prop}
 Let $X$ be a topological space and $Y$ a subspace of $X$. Let $A \subseteq Y$. If $A$ is closed in $Y$ and $Y$ is closed in $X$ then $A$ is closed in $X$.
 \end{prop}
 
@@ -440,6 +426,20 @@ Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $\mathcal{B}$ 
 	\step{e}{$y \in B \cap Y \subseteq V$}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a topological space and $Y$ a subspace of $X$. Let $A \subseteq Y$. Then $A$ is closed in $Y$ if and only if there exists a closed set $B$ in $X$ such that $A = B \cap Y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+A \text{ is closed in } Y & \Leftrightarrow Y - A \text{ is open in } Y \\
+& \Leftrightarrow \exists U \text{ open in } X. Y - A = U \cap Y \\
+& \Leftrightarrow \exists C \text{ closed in } X. Y - A = Y - C \\
+& \Leftrightarrow \exists C \text{ closed in } X. A = Y \cap C & \qed
+\end{align*}
 \end{proof}
 
 \subsection{Product Topology}
