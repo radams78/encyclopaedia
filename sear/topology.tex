@@ -4030,6 +4030,28 @@ Every component of a topological space is a subset of a quasicomponent.
 \qed
 \end{proof}
 
+\begin{prop}
+In a locally connected topological space, the components are the same as the quasicomponents.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a locally connected topological space.}}
+\step{2}{\pflet{$C$ be a component of $X$.}}
+\step{3}{\pflet{$Q$ be the quasicomponent that includes $C$.} \prove{$Q = C$}}
+\step{5}{\assume{for a contradiction $C \neq Q$}}
+\step{6}{\pick\ $c \in C$ and $d \in Q - C$}
+\step{7}{$(C, X-C)$ is a separation of $X$ with $c \in C$ and $d \in X - C$.}
+\begin{proof}
+	\pf\ Since the components of $X$ are open (Theorem \ref{thm:locally_connected}).
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the fact that $c \sim d$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
