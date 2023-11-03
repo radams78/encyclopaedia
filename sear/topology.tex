@@ -2487,6 +2487,7 @@ Let $X$ be a topological space. Let $A \subseteq X$. Let $C$ be a connected subs
 \subsection{Continuous Functions}
 
 \begin{prop}
+\label{prop:continuous_image_of_connected}
 The continuous image of a connected space is connected.
 \end{prop}
 
@@ -3798,6 +3799,43 @@ If a topological space is weakly locally connected at every point then it is loc
 	\end{proof}
 \end{proof}
 \step{3}{$X$ is locally connected.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:locally_connected}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+A quotient of a locally connected space is locally connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a locally connected space.}}
+\step{2}{\pflet{$p : X \twoheadrightarrow Y$ be a quotient map.}}
+\step{3}{For every open set $V$ in $Y$, every component of $V$ is open in $Y$.}
+\begin{proof}
+	\step{a}{\pflet{$V$ be an open set in $Y$.}}
+	\step{b}{\pflet{$C$ be a component of $V$.}}
+	\step{c}{$\inv{p}(C)$ is a union of components of $\inv{p}(V)$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in \inv{p}(C)$}}
+		\step{ii}{\pflet{$D$ be the component of $\inv{p}(V)$ that contains $x$.} \prove{$D \subseteq \inv{p}(C)$}}
+		\step{iii}{$p(D)$ is connected.}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:continuous_image_of_connected}.
+		\end{proof}
+		\step{iv}{$p(D) \subseteq C$}
+		\step{v}{$D \subseteq \inv{p}(C)$}
+	\end{proof}
+	\step{d}{Every component of $\inv{p}(V)$ is open in $X$.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:locally_connected}.
+	\end{proof}
+	\step{e}{$\inv{p}(C)$ is open in $X$.}
+	\step{f}{$C$ is open in $Y$.}
+\end{proof}
+\step{4}{$Y$ is locally connected.}
 \begin{proof}
 	\pf\ Theorem \ref{thm:locally_connected}.
 \end{proof}

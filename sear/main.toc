@@ -175,7 +175,7 @@
 \contentsline {section}{\numberline {13.38}Path Components}{157}{section.13.38}%
 \contentsline {section}{\numberline {13.39}Weak Local Connectedness}{158}{section.13.39}%
 \contentsline {section}{\numberline {13.40}Local Connectedness}{158}{section.13.40}%
-\contentsline {section}{\numberline {13.41}Local Path Connectedness}{160}{section.13.41}%
+\contentsline {section}{\numberline {13.41}Local Path Connectedness}{161}{section.13.41}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{163}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Balls}{164}{subsection.14.0.1}%
 \contentsline {subsection}{\numberline {14.0.2}Subspaces}{169}{subsection.14.0.2}%
