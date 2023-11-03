@@ -4052,6 +4052,31 @@ The space $\mathbb{R}$ is not compact, because the open cover $\{ (n, n+2) : n \
 Every finite topological space is compact.
 \end{ex}
 
+\begin{lm}
+Let $X$ be a topological space and $Y$ a subspace of $X$. Then $Y$ is compact if and only if every covering of $Y$ by sets open in $X$ contains a finite subcollection that covers $Y$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{If $Y$ is compact then every covering of $Y$ by sets open in $X$ contains a finite subcollection that covers $Y$.}
+\begin{proof}
+	\step{a}{\assume{$Y$ is compact.}}
+	\step{b}{\pflet{$\mathcal{A}$ be a covering of $Y$ by sets open in $X$.}}
+	\step{c}{$\{ U \cap Y : U \in \mathcal{A} \}$ is an open covering of $Y$.}
+	\step{d}{\pick\ a finite subcovering $\{U_1 \cap Y, \ldots, U_n \cap Y \}$.}
+	\step{e}{$\{U_1, \ldots, U_n\}$ is a finite subcollection of $\mathcal{A}$ that covers $Y$.}
+\end{proof}
+\step{2}{If every covering of $Y$ by sets open in $X$ contains a finite subcollection that covers $Y$ then $Y$ is compact.}
+\begin{proof}
+	\step{a}{\assume{Every covering of $Y$ by sets open in $X$ contains a finite subcollection that covers $Y$.}}
+	\step{b}{\pflet{$\mathcal{A}$ be an open cover of $Y$.}}
+	\step{c}{$\{ U \text{ open in } X : U \cap Y \in \mathcal{A} \}$ covers $Y$.}
+	\step{d}{\pick\ a finite subcollection $\{ U_1, \ldots, U_n \}$ that covers $Y$.}
+	\step{e}{$\{ U_1 \cap Y, \ldots, U_n \cap Y \}$ is a finite subcollection of $\mathcal{A}$ that covers $Y$.}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
