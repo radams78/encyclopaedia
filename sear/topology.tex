@@ -5494,6 +5494,41 @@ Let $G$ be a topological group and $H$ a subgroup of $G$. Then $\overline{H}$ is
 \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a topological group. The component of $G$ that contains $e$ is a normal subgroup of $G$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C$ be the component that contains $e$.}}
+\step{2}{For all $x \in G$, we have $Cx$ is the component of $G$ that contains $x$.}
+\begin{proof}
+	\pf\ Since right multiplication by $x$ is a homeomorphism between $G$ and itself.
+\end{proof}
+\step{3}{$C$ is a subgroup of $G$.}
+\begin{proof}
+	\step{a}{\pflet{$g,h \in C$}}
+	\step{b}{$C = Ch$}
+	\begin{proof}
+		\pf\ \stepref{2}
+	\end{proof}
+	\step{c}{\pick\ $x \in C$ such that $xh = g$}
+	\step{d}{$x = g \inv{h}$}
+	\step{e}{$g \inv{h} \in C$}
+\end{proof}
+\step{4}{$C$ is a normal subgroup of $G$.}
+\begin{proof}
+	\step{a}{\pflet{$g \in G$ and $h \in C$.} \prove{$gh\inv{g} \in C$}}
+	\step{b}{$C = C\inv{h}$}
+	\step{c}{$Cg = C\inv{h}g$}
+	\step{d}{$g \in C \inv{h}g$}
+	\step{e}{\pick\ $x \in C$ such that $g = x\inv{h}g$}
+	\step{f}{$x = gh\inv{g}$}
+	\step{g}{$gh\inv{g} \in C$}
+\end{proof}
+\qed
+\end{proof}
+
 \subsection{Left Cosets}
 
 \begin{prop}
