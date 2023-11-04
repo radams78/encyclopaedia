@@ -4225,6 +4225,23 @@ The product of two compact spaces is compact.
 \qed
 \end{proof}
 
+\begin{thm}
+Let $X$ be a topological space. Then $X$ is compact if and only if, for every set $\mathcal{C}$ of compact sets, if $\mathcal{C}$ has the finite intersection property then $\bigcup \mathcal{C} \neq \emptyset$.
+\end{thm}
+
+\begin{proof}
+\pf\ 
+The following are equivalent:
+\begin{itemize}
+\item $X$ is compact.
+\item For every set $\mathcal{A}$ of open sets, if $\bigcup \mathcal{A} = X$ then there is a finite subset of $\mathcal{A}$ that covers $X$.
+\item For every set $\mathcal{C}$ of closed sets, if $\bigcup_{C \in \mathcal{C}} (X - C) = X$ then there is a finite subset $\mathcal{C}_0 \subseteq \mathcal{C}$ such that $\bigcup_{C \in \mathcal{C}_0} (X - C) = X$.
+\item For every set $\mathcal{C}$ of closed sets, if $\bigcap \mathcal{C} = \emptyset$ then there is a finite subset $\mathcal{C}_0 \subseteq \mathcal{C}$ such that $\bigcap \mathcal{C}_0 = \emptyset$
+\item For every set $\mathcal{C}$ of closed sets, if $\mathcal{C}$ has the finite intersection property then $\bigcap \mathcal{C} \neq \emptyset$.
+\end{itemize}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
