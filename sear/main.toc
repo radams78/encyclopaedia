@@ -118,7 +118,7 @@
 \contentsline {subsection}{\numberline {13.13.1}Closure}{121}{subsection.13.13.1}%
 \contentsline {subsection}{\numberline {13.13.2}Continuous Functions}{121}{subsection.13.13.2}%
 \contentsline {subsection}{\numberline {13.13.3}Infinite Series}{121}{subsection.13.13.3}%
-\contentsline {section}{\numberline {13.14}Strong Continuity}{121}{section.13.14}%
+\contentsline {section}{\numberline {13.14}Strong Continuity}{122}{section.13.14}%
 \contentsline {section}{\numberline {13.15}Subspaces}{122}{section.13.15}%
 \contentsline {subsection}{\numberline {13.15.1}Product Topology}{124}{subsection.13.15.1}%
 \contentsline {section}{\numberline {13.16}Embedding}{125}{section.13.16}%
@@ -129,30 +129,30 @@
 \contentsline {section}{\numberline {13.20}Product Topology}{127}{section.13.20}%
 \contentsline {subsection}{\numberline {13.20.1}Closed Sets}{127}{subsection.13.20.1}%
 \contentsline {subsection}{\numberline {13.20.2}Closure}{129}{subsection.13.20.2}%
-\contentsline {subsection}{\numberline {13.20.3}Convergence}{129}{subsection.13.20.3}%
+\contentsline {subsection}{\numberline {13.20.3}Convergence}{130}{subsection.13.20.3}%
 \contentsline {section}{\numberline {13.21}Topological Disjoint Union}{130}{section.13.21}%
 \contentsline {section}{\numberline {13.22}Quotient Spaces}{132}{section.13.22}%
 \contentsline {subsection}{\numberline {13.22.1}Quotient Maps}{133}{subsection.13.22.1}%
 \contentsline {section}{\numberline {13.23}Box Topology}{137}{section.13.23}%
 \contentsline {subsection}{\numberline {13.23.1}Bases}{138}{subsection.13.23.1}%
 \contentsline {subsection}{\numberline {13.23.2}Subspaces}{138}{subsection.13.23.2}%
-\contentsline {subsection}{\numberline {13.23.3}Closure}{138}{subsection.13.23.3}%
+\contentsline {subsection}{\numberline {13.23.3}Closure}{139}{subsection.13.23.3}%
 \contentsline {section}{\numberline {13.24}Separations}{139}{section.13.24}%
 \contentsline {subsubsection}{Subspaces}{139}{section*.2}%
-\contentsline {section}{\numberline {13.25}Connected Spaces}{139}{section.13.25}%
+\contentsline {section}{\numberline {13.25}Connected Spaces}{140}{section.13.25}%
 \contentsline {subsection}{\numberline {13.25.1}The Real Numbers}{140}{subsection.13.25.1}%
 \contentsline {subsection}{\numberline {13.25.2}The Indiscrete Topology}{140}{subsection.13.25.2}%
 \contentsline {subsection}{\numberline {13.25.3}The Cofinite Topology}{140}{subsection.13.25.3}%
 \contentsline {subsection}{\numberline {13.25.4}Finer and Coarser}{140}{subsection.13.25.4}%
-\contentsline {subsection}{\numberline {13.25.5}Boundary}{140}{subsection.13.25.5}%
+\contentsline {subsection}{\numberline {13.25.5}Boundary}{141}{subsection.13.25.5}%
 \contentsline {subsection}{\numberline {13.25.6}Continuous Functions}{141}{subsection.13.25.6}%
 \contentsline {subsection}{\numberline {13.25.7}Subspaces}{141}{subsection.13.25.7}%
 \contentsline {subsection}{\numberline {13.25.8}Order Topology}{143}{subsection.13.25.8}%
-\contentsline {subsection}{\numberline {13.25.9}Product Topology}{144}{subsection.13.25.9}%
+\contentsline {subsection}{\numberline {13.25.9}Product Topology}{145}{subsection.13.25.9}%
 \contentsline {subsection}{\numberline {13.25.10}Quotient Spaces}{146}{subsection.13.25.10}%
 \contentsline {section}{\numberline {13.26}$T_1$ Spaces}{146}{section.13.26}%
 \contentsline {subsection}{\numberline {13.26.1}Limit Points}{147}{subsection.13.26.1}%
-\contentsline {section}{\numberline {13.27}Hausdorff Spaces}{147}{section.13.27}%
+\contentsline {section}{\numberline {13.27}Hausdorff Spaces}{148}{section.13.27}%
 \contentsline {subsection}{\numberline {13.27.1}Product Topology}{149}{subsection.13.27.1}%
 \contentsline {subsection}{\numberline {13.27.2}Box Topology}{149}{subsection.13.27.2}%
 \contentsline {subsection}{\numberline {13.27.3}$T_1$ Spaces}{149}{subsection.13.27.3}%
@@ -165,18 +165,18 @@
 \contentsline {section}{\numberline {13.34}Totally Disconnected Spaces}{152}{section.13.34}%
 \contentsline {section}{\numberline {13.35}Path Connected Spaces}{152}{section.13.35}%
 \contentsline {subsection}{\numberline {13.35.1}The Ordered Square}{152}{subsection.13.35.1}%
-\contentsline {subsection}{\numberline {13.35.2}Punctured Euclidean Space}{152}{subsection.13.35.2}%
+\contentsline {subsection}{\numberline {13.35.2}Punctured Euclidean Space}{153}{subsection.13.35.2}%
 \contentsline {subsection}{\numberline {13.35.3}The Topologist's Sine Curve}{153}{subsection.13.35.3}%
 \contentsline {subsection}{\numberline {13.35.4}The Long Line}{153}{subsection.13.35.4}%
-\contentsline {subsection}{\numberline {13.35.5}Continuous Functions}{153}{subsection.13.35.5}%
+\contentsline {subsection}{\numberline {13.35.5}Continuous Functions}{154}{subsection.13.35.5}%
 \contentsline {subsection}{\numberline {13.35.6}Subspaces}{154}{subsection.13.35.6}%
 \contentsline {subsection}{\numberline {13.35.7}Product Topology}{154}{subsection.13.35.7}%
-\contentsline {subsection}{\numberline {13.35.8}Connected Spaces}{154}{subsection.13.35.8}%
-\contentsline {section}{\numberline {13.36}Locally Homeomorphic}{155}{section.13.36}%
-\contentsline {subsection}{\numberline {13.36.1}The Long Line}{155}{subsection.13.36.1}%
+\contentsline {subsection}{\numberline {13.35.8}Connected Spaces}{155}{subsection.13.35.8}%
+\contentsline {section}{\numberline {13.36}Locally Homeomorphic}{156}{section.13.36}%
+\contentsline {subsection}{\numberline {13.36.1}The Long Line}{156}{subsection.13.36.1}%
 \contentsline {section}{\numberline {13.37}Components}{156}{section.13.37}%
 \contentsline {section}{\numberline {13.38}Path Components}{157}{section.13.38}%
-\contentsline {section}{\numberline {13.39}Weak Local Connectedness}{158}{section.13.39}%
+\contentsline {section}{\numberline {13.39}Weak Local Connectedness}{159}{section.13.39}%
 \contentsline {section}{\numberline {13.40}Local Connectedness}{159}{section.13.40}%
 \contentsline {section}{\numberline {13.41}Local Path Connectedness}{161}{section.13.41}%
 \contentsline {section}{\numberline {13.42}Quasicomponents}{163}{section.13.42}%
