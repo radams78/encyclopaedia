@@ -4142,6 +4142,20 @@ We cannot weaken the hypothesis from the space being Hausdorff to the space bein
 Let $X$ be any infinite set under the cofinite topology. Then $X$ is $T_1$. The closed sets are the finite sets and $X$, but every subspace is compact.
 \end{ex}
 
+\begin{thm}
+The continuous image of a compact space is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a compact space and $f : X \twoheadrightarrow Y$ be a surjective continuous function.}}
+\step{2}{\pflet{$\mathcal{V}$ be an open cover of $Y$.}}
+\step{3}{$\{ \inv{f}(V) : V \in \mathcal{V} \}$ is an open cover of $U$.}
+\step{4}{\pick\ a finite subcover $\{ \inv{f}(V_1), \ldots, \inv{f}(V_n) \}$.}
+\step{5}{$\{ V_1, \ldots, V_n \}$ covers $Y$.}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
