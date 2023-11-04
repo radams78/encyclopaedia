@@ -4187,6 +4187,46 @@ Let $X$ be a compact space and $Y$ a Hausdorff space. Let $f : X \rightarrow Y$ 
 \qed
 \end{proof}
 
+\begin{thm}
+The product of two compact spaces is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ and $Y$ be compact spaces.}}
+\step{2}{For every $x_0 \in X$ and $N$ an open set that includes $\{ x_0 \} \times Y$, there exists a neighbourhood $W$ of $x_0$ such that $W \times Y \subseteq N$.}
+\begin{proof}
+	\step{a}{\pflet{$x_0 \in X$}}
+	\step{b}{\pflet{$N$ be an open set that includes $\{x_0\} \times Y$.}}
+	\step{c}{For all $y \in Y$, there exist neighbourhoods $U$ of $x_0$ and $V$ of $y$ such that $U \times V \subseteq N$.}
+	\step{d}{$\{ V \text{ open in } Y : \exists U \text{ open in } X. x_0 \in U \wedge U \times V \subseteq N \}$ is an open cover of $Y$.}
+	\step{e}{\pick\ a finite subcover $\{ V_1, \ldots, V_n \}$}
+	\step{f}{For $i = 1, \ldots, n$, \pick\ a neighbourhood $U_i$ of $x_0$ such that $U_i \times V_i \subseteq N$.}
+	\step{g}{\pflet{$W = U_1 \cap \cdots \cap U_n$}}
+	\step{h}{$W$ is open.}
+	\step{i}{$x_0 \in W$}
+	\step{j}{$W \times Y \subseteq N$}
+\end{proof}
+\step{3}{\pflet{$\mathcal{A}$ be an open covering of $X \times Y$.}}
+\step{4}{For all $x \in X$, there exists a neighbourhood $W$ of $x$ such that $W \times Y$ can be covered by finitely many elements of $\mathcal{A}$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in X$}}
+	\step{b}{$\{ x \} \times Y$ is compact.}
+	\begin{proof}
+		\pf\ It is homeomorphic to $Y$.
+	\end{proof}
+	\step{c}{\pick\ a finite subcollection $\{ A_1, \ldots, A_n \}$ of $\mathcal{A}$ that covers $\{x\} \times Y$.}
+	\step{d}{There exists a neighbourhood $W$ of $x$ such that $W \times Y \subseteq A_1 \cup \cdots \cup A_n$.}
+	\begin{proof}
+		\pf\ \stepref{1}
+	\end{proof}
+\end{proof}
+\step{5}{\pick\ finitely many open sets $W_1$, \ldots, $W_n$ that cover $X$ such that each $W_i \times Y$ can be covered by finitely many elements of $\mathcal{A}$.}
+\step{6}{For $i = 1, \ldots, n$, \pick\ a finite subset $\mathcal{A}_i$ of $\mathcal{A}$ that covers $W_i \times Y$.}
+\step{7}{$\mathcal{A}_1 \cup \cdots \cup \mathcal{A}_n$ covers $X \times Y$.}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
