@@ -4100,6 +4100,22 @@ Every closed subspace of a compact space is compact.
 \qed
 \end{proof}
 
+\begin{lm}
+\label{lm:compact_subspace}
+Let $X$ be a compact space. Let $Y$ be a compact subspace. Let $x \in X - Y$. Then there exist disjoint open sets $U$ and $V$ such that $x \in U$ and $Y \subseteq V$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{For all $y \in Y$, there exist disjoint open sets $U'$ and $V'$ with $x \in U'$ and $y \in V'$.}
+\step{2}{$\{ V' \text{ open in } X : \exists U' \text{ open in } X. U' \cap V' = \emptyset \wedge x \in U' \}$ is an cover of $Y$ by sets open in $X$.}
+\step{3}{\pick\ a finite subcollection $\{ V_1, \ldots, V_n \}$ that covers $Y$.}
+\step{4}{For $i=1, \ldots, n$, \pick\ an open set $U_i$ with $U_i \cap V_i = \emptyset$ and $x \in U_i$.}
+\step{5}{\pflet{$U = U_1 \cap \cdots \cap U_n$ and $V = V_1 \cup \cdots \cup V_n$}}
+\step{6}{$U$ and $V$ are disjoint open sets with $x \in U$ and $Y \subseteq V$.}
+\qed
+\end{proof}
+
 \begin{thm}
 Every compact subspace of a Hausdorff space is closed.
 \end{thm}
@@ -4110,14 +4126,7 @@ Every compact subspace of a Hausdorff space is closed.
 \step{2}{\pflet{$Y$ be a compact subspace of $X$.}}
 \step{3}{For any $x \in X - Y$ there exists an open set $U$ such that $x \in U \subseteq X - Y$.}
 \begin{proof}
-	\step{a}{\pflet{$x \in X - Y$}}
-	\step{b}{For every $y \in Y$ there exist disjoint open sets $U$ and $V$ with $x \in U$ and $y \in V$}
-	\step{c}{$\{ V \text{ open in } X : \exists U \text{ open in } X. x \in U \wedge U \cap V = \emptyset \}$ is an open cover of $Y$.}
-	\step{d}{\pick\ a finite subcover $\{ V_1, \ldots, V_n \}$.}
-	\step{e}{For $i = 1, \ldots, n$, \pick\ an open set $U_i$ with $U_i \cap V_i = \emptyset$ and $x \in U_i$}
-	\step{f}{\pflet{$U = U_1 \cap \cdots \cap U_n$}}
-	\step{g}{$U$ is open.}
-	\step{h}{$x \in U \subseteq X - Y$}
+	\pf\ Lemma \ref{lm:compact_subspace}.
 \end{proof}
 \step{4}{$X - Y$ is open.}
 \begin{proof}
