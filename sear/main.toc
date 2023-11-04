@@ -37,6 +37,7 @@
 \contentsline {section}{\numberline {2.19}Finite and Infinite Sets}{29}{section.2.19}%
 \contentsline {section}{\numberline {2.20}Countable Sets}{30}{section.2.20}%
 \contentsline {section}{\numberline {2.21}Fixed Points}{32}{section.2.21}%
+\contentsline {section}{\numberline {2.22}Finite Intersection Property}{32}{section.2.22}%
 \contentsline {chapter}{\numberline {3}Relations}{33}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Order Theory}{35}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Strict Partial Orders}{35}{section.4.1}%
