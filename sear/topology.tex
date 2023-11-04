@@ -4081,6 +4081,7 @@ Let $X$ be a topological space and $Y$ a subspace of $X$. Then $Y$ is compact if
 \end{proof}
 
 \begin{thm}
+\label{thm:closed_compact}
 Every closed subspace of a compact space is compact.
 \end{thm}
 
@@ -4119,6 +4120,7 @@ Let $X$ be a compact space. Let $Y$ be a compact subspace. Let $x \in X - Y$. Th
 \end{proof}
 
 \begin{thm}
+\label{thm:compact_closed}
 Every compact subspace of a Hausdorff space is closed.
 \end{thm}
 
@@ -4145,6 +4147,7 @@ Let $X$ be any infinite set under the cofinite topology. Then $X$ is $T_1$. The 
 \end{ex}
 
 \begin{thm}
+\label{thm:compact_image}
 The continuous image of a compact space is compact.
 \end{thm}
 
@@ -4155,6 +4158,32 @@ The continuous image of a compact space is compact.
 \step{3}{$\{ \inv{f}(V) : V \in \mathcal{V} \}$ is an open cover of $U$.}
 \step{4}{\pick\ a finite subcover $\{ \inv{f}(V_1), \ldots, \inv{f}(V_n) \}$.}
 \step{5}{$\{ V_1, \ldots, V_n \}$ covers $Y$.}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a compact space and $Y$ a Hausdorff space. Let $f : X \rightarrow Y$ be a continuous bijection. Then $f$ is a homeomorphism.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For every closed set $C$ in $X$, we have $f(C)$ is closed.}
+\begin{proof}
+	\step{a}{\pflet{$C$ be a closed set in $X$.}}
+	\step{b}{$C$ is compact.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:closed_compact}.
+	\end{proof}
+	\step{c}{$f(C)$ is compact.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:compact_image}.
+	\end{proof}
+	\step{d}{$f(C)$ is closed.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:compact_closed}.
+	\end{proof}
+\end{proof}
+\step{2}{$\inv{f}$ is continuous.}
 \qed
 \end{proof}
 
