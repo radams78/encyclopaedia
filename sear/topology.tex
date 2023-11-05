@@ -4151,7 +4151,7 @@ Every closed subspace of a compact space is compact.
 
 \begin{lm}
 \label{lm:compact_subspace}
-Let $X$ be a compact space. Let $Y$ be a compact subspace. Let $x \in X - Y$. Then there exist disjoint open sets $U$ and $V$ such that $x \in U$ and $Y \subseteq V$.
+Let $X$ be a Hausdorff space. Let $Y$ be a compact subspace. Let $x \in X - Y$. Then there exist disjoint open sets $U$ and $V$ such that $x \in U$ and $Y \subseteq V$.
 \end{lm}
 
 \begin{proof}
@@ -4162,6 +4162,30 @@ Let $X$ be a compact space. Let $Y$ be a compact subspace. Let $x \in X - Y$. Th
 \step{4}{For $i=1, \ldots, n$, \pick\ an open set $U_i$ with $U_i \cap V_i = \emptyset$ and $x \in U_i$.}
 \step{5}{\pflet{$U = U_1 \cap \cdots \cap U_n$ and $V = V_1 \cup \cdots \cup V_n$}}
 \step{6}{$U$ and $V$ are disjoint open sets with $x \in U$ and $Y \subseteq V$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $X$ be a Hausdorff space. Let $A$ and $B$ be disjoint compact subspaces of $X$. Then there exist disjoint open sets $U$ and $V$ with $A \subseteq U$ and $B \subseteq V$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $x \in A$, there exist disjoint open sets $U'$ and $V'$ with $x \in U'$ and $B \subseteq V'$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:compact_subspace}.
+\end{proof}
+\step{2}{$\{ U' \text{ open in } X : \exists V' \text{ open in }X. U' \cap V' = \emptyset \wedge B \subseteq V' \}$ is a set of open sets that covers $A$.}
+\step{3}{\pick\ a finite subset $\{ U_1, \ldots, U_n \}$ that covers $A$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:subspace_compact}.
+\end{proof}
+\step{4}{For $i = 1, \ldots, n$, \pick\ $V_i$ open in $X$ such that $U_i \cap V_i = \emptyset$ and $B \subseteq V_i$.}
+\step{5}{\pflet{$U = U_1 \cup \cdots \cup U_n$}}
+\step{6}{\pflet{$V = V_1 \cap \cdots \cap V_n$}}
+\step{7}{$U$ and $V$ are disjoint and open.}
+\step{8}{$A \subseteq U$}
+\step{9}{$B \subseteq V$}
 \qed
 \end{proof}
 
