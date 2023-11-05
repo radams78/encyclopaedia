@@ -4231,31 +4231,32 @@ The continuous image of a compact space is compact.
 \qed
 \end{proof}
 
-\begin{thm}
-Let $X$ be a compact space and $Y$ a Hausdorff space. Let $f : X \rightarrow Y$ be a continuous bijection. Then $f$ is a homeomorphism.
-\end{thm}
+\begin{prop}
+Let $X$ be a compact space and $Y$ a Hausdorff space. Every continuous function from $X$ to $Y$ is a closed map.
+\end{prop}
 
 \begin{proof}
 \pf
-\step{1}{For every closed set $C$ in $X$, we have $f(C)$ is closed.}
+\step{1}{\pflet{$f : X \rightarrow Y$ be continuous.}}
+\step{2}{\pflet{$C$ be a closed set in $X$.}}
+\step{3}{$C$ is compact.}
 \begin{proof}
-	\step{a}{\pflet{$C$ be a closed set in $X$.}}
-	\step{b}{$C$ is compact.}
-	\begin{proof}
-		\pf\ Theorem \ref{thm:closed_compact}.
-	\end{proof}
-	\step{c}{$f(C)$ is compact.}
-	\begin{proof}
-		\pf\ Theorem \ref{thm:compact_image}.
-	\end{proof}
-	\step{d}{$f(C)$ is closed.}
-	\begin{proof}
-		\pf\ Theorem \ref{thm:compact_closed}.
-	\end{proof}
+	\pf\ Theorem \ref{thm:closed_compact}.
 \end{proof}
-\step{2}{$\inv{f}$ is continuous.}
+\step{4}{$f(C)$ is compact.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:compact_image}.
+\end{proof}
+\step{5}{$f(C)$ is closed in $Y$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:compact_closed}.
+\end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+Let $X$ be a compact space and $Y$ a Hausdorff space. Let $f : X \rightarrow Y$ be a continuous bijection. Then $f$ is a homeomorphism.
+\end{cor}
 
 \begin{cor}
 Let $\mathcal{T}$ and $\mathcal{T}'$ be two compact Hausdorff topologies on the same set $X$. Then either $\mathcal{T} = \mathcal{T}'$ or they are incompatible.
