@@ -85,6 +85,7 @@ Let $X$ be a topological space and $A \subseteq X$. Then $A$ is \emph{closed} if
 \end{df}
 
 \begin{prop}
+\label{prop:open_closed}
 A set $B$ is open if and only if $X - B$ is closed.
 \end{prop}
 
@@ -103,7 +104,50 @@ In this case, the topology is unique, and is $\{ X - C : C \in \mathcal{C} \}$.
 \end{thm}
 
 \begin{proof}
-\pf\ Straightforward.
+\pf
+\step{1}{In any topology on $X$ we have $\emptyset$ is closed.}
+\begin{proof}
+	\pf\ Since $X - \emptyset = X$ is open.
+\end{proof}
+\step{2}{In any topology on $X$, the intersection of a set $\mathcal{A}$ of closed sets is closed.}
+\begin{proof}
+	\pf\ Since $X - \bigcap \mathcal{A} = \bigcup_{A \in \mathcal{A}} (X - A)$ is open.
+\end{proof}
+\step{3}{In any topology on $X$, the union of two closed sets is closed.}
+\begin{proof}
+	\pf\ For any closed sets $C$ and $D$, we have $X - (C \cup D) = (X - C) \cap (X - D)$ is open.
+\end{proof}
+\step{4}{If $\mathcal{C}$ is a set satisfying 1--3, then $\{ X - C : C \in \mathcal{C} \}$ is a topology on $X$ with respect to which $\mathcal{C}$ is the set of closed sets.}
+\begin{proof}
+	\step{a}{\pflet{$\mathcal{C}$ be a set satisfying 1--3.}}
+	\step{b}{\pflet{$\mathcal{T} = \{ X - C : C \in \mathcal{C} \}$}}
+	\step{c}{For all $U \in \mathcal{T}$ we have $X - U \in \mathcal{C}$.}
+	\step{c}{$\mathcal{T}$ is a topology on $X$.}
+	\begin{proof}
+		\step{i}{For all $\mathcal{U} \subseteq \mathcal{T}$ we have $\bigcup \mathcal{U} \in \mathcal{T}$.}
+		\begin{proof}
+			\step{one}{\pflet{$\mathcal{U} \subseteq \mathcal{T}$}}
+			\step{two}{For all $U \in \mathcal{U}$ we have $X - U \in \mathcal{C}$.}
+			\step{two}{$X - \bigcup \mathcal{U} \in \mathcal{C}$}
+			\begin{proof}
+				\pf
+				\begin{align*}
+					X - \bigcup \mathcal{U} & = \bigcap_{U \in \mathcal{U}} (X - U) \\
+					& \in \mathcal{C}
+				\end{align*}
+			\end{proof}
+			\step{three}{$\bigcup \mathcal{U} \in \mathcal{T}$}
+		\end{proof}
+		\step{ii}{For all $U,V \in \mathcal{T}$ we have $U \cap V \in \mathcal{T}$.}
+		\step{iii}{$X \in \mathcal{T}$}
+	\end{proof}
+	\step{d}{For any set $C$ we have $C \in \mathcal{C}$ iff $C$ is closed with respect to $\mathcal{T}$.}
+\end{proof}
+\step{5}{If $\mathcal{T}$ is any topology on $X$ then $\mathcal{T} = \{ X - C : C \text{ is closed in } \mathcal{T} \}$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:open_closed}.
+\end{proof}
+\qed
 \end{proof}
 
 \subsection{Neighbourhoods}
