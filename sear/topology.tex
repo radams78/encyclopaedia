@@ -4339,6 +4339,23 @@ Let $X$ be a topological space. Let $Y$ and $Z$ be compact subspaces of $X$. The
 \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a topological space and $Y$ a compact space. Then the projection $\pi_1 : X \times Y \rightarrow X$ is a closed map.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C$ be closed in $X \times Y$.}}
+\step{2}{\pflet{$x \in X - \pi_1(C)$}}
+\step{3}{$\{x\} \times Y \subseteq (X \times Y) - C$}
+\step{4}{\pick\ a neighbourhood $U$ of $x$ such that $U \times Y \subseteq (X \times Y) - C$}
+\begin{proof}
+	\pf\ Tube Lemma.
+\end{proof}
+\step{5}{$x \in U \subseteq X - \pi_1(C)$}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
