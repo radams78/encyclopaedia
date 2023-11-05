@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  5 NOV 2023 13:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  5 NOV 2023 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,7 +868,7 @@ Chapter 13.
 WARNING: proof step "c" (<2>4) already defined
 WARNING: proof step "two" (<4>3) already defined
 [103] [104]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 253--253
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 255--255
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -878,29 +878,29 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
  []
 
 [105] [106] [107]
-Overfull \hbox (224.35663pt too wide) in paragraph at lines 478--479
+Overfull \hbox (224.35663pt too wide) in paragraph at lines 480--481
 \OML/cmm/m/it/10 I$\OT1/cmr/m/it/10 , let $\OMS/cmsy/m/n/10 B[]$ \OT1/cmr/m/it/
 10 be a ba-sis for the topol-ogy on $\OML/cmm/m/it/10 X[]$\OT1/cmr/m/it/10 . Th
 en $\OMS/cmsy/m/n/10 B \U/matha/m/n/10 ^^P []$
  []
 
 [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118]
-Overfull \hbox (3.73152pt too wide) in paragraph at lines 1183--1184
-[]\OT1/cmr/bx/n/10 Definition 13.15.13 \OT1/cmr/m/n/10 (Topo-log-i-cal Prop-ert
+Overfull \hbox (3.73152pt too wide) in paragraph at lines 1185--1186
+[]\OT1/cmr/bx/n/10 Definition 13.16.13 \OT1/cmr/m/n/10 (Topo-log-i-cal Prop-ert
 y)\OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 A prop-erty $\OML/cmm/m/it/10 P$ \OT1/cmr/
 m/n/10 of topo-log-i-cal spaces
  []
 
 
-Overfull \hbox (2.89607pt too wide) in paragraph at lines 1207--1208
-[]\OT1/cmr/bx/n/10 Proposition 13.15.18. \OT1/cmr/m/it/10 Let $\U/matha/m/n/10 
+Overfull \hbox (2.89607pt too wide) in paragraph at lines 1209--1210
+[]\OT1/cmr/bx/n/10 Proposition 13.16.18. \OT1/cmr/m/it/10 Let $\U/matha/m/n/10 
 p\OML/cmm/m/it/10 X; \OMS/cmsy/m/n/10 T\U/matha/m/n/10 q$ \OT1/cmr/m/it/10 be a
  topo-log-i-cal space. Let $\OML/cmm/m/it/10 S$ \OT1/cmr/m/it/10 be the Sierpi^
 ^Snski
  []
 
 [119] [120] [121]
-Overfull \hbox (6.78658pt too wide) detected at line 1386
+Overfull \hbox (6.78658pt too wide) detected at line 1388
 []
  []
 
@@ -908,7 +908,7 @@ Overfull \hbox (6.78658pt too wide) detected at line 1386
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 [124]
-Overfull \hbox (9.02847pt too wide) detected at line 1569
+Overfull \hbox (9.02847pt too wide) detected at line 1571
 []
  []
 
@@ -917,8 +917,8 @@ Underfull \vbox (badness 1968) has occurred while \output is active []
 
  [129]
 [130]
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 1912--1913
-[]\OT1/cmr/bx/n/10 Proposition 13.24.2. \OT1/cmr/m/it/10 The co-prod-uct topol-
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 1914--1915
+[]\OT1/cmr/bx/n/10 Proposition 13.25.2. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
 
@@ -933,51 +933,51 @@ WARNING: proof step "3" (<2>3) already defined
 [145] [146]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2931.
+(hyperref)                removing `math shift' on input line 2933.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2931.
+(hyperref)                removing `subscript' on input line 2933.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2931.
+(hyperref)                removing `math shift' on input line 2933.
 
 [147]
 WARNING: proof step "d" (<2>5) already defined
 [148] [149]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3121.
+(hyperref)                removing `math shift' on input line 3123.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3121.
+(hyperref)                removing `subscript' on input line 3123.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3121.
+(hyperref)                removing `math shift' on input line 3123.
 
 
-Overfull \hbox (24.67375pt too wide) detected at line 3161
+Overfull \hbox (24.67375pt too wide) detected at line 3163
 []
  []
 
 [150] [151] [152] [153] [154] [155] [156] [157]
-Overfull \hbox (4.625pt too wide) in paragraph at lines 3651--3652
-[]\OT1/cmr/bx/n/10 Example 13.41.2. \OT1/cmr/m/n/10 The topol-o-gist's sine cur
+Overfull \hbox (4.625pt too wide) in paragraph at lines 3653--3654
+[]\OT1/cmr/bx/n/10 Example 13.42.2. \OT1/cmr/m/n/10 The topol-o-gist's sine cur
 ve has two path com-po-nents, namely
  []
 
 [158]
-Overfull \hbox (33.53456pt too wide) in paragraph at lines 3700--3700
+Overfull \hbox (33.53456pt too wide) in paragraph at lines 3702--3702
 []\OT1/cmr/m/n/10 For all $[] \U/matha/m/n/10 P \U/msb/m/n/10 R[]$\OT1/cmr/m/n/
 10 , the com-po-nent that con-tains $[]$ is $\U/matha/m/n/10 t[] P \U/msb/m/n/1
 0 R[] \OT1/cmr/m/n/10 : [] \U/matha/m/n/10 ^^A [][]u$\OT1/cmr/m/n/10 . 
  []
 
 [159] [160] [161] [162]
-Overfull \hbox (0.11937pt too wide) in paragraph at lines 3971--3971
+Overfull \hbox (0.11937pt too wide) in paragraph at lines 3973--3973
 []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 x \U/matha/m/n/10 P p\OT1/cmr/m/
 n/10 0\OML/cmm/m/it/10 ; a\U/matha/m/n/10 q$\OT1/cmr/m/n/10 , \OT1/cmr/m/sc/10 
 Pick \OT1/cmr/m/n/10 a ra-tio-nal $\OML/cmm/m/it/10 q[] \U/matha/m/n/10 P r\OT1
@@ -994,24 +994,24 @@ Chapter 14.
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4454.
+(hyperref)                than one, level fixed on input line 4456.
 
 [172]
-Overfull \hbox (125.21025pt too wide) detected at line 4592
+Overfull \hbox (125.21025pt too wide) detected at line 4594
 []
  []
 
 [173] [174]
 WARNING: proof step "1" (<2>1) already defined
 
-Overfull \hbox (22.79451pt too wide) detected at line 4721
+Overfull \hbox (22.79451pt too wide) detected at line 4723
 []
  []
 
 [175] [176] [177]
 WARNING: proof step "6" (<1>7) already defined
 [178] [179] [180] [181]
-Overfull \hbox (4.95183pt too wide) detected at line 5124
+Overfull \hbox (4.95183pt too wide) detected at line 5126
 []
  []
 
@@ -1022,12 +1022,12 @@ WARNING: proof step "c" (<2>4) already defined
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [187]
-Overfull \hbox (108.65958pt too wide) detected at line 5499
+Overfull \hbox (108.65958pt too wide) detected at line 5501
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 5513--5513
+Overfull \hbox (47.883pt too wide) in paragraph at lines 5515--5515
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -1035,14 +1035,14 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 5529
+Overfull \hbox (0.90187pt too wide) detected at line 5531
 []
  []
 
 [188] [189] [190]
 Chapter 15.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 5696--5697
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 5698--5699
 []\OT1/cmr/bx/n/10 Definition 15.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1067,13 +1067,13 @@ Underfull \vbox (badness 2189) has occurred while \output is active []
 ]
 Chapter 18.
 [203] [204]
-Overfull \hbox (113.19771pt too wide) detected at line 6390
+Overfull \hbox (113.19771pt too wide) detected at line 6392
 []
  []
 
 WARNING: proof step "4" undefined
 [205] [206]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 6520--6520
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 6522--6522
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1083,48 +1083,309 @@ m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
  []
 
 [207] [208] [209] [210] [211] [212]) [213] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D07A57FC6D99BEA8785AB1D4522CF4D2;30120.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: D07A57FC6D99BEA8785AB1D4522CF4D2;30120
+(rerunfilecheck)             After:  8187E815EC8D8E5F4A039E4B2B4A962F;30214.
  ) 
 Here is how much of TeX's memory you used:
- 14092 strings out of 476091
- 196920 string characters out of 5794081
+ 14156 strings out of 476091
+ 197872 string characters out of 5794081
  1873330 words of memory out of 5000000
  32883 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
-athabx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/math
-abx-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-
-type1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type
-1/mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/m
-athx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
-m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (213 pages, 877154 bytes).
+
+pdfTeX warning (dest): name{cor.13.25.7.1} has been referenced but does not exi
+st, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.46.18} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.46.10} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.46.12} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.46.7} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.46.8} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.46.6} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.40.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.28.10} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.43.7} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.40.5} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.28.16} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.28.12} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.28.13} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.28.11} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.6.13} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.12.9} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.23.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.18.5} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.23.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.18.4} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.15.8} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.15.6} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.23.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.12.2} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{ax.13.12.3} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.8} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.7} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.6} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.5} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.4} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.38.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.30.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.30.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.10} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.9} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.8} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.7} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.6} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.5} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.4} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.28.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.26.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.26.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.25.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.23.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.23.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.23.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.20.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.18.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.15.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.15.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.15.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.12.4} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.12.3} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.12.2} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.12.1} has been referenced but does no
+t exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.6.2} has been referenced but does not
+ exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.13.6.1} has been referenced but does not
+ exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
+habx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathab
+x-type1/matha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-ty
+pe1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/
+mathb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mat
+hx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
+m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/xypic/xybtip10.pfb>
+Output written on main.pdf (213 pages, 878627 bytes).
 PDF statistics:
- 3655 PDF objects out of 4296 (max. 8388607)
- 3246 compressed objects within 33 object streams
- 1391 named destinations out of 1440 (max. 500000)
+ 3733 PDF objects out of 4296 (max. 8388607)
+ 3323 compressed objects within 34 object streams
+ 1455 named destinations out of 1728 (max. 500000)
  1793 words of extra memory for PDF output out of 10000 (max. 10000000)
 
