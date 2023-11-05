@@ -4264,22 +4264,38 @@ Let $X$ be a compact space and $Y$ a Hausdorff space. Let $f : X \rightarrow Y$ 
 Let $\mathcal{T}$ and $\mathcal{T}'$ be two compact Hausdorff topologies on the same set $X$. Then either $\mathcal{T} = \mathcal{T}'$ or they are incompatible.
 \end{cor}
 
-\begin{lm}[Tube Lemma]
-Let $X$ be a topological space and $Y$ a compact space. Let $x_0 \in X$. Let $N$ be an open set in $X \times Y$ that includes $\{x_0\} \times Y$. Then there exists a neighbourhood $W$ of $x_0$ such that $W \times Y \subseteq N$.
-\end{lm}
+\begin{thm}
+Let $X$ and $Y$ be topological spaces. Let $A$ be a compact subspace of $X$ and $B$ a compact subspace of $Y$. Let $N$ be an open set that includes $A \times B$. Then there exists open sets $U$ in $X$ and $V$ in $Y$ such that
+\[ A \times B \subseteq U \times V \subseteq N \enspace . \]
+\end{thm}
 
 \begin{proof}
 \pf
-\step{1}{For all $y \in Y$, there exist neighbourhoods $U$ of $x_0$ and $V$ of $y$ such that $U \times V \subseteq N$.}
-\step{2}{$\{ V \text{ open in } Y : \exists U \text{ open in } X. x_0 \in U \wedge U \times V \subseteq N \}$ is an open cover of $Y$.}
-\step{3}{\pick\ a finite subcover $\{V_1, \ldots, V_n\}$.}
-\step{4}{For $i = 1, \ldots, n$, \pick\ a neighbourhood $U_i$ of $x_0$ such that $U_i \times V_i \subseteq N$.}
-\step{5}{\pflet{$W = U_1 \cap \cdots \cap U_n$}}
-\step{6}{$W$ is open.}
-\step{7}{$x_0 \in W$}
-\step{8}{$W \times Y \subseteq N$}
+\step{1}{For all $x \in A$, there exist open sets $U$ in $X$ and $V$ in $Y$ such that $x \in U$, $B \subseteq V$, and $U \times V \subseteq N$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in A$}}
+	\step{b}{For all $y \in B$, there exist neighbourhoods $U$ of $x$ and $V$ of $y$ such that $U \times V \subseteq N$}
+	\step{c}{\pick\ open sets $V_1$, \ldots, $V_n$ that cover $B$ such that, for $i=1, \ldots, n$, there exists a neighbourhood $U_i$ of $x$ such that $U_i \times V_i \subseteq N$}
+	\step{d}{\pflet{$U = U_1 \cap \cdots \cap U_n$}}
+	\step{e}{\pflet{$V = V_1 \cup \cdots \cup V_n$}}
+	\step{f}{$U$ is open in $X$.}
+	\step{g}{$V$ is open in $Y$.}
+	\step{h}{$x \in U$}
+	\step{i}{$B \subseteq V$}
+	\step{j}{$U \times V \subseteq N$}
+\end{proof}
+\step{2}{\pick\ open sets $U_1$, \ldots, $U_n$ in $X$ that cover $A$ such that, for $i = 1, \ldots, n$, there exists $V_i$ open in $Y$ such that $B \subseteq V_i$ and $U_i \times V_i \subseteq N$.}
+\step{3}{\pflet{$U = U_1 \cup \cdots \cup U_n$}}
+\step{4}{\pflet{$V = V_1 \cap \cdots \cap V_n$}}
+\step{5}{$U$ is open in $X$.}
+\step{6}{$V$ is open in $Y$.}
+\step{7}{$A \times B \subseteq U \times V \subseteq N$}
 \qed
 \end{proof}
+
+\begin{cor}[Tube Lemma]
+Let $X$ be a topological space and $Y$ a compact space. Let $x_0 \in X$. Let $N$ be an open set in $X \times Y$ that includes $\{x_0\} \times Y$. Then there exists a neighbourhood $W$ of $x_0$ such that $W \times Y \subseteq N$.
+\end{cor}
 
 \begin{thm}
 The product of two compact spaces is compact.
