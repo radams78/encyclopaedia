@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  5 NOV 2023 08:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  5 NOV 2023 08:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,7 +868,7 @@ Chapter 13.
 WARNING: proof step "c" (<2>4) already defined
 WARNING: proof step "two" (<4>3) already defined
 [103] [104]
-Overfull \hbox (3.3423pt too wide) in paragraph at lines 249--249
+Overfull \hbox (3.3423pt too wide) in paragraph at lines 253--253
 []\OT1/cmr/m/n/10 If $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10 S\U
 /matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q X \OML/cmm/m/it/10 S\
 U/matha/m/n/10 p\OML/cmm/m/it/10 a[]; b[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 the
@@ -878,21 +878,21 @@ OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 n \U/matha/m/n/10 P \OML/cmm/m/it/10
  []
 
 [105] [106] [107]
-Overfull \hbox (224.35663pt too wide) in paragraph at lines 474--475
+Overfull \hbox (224.35663pt too wide) in paragraph at lines 478--479
 \OML/cmm/m/it/10 I$\OT1/cmr/m/it/10 , let $\OMS/cmsy/m/n/10 B[]$ \OT1/cmr/m/it/
 10 be a ba-sis for the topol-ogy on $\OML/cmm/m/it/10 X[]$\OT1/cmr/m/it/10 . Th
 en $\OMS/cmsy/m/n/10 B \U/matha/m/n/10 ^^P []$
  []
 
 [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118]
-Overfull \hbox (3.73152pt too wide) in paragraph at lines 1179--1180
+Overfull \hbox (3.73152pt too wide) in paragraph at lines 1183--1184
 []\OT1/cmr/bx/n/10 Definition 13.12.13 \OT1/cmr/m/n/10 (Topo-log-i-cal Prop-ert
 y)\OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 A prop-erty $\OML/cmm/m/it/10 P$ \OT1/cmr/
 m/n/10 of topo-log-i-cal spaces
  []
 
 
-Overfull \hbox (2.89607pt too wide) in paragraph at lines 1203--1204
+Overfull \hbox (2.89607pt too wide) in paragraph at lines 1207--1208
 []\OT1/cmr/bx/n/10 Proposition 13.12.18. \OT1/cmr/m/it/10 Let $\U/matha/m/n/10 
 p\OML/cmm/m/it/10 X; \OMS/cmsy/m/n/10 T\U/matha/m/n/10 q$ \OT1/cmr/m/it/10 be a
  topo-log-i-cal space. Let $\OML/cmm/m/it/10 S$ \OT1/cmr/m/it/10 be the Sierpi^
@@ -900,7 +900,7 @@ p\OML/cmm/m/it/10 X; \OMS/cmsy/m/n/10 T\U/matha/m/n/10 q$ \OT1/cmr/m/it/10 be a
  []
 
 [119] [120] [121]
-Overfull \hbox (6.78658pt too wide) detected at line 1382
+Overfull \hbox (6.78658pt too wide) detected at line 1386
 []
  []
 
@@ -908,7 +908,7 @@ Overfull \hbox (6.78658pt too wide) detected at line 1382
 WARNING: proof step "b" (<2>4) already defined
 WARNING: proof step "c" (<2>5) already defined
 [124]
-Overfull \hbox (9.02847pt too wide) detected at line 1565
+Overfull \hbox (9.02847pt too wide) detected at line 1569
 []
  []
 
@@ -917,7 +917,7 @@ Underfull \vbox (badness 1968) has occurred while \output is active []
 
  [129]
 [130]
-Overfull \hbox (1.80598pt too wide) in paragraph at lines 1908--1909
+Overfull \hbox (1.80598pt too wide) in paragraph at lines 1912--1913
 []\OT1/cmr/bx/n/10 Proposition 13.21.2. \OT1/cmr/m/it/10 The co-prod-uct topol-
 ogy is the finest topol-ogy on $[][] \OML/cmm/m/it/10 X[]$
  []
@@ -933,51 +933,51 @@ WARNING: proof step "3" (<2>3) already defined
 [145] [146]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2927.
+(hyperref)                removing `math shift' on input line 2931.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2927.
+(hyperref)                removing `subscript' on input line 2931.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2927.
+(hyperref)                removing `math shift' on input line 2931.
 
 [147]
 WARNING: proof step "d" (<2>5) already defined
 [148] [149]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3117.
+(hyperref)                removing `math shift' on input line 3121.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3117.
+(hyperref)                removing `subscript' on input line 3121.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3117.
+(hyperref)                removing `math shift' on input line 3121.
 
 
-Overfull \hbox (24.67375pt too wide) detected at line 3157
+Overfull \hbox (24.67375pt too wide) detected at line 3161
 []
  []
 
 [150] [151] [152] [153] [154] [155] [156] [157]
-Overfull \hbox (4.625pt too wide) in paragraph at lines 3647--3648
+Overfull \hbox (4.625pt too wide) in paragraph at lines 3651--3652
 []\OT1/cmr/bx/n/10 Example 13.38.2. \OT1/cmr/m/n/10 The topol-o-gist's sine cur
 ve has two path com-po-nents, namely
  []
 
 [158]
-Overfull \hbox (33.53456pt too wide) in paragraph at lines 3696--3696
+Overfull \hbox (33.53456pt too wide) in paragraph at lines 3700--3700
 []\OT1/cmr/m/n/10 For all $[] \U/matha/m/n/10 P \U/msb/m/n/10 R[]$\OT1/cmr/m/n/
 10 , the com-po-nent that con-tains $[]$ is $\U/matha/m/n/10 t[] P \U/msb/m/n/1
 0 R[] \OT1/cmr/m/n/10 : [] \U/matha/m/n/10 ^^A [][]u$\OT1/cmr/m/n/10 . 
  []
 
 [159] [160] [161] [162]
-Overfull \hbox (0.11937pt too wide) in paragraph at lines 3967--3967
+Overfull \hbox (0.11937pt too wide) in paragraph at lines 3971--3971
 []\OT1/cmr/m/n/10 For ev-ery $\OML/cmm/m/it/10 x \U/matha/m/n/10 P p\OT1/cmr/m/
 n/10 0\OML/cmm/m/it/10 ; a\U/matha/m/n/10 q$\OT1/cmr/m/n/10 , \OT1/cmr/m/sc/10 
 Pick \OT1/cmr/m/n/10 a ra-tio-nal $\OML/cmm/m/it/10 q[] \U/matha/m/n/10 P r\OT1
@@ -994,24 +994,24 @@ Chapter 14.
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 4375.
+(hyperref)                than one, level fixed on input line 4379.
 
 [170]
-Overfull \hbox (125.21025pt too wide) detected at line 4513
+Overfull \hbox (125.21025pt too wide) detected at line 4517
 []
  []
 
 [171] [172]
 WARNING: proof step "1" (<2>1) already defined
 
-Overfull \hbox (22.79451pt too wide) detected at line 4642
+Overfull \hbox (22.79451pt too wide) detected at line 4646
 []
  []
 
 [173] [174] [175]
 WARNING: proof step "6" (<1>7) already defined
 [176] [177] [178]
-Overfull \hbox (4.95183pt too wide) detected at line 5019
+Overfull \hbox (4.95183pt too wide) detected at line 5023
 []
  []
 
@@ -1024,12 +1024,12 @@ Underfull \vbox (badness 3769) has occurred while \output is active []
 [181]
 WARNING: proof step "c" (<2>4) already defined
 [182] [183] [184] [185]
-Overfull \hbox (108.65958pt too wide) detected at line 5394
+Overfull \hbox (108.65958pt too wide) detected at line 5398
 []
  []
 
 
-Overfull \hbox (47.883pt too wide) in paragraph at lines 5408--5408
+Overfull \hbox (47.883pt too wide) in paragraph at lines 5412--5412
 []$\OML/cmm/m/it/10 x[] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\O
 ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
 ] \U/matha/m/n/10 P \OML/cmm/m/it/10 B\U/matha/m/n/10 p\OML/cmm/m/it/10 y; []\U
@@ -1037,14 +1037,14 @@ ML/cmm/m/it/10 x; []\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 y[
  []
 
 
-Overfull \hbox (0.90187pt too wide) detected at line 5424
+Overfull \hbox (0.90187pt too wide) detected at line 5428
 []
  []
 
 [186] [187] [188]
 Chapter 15.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 5591--5592
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 5595--5596
 []\OT1/cmr/bx/n/10 Definition 15.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1069,13 +1069,13 @@ Underfull \vbox (badness 2189) has occurred while \output is active []
 ]
 Chapter 18.
 [201] [202]
-Overfull \hbox (113.19771pt too wide) detected at line 6285
+Overfull \hbox (113.19771pt too wide) detected at line 6289
 []
  []
 
 WARNING: proof step "4" undefined
 [203] [204]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 6415--6415
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 6419--6419
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1123,7 +1123,7 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (211 pages, 872423 bytes).
+Output written on main.pdf (211 pages, 872517 bytes).
 PDF statistics:
  3636 PDF objects out of 4296 (max. 8388607)
  3229 compressed objects within 33 object streams
