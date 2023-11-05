@@ -4772,6 +4772,22 @@ A metric space is compact if and only if it is sequentially compact.
 
 A metric space is separable if and only if it is second countable.
 
+\begin{prop}
+Every compact metric space is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a compact metric space.}}
+\step{2}{\assume{w.l.o.g. $X$ is nonempty.}}
+\step{3}{\pick\ $a \in X$}
+\step{4}{$\{ B(a,n) : n \in \mathbb{Z}_+ \}$ is an open cover of $X$.}
+\step{5}{\pick\ a finite subcover $\{ B(a,n_1), \ldots, B(a,n_k) \}$.}
+\step{6}{\pflet{$N = \max(n_1, \ldots, n_k)$}}
+\step{7}{$X = B(a,N)$}
+\qed
+\end{proof}
+
 \subsection{Subspaces}
 
 \begin{prop}
