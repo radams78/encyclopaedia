@@ -4340,6 +4340,7 @@ Let $X$ be a topological space. Let $Y$ and $Z$ be compact subspaces of $X$. The
 \end{proof}
 
 \begin{prop}
+\label{prop:projection_closed}
 Let $X$ be a topological space and $Y$ a compact space. Then the projection $\pi_1 : X \times Y \rightarrow X$ is a closed map.
 \end{prop}
 
@@ -4353,6 +4354,38 @@ Let $X$ be a topological space and $Y$ a compact space. Then the projection $\pi
 	\pf\ Tube Lemma.
 \end{proof}
 \step{5}{$x \in U \subseteq X - \pi_1(C)$}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a topological space and $Y$ a compact Hausdorff space. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if the graph of $f$,
+\[ G_f = \{ (x, f(x)) : x \in X \} \enspace , \]
+is closed in $X \times Y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then $G_f$ is closed in $X \times Y$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$(x,y) \in (X \times Y) - G_f$}}
+	\step{c}{\pick\ disjoint open neighbourhoods $U$ of $y$ and $V$ of $f(x)$.}
+	\step{d}{$(x,y) \in (\inv{f}(V) \times U) \subseteq (X \times Y) - G_f$}
+\end{proof}
+\step{2}{If $G_f$ is closed in $X \times Y$ then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{$G_f$ is closed in $X \times Y$.}}
+	\step{b}{\pflet{$x_0 \in X$}}
+	\step{c}{\pflet{$V$ be a neighbourhood of $f(x_0)$.}}
+	\step{d}{$G_f \cap (X \times (Y - V))$ is closed.}
+	\step{e}{$\pi_1(G_f \cap (X \times (Y - V)))$ is closed.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:projection_closed}.
+	\end{proof}
+	\step{f}{\pflet{$U = X - \pi_1(G_f \cap (X \times (Y - V)))$}}
+	\step{g}{$x_0 \in U$}
+	\step{h}{$f(U) \subseteq V$}
+\end{proof}
 \qed
 \end{proof}
 
