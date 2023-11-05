@@ -4298,6 +4298,18 @@ The following are equivalent:
 Let $X$ be a compact set. Let $(C_n)$ be a sequence of nonempty  closed sets such that $C_0 \supseteq C_1 \supseteq C_2 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty C_n \neq \emptyset$.
 \end{cor}
 
+\begin{prop}
+Let $X$ be a topological space. Let $Y$ and $Z$ be compact subspaces of $X$. The $Y \cup Z$ is compact.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{U}$ be a set of open sets that covers $Y \cup Z$.}}
+\step{2}{\pick\ finite subsets $\mathcal{U}_1$ that covers $Y$ and $\mathcal{U}_2$ that covers $Z$.}
+\step{3}{$\mathcal{U}_1 \cup \mathcal{U}_2$ is a finite subset of $\mathcal{U}$ that covers $Y \cup Z$.}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
