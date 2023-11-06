@@ -195,12 +195,12 @@
 \contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{185}{subsection.14.0.8}%
 \contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{188}{subsection.14.0.9}%
 \contentsline {subsection}{\numberline {14.0.10}Product Spaces}{188}{subsection.14.0.10}%
-\contentsline {section}{\numberline {14.1}Uniform Metric}{189}{section.14.1}%
-\contentsline {subsection}{\numberline {14.1.1}Products}{192}{subsection.14.1.1}%
+\contentsline {section}{\numberline {14.1}Uniform Metric}{190}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Products}{193}{subsection.14.1.1}%
 \contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{194}{subsection.14.1.2}%
-\contentsline {section}{\numberline {14.2}Isometric Embeddings}{194}{section.14.2}%
+\contentsline {section}{\numberline {14.2}Isometric Embeddings}{195}{section.14.2}%
 \contentsline {section}{\numberline {14.3}Complete Metric Spaces}{195}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Manifolds}{195}{section.14.4}%
+\contentsline {section}{\numberline {14.4}Manifolds}{196}{section.14.4}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{197}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{197}{section.15.1}%
 \contentsline {section}{\numberline {15.2}Homotopy Equivalence}{197}{section.15.2}%

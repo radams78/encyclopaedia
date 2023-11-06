@@ -5072,6 +5072,7 @@ A metric space is compact if and only if it is sequentially compact.
 A metric space is separable if and only if it is second countable.
 
 \begin{prop}
+\label{prop:compact_bounded}
 Every compact metric space is bounded.
 \end{prop}
 
@@ -5518,6 +5519,34 @@ The product of a countable family of metrizable spaces is metrizable.
 \begin{df}
 For $n \geq 1$, the \emph{unit ball} $B^n$ is the closed ball $\overline{B(0,1)}$ in $\mathbb{R}^n$ under the Euclidean metric.
 \end{df}
+
+\begin{thm}
+Let $n$ be a positive integer. Let $A$ be a subspace of $\mathbb{R}^n$. Then $A$ is compact if and only if it is closed and bounded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $A$ is compact then $A$ is closed.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:compact_closed}.
+\end{proof}
+\step{2}{If $A$ is compact then $A$ is bounded.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:compact_bounded}.
+\end{proof}
+\step{3}{If $A$ is closed and bounded then $A$ is compact.}
+\begin{proof}
+	\step{a}{\assume{$A$ is closed and bounded.}}
+	\step{b}{\pick\ $M$ such that $\forall \vec{x},\vec{y} \in A. \rho(\vec{x},\vec{y}) < M$.}
+	\step{c}{\assume{w.l.o.g. $A \neq \emptyset$}}
+	\step{d}{\pick\ $\vec{a} \in A$}
+	\step{e}{$A \subseteq \prod_{i=1}^n [a_i - M, a_i + M]$}
+	\step{f}{$A$ is compact.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:closed_compact}.
+	\end{proof}
+\end{proof}
+\end{proof}
 
 \section{Uniform Metric}
 
