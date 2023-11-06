@@ -187,7 +187,7 @@
 \contentsline {chapter}{\numberline {14}Metric Spaces}{175}{chapter.14}%
 \contentsline {subsection}{\numberline {14.0.1}Balls}{175}{subsection.14.0.1}%
 \contentsline {subsection}{\numberline {14.0.2}Subspaces}{181}{subsection.14.0.2}%
-\contentsline {subsection}{\numberline {14.0.3}Convergence}{182}{subsection.14.0.3}%
+\contentsline {subsection}{\numberline {14.0.3}Convergence}{181}{subsection.14.0.3}%
 \contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{182}{subsection.14.0.4}%
 \contentsline {subsection}{\numberline {14.0.5}First Countable Spaces}{184}{subsection.14.0.5}%
 \contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{184}{subsection.14.0.6}%
@@ -199,7 +199,7 @@
 \contentsline {subsection}{\numberline {14.1.1}Products}{192}{subsection.14.1.1}%
 \contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{194}{subsection.14.1.2}%
 \contentsline {section}{\numberline {14.2}Isometric Embeddings}{194}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{195}{section.14.3}%
+\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{194}{section.14.3}%
 \contentsline {section}{\numberline {14.4}Manifolds}{195}{section.14.4}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{197}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{197}{section.15.1}%

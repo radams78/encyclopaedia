@@ -4742,25 +4742,6 @@ The standard metric on $\mathbb{R}$ induces the standard topology.
 \end{proof}
 
 \begin{prop}
-The square metric on $\mathbb{R}^n$ induces the product topology.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{For any real numbers $a_1$, \ldots, $a_n$, $b_1$, \ldots, $b_n$ with $a_1 < b_1$, \ldots, $a_n < b_n$, we have $(a_1,b_1) \times \cdots \times (a_n,b_n)$ is open in the metric topology.}
-\begin{proof}
-	\step{a}{\pflet{$\vec{x} \in (a_1,b_1) \times \cdots \times (a_n,b_n)$}}
-	\step{b}{\pflet{$\epsilon = \min(x_1 - a_1, b_1 - x_1, \ldots, x_n - a_n, b_n - x_n)$}}
-	\step{c}{$B(\vec{x},\epsilon) \subseteq (a_1,b_1) \times \cdots \times (a_n,b_n)$}
-\end{proof}
-\step{2}{For any $\vec{a} \in \mathbb{R}^n$ and $\epsilon > 0$, we have $B(\vec{a}, \epsilon)$ is open in the product topology.}
-\begin{proof}
-	\pf\ Since $B(\vec{a}, \epsilon) = (a_1 - \epsilon, a_1 + \epsilon) \times \cdots \times (a_n - \epsilon, a_n + \epsilon)$.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
 \label{prop:addition_continuous}
 Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \end{prop}
