@@ -193,8 +193,16 @@ Let $X$ be a topological space and $B \subseteq X$. The \emph{closure} of $B$, $
 \end{df}
 
 \begin{prop}
-A set $B$ is open iff $X - B = \overline{X - B}$.
+A set $C$ is closed if and only if $C = \overline{C}$.
 \end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+A set $B$ is open iff $X - B = \overline{X - B}$.
+\end{cor}
 
 \begin{prop}[Kuratowski Closure Axioms]
 Let $X$ be a set and $\overline{\ } : \mathcal{P} X \rightarrow \mathcal{P} X$. Then there exists a topology $\mathcal{O}$ such that, for all $B \subseteq X$, $\overline{B}$ is the closure of $B$, if and only if:
@@ -4462,6 +4470,12 @@ Let $X$ be a compact Hausdorff space. Let $\mathcal{A}$ be a set of closed conne
 \end{proof}
 \qed
 \end{proof}
+
+\section{Perfect Maps}
+
+\begin{df}[Perfect Map]
+Let $X$ and $Y$ be topological spaces. A \emph{perfect map} from $X$ to $Y$ is a closed continuous surjective map $p : X \twoheadrightarrow Y$ such that, for all $y \in Y$, we have $\inv{p}(y)$ is compact.
+\end{df}
 
 \chapter{Metric Spaces}
 
