@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  6 NOV 2023 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  6 NOV 2023 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1049,7 +1049,7 @@ Underfull \vbox (badness 2600) has occurred while \output is active []
 ]
 Chapter 15.
 
-Overfull \hbox (2.65973pt too wide) in paragraph at lines 6067--6068
+Overfull \hbox (2.65973pt too wide) in paragraph at lines 6094--6095
 []\OT1/cmr/bx/n/10 Definition 15.2.1 \OT1/cmr/m/n/10 (Ho-mo-topy Equiv-a-lence)
 \OT1/cmr/bx/n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 X$ \OT1/cmr/m/n/10 and
  $\OML/cmm/m/it/10 Y$ \OT1/cmr/m/n/10 be topo-log-i-cal spaces.
@@ -1068,13 +1068,13 @@ Chapter 18.
 [211
 
 ] [212]
-Overfull \hbox (113.19771pt too wide) detected at line 6801
+Overfull \hbox (113.19771pt too wide) detected at line 6828
 []
  []
 
 WARNING: proof step "4" undefined
 [213] [214]
-Overfull \hbox (21.28508pt too wide) in paragraph at lines 6931--6931
+Overfull \hbox (21.28508pt too wide) in paragraph at lines 6958--6958
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a se-quence of real num-bers $\U/matha/
 m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
 ] \OML/cmm/m/it/10 ^^N[] \U/matha/m/n/10   p\OML/cmm/m/it/10 ^^O \U/matha/m/n/1
@@ -1084,20 +1084,14 @@ m/n/10 p\OML/cmm/m/it/10 ^^N[]\U/matha/m/n/10 q$ \OT1/cmr/m/n/10 such that $[][
  []
 
 [215] [216] [217] [218] [219] [220]) [221] (./main.aux)
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 61ED7D5D22E3D34C27282A271E3D2497;30560
-(rerunfilecheck)             After:  8000B5BB1161FFD4244655992128865D;30711.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 8000B5BB1161FFD4244655992128865D;30711.
  ) 
 Here is how much of TeX's memory you used:
- 14139 strings out of 476091
- 197575 string characters out of 5794081
+ 14141 strings out of 476091
+ 197598 string characters out of 5794081
  1873330 words of memory out of 5000000
- 32897 multiletter control sequences out of 15000+600000
+ 32898 multiletter control sequences out of 15000+600000
  534657 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1128,10 +1122,10 @@ bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/xypic/xybtip10.pfb>
-Output written on main.pdf (221 pages, 898207 bytes).
+Output written on main.pdf (221 pages, 899307 bytes).
 PDF statistics:
- 3748 PDF objects out of 4296 (max. 8388607)
- 3330 compressed objects within 34 object streams
- 1424 named destinations out of 1440 (max. 500000)
- 1825 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3753 PDF objects out of 4296 (max. 8388607)
+ 3335 compressed objects within 34 object streams
+ 1425 named destinations out of 1440 (max. 500000)
+ 1833 words of extra memory for PDF output out of 10000 (max. 10000000)
 

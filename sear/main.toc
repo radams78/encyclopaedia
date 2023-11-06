@@ -202,7 +202,7 @@
 \contentsline {section}{\numberline {14.3}Isometric Embeddings}{195}{section.14.3}%
 \contentsline {section}{\numberline {14.4}Lebesgue Numbers}{195}{section.14.4}%
 \contentsline {section}{\numberline {14.5}Uniform Continuity}{196}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Complete Metric Spaces}{196}{section.14.6}%
+\contentsline {section}{\numberline {14.6}Complete Metric Spaces}{197}{section.14.6}%
 \contentsline {section}{\numberline {14.7}Manifolds}{197}{section.14.7}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{199}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{199}{section.15.1}%

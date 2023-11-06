@@ -5978,6 +5978,33 @@ In a compact metric space, every open cover has a Lebesgue number.
 \begin{df}[Uniformly Continuous]
 Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is \emph{uniformly continuous} iff, for all $\epsilon > 0$, there exists $\delta > 0$ such that, for all $x,y \in X$, if $d(x,y) < \delta$ then $d(f(x),f(y)) < \epsilon$.
 \end{df}
+
+\begin{thm}[Uniform Continuity Theorem]
+Every continuous function from a compact metric space to a metric space is uniformly continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a compact metric space.}}
+\step{2}{\pflet{$Y$ be a metric space.}}
+\step{3}{\pflet{$f : X \rightarrow Y$ be continuous.}}
+\step{4}{\pflet{$\epsilon > 0$}}
+\step{5}{\pick\ a Lebesgue number $\delta$ for $\{ \inv{f}(B(y, \epsilon / 2)) : y \in Y \}$.}
+\step{6}{\pflet{$x,x' \in X$}}
+\step{7}{\assume{$d(x,x') < \delta$}}
+\step{8}{\pick\ $y \in Y$ such that $\{x,x'\} \subseteq \inv{f}(B(y, \epsilon / 2))$}
+\step{9}{$d(f(x),f(x')) < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		d(f(x),f(x')) & \leq d(f(x),y) + d(y,f(x')) & (\text{Triangle Inequality}) \\
+		& < \epsilon / 2 + \epsilon / 2 & (\text{\stepref{8}}) \\
+		& = \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Complete Metric Spaces}
 
 \begin{df}[Complete]
