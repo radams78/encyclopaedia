@@ -4529,6 +4529,39 @@ Let $X$ be a linearly ordered set with the least upper bound property under the 
 Every closed interval in $\mathbb{R}$ is compact.
 \end{cor}
 
+\begin{prop}
+A linearly ordered set that is compact under the order topology has a greatest and a least element.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a linearly ordered set that is compact under the order topology.}}
+\step{2}{$X$ has a greatest element.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $X$ has no greatest element.}}
+	\step{b}{The open rays $(-\infty, a)$ form an open cover of $X$.}
+	\step{c}{\pick\ a finite subcover $\{(-\infty, a_1), \ldots, (-\infty, a_n)\}$ where $a_1 \leq \cdots \leq a_n$}
+	\step{d}{$a_n < a_n$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{3}{$X$ has a least element.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Extreme Value Theorem]
+Let $X$ be a compact space and $Y$ a linearly ordered set in the order topology. Let $f : X \rightarrow Y$ be continuous. Then there exist $c,d \in X$ such that, for all $x \in X$, we have $f(c) \leq f(x) \leq f(d)$.
+\end{cor}
+
+\begin{proof}
+\pf\ Since $f(X)$ is compact, and so has a greatest and least element. \qed
+\end{proof}
+
 \section{Perfect Maps}
 
 \begin{df}[Perfect Map]
