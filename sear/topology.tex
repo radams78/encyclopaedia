@@ -4743,29 +4743,6 @@ The standard metric on $\mathbb{R}$ induces the standard topology.
 \end{proof}
 
 \begin{prop}
-\label{prop:addition_continuous}
-Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$(x,y) \in \mathbb{R}^2$ and $\epsilon > 0$}}
-\step{2}{\pflet{$\delta = \epsilon / 2$}}
-\step{3}{\pflet{$(x',y') \in (x-\delta, x + \delta) \times (y - \delta, y + \delta)$}}
-\step{4}{$|x-x'|,|y-y'| < \delta$}
-\step{5}{$|(x+y)-(x'+y')| < \epsilon$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		|(x+y)-(x'+y')| & \leq |x-x'| + |y-y'| \\
-		& < \delta + \delta & (\text{\stepref{4}}) \\
-		& = \epsilon & (\text{\stepref{2}})
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
 \label{prop:multiply_continuous}
 Multiplication is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
 \end{prop}
@@ -5269,6 +5246,29 @@ Let $X$ be a metric space. Let $A \subseteq X$ be nonempty. The function $d(-,A)
 	\pf\ Similar.
 \end{proof}
 \step{6}{$|d(x,A) - d(y,A)| < \epsilon$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:addition_continuous}
+Addition is a continuous function $\mathbb{R}^2 \rightarrow \mathbb{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(x,y) \in \mathbb{R}^2$ and $\epsilon > 0$}}
+\step{2}{\pflet{$\delta = \epsilon / 2$}}
+\step{3}{\pflet{$(x',y') \in (x-\delta, x + \delta) \times (y - \delta, y + \delta)$}}
+\step{4}{$|x-x'|,|y-y'| < \delta$}
+\step{5}{$|(x+y)-(x'+y')| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|(x+y)-(x'+y')| & \leq |x-x'| + |y-y'| \\
+		& < \delta + \delta & (\text{\stepref{4}}) \\
+		& = \epsilon & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
 \qed
 \end{proof}
 
