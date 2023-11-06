@@ -5201,6 +5201,37 @@ Assume that $\forall n \in \mathbb{N}. \forall x \in X. |f_n(x)| \leq M_n$. Assu
 \qed
 \end{proof}
 
+\begin{thm}
+Let $X$ 	be a compact space. Let $f_n : X \rightarrow \mathbb{R}$ be a monotone increasing sequence of continuous functions, and $f : X \rightarrow \mathbb{R}$ be continuous. If $f_n$ converges to $f$ pointwise, then $f_n$ converges to $f$ uniformly.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{For all $x \in X$, there exists a neighbourhood $U$ of $x$ and an integer $N$ such that, for all $y \in U$, we have $|f_N(y) - f(y)| < \epsilon$}
+\begin{proof}
+	\step{a}{\pflet{$x \in X$}}
+	\step{b}{\pick\ $N$ such that $\forall n \geq N. |f_n(x) - f(x)| < \epsilon / 3$.}
+	\step{c}{\pick\ neighbourhoods $U_1$, $U_2$ of $x$ such that $\forall y \in U_1. |f_N(y) - f_N(x)| < \epsilon / 3$ and $\forall y \in U_. |f(y) - f(x)| < \epsilon / 3$.}
+	\step{d}{\pflet{$U = U_1 \cap U_2$}}
+	\step{e}{\pflet{$y \in U$}}
+	\step{f}{$|f_N(y) - f(y)| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			|f_N(y) - f(y)| & \leq |f_N(y) - f_N(x)| + |f_N(x) - f(x)| + |f(x) - f(y)| & (\text{Triangle Inequality}) \\
+			& < \epsilon / 3 + \epsilon / 3 + \epsilon / 3 & (\text{\stepref{b}, \stepref{c}}) \\
+			& = \epsilon
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{\pick\ open sets $U_1$, \ldots, $U_k$ that cover $X$ such that, for all $i$, there exists $N_i$ such that $\forall y \in U_i. |f_{N_i}(y) - f(y)| < \epsilon$}
+\step{4}{\pflet{$N = \max(N_1, \ldots, N_k)$}}
+\step{5}{For all $x \in X$ we have $|f_N(x) - f(x)| < \epsilon$}
+\step{5}{For all $n \geq N$ and $x \in X$ we have $|f_n(x) - f(x)| < \epsilon$}
+\qed
+\end{proof}
+
 \subsection{Standard Bounded Metric}
 
 \begin{df}[Standard Bounded Metric]
