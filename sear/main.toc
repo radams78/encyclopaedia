@@ -96,12 +96,12 @@
 \contentsline {section}{\numberline {13.3}Neighbourhoods}{103}{section.13.3}%
 \contentsline {section}{\numberline {13.4}Interior}{104}{section.13.4}%
 \contentsline {section}{\numberline {13.5}Closure}{104}{section.13.5}%
-\contentsline {section}{\numberline {13.6}Bases}{104}{section.13.6}%
+\contentsline {section}{\numberline {13.6}Bases}{105}{section.13.6}%
 \contentsline {section}{\numberline {13.7}Order Topology}{106}{section.13.7}%
 \contentsline {subsection}{\numberline {13.7.1}Subspaces}{108}{subsection.13.7.1}%
-\contentsline {subsection}{\numberline {13.7.2}Product Topology}{108}{subsection.13.7.2}%
+\contentsline {subsection}{\numberline {13.7.2}Product Topology}{109}{subsection.13.7.2}%
 \contentsline {section}{\numberline {13.8}Subbases}{109}{section.13.8}%
-\contentsline {section}{\numberline {13.9}Neighbourhood Bases}{109}{section.13.9}%
+\contentsline {section}{\numberline {13.9}Neighbourhood Bases}{110}{section.13.9}%
 \contentsline {section}{\numberline {13.10}First Countable Spaces}{110}{section.13.10}%
 \contentsline {section}{\numberline {13.11}Second Countable Spaces}{110}{section.13.11}%
 \contentsline {section}{\numberline {13.12}Interior}{111}{section.13.12}%
@@ -110,7 +110,7 @@
 \contentsline {subsection}{\numberline {13.13.2}Subspaces}{112}{subsection.13.13.2}%
 \contentsline {subsection}{\numberline {13.13.3}Product Topology}{113}{subsection.13.13.3}%
 \contentsline {subsection}{\numberline {13.13.4}Interior}{113}{subsection.13.13.4}%
-\contentsline {section}{\numberline {13.14}Boundary}{113}{section.13.14}%
+\contentsline {section}{\numberline {13.14}Boundary}{114}{section.13.14}%
 \contentsline {section}{\numberline {13.15}Limit Points}{115}{section.13.15}%
 \contentsline {section}{\numberline {13.16}Continuous Functions}{116}{section.13.16}%
 \contentsline {subsection}{\numberline {13.16.1}Order Topology}{120}{subsection.13.16.1}%
