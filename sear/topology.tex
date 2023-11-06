@@ -1485,6 +1485,14 @@ Let $X$ be a topological space, $Y$ a subspace of $X$ and $U \subseteq Y$. If $Y
 \end{proof}
 
 \begin{prop}
+\label{prop:closed_in_closed}
+Let $X$ be a topological space. Let $Y$ be a subspace of $X$. Let $C \subseteq Y$. If $Y$ is closed in $X$ and $C$ is closed in $Y$ then $C$ is closed in $X$.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+\begin{prop}
 Let $Y$ be a subspace of $X$ and $A \subseteq Y$. Then the subspace topology on $A$ as a subspace of $Y$ is the same as the subspace topology on $A$ as a subspace of $X$.
 \end{prop}
 
@@ -4164,6 +4172,7 @@ Let $X$ be a Hausdorff space. Let $Y$ be a compact subspace. Let $x \in X - Y$. 
 \end{proof}
 
 \begin{prop}
+\label{prop:separate_compact}
 Let $X$ be a Hausdorff space. Let $A$ and $B$ be disjoint compact subspaces of $X$. Then there exist disjoint open sets $U$ and $V$ with $A \subseteq U$ and $B \subseteq V$.
 \end{prop}
 
@@ -4321,6 +4330,7 @@ The product of two compact spaces is compact.
 \end{proof}
 
 \begin{thm}
+\label{thm:finite_intersection_property_intersection}
 Let $X$ be a topological space. Then $X$ is compact if and only if, for every set $\mathcal{C}$ of compact sets, if $\mathcal{C}$ has the finite intersection property then $\bigcup \mathcal{C} \neq \emptyset$.
 \end{thm}
 
@@ -4338,6 +4348,7 @@ The following are equivalent:
 \end{proof}
 
 \begin{cor}
+\label{cor:nested_sequence_of_closed_sets}
 Let $X$ be a compact set. Let $(C_n)$ be a sequence of nonempty  closed sets such that $C_0 \supseteq C_1 \supseteq C_2 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty C_n \neq \emptyset$.
 \end{cor}
 
@@ -4399,6 +4410,55 @@ is closed in $X \times Y$.
 	\step{f}{\pflet{$U = X - \pi_1(G_f \cap (X \times (Y - V)))$}}
 	\step{g}{$x_0 \in U$}
 	\step{h}{$f(U) \subseteq V$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a compact Hausdorff space. Let $\mathcal{A}$ be a set of closed connected subspaces of $X$ that is linearly ordered under inclusion. Then $\bigcap \mathcal{A}$ is connected.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $(C,D)$ is a separation of $\bigcap \mathcal{A}$.}}
+\step{2}{\pick\ disjoint open sets $U$ and $V$ such that $C \subseteq U$ and $D \subseteq V$.}
+\begin{proof}
+	\step{a}{$C$ and $D$ are closed in $X$.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:closed_in_closed}.
+	\end{proof}
+	\step{b}{$C$ and $D$ are compact.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:closed_compact}.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Proposition \ref{prop:separate_compact}.
+	\end{proof}
+\end{proof}
+\step{3}{$\bigcap_{A \in \mathcal{A}}(A - (U \cup V))$ is nonempty.}
+\begin{proof}
+	\step{a}{$\{ A - (U \cap V) : A \in \mathcal{A} \}$ has the finite intersection property.}
+	\begin{proof}
+		\step{i}{\pflet{$A_1, \ldots, A_n \in \mathcal{A}$}}
+		\step{ii}{\assume{w.l.o.g. $A_1 \supseteq \cdots \supseteq A_n$}}
+		\begin{proof}
+			\pf\ $\mathcal{A}$ is linearly ordered by inclusion.
+		\end{proof}
+		\step{iii}{$\bigcap_{i=1}^n (A_i - (U \cup V)) = A_n - (U \cup V)$}
+		\step{iv}{$A_n - (U \cup V) \neq \emptyset$}
+		\begin{proof}
+			\pf\ Otherwise $(A_n \cap U, A_n \cap V)$ would be a separation of $A_n$.
+		\end{proof}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Theorem \ref{thm:finite_intersection_property_intersection}.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
 \end{proof}
 \qed
 \end{proof}
@@ -5231,6 +5291,20 @@ Let $X$ 	be a compact space. Let $f_n : X \rightarrow \mathbb{R}$ be a monotone 
 \step{5}{For all $n \geq N$ and $x \in X$ we have $|f_n(x) - f(x)| < \epsilon$}
 \qed
 \end{proof}
+
+\begin{ex}
+We cannot remove the requirement that $(f_n)$ is monotone increasing.
+
+For all $n \in \mathbb{Z}_+$, define $f_n : [0,1] \rightarrow \mathbb{R}$ by
+\[ f_n(x) = \frac{1}{n^3[x-(1/n)]^2 + 1} \enspace . \]
+Then $f_n(x) \rightarrow 0$ as $n \rightarrow \infty$ for all $x$, but the convergence is not uniform.
+\end{ex}
+
+\begin{ex}
+We cannot remove the requirement that $X$ is compact.
+
+For all $n \in \mathbb{Z}_+$, define $f_n : [0,1) \rightarrow \mathbb{R}$ by $f_n(x) = -x^n$. Then $(f_n)$ is monotone increasing and $f_n(x) \rightarrow 0$ as $n \rightarrow \infty$ for all $x$, but the convergence is not uniform.
+\end{ex}
 
 \subsection{Standard Bounded Metric}
 
