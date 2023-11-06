@@ -6073,8 +6073,12 @@ $GL(n, \mathbb{R})$ is a topological group considered as a subspace of $\mathbb{
 \end{proof}
 
 \begin{ex}
-$GL(n,\mathbb{R})$ and $GL(n,\mathbb{C})$ are topological groups.
+$GL(n,\mathbb{C})$ is a topological group.
 \end{ex}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
 
 \begin{prop}
 Let $G$ be a group with a topology. Then $G$ is a topological group if and only if the functions $m : G^2 \rightarrow G$ that sends $(x,y)$ to $xy$ and the function $i : G \rightarrow G$ that sends $x$ to $\inv{x}$ are continuous.
@@ -6098,6 +6102,7 @@ Let $G$ be a group with a topology. Then $G$ is a topological group if and only 
 \end{proof}
 
 \begin{prop}
+\label{prop:left_mult_homeomorphism}
 Let $G$ be a topological group. Let $\alpha \in G$. The function that maps $x$ to $\alpha x$ is a homeomorphism between $G$ and itself.
 \end{prop}
 
@@ -6119,6 +6124,7 @@ Every topological group is homogeneous.
 \end{cor}
 
 \begin{prop}
+\label{prop:right_mult_homeomorphism}
 Let $G$ be a topological group. Let $\alpha \in G$. The function that maps $x$ to $x \alpha$ is a homeomorphism between $G$ and itself.
 \end{prop}
 
@@ -6362,6 +6368,7 @@ Let $G$ be a topological group. Let $U$ be a neighbourhood of $e$. Then there ex
 \end{proof}
 
 \begin{prop}
+\label{prop:T1_group_regular}
 Every $T_1$ topological group is regular.
 \end{prop}
 
@@ -6399,6 +6406,39 @@ Let $G$ be a $T_1$ topological group. Let $H$ be a closed subgroup of $G$. Then 
 \end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Let $G$ be a topological group. Let $A$ and $B$ be subspaces of $G$. If $A$ is closed and $B$ is compact, then $AB$ is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $c \in G - AB$, there exists a neighbourhood $W$ of $c$ such that $W \inv{B} \cap A = \emptyset$.}
+\begin{proof}
+	\step{a}{\pflet{$c \in G - AB$}}
+	\step{b}{\pflet{$\phi : G^2 \rightarrow G$ be the function $\phi(x,y) = x \inv{y}$}}
+	\step{c}{$\{c\} \times B \subseteq \inv{\phi}(G - A)$}
+	\step{d}{\pick\ a neighbourhood $W$ of $c$ such that $W \times B \subseteq \inv{\phi}(G - A)$}
+	\begin{proof}
+		\pf\ Tube Lemma.
+	\end{proof}
+	\step{e}{$W \inv{B} \cap A = \emptyset$}
+\end{proof}
+\step{2}{For all $c \in G - AB$, there exists a neighbourhood $W$ of $c$ such that $W \subseteq G - AB$.}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a topological group. Let $H$ be a compact subgroup of $G$. Let $p : G \twoheadrightarrow G / H$ be  the quotient map. Then $p$ is a perfect map.
+\end{cor}
+
+\begin{proof}
+\pf\ The only thing remaining to prove is that, for all $gH \in G/H$, we have $\inv{p}(gH)$ is compact. This holds because $\inv{p}(gH) = gH$ is homeomorphic to $H$. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a topological group. Let $H$ be a compact subgroup of $G$. If $G/H$ is compact then $G$ is compact.
+\end{cor}
 
 \section{Continuous Actions}
 
