@@ -185,22 +185,22 @@
 \contentsline {section}{\numberline {13.47}Compact Spaces}{165}{section.13.47}%
 \contentsline {section}{\numberline {13.48}Perfect Maps}{172}{section.13.48}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{175}{chapter.14}%
-\contentsline {subsection}{\numberline {14.0.1}Balls}{176}{subsection.14.0.1}%
-\contentsline {subsection}{\numberline {14.0.2}Subspaces}{182}{subsection.14.0.2}%
+\contentsline {subsection}{\numberline {14.0.1}Balls}{175}{subsection.14.0.1}%
+\contentsline {subsection}{\numberline {14.0.2}Subspaces}{181}{subsection.14.0.2}%
 \contentsline {subsection}{\numberline {14.0.3}Convergence}{182}{subsection.14.0.3}%
-\contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{183}{subsection.14.0.4}%
+\contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{182}{subsection.14.0.4}%
 \contentsline {subsection}{\numberline {14.0.5}First Countable Spaces}{184}{subsection.14.0.5}%
-\contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{185}{subsection.14.0.6}%
-\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{185}{subsection.14.0.7}%
-\contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{185}{subsection.14.0.8}%
-\contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{188}{subsection.14.0.9}%
+\contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{184}{subsection.14.0.6}%
+\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{184}{subsection.14.0.7}%
+\contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{184}{subsection.14.0.8}%
+\contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{187}{subsection.14.0.9}%
 \contentsline {subsection}{\numberline {14.0.10}Product Spaces}{188}{subsection.14.0.10}%
-\contentsline {section}{\numberline {14.1}Uniform Metric}{190}{section.14.1}%
-\contentsline {subsection}{\numberline {14.1.1}Products}{193}{subsection.14.1.1}%
+\contentsline {section}{\numberline {14.1}Uniform Metric}{189}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Products}{192}{subsection.14.1.1}%
 \contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{194}{subsection.14.1.2}%
-\contentsline {section}{\numberline {14.2}Isometric Embeddings}{195}{section.14.2}%
+\contentsline {section}{\numberline {14.2}Isometric Embeddings}{194}{section.14.2}%
 \contentsline {section}{\numberline {14.3}Complete Metric Spaces}{195}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Manifolds}{196}{section.14.4}%
+\contentsline {section}{\numberline {14.4}Manifolds}{195}{section.14.4}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{197}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{197}{section.15.1}%
 \contentsline {section}{\numberline {15.2}Homotopy Equivalence}{197}{section.15.2}%

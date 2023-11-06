@@ -4629,46 +4629,6 @@ On any set $X$, define the \emph{discrete} metric by $d(x,y) = 0$ if $x = y$, 1 
 The \emph{standard metric} on $\mathbb{R}$ is defined by $d(x,y) = |x-y|$.
 \end{df}
 
-\begin{df}[Square Metric]
-The \emph{square metric} $\rho$ on $\mathbb{R}^n$ is defined by
-\[ \rho(\vec{x}, \vec{y}) = \max(|x_1 - y_1|, \ldots, |x_n - y_n|) \enspace . \]
-
-We prove this is a metric.
-\end{df}
-
-\begin{proof}
-\pf
-\step{1}{For all $\vec{x}, \vec{y} \in \mathbb{R}^n$ we have $\rho(\vec{x}, \vec{y}) \geq 0$.}
-\begin{proof}
-	\pf\ Immediate from definition.
-\end{proof}
-\step{2}{For all $\vec{x}, \vec{y} \in \mathbb{R}^n$ we have $\rho(\vec{x}, \vec{y}) = 0$ iff $\vec{x} = \vec{y}$.}
-\begin{proof}
-	\pf
-	\begin{align*}
-		\rho(\vec{x}, \vec{y}) = 0 & \Leftrightarrow \max(|x_1 - y_1|, \ldots, |x_n - y_n|) = 0 \\
-		& \Leftrightarrow |x_1 - y_1| = \cdots = |x_n - y_n| = 0 \\
-		& \Leftrightarrow x_1 = y_1 \wedge \cdots \wedge x_n = y_n \\
-		& \Leftrightarrow \vec{x} = \vec{y}
-	\end{align*}
-\end{proof}
-\step{3}{For all $\vec{x}, \vec{y} \in \mathbb{R}^n$ we have $\rho(\vec{x}, \vec{y}) = \rho(\vec{y}, \vec{x})$.}
-\begin{proof}
-	\pf\ Immediate from definition.
-\end{proof}
-\step{4}{For all $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^n$ we have $\rho(\vec{x}, \vec{z}) \leq \rho(\vec{x}, \vec{y}) + \rho(\vec{y}, \vec{z})$.}
-\begin{proof}
-	\pf
-	\begin{align*}
-		& max(|x_1 - z_1|, \ldots, |x_n - z_n|) \\
-		\leq & \max(|x_1 - y_1| + |y_1 - z_1|, \ldots, |x_n - y_n| + |y_n - z_n|) \\
-		\leq & \max(|x_1 - y_1|, \ldots, |x_n - y_n|) + \max(|y_1 - z_1|, \ldots, |y_n - z_n|) \\
-		= & \rho(\vec{x}, \vec{y}) + \rho(\vec{y}, \vec{z})
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
 \subsection{Balls}
 
 \begin{df}[Ball]
@@ -5555,6 +5515,8 @@ Let $J$ be a nonempty set.
 The \emph{uniform metric} $\overline{\rho}$ on $\mathbb{R}^J$ is defined by
 \[ \overline{\rho}(x,y) = \sup_{j \in J} \overline{d}(x_j,y_j) \]
 where $\overline{d}$ is the standard bounded metric associated with the standard metric on $\mathbb{R}$.
+
+On $\mathbb{R}^n$ we call the uniform metric the \emph{square metric} and denote it by $\rho$.
 
 The topology it induces is called the \emph{uniform topology}.
 
