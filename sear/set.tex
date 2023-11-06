@@ -40,11 +40,6 @@ Let $A$ and $B$ be sets. Assume that, for all $a \in A$, there exists $b \in B$ 
 Let $f, g : A \rightarrow B$. If, for all $x \in A$, we have $f(x) = g(x)$, then $f = g$.
 \end{ax}
 
-\begin{df}[Composition]
-Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
-\[ (g \circ f)(a) = g(f(a)) \enspace . \]
-\end{df}
-
 \begin{ax}[Pairing]
 For any sets $A$ and $B$, there exists a set $A \times B$, the \emph{Cartesian product} of $A$ and $B$, and functions $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$ such that, for all $a \in A$ and $b \in B$, there exists a unique $(a,b) \in A \times B$ such that $\pi_1(a,b) = a$ and $\pi_2(a,b) = b$.
 \end{ax}
@@ -74,6 +69,11 @@ For any set $A$, there exist sets $B$ and $Y$ and functions $p : B \rightarrow A
 \item For all $a \in A$, if $\exists Y. P[A,Y,a]$, then there exists $b \in B$ such that $a = p(b)$.
 \end{itemize}
 \end{axs}
+
+\begin{df}[Composition]
+Let $f : A \rightarrow B$ and $g : B \rightarrow C$. The \emph{composite} $g \circ f : A \rightarrow C$ is the function such that, for all $a \in A$, we have
+\[ (g \circ f)(a) = g(f(a)) \enspace . \]
+\end{df}
 
 \begin{ax}[Universe]
 There exists a set $E$, a set $U$ and a function $el : E \rightarrow U$ such that the following holds.
