@@ -4477,6 +4477,78 @@ Let $X$ be a compact Hausdorff space. Let $\mathcal{A}$ be a set of closed conne
 Let $X$ and $Y$ be topological spaces. A \emph{perfect map} from $X$ to $Y$ is a closed continuous surjective map $p : X \twoheadrightarrow Y$ such that, for all $y \in Y$, we have $\inv{p}(y)$ is compact.
 \end{df}
 
+\begin{prop}
+Let $X$ be a topological space and $Y$ a compact space. If there exists a perfect map $X \twoheadrightarrow Y$, then $X$ is compact.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p : X \twoheadrightarrow Y$ be a perfect map.}}
+\step{2}{For all $y \in Y$ and every open set $U$ such that $\inv{p}(y) \subseteq U$, there exists a neighbourhood $W$ of $y$ such that $\inv{p}(W) \subseteq U$.}
+\begin{proof}
+	\step{a}{\pflet{$y \in Y$}}
+	\step{b}{\pflet{$U$ be an open set such that $\inv{p}(y) \subseteq U$.}}
+	\step{c}{\pflet{$W = Y - p(X - U)$}}
+	\step{d}{$W$ is open.}
+	\begin{proof}
+		\step{i}{$X - U$ is closed.}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:open_closed}, \stepref{b}.
+		\end{proof}
+		\step{ii}{$p(X - U)$ is closed.}
+		\begin{proof}
+			\pf\ Since $p$ is a closed map (\stepref{1}).
+		\end{proof}
+		\step{iii}{$Y - p(X-U)$ is open.}
+	\end{proof}
+	\step{e}{$y \in W$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $y \in p(X - U)$}}
+		\step{ii}{\pick\ $x \in X - U$ such that $p(x) = y$}
+		\step{iii}{$x \in \inv{p}(y)$}
+		\step{iv}{$x \in U$}
+		\begin{proof}
+			\pf\ \stepref{b}
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{ii}.
+		\end{proof}
+	\end{proof}
+	\step{f}{$\inv{p}(W) \subseteq U$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in \inv{p}(W)$}}
+		\step{ii}{$p(x) \in W$}
+		\step{iii}{$p(x) \notin p(X - U)$}
+		\begin{proof}
+			\pf\ \stepref{c}
+		\end{proof}
+		\step{iv}{$x \notin X - U$}
+		\step{v}{$x \in U$}
+	\end{proof}
+\end{proof}
+\step{3}{\pflet{$\mathcal{U}$ be an open cover of $X$.}}
+\step{4}{For every $y \in Y$, there exists a neighbourhood $W$ of $y$ such that $\inv{p}(W)$ can be covered by finitely many elements of $\mathcal{U}$.}
+\begin{proof}
+	\step{a}{\pflet{$y \in Y$}}
+	\step{b}{\pick\ finitely many sets $U_1, \ldots, U_n \in \mathcal{U}$ that cover $\inv{p}(y)$}
+	\begin{proof}
+		\pf\ Since $\inv{p}(y)$ is compact.
+	\end{proof}
+	\step{c}{There exists a neighbourhood $W$ of $y$ such that $\inv{p}(W) \subseteq U_1 \cup \cdots \cup U_n$.}
+	\begin{proof}
+		\pf\ \stepref{2}
+	\end{proof}
+\end{proof}
+\step{5}{\pick\ finitely many open sets $W_1$, \ldots, $W_n$ in $Y$ such that each $\inv{p}(W_i)$ can be covered by finitely many elements of $\mathcal{U}$.}
+\begin{proof}
+	\pf\ Since $Y$ is compact.
+\end{proof}
+\step{6}{For $i=1, \ldots, n$, \pick\ a finite subset $\mathcal{U}_i$ of $\mathcal{U}$ such that $\inv{p}(W_i) \subseteq \bigcup \mathcal{U}_i$.}
+\step{7}{$\mathcal{U}_1 \cup \cdots \cup \mathcal{U}_n$ covers $X$.}
+\qed
+\end{proof}
+
 \chapter{Metric Spaces}
 
 %TODO Define real numbers
