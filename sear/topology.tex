@@ -4096,56 +4096,6 @@ In a locally connected topological space, the components are the same as the qua
 \qed
 \end{proof}
 
-\begin{thm}
-Let $X$ be a linearly ordered set with the least upper bound property under the order topology. Every closed interval in $X$ is compact.
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$a,b \in X$ with $a < b$.}}
-\step{2}{\pflet{$\mathcal{A}$ be an open covering of $[a,b]$}}
-\step{3}{For any $x \in [a,b)$, there exists $y \in (x,b]$ such that $[x,y]$ can be covered by at most two elements of $\mathcal{A}$.}
-\begin{proof}
-	\step{a}{\pflet{$x \in [a,b)$}}
-	\step{b}{\pick\ $U \in \mathcal{A}$ with $x \in U$.}
-	\step{c}{\pick\ $y > x$ such that $[x,y) \subseteq U$.}
-	\step{d}{\pick\ $V \in \mathcal{A}$ such that $y \in V$.}
-	\step{e}{$[x,y]$ can be covered by $U$ and $V$.}
-\end{proof}
-\step{4}{\pflet{$C = \{ y \in (a,b] : [a,y] \text{ can be covered by finitely many elements of } \mathcal{A} \}$}}
-\step{5}{$C \neq \emptyset$}
-\begin{proof}
-	\pf\ By \stepref{3}, there exists $y \in (a,b]$ such that $[a,y]$ can be covered by at most two elements of $\mathcal{A}$.
-\end{proof}
-\step{6}{\pflet{$c = \sup C$}}
-\step{7}{$c \in C$}
-\begin{proof}
-	\step{a}{\pick\ $U \in \mathcal{A}$ such that $c \in U$.}
-	\step{b}{\pick\ $y < c$ such that $(y,c] \subseteq U$.}
-	\step{c}{\pick\ $z \in C$ such that $y < z$}
-	\step{d}{\pick\ a finite $\mathcal{A}_0 \subseteq \mathcal{A}$ that covers $[a,z]$.}
-	\step{e}{$\mathcal{A}_0 \cup \{U\}$ covers $[a,c]$.}
-	\step{f}{$c \in C$}
-\end{proof}
-\step{8}{$c = b$}
-\begin{proof}
-	\step{a}{\assume{for a contradiction $c < b$.}}
-	\step{b}{\pick\ $y > c$ such that $[c,y]$ can be covered by at most two elements of $\mathcal{A}$.}
-	\step{c}{$[a,c]$ can be covered by finitely many elements of $\mathcal{A}$.}
-	\begin{proof}
-		\pf\ \stepref{7}
-	\end{proof}
-	\step{d}{$[a,y]$ can be covered by finitely many elements of $\mathcal{A}$.}
-	\step{e}{$y \in C$}
-	\qedstep
-	\begin{proof}
-		\pf\ This is a contradiction.
-	\end{proof}
-\end{proof}
-\step{9}{$[a,b]$ can be covered by finitely many elements of $\mathcal{A}$.}
-\qed
-\end{proof}
-
 \section{Compact Spaces}
 
 \begin{df}[Open Cover]
@@ -4524,6 +4474,60 @@ Let $X$ be a compact Hausdorff space. Let $\mathcal{A}$ be a set of closed conne
 \end{proof}
 \qed
 \end{proof}
+
+\begin{thm}
+Let $X$ be a linearly ordered set with the least upper bound property under the order topology. Every closed interval in $X$ is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$a,b \in X$ with $a < b$.}}
+\step{2}{\pflet{$\mathcal{A}$ be an open covering of $[a,b]$}}
+\step{3}{For any $x \in [a,b)$, there exists $y \in (x,b]$ such that $[x,y]$ can be covered by at most two elements of $\mathcal{A}$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in [a,b)$}}
+	\step{b}{\pick\ $U \in \mathcal{A}$ with $x \in U$.}
+	\step{c}{\pick\ $y > x$ such that $[x,y) \subseteq U$.}
+	\step{d}{\pick\ $V \in \mathcal{A}$ such that $y \in V$.}
+	\step{e}{$[x,y]$ can be covered by $U$ and $V$.}
+\end{proof}
+\step{4}{\pflet{$C = \{ y \in (a,b] : [a,y] \text{ can be covered by finitely many elements of } \mathcal{A} \}$}}
+\step{5}{$C \neq \emptyset$}
+\begin{proof}
+	\pf\ By \stepref{3}, there exists $y \in (a,b]$ such that $[a,y]$ can be covered by at most two elements of $\mathcal{A}$.
+\end{proof}
+\step{6}{\pflet{$c = \sup C$}}
+\step{7}{$c \in C$}
+\begin{proof}
+	\step{a}{\pick\ $U \in \mathcal{A}$ such that $c \in U$.}
+	\step{b}{\pick\ $y < c$ such that $(y,c] \subseteq U$.}
+	\step{c}{\pick\ $z \in C$ such that $y < z$}
+	\step{d}{\pick\ a finite $\mathcal{A}_0 \subseteq \mathcal{A}$ that covers $[a,z]$.}
+	\step{e}{$\mathcal{A}_0 \cup \{U\}$ covers $[a,c]$.}
+	\step{f}{$c \in C$}
+\end{proof}
+\step{8}{$c = b$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $c < b$.}}
+	\step{b}{\pick\ $y > c$ such that $[c,y]$ can be covered by at most two elements of $\mathcal{A}$.}
+	\step{c}{$[a,c]$ can be covered by finitely many elements of $\mathcal{A}$.}
+	\begin{proof}
+		\pf\ \stepref{7}
+	\end{proof}
+	\step{d}{$[a,y]$ can be covered by finitely many elements of $\mathcal{A}$.}
+	\step{e}{$y \in C$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{9}{$[a,b]$ can be covered by finitely many elements of $\mathcal{A}$.}
+\qed
+\end{proof}
+
+\begin{cor}
+Every closed interval in $\mathbb{R}$ is compact.
+\end{cor}
 
 \section{Perfect Maps}
 
