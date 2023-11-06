@@ -185,23 +185,24 @@
 \contentsline {section}{\numberline {13.47}Compact Spaces}{165}{section.13.47}%
 \contentsline {section}{\numberline {13.48}Perfect Maps}{172}{section.13.48}%
 \contentsline {chapter}{\numberline {14}Metric Spaces}{175}{chapter.14}%
-\contentsline {subsection}{\numberline {14.0.1}Balls}{175}{subsection.14.0.1}%
-\contentsline {subsection}{\numberline {14.0.2}Subspaces}{181}{subsection.14.0.2}%
-\contentsline {subsection}{\numberline {14.0.3}Convergence}{181}{subsection.14.0.3}%
-\contentsline {subsection}{\numberline {14.0.4}Continuous Functions}{182}{subsection.14.0.4}%
-\contentsline {subsection}{\numberline {14.0.5}First Countable Spaces}{184}{subsection.14.0.5}%
-\contentsline {subsection}{\numberline {14.0.6}Hausdorff Spaces}{184}{subsection.14.0.6}%
-\contentsline {subsection}{\numberline {14.0.7}Bounded Sets}{184}{subsection.14.0.7}%
-\contentsline {subsection}{\numberline {14.0.8}Uniform Convergence}{185}{subsection.14.0.8}%
-\contentsline {subsection}{\numberline {14.0.9}Standard Bounded Metric}{188}{subsection.14.0.9}%
-\contentsline {subsection}{\numberline {14.0.10}Product Spaces}{188}{subsection.14.0.10}%
-\contentsline {section}{\numberline {14.1}Uniform Metric}{189}{section.14.1}%
-\contentsline {subsection}{\numberline {14.1.1}Products}{193}{subsection.14.1.1}%
-\contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{194}{subsection.14.1.2}%
-\contentsline {section}{\numberline {14.2}Isometric Embeddings}{195}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Lebesgue Numbers}{195}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Complete Metric Spaces}{196}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Manifolds}{197}{section.14.5}%
+\contentsline {section}{\numberline {14.1}Metric Spaces}{175}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Balls}{175}{subsection.14.1.1}%
+\contentsline {subsection}{\numberline {14.1.2}Subspaces}{181}{subsection.14.1.2}%
+\contentsline {subsection}{\numberline {14.1.3}Convergence}{181}{subsection.14.1.3}%
+\contentsline {subsection}{\numberline {14.1.4}Continuous Functions}{182}{subsection.14.1.4}%
+\contentsline {subsection}{\numberline {14.1.5}First Countable Spaces}{184}{subsection.14.1.5}%
+\contentsline {subsection}{\numberline {14.1.6}Hausdorff Spaces}{184}{subsection.14.1.6}%
+\contentsline {subsection}{\numberline {14.1.7}Bounded Sets}{185}{subsection.14.1.7}%
+\contentsline {subsection}{\numberline {14.1.8}Uniform Convergence}{185}{subsection.14.1.8}%
+\contentsline {subsection}{\numberline {14.1.9}Standard Bounded Metric}{188}{subsection.14.1.9}%
+\contentsline {subsection}{\numberline {14.1.10}Product Spaces}{188}{subsection.14.1.10}%
+\contentsline {section}{\numberline {14.2}Uniform Metric}{189}{section.14.2}%
+\contentsline {subsection}{\numberline {14.2.1}Products}{193}{subsection.14.2.1}%
+\contentsline {subsection}{\numberline {14.2.2}Connected Spaces}{194}{subsection.14.2.2}%
+\contentsline {section}{\numberline {14.3}Isometric Embeddings}{195}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Lebesgue Numbers}{195}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Complete Metric Spaces}{196}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Manifolds}{197}{section.14.6}%
 \contentsline {chapter}{\numberline {15}Homotopy Theory}{199}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Homotopies}{199}{section.15.1}%
 \contentsline {section}{\numberline {15.2}Homotopy Equivalence}{199}{section.15.2}%
