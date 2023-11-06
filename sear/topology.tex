@@ -5238,6 +5238,39 @@ Division is a continuous function $\mathbb{R} \times (\mathbb{R} - \{0\}) \right
 \pf\ Since both multiplication and the function that maps $x$ to $\inv{x}$ are continuous. \qed
 \end{proof}
 
+\begin{prop}
+Let $X$ be a metric space. Let $A \subseteq X$ be nonempty. The function $d(-,A) : X \rightarrow \mathbb{R}$ is continuous.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in X$ and $\epsilon > 0$.}}
+\step{2}{\pflet{$\delta = \epsilon / 2$}}
+\step{3}{\pflet{$y \in X$ with $d(x,y) < \delta$.}}
+\step{4}{$d(x,A) < d(y,A) + \epsilon$}
+\begin{proof}
+	\step{a}{$\forall a \in A. d(x,a) < d(y,a) + \delta$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			d(x,a) & \leq d(y,a) + d(x,y) & (\text{Triangle Inequality}) \\
+			& < d(y,a) + \delta & (\text{\stepref{3}})
+		\end{align*}
+	\end{proof}
+	\step{b}{$\forall a \in A. d(x,A) < d(y,a) + \delta$}
+	\step{c}{$\forall a \in A. d(x,A) - \delta < d(y,a)$}
+	\step{d}{$d(x,A) - \delta \leq d(y,A)$}
+	\step{e}{$d(x,A) \leq d(y,A) + \delta$}
+	\step{f}{$d(x,A) < d(y,A) + \epsilon$}
+\end{proof}
+\step{5}{$d(y,A) < d(x,A) + \epsilon$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{6}{$|d(x,A) - d(y,A)| < \epsilon$}
+\qed
+\end{proof}
+
 \subsection{First Countable Spaces}
 
 \begin{prop}
