@@ -5917,6 +5917,61 @@ Every isometric embedding is an embedding.
 \qed
 \end{proof}
 
+\section{Lebesgue Numbers}
+
+\begin{df}[Lebesgue Number]
+Let $X$ be a metric space. Let $\mathcal{A}$ be an open covering of $X$. A \emph{Lebesgue number} for $\mathcal{A}$ is a real number $\delta > 0$ such that every bounded set with diameter $< \delta$ is included in some member of $\mathcal{A}$.
+\end{df}
+
+\begin{lm}[Lebesgue Number Lemma]
+In a compact metric space, every open cover has a Lebesgue number.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a compact metric space.}}
+\step{2}{\pflet{$\mathcal{A}$ be an open cover of $X$.}}
+\step{2.5}{\assume{w.l.o.g. $X \notin \mathcal{A}$}}
+\step{3}{\pick\ $A_1, \ldots, A_n \in \mathcal{A}$ that cover $X$.}
+\step{4}{For $i = 1, \ldots, n$, \pflet{$C_i = X - A_i$.}}
+\step{5}{\pflet{$f : X \rightarrow \mathbb{R}$ be the function
+\[ f(x) = \frac{1}{n} \sum_{i=1}^n d(x, C_i) \enspace . \]}}
+\begin{proof}
+	\pf\ Each $C_i$ is nonempty by \stepref{2.5}.
+\end{proof}
+\step{6}{$\forall x \in X. f(x) > 0$}
+\begin{proof}
+	\step{a}{\pflet{$x \in X$}}
+	\step{b}{\pick\ $i$ such that $x \in A_i$}
+	\step{c}{\pick\ $\epsilon > 0$ such that $B(x, \epsilon) \subseteq A_i$}
+	\step{d}{$d(x,C_i) \geq \epsilon$}
+	\step{e}{$f(x) \geq \epsilon / n$}
+\end{proof}
+\step{7}{\pflet{$\delta$ be the minimum value of $f(X)$.} \prove{$\delta$ is a Lebesgue number for $\mathcal{A}$.}}
+\begin{proof}
+	\pf\ $f(X)$ has a least element by the Extreme Value Theorem.
+\end{proof}
+\step{8}{\pflet{$B \subseteq X$ have diameter $< \delta$}}
+\step{9}{\pick\ $x_0 \in B$}
+\step{10}{$B \subseteq B(x_0, \delta)$}
+\step{11}{\pflet{$m$ be such that $d(x_0,C_m) = \max(d(x_0,C_1), \ldots, d(x_0,C_n))$}}
+\step{12}{$d(x_0,C_m) \geq \delta$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\delta & \leq f(x_0) & (\text{\stepref{7}}) \\
+		& = \frac{1}{n} \sum_{i=1}^n d(x_0,C_i) & (\text{\stepref{5}}) \\
+		& \leq \frac{1}{n} \sum_{i=1}^n d(x_0,C_m) & (\text{\stepref{11}}) \\
+		& = d(x_0,C_m)
+	\end{align*}
+\end{proof}
+\step{13}{$B \subseteq A_m$}
+\begin{proof}
+	\pf\ \stepref{10}, \stepref{12}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Complete Metric Spaces}
 
 \begin{df}[Complete]

@@ -199,29 +199,30 @@
 \contentsline {subsection}{\numberline {14.1.1}Products}{193}{subsection.14.1.1}%
 \contentsline {subsection}{\numberline {14.1.2}Connected Spaces}{194}{subsection.14.1.2}%
 \contentsline {section}{\numberline {14.2}Isometric Embeddings}{195}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Complete Metric Spaces}{195}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Manifolds}{196}{section.14.4}%
-\contentsline {chapter}{\numberline {15}Homotopy Theory}{197}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Homotopies}{197}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Homotopy Equivalence}{197}{section.15.2}%
-\contentsline {chapter}{\numberline {16}Simplicial Complexes}{199}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Cell Decompositions}{199}{section.16.1}%
-\contentsline {section}{\numberline {16.2}CW-complexes}{199}{section.16.2}%
-\contentsline {chapter}{\numberline {17}Topological Groups}{201}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Topological Groups}{201}{section.17.1}%
-\contentsline {subsection}{\numberline {17.1.1}Subgroups}{202}{subsection.17.1.1}%
-\contentsline {subsection}{\numberline {17.1.2}Left Cosets}{203}{subsection.17.1.2}%
-\contentsline {subsection}{\numberline {17.1.3}Homogeneous Spaces}{205}{subsection.17.1.3}%
-\contentsline {section}{\numberline {17.2}Symmetric Neighbourhoods}{205}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Continuous Actions}{207}{section.17.3}%
-\contentsline {chapter}{\numberline {18}Topological Vector Spaces}{209}{chapter.18}%
-\contentsline {section}{\numberline {18.1}Cauchy Sequences}{209}{section.18.1}%
-\contentsline {section}{\numberline {18.2}Seminorms}{210}{section.18.2}%
-\contentsline {section}{\numberline {18.3}Fr\'{e}chet Spaces}{210}{section.18.3}%
-\contentsline {section}{\numberline {18.4}Normed Spaces}{210}{section.18.4}%
-\contentsline {section}{\numberline {18.5}Unit Ball}{216}{section.18.5}%
-\contentsline {section}{\numberline {18.6}Unit Sphere}{217}{section.18.6}%
-\contentsline {section}{\numberline {18.7}Inner Product Spaces}{217}{section.18.7}%
-\contentsline {section}{\numberline {18.8}Banach Spaces}{218}{section.18.8}%
-\contentsline {section}{\numberline {18.9}Hilbert Spaces}{218}{section.18.9}%
-\contentsline {section}{\numberline {18.10}Locally Convex Spaces}{219}{section.18.10}%
+\contentsline {section}{\numberline {14.3}Lebesgue Numbers}{195}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Complete Metric Spaces}{196}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Manifolds}{197}{section.14.5}%
+\contentsline {chapter}{\numberline {15}Homotopy Theory}{199}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Homotopies}{199}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Homotopy Equivalence}{199}{section.15.2}%
+\contentsline {chapter}{\numberline {16}Simplicial Complexes}{201}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Cell Decompositions}{201}{section.16.1}%
+\contentsline {section}{\numberline {16.2}CW-complexes}{201}{section.16.2}%
+\contentsline {chapter}{\numberline {17}Topological Groups}{203}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Topological Groups}{203}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Subgroups}{204}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}Left Cosets}{205}{subsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.1.3}Homogeneous Spaces}{207}{subsection.17.1.3}%
+\contentsline {section}{\numberline {17.2}Symmetric Neighbourhoods}{207}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Continuous Actions}{209}{section.17.3}%
+\contentsline {chapter}{\numberline {18}Topological Vector Spaces}{211}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Cauchy Sequences}{211}{section.18.1}%
+\contentsline {section}{\numberline {18.2}Seminorms}{212}{section.18.2}%
+\contentsline {section}{\numberline {18.3}Fr\'{e}chet Spaces}{212}{section.18.3}%
+\contentsline {section}{\numberline {18.4}Normed Spaces}{212}{section.18.4}%
+\contentsline {section}{\numberline {18.5}Unit Ball}{218}{section.18.5}%
+\contentsline {section}{\numberline {18.6}Unit Sphere}{219}{section.18.6}%
+\contentsline {section}{\numberline {18.7}Inner Product Spaces}{219}{section.18.7}%
+\contentsline {section}{\numberline {18.8}Banach Spaces}{220}{section.18.8}%
+\contentsline {section}{\numberline {18.9}Hilbert Spaces}{220}{section.18.9}%
+\contentsline {section}{\numberline {18.10}Locally Convex Spaces}{221}{section.18.10}%
