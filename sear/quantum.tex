@@ -21,40 +21,123 @@ and satisfies
 \[ \int_{- \infty}^\infty |\Psi(x,0)|^2 dx = 1 \enspace . \]
 
 \begin{prop}
+\label{prop:differentiate_psi_squared}
+\[ \frac{\partial}{\partial t} |\Psi(x,t)|^2 = \frac{i \hbar}{2m} \frac{\partial}{\partial x} \left(
+\Psi^*(x,t) \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi(x,t) \right) \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\[ \frac{\partial \Psi}{\partial t} = \frac{i \hbar}{2m} \frac{\partial^2 \Psi}{\partial x^2} - \frac{i}{\hbar} V(x,t) \Psi(x,t) \]}
+\begin{proof}
+	\pf\ Schr\"{o}dinger equation.
+\end{proof}
+\step{2}{\[ \frac{\partial \Psi^*}{\partial t} = - \frac{i \hbar}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} + \frac{i}{\hbar} V(x,t) \Psi(x,t)^* \]}
+\begin{proof}
+	\pf\ Taking complex conjugates in \stepref{1}.
+\end{proof}
+\step{3}{\[ \frac{\partial}{\partial t} |\Psi(x,t)|^2 = \frac{i \hbar}{2m} \frac{\partial}{\partial x} \left(
+\Psi^*(x,t) \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi(x,t) \right) \]}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\frac{\partial}{\partial t} |\Psi(x,t)|^2
+		& = \frac{\partial}{\partial t} (\Psi(x,t)^* \Psi(x,t)) \\
+		& = \Psi^* \frac{\partial \Psi}{\partial t} + \frac{\partial \Psi^*}{\partial t} \Psi \\
+		& = \frac{i \hbar}{2m} \left( \Psi^* \frac{\partial^2 \Psi}{\partial x^2} - \frac{\partial^2 \Psi^*}{\partial x^2} \Psi \right) & (\text{\stepref{1}, \stepref{2}}) \\
+		& = \frac{i \hbar}{2m} \frac{\partial}{\partial x} \left(
+\Psi^*(x,t) \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi(x,t) \right)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 For all $t \in [0, + \infty)$ we have
 \[ \int_{- \infty}^\infty |\Psi(x,t)|^2 dx = 1 \enspace . \]
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\[ \frac{\partial \Psi}{\partial t} = \frac{i \hbar}{2m} \frac{\partial^2 \Psi}{\partial x^2} + \frac{1}{\hbar} V(x,t) \Psi(x,t) \]}
-\begin{proof}
-	\pf\ Schr\"{o}dinger equation.
-\end{proof}
-\step{2}{\[ \frac{\partial \Psi^*}{\partial t} = - \frac{i \hbar}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} + \frac{1}{\hbar} V(x,t) \Psi(x,t)^* \]}
-\begin{proof}
-	\pf\ Taking complex conjugates in \stepref{1}.
-\end{proof}
 \step{3}{\[ \frac{d}{dt} \int_{-\infty}^\infty |\Psi(x,t)|^2 dx = 0 \]}
 \begin{proof}
 \pf
 \begin{align*}
 \frac{d}{dt} \int_{-\infty}^\infty |\Psi(x,t)|^2 dx
-& = \int_{-\infty}^\infty \frac{\partial}{\partial t} (\Psi(x,t)^* \Psi(x,t)) dx \\
-& = \int_{-\infty}^\infty \left( \Psi^* \frac{\partial \Psi}{\partial t} + \frac{\partial \Psi^*}{\partial t} \Psi \right) dx \\
-& = \frac{i \hbar}{2m} \int_{-\infty}^\infty \left( \Psi^* \frac{\partial^2 \Psi}{\partial x^2} - \frac{\partial^2 \Psi^*}{\partial x^2} \Psi \right) dx & (\text{\stepref{1}, \stepref{2}}) \\
-& = \frac{i \hbar}{2m} \left[ \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right]_{- \infty}^\infty \\
+& = \int_{-\infty}^\infty \frac{\partial}{\partial t} |\Psi(x,t)|^2 dx \\
+& = \frac{i \hbar}{2m} \left[ \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right]_{- \infty}^\infty & (\text{Proposition \ref{prop:differentiate_psi_squared}}) \\
 & = 0 & (\Psi \rightarrow 0 \text{ as } x \rightarrow \pm \infty)
 \end{align*}
+\step{4}{$\int_{-\infty}^\infty |\Psi(x,t)|^2 dx$ is constant.}
 \end{proof}
 \qed
 \end{proof}
 
-\section{The Statistical Interpretation}
+\section{Statistical Interpretation}
 
 Born's statistical interpretation of the wave function:
 
-Let $a,b \in \mathbb{R}$ with $a < b$. When we measure the position of the particle, the probability that the particle is in the interval $[a,b]$ at time $t$ is
-\[ \int_a^b |\Psi(x,t)|^2 dx \enspace . \]
+The \emph{position} on the particle at time $t$ is a random variable $x$ with probability density function $|\Psi(x,t)|^2$ at time $t$.
 
-%TODO Prove this is a probability measure
+\begin{prop}
+The expected value of position is
+\[ \langle x \rangle = \int_{- \infty}^{+ \infty} x |\Psi(x,t)|^2 dx = \int_{-\infty}^{+ \infty} \Psi(x,t)^* x \Psi(x,t) dx \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\section{Momentum}
+
+Associated with any \emph{observable} quantity $Q$ is an operator
+\[ \hat{Q} : \mathcal{C}(\mathbb{R}, \mathbb{C}) \rightarrow \mathcal{C}(\mathbb{R}, \mathbb{C}) \enspace .\]
+%TODO What is the space of the functions?
+
+The \emph{expected value} of $Q$ at time $t$ is then
+\[ \langle Q \rangle = \int_{-\infty}^{+ \infty} \Psi(x,t)^* \hat{Q}(\lambda x. \Psi(x,t)) dx \enspace . \]
+
+Position $x$ is represented by the operator $\hat{x}$, multiplication by $x$.
+
+Momentum $p$ is represented by the operator $\hat{p} = - i \hbar \frac{\partial}{\partial x}$.
+
+Kinetic energy $T$ is represented by
+\[ \hat{T} = \frac{\hat{p}^2}{2m} = - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \enspace . \]
+
+\begin{prop}[Ehrenfest's Theorem]
+\begin{enumerate}
+\item \[ \langle p \rangle = m \frac{d \langle x \rangle}{dt} \]
+\item \[ \frac{d \langle p \rangle}{dt} = \left\langle - \frac{\partial V}{\partial x} \right\rangle \]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+m \frac{d \langle x \rangle}{dt} & = m \frac{d}{dt} \int_{- \infty}^{+ \infty} x |\Psi^2| dx \\
+& = m \int_{-\infty}^{+ \infty} x \frac{\partial}{\partial t} |\Psi^2| dx \\
+& = \frac{i \hbar}{2} \int_{-\infty}^{+ \infty} x \frac{\partial}{\partial x} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right) dx & (\text{Proposition \ref{prop:differentiate_psi_squared}}) \\
+& = - \frac{i \hbar}{2} \int_{-\infty}^{+ \infty} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right) dx \\
+& + \left[ x \left( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right) \right]_{- \infty}^{+ \infty} & (\text{integrating by parts}) \\
+& = - \frac{i \hbar}{2} \int_{-\infty}^{+ \infty} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right) dx \\
+& = - i \hbar \int_{- \infty}^{+ \infty} \Psi^* \frac{\partial \Psi}{\partial x} dx & (\text{integrating by parts}) \\
+& = \langle p \rangle \\
+\frac{d \langle p \rangle}{dt} & = - i \hbar \frac{d}{dt} \int_{-\infty}^{+ \infty} \Psi(x,t)^* \frac{\partial \Psi}{\partial x} dx \\
+& = - i \hbar \int_{-\infty}^{+ \infty} \frac{\partial}{\partial t} \left( \Psi(x,t)^* \frac{\partial \Psi}{\partial x} \right) dx \\
+& = - \i \hbar \int_{- \infty}^{+ \infty} \left( \Psi^* \frac{\partial^2 \Psi}{\partial t \partial x} + \frac{\partial \Psi^*}{\partial t} \frac{\partial \Psi}{\partial x} \right) dx \\
+\frac{\partial \Psi}{\partial t} & = \frac{i \hbar}{2m} \frac{\partial^2 \Psi}{\partial x^2} - \frac{i}{\hbar} V \Psi & (\text{Schr\"{o}dinger equation}) \\
+\therefore \frac{\partial^2 \Psi}{\partial x \partial t} & = \frac{i \hbar}{2m} \frac{\partial^3 \Psi} {\partial x^3} - \frac{i}{\hbar} \frac{\partial V}{\partial x} \Psi - \frac{i}{\hbar} V \frac{\partial \Psi}{\partial x} \\
+\frac{\partial \Psi^*}{\partial t} & = - \frac{i \hbar}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} + \frac{i}{\hbar} V \Psi^* \\
+\therefore \Psi^* \frac{\partial^2 \Psi}{\partial t \partial x} + \frac{\partial \Psi^*}{\partial t} \frac{\partial \Psi}{\partial x}
+& = \frac{i \hbar}{2m} \Psi^* \frac{\partial^3 \Psi}{\partial x^3} - \frac{i}{\hbar} \frac{\partial V}{\partial x} \Psi^* \Psi - \frac{i}{\hbar} V \Psi^* \frac{\partial \Psi}{\partial x} \\
+& - \frac{i \hbar}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} \frac{\partial \Psi}{\partial x} + \frac{i}{\hbar} V \Psi^* \frac{\partial \Psi}{\partial x} \\
+\therefore \frac{d \langle p \rangle}{dt}
+& = \frac{\hbar^2}{2m} \int_{-\infty}^{+ \infty} \left( \Psi^* \frac{\partial^3 \Psi}{\partial x^3} - \frac{\partial^2 \Psi^*}{\partial x^2} \frac{\partial \Psi}{\partial x} \right) dx \\
+& + \int_{-\infty}^{+ \infty} \Psi^* \left(- \frac{\partial V}{\partial x} \right) \Psi dx \\
+& = - \frac{\hbar^2}{2m} \int_{-\infty}^{+ \infty} \left( \frac{\partial \Psi^*}{\partial x} \frac{\partial^2 \Psi}{\partial x^3} + \frac{\partial^2 \Psi^*}{\partial x^2} \frac{\partial \Psi}{\partial x} \right) dx \\
+& + \left[ \Psi^* \frac{\partial^2 \Psi}{\partial x^2} \right]_{- \infty}^{+ \infty} 
++ \left \langle - \frac{\partial V}{\partial x} \right\rangle \\ \\
+& = - \frac{\hbar^2}{2m} \left[ \frac{\partial \Psi^*}{\partial x} \frac{\partial \Psi}{\partial x} \right]_{-\infty}^{+\infty} + \left\langle - \frac{\partial V}{\partial x} \right\rangle \\
+& = \left\langle - \frac{\partial V}{\partial x} \right\rangle %TODO Justify this & \qed
+\end{align*}
+\end{proof}
