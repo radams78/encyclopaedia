@@ -1,0 +1,123 @@
+\chapter{Discrete Random Variables}
+
+\begin{df}[Discrete random variable]
+Let $\Omega$ be a countable set. A \emph{discrete random variable} $X$ that takes values in $\Omega$ is a function
+\[ X : \Omega \rightarrow [0,1] \]
+such that
+\[ \sum_{a \in \Omega} X(a) = 1 \enspace . \]
+We write $P(X = a)$ for $X(a)$, and call this the \emph{probability} that $X$ takes value $a$.
+\end{df}
+
+\begin{df}[Expected Value]
+Let $X$ be a discrete random variable that takes values in a real vector space $\Omega$. %TODO Infinite case?
+The \emph{expected value} of $X$ is
+\[ \langle X \rangle = \sum_{a \in \Omega} P(X = a) a \enspace . \]
+\end{df}
+
+\begin{df}[Variance]
+The \emph{variance} of $X$ is
+\[ \langle (X - \langle X \rangle)^2 \rangle \enspace . \]
+\end{df}
+
+\begin{prop}
+The variance of $X$ is $\langle X^2 \rangle - \langle X \rangle^2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle (X - \langle X \rangle)^2 \rangle
+& = \sum_{a \in \Omega} (a - \langle X \rangle)^2 P(X = a) \\
+& = \sum_{a \in \Omega} (a^2 - 2 a \langle X \rangle + \langle X \rangle^2) P(X = a) \\
+& = \sum_{a \in \Omega} a^2 P(X=a) - 2 \langle X \rangle \sum_{a \in \Omega} a P(X = a) + \langle X \rangle^2 \sum_{a \in \Omega} P(X = a) \\
+& = \langle X^2 \rangle - 2 \langle X \rangle^2 + \langle X \rangle^2 \\
+& = \langle X^2 \rangle - \langle X \rangle^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+\[ \langle X^2 \rangle \geq \langle X \rangle^2 \]
+\end{cor}
+
+\begin{proof}
+\pf\ For all $a \in \Omega$ we have $(a - \langle X \rangle)^2 \geq 0$, so the variance of $X$ must be $\geq 0$. \qed
+\end{proof}
+
+\begin{df}[Standard Deviation]
+The \emph{standard deviation} of $X$, denoted $\sigma_X$, is the square root of the variance.
+\end{df}
+
+\chapter{Continuous Random Variables}
+
+\begin{df}[Continuous random variable]
+A \emph{continuous random variable} $X$ that takes values in $\mathbb{R}$ is an integrable function
+\[ \rho : \mathbb{R} \rightarrow [0,1] \]
+such that
+\[ \int \rho = 1 \enspace . \]
+
+Given a measurable set $S \subseteq \mathbb{R}$, \emph{probability} that $X$ takes a value in $S$ is
+\[ \int_S \rho \enspace . \]
+\end{df}
+
+\begin{ex}
+A \emph{Gaussian distribution} is
+\[ \rho(x) = \sqrt{\frac{\lambda}{\pi}} e^{- \lambda (x - a)^2} \]
+for some $\lambda$ and $a$.
+\end{ex}
+
+\begin{df}[Expected Value]
+Let $X$ be a discrete random variable that takes values in a real vector space $\Omega$. %TODO Infinite case?
+The \emph{expected value} of $X$ is
+\[ \langle X \rangle = \int x \rho(x) dx \]
+\end{df}
+
+\begin{ex}
+The Gaussian distribution
+\[ \rho(x) = \sqrt{\frac{\lambda}{\pi}} e^{- \lambda(x-a)^2} \]
+has expected value $a$.
+\end{ex}
+
+\begin{df}[Variance]
+The \emph{variance} of $X$ is
+\[ \langle (X - \langle X \rangle)^2 \rangle \enspace . \]
+\end{df}
+
+\begin{prop}
+The variance of $X$ is $\langle X^2 \rangle - \langle X \rangle^2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle (X - \langle X \rangle)^2 \rangle
+& = \int (x - \langle X \rangle)^2 \rho(x) dx \\
+& = \int (x^2 - 2 x \langle X \rangle + \langle X \rangle^2) \rho(x) dx \\
+& = \int x^2 \rho(x) dx - 2 \langle X \rangle \int x \rho(x) dx + \langle X \rangle^2 \int \rho(x) dx \\
+& = \langle X^2 \rangle - 2 \langle X \rangle^2 + \langle X \rangle^2 \\
+& = \langle X^2 \rangle - \langle X \rangle^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+\[ \langle X^2 \rangle \geq \langle X \rangle^2 \]
+\end{cor}
+
+\begin{proof}
+\pf\ For all $x \in \mathbb{R}$ we have $(x - \langle X \rangle)^2 \geq 0$, so the variance of $X$ must be $\geq 0$. \qed
+\end{proof}
+
+\begin{ex}
+The Gaussian distribution
+\[ \rho(x) = \sqrt{\frac{\lambda}{\pi}} e^{- \lambda(x-a)^2} \]
+has variance $\frac{1}{2 \lambda}$.
+\end{ex}
+
+\begin{df}[Standard Deviation]
+The \emph{standard deviation} of $X$, denoted $\sigma_X$, is the square root of the variance.
+\end{df}
+
+\begin{ex}
+The Gaussian distribution
+\[ \rho(x) = \sqrt{\frac{\lambda}{\pi}} e^{- \lambda(x-a)^2} \]
+has standard deviation $1/\sqrt{2 \lambda}$.
+\end{ex}

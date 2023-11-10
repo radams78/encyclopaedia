@@ -1,0 +1,60 @@
+\chapter{The Wave Function}
+
+\section{The Schr\"{o}dinger Equation}
+
+\begin{df}[Planck's constant]
+\emph{Planck's constant} is
+\[ h = 6.62607015 \times 10^{-3} \mathrm{Js} \enspace . \]
+\end{df}
+
+\begin{df}[Reduced Planck's constant]
+The \emph{reduced Planck's constant} is
+\[ \hbar = h / 2 \pi \enspace . \]
+\end{df}
+
+Consider a particle of mass $m$ moving in one dimension under a force given by a potential energy function $V(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{R}$. Associated with the particle is a \emph{wave function} $\Psi(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{C}$ that is differentiable in $t$, twice differentiable in $x$, satisfies the \emph{(time-dependent) Schr\"{o}dinger equation}: for all $x$ and $t$,
+
+\[ i \hbar \frac{\partial \Psi}{\partial t} = - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi}{\partial x^2} + V(x,t) \Psi(x,t) \]
+
+and satisfies
+
+\[ \int_{- \infty}^\infty |\Psi(x,0)|^2 dx = 1 \enspace . \]
+
+\begin{prop}
+For all $t \in [0, + \infty)$ we have
+\[ \int_{- \infty}^\infty |\Psi(x,t)|^2 dx = 1 \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\[ \frac{\partial \Psi}{\partial t} = \frac{i \hbar}{2m} \frac{\partial^2 \Psi}{\partial x^2} + \frac{1}{\hbar} V(x,t) \Psi(x,t) \]}
+\begin{proof}
+	\pf\ Schr\"{o}dinger equation.
+\end{proof}
+\step{2}{\[ \frac{\partial \Psi^*}{\partial t} = - \frac{i \hbar}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} + \frac{1}{\hbar} V(x,t) \Psi(x,t)^* \]}
+\begin{proof}
+	\pf\ Taking complex conjugates in \stepref{1}.
+\end{proof}
+\step{3}{\[ \frac{d}{dt} \int_{-\infty}^\infty |\Psi(x,t)|^2 dx = 0 \]}
+\begin{proof}
+\pf
+\begin{align*}
+\frac{d}{dt} \int_{-\infty}^\infty |\Psi(x,t)|^2 dx
+& = \int_{-\infty}^\infty \frac{\partial}{\partial t} (\Psi(x,t)^* \Psi(x,t)) dx \\
+& = \int_{-\infty}^\infty \left( \Psi^* \frac{\partial \Psi}{\partial t} + \frac{\partial \Psi^*}{\partial t} \Psi \right) dx \\
+& = \frac{i \hbar}{2m} \int_{-\infty}^\infty \left( \Psi^* \frac{\partial^2 \Psi}{\partial x^2} - \frac{\partial^2 \Psi^*}{\partial x^2} \Psi \right) dx & (\text{\stepref{1}, \stepref{2}}) \\
+& = \frac{i \hbar}{2m} \left[ \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right]_{- \infty}^\infty \\
+& = 0 & (\Psi \rightarrow 0 \text{ as } x \rightarrow \pm \infty)
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\section{The Statistical Interpretation}
+
+Born's statistical interpretation of the wave function:
+
+Let $a,b \in \mathbb{R}$ with $a < b$. When we measure the position of the particle, the probability that the particle is in the interval $[a,b]$ at time $t$ is
+\[ \int_a^b |\Psi(x,t)|^2 dx \enspace . \]
+
+%TODO Prove this is a probability measure
