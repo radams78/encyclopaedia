@@ -237,3 +237,5 @@
 \contentsline {section}{\numberline {22.1}The Schr\"{o}dinger Equation}{233}{section.22.1}%
 \contentsline {section}{\numberline {22.2}Statistical Interpretation}{234}{section.22.2}%
 \contentsline {section}{\numberline {22.3}Momentum}{235}{section.22.3}%
+\contentsline {section}{\numberline {22.4}The Time-Independent Schr\"{o}dinger Equation}{237}{section.22.4}%
+\contentsline {section}{\numberline {22.5}The Quantum Harmonic Oscillator}{239}{section.22.5}%

@@ -12,7 +12,7 @@ The \emph{reduced Planck's constant} is
 \[ \hbar = h / 2 \pi \enspace . \]
 \end{df}
 
-Consider a particle of mass $m$ moving in one dimension under a force given by a potential energy function $V(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{R}$. Associated with the particle is a \emph{wave function} $\Psi(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{C}$ that is differentiable in $t$, twice differentiable in $x$, satisfies the \emph{(time-dependent) Schr\"{o}dinger equation}: for all $x$ and $t$,
+Consider a particle of mass $m$ moving in one dimension under a force given by a potential energy function $V(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow [0, + \infty]$. Associated with the particle is a \emph{wave function} $\Psi(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{C}$ that is differentiable in $t$, twice differentiable in $x$, satisfies the \emph{(time-dependent) Schr\"{o}dinger equation}: for all $x$ and $t$,
 
 \[ i \hbar \frac{\partial \Psi}{\partial t} = - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi}{\partial x^2} + V(x,t) \Psi(x,t) \]
 
@@ -90,7 +90,7 @@ The expected value of position is
 
 \section{Momentum}
 
-Associated with any \emph{observable} quantity $Q$ is an operator
+Associated with any \emph{observable} quantity $Q$ is a linear operator
 \[ \hat{Q} : \mathcal{C}(\mathbb{R}, \mathbb{C}) \rightarrow \mathcal{C}(\mathbb{R}, \mathbb{C}) \enspace .\]
 %TODO What is the space of the functions?
 
@@ -137,7 +137,249 @@ m \frac{d \langle x \rangle}{dt} & = m \frac{d}{dt} \int_{- \infty}^{+ \infty} x
 & = - \frac{\hbar^2}{2m} \int_{-\infty}^{+ \infty} \left( \frac{\partial \Psi^*}{\partial x} \frac{\partial^2 \Psi}{\partial x^3} + \frac{\partial^2 \Psi^*}{\partial x^2} \frac{\partial \Psi}{\partial x} \right) dx \\
 & + \left[ \Psi^* \frac{\partial^2 \Psi}{\partial x^2} \right]_{- \infty}^{+ \infty} 
 + \left \langle - \frac{\partial V}{\partial x} \right\rangle \\ \\
-& = - \frac{\hbar^2}{2m} \left[ \frac{\partial \Psi^*}{\partial x} \frac{\partial \Psi}{\partial x} \right]_{-\infty}^{+\infty} + \left\langle - \frac{\partial V}{\partial x} \right\rangle \\
+& = - \frac{\hbar^2}{2m} \left[ \frac{\partial \Psi^*}{\partial x} \frac{\partial \Psi}{\partial x} \right]_{-\infty}^{+\infty} + \left\langle\textbf{•} - \frac{\partial V}{\partial x} \right\rangle \\
 & = \left\langle - \frac{\partial V}{\partial x} \right\rangle %TODO Justify this & \qed
 \end{align*}
 \end{proof}
+
+\begin{prop}[Canonical Commutation Relation]
+\[ [\hat{x}, \hat{p}] = i \hbar \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[ \hat{x}, \hat{p}] \psi & = - i \hbar x \frac{d \psi}{d x} + i \hbar \frac{d}{dx} (x \psi) \\
+& = - i \hbar (x \frac{d \psi}{dx} - x \frac{d \psi}{dx} - \psi) \\
+& = i \hbar \psi & \qed
+\end{align*}
+\end{proof}
+\section{The Time-Independent Schr\"{o}dinger Equation}
+
+\begin{df}[Hamiltonian]
+Assume that the potential $V$ does not vary with $t$. The \emph{Hamiltonian} or \emph{total energy} $H$ is the quantity with operator
+\begin{align*}
+\hat{H} & = \frac{\hat{p}^2}{2m} + V(t) \hat{I} \\
+& = - \frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x) \hat{I}
+\end{align*}
+\end{df}
+
+\begin{df}[Time-independent Schr\"{o}dinger equation]
+Assume that the potential $V$ does not vary with $t$. Let $E \geq 0$. The \emph{time-independent Schr\"{o}dinger equation} with \emph{energy} $E$ is
+\[ \hat{H} \psi = E \psi \]
+i.e.
+\[ - \frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} + V(x) \psi(x) = E \psi(x) \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $\psi : \mathbb{R} \rightarrow \mathbb{C}$. Then
+\[ \Psi(x,t) = \psi(x) e^{- \frac{iEt}{\hbar}} \]
+is a solution to the time-dependent Schr\"{o}dinger equation iff $\psi$ is a solution to the time-independent Schr\"{o}dinger equation.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+i \hbar \frac{\partial \Psi}{\partial t} & = i \hbar \psi (-\frac{iE}{\hbar}) e^{-\frac{iEt}{\hbar}} \\
+& = E \psi e^{- \frac{iEt}{\hbar}} \\
+- \frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + V \Psi
+& = e^{- \frac{iEt}{\hbar}} \left( - \frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} + V \psi \right)
+\end{align*}
+and these are equal iff the time-independent equation holds. \qed
+\end{proof}
+
+\begin{prop}[Solutions to the Time-Independent Equation are Stationary States]
+Let the wave function of the particle be
+\[ \Psi(x,t) = \psi(x) e^{- \frac{iEt}{\hbar}} \]
+For any quantity $Q$, the expectation value $\langle Q \rangle$ is constant in $t$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle Q \rangle & = \int_{- \infty}^{+ \infty} \Psi^*(x,t) \hat{Q}(\lambda x.\Psi(x,t))(x) dx \\
+& = \int_{-\infty}^{+ \infty} \psi^*(x) e^{\frac{iEt}{\hbar}} \hat{Q}(\lambda x. \psi(x) e^{- \frac{iEt}{\hbar}}) dx \\
+& = \int_{-\infty}^{+\infty} \psi^*(x) \hat{Q}(\psi)(x) dx
+\end{align*}
+since $\hat{Q}$ is linear. \qed
+\end{proof}
+
+\begin{cor}
+If the wave function is given by $\psi(x) e^{- \frac{iEt}{\hbar}}$ then $\langle p \rangle = 0$.
+\end{cor}
+
+\begin{prop}
+If the wave function is given by $\psi(x) e^{- \frac{iEt}{\hbar}}$ then $\langle H \rangle = E$ and $\sigma_H = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle H \rangle & = \int \psi^* \hat{H} \psi dx \\
+& = \int \psi^* E \psi dx & (\text{time-independent Schr\"{o}dinger equation}) \\
+& = E \int |\psi|^2 dx \\
+& = E \\
+\langle H^2 \rangle & = \int \psi^* \hat{H}^2 \psi dx \\
+& = E^2 \int \psi^* \psi dx \\
+& = E^2 \\
+\therefore \sigma_H^2 & = \langle H^2 \rangle - \langle H \rangle^2 \\
+& = 0 & \qed
+\end{align*}
+\end{proof}
+
+\begin{ex}[The Infinite Square Well]
+
+The \emph{infinite square well} with size $a$ ($a > 0$) is a particle moving under the potential
+\[ V(x) = \begin{cases}
+0 & \text{if } 0 \leq x \leq a , \\
+\infty & \text{otherwise}
+\end{cases} \]
+
+The normalizable solutions to the time-independent equation are
+\[ \psi_n(x) = \sqrt{\frac{2}{a}} \sin \frac{n \pi}{a} x \]
+with associated energy
+\[ E_n = \frac{n^2 \pi^2 \hbar^2}{2 m a^2} \enspace . \]
+\end{ex}
+
+\section{The Quantum Harmonic Oscillator}
+
+The \emph{quantum harmonic oscillator} with \emph{frequency} $\omega$ is a particle of mass $m$ moving under the potential
+\[ V(x) = \frac{1}{2} m \omega^2 x^2 \enspace . \]
+
+\begin{prop}
+The Hamiltonian operator for the quantum harmonic oscillator is
+\[ \hat{H} = \frac{1}{2m} \left( \hat{p}^2 + (m \omega x)^2 \right) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}[Ladder Operators]
+The \emph{raising operator} $\hat{a_+}$ is
+\[ \hat{a_+} = \frac{1}{\sqrt{2 \hbar m \omega}} (- i \hat{p} + m \omega \hat{x}) \]
+The \emph{lowering operator} $\hat{a_+}$ is
+\[ \hat{a_-} = \frac{1}{\sqrt{2 \hbar m \omega}} (i \hat{p} + m \omega \hat{x}) \]
+Together, these are called the \emph{ladder operators}.
+\end{df}
+
+\begin{prop}
+\[ [\hat{a_-}, \hat{a_+}] = 1 \]
+\end{prop}
+
+\begin{prop}
+\label{prop:qho_Hamiltonian}
+\[ \hat{H} = \hbar \omega (\hat{a_-} \hat{a_+} - \frac{1}{2}) = \hbar \omega (\hat{a_+} \hat{a_-} + \frac{1}{2}) \]
+\end{prop}
+
+\begin{prop}
+\label{prop:raise_lower}
+If $\psi$ is a solution to the time-independent Schr\"{o}dinger equation with energy $E$, then $\hat{a_+} \psi$ is a solution with energy $E + \hbar \omega$, and $\hat{a_-} \psi$ is a solution with energy $E - \hbar \omega$.
+\end{prop}
+
+\begin{prop}
+\label{prop:Hermitian_conjugates}
+For any integrable functions $f,g : \mathbb{R} \rightarrow \mathbb{C}$,
+\[ \int_{- \infty}^{+ \infty} f^* (\hat{a_\pm} g) dx = \int_{-\infty}^{+ \infty} (\hat{a_\mp} f)^* g dx \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\int_{-\infty}^{+ \infty} f^* (\hat{a_\pm} g) dx
+& = \frac{1}{\sqrt{2 \hbar m \omega}} \int_{- \infty}^{+ \infty}
+f^* (\mp \hbar \frac{d}{dx} + m \omega x) g \, dx \\
+& = \frac{1}{\sqrt{2 \hbar m \omega}} \left[
+\mp \int f^* \frac{dg}{dx} dx + \int m \omega f^* x g \, dx \right] \\
+& = \frac{1}{\sqrt{2 \hbar m \omega}} \left[ \pm \int \frac{df^*}{dx} g \, dx + \int m \omega f^* x g \, dx \right] & (\text{integrating by parts}) \\
+& = \frac{1}{\sqrt{2 \hbar m \omega}} \int ((\pm \hbar \frac{d}{dx} + m \omega x)f^*) g \, dx \\
+& = \int (\hat{a_mp} f)^* g \, dx & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+The normalized solutions to the time-independent Schr\"{o}dinger equation are
+\[ \psi_n(x) = \frac{1}{\sqrt{n!}} (\hat{a_+})^n \psi_0 \]
+with energies
+\[ E_n = \left( n + \frac{1}{2} \right) \hbar \omega \]
+where
+\[ \psi_0(x) = \left( \frac{m \omega}{\pi \hbar} \right)^{\frac{1}{4}} e^{- \frac{m \omega}{2 \hbar} x^2} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\psi(x) = e^{- \frac{m \omega}{2 \hbar}x^2}$ is a solution with energy $\frac{1}{2} \hbar m \omega$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\frac{d \psi}{dx} & = - \frac{m \omega}{ \hbar} x \psi \\
+		\therefore \frac{d^2 \psi}{dx^2} & = - \frac{m \omega}{\hbar} \left(x \frac{d \psi}{dx} + \psi \right) \\
+		& = \frac{m^2 \omega^2}{\hbar^2} x^2 \psi - \frac{m \omega}{\hbar} \psi \\
+		\therefore \hat{H} \psi & = -\frac{\hbar^2}{2m} \frac{m^2 \omega^2}{\hbar^2} x^2 \psi - \frac{\hbar^2}{2m} \frac{m \omega}{\hbar} \psi + \frac{1}{2} m \omega^2 x^2 \psi \\
+		& = \frac{1}{2} \hbar m \omega \psi
+	\end{align*}
+\end{proof}
+\step{2}{For this $\psi$ we have $\int |\psi|^2 dx = \sqrt{\frac{\pi \hbar}{m \omega}}$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\int |\psi|^2 dx & = \int e^{- \frac{m \omega}{\hbar} x^2} dx \\
+		& = \sqrt{\frac{\pi \hbar}{m \omega}}
+	\end{align*}
+\end{proof}
+\step{3}{$\psi_0$ is a normalized solution.}
+\step{4}{For all $n$ we have $(\hat{a_+})^n \psi_0$ is a solution with energy $E_n$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:raise_lower}.
+\end{proof}
+\step{4a}{$\hat{a_-} \hat{a_+} \chi_n = (n+1) \chi-n$}
+\begin{proof}
+		\pf\ Since from Proposition \ref{prop:qho_Hamiltonian} we have
+\[			\hbar \omega \hat{a_-} \hat{a_+} \chi_n - \frac{1}{2} \chi_n = (n + \frac{1}{2}) \hbar \omega \chi_n  \]
+\end{proof}
+\step{5}{For all $n$, we have $\int |(\hat{a_+})^n \psi_0|^2 dx = n!$.}
+\begin{proof}
+	\pf
+	\step{1}{\pflet{$\chi_n = (\hat{a_+})^n \psi_0$}}
+	\step{3}{\assume{as induction hypothesis $\int |\chi_n|^2 dx = n!$.}}
+	\step{4}{$\int |\chi_{n+1}|^2 dx = (n+1)!$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\int |\chi_{n+1}|^2 dx
+			& = \int (\hat{a_+} \chi_n)^* (\hat{a_+} \chi_n) dx \\
+			& = \int \chi_n^* (\hat{a_-} \hat{a_+} \chi_n) dx & (\text{Proposition \ref{prop:Hermitian_conjugates}}) \\
+			& = (n+1) \int \chi_n^* \chi_n dx & (\text{\stepref{4a}}) \\
+			& = (n+1) n! & (\text{\stepref{3}}) \\
+			& = (n+1)!
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{3}{For all $n$, $\psi_n$ is a normalized solution.}
+\step{4}{For all $n > 0$, $\hat{a_-} \psi_n = \sqrt{n} \psi_{n-1}$}
+\begin{proof}
+	\pf\ Using \stepref{4a}.
+\end{proof}
+\step{5}{For any non-zero solution $\psi$, if $\hat{a_-} \psi$ has energy $\leq 0$ then $\psi$ is a constant multiplied by $\psi_0$.}
+\begin{proof}
+	\pf
+	\step{a}{\assume{$\hat{a_-} \psi$ has energy $\leq 0$}}
+	\step{b}{$\hat{a_-} \psi = 0$}
+	\step{c}{\[ \hbar \frac{d \psi}{dx} + m \omega x \psi = 0 \]}
+	\step{d}{\[ \frac{1}{\psi} \frac{d \psi}{dx} = - \frac{m \omega}{\hbar} x \]}
+	\step{e}{$\ln \psi = - \frac{m \omega}{2 \hbar} x^2$ plus a constant.}
+	\step{6}{$\psi = e^{- \frac{m \omega}{2 \hbar} x^2}$ multiplied by a constant.}
+\end{proof}
+\step{6}{For any solution $\psi$ with energy $> 0$, there exists $n$ such that $\psi$ is a constant multiplied by $\psi_n$.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be least such that $(\hat{a_-})^{n+1} \psi$ has non-positive energy.}}
+	\step{b}{$(\hat{a_-})^n \psi$ is a constant multiplied by $\psi_0$.}
+	\step{c}{$\psi$ is a constant multiplied by $(\hat{a_+})^n \psi_0$.}
+	\step{d}{$\psi$ is a constant multiplied by $\psi_n$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+We call $\psi_0$ the \emph{ground state} of the quantum harmonic oscillator, and the other $\psi_n$ the \emph{excited states}.
+\end{df}
