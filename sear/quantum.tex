@@ -298,6 +298,7 @@ f^* (\mp \hbar \frac{d}{dx} + m \omega x) g \, dx \\
 \end{proof}
 
 \begin{prop}
+\label{prop:solve_qho}
 The normalized solutions to the time-independent Schr\"{o}dinger equation are
 \[ \psi_n(x) = \frac{1}{\sqrt{n!}} (\hat{a_+})^n \psi_0 \]
 with energies
@@ -383,3 +384,76 @@ where
 \begin{df}
 We call $\psi_0$ the \emph{ground state} of the quantum harmonic oscillator, and the other $\psi_n$ the \emph{excited states}.
 \end{df}
+
+\begin{prop}
+\[ x = \sqrt{\frac{\hbar}{2 m \omega}} (\hat{a_+} + \hat{a_-}) \]
+\end{prop}
+
+\begin{proof}
+\pf\ Straightforward calculation. \qed
+\end{proof}
+
+\begin{prop}
+\[ \hat{p} = i \sqrt{\frac{\hbar m \omega}{2}} (\hat{a_+} - \hat{a_-}) \]
+\end{prop}
+
+\begin{proof}
+\pf\ Straightforward calculation. \qed
+\end{proof}
+
+\begin{prop}
+If $m \neq n$ then
+\[ \int \psi_m^* \psi_n dx = 0 \]
+\end{prop}
+
+\begin{proof}
+\pf\ We have
+\[ \int \psi_m^* \hat{a_+} \hat{a_-} \psi_n dx = n \int \psi_m^* \psi_n dx \]
+and
+\begin{align*}
+\int \psi_m^* \hat{a_+} \hat{a_-} \psi_n dx & = \int \hat{a_+} \hat{a_-} \psi_m^* \psi_n dx & (\text{Proposition \ref{prop:Hermitian_conjugates}}) \\
+& = m \int \psi_m^* \psi_n dx
+\end{align*}
+Therefore either $m = n$ or $\int \psi_m^* \psi_n dx = 0$. \qed
+\end{proof}
+
+\begin{prop}
+For the $n$th excited state of the quantum harmonic oscillator we have:
+\begin{align*}
+\langle x \rangle & = 0 \\
+\langle p \rangle & = 0 \\
+\sigma_x & = \sqrt{\left( n + \frac{1}{2} \right) \frac{\hbar}{m \omega}} \\
+\sigma_p & = \sqrt{\left( n + \frac{1}{2} \right) \hbar m \omega} \\
+\langle T \rangle & = \frac{1}{2} \hbar \omega \left( n + \frac{1}{2} \right) \\
+\langle V \rangle & = \frac{1}{2} \hbar \omega \left( n + \frac{1}{2} \right)
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ These follow from
+\begin{align*}
+\langle x^2 \rangle & = \int_{-\infty}^{+ \infty} \psi_n^* x^2 \psi_n dx \\
+& = \frac{\hbar}{2 m \omega} \int_{-\infty}^{+ \infty} \psi_n^* [ \hat{a_+}^2 + \hat{a_+} \hat{a_-} + \hat{a_-} \hat{a_+} + \hat{a_-}^2 ] \psi_n dx \\
+& = \frac{\hbar}{2 m \omega} \left[ \int_{- \infty}^{+ \infty} a \psi_n^* \psi_{n+2} dx + n \int \psi_n^* \psi_n dx + (n+1) \int \psi_n^* \psi_n dx + \int b \psi_n^* \psi_{n-2} dx \right] \\
+& = \frac{\hbar}{2 m \omega} (2n+1)
+\end{align*}
+and $\langle p^2 \rangle = \frac{\hbar m \omega}{2} (2n+1)$ similary. \qed
+\end{proof}
+
+\begin{prop}
+The $n$th excited state is
+\[ \psi_n(x) = \left( \frac{m \omega}{\pi \hbar} \right)^{\frac{1}{4}} \frac{1}{\sqrt{2^n n!}} H_n(\xi) e^{-\frac{\xi^2}{2}} \]
+where $H_n$ is the $n$th Hermite polynomial and
+\[ \xi = \sqrt{\frac{m \omega}{\hbar}} x \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:solve_qho} by induction. \qed
+\end{proof}
+
+\section{The Free Particle}
+
+\begin{prop}
+The solutions to the time-independent Schr\"{o}dinger equation with $V = 0$ are 
+\[ A e^{i(kx - \frac{\hbar k^2}{2m} t)} \]
+\end{prop}

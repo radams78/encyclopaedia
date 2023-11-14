@@ -1195,6 +1195,59 @@ The set of transcendental numbers is uncountable.
 
 \input{algebra.tex}
 
+\part{Analysis}
+
+\chapter{Real Analysis}
+
+\section{Hermite Polynomials}
+
+\begin{df}[Hermite Polynomials]
+For $n \in \mathbb{N}$, define a sequence of natural numbers $a_n$, $a_{n-2}$, \ldots by
+\begin{align*}
+a_n & = 2 \\
+a_{k-2} & = -\frac{k(k-1)}{2(n-k+2)} a_k
+\end{align*}
+with the final entry being $a_1^n$ if $n$ is odd and $a_0$ if $n$ is even.
+
+The $n$th \emph{Hermite polynomial} $H_n$ is the polynomial
+\[ H_n(x) = \sum_k a_k x^k \enspace . \]
+\end{df}
+
+\begin{ex}
+\begin{align*}
+H_0(x) & = 1 \\
+H_1(x) & = 2x \\
+H_2(x) & = 4x^2 - 2 \\
+H_3(x) & = 8x^3 - 12x \\
+H_4(x) & = 16 x^4 - 48 x^2 + 12 \\
+H_5(x) & = 32 x^5 - 160 x^3 + 120 x
+\end{align*}
+\end{ex}
+
+\begin{prop}
+\[ H_{n+1}(x) = 2 x H_n(x) - 2n H_{n-1}(x) \]
+\end{prop}
+
+%TODO
+
+\begin{prop}[Rodrigues Formula]
+\[ H_n(x) = (-1)^n e^{x^2} \frac{d^n}{dx^n} e^{-x^2} \]
+\end{prop}
+
+%TODO
+
+\begin{prop}
+\[ \frac{d}{dx} H_n(x) = 2nH_{n-1}(x) \]
+\end{prop}
+
+%TODO
+
+\begin{prop}
+\[ \sum_{n=0}^\infty \frac{z^n}{n!} H_n(x) = e^{-z^2 + 2zx} \]
+\end{prop}
+
+%TODO
+
 \part{Topology}
 
 \input{topology.tex}
