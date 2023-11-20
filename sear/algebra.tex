@@ -268,3 +268,132 @@ Let $V$ be an inner product space. A linear operator $T : V \rightarrow V$ is \e
 \[ \langle \psi | T | \phi \rangle = \overline{\langle \phi | T | \psi \rangle} \]
 for all $\ket{\phi}, \ket{\psi} \in V$.
 \end{df}
+
+\begin{prop}
+Every eigenvalue of a Hermitian operator is real.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$T : V \rightarrow V$ be Hermitian.}}
+\step{2}{\pflet{$\ket{\phi}$ be an eigenvector with eigenvalue $\alpha$.}}
+\step{3}{$\langle \phi | T | \phi \rangle = \alpha \langle \phi | \phi \rangle$}
+\step{4}{$\langle \phi | T | \phi \rangle = \overline{\alpha} \langle \phi | \phi \rangle$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\langle \phi | T | \phi \rangle & = \overline{\langle \phi | T | \phi \rangle} \\
+		& = \overline{\alpha} \overline{\langle \phi | \phi \rangle} \\
+		& = \overline{\alpha} \langle \phi | \phi \rangle
+	\end{align*}
+\end{proof}
+\step{5}{$\alpha = \overline{\alpha}$}
+\qed
+\end{proof}
+
+\begin{df}[Hermitian Conjugate]
+Let $V$ be an inner product space and $T : V \rightarrow V$ a linear operator. The \emph{Hermitian conjugate} $T^\dagger : V \rightarrow V$ is the linear operator such that, for all $\ket{\phi}, \ket{\psi} \in V$, we have
+\[ \langle \phi | T^\dagger | \psi \rangle = \overline{\langle \psi | T | \phi \rangle} \enspace . \]
+\end{df}
+
+\begin{prop}
+\[ (cT)^\dagger = \overline{c} T^\dagger \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \phi | \overline{c} T^\dagger | \psi \rangle
+& = \overline{c} \langle \phi | T^\dagger | \psi \rangle \\
+& = \overline{c} \overline{\langle \psi | T | \phi \rangle} \\
+& = \overline{\langle \psi | cT | \phi \rangle} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\[ (ST)^\dagger = T^\dagger S^\dagger \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \phi | T^\dagger S^\dagger | \psi \rangle
+& = \overline{\langle S^\dagger \ket{\psi} | T \ket{\phi} \rangle} \\
+& = \langle T \ket{\phi} | S^\dagger | \psi \rangle \\
+& = \overline{\langle \psi | S T | \phi \rangle} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+$T$ is Hermitian iff $T = T^\dagger$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+If $M$ is the matrix of $T$ then $\overline{M}^\mathrm{T}$ is the matrix of $T^\dagger$.
+\end{prop}
+
+\begin{df}[Unitary]
+Let $V$ be an inner product space and $T : V \rightarrow V$ a linear operator. Then $T$ is \emph{unitary} iff $T^\dagger T = I$.
+\end{df}
+
+\begin{prop}
+If $\alpha$ is an eigenvalue of a unitary operator then $|\alpha| = 1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$T : V \rightarrow V$ be unitary.}}
+\step{2}{\pflet{$\ket{\phi}$ be an eigenstate with eigenvalue $\alpha$.}}
+\step{3}{$|\alpha|^2 \langle \phi | \phi \rangle = \langle \phi | \phi \rangle$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\langle \phi | \phi \rangle
+		& = \langle \phi | T^\dagger T | \phi \rangle \\
+		& = \alpha \langle \phi | T^\dagger | \phi \rangle \\
+		& = \alpha \overline{\langle \phi | T | \phi \rangle} \\
+		& = \alpha \overline{\alpha} \overline{\langle \phi | \phi \rangle} \\
+		& = |\alpha|^2 \langle \phi | \phi \rangle
+	\end{align*}
+\end{proof}
+\step{4}{$|\alpha| = 1$}
+\qed
+\end{proof}
+
+\begin{df}[Bra Vector]
+Let $V$ be an inner product space and $\ket{\phi} \in V$. The \emph{bra vector} or \emph{Hermitian conjugate} $\langle \phi |$ is the linear functional $\langle \phi | : V \rightarrow \mathbb{C}$ that maps $\ket{\psi}$ to $\langle \phi | \psi \rangle$.
+\end{df}
+
+\begin{prop}
+The hermitian conjugate of $c \ket{\phi}$ is $\overline{c} \langle \phi |$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\langle c \ket{\phi} | \psi \rangle = \overline{c} \langle \phi | \psi \rangle$. \qed
+\end{proof}
+
+\begin{prop}
+The Hermitian conjugate of $T \ket{\phi}$ is $\langle \phi | T^\dagger$, the linear functional that maps $\ket{\psi}$ to $\langle \phi | T^\dagger | \psi \rangle$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle T \ket{\phi} | \psi \rangle & = \overline{\langle \psi | T | \phi \rangle} \\
+& = \langle \phi | T^\dagger | \psi \rangle & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Outer Product]
+Let $\ket{\phi}, \ket{\psi} \in V$. The \emph{outer product} $\ket{\psi} \langle \phi | : V \rightarrow \mathbb{C}$ is the linear functional defined by
+\[ (\ket{\psi} \langle \phi |) \ket{\chi} = \langle \phi | \chi \rangle \ket{\psi} \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $\{ \ket{\psi_1}, \ket{\psi_2}, \ldots \}$ be a countable orthonormal basis. Then
+\[ \sum_{n=1}^\infty \ket{\psi_n} \langle \psi_n | = I \enspace . \]
+\end{prop}
