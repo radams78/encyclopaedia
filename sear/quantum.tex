@@ -1,3 +1,114 @@
+\chapter{The Postulates of Quantum Mechanics}
+
+\begin{ax}[Principle of Superposition]
+For any physical system $S$, there exists a complex inner product space $V$ such that the states of $S$ correspond to the one-dimensional subspaces of $V$. We call the elements of this subspace the \emph{state vectors} that correspond to the state.
+\end{ax}
+
+\begin{df}[Observable]
+An \emph{observable} of a physical system is a physical quantity that can be measured by an experiment whose value is a real number.
+\end{df}
+
+\begin{df}[Eigenstate]
+Let $S$ be a physical system. Let $E$ be an observable of $S$. Let $\alpha \in \mathbb{R}$. A state $s$ of $S$ is
+an \emph{eigenstate} of $E$ with \emph{eigenvalue} $\alpha$ iff the probability is 1 that, if we measure $E$ when the system is in state $s$, then the outcome will be $\alpha$.
+\end{df}
+
+\begin{ax}
+Let $E$ be an observable of a physical system $S$. Let $\alpha \in \mathbb{R}$. The state vectors corresponding to the eigenstates of $E$ form a subspace of the Hilbert space associated with $S$, called the \emph{eigenspace} of $\alpha$.
+\end{ax}
+
+\begin{ax}[Projection Postulate]
+Let $S$ be a physical system with associated state space $V$. Let $E$ be an observable of $S$. Let $V_\alpha$ be the eigenspace of $V$ with eigenvalue $\alpha$. Let $P_\alpha : V \rightarrow V_\alpha$ be the projection operator. If $S$ is in a state with normalised state vector $\ket{\psi}$, and we measure $E$ on $S$, then the probability of getting the value $\alpha$ is
+\[ p_E(\alpha | \psi) = \frac{\langle \psi | P_\alpha | \psi \rangle}{\langle \psi | \psi \rangle} \]
+and after the experiment, the state of the system is $P_\alpha | \psi \rangle$.
+\end{ax}
+
+\begin{prop}
+\label{prop:eigenstates_orthogonal}
+Let $E$ be an observable of a physical system $S$. Then eigenstates of $E$ with different eigenvalues are orthogonal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\ket{\psi}$ a normalised eigenstate with eigenvalue $\beta$ and $\alpha \neq \beta$.}}
+\step{2}{The probability of measuring $\alpha$ if the system is in state $\ket{\psi}$ is 0.}
+\step{3}{$\langle \psi | P_\alpha | \psi \rangle = 0$}
+\step{4}{$P_\alpha |\psi \rangle = 0$}
+\step{5}{$\ket{\psi}$ is orthogonal to every eigenvector with eigenvalue $\alpha$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $E$ be an observable of a physical system $S$ with state space $V$. Assume $E$ has countably many outcomes $\alpha_1$, $\alpha_2$, \ldots and, for any state vector $\ket{\psi}$, we have
+\[ \sum_{n=1}^\infty P_{\alpha_n} \ket{\psi} \text{ converges}. \]
+Then the eigenvectors of $E$ span $V$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\ket{\psi} \in V$}}
+\step{2}{\pflet{$\ket{\psi'} = \ket{\psi} - \sum_{n=1}^\infty P_{\alpha_n} \ket{\psi}$}}
+\step{3}{\assume{for a contradiction $\ket{\psi'} \neq 0$}}
+\step{4}{\pflet{$\ket{\phi} = \ket{\psi'} / \| \ket{\psi'} \|$}}
+\step{5}{For all $n$ we have $P_{\alpha_n} \ket{\phi} = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		P_{\alpha_n} \ket{\psi'} & = P_{\alpha_n} \ket{\psi} - \sum_{m=1}^\infty P_{\alpha_n} P_{\alpha_m} \ket{\psi} \\
+		& = P_{\alpha_n} \ket{\psi} - P_{\alpha_n} \ket{\psi} & (\text{Proposition \ref{prop:eigenstates_orthogonal}}) \\
+		& = 0
+	\end{align*}
+\end{proof}
+\step{6}{For all $n$, the probability of measuring $\alpha_n$ if the system is in state $\ket{\phi}$ is 0.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+For any observable $E$ of a physical system with state space $V$, pick an orthonormal basis $\mathcal{B}$ of normalised eigenvectors of $E$. The operator that represents $E$ is $\hat{E} : V \rightarrow V$ where, for $\ket{\phi} \in \mathcal{B}$, if $\alpha$ is the eigenvalue of $\ket{\phi}$ then
+\[ \hat{E} \ket{\phi} = \alpha \ket{\phi} \enspace . \]
+\end{df}
+
+\begin{prop}
+For any observable $E$, the operator $\hat{E}$ is Hermitian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\hat{\phi} = \sum_n c_n \hat{\psi_n}$ and $\hat{\psi} = \sum_n d_n \hat{\psi_n}$ be any two state vectors, where the $\hat{\psi_n}$ are the basis vectors with eigenvalues $\alpha_n$.}}
+\step{2}{$\langle \phi | \hat{E} | \psi \rangle = \overline{\langle \psi | \hat{E} | \phi \rangle}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\langle \phi | \hat{E} | \psi \rangle
+		& = \sum_m \sum_n \overline{c_m} d_n \langle \psi_m | \hat{E} | \psi_n \rangle \\
+		& = \sum_m \sum_n \overline{c_m} d_n \alpha_n \langle \psi_m | \psi_n \rangle \\
+		& = \sum_n \overline{c_n} d_n \alpha_n \\
+		\langle \psi | \hat{E} | \phi \rangle & = \sum_n \overline{d_n} c_n \alpha_n & \text{similarly}
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Let $E$ be an observable and $f : \mathbb{R} \rightarrow \mathbb{R}$. Then $f(E)$ is the observable that consists of performing the experiment to obtain the value of $E$ and then applying $f$ to it.
+\end{df}
+
+\begin{prop}
+$\widehat{E^n} = \hat{E}^n$
+\end{prop}
+
+\begin{proof}
+\pf\ Since if $\ket{\phi}$ is an eigenstate with eigenvalue $\alpha$ then $\hat{E}^n \ket{\phi} = \alpha^n \ket{\phi}$. \qed
+\end{proof}
+
+\begin{cor}
+For any real polynomial $p$ we have $\widehat{p(E)} = p(\hat{E})$.
+\end{cor}
+
 \chapter{The Wave Function}
 
 \section{The Schr\"{o}dinger Equation}
@@ -457,3 +568,21 @@ where $H_n$ is the $n$th Hermite polynomial and
 The solutions to the time-independent Schr\"{o}dinger equation with $V = 0$ are 
 \[ A e^{i(kx - \frac{\hbar k^2}{2m} t)} \]
 \end{prop}
+
+\begin{prop}
+The normalized solutions to the time-dependent Schr\"{o}dinger equation with $V = 0$ are the \emph{wave packets}
+\[ \Psi(x,t) = \frac{1}{\sqrt{2\pi}} \int_{- \infty}^{+ \infty} \phi(k) e^{i(kx - \frac{\hbar k^2}{2m}t)} dk \]
+where $\phi : \mathbb{R} \rightarrow \mathbb{C}$ is a function such that
+\[ \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+ \infty} \phi(k) dk = 1 \enspace . \]
+\end{prop}
+
+\begin{prop}
+Let a particle moving under potential $V = 0$ have initial wave function $\Psi(x,0)$. Then we have
+\[\ Psi(x,t) = \frac{1}{\sqrt{2\pi}} \int_{- \infty}^{+ \infty} \phi(k) e^{i(kx - \frac{\hbar k^2}{2m}t)} dk \]
+where
+\[ \phi(k) = \frac{1}{\sqrt{2 \pi}} \int_{- \infty}^{+ \infty} \Psi(x,0) e^{-ikx} dx \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ We have $\phi(k)$ is the inverse Fourier transform of $\Phi(x,t)$ hence of $\Phi(x,0)$. \qed
+\end{proof}

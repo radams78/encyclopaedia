@@ -10,23 +10,27 @@ For any sets $A$ and $B$, let there be a set $B^A$, whose elements are called \e
 
 For any function $f : A \rightarrow B$ and element $a \in A$, let there be an element $f(a) \in B$, the \emph{value} of the function $f$ at the \emph{argument} $a$.
 
-\section{Injections, Surjections and Bijections} % CHECKED FORMALIZED
+\section{Injections, Surjections and Bijections} %FORMALIZED
 
 \begin{df}[Injective]
-A function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection} iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
+We say a function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection}, and write $f : A \rightarrowtail B$, iff, for all $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
+
+We say a set $A$ is \emph{dominated} by a set $B$, and write $A \preccurlyeq B$, iff there exists an injection from $A$ to $B$.
 \end{df}
 
 \begin{df}[Surjective]
-A function $f : A \rightarrow B$ is \emph{surjective} or a \emph{surjection} iff, for all $y \in B$, there exists $x \in A$ such that $f(x) = y$.
+We say a function $f : A \rightarrow B$ is \emph{surjective} or a \emph{surjection}, and write $f : A \twoheadrightarrow B$, iff, for all $y \in B$, there exists $x \in A$ such that $f(x) = y$.
 \end{df}
 
 \begin{df}[Bijective]
-A function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection} iff it is injective and surjective.
+We say a function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection}, and write $f : A \approx B$, iff it is injective and surjective.
 
 Sets $A$ and $B$ are \emph{equinumerous}, $A \approx B$, iff there exists a bijection between them.
+
+We say the set $A$ is \emph{strictly} dominated by the set $B$, and write $A \prec B$, iff $A \preccurlyeq B$ and $A \not\approx B$. 
 \end{df}
 
-If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define "Let $C$ be the set such that $P(C)$".
+If we prove there exists a set $X$ such that $P(X)$, and that any two sets that satisfy $P$ are bijective, then we may introduce a constant $C$ and define ``Let $C$ be the set such that $P(C)$".
 
 \section{Axioms} % CHECKED FORMALIZED
 

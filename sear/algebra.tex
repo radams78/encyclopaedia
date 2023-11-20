@@ -1,3 +1,5 @@
+\newcommand{\ket}[1]{\ensuremath{\left| {#1} \right\rangle}}
+
 \chapter{Monoid Theory}
 
 \begin{df}[Monoid]
@@ -224,3 +226,45 @@ For any field $K$, we write $\mathbf{Vect}_K$ for $K-\mathbf{Mod}$.
 \end{df}
 
 Dual space functor $\mathbf{Vect}_K^{\mathrm{op}} \rightarrow \mathbf{Vect}_K$.
+
+\section{Inner Product Spaces}
+
+\begin{df}[Inner Product]
+Let $V$ be a complex vector space. An \emph{inner product} on $V$ is a function $\langle \ | \ \rangle : V^2 \rightarrow \mathbb{C}$ such that, for all $|\phi\rangle, |\psi\rangle, |\psi_1 \rangle, | \psi_2 \rangle \in V$ and $c_1, c_2 \in \mathbb{C}$,
+\begin{enumerate}
+\item $\langle \phi | c_1 \psi_1 + c_2 \psi_2 \rangle = c_1 \langle \phi | \psi_1 \rangle + c_2 \langle \phi | \psi_2 \rangle$
+\item $\langle \psi | \phi \rangle = \overline{\langle \phi | \psi \rangle}$
+\item $\langle \psi | \psi \rangle \geq 0$
+\item If $\langle \psi | \psi \rangle = 0$ then $|\psi\rangle = 0$.
+\end{enumerate}
+
+An \emph{inner product space} is a complex vector space with an inner product.
+\end{df}
+
+\begin{ex}
+The function $\langle \ | \ \rangle : (\mathbb{C}^n)^2 \rightarrow \mathbb{C}$ defined by
+\[ \langle (a_1, \ldots, a_n) | (b_1, \ldots, b_n) \rangle = \overline{a_1} b_1 + \cdots + \overline{a_n} b_n \]
+is an inner product on $\mathbb{C}^n$.
+\end{ex}
+
+\begin{df}[Normalised]
+Let $V$ be an inner product space and $|\psi\rangle \in V$. Then $|\psi\rangle$ is \emph{normalised} iff $\langle \psi | \psi \rangle = 1$.
+\end{df} 
+
+\begin{df}[Orthogonal]
+Let $V$ be an inner product space and $\ket{\phi}, |\psi\rangle \in V$. Then $\ket{\phi}$ and $|\psi\rangle$ ale \emph{orthogonal} iff $\langle \phi | \psi \rangle = 0$.
+\end{df} 
+
+\begin{df}[Orthonormal]
+Let $V$ be an inner product space and $S \subseteq V$. Then $S$ is \emph{orthonormal} iff:
+\begin{itemize}
+\item Every element of $S$ is normalised.
+\item Any two distinct elements of $S$ are orthogonal.
+\end{itemize}
+\end{df}
+
+\begin{df}[Hermitian]
+Let $V$ be an inner product space. A linear operator $T : V \rightarrow V$ is \emph{Hermitian} iff
+\[ \langle \psi | T | \phi \rangle = \overline{\langle \phi | T | \psi \rangle} \]
+for all $\ket{\phi}, \ket{\psi} \in V$.
+\end{df}

@@ -1,10 +1,10 @@
 % READ
 % READ
 % CHECK
+% FORMALIZE
 % READ
 % READ
 % CHECK
-% FORMALIZE
  
 \documentclass{book}
 
@@ -1247,6 +1247,24 @@ H_5(x) & = 32 x^5 - 160 x^3 + 120 x
 \end{prop}
 
 %TODO
+
+\section{Fourier Transforms}
+
+\begin{df}[Fourier Transform]
+The \emph{Fourier transform} of a function $f$ is
+\[ F(x) = \frac{1}{\sqrt{2 \pi}} \int_{- \infty}^{+ \infty} f(t) e^{-ixt} dt \enspace . \]
+\end{df}
+
+\begin{df}[Fourier Transform]
+The \emph{inverse Fourier transform} of a function $F$ is
+\[ f(x) = \frac{1}{\sqrt{2 \pi}} \int_{- \infty}^{+ \infty} F(t) e^{ixt} dt \enspace . \]
+\end{df}
+
+\begin{thm}[Plancherel's Theorem]
+$F$ is the Fourier transform of $f$ if and only if $f$ is the inverse Fourier transform of $F$.
+\end{thm}
+
+% TODO
 
 \part{Topology}
 
