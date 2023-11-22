@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 NOV 2023 06:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 NOV 2023 06:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -859,7 +859,7 @@ Chapter 11.
 ]
 Chapter 12.
 [99]
-Overfull \hbox (1.88866pt too wide) in paragraph at lines 255--256
+Overfull \hbox (1.88866pt too wide) in paragraph at lines 259--260
 []\OT1/cmr/bx/n/10 Definition 12.1.4 \OT1/cmr/m/n/10 (Or-thog-o-nal)\OT1/cmr/bx
 /n/10 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 be an in-ner p
 rod-uct space and $[] \OML/cmm/m/it/10 ; \U/matha/m/n/10 |\OML/cmm/m/it/10  \U/
@@ -1109,41 +1109,41 @@ Chapter 22.
 Chapter 23.
 [239
 
-] [240] [241] [242]
+] [240] [241] [242] [243] [244
+
+]
 Chapter 24.
-[243
+[245] [246]
 
-] [244]
-
-LaTeX Warning: Command \i invalid in math mode on input line 286.
+LaTeX Warning: Command \i invalid in math mode on input line 340.
 
 
-LaTeX Warning: Command \i invalid in math mode on input line 286.
+LaTeX Warning: Command \i invalid in math mode on input line 340.
 
 
-Overfull \hbox (41.9387pt too wide) detected at line 286
+Overfull \hbox (41.9387pt too wide) detected at line 340
 []
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [245]
+ [247]
 Overfull \vbox (87.41243pt too high) has occurred while \output is active []
 
 
-[246] [247] [248]
-Overfull \hbox (17.69855pt too wide) detected at line 441
+[248] [249] [250]
+Overfull \hbox (17.69855pt too wide) detected at line 495
 []
  []
 
-[249]
-Overfull \hbox (18.12831pt too wide) in paragraph at lines 446--447
+[251]
+Overfull \hbox (18.12831pt too wide) in paragraph at lines 500--501
 []\OT1/cmr/bx/n/10 Proposition 24.5.7. \OT1/cmr/m/it/10 The nor-mal-ized so-lu-
 tions to the time-independent Schr^^?odinger
  []
 
-[250]
+[252]
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "3" (<2>2) already defined
 WARNING: proof step "4" (<2>3) already defined
@@ -1153,29 +1153,29 @@ WARNING: proof step "5" (<1>9) already defined
 
 Underfull \vbox (badness 1975) has occurred while \output is active []
 
- [251]
-Overfull \hbox (19.64838pt too wide) detected at line 583
+ [253]
+Overfull \hbox (19.64838pt too wide) detected at line 637
 []
  []
 
 
 Underfull \vbox (badness 1394) has occurred while \output is active []
 
- [252]
-Overfull \hbox (9.43947pt too wide) in paragraph at lines 606--607
+ [254]
+Overfull \hbox (9.43947pt too wide) in paragraph at lines 660--661
 []\OT1/cmr/bx/n/10 Proposition 24.6.2. \OT1/cmr/m/it/10 The nor-mal-ized so-lu-
 tions to the time-dependent Schr^^?odinger
  []
 
-) [253] [254] (./main.aux)
+) [255] [256] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 79FDAC6665B886A31775B41B0570E14E;33923.
+(rerunfilecheck)             Checksum: 22B10DB3A9F25449F8C25171EB8912C3;34094.
  ) 
 Here is how much of TeX's memory you used:
- 14332 strings out of 476091
- 199410 string characters out of 5794081
+ 14342 strings out of 476091
+ 199500 string characters out of 5794081
  1882330 words of memory out of 5000000
- 32933 multiletter control sequences out of 15000+600000
+ 32934 multiletter control sequences out of 15000+600000
  535682 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1208,10 +1208,10 @@ m5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
 mf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/xypic/xybtip10.pfb>
-Output written on main.pdf (254 pages, 984014 bytes).
+Output written on main.pdf (256 pages, 987901 bytes).
 PDF statistics:
- 4167 PDF objects out of 4296 (max. 8388607)
- 3674 compressed objects within 37 object streams
- 1572 named destinations out of 1728 (max. 500000)
- 1985 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4188 PDF objects out of 4296 (max. 8388607)
+ 3693 compressed objects within 37 object streams
+ 1581 named destinations out of 1728 (max. 500000)
+ 1993 words of extra memory for PDF output out of 10000 (max. 10000000)
 

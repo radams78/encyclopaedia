@@ -240,10 +240,11 @@
 \contentsline {part}{VIII\hspace {1em}Quantum Theory}{237}{part.8}%
 \contentsline {chapter}{\numberline {23}The Postulates of Quantum Mechanics}{239}{chapter.23}%
 \contentsline {section}{\numberline {23.1}Observables as a Random Variable}{241}{section.23.1}%
-\contentsline {chapter}{\numberline {24}The Wave Function}{243}{chapter.24}%
-\contentsline {section}{\numberline {24.1}The Schr\"{o}dinger Equation}{243}{section.24.1}%
-\contentsline {section}{\numberline {24.2}Statistical Interpretation}{244}{section.24.2}%
-\contentsline {section}{\numberline {24.3}Momentum}{245}{section.24.3}%
-\contentsline {section}{\numberline {24.4}The Time-Independent Schr\"{o}dinger Equation}{247}{section.24.4}%
-\contentsline {section}{\numberline {24.5}The Quantum Harmonic Oscillator}{249}{section.24.5}%
-\contentsline {section}{\numberline {24.6}The Free Particle}{253}{section.24.6}%
+\contentsline {section}{\numberline {23.2}Compatible Observables}{242}{section.23.2}%
+\contentsline {chapter}{\numberline {24}The Wave Function}{245}{chapter.24}%
+\contentsline {section}{\numberline {24.1}The Schr\"{o}dinger Equation}{245}{section.24.1}%
+\contentsline {section}{\numberline {24.2}Statistical Interpretation}{246}{section.24.2}%
+\contentsline {section}{\numberline {24.3}Momentum}{247}{section.24.3}%
+\contentsline {section}{\numberline {24.4}The Time-Independent Schr\"{o}dinger Equation}{249}{section.24.4}%
+\contentsline {section}{\numberline {24.5}The Quantum Harmonic Oscillator}{251}{section.24.5}%
+\contentsline {section}{\numberline {24.6}The Free Particle}{255}{section.24.6}%

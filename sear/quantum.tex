@@ -142,6 +142,60 @@ Let $\ket{\psi}$ be a normalised state. Let $E$ be an observable. Then the expec
 Let $\ket{\psi}$ be a normalised state. Let $E$ be an observable. Then the variance of $E$ in state $\ket{\psi}$ is \[ (\Delta E)^2 = \langle \psi | \hat{E}^2 | \psi \rangle - \langle \psi | \hat{E} | \psi \rangle^2 \]
 \end{cor}
 
+\section{Compatible Observables}
+
+\begin{df}[Compatible]
+Two observables $A$ and $B$ on a physical system are \emph{compatible} iff, when we measure $A$ then $B$ then $A$, the second measurement of $A$ always yields the same value as the first.
+\end{df}
+
+\begin{prop}
+Let $A$ and $B$ be observables of a physical system $S$ with state space $V$. Then the following are equivalent.
+\begin{enumerate}
+\item $A$ and $B$ are compatible.
+\item $\hat{A} \hat{B} = \hat{B} \hat{A}$
+\item There exists a basis for $V$ whose elements are eigenvectors of both $A$ and $B$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$A$ and $B$ are compatible.}}
+	\step{b}{\pick\ orthonormal bases $\mathcal{B}_A$ and $\mathcal{B}_B$ whose elements are eigenvectors of $\hat{A}$ and of $\hat{B}$ respectively.}
+	\step{c}{For $\ket{\psi} \in \mathcal{B}_A$, \pflet{$\ket{\psi} = c_{\psi 1} \ket{\phi_{\psi 1}} + \cdots + c_{\psi n_\psi} \ket{\phi_{\psi n_\psi}}$ where each $c_{\psi i}$ is nonzero and each $\ket{\phi_{\psi i}} \in \mathcal{B}_B$}}
+	\step{d}{\pflet{$\alpha$ be the $\hat{A}$-eigenvalue of $\ket{\psi}$}}
+	\step{e}{Each $\ket{\phi_{\psi i}}$ is an eigenvalue of $\hat{A}$ with eigenvalue $\alpha$.}
+	\begin{proof}
+		\pf\ There is a nonzero probability that, if we perform $A$ then $B$, we will obtain value $\alpha$ for $A$ and then be in state $\ket{\phi_{\psi i}}$. If we perform $A$ in this state, the value is certain to be $\alpha$.
+	\end{proof}
+	\step{f}{$\{ \ket{\phi_{\psi i}} : \psi \in \mathcal{B}_A, 1 \leq i \leq n_\psi \}$ is a basis consisting of eigenvectors of both $\hat{A}$ and $\hat{B}$.}
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\mathcal{B}$ is a basis for $V$ whose elements are eigenvectors of both $A$ and $B$}}
+	\step{b}{For all $\ket{\phi} \in \mathcal{B}$ we have $\hat{A} \hat{B} \ket{\phi} = \hat{B} \hat{A} \ket{\phi}$}
+	\step{c}{For all $\ket{\phi}$ we have $\hat{A} \hat{B} \ket{\phi} = \hat{B} \hat{A} \ket{\phi}$}
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{$\hat{A} \hat{B} = \hat{B} \hat{A}$}}
+	\step{b}{\assume{We perform $A$ and obtain the value $\alpha$, leaving the system in state $\ket{\phi}$.}}
+	\step{c}{$\ket{\phi}$ is an eigenvector of $\hat{A}$ with eigenvalue $\alpha$.}
+	\step{d}{$\hat{A} \hat{B} \ket{\phi} = \alpha \\\\hat{B} \ket{\phi}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\hat{A} \hat{B} \ket{\phi} & = \hat{B} \hat{A} \ket{\phi} \\
+			& = \alpha \hat{B} \ket{\phi}
+						\end{align*}
+	\end{proof}
+	\step{e}{$\hat{B} \ket{\phi}$ is an eigenvector of $A$ with eigenvalue $\alpha$.}
+	\step{f}{If we perform $B$ then $A$, we are certain to get the value $\alpha$.}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{The Wave Function}
 
 \section{The Schr\"{o}dinger Equation}
