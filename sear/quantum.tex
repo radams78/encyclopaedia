@@ -246,6 +246,22 @@ The \emph{reduced Planck's constant} is
 \[ \hbar = h / 2 \pi \enspace . \]
 \end{df}
 
+\begin{ax}
+A particle moving in one dimension is a physical system whose state space $\mathcal{W}$ is the space of all functions $\psi : \mathbb{R} \rightarrow \mathbb{C}$ such that:
+\begin{itemize}
+\item For any polynomial $p \in \mathbb{C}[x]$, the function $p \circ \psi$ is square-integrable.
+\item $\psi$ has a uniformly continuous square-integrable derivative
+\end{itemize}
+with inner product given by
+\[ \langle \phi | \psi \rangle = \int \overline{\phi} \psi \]
+We call the elements of $\mathcal{W}$ \emph{wave functions}.
+
+The position of the particle is an observable $X$ whose operator is
+\[ (\hat{X} \psi)(x) = x \psi(x) \]
+and the momentum of the particle is an observable $K$ whose operator is
+\[ (\hat{K} \psi)(x) = - i \frac{d \psi}{dx} \]
+\end{ax}
+
 Consider a particle of mass $m$ moving in one dimension under a force given by a potential energy function $V(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow [0, + \infty]$. Associated with the particle is a \emph{wave function} $\Psi(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{C}$ that is differentiable in $t$, twice differentiable in $x$, satisfies the \emph{(time-dependent) Schr\"{o}dinger equation}: for all $x$ and $t$,
 
 \[ i \hbar \frac{\partial \Psi}{\partial t} = - \frac{\hbar^2}{2 m} \frac{\partial^2 \Psi}{\partial x^2} + V(x,t) \Psi(x,t) \]

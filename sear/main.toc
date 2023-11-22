@@ -244,7 +244,7 @@
 \contentsline {section}{\numberline {23.2}Compatible Observables}{244}{section.23.2}%
 \contentsline {chapter}{\numberline {24}The Wave Function}{247}{chapter.24}%
 \contentsline {section}{\numberline {24.1}The Schr\"{o}dinger Equation}{247}{section.24.1}%
-\contentsline {section}{\numberline {24.2}Statistical Interpretation}{248}{section.24.2}%
+\contentsline {section}{\numberline {24.2}Statistical Interpretation}{249}{section.24.2}%
 \contentsline {section}{\numberline {24.3}Momentum}{249}{section.24.3}%
 \contentsline {section}{\numberline {24.4}The Time-Independent Schr\"{o}dinger Equation}{251}{section.24.4}%
 \contentsline {section}{\numberline {24.5}The Quantum Harmonic Oscillator}{253}{section.24.5}%
