@@ -109,6 +109,39 @@ $\widehat{E^n} = \hat{E}^n$
 For any real polynomial $p$ we have $\widehat{p(E)} = p(\hat{E})$.
 \end{cor}
 
+\section{Observables as a Random Variable}
+
+\begin{df}[Uncertainty]
+Let $E$ be an observable. The \emph{uncertainty} of $E$ in a given state, $\Delta E$, is the standard deviation of the value of $E$ when measured.
+\end{df}
+
+\begin{prop}
+Let $\ket{\psi}$ be a normalised state. Let $E$ be an observable. Then the expected value of $E$ in state $\ket{\psi}$ is
+\[ \langle E \rangle = \langle \psi | \hat{E} | \psi \rangle \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ an orthonormal basis $\mathcal{B}$ of eigenstates for $E$.}
+\step{2}{\pflet{$\psi = \sum_i c_i \ket{\psi_i}$ where each $\ket{\psi_i} \in \mathcal{B}$ has eigenvalue $\alpha_i$.}}
+\step{3}{$\langle E \rangle = \langle \psi | \hat{E} | \psi \rangle$}
+\begin{proof}
+\pf
+\begin{align*}
+\langle E \rangle & = \sum_\alpha \alpha \langle \psi | P_\alpha | \psi \rangle \\
+& = \sum_\alpha \alpha \sum_i |c_i|^2 \langle \psi_i | P_\alpha | \psi_i \rangle \\
+& = \sum_i |c_i|^2 \sum_\alpha \alpha \langle \psi_i | P_\alpha | \psi_i \rangle \\
+& = \sum_i |c_i|^2 \alpha_i \\
+& = \langle \psi | \hat{E} | \psi \rangle
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $\ket{\psi}$ be a normalised state. Let $E$ be an observable. Then the variance of $E$ in state $\ket{\psi}$ is \[ (\Delta E)^2 = \langle \psi | \hat{E}^2 | \psi \rangle - \langle \psi | \hat{E} | \psi \rangle^2 \]
+\end{cor}
+
 \chapter{The Wave Function}
 
 \section{The Schr\"{o}dinger Equation}

@@ -239,6 +239,7 @@
 \contentsline {chapter}{\numberline {22}Continuous Random Variables}{235}{chapter.22}%
 \contentsline {part}{VIII\hspace {1em}Quantum Theory}{237}{part.8}%
 \contentsline {chapter}{\numberline {23}The Postulates of Quantum Mechanics}{239}{chapter.23}%
+\contentsline {section}{\numberline {23.1}Observables as a Random Variable}{241}{section.23.1}%
 \contentsline {chapter}{\numberline {24}The Wave Function}{243}{chapter.24}%
 \contentsline {section}{\numberline {24.1}The Schr\"{o}dinger Equation}{243}{section.24.1}%
 \contentsline {section}{\numberline {24.2}Statistical Interpretation}{244}{section.24.2}%
