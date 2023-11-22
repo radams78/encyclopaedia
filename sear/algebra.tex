@@ -239,6 +239,45 @@ Let $S,T : V \rightarrow V$ be linear transformations. The \emph{commutator} of 
 \[ [S,T] = ST - TS \]
 \end{df}
 
+\begin{prop}
+\[ [S,T] = -[T,S] \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\[ [R,ST] = [R,S]T + S[R,T] \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[R,ST] & = RST - STR \\
+& = RST - SRT + SRT - STR \\
+& = (RS - SR) T + S(RT - TR) \\
+& = [R,S]T + S[R,T] & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}[Jacobi Identity]
+\[ [R, [S,T]] + [S,[T,R]] + [T,[R,S]] = 0 \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[R,[S,T]] + [S,[T,R]] + [T,[R,S]]
+& = R(ST-TS) - (ST-TS)R \\
+& + S(TR - RT) - (TR - RT)S \\
+& + T(RS - SR) - (RS - SR)T \\
+& = RST - RTS - STR + TSR \\
+& + STR - SRT - TRS + RTS \\
+& + TRS - TSR - RST + SRT \\
+& = 0 & \qed
+\end{align*}
+\end{proof}
 \section{Inner Product Spaces}
 
 \begin{df}[Inner Product]
