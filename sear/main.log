@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 NOV 2023 06:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 NOV 2023 06:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1113,26 +1113,9 @@ Chapter 23.
 Chapter 24.
 [243
 
-]
-
-LaTeX Warning: Reference `prop:differentiate_psi_squared' on page 244 undefined
- on input line 214.
-
-
-LaTeX Warning: Reference `prop:differentiate_psi_squared' on page 244 undefined
- on input line 214.
-
-[244]
-
-LaTeX Warning: Reference `prop:differentiate_psi_squared' on page 245 undefined
- on input line 286.
-
+] [244]
 
 LaTeX Warning: Command \i invalid in math mode on input line 286.
-
-
-LaTeX Warning: Reference `prop:differentiate_psi_squared' on page 245 undefined
- on input line 286.
 
 
 LaTeX Warning: Command \i invalid in math mode on input line 286.
@@ -1160,26 +1143,10 @@ Overfull \hbox (18.12831pt too wide) in paragraph at lines 446--447
 tions to the time-independent Schr^^?odinger
  []
 
-
-LaTeX Warning: Reference `prop:raise_lower' on page 250 undefined on input line
- 478.
-
 [250]
-
-LaTeX Warning: Reference `prop:qho_Hamiltonian' on page 251 undefined on input 
-line 482.
-
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "3" (<2>2) already defined
 WARNING: proof step "4" (<2>3) already defined
-
-LaTeX Warning: Reference `prop:Hermitian_conjugates' on page 251 undefined on i
-nput line 500.
-
-
-LaTeX Warning: Reference `prop:Hermitian_conjugates' on page 251 undefined on i
-nput line 500.
-
 WARNING: proof step "3" (<1>7) already defined
 WARNING: proof step "4" (<1>8) already defined
 WARNING: proof step "5" (<1>9) already defined
@@ -1187,15 +1154,6 @@ WARNING: proof step "5" (<1>9) already defined
 Underfull \vbox (badness 1975) has occurred while \output is active []
 
  [251]
-
-LaTeX Warning: Reference `prop:Hermitian_conjugates' on page 252 undefined on i
-nput line 560.
-
-
-LaTeX Warning: Reference `prop:Hermitian_conjugates' on page 252 undefined on i
-nput line 560.
-
-
 Overfull \hbox (19.64838pt too wide) detected at line 583
 []
  []
@@ -1204,37 +1162,20 @@ Overfull \hbox (19.64838pt too wide) detected at line 583
 Underfull \vbox (badness 1394) has occurred while \output is active []
 
  [252]
-
-LaTeX Warning: Reference `prop:solve_qho' on page 253 undefined on input line 5
-95.
-
-
 Overfull \hbox (9.43947pt too wide) in paragraph at lines 606--607
 []\OT1/cmr/bx/n/10 Proposition 24.6.2. \OT1/cmr/m/it/10 The nor-mal-ized so-lu-
 tions to the time-dependent Schr^^?odinger
  []
 
 ) [253] [254] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 518D5D69BA56E5DC6B86DDB010935C52;32658
-(rerunfilecheck)             After:  79FDAC6665B886A31775B41B0570E14E;33923.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 79FDAC6665B886A31775B41B0570E14E;33923.
  ) 
 Here is how much of TeX's memory you used:
- 14325 strings out of 476091
- 199314 string characters out of 5794081
- 1883330 words of memory out of 5000000
- 32926 multiletter control sequences out of 15000+600000
+ 14332 strings out of 476091
+ 199410 string characters out of 5794081
+ 1882330 words of memory out of 5000000
+ 32933 multiletter control sequences out of 15000+600000
  535682 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,76p,3215b,910s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1267,10 +1208,10 @@ m5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7
 mf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/xypic/xyatip10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/xypic/xybtip10.pfb>
-Output written on main.pdf (254 pages, 982878 bytes).
+Output written on main.pdf (254 pages, 984014 bytes).
 PDF statistics:
- 4104 PDF objects out of 4296 (max. 8388607)
- 3639 compressed objects within 37 object streams
+ 4167 PDF objects out of 4296 (max. 8388607)
+ 3674 compressed objects within 37 object streams
  1572 named destinations out of 1728 (max. 500000)
- 1929 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1985 words of extra memory for PDF output out of 10000 (max. 10000000)
 
