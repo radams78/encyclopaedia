@@ -89,6 +89,7 @@
 \contentsline {chapter}{\numberline {10}Ring Theory}{95}{chapter.10}%
 \contentsline {chapter}{\numberline {11}Field Theory}{97}{chapter.11}%
 \contentsline {chapter}{\numberline {12}Linear Algebra}{99}{chapter.12}%
+\contentsline {subsection}{\numberline {12.0.1}Commutator}{100}{subsection.12.0.1}%
 \contentsline {section}{\numberline {12.1}Inner Product Spaces}{100}{section.12.1}%
 \contentsline {part}{V\hspace {1em}Analysis}{103}{part.5}%
 \contentsline {chapter}{\numberline {13}Real Analysis}{105}{chapter.13}%

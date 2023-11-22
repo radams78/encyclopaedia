@@ -231,6 +231,13 @@ Dual space functor $\mathbf{Vect}_K^{\mathrm{op}} \rightarrow \mathbf{Vect}_K$.
 Let $T : V \rightarrow V$ be a linear operator and $S$ a subspace of $V$. Then $S$ is \emph{invariant} under $T$ iff $T(S) \subseteq S$.
 \end{df}
 
+\subsection{Commutator}
+
+\begin{df}[Commutator]
+Let $S,T : V \rightarrow V$ be linear transformations. The \emph{commutator} of $S$ and $T$ is
+\[ [S,T] = ST - TS \]
+\end{df}
+
 \section{Inner Product Spaces}
 
 \begin{df}[Inner Product]
@@ -293,6 +300,23 @@ Every eigenvalue of a Hermitian operator is real.
 \end{proof}
 \step{5}{$\alpha = \overline{\alpha}$}
 \qed
+\end{proof}
+
+\begin{prop}
+If $S, T : V \rightarrow V$ are Hermitian then so is $i[S,T]$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	\langle \psi | i[S,T] | \phi \rangle
+	& = i\langle \psi | ST | \phi \rangle - i\langle \psi | TS | \phi \rangle \\
+	& = i \overline{\langle T \ket{\phi} | S | \psi \rangle} - i \overline{\langle S \ket{\phi} | T | \psi \rangle} \\
+	& = i \langle S \ket{\psi} | T | \phi \rangle - i \langle T \ket{\psi} | S | \phi \rangle \\
+	& = i \overline{\langle \phi | TS | \psi \rangle} -i \overline{\langle \phi | ST | \psi \rangle} \\
+	& = -i \overline{\langle \phi | [S,T] | \psi \rangle} \\
+	& = \overline{\langle \phi | i[S,T] | \psi \rangle} & \qed
+\end{align*}
 \end{proof}
 
 \begin{df}[Hermitian Conjugate]
