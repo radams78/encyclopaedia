@@ -142,6 +142,38 @@ Let $\ket{\psi}$ be a normalised state. Let $E$ be an observable. Then the expec
 Let $\ket{\psi}$ be a normalised state. Let $E$ be an observable. Then the variance of $E$ in state $\ket{\psi}$ is \[ (\Delta E)^2 = \langle \psi | \hat{E}^2 | \psi \rangle - \langle \psi | \hat{E} | \psi \rangle^2 \]
 \end{cor}
 
+\begin{thm}[Generalised Uncertainty Principle]
+Let $A$ and $B$ be observables. Then in any state,
+\[ \Delta A \Delta B \geq \frac{1}{2} |\langle i [A,B] \rangle| \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\ket{\psi}$ be any state.}}
+\step{2}{\pflet{$A_1 = A - \langle A \rangle$}}
+\step{3}{\pflet{$B_1 = B - \langle B \rangle$}}
+\step{5}{For $x \in \mathbb{R}$, \pflet{$\ket{\phi(x)} = \hat{A_1} \ket{\psi} + i x \hat{B_1} \ket{\psi}$}}
+\step{6}{For all $x \in \mathbb{R}$ we have $\bra{\phi(x)} = \bra{\psi} \hat{A_1} -ix \bra{\psi} \hat{B_1}$}
+\step{7}{For all $x \in \mathbb{R}$ we have $\langle \phi(x) | \phi(x) \rangle = \langle \psi | \hat{A_1}^2 | \psi \rangle - x \langle \psi | i [\hat{A_1}, \hat{B_1}] | \psi \rangle + x^2 \langle \psi | \hat{B_1}^2 | \psi \rangle$}
+\step{8}{$[\hat{A_1},\hat{B_1}] = [\hat{A},\hat{B}]$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		[\hat{A_1}, \hat{B_1}] & = (A - \langle A \rangle)(B - \langle B \rangle) - (B - \langle B \rangle) (A - \langle A \rangle)\\
+		& = AB - \langle B \rangle A - \langle A \rangle B + \langle A \rangle \langle B \rangle \\
+		& - BA + \langle A \rangle B + \langle B \rangle A - \langle A \rangle \langle B \rangle \\
+		& = AB - BA \\
+		& = [A,B]
+	\end{align*}
+\end{proof}
+\step{9}{For all $x \in \mathbb{R}$ we have $\langle \phi(x) | \phi(x) \rangle = \Delta A^2 - x \langle [A,B] \rangle + x^2 \Delta B^2$}
+\step{10}{For all $x \in \mathbb{R}$ we have $\langle \phi(x) | \phi(x) \rangle \geq 0$}
+\step{11}{For all $x \in \mathbb{R}$ we have $\Delta A^2 - x \langle x[A,B] \rangle + x^2 \Delta B^2 \geq 0$.}
+\step{12}{$\langle i[A,B] \rangle^2 \leq 4 \Delta A^2 \Delta B^2$}
+\step{13}{$\Delta A \Delta B \geq \langle i[A,B] \rangle$}
+\qed
+\end{proof}
+
 \section{Compatible Observables}
 
 \begin{df}[Compatible]
