@@ -13,14 +13,26 @@ Let $S$ be a physical system. Let $E$ be an observable of $S$. Let $\alpha \in \
 an \emph{eigenstate} of $E$ with \emph{eigenvalue} $\alpha$ iff the probability is 1 that, if we measure $E$ when the system is in state $s$, then the outcome will be $\alpha$.
 \end{df}
 
-\begin{ax}
-Let $E$ be an observable of a physical system $S$. Let $\alpha \in \mathbb{R}$. The state vectors corresponding to the eigenstates of $E$ form a subspace of the Hilbert space associated with $S$, called the \emph{eigenspace} of $\alpha$.
-\end{ax}
-
 \begin{ax}[Projection Postulate]
-Let $S$ be a physical system with associated state space $V$. Let $E$ be an observable of $S$. Let $V_\alpha$ be the eigenspace of $V$ with eigenvalue $\alpha$. Let $P_\alpha : V \rightarrow V_\alpha$ be the projection operator. If $S$ is in a state with normalised state vector $\ket{\psi}$, and we measure $E$ on $S$, then the probability of getting the value $\alpha$ is
-\[ p_E(\alpha | \psi) = \frac{\langle \psi | P_\alpha | \psi \rangle}{\langle \psi | \psi \rangle} \]
-and after the experiment, the state of the system is $P_\alpha | \psi \rangle$.
+Let $E$ be an observable of a physical system $S$. Then there exists a Hermitian operator $\hat{E}$ such that:
+\begin{itemize}
+\item The possible values of the measurement of $E$ are the eigenvalues of $\hat{E}$.
+\item For any discrete eigenvalue $\alpha$:
+\begin{itemize}
+\item The eigenstates with eigenvalue $\alpha$ form a subspace $S_\alpha$. Let $P_\alpha : V \rightarrow S_\alpha$ be the projection operator.
+\item For any normalised state $\ket{\alpha}$, the probability of measuring value $\alpha$ when the system is in state $\ket{\alpha}$ is
+\[ p_E(\alpha | \psi) = \langle \psi | P_\alpha | \psi \rangle \]
+and after the measurement, the state of the system is $P_\alpha \ket{\psi}$.
+\end{itemize}
+\item For any continuous eigenvalue $\alpha$:
+\begin{itemize}
+\item Let $\bra{\psi_\alpha}$ be the eigenbra with eigenvalue $\alpha$ normalised with respect to $\alpha$.
+\item When the system is in normalised state $\ket{\psi}$, the probability that the measurement of $E$ will be between $\alpha$ and $\alpha + d \alpha$ is
+\[ p_A(\alpha | \psi) d \alpha = |\langle \psi_\alpha | \psi \rangle|^2 d \alpha \enspace . \]
+\item After the measurement, if the value is measured to lie between $\alpha_1$ and $\alpha_2$, then the state of the system is $P \ket{\psi}$, where $P$ is the projection onto the subspace of states which are orthogonal to all states $\ket{\psi'}$ such that
+\[ \int_{\alpha_1}^{\alpha_2} \langle \psi_\alpha | \psi' \rangle d \alpha = 0 \enspace . \]
+\end{itemize}
+\end{itemize}
 \end{ax}
 
 \begin{prop}
@@ -247,20 +259,130 @@ The \emph{reduced Planck's constant} is
 \end{df}
 
 \begin{ax}
-A particle moving in one dimension is a physical system whose state space $\mathcal{W}$ is the space of all functions $\psi : \mathbb{R} \rightarrow \mathbb{C}$ such that:
-\begin{itemize}
-\item For any polynomial $p \in \mathbb{C}[x]$, the function $p \circ \psi$ is square-integrable.
-\item $\psi$ has a uniformly continuous square-integrable derivative
-\end{itemize}
-with inner product given by
-\[ \langle \phi | \psi \rangle = \int \overline{\phi} \psi \]
-We call the elements of $\mathcal{W}$ \emph{wave functions}.
-
-The position of the particle is an observable $X$ whose operator is
-\[ (\hat{X} \psi)(x) = x \psi(x) \]
-and the momentum of the particle is an observable $K$ whose operator is
-\[ (\hat{K} \psi)(x) = - i \frac{d \psi}{dx} \]
+The position and momentum of a particle in space are given by observables $(x,y,z) = (x_1,x_2,x_3)$ and $(p_x,p_y,p_z) = (p_1,p_2,p_3)$ such that the \emph{canonical commutation relations} hold:
+\begin{align*}
+[\hat{x_i},\hat{x_j}] & = 0 & \text{if } i \neq j \\
+[\hat{p_i},\hat{p_j}] & = 0 & \text{if } i \neq j \\
+[\hat{x_i},\hat{p_j}] & = i \hbar \delta_{ij}
+\end{align*}
+We say the particle is \emph{simple}, or has \emph{no internal properties}, iff every observable is compatible with all the $x_i$ and $p_i$.
 \end{ax}
+
+\begin{df}
+We define $\hat{\vec{r}} = (\hat{x_1},\hat{x_2},\hat{x_3})$ and $\hat{\vec{p}} = (\hat{p_1},\hat{p_2},\hat{p_3})$.
+\end{df}
+
+\begin{prop}[Heisenberg's Uncertainty Relation]
+\[ \Delta x_i \Delta p_i \geq \frac{1}{2} \hbar \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\Delta x_i \Delta p_i & \geq \frac{1}{2} |\langle i [x_i, p_i] \rangle| \\
+& = \frac{1}{2} |\langle - \hbar \rangle| \\
+& = \frac{1}{2} \hbar & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}[Stone/von Neumann Theorem]
+The state space of a particle can be taken to be the set $\mathcal{W}$ of all \emph{wave functions}, i.e. functions $\psi : \mathbb{R}^3 \rightarrow \mathbb{C}$ such that:
+\begin{itemize}
+\item For every polynomial $p \in \mathbb{C}[x,y,z]$ we have $p \circ \psi$ is square-integrable
+\item $\psi$ has uniformly continuous partial derivatives of all orders that are all square-integrable
+\end{itemize}
+with the inner product given by
+\[ \langle \psi | \phi \rangle = \int \overline{\psi} \phi \]
+We then have
+\begin{align*}
+\hat{x_i} \psi & = x_i \psi \\
+\hat{p_i} \psi & = - i \hbar \frac{\partial \psi}{\partial x_i}
+\end{align*}
+\end{thm}
+
+\begin{proof}
+\pf\ See J. M. Jauch. Foundations of Quantum Mechanics. 1968. p. 201
+\end{proof}
+
+\begin{prop}
+For $k \in \mathbb{R}$, define $\bra{\epsilon_k} : \mathcal{W} \rightarrow \mathbb{C}$ by
+\[ \langle \epsilon_k | \psi \rangle = \int_{- \infty}^{+ \infty} e^{-ikx} \psi(x) dx \enspace . \]
+Then $\bra{\epsilon_k}$ is an eigenbra of $\hat{K}$ with eigenvalue $k$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$e^{-ikx} \psi$ is integrable.}
+\step{2}{$\langle \epsilon_k | \hat{K} | \psi \rangle = k \langle \epsilon_k | \psi \rangle$}
+\begin{proof}
+\pf
+\begin{align*}
+\langle \epsilon_k | \hat{K} | \psi \rangle
+& = - i \int_{- \infty}^{+ \infty} e^{-ikx} \frac{d\psi}{dx} dx \\
+& = k \int_{-\infty}^{+ \infty} e^{ikx} \psi(x) dx & (\text{integrating by parts}) \\
+& = k \langle \epsilon_k | \psi \rangle
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For $a \in \mathbb{R}$, define $\bra{\delta_a} : \mathcal{W} \rightarrow \mathbb{C}$ by
+\[ \langle \delta_a | \psi \rangle = \psi(a) \]
+Then $\bra{\delta_a}$ is an eigenbra of $\hat{X}$ with eigenvalue $a$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \delta_a | \hat{X} | \psi \rangle & = a \psi(a) \\
+& = a \langle \delta_a | \psi \rangle & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For any $\ket{\psi} \in \mathcal{W}$, we have
+\[ \bra{\psi} = \int_{-\infty}^{+\infty} \overline{c_a} \bra{\delta_a} da \]
+where $c_a = \psi(a)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \psi | \phi \rangle & = \int_{-\infty}^{+ \infty} \overline{\psi(a)} \phi(a) da \\
+& = \int_{-\infty}^{+ \infty} \overline{c_a} \langle \delta_a | \phi \rangle da & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+For $\ket{\psi} \in \mathcal{W}$, let $\tilde{\psi}$ be the Fourier transform of $\psi$:
+\[ \tilde{\psi}(k) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+ \infty} \psi(x) e^{-ikx} dx \enspace . \]
+Then we have $\bra{\psi} = \int_{-\infty}^{+ \infty} \overline{c_k} \bra{\epsilon_k} dk$ where $c_k = \frac{1}{\sqrt{2 \pi}} \tilde{\psi}(k)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \psi | \phi \rangle
+& = \int_{-\infty}^{+ \infty} \overline{\psi(x)} \phi(x) dx \\
+& = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+ \infty} \int_{- \infty}^{+ \infty} \overline{\tilde{\psi}(k)} e^{-ikx} \phi(x) dx dk & (\text{Fourier Inversion Theorem}) \\
+& = \int_{-\infty}^{+ \infty} \overline{c_k} \int_{-\infty}^{+ \infty} e^{-ikx} \phi(x) dx dk \\
+& = \int_{-\infty}^{+\infty} \overline{c_k} \langle  \epsilon_k | \phi \rangle dk & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+$\{ \hat{x}, \hat{y}, \hat{z}\}$ is a complete set of observables on $\mathcal{W}$.
+\end{prop}
+
+\begin{prop}
+$\{ \hat{p_x}, \hat{p_y}, \hat{p_z}\}$ is a complete set of observables on $\mathcal{W}$.
+\end{prop}
+
+\begin{df}
+Let $\ket{\psi} \in \mathcal{W}$. The corresponding \emph{wave function in momentum space} is:
+\[ \phi(\vec{p}) = \langle \epsilon_{\vec{p} / \hbar} | \psi \rangle = \int \psi(\vec{r}) e^{-i \vec{p} \cdot \vec{r} / \hbar} dV \]
+\end{df}
 
 Consider a particle of mass $m$ moving in one dimension under a force given by a potential energy function $V(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow [0, + \infty]$. Associated with the particle is a \emph{wave function} $\Psi(x,t) : \mathbb{R} \times [0,+\infty) \rightarrow \mathbb{C}$ that is differentiable in $t$, twice differentiable in $x$, satisfies the \emph{(time-dependent) Schr\"{o}dinger equation}: for all $x$ and $t$,
 

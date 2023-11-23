@@ -278,6 +278,7 @@ Let $S,T : V \rightarrow V$ be linear transformations. The \emph{commutator} of 
 & = 0 & \qed
 \end{align*}
 \end{proof}
+
 \section{Inner Product Spaces}
 
 \begin{df}[Inner Product]
@@ -465,3 +466,69 @@ Let $\ket{\phi}, \ket{\psi} \in V$. The \emph{outer product} $\ket{\psi} \langle
 Let $\{ \ket{\psi_1}, \ket{\psi_2}, \ldots \}$ be a countable orthonormal basis. Then
 \[ \sum_{n=1}^\infty \ket{\psi_n} \langle \psi_n | = I \enspace . \]
 \end{prop}
+
+\subsection{Eigenbras}
+
+\begin{df}[Eigenbra]
+Let $V$ be an inner product space, $v \in V$, and $\alpha \in \mathbb{C}$. An \emph{eigenbra} of $v$ is a linear functional $f : V \rightarrow \mathbb{C}$ such that $f(v) = \alpha v$.
+
+An \emph{eigenbra} of a Hermitian operator $H : V \rightarrow V$ with \emph{eigenvalue} $\alpha$ is a linear functional $f : V \rightarrow \mathbb{C}$ such that $f \circ H = \alpha f$.
+
+We say $\alpha$ is a \emph{continuous eigenvalue} of the Hermitian operator $H$ iff it is the eigenvalue of some eigenbra.
+\end{df}
+
+\begin{df}[Spectrum]
+The \emph{spectrum} of a Hermitian operator $H$ is the set of all \emph{discrete} eigenvalues (eigenvalues of eigenvectors of $H$) and continuous eigenvalues.
+\end{df}
+
+\begin{thm}
+Let $V$ be a dense subspace of a Hilbert space. Let $H$ be a Hermitian operator on $V$. Then $H$ has countably many discrete eigenvalues, and the set of continuous eigenvalues is the union of a set of intervals.
+\end{thm}
+
+%TODO
+
+\begin{df}
+Let $V$ be a dense subspace of a Hilbert space.
+Let $H$ be a Hermitian operator on $V$. Let $\{ \bra{\phi_\alpha} \}_\alpha$ be an eigenbra with eigenvalue $\alpha$ for every discrete or continuous eigenvalue $\alpha$. Then the family $\{ \bra{\phi_\alpha}_\alpha$ is \emph{normalised relative to $H$} iff, for every $\ket{\psi} \in V$, we have
+\[ \bra{\psi} = \sum_{\alpha \text{ discrete}} \overline{c_\alpha} \bra{\phi_\alpha} + \int_{\alpha \text{ continuous}} c_\alpha \bra{\phi_\alpha} \]
+where, for each discrete eigenvalue $\alpha$, we have
+\[ c_\alpha = \langle \phi_\alpha | \psi \rangle \]
+and for each continuous eigenvalue $\alpha$ we have
+\[ c_\alpha = \langle \psi_\alpha | \psi \rangle \]
+\end{df}
+
+\begin{thm}
+Every Hermitian operator on a dense subspace of a Hilbert space has a normalised family of eigenvectors.
+\end{thm}
+
+\begin{df}
+Let $V$ be a dense subspace of a Hilbert space. Let $B$ be a Hermitian operator on $V$. Let $A = f(B)$. The \emph{density of states}, or density of eigenstates of $A$ relative to eigenstates of $B$, is the function
+\begin{align*}
+\rho & : \{ \text{continuous eigenvalues of } B \} \rightarrow \{ \text{continuous eigenvalue of } A \} \\rho(\beta) & = f'(\beta)
+\end{align*}
+\end{df}
+
+\begin{thm}
+Let $V$ be a dense subspace of a Hilbert space. Let $B$ be a Hermitian operator on $V$. Let $A = f(B)$. Let $\{ \bra{\phi_\alpha} \}_\alpha$ be a normalised set of eigenbras relative to $A$. Let $|g_\beta|^2 = \rho(\beta)$ for every continuous eigenvalue $\beta$ of $B$. Then
+\[ \{ \bra{\phi_{f(\beta)}} \}_{\alpha \text{ discrete}}\{ g(\beta) \bra{\phi_{f(\beta)}} \}_{\beta \text{ continuous}} \]
+is a normalised set of eigenbras relative to $B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\ket{\psi} \in V$}}
+\step{2}{For $\beta$ a discrete eigenvalue of $\beta$, let $c_\beta = \langle \phi_{f(\beta)} | \psi \rangle$}
+\step{3}{For $\beta$ a continuous eigenvalue, let
+\[ c'_\beta = g(\beta) \langle \phi_{f(\beta)} | \psi \rangle \]}
+\step{4}{$\bra{\psi} = \sum_{\beta} \overline{c_\beta} \bra{\phi_{f(\beta)}} + \int_{\beta} c'_\beta g(\beta) \bra{\phi_{f(\beta)}}d \beta$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\bra{\psi} & = \sum_\alpha \overline{\langle \phi_\alpha | \psi \rangle} + \int_\alpha \overline{\langle \phi_\alpha | \psi \rangle} \langle \phi_alpha | \psi \rangle d \alpha \\
+		& = \sum_\beta \overline{\langle \phi_{f(\beta)} | \psi \rangle} + \int_\beta \overline{\langle \phi_{f(\beta)} | \psi \rangle} \langle \phi_{f(\beta)} | \psi \rangle \frac{d f(\beta)}{d \beta} d \beta \\
+		& = \sum_\beta \overline{\langle \phi_{f(\beta)} | \psi \rangle} + \int_\beta \overline{\langle g(\beta) \phi_{f(\beta)} | \psi \rangle} g(\beta) \langle \phi_{f(\beta)} | \psi \rangle d \beta \\
+		& = \sum_\beta \overline{\langle \phi_{f(\beta)} | \psi \rangle} + \int_\beta \overline{c'_\beta} g(\beta) \bra{\phi_{f(\beta)}} d \beta
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
