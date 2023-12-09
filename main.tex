@@ -4,14 +4,103 @@
 \author{Robin Adams}
 \date{}
 
+\usepackage{amsthm}
+\let\proof\relax
+\let\endproof\relax
+\let\qed\relax
 \usepackage{pf2}
 
 \newtheorem{prop}{Proposition}[chapter]
+\newtheorem{cor}{Corollary}[prop]
+\theoremstyle{definition}
+\newtheorem{df}[prop]{Definition}
 
 \begin{document}
 
 \maketitle
 \tableofcontents
+
+\chapter{Relations}
+
+\begin{df}[Antisymmetric]
+A relation $R$ on a set $A$ is \emph{antisymmetric} iff, whenever $xRy$ and $yRx$, then $x = y$.
+\end{df}
+
+\begin{df}[Transitive]
+A relation $R$ on a type $A$ is \emph{transitive} iff, whenever $xRy$ and $yRz$, then $xRz$.
+\end{df}
+
+\chapter{Order Theory}
+
+\begin{df}[Linear Order]
+A \emph{linear order} on a set $A$ is a binary relation $\leq$ on $A$ that is transitive, antisymmetric and:
+\[ \forall x,y \in A. x \leq y \vee y \leq x \enspace . \]
+
+A \emph{linearly ordered set} is a pair $(A, \leq)$ where $A$ is a set and $\leq$ is a binary relation on $A$.
+
+We write $x < y$ for $x \leq y$ and $x \neq y$.
+\end{df}
+
+\begin{df}[Upper Bound]
+Let $S$ be a linearly ordered set, $u \in S$ and $E \subseteq S$. Then $u$ is an \emph{upper bound} in $E$ iff $\forall x \in E. x \leq u$. We say $E$ is \emph{bounded above} iff it has an upper bound.
+
+The \emph{up-set} of $E$, denoted $E \uparrow$, is the set of upper bounds of $E$.
+\end{df}
+
+\begin{df}[Lower Bound]
+Let $S$ be a linearly ordered set, $l \in S$ and $E \subseteq S$. Then $u$ is an \emph{lower bound} in $E$ iff $\forall x \in E. l \leq x$. We say $E$ is \emph{bounded below} iff it has a lower bound.
+
+The \emph{down-set} of $E$, denoted $E \downarrow$, is the set of lower bounds of $E$.
+\end{df}
+
+\begin{df}[Supremum]
+Let $S$ be a linearly ordered set, $u \in S$ and $E \subseteq S$. Then $u$ is the \emph{least upper bound} or \emph{supremum} of $E$ iff $u$ is an upper bound for $E$ and, for any upper bound $u'$ for $E$, we have $u \leq u'$.
+\end{df}
+
+\begin{df}[Infimum]
+Let $S$ be a linearly ordered set, $l \in S$ and $E \subseteq S$. Then $l$ is the \emph{greatest lower bound} or \emph{infimum} of $E$ iff $l$ is a lower bound for $E$ and, for any lower bound $l'$ for $E$, we have $l' \leq l$.
+\end{df}
+
+\begin{df}[Least Upper Bound Property]
+A linearly ordered set $S$ has the \emph{least upper bound property} iff every nonempty subset of $S$ that is bounded above has a least upper bound.
+\end{df}
+
+\begin{prop}
+Let $S$ be a linearly ordered set and $E \subseteq S$.
+\begin{enumerate}
+\item If $E \downarrow$ has a supremum $l$, then $l$ is the infimum of $E$.
+\item If $E \uparrow$ has an infimum $u$, then $U$ is the supremum of $E$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $E \downarrow$ has a supremum $l$, then $l$ is the infimum of $E$.}
+\begin{proof}
+	\step{1}{$l$ is a lower bound for $E$.}
+	\begin{proof}
+		\step{a}{\pflet{$x \in E$}}
+		\step{b}{$x$ is an upper bound for $E \downarrow$.}
+		\begin{proof}
+			\pf\ For all $y \in E \downarrow$ we have $y \leq x$.
+		\end{proof}
+		\step{c}{$l \leq x$}
+	\end{proof}
+	\step{2}{For any lower bound $l'$ for $E$, we have $l' \leq l$.}
+	\begin{proof}
+		\pf\ Since $l$ is an upper bound for $E \downarrow$.
+	\end{proof}
+\end{proof}
+\step{2}{If $E \uparrow$ has an infimum $u$, then $u$ is the supremum of $E$.}
+\begin{proof}
+	\pf\ Dual.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+A linearly ordered set has the least upper bound property if and only if every nonempty set bounded below has an infimum.
+\end{cor}
 
 \chapter{Real Analysis}
 
