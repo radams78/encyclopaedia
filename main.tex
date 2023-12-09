@@ -1,0 +1,38 @@
+\documentclass{book}
+
+\title{Encyclopaedia of Mathematics and Physics}
+\author{Robin Adams}
+\date{}
+
+\usepackage{pf2}
+
+\newtheorem{prop}{Proposition}[chapter]
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{Real Analysis}
+
+\begin{prop}
+There is no rational $p$ such that $p^2 = 2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $p^2 = 2$.}}
+\step{2}{\pick\ integers $m$, $n$ not both even such that $p = m / n$.} %TODO
+\step{3}{$m^2 = 2n^2$}
+\step{4}{$m$ is even.}
+\step{5}{\pick\ an integer $k$ such that $m = 2k$.}
+\step{6}{$4k^2 = 2n^2$}
+\step{7}{$2k^2 = n^2$}
+\step{8}{$n$ is even.}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{2}, \stepref{4} and \stepref{8} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
+\end{document}
