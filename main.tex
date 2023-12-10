@@ -4,6 +4,8 @@
 \author{Robin Adams}
 \date{}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsthm}
 \let\proof\relax
 \let\endproof\relax
@@ -12,8 +14,10 @@
 
 \newtheorem{prop}{Proposition}[chapter]
 \newtheorem{cor}{Corollary}[prop]
+\newtheorem{thm}[prop]{Theorem}
 \theoremstyle{definition}
 \newtheorem{df}[prop]{Definition}
+\newtheorem{ex}[prop]{Example}
 
 \begin{document}
 
@@ -102,7 +106,535 @@ Let $S$ be a linearly ordered set and $E \subseteq S$.
 A linearly ordered set has the least upper bound property if and only if every nonempty set bounded below has an infimum.
 \end{cor}
 
+\begin{df}[Closed Downwards]
+Let $S$ be a linearly ordered set and $E \subseteq S$. Then $E$ is \emph{closed downwards} iff, whenever $x \in E$ and $y < x$, then $y \in E$.
+\end{df}
+
+\begin{df}[Closed Upwards]
+Let $S$ be a linearly ordered set and $E \subseteq S$. Then $E$ is \emph{closed upwards} iff, whenever $x \in E$ and $x < y$, then $y \in E$.
+\end{df}
+
+\begin{df}[Greatest]
+Let $S$ be a linearly ordered set and $u \in S$. Then $u$ is \emph{greatest} in $S$ iff $\forall x \in S. x \leq u$.
+\end{df}
+
+\begin{df}[Least]
+Let $S$ be a linearly ordered set and $l \in S$. Then $l$ is \emph{least} in $S$ iff $\forall x \in S. l \leq x$.
+\end{df}
+
+\begin{prop}
+Let $\leq$ be a linear order on a set $S$ and $E \subseteq S$. Then $\leq \cap E^2$ is a linear order on $E$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+Given a linearly ordered set $(S, \leq)$ and $E \subseteq S$, we write just $E$ for the linearly ordered set $(E, \leq \cap E^2)$.
+
+\chapter{Field Theory}
+
+\begin{df}[Field]
+A \emph{field} $F$ consists of a set $F$, two operations $+, \cdot : F^2 \rightarrow F$ and an element $0 \in F$ such that:
+\begin{itemize}
+\item $+$ is commutative.
+\item $+$ is associative.
+\item $\forall x \in F. x + 0 = x$
+\item $\forall x \in F. \exists y \in F. x + y = 0$
+\item $\cdot$ is commutative.
+\item $\cdot$ is associative.
+\item There exists $1 \in F$ such that $1 \neq 0$ and $\forall x \in F. x1 = x$ and $\forall x \in F. x \neq 0 \Rightarrow \exists y \in F. xy = 1$
+\item \emph{Distributive Law} $\forall x,y,z \in F. x(y+z) = xy+xz$
+\end{itemize}
+\end{df}
+
+\begin{prop}
+In any field $F$, the element 0 is the unique element such that $\forall x \in F. x + 0 = x$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $0$ and $0'$ both have this property then $0 = 0 + 0' = 0'$. \qed
+\end{proof}
+
+\begin{prop}
+In any field $F$, given $x \in F$, there is a unique $y \in F$ such that $x + y = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $x + y = x + y' = 0$ then
+\begin{align*}
+	y & = y + 0 \\
+	& = y + x + y' \\
+	& = 0 + y' \\
+	& = y' & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}
+Let $F$ be a field. Let $x \in F$. We denote by $-x$ the unique element of $F$ such that $x + (-x) = 0$. 
+
+Given $x,y \in F$, we write $x - y$ for $x + (-y)$.
+\end{df}
+
+\begin{prop}
+In any field $F$, if $x + y = x + z$ then $y = z$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $x + y = x + z$ we have
+\begin{align*}
+-x + x + y & = -x + x + z \\
+\therefore 0 + y & = 0 + z \\
+\therefore y & = z & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:minus_minus}
+In any field $F$, we have $-(-x) = x$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $x + (-x) = 0$. \qed
+\end{proof}
+
+\begin{prop}
+In any field $F$, the element 1 such that $\forall x \in F. x1 = x$ is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ If 1 and $1'$ both have this property then $1 = 1 \cdot 1' = 1'$. \qed
+\end{proof}
+
+\begin{prop}
+In any field $F$, given $x \in F$ with $x \neq 0$, the element $y$ such that $xy = 1$ is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ If $y$ and $y'$ both have this property then we have
+\begin{align*}
+y & = y1 \\
+& = y x y' \\
+& = 1 y' \\
+& = y' & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}
+In any field $F$, if $x \neq 0$, we write $x^{-1}$ for the unique element such that $x x^{-1} = 1$.
+
+We write $x/y$ for $xy^{-1}$.
+\end{df}
+
+\begin{prop}
+In any field $F$, if $xy = xz$ and $x \neq 0$ then $y = z$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+y & = 1y \\
+& = x^{-1} x y \\
+& = x^{-1} x z \\
+& = 1z \\
+& = z & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+In any field $F$, if $x \neq 0$ then $x^{-1} \neq 0$ and $(x^{-1})^{-1} = x$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $x x^{-1} = 1$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:multiply_by_zero}
+In any field $F$, we have $x0 = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x0 + 0 & = x0 \\
+& = x(0+0) \\
+& = x0 + x0 \\
+\therefore 0 & = x0 & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+In any field $F$, if $xy = 0$ then $x = 0$ or $y = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $xy = 0$ and $x \neq 0$ then we have $y = x^{-1} x y = x^{-1} 0 = 0$. \qed
+\end{proof}
+
+\begin{prop}
+In any field $F$, we have $(-x) y = -(xy)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+xy + (-x) y & = (x + (-x))y \\
+& = 0y \\
+& = 0 & (\text{Proposition \ref{prop:multiply_by_zero}}) \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+In any field $F$, we have $(-x)(-y) = xy$.
+\end{cor}
+
+\begin{proof}
+\pf
+\begin{align*}
+(-x)(-y) & = -(x(-y)) \\
+& = -(-(xy)) \\
+& = xy & (\text{Proposition \ref{prop:minus_minus}}) \qed
+\end{align*}
+\end{proof}
+
+\section{Ordered Fields}
+
+\begin{df}[Ordered Field]
+An \emph{ordered field} $F$ consists of a field $F$ and a linear order $\leq$ on $F$ such that:
+\begin{itemize}
+\item For all $x,y,z \in F$, if $y < z$ then $x + y < x + z$
+\item For all $x,y \in F$, if $x > 0$ and $y > 0$ then $xy > 0$.
+\end{itemize}
+We call $x$ \emph{positive} iff $x > 0$ and \emph{negative} iff $x < 0$.
+\end{df}
+
+\begin{ex}
+$\mathbb{Q}$ is an ordered field. %TODO
+\end{ex}
+
+\begin{prop}
+In any ordered field, if $x$ is positive then $-x$ is negative.
+\end{prop}
+
+\begin{proof}
+\pf\ If $x > 0$ then $0 = x + (-x) > 0 = (-x) = -x$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:multiply_positive}
+In any ordered field, if $y < z$ and $x$ is positive then $xy < xz$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $y < z$ then we have
+\begin{align*}
+0 & < z - y \\
+\therefore 0 & < x(z-y) \\
+& = xz - xy \\
+\therefore xy & < xz & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:multiply_negative}
+In any ordered field, if $y < z$ and $x$ is negative then $xy > xz$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$-x$ is positive.}
+\step{2}{$(-x)y < (-x)z$}
+\step{3}{$-(xy) < -(xz)$}
+\step{4}{$xz < xy$}
+\qed
+\end{proof}
+
+\begin{prop}
+In any ordered field, if $x \neq 0$ then $x^2 > 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $x > 0$ then $x^2 > 0$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:multiply_positive}.
+\end{proof}
+\step{2}{If $x < 0$ then $x^2 > 0$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:multiply_negative}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+\label{cor:one_positive}
+In any ordered field, we have $1 > 0$.
+\end{cor}
+
+\begin{prop}
+\label{prop:inverse_positive}
+In any ordered field, if $x$ is positive then $x^{-1}$ is positive.
+\end{prop}
+
+\begin{proof}
+\pf\ If $x^{-1} < 0$ then we would have $1 = xx^{-1} < x0 = 0$ contradicting Corollary \ref{cor:one_positive}. \qed
+\end{proof}
+
+\begin{prop}
+In any ordered field, if $0 < x < y$ then $y^{-1} < x^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$0 < x < y$}}
+\step{2}{$x^{-1}$ and $y^{-1}$ are positive.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:inverse_positive}.
+\end{proof}
+\step{3}{$xy^{-1} < yy^{-1} = 1$}
+\step{4}{$y^{-1} = x^{-1}xy^{-1} < x^{-1}1 = x^{-1}$}
+\qed
+\end{proof}
+
 \chapter{Real Analysis}
+
+\section{Construction of the Real Numbers}
+
+\begin{df}[Cut]
+A \emph{cut} is a subset $\alpha$ of $\mathbb{Q}$ such that:
+\begin{itemize}
+\item $\emptyset \neq \alpha \neq \mathbb{Q}$
+\item $\alpha$ is closed downwards.
+\item $\alpha$ has no greatest element.
+\end{itemize}
+In this section, we write $R$ for the set of all cuts.
+\end{df}
+
+\begin{prop}
+$R$ is linearly ordered by $\subseteq$.
+\end{prop}
+
+\begin{proof}
+\pf\ The only difficult part is to prove that, for any cuts $\alpha$ and $\beta$, either $\alpha \subseteq \beta$ or $\beta \subseteq \alpha$.
+\step{1}{\assume{$\alpha \nsubseteq \beta$} \prove{$\beta \subseteq \alpha$}}
+\step{2}{\pick\ $q \in \alpha$ such that $q \notin \beta$}
+\step{3}{\pflet{$r \in \beta$}}
+\step{4}{$q \nless r$}
+\step{5}{$r < q$}
+\step{6}{$r \in \alpha$}
+\qed
+\end{proof}
+
+\begin{prop}
+$R$ has the least upper bound property.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E \subseteq R$ be nonempty and bounded above.}}
+\step{2}{\pflet{$s = \bigcup E$} \prove{$s$ is a cut.}}
+\step{3}{$\emptyset \neq s$}
+\begin{proof}
+	\pf\ Since $E$ is nonempty and every element of $E$ is nonempty.
+\end{proof}
+\step{4}{$s \neq \mathbb{Q}$}
+\begin{proof}
+	\step{a}{\pick\ an upper bound $u$ for $E$.}
+	\step{b}{\pick\ $q \notin u$ \prove{$q \notin s$}}
+	\step{c}{$\forall \alpha \in E. \alpha \subseteq u$}
+	\step{d}{$s \subseteq u$}
+	\step{e}{$q \notin s$} 
+\end{proof}
+\step{5}{$s$ is closed downwards.}
+\begin{proof}
+	\step{a}{\pflet{$q \in s$ and $r < q$.}}
+	\step{b}{\pick\ $\alpha \in E$ such that $q \in \alpha$.}
+	\step{c}{$r \in \alpha$}
+	\step{d}{$r \in s$}
+\end{proof}
+\step{6}{$s$ has no greatest element.}
+\begin{proof}
+	\step{a}{\pflet{$q \in s$}}
+	\step{b}{\pick\ $\alpha \in E$ such that $q \in \alpha$.}
+	\step{c}{\pick\ $r \in \alpha$ such that $q < r$.}
+	\step{d}{$r \in s$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Addition]
+Given cuts $\alpha$ and $\beta$, we define
+\[ \alpha + \beta = \{ q + r : q \in \alpha, r \in \beta \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Given cuts $\alpha$ and $\beta$, we have $\alpha + \beta$ is a cut.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha + \beta$ is nonempty.}
+\begin{proof}
+	\pf\ Since $\alpha$ and $\beta$ are nonempty.
+\end{proof}
+\step{2}{$\alpha + \beta \neq \mathbb{Q}$}
+\begin{proof}
+	\step{a}{\pick\ $q \in \mathbb{Q} - \alpha$ and $r \in \mathbb{Q} - \beta$. \prove{$q + r \notin \alpha + \beta$}}
+	\step{b}{\assume{for a contradiction $q + r \in \alpha + \beta$.}}
+	\step{c}{\pick\ $x \in \alpha$ and $y \in \beta$ such that $q + r = x + y$}
+	\step{d}{$x < q$}
+	\step{e}{$y < r$}
+	\step{f}{$x + y < q + r$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\step{3}{$\alpha + \beta$ is closed downwards.}
+\begin{proof}
+	\step{a}{\pflet{$q \in \alpha$, $r \in \beta$ and $x < q + r$}}
+	\step{b}{$x - q < r$}
+	\step{c}{$x - q \in \beta$}
+	\step{d}{$x \in \alpha + \beta$}
+\end{proof}
+\step{4}{$\alpha + \beta$ has no greatest element.}
+\begin{proof}
+	\step{a}{\pflet{$q \in \alpha$ and $r \in \beta$.} \prove{$q + r$ is not greatest in $\alpha + \beta$.}}
+	\step{b}{\pick\ $q' \in \alpha$ with $q < q'$ and $r' \in \beta$ with $r < r'$.}
+	\step{c}{$q + r < q' + r' \in \alpha + \beta$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Addition is commutative and associative on $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions and the fact that addition is commutative and associative on $\mathbb{Q}$. \qed
+\end{proof}
+
+\begin{df}
+For any $q \in \mathbb{Q}$, let $q^* = \{ r \in \mathbb{Q} : r < q \}$.
+\end{df}
+
+\begin{prop}
+For any $q \in \mathbb{Q}$, we have $q^*$ is a cut.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$q^* \neq \emptyset$}
+\begin{proof}
+\pf\ Since $q - 1 \in q^*$.
+\end{proof}
+\step{2}{$q^* \neq \mathbb{Q}$}
+\begin{proof}
+\pf\ Since $q \notin q^*$.
+\end{proof}
+\step{3}{$q^*$ is closed downwards.}
+\begin{proof}
+\pf\ Immediate from definition.
+\end{proof}
+\step{4}{$q^*$ has no greatest element.}
+\begin{proof}
+\pf\ For all $r \in q^*$ we have $r < (q+r)/2 \in q^*$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any cut $\alpha$ we have $\alpha + 0^* = \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha + 0^* \subseteq \alpha$}
+\begin{proof}
+	\step{a}{\pflet{$q \in \alpha$ and $r \in 0^*$} \prove{$q + r \in \alpha$}}
+	\step{b}{$r < 0$}
+	\step{c}{$q + r < q$}
+	\step{d}{$q + r \in \alpha$}
+\end{proof}
+\step{2}{$\alpha \subseteq \alpha + 0^*$}
+\begin{proof}
+	\step{a}{\pflet{$q \in \alpha$}}
+	\step{b}{\pick\ $r \in \alpha$ such that $q < r$}
+	\step{c}{$q = r + (q - r) \in \alpha + 0^*$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any cut $\alpha$, there exists a cut $\beta$ such that $\alpha + \beta = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\beta = \{ p \in \mathbb{Q} : \exists r > 0. -p-r \notin \alpha \}$}}
+\step{2}{$\beta$ is a cut.}
+\begin{proof}
+	\step{a}{$\beta \neq \emptyset$}
+	\begin{proof}
+		\step{i}{\pick\ $q \notin \alpha$}
+		\step{ii}{$-q-1 \in \beta$}
+	\end{proof}
+	\step{b}{$\beta \neq \mathbb{Q}$}
+	\begin{proof}
+		\step{i}{\pick\ $q \in \alpha$ \prove{$-q \notin \beta$}}
+		\step{ii}{\assume{for a contradiction $-q \in \beta$}}
+		\step{iii}{\pick\ $r > 0$ such that $q-r \notin \alpha$}
+		\step{iv}{$q-r < q$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts the fact that $\alpha$ is closed downwards.
+		\end{proof}
+	\end{proof}
+	\step{c}{$\beta$ is closed downwards.}
+	\begin{proof}
+		\step{i}{\pflet{$p \in \beta$ and $q < p$.}}
+		\step{ii}{\pick\ $r > 0$ such that $-p-r \notin \alpha$}
+		\step{iii}{$-p-r < -q-r$}
+		\step{iv}{$-q-r \notin \alpha$}
+		\step{v}{$q \in \beta$}
+	\end{proof}
+	\step{d}{$\beta$ has no greatest element.}
+	\begin{proof}
+		\step{i}{\pflet{$p \in \beta$}}
+		\step{ii}{\pick\ $r > 0$ such that $-p-r \notin \alpha$}
+		\step{iii}{$-(p+r/2)-r/2 \notin \alpha$}
+		\step{iv}{$p+r/2 \in \beta$}
+	\end{proof}
+\end{proof}
+\step{3}{$\alpha + \beta \subseteq 0^*$}
+\begin{proof}
+	\step{a}{\pflet{$p \in \alpha$ and $q \in \beta$.}}
+	\step{b}{\pick\ $r > 0$ such that $-q-r \notin \alpha$.}
+	\step{c}{$p < -q-r$}
+	\step{d}{$p + q < -r$}
+	\step{e}{$p + q < 0$}
+	\step{f}{$p + q \in 0^*$}
+\end{proof}
+\step{4}{$0^* \subseteq \alpha + \beta$}
+\begin{proof}
+	\step{a}{\pflet{$v \in 0^*$}}
+	\step{b}{\pflet{$w = -v/2$}}
+	\step{c}{$w > 0$}
+	\step{d}{\pick\ an integer $n$ such that $nw \in \alpha$ and $(n+1)w \notin \alpha$.} %TODO
+	\step{e}{\pflet{$p = -(n+2)w$}}
+	\step{f}{$p \in \beta$}
+	\step{g}{$v = nw + p$}
+	\step{h}{$v \in \alpha + \beta$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+There exists an ordered field with the least upper bound property.
+\end{thm}
+
+
 
 \begin{prop}
 There is no rational $p$ such that $p^2 = 2$.
