@@ -15,6 +15,7 @@
 \newtheorem{prop}{Proposition}[chapter]
 \newtheorem{cor}{Corollary}[prop]
 \newtheorem{thm}[prop]{Theorem}
+\newtheorem{lm}[prop]{Lemma}
 \theoremstyle{definition}
 \newtheorem{df}[prop]{Definition}
 \newtheorem{ex}[prop]{Example}
@@ -630,11 +631,191 @@ For any cut $\alpha$, there exists a cut $\beta$ such that $\alpha + \beta = 0$.
 \qed
 \end{proof}
 
+\begin{prop}
+Given $\alpha, \beta, \gamma \in R$, if $\beta < \gamma$, then $\alpha + \beta < \alpha + \gamma$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\alpha + \beta \subseteq \alpha + \gamma$}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\step{2}{$\alpha + \beta \neq \alpha + \gamma$}
+\begin{proof}
+	\pf\ If $\alpha + \beta = \alpha + \gamma$ then $\beta = \gamma$ by cancellation.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Given cuts $\alpha$ and $\beta$, define $\alpha \beta$ by:
+\[ \alpha \beta = \begin{cases}
+\{ p \in \mathbb{Q} : \exists r \in \alpha. \exists s \in \beta (p \leq rs \wedge r > 0 \wedge s > 0 \} & \text{if } \alpha > 0^* \text{ and } \beta > 0^* \\
+(-\alpha)(-\beta) & \text{if } \alpha < 0^* \text{ and } \beta < 0^* \\
+-((-\alpha)\beta) & \text{if } \alpha < 0^* \text{ and } \beta > 0^* \\
+-(\alpha(-\beta)) & \text{if } \alpha > 0^* \text{ and } \beta < 0^* \\
+0^* & \text{if } \alpha = 0^* \text{ or } \beta = 0^*
+\end{cases} \]
+\end{df}
+
+\begin{prop}
+For any cuts $\alpha$ and $\beta$, we have $\alpha \beta$ is a cut.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha > 0^*$ and $\beta > 0^*$ then $\alpha \beta$ is a cut.}
+\begin{proof}
+	\step{a}{$\alpha \beta \neq \emptyset$}
+	\begin{proof}
+		\step{i}{\pick\ $q \in \alpha$ and $r \in \beta$ such that $q,r \notin 0^*$}
+		\step{ii}{\assume{w.l.o.g. $0 < q$ and $0 < r$.}}
+		\begin{proof}
+			\pf\ Since $\alpha$ and $\beta$ have no greatest element.
+		\end{proof}
+		\step{iii}{$qr \in \alpha \beta$}
+	\end{proof}
+	\step{b}{$\alpha \beta \neq \mathbb{Q}$}
+	\begin{proof}
+		\step{i}{\pick\ $r \notin \alpha$ and $s \notin \beta$ \prove{$rs \notin \alpha\beta$}}
+		\step{ii}{\assume{for a contradiction $rs \in \alpha \beta$.}}
+		\step{iii}{\pick\ $r' \in \alpha$ and $s' \in \beta$ such that $rs \leq r's'$ and $r' > 0$ and $s' > 0$.}
+		\step{iv}{$r' < r$ and $s' < s$}
+		\step{v}{$r's' < rs$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{c}{$\alpha \beta$ is closed downwards.}
+	\begin{proof}
+		\step{i}{\pflet{$p \in \alpha \beta$ and $p' < p$}}
+		\step{ii}{\pick\ $r \in \alpha$ and $s \in \beta$ such that $p \leq rs$, $r > 0$ and $s > 0$}
+		\step{iii}{$p' \leq rs$}
+		\step{iv}{$p' \in \alpha \beta$}
+	\end{proof}
+	\step{d}{$\alpha \beta$ has no greatest element.}
+	\begin{proof}
+		\step{i}{\pflet{$p \in \alpha \beta$}}
+		\step{ii}{\pick\ $r \in \alpha$ and $s \in \beta$ such that $p \leq rs$, $r > 0$ and $s > 0$.}
+		\step{iii}{\pick\ $r' \in \alpha$ and $s' \in \beta$ with $r < r'$ and $s < s'$.}
+		\step{iv}{$p < r's' \in \alpha \beta$}
+	\end{proof}
+\end{proof}
+\step{2}{For any cuts $\alpha$ and $\beta$, we have $\alpha \beta$ is a cut.}
+\begin{proof}
+	\pf\ Since if $\alpha$ is a cut then $-\alpha$ is a cut.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any cuts $\alpha$ and $\beta$ we have $\alpha \beta = \beta \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy from the definitions. \qed
+\end{proof}
+
+\begin{prop}
+For any cuts $\alpha$, $\beta$ and $\gamma$ we have
+\[ \alpha (\beta \gamma) = (\alpha \beta) \gamma \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\case{$\alpha$, $\beta$ and $\gamma$ are all positive.}}
+\begin{proof}
+	\pf\ In this case $\alpha (\beta \gamma) = (\alpha \beta) \gamma = \{ p \in \mathbb{Q} : \exists r \in \alpha. \exists s \in \beta. \exists t \in \gamma. (p \leq rst \wedge r > 0 \wedge s > 0 \wedge t > 0) \}$.
+\end{proof}
+\step{2}{\case{One of $\alpha$, $\beta$ or $\gamma$ is $0^*$.}}
+\begin{proof}
+	\pf\ Then $\alpha (\beta \gamma) = (\alpha \beta) \gamma = 0^*$.
+\end{proof}
+\step{3}{\case{$\alpha$ and $\beta$ are positive, $\gamma$ is negative.}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha (\beta \gamma) & = \alpha (-(\beta (-\gamma))) \\
+		& = - (\alpha (\beta (-\gamma))) \\
+		& = - ((\alpha \beta) (-\gamma)) & (\text{\stepref{1}}) \\
+		& = (\alpha \beta) \gamma
+	\end{align*}
+\end{proof}
+\step{4}{\case{$\alpha$ is positive, $\beta$ is negative, $\gamma$ is positive.}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha (\beta \gamma) & = \alpha ( -((-\beta)\gamma)) \\
+		& = -(\alpha ((-\beta) \gamma)) \\
+		& = -((\alpha (-\beta)) \gamma) & (\text{\stepref{1}}) \\
+		& = (-(\alpha (-\beta))) \gamma \\
+		& = (\alpha \beta) \gamma
+	\end{align*}
+\end{proof}
+\step{5}{\case{$\alpha$ is positive, $\beta$ and $\gamma$ are negative.}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha (\beta \gamma) & = \alpha ((-\beta)(-\gamma)) \\
+		& = (\alpha (-\beta)) (-\gamma) & (\text{\stepref{1}}) \\
+		& = (-(\alpha \beta))(- \gamma) \\
+		& = (\alpha \beta) \gamma
+	\end{align*}
+\end{proof}
+\step{6}{\case{$\alpha$ is negative, $\beta$ and $\gamma$ are positive.}}
+\begin{proof}
+	\pf\ Similar to \stepref{3}.
+\end{proof}
+\step{7}{\case{$\alpha$ is negative, $\beta$ is positive, $\gamma$ is negative.}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha (\beta \gamma) & = \alpha (-(\beta(-\gamma))) \\
+		& = (-\alpha)(\beta(-\gamma)) \\
+		& = ((-\alpha) \beta)(- \gamma) & (\text{\stepref{1}}) \\
+		& = (-(\alpha \beta))(-\gamma) \\
+		& = (\alpha \beta) \gamma
+	\end{align*}
+\end{proof}
+\step{8}{\case{$\alpha$ and $\beta$ are negative, $\gamma$ is positive.}}
+\begin{proof}
+	\pf\ Similar to \stepref{5}.
+\end{proof}
+\step{9}{\case{$\alpha$, $\beta$ and $\gamma$ are all negative.}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha (\beta \gamma) & = \alpha (-(-\beta)(-\gamma)) \\
+		& = -((-\alpha)((-\beta)(-\gamma))) \\
+		& = -(((- \alpha)(- \beta)) (-\gamma)) & (\text{\stepref{1}}) \\
+		& = -((\alpha \beta) (-\gamma)) \\
+		& = (\alpha \beta) \gamma
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any cut $\alpha$ we have $\alpha 1^* = \alpha$.
+\end{prop}
+
+\begin{proof} %TODO Finish these
+\pf
+\step{1}{\case{$\alpha$ is positive.}}
+\begin{proof}
+	\step{a}{$\alpha 1^* \subseteq \alpha$}
+	\step{b}{$\alpha \subseteq \alpha 1^*$}
+\end{proof}
+\step{2}{\case{$\alpha = 0^*$}}
+\step{3}{\case{$\alpha$ is negative.}}
+\qed
+\end{proof}
+
 \begin{thm}
 There exists an ordered field with the least upper bound property.
 \end{thm}
-
-
 
 \begin{prop}
 There is no rational $p$ such that $p^2 = 2$.
@@ -656,4 +837,757 @@ There is no rational $p$ such that $p^2 = 2$.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{thm}
+Any two complete ordered fields are isomorphic.
+\end{thm}
+
+%TODO
+
+\begin{df}
+Let $\mathbb{R}$ be the complete ordered field. We call its elements \emph{real numbers}.
+\end{df}
+
+\section{Properties of the Real Numbers}
+
+\begin{thm}
+$\mathbb{Q}$ is a subfield of $\mathbb{R}$.
+\end{thm}
+
+%TODO
+
+\begin{thm}[Archimedean Property]
+Let $x,y \in \mathbb{R}$ with $x > 0$. There exists a positive integer $n$ such that $nx > y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A = \{ nx : n \in \mathbb{Z}^+ \}$}}
+\step{2}{\assume{for a contradiction there is no positive integer $n$ such that $nx > y$.}}
+\step{3}{$y$ is an upper bound for $A$.}
+\step{4}{\pflet{$\alpha = \sup A$}}
+\step{5}{$\alpha - x$ is not an upper bound for $A$.}
+\step{6}{\pick\ a positive integer $m$ such that $\alpha - x < mx$}
+\step{7}{$\alpha < (m+1)x \in A$}
+\qedstep
+\begin{proof}
+\pf\ This contradicts \stepref{4}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+$\mathbb{Q}$ is dense in $\mathbb{R}$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \mathbb{R}$ with $x < y$}}
+\step{2}{\pick\ a positive integer $n$ such that
+\[ n(y-x) > 1 \enspace . \]}
+\begin{proof}
+	\pf\ Archimedean property.
+\end{proof}
+\step{3}{\pick\ a positive integer $m_1$ such that $m_1 > nx$}
+\begin{proof}
+	\pf\ Archimedean property.
+\end{proof}
+\step{4}{\pick\ a positive integer $m_2$ such that $m_2 > -nx$}
+\begin{proof}
+	\pf\ Archimedean property.
+\end{proof}
+\step{5}{$-m_2 < nx < m_1$}
+\step{6}{\pflet{$m$ be the integer such that
+\[ m-1 \leq nx < m \enspace . \]}}
+\step{7}{$nx < m \leq 1 + nx < ny$}
+\step{8}{$x < m/n < y$}
+\qed
+\end{proof}
+
+\begin{thm}
+For every real number $x > 0$ and positive integer $n$, there exists a unique positive real number $y$ such that $y^n = x$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{There exists a real $y > 0$ such that $y^n = x$.}
+\begin{proof}
+	\step{a}{\pflet{$E = \{ t \in \mathbb{R}^+ : t^n < x \}$}}
+	\step{b}{\pflet{$y = \sup E$}}
+	\begin{proof}
+		\step{i}{$E \neq \emptyset$}
+		\begin{proof}
+			\step{one}{\pflet{$t = x / (x + 1)$}}
+			\step{two}{$0 < t < 1$}
+			\step{three}{$t^n < t < x$}
+			\step{four}{$t \in E$}
+		\end{proof}
+		\step{ii}{$x + 1$ is an upper bound for $E$.}
+		\begin{proof}
+			\step{one}{\pflet{$t > x + 1$}}
+			\step{two}{$t^n > t > x$}
+			\step{three}{$t \notin E$}
+		\end{proof}
+	\end{proof}
+	\step{c}{$y^n = x$}
+	\begin{proof}
+		\step{i}{$y^n \nless x$}
+		\begin{proof}
+			\step{one}{\assume{for a contradiction $y^n < x$.}}
+			\step{two}{\pick\ $h$ such that $0 < h < 1$ and
+			\[ h < \frac{x - y^n}{n(y+1)^{n-1}} \enspace . \]}
+			\step{three}{$(y+h)^n - y^n < x - y^n$}
+			\begin{proof}
+				\pf
+				\begin{align*}
+					(y+h)^n - y^n & = ((y+h)-y) \sum_{i=0}^{n-1} (y+h)^{n-1-i}y^i \\
+					& = h \sum_{i=0}^{n-1} (y+h)^{n-1-i}y^i \\
+					& \leq hn(y+h)^{n-1} \\
+					& \leq hn(y+1)^{n-1} \\
+					& < x - y^n
+				\end{align*}
+			\end{proof}
+			\step{four}{$(y+h)^n < x$}
+			\step{five}{$y + h \in E$}
+			\qedstep
+			\begin{proof}
+				\pf\ This contradicts the fact that $y$ is an upper bound for $E$.
+			\end{proof}
+		\end{proof}
+		\step{ii}{$y^n \ngtr x$}
+		\begin{proof}
+			\step{one}{\assume{for a contradiction $y^n > x$}}
+			\step{two}{\pflet{\[ k = \frac{y^n - x}{ny^{n-1}} \]}}
+			\step{three}{$0 < k < y$}
+			\step{four}{$y - k$ is an upper bound for $E$.}
+			\begin{proof}
+				\step{A}{\pflet{$t \geq y - k$}}
+				\step{B}{$y^n - t^n \leq y^n - x$}
+				\begin{proof}
+					\pf
+					\begin{align*}
+						y^n - t^n & \leq y^n - (y-k)^n \\
+						& = (y-(y-k)) \sum_{i=0}^{n-1} y^{n-i} (y-k)^i \\
+						& = k \sum_{i=0}^{n-1} y^{n-i} (y-k)^i \\
+						& \leq kn y^{n-1} \\
+						& = y^n - x
+					\end{align*}
+				\end{proof}
+				\step{C}{$t^n \geq x$}
+				\step{D}{$t \notin E$}
+			\end{proof}
+			\qedstep
+			\begin{proof}
+				\pf\ This contradicts the fact that $y$ is the least upper bound of $E$.
+			\end{proof}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{If $y$ and $y'$ are positive reals with $y^n = y'^n$ then $y = y'$.}
+\begin{proof}
+	\pf\ Since the function that sends $y$ to $y^n$ is strictly monotone.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[$n$th Root]
+Given any real number $x > 0$ and positive integer $n$, the \emph{$n$th root} of $x$, denoted $x^{1/n}$, is the unique positive real such that
+\[ (x^{1/n})^n = x \enspace . \]
+We write $\sqrt{x}$ for $x^{1/2}$.
+\end{df}
+
+\begin{prop}
+\label{prop:root_mult}
+Let $a$ and $b$ be positive real numbers and $n$ a positive integer. Then
+\[ (ab)^{1/n} = a^{1/n} b^{1/n} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Since $(a^{1/n} b^{1/n})^n = ab$. \qed
+\end{proof}
+
+\section{The Extended Real Number System}
+
+\begin{df}[Extended Real Number System]
+The \emph{extended real number system} is the set $\mathbb{R} \cup \{ + \infty, - \infty \}$.
+
+We extend the ordering $\leq$ to the extended reals by defining
+\[ - \infty < x < + \infty \]
+for every $x \in \mathbb{R}$.
+
+We extend $+$, $\cdot$ and $/$ to partial operations on the extended real by defining:
+\begin{align*} 
+x + (+\infty) & = + \infty & (x \in \mathbb{R}) \\
+x + (- \infty) & = - \infty & (x \in \mathbb{R}) \\
+(+ \infty) + x & = + \infty & (x \in \mathbb{R}) \\
+(+ \infty) + (+ \infty) & \text{ is undefined} \\
+(+ \infty) + (- \infty) & \text{ is undefined} \\
+(- \infty) + x & = - \infty & (x \in \mathbb{R}) \\
+(- \infty) + (+ \infty) & \text{ is undefined} \\
+(- \infty) + (- \infty) & \text{ is undefined} \\
+x \cdot (+ \infty) & = + \infty & (x \in \mathbb{R}) \\
+x \cdot (- \infty) & = - \infty & (x \in \mathbb{R}) \\
+(+ \infty) \cdot x & = + \infty & (x \in \mathbb{R}) \\
+(+ \infty) \cdot (+ \infty) & \text{ is undefined} \\
+(+ \infty) \cdot (- \infty) & \text{ is undefined} \\
+(- \infty) \cdot x & = - \infty & (x \in \mathbb{R}) \\
+(- \infty) \cdot (+ \infty) & \text{ is undefined} \\
+(- \infty) \cdot (- \infty) & \text{ is undefined} \\
+x / (+ \infty) & = 0 & (x \in \mathbb{R}) \\
+x / (- \infty) & = 0 & (x \in \mathbb{R}) \\
+(+ \infty) / x & \text{ is undefined} & (x \in \mathbb{R}) \\
+(+ \infty) / (+ \infty) & \text{ is undefined} \\
+(+ \infty) / (- \infty) & \text{ is undefined} \\
+(- \infty) / x & \text{ is undefined} & (x \in \mathbb{R}) \\
+(- \infty) / (+ \infty) & \text{ is undefined} \\
+(- \infty) / (- \infty) & \text{ is undefined}
+\end{align*}
+\end{df}
+
+\chapter{Complex Analysis}
+
+\renewcommand{\Re}{\ensuremath{\operatorname{Re}}}
+\renewcommand{\Im}{\ensuremath{\operatorname{Im}}}
+
+\begin{df}[Complex Numbers]
+A \emph{complex number} is a pair of real numbers. We write $\mathbb{C}$ for the set of complex numbers.
+
+Define $+$ and $\cdot$ on $\mathbb{C}$ by:
+\begin{align*}
+(a,b) + (c,d) & = (a+c,b+d) \\
+(a,b)(c,d) & = (ac-bd,ad+bc)
+\end{align*}
+\end{df}
+
+\begin{thm}
+The complex numbers form a field.
+\end{thm}
+
+%TODO
+
+\begin{thm}
+The function that maps $a$ to $(a,0)$ is an embedding of $\mathbb{R}$ in $\mathbb{C}$.
+\end{thm}
+
+%TODO
+
+\begin{df}
+\[ i = (0,1) \]
+\end{df}
+
+\begin{lm}
+\[ (a,b) = a + ib \]
+\end{lm}
+
+\begin{proof}
+\pf\ Since $(a,0) + (0,1)(b,0) = (a,b)$. \qed
+\end{proof}
+
+\begin{lm}
+\[ i^2 = -1 \]
+\end{lm}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}[Complex Conjugate]
+For any complex number $z$, the \emph{complex conjugate} $\overline{z}$ is defined by
+\[ \overline{a + ib} = a - ib \qquad (a,b \in \mathbb{R}) \enspace . \]
+\end{df}
+
+\begin{df}[Real Part]
+For any complex number $z$, the \emph{real part} of $z$, denoted $\Re(z)$, is defined by
+\[ \Re(a + ib) = a \qquad (a,b \in \mathbb{R}) \enspace . \]
+\end{df}
+
+\begin{df}[Imaginary Part]
+For any complex number $z$, the \emph{imaginar part} of $z$, denoted $\Im(z)$, is defined by
+\[ \Im(a + ib) = b \qquad (a,b \in \mathbb{R}) \enspace . \]
+\end{df}
+
+\begin{thm}
+For all $z,w \in \mathbb{C}$ we have
+\[ \overline{z + w} = \overline{z} + \overline{w} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+\overline{(a + ib) + (c + id)} & = \overline{(a + c) + i (b + d)} \\
+& = (a + c) - i(b+ d) \\
+& = (a-ib) + (c-id) \\
+& = \overline{a + ib} + \overline{c + id} & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+For all $z,w \in \mathbb{C}$ we have
+\[ \overline{zw} = \overline{z} \cdot \overline{w} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+\overline{(a+ib)(c+id)} & = \overline{(ac-bd) + i(ad+bc)} \\
+& = (ac-bd)-i(ad+bc) \\
+& = (a-ib)(c-id) \\
+& = \overline{a+ib} \cdot \overline{c+id} & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:Re_z_plus_zbar}
+For all $z \in \mathbb{C}$ we have
+\[ \Re(z) = \frac{1}{2} (z + \overline{z}) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+(a+ib) + \overline{a+ib} & = (a+ib) + (a-ib) \\
+& = 2a \\
+& = 2 \Re(a+ib) & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+For all $z \in \mathbb{C}$ we have
+\[ \Im(z) = \frac{1}{2i} (z - \overline{z}) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+(a+ib) - \overline{a+ib} & = (a+ib) - (a-ib) \\
+& = 2ib \\
+& = 2 i\Im(a+ib) & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+For all $z \in \mathbb{C}$ we have $z \overline{z}$ is a non-negative real.
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+(a+ib) (\overline{a+ib}) & = (a+ib)(a-ib) \\
+& = a^2 + b^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:zz_zero}
+For any $z \in \mathbb{C}$, if $z \overline{z} = 0$ then $z = 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ Let $z = a + ib$. Then $z \overline{z} = a^2 + b^2 = 0$ iff $a = b = 0$. \qed
+\end{proof}
+
+\begin{df}[Absolute Value]
+For $z \in \mathbb{C}$, the \emph{absolute value} of $z$ is
+\[ |z| = (z \overline{z})^{1/2} \enspace . \]
+\end{df}
+
+\begin{prop}
+For $x$ a non-negative real we have $|x| = x$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $|x| = \sqrt{x^2} = x$. \qed
+\end{proof}
+
+\begin{prop}
+For $x$ a negative real we have $|x| = -x$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $|x| = \sqrt{x^2} = -x$. \qed
+\end{proof}
+
+\begin{thm}
+For any complex number $z$ we have $|z| \geq 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from definition. \qed
+\end{proof}
+
+\begin{thm}
+For any complex number $z$, if $|z| = 0$ then $z = 0$.
+\end{thm}
+
+\begin{proof}
+\pf\ From Theorem \ref{thm:zz_zero}. \qed
+\end{proof}
+
+\begin{thm}
+For any complex number $z$ we have
+\[ |\overline{z}| = |z| \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{thm}
+\label{thm:abs_mult}
+For any complex numbers $z$ and $w$ we have
+\[ |zw| = |z||w| \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+|zw| & = \sqrt{zw \overline{z} \overline{w}} \\
+& = \sqrt{z \overline{z}} \sqrt{w \overline{w}} & (\text{Proposition \ref{prop:root_mult}}) \\
+& = |z||w| & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+\label{thm:Re_leq_abs}
+For any complex number $z$ we have
+\[ |\Re z| \leq |z| \]
+\end{thm}
+
+\begin{proof}
+\pf\ Let $z = a + ib$. Then
+\[ |\Re z| = \sqrt{a^2} \leq \sqrt{a^2 + b^2} \enspace .  \qed \]
+\end{proof}
+
+\begin{thm}
+For any complex numbers $z$ and $w$ we have
+\[ |z+w| \leq |z| + |w| \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+|z+w|^2 & = (z+w)(\overline{z} + \overline{w}) \\
+& = z \overline{z} + z \overline{w} + \overline{z} w + w \overline{w} \\
+& = |z|^2 + 2 \Re(z \overline{w}) + |w|^2 & 
+(\text{Theorem \ref{thm:Re_z_plus_zbar}}) \\
+& \leq |z|^2 + 2 |z \overline{w}| + |w|^2 &
+(\text{Theorem \ref{thm:Re_leq_abs}}) \\
+& = |z|^2 + 2 |z||w| + |w|^2 &
+(\text{Theorem \ref{thm:abs_mult}}) \\
+& = (|z| + |w|)^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}[Schwarz Inequality]
+Let $a_1$, \ldots, $a_n$, $b_1$, \ldots, $b_n$ be complex numbers. Then
+\[ \left| \sum_{j=1}^n a_j \overline{b_j} \right|^2 \leq \sum_{j=1}^n |a_j|^2 \sum_{j=1}^n |b_j|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A = \sum_{j=1}^n |a_j|^2$}}
+\step{2}{\pflet{$B = \sum_{j=1}^n |b_j|^2$}}
+\step{3}{\pflet{$C = \sum_{j=1}^n a_j \overline{b_j}$}}
+\step{4}{\assume{w.l.o.g. $B > 0$}}
+\begin{proof}
+	\pf\ If $B = 0$ then $b_1 = \cdots = b_n = 0$ and both sides of the inequality are 0.
+\end{proof}
+\step{5}{$\sum_{j=1}^n |Ba_j - Cb_j|^2 = B(AB - |C|^2)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\sum_{j=1}^n |Ba_j - Cb_j|^2 & = \sum_{j=1}^n (Ba_j - Cb_j)(B \overline{a_j} - \overline{C} \overline{b_j}) \\
+		& = B^2 \sum_{j=1}^n |a_j|^2 - B \overline{C} \sum_{j=1}^n a_j \overline{b_j} - BC \sum_{j=1}^n \overline{a_j} b_j + |C|^2 \sum_{j=1}^n |b_j|^2 \\
+		& = B^2 A - 2 B |C|^2 + B |C|^2 \\
+		& = B(AB - |C|^2)
+	\end{align*}
+\end{proof}
+\step{6}{$B(AB-|C|^2) \geq 0$}
+\step{7}{$AB \geq |C|^2$}
+\qed
+\end{proof}
+
+\part{Linear Algebra}
+
+\newcommand{\tr}[1]{\ensuremath{\operatorname{tr}}}
+
+\chapter{Vector Spaces}
+
+\chapter{Real Inner Product Spaces}
+
+\begin{df}[Inner Product]
+Given $\vec{x}, \vec{y} \in \mathbb{R}^k$, define the \emph{inner product} $\vec{x} \cdot \vec{y}$ by
+\[ (x_1, \ldots, x_k) \cdot (y_1, \ldots, y_k) = x_1 y_1 + \cdots + x_k y_k \enspace . \]
+\end{df}
+
+\begin{df}[Norm]
+Define the \emph{norm} of a vector $\vec{x} \in \mathbb{R}^k$ by
+\[ \|\vec{x}\| = \sqrt{\vec{x} \cdot \vec{x}} \enspace . \]
+\end{df}
+
+\begin{prop}
+\[ \|\vec{x}\| \geq 0 \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from the definition. \qed
+\end{proof}
+
+\begin{prop}
+If $\|\vec{x}\| = 0$ then $\vec{x} = \vec{0}$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\|\vec{x}\| = 0$ then $x_1^2 + \cdots + x_n^2 = 0$ so $x_1 = \cdots = x_n = 0$. \qed
+\end{proof}
+
+\begin{prop}
+For $\alpha \in \mathbb{R}$ and $\vec{x} \in \mathbb{R}^k$,
+\[ \| \alpha \vec{x} \| = |\alpha| \| \vec{x} \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:norm_x_dot_y}
+For $\vec{x}, \vec{y} \in \mathbb{R}^k$, we have
+\[ \| \vec{x} \cdot \vec{y} \| \leq \| \vec{x} \| \| \vec{y} \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ By the Schwarz inequality. \qed
+\end{proof}
+
+\begin{prop}
+For $\vec{x}, \vec{y} \in \mathbb{R}^k$ we have
+\[ \| \vec{x} + \vec{y} \| \leq \| \vec{x} \| + \| \vec{y} \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\| \vec{x} + \vec{y} \|^2 & = (\vec{x} + \vec{y}) \cdot (\vec{x} + \vec{y}) \\
+& = \vec{x} \cdot \vec{x} + 2 \vec{x} \cdot \vec{y} + \vec{y} \cdot \vec{y} \\
+& \leq \| \vec{x} \|^2 + 2 \| \vec{x} \| \| \vec{y} \| + \| \vec{y} \|^2 & (\text{Proposition \ref{prop:norm_x_dot_y}}) \\
+& = (\| \vec{x} \| + \| \vec{y} \|)^2 & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+For $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^k$ we have
+\[ \| \vec{x} - \vec{z} \| \leq \| \vec{x} - \vec{y} \| + \| \vec{y} - \vec{z} \| \enspace . \]
+\end{cor}
+
+\chapter{Complex Inner Product Spaces}
+
+\newcommand{\ket}[1]{\ensuremath{\left| {#1} \right\rangle}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle {#1} \right|}}
+
+\begin{df}[Inner Product]
+Let $V$ be a complex vector space. An \emph{inner product} on $V$ is a function $\langle \ , \ \rangle :  V^2 \rightarrow \mathbb{C}$ such that, for all $x,y,z \in V$ and $\alpha \in \mathbb{C}$:
+\begin{itemize}
+\item $\langle y,x \rangle = \overline{\langle x,y \rangle}$
+\item $\langle x+y,z \rangle = \langle x,z \rangle + \langle y,z \rangle$
+\item $\langle \alpha x,y \rangle = \overline{\alpha} \langle x,y \rangle$
+\item $\langle x,x \rangle \geq 0$
+\item If $\langle x,x \rangle = 0$ then $x = 0$.
+\end{itemize}
+An \emph{inner product space} consists of a complex vector space $V$ and an inner product on $V$.
+\end{df}
+
+\begin{df}[Norm]
+Let $V$ be an inner product space and $x \in V$. The \emph{norm} of $x$ is
+\[ \| x \| = \sqrt{\langle x,x \rangle} \enspace . \]
+\end{df}
+
+\begin{prop}
+An inner product space is a metric space under
+\[ d(x,y) = \| x-y \| \enspace . \]
+\end{prop}
+
+%TODO
+
+\begin{df}[Bounded]
+Let $V_1$ and $V_2$ be inner product spaces and $T : V_1 \rightarrow V_2$ a linear transformation. Then $T$ is \emph{bounded} iff $\{ \| T(x) \| : \|x \| = 1 \}$ is bounded above.
+\end{df}
+
+\begin{prop}
+Every linear transformation between finite dimensional inner product spaces is bounded.
+\end{prop}
+
+%TODO
+
+\begin{df}[Outer Product]
+Let $V$ be an inner product space and $\ket{\psi}, \ket{\phi} \in V$. The \emph{outer product} of $\ket{\psi}$ and $\ket{\phi}$ is
+\[ \ket{\psi} \bra{\phi} : V \rightarrow V \enspace . \]
+\end{df}
+
+\section{Hilbert Spaces}
+
+\begin{df}[Hilbert Space]
+A \emph{Hilbert space} is a complete inner product space.
+\end{df}
+
+\begin{thm}[Completeness Relation]
+Let $\mathcal{H}$ be a Hilbert space. Let $\{ \ket{e_n} \}_{n \in \mathbb{N}}$ be a countable orthonormal basis for $\mathcal{H}$. Then
+\[ \sum_{n=0}^\infty \ket{e_n} \bra{e_n} = I \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\ket{\psi} \in \mathcal{H}$}}
+\step{2}{\pflet{$\ket{\psi} = \sum_{n=0}^\infty \alpha_n \ket{e_n}$}}
+\step{3}{$\sum_{n=0}^\infty \langle e_n | \phi \rangle \ket{e_n} = \ket{\psi}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\sum_{n=0}^\infty \langle e_n | \phi \rangle \ket{e_n} & = \sum_{n=0}^\infty \sum_{m=0}^\infty \alpha_m \langle e_n | e_m \rangle \ket{e_n} \\
+		& = \sum_{n=0}^\infty \alpha_n \ket{e_n} \\
+		& = \ket{\psi} & \qed
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Separable]
+A Hilbert space is \emph{separable} iff it has a countable dense orthonormal basis.
+\end{df}
+
+\chapter{Lie Algebras}
+
+\begin{df}[Lie Algebra]
+Let $K$ be a field.
+A \emph{Lie algebra} $\mathcal{L}$ over $K$ consists of a vector space $\mathcal{L}$ over $K$ and an operation
+\[ [\ ,\ ] : \mathcal{L}^2 \rightarrow \mathcal{L} \enspace , \]
+the \emph{Lie bracket} or \emph{commutator}, such that, for all $x,y,z \in \mathcal{L}$ and $\alpha \in K$:
+\begin{align*}
+[x+y,z] & = [x,z] + [y,z] \\
+[x,y+z] & = [x,y] + [x,z] \\
+[\alpha x,y] & = \alpha [x,y] \\
+[x,x] & = 0 \\
+[x,[y,z]] + [y,[z,x]] + [z,[x,y]] & = 0 & (\text{Jacobi identity})
+\end{align*}
+\end{df}
+
+\begin{lm}
+If $K$ has characteristic 0 then the condition $[x,x] = 0$ can be replaced with $[x,y] = -[y,x]$.
+\end{lm}
+
+%TODO
+
+\begin{prop}
+The commutator is determind by its values on any basis for $\mathcal{L}$.
+\end{prop}
+
+%TODO
+
+\begin{ex}
+$\mathbb{R}^3$ with the cross product is a real Lie algebra.
+\end{ex}
+
+\begin{ex}
+For any $n \geq 0$, we have $GL(n,K)$ is a Lie algebra over $K$ under
+\[ [A,B] = AB - BA \enspace . \]
+\end{ex}
+
+\begin{df}[Linear Lie Algebra]
+A \emph{linear Lie algebra} over $K$ is a Lie algebra over $K$ that is a subalgebra of $GL(n,K)$ for some $n$.
+\end{df}
+
+\begin{ex}[Special Linear Algebra]
+The \emph{special Linear algebra}
+$SL(n,\mathbb{R}) = \{ A \in GL(n,\mathbb{R}) : \tr A = 0 \}$ is a real linear Lie algebra.
+\end{ex}
+
+\begin{ex}[Orthogonal Lie Algebra]
+The \emph{orthogonal Lie algebra}
+$SO(n,\mathbb{R}) = \{ A \in GL(n,\mathbb{R}) : A \text{ is skew-symmetric} \}$ is a real linear Lie algebra.
+\end{ex}
+
+\begin{ex}
+Let $u(n)$ be the set of all skew-Hermitian $n \times n$-matrices as a real Lie algebra.
+
+Let $su(n) = u(n) \cap SL(n, \mathbb{R})$.
+\end{ex}
+
+\begin{prop}
+$SU(2)$ is spanned by the \emph{Pauli matrices}
+\[ \sigma_x = \frac{1}{2} \left( \begin{array}{cc}
+0 & i \\
+i & 0 \end{array} \right), \qquad
+\sigma_y = \frac{1}{2} \left( \begin{array}{cc}
+0 & -1 \\
+1 & 0 \end{array} \right), \qquad
+\sigma_z = \frac{1}{2} \left( \begin{array}{cc}
+i & 0 \\
+0 & -i
+\end{array} \right) \]
+which satisfy
+\begin{align*}
+[\sigma_x, \sigma_y] & = \sigma_z \\
+[\sigma_y, \sigma_z] & = \sigma_x \\
+[\sigma_z, \sigma_x] & = \sigma_y
+\end{align*}
+\end{prop}
+
+%TODO
+
+\section{Lie Algebar Homomorphisms}
+
+\begin{df}[Homomorphism]
+Let $L_1$ and $L_2$ be Lie algebras over the same field. A \emph{Lie algebra homomorphism} $\phi : L_1 \rightarrow L_2$ is a linear transformation such that
+\[ \phi([x,y]) = [\phi(x), \phi(y)] \]
+for all $x,y \in L_1$.
+\end{df}
+
+\begin{lm}
+Every bijective Lie algebra homomorphism is an isomorphism.
+\end{lm}
+
+%TODO
+
+\begin{df}[Representation]
+Let $L$ be a real (complex) Lie algebra. A \emph{representation} of $L$ is a Lie algebra homomorphism $L \rightarrow GL(n, \mathbb{R})$ ($GL(n, \mathbb{C})$) for some $n$.
+\end{df}
+
+\begin{ex}
+The linear transformation $\mathbb{R}^3 \rightarrow su(2)$ defined by
+\[ i \mapsto \sigma_x, j \mapsto \sigma_y, k \mapsto \sigma_z \]
+is a representation of $\mathbb{R}^3$.
+\end{ex}
+
+\part{More Algebra}
+
+\chapter{Lie Groups}
+
+\begin{df}[Lie Group]
+A \emph{Lie group} $G$ is a group $G$ that is also an analytic differentiable manifold such that the group operation and inverse operation are analytic.
+
+A \emph{homomorphism of Lie groups} is a group homomorphism that is an analytic function.
+\end{df}
+
+\begin{lm}
+Every bijective Lie group homomorphism is an isomorphism.
+\end{lm}
+
+%TODO
+
+\begin{df}[Unitary Group]
+The \emph{unitary group} $U(n)$ is the Lie group of all $n \times n$ unitary matrices.
+\end{df}
+
+\begin{df}[Special Unitary Group]
+The \emph{special unitary group} $SU(n)$ is the Lie group of all $n \times n$ unitary matrices with determinant 1.
+\end{df}
+
+\begin{df}[Lie Subgroup]
+Let $G$ be a Lie group. A \emph{Lie subgroup} of $G$ is a subgroup that is also an analytic submanifold of $G$.
+\end{df}
+
+\begin{ex}
+$U(n)$ and $SU(n)$ are Lie subgroups of $GL(n, \mathbb{C})$.
+\end{ex}
+
 \end{document}
