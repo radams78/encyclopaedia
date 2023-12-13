@@ -1811,10 +1811,56 @@ Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{open ball} with \emph{cent
 \[ \{ y \in \mathbb{R}^k : \| y - x \| < r \} \enspace . \]
 \end{df}
 
+\begin{prop}
+Every open ball is convex.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B$ be the open ball with center $\vec{a}$ and radius $r$.}}
+\step{2}{\pflet{$\vec{x}, \vec{y} \in B$}}
+\step{3}{\pflet{$\lambda \in (0,1)$}}
+\step{4}{$\lambda \vec{x} + (1-\lambda) \vec{y} \in B$}
+\begin{proof}
+\pf
+\begin{align*}
+\| \lambda \vec{x} + (1 - \lambda) \vec{y} - \vec{a} \|
+& = \| \lambda (\vec{x} - \vec{a}) + (1 - \lambda) (\vec{y} - \vec{a}) \| \\
+& = \lambda \| \vec{x} - \vec{a} \| + (1 - \lambda) \| \vec{y} - \vec{a} \| \\
+& < \lambda r + (1 - \lambda) r \\
+& = r & \qed
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Closed Ball]
 Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{closed ball} with \emph{centre} $\vec{x}$ and \emph{radius} $r$ is
 \[ \{ y \in \mathbb{R}^k : \| y - x \| \leq r \} \enspace . \]
 \end{df}
+
+\begin{prop}
+Every closed ball is convex.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B$ be the closed ball with center $\vec{a}$ and radius $r$.}}
+\step{2}{\pflet{$\vec{x}, \vec{y} \in B$}}
+\step{3}{\pflet{$\lambda \in (0,1)$}}
+\step{4}{$\lambda \vec{x} + (1-\lambda) \vec{y} \in B$}
+\begin{proof}
+\pf
+\begin{align*}
+\| \lambda \vec{x} + (1 - \lambda) \vec{y} - \vec{a} \|
+& = \| \lambda (\vec{x} - \vec{a}) + (1 - \lambda) (\vec{y} - \vec{a}) \| \\
+& = \lambda \| \vec{x} - \vec{a} \| + (1 - \lambda) \| \vec{y} - \vec{a} \| \\
+& \leq \lambda r + (1 - \lambda) r \\
+& = r & \qed
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Complex Inner Product Spaces}
 

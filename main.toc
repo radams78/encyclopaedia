@@ -15,11 +15,11 @@
 \contentsline {section}{\numberline {7.1}Convex Sets}{39}{}%
 \contentsline {chapter}{\numberline {8}Real Inner Product Spaces}{41}{}%
 \contentsline {section}{\numberline {8.1}Balls}{42}{}%
-\contentsline {chapter}{\numberline {9}Complex Inner Product Spaces}{43}{}%
-\contentsline {section}{\numberline {9.1}Hilbert Spaces}{44}{}%
-\contentsline {chapter}{\numberline {10}Lie Algebras}{45}{}%
-\contentsline {section}{\numberline {10.1}Lie Algebar Homomorphisms}{46}{}%
-\contentsline {part}{II\hspace {1em}Topology}{47}{}%
-\contentsline {chapter}{\numberline {11}Metric Spaces}{49}{}%
-\contentsline {part}{III\hspace {1em}More Algebra}{51}{}%
-\contentsline {chapter}{\numberline {12}Lie Groups}{53}{}%
+\contentsline {chapter}{\numberline {9}Complex Inner Product Spaces}{45}{}%
+\contentsline {section}{\numberline {9.1}Hilbert Spaces}{46}{}%
+\contentsline {chapter}{\numberline {10}Lie Algebras}{47}{}%
+\contentsline {section}{\numberline {10.1}Lie Algebar Homomorphisms}{48}{}%
+\contentsline {part}{II\hspace {1em}Topology}{49}{}%
+\contentsline {chapter}{\numberline {11}Metric Spaces}{51}{}%
+\contentsline {part}{III\hspace {1em}More Algebra}{53}{}%
+\contentsline {chapter}{\numberline {12}Lie Groups}{55}{}%
