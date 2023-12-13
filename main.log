@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  11 DEC 2023 20:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  13 DEC 2023 08:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -206,66 +206,66 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [18]
-[19] [20] [21]
+[19] [20] [21] [22] [23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22]
-[23] [24
+ [24]
+[25] [26
 
 ]
 Chapter 5.
-[25] [26] [27] [28] [29
+[27] [28] [29] [30] [31
 
-] [30]
+] [32]
 Chapter 6.
-[31
+[33
 
-] [32
+] [34
 
 ]
 Chapter 7.
-[33] [34]
+[35] [36]
 Chapter 8.
 
-Overfull \hbox (1.81013pt too wide) in paragraph at lines 1423--1424
+Overfull \hbox (1.81013pt too wide) in paragraph at lines 1574--1575
 \OT1/cmr/bx/n/10 Definition 8.6 \OT1/cmr/m/n/10 (Outer Prod-uct)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 be an in-ner prod-
 uct space and $[] \OML/cmm/m/it/10 ; [] \OMS/cmsy/m/n/10 2
  []
 
-[35
+[37
 
 ]
-Overfull \hbox (0.1539pt too wide) in paragraph at lines 1434--1435
+Overfull \hbox (0.1539pt too wide) in paragraph at lines 1585--1586
 \OT1/cmr/bx/n/10 Theorem 8.8 \OT1/cmr/m/n/10 (Com-plete-ness Re-la-tion)\OT1/cm
 r/bx/n/10 . \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 H$ \OT1/cmr/m/it/10 be a Hil
 bert space. Let $\OMS/cmsy/m/n/10 f[]g[]$
  []
 
-[36]
+[38]
 Chapter 9.
 
-Overfull \hbox (2.7575pt too wide) in paragraph at lines 1505--1507
+Overfull \hbox (2.7575pt too wide) in paragraph at lines 1656--1658
 \OT1/cmr/bx/n/10 Example 9.8 \OT1/cmr/m/n/10 (Or-thog-o-nal Lie Al-ge-bra)\OT1/
 cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 or-thog-o-nal Lie al-ge-bra 
 $\OML/cmm/m/it/10 SO\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\OT1/cm
 r/m/n/10 ) =
  []
 
-[37
+[39
 
-] [38] [39
+] [40] [41
 
-] [40]
+] [42]
 Chapter 10.
-[41
+[43
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2157 strings out of 476091
- 29411 string characters out of 5794081
+ 2159 strings out of 476091
+ 29447 string characters out of 5794081
  1873330 words of memory out of 5000000
- 22559 multiletter control sequences out of 15000+600000
+ 22561 multiletter control sequences out of 15000+600000
  522697 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,13n,62p,257b,512s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -287,10 +287,10 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (41 pages, 274044 bytes).
+Output written on main.pdf (43 pages, 280848 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
+ 236 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

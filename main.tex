@@ -398,6 +398,21 @@ In any ordered field, if $0 < x < y$ then $y^{-1} < x^{-1}$.
 \qed
 \end{proof}
 
+\begin{lm}
+\label{lm:b_to_the_n_minus_1}
+Let $K$ be an ordered field. Let $b \in K$ with $b > 1$. Let $n$ be a positive integer. Then
+\[ b^n - 1 \geq n(b-1) \]
+\end{lm}
+
+\begin{proof}
+\pf
+\begin{align*}
+b^n - 1 & = (b-1) (b^{n-1} + b^{n-2} + \cdots + 1) \\
+& \geq (b-1) (1 + 1 + \cdots + 1) \\
+& = n(b-1) & \qed
+\end{align*}
+\end{proof}
+
 \chapter{Real Analysis}
 
 \section{Construction of the Real Numbers}
@@ -1004,6 +1019,142 @@ Let $a$ and $b$ be positive real numbers and $n$ a positive integer. Then
 
 \begin{proof}
 \pf\ Since $(a^{1/n} b^{1/n})^n = ab$. \qed
+\end{proof}
+
+\begin{lm}
+Let $b$ be a real number with $b > 1$. Let $n$ be a positive integer. Then
+\[ b - 1 \geq n(b^{1/n} - 1) \enspace . \]
+\end{lm}
+
+\begin{proof}
+\pf\ From Lemma \ref{lm:b_to_the_n_minus_1}. \qed
+\end{proof}
+
+\begin{lm}
+Let $b$ and $t$ be real numbers with $b > 1$ and $t > 1$. For any positive integer $n$, if $n > \frac{b-1}{t-1}$ then $b^{1/n} < t$.
+\end{lm}
+
+\begin{proof}
+\pf
+\begin{align*}
+b-1 & \geq n (b^{1/n} - 1) \\
+\therefore \frac{b-1}{n} & \geq b^{1/n} - 1 \\
+\therefore t-1 & > b^{1/n} - 1 \\
+\therefore t & > b^{1/n} & \qed
+\end{align*}
+\end{proof}
+
+\begin{lm}
+Let $b$ be a real number with $b > 0$. Let $m$, $n$, $p$, $q$ be integers with $n > 0$ and $q > 0$. Assume $m/n = p/q$. Then
+\[ (b^m)^{1/n} = (b^p)^{1/q} \enspace . \]
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$(b^m)^{1/n} = (b^{1/n})^m$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		((b^{1/n})^m)^n & = ((b^{1/n})^n)^m \\
+		& = b^m
+	\end{align*}
+\end{proof}
+\step{2}{$((b^m)^{1/n})^q = b^p$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		((b^m)^{1/n})^q & = (b^{1/n})^{mq} \\
+		& = (b^{1/n})^{np} \\
+		& = b^p
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+For $a$ a positive real and $q$ a rational number, we may therefore define $a^q$ by
+\[ a^{m/n} = (a^m)^{1/n} \]
+for $m$ and $n$ integers with $n > 0$.
+\end{df}
+
+\begin{prop}
+Let $a$ be a positive real and $r$, $s$ rational numbers. Then
+\[ a^{r+s} = a^r a^s \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+a^{m/n + p/q} & = a^{(mq+np)/nq} \\
+& = (a^{mq+np})^{1/nq} \\
+& = (a^{mq})^{1/nq} (a^{np})^{1/nq} \\
+& = a^{m/n} a^{p/q} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $b > 1$ be a real number and $q$ a rational number. Then
+\[ b^q = \sup \{ b^t : t \in \mathbb{Q}, t \leq q \} \]
+\end{prop}
+
+\begin{proof}
+\pf\ It is the greatest element of this set. \qed
+\end{proof}
+
+\begin{df}
+Let $b > 1$ be a real number and $x$ a real number. Then
+\[ b^x = \sup \{ b^t : t \in \mathbb{Q}, t \leq x \} \enspace . \]
+\end{df}
+
+
+\begin{prop}
+For $b$ and $x$ real numbers with $b > 1$ we have
+\[ b^x = \sup \{ b^t : t \in \mathbb{Q}, t < x \} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$b^x$ is an upper bound for $\{ b^t : t \in \mathbb{Q}, t < x \}$}
+\step{2}{\pflet{$u$ be any upper bound for $\{ b^t : t \in \mathbb{Q}, t < x \}$} \prove{$b^x \leq u$}}
+\step{3}{\pflet{$q$ be a rational number with $q \leq x$.} \prove{$b^q \leq u$}}
+%\step{4}{\assume{
+%HERE
+\end{proof}
+
+\begin{lm}
+\label{lm:sup_prod}
+Let $A$ be a set of positive real numbers with supremum $a > 0$ and $B$ a set of positive real numbers with supremum $b > 0$. Then $ab$ is the supremum of $\{ xy : x \in A, y \in B \}$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{For all $x \in A$ and $y \in B$ we have $xy \leq ab$.}
+\step{2}{If $u$ is any upper bound for $\{ xy : x \in A, y \in B \}$ then $ab \leq u$.}
+\begin{proof}
+	\step{a}{\pflet{$u$ be an upper bound for $\{ xy : x \in A, y \in B \}$.}}
+	\step{b}{For all $x \in A$ we have $u/x$ is an upper bound for $B$.}
+	\step{c}{For all $x \in A$ we have $b \leq u /x$}
+	\step{d}{For all $x \in A$ we have $x \leq u /b$}
+	\step{e}{$a \leq u / b$}
+	\step{f}{$ab \leq u$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $b,x,y \in \mathbb{R}$ with $b > 1$. Then
+\[ b^{x+y} = b^x b^y \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+b^x b^y & = \sup \{ b^q b^r : q,r \in \mathbb{Q}, q \leq x, r \leq y \} \\
+& = \sup \{ b^{q+r} : q,r \in \mathbb{Q}, q \leq x, r \leq y \} \\
+& = \sup \{ b^q : q \in \mathbb{Q}, q \leq x + y \} \\
+& = b^{x+y}
+\end{align*}
+\qed
 \end{proof}
 
 \section{The Extended Real Number System}
