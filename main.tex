@@ -1031,6 +1031,7 @@ Let $b$ be a real number with $b > 1$. Let $n$ be a positive integer. Then
 \end{proof}
 
 \begin{lm}
+\label{lm:Rudin_1_Exercise_7c}
 Let $b$ and $t$ be real numbers with $b > 1$ and $t > 1$. For any positive integer $n$, if $n > \frac{b-1}{t-1}$ then $b^{1/n} < t$.
 \end{lm}
 
@@ -1106,6 +1107,30 @@ Let $b > 1$ be a real number and $x$ a real number. Then
 \[ b^x = \sup \{ b^t : t \in \mathbb{Q}, t \leq x \} \enspace . \]
 \end{df}
 
+\begin{lm}
+Let $b$, $w$ and $y$ be real numbers with $b > 1$. Assume $b^w < y$. Then there exists a positive integer $n$ such that $b^{w + 1/n} < y$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$t = yb^{-w}$}}
+\step{2}{\pick\ a positive integer $n$ such that $n > \frac{b-1}{t-1}$.}
+\step{3}{$b^{1/n} < t$}
+\begin{proof}
+	\pf\ Lemma \ref{lm:Rudin_1_Exercise_7c}.
+\end{proof}
+\step{4}{$b^{w + 1/n} < y$}
+\qed
+\end{proof}
+
+\begin{lm}
+\label{lm:Rudin_1_Exercise_7d}
+Let $b$, $w$ and $y$ be real numbers with $b > 1$. Assume $b^w > y$. Then there exists a positive integer $n$ such that $b^{w - 1/n} < y$.
+\end{lm}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
 
 \begin{prop}
 For $b$ and $x$ real numbers with $b > 1$ we have
@@ -1114,11 +1139,23 @@ For $b$ and $x$ real numbers with $b > 1$ we have
 
 \begin{proof}
 \pf
-\step{1}{$b^x$ is an upper bound for $\{ b^t : t \in \mathbb{Q}, t < x \}$}
-\step{2}{\pflet{$u$ be any upper bound for $\{ b^t : t \in \mathbb{Q}, t < x \}$} \prove{$b^x \leq u$}}
+\step{1}{$b^x$ is an upper bound for $\{ b^t : t \in \mathbb{Q}, t < x \}$.}
+\step{2}{\pflet{$u$ be any upper bound for $\{ b^t : t \in \mathbb{Q}, t < x \}$.} \prove{$b^x \leq u$}}
 \step{3}{\pflet{$q$ be a rational number with $q \leq x$.} \prove{$b^q \leq u$}}
-%\step{4}{\assume{
-%HERE
+\step{4}{\assume{for a contradiction $b^q > u$.}}
+\step{5}{\pick\ a positive integer $n$ such that $b^{q-1/n} > u$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:Rudin_1_Exercise_7d}.
+\end{proof}
+\step{6}{$b^{q-1/n} \leq u$}
+\begin{proof}
+	\pf\ \stepref{2}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{4}.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{lm}
@@ -1148,12 +1185,22 @@ Let $b,x,y \in \mathbb{R}$ with $b > 1$. Then
 
 \begin{proof}
 \pf
+\step{1}{For any rational number $q < x + y$, there exist rational numbers $r < x$ and $s < y$ such that $q = r + s$.}
+\begin{proof}
+\step{a}{$q - x < y$}
+\step{b}{\pick\ a rational $t$ such that $q - x < t < y$}
+\step{c}{$q = t + (q-t)$ and $t < y$, $q-t < x$}
+\end{proof}
+\step{2}{$b^x b^y = b^{x+y}$}
+\begin{proof}
+\pf
 \begin{align*}
-b^x b^y & = \sup \{ b^q b^r : q,r \in \mathbb{Q}, q \leq x, r \leq y \} \\
-& = \sup \{ b^{q+r} : q,r \in \mathbb{Q}, q \leq x, r \leq y \} \\
-& = \sup \{ b^q : q \in \mathbb{Q}, q \leq x + y \} \\
+b^x b^y & = \sup \{ b^q b^r : q,r \in \mathbb{Q}, q < x, r < y \} \\
+& = \sup \{ b^{q+r} : q,r \in \mathbb{Q}, q < x, r < y \} \\
+& = \sup \{ b^q : q \in \mathbb{Q}, q < x + y \} \\
 & = b^{x+y}
 \end{align*}
+\end{proof}
 \qed
 \end{proof}
 
