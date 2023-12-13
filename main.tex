@@ -1736,6 +1736,21 @@ Let $E \subseteq \mathbb{R}^k$. Then $E$ is \emph{convex} iff, for all $\vec{x},
 \[ \lambda \vec{x} + (1 - \lambda) \vec{y} \in E \enspace . \]
 \end{df}
 
+\begin{prop}
+Every $k$-cell is convex.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$C = \{ \vec{x} \in \mathbb{R}^k : \forall i. a_i \leq x_i \leq b_i \}$ be a $k$-cell.}}
+\step{2}{\pflet{$\vec{x}, \vec{y} \in C$ and $\lambda \in (0,1)$.} \prove{$\lambda \vec{x} + (1-\lambda) \vec{y} \in C$}}
+\step{3}{For each $i$ we have $a_i \leq \lambda x_i + (1-\lambda) y_i \leq b_i$}
+\begin{proof}
+\pf\ Since $\lambda a_1 + (1-\lambda) a_i \leq \lambda x_i + (1 - \lambda) y_i \leq \lambda b_i + (1 - \lambda) b_i$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Real Inner Product Spaces}
 
 \begin{df}[Inner Product]
@@ -1805,34 +1820,6 @@ For $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^k$ we have
 \end{cor}
 
 \section{Balls}
-
-\begin{df}[Open Ball]
-Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{open ball} with \emph{centre} $\vec{x}$ and \emph{radius} $r$ is
-\[ \{ y \in \mathbb{R}^k : \| y - x \| < r \} \enspace . \]
-\end{df}
-
-\begin{prop}
-Every open ball is convex.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$B$ be the open ball with center $\vec{a}$ and radius $r$.}}
-\step{2}{\pflet{$\vec{x}, \vec{y} \in B$}}
-\step{3}{\pflet{$\lambda \in (0,1)$}}
-\step{4}{$\lambda \vec{x} + (1-\lambda) \vec{y} \in B$}
-\begin{proof}
-\pf
-\begin{align*}
-\| \lambda \vec{x} + (1 - \lambda) \vec{y} - \vec{a} \|
-& = \| \lambda (\vec{x} - \vec{a}) + (1 - \lambda) (\vec{y} - \vec{a}) \| \\
-& = \lambda \| \vec{x} - \vec{a} \| + (1 - \lambda) \| \vec{y} - \vec{a} \| \\
-& < \lambda r + (1 - \lambda) r \\
-& = r & \qed
-\end{align*}
-\end{proof}
-\qed
-\end{proof}
 
 \begin{df}[Closed Ball]
 Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{closed ball} with \emph{centre} $\vec{x}$ and \emph{radius} $r$ is
@@ -2067,6 +2054,52 @@ Let $(X,d)$ be a metric space and $Y$ a subset of $X$. Then $d \restriction Y^2$
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
+\section{Balls}
+
+\begin{df}[Open Ball]
+Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{open ball} with \emph{centre} $\vec{x}$ and \emph{radius} $r$ is
+\[ \{ y \in \mathbb{R}^k : \| y - x \| < r \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Every open ball in $\mathbb{R}^k$ is convex.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B$ be the open ball with center $\vec{a}$ and radius $r$.}}
+\step{2}{\pflet{$\vec{x}, \vec{y} \in B$}}
+\step{3}{\pflet{$\lambda \in (0,1)$}}
+\step{4}{$\lambda \vec{x} + (1-\lambda) \vec{y} \in B$}
+\begin{proof}
+\pf
+\begin{align*}
+\| \lambda \vec{x} + (1 - \lambda) \vec{y} - \vec{a} \|
+& = \| \lambda (\vec{x} - \vec{a}) + (1 - \lambda) (\vec{y} - \vec{a}) \| \\
+& = \lambda \| \vec{x} - \vec{a} \| + (1 - \lambda) \| \vec{y} - \vec{a} \| \\
+& < \lambda r + (1 - \lambda) r \\
+& = r & \qed
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Limit Points}
+
+\begin{df}[Limit Point]
+Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is a \emph{limit point} of $E$ iff every open ball with centre $p$ contains a point of $E$ other than $p$.
+\end{df}
+
+\begin{df}[Isolated Point]
+Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is an \emph{isolated point} of $E$ iff $p \in E$ and $p$ is not a limit point of $E$.
+\end{df}
+
+\section{Closed Sets}
+
+\begin{df}[Closed Set]
+Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{closed} iff every limit point of $E$ is a member of $E$.
+\end{df}
 
 \part{More Algebra}
 
