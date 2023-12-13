@@ -12,6 +12,7 @@
 \contentsline {chapter}{\numberline {6}Complex Analysis}{31}{}%
 \contentsline {part}{I\hspace {1em}Linear Algebra}{37}{}%
 \contentsline {chapter}{\numberline {7}Vector Spaces}{39}{}%
+\contentsline {section}{\numberline {7.1}Convex Sets}{39}{}%
 \contentsline {chapter}{\numberline {8}Real Inner Product Spaces}{41}{}%
 \contentsline {section}{\numberline {8.1}Balls}{42}{}%
 \contentsline {chapter}{\numberline {9}Complex Inner Product Spaces}{43}{}%
