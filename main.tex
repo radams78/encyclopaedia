@@ -1124,12 +1124,20 @@ Let $b$, $w$ and $y$ be real numbers with $b > 1$. Assume $b^w < y$. Then there 
 \end{proof}
 
 \begin{lm}
-\label{lm:Rudin_1_Exercise_7d}
+\label{lm:Rudin_1_Exercise_7e}
 Let $b$, $w$ and $y$ be real numbers with $b > 1$. Assume $b^w > y$. Then there exists a positive integer $n$ such that $b^{w - 1/n} < y$.
 \end{lm}
 
 \begin{proof}
-\pf\ Similar. \qed
+\pf
+\step{1}{\pflet{$t = b^w/y$}}
+\step{2}{\pick\ a positive integer $n$ such that $n > \frac{b-1}{t-1}$}
+\step{3}{$b^{1/n} < t$}
+\begin{proof}
+	\pf\ Lemma \ref{lm:Rudin_1_Exercise_7c}.
+\end{proof}
+\step{4}{$y < b^{w-1/n}$}
+\qed
 \end{proof}
 
 \begin{prop}
@@ -1145,7 +1153,7 @@ For $b$ and $x$ real numbers with $b > 1$ we have
 \step{4}{\assume{for a contradiction $b^q > u$.}}
 \step{5}{\pick\ a positive integer $n$ such that $b^{q-1/n} > u$.}
 \begin{proof}
-	\pf\ Lemma \ref{lm:Rudin_1_Exercise_7d}.
+	\pf\ Lemma \ref{lm:Rudin_1_Exercise_7e}.
 \end{proof}
 \step{6}{$b^{q-1/n} \leq u$}
 \begin{proof}
@@ -1203,6 +1211,68 @@ b^x b^y & = \sup \{ b^q b^r : q,r \in \mathbb{Q}, q < x, r < y \} \\
 \end{proof}
 \qed
 \end{proof}
+
+\subsection{Logarithms}
+
+\begin{prop}
+Let $b$ and $y$ be real numbers with $b > 1$ and $y > 0$. There exists a unique real $x$ such that $b^x = y$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x = \sup \{ w : b^w < y \}$} \prove{$b^x = y$}}
+\begin{proof}
+	\step{a}{$\{ w : b^w < y \} \neq \emptyset$}
+	\begin{proof}
+		\pf\ It contains 0.
+	\end{proof}
+	\step{b}{$\{ w : b^w < y \}$ is bounded above.}
+	\begin{proof}
+		\step{i}{\pflet{$n$ be the least integer such that
+		\[ n \geq \frac{y-1}{b-1} \]}}
+		\begin{proof}
+			\pf\ Archimedean property.
+		\end{proof}
+		\step{ii}{\pflet{$w$ be a real number with $b^w < y$} \prove{$w < n$}}
+		\step{iii}{$b^w < n(b-1) + 1$}
+		\step{iv}{$b^w < b^n$}
+		\step{v}{$w < n$}
+	\end{proof}
+\end{proof}
+\step{2}{$b^x \leq y$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $b^x > y$}}
+	\step{b}{\pick\ a positive integer $n$ such that $b^{x-1/n} > y$}
+	\begin{proof}
+		\pf\ Lemma \ref{lm:Rudin_1_Exercise_7e}.
+	\end{proof}
+	\step{c}{\pick\ $w$ such that $x - 1/n < w$ and $b^w < y$}
+	\begin{proof}
+		\pf\ Since $x - 1/n$ is not an upper bound for $\{ w : b^w < y \}$.
+	\end{proof}
+	\step{d}{$b^{x-1/n} < y$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{b}.
+	\end{proof}
+\end{proof}
+\step{3}{$b^x \geq y$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $b^x < y$.}}
+	\step{b}{\pick\ a positive integer $n$ such that $b^{x + 1/n} < y$.}
+	\step{c}{$x + 1/n \leq x$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Logarithm]
+Let $b$ and $y$ be real numbers with $b > 1$ and $y > 0$. The \emph{logarithm} of $y$ to \emph{base} $b$, denoted $\log_b y$, is the unique real number such that
+\[ b^{\log_b y} = y \enspace . \]
+\end{df}
 
 \section{The Extended Real Number System}
 
