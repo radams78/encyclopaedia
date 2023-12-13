@@ -1344,6 +1344,28 @@ Let $b$ and $y$ be real numbers with $b > 1$ and $y > 0$. The \emph{logarithm} o
 \[ b^{\log_b y} = y \enspace . \]
 \end{df}
 
+\subsection{Intervals}
+
+\begin{df}[Intervals]
+Let $a, b \in \mathbb{R}$. 
+
+The \emph{open interval} $(a,b)$ is $\{ x \in \mathbb{R} : a < x < b \}$.
+
+The \emph{closed interval} $[a,b]$ is $\{ x \in \mathbb{R} : a \leq x \leq b \}$.
+
+The \emph{half-open intervals} $[a,b)$ and $(a,b]$ are defined by
+\begin{align*}
+[a,b) & := \{ x \in \mathbb{R} : a \leq x < b \} \\
+(a,b] & := \{ x \in \mathbb{R} : a < x \leq b \}
+\end{align*}
+\end{df}
+
+\begin{df}[$k$-cell]
+Let $k$ be a positive integer. A \emph{$k$-cell} is a subset of $\mathbb{R}^k$ of the form
+\[ \{ \vec{x} \in \mathbb{R}^k : \forall i = 1, \ldots, k. a_i \leq x_i \leq b_i \} \]
+for some real numbers $a_1$, \ldots, $a_k$, $b_1$, \ldots, $b_k$ with $a_i \leq b_i$ for each $i$.
+\end{df}
+
 \section{The Extended Real Number System}
 
 \begin{df}[Extended Real Number System]
@@ -1770,9 +1792,22 @@ For $\vec{x}, \vec{y} \in \mathbb{R}^k$ we have
 \end{proof}
 
 \begin{cor}
+\label{cor:triangle_inequality}
 For $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^k$ we have
 \[ \| \vec{x} - \vec{z} \| \leq \| \vec{x} - \vec{y} \| + \| \vec{y} - \vec{z} \| \enspace . \]
 \end{cor}
+
+\section{Balls}
+
+\begin{df}[Open Ball]
+Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{open ball} with \emph{centre} $\vec{x}$ and \emph{radius} $r$ is
+\[ \{ y \in \mathbb{R}^k : \| y - x \| < r \} \enspace . \]
+\end{df}
+
+\begin{df}[Closed Ball]
+Let $\vec{x} \in \mathbb{R}^k$ and $r > 0$. The \emph{closed ball} with \emph{centre} $\vec{x}$ and \emph{radius} $r$ is
+\[ \{ y \in \mathbb{R}^k : \| y - x \| \leq r \} \enspace . \]
+\end{df}
 
 \chapter{Complex Inner Product Spaces}
 
@@ -1967,6 +2002,18 @@ A \emph{metric} on a set $X$ is a function $d : X^2 \rightarrow \mathbb{R}$ such
 
 A \emph{metric space} $X$ consists of a set $X$ and a metric on $X$.
 \end{df}
+
+\begin{ex}
+$\mathbb{R}^k$ is a metric space under $d(\vec{x},\vec{y}) = \| \vec{x} - \vec{y} \|$. The triangle inequality is Corollary \ref{cor:triangle_inequality}.
+\end{ex}
+
+\begin{prop}
+Let $(X,d)$ be a metric space and $Y$ a subset of $X$. Then $d \restriction Y^2$ is a metric on $Y$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \part{More Algebra}
 

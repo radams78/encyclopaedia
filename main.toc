@@ -7,16 +7,18 @@
 \contentsline {section}{\numberline {5.1}Construction of the Real Numbers}{15}{}%
 \contentsline {section}{\numberline {5.2}Properties of the Real Numbers}{21}{}%
 \contentsline {subsection}{\numberline {5.2.1}Logarithms}{27}{}%
+\contentsline {subsection}{\numberline {5.2.2}Intervals}{28}{}%
 \contentsline {section}{\numberline {5.3}The Extended Real Number System}{28}{}%
-\contentsline {chapter}{\numberline {6}Complex Analysis}{29}{}%
-\contentsline {part}{I\hspace {1em}Linear Algebra}{35}{}%
-\contentsline {chapter}{\numberline {7}Vector Spaces}{37}{}%
-\contentsline {chapter}{\numberline {8}Real Inner Product Spaces}{39}{}%
-\contentsline {chapter}{\numberline {9}Complex Inner Product Spaces}{41}{}%
-\contentsline {section}{\numberline {9.1}Hilbert Spaces}{42}{}%
-\contentsline {chapter}{\numberline {10}Lie Algebras}{43}{}%
-\contentsline {section}{\numberline {10.1}Lie Algebar Homomorphisms}{44}{}%
-\contentsline {part}{II\hspace {1em}Topology}{45}{}%
-\contentsline {chapter}{\numberline {11}Metric Spaces}{47}{}%
-\contentsline {part}{III\hspace {1em}More Algebra}{49}{}%
-\contentsline {chapter}{\numberline {12}Lie Groups}{51}{}%
+\contentsline {chapter}{\numberline {6}Complex Analysis}{31}{}%
+\contentsline {part}{I\hspace {1em}Linear Algebra}{37}{}%
+\contentsline {chapter}{\numberline {7}Vector Spaces}{39}{}%
+\contentsline {chapter}{\numberline {8}Real Inner Product Spaces}{41}{}%
+\contentsline {section}{\numberline {8.1}Balls}{42}{}%
+\contentsline {chapter}{\numberline {9}Complex Inner Product Spaces}{43}{}%
+\contentsline {section}{\numberline {9.1}Hilbert Spaces}{44}{}%
+\contentsline {chapter}{\numberline {10}Lie Algebras}{45}{}%
+\contentsline {section}{\numberline {10.1}Lie Algebar Homomorphisms}{46}{}%
+\contentsline {part}{II\hspace {1em}Topology}{47}{}%
+\contentsline {chapter}{\numberline {11}Metric Spaces}{49}{}%
+\contentsline {part}{III\hspace {1em}More Algebra}{51}{}%
+\contentsline {chapter}{\numberline {12}Lie Groups}{53}{}%
