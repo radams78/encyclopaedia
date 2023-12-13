@@ -24,5 +24,7 @@
 \contentsline {section}{\numberline {11.1}Balls}{49}{}%
 \contentsline {section}{\numberline {11.2}Limit Points}{50}{}%
 \contentsline {section}{\numberline {11.3}Closed Sets}{50}{}%
+\contentsline {section}{\numberline {11.4}Interior Points}{50}{}%
+\contentsline {section}{\numberline {11.5}Open Sets}{50}{}%
 \contentsline {part}{III\hspace {1em}More Algebra}{51}{}%
 \contentsline {chapter}{\numberline {12}Lie Groups}{53}{}%
