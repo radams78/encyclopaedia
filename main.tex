@@ -2113,6 +2113,29 @@ Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is an \em
 Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{open} iff every point in $E$ is an interior point of $E$.
 \end{df}
 
+\begin{prop}
+Every open ball is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$B$ be an open ball with centre $c$ and radius $r$.}}
+\step{2}{\pflet{$x \in B$}}
+\step{3}{\pflet{$\epsilon = r - d(x,c)$}}
+\step{4}{\pflet{$B'$ be the open ball with centre $x$ and radius $\epsilon$.} \prove{$B' \subseteq B$}}
+\step{5}{\pflet{$y \in B'$}}
+\step{6}{$d(y,c) < r$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		d(y,c) & \leq d(y,x) + d(x,c) & (\text{Triangle Inequality}) \\
+		& < \epsilon + d(x,c) & (\text{\stepref{5}}) \\
+		& = r & (\text{\stepref{3}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Perfect Sets}
 
 \begin{df}[Perfect Set]
