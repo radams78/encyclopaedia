@@ -2091,6 +2091,19 @@ Every open ball in $\mathbb{R}^k$ is convex.
 Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is a \emph{limit point} of $E$ iff every open ball with centre $p$ contains a point of $E$ other than $p$.
 \end{df}
 
+\begin{prop}
+Let $X$ be a metric space. Let $E \subseteq X$. Let $p$ be a limit point of $E$. Then every neighbourhood of $p$ contains infinitely many points of $E$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $N$ is a neighbourhood of $p$ that contains only finitely many points $q_1$, \ldots, $q_n$ of $E - \{p\}$.}}
+\step{2}{\pflet{$r = \min(q_1, \ldots, q_n)$}}
+\step{3}{\pflet{$B$ be the open ball with centre $p$ and radius $r$.}}
+\step{4}{$B$ is a neighbourhood of $p$ that contains no points of $E$ other than $p$.}
+\qed
+\end{proof}
+
 \begin{df}[Isolated Point]
 Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is an \emph{isolated point} of $E$ iff $p \in E$ and $p$ is not a limit point of $E$.
 \end{df}
