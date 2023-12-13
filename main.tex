@@ -25,6 +25,51 @@
 \maketitle
 \tableofcontents
 
+\chapter{Set Theory}
+
+\begin{prop}
+Every infinite subset of a countably infinite set is countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i : A \hookrightarrow \mathbb{N}$ be an infinite subset of $\mathbb{N}$.}}
+\step{2}{Define $j : \mathbb{N} \rightarrow A$ by: $j(k)$ is the element such that $i(j(k))$ is least such that $i(j(k)) \notin \{ i(j(0)), \ldots, i(j(k-1)) \}$.}
+\step{3}{$j$ is a bijection.}
+\qed
+\end{proof}
+
+\begin{prop}
+A countable union of countable sets is countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(A_n)$ be a sequence of countable sets.}}
+\step{2}{For $n \in \mathbb{N}$, \pick\ an enumeration $(e_{nm})_m$ of $A_n$.}
+\step{3}{\pflet{$(p_k)$ be the following enumeration of $\mathbb{N} \times \mathbb{N}$:
+\[ (0,0), (1,0), (0,1), (2,0), (1,1), (0,2), \ldots \]}}
+\step{4}{$(e_{\pi_1(p_k)\pi_2(p_k)})_k$ is an enumeration of $\bigcup_n A_n$.}
+\qed
+\end{proof}
+
+\begin{thm}
+$2^\mathbb{N}$ is uncountable.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $f : \mathbb{N} \approx 2^\mathbb{N}$}}
+\step{2}{\pflet{$S = \{ n \in \mathbb{N} : n \notin f(n) \}$}}
+\step{3}{For all $n$, we have $n \in S \Leftrightarrow n \notin f(n)$}
+\step{4}{For all $n$ we have $S \neq f(n)$.}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Relations}
 
 \begin{df}[Antisymmetric]
@@ -132,6 +177,17 @@ Let $\leq$ be a linear order on a set $S$ and $E \subseteq S$. Then $\leq \cap E
 \end{proof}
 
 Given a linearly ordered set $(S, \leq)$ and $E \subseteq S$, we write just $E$ for the linearly ordered set $(E, \leq \cap E^2)$.
+
+\begin{df}[Lexicographic Order]
+Let $A$ and $B$ be linearly ordered sets. The \emph{lexicographic order} or \emph{dictionary order} on $A \times B$ is the order defined by
+\[ (a,b) \leq (a',b') \Leftrightarrow a = a' \vee (a < a' \wedge b \leq b') \enspace . \]
+\end{df}
+
+\begin{prop}
+The lexicographic order is a linear order.
+\end{prop}
+
+%TODO
 
 \chapter{Field Theory}
 
@@ -297,6 +353,20 @@ In any field $F$, we have $(-x)(-y) = xy$.
 & = -(-(xy)) \\
 & = xy & (\text{Proposition \ref{prop:minus_minus}}) \qed
 \end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:at_most_two_square_roots}
+Let $K$ be a field. Let $a,b \in K$. If $a^2 = b^2$ then $a = b$ or $a = -b$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+a^2 - b^2 & = 0 \\
+\therefore (a-b)(a+b) & = 0
+\end{align*}
+Hence either $a - b = 0$ or $a + b = 0$, and the conclusion follows. \qed
 \end{proof}
 
 \section{Ordered Fields}
@@ -1359,6 +1429,10 @@ The function that maps $a$ to $(a,0)$ is an embedding of $\mathbb{R}$ in $\mathb
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\begin{cor}
+There is no linear order on $\mathbb{C}$ that makes $\mathbb{C}$ into an ordered field.
+\end{cor}
+
 \begin{df}[Complex Conjugate]
 For any complex number $z$, the \emph{complex conjugate} $\overline{z}$ is defined by
 \[ \overline{a + ib} = a - ib \qquad (a,b \in \mathbb{R}) \enspace . \]
@@ -1574,6 +1648,58 @@ Let $a_1$, \ldots, $a_n$, $b_1$, \ldots, $b_n$ be complex numbers. Then
 \step{7}{$AB \geq |C|^2$}
 \qed
 \end{proof}
+
+\begin{prop}
+For any non-zero complex number $w$, there are exactly two complex numbers $z$ such that $z^2 = w$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{There are at most two complex numbers $z$ such that $z^2 = w$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:at_most_two_square_roots}.
+\end{proof}
+\step{2}{There are at least two complex numbers $z$ such that $z^2 = w$.}
+\begin{proof}
+	\step{a}{\pflet{$w = u + iv$}}
+	\step{b}{\pflet{$a = \sqrt{\frac{|w| + u}{2}}$}}
+	\step{c}{\pflet{$b = \sqrt{\frac{|w| - u}{2}}$}}
+	\step{d}{\case{$v \geq 0$}}
+	\begin{proof}
+		\step{i}{\pflet{$z = a + ib$}}
+		\step{ii}{$z^2 = w$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				z^2 & = (a + ib)^2 \\
+				& = a^2 - b^2 + 2iab \\
+				& = u + i \sqrt{|w|^2-u^2} \\
+				& = u + iv \\
+				& = w
+			\end{align*}
+		\end{proof}
+		\step{iii}{$(-z)^2 = w$}
+	\end{proof}
+	\step{e}{\case{$v \leq 0$}}
+	\begin{proof}
+		\step{i}{\pflet{$z = a - ib$}}
+		\step{ii}{$z^2 = w$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				z^2 & = (a-ib)^2 \\
+				& = a^2 - b^2 -2iab \\
+				& = u - i \sqrt{|w|^2 - u^2} \\
+				& = u - i |v| \\
+				& = w
+			\end{align*}
+		\end{proof}
+		\step{iii}{$(-z)^2 = w$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 
 \part{Linear Algebra}
 
@@ -1825,6 +1951,22 @@ The linear transformation $\mathbb{R}^3 \rightarrow su(2)$ defined by
 \[ i \mapsto \sigma_x, j \mapsto \sigma_y, k \mapsto \sigma_z \]
 is a representation of $\mathbb{R}^3$.
 \end{ex}
+
+\part{Topology}
+
+\chapter{Metric Spaces}
+
+\begin{df}[Metric]
+A \emph{metric} on a set $X$ is a function $d : X^2 \rightarrow \mathbb{R}$ such that, for all $x,y,z \in X$:
+\begin{itemize}
+\item $d(x,y) \geq 0$
+\item $d(x,y) = 0$ iff $x = y$
+\item $d(x,y) = d(y,x)$
+\item \textbf{Triangle Inequality} $d(x,z) \leq d(x,y) + d(y,z)$
+\end{itemize}
+
+A \emph{metric space} $X$ consists of a set $X$ and a metric on $X$.
+\end{df}
 
 \part{More Algebra}
 
