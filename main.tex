@@ -2153,6 +2153,47 @@ Every open ball is open.
 \qed
 \end{proof}
 
+\begin{prop}
+A set is open if and only if its complement is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E \subseteq X$}}
+\step{2}{If $E$ is open then $X - E$ is closed.}
+\begin{proof}
+	\step{a}{\assume{$E$ is open.}}
+	\step{b}{\pflet{$p$ be a limit point of $X - E$.} \prove{$p \in X - E$}}
+	\step{c}{\assume{for a contradiction $p \in E$.}}
+	\step{d}{\pick\ an open ball $B$ with centre $p$ such that $B \subseteq E$.}
+	\step{e}{$B$ contains a point of $X - E$.}
+	\begin{proof}
+		\pf\ \stepref{b}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{d}.
+	\end{proof}
+\end{proof}
+\step{3}{If $X - E$ is closed then $E$ is open.}
+\begin{proof}
+	\step{a}{\assume{$X - E$ is closed.}}
+	\step{b}{\pflet{$p \in E$}}
+	\step{c}{\assume{for a contradiction no open ball with centre $p$ is a subset of $E$.}}
+	\step{d}{Every open ball with centre $p$ intersects $X - E$.}
+	\step{e}{$p$ is a limit point of $X - E$.}
+	\step{f}{$p \in X - E$}
+	\begin{proof}
+		\pf\ \stepref{a}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{b}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Perfect Sets}
 
 \begin{df}[Perfect Set]
