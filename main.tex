@@ -2198,6 +2198,42 @@ A set is open if and only if its complement is closed.
 A set is closed if and only if its complement is open.
 \end{cor}
 
+\begin{prop}
+The union of a set of open sets is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{U}$ be a set of open sets.}}
+\step{2}{\pflet{$p \in \bigcup \mathcal{U}$}}
+\step{3}{\pick\ $U \in \mathcal{U}$ such that $p \in U$.}
+\step{4}{\pick\ an open ball $B$ with centre $p$ such that $B \subseteq U$.}
+\step{5}{$B \subseteq \bigcup \mathcal{U}$}
+\qed
+\end{proof}
+
+\begin{cor}
+The intersection of a set of closed sets is closed.
+\end{cor}
+
+\begin{prop}
+The intersection of two open sets is open.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$U$ and $V$ be open.}}
+\step{2}{\pflet{$p \in U \cap V$}}
+\step{3}{\pick\ open balls $B_1$ and $B_2$ with centre $p$ such that $B_1 \subseteq U$ and $B_2 \subseteq V$.}
+\step{4}{\assume{w.l.o.g. the radius of $B_1$ is $\leq$ the radius of $B_2$.}}
+\step{5}{$B_1 \subseteq U \cap V$}
+\qed
+\end{proof}
+
+\begin{cor}
+The union of two closed sets is closed.
+\end{cor}
+
 \section{Perfect Sets}
 
 \begin{df}[Perfect Set]

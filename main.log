@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  13 DEC 2023 20:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  13 DEC 2023 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -272,11 +272,7 @@ mr/m/n/10 ) =
 Chapter 11.
 [49
 
-] [50]
-Underfull \vbox (badness 2103) has occurred while \output is active []
-
- [51]
-[52] [53
+] [50] [51] [52] [53
 
 ] [54]
 Chapter 12.
@@ -311,7 +307,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (55 pages, 323624 bytes).
+Output written on main.pdf (55 pages, 324822 bytes).
 PDF statistics:
  284 PDF objects out of 1000 (max. 8388607)
  185 compressed objects within 2 object streams
