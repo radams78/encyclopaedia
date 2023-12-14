@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  14 DEC 2023 08:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  14 DEC 2023 08:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -273,7 +273,7 @@ Chapter 11.
 [49
 
 ] [50] [51]
-Overfull \hbox (39.69167pt too wide) in paragraph at lines 2240--2241
+Overfull \hbox (39.69167pt too wide) in paragraph at lines 2241--2242
 []\OT1/cmr/m/n/10 For ev-ery pos-i-tive in-te-ger $\OML/cmm/m/it/10 n$\OT1/cmr/
 m/n/10 , we have $(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n; \O
 T1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 )$ is open in $\U/msb/m/n/10 
@@ -281,18 +281,18 @@ R$\OT1/cmr/m/n/10 , but $[][](\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/i
 t/10 =n; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 ) =
  []
 
-[52] [53] [54
+[52] [53] [54] [55
 
-] [55] [56]
+] [56]
 Chapter 12.
 [57
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2164 strings out of 476091
- 29556 string characters out of 5794081
+ 2165 strings out of 476091
+ 29573 string characters out of 5794081
  1873330 words of memory out of 5000000
- 22566 multiletter control sequences out of 15000+600000
+ 22567 multiletter control sequences out of 15000+600000
  522697 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,13n,62p,257b,512s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -316,7 +316,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (57 pages, 327803 bytes).
+Output written on main.pdf (57 pages, 329873 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  189 compressed objects within 2 object streams

@@ -2199,6 +2199,7 @@ A set is closed if and only if its complement is open.
 \end{cor}
 
 \begin{prop}
+\label{prop:union_open}
 The union of a set of open sets is open.
 \end{prop}
 
@@ -2239,6 +2240,49 @@ The intersection of a set of open sets is not necessarily open.
 
 For every positive integer $n$, we have $(-1/n,1/n)$ is open in $\mathbb{R}$, but $\bigcap_{n=1}^\infty (-1/n,1/n) = \{0\}$ is not open.
 \end{ex}
+
+\begin{thm}
+Let $X$ be a metric space. Let $Y \subseteq X$ and $E \subseteq Y$. Then $E$ is open in $Y$ if and only if there exists an open subset $G$ of $X$ such that $E = G \cap Y$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $E$ is open in $Y$ then there exists an open subset $G$ of $X$ such that $E = G \cap Y$.}
+\begin{proof}
+	\step{a}{\assume{$E$ is open in $Y$.}}
+	\step{b}{For $p \in E$, \pick\ $r_p > 0$ such that the open ball in $Y$ with centre $p$ and radius $r_p$ is included in $E$.}
+	\step{c}{For $p \in E$, \pflet{$V_p$ be the open ball in $X$ with centre $p$ and radius $r_p$.}}
+	\step{d}{\pflet{$G = \bigcup_{p \in E} V_p$}}
+	\step{e}{$G$ is open in $Y$.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:union_open}.
+	\end{proof}
+	\step{f}{$E = G \cap Y$}
+	\begin{proof}
+		\step{i}{$E \subseteq G \cap Y$}
+		\begin{proof}
+			\step{one}{\pflet{$p \in E$}}
+			\step{two}{$p \in V_p$}
+			\step{three}{$p \in G$}
+		\end{proof}
+		\step{ii}{$G \cap Y \subseteq E$}
+		\begin{proof}
+			\step{one}{\pflet{$x \in G \cap Y$}}
+			\step{two}{\pick\ $p \in E$ such that $x \in V_p$}
+			\step{three}{$d(x,p) < r_p$}
+			\step{four}{$x \in E$}
+		\end{proof}
+	\end{proof}
+\end{proof}
+\step{2}{For any open subset $G$ of $X$, we have $G \cap Y$ is open in $Y$.}
+\begin{proof}
+	\step{a}{\pflet{$G$ be an open subset of $X$.}}
+	\step{b}{\pflet{$p \in G \cap Y$}}
+	\step{c}{\pick\ $r > 0$ such that the open ball in $X$ with centre $p$ and radius $r$ is included in $G$.}
+	\step{d}{The open ball in $Y$ with centre $p$ and radius $r$ is included in $G \cap Y$.}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Perfect Sets}
 
