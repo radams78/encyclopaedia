@@ -2409,6 +2409,22 @@ Let $X$ be a metric space. Let $Y \subseteq X$ and $K \subseteq Y$. Then $K$ is 
 \qed
 \end{proof}
 
+\begin{prop}
+Every compact set is closed.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be compact.}}
+\step{2}{\pflet{$p \in X - E$} \prove{There exists an open ball with centre $p$ that is a subset of $X - E$.}}
+\step{3}{For all $q \in E$, there exist disjoint open balls $B$ with centre $q$ and $B'$ with centre $p$.}
+\step{4}{The set of open balls $B$ such that there exists a disjoint open ball $B'$ with centre $p$ is an open cover of $E$.}
+\step{5}{\pick\ a finite subcover $\{B_1, \ldots, B_n\}$.}
+\step{6}{For $i = 1, \ldots, n$, \pick\ an open ball $B_i'$ with centre $p$ such that $B_i \cap B_i' = \emptyset$.}
+\step{7}{$B_1' \cap \cdots \cap B_n'$ is an open ball with centre $p$ that is a subset of $X - E$.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
