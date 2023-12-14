@@ -2234,6 +2234,12 @@ The intersection of two open sets is open.
 The union of two closed sets is closed.
 \end{cor}
 
+\begin{ex}
+The intersection of a set of open sets is not necessarily open.
+
+For every positive integer $n$, we have $(-1/n,1/n)$ is open in $\mathbb{R}$, but $\bigcap_{n=1}^\infty (-1/n,1/n) = \{0\}$ is not open.
+\end{ex}
+
 \section{Perfect Sets}
 
 \begin{df}[Perfect Set]
@@ -2251,6 +2257,69 @@ Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{bounded} iff t
 \begin{df}[Dense Set]
 Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{dense} iff every point of $X$ is either a limit point of $E$ or a point of $E$, or both.
 \end{df}
+
+\section{Closure}
+
+\begin{df}[Closure]
+Let $X$ be a metric space. Let $E \subseteq X$. Then the \emph{closure} of $E$, denoted $\overline{E}$, is the union of $E$ and the set of limit points of $E$.
+\end{df}
+
+\begin{prop}
+$\overline{E}$ is the smallest closed set that includes $E$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\overline{E}$ is closed.}
+\begin{proof}
+	\step{a}{\pflet{$p$ be a limit point of $\overline{E}$.}}
+	\step{aa}{\assume{$p \notin E$} \prove{$p$ is a limit point of $E$.}}
+	\step{b}{\pflet{$B$ be the open ball with centre $p$ and radius $r$.} \prove{$B$ intersects $E$.}}
+	\step{c}{\pick\ a point $q \in B \cap \overline{E}$.}
+	\step{d}{\pick\ an open ball $B'$ with centre $q$ such that $B' \subseteq B$.}
+	\step{e}{\pick\ a point $r \in E \cap B'$}
+	\step{f}{$r \in E \cap B$}
+\end{proof}
+\step{2}{If $C$ is closed and $E \subseteq C$ then $\overline{E} \subseteq C$.}
+\begin{proof}
+	\step{a}{\assume{$C$ is closed.}}
+	\step{b}{\assume{$E \subseteq C$}}
+	\step{c}{\pflet{$p \in \overline{E}$}}
+	\step{d}{\assume{for a contradiction $p \notin C$}}
+	\step{e}{$p$ is a limit point of $C$.}
+	\begin{proof}
+		\step{i}{\pflet{$B$ be an open ball with centre $p$.}}
+		\step{ii}{$B$ intersects $E$.}
+		\step{iii}{$B$ intersects $C$.}
+		\step{iv}{$B$ intersects $C$ in a point other than $p$.}
+		\begin{proof}
+			\pf\ \stepref{c}
+		\end{proof}
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{a}.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+$E$ is closed if and only if $E = \overline{E}$.
+\end{cor}
+
+\begin{thm}
+Let $E$ be a nonempty set of real numbers bounded above. Then $\sup E \in \overline{E}$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\sup E \notin E$} \prove{$\sup E$ is a limit point of $E$.}}
+\step{2}{\pflet{$B$ be an open ball with centre $\sup E$ and radius $r$.}}
+\step{3}{There exists $x \in E$ such that $x > \sup E - r$.}
+\step{4}{$E$ intersects $B$ in a point other than $p$.}
+\qed
+\end{proof}
 
 \part{More Algebra}
 
