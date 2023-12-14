@@ -30,5 +30,6 @@
 \contentsline {section}{\numberline {11.7}Bounded Sets}{53}{}%
 \contentsline {section}{\numberline {11.8}Dense Sets}{53}{}%
 \contentsline {section}{\numberline {11.9}Closure}{53}{}%
+\contentsline {section}{\numberline {11.10}Compact Sets}{54}{}%
 \contentsline {part}{III\hspace {1em}More Algebra}{55}{}%
 \contentsline {chapter}{\numberline {12}Lie Groups}{57}{}%
