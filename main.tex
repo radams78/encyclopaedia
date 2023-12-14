@@ -1360,6 +1360,24 @@ The \emph{half-open intervals} $[a,b)$ and $(a,b]$ are defined by
 \end{align*}
 \end{df}
 
+\begin{prop}
+Let $(I_n)$ be a sequence of closed intervals with $I_0 \supseteq I_1 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty I_n$ is nonempty.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I_n = [a_n,b_n]$}}
+\step{2}{\pflet{$x = \sup_n a_n$}}
+\begin{proof}
+	\pf\ $\{ a_n : n \in \mathbb{N} \}$ is bounded above by $b_0$.
+\end{proof}
+\step{3}{$x \in \bigcap_{n=0}^\infty I_n$}
+\begin{proof}
+	\pf\ For all $n$ we have $a_n \leq x \leq b_n$ since $b_n$ is an upper bound for $\{ a_n : n \in \mathbb{N} \}$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[$k$-cell]
 Let $k$ be a positive integer. A \emph{$k$-cell} is a subset of $\mathbb{R}^k$ of the form
 \[ \{ \vec{x} \in \mathbb{R}^k : \forall i = 1, \ldots, k. a_i \leq x_i \leq b_i \} \]
