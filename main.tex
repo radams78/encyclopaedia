@@ -2443,6 +2443,24 @@ Every closed subset of a compact set is compact.
 The intersection of a compact set and a closed set is compact.
 \end{cor}
 
+\begin{prop}
+Let $\mathcal{K}$ be a nonempty set of compact sets. If every nonempty finite subset of $\mathcal{K}$ has nonempty intersection, then $\bigcap \mathcal{K}$ is nonempty.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $K \in \mathcal{K}$}
+\step{2}{\assume{$\bigcap \mathcal{K} = \emptyset$}}
+\step{3}{$\{ X - K' : K' \in \mathcal{K} \}$ is an open cover of $K$.}
+\step{4}{\pick\ a finite subcover $\{ X - K_1, \ldots, X - K_n \}$.}
+\step{5}{There exists $p \in K \cap K_1 \cap \cdots \cap K_n$}
+\qedstep
+\begin{proof}
+	\pf\ \stepref{4} and \stepref{5} form a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
