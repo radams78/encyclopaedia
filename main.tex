@@ -2384,6 +2384,31 @@ Every finite set is compact.
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{thm}
+Let $X$ be a metric space. Let $Y \subseteq X$ and $K \subseteq Y$. Then $K$ is compact in $Y$ if and only if $K$ is compact in $X$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $K$ is compact in $Y$ then $K$ is compact in $X$.}
+\begin{proof}
+	\step{a}{\assume{$K$ is compact in $Y$.}}
+	\step{b}{\pflet{$\mathcal{U}$ be an open cover of $K$ in $X$.}}
+	\step{c}{$\{ U \cap Y : U \in \mathcal{U} \}$ is an open cover of $K$ in $Y$.}
+	\step{d}{\pick\ a finite subcover $\{ U_1 \cap Y, \ldots, U_n \cap Y \}$}
+	\step{e}{$\{ U_1, \ldots, U_n \}$ is a finite subset of $\mathcal{U}$ that is an open cover of $K$ is $X$.}
+\end{proof}
+\step{2}{If $K$ is compact in $X$ then $K$ is compact in $Y$.}
+\begin{proof}
+	\step{a}{\assume{$K$ is compact in $X$.}}
+	\step{b}{\pflet{$\mathcal{U}$ be an open cover of $K$ in $Y$.}}
+	\step{c}{$\{ U \text{ open in } X : U \cap Y \in \mathcal{U} \}$ is an open cover of $K$ in $X$.}
+	\step{d}{\pick\ a finite subcover $\{U_1, \ldots, U_n\}$.}
+	\step{e}{$\{ U_1 \cap Y, \ldots, U_n \cap Y \}$ is a subset of $\mathcal{U}$ that is an open cover of $E$ in $Y$.}
+\end{proof}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
