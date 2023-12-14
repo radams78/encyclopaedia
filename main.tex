@@ -2425,6 +2425,20 @@ Every compact set is closed.
 \qed
 \end{proof}
 
+\begin{prop}
+Every closed subset of a compact set is compact.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be compact and $C \subseteq E$ be closed.}}
+\step{2}{\pflet{$\mathcal{U}$ be an open cover of $C$.}}
+\step{3}{$\mathcal{U} \cup \{ X - C \}$ is an open cover of $E$.}
+\step{4}{\pick\ a finite subcover $\{ U_1, \ldots, U_n \}$ or $\{ U_1, \ldots, U_n, X - C \}$.}
+\step{5}{$\{ U_1, \ldots, U_n\}$ covers $C$.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
