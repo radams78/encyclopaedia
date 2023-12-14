@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  14 DEC 2023 10:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  14 DEC 2023 11:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -227,7 +227,7 @@ Chapter 8.
 [41] [42]
 Chapter 9.
 
-Overfull \hbox (1.81013pt too wide) in paragraph at lines 1910--1911
+Overfull \hbox (1.81013pt too wide) in paragraph at lines 1922--1923
 \OT1/cmr/bx/n/10 Definition 9.6 \OT1/cmr/m/n/10 (Outer Prod-uct)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 be an in-ner prod-
 uct space and $[] \OML/cmm/m/it/10 ; [] \OMS/cmsy/m/n/10 2
@@ -236,7 +236,7 @@ uct space and $[] \OML/cmm/m/it/10 ; [] \OMS/cmsy/m/n/10 2
 [43
 
 ]
-Overfull \hbox (0.1539pt too wide) in paragraph at lines 1921--1922
+Overfull \hbox (0.1539pt too wide) in paragraph at lines 1933--1934
 \OT1/cmr/bx/n/10 Theorem 9.8 \OT1/cmr/m/n/10 (Com-plete-ness Re-la-tion)\OT1/cm
 r/bx/n/10 . \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 H$ \OT1/cmr/m/it/10 be a Hil
 bert space. Let $\OMS/cmsy/m/n/10 f[]g[]$
@@ -245,7 +245,7 @@ bert space. Let $\OMS/cmsy/m/n/10 f[]g[]$
 [44]
 Chapter 10.
 
-Overfull \hbox (0.42967pt too wide) in paragraph at lines 1987--1989
+Overfull \hbox (0.42967pt too wide) in paragraph at lines 1999--2001
 \OT1/cmr/bx/n/10 Example 10.7 \OT1/cmr/m/n/10 (Spe-cial Lin-ear Al-ge-bra)\OT1/
 cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 spe-cial Lin-ear al-ge-bra $
 \OML/cmm/m/it/10 SL\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\OT1/cmr
@@ -253,7 +253,7 @@ cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 spe-cial Lin-ear al-ge-bra $
  []
 
 
-Overfull \hbox (8.50748pt too wide) in paragraph at lines 1992--1994
+Overfull \hbox (8.50748pt too wide) in paragraph at lines 2004--2006
 \OT1/cmr/bx/n/10 Example 10.8 \OT1/cmr/m/n/10 (Or-thog-o-nal Lie Al-ge-bra)\OT1
 /cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 or-thog-o-nal Lie al-ge-bra
  $\OML/cmm/m/it/10 SO\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\OT1/c
@@ -269,7 +269,7 @@ Chapter 11.
 [49
 
 ] [50] [51]
-Overfull \hbox (39.69167pt too wide) in paragraph at lines 2259--2260
+Overfull \hbox (39.69167pt too wide) in paragraph at lines 2271--2272
 []\OT1/cmr/m/n/10 For ev-ery pos-i-tive in-te-ger $\OML/cmm/m/it/10 n$\OT1/cmr/
 m/n/10 , we have $(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n; \O
 T1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 )$ is open in $\U/msb/m/n/10 
@@ -278,7 +278,7 @@ t/10 =n; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 ) =
  []
 
 [52] [53] [54]
-Overfull \hbox (3.35152pt too wide) in paragraph at lines 2465--2466
+Overfull \hbox (3.35152pt too wide) in paragraph at lines 2477--2478
 \OT1/cmr/bx/n/10 Proposition 11.30. \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 K$ \
 OT1/cmr/m/it/10 be a nonempty set of com-pact sets. If ev-ery nonempty
  []
@@ -318,7 +318,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (59 pages, 336375 bytes).
+Output written on main.pdf (59 pages, 337008 bytes).
 PDF statistics:
  296 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams

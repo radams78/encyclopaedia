@@ -1384,6 +1384,18 @@ Let $k$ be a positive integer. A \emph{$k$-cell} is a subset of $\mathbb{R}^k$ o
 for some real numbers $a_1$, \ldots, $a_k$, $b_1$, \ldots, $b_k$ with $a_i \leq b_i$ for each $i$.
 \end{df}
 
+\begin{prop}
+Let $(I_n)$ be a sequence of $k$-cells such that $I_0 \supseteq I_1 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty I_n \neq \emptyset$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I_n = J_{n1} \times \cdots \times J_{nk}$ where each $J_{ni}$ is a closed interval.}}
+\step{2}{For $i = 1, \ldots, k$, \pick\ $a_i \in \bigcap_{n=0}^\infty J_{ni}$.}
+\step{3}{$(a_1, \ldots, a_k) \in \bigcap_{n=0}^\infty I_n$}
+\qed
+\end{proof}
+
 \section{The Extended Real Number System}
 
 \begin{df}[Extended Real Number System]
