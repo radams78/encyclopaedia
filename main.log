@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 18:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -147,26 +147,26 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -227,7 +227,7 @@ Chapter 8.
 [41] [42]
 Chapter 9.
 
-Overfull \hbox (1.81013pt too wide) in paragraph at lines 1948--1949
+Overfull \hbox (1.81013pt too wide) in paragraph at lines 1950--1951
 \OT1/cmr/bx/n/10 Definition 9.6 \OT1/cmr/m/n/10 (Outer Prod-uct)\OT1/cmr/bx/n/1
 0 . \OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 be an in-ner prod-
 uct space and $[] \OML/cmm/m/it/10 ; [] \OMS/cmsy/m/n/10 2
@@ -236,7 +236,7 @@ uct space and $[] \OML/cmm/m/it/10 ; [] \OMS/cmsy/m/n/10 2
 [43
 
 ]
-Overfull \hbox (0.1539pt too wide) in paragraph at lines 1959--1960
+Overfull \hbox (0.1539pt too wide) in paragraph at lines 1961--1962
 \OT1/cmr/bx/n/10 Theorem 9.8 \OT1/cmr/m/n/10 (Com-plete-ness Re-la-tion)\OT1/cm
 r/bx/n/10 . \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 H$ \OT1/cmr/m/it/10 be a Hil
 bert space. Let $\OMS/cmsy/m/n/10 f[]g[]$
@@ -245,7 +245,7 @@ bert space. Let $\OMS/cmsy/m/n/10 f[]g[]$
 [44]
 Chapter 10.
 
-Overfull \hbox (0.42967pt too wide) in paragraph at lines 2025--2027
+Overfull \hbox (0.42967pt too wide) in paragraph at lines 2027--2029
 \OT1/cmr/bx/n/10 Example 10.7 \OT1/cmr/m/n/10 (Spe-cial Lin-ear Al-ge-bra)\OT1/
 cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 spe-cial Lin-ear al-ge-bra $
 \OML/cmm/m/it/10 SL\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\OT1/cmr
@@ -253,7 +253,7 @@ cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 spe-cial Lin-ear al-ge-bra $
  []
 
 
-Overfull \hbox (8.50748pt too wide) in paragraph at lines 2030--2032
+Overfull \hbox (8.50748pt too wide) in paragraph at lines 2032--2034
 \OT1/cmr/bx/n/10 Example 10.8 \OT1/cmr/m/n/10 (Or-thog-o-nal Lie Al-ge-bra)\OT1
 /cmr/bx/n/10 . \OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 or-thog-o-nal Lie al-ge-bra
  $\OML/cmm/m/it/10 SO\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\OT1/c
@@ -269,7 +269,7 @@ Chapter 11.
 [49
 
 ] [50] [51] [52]
-Overfull \hbox (39.69167pt too wide) in paragraph at lines 2341--2342
+Overfull \hbox (39.69167pt too wide) in paragraph at lines 2343--2344
 []\OT1/cmr/m/n/10 For ev-ery pos-i-tive in-te-ger $\OML/cmm/m/it/10 n$\OT1/cmr/
 m/n/10 , we have $(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n; \O
 T1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 )$ is open in $\U/msb/m/n/10 
@@ -282,7 +282,7 @@ Underfull \vbox (badness 3525) has occurred while \output is active []
 
  [53]
 [54] [55]
-Overfull \hbox (3.35152pt too wide) in paragraph at lines 2585--2586
+Overfull \hbox (3.35152pt too wide) in paragraph at lines 2587--2588
 \OT1/cmr/bx/n/10 Proposition 11.36. \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 K$ \
 OT1/cmr/m/it/10 be a nonempty set of com-pact sets. If ev-ery nonempty
  []
@@ -299,10 +299,10 @@ Chapter 12.
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2179 strings out of 476091
- 29756 string characters out of 5794081
+ 2180 strings out of 476091
+ 29759 string characters out of 5794081
  1873330 words of memory out of 5000000
- 22581 multiletter control sequences out of 15000+600000
+ 22582 multiletter control sequences out of 15000+600000
  522697 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,62p,257b,512s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -326,7 +326,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (65 pages, 357846 bytes).
+Output written on main.pdf (65 pages, 358726 bytes).
 PDF statistics:
  316 PDF objects out of 1000 (max. 8388607)
  206 compressed objects within 3 object streams
