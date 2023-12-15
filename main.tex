@@ -3418,6 +3418,28 @@ Let $(p_n)$ be a sequence in the metric space $X$. The set $E^*$ of all limits o
 \qed
 \end{proof}
 
+\begin{thm}
+Every monotonically increasing sequence in $\mathbb{R}$ that is bounded above converges to its supremum.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(s_n)$ be a monotonically increasing sequence with supremum $s$.}}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $S$ such that $|s_N - s| < \epsilon$}
+\step{4}{For all $n \geq N$, we have $s - \epsilon < s - s_N \leq s - s_n \leq s$.}
+\step{5}{$\forall n \geq N. |s_n - s| < \epsilon$}
+\qed
+\end{proof}
+
+\begin{thm}
+Every monotonically decreasing sequence in $\mathbb{R}$ that is bounded below converges to its infimum.
+\end{thm}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
 \section{Cauchy Sequences}
 
 \begin{df}[Cauchy Sequence]
