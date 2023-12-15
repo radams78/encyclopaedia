@@ -2918,6 +2918,48 @@ Every connected metric space with more than one point is uncountable.
 \qed
 \end{proof}
 
+\begin{prop}
+The closure of a connected set is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a metric space.}}
+\step{2}{\pflet{$E$ be a connected subspace of $X$.}}
+\step{3}{\assume{for a contradiction $A$ and $B$ form a separation of $\overline{E}$} \prove{$A \cap E$ and $B \cap E$ form a separation of $E$.}}
+\step{4}{$A \cap E \neq \emptyset$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $A \cap E = \emptyset$}}
+	\step{b}{$E \subseteq B$}
+	\step{c}{$\overline{E} \subseteq \overline{B}$}
+	\step{d}{$A \subseteq \overline{B}$}
+	\step{e}{$A \cap \overline{B} = A \neq \emptyset$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{3}.
+	\end{proof}
+\end{proof}
+\step{5}{$B \cap E \neq \emptyset$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{6}{$\overline{A \cap E} \cap B \cap E = \emptyset$}
+\begin{proof}
+	\pf\ Since $\overline{A \cap E} \cap B \cap E \subseteq \overline{A} \cap B$.
+\end{proof}
+\step{7}{$A \cap E \cap \overline{B \cap E} = \emptyset$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
+The interior of a connected set is not necessarily connected.
+
+Two touching discs in $\mathbb{R}^2$ form a connected set but the interior is disconnected.
+\end{ex}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
