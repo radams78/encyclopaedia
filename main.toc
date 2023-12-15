@@ -33,9 +33,9 @@
 \contentsline {section}{\numberline {11.8}Dense Sets}{54}{}%
 \contentsline {section}{\numberline {11.9}Closure}{54}{}%
 \contentsline {section}{\numberline {11.10}Compact Sets}{56}{}%
-\contentsline {section}{\numberline {11.11}Connected Sets}{60}{}%
+\contentsline {section}{\numberline {11.11}Connected Sets}{61}{}%
 \contentsline {section}{\numberline {11.12}Separable Spaces}{63}{}%
-\contentsline {section}{\numberline {11.13}Bases}{63}{}%
+\contentsline {section}{\numberline {11.13}Bases}{64}{}%
 \contentsline {section}{\numberline {11.14}Condensation Points}{64}{}%
 \contentsline {chapter}{\numberline {12}Convergence}{67}{}%
 \contentsline {section}{\numberline {12.1}Cauchy Sequences}{70}{}%

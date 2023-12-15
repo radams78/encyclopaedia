@@ -2633,6 +2633,7 @@ Let $\mathcal{K}$ be a nonempty set of compact sets. If every nonempty finite su
 \end{proof}
 
 \begin{cor}
+\label{cor:finite_intersection_property}
 Let $(K_n)$ be a sequence of nonempty compact sets such that $K_0 \supseteq K_1 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty K_n \neq \emptyset$.
 \end{cor}
 
@@ -2864,6 +2865,30 @@ The Cantor set is a perfect set in $\mathbb{R}$ that does not include any open i
 \begin{cor}
 The Cantor set is uncountable.
 \end{cor}
+
+\begin{prop}
+Let $X$ be a metric space. Let $(K_n)$ be a sequence of compact sets in $X$ such that $K_0 \supseteq K_1 \supseteq K_2 \supseteq \cdots$. Assume $\diam K_n \rightarrow 0$ as $n \rightarrow \infty$. Then $\bigcap_{n=0}^\infty K_n$ is a singleton.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\bigcap_n K_n \neq \emptyset$}
+\begin{proof}
+\pf\ Corollary \ref{cor:finite_intersection_property}.
+\end{proof}
+\step{2}{$\bigcap_n K_n$ has no more than one point.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $a,b \in \bigcap_n K_n$ with $a \neq b$.}}
+	\step{b}{\pflet{$\epsilon = d(a,b)$}}
+	\step{c}{\pick\ $n$ such that $\diam K_n < \epsilon$}
+	\step{d}{$a,b \in K_n$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \section{Connected Sets}
 
