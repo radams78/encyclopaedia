@@ -3308,6 +3308,24 @@ Let $(\vec{x_n})$ be a sequence in $\mathbb{R}^k$ and $\vec{l} \in \mathbb{R}^k$
 \qed
 \end{proof}
 
+\begin{cor}
+If $\vec{x_n} \rightarrow \vec{x}$ and $\vec{y_n} \rightarrow \vec{y}$ in $\mathbb{R}^k$, then $\vec{x_n} + \vec{y_n} \rightarrow \vec{x} + \vec{y}$.
+\end{cor}
+
+\begin{prop}
+If $\vec{x_n} \rightarrow \vec{x}$ and $\vec{y_n} \rightarrow \vec{y}$ in $\mathbb{R}^k$, then $\vec{x_n} \cdot \vec{y_n} \rightarrow \vec{x} \cdot \vec{y}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\vec{x_n} \cdot \vec{y_n}
+& = \sum_{i=1}^k \pi_i(\vec{x_n}) \pi_i(\vec{y_n}) \\
+& \rightarrow \sum_{i=1}^k \pi_i(\vec{x}) \pi_i(\vec{y}) \\
+& = \vec{x} \cdot \vec{y} & \qed
+\end{align*}
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
