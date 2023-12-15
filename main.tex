@@ -2606,6 +2606,7 @@ Let $(K_n)$ be a sequence of nonempty compact sets such that $K_0 \supseteq K_1 
 \end{cor}
 
 \begin{thm}
+\label{thm:compact_infinite_set_limit_point}
 Let $X$ be a metric space and $E \subseteq X$. Then $E$ is compact if and only if every infinite subset of $E$ has a limit point in $E$.
 \end{thm}
 
@@ -3202,6 +3203,14 @@ If $l$ is a limit point of $E$, then there exists a sequence in $E$ that converg
 \end{proof}
 \step{2}{$a_n \rightarrow l$ as $n \rightarrow \infty$.}
 \qed
+\end{proof}
+
+\begin{cor}
+Every sequence in a compact metric space has a convergent subsequence.
+\end{cor}
+
+\begin{proof}
+\pf\ By Theorem \ref{thm:compact_infinite_set_limit_point}. \qed
 \end{proof}
 
 \begin{prop}
