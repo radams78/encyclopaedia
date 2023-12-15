@@ -2999,6 +2999,28 @@ A metric space is \emph{separable} iff it has a countable dense subset.
 $\mathbb{R}^k$ is separable since $\mathbb{Q}^k$ is dense.
 \end{ex}
 
+\begin{prop}
+Every compact metric space is separable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$X$ be a compact metric space.}}
+\step{1}{For $n \in \mathbb{Z}^+$, pick finitely many points $a_{n1}$, \ldots, $a_{nr_n}$ such that $\{ B(a_{ni}, 1/n) : 1 \leq i \leq r_n \}$ covers $X$.}
+\begin{proof}
+	\pf\ Since $\{ B(x, 1/n) : x \in X \}$ covers $X$.
+\end{proof}
+\step{2}{$\{ a_{ni} : n \in \mathbb{Z}^+, 1 \leq i \leq r_n \}$ is dense.}
+\begin{proof}
+	\step{a}{\pflet{$U$ be an open set and $p \in U$.}}
+	\step{b}{\pick\ $\epsilon > 0$ such that $B(p, \epsilon) \subseteq U$.}
+	\step{c}{\pick\ $n$ such that $1/n < \epsilon$.}
+	\step{d}{\pick\ $i$ such that $p \in B(a_{ni}, 1/n)$}
+	\step{e}{$a_{ni} \in U$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Bases}
 
 \begin{df}[Basis]
@@ -3019,6 +3041,32 @@ Every separable metric space has a countable basis.
 \step{6}{\pick\ $q \in B(p, \epsilon) \cap D$}
 \step{7}{\pick\ a rational $\delta$ such that $d(p,q) < \delta < \epsilon$.}
 \step{8}{$B(q,\delta) \in \mathcal{B}$ and $B(q, \delta) \subseteq U$.}
+\qed
+\end{proof}
+
+\section{Condensation Points}
+
+\begin{df}[Condensation Point]
+Let $X$ be a metric space, $p \in X$ and $E \subseteq X$. Then $p$ is a \emph{condensation point} of $E$ iff every neighbourhood of $p$ contains uncountably many points in $E$.
+\end{df}
+
+\begin{prop}
+Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensation points of $E$. Then $P$ is perfect.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$P$ is closed.}
+\begin{proof}
+	\step{a}{\pflet{$p \in \mathbb{R}^k - P$}}
+	\step{b}{\pick\ a neighbourhood $U$ of $p$ that contains only countably many points of $E$.}
+	\step{c}{For every $x \in U$, we have that $U$ is a neighbourhood of $x$ that contains only countably many points of $E$.}
+	\step{d}{$p \in U \subseteq \mathbb{R}^k - P$}
+\end{proof}
+\step{2}{Every point in $P$ is a limit point of $P$.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
 \qed
 \end{proof}
 
