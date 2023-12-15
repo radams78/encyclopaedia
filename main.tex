@@ -3216,6 +3216,42 @@ Assume $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$. Then $s_n + 
 \qed
 \end{proof}
 
+\begin{lm}
+If $s_n \rightarrow s$ as $n \rightarrow \infty$ in $\mathbb{C}$, and $c \in \mathbb{C}$, then $c s_n \rightarrow cs$ as $n \rightarrow \infty$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\assume{w.l.o.g. $c \neq 0$}}
+\step{3}{\pick\ $N$ such that $\forall n \geq N. |s_n - s| < \epsilon / |c|$.}
+\step{4}{$\forall n \geq N. |cs_n - cs| < \epsilon$}
+\qed
+\end{proof}
+
+\begin{prop}
+If $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$ then $s_n t_n \rightarrow st$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$(s_n - s)(t_n - t) \rightarrow 0$ as $n \rightarrow \infty$}
+\begin{proof}
+	\step{a}{\pflet{$\epsilon > 0$}}
+	\step{b}{\pick\ $N$ such that, for all $n \geq N$, we have $|s_n - s| < \sqrt{\epsilon}$ and $|t_n - t| < \sqrt{\epsilon}$.}
+	\step{c}{For all $n \geq N$ we have $|(s_n - s)(t_n -t)| < \epsilon$}
+\end{proof}
+\step{2}{$s_n t_n - st \rightarrow 0$ as $n \rightarrow \infty$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		s_n t_n - st & = (s_n - s)(t_n - t) + s(t_n - t) + t(s_n - s) \\
+		& \rightarrow 0 & \text{ as } n \rightarrow \infty
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
