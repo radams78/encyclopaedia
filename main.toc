@@ -36,5 +36,5 @@
 \contentsline {section}{\numberline {11.11}Connected Sets}{60}{}%
 \contentsline {section}{\numberline {11.12}Separable Spaces}{62}{}%
 \contentsline {section}{\numberline {11.13}Bases}{62}{}%
-\contentsline {part}{III\hspace {1em}More Algebra}{63}{}%
-\contentsline {chapter}{\numberline {12}Lie Groups}{65}{}%
+\contentsline {part}{III\hspace {1em}More Algebra}{65}{}%
+\contentsline {chapter}{\numberline {12}Lie Groups}{67}{}%

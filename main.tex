@@ -2995,11 +2995,32 @@ Every convex set in $\mathbb{R}^k$ is connected.
 A metric space is \emph{separable} iff it has a countable dense subset.
 \end{df}
 
+\begin{ex}
+$\mathbb{R}^k$ is separable since $\mathbb{Q}^k$ is dense.
+\end{ex}
+
 \section{Bases}
 
 \begin{df}[Basis]
 A \emph{basis} for a metric space $X$ is a set $\mathcal{B}$ of open sets such that, for every open set $U$ and point $p \in U$, there exists $B \in \mathcal{B}$ such that $p \in B \subseteq U$.
 \end{df}
+
+\begin{prop}
+Every separable metric space has a countable basis.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a separable metric space.}}
+\step{2}{\pick\ a countable dense set $D$ in $X$.}
+\step{3}{\pflet{$\mathcal{B} = \{ B(p,\epsilon) : p \in D, \epsilon \in \mathbb{Q}^+ \}$} \prove{$\mathcal{B}$ is a basis.}}
+\step{4}{\pflet{$U$ be an open set in $X$ and $p \in U$}}
+\step{5}{\pick\ $\epsilon > 0$ such that $B(p,\epsilon) \subseteq U$}
+\step{6}{\pick\ $q \in B(p, \epsilon) \cap D$}
+\step{7}{\pick\ a rational $\delta$ such that $d(p,q) < \delta < \epsilon$.}
+\step{8}{$B(q,\delta) \in \mathcal{B}$ and $B(q, \delta) \subseteq U$.}
+\qed
+\end{proof}
 
 \part{More Algebra}
 
