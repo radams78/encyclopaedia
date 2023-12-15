@@ -29,7 +29,7 @@
 \contentsline {section}{\numberline {11.4}Interior Points}{50}{}%
 \contentsline {section}{\numberline {11.5}Open Sets}{51}{}%
 \contentsline {section}{\numberline {11.6}Perfect Sets}{53}{}%
-\contentsline {section}{\numberline {11.7}Bounded Sets}{53}{}%
+\contentsline {section}{\numberline {11.7}Bounded Sets}{54}{}%
 \contentsline {section}{\numberline {11.8}Dense Sets}{54}{}%
 \contentsline {section}{\numberline {11.9}Closure}{54}{}%
 \contentsline {section}{\numberline {11.10}Compact Sets}{55}{}%

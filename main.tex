@@ -2103,6 +2103,14 @@ A \emph{metric space} $X$ consists of a set $X$ and a metric on $X$.
 $\mathbb{R}^k$ is a metric space under $d(\vec{x},\vec{y}) = \| \vec{x} - \vec{y} \|$. The triangle inequality is Corollary \ref{cor:triangle_inequality}.
 \end{ex}
 
+\begin{ex}
+For any set $X$, the \emph{discrete} metric on $X$ is defined by
+\[ d(x,y) = \begin{cases}
+1 & \text{if } x \neq y \\
+0 & \text{if } x = y
+\end{cases} \]
+\end{ex}
+
 \begin{prop}
 Let $(X,d)$ be a metric space and $Y$ a subset of $X$. Then $d \restriction Y^2$ is a metric on $Y$.
 \end{prop}
@@ -2183,7 +2191,7 @@ Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is an \em
 \end{df}
 
 \begin{df}[Interior]
-The \emph{interior} of a set $E$ is the set of all its interior points.
+The \emph{interior} of a set $E$, denoted $E^\circ$, is the set of all its interior points.
 \end{df}
 
 \begin{prop}
@@ -2477,6 +2485,20 @@ In $\mathbb{R}$, let $\mathcal{A} = \{ \{ 1/n \} : n \in \mathbb{Z}^+ \}$. Then
 \bigcup_{A \in \mathcal{A}} \overline{A} & = \{ 1/n : n \in \mathbb{Z}^+ \}
 \end{align*}
 \end{ex}
+
+\begin{prop}
+\[ X - E^\circ = \overline{X - E} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+p \in X - E^\circ & \Leftrightarrow p \notin E^\circ \\
+& \Leftrightarrow \forall B \text{ an open ball with centre } p. B \nsubseteq E \\
+& \Leftrightarrow \forall B \text{ an open ball with centre } p. B \text{ intersects} X - E \\
+& \Leftrightarrow p \in \overline{X - E} & \qed
+\end{align*}
+\end{proof}
 
 \section{Compact Sets}
 
@@ -2815,6 +2837,19 @@ The Cantor set is uncountable.
 Let $X$ be a metric space. Let $A,B \subseteq X$. Then $A$ and $B$ are \emph{separated} iff $\overline{A} \cap B = A \cap \overline{B} = \emptyset$.
 \end{df}
 
+\begin{prop}
+Any two disjoint open sets are separated.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ and $B$ be disjoint open sets.}}
+\step{2}{\assume{for a contradiction $p \in \overline{A} \cap B$.}}
+\step{3}{$B$ is a neighbourhood of $p$.}
+\step{4}{$B$ intersects $A$.}
+\qed
+\end{proof}
+
 \begin{df}[Connected]
 Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{connected} iff $E$ is not the union of two nonempty separated sets.
 \end{df}
@@ -2863,6 +2898,22 @@ A subset $E$ of the real line is connected if and only if it is convex.
 	\begin{proof}
 		\pf\ Then $a < z < b$ and $z \notin E$ contradicting \stepref{a}.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every connected metric space with more than one point is uncountable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a connected metric space with more than one points.}}
+\step{2}{\pick\ distinct points $p,q \in X$.}
+\step{3}{\pflet{$\epsilon = d(p,q)$}}
+\step{4}{For every $r \in (0, \epsilon)$, there exists a point $x \in X$ such that $d(p,x) = r$.}
+\begin{proof}
+	\pf\ Otherwise $\{ x \in X : d(p,x) < r \}$ and $\{ x \in X : d(p,x) > r \}$ would form a separation of $X$.
 \end{proof}
 \qed
 \end{proof}
