@@ -2867,6 +2867,7 @@ The Cantor set is uncountable.
 \end{cor}
 
 \begin{prop}
+\label{prop:nested_sequence_of_compact_sets}
 Let $X$ be a metric space. Let $(K_n)$ be a sequence of compact sets in $X$ such that $K_0 \supseteq K_1 \supseteq K_2 \supseteq \cdots$. Assume $\diam K_n \rightarrow 0$ as $n \rightarrow \infty$. Then $\bigcap_{n=0}^\infty K_n$ is a singleton.
 \end{prop}
 
@@ -3439,8 +3440,34 @@ Every convergent sequence is Cauchy.
 \pf
 \step{1}{\pflet{$(p_n)$ be a convergent sequence with limit $l$.}}
 \step{2}{\pflet{$\epsilon > 0$}}
-\step{3}{\pick\ $N$ such that, for all $n \geg N$, we have $d(p_n,l) < \epsilon / 2$}
+\step{3}{\pick\ $N$ such that, for all $n \geq N$, we have $d(p_n,l) < \epsilon / 2$}
 \step{4}{$\forall m,n \geq N. d(p_m,p_n) < \epsilon$}
+\qed
+\end{proof}
+
+\begin{thm}
+Every Cauchy sequence in a compact metric space converges.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a compact metric space.}}
+\step{2}{\pflet{$(p_n)$ be a Cauchy sequence in $X$.}}
+\step{3}{For $N \in \mathbb{N}$, \pflet{$E_N = \{ p_n : n \geq N \}$.}}
+\step{4}{$\diam \overline{E_N} \rightarrow 0$ as $N \rightarrow \infty$.}
+\step{5}{For all $N$, every $\overline{E_N}$ is compact.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:closed_compact}.
+\end{proof}
+\step{6}{For all $N$ we have $\overline{E_N} \supseteq \overline{E_{N+1}}$.}
+\step{7}{\pflet{$l$ be the unique point in $\bigcap_{N=0}^\infty \overline{E_N}$} \prove{$p_n \rightarrow l$ as $n \rightarrow \infty$.}}
+\begin{proof}
+	\pf\ Proposition \ref{prop:nested_sequence_of_compact_sets}.
+\end{proof}
+\step{8}{\pflet{$\epsilon > 0$}}
+\step{9}{\pick\ $N_0$ such that $\forall N \geq N_0. \diam \overline{E_N} < \epsilon$.}
+\step{10}{$\forall q \in E_N. d(l,q) < \epsilon$}
+\step{11}{$\forall n \geq N. d(l,p_n) < \epsilon$}
 \qed
 \end{proof}
 

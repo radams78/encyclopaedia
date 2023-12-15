@@ -39,5 +39,5 @@
 \contentsline {section}{\numberline {11.14}Condensation Points}{64}{}%
 \contentsline {chapter}{\numberline {12}Convergence}{67}{}%
 \contentsline {section}{\numberline {12.1}Cauchy Sequences}{70}{}%
-\contentsline {part}{III\hspace {1em}More Algebra}{71}{}%
-\contentsline {chapter}{\numberline {13}Lie Groups}{73}{}%
+\contentsline {part}{III\hspace {1em}More Algebra}{73}{}%
+\contentsline {chapter}{\numberline {13}Lie Groups}{75}{}%
