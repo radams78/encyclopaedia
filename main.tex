@@ -3190,6 +3190,20 @@ Every convergent sequence is bounded.
 \qed
 \end{proof}
 
+\begin{prop}
+If $l$ is a limit point of $E$, then there exists a sequence in $E$ that converges to $l$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For $n \in \mathbb{Z}^+$, \pick\ a point $a_n \in E$ such that $d(a_n,l) < 1/n$.}
+\begin{proof}
+	\pf\ Since $B(l,1/n)$ intersects $E$.
+\end{proof}
+\step{2}{$a_n \rightarrow l$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
