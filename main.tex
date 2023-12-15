@@ -3204,6 +3204,18 @@ If $l$ is a limit point of $E$, then there exists a sequence in $E$ that converg
 \qed
 \end{proof}
 
+\begin{prop}
+Assume $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$. Then $s_n + t_n \rightarrow s + t$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $N$ such that, for all $n \geq N$, we have $d(s_n,s) < \epsilon / 2$ and $d(t_n, t) < \epsilon / 2$.}
+\step{3}{For all $n \geq N$ we have $d(s_n + t_n, s + t) < \epsilon$.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
