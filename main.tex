@@ -2182,6 +2182,40 @@ Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{closed} iff ev
 Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is an \emph{interior point} of $E$ iff there exists an open ball $B$ with centre $p$ such that $B \subseteq E$.
 \end{df}
 
+\begin{df}[Interior]
+The \emph{interior} of a set $E$ is the set of all its interior points.
+\end{df}
+
+\begin{prop}
+The interior of $E$ is the largest open set that is included in $E$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I$ be the interior of $E$.}}
+\step{2}{$I$ is open.}
+\begin{proof}
+	\step{a}{\pflet{$p \in I$}}
+	\step{b}{\pick\ an open ball $B$ with centre $p$ such that $B \subseteq E$.}
+	\step{c}{$B \subseteq I$}
+	\begin{proof}
+		\step{i}{\pflet{$q \in B$}}
+		\step{ii}{There exists an open ball $B'$ with centre $q$ such that $B' \subseteq B$.}
+		\step{iii}{There exists an open ball $B'$ with centre $q$ such that $B' \subseteq E$.}
+		\step{iv}{$q \in I$}
+	\end{proof}
+\end{proof}
+\step{3}{If $J$ is any open set and $J \subseteq E$ then $J \subseteq I$.}
+\begin{proof}
+	\step{a}{\pflet{$J$ be an open set.}}
+	\step{b}{\assume{$J \subseteq E$}}
+	\step{c}{For all $p \in J$, there exists an open ball $B$ with centre $p$ such that $B \subseteq J$.}
+	\step{d}{For all $p \in J$, there exists an open ball $B$ with centre $p$ such that $B \subseteq E$.}
+	\step{e}{$p \in I$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Open Sets}
 
 \begin{df}[Open Sets]
@@ -2422,6 +2456,27 @@ Let $E$ be a nonempty set of real numbers bounded above. Then $\sup E \in \overl
 \step{4}{$E$ intersects $B$ in a point other than $p$.}
 \qed
 \end{proof}
+
+\begin{prop}
+\[ \overline{A \cup B} = \overline{A} \cup \overline{B} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{a}{$\overline{A} \cup \overline{B}$ is a closed set that includes $A \cup B$.}
+\step{b}{If $C$ is a closed set that includes $A \cup B$ then $\overline{A} \cup \overline{B} \subseteq C$.}
+\qed
+\end{proof}
+
+\begin{ex}
+It is not true in general. that $\overline{\bigcup \mathcal{A}} = \bigcup_{A \in \mathcal{A}} \overline{A}$.
+
+In $\mathbb{R}$, let $\mathcal{A} = \{ \{ 1/n \} : n \in \mathbb{Z}^+ \}$. Then
+\begin{align*}
+\overline{\bigcup \mathcal{A}} & = \{ 1/n : n \in \mathbb{Z}^+ \} \cup \{ 0 \} \\
+\bigcup_{A \in \mathcal{A}} \overline{A} & = \{ 1/n : n \in \mathbb{Z}^+ \}
+\end{align*}
+\end{ex}
 
 \section{Compact Sets}
 
@@ -2702,6 +2757,14 @@ For any $a,b \in \mathbb{R}$ with $a < b$, the closed interval $[a,b]$ is uncoun
 \begin{cor}
 $\mathbb{R}$ is uncountable.
 \end{cor}
+
+\begin{cor}
+The set of transcendental numbers is uncountable.
+\end{cor}
+
+\begin{proof}
+\pf\ Since the set of algebraic numbers is countable. \qed
+\end{proof}
 
 \begin{ex}
 The Cantor set is a perfect set in $\mathbb{R}$ that does not include any open interval.
