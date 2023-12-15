@@ -40,5 +40,6 @@
 \contentsline {chapter}{\numberline {12}Convergence}{67}{}%
 \contentsline {section}{\numberline {12.1}Cauchy Sequences}{70}{}%
 \contentsline {section}{\numberline {12.2}Complete Metric Spaces}{71}{}%
+\contentsline {section}{\numberline {12.3}Divergent Sequences}{72}{}%
 \contentsline {part}{III\hspace {1em}More Algebra}{73}{}%
 \contentsline {chapter}{\numberline {13}Lie Groups}{75}{}%
