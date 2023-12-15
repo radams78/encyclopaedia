@@ -3279,16 +3279,32 @@ If $s_n \rightarrow s$ as $n \rightarrow \infty$ in $\mathbb{C}$, and every $s_n
 \end{proof}
 
 \begin{thm}
-Assume $\vec{x_n} \rightarrow \vec{l}$ as $n \rightarrow \infty$ in $\mathbb{R}^k$. Let $\vec{x_n} = (\alpha_{n1}, \ldots, \alpha_{nk})$ and $\vec{l} = (\alpha_1, \ldots, \alpha_k)$. Then $\alpha_{ni} \rightarrow \alpha_i$ as $n \rightarrow \infty$.
+Let $(\vec{x_n})$ be a sequence in $\mathbb{R}^k$ and $\vec{l} \in \mathbb{R}^k$. Then $\vec{x_n} \rightarrow \vec{l}$ as $n \rightarrow \infty$ iff, for $i = 1, \ldots, k$, we have $\pi_i(\vec{x_n}) \rightarrow \pi_i(\vec{l})$ as $n \rightarrow \infty$.
 \end{thm}
 
 \begin{proof}
 \pf
+\step{1}{If $\vec{x_n} \rightarrow \vec{l}$ then $\pi_i(\vec{x_n}) \rightarrow \pi_i(l)$.}
+\begin{proof}
 \step{1}{$\| \vec{x_n} - \vec{l} \| \rightarrow 0$ as $n \rightarrow \infty$.}
-\step{2}{$\sqrt{\sum_{i=1}^k (\alpha_{ni} - \alpha_i)^2} \rightarrow 0$ as $n \rightarrow \infty$.}
-\step{3}{$\sum_{i=1}^k (\alpha_{ni} - \alpha_i)^2 \rightarrow 0$ as $n \rightarrow \infty$.}
-\step{4}{$(\alpha_{ni} - \alpha_i)^2 \rightarrow 0$ as $n \rightarrow \infty$}
-\step{5}{$\alpha_{ni} - \alpha_i \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{2}{$\sqrt{\sum_{i=1}^k (\pi_i(\vec{x_n}) - \pi_i(l))^2} \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{3}{$\sum_{i=1}^k (\pi_i(\vec{x_n}) - \pi_i(l))^2 \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{4}{$(\pi_i(\vec{x_n}) - \pi_i(l))^2 \rightarrow 0$ as $n \rightarrow \infty$}
+\step{5}{$\pi_i(\vec{x_n}) - \pi_i(l) \rightarrow 0$ as $n \rightarrow \infty$.}
+\end{proof}
+\step{2}{If $\pi_i(\vec{x_n}) \rightarrow \pi_i(\vec{l})$ for every $i$ then $\vec{x_n} \rightarrow l$.}
+\begin{proof}
+	\step{a}{\assume{$\pi_i(\vec{x_n}) \rightarrow \pi_i(\vec{l})$ for every $i$.}}
+	\step{b}{$\vec{x_n} \rightarrow \vec{l}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| \vec{x_n} - \vec{l} \|^2
+			& = \sum_{i=1}^k (\pi_i(\vec{x_n}) - \pi_i(\vec{l}))^2 \\
+			& \rightarrow 0
+		\end{align*}
+	\end{proof}
+\end{proof}
 \qed
 \end{proof}
 
