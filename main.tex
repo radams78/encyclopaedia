@@ -3252,6 +3252,32 @@ If $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$ then $s_n t_n \ri
 \qed
 \end{proof}
 
+\begin{prop}
+If $s_n \rightarrow s$ as $n \rightarrow \infty$ in $\mathbb{C}$, and every $s_n$ and $s$ is nonzero, then $1/s_n \rightarrow 1/s$ as $n \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $m$ such that, for all $n \geq m$, we have $|s_n - s| < \frac{1}{2} |s|$.}
+\step{2}{$\forall n \geq m. |s_n| > \frac{1}{2} |s|$}
+\step{3}{\pflet{$\epsilon > 0$}}
+\step{4}{\pick\ $N > m$ such that, for all $n \geq N$, we have
+\[ |s_n - s| < \frac{1}{2} |s|^2 \epsilon \enspace . \]}
+\step{5}{For all $n \geq N$, we have
+\[ \left| \frac{1}{s_n} - \frac{1}{s} \right| < \epsilon \enspace . \]}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\left| \frac{1}{s_n} - \frac{1}{s} \right|
+		& = \frac{|s_n - s|}{|s_n||s|} \\
+		& < \frac{|s|^2 \epsilon}{2 |s_n| |s|} \\
+		& = \frac{|s| \epsilon}{2 |s_n|} \\
+		& < \epsilon
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
