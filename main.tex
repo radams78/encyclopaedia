@@ -2136,6 +2136,7 @@ Let $X$ be a metric space. Let $E \subseteq X$. Let $p$ be a limit point of $E$.
 \end{proof}
 
 \begin{cor}
+\label{cor:finite_no_limit_points}
 A finite set has no limit points.
 \end{cor}
 
@@ -2477,6 +2478,7 @@ The intersection of a compact set and a closed set is compact.
 \end{cor}
 
 \begin{prop}
+\label{prop:finite_intersection_property}
 Let $\mathcal{K}$ be a nonempty set of compact sets. If every nonempty finite subset of $\mathcal{K}$ has nonempty intersection, then $\bigcap \mathcal{K}$ is nonempty.
 \end{prop}
 
@@ -2597,6 +2599,83 @@ Let $E \subseteq \mathbb{R}^k$. Then $E$ is compact if and only if it is closed 
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}[Weierstrass's Theorem]
+Every bounded infinite subset of $\mathbb{R}^k$ has a limit point.
+\end{cor}
+
+\begin{proof}
+\pf\ It is a bounded infinite subset of some $k$-cell and therefore has a limit point in that $k$-cell. \qed
+\end{proof}
+
+\begin{ex}
+It is not true that, in any metric space, a set is compact if and only if it is closed and bounded.
+
+In $\mathbb{Q}$, the set $\{ p \in \mathbb{Q} : 2 < p^2 < 3 \}$ is closed and bounded but not compact.
+\end{ex}
+
+\begin{thm}
+Every nonempty perfect set in $\mathbb{R}^k$ is uncountable.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P$ be a nonempty perfect set in $\mathbb{R}^k$.}}
+\step{2}{$P$ is infinite.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:finite_no_limit_points}.
+\end{proof}
+\step{3}{\assume{for a contradiction $P$ is countable.}}
+\step{4}{\pick\ an enumeration $P = \{ x_n : n \in \mathbb{N} \}$.}
+\step{5}{\pick\ a sequence $(V_n)$ of open balls such that, for all $n$, we have $\overline{V_{n+1}} \subseteq V_n$ and $x_n \notin \overline{V_{n+1}}$ and $V_n \cap P \neq \emptyset$}
+\begin{proof}
+	\step{a}{\assume{as induction hypothesis we have picked $V_0$, \ldots, $V_{n-1}$ that satisfy these conditions.}}
+	\step{b}{\pick\ $p \in P \cap V_n$ such that $p \neq x_n$}
+	\begin{proof}
+		\pf\ We cannot have $P \cap V_n = \{x_n\}$ because then $V_n$ would be a neighbourhood of $x_n$ that only intersects $P$ at $x_n$.
+	\end{proof}
+	\step{c}{\pick\ an open ball $B$ with centre $p$ such that $B \subseteq V_n \cap P - \{x_n\} $}
+	\step{d}{\pflet{$V_{n+1}$ be the open ball with centre $p$ and half the radius of $B$.}}
+	\step{e}{$\overline{V_{n+1}} \subseteq V_n$}
+	\begin{proof}
+		\pf\ Since $\overline{V_{n+1}} \subseteq B \subseteq V_n$.
+	\end{proof}
+	\step{f}{$x_n \notin \overline{V_{n+1}}$}
+	\begin{proof}
+		\pf\ Since $\overline{V_{n+1}} \subseteq B \subseteq P - \{x_n\}$.
+	\end{proof}
+	\step{g}{$V_{n+1} \cap P \neq \emptyset$}
+	\begin{proof}
+		\pf\ Since $p \in V_{n+1} \cap P$.
+	\end{proof}
+\end{proof}
+\step{6}{For $n \in \mathbb{N}$, \pflet{$K_n = \overline{V_n} \cap P$.}}
+\step{7}{For all $n \in \mathbb{N}$, $K_n$ is compact.}
+\begin{proof}
+	\pf\ By the Heine-Borel Theorem.
+\end{proof}
+\step{8}{$\bigcap_{n=0}^\infty K_n \cap P = \emptyset$}
+\begin{proof}
+	\pf\ Since for each $n$ we have $x_n \notin K_{n+1}$.
+\end{proof}
+\step{9}{$\bigcap_{n=0}^\infty K_n = \emptyset$}
+\begin{proof}
+	\pf\ Since $\bigcap_{n=0}^\infty K_n \subseteq P$.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts Proposition \ref{prop:finite_intersection_property}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For any $a,b \in \mathbb{R}$ with $a < b$, the closed interval $[a,b]$ is uncountable.
+\end{cor}
+
+\begin{cor}
+$\mathbb{R}$ is uncountable.
+\end{cor}
 
 \part{More Algebra}
 
