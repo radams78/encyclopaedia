@@ -3431,6 +3431,19 @@ Let $(p_n)$ be a sequence in the metric space $X$ and let $E_N = \{ p_n : n \geq
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\begin{thm}
+Every convergent sequence is Cauchy.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(p_n)$ be a convergent sequence with limit $l$.}}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $N$ such that, for all $n \geg N$, we have $d(p_n,l) < \epsilon / 2$}
+\step{4}{$\forall m,n \geq N. d(p_m,p_n) < \epsilon$}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
