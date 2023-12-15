@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -281,18 +281,18 @@ t/10 =n; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 ) =
 Underfull \vbox (badness 3525) has occurred while \output is active []
 
  [53]
-[54] [55]
-Overfull \hbox (3.35152pt too wide) in paragraph at lines 2592--2593
-\OT1/cmr/bx/n/10 Proposition 11.37. \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 K$ \
+[54] [55] [56]
+Overfull \hbox (3.35152pt too wide) in paragraph at lines 2618--2619
+\OT1/cmr/bx/n/10 Proposition 11.38. \OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 K$ \
 OT1/cmr/m/it/10 be a nonempty set of com-pact sets. If ev-ery nonempty
  []
 
-[56]
+[57]
 WARNING: proof step "i" (<3>1) already defined
-[57] [58] [59] [60]
+[58] [59] [60]
 WARNING: proof step "i" (<3>1) already defined
-[61]
-Overfull \hbox (4.18407pt too wide) in paragraph at lines 3015--3015
+[61] [62]
+Overfull \hbox (4.18407pt too wide) in paragraph at lines 3041--3041
 []\OT1/cmr/m/n/10 For $\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 Z[]$
 \OT1/cmr/m/n/10 , pick finitely many points $\OML/cmm/m/it/10 a[]$\OT1/cmr/m/n/
 10 , ..., $\OML/cmm/m/it/10 a[]$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 f\
@@ -300,7 +300,7 @@ OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; \OT1/cmr/m/n/10 1\OML/c
 mm/m/it/10 =n\OT1/cmr/m/n/10 ) :
  []
 
-[62] [63] [64] [65] [66
+[63] [64] [65] [66
 
 ]
 Chapter 12.
@@ -343,7 +343,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (73 pages, 378065 bytes).
+Output written on main.pdf (73 pages, 378876 bytes).
 PDF statistics:
  343 PDF objects out of 1000 (max. 8388607)
  225 compressed objects within 3 object streams

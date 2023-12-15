@@ -2400,8 +2400,34 @@ Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{bounded} iff t
 \end{df}
 
 \begin{df}[Diameter]
-Let $X$ be a metric space and $E \subseteq X$. Then the \emph{diameter} of $E$ is $\sup \{ d(x,y) : x,y \in E \}$.
+Let $X$ be a metric space and $E \subseteq X$ be bounded. Then the \emph{diameter} of $E$ is $\sup \{ d(x,y) : x,y \in E \}$.
 \end{df}
+
+\begin{prop}
+Let $X$ be a metric space. Let $E \subseteq X$ be bounded. Then $\overline{E}$ is bounded and
+\[ \diam \overline{E} = \diam E \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\diam E$ is an upper bound for $\{ d(x,y) : x,y \in \overline{E} \}$.}
+\begin{proof}
+	\step{a}{\pflet{$x,y \in \overline{E}$}}
+	\step{b}{For all $\epsilon > 0$ we have $d(x,y) < \diam E + \epsilon$.}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon > 0$}}
+		\step{ii}{\pick\ $x',y' \in E$ such that $d(x',x) < \epsilon / 2$ and $d(y',y) < \epsilon / 2$}
+		\step{iii}{$d(x',y') < \diam E$}
+		\step{iv}{$d(x,y) < \diam E + \epsilon$}
+	\end{proof}
+	\step{c}{$d(x,y) \leq \diam E$}
+\end{proof}
+\step{2}{$\diam \overline{E}$ is an upper bound for $\{ d(x,y) : x,y \in E \}$.}
+\begin{proof}
+	\pf\ This follows since $E \subseteq \overline{E}$.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Dense Sets}
 
