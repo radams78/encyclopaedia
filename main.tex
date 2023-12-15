@@ -3339,6 +3339,28 @@ If $\vec{x_n} \rightarrow \vec{x}$ and $\vec{y_n} \rightarrow \vec{y}$ in $\math
 \end{align*}
 \end{proof}
 
+\begin{prop}
+Let $(p_n)$ be a sequence in the metric space $X$. The set $E^*$ of all limits of convergent subsequences is a closed set.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\assume{w.l.o.g. $\{ p_n : n \in \mathbb{N} \}$ is infinite.}}
+\step{1}{\pflet{$q$ be a limit point of $E^*$.} \prove{$q \in E^*$}}
+\step{2}{\pick\ an integer $n_0$ such that $q \neq p_{n_0}$.}
+\step{3}{Extend a strictly increasing sequence of integers $(n_i)$ such that, for all $i$, we have $d(q, p_{n_i}) \leq 2^i d(q, p_{n_0})$.}
+\begin{proof}
+	\step{a}{\assume{as induction hypothesis we have picked $n_0 < n_1 < \cdots < n_i$ such that, for $0 \leq j \leq i$, we have $d(q, p_{n_j}) \leq 2^j d(q, p_{n_0})$.}}
+	\step{b}{\pick\ $x \in E^*$ such that $d(x,q) < 2^{-(i+2)} \delta$}
+	\step{c}{There exists a subsequence of $(p_n)$ that converges to $x$.}
+	\step{d}{There exists $n_{i+1} > n_i$ such that $d(p_{n_{i+1}}, x) < 2^{-(i+2)} \delta$.}
+	\step{e}{$d(p_{n_{i+1}}, q) < 2^{-(i+1)}\delta$}
+\end{proof}
+\step{3}{$p_{n_i} \rightarrow q$ as $i \rightarrow \infty$.}
+\step{4}{$q \in E^*$}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
