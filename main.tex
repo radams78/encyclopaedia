@@ -3051,6 +3051,7 @@ Let $X$ be a metric space, $p \in X$ and $E \subseteq X$. Then $p$ is a \emph{co
 \end{df}
 
 \begin{prop}
+\label{prop:P_closed}
 Let $X$ be a metric space. Let $E \subseteq X$. Let $P$ be the set of condensation points of $E$. Then $P$ is perfect.
 \end{prop}
 
@@ -3071,16 +3072,18 @@ Let $X$ be a metric space. Let $E \subseteq X$. Let $P$ be the set of condensati
 \end{proof}
 
 \begin{prop}
-Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensation points of $E$. Then $E - P$ is countable.
+\label{prop:E_minus_P_countable}
+Let $X$ be a metric space with a countable basis.
+Let $E \subseteq X$ be uncountable. Let $P$ be the set of condensation points of $E$. Then $E - P$ is countable.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pick\ a countable basis $\mathcal{B}$ for $\mathbb{R}^k$.}
+\step{1}{\pick\ a countable basis $\mathcal{B}$ for $X$.}
 \step{2}{\pflet{$W = \bigcup \{ B \in \mathcal{B} : E \cap B \text{ is countable} \}$}}
-\step{3}{$P = \mathbb{R}^k - W$}
+\step{3}{$P = X - W$}
 \begin{proof}
-	\step{a}{$P \subseteq \mathbb{R}^k - W$}
+	\step{a}{$P \subseteq X - W$}
 	\begin{proof}
 		\step{i}{\assume{for a contradiction $p \in P \cap W$}}
 		\step{ii}{\pick\ $B \in \mathcal{B}$ such that $p \in B$ and $E \cap B$ is countable.}
@@ -3090,9 +3093,9 @@ Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensatio
 			\pf\ This is a contradiction.
 		\end{proof}
 	\end{proof}
-	\step{b}{$\mathbb{R}^k - W \subseteq P$}
+	\step{b}{$X - W \subseteq P$}
 	\begin{proof}
-		\step{i}{\pflet{$p \in \mathbb{R}^k - W$}}
+		\step{i}{\pflet{$p \in X - W$}}
 		\step{ii}{\pflet{$U$ be a neighbourhood of $p$.}}
 		\step{iii}{\pick\ $B \in \mathcal{B}$ such that $p \in B \subseteq U$.}
 		\step{iv}{$E \cap B$ is uncountable.}
@@ -3105,7 +3108,43 @@ Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensatio
 \step{4}{$E - P = E \cap W$}
 \step{5}{$E - P$ is countable.}
 \qed
-\end{proof} 
+\end{proof}
+
+\begin{cor}
+Every closed subset of a metric space with a countable basis is the union of a perfect set and a countable set.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a metric space with a countable basis.}}
+\step{2}{\pflet{$E$ be a closed subset of $X$.}}
+\step{3}{\pflet{$P$ be the set of condensation points of $E$.}}
+\step{5}{$E - P$ is countable.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:E_minus_P_countable}.
+\end{proof}
+\step{4}{$P \cap E$ is perfect.}
+\begin{proof}
+	\step{a}{$P \cap E$ is closed.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:P_closed}.
+	\end{proof}
+	\step{b}{Every point in $P \cap E$ is a limit point of $P \cap E$.}
+	\begin{proof}
+		\step{i}{\pflet{$l \in P \cap E$}}
+		\step{ii}{\pflet{$U$ be a neighbourhood of $l$.}}
+		\step{iii}{\pick\ $x \in P \cap U$}
+		\step{iv}{$U$ is a neighbourhood of $x$.}
+		\step{v}{$U$ contains uncountably many points of $E$.}
+		\step{vi}{$U$ intersects $P \cap E$}
+		\begin{proof}
+			\pf\ It cannot be that every point in $U$ and $E$ is not in $P$ since $E - P$ is countable.
+		\end{proof}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}

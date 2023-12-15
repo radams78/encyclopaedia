@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 19:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -176,15 +176,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] (./main.toc)
+] (./main.toc [3])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [3] [4
-
-]
+ [4]
 Chapter 1.
-[5] [6
+[5
+
+] [6
 
 ]
 Chapter 2.
@@ -300,18 +300,18 @@ OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; \OT1/cmr/m/n/10 1\OML/c
 mm/m/it/10 =n\OT1/cmr/m/n/10 ) :
  []
 
-[62] [63] [64] [65
+[62] [63] [64] [65] [66
 
-] [66]
+] [67] [68]
 Chapter 12.
-[67
+[69
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 2181 strings out of 476091
- 29763 string characters out of 5794081
+ 2183 strings out of 476091
+ 29804 string characters out of 5794081
  1873330 words of memory out of 5000000
- 22583 multiletter control sequences out of 15000+600000
+ 22585 multiletter control sequences out of 15000+600000
  522697 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,62p,257b,512s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -335,10 +335,10 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (67 pages, 361115 bytes).
+Output written on main.pdf (69 pages, 366015 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
+ 329 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

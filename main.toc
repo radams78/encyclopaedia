@@ -37,5 +37,5 @@
 \contentsline {section}{\numberline {11.12}Separable Spaces}{62}{}%
 \contentsline {section}{\numberline {11.13}Bases}{63}{}%
 \contentsline {section}{\numberline {11.14}Condensation Points}{63}{}%
-\contentsline {part}{III\hspace {1em}More Algebra}{65}{}%
-\contentsline {chapter}{\numberline {12}Lie Groups}{67}{}%
+\contentsline {part}{III\hspace {1em}More Algebra}{67}{}%
+\contentsline {chapter}{\numberline {12}Lie Groups}{69}{}%
