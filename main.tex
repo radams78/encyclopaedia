@@ -21,6 +21,7 @@
 \newtheorem{ex}[prop]{Example}
 
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+\newcommand{\diam}{\ensuremath{\operatorname{diam}}}
 
 \begin{document}
 
@@ -2398,6 +2399,10 @@ Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{perfect} iff $
 Let $X$ be a metric space. Let $E \subseteq X$. Then $E$ is \emph{bounded} iff there exists a real number $M$ and $q \in X$ such that, for all $p \in E$, we have $d(p,q) < M$.
 \end{df}
 
+\begin{df}[Diameter]
+Let $X$ be a metric space and $E \subseteq X$. Then the \emph{diameter} of $E$ is $\sup \{ d(x,y) : x,y \in E \}$.
+\end{df}
+
 \section{Dense Sets}
 
 \begin{df}[Dense Set]
@@ -3359,6 +3364,20 @@ Let $(p_n)$ be a sequence in the metric space $X$. The set $E^*$ of all limits o
 \step{3}{$p_{n_i} \rightarrow q$ as $i \rightarrow \infty$.}
 \step{4}{$q \in E^*$}
 \qed
+\end{proof}
+
+\section{Cauchy Sequences}
+
+\begin{df}[Cauchy Sequence]
+Let $(p_n)$ be a sequence in the metric space $X$. Then $(p_n)$ is a \emph{Cauchy sequence} iff, for every $\epsilon > 0$, there exists $N$ such that, for all $m,n \geq N$, we have $d(p_m,p_n) < \epsilon$.
+\end{df}
+
+\begin{prop}
+Let $(p_n)$ be a sequence in the metric space $X$ and let $E_N = \{ p_n : n \geq N \}$ for all $N$. Then $(p_n)$ is a Cauchy sequence if and only if $\diam E_N \rightarrow 0$ as $N \rightarrow \infty$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
 \end{proof}
 
 \part{More Algebra}
