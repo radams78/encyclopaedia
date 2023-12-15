@@ -2122,6 +2122,7 @@ Let $X$ be a metric space. Let $E \subseteq X$ and $p \in X$. Then $p$ is a \emp
 \end{df}
 
 \begin{prop}
+\label{prop:limit_point_infinite_intersection}
 Let $X$ be a metric space. Let $E \subseteq X$. Let $p$ be a limit point of $E$. Then every neighbourhood of $p$ contains infinitely many points of $E$.
 \end{prop}
 
@@ -2440,6 +2441,7 @@ Let $X$ be a metric space. Let $Y \subseteq X$ and $K \subseteq Y$. Then $K$ is 
 \end{proof}
 
 \begin{prop}
+\label{prop:compact_closed}
 Every compact set is closed.
 \end{prop}
 
@@ -2456,6 +2458,7 @@ Every compact set is closed.
 \end{proof}
 
 \begin{prop}
+\label{prop:closed_compact}
 Every closed subset of a compact set is compact.
 \end{prop}
 
@@ -2496,12 +2499,15 @@ Let $(K_n)$ be a sequence of nonempty compact sets such that $K_0 \supseteq K_1 
 \end{cor}
 
 \begin{thm}
-Every infinite subset of a compact set $K$ has a limit point in $K$.
+Let $X$ be a metric space and $E \subseteq X$. Then $E$ is compact if and only if every infinite subset of $E$ has a limit point in $E$.
 \end{thm}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$E$ be a compact set and $A \subseteq E$ be infinite.}}
+\step{1}{If $E$ is compact then every infinite subset of $E$ has a limit point in $E$.}
+\begin{proof}
+\step{a}{\assume{$E$ is compact.}}
+\step{b}{\pflet{$A \subseteq E$ be infinite.}}
 \step{2}{\assume{for a contradiction $E$ has no limit point in $K$.}}
 \step{3}{For all $p \in K$, there exists an open ball $B$ with centre $p$ such that $B$ does not intersect $E$ outside $p$.}
 \step{4}{The set of open balls that intersect $E$ in at most one point is an open cover for $K$.}
@@ -2510,6 +2516,84 @@ Every infinite subset of a compact set $K$ has a limit point in $K$.
 \qedstep
 \begin{proof}
 	\pf\ This contradicts the fact that $E$ is finite.
+\end{proof}
+\end{proof}
+\step{2}{If every infinite subset of $K$ has a limit point in $K$ then $K$ is compact.}
+\begin{proof}
+	\step{a}{\assume{Every infinite subset of $K$ has a limit point in $K$.}}
+	\step{b}{\pflet{$\mathcal{U}$ be an open cover of $K$.}}
+	\step{c}{\assume{w.l.o.g. $\mathcal{U}$ is countable.}}
+	\begin{proof}
+		\pf\ We may replace $\mathcal{U}$ with the set of all open balls $B$ with centres in $\mathbb{Q}^2$ and rational radius such that there exists $U \in \mathcal{U}$ such that $B \subseteq U$.
+	\end{proof}
+	\step{d}{\pick\ an enumeration $\mathcal{U} = \{ G_n : n \in \mathbb{N} \}$.}
+	\step{e}{For $n \in \mathbb{N}$, \pflet{$F_n = \bigcup_{i=0}^n G_n$.}}
+	\step{f}{For all $n \in \mathbb{N}$, we have $K - F_n \neq \emptyset$.}
+	\begin{proof}
+		\pf\ Since $\{ G_0, \ldots, G_n \}$ does not cover $K$.
+	\end{proof}
+	\step{g}{$\bigcap_{n=0}^\infty F_n = \emptyset$}
+	\begin{proof}
+		\pf\ Since $\{ G_n : n \in \mathbb{N} \}$ covers $K$.
+	\end{proof}
+	\step{h}{For $n \in \mathbb{N}$, \pick\ $a_n \in K - F_n$}
+	\step{i}{\pflet{$E = \{ a_n : n \in \mathbb{N} \}$}}
+	\step{j}{$E$ is infinite.}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{N}$} \prove{there exists $m$ such that $a_m \notin \{ a_0, a_1, \ldots, a_n \}$.}}
+		\step{ii}{For $i = 0, \ldots, n$, \pick\ $k_i$ such that $a_i \in G_{k_i}$.}
+		\step{iii}{\pflet{$m = \max(k_0, \ldots, k_n)$}}
+		\step{iv}{\assume{for a contradiction $a_m = a_i$ for some $i = 0, \ldots, n$}}
+		\step{v}{$a_i \in G_{k_i}$}
+		\step{vi}{$a_i \notin F_m$}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction since $k_i \leq m$.
+		\end{proof}
+	\end{proof}
+	\step{k}{\pick\ a limit point $l$ for $E$ in $K$.}
+	\begin{proof}
+		\pf\ From \stepref{a}.
+	\end{proof}
+	\step{l}{\pick\ $n$ such that $l \in G_n$.}
+	\step{m}{\pick\ an open ball $B$ with centre $l$ such that $B \subseteq G_n$}
+	\step{n}{$B \cap E$ is infinite.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:limit_point_infinite_intersection}.
+	\end{proof}
+	\step{o}{\pick\ $m \geq`n$ such that $a_m \in B$.}
+	\step{p}{$a_m \in G_n$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction since $a_m \notin F_m$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Heine-Borel]
+Let $E \subseteq \mathbb{R}^k$. Then $E$ is compact if and only if it is closed and bounded.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $E$ is compact then $E$ is closed.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:compact_closed}.
+\end{proof}
+\step{2}{If $E$ is compact then $E$ is bounded.}
+\begin{proof}
+	\pf\ Otherwise $\{ (-N,N)^k : N \in \mathbb{Z}^+ \}$ would be an open cover of $E$ with no finite subcover.
+\end{proof}
+\step{3}{If $E$ is closed and bounded then $E$ is compact.}
+\begin{proof}
+	\step{a}{\assume{$E$ is closed and bounded.}}
+	\step{b}{\pick\ $\vec{c}$ and $M$ such that $\forall \vec{x} \in E. \| \vec{x} - \vec{c} \| < M$.}
+	\step{c}{$E \subseteq \prod_{i=1}^k [c_i - M, c_i + M]$}
+	\step{d}{$E$ is compact.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:closed_compact}.
+	\end{proof}
 \end{proof}
 \qed
 \end{proof}
