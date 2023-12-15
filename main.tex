@@ -1763,6 +1763,21 @@ For any non-zero complex number $w$, there are exactly two complex numbers $z$ s
 \qed
 \end{proof}
 
+\section{Algebraic Numbers}
+
+\begin{df}[Algebraic]
+A complex number $z$ is \emph{algebraic} iff there exist integers $a_0$, $a_1$, \ldots, $a_n$ not all zero such that
+\[ a_0 z^n + a_1 z^{n-1} + \cdots + a_{n-1} z + a_n = 0 \enspace ; \]
+otherwise, it is \emph{transcendental}.
+\end{df}
+
+\begin{prop}
+The set of algebraic numbers is countable.
+\end{prop}
+
+\begin{proof}
+\pf\ There are countably many finite sequences of integers $(a_0, a_1, \ldots, a_n)$, and for each one, there are only finitely many complex numbers $z$ such that $a_0 z^n + a_1 z^{n-1} + \cdots + a_n = 0$. \qed
+\end{proof}
 
 \part{Linear Algebra}
 
