@@ -3278,6 +3278,20 @@ If $s_n \rightarrow s$ as $n \rightarrow \infty$ in $\mathbb{C}$, and every $s_n
 \qed
 \end{proof}
 
+\begin{thm}
+Assume $\vec{x_n} \rightarrow \vec{l}$ as $n \rightarrow \infty$ in $\mathbb{R}^k$. Let $\vec{x_n} = (\alpha_{n1}, \ldots, \alpha_{nk})$ and $\vec{l} = (\alpha_1, \ldots, \alpha_k)$. Then $\alpha_{ni} \rightarrow \alpha_i$ as $n \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\| \vec{x_n} - \vec{l} \| \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{2}{$\sqrt{\sum_{i=1}^k (\alpha_{ni} - \alpha_i)^2} \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{3}{$\sum_{i=1}^k (\alpha_{ni} - \alpha_i)^2 \rightarrow 0$ as $n \rightarrow \infty$.}
+\step{4}{$(\alpha_{ni} - \alpha_i)^2 \rightarrow 0$ as $n \rightarrow \infty$}
+\step{5}{$\alpha_{ni} - \alpha_i \rightarrow 0$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
