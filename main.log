@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 19:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 DEC 2023 19:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -176,15 +176,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] (./main.toc [3])
+] (./main.toc)
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [4]
-Chapter 1.
-[5
+ [3] [4
 
-] [6
+]
+Chapter 1.
+[5] [6
 
 ]
 Chapter 2.
@@ -335,7 +335,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/pub
 lic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (67 pages, 363319 bytes).
+Output written on main.pdf (67 pages, 361115 bytes).
 PDF statistics:
  323 PDF objects out of 1000 (max. 8388607)
  211 compressed objects within 3 object streams

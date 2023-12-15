@@ -3051,17 +3051,17 @@ Let $X$ be a metric space, $p \in X$ and $E \subseteq X$. Then $p$ is a \emph{co
 \end{df}
 
 \begin{prop}
-Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensation points of $E$. Then $P$ is perfect.
+Let $X$ be a metric space. Let $E \subseteq X$. Let $P$ be the set of condensation points of $E$. Then $P$ is perfect.
 \end{prop}
 
 \begin{proof}
 \pf
 \step{1}{$P$ is closed.}
 \begin{proof}
-	\step{a}{\pflet{$p \in \mathbb{R}^k - P$}}
+	\step{a}{\pflet{$p \in X - P$}}
 	\step{b}{\pick\ a neighbourhood $U$ of $p$ that contains only countably many points of $E$.}
 	\step{c}{For every $x \in U$, we have that $U$ is a neighbourhood of $x$ that contains only countably many points of $E$.}
-	\step{d}{$p \in U \subseteq \mathbb{R}^k - P$}
+	\step{d}{$p \in U \subseteq X - P$}
 \end{proof}
 \step{2}{Every point in $P$ is a limit point of $P$.}
 \begin{proof}
@@ -3070,6 +3070,42 @@ Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensatio
 \qed
 \end{proof}
 
+\begin{prop}
+Let $E \subseteq \mathbb{R}^k$ be uncountable. Let $P$ be the set of condensation points of $E$. Then $E - P$ is countable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a countable basis $\mathcal{B}$ for $\mathbb{R}^k$.}
+\step{2}{\pflet{$W = \bigcup \{ B \in \mathcal{B} : E \cap B \text{ is countable} \}$}}
+\step{3}{$P = \mathbb{R}^k - W$}
+\begin{proof}
+	\step{a}{$P \subseteq \mathbb{R}^k - W$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $p \in P \cap W$}}
+		\step{ii}{\pick\ $B \in \mathcal{B}$ such that $p \in B$ and $E \cap B$ is countable.}
+		\step{iii}{$E \cap B$ is uncountable.}
+		\qedstep
+		\begin{proof}
+			\pf\ This is a contradiction.
+		\end{proof}
+	\end{proof}
+	\step{b}{$\mathbb{R}^k - W \subseteq P$}
+	\begin{proof}
+		\step{i}{\pflet{$p \in \mathbb{R}^k - W$}}
+		\step{ii}{\pflet{$U$ be a neighbourhood of $p$.}}
+		\step{iii}{\pick\ $B \in \mathcal{B}$ such that $p \in B \subseteq U$.}
+		\step{iv}{$E \cap B$ is uncountable.}
+		\begin{proof}
+			\pf\ Since $p \notin W$.
+		\end{proof}
+		\step{v}{$E \cap W$ is uncountable.}
+	\end{proof}
+\end{proof}
+\step{4}{$E - P = E \cap W$}
+\step{5}{$E - P$ is countable.}
+\qed
+\end{proof} 
 \part{More Algebra}
 
 \chapter{Lie Groups}
