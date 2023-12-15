@@ -3159,6 +3159,37 @@ iff for every $\epsilon > 0$, there exists an integer $N$ such that, for all $n 
 We say $(p_n)$ \emph{diverges} iff it does not converge to any limit.
 \end{df}
 
+\begin{prop}
+A sequence has at most one limit.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$p_n \rightarrow l$ and $p_n \rightarrow m$ as $n \rightarrow \infty$.}}
+\step{2}{\assume{for a contradiction $l \neq m$.}}
+\step{3}{\pflet{$\epsilon = d(l,m) / 2$}}
+\step{4}{There exists $N$ such that $\forall n \geq N. d(p_n,l) < \epsilon$ and $d(p_n, m) < \epsilon$}
+\step{5}{$d(l,m) < 2 \epsilon$}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every convergent sequence is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p_n \rightarrow l$ as $n \rightarrow \infty$}}
+\step{2}{\pick\ $N$ such that $\forall n \geq N. d(p_n,l) < 1$}
+\step{3}{\pflet{$M = \max(d(p_0,l), \ldots, d(p_{N-1},l), 1)$}}
+\step{4}{For all $n$, we have $d(p_n,l) \leq M$.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
