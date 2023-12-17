@@ -3442,6 +3442,124 @@ Every monotonically decreasing sequence in $\mathbb{R}$ that is bounded below co
 \pf\ Similar. \qed
 \end{proof}
 
+\begin{prop}[Sandwich Theorem]
+Let $(a_n)$, $(b_n)$ and $(c_n)$ be sequences of real numbers and $l \in \mathbb{R}$. Assume $\forall n. a_n \leq b_n \leq c_n$ and $a_n \rightarrow l$ and $c_n \rightarrow l$. Then $b_n \rightarrow l$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $N$ such that, for all $n \geq N$, we have $|a_n - l| < \epsilon$ and $|c_n - l| < \epsilon$.}
+\step{3}{$\forall n \geq N. |b_n - l| < \epsilon$}
+\qed
+\end{proof}
+
+\begin{thm}
+\label{thm:n_to_the_p_tends_to_zero}
+For any real $p > 0$ we have
+\[ \frac{1}{(n+1)^p} \rightarrow 0 \]
+as $n \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $N$ such that $N > (1/\epsilon)^{1/p}$.}
+\step{3}{\pflet{$n \geq N$}}
+\step{4}{$1/n^p < \epsilon$}
+\qed
+\end{proof}
+
+\begin{thm}
+For any real $p > 0$ we have
+\[ p^{\frac{1}{n+1}} \rightarrow 1 \]
+as $n \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\case{$p > 1$}}
+\begin{proof}
+	\step{a}{For $n \in \mathbb{N}$ \pflet{$x_n = p^{\frac{1}{n+1}} - 1$.}}
+	\step{b}{$\forall n \in \mathbb{N}. x_n > 0$}
+	\step{c}{$\forall n \in \mathbb{N}.$
+	\[ 1 + (n+1)x_n \leq p \enspace . \]}
+	\begin{proof}
+		\pf\ Since $1 + (n+1)x_n \leq (1 + x_n)^{n+1}$ by the Binomial Theorem.
+	\end{proof}
+	\step{d}{$\forall n \in \mathbb{N}.$
+	\[ 0 < x_n \leq \frac{p-1}{n+1} \enspace . \]}
+	\step{e}{$x_n \rightarrow 0$ as $n \rightarrow \infty$.}
+	\begin{proof}
+		\pf\ Sandwich Theorem.
+	\end{proof}
+\end{proof}
+\step{2}{\case{$p = 1$}}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{3}{\case{$p < 1$}}
+\begin{proof}
+	\pf\ Then $p^{1/(n+1)} = 1/((1/p)^{1/(n+1)}) \rightarrow 1/1 = 1$ by \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+\[ (n+1)^{1/(n+1)} \rightarrow 1 \text{ as } n \rightarrow \infty \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $n \in \mathbb{N}$, \pflet{$x_n = (n+1)^{1/(n+1)} - 1$.}}
+\step{2}{$\forall n \in \mathbb{N}. x_n \geq 0$}
+\step{3}{$\forall n \in \mathbb{N}$
+\[ n+1 \geq \frac{n(n+1)}{2} x_n^2 \enspace . \]}
+\begin{proof}
+	\pf\ Since $(1+x_n)^{n+1} \geq \frac{n(n+1)}{2} x_n^2$ by the Binomial Theorem.
+\end{proof}
+\step{4}{$\forall n \geq 1$
+\[ 0 \leq x_n \leq \sqrt{\frac{2}{n}} \]}
+\step{5}{$x_n \rightarrow 0$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Sandwich Theorem.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $p$ and $\alpha$ be real numbers with $p > 0$. Then
+\[ \frac{n^\alpha}{(1+p)^n} \rightarrow 0 \text{ as } n \rightarrow \infty \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a positive integer $k$ such that $k > \alpha$.}
+\begin{proof}
+	\pf\ Archimedean Property.
+\end{proof}
+\step{2}{$\forall n > 2k$
+\[ (1 + p)^n > \frac{n^k p^k}{2^k k!} \enspace . \]}
+\begin{proof}
+	\begin{align*}
+		(1+p)^n & > \left( \begin{array}{c} n \\ k \end{array} \right) p^k & (\text{Binomial Theorem}) \\
+		& = \frac{n(n-1) \cdots (n-k+1)}{k!} p^k \\
+		& > \frac{n^k p^k}{2^k k!} & (n > 2k \text{ so if } n-k < i \leq n \text{ then } i > n/2)
+	\end{align*}
+\end{proof}
+\step{3}{$\forall n > 2k$
+\[ 0 < \frac{n^\alpha}{(1+p)^n} < \frac{2^k k!}{p^k} n^{\alpha - k} \enspace . \]}
+\step{4}{$n^{\alpha - k} \rightarrow 0$ as $n \rightarrow \infty$}
+\begin{proof}
+	\pf\ Theorem \ref{thm:n_to_the_p_tends_to_zero}.
+\end{proof}
+\step{5}{$\frac{n^\alpha}{(1+p)^n} \rightarrow 0$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Sandwich Theorem.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Cauchy Sequences}
 
 \begin{df}[Cauchy Sequence]
@@ -3663,6 +3781,34 @@ Let $(s_n)$ be a sequence of real numbers and $l \in \mathbb{R}$. Then $(s_n)$ c
 	\step{c}{$s_n \rightarrow l$ as $n \rightarrow \infty$.}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ and $(t_n)$ be sequences of real numbers and $N \in \mathbb{N}$. Assume $\forall n \geq N. s_n \leq t_n$. Then
+\[ \liminf_{n \rightarrow \infty} s_n \leq \liminf_{n \rightarrow \infty} t_n \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For any subsequence $(t_{n_r})$ of $(t_n)$ that converges or diverges to $\pm \infty$, we have $\liminf_n s_n \leq \lim_r t_{n_r}$}
+\begin{proof}
+	\step{a}{\pflet{$(t_{n_r})$ be a subsequence of $(t_n)$ with limit $l$.}}
+	\step{b}{\pick\ $m$ such that a subsequence of $(s_{n_r})$ has limit $m$.}
+	\step{c}{$\forall r. s_{n_r} \leq t_{n_r}$}
+	\step{d}{$m \leq l$}
+	\step{e}{$\liminf_n s_n \leq l$}
+\end{proof}
+\step{2}{$\liminf_n s_n \leq \liminf_n t_n$}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ and $(t_n)$ be sequences of real numbers and $N \in \mathbb{N}$. Assume $\forall n \geq N. s_n \leq t_n$. Then
+\[ \limsup_{n \rightarrow \infty} s_n \leq \limsup_{n \rightarrow \infty} t_n \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ Similar. \qed
 \end{proof}
 
 \part{More Algebra}
