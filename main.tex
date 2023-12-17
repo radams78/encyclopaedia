@@ -3263,6 +3263,7 @@ If $l$ is a limit point of $E$, then there exists a sequence in $E$ that converg
 \end{proof}
 
 \begin{cor}
+\label{cor:convergent_subsequence}
 Every sequence in a compact metric space has a convergent subsequence.
 \end{cor}
 
@@ -3397,6 +3398,7 @@ If $\vec{x_n} \rightarrow \vec{x}$ and $\vec{y_n} \rightarrow \vec{y}$ in $\math
 \end{proof}
 
 \begin{prop}
+\label{prop:E_star_closed}
 Let $(p_n)$ be a sequence in the metric space $X$. The set $E^*$ of all limits of convergent subsequences is a closed set.
 \end{prop}
 
@@ -3548,6 +3550,96 @@ The \emph{limit infimum} of $(s_n)$, denoted
 \[ \liminf_{n \rightarrow \infty} s_n \enspace , \]
 is the infimum of $E$ in the extended reals.
 \end{df}
+
+\begin{proof}
+\pf\ The set $E$ is always nonempty because: if $(s_n)$ is unbounded above then $+ \infty \in E$; if it is unbounded below then $- \infty \in E$; and if it is bounded above and below then there is a real number in $E$ by Corollary \ref{cor:convergent_subsequence}. \qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ be a sequence in $\mathbb{R}$. Then there exists a subsequence of $(s_n)$ that converges or diverges to $\limsup_{n \rightarrow \infty} s_n$
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\case{$\limsup_n s_n = + \infty$}}
+\begin{proof}
+	\pf\ $(s_n)$ is unbounded above and so has a subsequence that diverges to $+ \infty$.
+\end{proof}
+\step{2}{\case{$\limsup_n s_n \in \mathbb{R}$}}
+\begin{proof}
+	\pf\ Then $\limsup s_n$ is in the set of limits of subsequences of $(s_n)$ by Proposition \ref{prop:E_star_closed}.
+\end{proof}
+\step{3}{\case{$\limsup_n s_n = - \infty$}}
+\begin{proof}
+	\pf\ $(s_n)$ is unbounded below and so has a subsequence that diverges to $- \infty$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ be a sequence in $\mathbb{R}$. Then there exists a subsequence of $(s_n)$ that converges or diverges to $\liminf_{n \rightarrow \infty} s_n$
+\end{thm}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ be a sequence in $\mathbb{R}$. If $x > \limsup_n s_n$, then there exists $N$ such that $\forall n \geq N. s_n < x$.
+\end{thm}
+
+\begin{proof}
+\pf\ If not, we could choose a subsequence of $(s_n)$ that converges to a value $\geq x$, contradicting the definition of $\limsup_n s_n$. \qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ be a sequence in $\mathbb{R}$. If $x < \liminf_n s_n$, then there exists $N$ such that $\forall n \geq N. s_n > x$.
+\end{thm}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ be a sequence in $\mathbb{R}$. Let $s^*$ be an extended real such that:
+\begin{itemize}
+\item There exists a subsequence of $(s_n)$ that converges or diverges to $s^*$.
+\item For any $x > s^*$, there exists $N$ such that $\forall n \geq N. s_n < x$.
+\end{itemize}
+Then $s^* = \limsup_n s_n$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$E$ be the set of subsequential limits of $(s_n)$.}}
+\step{2}{$s^*$ is an upper bound for $E$.}
+\begin{proof}
+	\step{a}{\pflet{$x \in E$}}
+	\step{b}{\assume{for a contradiction $x > s^*$.}}
+	\step{c}{$s^* \in \mathbb{R}$}
+	\step{d}{\pflet{$y = x$ if $x \in \mathbb{R}$, or $s^* + 1$ if $x = + \infty$}}
+	\step{e}{There exists $N$ such that $\forall n \geq N. s_n < y$.}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that some subsequence of $(s_n)$ converges or diverges to $x$.
+	\end{proof}
+\end{proof}
+\step{3}{If $u$ is an upper bound for $E$ then $s^* \leq u$.}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $(s_n)$ be a sequence in $\mathbb{R}$. Let $s^*$ be an extended real such that:
+\begin{itemize}
+\item There exists a subsequence of $(s_n)$ that converges or diverges to $s^*$.
+\item For any $x < s^*$, there exists $N$ such that $\forall n \geq N. s_n > x$.
+\end{itemize}
+Then $s^* = \liminf_n s_n$.
+\end{thm}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
 
 \part{More Algebra}
 
