@@ -3819,6 +3819,103 @@ Let $(s_n)$ and $(t_n)$ be sequences of real numbers and $N \in \mathbb{N}$. Ass
 \pf\ Similar. \qed
 \end{proof}
 
+\section{Infinite Series}
+
+\begin{df}
+Let $(a_n)$ be a sequence of complex numbers and $s \in \mathbb{C}$. We say the \emph{infinite series} $\sum_{n=0}^\infty a_n$ \emph{converges} to $s$, and write
+\[ \sum_{n=0}^\infty a_n = s \]
+iff
+\[ \sum_{n=0}^N a_n \rightarrow s \text{ as } N \rightarrow \infty \enspace . \]
+If $(\sum_{n=0}^N a_n)$ diverges, we say the infinite series $\sum_{n=0}^\infty a_n$ diverges.
+\end{df}
+
+\begin{thm}
+Let $(a_n)$ be a sequence of complex numbers. Then $\sum_{n=0}^\infty a_n$ converges if and only if, for all $\epsilon > 0$, there exists $N$ such that, for all $m,n \geq N$,
+\[ \left| \sum_{k=m}^n a_k \right| \leq \epsilon \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ This is what it means for $(\sum_{k=0}^n a_k)$ to be a Cauchy sequence. \qed
+\end{proof}
+
+\begin{cor}
+If $\sum_{n=0}^\infty a_n$ converges then $a_n \rightarrow 0$ as $n \rightarrow \infty$.
+\end{cor}
+
+\begin{thm}
+A series of nonnegative reals converges if and only if its partial sums form a bounded sequence.
+\end{thm}
+
+\begin{proof}
+\pf\ Its partial sums are a monotonically increasing sequence, and so converge if and only if they are bounded above. \qed
+\end{proof}
+
+\begin{thm}[Comparison Test]
+Let $(a_n)$ be a sequence of complex numbers and $(c_n)$ a sequence of real numbers. If there exists $N$ such that $\forall n \geq N. |a_n| \leq c_n$, and if $\sum_n c_n$ converges, then $\sum_n a_n$ converges.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $N$ such that $\forall n \geq N. |a_n| \leq c_n$ and $\forall m,n \geq N. \sum_{k=m}^n c_k < \epsilon$.}
+\step{3}{$\forall m,n \geq N. |\sum_{k=m}^n a_k| \leq \epsilon$}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $(a_n)$ and $(d_n)$ be sequences of real numbers. If there exists $N$ such that $\forall n \geq N. a_n \geq d_n \geq 0$, and if $\sum_n d_n$ diverges, then $\sum_n a_n$ diverges.
+\end{cor}
+
+\begin{thm}[Geometric Series]
+For $x$ a real number with $0 \leq x < 1$ we have
+\[ \sum_{n=0}^\infty x^n = \frac{1}{1-x} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+Since $\sum_{n=0}^N x^n = \frac{1 - x^{N+1}}{1-x} \rightarrow \frac{1}{1-x}$ as $n \rightarrow \infty$. \qed
+\end{proof}
+
+\begin{thm}
+For $x$ a real number with $x \geq 1$ we have $\sum_{n=0}^\infty x^n$ diverges.
+\end{thm}
+
+\begin{proof}
+\pf\ If $x = 1$ then $\sum_{n=0}^N x^n = N + 1$. If $x > 1$ then $\sum_{n=0}^N x^n = \frac{1 - x^{N+1}}{1-x}$. Both of these sequences diverge. \qed
+\end{proof}
+
+\begin{thm}
+Let $(a_n)$ be a monotonically decreasing sequence of nonnegative real numbers. Then $\sum_n a_n$ converges if and only if $\sum_n 2^n a_{2^n}$ converges.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $N \in \mathbb{N}$, \pflet{$s_N = \sum_{n=0}^N a_n$.}}
+\step{2}{For $N \in \mathbb{N}$, \pflet{$t_N = \sum_{n=0}^N 2^n a_{2^n}$.}}
+\step{3}{For natural number $N$ and $k$ with $N < 2^k$ we have $s_N \leq a_0 + t_{k-1}$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		s_N & \leq \sum_{n=0}^{2^k - 1} a_n \\
+		& = a_0 + \sum_{i=0}^{k-1} \sum_{n=2^i}{2^{i+1} - 1} a_n \\
+		& \leq a_0 + \sum_{i=0}^{k-1} 2^i a_{2^i} \\
+		& = a_0 + t_{k-1}
+	\end{align*}
+\end{proof}
+\step{4}{For natural number $N$ and $k$ with $N > 2^k$ we have $t_k < 2 s_N$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		s_N & \geq \sum_{n=1}^{2^k} a_n \\
+		& \geq \sum_{i=0}^k \sum_{n = 2^i + 1}{2^{i+1}} a_n \\
+		& \geq \sum_{i=0}^k 2^i a_{2^{i+1}} \\
+		& = (1/2) t_k
+	\end{align*}
+\end{proof}
+\step{5}{$(s_N)$ converges if and only if $(t_k)$ converges.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
