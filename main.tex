@@ -3601,6 +3601,7 @@ Let $(s_n)$ be a sequence in $\mathbb{R}$. If $x < \liminf_n s_n$, then there ex
 \end{proof}
 
 \begin{thm}
+\label{thm:limsup}
 Let $(s_n)$ be a sequence in $\mathbb{R}$. Let $s^*$ be an extended real such that:
 \begin{itemize}
 \item There exists a subsequence of $(s_n)$ that converges or diverges to $s^*$.
@@ -3629,6 +3630,7 @@ Then $s^* = \limsup_n s_n$.
 \end{proof}
 
 \begin{thm}
+\label{thm:liminf}
 Let $(s_n)$ be a sequence in $\mathbb{R}$. Let $s^*$ be an extended real such that:
 \begin{itemize}
 \item There exists a subsequence of $(s_n)$ that converges or diverges to $s^*$.
@@ -3639,6 +3641,28 @@ Then $s^* = \liminf_n s_n$.
 
 \begin{proof}
 \pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+Let $(s_n)$ be a sequence of real numbers and $l \in \mathbb{R}$. Then $(s_n)$ converges to $l$ iff $\limsup_n s_n = \liminf_n s_n = l$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $(s_n)$ converges to $l$ then $\limsup_n s_n = \liminf_n s_n = l$.}
+\begin{proof}
+	\pf\ If $(s_n)$ converges to $l$ then every subsequence of $(s_n)$ converges to $l$.
+\end{proof}
+\step{2}{If $\limsup_n s_n = \liminf_n s_n = l$ then $(s_n)$ converges to $l$.}
+\begin{proof}
+	\step{a}{\assume{$\limsup_n s_n = \liminf_n s_n = l$}}
+	\step{b}{For all $\epsilon > 0$, there exists $N$ such that $\forall n \geq N. l - \epsilon < s_n < l + \epsilon$.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:limsup} and \ref{thm:liminf}.
+	\end{proof}
+	\step{c}{$s_n \rightarrow l$ as $n \rightarrow \infty$.}
+\end{proof}
+\qed
 \end{proof}
 
 \part{More Algebra}
