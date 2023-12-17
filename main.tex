@@ -3916,6 +3916,28 @@ Let $(a_n)$ be a monotonically decreasing sequence of nonnegative real numbers. 
 \qed
 \end{proof}
 
+\begin{thm}
+If $p$ is a real number with $p > 1$ then $\sum_n 1/n^p$ converges.
+\end{thm}
+
+\begin{proof}
+\pf\ Since
+\[ \sum_{n=0}^\infty 2^n \frac{1}{2^{np}} = \sum_{n=0}^\infty 2^{(1-p)n} \]
+which converges since $2^{1-p} < 1$. \qed
+\end{proof}
+
+\begin{thm}
+If $p$ is a real number with $p \leq 1$ then $\sum_n 1/n^p$ diverges.
+\end{thm}
+
+\begin{proof}
+\pf\ If $p \leq 0$ then $1/n^p$ does not converge to 0.
+
+If $0 < p \leq 1$ we have
+\[ \sum_{n=0}^\infty 2^n \frac{1}{2^{np}} = \sum_{n=0}^\infty 2^{(1-p)n} \]
+which diverges since $2^{1-p} \geq 1$. \qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
