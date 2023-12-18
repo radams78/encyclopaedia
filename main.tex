@@ -3682,6 +3682,7 @@ is the infimum of $E$ in the extended reals.
 \end{proof}
 
 \begin{thm}
+\label{thm:limsup_is_subsequential_limit}
 Let $(s_n)$ be a sequence in $\mathbb{R}$. Then there exists a subsequence of $(s_n)$ that converges or diverges to $\limsup_{n \rightarrow \infty} s_n$
 \end{thm}
 
@@ -3711,6 +3712,7 @@ Let $(s_n)$ be a sequence in $\mathbb{R}$. Then there exists a subsequence of $(
 \end{proof}
 
 \begin{thm}
+\label{thm:greater_than_limsup}
 Let $(s_n)$ be a sequence in $\mathbb{R}$. If $x > \limsup_n s_n$, then there exists $N$ such that $\forall n \geq N. s_n < x$.
 \end{thm}
 
@@ -3839,6 +3841,7 @@ Let $(a_n)$ be a sequence of complex numbers. Then $\sum_{n=0}^\infty a_n$ conve
 \end{proof}
 
 \begin{cor}
+\label{cor:terms_of_convergent_series_tend_to_zero}
 If $\sum_{n=0}^\infty a_n$ converges then $a_n \rightarrow 0$ as $n \rightarrow \infty$.
 \end{cor}
 
@@ -3867,6 +3870,7 @@ Let $(a_n)$ and $(d_n)$ be sequences of real numbers. If there exists $N$ such t
 \end{cor}
 
 \begin{thm}[Geometric Series]
+\label{thm:geometric_series}
 For $x$ a real number with $0 \leq x < 1$ we have
 \[ \sum_{n=0}^\infty x^n = \frac{1}{1-x} \enspace . \]
 \end{thm}
@@ -3954,6 +3958,51 @@ converges if and only if $p > 1$.
 & = \frac{1}{(\ln 2)^p} \cdot \frac{1}{k^p}
 \end{align*}
 and this series converges iff $\sum_k \frac{1}{k^p}$ converges iff $p > 1$. \qed
+\end{proof}
+
+\begin{thm}[Root Test]
+Let $(a_n)_{n \geq 1}$ be a sequence of complex numbers. Let $\alpha = \limsup_{n \rightarrow \infty} |a_n|^{1/n}$.
+\begin{enumerate}
+\item If $\alpha < 1$ then $\sum_{n=1}^\infty a_n$ converges.
+\item If $\alpha > 1$ then $\sum_{n=1}^\infty a_n$ diverges.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $\alpha < 1$ then $\sum_{n=1}^\infty a_n$ converges.}
+\begin{proof}
+	\step{a}{\assume{$\alpha < 1$}}
+	\step{b}{\pick\ $\beta$ such that $\alpha < \beta < 1$}
+	\step{c}{\pick\ $N$ such that $\forall n \geq N. |a_n|^{1/n} < \beta$}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:greater_than_limsup}.
+	\end{proof}
+	\step{d}{$\forall n \geq N. |a_n| < \beta^n$}
+	\step{e}{$\sum_{n=1}^\infty \beta^n$ converges.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:geometric_series}.
+	\end{proof}
+	\step{f}{$\sum_{n=1}^\infty a_n$ converges.}
+	\begin{proof}
+		\pf\ Comparison Test.
+	\end{proof}
+\end{proof}
+\step{2}{If $\alpha > 1$ then $\sum_{n=1}^\infty a_n$ diverges.}
+\begin{proof}
+	\step{a}{\assume{$\alpha > 1$}}
+	\step{b}{There exists a sequence of positive integers $(n_k)$ such that $|a_{n_k}|^{1/n_k} \rightarrow \alpha$ as $k \rightarrow \infty$.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:limsup_is_subsequential_limit}.
+	\end{proof}
+	\step{c}{There are infinitely many $n$ such that $|a_n| > 1$.}
+	\step{d}{$a_n \nrightarrow 0$ as $n \rightarrow \infty$.}
+	\step{e}{$\sum_{n=1}^\infty a_n$ diverges.}
+	\begin{proof}
+		\pf\ Corollary \ref{cor:terms_of_convergent_series_tend_to_zero}.
+	\end{proof}
+\end{proof}
+\qed
 \end{proof}
 
 \section{The Number $e$}
