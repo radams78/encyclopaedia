@@ -4011,6 +4011,43 @@ t_n & = \sum_{k=0}^n \left( \begin{array}{c} n \\ k \end{array} \right) \frac{1}
 \qed
 \end{proof}
 
+\begin{thm}
+$e$ is irrational.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $e = p/q$ where $p$ and $q$ are positive integers.}}
+\step{2}{For $n \in \mathbb{N}$, \pflet{$s_n = \sum_{k=0}^n \frac{1}{k!}$.}}
+\step{3}{For $n \in \mathbb{Z}^+$ we have
+\[ 0 < e - s_n < \frac{1}{n!n} \enspace . \]}
+\begin{proof}
+	\pf
+	\begin{align*}
+		e - s_n & = \sum_{k=n+1}^\infty \frac{1}{k!} \\
+		& < \frac{1}{(n+1)!} \sum_{k=0}^\infty \frac{1}{(n+1)^k} \\
+		& = \frac{1}{n!n}
+	\end{align*}
+\end{proof}
+\step{4}{\[ 0 < q!(e - s_q) < \frac{1}{q} \]}
+\step{5}{$q!e$ is an integer.}
+\step{6}{$q!(e - s_q)$ is an integer.}
+\step{7}{There exists an integer between 0 and 1.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+$e$ is transcendental.
+\end{thm}
+
+\begin{proof}
+\pf\ See I. M. Niven. \emph{Irrational Numbers} p. 25. \qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
