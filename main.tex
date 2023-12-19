@@ -4194,6 +4194,40 @@ $e$ is transcendental.
 \pf\ See I. M. Niven. \emph{Irrational Numbers} p. 25. \qed
 \end{proof}
 
+\section{Power Series}
+
+\begin{df}[Power Series]
+Let $(c_n)$ be a sequence of complex numbers. The \emph{power series} with \emph{coefficients} $(c_n)$ is the function that maps a complex number $z$ to the series
+\[ \sum_{n=0}^\infty c_n z^n \enspace . \]
+\end{df}
+
+\begin{thm}
+Let $(c_n)$ be a sequence of complex numbers. Let
+\begin{align*}
+\alpha & := \limsup_{n \rightarrow \infty} |c_n|^{1/n} \\
+R & := \frac{1}{\alpha}
+\end{align*}
+where $R = + \infty$ if $\alpha = 0$ and $R = 0$ if $\alpha = + \infty$.
+\begin{enumerate}
+\item If $|z| < R$ then $\sum_{n=0}^\infty c_n z^n$ converges.
+\item If $|z| > R$ then $\sum_{n=0}^\infty c_n z^n$ diverges.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $z \in \mathbb{C}$ and $n \in \mathbb{N}$, \pflet{$a_n(z) = c_n z^n$}}
+\step{2}{\[ \limsup_{n \rightarrow \infty} |a_n(z)|^{1/n} = |z| / R \]}
+\step{3}{If $|z| < R$ then $\sum_{n=0}^\infty a_n(z)$ converges.}
+\begin{proof}
+	\pf\ Root Test.
+\end{proof}
+\step{4}{If $|z| > R$ then $\sum_{n=0}^\infty a_n(z)$ diverges.}
+\begin{proof}
+	\pf\ Root Test.
+\end{proof}
+\qed
+\end{proof}
 \part{More Algebra}
 
 \chapter{Lie Groups}
