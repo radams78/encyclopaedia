@@ -3824,6 +3824,7 @@ Let $(s_n)$ and $(t_n)$ be sequences of real numbers and $N \in \mathbb{N}$. Ass
 \end{proof}
 
 \begin{thm}
+\label{thm:limsups_compared}
 For any sequence $(c_n)$ of positive real numbers, we have
 \[ \limsup_{n \rightarrow \infty} c_n^{1/n} \leq \limsup_{n \rightarrow \infty} \frac{c_{n+1}}{c_n} \enspace . \]
 \end{thm}
@@ -4078,23 +4079,13 @@ $\sum_{n=0}^\infty a_n$ diverges.
 then $\sum_{n=0}^\infty a_n$ converges.}
 \begin{proof}
 	\step{a}{\assume{$\limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1$}}
-	\step{b}{\pick\ $\beta < 1$ and $N$ such that $\forall n \geq N$
-	\[ \left| \frac{a_{n+1}}{a_n} \right| < \beta \enspace . \]}
+	\step{b}{$\limsup_{n \rightarrow \infty} |a_n|^{1/n} < 1$}
 	\begin{proof}
-		\pf\ Theorem \ref{thm:greater_than_limsup}.
+		\pf\ Theorem \ref{thm:limsups_compared}.
 	\end{proof}
-	\step{c}{For all $n > N$ we have
-	\[ |a_n| < |a_N| \beta^{-N} \beta^n \enspace . \]}
+	\step{c}{$\sum_{n=0}^\infty a_n$ converges.}
 	\begin{proof}
-		\pf\ By induction on $n$.
-	\end{proof}
-	\step{d}{$\sum_n \beta^n$ converges.}
-	\begin{proof}
-		\pf\ Theorem \ref{thm:geometric_series}.
-	\end{proof}
-	\step{e}{$\sum_n a_n$ converges.}
-	\begin{proof}
-		\pf\ Comparison Test.
+		\pf\ Root Test
 	\end{proof}
 \end{proof}
 \step{2}{If there exists $N$ such that $\forall n \geq N. \left| \frac{a_{n+1}}{a_n} \right| > 1$ then
