@@ -3471,6 +3471,7 @@ as $n \rightarrow \infty$.
 \end{proof}
 
 \begin{thm}
+\label{thm:p_to_the_one_over_n_tends_to_one}
 For any real $p > 0$ we have
 \[ p^{\frac{1}{n+1}} \rightarrow 1 \]
 as $n \rightarrow \infty$.
@@ -3813,12 +3814,52 @@ Let $(s_n)$ and $(t_n)$ be sequences of real numbers and $N \in \mathbb{N}$. Ass
 \end{proof}
 
 \begin{thm}
+\label{thm:limsup_monotone}
 Let $(s_n)$ and $(t_n)$ be sequences of real numbers and $N \in \mathbb{N}$. Assume $\forall n \geq N. s_n \leq t_n$. Then
 \[ \limsup_{n \rightarrow \infty} s_n \leq \limsup_{n \rightarrow \infty} t_n \enspace . \]
 \end{thm}
 
 \begin{proof}
 \pf\ Similar. \qed
+\end{proof}
+
+\begin{thm}
+For any sequence $(c_n)$ of positive real numbers, we have
+\[ \limsup_{n \rightarrow \infty} c_n^{1/n} \leq \limsup_{n \rightarrow \infty} \frac{c_{n+1}}{c_n} \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha = \limsup_n c_{n+1}/c_n$}}
+\step{2}{\assume{w.l.o.g. $\alpha < + \infty$}}
+\step{3}{For all $\beta > \alpha$ we have $\limsup_{n \rightarrow \infty} c_n^{1/n} \leq \beta$.}
+\begin{proof}
+	\step{a}{\pflet{$\beta > \alpha$}}
+	\step{b}{\pick\ $N$ such that, for all $n \geq N$, we have
+	\[ \frac{c_{n+1}}{c_n} \leq \beta \enspace . \]}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:greater_than_limsup}.
+	\end{proof}
+	\step{c}{For all $k \geq 0$ we have
+	\[ c_{N + k + 1} \leq \beta c_{N + k} \enspace . \]}
+	\step{d}{For all $n \geq N$ we have
+	\[ c_n \leq c_N \beta^{-N} \beta^n \enspace . \]}
+	\begin{proof}
+		\pf\ Induction on $n$.
+	\end{proof}
+	\step{e}{For all $n \geq N$ we have
+	\[ c_n^{1/n} \leq (c_N \beta^{-N})^{1/n} \beta \enspace . \]}
+	\step{f}{\[ \limsup_{n \rightarrow \infty} c_n^{1/n} \leq \beta \]}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\limsup_{n \rightarrow \infty} c_n^{1/n} & \leq \limsup_{n \rightarrow \infty} (c_N \beta^{-N})^{1/n} \beta & (\text{Theorem \ref{thm:limsup_monotone}}) \\
+			& = \beta & (\text{Theorem \ref{thm:p_to_the_one_over_n_tends_to_one}})
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{\[ \limsup_{n \rightarrow \infty} c_n^{1/n} \leq \alpha \]}
+\qed
 \end{proof}
 
 \section{Infinite Series}
@@ -4004,6 +4045,62 @@ Let $(a_n)_{n \geq 1}$ be a sequence of complex numbers. Let $\alpha = \limsup_{
 \end{proof}
 \qed
 \end{proof}
+
+\begin{ex}
+If $a_n = 1/n$ then $|a_n|^{1/n} \rightarrow 1$ and $\sum_n a_n$ diverges.
+
+If $a_n = 1/n^2$ then $|a_n|^{1/n} \rightarrow 1$ and $\sum_n a_n$ converges.
+\end{ex}
+
+\begin{thm}[Ratio Test]
+Let $(a_n)_{n \geq 0}$ be a sequence of complex numbers.
+\begin{enumerate}
+\item If
+\[ \limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1 \]
+then $\sum_{n=0}^\infty a_n$ converges.
+\item If there exists $N$ such that $\forall n \geq N. \left| \frac{a_{n+1}}{a_n} \right| > 1$ then
+$\sum_{n=0}^\infty a_n$ diverges.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $\limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1$
+then $\sum_{n=0}^\infty a_n$ converges.}
+\begin{proof}
+	\step{a}{\assume{$\limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1$}}
+	\step{b}{\pick\ $\beta < 1$ and $N$ such that $\forall n \geq N$
+	\[ \left| \frac{a_{n+1}}{a_n} \right| < \beta \enspace . \]}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:greater_than_limsup}.
+	\end{proof}
+	\step{c}{For all $n > N$ we have
+	\[ |a_n| < |a_N| \beta^{-N} \beta^n \enspace . \]}
+	\begin{proof}
+		\pf\ By induction on $n$.
+	\end{proof}
+	\step{d}{$\sum_n \beta^n$ converges.}
+	\begin{proof}
+		\pf\ Theorem \ref{thm:geometric_series}.
+	\end{proof}
+	\step{e}{$\sum_n a_n$ converges.}
+	\begin{proof}
+		\pf\ Comparison Test.
+	\end{proof}
+\end{proof}
+\step{2}{If there exists $N$ such that $\forall n \geq N. \left| \frac{a_{n+1}}{a_n} \right| > 1$ then
+$\sum_{n=0}^\infty a_n$ diverges.}
+\begin{proof}
+	\pf\ Since $a_n \nrightarrow 0$ as $n \rightarrow \infty$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
+If $a_n = 1/n$ then $a_{n+1}/a_n \rightarrow 1$ and $\sum_n a_n$ diverges.
+
+If $a_n = 1/n^2$ then $a_{n+1}/a_n \rightarrow 1$ and $\sum_n a_n$ converges.
+\end{ex}
 
 \section{The Number $e$}
 
