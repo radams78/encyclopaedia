@@ -4201,13 +4201,17 @@ Let $(c_n)$ be a sequence of complex numbers. The \emph{power series} with \emph
 \[ \sum_{n=0}^\infty c_n z^n \enspace . \]
 \end{df}
 
-\begin{thm}
+\begin{df}[Radius of Convergence]
 Let $(c_n)$ be a sequence of complex numbers. Let
 \begin{align*}
 \alpha & := \limsup_{n \rightarrow \infty} |c_n|^{1/n} \\
 R & := \frac{1}{\alpha}
 \end{align*}
-where $R = + \infty$ if $\alpha = 0$ and $R = 0$ if $\alpha = + \infty$.
+where $R = + \infty$ if $\alpha = 0$ and $R = 0$ if $\alpha = + \infty$. Then $R$ is called the \emph{radius of convergence} of the power series $\sum_n c_n z^n$.
+\end{df}
+
+\begin{thm}
+Let $R$ be the radius of convergence of $\sum_n c_n z^n$.
 \begin{enumerate}
 \item If $|z| < R$ then $\sum_{n=0}^\infty c_n z^n$ converges.
 \item If $|z| > R$ then $\sum_{n=0}^\infty c_n z^n$ diverges.
@@ -4227,6 +4231,24 @@ where $R = + \infty$ if $\alpha = 0$ and $R = 0$ if $\alpha = + \infty$.
 	\pf\ Root Test.
 \end{proof}
 \qed
+\end{proof}
+
+\section{Summation by Parts}
+
+\begin{thm}
+Let $(a_n)$, $(b_n)$ be two sequences of complex numbers. Let
+\[ A_n = \sum_{k=0}^n a_k \qquad (n \geq -1) \enspace . \]
+Let $p$ and $q$ be integers with $0 \leq p \leq q$. Then
+\[ \sum_{n=p}^q a_n b_n = \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{p-1} b_p \enspace .\]
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+\sum_{n=p}^q a_n b_n & = \sum_{n=p}^q (A_n - A_{n-1}) b_n \\
+& = \sum_{n=p}^q A_n b_n - \sum_{n=p-1}^{q-1} A_n b_{n+1} \\
+& = \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{p-1} b_p & \qed
+\end{align*}
 \end{proof}
 \part{More Algebra}
 
