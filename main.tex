@@ -1363,41 +1363,11 @@ The \emph{half-open intervals} $[a,b)$ and $(a,b]$ are defined by
 \end{align*}
 \end{df}
 
-\begin{prop}
-Let $(I_n)$ be a sequence of closed intervals with $I_0 \supseteq I_1 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty I_n$ is nonempty.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$I_n = [a_n,b_n]$}}
-\step{2}{\pflet{$x = \sup_n a_n$}}
-\begin{proof}
-	\pf\ $\{ a_n : n \in \mathbb{N} \}$ is bounded above by $b_0$.
-\end{proof}
-\step{3}{$x \in \bigcap_{n=0}^\infty I_n$}
-\begin{proof}
-	\pf\ For all $n$ we have $a_n \leq x \leq b_n$ since $b_n$ is an upper bound for $\{ a_n : n \in \mathbb{N} \}$.
-\end{proof}
-\qed
-\end{proof}
-
 \begin{df}[$k$-cell]
 Let $k$ be a positive integer. A \emph{$k$-cell} is a subset of $\mathbb{R}^k$ of the form
 \[ \{ \vec{x} \in \mathbb{R}^k : \forall i = 1, \ldots, k. a_i \leq x_i \leq b_i \} \]
 for some real numbers $a_1$, \ldots, $a_k$, $b_1$, \ldots, $b_k$ with $a_i \leq b_i$ for each $i$.
 \end{df}
-
-\begin{prop}
-Let $(I_n)$ be a sequence of $k$-cells such that $I_0 \supseteq I_1 \supseteq \cdots$. Then $\bigcap_{n=0}^\infty I_n \neq \emptyset$.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$I_n = J_{n1} \times \cdots \times J_{nk}$ where each $J_{ni}$ is a closed interval.}}
-\step{2}{For $i = 1, \ldots, k$, \pick\ $a_i \in \bigcap_{n=0}^\infty J_{ni}$.}
-\step{3}{$(a_1, \ldots, a_k) \in \bigcap_{n=0}^\infty I_n$}
-\qed
-\end{proof}
 
 \subsection{The Cantor Set}
 
@@ -3652,6 +3622,70 @@ For every natural number $k$, we have $\mathbb{R}^k$ is complete.
 Every closed subspace of a complete metric space is complete.
 \end{cor}
 
+\begin{prop}
+\label{prop:nested_closed_bounded_sets}
+Let $X$ be a complete metric space. Let $(E_n)$ be a sequence of nonempty closed bounded sets in $X$ with
+\[ E_0 \supseteq E_1 \supseteq \cdots \]
+and $\diam E_n \rightarrow 0$ as $n \rightarrow \infty$. Then $\bigcap_{n=0}^\infty E_n$ consists of exactly one point.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$K = \bigcap_{n=0}^\infty E_n$}}
+\step{2}{$K$ has at least one point.}
+\begin{proof}
+	\step{a}{For each $n$, \pick\ $a_n \in E_n$}
+	\step{b}{$(a_n)$ is Cauchy.}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon > 0$}}
+		\step{ii}{\pick\ $N$ such that $\forall n \geq N. \diam E_n < \epsilon$}
+		\step{iii}{$\forall m,n \geq N. d(a_m,a_n) < \epsilon$}
+	\end{proof}
+	\step{c}{\pflet{$l = \lim_{n \rightarrow \infty} a_n$}}
+	\step{d}{$l \in K$}
+	\begin{proof}
+		\step{i}{\pflet{$n \in \mathbb{N}$}}
+		\step{ii}{For all $m \geq n$ we have $a_m \in E_n$}
+		\step{iii}{$l \in E_n$}
+	\end{proof}
+\end{proof}
+\step{3}{$K$ has at most one point.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $a,b \in K$ such that $a \neq b$}}
+	\step{b}{\pick\ $n$ such that $\diam E_n < d(a,b)$}
+	\step{c}{$a,b \in E_n$}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Baire's Theorem]
+Let $X$ be a complete metric space. Let $(G_n)$ be a sequence of dense open subsets of $X$. Then $\bigcap_{n=0}^\infty G_n$ is not empty.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a sequence $(E_n)$ of open balls such that $E_0 \supseteq E_1 \supseteq \cdots$ and $\diam E_n \leq 1/2^n$ and $\overline{E_n} \subseteq G_n$.}
+\begin{proof}
+	\step{a}{\assume{as induction hypothesis we have chosen $E_0$, \ldots, $E_n$ with centres $c_0$, \ldots, $c_n$.}}
+	\step{b}{\pick\ $x \in E_n \cap G_{n+1}$}
+	\step{c}{\pick\ $0 < \epsilon \leq 1/2^{n+2}$ such that $B(x, \epsilon) \subseteq E_n \cap G_{n+1}$}
+	\step{d}{\pflet{$E_{n+1} = B(x, \epsilon/2)$}}
+	\step{e}{$E_{n+1} \subseteq E_n$}
+	\step{f}{$\diam E_{n+1} \leq 1/2^{n+1}$}
+	\step{g}{$\overline{E_{n+1}} \subseteq G_{n+1}$}
+\end{proof}
+\step{2}{\pflet{$\bigcap_{n=0}^\infty \overline{E_n} = \{ p \}$}}
+\begin{proof}
+	\pf\ Proposition \ref{prop:nested_closed_bounded_sets}.
+\end{proof}
+\step{3}{$p \in \bigcap_{n=0}^\infty G_n$}
+\qed
+\end{proof}
+
 \section{Divergent Sequences}
 
 \begin{df}
@@ -3872,10 +3906,15 @@ For any sequence $(c_n)$ of positive real numbers, we have
 \pf\ Similar. \qed
 \end{proof}
 
+\begin{prop}
+Let $(a_n)$ and $(b_n)$ be sequences of reals. Assume that it is not the case that one of $\limsup_n a_n$, $\limsup_n b_n$ is $+ \infty$ and the other is $- \infty$. Then
+\[ \limsup_{n \rightarrow \infty} (a_n + b_n) \leq \limsup_{n \rightarrow \infty} a_n + \limsup_{n \rightarrow \infty} b_n \enspace . \]
+\end{prop}
+
 \section{Infinite Series}
 
 \begin{df}
-Let $(a_n)$ be a sequence of complex numbers and $s \in \mathbb{C}$. We say the \emph{infinite series} $\sum_{n=0}^\infty a_n$ \emph{converges} to $s$, and write
+Let $(a_n)$ be a sequence in $\mathbb{R}^k$ and $s \in \mathbb{R}^k$. We say the \emph{infinite series} $\sum_{n=0}^\infty a_n$ \emph{converges} to $s$, and write
 \[ \sum_{n=0}^\infty a_n = s \]
 iff
 \[ \sum_{n=0}^N a_n \rightarrow s \text{ as } N \rightarrow \infty \enspace . \]
@@ -3883,12 +3922,12 @@ If $(\sum_{n=0}^N a_n)$ diverges, we say the infinite series $\sum_{n=0}^\infty 
 \end{df}
 
 \begin{thm}
-Let $(a_n)$ be a sequence of complex numbers. Then $\sum_{n=0}^\infty a_n$ converges if and only if, for all $\epsilon > 0$, there exists $N$ such that, for all $m,n \geq N$,
-\[ \left| \sum_{k=m}^n a_k \right| \leq \epsilon \enspace . \]
+Let $(a_n)$ be a sequence in $\mathbb{R}^k$. Then $\sum_{n=0}^\infty a_n$ converges if and only if, for all $\epsilon > 0$, there exists $N$ such that, for all $m,n \geq N$,
+\[ \left\| \sum_{i=m}^n a_i \right\| \leq \epsilon \enspace . \]
 \end{thm}
 
 \begin{proof}
-\pf\ This is what it means for $(\sum_{k=0}^n a_k)$ to be a Cauchy sequence. \qed
+\pf\ This is what it means for $(\sum_{i=0}^n a_i)$ to be a Cauchy sequence. \qed
 \end{proof}
 
 \begin{cor}
@@ -3905,14 +3944,14 @@ A series of nonnegative reals converges if and only if its partial sums form a b
 \end{proof}
 
 \begin{thm}[Comparison Test]
-Let $(a_n)$ be a sequence of complex numbers and $(c_n)$ a sequence of real numbers. If there exists $N$ such that $\forall n \geq N. |a_n| \leq c_n$, and if $\sum_n c_n$ converges, then $\sum_n a_n$ converges.
+Let $(a_n)$ be a sequence in $\mathbb{R}^k$ and $(c_n)$ a sequence of real numbers. If there exists $N$ such that $\forall n \geq N. \|a_n\| \leq c_n$, and if $\sum_n c_n$ converges, then $\sum_n a_n$ converges.
 \end{thm}
 
 \begin{proof}
 \pf
 \step{1}{\pflet{$\epsilon > 0$}}
-\step{2}{\pick\ $N$ such that $\forall n \geq N. |a_n| \leq c_n$ and $\forall m,n \geq N. \sum_{k=m}^n c_k < \epsilon$.}
-\step{3}{$\forall m,n \geq N. |\sum_{k=m}^n a_k| \leq \epsilon$}
+\step{2}{\pick\ $N$ such that $\forall n \geq N. \|a_n\| \leq c_n$ and $\forall m,n \geq N. \sum_{k=m}^n c_k < \epsilon$.}
+\step{3}{$\forall m,n \geq N. \left\|\sum_{k=m}^n a_k\right\| \leq \epsilon$}
 \qed
 \end{proof}
 
@@ -4012,7 +4051,7 @@ and this series converges iff $\sum_k \frac{1}{k^p}$ converges iff $p > 1$. \qed
 \end{proof}
 
 \begin{thm}[Root Test]
-Let $(a_n)_{n \geq 1}$ be a sequence of complex numbers. Let $\alpha = \limsup_{n \rightarrow \infty} |a_n|^{1/n}$.
+Let $(a_n)_{n \geq 1}$ be a sequence in $\mathbb{R}^k$. Let $\alpha = \limsup_{n \rightarrow \infty} \|a_n\|^{1/n}$.
 \begin{enumerate}
 \item If $\alpha < 1$ then $\sum_{n=1}^\infty a_n$ converges.
 \item If $\alpha > 1$ then $\sum_{n=1}^\infty a_n$ diverges.
@@ -4025,11 +4064,11 @@ Let $(a_n)_{n \geq 1}$ be a sequence of complex numbers. Let $\alpha = \limsup_{
 \begin{proof}
 	\step{a}{\assume{$\alpha < 1$}}
 	\step{b}{\pick\ $\beta$ such that $\alpha < \beta < 1$}
-	\step{c}{\pick\ $N$ such that $\forall n \geq N. |a_n|^{1/n} < \beta$}
+	\step{c}{\pick\ $N$ such that $\forall n \geq N. \|a_n\|^{1/n} < \beta$}
 	\begin{proof}
 		\pf\ Theorem \ref{thm:greater_than_limsup}.
 	\end{proof}
-	\step{d}{$\forall n \geq N. |a_n| < \beta^n$}
+	\step{d}{$\forall n \geq N. \|a_n\| < \beta^n$}
 	\step{e}{$\sum_{n=1}^\infty \beta^n$ converges.}
 	\begin{proof}
 		\pf\ Theorem \ref{thm:geometric_series}.
@@ -4042,11 +4081,11 @@ Let $(a_n)_{n \geq 1}$ be a sequence of complex numbers. Let $\alpha = \limsup_{
 \step{2}{If $\alpha > 1$ then $\sum_{n=1}^\infty a_n$ diverges.}
 \begin{proof}
 	\step{a}{\assume{$\alpha > 1$}}
-	\step{b}{There exists a sequence of positive integers $(n_k)$ such that $|a_{n_k}|^{1/n_k} \rightarrow \alpha$ as $k \rightarrow \infty$.}
+	\step{b}{There exists a sequence of positive integers $(n_k)$ such that $\|a_{n_k}\|^{1/n_k} \rightarrow \alpha$ as $k \rightarrow \infty$.}
 	\begin{proof}
 		\pf\ Theorem \ref{thm:limsup_is_subsequential_limit}.
 	\end{proof}
-	\step{c}{There are infinitely many $n$ such that $|a_n| > 1$.}
+	\step{c}{There are infinitely many $n$ such that $\|a_n\| > 1$.}
 	\step{d}{$a_n \nrightarrow 0$ as $n \rightarrow \infty$.}
 	\step{e}{$\sum_{n=1}^\infty a_n$ diverges.}
 	\begin{proof}
@@ -4063,23 +4102,23 @@ If $a_n = 1/n^2$ then $|a_n|^{1/n} \rightarrow 1$ and $\sum_n a_n$ converges.
 \end{ex}
 
 \begin{thm}[Ratio Test]
-Let $(a_n)_{n \geq 0}$ be a sequence of complex numbers.
+Let $(a_n)_{n \geq 0}$ be a sequence in $\mathbb{R}^k$.
 \begin{enumerate}
 \item If
-\[ \limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1 \]
+\[ \limsup_{n \rightarrow \infty} \frac{\|a_{n+1}\|}{\|a_n\|} < 1 \]
 then $\sum_{n=0}^\infty a_n$ converges.
-\item If there exists $N$ such that $\forall n \geq N. \left| \frac{a_{n+1}}{a_n} \right| > 1$ then
+\item If there exists $N$ such that $\forall n \geq N. \frac{\|a_{n+1}\|}{\|a_n\|} > 1$ then
 $\sum_{n=0}^\infty a_n$ diverges.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
 \pf
-\step{1}{If $\limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1$
+\step{1}{If $\limsup_{n \rightarrow \infty} \frac{\|a_{n+1}\|}{\|a_n\|} < 1$
 then $\sum_{n=0}^\infty a_n$ converges.}
 \begin{proof}
-	\step{a}{\assume{$\limsup_{n \rightarrow \infty} \left| \frac{a_{n+1}}{a_n} \right| < 1$}}
-	\step{b}{$\limsup_{n \rightarrow \infty} |a_n|^{1/n} < 1$}
+	\step{a}{\assume{$\limsup_{n \rightarrow \infty} \frac{\|a_{n+1}\|}{\|a_n\|} < 1$}}
+	\step{b}{$\limsup_{n \rightarrow \infty} \|a_n\|^{1/n} < 1$}
 	\begin{proof}
 		\pf\ Theorem \ref{thm:limsups_compared}.
 	\end{proof}
@@ -4088,7 +4127,7 @@ then $\sum_{n=0}^\infty a_n$ converges.}
 		\pf\ Root Test
 	\end{proof}
 \end{proof}
-\step{2}{If there exists $N$ such that $\forall n \geq N. \left| \frac{a_{n+1}}{a_n} \right| > 1$ then
+\step{2}{If there exists $N$ such that $\forall n \geq N. \frac{\|a_{n+1}\|}{\|a_n\|} > 1$ then
 $\sum_{n=0}^\infty a_n$ diverges.}
 \begin{proof}
 	\pf\ Since $a_n \nrightarrow 0$ as $n \rightarrow \infty$.
@@ -4236,7 +4275,7 @@ Let $R$ be the radius of convergence of $\sum_n c_n z^n$.
 \section{Summation by Parts}
 
 \begin{thm}
-Let $(a_n)$, $(b_n)$ be two sequences of complex numbers. Let
+Let $(a_n)$, $(b_n)$ be two sequences in $\mathbb{R}^k$. Let
 \[ A_n = \sum_{k=0}^n a_k \qquad (n \geq -1) \enspace . \]
 Let $p$ and $q$ be integers with $0 \leq p \leq q$. Then
 \[ \sum_{n=p}^q a_n b_n = \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{p-1} b_p \enspace .\]
@@ -4250,6 +4289,386 @@ Let $p$ and $q$ be integers with $0 \leq p \leq q$. Then
 & = \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{p-1} b_p & \qed
 \end{align*}
 \end{proof}
+
+\begin{thm}
+\label{thm:sum_an_bn_converges}
+Let $(a_n)$ be a sequence in $\mathbb{R}^k$ and $(b_n)$ be a sequence of real numbers. Assume that:
+\begin{enumerate}
+\item The partial sums $\sum_{n=0}^N a_n$ form a bounded sequence.
+\item $(b_n)$ is monotone decreasing.
+\item $b_n \rightarrow 0$ as $n \rightarrow \infty$.
+\end{enumerate}
+Then $\sum_{n=0}^\infty a_n b_n$ converges.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $M$ such that, for all $N$, we have $\| \sum_{n=0}^N a_n \| \leq M$.}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $N$ such that $b_N \leq \epsilon / 2M$.}
+\step{4}{\pflet{$N \leq p \leq q$}}
+\step{4a}{For any integer $k$, \pflet{$A_k = \sum_{n=0}^k a_n$.}}
+\step{5}{$\| \sum_{n=p}^q a_n b_n \| \leq \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\left\| \sum_{n=p}^q a_n b_n \right\|
+		& = \left\| \sum_{n=p}^{q-1} A_n (b_n - b_{n+1}) + A_q b_q - A_{p-1} b_p \right\| & (\text{Summation by Parts}) \\
+		& \leq M \left\| \sum_{n=p}^{q-1} (b_n - b_{n+1}) + b_q - b_p \right\| \\
+		& = 2 M b_p \\
+		& \leq 2 M b_N \\
+		& \leq \epsilon
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Cauchy criterion.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Alternating Series]
+Let $(c_n)$ be a sequence of real numbers. Assume that
+\begin{enumerate}
+\item $(|c_n|)$ is monotone decreasing.
+\item $c_n \geq 0$ for all odd $n$, and $c_n \leq 0$ for all even $n$.
+\item $c_n \rightarrow 0$ as $n \rightarrow \infty$
+\end{enumerate}
+Then $\sum_{n=0}^\infty c_n$ converges.
+\end{cor}
+
+\begin{proof}
+\pf\ Take $a_n = (-1)^{n+1}$ and $b_n = |c_n|$. \qed
+\end{proof}
+
+\begin{thm}
+Let $\sum_n c_n z^n$ be a power series with radius of convergence 1. Suppose $(c_n)$ is monotone decreasing with limit 0. Then $\sum_n c_n z^n$ converges at every point on the circle $|z| = 1$ except possibly $z = 1$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$z$ be a complex number with $|z| = 1$ and $z \neq 1$.}}
+\step{2}{For $n \in \mathbb{N}$, \pflet{$a_n = z^n$.}}
+\step{3}{For $n \in \mathbb{N}$, \pflet{$b_n = c_n$.}}
+\step{4}{The partial sums $\sum_{n=0}^N a_n$ form a bounded sequence.}
+\begin{proof}
+\pf
+\begin{align*}
+\left| \sum_{n=0}^N a_n \right|
+& = \left| \sum_{n=0}^N z^n \right| \\
+& = \left| \frac{1 - z^{N+1}}{1-z} \right| \\
+& \leq \frac{2}{|1-z|}
+\end{align*}
+\end{proof}
+\step{5}{$(b_n)$ is monotone decreasing with limit 0.}
+\qedstep
+\begin{proof}
+\pf\ Theorem \ref{thm:sum_an_bn_converges}.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Absolute Convergence}
+
+\begin{df}[Absolute Convergence]
+Let $(a_n)$ be a sequence in $\mathbb{R}^k$. Then the series $\sum_{n=0}^\infty a_n$ \emph{converges absolutely} iff $\sum_{n=0}^\infty \|a_n\|$ converges.
+\end{df}
+
+\begin{thm}
+If $\sum_{n=0}^\infty a_n$ converges absolutely then $\sum_{n=0}^\infty a_n$ converges.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $N$ such that, for all $p,q \geq N$, we have
+\[ \sum_{n=p}^q \|a_n\| \leq \epsilon \enspace . \]}
+\step{3}{For $p,q \geq N$, we have
+\[ \left\| \sum_{n=p}^q a_n \right\| \leq \epsilon \enspace . \]S}
+\qedstep
+\begin{proof}
+	\pf\ Cauchy criterion.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Addition and Multiplication of Series}
+
+\begin{thm}
+If $\sum_n a_n = A$ and $\sum_n b_n = B$ then $\sum_n (a_n + b_n) = A + B$.
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+\sum_{n=0}^N (a_n + b_n) & = \sum_{n=0}^N a_n + \sum_{n=0}^N b_n \\
+& \rightarrow A + B & \text{ as } N \rightarrow \infty & \qed
+\end{align*}
+\end{proof}
+
+\begin{thm}
+If $\sum_n a_n = A$ then $\sum_n (c a_n) = cA$.
+\end{thm}
+
+\begin{proof}
+\pf
+\begin{align*}
+\sum_{n=0}^N c a_n & = c \sum_{n=0}^N a_n \\
+& \rightarrow cA & \text{ as } N \rightarrow \infty & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Cauchy Product]
+The \emph{(Cauchy) product} of the series $\sum_{n=0}^\infty a_n$ and $\sum_{n=0}^\infty b_n$ is
+\[ \sum_{n=0}^\infty \sum_{k=0}^n a_k b_{n-k} \enspace . \]
+\end{df}
+
+\begin{thm}
+\label{thm:Cauchy_product_converges}
+Let $(a_n)$ and $(b_n)$ be sequences of complex numbers. Assume:
+\begin{enumerate}
+\item $\sum_{n=0}^\infty a_n$ converges absolutely.
+\item $\sum_{n=0}^\infty b_n$ converges.
+\end{enumerate}
+For $n \in \mathbb{N}$, let $c_n = \sum_{k=0}^n a_k b_{n-k}$. Then
+\[ \sum_{n=0}^\infty c_n = \left( \sum_{n=0}^\infty a_n \right) \left( \sum_{n=0}^\infty b_n \right) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{\[ A = \sum_{n=0}^\infty a_n \]}}
+\step{00}{\pflet{\[ B = \sum_{n=0}^\infty b_n \]}}
+\step{1}{For $n \in \mathbb{N}$, \pflet{\[ A_n = \sum_{k=0}^n a_k \enspace . \]}}
+\step{2}{For $n \in \mathbb{N}$, \pflet{\[ B_n = \sum_{k=0}^n b_k \enspace . \]}}
+\step{3}{For $n \in \mathbb{N}$, \pflet{\[ C_n = \sum_{k=0}^n a_k b_{n-k} \enspace . \]}}
+\step{4}{For $n \in \mathbb{N}$, \pflet{\[ \beta_n = B_n - B\]}}
+\step{5}{For $n \in \mathbb{N}$,
+\[ C_n = A_n B + \sum_{k=0}^n a_k \beta_{n-k} \enspace . \]}
+\step{6}{For $n \in \mathbb{N}$, \pflet{\[ \gamma_n = \sum_{k=0}^n a_k \beta_{n-k} \]}}
+\step{7}{$A_n B \rightarrow AB$ as $n \rightarrow \infty$.}
+\step{8}{$\gamma_n \rightarrow 0$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\step{a}{\pflet{$\alpha = \sum_{n=0}^\infty |a_n|$}}
+	\step{b}{For all $\epsilon > 0$ we have $\limsup_n |\gamma_n| \leq \epsilon \alpha$.}
+	\begin{proof}
+		\step{i}{\pflet{$\epsilon > 0$}}
+		\step{ii}{\pick\ $N$ such that $\forall n \geq N. |\beta_n| \leq \epsilon$.}
+		\step{iii}{For all $n \geq N$ we have $|\gamma_n| \leq \left|\sum_{k=0}^N \beta_k \alpha_{n-k} \right| + \epsilon \alpha$.}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				|\gamma_n| & \leq \left| \sum_{k=0}^N \beta_k \alpha_{n-k} \right| + \left| \sum_{k=N+1}^n \beta_k a_{n-k} \right| \\
+				& \leq \left|\sum_{k=0}^N \beta_k \alpha_{n-k} \right| + \epsilon \alpha
+			\end{align*}
+		\end{proof}
+		\step{iv}{\[ \limsup_{n \rightarrow \infty} |\gamma_n| \leq \epsilon \alpha \]}
+	\end{proof}
+	\step{c}{$\limsup_n \gamma_n = 0$}
+\end{proof}
+\step{9}{$C_n \rightarrow AB$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
+\begin{thm}[Abel]
+Let $(a_n)$ and $(b_n)$ be sequences of complex numbers. Let
+\[ c_n = \sum_{k=0}^n a_k b_{n-k} \]
+for all $n$. If the series $\sum_n a_n$, $\sum_n b_n$ and $\sum_n c_n$ all converge, then
+\[ \sum_n c_n = \left( \sum_n a_n \right) \left( \sum_n b_n \right) \enspace . \]
+\end{thm}
+
+%TODO
+
+\begin{prop}
+The Cauchy product of two absolutely convergent series is absolutely convergent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\sum_n a_n$ and $\sum_n b_n$ be two absolutely convergent series.}}
+\step{2}{\pflet{$c_n = \sum_{k=0}^n a_k b_{n-k}$}}
+\step{3}{$\sum_n |c_n|$ converges.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\sum_{n=0}^\infty |c_n| & = \sum_{n=0}^\infty \left| \sum_{k=0}^n a_k b_{n-k} \right| \\
+		& \leq \sum_{n=0}^\infty \sum_{k=0}^n |a_k| |b_{n-k}|
+	\end{align*}
+	which converges by Theorem \ref{thm:Cauchy_product_converges}.
+\end{proof}
+\end{proof}
+
+\section{Rearrangements}
+
+\begin{df}[Rearrangement]
+A \emph{rearrangement} of a sequence $(a_n)$ is a sequence $(a_{\phi(n)})$ for some bijection $\phi : \mathbb{N} \approx \mathbb{N}$.
+\end{df}
+
+\begin{thm}[Riemann]
+Let $\sum_{n=1}^\infty a_n$ be a series that converges but not absolutely. Let $\alpha$ and $\beta$ be extended reals with $\alpha \leq \beta$. Then there exists a rearrangement of $\sum_n a_n$ with partial sums $s_n'$ such that
+\[ \limsup_{n \rightarrow \infty} s_n' = \alpha, \qquad \liminf_{n \rightarrow \infty} s_n' = \beta \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For $n \in \mathbb{Z}^+$, \pflet{\[ p_n = \frac{|a_n| + a_n}{2} \enspace . \]}}
+\step{2}{For $n \in \mathbb{Z}^+$, \pflet{\[ q_n = \frac{|a_n| - a_n}{2} \enspace . \]}}
+\step{3}{$\forall n \in \mathbb{Z}^+. p_n - q_n = a_n$}
+\step{4}{$\forall n \in \mathbb{Z}^+. p_n + q_n = |a_n|$}
+\step{5}{$\forall n \in \mathbb{Z}^+. p_n \geq 0$}
+\step{6}{$\forall n \in \mathbb{Z}^+. q_n \geq 0$}
+\step{7}{$\sum_n p_n$ and $\sum_n q_n$ both diverge.}
+\begin{proof}
+	\step{a}{It is not the case than $\sum_n p_n$ and $\sum_n q_n$ both converge.}
+	\begin{proof}
+		\pf\ This would imply that $\sum_n |a_n|$ converges by \stepref{4}.
+	\end{proof}
+	\step{b}{It is not the case that $\sum_n p_n$ converges and $\sum_n q_n$ diverges.}
+	\begin{proof}
+		\pf\ This would imply that $\sum_n a_n$ diverges by \stepref{3}.
+	\end{proof}
+	\step{c}{It is not the case that $\sum_n p_n$ diverges and $\sum_n q_n$ converges.}
+	\begin{proof}
+		\pf\ This would imply that $\sum_n a_n$ diverges by \stepref{3}.
+	\end{proof}
+\end{proof}
+\step{8}{\pflet{$(P_n)$ be the subsequence of $(a_n)$ consisting of the non-negative terms.}}
+\step{9}{\pflet{$(Q_n)$ be the subsequence of $(|a_n|)$ consisting only of the terms such that $a_n$ is negative.}}
+\step{10}{$\sum_n P_n$ diverges.}
+\begin{proof}
+	\pf\ It is the series $\sum_n p_n$ with the zero terms removed.
+\end{proof}
+\step{11}{$\sum_n Q_n$ diverges.}
+\begin{proof}
+	\pf\ It is the series $\sum_n q_n$ with the zero terms removed.
+\end{proof}
+\step{11half}{\pick\ sequences of real numbers $(\alpha_n)$, $(\beta_n)$ such that $\alpha_n \rightarrow \alpha$, $\beta_n \rightarrow \beta$, $\alpha_n < \beta_n$ for all $n$, and $\beta_1 > 0$.}
+\step{12}{\pick\ strictly increasing sequences of natural numbers $(m_n)_{n \geq 1}$, $(k_n)_{n \geq 1}$ such that, for all $n$,
+\begin{align*}
+\sum_{i=1}^{n-1} \left( \sum_{j=m_{i-1}+1}^{m_i} P_j - \sum_{j=k_{i-1}+1}^{k_i} Q_j \right) + \sum_{j=m_{n-1}+1}^{m_n} P_j & > \beta_n \\
+\sum_{i=1}^n \left( \sum_{j=m_{i-1}+1}^{m_i} P_j - \sum_{j=k_{i-1}+1}^{k_i} Q_j \right) & < \alpha_n
+\end{align*}
+and $m_n$ and $k_n$ are the smallest integers that make these inequalities true.}
+\begin{proof}
+	\pf\ Given the choice of $m_1$, \ldots, $m_n$ and $k_1$, \ldots, $k_n$, there must exist such an $m_{n+1}$ by \stepref{10}, and then there must exist such a $k_{n+1}$ by \stepref{11}.
+\end{proof}
+\step{13}{For $n \in \mathbb{Z}^+$, \pflet{$x_n = \sum_{i=1}^{n-1} \left( \sum_{j=m_{i-1}+1}^{m_i} P_j - \sum_{j=k_{i-1}+1}^{k_i} Q_j \right) + \sum_{j=m_{n-1}+1}^{m_n} P_j$}}
+\step{14}{For $n \in \mathbb{Z}^+$, \pflet{$y_n = \sum_{i=1}^n \left( \sum_{j=m_{i-1}+1}^{m_i} P_j - \sum_{j=k_{i-1}+1}^{k_i} Q_j \right)$}}
+\step{15}{For $n \in \mathbb{Z}^+$ we have
+\[ | x_n - \beta_n | \leq P_{m_n} \enspace . \]}
+\begin{proof}
+	\pf\ By minimality of $m_n$.
+\end{proof}
+\step{16}{For $n \in \mathbb{Z}^+$ we have
+\[ | y_n - \alpha_n | \leq Q_{k_n} \enspace . \]}
+\begin{proof}
+	\pf\ By minimality of $k_n$.
+\end{proof}
+\step{17}{$P_n \rightarrow 0$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Since $a_n \rightarrow 0$ as $n \rightarrow \infty$.
+\end{proof}
+\step{18}{$Q_n \rightarrow 0$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Since $a_n \rightarrow 0$ as $n \rightarrow \infty$.
+\end{proof}
+\step{19}{$x_n \rightarrow \beta$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ \stepref{15}, \stepref{17}
+\end{proof}
+\step{20}{$y_n \rightarrow \alpha$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ \stepref{16}, \stepref{18}
+\end{proof}
+\step{21}{No number less than $\alpha$ or greater than $\beta$ is a subsequential limit of the partial sums of the series $P_1 + \cdots + P_{m_1} -Q_1 - \cdots -Q_{k_1} + P_{m_1 + 1} + \cdots + P_{m_2} -Q_{k_1+1} - \cdots -Q_{k_2} + \cdots$}
+\begin{proof}
+	\pf\ Since every partial sum after the $m_n + k_n$ term is between $\alpha_n - Q_{k_n}$ and $\beta_n + P_{m_n}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+If $\sum_n a_n$ is a series in $\mathbb{R}^k$ that converges absolutely to $s$, then every rearrangement of $\sum_n a_n$ converges to $s$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\sum_n a_n' = \sum_n a_{k_n}$ be a rearrangement with partial sums $s_n'$.}}
+\step{2}{\pflet{$\epsilon > 0$}}
+\step{3}{\pick\ $N$ such that, for all $m \geq n \geq N$, we have
+\[ \sum_{i=n}^m \|a_i\| \leq \epsilon/3 \enspace . \]}
+\step{4}{\pick\ $p$ such that $\{ 1, \ldots, N \} \subseteq \{ k_1, k_2, \ldots, k_p \}$.}
+\step{5}{For all $n > p$ we have $\|s_n - s_n'\| \leq \epsilon$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\|s_n - s_n'\| & = \left\| \sum_{i=1}^N a_i + \sum_{i=N+1}^n a_i - \sum_{i=1}^p a_{k_i} - \sum_{i=p+1}^n a_{k_i} \right\| \\
+		& \leq \left\| \sum_{i=N+1}^n a_i \right\| + \left\| \sum_{
+		\substack{1 \leq i \leq p \\ k_i > N}} a_{k_i} \right\| + \left\| \sum_{i=p+1}^n a_{k_i} \right\| \\
+		& \leq \epsilon & (\text{\stepref{3}})
+	\end{align*}
+\end{proof}
+\step{6}{$s_n' \rightarrow s$ as $n \rightarrow \infty$.}
+\qed
+\end{proof}
+
+\section{Completion of a Metric Space}
+
+\begin{df}[Completion]
+Let $X$ be a metric space. Let $X^*$ be the set of all Cauchy sequences in $X$, quotiented by: $(p_n) \sim (q_n)$ iff $d(p_n, q_n) \rightarrow 0$. Define the distance function on $X^*$ by:
+\[ \Delta((p_n),(q_n)) = \lim_{n \rightarrow \infty} d(p_n, q_n) \enspace . \]
+Then the metric space $X^*$ is called the \emph{completion} of $X$.
+\end{df}
+
+\begin{thm}
+The completion of $X^*$ is a complete metric space, and $X$ is a dense subspace under the embedding that maps $p \in X$ to the constant sequence $(p)$.
+\end{thm}
+
+%todo
+
+\begin{ex}
+$\mathbb{R}$ is the completion of $\mathbb{Q}$.
+\end{ex}
+
+\chapter{Continuity}
+
+\section{Limit of a Function}
+
+\begin{df}[Limit]
+Let $X$ and $Y$ be metric spaces. Let $E \subseteq X$ and $f : E \rightarrow Y$. Let $p$ be a limit point of $E$ and $q \in Y$. Then we say $q$ is the \emph{limit} of $f$ at $p$, and write
+\[ f(x) \rightarrow q \text{ as } x \rightarrow p, \text{ or } \lim_{x \rightarrow p} f(x) = q \enspace , \]
+iff for all $\epsilon > 0$, there exists $\delta > 0$ such that, for all $x \in E$, if $0 < d(x,p) < \delta$ then $d(f(x),q) < \epsilon$.
+\end{df}
+
+\begin{thm}
+Let $X$ and $Y$ be metric spaces. Let $E \subseteq X$ and $f : E \rightarrow Y$. Let $p$ be a limit point of $E$ and $q \in Y$. Then $f(x) \rightarrow q$ as $x \rightarrow p$ if and only if, for every sequence $(p_n)$ in $E - \{p\}$ with limit $p$, we have $f(p_n) \rightarrow q$ as $n \rightarrow \infty$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $f(x) \rightarrow q$ as $x \rightarrow p$ then, for every sequence $(p_n)$ in $E - \{p\}$ with limit $p$, we have $f(p_n) \rightarrow q$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\step{a}{\assume{$f(x) \rightarrow q$ as $x \rightarrow p$.}}
+	\step{b}{\pflet{$(p_n)$ be a sequence in $E - \{p\}$ with limit $p$.}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{\pick\ $\delta > 0$ such that, for all $x \in E$, if $0 < d(x,p) < \delta$ then $d(f(x),q) < \epsilon$.}
+	\step{d}{\pick\ $N$ such that, for all $n \geq N$, we have $d(p_n,p) < \delta$}
+	\step{e}{$\forall n \geq N. d(f(p_n),q) < \epsilon$}
+\end{proof}
+\step{2}{If, for every sequence $(p_n)$ in $E - \{p\}$ with limit $p$, we have $f(p_n) \rightarrow q$ as $n \rightarrow \infty$, then $f(x) \rightarrow q$ as $x \rightarrow p$.}
+\begin{proof}
+	\step{b}{\assume{$f(x) \nrightarrow q$ as $x \rightarrow p$.}}
+	\step{c}{\pick\ $\epsilon > 0$ such that, for all $\delta > 0$, there exists a $x \in E$ such that $0 < d(x,p) < \delta$ and $d(f(x),q) \geq \epsilon$.}
+	\step{d}{For all $n \in \mathbb{Z}^+$, \pick\ $p_n \in E$ such that $0 < d(p_n,p) < 1/n$ and $d(f(p_n),q) \geq \epsilon$.}
+	\step{e}{$p_n \rightarrow p$ as $n \rightarrow \infty$.}
+	\step{f}{$f(p_n) \nrightarrow q$ as $n \rightarrow \infty$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+A function has at most one limit at any point.
+\end{cor}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
