@@ -1848,6 +1848,10 @@ For $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^k$ we have
 \[ \| \vec{x} - \vec{z} \| \leq \| \vec{x} - \vec{y} \| + \| \vec{y} - \vec{z} \| \enspace . \]
 \end{cor}
 
+\begin{df}[Bounded Function]
+Let $E$ be a set. Let $f : E \rightarrow \mathbb{R}^k$. Then $f$ is \emph{bounded} iff $f(E)$ is bounded.
+\end{df}
+
 \section{Balls}
 
 \begin{df}[Closed Ball]
@@ -4817,6 +4821,58 @@ Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continu
 
 \begin{cor}
 Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for every closed set $C$ in $Y$, we have $f^{-1}(C)$ is closed in $X$.
+\end{cor}
+
+\begin{thm}
+Let $X$ be a metric space. Let $f : X \rightarrow \mathbb{R}^k$. Then $f$ is continuous if and only if, for $i = 1, \ldots, k$, we have $\pi_i \circ f$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Each $\pi_i$ is continuous.}
+\begin{proof}
+	\step{a}{\pflet{$\vec{p} \in \mathbb{R}^k$}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pflet{$\vec{q} \in \mathbb{R}^k$}}
+	\step{d}{\assume{$\| \vec{p} - \vec{q} \| < \epsilon$}}
+	\step{e}{$|p_i - q_i| < \epsilon$}
+\end{proof}
+\step{2}{If, for all $i$, we have $\pi_i \circ f$ is continuous, then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For all $i$, we have $\pi_i \circ f$ is continuous.}}
+	\step{b}{\pflet{$p \in X$}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{For $i = 1, \ldots, k$, \pick\ $\delta_i > 0$ such that, for all $x \in X$, we have if $d(x,p) < \delta_i$ then $|\pi_i(f(p)) - \pi_i(f(x))| < \epsilon / \sqrt{k}$}
+	\step{e}{\pflet{$\delta = \min(\delta_1, \ldots, \delta_k)$}}
+	\step{f}{\pflet{$q \in X$ with $d(p,q) < \delta$.}}
+	\step{g}{$\| f(p) - f(q) \| < \epsilon$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\| f(p) - f(q) \| & = \sqrt{\sum_{i=1}^k |\pi_i(f(p)) - \pi_i(f(q))|^2} \\
+			& < \sqrt{\sum_{i=1}^k \epsilon^2 / k} \\
+			& = \epsilon
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a compact metric space and $Y$ a metric space. Let $f : X \rightarrow Y$ be continuous. Then $f(X)$ is compact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mathcal{V}$ be an open cover of $f(X)$.}}
+\step{2}{$\{ f^{-1}(V) : V \in \mathcal{V} \}$ is an open cover of $X$.}
+\step{3}{\pick\ a finite subcover $\{ f^{-1}(V_1), \ldots, f^{-1}(V_n) \}$.}
+\step{4}{$\{ V_1, \ldots, V_n \}$ covers $Y$.}
+\qed
+\end{proof}
+
+\begin{cor}
+Every continuous function from a compact metric space to $\mathbb{R}^k$ is bounded.
 \end{cor}
 
 \part{More Algebra}

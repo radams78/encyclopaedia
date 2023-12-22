@@ -52,5 +52,5 @@
 \contentsline {chapter}{\numberline {13}Continuity}{93}{}%
 \contentsline {section}{\numberline {13.1}Limit of a Function}{93}{}%
 \contentsline {section}{\numberline {13.2}Continuous Functions}{95}{}%
-\contentsline {part}{III\hspace {1em}More Algebra}{97}{}%
-\contentsline {chapter}{\numberline {14}Lie Groups}{99}{}%
+\contentsline {part}{III\hspace {1em}More Algebra}{99}{}%
+\contentsline {chapter}{\numberline {14}Lie Groups}{101}{}%
