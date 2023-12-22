@@ -4883,6 +4883,21 @@ Let $X$ be a compact metric space. Let $f : X \rightarrow \mathbb{R}$. Let $M = 
 \pf\ Since $f(X)$ is compact and hence closed. \qed
 \end{proof}
 
+\begin{thm}
+Let $X$ be a compact metric space and $Y$ a metric space. Let $f : X \approx Y$ be a continuous bijection. Then $f^{-1}$ is continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$V$ be open in $X$.}}
+\step{2}{$X - V$ is compact.}
+\step{3}{$f(X - V)$ is compact.}
+\step{4}{$Y - f(V)$ is compact.}
+\step{5}{$Y - f(V)$ is closed.}
+\step{6}{$f(V)$ is open.}
+\qed
+\end{proof}
+
 \part{More Algebra}
 
 \chapter{Lie Groups}
