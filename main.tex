@@ -3242,14 +3242,18 @@ Every sequence in a compact metric space has a convergent subsequence.
 \end{proof}
 
 \begin{prop}
-Assume $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$. Then $s_n + t_n \rightarrow s + t$.
+\label{prop:limit_of_sum}
+Assume $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{R}^k$. Then $s_n + t_n \rightarrow s + t$.
 \end{prop}
 
 \begin{proof}
 \pf
 \step{1}{\pflet{$\epsilon > 0$}}
-\step{2}{\pick\ $N$ such that, for all $n \geq N$, we have $d(s_n,s) < \epsilon / 2$ and $d(t_n, t) < \epsilon / 2$.}
-\step{3}{For all $n \geq N$ we have $d(s_n + t_n, s + t) < \epsilon$.}
+\step{2}{\pick\ $N$ such that, for all $n \geq N$, we have $\|s_n - s \| < \epsilon / 2$ and $\| t_n - t \| < \epsilon / 2$.}
+\step{3}{For all $n \geq N$ we have $\| (s_n + t_n) - (s + t) \| < \epsilon$.}
+\begin{proof}
+	\pf\ Since $\| (s_n + t_n) - (s + t) \| \leq \| s_n - s \| + \| t_n - t \|$.
+\end{proof}
 \qed
 \end{proof}
 
@@ -3267,6 +3271,7 @@ If $s_n \rightarrow s$ as $n \rightarrow \infty$ in $\mathbb{C}$, and $c \in \ma
 \end{proof}
 
 \begin{prop}
+\label{prop:limit_of_product}
 If $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$ then $s_n t_n \rightarrow st$.
 \end{prop}
 
@@ -3290,6 +3295,7 @@ If $s_n \rightarrow s$ and $t_n \rightarrow t$ in $\mathbb{C}$ then $s_n t_n \ri
 \end{proof}
 
 \begin{prop}
+\label{prop:limit_of_inverse}
 If $s_n \rightarrow s$ as $n \rightarrow \infty$ in $\mathbb{C}$, and every $s_n$ and $s$ is nonzero, then $1/s_n \rightarrow 1/s$ as $n \rightarrow \infty$.
 \end{prop}
 
@@ -3346,14 +3352,11 @@ Let $(\vec{x_n})$ be a sequence in $\mathbb{R}^k$ and $\vec{l} \in \mathbb{R}^k$
 \end{proof}
 
 \begin{cor}
-If $\vec{x_n} \rightarrow \vec{x}$ and $\vec{y_n} \rightarrow \vec{y}$ in $\mathbb{R}^k$, then $\vec{x_n} + \vec{y_n} \rightarrow \vec{x} + \vec{y}$.
-\end{cor}
-
-\begin{cor}
 If $\beta_n \rightarrow \beta$ in $\mathbb{R}$ and $\vec{x_n} \rightarrow \vec{l}$ in $\mathbb{R}^k$, then $\beta_n \vec{x_n} \rightarrow \beta \vec{l}$.
 \end{cor}
 
 \begin{prop}
+\label{prop:limit_of_inner_product}
 If $\vec{x_n} \rightarrow \vec{x}$ and $\vec{y_n} \rightarrow \vec{y}$ in $\mathbb{R}^k$, then $\vec{x_n} \cdot \vec{y_n} \rightarrow \vec{x} \cdot \vec{y}$.
 \end{prop}
 
@@ -4640,6 +4643,7 @@ iff for all $\epsilon > 0$, there exists $\delta > 0$ such that, for all $x \in 
 \end{df}
 
 \begin{thm}
+\label{thm:limits_and_sequences}
 Let $X$ and $Y$ be metric spaces. Let $E \subseteq X$ and $f : E \rightarrow Y$. Let $p$ be a limit point of $E$ and $q \in Y$. Then $f(x) \rightarrow q$ as $x \rightarrow p$ if and only if, for every sequence $(p_n)$ in $E - \{p\}$ with limit $p$, we have $f(p_n) \rightarrow q$ as $n \rightarrow \infty$.
 \end{thm}
 
@@ -4667,6 +4671,152 @@ Let $X$ and $Y$ be metric spaces. Let $E \subseteq X$ and $f : E \rightarrow Y$.
 
 \begin{cor}
 A function has at most one limit at any point.
+\end{cor}
+
+\begin{thm}
+Let $X$ be a metric space, $E \subseteq X$, and $p$ a limit point of $E$. Let $f,g : E \rightarrow \mathbb{R}^k$. Assume $f(x) \rightarrow a$ as $x \rightarrow p$ and $g(x) \rightarrow b$ as $x \rightarrow p$. Then
+\[ f(x) + g(x) \rightarrow a + b \text{ as } x \rightarrow p \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(p_n)$ be a sequence in $E$ that converges to $p$.}}
+\step{2}{$f(p_n) \rightarrow a$ as $n \rightarrow \infty$.}
+\step{3}{$g(p_n) \rightarrow b$ as $n \rightarrow \infty$.}
+\step{4}{$f(p_n) + g(p_n) \rightarrow a + b$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:limit_of_sum}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Theorem \ref{thm:limits_and_sequences}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a metric space, $E \subseteq X$, and $p$ a limit point of $E$. Let $f,g : E \rightarrow \mathbb{C}$. Assume $f(x) \rightarrow a$ as $x \rightarrow p$ and $g(x) \rightarrow b$ as $x \rightarrow p$. Then
+\[ f(x) g(x) \rightarrow a b \text{ as } x \rightarrow p \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(p_n)$ be a sequence in $E$ that converges to $p$.}}
+\step{2}{$f(p_n) \rightarrow a$ as $n \rightarrow \infty$.}
+\step{3}{$g(p_n) \rightarrow b$ as $n \rightarrow \infty$.}
+\step{4}{$f(p_n) g(p_n) \rightarrow ab$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:limit_of_product}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Theorem \ref{thm:limits_and_sequences}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a metric space, $E \subseteq X$, and $p$ a limit point of $E$. Let $f : E \rightarrow \mathbb{C} - \{0\}$. Assume $f(x) \rightarrow a \neq 0$ as $x \rightarrow p$. Then
+\[ f(x)^{-1} \rightarrow a^{-1} \text{ as } x \rightarrow p \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(p_n)$ be a sequence in $E$ that converges to $p$.}}
+\step{2}{$f(p_n) \rightarrow a$ as $n \rightarrow \infty$.}
+\step{4}{$f(p_n)^{-1} \rightarrow a^{-1}$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:limit_of_inverse}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Theorem \ref{thm:limits_and_sequences}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ be a metric space, $E \subseteq X$, and $p$ a limit point of $E$. Let $f,g : E \rightarrow \mathbb{R}^k$. Assume $f(x) \rightarrow a$ as $x \rightarrow p$ and $g(x) \rightarrow b$ as $x \rightarrow p$. Then
+\[ f(x) \cdot g(x) \rightarrow a \cdot b \text{ as } x \rightarrow p \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(p_n)$ be a sequence in $E$ that converges to $p$.}}
+\step{2}{$f(p_n) \rightarrow a$ as $n \rightarrow \infty$.}
+\step{3}{$g(p_n) \rightarrow b$ as $n \rightarrow \infty$.}
+\step{4}{$f(p_n) \cdot g(p_n) \rightarrow a \cdot b$ as $n \rightarrow \infty$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:limit_of_inner_product}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Theorem \ref{thm:limits_and_sequences}.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Continuous Functions}
+
+\begin{df}[Continuous]
+Let $X$ be a metric space, $E \subseteq X$ and $p
+ \in E$. Then $f$ is \emph{continuous} at $p$ iff, for every $\epsilon > 0$, there exists $\delta > 0$ such that, for all $x \in E$, if $d(x,p) < \delta$ then
+\[ d(f(x),f(p)) < \epsilon \enspace . \]
+
+$f$ is \emph{continuous} or \emph{continuous on $E$} iff $f$ is continuous at every point.
+\end{df}
+
+\begin{thm}
+Let $X$ be a metric space, $E \subseteq X$ and $p
+ \in E$ be a limit point of $E$. Then $f$ is continuous at $p$ iff $f(x) \rightarrow f(p)$ as $x \rightarrow p$.
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}
+Let $X$, $Y$ and $Z$ be metric spaces. Let $E \subseteq X$. Let $f : E \rightarrow Y$ and $g : f(E) \rightarrow Z$. Let $p \in E$. If $f$ is continuous at $p$ and $g$ is continuous at $f(p)$ then $g \circ f$ is continuous at $p$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{\pick\ $\delta_1 > 0$ such that, for all $y \in f(E)$, if $d(y,f(p)) < \delta_1$ then $d(g(y),g(f(p))) < \epsilon$.}
+\step{3}{\pick\ $\delta_2 > 0$ such that, for all $x \in E$, if $d(x,p) < \delta_2$ then $d(f(x),f(p)) < \delta_1$.}
+\step{4}{For all $x \in E$, if $d(x,p) < \delta_2$ then $d(g(f(x)),g(f(p))) < \epsilon$.}
+\qed
+\end{proof}
+
+\begin{thm}
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for every open set $V \subseteq Y$, we have $f^{-1}(V)$ is open in $X$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{If $f$ is continuous then, for every open set $V$ in $Y$, we have $f^{-1}(V)$ is open in $X$.}
+\begin{proof}
+	\step{a}{\assume{$f$ is continuous.}}
+	\step{b}{\pflet{$V$ be an open set in $Y$.} \prove{$f^{-1}(V)$ is open.}}
+	\step{c}{\pflet{$x \in f^{-1}(V)$}}
+	\step{d}{\pick\ $\epsilon > 0$ such that $B(f(x),\epsilon) \subseteq V$.}
+	\step{e}{\pick\ $\delta > 0$ such that, for all $x' \in X$, if $d(x',x) < \delta$ then $d(f(x'),f(x)) < \epsilon$.}
+	\step{f}{$B(x,\delta) \subseteq f^{-1}(V)$}
+\end{proof}
+\step{2}{If, for every open set $V$ in $Y$, we have $f^{-1}(V)$ is open in $X$, then $f$ is continuous.}
+\begin{proof}
+	\step{a}{\assume{For every open set $V$ in $Y$, we have $f^{-1}(V)$ is open in $X$.}}
+	\step{b}{\pflet{$p \in X$}}
+	\step{c}{\pflet{$\epsilon > 0$}}
+	\step{d}{$f^{-1}(B(f(p),\epsilon))$ is open in $X$.}
+	\step{e}{\pick\ $\delta > 0$ such that $B(p,\delta) \subseteq f^{-1}(B(f(p), \epsilon))$.}
+	\step{f}{For all $x \in X$, if $d(x,p) < \delta$ then $d(f(x),f(p)) < \epsilon$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is continuous if and only if, for every closed set $C$ in $Y$, we have $f^{-1}(C)$ is closed in $X$.
 \end{cor}
 
 \part{More Algebra}
