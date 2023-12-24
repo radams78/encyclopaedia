@@ -4875,12 +4875,50 @@ Let $X$ be a compact metric space and $Y$ a metric space. Let $f : X \rightarrow
 Every continuous function from a compact metric space to $\mathbb{R}^k$ is bounded.
 \end{cor}
 
+\begin{ex}
+If $E \subseteq \mathbb{R}$ is not compact, then there exists a continuous function $E \rightarrow \mathbb{R}$ that is not bounded.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\case{$E$ is bounded.}}
+\begin{proof}
+	\step{a}{\pick\ a limit point $x_0$ of $E$ that is not in $E$.}
+	\step{b}{Define $f : E \rightarrow \mathbb{R}$ by $f(x) = 1/(x - x_0)$.}
+	\step{c}{$f$ is continuous and unbounded.}
+\end{proof}
+\step{2}{\case{$E$ is unbounded.}}
+\begin{proof}
+	\pf\ The inclusion $E \hookrightarrow \mathbb{R}$ is continuous and unbounded.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{thm}[Extreme Values Theorem]
 Let $X$ be a compact metric space. Let $f : X \rightarrow \mathbb{R}$. Let $M = \sup f(X)$ and $m = \inf f(X)$. Then there exist $p,q \in X$ such that $f(p) = M$ and $f(q) \in m$.
 \end{thm}
 
 \begin{proof}
 \pf\ Since $f(X)$ is compact and hence closed. \qed
+\end{proof}
+
+\begin{ex}
+For any $E \subseteq \mathbb{R}$ that is not compact, there exists a continuous and bounded function $E \rightarrow \mathbb{R}$ that does not attain its supremum.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\case{$E$ is bounded.}}
+\begin{proof}
+	\step{a}{\pick\ a limit point $x_0$ for $E$ such that $x_0 \notin E$.}
+	\step{b}{Define $g : E \rightarrow \mathbb{R}$ by $g(x) = 1/(1 + (x - x_0)^2)$.}
+	\step{c}{$g$ is continuous and bounded but does not attain its supremum 1.}
+\end{proof}
+\step{2}{\case{$E$ is unbounded.}}
+\begin{proof}
+	\pf\ Then $h(x) = x^2/(1+x^2)$ is continuous and bounded but does not attain its supremum 1.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{thm}
@@ -4896,6 +4934,111 @@ Let $X$ be a compact metric space and $Y$ a metric space. Let $f : X \approx Y$ 
 \step{5}{$Y - f(V)$ is closed.}
 \step{6}{$f(V)$ is open.}
 \qed
+\end{proof}
+
+\begin{ex}
+This example shows we cannot remove the hypothesis of compactness of $X$, even if $Y$ is compact.
+
+Let $X = [0, 2 \pi)$. Let $f : X \rightarrow S^1$ be the function $f(t) = (\cos t, \sin t)$. Then $f$ is a continuous bijection $X \approx S^1$, but the inverse $f^{-1}$ is not continuous.
+\end{ex}
+
+\begin{prop}
+The continuous image of a connected metric space is connected.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$X$ be a connected metric space and $Y$ a metric space.}}
+\step{2}{\pflet{$f : X \twoheadrightarrow Y$ be a continuous surjection.}}
+\step{3}{\assume{for a contradiction $A$ and $B$ form a separation of $Y$.}}
+\step{4}{$f^{-1}(A)$ and $f^{-1}(B)$ form a separation of $X$.}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Intermediate Value Theorem]
+Let $f : [a,b] \rightarrow \mathbb{R}$ be continuous. If $f(a) < c < f(b)$ or $f(a) > c > f(b)$, then there exists a real number $x \in (a,b)$ such that $f(x) = c$.
+\end{cor}
+
+\begin{proof}
+\pf\ Since $f([a,b])$ is connected. \qed
+\end{proof}
+
+\begin{ex}
+The converse does not hold. Let $f : [-1,1] \rightarrow \mathbb{R}$ be the function
+\[
+f(x) = \begin{cases}
+\sin 1/x & \text{if } x \neq 0 \\
+0 & \text{if } x = 0
+\end{cases}
+\]
+For all $a,b \in [-1,1]$ with $a < b$, and all $c$ with $f(a) < c < f(b)$, there exists $x \in (a,b)$ such that $f(x) = c$. Nevertheless, $f$ is discontinuous at $0$.
+\end{ex}
+
+\section{Limits from the Left and the Right}
+
+\begin{df}[Limit from the Left]
+Let $f : (a,b) \rightarrow \mathbb{R}$. Let $c \in (a,b]$ and $q \in \mathbb{R}$. Then we say $q$ is the \emph{limit} as $f$ approaches $c$ \emph{from the left}, and write
+\[ f(x) \rightarrow q \text{ as } x \rightarrow c- \]
+or
+\[ \lim_{x \rightarrow c-} f(x) = q \]
+iff, for every sequence $(t_n)$ in $(a,c)$ such that $t_n \rightarrow c$ as $n \rightarrow \infty$, we have $f(t_n) \rightarrow q$ as $n \rightarrow \infty$.
+\end{df}
+
+\begin{df}[Limit from the Right]
+Let $f : (a,b) \rightarrow \mathbb{R}$. Let $c \in [a,b)$ and $q \in \mathbb{R}$. Then we say $q$ is the \emph{limit} as $f$ approaches $c$ \emph{from the right}, and write
+\[ f(x) \rightarrow q \text{ as } x \rightarrow c+ \]
+or
+\[ \lim_{x \rightarrow c+} f(x) = q \]
+iff, for every sequence $(t_n)$ in $(c,b)$ such that $t_n \rightarrow c$ as $n \rightarrow \infty$, we have $f(t_n) \rightarrow q$ as $n \rightarrow \infty$.
+\end{df}
+
+\begin{prop}
+Let $f : (a,b) \rightarrow \mathbb{R}$. Let $c \in (a,b)$ and $q \in \mathbb{R}$. Then $f(x) \rightarrow q$ as $x \rightarrow c$ iff $f(x) \rightarrow q$ as $x \rightarrow c-$ and $f(x) \rightarrow q$ as $x \rightarrow c+$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $f(x) \rightarrow q$ as $x \rightarrow c$ then $f(x) \rightarrow q$ as $x \rightarrow c-$ and $f(x) \rightarrow q$ as $x \rightarrow c+$.}
+\step{2}{If $f(x) \rightarrow q$ as $x \rightarrow c-$ and $f(x) \rightarrow q$ as $x \rightarrow c+$ then $f(x) \rightarrow q$ as $x \rightarrow c$.}
+\qed
+\end{proof}
+
+\section{Uniform Continuity}
+
+\begin{df}[Uniformly Continuous]
+Let $X$ and $Y$ be metric spaces. Let $f : X \rightarrow Y$. Then $f$ is \emph{uniformly continuous} iff, for every $\epsilon > 0$, there exists $\delta > 0$ such that, for all $p,q \in X$, if $d(p,q) < \delta$ then $d(f(p),f(q)) < \epsilon$.
+\end{df}
+
+\begin{thm}
+Let $X$ be a compact metric space and $Y$ a metric space. Let $f : X \rightarrow Y$. If $f$ is continuous then $f$ is uniformly continuous.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$}}
+\step{2}{For all $p \in X$, \pick\ $\phi(p) > 0$ such that, for all $q \in X$, if $d(p,q) < \phi(x)$ then $d(f(p),f(q)) < \epsilon / 2$.}
+\step{3}{For all $p \in X$, \pflet{$J(p) = B(p, \phi(x)/2)$.}}
+\step{4}{$\{ J(p) : p \in X \}$ is an open cover of $X$.}
+\step{5}{\pick\ a finite subcover $\{ J(p_1), \ldots, J(p_n) \}$.}
+\step{6}{\pflet{$\delta = \min(\phi(p_1), \ldots, \phi(p_n)) / 2$}}
+\step{7}{\pflet{$p,q \in X$ with $d(p,q) < \delta$.}}
+\step{8}{\pick\ $m$ such that $p \in J(p_m)$.}
+\step{9}{$d(p,p_m) < \phi(p_m) / 2$}
+\step{10}{$d(q,p_m) < \phi(p_m)$}
+\step{11}{$d(f(p),f(q)) < \epsilon$}
+\qed
+\end{proof}
+
+\begin{ex}
+Let $E \subseteq \mathbb{R}$ be bounded but not compact. Then there exists a continuous function $E \rightarrow \mathbb{R}$ that is not uniformly continuous.
+\end{ex}
+
+\begin{proof}
+\pf\ Pick a limit point $x_0$ for $E$ that is not in $E$. Then the function $f(x) = 1/(x-x_0)$ is continuous but not uniformly continuous. \qed
 \end{proof}
 
 \part{More Algebra}
