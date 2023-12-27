@@ -1,0 +1,9 @@
+module Semicat where
+
+open import Logic public
+
+infix 75 _∘_
+postulate _∘_ : ∀ {A} {B} {C} → B ⇒ C → A ⇒ B → A ⇒ C
+
+postulate AxAssoc : ∀ {A} {B} {C} {D} {f : A ⇒ B} {g : B ⇒ C} {h : C ⇒ D} → Prf (h ∘ (g ∘ f) ≡ (h ∘ g) ∘ f)
+

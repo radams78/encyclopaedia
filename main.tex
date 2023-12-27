@@ -13,6 +13,7 @@
 \usepackage{pf2}
 
 \newtheorem{prop}{Proposition}[chapter]
+\newtheorem{ax}[prop]{Axiom}
 \newtheorem{cor}{Corollary}[prop]
 \newtheorem{thm}[prop]{Theorem}
 \newtheorem{lm}[prop]{Lemma}
@@ -20,6 +21,7 @@
 \newtheorem{df}[prop]{Definition}
 \newtheorem{ex}[prop]{Example}
 
+\newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\diam}{\ensuremath{\operatorname{diam}}}
 
@@ -28,7 +30,281 @@
 \maketitle
 \tableofcontents
 
+\part{Set Theory}
+
+\chapter{Foundations}
+
+\section{The Theory of Semicategories}
+
+Let there be \emph{sets}.
+
+Given sets $A$ and $B$, let there be \emph{functions} from $A$ to $B$. We write $f : A \rightarrow B$ iff $f$ is a function from $A$ to $B$, and call $A$ the \emph{domain} of $f$ and $B$ the \emph{codomain}.
+
+Given functions $f : A \rightarrow B$ and $g : B \rightarrow C$, let there be a function $g \circ f : A \rightarrow C$, the \emph{composite} of $g$ and $f$.
+
+\begin{ax}[Associativity]
+Given functions $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
+\[ h \circ (g \circ f) = (h \circ g) \circ f \enspace . \]
+\end{ax}
+
+\subsection{Identity Functions}
+
+\begin{df}[Identity Function]
+Let $A$ be a set. An \emph{identity function} on $A$ is a function $i : A \rightarrow A$ such that:
+\begin{itemize}
+\item For any set $B$ and function $f : B \rightarrow A$, we have $i \circ f = f$.
+\item For any set $B$ and function $f : A \rightarrow B$, we have $f \circ i = f$.
+\end{itemize}
+\end{df}
+
+\begin{prop}
+A set has at most one identity function.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$A$ be a set.}}
+\step{2}{\pflet{$i,j : A \rightarrow A$ be identity functions.}}
+\step{3}{$i = j$}
+\begin{proof}
+	\pf\ If $i$ and $j$ both satisfy the conditions then $i = i \circ j = j$.
+\end{proof}
+\qed
+\end{proof}
+
+\subsection{Monomorphisms and Epimorphisms}
+
+\begin{df}[Monomorphism]
+We say a function $f : A \rightarrow B$ is a \emph{monomorphism}, and write $f : A \rightarrowtail B$, iff, for any set $X$ and functions $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
+\end{df}
+
+\begin{df}[Epimorphism]
+We say a function $f : A \rightarrow B$ is a \emph{epimorphism}, and write $f : A \twoheadrightarrow B$, iff, for any set $X$ and functions $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
+\end{df}
+
+\section{The Theory of Categories}
+
+\subsection{Minimalist Presentation}
+
+\begin{ax}[Identity Functions]
+Every set has an identity function.
+\end{ax}
+
+\subsection{Practical Presentation}
+
+For any set $A$, let there be a function $\id{A} : A \rightarrow A$.
+
+\begin{ax}[Left Unit Law]
+For any function $f : A \rightarrow B$, we have $\id{B} \circ f = f$.
+\end{ax}
+
+\begin{ax}[Right Unit Law]
+For any function $f : A \rightarrow B$, we have $f \circ \id{A} = f$.
+\end{ax}
+
+\subsection{Sections and Retractions}
+
+\begin{df}[Section, Retraction]
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. We say that $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $r$.
+\end{df}
+
+\subsection{Bijections}
+
+\begin{df}[Bijection]
+We say a function $f : A \rightarrow B$ is \emph{bijective} or a \emph{bijection}, and write $f : A \approx B$, iff there exists a function $g : B \rightarrow A$ such that $f \circ g = \id{B}$ and $g \circ f = \id{A}$.
+\end{df}
+
+\subsection{Terminal Set}
+
+\begin{df}[Terminal Set]
+A set $T$ is \emph{terminal} iff, for any set $X$, there is exactly one function $X \rightarrow T$.
+\end{df}
+
+\begin{ax}[Terminal Set]
+There exists a terminal set.
+\end{ax}
+
+\begin{prop}
+For any terminal sets $T$ and $T'$, there is a unique bijection $T \approx T'$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$i$ be the unique function $T \rightarrow T'$.}}
+\step{2}{\pflet{$j$ be the unique function $T' \rightarrow T$.}}
+\step{3}{$i \circ j = \id{T'}$}
+\begin{proof}
+	\pf\ Since there is only one function $T' \rightarrow T'$.
+\end{proof}
+\step{4}{$j \circ i = \id{T}$}
+\begin{proof}
+	\pf\ Since there is only one function $T \rightarrow T$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Terminal Set]
+We denote the terminal set by $1$.
+\end{df}
+
+\begin{df}[Element]
+An \emph{element} of a set $A$ is a function $1 \rightarrow A$. We write $a \in A$ for $a : 1 \rightarrow A$. Given $a \in A$ and $f : A \rightarrow B$, we write $f(a)$ for $f \circ a$.
+\end{df}
+
+\begin{ax}[Extensionality]
+Let $f, g : A \rightarrow B$. Assume that, for all $a \in A$, if $f(a) = g(a)$ then $f = g$.
+\end{ax}
+
+\begin{df}[Injective]
+We say a function $f : A \rightarrow B$ is \emph{injective} or an \emph{injection}, and we write $f : A \rightarrowtail B$, iff, for any $x,y \in A$, if $f(x) = f(y)$ then $x = y$.
+\end{df}
+
+\begin{df}[Surjective]
+We say a function $f : A \rightarrow B$ is \emph{surjective} or a \emph{surjection}, and we write $f : A \twoheadrightarrow B$, iff, for any $y \in B$, there exists $x \in A$ such that $f(x) = y$.
+\end{df}
+
+\subsection{Empty Set}
+
+\begin{ax}[Empty Set]
+There exists a set with no elements.
+\end{ax}
+
+\subsection{Products}
+
+\begin{df}[Product]
+Let $A$, $B$ and $P$ be sets, and $\pi_1 : P \rightarrow A$, $\pi_2 : P \rightarrow B$. Then we say that $(P, \pi_1, \pi_2)$ is a \emph{product} of $A$ and $B$ iff, for any set $X$ and functions $f : X \rightarrow A$ and $g : X \rightarrow B$, there exists a unique function $h : X \rightarrow A \times B$ such that
+\[ \pi_1 \circ h = f, \qquad \pi_2 \circ h = g \enspace . \]
+\end{df}
+
+\begin{ax}[Products]
+Any two sets have a product.
+\end{ax}
+
+\begin{prop}
+If $(P, p_1, p_2)$ and $(Q, q_1, q_2)$ are products of $A$ and $B$, then there exists a unique bijection $\phi : P \approx Q$ such that $q_1 \circ \phi = p_1$ and $q_2 \circ \phi = p_2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : P \rightarrow Q$ be the unique function such that $q_1 \circ \phi = p_1$ and $q_2 \circ \phi = p_2$.}}
+\step{2}{\pflet{$\phi^{-1} : Q \rightarrow P$ be the unique function such that $p_1 \circ \phi = q_1$ and $p_2 \circ \phi = q_2$.}}
+\step{3}{$\phi \circ \phi^{-1} = \id{Q}$}
+\begin{proof}
+	\pf\ Each is the unique $x : Q \rightarrow Q$ such that $q_1 \circ x = q_1$ and $q_2 \circ x = q_2$.
+\end{proof}
+\step{4}{$\phi^{-1} \circ \phi = \id{P}$}
+\begin{proof}
+	\pf\ Each is the unique $x : P \rightarrow P$ such that $p_1 \circ x = p_1$ and $p_2 \circ x = p_2$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+Given sets $A$ and $B$, we write $A \times B$ for the product of $A$ and $B$, with projections $\pi_1 : A \times B \rightarrow A$ and $\pi_2 : A \times B \rightarrow B$. Given functions $f : A \rightarrow B$ and $g : A \rightarrow C$, we write $\langle f,g \rangle$ for the unique function $A \rightarrow B \times C$ such that
+\[ \pi_1 \circ \langle f,g \rangle = f, \qquad \pi_2 \circ \langle f,g \rangle = g \enspace . \]
+\end{df}
+
+\begin{df}
+Given $f : A \rightarrow B$ and $g : C \rightarrow D$, we define $f \times g : A \times C \rightarrow B \times D$ by
+\[ f \times g = \langle f \circ \pi_1, g \circ \pi_2 \rangle \enspace . \]
+\end{df}
+
+\subsection{Function Sets}
+
+\begin{df}[Function Set]
+Let $A$, $B$ and $F$ be sets, and let $\epsilon : F \times A \rightarrow B$. Then we say that $F$ and $\epsilon$ form the \emph{function set} from $A$ to $B$, with $\epsilon$ the \emph{evaluation function}, iff, for any set $X$ and function $f : X \times A \rightarrow B$, there exists a unique function $g : X \rightarrow F$ such that
+\[ \epsilon \circ (g \times \id{A}) = f \enspace . \]
+\end{df}
+
+\begin{ax}[Function Sets]
+Any two sets have a function set.
+\end{ax}
+
+\begin{prop}
+Let $(F, \epsilon : F \times A \rightarrow B)$ and $(G, e : G \times A \rightarrow B)$ be function sets from $A$ to $B$. Then there exists a unique bijection $\phi : F \approx G$ such that $e \circ (\phi \times \id{A}) = \epsilon$.
+\end{prop}
+
+%TODO
+
+\begin{df}
+Given sets $A$ and $B$, we write $B^A$ for the function set from $A$ to $B$, and $\epsilon : B^A \times A \rightarrow B$ for the evaluation function. Given $f : X \times A \rightarrow B$, we write $\lambda f$ for the unique function $X \rightarrow B^A$ such that
+\[ \epsilon \circ (\lambda f \times \id{A}) = f \enspace . \]
+\end{df}
+
+\subsection{Inverse Images}
+
+\begin{df}[Inverse Image]
+Let $A$, $B$ and $I$ be sets. Let $f : A \rightarrow B$, $b \in B$ and $i : I \rightarrow A$. Then we say that $I$ and $i$ form the \emph{inverse image} of $b$ under $f$ iff:
+\begin{itemize}
+\item $f \circ i = b \circ !_I$
+\item For any set $X$ and function $j : X \rightarrow A$, if $f \circ j = b \circ !_X$, then there exists a unique $\overline{j} : X \rightarrow I$ such that $i \circ \overline{j} = j$.
+\end{itemize}
+\end{df}
+
+\begin{ax}[Inverse Images]
+Given any sets $A$ and $B$, function $f : A \rightarrow B$, and element $b \in B$, there exists an inverse image of $b$ under $f$.
+\end{ax}
+
+\begin{prop}
+If $(I, i : I \rightarrow A)$ and $(J, j : J \rightarrow A)$ are inverse images of $b \in B$ under $f : A \rightarrow B$, then there exists a unique isomorphism $\phi : I \approx J$ such that $j \circ \phi = i$.
+\end{prop}
+
+%TODO
+
+\begin{df}
+Let $f : A \rightarrow B$ and $b \in B$. We write $f^{-1}(b)$ and $i_{f,b} : f^{-1}(b) \rightarrow A$ for the inverse image of $b$ under $f$.
+\end{df}
+
+\subsection{Subset Classifiers}
+
+\begin{df}[Subset Classifier]
+Let $\Omega$ be a set and $\top \in \Omega$. Then we say $(\Omega, \top)$ form a \emph{subset classifier} iff, for any sets $A$ and $X$ and injection $j : A \rightarrowtail X$, there exists a unique $\chi : X \rightarrow \Omega$ such that $(A, j)$ is the inverse image of $\top$ under $\chi$.
+\end{df}
+
+\begin{ax}[Subset Classifier]
+There exists a subset classifier.
+\end{ax}
+
+\begin{prop}
+If $(\Omega, \top)$ and $(\Omega', \top')$ are subset classifiers, then there exists a unique bijection $\phi : \Omega \approx \Omega'$ such that $\phi(\top) = \top'$.
+\end{prop}
+
+%TODO
+
+\begin{df}
+We write $2$ and $\top \in 2$ for the subset classifier.
+\end{df}
+
+\subsection{Natural Number Sets}
+
+\begin{df}[Natural Number Set]
+Let $N$ be a set, $z \in N$ and $s : N \rightarrow N$. Then we say $(N,z,s)$ is a \emph{natural number set} iff, for any set $X$, element $a \in X$ and function $f : X \rightarrow X$, there exists a unique $r : N \rightarrow X$ such that
+\[ r(z) = a, \qquad f \circ r = r \circ s \enspace . \]
+\end{df}
+
+\begin{ax}[Infinity]
+There exists a natural number set.
+\end{ax}
+
+\begin{prop}
+If $(N,z,s)$ and $(N',z',s')$ are natural number sets, then there exists a unique bijection $\phi : N \approx N'$ such that $\phi(z) = z'$ and $s' \circ \phi = \phi \circ s$.
+\end{prop}
+
+%TODO
+
+\begin{df}
+We write $\mathbb{N}$, $0 \in \mathbb{N}$ and $\mathrm{s} : \mathbb{N} \rightarrow \mathbb{N}$ for the natural number set.
+\end{df}
+
+\subsection{The Axiom of Choice}
+
+\begin{df}[Axiom of Choice]
+Every surjection is a retraction.
+\end{df}
+
 \chapter{Set Theory}
+
+
 
 \begin{prop}
 Every infinite subset of a countably infinite set is countable.
@@ -1778,6 +2054,24 @@ Every $k$-cell is convex.
 \pf\ Since $\lambda a_1 + (1-\lambda) a_i \leq \lambda x_i + (1 - \lambda) y_i \leq \lambda b_i + (1 - \lambda) b_i$.
 \end{proof}
 \qed
+\end{proof}
+
+\section{Linear Transformations}
+
+\begin{df}[Norm]
+For $A \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^m]$, define the \emph{norm} of $A$ to be
+\[ \| A \| := \{ \| A \vec{x} \| : \vec{x} \in \mathbb{R}^n, \| \vec{x} \| = 1 \} \enspace . \]
+
+We prove that this always exists.
+\end{df}
+
+\begin{proof}
+\pf\ Since for $(x_1, \ldots, x_n) \in \mathbb{R}^n$ with $x_1^2 + \cdots + x_n^, = 1$ we have
+\begin{align*}
+\| A (x_1, \ldots, x_n) \| & = \| \sum_{i=1}^n x_i A \vec{e_i} \| \\
+& \leq \sum_{i=1}^n |x_i| \| A \vec{e_i} \| \\
+& \leq \sum_{i=1}^n \| A \vec{e_i} \| & \qed
+\end{align*}
 \end{proof}
 
 \chapter{Real Inner Product Spaces}
@@ -5003,9 +5297,76 @@ Let $f : (a,b) \rightarrow \mathbb{R}$. Let $c \in (a,b)$ and $q \in \mathbb{R}$
 \begin{proof}
 \pf
 \step{1}{If $f(x) \rightarrow q$ as $x \rightarrow c$ then $f(x) \rightarrow q$ as $x \rightarrow c-$ and $f(x) \rightarrow q$ as $x \rightarrow c+$.}
+\begin{proof}
+	\pf\ Theorem \ref{thm:limits_and_sequences}.
+\end{proof}
 \step{2}{If $f(x) \rightarrow q$ as $x \rightarrow c-$ and $f(x) \rightarrow q$ as $x \rightarrow c+$ then $f(x) \rightarrow q$ as $x \rightarrow c$.}
+\begin{proof}
+	\step{a}{\assume{$f(x) \rightarrow q$ as $x \rightarrow c-$ and $f(x) \rightarrow q$ as $x \rightarrow c+$.}}
+	\step{b}{\assume{for a contradiction $f(x) \nrightarrow q$ as $x \rightarrow c$.}}
+	\step{c}{\pick\ a sequence $(p_n)$ such that $p_n \rightarrow c$ as $n \rightarrow \infty$, $f(p_n) \nrightarrow q$ as $n \rightarrow \infty$, and $p_n \neq c$ for all $n$.}
+	\step{d}{\case{There are only finitely many $n$ such that $p_n > c$.}}
+	\begin{proof}
+		\step{i}{\pflet{$(q_n)$ be the subsequence of $(p_n)$ consisting of all the terms such that $p_n < c$.}}
+		\step{ii}{$q_n \rightarrow c$ as $n \rightarrow \infty$.}
+		\step{iii}{$f(q_n) \nrightarrow q$ as $n \rightarrow \infty$.}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{a}.
+		\end{proof}
+	\end{proof}
+	\step{e}{\case{There are only finitely many $n$ such that $p_n < c$.}}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+	\step{f}{\case{There are infinitely many $n$ such that $p_n > c$ and infinitely many $n$ such that $p_n < c$.}}
+	\begin{proof}
+		\step{i}{\pflet{$(q_n)$ the subsequence of $(p_n)$ consisting of all the terms such that $p_n > c$, and $(r_n)$ the subsequence consisting of all the terms such that $p_n < c$.}}
+		\step{ii}{$q_n \rightarrow c$ as $n \rightarrow \infty$ and $r_n \rightarrow c$ as $n \rightarrow \infty$.}
+		\step{iii}{It is not the case that $f(q_n) \rightarrow q$ as $n \rightarrow \infty$ and $f(r_n) \rightarrow q$ as $n \rightarrow \infty$.}
+		\begin{proof}
+			\pf\ If $f(q_n) \rightarrow q$ as $n \rightarrow \infty$ and $f(r_n) \rightarrow q$ as $n \rightarrow \infty$ then $f(p_n) \rightarrow q$ as $n \rightarrow \infty$.
+		\end{proof}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{a}.
+		\end{proof}
+	\end{proof}
+\end{proof}
 \qed
 \end{proof}
+
+\begin{prop}
+Let $f : (a,b) \rightarrow \mathbb{R}$ be monotonic. Then, for all $c \in (a,b)$ we have $\lim_{x \rightarrow c-} f(x)$ and $\lim_{x \rightarrow c+}f(x)$ both exist, and
+\[ \sup_{a < x < c} f(x) = \lim_{x \rightarrow c-}f(x) \leq f(c) \leq \lim_{x \rightarrow c+} f(x) = \inf_{c < x < b} f(x) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $f$ is monotonically increasing on $(a,b)$.}}
+\step{2}{$f(x) \rightarrow \sup_{a < x < c} f(x)$ as $x \rightarrow c-$.}
+\begin{proof}
+	\step{a}{\pflet{$(t_n)$ be a sequence in $(a,c)$ such that $t_n \rightarrow c$ as $n \rightarrow \infty$.} \prove{$f(t_n) \rightarrow \sup_{a < x < c} f(x)$ as $n \rightarrow \infty$.}}
+	\step{b}{\pflet{$\epsilon > 0$}}
+	\step{c}{\pick\ $x \in (a,c)$ such that $f(x)$}
+	%TODO
+\end{proof}
+\step{3}{$f(x) \rightarrow \inf_{c < x < b} f(x)$ as $x \rightarrow c+$.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Discontinuities}
+
+\begin{df}[Simple Discontinuity]
+Let $f : (a,b) \rightarrow \mathbb{R}$ and $c \in (a,b)$. We say $f$ has a \emph{simple discontinuity} or \emph{discontinuity of the first kind} at $c$ iff $f$ is discontinuous at $c$ but $\lim_{x \rightarrow c+} f(x)$ and $\lim_{x \rightarrow c-} f(x)$ both exist.
+\end{df}
+
+\begin{df}[Discontinuity of the Second Kind]
+Let $f : (a,b) \rightarrow \mathbb{R}$ and $c \in (a,b)$. We say $f$ has a \emph{discontinuity of the second kind} at $c$ iff  $\lim_{x \rightarrow c+} f(x)$ and $\lim_{x \rightarrow c-} f(x)$ do not both exist.
+\end{df}
 
 \section{Uniform Continuity}
 
@@ -5039,6 +5400,14 @@ Let $E \subseteq \mathbb{R}$ be bounded but not compact. Then there exists a con
 
 \begin{proof}
 \pf\ Pick a limit point $x_0$ for $E$ that is not in $E$. Then the function $f(x) = 1/(x-x_0)$ is continuous but not uniformly continuous. \qed
+\end{proof}
+
+\begin{prop}
+Every linear transformation $A : \mathbb{R}^n \rightarrow \mathbb{R}^m$ is uniformly continuous.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\| A \vec{x} - A \vec{y} \| \leq \| A \| \| \vec{x} - \vec{y} \|$ for all $\vec{x}, \vec{y} \in \mathbb{R}^n$. \qed
 \end{proof}
 
 \part{More Algebra}
