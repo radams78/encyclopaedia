@@ -2028,6 +2028,43 @@ The set of algebraic numbers is countable.
 \pf\ There are countably many finite sequences of integers $(a_0, a_1, \ldots, a_n)$, and for each one, there are only finitely many complex numbers $z$ such that $a_0 z^n + a_1 z^{n-1} + \cdots + a_n = 0$. \qed
 \end{proof}
 
+\part{Category Theory}
+
+\chapter{Categories}
+
+\begin{df}[Category]
+A \emph{category} $\mathcal{C}$ consists of:
+\begin{itemize}
+\item a preset $|\mathcal{C}|$ of \emph{objects};
+\item for any objects $A$ and $B$, a set $\mathcal{C}[A,B]$ of \emph{morphisms} from $A$ to $B$. We write $f : A \rightarrow B$ for $f \in \mathcal{C}[A,B]$, and call $A$ the \emph{source} of $f$ and $B$ the \emph{target}.
+\item for any object $A$, a morphism $\id{A} : A \rightarrow A$, the \emph{identity} morphism on $A$
+\item for any morphisms $f : A \rightarrow B$ and $g : B \rightarrow C$, a morphism $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+\end{itemize}
+such that:
+\begin{description}
+\item[Associativity] For any morphisms $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have
+\[ h \circ (g \circ f) = (h \circ g) \circ f \]
+\item[Left Unit Law]
+For any morphism $f : A \rightarrow B$, we have
+\[ \id{B} \circ f = f \]
+\item[Right Unit Law]
+For any morphism $f : A \rightarrow B$, we have
+\[ f \circ \id{A} = f \]
+\end{description}
+\end{df}
+
+\begin{ex}
+For any preset of sets $\mathcal{U}$, the category $\mathbf{Set}_\mathcal{U}$ with objects $\mathcal{U}$ and morphisms all functions is a category.
+\end{ex}
+
+\section{Isomorphisms}
+
+\begin{df}[Isomorphism]
+We say a morphism $f : A \rightarrow B$ is an \emph{isomorphism}, and write $f : A \cong B$, iff there exists a morphism $g : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ g = \id{B}$ and $g \circ f = \id{A}$.
+
+Objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
+\end{df}
+
 \part{Linear Algebra}
 
 \newcommand{\tr}[1]{\ensuremath{\operatorname{tr}}}
@@ -2072,6 +2109,76 @@ We prove that this always exists.
 & \leq \sum_{i=1}^n |x_i| \| A \vec{e_i} \| \\
 & \leq \sum_{i=1}^n \| A \vec{e_i} \| & \qed
 \end{align*}
+\end{proof}
+
+\begin{prop}
+Given $A,B \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^m]$, we have
+\[ \| A + B \| \leq \| A \| + \| B \| \]
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\| A \vec{x} + B \vec{x} \| \leq \| A \vec{x} \| + \| B \vec{x} \|$. \qed
+\end{proof}
+
+\begin{prop}
+Given $A \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^m$ and $c \in \mathbb{R}$, we have
+\[ \| c A \| = |c| \| A \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\| c A \vec{x} \| = |c| \| A \vec{x} \|$. \qed
+\end{proof}
+
+\begin{prop}
+Given $A \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^m]$ and $B \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^m, \mathbb{R}^k]$, we have
+\[ \| BA \| \leq \| B \| \| A \| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\| BA \vec{x} \| \leq \| B \| \| A \vec{x} \| \leq \| B \| \| A \| \| \vec{x} \|$. \qed
+\end{proof}
+
+\begin{lm}
+\label{lm:pre_norm_inverse}
+Let $A,B \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^m]$ with $A$ invertible. Let $\alpha = 1/\| A^{-1}\|$ and $\beta = \| B - A \|$. Then, for all $\vec{x} \in \mathbb{R}^n$, we have
+\[ (\alpha - \beta) \| \vec{x} \| \leq \| B \vec{x} \| \enspace . \]
+\end{lm}
+
+\begin{proof}
+	\pf
+	\begin{align*}
+		\alpha \| \vec{x} \|
+		& = \alpha \| A^{-1} A \vec{x} \| \\
+		& \leq \alpha \| A^{-1} \| \| A \vec{x} \| \\
+		& = \| A \vec{x} \| \\
+		& \leq \| (A - B) \vec{x} \| + \| B \vec{x} \| \\
+		& \leq \beta \| \vec{x} \| + \| B \vec{x} \| & \qed
+	\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:norm_inverse}
+Let $A,B \in \mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^n]$. If $A$ is invertible and
+\[ \| B - A \| \| A^{-1} \| < 1 \]
+then $B$ is invertible.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha = 1 / \| A^{-1} \|$}}
+\step{2}{\pflet{$\beta = \| B - A \|$}}
+\step{3}{$\beta < \alpha$}
+\step{4}{For all $\vec{x} \in \mathbb{R}^n$ we have $\alpha \| \vec{x} \| \leq \beta \| \vec{x} \| + \| B \vec{x} \|$}
+\begin{proof}
+	\pf\ Lemma \ref{lm:pre_norm_inverse}.
+\end{proof}
+\step{5}{For all $\vec{x} \in \mathbb{R}^n$ we have
+\[ (\alpha - \beta) \| \vec{x} \| \leq \| B \vec{x} \| \enspace . \]}
+\step{6}{$\ker B = 0$}
+\begin{proof}
+	\pf\ Since $\alpha - \beta > 0$ so if $\| \vec{x} \| > 0$ then $\| B \vec{x} \| > 0$.
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Real Inner Product Spaces}
@@ -2382,6 +2489,10 @@ For any set $X$, the \emph{discrete} metric on $X$ is defined by
 \end{cases} \]
 \end{ex}
 
+\begin{ex}
+$\mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^m]$ is a metric space under $d(A,B) = \| A - B \|$.
+\end{ex}
+
 \begin{prop}
 Let $(X,d)$ be a metric space and $Y$ a subset of $X$. Then $d \restriction Y^2$ is a metric on $Y$.
 \end{prop}
@@ -2653,6 +2764,14 @@ Let $X$ be a metric space. Let $Y \subseteq X$ and $E \subseteq Y$. Then $E$ is 
 	\step{d}{The open ball in $Y$ with centre $p$ and radius $r$ is included in $G \cap Y$.}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+The set $\Omega$ of all invertible linear transformations is an open set in $\mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^n]$.
+\end{prop}
+
+\begin{proof}
+\pf\ For $A \in \Omega$ we have $B(A, 1/\|A^{-1}\|) \subseteq \Omega$ by Proposition \ref{prop:norm_inverse}. \qed
 \end{proof}
 
 \section{Perfect Sets}
@@ -5272,6 +5391,41 @@ f(x) = \begin{cases}
 For all $a,b \in [-1,1]$ with $a < b$, and all $c$ with $f(a) < c < f(b)$, there exists $x \in (a,b)$ such that $f(x) = c$. Nevertheless, $f$ is discontinuous at $0$.
 \end{ex}
 
+\begin{prop}
+Let $\Omega$ be the set of all invertible linear transformations in $\mathbf{Vect}_\mathbb{R}[\mathbb{R}^n, \mathbb{R}^n]$. Then the function that sends $A$ to $A^{-1}$ is a continuous function $\Omega \rightarrow \Omega$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\epsilon > 0$ and $A \in \Omega$}}
+\step{1a}{\pflet{$\alpha = 1/\| A^{-1} \|$}}
+\step{2}{\pflet{$\delta = \alpha^2 \epsilon / (1 + \alpha \epsilon)$}}
+\step{3}{\pflet{$B \in \Omega$ with $\| B - A \| < \delta$.}}
+\step{3a}{$\| B^{-1} \| \leq (\alpha - \delta)^{-1}$}
+\begin{proof}
+	\step{i}{For all $\vec{y} \in \mathbb{R}^n$ we have $(\alpha - \delta) \| B^{-1} \vec{y} \| \leq \| \vec{y} \|$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			(\alpha - \delta) \| B^{-1} \vec{y} \|
+			& < (\alpha - \| B - A \|) \| B^{-1} \vec{y} \| & (\text{\stepref{3}}) \\
+			& \leq \| B B^{-1} \vec{y} \| & (\text{Lemma \ref{lm:pre_norm_inverse}}) \\
+			& = \| \vec{y} \|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{$\| B^{-1} - A^{-1} \| < \epsilon$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| B^{-1} - A^{-1} \| & \leq \| B^{-1} \| \| B - A \| \| A^{-1} \| & (\text{since } B^{-1} - A^{-1} = B^{-1} (A - B) A^{-1}) \\
+		& < \frac{\delta}{\alpha(\alpha - \delta)}  & (\text{\stepref{1a}, \stepref{3}, \stepref{3a}}) \\
+		& = \epsilon & (\text{\stepref{2}})
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Limits from the Left and the Right}
 
 \begin{df}[Limit from the Left]
@@ -5408,6 +5562,80 @@ Every linear transformation $A : \mathbb{R}^n \rightarrow \mathbb{R}^m$ is unifo
 
 \begin{proof}
 \pf\ Since $\| A \vec{x} - A \vec{y} \| \leq \| A \| \| \vec{x} - \vec{y} \|$ for all $\vec{x}, \vec{y} \in \mathbb{R}^n$. \qed
+\end{proof}
+
+\part{Analysis}
+
+\chapter{Differentiation}
+
+\begin{df}[Derivative]
+Let $E$ be an open set in $\mathbb{R}^n$. Let $f : E \rightarrow \mathbb{R}^m$. Let $\vec{x} \in E$. Let $A : \mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation. Then we say $A$ is the \emph{derivative} of $f$ at $\vec{x}$, and write $f'(\vec{x}) = A$, iff
+\[ \frac{\| f(\vec{x} + \vec{h}) - f(\vec{x}) - A(\vec{h}) \|}{\| \vec{h} \|} \rightarrow 0 \text{ as } \vec{h} \rightarrow \vec{0} \enspace . \]
+
+We say $f$ is \emph{differentiable} at $\vec{x}$ iff $f$ has a derivative at $\vec{x}$.
+
+We say $f$ is \emph{differentiable} on $E$ iff $f$ is differentiable at every point in $E$. In this case, the \emph{differential} or \emph{total derivative} $f'$ is the function that maps a point $\vec{x}$ to the derivative at that point.
+\end{df}
+
+\begin{prop}
+A function has at most one derivative at any point.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$A_1$ and $A_2$ are derivatives of $f$ at $\vec{x}$.}}
+\step{2}{\pflet{$B = A_1 - A_2$}}
+\step{3}{For all $\vec{h}$ such that $\vec{x} + \vec{h} \in E$ we have
+\[ \| B (\vec{h}) \| \leq \| f(\vec{x} + \vec{h}) - f(\vec{x}) - A_1(\vec{h}) \| + \| f(\vec{x} + \vec{h}) - f(\vec{x}) - A_2(\vec{h}) \| \]}
+\step{4}{$\| B (\vec{h}) \| / \| \vec{h} \| \rightarrow 0$ as $\vec{h} \rightarrow \vec{0}$.}
+\step{5}{For $\vec{h} \neq \vec{0}$ such that $\vec{x} + \vec{h} \in E$ we have
+\[ \frac{\| B(t \vec{h}) \|}{\|t \vec{h}\|} \rightarrow 0 \text{ as } t \rightarrow 0 \enspace . \]}
+\step{6}{For $\vec{h} \neq \vec{0}$ such that $\vec{x} + \vec{h} \in E$ we have
+\[ \frac{\| B (\vec{h})\|}{\| \vec{h}\|} \rightarrow 0 \text{ as } t \rightarrow 0 \enspace . \]}
+\begin{proof}
+	\pf\ Since $B$ is linear.
+\end{proof}
+\step{7}{For $\vec{h} \neq \vec{0}$ such that $\vec{x} + \vec{h} \in E$ we have $B \vec{h} = \vec{0}$}
+\step{8}{$B = 0$}
+\step{9}{$A_1 = A_2$}
+\qed
+\end{proof}
+
+\begin{prop}
+A linear transformation is its own derivative.
+\end{prop}
+
+\begin{proof}
+	\pf\ If $A$ is linear then
+	\begin{align*}
+		\frac{\| A(\vec{x} + \vec{h}) - A(\vec{x}) - A(\vec{h})\|}{\| \vec{h}\|} & = 0 & \qed
+	\end{align*}
+\end{proof}
+
+\begin{thm}[Chain Rule]
+Let $E$ be an open set in $\mathbb{R}^n$ and $U$ an open set in $\mathbb{R}^m$. Let $f : E \rightarrow U$ and $g : U \rightarrow \mathbb{R}^k$. Let $\vec{x_0} \in E$. If $f$ is differentiable at $\vec{x_0}$ and $g$ is differentiable at $f(\vec{x_0})$, then $g \circ f$ is differentiable at $\vec{x_0}$ and
+\[ (g \circ f)'(\vec{x_0}) = g'(f(\vec{x_0})) \circ f'(\vec{x_0}) \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\vec{y_0} = f(\vec{x_0})$}}
+\step{2}{\pflet{$A = f'(\vec{x_0})$}}
+\step{3}{\pflet{$B = g'(\vec{y_0})$}}
+\step{4}{For $\vec{h}$ such that $\vec{x_0} + \vec{h} \in E$, \pflet{$u(\vec{h}) = f(\vec{x_0} + \vec{h}) - f(\vec{x_0}) + A(\vec{h})$ \enspace .}}
+\step{5}{For $\vec{k}$ such that $\vec{y_0} + \vec{k} \in U$, \pflet{$v(\vec{k}) = g(\vec{y_0} + \vec{k}) - g(\vec{y_0}) + B(\vec{k})$ \enspace . }}
+\step{6}{For $\vec{h}$ non-zero such that $\vec{x_0} + \vec{h} \in E$, \pflet{$\epsilon(\vec{h}) = \| u(\vec{h})\| / \|\vec{h}\|$ \enspace .}}
+\step{7}{For $\vec{k}$ non-zero such that $\vec{y_0} + \vec{k} \in U$, \pflet{$\eta(\vec{k}) = \| v(\vec{k}) \| / \| \vec{k} \|$ \enspace . }}
+\step{8}{$\epsilon(\vec{h}) \rightarrow 0$ as $\vec{h} \rightarrow \vec{0}$}
+\begin{proof}
+	\pf\ \stepref{2}, \stepref{4}, \stepref{6}.
+\end{proof}
+\step{9}{$\eta(\vec{k}) \rightarrow 0$ as $\vec{k} \rightarrow \vec{0}$}
+\begin{proof}
+	\pf\ \stepref{3}, \stepref{5}, \stepref{7}
+\end{proof}
+\step{10}{For $\vec{h}$ such that $\vec{x_0} + \vec{h} \in E$, \pflet{$k(\vec{h}) = f(\vec{x_0} + \vec{h}) - f(\vec{x_0})$ \enspace . }}
+%TODO
 \end{proof}
 
 \part{More Algebra}

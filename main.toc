@@ -30,49 +30,54 @@
 \contentsline {section}{\numberline {6.3}The Extended Real Number System}{38}{}%
 \contentsline {chapter}{\numberline {7}Complex Analysis}{41}{}%
 \contentsline {section}{\numberline {7.1}Algebraic Numbers}{45}{}%
-\contentsline {part}{II\hspace {1em}Linear Algebra}{47}{}%
-\contentsline {chapter}{\numberline {8}Vector Spaces}{49}{}%
-\contentsline {section}{\numberline {8.1}Convex Sets}{49}{}%
-\contentsline {section}{\numberline {8.2}Linear Transformations}{49}{}%
-\contentsline {chapter}{\numberline {9}Real Inner Product Spaces}{51}{}%
-\contentsline {section}{\numberline {9.1}Balls}{52}{}%
-\contentsline {chapter}{\numberline {10}Complex Inner Product Spaces}{53}{}%
-\contentsline {section}{\numberline {10.1}Hilbert Spaces}{54}{}%
-\contentsline {chapter}{\numberline {11}Lie Algebras}{55}{}%
-\contentsline {section}{\numberline {11.1}Lie Algebar Homomorphisms}{56}{}%
-\contentsline {part}{III\hspace {1em}Topology}{57}{}%
-\contentsline {chapter}{\numberline {12}Metric Spaces}{59}{}%
-\contentsline {section}{\numberline {12.1}Balls}{59}{}%
-\contentsline {section}{\numberline {12.2}Limit Points}{60}{}%
-\contentsline {section}{\numberline {12.3}Closed Sets}{60}{}%
-\contentsline {section}{\numberline {12.4}Interior Points}{60}{}%
-\contentsline {section}{\numberline {12.5}Open Sets}{61}{}%
-\contentsline {section}{\numberline {12.6}Perfect Sets}{63}{}%
-\contentsline {section}{\numberline {12.7}Bounded Sets}{64}{}%
-\contentsline {section}{\numberline {12.8}Dense Sets}{64}{}%
-\contentsline {section}{\numberline {12.9}Closure}{64}{}%
-\contentsline {section}{\numberline {12.10}Compact Sets}{66}{}%
-\contentsline {section}{\numberline {12.11}Connected Sets}{71}{}%
-\contentsline {section}{\numberline {12.12}Separable Spaces}{73}{}%
-\contentsline {section}{\numberline {12.13}Bases}{74}{}%
-\contentsline {section}{\numberline {12.14}Condensation Points}{74}{}%
-\contentsline {chapter}{\numberline {13}Convergence}{77}{}%
-\contentsline {section}{\numberline {13.1}Cauchy Sequences}{83}{}%
-\contentsline {section}{\numberline {13.2}Complete Metric Spaces}{83}{}%
-\contentsline {section}{\numberline {13.3}Divergent Sequences}{85}{}%
-\contentsline {section}{\numberline {13.4}Infinite Series}{89}{}%
-\contentsline {section}{\numberline {13.5}The Number $e$}{92}{}%
-\contentsline {section}{\numberline {13.6}Power Series}{94}{}%
-\contentsline {section}{\numberline {13.7}Summation by Parts}{95}{}%
-\contentsline {section}{\numberline {13.8}Absolute Convergence}{97}{}%
-\contentsline {section}{\numberline {13.9}Addition and Multiplication of Series}{97}{}%
-\contentsline {section}{\numberline {13.10}Rearrangements}{100}{}%
-\contentsline {section}{\numberline {13.11}Completion of a Metric Space}{102}{}%
-\contentsline {chapter}{\numberline {14}Continuity}{103}{}%
-\contentsline {section}{\numberline {14.1}Limit of a Function}{103}{}%
-\contentsline {section}{\numberline {14.2}Continuous Functions}{105}{}%
-\contentsline {section}{\numberline {14.3}Limits from the Left and the Right}{109}{}%
-\contentsline {section}{\numberline {14.4}Discontinuities}{110}{}%
-\contentsline {section}{\numberline {14.5}Uniform Continuity}{110}{}%
-\contentsline {part}{IV\hspace {1em}More Algebra}{113}{}%
-\contentsline {chapter}{\numberline {15}Lie Groups}{115}{}%
+\contentsline {part}{II\hspace {1em}Category Theory}{47}{}%
+\contentsline {chapter}{\numberline {8}Categories}{49}{}%
+\contentsline {section}{\numberline {8.1}Isomorphisms}{50}{}%
+\contentsline {part}{III\hspace {1em}Linear Algebra}{51}{}%
+\contentsline {chapter}{\numberline {9}Vector Spaces}{53}{}%
+\contentsline {section}{\numberline {9.1}Convex Sets}{53}{}%
+\contentsline {section}{\numberline {9.2}Linear Transformations}{53}{}%
+\contentsline {chapter}{\numberline {10}Real Inner Product Spaces}{55}{}%
+\contentsline {section}{\numberline {10.1}Balls}{56}{}%
+\contentsline {chapter}{\numberline {11}Complex Inner Product Spaces}{57}{}%
+\contentsline {section}{\numberline {11.1}Hilbert Spaces}{58}{}%
+\contentsline {chapter}{\numberline {12}Lie Algebras}{59}{}%
+\contentsline {section}{\numberline {12.1}Lie Algebar Homomorphisms}{60}{}%
+\contentsline {part}{IV\hspace {1em}Topology}{61}{}%
+\contentsline {chapter}{\numberline {13}Metric Spaces}{63}{}%
+\contentsline {section}{\numberline {13.1}Balls}{63}{}%
+\contentsline {section}{\numberline {13.2}Limit Points}{64}{}%
+\contentsline {section}{\numberline {13.3}Closed Sets}{64}{}%
+\contentsline {section}{\numberline {13.4}Interior Points}{64}{}%
+\contentsline {section}{\numberline {13.5}Open Sets}{65}{}%
+\contentsline {section}{\numberline {13.6}Perfect Sets}{68}{}%
+\contentsline {section}{\numberline {13.7}Bounded Sets}{68}{}%
+\contentsline {section}{\numberline {13.8}Dense Sets}{68}{}%
+\contentsline {section}{\numberline {13.9}Closure}{68}{}%
+\contentsline {section}{\numberline {13.10}Compact Sets}{70}{}%
+\contentsline {section}{\numberline {13.11}Connected Sets}{75}{}%
+\contentsline {section}{\numberline {13.12}Separable Spaces}{77}{}%
+\contentsline {section}{\numberline {13.13}Bases}{78}{}%
+\contentsline {section}{\numberline {13.14}Condensation Points}{78}{}%
+\contentsline {chapter}{\numberline {14}Convergence}{81}{}%
+\contentsline {section}{\numberline {14.1}Cauchy Sequences}{87}{}%
+\contentsline {section}{\numberline {14.2}Complete Metric Spaces}{87}{}%
+\contentsline {section}{\numberline {14.3}Divergent Sequences}{89}{}%
+\contentsline {section}{\numberline {14.4}Infinite Series}{93}{}%
+\contentsline {section}{\numberline {14.5}The Number $e$}{96}{}%
+\contentsline {section}{\numberline {14.6}Power Series}{98}{}%
+\contentsline {section}{\numberline {14.7}Summation by Parts}{99}{}%
+\contentsline {section}{\numberline {14.8}Absolute Convergence}{101}{}%
+\contentsline {section}{\numberline {14.9}Addition and Multiplication of Series}{101}{}%
+\contentsline {section}{\numberline {14.10}Rearrangements}{104}{}%
+\contentsline {section}{\numberline {14.11}Completion of a Metric Space}{106}{}%
+\contentsline {chapter}{\numberline {15}Continuity}{107}{}%
+\contentsline {section}{\numberline {15.1}Limit of a Function}{107}{}%
+\contentsline {section}{\numberline {15.2}Continuous Functions}{109}{}%
+\contentsline {section}{\numberline {15.3}Limits from the Left and the Right}{113}{}%
+\contentsline {section}{\numberline {15.4}Discontinuities}{115}{}%
+\contentsline {section}{\numberline {15.5}Uniform Continuity}{115}{}%
+\contentsline {part}{V\hspace {1em}Analysis}{117}{}%
+\contentsline {chapter}{\numberline {16}Differentiation}{119}{}%
+\contentsline {part}{VI\hspace {1em}More Algebra}{121}{}%
+\contentsline {chapter}{\numberline {17}Lie Groups}{123}{}%
