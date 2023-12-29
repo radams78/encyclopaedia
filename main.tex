@@ -11,6 +11,7 @@
 \let\endproof\relax
 \let\qed\relax
 \usepackage{pf2}
+\usepackage{tikz-cd}
 
 \newtheorem{prop}{Proposition}[chapter]
 \newtheorem{ax}[prop]{Axiom}
@@ -2057,12 +2058,277 @@ For any morphism $f : A \rightarrow B$, we have
 For any preset of sets $\mathcal{U}$, the category $\mathbf{Set}_\mathcal{U}$ with objects $\mathcal{U}$ and morphisms all functions is a category.
 \end{ex}
 
+\section{Monomorphisms and Epimorphisms}
+
+\begin{df}[Monomorphism]
+We say a morphism $f : A \rightarrow B$ is \emph{monic} or a \emph{monomorphism}, and write $f : A \rightarrowtail B$, iff, for any object $X$ and morphisms $x,y : X \rightarrow A$, if $f \circ x = f \circ y$ then $x = y$.
+\end{df}
+
+\begin{df}[Epimorphism]
+We say a morphism $f : A \rightarrow B$ is \emph{epi} or a \emph{epimorphism}, and write $f : A \twoheadrightarrow B$, iff, for any object $X$ and morphisms $x,y : B \rightarrow X$, if $x \circ f = y \circ f$ then $x = y$.
+\end{df}
+
+\section{Sections and Retractions}
+
+\begin{df}[Section, Retraction]
+Let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then we say $s$ is a \emph{section} of $r$, and $r$ is a \emph{retraction} of $s$, iff $r \circ s = \id{B}$.
+\end{df}
+
+\begin{prop}
+\label{prop:retraction_is_section}
+If $r : A \rightarrow B$ is a retraction of $f : B \rightarrow A$ and $s : A \rightarrow B$ is a section of $f$, then $r = s$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	r & = r \circ \id{A} & (\text{Right Unit Law}) \\
+	& = r \circ f \circ s & (\text{$s$ is a section of $f$}) \\
+	& = \id{B} \circ s & (\text{$r$ is a retraction of $f$}) \\
+	& = s & (\text{Left Unit Law}) \qquad \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:section_comp}
+If $s_1 : A \rightarrow B$ is a section of $r_1 : B \rightarrow A$ and $s_2 : B \rightarrow C$ is a section of $r_2 : C \rightarrow B$ then $s_2 \circ s_1$ is a section of $r_1 \circ r_2$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+r_1 \circ r_2 \circ s_2 \circ s_1 & = r_1 \circ \id{B} \circ s_1 \\
+& = r_1 \circ s_1 \\
+& = \id{A} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Every retraction is epi.
+\end{prop}
+
+\begin{proof}
+\pf\ If $r$ is a retraction of $s$ and $x \circ r = y \circ r$ then
+\[ x = xrs = yrs = y \enspace .  \qed \]
+\end{proof}
+
+\begin{prop}
+Every section is monic.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
 \section{Isomorphisms}
 
 \begin{df}[Isomorphism]
 We say a morphism $f : A \rightarrow B$ is an \emph{isomorphism}, and write $f : A \cong B$, iff there exists a morphism $g : B \rightarrow A$, the \emph{inverse} of $f$, such that $f \circ g = \id{B}$ and $g \circ f = \id{A}$.
 
 Objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
+\end{df}
+
+\begin{prop}
+The inverse of an isomorphism is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:retraction_is_section}. \qed
+\end{proof}
+
+\begin{prop}
+$\id{A} : A \cong A$ with $\id{A}^{-1} = \id{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from the Unit Laws. \qed
+\end{proof}
+
+\begin{prop}
+If $f : A \cong B$ then $f^{-1} : B \cong A$ and $(f^{-1})^{-1} = f$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+If $f : A \cong B$ and $g : B \cong C$ then $g \circ f : A \cong C$ and $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:section_comp}. \qed
+\end{proof}
+
+\begin{prop}
+Every monic retraction is iso.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r : A \rightarrow B$ be a monic retraction of $s : B \rightarrow A$.}}
+\step{2}{$rsr = r$}
+\step{3}{$sr = \id{A}$}
+\qed
+\end{proof}
+
+\begin{prop}
+Every epi section is iso.
+\end{prop}
+
+\begin{proof}
+\pf\ Dual. \qed
+\end{proof}
+
+\section{Idempotent Morphisms}
+
+\begin{df}[Idempotent]
+A morphism $e : A \rightarrow A$ is \emph{idempotent} iff $e \circ e = e$.
+\end{df}
+
+\begin{prop}
+If $r : A \rightarrow B$ is a retraction of $s : B \rightarrow A$ then $s \circ r$ is idempotent.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $srsr = s \id{B} r = sr$. \qed
+\end{proof}
+
+\begin{df}[Splitting]
+A \emph{splitting} of an idempotent endomorphism $e : A \rightarrow A$ consists of an object $B$ and morphisms $r : A \rightarrow B$, $s : B \rightarrow A$ such that $rs = \id{B}$ and $sr = e$.
+
+We say $e$ \emph{splits}, or is a \emph{split idempotent}, iff it has a splitting.
+\end{df}
+
+\begin{prop}
+If $r : A \rightarrow B$, $s : B \rightarrow A$ and $r' : A \rightarrow B'$, $s' : B' \rightarrow A$ are splittings of $e : A \rightarrow A$, then there exists a unique isomorphism $\phi : B \cong B'$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+& B \arrow{dd}{\phi} \arrow{dr}{s} \\
+A \arrow{ur}{r} \arrow{dr}{r'} & & A\\
+& B' \arrow{ur}{s'}
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi = r' \circ s$}}
+\step{2}{\pflet{$\phi^{-1} = r \circ s'$}}
+\step{3}{$\phi \circ \phi^{-1} = \id{B'}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\phi \phi^{-1} & = r' s r s' \\
+		& = r' e s' \\
+		& = r' s' r' s' \\
+		& = \id{B'} \id{B'} \\
+		& = \id{B'}
+	\end{align*}
+\end{proof}
+\step{4}{$\phi^{-1} \circ \phi = \id{B}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\phi^{-1} \phi & = r s' r' s \\
+		& = r e s \\
+		& = r s r s \\
+		& = \id{B} \id{B} \\
+		& = \id{B}
+	\end{align*}
+\end{proof}
+\step{5}{$\phi \circ r = r'$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\phi r & = r' s r \\
+		& = r' e \\
+		& = r' s' r' \\
+		& = r'
+	\end{align*}
+\end{proof}
+\step{6}{$s' \circ \phi = s$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		s' \phi & = s' r' s \\
+		& = e s \\
+		& = s r s \\
+		& = s
+	\end{align*}
+\end{proof}
+\step{7}{If $\psi : B \cong B'$ satisfies $\psi r = r'$ and $s' \psi = s$ then $\psi = \phi$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\psi & = \psi r s \\
+		& = r' s \\
+		& = \phi
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+Hence we may talk about \emph{the} splitting of a split idempotent.
+
+\begin{prop}
+If $e : A \rightarrow A$ is idempotent and either monic or epi, then $e = \id{A}$.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $ee = e$ and so $e = \id{A}$ by cancellation. \qed
+\end{proof}
+
+\section{Involutions}
+
+\begin{df}[Involution]
+An \emph{involution} on an object $A$ is an automorphism $f : A \cong A$ such that $ff = f$.
+\end{df}
+
+\chapter{Terminal Objects}
+
+\begin{df}[Terminal Object]
+An object $T$ is \emph{terminal} iff, for any object $X$, there is exactly one morphism $X \rightarrow T$.
+\end{df}
+
+\begin{prop}
+If $T$ and $T'$ are terminal objects, then there exists a unique isomorphism $T \cong T'$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi$ be the unique morphism $T \rightarrow T'$.}}
+\step{2}{\pflet{$\inv{\phi}$ be the unique morphism $T' \rightarrow T$.}}
+\step{3}{$\phi \circ \inv{\phi} = \id{T'}$}
+\begin{proof}
+	\pf\ Since there is only one morphism $T' \rightarrow T'$.
+\end{proof}
+\step{4}{$\inv{\phi} \circ \phi = \id{T}$}
+\begin{proof}
+	\pf\ Since there is only one morphism $T \rightarrow T$.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Functors}
+
+\begin{df}[Functor]
+Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
+\begin{itemize}
+\item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
+\item for every morphism $f : A \rightarrow B$ in $\mathcal{C}$, a morphism $Ff : FA \rightarrow FB$ in $\mathcal{D}$
+\end{itemize}
+such that:
+\begin{align*}
+F \id{A} & = \id{FA} \\
+F(g \circ f) & = Fg \circ Ff
+\end{align*}
+\end{df}
+
+\part{Abstract Algebra}
+
+\chapter{Monoid Theory}
+
+\begin{df}
+We identify every monoid $M$ with the category with one object and set of morphisms $M$, with composition given by the multiplication in $M$.
 \end{df}
 
 \part{Linear Algebra}
