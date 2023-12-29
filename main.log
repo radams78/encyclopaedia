@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  29 DEC 2023 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  29 DEC 2023 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,66 +588,70 @@ Chapter 9.
 Chapter 10.
 [57] [58
 
-] [59] [60]
+]
 Chapter 11.
-[61
+[59] [60
 
-] [62
-
-] [63] [64]
+] [61] [62]
 Chapter 12.
-[65
+[63
 
-] [66]
+] [64
+
+] [65] [66]
 Chapter 13.
 [67
 
 ] [68]
 Chapter 14.
+[69
 
-Overfull \hbox (7.5601pt too wide) in paragraph at lines 2592--2593
-[]\OT1/cmr/bx/n/10 Definition 14.6 \OT1/cmr/m/n/10 (Outer Prod-uct)\OT1/cmr/bx/
+] [70]
+Chapter 15.
+
+Overfull \hbox (7.5601pt too wide) in paragraph at lines 2617--2618
+[]\OT1/cmr/bx/n/10 Definition 15.6 \OT1/cmr/m/n/10 (Outer Prod-uct)\OT1/cmr/bx/
 n/10 . []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 V$ \OT1/cmr/m/n/10 be an in-ner 
 prod-uct space and $[] \OML/cmm/m/it/10 ; [] \OMS/cmsy/m/n/10 2
  []
 
-[69
+[71
 
 ]
-Overfull \hbox (5.90387pt too wide) in paragraph at lines 2603--2604
-[]\OT1/cmr/bx/n/10 Theorem 14.8 \OT1/cmr/m/n/10 (Com-plete-ness Re-la-tion)\OT1
+Overfull \hbox (5.90387pt too wide) in paragraph at lines 2628--2629
+[]\OT1/cmr/bx/n/10 Theorem 15.8 \OT1/cmr/m/n/10 (Com-plete-ness Re-la-tion)\OT1
 /cmr/bx/n/10 . []\OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 H$ \OT1/cmr/m/it/10 be 
 a Hilbert space. Let $\OMS/cmsy/m/n/10 f[]g[]$
  []
 
-[70]
-Chapter 15.
+[72]
+Chapter 16.
 
-Overfull \hbox (0.42967pt too wide) in paragraph at lines 2669--2671
-[]\OT1/cmr/bx/n/10 Example 15.7 \OT1/cmr/m/n/10 (Spe-cial Lin-ear Al-ge-bra)\OT
+Overfull \hbox (0.42967pt too wide) in paragraph at lines 2694--2696
+[]\OT1/cmr/bx/n/10 Example 16.7 \OT1/cmr/m/n/10 (Spe-cial Lin-ear Al-ge-bra)\OT
 1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 spe-cial Lin-ear al-ge-b
 ra $\OML/cmm/m/it/10 SL\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\OT1
 /cmr/m/n/10 ) =
  []
 
 
-Overfull \hbox (8.50748pt too wide) in paragraph at lines 2674--2676
-[]\OT1/cmr/bx/n/10 Example 15.8 \OT1/cmr/m/n/10 (Or-thog-o-nal Lie Al-ge-bra)\O
+Overfull \hbox (8.50748pt too wide) in paragraph at lines 2699--2701
+[]\OT1/cmr/bx/n/10 Example 16.8 \OT1/cmr/m/n/10 (Or-thog-o-nal Lie Al-ge-bra)\O
 T1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 or-thog-o-nal Lie al-ge
 -bra $\OML/cmm/m/it/10 SO\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; \U/msb/m/n/10 R\O
 T1/cmr/m/n/10 ) =
  []
 
-[71
+[73
 
-] [72] [73
+] [74] [75
 
-] [74]
-Chapter 16.
-[75
+] [76]
+Chapter 17.
+[77
 
-] [76] [77] [78]
-Overfull \hbox (39.69167pt too wide) in paragraph at lines 2989--2990
+] [78] [79] [80]
+Overfull \hbox (39.69167pt too wide) in paragraph at lines 3014--3015
 []\OT1/cmr/m/n/10 For ev-ery pos-i-tive in-te-ger $\OML/cmm/m/it/10 n$\OT1/cmr/
 m/n/10 , we have $(\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n; \O
 T1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 )$ is open in $\U/msb/m/n/10 
@@ -655,22 +659,22 @@ R$\OT1/cmr/m/n/10 , but $[][](\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 1\OML/cmm/m/i
 t/10 =n; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 =n\OT1/cmr/m/n/10 ) =
  []
 
-[79] [80] [81] [82]
-Overfull \hbox (3.35152pt too wide) in paragraph at lines 3271--3272
-[]\OT1/cmr/bx/n/10 Proposition 16.40. []\OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 
+[81] [82] [83] [84]
+Overfull \hbox (3.35152pt too wide) in paragraph at lines 3296--3297
+[]\OT1/cmr/bx/n/10 Proposition 17.40. []\OT1/cmr/m/it/10 Let $\OMS/cmsy/m/n/10 
 K$ \OT1/cmr/m/it/10 be a nonempty set of com-pact sets. If ev-ery nonempty
  []
 
-[83]
+[85]
 WARNING: proof step "i" (<3>1) already defined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [84]
-[85] [86] [87]
+ [86]
+[87] [88] [89]
 WARNING: proof step "i" (<3>1) already defined
-[88]
-Overfull \hbox (4.18407pt too wide) in paragraph at lines 3720--3720
+[90]
+Overfull \hbox (4.18407pt too wide) in paragraph at lines 3745--3745
 []\OT1/cmr/m/n/10 For $\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 Z[]$
 \OT1/cmr/m/n/10 , pick finitely many points $\OML/cmm/m/it/10 a[]$\OT1/cmr/m/n/
 10 , ..., $\OML/cmm/m/it/10 a[]$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 f\
@@ -678,49 +682,49 @@ OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[]; \OT1/cmr/m/n/10 1\OML/c
 mm/m/it/10 =n\OT1/cmr/m/n/10 ) :
  []
 
-[89] [90] [91] [92]
-Chapter 17.
-[93
+[91] [92] [93] [94]
+Chapter 18.
+[95
 
-] [94]
+] [96]
 WARNING: proof step "1" (<2>1) already defined
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [95]
+ [97]
 WARNING: proof step "3" (<1>5) already defined
-[96] [97]
-Overfull \hbox (18.07214pt too wide) detected at line 4205
+[98] [99]
+Overfull \hbox (18.07214pt too wide) detected at line 4230
 []
  []
 
-[98] [99] [100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110]
-[111]
-Overfull \hbox (1.9196pt too wide) detected at line 5007
-[]
- []
-
+[100] [101] [102] [103] [104] [105] [106] [107] [108] [109] [110] [111]
 [112] [113]
-Overfull \hbox (9.28017pt too wide) in paragraph at lines 5108--5109
-[]\OT1/cmr/bx/n/10 Definition 17.69 \OT1/cmr/m/n/10 (Cauchy Prod-uct)\OT1/cmr/b
+Overfull \hbox (1.9196pt too wide) detected at line 5032
+[]
+ []
+
+[114] [115]
+Overfull \hbox (9.28017pt too wide) in paragraph at lines 5133--5134
+[]\OT1/cmr/bx/n/10 Definition 18.69 \OT1/cmr/m/n/10 (Cauchy Prod-uct)\OT1/cmr/b
 x/n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 (Cauchy) prod-uct \OT1/cmr/m/n/
 10 of the se-ries $[][] \OML/cmm/m/it/10 a[]$
  []
 
-[114] [115]
-Overfull \hbox (0.10971pt too wide) in paragraph at lines 5220--5220
+[116] [117]
+Overfull \hbox (0.10971pt too wide) in paragraph at lines 5245--5245
 []$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 )$ be the sub-se-quence
  of $(\OML/cmm/m/it/10 a[]\OT1/cmr/m/n/10 )$ con-sist-ing of the non-negative t
 erms. 
  []
 
-[116] [117] [118]
-Chapter 18.
+[118] [119] [120]
+Chapter 19.
 WARNING: proof step "d" (<2>5) already defined
-[119
+[121
 
-] [120]
-Overfull \hbox (24.8722pt too wide) in paragraph at lines 5468--5468
+] [122]
+Overfull \hbox (24.8722pt too wide) in paragraph at lines 5493--5493
 []\OT1/cmr/m/sc/10 Pick $\OML/cmm/m/it/10 ^^N[] > \OT1/cmr/m/n/10 0$ such that,
  for all $\OML/cmm/m/it/10 y \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 f\OT1/cmr/m/n/
 10 (\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 )$, if $\OML/cmm/m/it/10 d\OT1/cmr/m/n/10
@@ -731,28 +735,32 @@ m/m/it/10 ; g\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 p\OT1/cmr/m/n/10 ))) \OML/cmm/m/it/10 <
  []
 
-[121]
+[123]
 Underfull \vbox (badness 7326) has occurred while \output is active []
 
- [122]
-[123] [124]
-Overfull \hbox (10.02084pt too wide) detected at line 5690
+ [124]
+[125] [126]
+Overfull \hbox (10.02084pt too wide) detected at line 5715
 []
  []
 
-[125] [126] [127] [128
+[127] [128] [129] [130
 
-] [129] [130]
-Chapter 19.
-[131
-
-] [132] [133
-
-] [134]
+] [131] [132]
 Chapter 20.
-[135
+[133
 
-] (./main.aux) ) 
+] [134] [135
+
+] [136]
+Chapter 21.
+[137
+
+] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  14553 strings out of 476091
  299966 string characters out of 5794081
@@ -761,32 +769,31 @@ Here is how much of TeX's memory you used:
  525261 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,15n,118p,448b,1059s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfrm1000.pfb>
-Output written on main.pdf (135 pages, 533527 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (137 pages, 534860 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
- 369 compressed objects within 4 object streams
+ 560 PDF objects out of 1000 (max. 8388607)
+ 373 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2308,6 +2308,31 @@ If $T$ and $T'$ are terminal objects, then there exists a unique isomorphism $T 
 \qed
 \end{proof}
 
+\chapter{Initial Objects}
+
+\begin{df}[Initial Object]
+An object $I$ is \emph{initial} iff, for any object $X$, there is exactly one morphism $I \rightarrow X$.
+\end{df}
+
+\begin{prop}
+If $I$ and $I'$ are initial objects, then there exists a unique isomorphism $I \cong I'$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi$ be the unique morphism $I \rightarrow I'$.}}
+\step{2}{\pflet{$\inv{\phi}$ be the unique morphism $I' \rightarrow I$.}}
+\step{3}{$\phi \circ \inv{\phi} = \id{I'}$}
+\begin{proof}
+	\pf\ Since there is only one morphism $I' \rightarrow I'$.
+\end{proof}
+\step{4}{$\inv{\phi} \circ \phi = \id{I}$}
+\begin{proof}
+	\pf\ Since there is only one morphism $I \rightarrow I$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Functors}
 
 \begin{df}[Functor]
