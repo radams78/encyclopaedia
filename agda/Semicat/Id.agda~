@@ -1,3 +1,0 @@
-module Semicat.Id where
-
-open import Semicat

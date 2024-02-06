@@ -1,3 +1,0 @@
-module Term0 where
-
-open import ETCS

@@ -1,5 +1,0 @@
-module Term where
-
-open import ETCS
-
-postulate One : set

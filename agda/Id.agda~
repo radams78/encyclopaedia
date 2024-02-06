@@ -1,3 +1,0 @@
-module Id where
-
-open import ETCS
