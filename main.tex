@@ -455,6 +455,8 @@ The inverse of an isomorphism is unique.
     \end{itemize}
 
     We identify a group $G$ with the category $G$ with one object and morphisms the elements of $G$, with composition given by $\cdot$.
+
+    The \emph{order} of a group $G$, denoted $|G|$, is the number of elements in $G$ if $G$ is finite; otherwise we write $|G| = \infty$.
 \end{df}
 
 \begin{prop}
@@ -508,6 +510,7 @@ The inverse of an isomorphism is unique.
 \end{df}
 
 \begin{prop}
+    \label{prop:power-add}
     Let $G$ be a group. Let $g \in G$ and $m,n \in \mathbb{Z}$. Then
     \[ g^{m+n} = g^m g^n \enspace . \]
 \end{prop}
@@ -565,6 +568,39 @@ The inverse of an isomorphism is unique.
     \qed
 \end{proof}
 
+\begin{prop}
+    \label{prop:power-mult}
+    Let $G$ be a group. Let $g \in G$ and $m,n \in \mathbb{Z}$. Then
+    \[ (g^m)^n = g^{mn} \enspace . \]
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$(g^m)^0 = g^0$}
+    \begin{proof}
+        \pf\ Both sides are equal to $e$.
+    \end{proof}
+    \step{2}{If $(g^m)^n = g^{mn}$ then $(g^m)^{n+1} = g^{m(n+1)}$.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            (g^m)^{n+1} & = (g^m)^n g^m & (\text{Proposition \ref{prop:power-add}}) \\
+            & = g^{mn} g^m \\
+            & = g^{mn + m} & (\text{Proposition \ref{prop:power-add}})
+        \end{align*}
+    \end{proof}
+    \step{3}{If $(g^m)^n = g^{mn}$ then $(g^m)^{n-1} = g^{m(n-1)}$.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            (g^m)^n & = g^{mn} \\
+            \therefore (g^m)^{n-1} g^m & = g^{mn-m} g^m & (\text{Proposition \ref{prop:power-add}})\\
+            \therefore (g^m)^{n-1} & = g^{mn-m} & (\text{Cancellation})
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
 \begin{df}[Commute]
     Let $G$ be a group and $g,h \in G$. We say $g$ and $h$ \emph{commute} iff $gh = hg$.
 \end{df}
@@ -576,6 +612,58 @@ The inverse of an isomorphism is unique.
 
     If $g$ does not have finite order, we write $|g| = \infty$.
 \end{df}
+
+\begin{prop}
+    Let $G$ be a group. Let $g \in G$ and $n$ be a positive integer. If $g^n = e$ then $|g| \mid n$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$n = q |g| + d$ where $0 \leq d < |g|$}}
+    \begin{proof}
+        \pf\ Division Algorithm.
+    \end{proof}
+    \step{2}{$g^d = e$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            e & = g^n \\
+            & = g^{q|g| + d} \\
+            & = (g^{|g|})^q g^d & (\text{Propositions \ref{prop:power-add}, \ref{prop:power-mult}}) \\
+            & = e^q g^d \\
+            & = g^d
+        \end{align*}
+    \end{proof}
+    \step{3}{$d = 0$}
+    \begin{proof}
+        \pf\ By minimality of $|g|$.
+    \end{proof}
+    \step{4}{$n = q|g|$}
+    \qed
+\end{proof}
+
+\begin{cor}
+    Let $G$ be a group. Let $g \in G$ have finite order and $n \in \mathbb{Z}$. Then $g^n = e$ if and only if $|g| \mid n$.
+\end{cor}
+
+\begin{prop}
+    Let $G$ be a group and $g \in G$. Then $|g| \leq |G|$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\assume{w.l.o.g. $G$ is finite.}}
+    \step{2}{\pick\ $i$, $j$ with $0 \leq i < j \leq |G|$ such that $g^i = g^j$.}
+    \begin{proof}
+        \pf\ Otherwise $g^0$, $g^1$, \ldots, $g^{|G|}$ would be $|G| + 1$ distinct elements of $G$.
+    \end{proof}
+    \step{3}{$g^{j-i} = e$}
+    \step{4}{$g$ has finite order and $|g| \leq |G|$}
+    \begin{proof}
+            \pf\ Since $|g| \leq j - i \leq j \leq |G|$.
+    \end{proof}
+    \qed
+\end{proof}
 
 \chapter{Abelian Groups}
 
