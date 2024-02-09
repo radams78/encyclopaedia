@@ -734,6 +734,26 @@ The inverse of an isomorphism is unique.
     If a finite group has even order, then it contains an element of order 2.
 \end{cor}
 
+\begin{prop}
+    Let $G$ be a group and $a,g \in G$. Then $|ag\inv{a}| = |g|$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since
+    \begin{align*}
+        (ag\inv{a})^n = e & \Leftrightarrow a g^n \inv{a} = e \\
+        & \Leftrightarrow g^n = e & \qed
+    \end{align*}
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group and $g,h \in G$. Then $|gh| = |hg|$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $|gh| = |ghg\inv{g}| = |hg|$. \qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
