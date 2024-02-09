@@ -22,6 +22,7 @@
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
+\newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
 
 \begin{document}
 
@@ -643,9 +644,11 @@ The inverse of an isomorphism is unique.
 \end{proof}
 
 \begin{cor}
+    \label{cor:order-divides}
     Let $G$ be a group. Let $g \in G$ have finite order and $n \in \mathbb{Z}$. Then $g^n = e$ if and only if $|g| \mid n$.
 \end{cor}
 
+%TODO: In fact |g| \mid |G|
 \begin{prop}
     Let $G$ be a group and $g \in G$. Then $|g| \leq |G|$.
 \end{prop}
@@ -663,6 +666,30 @@ The inverse of an isomorphism is unique.
             \pf\ Since $|g| \leq j - i \leq j \leq |G|$.
     \end{proof}
     \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Let $g \in G$ have finite order. Let $m \in \mathbb{N}$. Then
+    \[ |g^m| = \frac{\lcm(m,|g|)}{m} = \frac{|g|}{\gcd(m,|g|)}\]
+\end{prop}
+
+\begin{proof}
+    \pf\ Since for any integer $d$ we have
+    \begin{align*}
+        g^{md} = e & \Leftrightarrow |g| \mid md & (\text{Corollary \ref{cor:order-divides}})\\
+        & \Leftrightarrow \lcm(m,|g|) \mid md \\
+        & \Leftrightarrow \frac{\lcm(m,|g|)}{m} \mid d & \qed
+    \end{align*}
+    and so $|g^m| = \frac{\lcm(m,|g|)}{m}$ by Corollary \ref{cor:order-divides}. \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Let $g,h \in G$ have finite order. Assume $gh = hg$. Then $|gh|$ has finite order and 
+    \[ |gh| \mid \lcm(|g|,|h|)\]
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $(gh)^{\lcm(|g|,|h|)} = g^{\lcm(|g|,|h|)}h^{\lcm(|g|,|h|)} = e$. \qed
 \end{proof}
 
 \chapter{Abelian Groups}
