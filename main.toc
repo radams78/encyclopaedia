@@ -11,5 +11,5 @@
 \contentsline {part}{II\hspace {1em}Group Theory}{17}{}%
 \contentsline {chapter}{\numberline {4}Groups}{19}{}%
 \contentsline {section}{\numberline {4.1}Order of an Element}{21}{}%
-\contentsline {chapter}{\numberline {5}Abelian Groups}{23}{}%
-\contentsline {part}{III\hspace {1em}Linear Algebra}{25}{}%
+\contentsline {chapter}{\numberline {5}Abelian Groups}{25}{}%
+\contentsline {part}{III\hspace {1em}Linear Algebra}{27}{}%

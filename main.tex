@@ -490,6 +490,16 @@ The inverse of an isomorphism is unique.
     \item $\mathbb{C} - \{0\}$ is a group under multiplication
     \item $\{-1,1\}$ is a group under multiplication
     \item The set of $2 \times 2$ real matrices with non-zero determinant is a group under matrix multiplication.
+    \item For any positive integer $n$, the set $\mathbb{Z}_n$ of integers modulo $n$ under addition is a group.
+    \end{itemize}
+\end{ex}
+
+\begin{ex}
+    \begin{itemize}
+        \item The only group of order 1 is the trivial group.
+        \item The only group of order 2 is $\mathbb{Z}_2$.
+        \item The only group of order 3 is $\mathbb{Z}_3$.
+        \item There are exactly two groups of order 4: $\mathbb{Z}_4$ and $\mathbb{Z}_2 \times \mathbb{Z}_2$ under $(a,b) (c,d) = (ac,bd)$.
     \end{itemize}
 \end{ex}
 
@@ -499,6 +509,14 @@ The inverse of an isomorphism is unique.
 
 \begin{proof}
     \pf\ If $ag = ah$ then $g = \inv{a} a g = \inv{a} a h = h$. Similarly if $ga = ha$. \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group and $g,h \in G$. Then $(gh)^{-1} = h^{-1}g^{-1}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $ghh^{-1}g^{-1} = e$. \qed
 \end{proof}
 
 \begin{df}
@@ -692,6 +710,14 @@ The inverse of an isomorphism is unique.
     \pf\ Since $(gh)^{\lcm(|g|,|h|)} = g^{\lcm(|g|,|h|)}h^{\lcm(|g|,|h|)} = e$. \qed
 \end{proof}
 
+\begin{prop}
+    Let $G$ be a finite group. Assume there is exactly one element $f \in G$ of order 2. Then the product of all the elements of $G$ is $f$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Let the elements of $G$ be $g_1$, $g_2$, \ldots, $g_n$. Apart from $e$ and $f$, every element and its inverse are distinct elements of the list. Hence the product of the list is $ef = f$. \qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -699,6 +725,23 @@ The inverse of an isomorphism is unique.
 \end{df}
 
 In an Abelian group $G$, we often denote the group operation by $+$, the identity element by $0$ and the inverse of an element $g$ by $-g$. We write $ng$ for $g^n$ ($g \in G$, $n \in \mathbb{Z}$).
+
+\begin{ex}
+    Every group of order $\leq 4$ is Abelian.
+\end{ex}
+
+\begin{prop}
+    Let $G$ be a group. If $g^2 = e$ for all $g \in G$ then $G$ is Abelian.
+\end{prop}
+
+\begin{proof}
+    \pf\ For any $g,h \in G$ we have
+    \begin{align*}
+        ghgh & = e \\
+        \therefore hgh & = g & (\text{multiplying on the left by }g) \\
+        \therefore hg & = gh & (\text{multiplying on the right by } h) & \qed
+    \end{align*}
+\end{proof}
 
 \part{Linear Algebra}
 
