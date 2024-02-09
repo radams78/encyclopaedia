@@ -52,6 +52,15 @@ This is a placeholder --- I am not sure what foundation I want to use for this p
     \end{description}
 \end{df}
 
+\begin{prop}
+    \label{prop:id-morph-unique}
+    The identity morphism on an object is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $i$ and $j$ are identity morphisms on $A$ then $i = i \circ j = j$. \qed
+\end{proof}
+
 \begin{ex}[Category of Sets]
     The \emph{category of sets} $\Set$ has objects all sets and morphisms all functions.
 \end{ex}
@@ -295,6 +304,7 @@ This is a placeholder --- I am not sure what foundation I want to use for this p
 \end{df}
 
 \begin{prop}
+    \label{prop:inv-unique}
 The inverse of an isomorphism is unique.
 \end{prop}
 
@@ -443,6 +453,8 @@ The inverse of an isomorphism is unique.
         \item For all $x \in G$ we have $xe = ex = x$
         \item For all $x \in G$, there exists $\inv{x} \in G$, the \emph{inverse} of $x$, such that $x \inv{x} = \inv{x} x = e$.
     \end{itemize}
+
+    We identify a group $G$ with the category $G$ with one object and morphisms the elements of $G$, with composition given by $\cdot$.
 \end{df}
 
 \begin{prop}
@@ -450,7 +462,16 @@ The inverse of an isomorphism is unique.
 \end{prop}
 
 \begin{proof}
-    \pf\ If $e$ and $e'$ are identities then $e = ee' = e'$. \qed
+    \pf\ Proposition \ref{prop:id-morph-unique}.
+\end{proof}
+
+\begin{prop}
+    \label{prop:inv-unique}
+    The inverse of an element is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $i$ and $j$ are inverses of $x$ then $i = ixj = j$. \qed
 \end{proof}
 
 \begin{ex}
@@ -468,6 +489,91 @@ The inverse of an isomorphism is unique.
     \item The set of $2 \times 2$ real matrices with non-zero determinant is a group under matrix multiplication.
     \end{itemize}
 \end{ex}
+
+\begin{prop}[Cancellation]
+    Let $G$ be a group. Let $a,g,h \in G$. If $ag = ah$ or $ga = ha$ then $g = h$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $ag = ah$ then $g = \inv{a} a g = \inv{a} a h = h$. Similarly if $ga = ha$. \qed
+\end{proof}
+
+\begin{df}
+    Let $G$ be a group. Let $g \in G$. We define $g^n \in G$ for all $n \in \mathbb{Z}$ as follows:
+    \begin{align*}
+        g^0 & = e \\
+        g^{n+1} & = g^n g & (n \geq 0) \\
+        g^{-n} & = (g^{-1})^n & (n > 0)
+    \end{align*}
+\end{df}
+
+\begin{prop}
+    Let $G$ be a group. Let $g \in G$ and $m,n \in \mathbb{Z}$. Then
+    \[ g^{m+n} = g^m g^n \enspace . \]
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{For all $k \in \mathbb{Z}$ we have $g^{k+1} = g^k g$}
+    \begin{proof}
+        \step{a}{For all $k \geq 0$ we have $g^{k+1} = g^k g$}
+        \begin{proof}
+            \pf\ Immediate from definition.
+        \end{proof}
+        \step{b}{$g^{-1+1} = g^{-1} g$}
+        \begin{proof}
+            \pf\ Both are equal to $e$.
+        \end{proof}
+        \step{c}{For all $k > 1$ we have $g^{-k+1} = g^{-k} g$}
+        \begin{proof}
+            \pf
+            \begin{align*}
+                g^{-k+1} & = (g^{-1})^{k-1} \\
+                & = (g^{-1})^{k-1} g^{-1} g \\
+                & = (g^{-1})^k g \\
+                & = g^{-k} g
+            \end{align*}
+        \end{proof}
+    \end{proof}
+    \step{2}{For all $k \in \mathbb{Z}$ we have $g^{k-1} = g^k g^{-1}$}
+    \begin{proof}
+        \pf\ Substitute $k = k-1$ above and multiply by $g^{-1}$.
+    \end{proof}
+    \step{3}{$g^{m+0} = g^m g^0$}
+    \begin{proof}
+        \pf\ Since $g^m g^0 = g^m e = g^m$.
+    \end{proof}
+    \step{4}{If $g^{m+n} = g^m g^n$ then $g^{m+n+1} = g^m g^{n+1}$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            g^{m+n+1} & = g^{m+n} g & (\text{\stepref{1}}) \\
+            & = g^m g^n g \\
+            & = g^m g^{n+1} & (\text{\stepref{1}})
+        \end{align*}
+    \end{proof}
+    \step{5}{If $g^{m+n} = g^m g^n$ then $g^{m+n-1} = g^m g^{n-1}$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            g^{m+n-1} g & = g^{m+n} & (\text{\stepref{1}})\\
+            & = g^m g^n \\
+            \therefore g^{m+n-1} & = g^m g^n g^{-1} \\
+            & = g^m g^{n-1} & (\text{\stepref{2}})
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}[Commute]
+    Let $G$ be a group and $g,h \in G$. We say $g$ and $h$ \emph{commute} iff $gh = hg$.
+\end{df}
+
+\chapter{Abelian Groups}
+
+\begin{df}[Abelian Group]
+    A group is \emph{Abelian} iff any two elements commute.
+\end{df}
 
 \part{Linear Algebra}
 
