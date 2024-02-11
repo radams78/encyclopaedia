@@ -706,12 +706,50 @@ The inverse of an isomorphism is unique.
 \end{cor}
 
 \begin{prop}
+    \label{prop:order-gh}
     Let $G$ be a group. Let $g,h \in G$ have finite order. Assume $gh = hg$. Then $|gh|$ has finite order and 
     \[ |gh| \mid \lcm(|g|,|h|)\]
 \end{prop}
 
 \begin{proof}
     \pf\ Since $(gh)^{\lcm(|g|,|h|)} = g^{\lcm(|g|,|h|)}h^{\lcm(|g|,|h|)} = e$. \qed
+\end{proof}
+
+\begin{ex}
+    This example shows that we cannot remove the hypothesis that $gh = hg$.
+
+    In $\mathrm{GL}_2(\mathbb{R})$, take
+    \[ g = \left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right), \qquad
+        h = \left( \begin{array}{cc} 0 & 1 \\ -1 & -1 \end{array} \right) \enspace . \]
+    Then $|g| = 4$, $|h| = 3$ and $|gh| = \infty$.
+\end{ex}
+
+\begin{prop}
+    \label{prop:order-gh-if-gcd-one}
+    Let $G$ be a group and $g,h \in G$ have finite order. If $gh=hg$ and $\gcd(|g|,|h|) = 1$ then $|gh| = |g||h|$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$N = |gh|$}}
+    \step{2}{$g^N = (\inv{h})^N$}
+    \step{3}{$g^{N|g|} = e$}
+    \step{4}{$|g^N| \mid |g|$}
+    \step{5}{$h^{-N|h|} = e$}
+    \step{5}{$|g^N| \mid |h|$}
+    \step{6}{$|g^N| = 1$}
+    \begin{proof}
+        \pf\ Since $\gcd(|g|,|h|) = 1$.
+    \end{proof}
+    \step{7}{$g^N = e$}
+    \step{8}{$|g| \mid N$}
+    \step{9}{$h^{-N} = e$}
+    \step{10}{$|h| \mid N$}
+    \step{11}{$N = |g||h|$}
+    \begin{proof}
+        \pf\ Using Proposition \ref{prop:order-gh}.
+    \end{proof}
+    \qed
 \end{proof}
 
 \begin{prop}
@@ -777,6 +815,26 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
         \therefore hgh & = g & (\text{multiplying on the left by }g) \\
         \therefore hg & = gh & (\text{multiplying on the right by } h) & \qed
     \end{align*}
+\end{proof}
+
+\begin{prop}
+    Let $G$ be an Abelian group. Let $g,h \in G$. If $g$ has maximal finite order in $G$, and $h$ has finite order, then $|h| \mid |g|$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\assume{for a contradiction $|h| \nmid |g|$.}}
+    \step{2}{\pick\ a prime $p$ such that $|g| = p^mr$, $|h| = p^n s$ where $p \nmid r$, $p \nmid s$ and $m < n$.}
+    \step{3}{$|g^{p^m}h^s| = p^n r$}
+    \begin{proof}
+        \pf\ Proposition \ref{prop:order-gh-if-gcd-one}.
+    \end{proof}
+    \step{4}{$|g| < |g^{p^m}h^s|$}
+    \qedstep
+    \begin{proof}
+        \pf\ This contradicts the maximality of $|g|$.
+    \end{proof}
+    \qed
 \end{proof}
 
 \part{Linear Algebra}
