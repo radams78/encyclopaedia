@@ -23,6 +23,7 @@
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
+\newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
 
 \begin{document}
 
@@ -34,6 +35,55 @@
 \chapter{Foundations}
 
 This is a placeholder --- I am not sure what foundation I want to use for this project yet. I will try to work in a way which is foundation-independent. What I do could be formalized in ZFC, ETCS, or some other system. I will assume the usual set theoretic constructions as needed. Sets will be defined up to bijection only.
+
+\chapter{Number Theory}
+
+\section{Congruence}
+
+\begin{df}[Congruence]
+    Let $a$, $b$, $n$ be integers with $n > 0$. We say $a$ is \emph{congruent} to $b$ \emph{modulo} $n$, and write $a \equiv b \mod n$, iff $n \mid b - a$.
+\end{df}
+
+\begin{prop}
+    For $n$ a positive integer, congruence modulo $n$ is an equivalence relation.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{For any integer $a$ we have $a \equiv a \mod n$.}
+    \begin{proof}
+        \pf\ Since $n \mid 0 = a - a$.
+    \end{proof}
+    \step{2}{If $a \equiv b \mod n$ then $b \equiv a \mod n$.}
+    \begin{proof}
+        \pf\ If $n \mid b - a$ then $n \mid a - b = -(b-a)$.
+    \end{proof}
+    \step{3}{If $a \equiv b \mod n$ and $b \equiv c \mod n$ then $a \equiv c \mod n$.}
+    \begin{proof}
+        \pf\ If $n \mid b - a$ and $n \mid c - b$ then $n \mid c - a = (c - b) + (b - a)$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}
+    Let $\mathbb{Z} / n \mathbb{Z}$ be the quotient set of $\mathbb{Z}$ with respect to congruence modulo $n$.
+\end{df}
+
+\begin{prop}
+    $\mathbb{Z} / n \mathbb{Z}$ has exactly $n$ elements.
+\end{prop}
+
+\begin{proof}
+    \pf\ Every integer is congruent to one of 0, 1, \ldots, $n - 1$ by the division algorithm, and no two of them are conguent to one another, since if $0 \leq i < j < n$ then $0 < j - i < n$. \qed
+\end{proof}
+
+\begin{prop}
+    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $a + b \equiv a' + b' \mod n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid (a' + b') - (a + b)$. \qed
+\end{proof}
 
 \chapter{Categories}
 
@@ -54,7 +104,7 @@ This is a placeholder --- I am not sure what foundation I want to use for this p
 \end{df}
 
 \begin{prop}
-    \label{prop:id-morph-unique}
+\label{prop:id-morph-unique}
     The identity morphism on an object is unique.
 \end{prop}
 
@@ -490,7 +540,12 @@ The inverse of an isomorphism is unique.
     \item $\mathbb{C} - \{0\}$ is a group under multiplication
     \item $\{-1,1\}$ is a group under multiplication
     \item The set of $2 \times 2$ real matrices with non-zero determinant is a group under matrix multiplication.
-    \item For any positive integer $n$, the set $\mathbb{Z}_n$ of integers modulo $n$ under addition is a group.
+    \item For any positive integer $n$, the set $\mathbb{Z} / n \mathbb{Z}$ of integers modulo $n$ under addition is a group. We call this set the \emph{cyclic} group of order $n$, denoted $C_n$.
+    \item For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, we have $\Aut{\mathcal{C}}{A}$ is a group under $gf = f \circ g$.
+
+    For $A$ a set, we call $S_A = \Aut{\Set}{A}$ the \emph{symmetric group} or \emph{group of permutations} of $A$.
+
+    \item For $n \geq 3$, the \emph{dihedral group} $D_{2n}$ consists of the set of rigid motions that map the regular $n$-gon onto itself under composition.
     \end{itemize}
 \end{ex}
 
@@ -705,6 +760,15 @@ The inverse of an isomorphism is unique.
     If $g$ has odd order then $|g^2| = |g|$.
 \end{cor}
 
+\begin{cor}
+    \label{cor:order-of-m-in-ZnZ}
+    Let $m$ and $n$ be integers with $n > 0$. The order of $m$ in $\mathbb{Z} / n \mathbb{Z}$ is $\frac{n}{\gcd(m,n)}$.
+\end{cor}
+
+\begin{proof}
+    \pf\ Since the order of 1 is $n$. \qed
+\end{proof}
+
 \begin{prop}
     \label{prop:order-gh}
     Let $G$ be a group. Let $g,h \in G$ have finite order. Assume $gh = hg$. Then $|gh|$ has finite order and 
@@ -792,6 +856,24 @@ The inverse of an isomorphism is unique.
     \pf\ Since $|gh| = |ghg\inv{g}| = |hg|$. \qed
 \end{proof}
 
+\section{Generators}
+
+\begin{df}[Generator]
+    Let $G$ be a group and $a \in G$. We say $a$ \emph{generates} the group iff, for all $x \in G$, there exists an integer $n$ such that $x^n = a$.
+\end{df}
+
+\begin{prop}
+    The integer $m$ generates $\mathbb{Z} / n \mathbb{Z}$ if and only if $\gcd(m,n) = 1$.
+\end{prop}
+
+\begin{proof}
+    \pf\ By Corollary \ref{cor:order-of-m-in-ZnZ}. \qed
+\end{proof}
+
+\begin{cor}
+    If $p$ is prime then every non-zero element in $\mathbb{Z} / p \mathbb{Z}$ is a generator.
+\end{cor}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -802,6 +884,14 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
 
 \begin{ex}
     Every group of order $\leq 4$ is Abelian.
+\end{ex}
+
+\begin{ex}
+    For any positive integer $n$, we have $\mathbb{Z} / n \mathbb{Z}$ is an Abelian group under addition.
+\end{ex}
+
+\begin{ex}
+    $S_n$ is not Abelian for $n \geq 3$. If $x = \left( \begin{array}{cc} 1 & 2 \end{array} \right)$ and $y = \left( \begin{array}{ccc} 1 & 3 & 2 \end{array} \right)$ then $xy = \left( \begin{array}{cc} 2 & 3 \end{array} \right)$ and $yx = \left( \begin{array}{cc} 1 & 3 \end{array} \right)$.
 \end{ex}
 
 \begin{prop}
