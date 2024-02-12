@@ -85,6 +85,14 @@ This is a placeholder --- I am not sure what foundation I want to use for this p
     \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid (a' + b') - (a + b)$. \qed
 \end{proof}
 
+\begin{prop}
+    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $ab \equiv a'b' \mod n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid a'b' - ab = a'(b'-b) + (a'-a)b$. \qed
+\end{proof}
+
 \chapter{Categories}
 
 \begin{df}[Category]
@@ -557,6 +565,25 @@ The inverse of an isomorphism is unique.
         \item There are exactly two groups of order 4: $\mathbb{Z}_4$ and $\mathbb{Z}_2 \times \mathbb{Z}_2$ under $(a,b) (c,d) = (ac,bd)$.
     \end{itemize}
 \end{ex}
+
+\begin{ex}
+    For any positive integer $n$, the set
+    \[ (\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \} \]
+    is a group under multiplication.
+\end{ex}
+
+\begin{proof}
+    \pf
+    \step{1}{Multiplication is associative.}
+    \step{2}{1 is the identity element.}
+    \step{3}{Every element has an inverse.}
+    \begin{proof}
+        \step{a}{\pflet{$a \in (\mathbb{Z} / n \mathbb{Z})^*$}}
+        \step{b}{\pick\ integers $b$, $c$ such that $ab + cn = 1$}
+        \step{c}{$ab = 1$ in $(\mathbb{Z} / n \mathbb{Z})^*$}
+    \end{proof}
+    \qed
+\end{proof}
 
 \begin{prop}[Cancellation]
     Let $G$ be a group. Let $a,g,h \in G$. If $ag = ah$ or $ga = ha$ then $g = h$.
