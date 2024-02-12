@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  12 FEB 2024 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  12 FEB 2024 20:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,11 +575,20 @@ WARNING: proof step "5" (<1>6) already defined
 
 ]
 Chapter 6.
-[29] [30
+[29]
+Overfull \hbox (42.37027pt too wide) in paragraph at lines 1013--1014
+[]\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Since $(\OML/cmm/m/it/10 g[]; h[]\OT1
+/cmr/m/n/10 )((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 g[];
+ h[]\OT1/cmr/m/n/10 )) = ((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/
+m/it/10 g[]; h[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 ) =
+ (\OML/cmm/m/it/10 g[]g[]g[]; h[]h[]h[]\OT1/cmr/m/n/10 )$. 
+ []
 
-]
+[30]
 Chapter 7.
-[31] [32
+[31
+
+] [32
 
 ] [33] [34] [35] (./main.aux)
 
@@ -614,7 +623,7 @@ s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (35 pages, 286926 bytes).
+Output written on main.pdf (35 pages, 288976 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams

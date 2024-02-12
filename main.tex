@@ -1000,6 +1000,52 @@ The inverse of an isomorphism is unique.
     \pf\ For any group $G$, the unique function $G \rightarrow \{e\}$ is a group homomorphism, and the only group homomorphism $\{e\} \rightarrow G$ maps $e$ to $e_G$. \qed
 \end{proof}
 
+\begin{prop}
+    For any groups $G$ and $H$, the set $G \times H$ under $(g,h)(g',h') = (gg',hh')$ is the product of $G$ and $H$ in $\mathbf{Grp}$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$G \times H$ is a group.}
+    \begin{proof}
+        \step{a}{The multiplication is associative.}
+        \begin{proof}
+            \pf\ Since $(g_1,h_1)((g_2,h_2)(g_3,h_3)) = ((g_1,h_1)(g_2,h_2))(g_3,h_3) = (g_1 g_2 g_3, h_1 h_2 h_3)$.
+        \end{proof}
+        \step{b}{$(e_G,e_H)$ is the identity.}
+        \begin{proof}
+            \pf\ Since $(g,h)(e_G,e_H) = (e_G,e_H)(g,h) = (g,h)$.
+        \end{proof}
+        \step{c}{The inverse of $(g,h)$ is $(\inv{g},\inv{h})$.}
+        \begin{proof}
+            \pf\ Since $(g,h)(\inv{g},\inv{h}) = (\inv{g},\inv{h})(g,h) = (e_G,e_H)$.
+        \end{proof}
+    \end{proof}
+    \step{2}{$\pi_1 : G \times H \rightarrow G$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Immediate from definitions.
+    \end{proof}
+    \step{3}{$\pi_2 : G \times H \rightarrow H$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Immediate from definitions.
+    \end{proof}
+    \step{4}{For any group homomorphism $\phi : K \rightarrow G$ and $\psi : K \rightarrow H$, the function $\langle \phi, \psi \rangle : K \rightarrow G \times H$ where $\langle \phi, \psi \rangle(k) = (\phi(k), \psi(k))$ is a group homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            \langle \phi, \psi \rangle (kk') & = (\phi(kk'), \psi(kk')) \\
+            & = (\phi(k)\phi(k'), \psi(k)\psi(k')) \\
+            & = (\phi(k),\psi(k)) (\phi(k'),\psi(k')) \\
+            & = \langle \phi,\psi \rangle(k) \langle \phi,\psi \rangle(k')
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}[Direct Product]
+    The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$.
+\end{df}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
