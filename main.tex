@@ -955,6 +955,23 @@ The inverse of an isomorphism is unique.
 \end{df}
 
 \begin{prop}
+    Let $G$ and $H$ be groups with identities $e_G$ and $e_H$.
+    Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\phi(e_G) = e_H$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\phi(e_G) = \phi(e_G e_G) = \phi(e_G) \phi(e_G)$ and so $\phi(e_G) = e_H$ by Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+    Let $\phi : G \rightarrow H$ be a group homomorphism. For all $x \in G$ we have $\phi(x^{-1}) = \phi(x)^{-1}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\phi(x) \phi(x^{-1}) = \phi(xx^{-1}) = \phi(e_G) = e_H$. \qed
+\end{proof}
+
+\begin{prop}
     Let $G$, $H$ and $K$ be groups. If $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ are homomorphisms then $\psi \circ \phi : G \rightarrow K$ is a homomorphism.
 \end{prop}
 
