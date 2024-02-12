@@ -93,6 +93,47 @@ This is a placeholder --- I am not sure what foundation I want to use for this p
     \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid a'b' - ab = a'(b'-b) + (a'-a)b$. \qed
 \end{proof}
 
+\section{Euler's $\phi$-function}
+
+\begin{df}
+For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \}$.
+\end{df}
+
+\begin{proof}
+    \pf\ We prove this is well-defined.
+    \step{0}{If $m \equiv m' \mod n$ and $\gcd(m,n) = 1$ then $\gcd(m',n) = 1$.}
+    \begin{proof}
+        \step{a}{\pick\ integers $a$, $b$ such that $am+bn = 1$}
+        \step{b}{\pick\ an integer $c$ such that $m' - m = cn$}
+        \step{c}{$am' + (b-ac)n = 1$}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}
+    For $n$ a positive integer, let $\phi(n) = |(\mathbb{Z} / n \mathbb{Z})^*|$.
+\end{df}
+
+\begin{prop}
+    If $n$ is an odd positive integer then $\phi(2n) = \phi(n)$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$n$ be an odd positive integer.}}
+    \step{2}{For any integer $m$, if $\gcd(m,n) = 1$ then $\gcd(2m+n,2n) = 1$}
+    \begin{proof}
+        \pf\ For $p$ a prime, if $p \mid 2m+n$ and $p \mid 2n$ then $p \neq 2$ (since $2m+n$ is odd) so $p \mid n$ and hence $p \mid m$, which is a contradiction.
+    \end{proof}
+    \step{3}{For any integer $r$, if $\gcd(r,2n) = 1$ then $\gcd(\frac{r+n}{2},n) = 1$}
+    \begin{proof}
+        \pf\ If $p \mid n$ and $p \mid \frac{r + n}{2}$ then $p \mid r + n$ so $p \mid r$ which is a contradiction.
+    \end{proof}
+    \step{4}{The function that maps $m$ to $2m+n$ is a bijection between $(\mathbb{Z} / n\mathbb{Z})^*$
+    and $(\mathbb{Z} / 2n\mathbb{Z})^*$.}
+    \qed
+\end{proof}
+
 \chapter{Categories}
 
 \begin{df}[Category]
@@ -574,12 +615,6 @@ The inverse of an isomorphism is unique.
 
 \begin{proof}
     \pf
-    \step{0}{If $m \equiv m' \mod n$ and $\gcd(m,n) = 1$ then $\gcd(m',n) = 1$.}
-    \begin{proof}
-        \step{a}{\pick\ integers $a$, $b$ such that $am+bn = 1$}
-        \step{b}{\pick\ an integer $c$ such that $m' - m = cn$}
-        \step{c}{$am' + (b-ac)n = 1$}
-    \end{proof}
     \step{00}{If $\gcd(m_1,n) = \gcd(m_2,n) = 1$ then $\gcd(m_1m_2,n) = 1$}
     \begin{proof}
         \step{a}{\pick\ integers $a$, $b$, $c$, $d$ such that $am_1 + bn = cm_2 + dn = 1$}
