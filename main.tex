@@ -954,6 +954,27 @@ The inverse of an isomorphism is unique.
     \[ \phi(xy) = \phi(x) \phi(y) \enspace . \]
 \end{df}
 
+\begin{prop}
+    Let $G$, $H$ and $K$ be groups. If $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ are homomorphisms then $\psi \circ \phi : G \rightarrow K$ is a homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf\ For $x,y \in G$ we have
+    \[ \psi(\phi(xy)) = \psi(\phi(x) \phi(y)) = \psi(\phi(x)) \psi(\phi(y)) \enspace . \]
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Then $\id{G} : G \rightarrow G$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf\ For $x,y \in G$ we have $\id{G}(xy) = xy = \id{G}(x) \id{G}(y)$. \qed
+\end{proof}
+
+\begin{df}[Category of Groups]
+    Let $\mathbf{Grp}$ be the category of groups and group homomorphisms.
+\end{df}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
