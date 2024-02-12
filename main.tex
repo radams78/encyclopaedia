@@ -574,6 +574,12 @@ The inverse of an isomorphism is unique.
 
 \begin{proof}
     \pf
+    \step{0}{If $m \equiv m' \mod n$ and $\gcd(m,n) = 1$ then $\gcd(m',n) = 1$.}
+    \begin{proof}
+        \step{a}{\pick\ integers $a$, $b$ such that $am+bn = 1$}
+        \step{b}{\pick\ an integer $c$ such that $m' - m = cn$}
+        \step{c}{$am' + (b-ac)n = 1$}
+    \end{proof}
     \step{1}{Multiplication is associative.}
     \step{2}{1 is the identity element.}
     \step{3}{Every element has an inverse.}

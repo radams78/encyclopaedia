@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  12 FEB 2024 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  12 FEB 2024 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -574,10 +574,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14442 strings out of 476091
- 298218 string characters out of 5794081
+ 14443 strings out of 476091
+ 298222 string characters out of 5794081
  1870330 words of memory out of 5000000
- 34579 multiletter control sequences out of 15000+600000
+ 34580 multiletter control sequences out of 15000+600000
  523316 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,14n,118p,444b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -600,7 +600,7 @@ t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1000.pfb>
-Output written on main.pdf (33 pages, 271210 bytes).
+Output written on main.pdf (33 pages, 271477 bytes).
 PDF statistics:
  210 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
