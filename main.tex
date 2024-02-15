@@ -1099,6 +1099,62 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
     \qed
 \end{proof}
 
+\section{The Category of Abelian Groups}
+
+\begin{df}[Category of Abelian Groups]
+    Let $\mathbf{Ab}$ be the full subcategory of $\mathbf{Grp}$ whose objects are the Abelian groups.
+\end{df}
+
+\begin{df}[Direct Sum]
+    Given Abelian groups $G$ and $H$, we also call the direct product of $G$ and $H$ the \emph{direct sum} and denote it $G \oplus H$.
+\end{df}
+
+\begin{prop}
+    Given Abelian groups $G$ and $H$, the direct sum $G \oplus H$ is the coproduct of $G$ and $H$ in $\mathbf{Ab}$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$\kappa_1 : G \rightarrow G \oplus H$ be the group homomorphism $\kappa_1(g) = (g,e_H)$.}}
+    \step{2}{\pflet{$\kappa_2 : H \rightarrow G \oplus H$ be the group homomorphism $\kappa_2(h) = (e_G,h)$.}}
+    \step{3}{Given group homomorphism $\phi : G \rightarrow K$ and $\psi : H \rightarrow K$, define $[\phi, \psi] : G \oplus H \rightarrow K$ by $[\phi,\psi](g,h) = \phi(g) + \psi(h)$.}
+    \step{4}{$[\phi,\psi]$ is a group homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            [\phi,\psi]((g,h) + (g',h')) & = [\phi,\psi](g + g', h + h') \\
+            & = \phi(g + g') + \psi(h + h') \\
+            & = \phi(g) + \phi(g') + \psi(h) + \psi(h') \\
+            & = \phi(g) + \psi(h) + \phi(g') + \psi(h') \\
+            & = [\phi,\psi](g,h) + [\phi,\psi](g',h')
+        \end{align*}
+    \end{proof}
+    \step{5}{$[\phi,\psi] \circ \kappa_1 = \phi$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            [\phi,\psi](\kappa_1(g)) & = [\phi,\psi](g,e_h) \\
+            & = \phi(g) + \psi(e_H) \\
+            & = \phi(g) + e_K \\
+            & = \phi(g)
+        \end{align*}
+    \end{proof}
+    \step{6}{$[\phi,\psi] \circ \kappa_2 = \psi$}
+    \begin{proof}
+        \pf\ Similar.
+    \end{proof}
+    \step{7}{If $f : G \oplus H \rightarrow K$ is a group homomorphism with $f \circ \kappa_1 = \phi$ and $f \circ \kappa_2 = \psi$ then $f = [\phi,\psi]$.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            f(g,h) & = f((g,e_H) + (e_G,h)) \\
+            & = f(\kappa_1(g)) + f(\kappa_2(h)) \\
+            & = \phi(g) + \psi(h)
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
 \part{Linear Algebra}
 
 \begin{df}

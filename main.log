@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  12 FEB 2024 20:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 FEB 2024 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,9 +588,9 @@ m/it/10 g[]; h[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 ) =
 Chapter 7.
 [31
 
-] [32
+] [32] [33
 
-] [33] [34] [35] (./main.aux)
+] [34] [35] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -598,7 +598,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  14449 strings out of 476091
  298306 string characters out of 5794081
- 1870330 words of memory out of 5000000
+ 1871330 words of memory out of 5000000
  34586 multiletter control sequences out of 15000+600000
  524563 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -623,7 +623,7 @@ s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (35 pages, 288976 bytes).
+Output written on main.pdf (35 pages, 292360 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams
