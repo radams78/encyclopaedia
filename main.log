@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 FEB 2024 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 FEB 2024 10:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -576,7 +576,16 @@ WARNING: proof step "5" (<1>6) already defined
 ]
 Chapter 6.
 [29]
-Overfull \hbox (42.37027pt too wide) in paragraph at lines 1013--1014
+Overfull \hbox (0.97186pt too wide) in paragraph at lines 1028--1029
+[]\OT1/cmr/bx/n/10 Proposition 6.10. []\OT1/cmr/m/it/10 For any groups $\OML/cm
+m/m/it/10 G$ \OT1/cmr/m/it/10 and $\OML/cmm/m/it/10 H$\OT1/cmr/m/it/10 , the se
+t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
+ un-der $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g; h\OT1/cmr/m/n/10 )(\OML/cmm/m/it/
+10 g[]; h[]\OT1/cmr/m/n/10 ) =
+ []
+
+
+Overfull \hbox (42.37027pt too wide) in paragraph at lines 1037--1038
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Since $(\OML/cmm/m/it/10 g[]; h[]\OT1
 /cmr/m/n/10 )((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 g[];
  h[]\OT1/cmr/m/n/10 )) = ((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/
@@ -623,7 +632,7 @@ s/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1
 c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
 1000.pfb>
-Output written on main.pdf (35 pages, 292360 bytes).
+Output written on main.pdf (35 pages, 293067 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  142 compressed objects within 2 object streams

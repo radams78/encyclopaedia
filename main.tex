@@ -988,9 +988,33 @@ The inverse of an isomorphism is unique.
     \pf\ For $x,y \in G$ we have $\id{G}(xy) = xy = \id{G}(x) \id{G}(y)$. \qed
 \end{proof}
 
+\begin{prop}
+    Let $\phi : G \rightarrow H$ be a group homomorphism. Let $g \in G$ have finite order. Then $|\phi(g)|$ divides $|g|$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\phi(g)^{|g|} = \phi(g^{|g|}) = e$. \qed
+\end{proof}
+
 \begin{df}[Category of Groups]
     Let $\mathbf{Grp}$ be the category of groups and group homomorphisms.
 \end{df}
+
+\begin{prop}
+    A group homomorphism $\phi : G \rightarrow H$ is an isomorphism in $\mathbf{Grp}$ if and only if it is bijective.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\assume{$\phi$ is bijective.} \prove{$\inv{\phi}$ is a group homomorphism.}}
+    \step{2}{\pflet{$h,h' \in H$}}
+    \step{3}{$\phi(\inv{\phi}(hh')) = \phi(\inv{\phi}(h)\inv{\phi}(h'))$}
+    \begin{proof}
+        \pf\ Both are equal to $hh'$.
+    \end{proof}
+    \step{4}{$\inv{\phi}(hh') = \inv{\phi}(h) \inv{\phi}(h')$}
+    \qed
+\end{proof}
 
 \begin{prop}
     The trivial group is the zero object in $\mathbf{Grp}$.
