@@ -589,7 +589,7 @@ The inverse of an isomorphism is unique.
     \item $\mathbb{C} - \{0\}$ is a group under multiplication
     \item $\{-1,1\}$ is a group under multiplication
     \item The set of $2 \times 2$ real matrices with non-zero determinant is a group under matrix multiplication.
-    \item For any positive integer $n$, the set $\mathbb{Z} / n \mathbb{Z}$ of integers modulo $n$ under addition is a group. We call this set the \emph{cyclic} group of order $n$, denoted $C_n$.
+    \item For any positive integer $n$, the set $\mathbb{Z} / n \mathbb{Z}$ of integers modulo $n$ under addition is a group.
     \item For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, we have $\Aut{\mathcal{C}}{A}$ is a group under $gf = f \circ g$.
 
     For $A$ a set, we call $S_A = \Aut{\Set}{A}$ the \emph{symmetric group} or \emph{group of permutations} of $A$.
@@ -1016,6 +1016,22 @@ The inverse of an isomorphism is unique.
     \qed
 \end{proof}
 
+\begin{cor}
+    \[ D_6 \cong C_3 \]
+\end{cor}
+
+\begin{proof}
+    \pf\ The canonical homomorphism $D_6 \rightarrow C_3$ is bijective. \qed
+\end{proof}
+
+\begin{cor}
+    \[ (\mathbb{R}, +) \cong (\{ x \in \mathbb{R} : x > 0 \}, \cdot) \]
+\end{cor}
+
+\begin{proof}
+    \pf\ The function that maps $x$ to $e^x$ is a bijective homomorphism. \qed
+\end{proof}
+
 \begin{prop}
     The trivial group is the zero object in $\mathbf{Grp}$.
 \end{prop}
@@ -1070,6 +1086,18 @@ The inverse of an isomorphism is unique.
     The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$.
 \end{df}
 
+\begin{ex}
+    \[ C_6 \cong C_2 \times C_3 \]
+\end{ex}
+
+\begin{proof}
+    \pf\ The function that maps $n$ to $(n \mod 2, n \mod 3)$ is an isomorphism. \qed
+\end{proof}
+
+\begin{df}[Cyclic Group]
+    The \emph{cyclic} groups are $\mathbb{Z}$ and $\mathbb{Z} / n \mathbb{Z}$ for positive integers $n$.
+\end{df}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -1104,6 +1132,41 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
 \end{proof}
 
 \begin{prop}
+    Let $G$ be a group. Then $G$ is Abelian if and only if the function that maps $g$ to $\inv{g}$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{If $G$ is Abelian then the function that maps $g$ to $\inv{g}$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Since $\inv{(gh)} = \inv{h} \inv{g} = \inv{g} \inv{h}$.
+    \end{proof}
+    \step{2}{If the function that maps $g$ to $\inv{g}$ is a group homomorphism then $G$ is Abelian.}
+    \begin{proof}
+        \pf\ Since $gh = \inv{(\inv{g})}\inv{(\inv{h})} = \inv{(\inv{g}\inv{h})} = hg$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Then $G$ is Abelian if and only if the function that maps $g$ to $g^2$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{If $G$ is Abelian then the function that maps $g$ to $g^2$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Since $(gh)^2 = g^2h^2$.
+    \end{proof}
+    \step{2}{If the function that maps $g$ to $g^2$ is a group homomorphism then $G$ is Abelian.}
+    \begin{proof}
+        \pf\ Since we have $(gh)^2 = ghgh = g^2 h^2$ and so $hg = gh$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:maximal-finite-order}
     Let $G$ be an Abelian group. Let $g,h \in G$. If $g$ has maximal finite order in $G$, and $h$ has finite order, then $|h| \mid |g|$.
 \end{prop}
 
@@ -1119,6 +1182,63 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
     \qedstep
     \begin{proof}
         \pf\ This contradicts the maximality of $|g|$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    If $p$ is prime then $(\mathbb{Z} / p \mathbb{Z})^*$ is cyclic.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$g$ be an element of maximal order in $(\mathbb{Z} / p \mathbb{Z})^*$.}}
+    \step{2}{For all $h \in (\mathbb{Z} / p \mathbb{Z})^*$ we have $h^{|g|} = 1$.}
+    \begin{proof}
+        \pf\ Proposition \ref{prop:maximal-finite-order}.
+    \end{proof}
+    \step{3}{There are at most $|g|$ elements $x$ such that $x^{|g|} = 1$ in $\mathbb{Z} / p \mathbb{Z}$} %TODO
+    \step{4}{$p-1 \leq |g|$}
+    \step{5}{$|g| = p-1$}
+    \step{6}{$g$ generates $(\mathbb{Z} / p \mathbb{Z})^*$.}
+    \qed
+\end{proof}
+
+\begin{ex}
+    $(\mathbb{Z} / 12 \mathbb{Z})^*$ is not cyclic. Its elements are 1, 5, 7 and 11 with orders 1, 2, 2 and 2.
+\end{ex}
+
+\begin{prop}
+    Given a set $A$ and an Abelian group $H$, the set $H^A$ is an Abelian group under
+    \[ (\phi + \psi)(a) = \phi(a) + \psi(a) \qquad (\phi,\psi \in H^A, a \in A) \enspace . \]
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{2}{$\phi + (\psi + \chi) = (\phi + \psi) + \chi$}
+    \step{2a}{$\phi + \psi = \psi + \phi$}
+    \step{3}{\pflet{$0 : A \rightarrow H$ be the function $0(a) = 0$.}}
+    \step{4}{$\phi + 0 = 0 + \phi = \phi$}
+    \step{5}{Given $\phi : A \rightarrow H$, define $-\phi : A \rightarrow H$ by $(-\phi)(a) = -(\phi(a))$.}
+    \step{6}{$\phi + (-\phi) = (-\phi) + \phi = 0$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Given a group $G$ and an Abelian group $H$, the set $\mathbf{Grp}[G,H]$ is a subgroup of $H^G$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{Given $\phi, \psi : G \rightarrow H$ group homomorphisms, we have $\phi - \psi$ is a group homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            (\phi - \psi)(g + g') & = \phi(g + g') - \psi(g + g') \\
+            & = \phi(g) + \phi(g') - \psi(g) - \psi(g') \\
+            & = \phi(g) - \psi(g) + \phi(g') - \psi(g') \\
+            & = (\phi - \psi)(g) + (\phi - \psi)(g')
+        \end{align*}
     \end{proof}
     \qed
 \end{proof}
