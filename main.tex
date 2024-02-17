@@ -24,6 +24,7 @@
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
+\newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
 
 \begin{document}
 
@@ -890,6 +891,7 @@ The inverse of an isomorphism is unique.
 \end{proof}
 
 \begin{prop}
+    \label{prop:product-of-all-elements}
     Let $G$ be a finite group. Assume there is exactly one element $f \in G$ of order 2. Then the product of all the elements of $G$ is $f$.
 \end{prop}
 
@@ -1082,16 +1084,83 @@ The inverse of an isomorphism is unique.
     \qed
 \end{proof}
 
+\begin{prop}
+    \[ \Aut{\Grp}{\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}} \cong S_3 \]
+\end{prop}
+
+\begin{proof}
+    \pf\ Every permutation of $\{ (1,0), (0,1), (1,1) \}$ gives an automorphism of $\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}$. \qed
+\end{proof}
+
+\begin{prop}
+    \[ |\Aut{\Grp}{C_n}| = \phi(n) \]
+\end{prop}
+
+\begin{proof}
+    \pf\ An automorphism $\alpha$ is determined by $\alpha(1)$ which is any element of order $n$, and $g$ has order $n$ iff $\gcd(g,n) = 1$. \qed
+\end{proof}
+
+\begin{ex}
+    \[ \Aut{\Grp}{\mathbb{Z}} \cong C_2 \]
+\end{ex}
+
+\begin{proof}
+    \pf\ The only automorphisms are the identity and multiplication by -1. \qed
+\end{proof}
+
+\section{Inner Automorphisms}
+
+\begin{prop}
+    Let $G$ be a group and $g \in G$. The function $\gamma_g : G \rightarrow G$ defined by $\gamma_g(a) = ga\inv{g}$ is an automorphism on $G$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$\gamma_g$ is a homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            \gamma_g(ab) & = gab\inv{g} \\
+            & = ga\inv{g} gb\inv{g} \\
+            & = \gamma_g(a) \gamma_g(b)
+        \end{align*}
+    \end{proof}
+    \step{2}{$\gamma_g$ is injective.}
+    \begin{proof}
+        \pf\ By Cancellation.
+    \end{proof}
+    \step{3}{$\gamma_g$ is surjective.}
+    \begin{proof}
+        \pf\ Given $b \in G$, we have $\gamma_g(\inv{g}bg) = b$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}[Inner Automorphism]
+Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the form $\gamma_g(a) = ga\inv{g}$ for some $g \in G$.
+\end{df}
+
+\begin{prop}
+    Let $G$ be a group.
+    The function $\gamma : G \rightarrow \Aut{\Grp}{G}$ that maps $g$ to $\gamma_g$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\gamma_{gh}(a) = gha\inv{h}\inv{g} = \gamma_g(\gamma_h(a))$. \qed
+\end{proof}
+
+\section{Direct Products}
+
 \begin{df}[Direct Product]
     The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$.
 \end{df}
 
-\begin{ex}
-    \[ C_6 \cong C_2 \times C_3 \]
-\end{ex}
+\begin{prop}
+    If $m$ and $n$ are positive integers with $\gcd(m,n) = 1$ then $C_{mn} \cong C_m \times C_n$.
+\end{prop}
 
 \begin{proof}
-    \pf\ The function that maps $n$ to $(n \mod 2, n \mod 3)$ is an isomorphism. \qed
+    \pf\ The function that maps $x$ to $(x \mod m, x \mod n)$ is an isomorphism. \qed
 \end{proof}
 
 \begin{df}[Cyclic Group]
@@ -1166,6 +1235,23 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
 \end{proof}
 
 \begin{prop}
+    Let $G$ be a group. Then $G$ is Abelian if and only if the homomorphism $\gamma : G \rightarrow \Aut{\Grp}{G}$ is the trivial homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{If $G$ is Abelian then $\gamma$ is trivial.}
+    \begin{proof}
+        \pf\ Since $\gamma_g(a) = ga\inv{g} = a$.
+    \end{proof}
+    \step{2}{If $\gamma$ is trivial then $G$ is Abelian.}
+    \begin{proof}
+        \pf\ If $\gamma_g(a) = ga\inv{g} = a$ for all $g$ and $a$ then $ga = ag$ for all $g$, $a$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
     \label{prop:maximal-finite-order}
     Let $G$ be an Abelian group. Let $g,h \in G$. If $g$ has maximal finite order in $G$, and $h$ has finite order, then $|h| \mid |g|$.
 \end{prop}
@@ -1207,6 +1293,77 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
 \begin{ex}
     $(\mathbb{Z} / 12 \mathbb{Z})^*$ is not cyclic. Its elements are 1, 5, 7 and 11 with orders 1, 2, 2 and 2.
 \end{ex}
+
+\begin{thm}[Wilson's Theorem]
+    A positive integer $p$ is prime if and only if $(p-1)! \equiv 1 (\mod p)$.
+\end{thm}
+
+\begin{proof}
+    \step{1}{If $p$ is prime then $(p-1)! \equiv 1 (\mod p)$.}
+    \begin{proof}
+        \step{a}{\assume{$p$ is prime.}}
+        \step{b}{$(p-1)!$ is the product of all the elements of $(\mathbb{Z} / p \mathbb{Z})^*$}
+        \step{c}{The only element of $(\mathbb{Z} / p \mathbb{Z})^*$ with order 2 is $-1$.}
+        \step{d}{$(p-1)! \equiv -1 (\mod p)$}
+        \begin{proof}
+            \pf\ Proposition \ref{prop:product-of-all-elements}.
+        \end{proof}
+    \end{proof}
+    \step{2}{If $(p-1)! \equiv -1 (\mod p)$ then $p$ is prime.}
+    \begin{proof}
+        \step{a}{\assume($(p-1)! \equiv -1 (\mod p)$)}
+        \step{b}{\pflet{$d$ be a proper divisor of $p$.} \prove{$d = 1$}}
+        \step{c}{$d \mid (p-1)!$}
+        \step{d}{$d \mid 1$}
+        \begin{proof}
+            \pf\ Since $d \mid p \mid (p-1)! + 1$.
+        \end{proof}
+        \step{e}{$d = 1$}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    If $p$ and $q$ are distinct odd primes then $(\mathbb{Z} / pq\mathbb{Z})^*$ is not cyclic.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$|(\mathbb{Z} / pq \mathbb{Z})^*| = (p-1)(q-1)$}
+    \step{2}{\pflet{$g \in (\mathbb{Z} / p q \mathbb{Z})^*$} \prove{$g$ does not have order $(p-1)(q-1)$}}
+    \step{3}{$g^{(p-1)(q-1)/2} \equiv 1 (\mod p)$}
+    \step{4}{$g^{(p-1)(q-1)/2} \equiv 1 (\mod q)$}
+    \step{5}{$pq \mid g^{(p-1)(q-1)/2} - 1$}
+    \step{6}{$g^{(p-1)(q-1)/2} \equiv 1 (\mod pq)$}
+    \step{7}{$|g| \mid (p-1)(q-1)/2$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    For any prime $p$, we have $\Aut{\Grp}{C_p} \cong C_{p-1}$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$\phi : \Aut{\Grp}{C_p} \rightarrow (\mathbb{Z} / p \mathbb{Z})^*$ be the function $\phi(\alpha) = \alpha(1)$.}}
+    \begin{proof}
+        \pf\ $\alpha(1)$ has order $p$ in $C_p$ and so is coprime with $p$.
+    \end{proof}
+    \step{2}{$\phi$ is a homomorphism.}
+    \begin{proof}
+        \pf\ $\phi(\alpha \circ \beta) = \alpha(\beta(1)) = \alpha(\beta(1) 1) = \beta(1) \alpha(1) = \phi(\alpha) \phi(\beta)$
+    \end{proof}
+    \step{3}{$\phi$ is injective.}
+    \begin{proof}
+        \pf\ If $\phi(\alpha) = \phi(\beta)$ then for any $n$ we have $\alpha(n) = n \alpha(1) = n \phi(\alpha) = n \phi(\beta) = n \beta(1) = \beta(n)$.
+    \end{proof}
+    \step{4}{$\phi$ is surjective.}
+    \begin{proof}
+        \pf\ For any $r \in (\mathbb{Z} / p \mathbb{Z})^*$ we have $r = \phi(\alpha)$ where $\alpha(n) = nr \mod p$.
+    \end{proof}
+    \step{5}{$(\mathbb{Z} / p \mathbb{Z})^* \cong C_{p-1}$}
+    \qed
+\end{proof}
 
 \begin{prop}
     Given a set $A$ and an Abelian group $H$, the set $H^A$ is an Abelian group under
