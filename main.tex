@@ -1167,6 +1167,76 @@ Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the for
     The \emph{cyclic} groups are $\mathbb{Z}$ and $\mathbb{Z} / n \mathbb{Z}$ for positive integers $n$.
 \end{df}
 
+\section{Free Groups}
+
+\begin{prop}
+    Let $A$ be a set. Let $\mathcal{F}^A$ be the category whose objects are pairs $(G,j)$ where $G$ is a group and $j$ is a function $A \rightarrow G$, with morphisms $f : (G,j) \rightarrow (H,k)$ the group homomorphisms $f : G \rightarrow H$ such that $f \circ j = k$. Then $\mathcal{F}^A$ has an initial object.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$W(A)$ be the set of words in the alphabet whose elements are the elements of $A$ together with $\{ \inv{a} : a \in A \}$.}}
+    \step{2}{\pflet{$r : W(A) \rightarrow W(A)$ be the function that, given a word $w$, removes the first pair of letters of the form $a \inv{a}$ or $\inv{a}a$; if there is no such pair, then $r(w) = w$.}}
+    \step{3}{Let us say that a word $w$ is a \emph{reduced word} iff $r(w) = w$.}
+    \step{4}{For any word $w$ of length $n$, we have $r^{\ulcorner \frac{n}{2} \urcorner}(w)$ is a reduced word.}
+    \begin{proof}
+        \pf\ Since we cannot remove more than $n/2$ pairs of letters from $w$.
+    \end{proof}
+    \step{5}{\pflet{$R : W(A) \rightarrow W(A)$ be the function $R(w) = r^{\ulcorner \frac{n}{2} \urcorner}(w)$, where $n$ is the length of $w$.}}
+    \step{5}{\pflet{$F(A)$ be the set of reduced words.}}
+    \step{6}{Define $\cdot : F(A)^2 \rightarrow F(A)$ by $w \cdot w' = R(ww')$}
+    \step{7}{$\cdot$ is associative.}
+    \begin{proof}
+        \pf\ Both $w_1 \cdot (w_2 \cdot w_3)$ and $(w_1 \cdot w_2) \cdot w_3$ are equal to $R(w_1 w_2 w_3)$.
+    \end{proof}
+    \step{8}{The empty word is the identity element in $F(A)$}
+    \step{9}{The inverse of $a_1^{\pm 1} a_2^{\pm 1} \cdots a_n^{\pm 1}$ is $a_n^{\mp 1} \cdots a_2^{\mp 1} a_1^{\mp 1}$.}
+    \step{10}{\pflet{$j : A \rightarrow F(A)$ be the function that maps $a$ to the word $a$ of length .}}
+    \step{11}{\pflet{$G$ be any group and $k : A \rightarrow G$ any function.}}
+    \step{12}{The only morphism $f : (F(A),j) \rightarrow (G,k)$ in $\mathcal{F}^A$ is $f(a_1^{\pm 1} a_2^{\pm 1} \cdots a_n^{\pm 1}) = k(a_1)^{\pm 1} k(a_2)^{\pm 1} \cdots k(a_n)^{\pm 1}$.}
+    \qed
+\end{proof}
+
+\begin{df}[Free Group]
+    For any set $A$, the \emph{free group} on $A$ is the initial object $(F(A),i)$ in $\mathcal{F}^A$.
+\end{df}
+
+\begin{prop}
+    $i : A \rightarrow F(A)$ is injective.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$x,y \in A$}}
+    \step{2}{\assume{$x \neq y$} \prove{$i(x) \neq i(y)$}}
+    \step{3}{\pflet{$f : A \rightarrow C_2$ be the function that maps $x$ to $0$ and all other elements of $A$ to 1.}}
+    \step{4}{\pflet{$\phi : F(A) \rightarrow C_2$ be the group homomorphism such that $f = \phi\circ i$.}}
+    \step{5}{$f(x) \neq f(y)$}
+    \step{6}{$\phi(i(x)) \neq \phi(i(y))$}
+    \step{7}{$i(x) \neq i(y)$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    \[ F(0) \cong \{e\} \]
+\end{prop}
+
+\begin{proof}
+    \pf\ For any set $A$, the unique group homomorphism $\{e\} \rightarrow A$ makes the following diagram commute.
+    \[ \begin{tikzcd}
+        \{e\} \arrow[r] & A \\
+        \emptyset \arrow[u] \arrow[ur]
+    \end{tikzcd} \]
+\end{proof}
+
+\begin{prop}
+    The free group on 1 is $\mathbb{Z}$ with the injection mapping 0 to $1$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Given any group $G$ and function $a : 1 \rightarrow G$, the required unique homomorphism $\phi : \mathbb{Z} \rightarrow G$ is defined by $\phi(n) = a(0)^n$. \qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -1453,6 +1523,21 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
             & = \phi(g) + \psi(h)
         \end{align*}
     \end{proof}
+    \qed
+\end{proof}
+
+\section{Free Abelian Groups}
+
+\begin{prop}
+    Let $A$ be a set. Let $\mathcal{F}^A$ be the category whose objects are pairs $(G,j)$ where $G$ is an Abelian group and $j$ is a function $A \rightarrow G$, with morphisms $f : (G,j) \rightarrow (H,k)$ the group homomorphisms $f : G \rightarrow H$ such that $f \circ j = k$. Then $\mathcal{F}^A$ has an initial object.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$\mathbb{Z}^{\oplus A}$ be the subgroup of $\mathbb{Z}^A$ consisting of all functions $\alpha : A \rightarrow \mathbb{Z}$ such that $\alpha(a) = 0$ for only finitely many $a \in A$.}}
+    \step{2}{\pflet{$i : A \rightarrow \mathbb{Z}^{\oplus A}$ be the function such that $i(a)(b) = 1$ if $a = b$ and 0 if $a \neq b$.}}
+    \step{3}{\pflet{$G$ be any Abelian group and $j : A \rightarrow G$ any function.}}
+    \step{4}{The unique homomorphism $\phi : \mathbb{Z}^{\oplus A} \rightarrow G$ required is defined by $\phi(\alpha) = \sum_{a \in A} \alpha(a) j(a)$}
     \qed
 \end{proof}
 
