@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  18 FEB 2024 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  18 FEB 2024 21:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,29 +595,29 @@ m/it/10 g[]; h[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 ) =
 
 [30] [31]
 WARNING: proof step "5" (<1>6) already defined
-[32] [33] [34
-
-]
+[32] [33] [34]
 Chapter 7.
-[35] [36] [37]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 1455--1456
+[35
+
+] [36] [37]
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 1477--1478
 []\OT1/cmr/bx/n/10 Proposition 7.16. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
  []
 
-[38] [39] [40
+[38] [39] [40] [41
 
-] [41] [42] [43] (./main.aux)
+] [42] [43] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14489 strings out of 476091
- 299222 string characters out of 5794081
- 1871330 words of memory out of 5000000
- 34626 multiletter control sequences out of 15000+600000
+ 14642 strings out of 476091
+ 302986 string characters out of 5794081
+ 1875330 words of memory out of 5000000
+ 34779 multiletter control sequences out of 15000+600000
  524563 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,15n,118p,444b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -642,7 +642,7 @@ amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (43 pages, 331072 bytes).
+Output written on main.pdf (43 pages, 337586 bytes).
 PDF statistics:
  259 PDF objects out of 1000 (max. 8388607)
  168 compressed objects within 2 object streams
