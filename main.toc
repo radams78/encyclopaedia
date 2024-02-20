@@ -17,10 +17,11 @@
 \contentsline {section}{\numberline {5.2}Generators}{26}{}%
 \contentsline {chapter}{\numberline {6}Group Homomorphisms}{29}{}%
 \contentsline {section}{\numberline {6.1}Subgroups}{31}{}%
-\contentsline {section}{\numberline {6.2}Inner Automorphisms}{32}{}%
-\contentsline {section}{\numberline {6.3}Direct Products}{32}{}%
-\contentsline {section}{\numberline {6.4}Free Groups}{33}{}%
-\contentsline {chapter}{\numberline {7}Abelian Groups}{35}{}%
-\contentsline {section}{\numberline {7.1}The Category of Abelian Groups}{38}{}%
-\contentsline {section}{\numberline {7.2}Free Abelian Groups}{39}{}%
-\contentsline {part}{III\hspace {1em}Linear Algebra}{41}{}%
+\contentsline {section}{\numberline {6.2}Kernel}{32}{}%
+\contentsline {section}{\numberline {6.3}Inner Automorphisms}{32}{}%
+\contentsline {section}{\numberline {6.4}Direct Products}{33}{}%
+\contentsline {section}{\numberline {6.5}Free Groups}{33}{}%
+\contentsline {chapter}{\numberline {7}Abelian Groups}{37}{}%
+\contentsline {section}{\numberline {7.1}The Category of Abelian Groups}{40}{}%
+\contentsline {section}{\numberline {7.2}Free Abelian Groups}{41}{}%
+\contentsline {part}{III\hspace {1em}Linear Algebra}{43}{}%

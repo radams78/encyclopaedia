@@ -1201,6 +1201,35 @@ Let $G$ be a group. Let $H$ be a subset of $G$. Then $H$ is a subgroup of $G$ if
 \qed
 \end{proof}
 
+\begin{cor}
+The intersection of a set of subgroups of $G$ is a subgroup of $G$.
+\end{cor}
+
+\begin{cor}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $H$. Then $\inv{\phi}(K)$ is a subgroup of $G$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{0}{$\inv{\phi}(K)$ is nonempty.}
+\begin{proof}
+\pf\ Since $e \in \inv{\phi}(K)$.
+\end{proof}
+\step{1}{\pflet{$x,y \in \inv{\phi}(K)$}}
+\step{2}{$\phi(x),\phi(y) \in K$}
+\step{3}{$\phi(x)\inv{\phi(y)} \in K$}
+\step{4}{$\phi(x\inv{y}) \in K$}
+\step{5}{$x\inv{y} \in \inv{\phi}(K)$}
+\qed
+\end{proof}
+
+\section{Kernel}
+
+\begin{df}[Kernel]
+Let $\phi : G \rightarrow H$ be a group homomorphism. The \emph{kernel} of $\phi$ is
+\[ \ker \phi = \{ g \in G : \phi(g) = e \} \enspace . \]
+\end{df}
+
 \section{Inner Automorphisms}
 
 \begin{prop}
