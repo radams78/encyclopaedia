@@ -18,7 +18,7 @@
 \contentsline {chapter}{\numberline {6}Group Homomorphisms}{29}{}%
 \contentsline {section}{\numberline {6.1}Subgroups}{31}{}%
 \contentsline {section}{\numberline {6.2}Kernel}{32}{}%
-\contentsline {section}{\numberline {6.3}Inner Automorphisms}{32}{}%
+\contentsline {section}{\numberline {6.3}Inner Automorphisms}{33}{}%
 \contentsline {section}{\numberline {6.4}Direct Products}{33}{}%
 \contentsline {section}{\numberline {6.5}Free Groups}{33}{}%
 \contentsline {chapter}{\numberline {7}Abelian Groups}{37}{}%

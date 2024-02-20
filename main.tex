@@ -1224,6 +1224,19 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $
 \qed
 \end{proof}
 
+\begin{cor}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $G$. Then $\phi(K)$ is a subgroup of $H$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \phi(K)$}}
+\step{2}{\pick\ $a,b \in K$ such that $x = \phi(a)$ and $y = \phi(b)$}
+\step{3}{$x\inv{y} = \phi(a\inv{b})$}
+\step{4}{$x\inv{y} \in \phi(K)$}
+\qed
+\end{proof}
+
 \section{Kernel}
 
 \begin{df}[Kernel]
