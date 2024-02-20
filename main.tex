@@ -1252,6 +1252,17 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a subg
 \pf\ Corollary \ref{cor:inverse-image-subgroup}. \qed
 \end{proof}
 
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then the inclusion $i : \ker \phi \hookrightarrow G$ is terminal in the category of pairs $(K,\alpha : K \rightarrow G)$ such that $\phi \circ \alpha = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\phi \circ i = 0$}
+\step{2}{For any group $K$ and homomorphism $\alpha : K \rightarrow G$ such that $\phi \circ \alpha = 0$, there exists a unique homomorphism $\beta : K \rightarrow \ker \phi$ such that $i \circ \beta = \alpha$.}
+\qed
+\end{proof}
+
 \section{Inner Automorphisms}
 
 \begin{prop}
