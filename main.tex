@@ -36,7 +36,11 @@
 
 \chapter{Foundations}
 
-This is a placeholder --- I am not sure what foundation I want to use for this project yet. I will try to work in a way which is foundation-independent. What I do could be formalized in ZFC, ETCS, or some other system. I will assume the usual set theoretic constructions as needed. Sets will be defined up to bijection only.
+This is a placeholder --- I am not sure what foundation I want to use for this
+project yet. I will try to work in a way which is foundation-independent. What
+I do could be formalized in ZFC, ETCS, or some other system. I will assume the
+usual set theoretic constructions as needed. Sets will be defined up to
+bijection only.
 
 \chapter{Number Theory}
 
@@ -98,7 +102,7 @@ This is a placeholder --- I am not sure what foundation I want to use for this p
 \section{Euler's $\phi$-function}
 
 \begin{df}
-For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \}$.
+    For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \}$.
 \end{df}
 
 \begin{proof}
@@ -132,7 +136,7 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
         \pf\ If $p \mid n$ and $p \mid \frac{r + n}{2}$ then $p \mid r + n$ so $p \mid r$ which is a contradiction.
     \end{proof}
     \step{4}{The function that maps $m$ to $2m+n$ is a bijection between $(\mathbb{Z} / n\mathbb{Z})^*$
-    and $(\mathbb{Z} / 2n\mathbb{Z})^*$.}
+        and $(\mathbb{Z} / 2n\mathbb{Z})^*$.}
     \qed
 \end{proof}
 
@@ -141,21 +145,28 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
 \begin{df}[Category]
     A \emph{category} $\mathcal{C}$ consists of:
     \begin{itemize}
-        \item A class $|\mathcal{C}|$ of \emph{objects}. We write $A \in \mathcal{C}$ for $A \in |\mathcal{C}|$.
-        \item For any objects $A$, $B$, a set $\mathcal{C}[A,B]$ of \emph{morphisms} from $A$ to $B$. We write $f : A \rightarrow B$ for $f \in \mathcal{C}[A,B]$.
-        \item For any object $A$, a morphism $\id{A} : A \rightarrow A$, the \emph{identity} morphism on $A$.
-        \item For any morphisms $f : A \rightarrow B$ and $g : B \rightarrow C$, a morphism $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+        \item A class $|\mathcal{C}|$ of \emph{objects}. We write $A \in \mathcal{C}$ for $A
+                  \in |\mathcal{C}|$.
+        \item For any objects $A$, $B$, a set $\mathcal{C}[A,B]$ of \emph{morphisms} from $A$
+              to $B$. We write $f : A \rightarrow B$ for $f \in \mathcal{C}[A,B]$.
+        \item For any object $A$, a morphism $\id{A} : A \rightarrow A$, the \emph{identity}
+              morphism on $A$.
+        \item For any morphisms $f : A \rightarrow B$ and $g : B \rightarrow C$, a morphism
+              $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
     \end{itemize}
     such that:
     \begin{description}
-        \item[Associativity] Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C \rightarrow D$, we have $h \circ (g \circ f) = (h \circ g) \circ f$
-        \item[Left Unit Law] For any morphism $f : A \rightarrow B$, we have $\id{B} \circ f = f$.
-        \item[Right Unit Law] For any morphism $f : A \rightarrow B$, we have $f \circ \id{A} = f$.
+        \item[Associativity] Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C
+                \rightarrow D$, we have $h \circ (g \circ f) = (h \circ g) \circ f$
+        \item[Left Unit Law] For any morphism $f : A \rightarrow B$, we have $\id{B} \circ f
+                = f$.
+        \item[Right Unit Law] For any morphism $f : A \rightarrow B$, we have $f \circ \id{A}
+                = f$.
     \end{description}
 \end{df}
 
 \begin{prop}
-\label{prop:id-morph-unique}
+    \label{prop:id-morph-unique}
     The identity morphism on an object is unique.
 \end{prop}
 
@@ -181,9 +192,12 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
 \begin{df}[Preorder]
     A \emph{preorder} on a set $A$ is a relation $\leq$ on $A$ that is reflexive and transitive.
 
-    A \emph{preordered set} is a pair $(A, \leq)$ such that $\leq$ is a preorder on $A$. We usually write $A$ for the preordered set $(A, \leq)$.
+    A \emph{preordered set} is a pair $(A, \leq)$ such that $\leq$ is a preorder on
+    $A$. We usually write $A$ for the preordered set $(A, \leq)$.
 
-    We identify any preordered set $A$ with the category whose objects are the elements of $A$, with one morphism $a \rightarrow b$ iff $a \leq b$, and no morphism $a \rightarrow b$ otherwise.
+    We identify any preordered set $A$ with the category whose objects are the
+    elements of $A$, with one morphism $a \rightarrow b$ iff $a \leq b$, and no
+    morphism $a \rightarrow b$ otherwise.
 \end{df}
 
 \begin{ex}
@@ -337,10 +351,10 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
 \begin{proof}
     \pf
     \begin{align*}
-        r & = r \circ \id{A} \\
-        & = r \circ s \circ r' \\
-        & = \id{B} \circ r' \\
-        & = r' & \qed
+        r & = r \circ \id{A}            \\
+          & = r \circ s \circ r'        \\
+          & = \id{B} \circ r'           \\
+          & = r'                 & \qed
     \end{align*}
 \end{proof}
 
@@ -352,9 +366,9 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
 \begin{proof}
     \pf
     \begin{align*}
-        r_2 \circ r_1 \circ s_1 \circ s_2 & = r_2 \circ \id{B} \circ s_2 \\
-        & = r_2 \circ s_2 \\
-        & = \id{C} & \qed
+        r_2 \circ r_1 \circ s_1 \circ s_2 & = r_2 \circ \id{B} \circ s_2        \\
+                                          & = r_2 \circ s_2                     \\
+                                          & = \id{C}                     & \qed
     \end{align*}
 \end{proof}
 
@@ -390,7 +404,8 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
 \begin{ex}
     It is not true in general that every monomorphism in any category has a section. nor that every epimorphism in any category has a retraction.
 
-    In the category $\mathbf{2}$, the morphism $0 \leq 1$ is monic and epi but has no retraction or section.
+    In the category $\mathbf{2}$, the morphism $0 \leq 1$ is monic and epi but has
+    no retraction or section.
 \end{ex}
 
 %TODO This is not true in Grp
@@ -400,14 +415,17 @@ For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathb
 \begin{df}[Isomorphism]
     In a category $\mathcal{C}$, a morphism $f : A \rightarrow B$ is an \emph{isomorphism}, denoted $f : A \cong B$, iff there exists a morphism $f^{-1} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f^{-1} \circ f = \id{A}$ and $f \circ f^{-1} = \id{B}$.
 
-    An \emph{automorphism} on an object $A$ is an isomorphism between $A$ and itself. We write $\mathrm{Aut}_\mathcal{C}(A)$ for the set of all automorphisms on $A$.
+    An \emph{automorphism} on an object $A$ is an isomorphism between $A$ and
+    itself. We write $\mathrm{Aut}_\mathcal{C}(A)$ for the set of all automorphisms
+    on $A$.
 
-    Objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an isomorphism between them.
+    Objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an
+    isomorphism between them.
 \end{df}
 
 \begin{prop}
     \label{prop:inv-unique}
-The inverse of an isomorphism is unique.
+    The inverse of an isomorphism is unique.
 \end{prop}
 
 \begin{proof}
@@ -493,7 +511,8 @@ The inverse of an isomorphism is unique.
     Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
     \begin{itemize}
         \item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
-        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA \rightarrow FB : \mathcal{D}$
+        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA
+                  \rightarrow FB : \mathcal{D}$
     \end{itemize}
     such that:
     \begin{itemize}
@@ -513,7 +532,7 @@ The inverse of an isomorphism is unique.
 \begin{df}[Constant Functor]
     Given categories $\mathcal{C}$, $\mathcal{D}$ and an object $D \in \mathcal{D}$, the \emph{constant functor} $K^\mathcal{C} D : \mathcal{C} \rightarrow \mathcal{D}$ is the functor defined by
     \begin{align*}
-        K^\mathcal{C} D C & = D \\
+        K^\mathcal{C} D C & = D      \\
         K^\mathcal{C} D f & = \id{D}
     \end{align*}
 \end{df}
@@ -523,13 +542,16 @@ The inverse of an isomorphism is unique.
 \begin{df}[Comma Category]
     Let $F : \mathcal{C} \rightarrow \mathcal{E}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$ be functors. The \emph{comma category} $F \downarrow G$ is the category with:
     \begin{itemize}
-        \item objects all pairs $(C,D,f)$ where $C \in \mathcal{C}$, $D \in \mathcal{D}$ and $f : FC \rightarrow GD : \mathcal{E}$
-        \item morphisms $(u,v) : (C,D,f) \rightarrow (C',D',g)$ all pairs $u : C \rightarrow C' : \mathcal{C}$ and $v : D \rightarrow D' : \mathcal{D}$ such that the following diagram commutes:
+        \item objects all pairs $(C,D,f)$ where $C \in \mathcal{C}$, $D \in \mathcal{D}$ and
+              $f : FC \rightarrow GD : \mathcal{E}$
+        \item morphisms $(u,v) : (C,D,f) \rightarrow (C',D',g)$ all pairs $u : C \rightarrow
+                  C' : \mathcal{C}$ and $v : D \rightarrow D' : \mathcal{D}$ such that the
+              following diagram commutes:
 
-        \begin{tikzcd}
-            FC \arrow[r,"f"] \arrow[d,"Fu"] & GD \arrow[d,"Gv"] \\
-            FC' \arrow[r,"g"] & GD'
-        \end{tikzcd}
+              \begin{tikzcd}
+                  FC \arrow[r,"f"] \arrow[d,"Fu"] & GD \arrow[d,"Gv"] \\
+                  FC' \arrow[r,"g"] & GD'
+              \end{tikzcd}
     \end{itemize}
 \end{df}
 
@@ -553,12 +575,15 @@ The inverse of an isomorphism is unique.
     A \emph{group} $G$ consists of a set $G$ and a binary operation $\cdot : G^2 \rightarrow G$ such that $\cdot$ is associative, and there exists $e \in G$, the \emph{identity} element of the group, such that:
     \begin{itemize}
         \item For all $x \in G$ we have $xe = ex = x$
-        \item For all $x \in G$, there exists $\inv{x} \in G$, the \emph{inverse} of $x$, such that $x \inv{x} = \inv{x} x = e$.
+        \item For all $x \in G$, there exists $\inv{x} \in G$, the \emph{inverse} of $x$,
+              such that $x \inv{x} = \inv{x} x = e$.
     \end{itemize}
 
-    We identify a group $G$ with the category $G$ with one object and morphisms the elements of $G$, with composition given by $\cdot$.
+    We identify a group $G$ with the category $G$ with one object and morphisms the
+    elements of $G$, with composition given by $\cdot$.
 
-    The \emph{order} of a group $G$, denoted $|G|$, is the number of elements in $G$ if $G$ is finite; otherwise we write $|G| = \infty$.
+    The \emph{order} of a group $G$, denoted $|G|$, is the number of elements in
+    $G$ if $G$ is finite; otherwise we write $|G| = \infty$.
 \end{df}
 
 \begin{prop}
@@ -581,22 +606,27 @@ The inverse of an isomorphism is unique.
 \begin{ex}
     \begin{itemize}
         \item
-    The \emph{trivial} group is $\{e\}$ under $ee = e$.
-    \item $\mathbb{Z}$ is a group under addition %TODO Define this
-    \item $\mathbb{Q}$ is a group under addition %TODO Define this
-    \item $\mathbb{Q} - \{0\}$ is a group under multiplication
-    \item $\mathbb{R}$ is a group under addition %TODO Define this
-    \item $\mathbb{R} - \{0\}$ is a group under multiplication
-    \item $\mathbb{C}$ is a group under addition %TODO Define this
-    \item $\mathbb{C} - \{0\}$ is a group under multiplication
-    \item $\{-1,1\}$ is a group under multiplication
-    \item The set of $2 \times 2$ real matrices with non-zero determinant is a group under matrix multiplication.
-    \item For any positive integer $n$, the set $\mathbb{Z} / n \mathbb{Z}$ of integers modulo $n$ under addition is a group.
-    \item For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, we have $\Aut{\mathcal{C}}{A}$ is a group under $gf = f \circ g$.
+              The \emph{trivial} group is $\{e\}$ under $ee = e$.
+        \item $\mathbb{Z}$ is a group under addition %TODO Define this
+        \item $\mathbb{Q}$ is a group under addition %TODO Define this
+        \item $\mathbb{Q} - \{0\}$ is a group under multiplication
+        \item $\mathbb{R}$ is a group under addition %TODO Define this
+        \item $\mathbb{R} - \{0\}$ is a group under multiplication
+        \item $\mathbb{C}$ is a group under addition %TODO Define this
+        \item $\mathbb{C} - \{0\}$ is a group under multiplication
+        \item $\{-1,1\}$ is a group under multiplication
+        \item The set of $2 \times 2$ real matrices with non-zero determinant is a group
+              under matrix multiplication.
+        \item For any positive integer $n$, the set $\mathbb{Z} / n \mathbb{Z}$ of integers
+              modulo $n$ under addition is a group.
+        \item For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, we have
+              $\Aut{\mathcal{C}}{A}$ is a group under $gf = f \circ g$.
 
-    For $A$ a set, we call $S_A = \Aut{\Set}{A}$ the \emph{symmetric group} or \emph{group of permutations} of $A$.
+              For $A$ a set, we call $S_A = \Aut{\Set}{A}$ the \emph{symmetric group} or
+              \emph{group of permutations} of $A$.
 
-    \item For $n \geq 3$, the \emph{dihedral group} $D_{2n}$ consists of the set of rigid motions that map the regular $n$-gon onto itself under composition.
+        \item For $n \geq 3$, the \emph{dihedral group} $D_{2n}$ consists of the set of rigid
+              motions that map the regular $n$-gon onto itself under composition.
     \end{itemize}
 \end{ex}
 
@@ -605,7 +635,8 @@ The inverse of an isomorphism is unique.
         \item The only group of order 1 is the trivial group.
         \item The only group of order 2 is $\mathbb{Z}_2$.
         \item The only group of order 3 is $\mathbb{Z}_3$.
-        \item There are exactly two groups of order 4: $\mathbb{Z}_4$ and $\mathbb{Z}_2 \times \mathbb{Z}_2$ under $(a,b) (c,d) = (ac,bd)$.
+        \item There are exactly two groups of order 4: $\mathbb{Z}_4$ and $\mathbb{Z}_2
+                  \times \mathbb{Z}_2$ under $(a,b) (c,d) = (ac,bd)$.
     \end{itemize}
 \end{ex}
 
@@ -652,9 +683,9 @@ The inverse of an isomorphism is unique.
 \begin{df}
     Let $G$ be a group. Let $g \in G$. We define $g^n \in G$ for all $n \in \mathbb{Z}$ as follows:
     \begin{align*}
-        g^0 & = e \\
-        g^{n+1} & = g^n g & (n \geq 0) \\
-        g^{-n} & = (g^{-1})^n & (n > 0)
+        g^0     & = e                       \\
+        g^{n+1} & = g^n g      & (n \geq 0) \\
+        g^{-n}  & = (g^{-1})^n & (n > 0)
     \end{align*}
 \end{df}
 
@@ -680,10 +711,10 @@ The inverse of an isomorphism is unique.
         \begin{proof}
             \pf
             \begin{align*}
-                g^{-k+1} & = (g^{-1})^{k-1} \\
-                & = (g^{-1})^{k-1} g^{-1} g \\
-                & = (g^{-1})^k g \\
-                & = g^{-k} g
+                g^{-k+1} & = (g^{-1})^{k-1}          \\
+                         & = (g^{-1})^{k-1} g^{-1} g \\
+                         & = (g^{-1})^k g            \\
+                         & = g^{-k} g
             \end{align*}
         \end{proof}
     \end{proof}
@@ -699,19 +730,19 @@ The inverse of an isomorphism is unique.
     \begin{proof}
         \pf
         \begin{align*}
-            g^{m+n+1} & = g^{m+n} g & (\text{\stepref{1}}) \\
-            & = g^m g^n g \\
-            & = g^m g^{n+1} & (\text{\stepref{1}})
+            g^{m+n+1} & = g^{m+n} g   & (\text{\stepref{1}}) \\
+                      & = g^m g^n g                          \\
+                      & = g^m g^{n+1} & (\text{\stepref{1}})
         \end{align*}
     \end{proof}
     \step{5}{If $g^{m+n} = g^m g^n$ then $g^{m+n-1} = g^m g^{n-1}$}
     \begin{proof}
         \pf
         \begin{align*}
-            g^{m+n-1} g & = g^{m+n} & (\text{\stepref{1}})\\
-            & = g^m g^n \\
-            \therefore g^{m+n-1} & = g^m g^n g^{-1} \\
-            & = g^m g^{n-1} & (\text{\stepref{2}})
+            g^{m+n-1} g          & = g^{m+n}        & (\text{\stepref{1}}) \\
+                                 & = g^m g^n                               \\
+            \therefore g^{m+n-1} & = g^m g^n g^{-1}                        \\
+                                 & = g^m g^{n-1}    & (\text{\stepref{2}})
         \end{align*}
     \end{proof}
     \qed
@@ -734,17 +765,17 @@ The inverse of an isomorphism is unique.
         \pf
         \begin{align*}
             (g^m)^{n+1} & = (g^m)^n g^m & (\text{Proposition \ref{prop:power-add}}) \\
-            & = g^{mn} g^m \\
-            & = g^{mn + m} & (\text{Proposition \ref{prop:power-add}})
+                        & = g^{mn} g^m                                              \\
+                        & = g^{mn + m}  & (\text{Proposition \ref{prop:power-add}})
         \end{align*}
     \end{proof}
     \step{3}{If $(g^m)^n = g^{mn}$ then $(g^m)^{n-1} = g^{m(n-1)}$.}
     \begin{proof}
         \pf
         \begin{align*}
-            (g^m)^n & = g^{mn} \\
-            \therefore (g^m)^{n-1} g^m & = g^{mn-m} g^m & (\text{Proposition \ref{prop:power-add}})\\
-            \therefore (g^m)^{n-1} & = g^{mn-m} & (\text{Cancellation})
+            (g^m)^n                    & = g^{mn}                                                   \\
+            \therefore (g^m)^{n-1} g^m & = g^{mn-m} g^m & (\text{Proposition \ref{prop:power-add}}) \\
+            \therefore (g^m)^{n-1}     & = g^{mn-m}     & (\text{Cancellation})
         \end{align*}
     \end{proof}
     \qed
@@ -776,11 +807,11 @@ The inverse of an isomorphism is unique.
     \begin{proof}
         \pf
         \begin{align*}
-            e & = g^n \\
-            & = g^{q|g| + d} \\
-            & = (g^{|g|})^q g^d & (\text{Propositions \ref{prop:power-add}, \ref{prop:power-mult}}) \\
-            & = e^q g^d \\
-            & = g^d
+            e & = g^n                                                                                 \\
+              & = g^{q|g| + d}                                                                        \\
+              & = (g^{|g|})^q g^d & (\text{Propositions \ref{prop:power-add}, \ref{prop:power-mult}}) \\
+              & = e^q g^d                                                                             \\
+              & = g^d
         \end{align*}
     \end{proof}
     \step{3}{$d = 0$}
@@ -811,7 +842,7 @@ The inverse of an isomorphism is unique.
     \step{3}{$g^{j-i} = e$}
     \step{4}{$g$ has finite order and $|g| \leq |G|$}
     \begin{proof}
-            \pf\ Since $|g| \leq j - i \leq j \leq |G|$.
+        \pf\ Since $|g| \leq j - i \leq j \leq |G|$.
     \end{proof}
     \qed
 \end{proof}
@@ -824,9 +855,9 @@ The inverse of an isomorphism is unique.
 \begin{proof}
     \pf\ Since for any integer $d$ we have
     \begin{align*}
-        g^{md} = e & \Leftrightarrow |g| \mid md & (\text{Corollary \ref{cor:order-divides}})\\
-        & \Leftrightarrow \lcm(m,|g|) \mid md \\
-        & \Leftrightarrow \frac{\lcm(m,|g|)}{m} \mid d & \qed
+        g^{md} = e & \Leftrightarrow |g| \mid md                  & (\text{Corollary \ref{cor:order-divides}}) \\
+                   & \Leftrightarrow \lcm(m,|g|) \mid md                                                       \\
+                   & \Leftrightarrow \frac{\lcm(m,|g|)}{m} \mid d & \qed
     \end{align*}
     and so $|g^m| = \frac{\lcm(m,|g|)}{m}$ by Corollary \ref{cor:order-divides}. \qed
 \end{proof}
@@ -846,7 +877,7 @@ The inverse of an isomorphism is unique.
 
 \begin{prop}
     \label{prop:order-gh}
-    Let $G$ be a group. Let $g,h \in G$ have finite order. Assume $gh = hg$. Then $|gh|$ has finite order and 
+    Let $G$ be a group. Let $g,h \in G$ have finite order. Assume $gh = hg$. Then $|gh|$ has finite order and
     \[ |gh| \mid \lcm(|g|,|h|)\]
 \end{prop}
 
@@ -919,8 +950,8 @@ The inverse of an isomorphism is unique.
 \begin{proof}
     \pf\ Since
     \begin{align*}
-        (ag\inv{a})^n = e & \Leftrightarrow a g^n \inv{a} = e \\
-        & \Leftrightarrow g^n = e & \qed
+        (ag\inv{a})^n = e & \Leftrightarrow a g^n \inv{a} = e        \\
+                          & \Leftrightarrow g^n = e           & \qed
     \end{align*}
 \end{proof}
 
@@ -1076,10 +1107,10 @@ The inverse of an isomorphism is unique.
     \begin{proof}
         \pf
         \begin{align*}
-            \langle \phi, \psi \rangle (kk') & = (\phi(kk'), \psi(kk')) \\
-            & = (\phi(k)\phi(k'), \psi(k)\psi(k')) \\
-            & = (\phi(k),\psi(k)) (\phi(k'),\psi(k')) \\
-            & = \langle \phi,\psi \rangle(k) \langle \phi,\psi \rangle(k')
+            \langle \phi, \psi \rangle (kk') & = (\phi(kk'), \psi(kk'))                                     \\
+                                             & = (\phi(k)\phi(k'), \psi(k)\psi(k'))                         \\
+                                             & = (\phi(k),\psi(k)) (\phi(k'),\psi(k'))                      \\
+                                             & = \langle \phi,\psi \rangle(k) \langle \phi,\psi \rangle(k')
         \end{align*}
     \end{proof}
     \qed
@@ -1109,6 +1140,67 @@ The inverse of an isomorphism is unique.
     \pf\ The only automorphisms are the identity and multiplication by -1. \qed
 \end{proof}
 
+\section{Subgroups}
+
+\begin{df}[Subgroup]
+Let $(G,\cdot)$ and $(H,*)$ be groups such that $H$ is a subset of $G$. Then $H$ is a \emph{subgroup} of $G$ iff the inclusion $i : H \hookrightarrow G$ is a group homomorphism.
+\end{df}
+
+\begin{prop}
+If $(H,*)$ is a subgroup of $(G,\cdot)$ then $*$ is the restriction of $\cdot$ to $H$.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $x,y \in H$ we have
+\[ x * y = i(x * y) = i(x) \cdot i(y) = x \cdot y \enspace .  \qquad \qed \]
+\end{proof}
+
+\begin{ex}
+For any group $G$ we have $\{e\}$ is a subgroup of $G$.
+\end{ex}
+
+\begin{prop}
+Let $G$ be a group. Let $H$ be a subset of $G$. Then $H$ is a subgroup of $G$ iff $H$ is nonempty and, for all $x,y \in H$, we have $x \inv{y} \in H$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $H$ is a subgroup of $G$ then $H$ is nonempty.}
+\begin{proof}
+\pf\ Since every group has an identity element and so is nonempty.
+\end{proof}
+\step{2}{If $H$ is a subgroup of $G$ then, for all $x,y \in H$, we have $x \inv{y} \in H$.}
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+\step{3}{If $H$ is nonempty and, for all $x,y \in H$, we have $x \inv{y} \in H$, then $H$ is a subgroup of $G$.}
+\begin{proof}
+	\step{a}{\assume{$H$ is nonempty.}}
+	\step{b}{\assume{$\forall x,y \in H. x \inv{y} \in H$}}
+	\step{c}{$e \in H$}
+	\begin{proof}
+		\pf\ Pick $x \in H$. We have $e = x \inv{x} \in H$.
+	\end{proof}
+	\step{d}{$\forall x \in H. \inv{x} \in H$}
+	\begin{proof}
+		\pf\ Given $x \in H$ we have $\inv{x} = e \inv{x} \in H$.
+	\end{proof}
+	\step{c}{$H$ is closed under the restriction of $\cdot$}
+	\begin{proof}
+		\pf\ Given $x,y \in H$ we have $xy = x \inv{(\inv{y})} \in H$.
+	\end{proof}
+	\step{d}{$H$ is a group under the restriction of $\cdot$}
+	\begin{proof}
+		\pf\ Associativity is inherited from $G$ and the existence of an identity element and inverses follows from \stepref{c} and \stepref{d}.
+	\end{proof}
+	\step{e}{The inclusion $H \hookrightarrow G$ is a group homomorphism.}
+	\begin{proof}
+		\pf\ For $x,y \in H$ we have $i(xy) = i(x)i(y) = xy$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Inner Automorphisms}
 
 \begin{prop}
@@ -1121,9 +1213,9 @@ The inverse of an isomorphism is unique.
     \begin{proof}
         \pf
         \begin{align*}
-            \gamma_g(ab) & = gab\inv{g} \\
-            & = ga\inv{g} gb\inv{g} \\
-            & = \gamma_g(a) \gamma_g(b)
+            \gamma_g(ab) & = gab\inv{g}              \\
+                         & = ga\inv{g} gb\inv{g}     \\
+                         & = \gamma_g(a) \gamma_g(b)
         \end{align*}
     \end{proof}
     \step{2}{$\gamma_g$ is injective.}
@@ -1138,7 +1230,7 @@ The inverse of an isomorphism is unique.
 \end{proof}
 
 \begin{df}[Inner Automorphism]
-Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the form $\gamma_g(a) = ga\inv{g}$ for some $g \in G$.
+    Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the form $\gamma_g(a) = ga\inv{g}$ for some $g \in G$.
 \end{df}
 
 \begin{prop}
@@ -1225,9 +1317,9 @@ Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the for
 \begin{proof}
     \pf\ For any set $A$, the unique group homomorphism $\{e\} \rightarrow A$ makes the following diagram commute.
     \[ \begin{tikzcd}
-        \{e\} \arrow[r] & A \\
-        \emptyset \arrow[u] \arrow[ur]
-    \end{tikzcd} \]
+            \{e\} \arrow[r] & A \\
+            \emptyset \arrow[u] \arrow[ur]
+        \end{tikzcd} \]
 \end{proof}
 
 \begin{prop}
@@ -1243,10 +1335,10 @@ Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the for
 \end{prop}
 
 \[ \begin{tikzcd}
-    & G & \\
-    F(A) \arrow[r,"\kappa_1"] \arrow[ur,"f"] & F(A+B) \arrow[u,"k"] & \arrow[l,"\kappa_2"] F(B) \arrow[ul,"g"] \\
-    A \arrow[r,"k_1"] \arrow[u,"i_A"] & A+B \arrow[u,"j"] & \arrow[l,"k_2"] \arrow[u,"i_B"] B
-\end{tikzcd} \]
+        & G & \\
+        F(A) \arrow[r,"\kappa_1"] \arrow[ur,"f"] & F(A+B) \arrow[u,"k"] & \arrow[l,"\kappa_2"] F(B) \arrow[ul,"g"] \\
+        A \arrow[r,"k_1"] \arrow[u,"i_A"] & A+B \arrow[u,"j"] & \arrow[l,"k_2"] \arrow[u,"i_B"] B
+    \end{tikzcd} \]
 
 \begin{proof}
     \pf
@@ -1260,13 +1352,16 @@ Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the for
     \qed
 \end{proof}
 
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
     A group is \emph{Abelian} iff any two elements commute.
 \end{df}
 
-In an Abelian group $G$, we often denote the group operation by $+$, the identity element by $0$ and the inverse of an element $g$ by $-g$. We write $ng$ for $g^n$ ($g \in G$, $n \in \mathbb{Z}$).
+In an Abelian group $G$, we often denote the group operation by $+$, the
+identity element by $0$ and the inverse of an element $g$ by $-g$. We write
+$ng$ for $g^n$ ($g \in G$, $n \in \mathbb{Z}$).
 
 \begin{ex}
     Every group of order $\leq 4$ is Abelian.
@@ -1287,9 +1382,9 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
 \begin{proof}
     \pf\ For any $g,h \in G$ we have
     \begin{align*}
-        ghgh & = e \\
-        \therefore hgh & = g & (\text{multiplying on the left by }g) \\
-        \therefore hg & = gh & (\text{multiplying on the right by } h) & \qed
+        ghgh           & = e                                                   \\
+        \therefore hgh & = g  & (\text{multiplying on the left by }g)          \\
+        \therefore hg  & = gh & (\text{multiplying on the right by } h) & \qed
     \end{align*}
 \end{proof}
 
@@ -1484,10 +1579,10 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
     \begin{proof}
         \pf
         \begin{align*}
-            (\phi - \psi)(g + g') & = \phi(g + g') - \psi(g + g') \\
-            & = \phi(g) + \phi(g') - \psi(g) - \psi(g') \\
-            & = \phi(g) - \psi(g) + \phi(g') - \psi(g') \\
-            & = (\phi - \psi)(g) + (\phi - \psi)(g')
+            (\phi - \psi)(g + g') & = \phi(g + g') - \psi(g + g')             \\
+                                  & = \phi(g) + \phi(g') - \psi(g) - \psi(g') \\
+                                  & = \phi(g) - \psi(g) + \phi(g') - \psi(g') \\
+                                  & = (\phi - \psi)(g) + (\phi - \psi)(g')
         \end{align*}
     \end{proof}
     \qed
@@ -1516,21 +1611,21 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
     \begin{proof}
         \pf
         \begin{align*}
-            [\phi,\psi]((g,h) + (g',h')) & = [\phi,\psi](g + g', h + h') \\
-            & = \phi(g + g') + \psi(h + h') \\
-            & = \phi(g) + \phi(g') + \psi(h) + \psi(h') \\
-            & = \phi(g) + \psi(h) + \phi(g') + \psi(h') \\
-            & = [\phi,\psi](g,h) + [\phi,\psi](g',h')
+            [\phi,\psi]((g,h) + (g',h')) & = [\phi,\psi](g + g', h + h')             \\
+                                         & = \phi(g + g') + \psi(h + h')             \\
+                                         & = \phi(g) + \phi(g') + \psi(h) + \psi(h') \\
+                                         & = \phi(g) + \psi(h) + \phi(g') + \psi(h') \\
+                                         & = [\phi,\psi](g,h) + [\phi,\psi](g',h')
         \end{align*}
     \end{proof}
     \step{5}{$[\phi,\psi] \circ \kappa_1 = \phi$}
     \begin{proof}
         \pf
         \begin{align*}
-            [\phi,\psi](\kappa_1(g)) & = [\phi,\psi](g,e_h) \\
-            & = \phi(g) + \psi(e_H) \\
-            & = \phi(g) + e_K \\
-            & = \phi(g)
+            [\phi,\psi](\kappa_1(g)) & = [\phi,\psi](g,e_h)  \\
+                                     & = \phi(g) + \psi(e_H) \\
+                                     & = \phi(g) + e_K       \\
+                                     & = \phi(g)
         \end{align*}
     \end{proof}
     \step{6}{$[\phi,\psi] \circ \kappa_2 = \psi$}
@@ -1541,9 +1636,9 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
     \begin{proof}
         \pf
         \begin{align*}
-            f(g,h) & = f((g,e_H) + (e_G,h)) \\
-            & = f(\kappa_1(g)) + f(\kappa_2(h)) \\
-            & = \phi(g) + \psi(h)
+            f(g,h) & = f((g,e_H) + (e_G,h))            \\
+                   & = f(\kappa_1(g)) + f(\kappa_2(h)) \\
+                   & = \phi(g) + \psi(h)
         \end{align*}
     \end{proof}
     \qed
@@ -1573,10 +1668,10 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
 \end{prop}
 
 \[ \begin{tikzcd}
-    & G & \\
-    F^{ab}(A) \arrow[r,"\kappa_1"] \arrow[ur,"f"] & F^{ab}(A+B) \arrow[u,"k"] & \arrow[l,"\kappa_2"] F^{ab}(B) \arrow[ul,"g"] \\
-    A \arrow[r,"k_1"] \arrow[u,"i_A"] & A+B \arrow[u,"j"] & \arrow[l,"k_2"] \arrow[u,"i_B"] B
-\end{tikzcd} \]
+        & G & \\
+        F^{ab}(A) \arrow[r,"\kappa_1"] \arrow[ur,"f"] & F^{ab}(A+B) \arrow[u,"k"] & \arrow[l,"\kappa_2"] F^{ab}(B) \arrow[ul,"g"] \\
+        A \arrow[r,"k_1"] \arrow[u,"i_A"] & A+B \arrow[u,"j"] & \arrow[l,"k_2"] \arrow[u,"i_B"] B
+    \end{tikzcd} \]
 
 \begin{proof}
     \pf
