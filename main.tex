@@ -1206,6 +1206,7 @@ The intersection of a set of subgroups of $G$ is a subgroup of $G$.
 \end{cor}
 
 \begin{cor}
+\label{cor:inverse-image-subgroup}
 Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $H$. Then $\inv{\phi}(K)$ is a subgroup of $G$.
 \end{cor}
 
@@ -1229,6 +1230,14 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $
 Let $\phi : G \rightarrow H$ be a group homomorphism. The \emph{kernel} of $\phi$ is
 \[ \ker \phi = \{ g \in G : \phi(g) = e \} \enspace . \]
 \end{df}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a subgroup of $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ Corollary \ref{cor:inverse-image-subgroup}. \qed
+\end{proof}
 
 \section{Inner Automorphisms}
 
