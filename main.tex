@@ -25,6 +25,7 @@
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
 \newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
+\newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
 
 \begin{document}
 
@@ -1586,6 +1587,25 @@ In an Abelian group $G$, we often denote the group operation by $+$, the identit
     \step{5}{\pflet{$k : F^{ab}(A+B) \rightarrow G$ be the unique group homomorphism such that $k \circ j = h$.}}
     \step{6}{$k$ is the unique group homomorphism such that $k \circ \kappa_1 \circ i_A = f \circ i_A$ and $k \circ \kappa_2 \circ i_B = g \circ i_B$.}
     \step{7}{$k$ is the unique group homomorphism such that $k \circ \kappa_1 = f$ and $k \circ \kappa_2 = g$.}
+    \qed
+\end{proof}
+
+\begin{prop}
+    For $A$ and $B$ finite sets, if $\Fab{A} \cong \Fab{B}$ then $A \cong B$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{For any set $C$, define $\sim$ on $\Fab{C}$ by: $f \sim f'$ iff there exists $g \in \Fab{C}$ such that $f - f' = 2g$.}
+    \step{2}{For any set $C$, $\sim$ is an equivalence relation on $\Fab{C}$.}
+    \step{3}{For any set $C$, we have $\Fab{C}/\sim$ is finite if and only if $C$ is finite, in which case $|\Fab{C}/\sim| = 2^{|C|}$.}
+    \begin{proof}
+        \pf\ There is a bijection between $\Fab{C}/\sim$ and the finite subsets of $C$, which maps $f$ to $\{ c \in C : f(c) \text{ is odd} \}$.
+    \end{proof}
+    \step{4}{If $\Fab{A} \cong \Fab{B}$ then $A \cong B$.}
+    \begin{proof}
+        \pf\ If $|\Fab{A}/\sim| = |\Fab{B} / \sim|$ then $2^{|A|} = 2^{|B|}$ and so $|A| = |B|$.
+    \end{proof}
     \qed
 \end{proof}
 
