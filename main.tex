@@ -1377,6 +1377,8 @@ which is impossible.
 
 \begin{df}[Inner Automorphism]
     Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the form $\gamma_g(a) = ga\inv{g}$ for some $g \in G$.
+    
+    We write $\mathrm{Inn}(G)$ for the set of inner automorphisms of $G$.
 \end{df}
 
 \begin{prop}
@@ -1387,6 +1389,10 @@ which is impossible.
 \begin{proof}
     \pf\ Since $\gamma_{gh}(a) = gha\inv{h}\inv{g} = \gamma_g(\gamma_h(a))$. \qed
 \end{proof}
+
+\begin{cor}
+$\mathrm{Inn}(G)$ is a subgroup of $\Aut{\Grp}{G}$.
+\end{cor}
 
 \section{Direct Products}
 
@@ -1809,6 +1815,48 @@ There are 42 Abelian groups of order 1024 up to isomorphism. %TODO
     \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a group. The following are equivalent.
+\begin{enumerate}
+\item $\mathrm{Inn}(G)$ is cyclic.
+\item $\mathrm{Inn}(G)$ is trivial.
+\item $G$ is Abelian.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\mathrm{Inn}(G) = \langle \gamma_g \rangle$}}
+	\step{b}{$g$ commutes with every element of $G$}
+	\begin{proof}
+		\step{b}{\pflet{$x \in G$}}
+		\step{c}{\pick\ $n \in \mathbb{Z}$ such that $\gamma_x = \gamma_g^n$}
+		\step{d}{$\forall y \in G. xy\inv{x} = g^nyg^{-n}$}
+		\step{e}{$x g \inv{x} = g$}
+	\end{proof}
+	\step{c}{$\gamma_g = \id{G}$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$\forall g \in G. \gamma_g = \id{G}$}}
+	\step{b}{\pflet{$x,y \in G$}}
+	\step{c}{$\gamma_x(y) = y$}
+	\step{d}{$xy\inv{x} = y$}
+	\step{e}{$xy = yx$}
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+	\pf\ If $xy = yx$ for all $x,y$ then $\gamma_x(y) = y$ for all $x$, $y$.
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
 \section{The Category of Abelian Groups}
 
 \begin{df}[Category of Abelian Groups]
@@ -1996,5 +2044,11 @@ for some $a,b,c,d \in \mathbb{R}$ with $a^2 + b^2 + c^2 + d^2 = 1$.
 \step{7}{$\det M = a^2 + b^2 + c^2 + d^2 = 1$}
 \qed
 \end{proof}
+
+\begin{cor}
+$\mathrm{SU}_2(\mathbb{C})$ is simply connected.
+\end{cor}
+
+%TODO
 
 \end{document}

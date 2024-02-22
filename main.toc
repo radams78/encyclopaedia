@@ -19,9 +19,9 @@
 \contentsline {section}{\numberline {6.1}Subgroups}{31}{}%
 \contentsline {section}{\numberline {6.2}Kernel}{33}{}%
 \contentsline {section}{\numberline {6.3}Inner Automorphisms}{34}{}%
-\contentsline {section}{\numberline {6.4}Direct Products}{34}{}%
+\contentsline {section}{\numberline {6.4}Direct Products}{35}{}%
 \contentsline {section}{\numberline {6.5}Free Groups}{35}{}%
 \contentsline {chapter}{\numberline {7}Abelian Groups}{39}{}%
-\contentsline {section}{\numberline {7.1}The Category of Abelian Groups}{42}{}%
-\contentsline {section}{\numberline {7.2}Free Abelian Groups}{43}{}%
-\contentsline {part}{III\hspace {1em}Linear Algebra}{45}{}%
+\contentsline {section}{\numberline {7.1}The Category of Abelian Groups}{43}{}%
+\contentsline {section}{\numberline {7.2}Free Abelian Groups}{44}{}%
+\contentsline {part}{III\hspace {1em}Linear Algebra}{47}{}%
