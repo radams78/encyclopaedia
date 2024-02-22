@@ -1938,4 +1938,63 @@ Every finitely generated Abelian group is a direct sum of cyclic groups.
 \begin{df}
     Let $\mathrm{GL}_n(\mathbb{R})$ be the group of invertible $n \times n$ real matrices.
 \end{df}
+
+\begin{df}
+    Let $\mathrm{GL}_n(\mathbb{C})$ be the group of invertible $n \times n$ complex matrices.
+\end{df}
+
+\begin{df}
+Let $\mathrm{SL}_n(\mathbb{R}) = \{ M \in \mathrm{GL}_n(\mathbb{R}) : \det M = 1 \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{SL}_n(\mathbb{C}) = \{ M \in \mathrm{GL}_n(\mathbb{C}) : \det M = 1 \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{O}_n(\mathbb{R}) = \{ M \in \mathrm{GL}_n(\mathbb{R}) : M M^\mathrm{T} = M^\mathrm{T} M = I_n \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{SO}_n(\mathbb{R}) = \{ M \in \mathrm{O}_n(\mathbb{R}) : \det M = 1 \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{U}_n(\mathbb{C}) = \{ M \in \mathrm{GL}_n(\mathbb{C}) : M M^\dagger = M^\dagger M = I_n \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{SU}_n(\mathbb{C}) = \{ M \in U_n(\mathbb{C}) : \det M = 1 \}$.
+\end{df}
+
+\begin{prop}
+Every matrix in $\mathrm{SU}_2(\mathbb{C})$ can be written in the form
+\[ \left( \begin{array}{cc}
+a + b i & c + d i \\
+-c + di & a - bi
+\end{array} \right) \]
+for some $a,b,c,d \in \mathbb{R}$ with $a^2 + b^2 + c^2 + d^2 = 1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$M = \left( \begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array} \right) \in \mathrm{SU}_2(\mathbb{C})$}}
+\step{2}{$\inv{M} = M^\dagger$}
+\step{3}{$\left( \begin{array}{cc}
+\delta & - \beta \\
+- \gamma & \alpha
+\end{array} \right) = \left( \begin{array}{cc}
+\overline{\alpha} & \overline{\gamma} \\
+\overline{\beta} & \overline{\delta}
+\end{array} \right)$}
+\step{4}{\pflet{$\alpha = a + bi$ and $\beta = c+di$.}}
+\step{5}{$\delta = \overline{\alpha} = a-bi$}
+\step{6}{$\gamma = - \overline{\beta} = -c+di$}
+\step{7}{$\det M = a^2 + b^2 + c^2 + d^2 = 1$}
+\qed
+\end{proof}
+
 \end{document}
