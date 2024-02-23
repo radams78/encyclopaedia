@@ -1727,6 +1727,42 @@ A subgroup $N$ of $G$ is \emph{normal} iff, for all $g \in G$ and $n \in N$, we 
 \end{df}
 
 \begin{prop}
+Let $G$ be a group and $N$ a subgroup of $G$. Then the following are equivalent.
+\begin{enumerate}
+\item $N$ is normal.
+\item $\forall g \in G. g N \inv{g} \subseteq N$
+\item $\forall g \in G. g N \inv{g} = N$
+\item $\forall g \in G. g N \subseteq N g$
+\item $\forall g \in G. gN = Ng$
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Leftrightarrow 2$}
+\begin{proof}
+\pf\ Immediate from definitions.
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If 2 holds then we have $gN\inv{g} \subseteq N$ and $\inv{g}Ng \subseteq N$ hence $N = gN\inv{g}$.
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+\pf\ Trivial.
+\end{proof}
+\step{3}{$2 \Leftrightarrow 4$}
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+\step{4}{$3 \Leftrightarrow 5$}
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
 Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a normal subgroup of $G$.
 \end{prop}
 
