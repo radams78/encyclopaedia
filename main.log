@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 FEB 2024 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 FEB 2024 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,14 +592,14 @@ m/it/10 g[]; h[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 ) =
 [30]
 WARNING: proof step "c" (<2>5) already defined
 WARNING: proof step "d" (<2>6) already defined
-[31] [32] [33] [34]
+[31] [32] [33] [34] [35]
 WARNING: proof step "5" (<1>6) already defined
-[35] [36] [37] [38]
+[36] [37] [38]
 Chapter 7.
 [39
 
 ] [40] [41]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 1919--1920
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 1939--1940
 []\OT1/cmr/bx/n/10 Proposition 7.17. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -641,7 +641,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/p
 ublic/cm-super/sfrm1000.pfb>
-Output written on main.pdf (49 pages, 362222 bytes).
+Output written on main.pdf (49 pages, 363448 bytes).
 PDF statistics:
  278 PDF objects out of 1000 (max. 8388607)
  181 compressed objects within 2 object streams

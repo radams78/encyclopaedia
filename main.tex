@@ -1531,6 +1531,26 @@ Every finitely generated subgroup of $\mathbb{Q}$ is cyclic.
 $\mathbb{Q}$ is not finitely generated.
 \end{cor}
 
+\begin{thm}
+For any positive integer $n$ we have
+\[ \sum_{m > 0, m \mid n} \phi(m) = n \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $\chi : \{ 0, 1, \ldots, n-1 \} \rightarrow \{ (m,d) : m > 0, m \mid n, d \text{ generates } \langle n/m \rangle \}$ by: $\chi(x) = (\gcd(x,n), x)$.}
+\step{2}{$\chi$ is injective.}
+\step{3}{$\chi$ is surjective.}
+\begin{proof}
+\pf\ Given $(m,d)$ such that $d$ generates $\langle n/m \rangle$ we have $\chi(d) = (m,d)$.
+\end{proof}
+\step{4}{$n = \sum_{m > 0, m \mid n} \phi(m)$}
+\begin{proof}
+\pf\ Since $\langle n/m \rangle \cong C_m$ and so has $\phi(m)$ generators.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Free Groups}
 
 \begin{prop}
