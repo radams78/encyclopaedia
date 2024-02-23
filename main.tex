@@ -1776,6 +1776,18 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a norm
 and so $gn\inv{g} \in \ker \phi$. \qed
 \end{proof}
 
+\section{Quotient Groups}
+
+\begin{prop}
+Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$. Then there exists an operation $\cdot : (G/\sim)^2 \rightarrow G/sim$ such that
+\[ \forall a,b \in G. [a][b] = [ab] \]
+iff, for all $a,g,g' \in G$, if $a \sim a'$ then $ag \sim a'g$ and $ga \sim ga'$. In this case, $G/\sim$ is a group under $\cdot$ and the canonical function $\pi : G \rightarrow G / \sim$ is a group homomorphism, and is universal with respect to group homomorphisms $\phi : G \rightarrow G'$ such that if $a \sim a'$ then $\phi(a) = \phi(a')$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
