@@ -1721,6 +1721,20 @@ $F(2)$ includes subgroups isomorphic to the free group on arbitrarily many gener
 A subgroup $N$ of $G$ is \emph{normal} iff, for all $g \in G$ and $n \in N$, we have $gn\inv{g} \in N$.
 \end{df}
 
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a normal subgroup of $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $g \in G$ and $n \in \ker \phi$ we have
+\begin{align*}
+\phi(gn\inv{g}) & = \phi(g) \phi(n) \inv{\phi(g)} \\
+& = \phi(g) \inv{\phi(g)} \\
+& = e
+\end{align*}
+and so $gn\inv{g} \in \ker \phi$. \qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -2005,6 +2019,14 @@ Let $G$ be a group. The following are equivalent.
 \begin{cor}
 If $\Aut{\Grp}{G}$ is cyclic then $G$ is Abelian.
 \end{cor}
+
+\begin{prop}
+Every subgroup of an Abelian group is normal.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $G$ be an Abelian group and $N$ a subgroup of $G$. Given $g \in G$ and $n \in N$ we have $gn\inv{g} = n \in N$. \qed
+\end{proof}
 
 \section{The Category of Abelian Groups}
 
