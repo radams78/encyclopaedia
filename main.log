@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 FEB 2024 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  24 FEB 2024 18:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,11 +528,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] (./main.toc)
+] (./main.toc [3])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [3] [4] [5
+ [4] [5
 
 ] [6]
 Chapter 1.
@@ -601,7 +601,7 @@ WARNING: proof step "2" (<1>3) already defined
 ]
 Chapter 7.
 [41] [42] [43]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2012--2013
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2020--2021
 []\OT1/cmr/bx/n/10 Proposition 7.17. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -643,7 +643,7 @@ onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public
 /cm-super/sfrm1000.pfb>
-Output written on main.pdf (51 pages, 368169 bytes).
+Output written on main.pdf (51 pages, 368587 bytes).
 PDF statistics:
  284 PDF objects out of 1000 (max. 8388607)
  185 compressed objects within 2 object streams
