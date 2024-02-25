@@ -1805,6 +1805,7 @@ Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ such that, for 
 
 \begin{proof}
 \pf
+\step{0}{$e \in H$}
 \step{1}{For all $x,y \in H$ we have $x \inv{y} \in H$.}
 \begin{proof}
 	\step{a}{\assume{$x \sim e$ and $y \sim e$.}}
@@ -1844,6 +1845,35 @@ Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ such that, for 
 	\begin{proof}
 		\pf\ $a = b \inv{b} a \sim b e = b$.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Coset]
+Let $G$ be a group and $H$ a subgroup of $G$. A \emph{left coset} of $H$ is a set of the form $aH$ for $a \in G$. A \emph{right coset} of $H$ is a set of the form $Ha$ for some $a \in G$.
+\end{df}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim$ on $G$ by: $a\sim b$ iff $\inv{a} b \in H$. Then $\sim$ is an equivalence relation on $G$ such that, if $a \sim b$, then $ga \sim gb$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\sim$ is reflexive.}
+\begin{proof}
+	\pf\ For any $a \in G$ we have $\inv{a} a = e \in H$.
+\end{proof}
+\step{2}{$\sim$ is symmetric.}
+\begin{proof}
+	\pf\ If $\inv{a} b \in H$ then $\inv{b} a \in H$.
+\end{proof}
+\step{3}{$\sim$ is transitive.}
+\begin{proof}
+	\pf\ If $\inv{a} b \in H$ and $\inv{b} c \in H$ then $\inv{a} c = (\inv{a} b) (\inv{b} c) \in H$.
+\end{proof}
+\step{4}{If $a \sim b$ then $ga \sim gb$.}
+\begin{proof}
+	\pf\ If $\inv{a} b \in H$ then $\inv{(ga)}(gb) = \inv{a} \inv{g} g b = \inv{a} b \in H$.
 \end{proof}
 \qed
 \end{proof}
