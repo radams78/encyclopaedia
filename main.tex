@@ -1799,6 +1799,7 @@ Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ that is compati
 \section{Cosets}
 
 \begin{prop}
+\label{prop:sim-gives-H}
 Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ such that, for all $a,b,g \in G$, if $a \sim b$ then $ga \sim gb$. Let $H = \{ h \in G : h \sim e \}$. Then $H$ is a subgroup of $G$ and, for all $a,b \in G$, we have
 \[ a \sim b \Leftrightarrow \inv{a} b \in H \Leftrightarrow aH = bH \enspace . \]
 \end{prop}
@@ -1854,26 +1855,43 @@ Let $G$ be a group and $H$ a subgroup of $G$. A \emph{left coset} of $H$ is a se
 \end{df}
 
 \begin{prop}
-Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim$ on $G$ by: $a\sim b$ iff $\inv{a} b \in H$. Then $\sim$ is an equivalence relation on $G$ such that, if $a \sim b$, then $ga \sim gb$.
+Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $\inv{a} b \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ga \sim gb$. The equivalence class of $a$ is $aH$.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{$\sim$ is reflexive.}
+\step{1}{For any subgroup $H$, we have $\sim_H$ is an equivalence relation on $G$.}
 \begin{proof}
-	\pf\ For any $a \in G$ we have $\inv{a} a = e \in H$.
+	\step{1}{$\sim$ is reflexive.}
+	\begin{proof}
+		\pf\ For any $a \in G$ we have $\inv{a} a = e \in H$.
+	\end{proof}
+	\step{2}{$\sim$ is symmetric.}
+	\begin{proof}
+		\pf\ If $\inv{a} b \in H$ then $\inv{b} a \in H$.
+	\end{proof}
+	\step{3}{$\sim$ is transitive.}
+	\begin{proof}
+		\pf\ If $\inv{a} b \in H$ and $\inv{b} c \in H$ then $\inv{a} c = (\inv{a} b) (\inv{b} c) \in H$.
+	\end{proof}
 \end{proof}
-\step{2}{$\sim$ is symmetric.}
-\begin{proof}
-	\pf\ If $\inv{a} b \in H$ then $\inv{b} a \in H$.
-\end{proof}
-\step{3}{$\sim$ is transitive.}
-\begin{proof}
-	\pf\ If $\inv{a} b \in H$ and $\inv{b} c \in H$ then $\inv{a} c = (\inv{a} b) (\inv{b} c) \in H$.
-\end{proof}
-\step{4}{If $a \sim b$ then $ga \sim gb$.}
+\step{4}{If $a \sim_H b$ then $ga \sim_H gb$.}
 \begin{proof}
 	\pf\ If $\inv{a} b \in H$ then $\inv{(ga)}(gb) = \inv{a} \inv{g} g b = \inv{a} b \in H$.
+\end{proof}
+\step{5}{For any equivalence relation $\sim$ on $G$ such that, whenever $a \sim b$, then $ga \sim gb$, there exists a subgroup $H$ such that $\sim = \sim_H$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:sim-gives-H}.
+\end{proof}
+\step{6}{The $\sim_H$-equivalence class of $a$ is $aH$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		a \sim b & \Leftrightarrow \inv{a} b \in H \\
+		& \Leftrightarrow \exists h \in H. \inv{a} b = h \\
+		& \Leftrightarrow \exists h \in H. b = aH \\
+		& \Leftrightarrow b \in aH
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
