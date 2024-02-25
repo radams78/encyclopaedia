@@ -1796,6 +1796,58 @@ iff $\sim$ is compatible with the group operation on $G$. In this case, $G/\sim$
 Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ that is compatible with the group operation on $G$. Then $G/\sim$ is the \emph{quotient group} of $G$ by $\sim$ under $[a][b] = [ab]$.
 \end{df}
 
+\section{Cosets}
+
+\begin{prop}
+Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ such that, for all $a,b,g \in G$, if $a \sim b$ then $ga \sim gb$. Let $H = \{ h \in G : h \sim e \}$. Then $H$ is a subgroup of $G$ and, for all $a,b \in G$, we have
+\[ a \sim b \Leftrightarrow \inv{a} b \in H \Leftrightarrow aH = bH \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $x,y \in H$ we have $x \inv{y} \in H$.}
+\begin{proof}
+	\step{a}{\assume{$x \sim e$ and $y \sim e$.}}
+	\step{b}{$e \sim \inv{y}$}
+	\begin{proof}
+		\pf\ Since $y \inv{y} \sim e \inv{y}$.
+	\end{proof}
+	\step{c}{$x \inv{y} \sim e$}
+	\begin{proof}
+		\pf\ Since $x \inv{y} \sim e \inv{y} \sim e$.
+	\end{proof}
+\end{proof}
+\step{2}{If $a \sim b$ then $\inv{a} b \in H$.}
+\begin{proof}
+	\pf\ If $a \sim b$ then $\inv{a} b \sim \inv{a} a = e$.
+\end{proof}
+\step{3}{If $\inv{a}b \in H$ then $aH = bH$.}
+\begin{proof}
+	\step{a}{\assume{$\inv{a}b \in H$}}
+	\step{c}{$bH \subseteq aH$}
+	\begin{proof}
+		\pf\ For any $h \in H$ we have $bh = a \inv{a} b h \in a H$.	
+	\end{proof}
+	\step{b}{$aH \subseteq bH$}
+	\begin{proof}
+		\pf\ Similar since $\inv{b}a \in H$.
+	\end{proof}
+\end{proof}
+\step{4}{If $aH = bH$ then $a \sim b$.}
+\begin{proof}
+	\step{a}{\assume{$aH = bH$}}
+	\step{b}{\pick\ $h \in H$ such that $a = bh$.}
+	\step{c}{$\inv{b} a = h$}
+	\step{d}{$\inv{b} a \in H$}
+	\step{e}{$\inv{b} a \sim e$}
+	\step{f}{$a \sim b$}
+	\begin{proof}
+		\pf\ $a = b \inv{b} a \sim b e = b$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
