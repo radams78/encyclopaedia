@@ -1896,6 +1896,49 @@ Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim 
 \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $a \inv{b} \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ag \sim bg$. The equivalence class of $a$ is $Ha$..
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $H$ be a subgroup of $G$. Define $\sim_L$ and $\sim_R$ on $G$ by:
+\[ a \sim_L b \Leftrightarrow \inv{a} b \in H, \qquad a \sim_R b \Leftrightarrow a \inv{b} \in H \enspace . \]
+Then $\sim_L = \sim_R$ if and only if $H$ is normal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\sim_L = \sim_R$ then $H$ is normal.}
+\begin{proof}
+	\step{a}{\assume{$\sim_L = \sim_R$}}
+	\step{b}{\pflet{$h \in H$ and $g \in G$}}
+	\step{c}{$g \sim_L g\inv{h}$}
+	\step{d}{$g \sim_R g \inv{h} h$}
+	\step{e}{$gh\inv{g} \in H$}
+\end{proof}
+\step{2}{If $H$ is normal then $\sim_L = \sim_R$.}
+\begin{proof}
+	\step{a}{\assume{$H$ is normal.}}
+	\step{b}{If $a \sim_L b$ then $a \sim_R b$.}
+	\begin{proof}
+		\step{i}{\assume{$a \sim_L b$}}
+		\step{ii}{$\inv{a} b \in H$}
+		\step{iii}{$a \inv{a} b \inv{a} \in H$}
+		\step{iv}{$b \inv{a} \in H$}
+		\step{v}{$a \sim_R b$}
+	\end{proof}
+	\step{c}{If $a \sim_R b$ then $a \sim_L b$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
