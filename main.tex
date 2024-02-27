@@ -1540,6 +1540,7 @@ Let $G$ be a group and $N$ a subgroup of $G$. Then the following are equivalent.
 \end{proof}
 
 \begin{prop}
+\label{prop:kernel-normal}
 Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a normal subgroup of $G$.
 \end{prop}
 
@@ -1572,6 +1573,14 @@ iff $\sim$ is compatible with the group operation on $G$. In this case, $G/\sim$
 \begin{df}[Quotient Group]
 Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ that is compatible with the group operation on $G$. Then $G/\sim$ is the \emph{quotient group} of $G$ by $\sim$ under $[a][b] = [ab]$.
 \end{df}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if there exists a group $K$ and homomorphism $\phi : G \rightarrow K$ such that $H = \ker \phi$.
+\end{prop}
+
+\begin{proof}
+\pf\ One direction is given by Proposition \ref{prop:kernel-normal}. For the other direction, take $K = G / H$ and $\phi$ to be the canonical map $G \rightarrow G / H$. \qed
+\end{proof}
 
 \section{Cosets}
 
