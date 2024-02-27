@@ -1,30 +1,30 @@
 \contentsline {part}{I\hspace {1em}Category Theory}{5}{}%
 \contentsline {chapter}{\numberline {1}Foundations}{7}{}%
-\contentsline {chapter}{\numberline {2}Number Theory}{9}{}%
-\contentsline {section}{\numberline {2.1}Congruence}{9}{}%
-\contentsline {section}{\numberline {2.2}Euler's $\phi $-function}{10}{}%
-\contentsline {chapter}{\numberline {3}Categories}{11}{}%
-\contentsline {section}{\numberline {3.1}Preorders}{12}{}%
-\contentsline {section}{\numberline {3.2}Monomorphisms and Epimorphisms}{12}{}%
-\contentsline {section}{\numberline {3.3}Sections and Retractions}{14}{}%
-\contentsline {section}{\numberline {3.4}Isomorphisms}{15}{}%
-\contentsline {section}{\numberline {3.5}Initial and Terminal Objects}{15}{}%
-\contentsline {chapter}{\numberline {4}Functors}{17}{}%
-\contentsline {section}{\numberline {4.1}Comma Categories}{17}{}%
-\contentsline {part}{II\hspace {1em}Group Theory}{19}{}%
-\contentsline {chapter}{\numberline {5}Groups}{21}{}%
-\contentsline {section}{\numberline {5.1}Order of an Element}{24}{}%
-\contentsline {section}{\numberline {5.2}Generators}{26}{}%
-\contentsline {chapter}{\numberline {6}Group Homomorphisms}{29}{}%
-\contentsline {section}{\numberline {6.1}Subgroups}{31}{}%
-\contentsline {section}{\numberline {6.2}Kernel}{33}{}%
-\contentsline {section}{\numberline {6.3}Inner Automorphisms}{34}{}%
-\contentsline {section}{\numberline {6.4}Direct Products}{35}{}%
-\contentsline {section}{\numberline {6.5}Free Groups}{35}{}%
-\contentsline {section}{\numberline {6.6}Normal Subgroups}{38}{}%
-\contentsline {section}{\numberline {6.7}Quotient Groups}{39}{}%
-\contentsline {section}{\numberline {6.8}Cosets}{39}{}%
-\contentsline {chapter}{\numberline {7}Abelian Groups}{43}{}%
-\contentsline {section}{\numberline {7.1}The Category of Abelian Groups}{47}{}%
-\contentsline {section}{\numberline {7.2}Free Abelian Groups}{48}{}%
+\contentsline {chapter}{\numberline {2}Categories}{9}{}%
+\contentsline {section}{\numberline {2.1}Preorders}{10}{}%
+\contentsline {section}{\numberline {2.2}Monomorphisms and Epimorphisms}{10}{}%
+\contentsline {section}{\numberline {2.3}Sections and Retractions}{12}{}%
+\contentsline {section}{\numberline {2.4}Isomorphisms}{13}{}%
+\contentsline {section}{\numberline {2.5}Initial and Terminal Objects}{13}{}%
+\contentsline {chapter}{\numberline {3}Functors}{15}{}%
+\contentsline {section}{\numberline {3.1}Comma Categories}{15}{}%
+\contentsline {part}{II\hspace {1em}Group Theory}{17}{}%
+\contentsline {chapter}{\numberline {4}Groups}{19}{}%
+\contentsline {section}{\numberline {4.1}Order of an Element}{22}{}%
+\contentsline {section}{\numberline {4.2}Generators}{24}{}%
+\contentsline {chapter}{\numberline {5}Group Homomorphisms}{27}{}%
+\contentsline {section}{\numberline {5.1}Subgroups}{29}{}%
+\contentsline {section}{\numberline {5.2}Kernel}{31}{}%
+\contentsline {section}{\numberline {5.3}Inner Automorphisms}{32}{}%
+\contentsline {section}{\numberline {5.4}Direct Products}{32}{}%
+\contentsline {section}{\numberline {5.5}Free Groups}{32}{}%
+\contentsline {section}{\numberline {5.6}Normal Subgroups}{35}{}%
+\contentsline {section}{\numberline {5.7}Quotient Groups}{36}{}%
+\contentsline {section}{\numberline {5.8}Cosets}{36}{}%
+\contentsline {section}{\numberline {5.9}Congruence}{39}{}%
+\contentsline {section}{\numberline {5.10}Cyclic Groups}{40}{}%
+\contentsline {section}{\numberline {5.11}Euler's $\phi $-function}{40}{}%
+\contentsline {chapter}{\numberline {6}Abelian Groups}{43}{}%
+\contentsline {section}{\numberline {6.1}The Category of Abelian Groups}{47}{}%
+\contentsline {section}{\numberline {6.2}Free Abelian Groups}{48}{}%
 \contentsline {part}{III\hspace {1em}Linear Algebra}{51}{}%

@@ -19,6 +19,7 @@
 \newtheorem{df}[prop]{Definition}
 \newtheorem{ex}[prop]{Example}
 
+\renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\im}{\ensuremath{\operatorname{im}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
@@ -43,104 +44,6 @@ project yet. I will try to work in a way which is foundation-independent. What
 I do could be formalized in ZFC, ETCS, or some other system. I will assume the
 usual set theoretic constructions as needed. Sets will be defined up to
 bijection only.
-
-\chapter{Number Theory}
-
-\section{Congruence}
-
-\begin{df}[Congruence]
-    Let $a$, $b$, $n$ be integers with $n > 0$. We say $a$ is \emph{congruent} to $b$ \emph{modulo} $n$, and write $a \equiv b \mod n$, iff $n \mid b - a$.
-\end{df}
-
-\begin{prop}
-    For $n$ a positive integer, congruence modulo $n$ is an equivalence relation.
-\end{prop}
-
-\begin{proof}
-    \pf
-    \step{1}{For any integer $a$ we have $a \equiv a \mod n$.}
-    \begin{proof}
-        \pf\ Since $n \mid 0 = a - a$.
-    \end{proof}
-    \step{2}{If $a \equiv b \mod n$ then $b \equiv a \mod n$.}
-    \begin{proof}
-        \pf\ If $n \mid b - a$ then $n \mid a - b = -(b-a)$.
-    \end{proof}
-    \step{3}{If $a \equiv b \mod n$ and $b \equiv c \mod n$ then $a \equiv c \mod n$.}
-    \begin{proof}
-        \pf\ If $n \mid b - a$ and $n \mid c - b$ then $n \mid c - a = (c - b) + (b - a)$.
-    \end{proof}
-    \qed
-\end{proof}
-
-\begin{df}
-    Let $\mathbb{Z} / n \mathbb{Z}$ be the quotient set of $\mathbb{Z}$ with respect to congruence modulo $n$.
-\end{df}
-
-\begin{prop}
-    $\mathbb{Z} / n \mathbb{Z}$ has exactly $n$ elements.
-\end{prop}
-
-\begin{proof}
-    \pf\ Every integer is congruent to one of 0, 1, \ldots, $n - 1$ by the division algorithm, and no two of them are conguent to one another, since if $0 \leq i < j < n$ then $0 < j - i < n$. \qed
-\end{proof}
-
-\begin{prop}
-    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $a + b \equiv a' + b' \mod n$.
-\end{prop}
-
-\begin{proof}
-    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid (a' + b') - (a + b)$. \qed
-\end{proof}
-
-\begin{prop}
-    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $ab \equiv a'b' \mod n$.
-\end{prop}
-
-\begin{proof}
-    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid a'b' - ab = a'(b'-b) + (a'-a)b$. \qed
-\end{proof}
-
-\section{Euler's $\phi$-function}
-
-\begin{df}
-    For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \}$.
-\end{df}
-
-\begin{proof}
-    \pf\ We prove this is well-defined.
-    \step{0}{If $m \equiv m' \mod n$ and $\gcd(m,n) = 1$ then $\gcd(m',n) = 1$.}
-    \begin{proof}
-        \step{a}{\pick\ integers $a$, $b$ such that $am+bn = 1$}
-        \step{b}{\pick\ an integer $c$ such that $m' - m = cn$}
-        \step{c}{$am' + (b-ac)n = 1$}
-    \end{proof}
-    \qed
-\end{proof}
-
-\begin{df}
-    For $n$ a positive integer, let $\phi(n) = |(\mathbb{Z} / n \mathbb{Z})^*|$.
-\end{df}
-
-\begin{prop}
-    If $n$ is an odd positive integer then $\phi(2n) = \phi(n)$.
-\end{prop}
-
-\begin{proof}
-    \pf
-    \step{1}{\pflet{$n$ be an odd positive integer.}}
-    \step{2}{For any integer $m$, if $\gcd(m,n) = 1$ then $\gcd(2m+n,2n) = 1$}
-    \begin{proof}
-        \pf\ For $p$ a prime, if $p \mid 2m+n$ and $p \mid 2n$ then $p \neq 2$ (since $2m+n$ is odd) so $p \mid n$ and hence $p \mid m$, which is a contradiction.
-    \end{proof}
-    \step{3}{For any integer $r$, if $\gcd(r,2n) = 1$ then $\gcd(\frac{r+n}{2},n) = 1$}
-    \begin{proof}
-        \pf\ If $p \mid n$ and $p \mid \frac{r + n}{2}$ then $p \mid r + n$ so $p \mid r$ which is a contradiction.
-    \end{proof}
-    \step{4}{The function that maps $m$ to $2m+n$ is a bijection between $(\mathbb{Z} / n\mathbb{Z})^*$
-        and $(\mathbb{Z} / 2n\mathbb{Z})^*$.}
-    \qed
-\end{proof}
 
 \chapter{Categories}
 
@@ -619,8 +522,6 @@ bijection only.
         \item $\{-1,1\}$ is a group under multiplication
         \item The set of $2 \times 2$ real matrices with non-zero determinant is a group
               under matrix multiplication.
-        \item For any positive integer $n$, the set $\mathbb{Z} / n \mathbb{Z}$ of integers
-              modulo $n$ under addition is a group.
         \item For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, we have
               $\Aut{\mathcal{C}}{A}$ is a group under $gf = f \circ g$.
 
@@ -645,30 +546,6 @@ bijection only.
                   \times \mathbb{Z}_2$ under $(a,b) (c,d) = (ac,bd)$.
     \end{itemize}
 \end{ex}
-
-\begin{ex}
-    For any positive integer $n$, the set
-    \[ (\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \} \]
-    is a group under multiplication.
-\end{ex}
-
-\begin{proof}
-    \pf
-    \step{00}{If $\gcd(m_1,n) = \gcd(m_2,n) = 1$ then $\gcd(m_1m_2,n) = 1$}
-    \begin{proof}
-        \step{a}{\pick\ integers $a$, $b$, $c$, $d$ such that $am_1 + bn = cm_2 + dn = 1$}
-        \step{b}{$acm_1m_2 + (bcm_2 + d)n = !$}
-    \end{proof}
-    \step{1}{Multiplication is associative.}
-    \step{2}{1 is the identity element.}
-    \step{3}{Every element has an inverse.}
-    \begin{proof}
-        \step{a}{\pflet{$a \in (\mathbb{Z} / n \mathbb{Z})^*$}}
-        \step{b}{\pick\ integers $b$, $c$ such that $ab + cn = 1$}
-        \step{c}{$ab = 1$ in $(\mathbb{Z} / n \mathbb{Z})^*$}
-    \end{proof}
-    \qed
-\end{proof}
 
 \begin{prop}[Cancellation]
     Let $G$ be a group. Let $a,g,h \in G$. If $ag = ah$ or $ga = ha$ then $g = h$.
@@ -859,6 +736,7 @@ Let $G$ be a group. Given $g \in G$ and $A \subseteq G$, we define
 \end{proof}
 
 \begin{prop}
+\label{prop:order-of-g-to-the-m}
     Let $G$ be a group. Let $g \in G$ have finite order. Let $m \in \mathbb{N}$. Then
     \[ |g^m| = \frac{\lcm(m,|g|)}{m} = \frac{|g|}{\gcd(m,|g|)}\]
 \end{prop}
@@ -876,15 +754,6 @@ Let $G$ be a group. Given $g \in G$ and $A \subseteq G$, we define
 \begin{cor}
     If $g$ has odd order then $|g^2| = |g|$.
 \end{cor}
-
-\begin{cor}
-    \label{cor:order-of-m-in-ZnZ}
-    Let $m$ and $n$ be integers with $n > 0$. The order of $m$ in $\mathbb{Z} / n \mathbb{Z}$ is $\frac{n}{\gcd(m,n)}$.
-\end{cor}
-
-\begin{proof}
-    \pf\ Since the order of 1 is $n$. \qed
-\end{proof}
 
 \begin{prop}
     \label{prop:order-gh}
@@ -979,18 +848,6 @@ Let $G$ be a group. Given $g \in G$ and $A \subseteq G$, we define
 \begin{df}[Generator]
     Let $G$ be a group and $a \in G$. We say $a$ \emph{generates} the group iff, for all $x \in G$, there exists an integer $n$ such that $x^n = a$.
 \end{df}
-
-\begin{prop}
-    The integer $m$ generates $\mathbb{Z} / n \mathbb{Z}$ if and only if $\gcd(m,n) = 1$.
-\end{prop}
-
-\begin{proof}
-    \pf\ By Corollary \ref{cor:order-of-m-in-ZnZ}. \qed
-\end{proof}
-
-\begin{cor}
-    If $p$ is prime then every non-zero element in $\mathbb{Z} / p \mathbb{Z}$ is a generator.
-\end{cor}
 
 \begin{ex}
 $\mathrm{SL}_2(\mathbb{Z})$ is generated by
@@ -1230,14 +1087,6 @@ There are 49487365402 groups of order 1024 up to isomorphism. %TODO
 \end{proof}
 
 \begin{prop}
-    \[ \Aut{\Grp}{\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}} \cong S_3 \]
-\end{prop}
-
-\begin{proof}
-    \pf\ Every permutation of $\{ (1,0), (0,1), (1,1) \}$ gives an automorphism of $\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}$. \qed
-\end{proof}
-
-\begin{prop}
     \[ |\Aut{\Grp}{C_n}| = \phi(n) \]
 \end{prop}
 
@@ -1443,18 +1292,6 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Then the following are equ
 \qed
 \end{proof}
 
-\begin{ex}
-Not all monomorphisms split in $\Grp$.
-
-Define $\phi : \mathbb{Z} / 3 \mathbb{Z} \rightarrow S_3$ by
-\[ \phi(0) = \id{3}, \qquad \phi(1) = (1 \ 3 \ 2), \qquad \phi(2) = (1 \ 2 \ 3) \enspace . \]
-Then $\phi$ is monic but has no retraction.
-
-For if $r : S_3 \rightarrow \mathbb{Z} / 3 \mathbb{Z}$ is a retraction, then we would have
-\[ r(1\ 2) + r(2\ 3) = 1, \qquad r(2\ 3) + r(1\ 2) = 2 \]
-which is impossible.
-\end{ex}
-
 \section{Inner Automorphisms}
 
 \begin{prop}
@@ -1507,54 +1344,6 @@ $\mathrm{Inn}(G)$ is a subgroup of $\Aut{\Grp}{G}$.
 \begin{df}[Direct Product]
     The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$.
 \end{df}
-
-\begin{prop}
-    If $m$ and $n$ are positive integers with $\gcd(m,n) = 1$ then $C_{mn} \cong C_m \times C_n$.
-\end{prop}
-
-\begin{proof}
-    \pf\ The function that maps $x$ to $(x \mod m, x \mod n)$ is an isomorphism. \qed
-\end{proof}
-
-\begin{df}[Cyclic Group]
-    The \emph{cyclic} groups are $\mathbb{Z}$ and $\mathbb{Z} / n \mathbb{Z}$ for positive integers $n$.
-\end{df}
-
-\begin{prop}
-Every finitely generated subgroup of $\mathbb{Q}$ is cyclic.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$G = \langle a_1/b, \ldots, a_n/b \rangle$ where $a_1$, \ldots, $a_n$, $b$ are integers with $b > 0$}}
-\step{2}{\pflet{$a = \gcd(a_1, \ldots, a_n)$}}
-\step{3}{$G = \langle a/b \rangle$}
-\qed
-\end{proof}
-
-\begin{cor}
-$\mathbb{Q}$ is not finitely generated.
-\end{cor}
-
-\begin{thm}
-For any positive integer $n$ we have
-\[ \sum_{m > 0, m \mid n} \phi(m) = n \enspace . \]
-\end{thm}
-
-\begin{proof}
-\pf
-\step{1}{Define $\chi : \{ 0, 1, \ldots, n-1 \} \rightarrow \{ (m,d) : m > 0, m \mid n, d \text{ generates } \langle n/m \rangle \}$ by: $\chi(x) = (\gcd(x,n), x)$.}
-\step{2}{$\chi$ is injective.}
-\step{3}{$\chi$ is surjective.}
-\begin{proof}
-\pf\ Given $(m,d)$ such that $d$ generates $\langle n/m \rangle$ we have $\chi(d) = (m,d)$.
-\end{proof}
-\step{4}{$n = \sum_{m > 0, m \mid n} \phi(m)$}
-\begin{proof}
-\pf\ Since $\langle n/m \rangle \cong C_m$ and so has $\phi(m)$ generators.
-\end{proof}
-\qed
-\end{proof}
 
 \section{Free Groups}
 
@@ -1680,21 +1469,9 @@ Let $G$ be a group and $A$ a subset of $G$. Then $\langle A \rangle$ is the inte
 \pf\ Easy. \qed
 \end{proof}
 
-\begin{prop}
-Let $G$ be a group and $g \in G$. Then $\langle g \rangle$ is cyclic.
-\end{prop}
-
-\begin{proof}
-\pf\ If $g$ has finite order then $\langle g \rangle \cong C_{|g|}$, otherwise $\langle g \rangle \cong \mathbb{Z}$. \qed
-\end{proof}
-
 \begin{df}[Finitely Generated]
 Let $G$ be a group. Then $G$ is \emph{finitely generated} iff there exists a finite subset $A$ of $G$ such that $G = \langle A \rangle$.
 \end{df}
-
-\begin{ex}
-Every cyclic group is finitely generated.
-\end{ex}
 
 \begin{prop}
 Every subgroup of a finitely generated free group is free.
@@ -1897,7 +1674,7 @@ Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim 
 \end{proof}
 
 \begin{prop}
-Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $a \inv{b} \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ag \sim bg$. The equivalence class of $a$ is $Ha$..
+Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $a \inv{b} \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ag \sim bg$. The equivalence class of $a$ is $Ha$.
 \end{prop}
 
 \begin{proof}
@@ -1935,6 +1712,224 @@ Then $\sim_L = \sim_R$ if and only if $H$ is normal.
 	\begin{proof}
 		\pf\ Similar.
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $H$ be a normal subgroup of $G$. Define $\sim$ on $G$ by $a \sim b$ iff $\inv{a} b \in H$. Then $G / \sim$ is a group under $[a][b] = [ab]$.
+\end{cor}
+
+\begin{df}[Quotient Group]
+Let $G$ be a group and $H$ be a normal subgroup of $G$. The \emph{quotient group} $G / H$ is $G / \sim$ where $a \sim b$ iff $\inv{a} b \in H$, under $[a][b] = [ab]$ or $(aH)(bH) = abH$.
+\end{df}
+
+\begin{cor}
+Let $H$ be a normal subgroup of a group $G$. For every group homomorphism $\phi : G \rightarrow G'$ such that $H \subseteq \ker \phi$, there exists a unique group homomorphism $\overline{\phi} : G / H \rightarrow G'$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+G \arrow[rr,"\phi"]  \arrow[dr,"\pi"] & & G' \\
+& G/ H\arrow[ur,"\overline{\phi}"]
+\end{tikzcd} \]
+\end{cor}
+
+\begin{prop}
+    $\mathbb{Z} / n \mathbb{Z}$ has exactly $n$ elements.
+\end{prop}
+
+\begin{proof}
+    \pf\ Every integer is congruent to one of 0, 1, \ldots, $n - 1$ by the division algorithm, and no two of them are conguent to one another, since if $0 \leq i < j < n$ then $0 < j - i < n$. \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:order-of-m-in-ZnZ}
+    Let $m$ and $n$ be integers with $n > 0$. The order of $m$ in $\mathbb{Z} / n \mathbb{Z}$ is $\frac{n}{\gcd(m,n)}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ By Proposition \ref{prop:order-of-g-to-the-m} since the order of 1 is $n$. \qed
+\end{proof}
+
+\begin{prop}
+    The integer $m$ generates $\mathbb{Z} / n \mathbb{Z}$ if and only if $\gcd(m,n) = 1$.
+\end{prop}
+
+\begin{proof}
+    \pf\ By Proposition \ref{prop:order-of-m-in-ZnZ}. \qed
+\end{proof}
+
+\begin{cor}
+    If $p$ is prime then every non-zero element in $\mathbb{Z} / p \mathbb{Z}$ is a generator.
+\end{cor}
+
+\begin{prop}
+    \[ \Aut{\Grp}{\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}} \cong S_3 \]
+\end{prop}
+
+\begin{proof}
+    \pf\ Every permutation of $\{ (1,0), (0,1), (1,1) \}$ gives an automorphism of $\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}$. \qed
+\end{proof}
+
+\begin{ex}
+Not all monomorphisms split in $\Grp$.
+
+Define $\phi : \mathbb{Z} / 3 \mathbb{Z} \rightarrow S_3$ by
+\[ \phi(0) = \id{3}, \qquad \phi(1) = (1 \ 3 \ 2), \qquad \phi(2) = (1 \ 2 \ 3) \enspace . \]
+Then $\phi$ is monic but has no retraction.
+
+For if $r : S_3 \rightarrow \mathbb{Z} / 3 \mathbb{Z}$ is a retraction, then we would have
+\[ r(1\ 2) + r(2\ 3) = 1, \qquad r(2\ 3) + r(1\ 2) = 2 \]
+which is impossible.
+\end{ex}
+
+\section{Congruence}
+
+\begin{df}[Congruence]
+Given integers $a$, $b$, $n$ with $n$ positive, we say $a$ is \emph{congruent} to $b$ \emph{modulo} $n$, and write $a \equiv b (\mod n)$, iff $a + n \mathbb{Z} = b + n \mathbb{Z}$ in $\mathbb{Z} / n \mathbb{Z}$.
+\end{df}
+
+\begin{prop}
+Given integers $a$, $b$, $n$ with $n$ positive, we have $a \equiv b (\mod n)$ iff $n \mid a - b$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:sim-gives-H}. \qed
+\end{proof}
+
+\begin{prop}
+    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $a + b \equiv a' + b' \mod n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid (a' + b') - (a + b)$. \qed
+\end{proof}
+
+\begin{prop}
+    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $ab \equiv a'b' \mod n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid a'b' - ab = a'(b'-b) + (a'-a)b$. \qed
+\end{proof}
+
+\section{Cyclic Groups}
+
+\begin{df}[Cyclic Group]
+    The \emph{cyclic} groups are $\mathbb{Z}$ and $\mathbb{Z} / n \mathbb{Z}$ for positive integers $n$.
+\end{df}
+
+\begin{prop}
+    If $m$ and $n$ are positive integers with $\gcd(m,n) = 1$ then $C_{mn} \cong C_m \times C_n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ The function that maps $x$ to $(x \mod m, x \mod n)$ is an isomorphism. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $g \in G$. Then $\langle g \rangle$ is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf\ If $g$ has finite order then $\langle g \rangle \cong C_{|g|}$, otherwise $\langle g \rangle \cong \mathbb{Z}$. \qed
+\end{proof}
+
+\begin{prop}
+Every finitely generated subgroup of $\mathbb{Q}$ is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G = \langle a_1/b, \ldots, a_n/b \rangle$ where $a_1$, \ldots, $a_n$, $b$ are integers with $b > 0$}}
+\step{2}{\pflet{$a = \gcd(a_1, \ldots, a_n)$}}
+\step{3}{$G = \langle a/b \rangle$}
+\qed
+\end{proof}
+
+\begin{cor}
+$\mathbb{Q}$ is not finitely generated.
+\end{cor}
+
+\section{Euler's $\phi$-function}
+
+\begin{df}
+    For $n$ a positive integer, let $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \}$.
+\end{df}
+
+\begin{proof}
+    \pf\ We prove this is well-defined.
+    \step{0}{If $m \equiv m' \mod n$ and $\gcd(m,n) = 1$ then $\gcd(m',n) = 1$.}
+    \begin{proof}
+        \step{a}{\pick\ integers $a$, $b$ such that $am+bn = 1$}
+        \step{b}{\pick\ an integer $c$ such that $m' - m = cn$}
+        \step{c}{$am' + (b-ac)n = 1$}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{ex}
+    For any positive integer $n$, the set
+    \[ (\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \} \]
+    is a group under multiplication.
+\end{ex}
+
+\begin{proof}
+    \pf
+    \step{00}{If $\gcd(m_1,n) = \gcd(m_2,n) = 1$ then $\gcd(m_1m_2,n) = 1$}
+    \begin{proof}
+        \step{a}{\pick\ integers $a$, $b$, $c$, $d$ such that $am_1 + bn = cm_2 + dn = 1$}
+        \step{b}{$acm_1m_2 + (bcm_2 + d)n = !$}
+    \end{proof}
+    \step{1}{Multiplication is associative.}
+    \step{2}{1 is the identity element.}
+    \step{3}{Every element has an inverse.}
+    \begin{proof}
+        \step{a}{\pflet{$a \in (\mathbb{Z} / n \mathbb{Z})^*$}}
+        \step{b}{\pick\ integers $b$, $c$ such that $ab + cn = 1$}
+        \step{c}{$ab = 1$ in $(\mathbb{Z} / n \mathbb{Z})^*$}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}
+    For $n$ a positive integer, let $\phi(n) = |(\mathbb{Z} / n \mathbb{Z})^*|$.
+\end{df}
+
+\begin{prop}
+    If $n$ is an odd positive integer then $\phi(2n) = \phi(n)$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$n$ be an odd positive integer.}}
+    \step{2}{For any integer $m$, if $\gcd(m,n) = 1$ then $\gcd(2m+n,2n) = 1$}
+    \begin{proof}
+        \pf\ For $p$ a prime, if $p \mid 2m+n$ and $p \mid 2n$ then $p \neq 2$ (since $2m+n$ is odd) so $p \mid n$ and hence $p \mid m$, which is a contradiction.
+    \end{proof}
+    \step{3}{For any integer $r$, if $\gcd(r,2n) = 1$ then $\gcd(\frac{r+n}{2},n) = 1$}
+    \begin{proof}
+        \pf\ If $p \mid n$ and $p \mid \frac{r + n}{2}$ then $p \mid r + n$ so $p \mid r$ which is a contradiction.
+    \end{proof}
+    \step{4}{The function that maps $m$ to $2m+n$ is a bijection between $(\mathbb{Z} / n\mathbb{Z})^*$
+        and $(\mathbb{Z} / 2n\mathbb{Z})^*$.}
+    \qed
+\end{proof}
+
+\begin{thm}
+For any positive integer $n$ we have
+\[ \sum_{m > 0, m \mid n} \phi(m) = n \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $\chi : \{ 0, 1, \ldots, n-1 \} \rightarrow \{ (m,d) : m > 0, m \mid n, d \text{ generates } \langle n/m \rangle \}$ by: $\chi(x) = (\gcd(x,n), x)$.}
+\step{2}{$\chi$ is injective.}
+\step{3}{$\chi$ is surjective.}
+\begin{proof}
+\pf\ Given $(m,d)$ such that $d$ generates $\langle n/m \rangle$ we have $\chi(d) = (m,d)$.
+\end{proof}
+\step{4}{$n = \sum_{m > 0, m \mid n} \phi(m)$}
+\begin{proof}
+\pf\ Since $\langle n/m \rangle \cong C_m$ and so has $\phi(m)$ generators.
 \end{proof}
 \qed
 \end{proof}
