@@ -2420,6 +2420,29 @@ Let $G$ be an Abelian group. Then $G$ is finitely generated if and only if there
 \qed
 \end{proof}
 
+\begin{prop}
+Let $A$ be a set. Let $i : A \hookrightarrow F(A)$ be the free group on $A$. Then $\pi \circ i : A \rightarrow F(A) / [F(A),F(A)]$ is the free Abelian group on $A$.
+\end{prop}
+
+\[ \begin{tikzcd}
+F(A)/[F(A),F(A)] \arrow[dr,"h"] \\
+F(A) \arrow[r,"g"] \arrow[u,"\pi"] & G \\
+A \arrow[u,"i"] \arrow[ur,"f"]
+\end{tikzcd} \]
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be an Abelian group and $f : A \rightarrow G$ a function.}}
+\step{2}{\pflet{$g : F(A) \rightarrow G$ be the unique group homomorphism such that $g \circ i = f$.}}
+\step{3}{$[F(A),F(A)] \subseteq \ker g$}
+\begin{proof}
+	\pf\ For all $x,y \in F(A)$ we have $g(xy\inv{x}\inv{y}) = g(x) + g(y) - g(x) - g(y) = 0$.
+\end{proof}
+\step{4}{\pflet{$h : F(A)/[F(A),F(A)]$ be the unique group homomorphism such that $h \circ \pi = g$.}}
+\step{5}{$h$ is the unique group homomorphism such that $h \circ \pi \circ i = f$.}
+\qed
+\end{proof}
+
 \part{Linear Algebra}
 
 \begin{df}
