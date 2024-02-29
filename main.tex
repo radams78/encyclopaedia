@@ -2385,6 +2385,7 @@ Every finitely generated Abelian group is a direct sum of cyclic groups.
 \end{proof}
 
 \begin{prop}
+\label{prop:Fab-reflects-cong}
     For $A$ and $B$ finite sets, if $\Fab{A} \cong \Fab{B}$ then $A \cong B$.
 \end{prop}
 
@@ -2441,6 +2442,14 @@ A \arrow[u,"i"] \arrow[ur,"f"]
 \step{4}{\pflet{$h : F(A)/[F(A),F(A)]$ be the unique group homomorphism such that $h \circ \pi = g$.}}
 \step{5}{$h$ is the unique group homomorphism such that $h \circ \pi \circ i = f$.}
 \qed
+\end{proof}
+
+\begin{cor}
+Let $A$ and $B$ be sets. Let $F(A)$ and $F(B)$ be the free groups on $A$ and $B$ respectively. If $F(A) \cong F(B)$ then $A \cong B$.
+\end{cor}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:Fab-reflects-cong}. \qed
 \end{proof}
 
 \part{Linear Algebra}
