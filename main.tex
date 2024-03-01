@@ -671,6 +671,8 @@ bijection only.
 \begin{df}
 Let $G$ be a group. Given $g \in G$ and $A \subseteq G$, we define
 \[ gA = \{ ga : a \in A \}, \qquad Ag = \{ ag : a \in A \} \enspace . \]
+Given sets $A,B \subseteq G$, we define
+\[ AB = \{ ab : a \in A, b \in B \} \enspace . \]
 \end{df}
 
 \section{Order of an Element}
@@ -1716,6 +1718,29 @@ Let $H$ be a normal subgroup of a group $G$. Let $N$ be a subgroup of $G$ that i
 \qed
 \end{proof}
 
+\begin{prop}[Second Isomorphism Theorem]
+Let $H$ and $K$ be subgroups of a group $G$. Assume that $H$ is normal in $G$. Then:
+\begin{enumerate}
+\item $HK$ is a subgroup of $G$, and $H$ is normal in $HK$.
+\item $H \cap K$ is normal in $K$, and
+\[ \frac{HK}{H} \cong \frac{K}{H \cap K} \enspace . \]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$HK$ is a subgroup of $G$.}
+\begin{proof}
+	\pf\ Since $hkh'k' = hh'(\inv{h'}kh')k' \in HK$.
+\end{proof}
+\step{2}{$H$ is normal in $HK$.}
+\step{3}{$H \cap K$ is normal in $K$ and $HK/H \cong K/(H \cap K)$}
+\begin{proof}
+\pf\ The function that maps $k$ to $kH$ is a surjective homomorphism $K \twoheadrightarrow HK/H$ with kernel $H \cap K$. Surjectivity follows because $hkH = hk\inv{h}H$.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Cosets}
 
 \begin{prop}
@@ -1924,6 +1949,22 @@ For if $r : S_3 \rightarrow \mathbb{Z} / 3 \mathbb{Z}$ is a retraction, then we 
 which is impossible.
 \end{ex}
 
+\begin{prop}
+Let $G$ be a group, $H$ a subgroup of $G$, and $g \in G$. The function that maps $h$ to $gh$ is a bijection $H \cong gH$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group, $H$ a subgroup of $G$, and $g \in G$. The function that maps $h$ to $hg$ is a bijection $H \cong Hg$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Cancellation. \qed
+\end{proof}
+
 \section{Congruence}
 
 \begin{df}[Congruence]
@@ -2118,6 +2159,12 @@ Let $(A,R)$ be a presentation of the group $G$. Let $w_1, w_2 \in F(A)$ be two w
 %TODO
 \begin{df}[Finitely Presented]
 A group is \emph{finitely presented} iff it has a presentation $(A,R)$ where both $A$ and $R$ are finite.
+\end{df}
+
+\section{Index of a Subgroup}
+
+\begin{df}[Index]
+Let $G$ be a group and $H$ a subgroup of $G$. The \emph{index} of $H$ in $G$, denoted $|G:H|$, is the number of left cosets of $H$ in $G$ if this is finite, otherwise $\infty$.
 \end{df}
 
 \chapter{Abelian Groups}
