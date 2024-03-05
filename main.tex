@@ -2184,6 +2184,24 @@ For $p$ a prime number, the only group of order $p$ is $C_p$.
 \pf\ Let $G$ be a group of order $p$ and $g \in G$ with $g \neq e$. Then $|\langle g \rangle|$ divides $p$ and is not 1, hence is $p$, that is, $G = \langle g \rangle$. \qed
 \end{proof}
 
+\begin{cor}[Fermat's Little Theorem]
+Let $p$ be a prime number and $a$ any integer. Then $a^p \equiv a (\mod p)$.
+\end{cor}
+
+\begin{proof}
+\pf\ If $p \mid a$ then $a^p \equiv a \equiv 0 (\mod p)$. Otherwise, we have $a^{p-1} \equiv 1 (\mod p)$ by applying Lagrange's Theorem to $(\mathbb{Z} / p \mathbb{Z})^*$. \qed
+\end{proof}
+
+\begin{ex}
+It is not true that, if $n \mid |G|$, then $G$ has a subgroup of order $n$. The group $A_4$ has order 12 but no subgroup of order 6.
+\end{ex}
+
+\begin{thm}[Cauchy's Theorem]
+Let $G$ be a finite group. If $p$ is prime and $p \mid |G|$ then $G$ has a subgroup of order $p$.
+\end{thm}
+
+%TODO
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
