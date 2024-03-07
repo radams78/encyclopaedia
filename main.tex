@@ -2274,6 +2274,40 @@ Let $G$ be a group. Let $K$ be a subgroup of $G$ and $H$ a subgroup of $K$. If $
 \qed
 \end{proof}
 
+\begin{prop}
+A subgroup of index 2 is normal.
+\end{prop}
+
+\begin{proof}
+\pf\ If $|G : H| = 2$ then, for all $g \in G$ we have $gH = Hg = H$ if $g \in H$ and $gH = Hg = G - H$ if $g \notin H$. \qed
+\end{proof}
+
+\section{Cokernels}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a homomorphism between groups. Then there exists a group $K$ and homomorphism $\pi : H \rightarrow K$ that is initial with respect to all homomorphism $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$N$ be the intersection of all the normal subgroups of $H$ that include $\im \phi$.}}
+\step{1}{\pflet{$K = H / N$ and $\pi$ be the canonical homomorphism.}}
+\step{2}{\pflet{$\pi \circ \phi = 0$}}
+\step{3}{\pflet{$\alpha : H \rightarrow L$ satisfy $\alpha \circ \phi = 0$}}
+\step{4}{$\im \phi \subseteq \ker \alpha$}
+\step{4a}{$N \subseteq \ker \alpha$}
+\step{5}{There exists a unique $\overline{\alpha} : H / \im \phi \rightarrow L$ such that $\overline{\alpha} \circ \pi = \alpha$}
+\qed
+\end{proof}
+
+\begin{df}[Cokernel]
+For any homomorphism $\phi : G \rightarrow H$ in $\mathbf{Grp}$, the \emph{cokernel} of $\phi$ is the group $\coker \phi$ and homomorphism $\pi : H \rightarrow \coker \phi$ that is initial among homomorphisms $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{df}
+
+\begin{ex}
+It is not true that a homomorphism with trivial cokernel is epi. The inclusion $\langle (1\ 2) \rangle \hookrightarrow S_3$ has trivial cokernel but is not epi.
+\end{ex}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
