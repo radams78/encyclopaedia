@@ -2208,6 +2208,25 @@ Let $(A,R)$ be a presentation of the group $G$. Let $w_1, w_2 \in F(A)$ be two w
 A group is \emph{finitely presented} iff it has a presentation $(A,R)$ where both $A$ and $R$ are finite.
 \end{df}
 
+\begin{prop}
+Let $(A|R)$ be a presentation of $G$ and $(A'|R')$ a presentation of $H$. Assume w.l.o.g. $A$ and $A'$ are disjoint. Then the group $G * G'$ presented by $(A \cup A' | R \cup R')$ is the coproduct of $G$ and $G'$ in $\mathbf{Grp}$.
+\end{prop}
+
+\[ \begin{tikzcd}
+A \arrow[d] \arrow[r] & A \cup A' \arrow[d] & A' \arrow[l] \arrow[d] \\
+ F(A) \arrow[d] \arrow[r] & F(A \cup A') \arrow[d] & F(A') \arrow[l] \arrow[d] \\
+G \arrow[r, "\kappa_1"] & G * G' & G' \arrow[l, "\kappa_2"]
+\end{tikzcd} \]
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\kappa_1 : G \rightarrow G * G'$ and $\kappa_2 : G' \rightarrow G * G'$ be the unique homomorphisms that make the diagram above commute.}}
+\step{2}{\pflet{$\phi : G \rightarrow H$ and $\psi : G' \rightarrow H$ be any homomorphisms.}}
+\step{3}{\pflet{$[\phi, \psi] : F(A \cup A') \rightarrow H$ be the unique homomorphism such that \ldots}}
+\step{4}{$R \cup R' \subseteq \ker [\phi, \psi]$}
+\step{5}{$[\phi, \psi]$ factors uniquely through the morphism $F(A \cup A') \rightarrow G * G'$}
+\qed
+\end{proof}
 
 \section{Index of a Subgroup}
 

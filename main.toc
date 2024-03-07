@@ -26,8 +26,8 @@
 \contentsline {section}{\numberline {5.11}Euler's $\phi $-function}{43}{}%
 \contentsline {section}{\numberline {5.12}Commutator Subgroup}{45}{}%
 \contentsline {section}{\numberline {5.13}Presentations}{45}{}%
-\contentsline {section}{\numberline {5.14}Index of a Subgroup}{45}{}%
-\contentsline {section}{\numberline {5.15}Cokernels}{46}{}%
+\contentsline {section}{\numberline {5.14}Index of a Subgroup}{46}{}%
+\contentsline {section}{\numberline {5.15}Cokernels}{47}{}%
 \contentsline {section}{\numberline {5.16}Cayley Graphs}{47}{}%
 \contentsline {chapter}{\numberline {6}Abelian Groups}{49}{}%
 \contentsline {section}{\numberline {6.1}The Category of Abelian Groups}{53}{}%
