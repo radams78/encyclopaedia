@@ -29,6 +29,7 @@
 \newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
 \newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
+\newcommand{\coker}{\ensuremath{\operatorname{coker}}}
 
 \begin{document}
 
@@ -1295,6 +1296,12 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Then the following are equ
 \qed
 \end{proof}
 
+\begin{prop}
+A group homomorphism is an epimorphism if and only if it is surjective.
+\end{prop}
+
+%TODO
+
 \section{Inner Automorphisms}
 
 \begin{prop}
@@ -1741,6 +1748,8 @@ Let $H$ and $K$ be subgroups of a group $G$. Assume that $H$ is normal in $G$. T
 \qed
 \end{proof}
 
+See also Proposition \ref{prop:order-of-HK} for a result that holds even if $H$ is not normal.
+
 \section{Cosets}
 
 \begin{prop}
@@ -1797,7 +1806,17 @@ Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ such that, for 
 
 \begin{df}[Coset]
 Let $G$ be a group and $H$ a subgroup of $G$. A \emph{left coset} of $H$ is a set of the form $aH$ for $a \in G$. A \emph{right coset} of $H$ is a set of the form $Ha$ for some $a \in G$.
+
+We write $G / H$ for the set of all left cosets of $H$, and $G \backslash H$ for the set of all right cosets of $H$.
 \end{df}
+
+\begin{prop}
+\[ G / H \cong G \backslash H \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $aH$ to $H \inv{a}$ is a bijection. \qed
+\end{proof}
 
 \begin{prop}
 Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $\inv{a} b \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ga \sim gb$. The equivalence class of $a$ is $aH$.
@@ -1963,6 +1982,30 @@ Let $G$ be a group, $H$ a subgroup of $G$, and $g \in G$. The function that maps
 
 \begin{proof}
 \pf\ By Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:order-of-HK}
+Let $H$ and $K$ be finite subgroups of a group $G$. Then
+\[ |HK| = \frac{|H||K|}{|H \cap K|} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : \{ hK : h \in H \} \rightarrow H/(H \cap K)$ be the function $f(hK) = h(H \cap K)$}}
+\begin{proof}
+	\pf\ This is well-defined because if $hK = h'K$ then $\inv{h} h' \in H \cap K$ so $h(H \cap K) = h'(H \cap K)$.
+\end{proof}
+\step{2}{$f$ is injective.}
+\begin{proof}
+	\pf\ If $h(H \cap K) = h'(H \cap K)$ then $hK = h'K$.
+\end{proof}
+\step{3}{$f$ is surjective.}
+\begin{proof}
+	\pf\ Clear.
+\end{proof}
+\step{4}{\[ \frac{|HK|}{|K|} = \frac{|H|}{|H \cap K|} \]}
+\qed
 \end{proof}
 
 \section{Congruence}
@@ -2201,6 +2244,35 @@ Let $G$ be a finite group. If $p$ is prime and $p \mid |G|$ then $G$ has a subgr
 \end{thm}
 
 %TODO
+
+\begin{prop}
+Let $G$ be a group. Let $K$ be a subgroup of $G$ and $H$ a subgroup of $K$. If $|G:H|$, $|G:K|$ and $|K:H|$ are all finite then
+\[ |G:H| = |G:K| |K:H| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G/K = \{ g_1 K, g_2 K, \ldots, g_m K \}$}}
+\step{2}{\pflet{$K / H = \{ k_1 H, k_2 H, \ldots, k_n H \}$}}
+\step{3}{$G/H = \{ g_i k_j H : 1 \leq i \leq m, 1 \leq j \leq n \}$}
+\begin{proof}
+	\step{a}{\pflet{$g \in G$}}
+	\step{b}{\pick\ $i$ such that $gK = g_i K$}
+	\step{c}{$\inv{g} g_i \in K$}
+	\step{d}{\pick\ $j$ such that $\inv{g} g_i H = k_j H$}
+	\step{e}{$\inv{g} g_i k_j \in H$}
+	\step{f}{$gH = g_i k_j H$}
+\end{proof}
+\step{4}{If $g_i k_j H = g_{i'} k_{j'} H$ then $i = i'$ and $j = j'$.}
+\begin{proof}
+	\step{a}{\assume{$g_i k_j H = g_{i'} k_{j'} H$}}
+	\step{b}{$g_i K = g_{i'} K$}
+	\step{c}{$i = i'$}
+	\step{d}{$k_j H = k_{j'} H$}
+	\step{e}{$j = j'$}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Abelian Groups}
 
@@ -2678,6 +2750,64 @@ Let $A$ and $B$ be sets. Let $F(A)$ and $F(B)$ be the free groups on $A$ and $B$
 
 \begin{proof}
 \pf\ Proposition \ref{prop:Fab-reflects-cong}. \qed
+\end{proof}
+
+\section{Cokernels}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a homomorphism between Abelian groups. Then there exists an Abelian group $K$ and homomorphism $\pi : H \rightarrow K$ that is initial with respect to all homomorphism $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$K = H / \im \phi$ and $\pi$ be the canonical homomorphism.}}
+\step{2}{\pflet{$\pi \circ \phi = 0$}}
+\step{3}{\pflet{$\alpha : H \rightarrow L$ satisfy $\alpha \circ \phi = 0$}}
+\step{4}{$\im \phi \subseteq \ker \alpha$}
+\step{5}{There exists a unique $\overline{\alpha} : H / \im \phi \rightarrow L$ such that $\overline{\alpha} \circ \pi = \alpha$}
+\qed
+\end{proof}
+
+\begin{df}[Cokernel]
+For any homomorphism $\phi : G \rightarrow H$ in $\mathbf{Ab}$, the \emph{cokernel} of $\phi$ is the Abelian group $\coker \phi$ and homomorphism $\pi : H \rightarrow \coker \phi$ that is initial among homomorphisms $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{df}
+
+\begin{prop}
+$\pi : H \rightarrow \coker \phi$ is initial among functions $f : H \rightarrow X$ such that, for all $x,y \in H$, if $x + \im \phi = y + \im \phi$ then $f(x) = f(y)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a homomorphism of Abelian groups. Then the following are equivalent.
+\begin{itemize}
+\item $\phi$ is an epimorphism.
+\item $\coker \phi$ is trivial.
+\item $\phi$ is surjective.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\phi$ is epi.}}
+	\step{b}{\pflet{$\pi : H \rightarrow \coker \phi$ be the canonical homomorphism.}}
+	\step{c}{$\pi \circ \phi = 0 \circ \phi$}
+	\step{d}{$\pi = 0$}
+	\step{e}{$\coker \phi = \im \pi$ is trivial.}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If $\coker \phi = H / \im \phi$ is trivial then $\im \phi = H$.
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\pf\ If it is surjective then it is epi in $\mathbf{Set}$.
+\end{proof}
+\qed
 \end{proof}
 
 \part{Linear Algebra}
