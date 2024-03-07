@@ -28,6 +28,7 @@
 \contentsline {section}{\numberline {5.13}Presentations}{45}{}%
 \contentsline {section}{\numberline {5.14}Index of a Subgroup}{45}{}%
 \contentsline {section}{\numberline {5.15}Cokernels}{46}{}%
+\contentsline {section}{\numberline {5.16}Cayley Graphs}{47}{}%
 \contentsline {chapter}{\numberline {6}Abelian Groups}{49}{}%
 \contentsline {section}{\numberline {6.1}The Category of Abelian Groups}{53}{}%
 \contentsline {section}{\numberline {6.2}Free Abelian Groups}{54}{}%

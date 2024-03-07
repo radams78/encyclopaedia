@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  7 MAR 2024 20:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  7 MAR 2024 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -606,7 +606,7 @@ Overfull \hbox (62.49506pt too wide) detected at line 2179
 ]
 Chapter 6.
 [49] [50] [51]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2537--2538
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2551--2552
 []\OT1/cmr/bx/n/10 Proposition 6.17. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -649,7 +649,7 @@ ts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1000.pfb>
-Output written on main.pdf (61 pages, 407821 bytes).
+Output written on main.pdf (61 pages, 408904 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  210 compressed objects within 3 object streams

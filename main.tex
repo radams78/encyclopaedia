@@ -2313,6 +2313,20 @@ For any homomorphism $\phi : G \rightarrow H$ in $\mathbf{Grp}$, the \emph{coker
 It is not true that a homomorphism with trivial cokernel is epi. The inclusion $\langle (1\ 2) \rangle \hookrightarrow S_3$ has trivial cokernel but is not epi.
 \end{ex}
 
+\section{Cayley Graphs}
+
+\begin{df}[Cayley Graph]
+Let $G$ be a finitely generated group. Let $A$ be a finite set of generators for $G$. The \emph{Cayley graph} of $G$ with respect to $A$ is the directed graph whose vertices are the elements of $G$, with an edge $g_1 \rightarrow g_2$ labelled by $a \in A$ iff $g_2 = g_1 a$.
+\end{df}
+
+\begin{prop}
+$G$ is the free group on $A$ iff the Cayley graph with respect to $A$ is a tree.
+\end{prop}
+
+\begin{proof}
+\pf\ Both are equivalent to saying that the product of two different strings of elements of $A$ and/or their inverses are not equal. \qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
