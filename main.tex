@@ -2180,6 +2180,22 @@ For any positive integer $n$ we have
 \qed
 \end{proof}
 
+\begin{prop}
+For any positive integers $a$ and $n$, we have $n \mid \phi(a^n - 1)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since the order of $a$ is $n$ in $(\mathbb{Z} / (a^n - 1)\mathbb{Z})^*$. \qed
+\end{proof}
+
+\begin{thm}[Euler's Theorem]
+For any coprime integers $a$ and $n$ we have $a^{\phi(n)} \equiv a (\mod n)$.
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from Lagrange's Theorem. \qed
+\end{proof}
+
 \section{Commutator Subgroup}
 
 \begin{df}[Commutator Subgroup]
@@ -2669,6 +2685,45 @@ gh\inv{(hg)} & \in [G,G] \\
 \therefore gh[G,G] & = hg[G,G] & \qed
 \end{align*}
 \end{proof}
+
+\begin{prop}
+Let $G$ be a finite Abelian group. Let $p$ be a prime divisor of $|G|$. Then $G$ has an element of order $p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result holds for all groups smaller than $G$.}}
+\step{2}{\pick\ $g \in G - \{0\}$.}
+\step{3}{\pick\ an element $h \in \langle g \rangle$ with prime order $q$.}
+\step{4}{\case{$q = p$}}
+\begin{proof}
+\pf\ $h$ is the required element.
+\end{proof}
+\step{5}{\case{$q \neq p$}}
+\begin{proof}
+\step{a}{\pick\ $r \in G$ such that $r + \langle h \rangle$ has order $p$ in $G / \langle h \rangle$.}
+\begin{proof}
+\pf\ By induction hypothesis since $|G / \langle h \rangle| = |G| / q$.
+\end{proof}
+\step{b}{$pr \in \langle h \rangle$}
+\step{c}{\pick\ $k$ such that $pr = kh$}
+\step{d}{$pqr = e$}
+\step{e}{$qr$ has order $p$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For $n$ an odd integer, any Abelian group of order $2n$ has exactly one element of order 2.
+\end{cor}
+
+\begin{proof}
+\pf\ If $x$ and $y$ are distinct elements of order 2 then $\langle x,y \rangle = \{ e, x, y, xy \}$ has size 4 and so $4 \mid 2n$ which is a contradiction. \qed
+\end{proof}
+
+\begin{ex}
+It is not true that, if $G$ is a finite group and $d \mid |G|$, then $G$ has an element of order $d$. The quaternion group has no element of order 4.
+\end{ex}
 
 \section{The Category of Abelian Groups}
 

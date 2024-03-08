@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  8 MAR 2024 17:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  8 MAR 2024 20:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -597,7 +597,7 @@ WARNING: proof step "v" (<3>6) already defined
 [37] [38] [39]
 WARNING: proof step "1" (<2>1) already defined
 [40] [41] [42] [43] [44]
-Overfull \hbox (62.49506pt too wide) detected at line 2198
+Overfull \hbox (62.49506pt too wide) detected at line 2214
 []
  []
 
@@ -606,7 +606,7 @@ Chapter 6.
 [49
 
 ] [50] [51]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2589--2590
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2605--2606
 []\OT1/cmr/bx/n/10 Proposition 6.17. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -618,7 +618,7 @@ WARNING: proof step "2" (<1>3) already defined
 [53] [54] [55] [56] [57] [58
 
 ] [59] [60]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 2994--3002
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 3049--3057
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
@@ -630,7 +630,7 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  14916 strings out of 476091
  309442 string characters out of 5794081
- 1877330 words of memory out of 5000000
+ 1874330 words of memory out of 5000000
  35052 multiletter control sequences out of 15000+600000
  525261 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -657,7 +657,7 @@ s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (61 pages, 413223 bytes).
+Output written on main.pdf (61 pages, 414971 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  210 compressed objects within 3 object streams
