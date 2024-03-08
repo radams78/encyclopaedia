@@ -2725,6 +2725,22 @@ For $n$ an odd integer, any Abelian group of order $2n$ has exactly one element 
 It is not true that, if $G$ is a finite group and $d \mid |G|$, then $G$ has an element of order $d$. The quaternion group has no element of order 4.
 \end{ex}
 
+\begin{prop}
+If $G$ is a finite Abelian group and $d \mid |G|$ then $G$ has a subgroup of size $d$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result is true for all $d' < d$.}}
+\step{2}{\assume{w.l.o.g. $d \neq 1$.}}
+\step{3}{\pick\ a prime $p$ such that $p \mid d$.}
+\step{4}{\pick\ an element $g \in G$ of order $p$.}
+\step{5}{$d/p \mid |G/\langle g \rangle|$}
+\step{6}{\pick\ a subgrop $H$ of $G/\langle g \rangle$ of size $d/p$.}
+\step{7}{$\inv{\pi}(H)$ is a subgroup of $G$ of size $d$.}
+\qed
+\end{proof}
+
 \section{The Category of Abelian Groups}
 
 \begin{df}[Category of Abelian Groups]
