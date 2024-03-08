@@ -2896,6 +2896,21 @@ Let $\phi : G \rightarrow H$ be a homomorphism of Abelian groups. Then the follo
 Let $\mathrm{SL}_n(\mathbb{R}) = \{ M \in \mathrm{GL}_n(\mathbb{R}) : \det M = 1 \}$.
 \end{df}
 
+\begin{prop}
+$\mathrm{SL}_n(\mathbb{R})$ is a normal subgroup of $\mathrm{GL}_n(\mathbb{R})$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\det M = 1$ then $\det(AMA^{-1}) = (\det A) (\det M) (\det A)^{-1} = 1$. \qed
+\end{proof}
+
+\begin{prop}
+\[ \mathrm{GL}_n(\mathbb{R}) / \mathrm{SL}_n(\mathbb{R}) \cong \mathbb{R}^* \]
+\end{prop}
+
+\begin{proof}
+\end{proof}
+
 \begin{df}
 Let $\mathrm{SL}_n(\mathbb{C}) = \{ M \in \mathrm{GL}_n(\mathbb{C}) : \det M = 1 \}$.
 \end{df}
@@ -2952,4 +2967,24 @@ $\mathrm{SU}_2(\mathbb{C})$ is simply connected.
 
 %TODO
 
+\begin{cor}
+\[ \mathrm{SO}_3(\mathbb{R}) \cong \mathrm{SU}_2(\mathbb{C}) / \{ I, -I \} \]
+\end{cor}
+
+\begin{proof}
+\pf\ The function that maps $\left( \begin{array}{cc}
+a + b i & c + d i \\
+-c + di & a - bi
+\end{array} \right)$ to $\left( \begin{array}{ccc}
+a^2 + b^2 - c^2 - d^2 & 2(bc - ad) & 2(ac + bd) \\
+2(ad + bc) & a^2 - b^2 + c^2 - d^2 & 2(cd - ab) \\
+2(bd - ac) & 2(ab + cd) & a^2 - b^2 - c^2 + d^2
+\end{array} \right)$ is a surjective homomorphism with kernel $\{ I, -I \}$. \qed
+\end{proof}
+
+\begin{cor}
+The fundamental group of $\mathrm{SO}_3(\mathbb{R})$ is $C_2$.
+\end{cor}
+
+%TODO
 \end{document}
