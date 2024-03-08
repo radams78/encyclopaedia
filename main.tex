@@ -846,6 +846,25 @@ Given sets $A,B \subseteq G$, we define
     \pf\ Since $|gh| = |ghg\inv{g}| = |hg|$. \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a group of order $n$. Let $k$ be relatively prime to $n$. Then every element in $G$ has the form $x^k$ for some $x$.
+\end{prop}
+
+\begin{proof}
+\step{1}{\pick\ integers $a$ and $b$ such that $an + bk = 1$.}
+\step{2}{\pflet{$g \in G$}}
+\step{3}{$g = (g^b)^k$}
+\begin{proof}
+\pf
+\begin{align*}
+g & = g. (g^n)^{-a} & (g^n = e) \\
+& = g^{1-an} \\
+& = g^{bk}
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Generators}
 
 \begin{df}[Generator]

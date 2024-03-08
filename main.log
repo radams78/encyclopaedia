@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  8 MAR 2024 17:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  8 MAR 2024 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,12 +554,12 @@ Chapter 4.
 
 ] [20] [21] [22]
 WARNING: proof step "5" (<1>6) already defined
-[23] [24] [25] [26
+[23] [24] [25] [26]
+Chapter 5.
+[27
 
 ]
-Chapter 5.
-[27]
-Overfull \hbox (0.97186pt too wide) in paragraph at lines 1052--1053
+Overfull \hbox (0.97186pt too wide) in paragraph at lines 1071--1072
 []\OT1/cmr/bx/n/10 Proposition 5.11. []\OT1/cmr/m/it/10 For any groups $\OML/cm
 m/m/it/10 G$ \OT1/cmr/m/it/10 and $\OML/cmm/m/it/10 H$\OT1/cmr/m/it/10 , the se
 t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
@@ -568,7 +568,7 @@ t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
  []
 
 
-Overfull \hbox (42.37027pt too wide) in paragraph at lines 1061--1062
+Overfull \hbox (42.37027pt too wide) in paragraph at lines 1080--1081
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Since $(\OML/cmm/m/it/10 g[]; h[]\OT1
 /cmr/m/n/10 )((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 g[];
  h[]\OT1/cmr/m/n/10 )) = ((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/
@@ -584,7 +584,7 @@ WARNING: proof step "5" (<1>6) already defined
 [33] [34]
 WARNING: proof step "2" (<1>3) already defined
 [35]
-Overfull \hbox (16.43498pt too wide) in paragraph at lines 1596--1597
+Overfull \hbox (16.43498pt too wide) in paragraph at lines 1615--1616
 []\OT1/cmr/bx/n/10 Definition 5.48 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/bx
 /n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 mod-u-lar group $[][]\OT1/cmr/m/
 n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 )$ is $[][](\U/msb/m/n/10 Z\OT1/cmr/m/n/10
@@ -597,7 +597,7 @@ WARNING: proof step "v" (<3>6) already defined
 [37] [38] [39]
 WARNING: proof step "1" (<2>1) already defined
 [40] [41] [42] [43] [44]
-Overfull \hbox (62.49506pt too wide) detected at line 2179
+Overfull \hbox (62.49506pt too wide) detected at line 2198
 []
  []
 
@@ -606,7 +606,7 @@ Chapter 6.
 [49
 
 ] [50] [51]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2570--2571
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2589--2590
 []\OT1/cmr/bx/n/10 Proposition 6.17. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -618,11 +618,15 @@ WARNING: proof step "2" (<1>3) already defined
 [53] [54] [55] [56] [57] [58
 
 ] [59] [60]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 2975--2983
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 2994--3002
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[61] (./main.aux) ) 
+[61] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  14916 strings out of 476091
  309442 string characters out of 5794081
@@ -631,30 +635,29 @@ Here is how much of TeX's memory you used:
  525261 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,15n,118p,448b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
-1000.pfb>
-Output written on main.pdf (61 pages, 412611 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (61 pages, 413223 bytes).
 PDF statistics:
  322 PDF objects out of 1000 (max. 8388607)
  210 compressed objects within 3 object streams
