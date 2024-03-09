@@ -3069,6 +3069,17 @@ Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer 
 \[ \mathrm{Stab}_G(a) := \{ g \in G : ga = a \} \enspace . \]
 \end{df}
 
+\section{Category of $G$-Sets}
+
+\begin{df}
+Given a group $G$, let $G-\mathbf{Set}$ be the category with:
+\begin{itemize}
+\item objects all pairs $(A, \rho)$ such that $A$ is a set and $\rho : G \times A \rightarrow A$ is an action of $G$ on $A$;
+\item morphisms $f : (A, \rho) \rightarrow (B, \sigma)$ are functions $f : A \rightarrow B$ such that
+\[ \forall g \in G. \forall a \in A. f(\rho(g,a)) = \sigma(g,f(a)) \enspace . \]
+\end{itemize}
+\end{df}
+
 \part{Linear Algebra}
 
 \begin{df}
