@@ -2978,7 +2978,21 @@ Let $\phi : G \rightarrow H$ be a homomorphism of Abelian groups. Then the follo
 
 \begin{df}[Action]
 Let $G$ be a group. Let $A$ be an object of a category $\mathcal{C}$. An \emph{action} of $G$ on $A$ is a group homomorphism $G \rightarrow \mathrm{Aut}_\mathcal{C}(A)$.
+
+It is \emph{faithful} or \emph{effective} iff it is injective.
 \end{df}
+
+\begin{prop}
+Let $A$ be a set. An action of the group $G$ on the set $A$ is given by a function $\cdot : G \times A \rightarrow A$ such that
+\begin{itemize}
+\item $\forall a \in A. ea = a$
+\item $\forall g,h \in G. \forall a \in A. (gh)a = g(ha)$
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Just unfolding definitions. \qed
+\end{proof}
 
 \part{Linear Algebra}
 
