@@ -3075,10 +3075,30 @@ Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer 
 Given a group $G$, let $G-\mathbf{Set}$ be the category with:
 \begin{itemize}
 \item objects all pairs $(A, \rho)$ such that $A$ is a set and $\rho : G \times A \rightarrow A$ is an action of $G$ on $A$;
-\item morphisms $f : (A, \rho) \rightarrow (B, \sigma)$ are functions $f : A \rightarrow B$ such that
+\item morphisms $f : (A, \rho) \rightarrow (B, \sigma)$ are functions $f : A \rightarrow B$ that are \emph{($G$-)equivariant}, i.e.
 \[ \forall g \in G. \forall a \in A. f(\rho(g,a)) = \sigma(g,f(a)) \enspace . \]
 \end{itemize}
 \end{df}
+
+\begin{prop}
+A $G$-equivariant function $f : A \rightarrow B$ is an isomorphism in $G-\mathbf{Set}$ if and only if it is bijective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrow B$ be $G$-equivariant and bijective.} \prove{$\inv{f}$ is $G$-equivariant.}}
+\step{2}{\pflet{$g \in G$ and $b \in B$}}
+\step{3}{$\inv{f}(gb) = g \inv{f}(b)$}
+\begin{proof}
+\pf
+\begin{align*}
+f(\inv{f}(gb)) & = gb \\
+& = g f(\inv{f}(b)) \\
+& = f(g \inv{f}(b))
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
 
 \part{Linear Algebra}
 
