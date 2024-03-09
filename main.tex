@@ -3047,6 +3047,23 @@ Given an action of a group $G$ on a set $A$, the orbits form a partition of $A$.
 \qed
 \end{proof}
 
+\begin{prop}
+Given an action of a group $G$ on a set $A$ and $a \in A$, the action is transitive on $\mathrm{O}_G(a)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{The restriction of the action is an action on $\mathrm{O}_G(a)$.}
+\begin{proof}
+\pf\ Since $g(ha) = (gh)a$, the action maps $\mathrm{O}_G(a)$ to itself.
+\end{proof}
+\step{2}{The restricted action is transitive.}
+\begin{proof}
+\pf\ Given $ga, ha \in \mathrm{O}_G(a)$, we have $ha = (h\inv{g})(ga)$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{df}[Stabilizer Subgroup]
 Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer subgroup} of $a$ is
 \[ \mathrm{Stab}_G(a) := \{ g \in G : ga = a \} \enspace . \]
