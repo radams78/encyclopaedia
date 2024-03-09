@@ -3070,6 +3070,21 @@ Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer 
 \[ \Stab{G}{a} := \{ g \in G : ga = a \} \enspace . \]
 \end{df}
 
+\begin{prop}
+Let $G$ act on a set $A$. Let $a \in A$ and $g \in G$. Then
+\[ \Stab{G}{ga} = g \Stab{G}{a} \inv{g} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+h \in \Stab{G}{ga} & \Leftrightarrow hga = ga \\
+& \Leftrightarrow \inv{g}hga = a \\
+& \Leftrightarrow \inv{g}hg \in \Stab{G}{a} \\
+& \Leftrightarrow h \in g \Stab{G}{a} \inv{g} & \qed
+\end{align*}
+\end{proof}
+
 \section{Category of $G$-Sets}
 
 \begin{df}
