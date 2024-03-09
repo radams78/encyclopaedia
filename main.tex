@@ -19,17 +19,18 @@
 \newtheorem{df}[prop]{Definition}
 \newtheorem{ex}[prop]{Example}
 
-\renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
+\newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
+\newcommand{\coker}{\ensuremath{\operatorname{coker}}}
+\newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
+\newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\im}{\ensuremath{\operatorname{im}}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
-\newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
-\newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
-\newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
-\newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
+\renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
+\newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
-\newcommand{\coker}{\ensuremath{\operatorname{coker}}}
+\newcommand{\Stab}[2]{\ensuremath{\mathrm{Stab}_{#1} \left( {#2} \right)}}
 
 \begin{document}
 
@@ -3066,7 +3067,7 @@ Given an action of a group $G$ on a set $A$ and $a \in A$, the action is transit
 
 \begin{df}[Stabilizer Subgroup]
 Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer subgroup} of $a$ is
-\[ \mathrm{Stab}_G(a) := \{ g \in G : ga = a \} \enspace . \]
+\[ \Stab{G}{a} := \{ g \in G : ga = a \} \enspace . \]
 \end{df}
 
 \section{Category of $G$-Sets}
@@ -3101,25 +3102,25 @@ f(\inv{f}(gb)) & = gb \\
 \end{proof}
 
 \begin{prop}
-Let $G$ be a group and $A$ a transitive $G$-set. Let $a \in A$. Then $A$ is isomorphic to $G / \mathrm{Stab}_G(a)$ under left multiplication.
+Let $G$ be a group and $A$ a transitive $G$-set. Let $a \in A$. Then $A$ is isomorphic to $G / \Stab{G}{a}$ under left multiplication.
 \end{prop}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$f : G / \mathrm{Stab}_G(a)$ be the function $f(g \mathrm{Stab}_G(a)) = ga$.}}
+\step{1}{\pflet{$f : G / \Stab{G}{a}$ be the function $f(g \Stab{G}{a}) = ga$.}}
 \begin{proof}
-	\step{a}{\assume{$g \mathrm{Stab}_G(a) = h \mathrm{Stab}_G(a)$} \prove{$ga = ha$}}
-	\step{b}{$\inv{g} h \in \mathrm{Stab}_G(a)$}
+	\step{a}{\assume{$g \Stab{G}{a} = h \Stab{G}{a}$} \prove{$ga = ha$}}
+	\step{b}{$\inv{g} h \in \Stab{G}{a}$}
 	\step{c}{$\inv{g} h a = a$}
 	\step{d}{$ha = ga$}
 \end{proof}
 \step{2}{$f$ is $G$-equivariant.}
 \begin{proof}
-	\pf\ Since $f(gh \mathrm{Stab}_G(a)) = gha = g f(h \mathrm{Stab}_G(a))$.
+	\pf\ Since $f(gh \Stab{G}{a}) = gha = g f(h \Stab{G}{a})$.
 \end{proof}
 \step{3}{$f$ is injective.}
 \begin{proof}
-	\pf\ If $ga = ha$ then $\inv{g}h \in \mathrm{Stab}_G(a)$ so $g \mathrm{Stab}_G(a) = h \mathrm{Stab}_G(a)$.
+	\pf\ If $ga = ha$ then $\inv{g}h \in \Stab{G}{a}$ so $g \Stab{G}{a} = h \Stab{G}{a}$.
 \end{proof}
 \step{4}{$f$ is surjective.}
 \begin{proof}
