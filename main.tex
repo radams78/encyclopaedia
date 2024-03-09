@@ -3126,7 +3126,7 @@ Let $G$ be a group and $A$ a transitive $G$-set. Let $a \in A$. Then $A$ is isom
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$f : G / \Stab{G}{a}$ be the function $f(g \Stab{G}{a}) = ga$.}}
+\step{1}{\pflet{$f : G / \Stab{G}{a} \rightarrow A$ be the function $f(g \Stab{G}{a}) = ga$.}}
 \begin{proof}
 	\step{a}{\assume{$g \Stab{G}{a} = h \Stab{G}{a}$} \prove{$ga = ha$}}
 	\step{b}{$\inv{g} h \in \Stab{G}{a}$}
@@ -3152,14 +3152,28 @@ Let $G$ be a group and $A$ a transitive $G$-set. Let $a \in A$. Then $A$ is isom
 If $O$ is an orbit of the action of a finite group $G$ on a set $A$, then $O$ is finite and $|O|$ divides $|G|$.
 \end{cor}
 
+\begin{cor}
+Let $H$ be a subgroup of $G$ and $g \in G$. Then
+\[ G / H \cong G / (g H \inv{g}) \]
+in $G-\mathbf{Set}$.
+\end{cor}
+
+\begin{proof}
+\pf\ Taking $A = G / H$ and $a = gH$. \qed
+\end{proof}
+
 \part{Linear Algebra}
 
 \begin{df}
     Let $\mathrm{GL}_n(\mathbb{R})$ be the group of invertible $n \times n$ real matrices.
+    
+    $\mathrm{GL}_n(\mathbb{R})$ acts on $\mathbb{R}^n$ by matrix multiplication.
 \end{df}
 
 \begin{df}
     Let $\mathrm{GL}_n(\mathbb{C})$ be the group of invertible $n \times n$ complex matrices.
+    
+    $\mathrm{GL}_n(\mathbb{C})$ acts on $\mathbb{C}^n$ by matrix multiplication.
 \end{df}
 
 \begin{df}
@@ -3188,6 +3202,12 @@ Let $\mathrm{SL}_n(\mathbb{C}) = \{ M \in \mathrm{GL}_n(\mathbb{C}) : \det M = 1
 \begin{df}
 Let $\mathrm{O}_n(\mathbb{R}) = \{ M \in \mathrm{GL}_n(\mathbb{R}) : M M^\mathrm{T} = M^\mathrm{T} M = I_n \}$.
 \end{df}
+
+\begin{prop}
+The action of $\mathrm{O}_n(\mathbb{R})$ on $\mathbb{R}^n$ preserves lengths and angles.
+\end{prop}
+
+%TODO
 
 \begin{df}
 Let $\mathrm{SO}_n(\mathbb{R}) = \{ M \in \mathrm{O}_n(\mathbb{R}) : \det M = 1 \}$.
