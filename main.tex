@@ -3100,6 +3100,34 @@ f(\inv{f}(gb)) & = gb \\
 \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a group and $A$ a transitive $G$-set. Let $a \in A$. Then $A$ is isomorphic to $G / \mathrm{Stab}_G(a)$ under left multiplication.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : G / \mathrm{Stab}_G(a)$ be the function $f(g \mathrm{Stab}_G(a)) = ga$.}}
+\begin{proof}
+	\step{a}{\assume{$g \mathrm{Stab}_G(a) = h \mathrm{Stab}_G(a)$} \prove{$ga = ha$}}
+	\step{b}{$\inv{g} h \in \mathrm{Stab}_G(a)$}
+	\step{c}{$\inv{g} h a = a$}
+	\step{d}{$ha = ga$}
+\end{proof}
+\step{2}{$f$ is $G$-equivariant.}
+\begin{proof}
+	\pf\ Since $f(gh \mathrm{Stab}_G(a)) = gha = g f(h \mathrm{Stab}_G(a))$.
+\end{proof}
+\step{3}{$f$ is injective.}
+\begin{proof}
+	\pf\ If $ga = ha$ then $\inv{g}h \in \mathrm{Stab}_G(a)$ so $g \mathrm{Stab}_G(a) = h \mathrm{Stab}_G(a)$.
+\end{proof}
+\step{4}{$f$ is surjective.}
+\begin{proof}
+	\pf\ Since for all $b \in A$ there exists $g \in G$ such that $ga = b$.
+\end{proof}
+\qed
+\end{proof}
+
 \part{Linear Algebra}
 
 \begin{df}
