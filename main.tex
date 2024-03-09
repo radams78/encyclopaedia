@@ -3071,6 +3071,14 @@ Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer 
 \end{df}
 
 \begin{prop}
+Stabilizer subgroups are subgroups.
+\end{prop}
+
+\begin{proof}
+\pf\ If $g,h \in \Stab{G}{a}$ then $g \inv{h} a = a$ so $g \inv{h} \in \Stab{G}{a}$. \qed
+\end{proof}
+
+\begin{prop}
 Let $G$ act on a set $A$. Let $a \in A$ and $g \in G$. Then
 \[ \Stab{G}{ga} = g \Stab{G}{a} \inv{g} \enspace . \]
 \end{prop}
@@ -3088,6 +3096,14 @@ h \in \Stab{G}{ga} & \Leftrightarrow hga = ga \\
 \begin{cor}
 Let $G$ be an action on a set $A$ and $a \in A$. If $\Stab{G}{a}$ is normal in $G$, then for any $b \in \mathrm{O}_G(a)$ we have $\Stab{G}{a} = \Stab{G}{b}$.
 \end{cor}
+
+\begin{df}[Free]
+An action of a group $G$ on a set $A$ is \emph{free} iff, whenever $ga = a$, then $g = e$.
+\end{df}
+
+\begin{ex}
+The action of left multiplication is free.
+\end{ex}
 
 \section{Category of $G$-Sets}
 
@@ -3160,6 +3176,15 @@ in $G-\mathbf{Set}$.
 
 \begin{proof}
 \pf\ Taking $A = G / H$ and $a = gH$. \qed
+\end{proof}
+
+\begin{prop}
+Given a family of $G$-sets $\{ A_i \}_{i \in I}$, we have $\prod_{i \in I} A_i$ is their product in $G-\mathbf{Set}$ under
+\[ g \{a_i\}_{i \in I} = \{ga_i\}_{i \in I} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
 \end{proof}
 
 \part{Linear Algebra}
