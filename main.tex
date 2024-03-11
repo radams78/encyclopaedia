@@ -2334,14 +2334,6 @@ Let $G$ be a group. Let $K$ be a subgroup of $G$ and $H$ a subgroup of $K$. If $
 \qed
 \end{proof}
 
-\begin{prop}
-A subgroup of index 2 is normal.
-\end{prop}
-
-\begin{proof}
-\pf\ If $|G : H| = 2$ then, for all $g \in G$ we have $gH = Hg = H$ if $g \in H$ and $gH = Hg = G - H$ if $g \notin H$. \qed
-\end{proof}
-
 \section{Cokernels}
 
 \begin{prop}
@@ -3105,6 +3097,53 @@ An action of a group $G$ on a set $A$ is \emph{free} iff, whenever $ga = a$, the
 The action of left multiplication is free.
 \end{ex}
 
+\begin{prop}
+Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of index $p$ where $p$ is the smallest prime that divides $|G|$. Then $H$ is normal in $G$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\sigma : G \rightarrow \Aut{\Set}{G/H}$ be the action of left multiplication.}}
+\step{2}{$G / \ker \sigma$ is a subgroup of $\Aut{\Set}{G / H}$.}
+\step{3}{$|G : \ker \sigma|$ divides $p!$.}
+\step{4}{$\ker \sigma \subseteq H$}
+\begin{proof}
+	\step{a}{\pflet{$g \in \ker \sigma$}}
+	\step{b}{$\sigma(g)(H) = H$}
+	\step{c}{$gH = H$}
+	\step{d}{$g \in H$}
+\end{proof}
+\step{5}{$\ker \sigma = H$}
+\begin{proof}
+	\step{a}{$|\ker \sigma| \mid |H|$}
+	\begin{proof}
+		\pf\ By Lagrange's Theorem and \stepref{4}.
+	\end{proof}
+	\step{b}{\pflet{$|H| = k |\ker \sigma|$}}
+	\step{d}{$|G| = p k |\ker \sigma|$}
+	\step{e}{$p k \mid p!$}
+	\begin{proof}
+		\pf\ By \stepref{3}.
+	\end{proof}
+	\step{f}{$k \mid (p-1)!$}
+	\step{g}{Every prime that divides $k$ is $< p$.}
+	\begin{proof}
+		\pf\ From \stepref{f}.
+	\end{proof}
+	\step{h}{Every prime that divides $k$ is $\geq p$.}
+	\begin{proof}
+		\pf\ By \stepref{d}.
+	\end{proof}
+	\step{i}{$k = 1$}
+	\step{j}{$|H| = |\ker \sigma|$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Any subgroup of index 2 is normal.
+\end{cor}
+
 \section{Category of $G$-Sets}
 
 \begin{df}
@@ -3185,6 +3224,23 @@ Given a family of $G$-sets $\{ A_i \}_{i \in I}$, we have $\prod_{i \in I} A_i$ 
 
 \begin{proof}
 \pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Given a family of $G$-sets $\{ A_i \}_{i \in I}$, we have $\coprod_{i \in I} A_i$ is their product in $G-\mathbf{Set}$ under
+\[ g (i,a_i) = (i, ga_i) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every finite $G$-set is a coproduct of $G$-sets of the form $G/H$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $O(a_1)$, \ldots, $O(a_n)$ are the orbits of the $G$-set $A$, then $G$ is the coproduct of $G / \Stab{G}{a_1}$, \ldots, $G / \Stab{G}{a_n}$. \qed
 \end{proof}
 
 \part{Linear Algebra}
