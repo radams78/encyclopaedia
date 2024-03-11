@@ -3098,45 +3098,47 @@ The action of left multiplication is free.
 \end{ex}
 
 \begin{prop}
-Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of index $p$ where $p$ is the smallest prime that divides $|G|$. Then $H$ is normal in $G$.
+Let $G$ be a group. Let $H$ be a subgroup of $G$ of finite index $n$. Then $H$ includes a subgroup $K$ that is normal in $G$ and such that $|G:K|$ divides $\gcd(|G|,n!)$.
 \end{prop}
 
 \begin{proof}
 \pf
 \step{1}{\pflet{$\sigma : G \rightarrow \Aut{\Set}{G/H}$ be the action of left multiplication.}}
-\step{2}{$G / \ker \sigma$ is a subgroup of $\Aut{\Set}{G / H}$.}
-\step{3}{$|G : \ker \sigma|$ divides $p!$.}
-\step{4}{$\ker \sigma \subseteq H$}
+\step{2}{\pflet{$K = \ker \sigma$}}
+\step{3}{$K \subseteq H$}
 \begin{proof}
-	\step{a}{\pflet{$g \in \ker \sigma$}}
+	\step{a}{\pflet{$g \in K$}}
 	\step{b}{$\sigma(g)(H) = H$}
 	\step{c}{$gH = H$}
 	\step{d}{$g \in H$}
 \end{proof}
-\step{5}{$\ker \sigma = H$}
+\step{4}{$K$ is normal in $G$.}
 \begin{proof}
-	\step{a}{$|\ker \sigma| \mid |H|$}
-	\begin{proof}
-		\pf\ By Lagrange's Theorem and \stepref{4}.
-	\end{proof}
-	\step{b}{\pflet{$|H| = k |\ker \sigma|$}}
-	\step{d}{$|G| = p k |\ker \sigma|$}
-	\step{e}{$p k \mid p!$}
-	\begin{proof}
-		\pf\ By \stepref{3}.
-	\end{proof}
-	\step{f}{$k \mid (p-1)!$}
-	\step{g}{Every prime that divides $k$ is $< p$.}
-	\begin{proof}
-		\pf\ From \stepref{f}.
-	\end{proof}
-	\step{h}{Every prime that divides $k$ is $\geq p$.}
-	\begin{proof}
-		\pf\ By \stepref{d}.
-	\end{proof}
-	\step{i}{$k = 1$}
-	\step{j}{$|H| = |\ker \sigma|$}
+	\pf\ Proposition \ref{prop:kernel-normal}.
 \end{proof}
+\step{5}{$|G : K| \mid |G|$}
+\begin{proof}
+	\pf\ Lagrange's Theorem.
+\end{proof}
+\step{6}{$|G : K| \mid n!$} 
+\begin{proof}
+	\pf\ Since $G / K$ is a subgroup of $\Aut{\Set}{G/H}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of index $p$ where $p$ is the smallest prime that divides $|G|$. Then $H$ is normal in $G$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a subgroup $K$ of $H$ normal in $G$ such that $|G : K|$ divides $\gcd(|G|, p!)$.}
+\step{2}{$|G : K|$ divides $p$.}
+\step{3}{$|G:H||H:K|$ divides $p$.}
+\step{4}{$|H:K| = 1$}
+\step{9}{$H = K$}
+\step{10}{$H$ is normal.}
 \qed
 \end{proof}
 
