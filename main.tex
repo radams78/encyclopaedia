@@ -19,6 +19,7 @@
 \newtheorem{df}[prop]{Definition}
 \newtheorem{ex}[prop]{Example}
 
+\newcommand{\Ab}{\ensuremath{\mathbf{Ab}}}
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
 \newcommand{\coker}{\ensuremath{\operatorname{coker}}}
 \newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
@@ -479,7 +480,35 @@ bijection only.
 \chapter{Groups}
 
 \begin{df}[Group]
-    A \emph{group} $G$ consists of a set $G$ and a binary operation $\cdot : G^2 \rightarrow G$ such that $\cdot$ is associative, and there exists $e \in G$, the \emph{identity} element of the group, such that:
+Let $\mathcal{C}$ be a category with finite products. A \emph{group (object)} in $\mathcal{C}$ consists of an object $G \in \mathcal{C}$ and morphisms
+\[ m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G \]
+such that the following diagrams commute.
+\[ \begin{tikzcd}
+G^3 \arrow[r,"m \times \id{G}"] \arrow[d,"\id{G} \times m"] & G^2 \arrow[d,"m"] \\
+G^2 \arrow[r,"m"] & G
+\end{tikzcd} \]
+\[ \begin{tikzcd}
+1 \times G \arrow[r,"e \times \id{G}"] \arrow[dr,"\cong"] & G^2 \arrow[d,"m"] \\
+& G
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+G \times 1 \arrow[r,"\id{G} \times e"] \arrow[dr,"\cong"] & G^2 \arrow[d,"m"] \\
+& G
+\end{tikzcd} \]
+\[ \begin{tikzcd}
+G \arrow[r,"\Delta"] \arrow[d] & G^2 \arrow[r,"\id{G} \times i"] & G^2 \arrow[d,"m"] \\
+1 \arrow[rr,"e"] & & G
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+G \arrow[r,"\Delta"] \arrow[d] & G^2 \arrow[r,"i \times \id{G}"] & G^2 \arrow[d,"m"] \\
+1 \arrow[rr,"e"] & & G
+\end{tikzcd} \]
+\end{df}
+
+\begin{df}[Group]
+We write just 'group' for 'group in $\Set$. Thus, a \emph{group} $G$ consists of a set $G$ and a binary operation $\cdot : G^2 \rightarrow G$ such that $\cdot$ is associative, and there exists $e \in G$, the \emph{identity} element of the group, such that:
     \begin{itemize}
         \item For all $x \in G$ we have $xe = ex = x$
         \item For all $x \in G$, there exists $\inv{x} \in G$, the \emph{inverse} of $x$,
@@ -2853,18 +2882,76 @@ If $G$ is a finite Abelian group and $d \mid |G|$ then $G$ has a subgroup of siz
 \qed
 \end{proof}
 
+\begin{prop}
+Let $(G,\cdot)$ be a group. Let $\circ : G^2 \rightarrow G$ be a group homomorphism such that $(G,\circ)$ is a group. Then $\circ$ and $\cdot$ coincide, and $G$ is Abelian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $g_1,g_2,h_1,h_2 \in G$ we have
+\[ (g_1 g_2) \circ (h_1 h_2) = (g_1 \circ h_1)(g_2 \circ h_2) \]}
+\step{2}{$e \circ e = e$}
+\begin{proof}
+\pf
+\begin{align*}
+e \circ e & = (ee) \circ (ee) \\
+& = (e \circ e) (e \circ e)
+\end{align*}
+Hence $e \circ e = e$ by Cancellation.
+\end{proof}
+\step{3}{$e$ is the identity of $(G,\circ)$}
+\step{4}{For all $g,h \in G$ we have
+\[ g \circ h = g h \]}
+\begin{proof}
+\pf
+\begin{align*}
+g \circ h & = (ge) \circ (eh) \\
+& = (g \circ e)(e \circ h) \\
+& = gh
+\end{align*}
+\end{proof}
+\step{5}{For all $g,h \in G$ we have $gh = hg$.}
+\begin{proof}
+\pf
+\begin{align*}
+gh & = (e \circ g)(h \circ e) \\
+& = (eh) \circ (ge) \\
+& = h \circ g \\
+& = hg
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+\label{cor:group-in-group}
+If $(G, m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G)$ is a group object in $\Grp$ then $m$ is the multiplication of $G$, $e(*)$ is the identity of $G$, $i(g) = \inv{g}$, and $G$ is Abelian.
+
+Conversely, if $(G, m)$ is any Abelian group, then $(G,m,e,i)$ is a group object in $\Grp$ where $e(*) = e$ and $i(g) = \inv{g}$.
+\end{cor}
+
 \section{The Category of Abelian Groups}
 
 \begin{df}[Category of Abelian Groups]
-    Let $\mathbf{Ab}$ be the full subcategory of $\mathbf{Grp}$ whose objects are the Abelian groups.
+    Let $\Ab$ be the full subcategory of $\mathbf{Grp}$ whose objects are the Abelian groups.
 \end{df}
+
+\begin{prop}
+If $(G, m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G)$ is a group object in $\Ab$ then $m$ is the multiplication of $G$, $e(*)$ is the identity of $G$, $i(g) = \inv{g}$, and $G$ is Abelian.
+
+Conversely, if $(G, m)$ is any Abelian group, then $(G,m,e,i)$ is a group object in $\Ab$ where $e(*) = e$ and $i(g) = \inv{g}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from Corollary \ref{cor:group-in-group}. \qed
+\end{proof}
 
 \begin{df}[Direct Sum]
     Given Abelian groups $G$ and $H$, we also call the direct product of $G$ and $H$ the \emph{direct sum} and denote it $G \oplus H$.
 \end{df}
 
 \begin{prop}
-    Given Abelian groups $G$ and $H$, the direct sum $G \oplus H$ is the coproduct of $G$ and $H$ in $\mathbf{Ab}$.
+    Given Abelian groups $G$ and $H$, the direct sum $G \oplus H$ is the coproduct of $G$ and $H$ in $\Ab$.
 \end{prop}
 
 \begin{proof}
@@ -3043,7 +3130,7 @@ Let $\phi : G \rightarrow H$ be a homomorphism between Abelian groups. Then ther
 \end{proof}
 
 \begin{df}[Cokernel]
-For any homomorphism $\phi : G \rightarrow H$ in $\mathbf{Ab}$, the \emph{cokernel} of $\phi$ is the Abelian group $\coker \phi$ and homomorphism $\pi : H \rightarrow \coker \phi$ that is initial among homomorphisms $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+For any homomorphism $\phi : G \rightarrow H$ in $\Ab$, the \emph{cokernel} of $\phi$ is the Abelian group $\coker \phi$ and homomorphism $\pi : H \rightarrow \coker \phi$ that is initial among homomorphisms $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
 \end{df}
 
 \begin{prop}
@@ -3265,6 +3352,32 @@ Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of index $p$ where $p$ i
 Any subgroup of index 2 is normal.
 \end{cor}
 
+\begin{prop}
+Let $G$ be a group with finite set of generators $A$. Then left multiplication defines a free action of $G$ on its Cayley graph.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy since if $g_2 = g_1 a$ then $h g_2 = h g_1 a$. \qed
+\end{proof}
+
+\begin{cor}
+A free group acts freely on a tree.
+\end{cor}
+
+\begin{thm}
+If a group $G$ acts freely on a tree then $G$ is free.
+\end{thm}
+
+%TODO
+
+\begin{cor}
+Every subgroup of the free group on a finite set is free.
+\end{cor}
+
+\begin{proof}
+\pf\ If $H$ is a subgroup of $F(A)$ then left multiplication defines a free action of $H$ on the Cayley graph of $F(A)$, which is a tree. \qed
+\end{proof}
+
 \section{Category of $G$-Sets}
 
 \begin{df}
@@ -3362,6 +3475,48 @@ Every finite $G$-set is a coproduct of $G$-sets of the form $G/H$.
 
 \begin{proof}
 \pf\ If $O(a_1)$, \ldots, $O(a_n)$ are the orbits of the $G$-set $A$, then $G$ is the coproduct of $G / \Stab{G}{a_1}$, \ldots, $G / \Stab{G}{a_n}$. \qed
+\end{proof}
+
+\begin{prop}
+For any group $G$ we have $G \cong \Aut{G-\mathbf{Set}}{G}$ (considering $G$ as a $G$-set under left multiplication).
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define $\phi : G \rightarrow \Aut{G-\mathbf{Set}}{G}$ by $\phi(g)(g') = g'\inv{g}$.}
+\begin{proof}
+	\step{a}{\pflet{$g \in G$} \prove{$\lambda g' \in G. g'\inv{g}$ is an automorphism of $G$ in $G-\mathbf{Set}$.}}
+	\step{b}{$\phi(g)$ is $G$-equivariant.}
+	\begin{proof}
+		\pf\ Since $\phi(g)(h_1h_2) = h_1h_2\inv{g} = h_1 \phi(g)(h_2)$.
+	\end{proof}
+	\step{c}{$\phi(g)$ is injective.}
+	\begin{proof}
+		\pf\ By Cancellation.
+	\end{proof}
+	\step{d}{$\phi(g)$ is surjective.}
+	\begin{proof}
+		\pf\ For any $h \in G$ we ahev $h = \phi(g)(hg)$.
+	\end{proof}
+\end{proof}
+\step{2}{$\phi$ is a group homomorphism.}
+\begin{proof}
+	\pf\ $\phi(g_1 g_2)(h) = h\inv{g_2} \inv{g_1} = \phi(g_1)(\phi(g_2)(h))$.
+\end{proof}
+\step{3}{$\phi$ is injective.}
+\begin{proof}
+	\pf\ If $\phi(g) = \phi(g')$ then $g = \phi(g)(e) = \phi(g')(e) = g'$.
+\end{proof}
+\step{4}{$\phi$ is surjective.}
+	\begin{proof}
+		\step{i}{\pflet{$\sigma \in \Aut{G-\mathbf{Set}}{G}$}}
+		\step{ii}{\pflet{$g = \sigma(e)$} \prove{$\sigma = \phi(\inv{g})$}}
+		\step{iii}{$\sigma(h) = hg$}
+		\begin{proof}
+		\pf\ $\sigma(h) = \sigma(he) = h \sigma(e) = hg$.
+		\end{proof}
+	\end{proof}
+\qed
 \end{proof}
 
 \part{Linear Algebra}
