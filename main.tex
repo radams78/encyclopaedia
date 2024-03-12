@@ -3533,16 +3533,23 @@ For any group $G$ we have $G \cong \Aut{G-\mathbf{Set}}{G}$ (considering $G$ as 
 
 \chapter{Rings}
 
-\section{Rings}
+\section{Rngs}
 
 \begin{df}[Ring]
-A \emph{ring} consists of a set $R$ and binary operations $+, \cdot : R^2 \rightarrow R$ such that:
+A \emph{rng} consists of a set $R$ and binary operations $+, \cdot : R^2 \rightarrow R$ such that:
 \begin{itemize}
 \item $(R,+)$ is an Abelian group
-\item $(R,\cdot)$ is a monoid
+\item $\cdot$ is associative.
 \item The \emph{distributive properties} hold: for all $r,s,t \in R$ we have
 \[ (r+s)t = rt + st, \qquad r(s+t) = rs + rt \enspace .\]
 \end{itemize}
+\end{df}
+
+\section{Rings}
+
+\begin{df}[Ring]
+A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplicative identity}, such that
+\[ \forall x \in R. x1 = 1x = x \enspace . \]
 \end{df}
 
 \part{Linear Algebra}
