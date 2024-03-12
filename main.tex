@@ -477,6 +477,16 @@ bijection only.
 
 \part{Group Theory}
 
+\chapter{Monoids}
+
+\begin{df}[Monoid]
+A \emph{monoid} consists of a set $M$ and a binary operation $\cdot : M^2 \rightarrow M$ such that:
+\begin{itemize}
+\item $\cdot$ is associative
+\item There exists $e \in M$ such that, for all $x \in M$, we have $x e = ex = x$.
+\end{itemize}
+\end{df}
+
 \chapter{Groups}
 
 \begin{df}[Group]
@@ -3518,6 +3528,22 @@ For any group $G$ we have $G \cong \Aut{G-\mathbf{Set}}{G}$ (considering $G$ as 
 	\end{proof}
 \qed
 \end{proof}
+
+\part{Ring Theory}
+
+\chapter{Rings}
+
+\section{Rings}
+
+\begin{df}[Ring]
+A \emph{ring} consists of a set $R$ and binary operations $+, \cdot : R^2 \rightarrow R$ such that:
+\begin{itemize}
+\item $(R,+)$ is an Abelian group
+\item $(R,\cdot)$ is a monoid
+\item The \emph{distributive properties} hold: for all $r,s,t \in R$ we have
+\[ (r+s)t = rt + st, \qquad r(s+t) = rs + rt \enspace .\]
+\end{itemize}
+\end{df}
 
 \part{Linear Algebra}
 
