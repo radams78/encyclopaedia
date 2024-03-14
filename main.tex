@@ -23,6 +23,7 @@
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
 \newcommand{\coker}{\ensuremath{\operatorname{coker}}}
 \newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
+\newcommand{\gl}[2]{\ensuremath{\mathfrak{gl}_{#1} \left( {#2} \right)}}
 \newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
 \newcommand{\id}[1]{\ensuremath{\mathrm{id}_{#1}}}
 \newcommand{\im}{\ensuremath{\operatorname{im}}}
@@ -31,6 +32,7 @@
 \renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
+\renewcommand{\sl}[2]{\ensuremath{\mathfrak{sl}_{#1} \left( {#2} \right)}}
 \newcommand{\Stab}[2]{\ensuremath{\mathrm{Stab}_{#1} \left( {#2} \right)}}
 \newcommand{\tr}{\ensuremath{\operatorname{tr}}}
 
@@ -3550,12 +3552,13 @@ A \emph{rng} consists of a set $R$ and binary operations $+, \cdot : R^2 \righta
 \item
 $2 \mathbb{Z}$ is a rng.
 \item
-Given a rng $R$ and natural number $n$, then the set $\mathfrak{gl}_n(R)$ of all $n \times n$ matrices with entries in $R$ is a rng under matrix addition and matrix multiplication.
+Given a rng $R$ and natural number $n$, then the set $\gl{n}{R}$ of all $n \times n$ matrices with entries in $R$ is a rng under matrix addition and matrix multiplication.
 \item
 For any set $S$, the power set $\mathcal{P} S$ is a rng under $A + B = (A \cup B) - (A \cap B)$ and $AB = A \cap B$.
 \item
 Given a rng $R$ and a set $S$, then $R^S$ is a rng under $(f + g)(s) = f(s) + g(s)$ and $(fg)(s) = f(s)g(s)$ for all $f,g \in R^S$ and $s \in S$.
-\item The set $\mathfrak{sl}_n(\mathbb{R}) = \{ M \in \mathfrak{gl}_n(\mathbb{R}) : \tr M = 0 \}$ is a rng.
+\item The set $\sl{n}{\mathbb{R}} = \{ M \in \gl{n}{\mathbb{R}} : \tr M = 0 \}$ is a rng.
+\item The set $\sl{n}{\mathbb{C}} = \{ M \in \gl{n}{\mathbb{C}} : \tr M = 0 \}$ is a rng.
 \end{itemize}
 \end{ex}
 
@@ -3585,7 +3588,7 @@ A rng $R$ is \emph{commutative} iff $\forall x,y \in R. xy = yx$.
 \item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are commutative.
 \item
 $2 \mathbb{Z}$ is commutative.
-\item $\mathfrak{gl}_2(\mathbb{R})$ is not commutative.
+\item $\gl{2}{\mathbb{R}}$ is not commutative.
 \item For any set $S$, the rng $\mathcal{P} S$ is commutative.
 \item If $R$ is commutative then $R^S$ is commutative.
 \end{itemize}
@@ -3603,10 +3606,11 @@ A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplic
 \item The zero rng is a ring with $1 = 0$.
 \item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are rngs.
 \item $2 \mathbb{Z}$ is not a ring.
-\item If $R$ is a ring then $\mathfrak{gl}_n(R)$ is a ring.
+\item If $R$ is a ring then $\gl{n}{R}$ is a ring.
 \item For any set $S$, the rng $\mathcal{P} S$ is a ring with $1 = S$.
 \item If $R$ is a ring then $R^S$ is a ring.
-\item $\mathfrak{sl}_n(\mathbb{R})$ is not a ring for $n > 0$.
+\item $\sl{n}{\mathbb{R}}$ is not a ring for $n > 0$.
+\item $\sl{n}{\mathbb{C}}$ is not a ring for $n > 0$.
 \end{itemize}
 \end{ex}
 
