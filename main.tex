@@ -33,6 +33,7 @@
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
 \renewcommand{\sl}[2]{\ensuremath{\mathfrak{sl}_{#1} \left( {#2} \right)}}
+\newcommand{\so}[2]{\ensuremath{\mathfrak{so}_{#1} \left( {#2} \right)}}
 \newcommand{\Stab}[2]{\ensuremath{\mathrm{Stab}_{#1} \left( {#2} \right)}}
 \newcommand{\tr}{\ensuremath{\operatorname{tr}}}
 
@@ -3559,6 +3560,7 @@ For any set $S$, the power set $\mathcal{P} S$ is a rng under $A + B = (A \cup B
 Given a rng $R$ and a set $S$, then $R^S$ is a rng under $(f + g)(s) = f(s) + g(s)$ and $(fg)(s) = f(s)g(s)$ for all $f,g \in R^S$ and $s \in S$.
 \item The set $\sl{n}{\mathbb{R}} = \{ M \in \gl{n}{\mathbb{R}} : \tr M = 0 \}$ is a rng.
 \item The set $\sl{n}{\mathbb{C}} = \{ M \in \gl{n}{\mathbb{C}} : \tr M = 0 \}$ is a rng.
+\item The set $\so{n}{\mathbb{R}} = \{ M \in \sl{n}{\mathbb{R}} : M + M^T = 0 \}$ is a rng.
 \end{itemize}
 \end{ex}
 
@@ -3611,6 +3613,7 @@ A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplic
 \item If $R$ is a ring then $R^S$ is a ring.
 \item $\sl{n}{\mathbb{R}}$ is not a ring for $n > 0$.
 \item $\sl{n}{\mathbb{C}}$ is not a ring for $n > 0$.
+\item $\so{n}{\mathbb{R}} = \{ M \in \sl{n}{\mathbb{R}} : M + M^T = 0 \}$ is not a ring.
 \end{itemize}
 \end{ex}
 
