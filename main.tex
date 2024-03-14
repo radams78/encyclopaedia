@@ -3552,6 +3552,8 @@ A \emph{rng} consists of a set $R$ and binary operations $+, \cdot : R^2 \righta
 $2 \mathbb{Z}$ is a rng.
 \item
 The set of all $2 \times 2$ real matrices is a rng under matrix addition and matrix multiplication.
+\item
+For any set $S$, the power set $\mathcal{P} S$ is a rng under $A + B = (A \cup B) - (A \cap B)$ and $AB = A \cap B$.
 \end{itemize}
 \end{ex}
 
@@ -3582,6 +3584,7 @@ A rng $R$ is \emph{commutative} iff $\forall x,y \in R. xy = yx$.
 \item
 $2 \mathbb{Z}$ is commutative.
 \item For any rng $R$ and natural number $n$, the set of $n \times n$ matrices with entries in $R$ is a rng under matrix addition and matrix multiplication.
+\item For any set $S$, the rng $\mathcal{P} S$ is commutative.
 \end{itemize}
 \end{ex}
 
@@ -3598,6 +3601,7 @@ A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplic
 \item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are rngs.
 \item $2 \mathbb{Z}$ is not a ring.
 \item If $R$ is a ring then the rng of $n \times n$ matrices with entries in $R$ is a ring.
+\item For any set $S$, the rng $\mathcal{P} S$ is a ring with $1 = S$.
 \end{itemize}
 \end{ex}
 
