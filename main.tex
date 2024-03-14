@@ -485,7 +485,17 @@ A \emph{monoid} consists of a set $M$ and a binary operation $\cdot : M^2 \right
 \item $\cdot$ is associative
 \item There exists $e \in M$ such that, for all $x \in M$, we have $x e = ex = x$.
 \end{itemize}
+
+We identify a monoid $M$ with the category with one object whose morphisms are the elements of $M$, with composition given by $\cdot$.
 \end{df}
+
+\begin{prop}
+    The identity in a group is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ Proposition \ref{prop:id-morph-unique}.
+\end{proof}
 
 \chapter{Groups}
 
@@ -525,20 +535,9 @@ We write just 'group' for 'group in $\Set$. Thus, a \emph{group} $G$ consists of
               such that $x \inv{x} = \inv{x} x = e$.
     \end{itemize}
 
-    We identify a group $G$ with the category $G$ with one object and morphisms the
-    elements of $G$, with composition given by $\cdot$.
-
     The \emph{order} of a group $G$, denoted $|G|$, is the number of elements in
     $G$ if $G$ is finite; otherwise we write $|G| = \infty$.
 \end{df}
-
-\begin{prop}
-    The identity in a group is unique.
-\end{prop}
-
-\begin{proof}
-    \pf\ Proposition \ref{prop:id-morph-unique}.
-\end{proof}
 
 \begin{prop}
     \label{prop:grp-inv-unique}
@@ -3545,12 +3544,57 @@ A \emph{rng} consists of a set $R$ and binary operations $+, \cdot : R^2 \righta
 \end{itemize}
 \end{df}
 
+\begin{ex}
+\begin{itemize}
+\item The \emph{zero rng} is $\{0\}$.
+\item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are rngs.
+\item
+$2 \mathbb{Z}$ is a rng.
+\end{itemize}
+\end{ex}
+
+\begin{prop}
+In any rng $R$ we have
+\[ \forall x \in R. x0 = 0x = 0 \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x0 & = x(0+0) \\
+& = x0+x0
+\end{align*}
+and so $x0 = 0$ by Cancellation. Similarly $0x = 0$. \qed
+\end{proof}
+
 \section{Rings}
 
 \begin{df}[Ring]
 A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplicative identity}, such that
 \[ \forall x \in R. x1 = 1x = x \enspace . \]
 \end{df}
+
+\begin{ex}
+\begin{itemize}
+\item The zero rng is a ring with $1 = 0$.
+\item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are rngs.
+\item $2 \mathbb{Z}$ is not a ring.
+\end{itemize}
+\end{ex}
+
+\begin{prop}
+In any ring we have $(-1)x = -x$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since
+\begin{align*}
+x + (-1)x & = 1x + (-1) x \\
+& = (1 + (-1))x \\
+& = 0x \\
+& = 0 & \qed
+\end{align*}
+\end{proof}
 
 \part{Linear Algebra}
 
