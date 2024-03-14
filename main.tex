@@ -3554,6 +3554,8 @@ $2 \mathbb{Z}$ is a rng.
 The set of all $2 \times 2$ real matrices is a rng under matrix addition and matrix multiplication.
 \item
 For any set $S$, the power set $\mathcal{P} S$ is a rng under $A + B = (A \cup B) - (A \cap B)$ and $AB = A \cap B$.
+\item
+Given a rng $R$ and a set $S$, then $R^S$ is a rng under $(f + g)(s) = f(s) + g(s)$ and $(fg)(s) = f(s)g(s)$ for all $f,g \in R^S$ and $s \in S$.
 \end{itemize}
 \end{ex}
 
@@ -3585,6 +3587,7 @@ A rng $R$ is \emph{commutative} iff $\forall x,y \in R. xy = yx$.
 $2 \mathbb{Z}$ is commutative.
 \item For any rng $R$ and natural number $n$, the set of $n \times n$ matrices with entries in $R$ is a rng under matrix addition and matrix multiplication.
 \item For any set $S$, the rng $\mathcal{P} S$ is commutative.
+\item If $R$ is commutative then $R^S$ is commutative.
 \end{itemize}
 \end{ex}
 
@@ -3602,6 +3605,7 @@ A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplic
 \item $2 \mathbb{Z}$ is not a ring.
 \item If $R$ is a ring then the rng of $n \times n$ matrices with entries in $R$ is a ring.
 \item For any set $S$, the rng $\mathcal{P} S$ is a ring with $1 = S$.
+\item If $R$ is a ring then $R^S$ is a ring.
 \end{itemize}
 \end{ex}
 
