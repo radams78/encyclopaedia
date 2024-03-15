@@ -42,4 +42,5 @@
 \contentsline {section}{\numberline {9.1}Rngs}{73}{}%
 \contentsline {subsection}{\numberline {9.1.1}Commutative Rngs}{74}{}%
 \contentsline {section}{\numberline {9.2}Rings}{75}{}%
+\contentsline {section}{\numberline {9.3}Integral Domains}{75}{}%
 \contentsline {part}{IV\hspace {1em}Linear Algebra}{77}{}%
