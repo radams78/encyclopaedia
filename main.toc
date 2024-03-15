@@ -42,6 +42,7 @@
 \contentsline {section}{\numberline {9.1}Commutative Rngs}{74}{}%
 \contentsline {chapter}{\numberline {10}Rings}{75}{}%
 \contentsline {section}{\numberline {10.1}Units}{76}{}%
+\contentsline {section}{\numberline {10.2}Nilpotent Elements}{77}{}%
 \contentsline {chapter}{\numberline {11}Integral Domains}{79}{}%
 \contentsline {chapter}{\numberline {12}Unique Factorization Domains}{81}{}%
 \contentsline {chapter}{\numberline {13}Principal Ideal Domains}{83}{}%

@@ -3769,6 +3769,26 @@ The units of a ring form a group under multiplication.
 \qed
 \end{proof}
 
+\section{Nilpotent Elements}
+
+\begin{df}[Nilpotent]
+Let $R$ be a ring and $a \in R$. Then $a$ is \emph{nilpotent} iff there exists $n$ such that $a^n = 0$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $a,b \in R$. If $a$ and $b$ are nilpotent and $ab = ba$ then $a + b$ is nilpotent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $m$ and $n$ such that $a^m = b^n = 0$.}
+\step{2}{$(a+b)^{m+n} = 0$}
+\begin{proof}
+	\pf\ Since $(a+b)^{m+n} = \sum_k \left( \begin{array}{c} m + n \\ k \end{array} \right) a^k b^{m+n-k}$ and every term in this sum is 0 since, for every $k$, either $k \geq m$ or $m+n-k \geq n$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
