@@ -3700,6 +3700,38 @@ Let $R$ be a ring and $a \in R$. Then $a$ is a left-unit iff left multiplication
 \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a ring and $a \in R$. Then $a$ is a right-unit iff right multiplication by $a$ is a surjective function $R \rightarrow R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+No left-unit is a right-zero-divisor.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $ab = 1$ and $ca = 0$ where $c \neq 0$.}}
+\step{2}{$c = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		0 & = 0b \\
+		& = cab \\
+		& = c1 \\
+		& = c
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
