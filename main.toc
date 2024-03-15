@@ -46,4 +46,6 @@
 \contentsline {section}{\numberline {9.4}Unique Factorization Domains}{76}{}%
 \contentsline {section}{\numberline {9.5}Principal Ideal Domains}{76}{}%
 \contentsline {section}{\numberline {9.6}Euclidean Domains}{76}{}%
-\contentsline {part}{IV\hspace {1em}Linear Algebra}{77}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{77}{}%
+\contentsline {chapter}{\numberline {10}Fields}{79}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{81}{}%
