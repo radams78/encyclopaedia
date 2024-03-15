@@ -3748,6 +3748,27 @@ The inverse of a unit is unique.
 \pf\ If $ba = 1$ and $ac = 1$ then $b = bac = c$. \qed
 \end{proof}
 
+\begin{prop}
+The units of a ring form a group under multiplication.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ and $b$ are units then $ab$ is a unit.}
+\begin{proof}
+	\pf\ We have $\inv{b} \inv{a} a b = 1$ and $ab \inv{b} \inv{a} = 1$.
+\end{proof}
+\step{2}{1 is a unit.}
+\begin{proof}
+	\pf\ Since $1 \cdot 1 = 1$.
+\end{proof}
+\step{3}{If $a$ is a unit then its inverse is a unit.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
