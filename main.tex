@@ -3789,6 +3789,30 @@ Let $R$ be a ring and $a,b \in R$. If $a$ and $b$ are nilpotent and $ab = ba$ th
 \qed
 \end{proof}
 
+\begin{prop}
+$m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$ if and only if $m$ is divisible by all the prime factors of $n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $m$ is nilpotent then $m$ is divisible by all the prime factors of $n$.}
+\begin{proof}
+	\step{a}{\assume{$m^a \equiv 0 (\mod n)$}}
+	\step{b}{For every prime $p$, if $p \mid n$ then $p \mid m^a$.}
+	\step{c}{For every prime $p$, if $p \mid n$ then $p \mid m$.}
+\end{proof}
+\step{2}{If $m$ is divisible by all the prime factors of $n$ then $m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$.}
+\begin{proof}
+	\step{a}{\assume{$m$ is divisible by all the prime factors of $n$.}}
+	\step{b}{\pflet{$a$ be the largest number such that $p^a \mid n$ for some prime $p$.}}
+	\step{c}{For every prime $p$ that divides $n$ we have $p^a \mid m^a$}
+	\step{d}{$n \mid m^a$}
+	\step{e}{$m^a \equiv 0 (\mod n)$}
+	\step{f}{$m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$.}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
