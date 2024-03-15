@@ -3682,6 +3682,24 @@ Let $R$ be a ring and $a \in R$. Then $a$ is a \emph{left-unit} iff there exists
 An element is a \emph{unit} iff it is a left-unit and a right-unit.
 \end{df}
 
+\begin{prop}
+Let $R$ be a ring and $a \in R$. Then $a$ is a left-unit iff left multiplication by $a$ is a surjective function $R \rightarrow R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ is a left-unit then left multiplication by $a$ is surjective.}
+\begin{proof}
+	\step{a}{\pick\ $b \in R$ such that $ab = 1$.}
+	\step{b}{For all $c \in R$ we have $c = a(bc)$.}
+\end{proof}
+\step{2}{If left multiplication by $a$ is surjective then $a$ is a left-unit.}
+\begin{proof}
+	\pf\ Immediate.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
