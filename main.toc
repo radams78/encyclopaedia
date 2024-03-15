@@ -43,4 +43,7 @@
 \contentsline {subsection}{\numberline {9.1.1}Commutative Rngs}{74}{}%
 \contentsline {section}{\numberline {9.2}Rings}{75}{}%
 \contentsline {section}{\numberline {9.3}Integral Domains}{75}{}%
+\contentsline {section}{\numberline {9.4}Unique Factorization Domains}{76}{}%
+\contentsline {section}{\numberline {9.5}Principal Ideal Domains}{76}{}%
+\contentsline {section}{\numberline {9.6}Euclidean Domains}{76}{}%
 \contentsline {part}{IV\hspace {1em}Linear Algebra}{77}{}%

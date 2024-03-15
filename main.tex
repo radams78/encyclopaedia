@@ -3686,6 +3686,43 @@ An \emph{integral domain} is a non-trivial commutative ring with no nonzero zero
 $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are integral domains.
 \end{ex}
 
+\begin{prop}
+$\mathbb{Z} / n \mathbb{Z}$ is an integral domain if and only if $n$ is prime.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+n \text{ is prime} & \Leftrightarrow \forall a,b \in \mathbb{Z} (n \mid a b \Rightarrow n \mid a \vee n \mid b) \\
+& \Leftrightarrow \forall a,b \in \mathbb{Z} / n \mathbb{Z} (ab \cong 0 (\mod n) \Rightarrow a \cong 0 (\mod n) \vee b \cong 0 (\mod n)) \\
+& \Leftrightarrow \mathbb{Z} / n \mathbb{Z} \text{ is an integral domain} & \qed
+\end{align*}
+\end{proof}
+
+\section{Unique Factorization Domains}
+
+%TODO Define this
+
+\begin{ex}
+$\mathbb{Z}$ is a UFD.
+\end{ex}
+
+\section{Principal Ideal Domains}
+
+%TODO Define this
+
+\begin{ex}
+$\mathbb{Z}$ is a PID.
+\end{ex}
+
+\section{Euclidean Domains}
+
+%TODO Define this
+
+\begin{ex}
+$\mathbb{Z}$ is a Euclidean domain.
+\end{ex}
+
 \part{Linear Algebra}
 
 \begin{df}
