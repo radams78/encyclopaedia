@@ -3579,12 +3579,40 @@ and so $x0 = 0$ by Cancellation. Similarly $0x = 0$. \qed
 \end{proof}
 
 \begin{df}[Zero Divisor]
-Let $R$ be a ring and $a \in R$.
+Let $R$ be a rng and $a \in R$.
 
 Then $a$ is a \emph{left-zero-divisor} iff there exists $b \in R - \{0\}$ such that $ab = 0$.
 
 The element $a$ is a \emph{right-zero-divisor} iff there exists $b \in R - \{0\}$ such that $ba = 0$.
 \end{df}
+
+\begin{ex}
+0 is a left- and right-zero-divisor in every non-zero rng.
+
+The zero rng is the only ring with no zero divisors.
+\end{ex}
+
+\begin{prop}
+Let $R$ be a rng and $a \in R$. Then $a$ is not a left-zero-divisor if and only if left multiplication by $a$ is an injective function $R \rightarrow R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ is not a left-zero-divisor then left multiplication by $a$ is injective.}
+\begin{proof}
+	\step{a}{\assume{$a$ is not a left-zero-divisor.}}
+	\step{b}{\pflet{$ab = ac$}}
+	\step{c}{$a(b-c) = 0$}
+	\step{d}{$b - c = 0$}
+	\step{e}{$b = c$}
+\end{proof}
+\step{2}{If $a$ is a left-zero-divisor then left multiplication by $a$ is not injective.}
+\begin{proof}
+	\step{a}{\pick\ $b \neq 0$ such that $ab = 0$.}
+	\step{b}{$ab = a0$ but $b \neq 0$}
+\end{proof}
+\qed
+\end{proof}
 
 \subsection{Commutative Rngs}
 
