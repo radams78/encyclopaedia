@@ -38,14 +38,14 @@
 \contentsline {section}{\numberline {8.1}Group Actions}{65}{}%
 \contentsline {section}{\numberline {8.2}Category of $G$-Sets}{68}{}%
 \contentsline {part}{III\hspace {1em}Ring Theory}{71}{}%
-\contentsline {chapter}{\numberline {9}Rings}{73}{}%
-\contentsline {section}{\numberline {9.1}Rngs}{73}{}%
-\contentsline {subsection}{\numberline {9.1.1}Commutative Rngs}{74}{}%
-\contentsline {section}{\numberline {9.2}Rings}{75}{}%
-\contentsline {section}{\numberline {9.3}Integral Domains}{75}{}%
-\contentsline {section}{\numberline {9.4}Unique Factorization Domains}{76}{}%
-\contentsline {section}{\numberline {9.5}Principal Ideal Domains}{76}{}%
-\contentsline {section}{\numberline {9.6}Euclidean Domains}{76}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{77}{}%
-\contentsline {chapter}{\numberline {10}Fields}{79}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{81}{}%
+\contentsline {chapter}{\numberline {9}Rngs}{73}{}%
+\contentsline {section}{\numberline {9.1}Commutative Rngs}{74}{}%
+\contentsline {chapter}{\numberline {10}Rings}{75}{}%
+\contentsline {section}{\numberline {10.1}Units}{76}{}%
+\contentsline {chapter}{\numberline {11}Integral Domains}{77}{}%
+\contentsline {chapter}{\numberline {12}Unique Factorization Domains}{79}{}%
+\contentsline {chapter}{\numberline {13}Principal Ideal Domains}{81}{}%
+\contentsline {chapter}{\numberline {14}Euclidean Domains}{83}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{85}{}%
+\contentsline {chapter}{\numberline {15}Fields}{87}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{89}{}%

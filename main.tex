@@ -3532,9 +3532,7 @@ For any group $G$ we have $G \cong \Aut{G-\mathbf{Set}}{G}$ (considering $G$ as 
 
 \part{Ring Theory}
 
-\chapter{Rings}
-
-\section{Rngs}
+\chapter{Rngs}
 
 \begin{df}[Ring]
 A \emph{rng} consists of a set $R$ and binary operations $+, \cdot : R^2 \rightarrow R$ such that:
@@ -3614,7 +3612,7 @@ Let $R$ be a rng and $a \in R$. Then $a$ is not a left-zero-divisor if and only 
 \qed
 \end{proof}
 
-\subsection{Commutative Rngs}
+\section{Commutative Rngs}
 
 \begin{df}[Commutative]
 A rng $R$ is \emph{commutative} iff $\forall x,y \in R. xy = yx$.
@@ -3632,7 +3630,7 @@ $2 \mathbb{Z}$ is commutative.
 \end{itemize}
 \end{ex}
 
-\section{Rings}
+\chapter{Rings}
 
 \begin{df}[Ring]
 A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplicative identity}, such that
@@ -3676,7 +3674,13 @@ x + (-1)x & = 1x + (-1) x \\
 \end{align*}
 \end{proof}
 
-\section{Integral Domains}
+\section{Units}
+
+\begin{df}[Left-Unit, Right-Unit]
+Let $R$ be a ring and $a \in R$. Then $a$ is a \emph{left-unit} iff there exists $b \in R$ such that $ab = 1$. The element $a$ is a \emph{right-unit} iff there exists $b \in R$ such that $ba = 1$.
+\end{df}
+
+\chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
 An \emph{integral domain} is a non-trivial commutative ring with no nonzero zero-divisors.
@@ -3699,7 +3703,7 @@ n \text{ is prime} & \Leftrightarrow \forall a,b \in \mathbb{Z} (n \mid a b \Rig
 \end{align*}
 \end{proof}
 
-\section{Unique Factorization Domains}
+\chapter{Unique Factorization Domains}
 
 %TODO Define this
 
@@ -3707,7 +3711,7 @@ n \text{ is prime} & \Leftrightarrow \forall a,b \in \mathbb{Z} (n \mid a b \Rig
 $\mathbb{Z}$ is a UFD.
 \end{ex}
 
-\section{Principal Ideal Domains}
+\chapter{Principal Ideal Domains}
 
 %TODO Define this
 
@@ -3715,7 +3719,7 @@ $\mathbb{Z}$ is a UFD.
 $\mathbb{Z}$ is a PID.
 \end{ex}
 
-\section{Euclidean Domains}
+\chapter{Euclidean Domains}
 
 %TODO Define this
 
