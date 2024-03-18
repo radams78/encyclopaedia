@@ -43,11 +43,12 @@
 \contentsline {section}{\numberline {10.1}Units}{72}{}%
 \contentsline {section}{\numberline {10.2}Euler's $\phi $-function}{74}{}%
 \contentsline {section}{\numberline {10.3}Nilpotent Elements}{75}{}%
-\contentsline {chapter}{\numberline {11}Integral Domains}{77}{}%
-\contentsline {chapter}{\numberline {12}Unique Factorization Domains}{79}{}%
-\contentsline {chapter}{\numberline {13}Principal Ideal Domains}{81}{}%
-\contentsline {chapter}{\numberline {14}Euclidean Domains}{83}{}%
-\contentsline {chapter}{\numberline {15}Division Rings}{85}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{87}{}%
-\contentsline {chapter}{\numberline {16}Fields}{89}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{91}{}%
+\contentsline {chapter}{\numberline {11}Polynomials}{77}{}%
+\contentsline {chapter}{\numberline {12}Integral Domains}{79}{}%
+\contentsline {chapter}{\numberline {13}Unique Factorization Domains}{81}{}%
+\contentsline {chapter}{\numberline {14}Principal Ideal Domains}{83}{}%
+\contentsline {chapter}{\numberline {15}Euclidean Domains}{85}{}%
+\contentsline {chapter}{\numberline {16}Division Rings}{87}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{89}{}%
+\contentsline {chapter}{\numberline {17}Fields}{91}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{93}{}%
