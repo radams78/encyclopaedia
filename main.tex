@@ -3709,6 +3709,7 @@ Let $R$ be a ring and $a \in R$. Then $a$ is a right-unit iff right multiplicati
 \end{proof}
 
 \begin{prop}
+\label{prop:no-left-unit-is-a-right-zero-divisor}
 No left-unit is a right-zero-divisor.
 \end{prop}
 
@@ -3733,6 +3734,7 @@ No left-unit is a right-zero-divisor.
 \end{proof}
 
 \begin{prop}
+\label{prop:no-right-unit-is-a-left-zero-divisor}
 No right-unit is a left-zero-divisor.
 \end{prop}
 
@@ -3884,6 +3886,18 @@ A \emph{field} is a non-trivial commutative division ring.
 
 \begin{ex}
 $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are fields.
+\end{ex}
+
+\begin{prop}
+Every field is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ By Propositions \ref{prop:no-left-unit-is-a-right-zero-divisor} and \ref{prop:no-right-unit-is-a-left-zero-divisor}. \qed
+\end{proof}
+
+\begin{ex}
+The converse does not hold: $\mathbb{Z}$ is an integral domain but not a field.
 \end{ex}
 
 \part{Linear Algebra}
