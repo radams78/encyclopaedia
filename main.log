@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  18 MAR 2024 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  18 MAR 2024 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,13 +583,13 @@ m/it/10 g[]; h[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 ) =
 [30]
 WARNING: proof step "c" (<2>5) already defined
 WARNING: proof step "d" (<2>6) already defined
-[31] [32] [33] [34]
+[31] [32] [33]
 WARNING: proof step "5" (<1>6) already defined
-[35] [36]
+[34] [35] [36]
 WARNING: proof step "2" (<1>3) already defined
 [37]
-Overfull \hbox (16.43498pt too wide) in paragraph at lines 1656--1657
-[]\OT1/cmr/bx/n/10 Definition 6.48 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/bx
+Overfull \hbox (16.43498pt too wide) in paragraph at lines 1640--1641
+[]\OT1/cmr/bx/n/10 Definition 6.46 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/bx
 /n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 mod-u-lar group $[][]\OT1/cmr/m/
 n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 )$ is $[][](\U/msb/m/n/10 Z\OT1/cmr/m/n/10
  )\OML/cmm/m/it/10 =\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 I; \OMS/cmsy/m/n/10 ^^@\
@@ -606,31 +606,30 @@ WARNING: proof step "5" (<1>15) already defined
 WARNING: proof step "v" (<3>6) already defined
 [41] [42]
 WARNING: proof step "1" (<2>1) already defined
-[43] [44] [45] [46] [47]
-Overfull \hbox (62.49506pt too wide) detected at line 2374
+[43] [44] [45] [46]
+Overfull \hbox (62.49506pt too wide) detected at line 2257
 []
  []
 
-[48] [49] [50] [51] [52
-
-]
+[47] [48] [49] [50]
 Chapter 7.
-[53] [54] [55]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2757--2758
-[]\OT1/cmr/bx/n/10 Proposition 7.17. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
+[51
+
+] [52]
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2535--2536
+[]\OT1/cmr/bx/n/10 Proposition 7.12. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
  []
 
 WARNING: proof step "b" (<3>1) already defined
-[56]
 WARNING: proof step "2" (<1>3) already defined
-[57] [58] [59] [60] [61] [62] [63] [64
+[53] [54] [55] [56] [57] [58] [59] [60
 
 ]
 Chapter 8.
-[65] [66]
-Overfull \hbox (0.47714pt too wide) in paragraph at lines 3353--3353
+[61] [62]
+Overfull \hbox (0.47714pt too wide) in paragraph at lines 3131--3131
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a sub-group $\OML/cmm/m/it/10 K$ \OT1/c
 mr/m/n/10 of $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 nor-mal in $\OML/cmm/m/it/10 
 G$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G \OT1/cmr/m/n
@@ -639,60 +638,60 @@ msy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ; p\OT1/cmr/m/
 n/10 !)$. 
  []
 
-[67] [68] [69] [70
+[63] [64] [65] [66
 
-] [71] [72]
+] [67] [68]
 Chapter 9.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 355
-4.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 333
+2.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [73
+) [69
 
-] [74]
+] [70]
 Chapter 10.
-[75
+[71
 
-] [76] [77] [78
-
-]
+] [72] [73] [74] [75] [76]
 Chapter 11.
-[79] [80
+[77
+
+] [78
 
 ]
 Chapter 12.
-[81] [82
+[79] [80
 
 ]
 Chapter 13.
-[83] [84
+[81] [82
 
 ]
 Chapter 14.
-[85] [86
+[83] [84
 
 ]
 Chapter 15.
-[87] [88
+[85] [86
 
-] [89] [90]
+] [87] [88]
 Chapter 16.
-[91
+[89
 
-] [92
+] [90
 
-] [93] [94]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 4017--4025
+] [91] [92]
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 3995--4003
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[95] (./main.aux) ) 
+[93] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  15156 strings out of 476091
- 315355 string characters out of 5794081
- 1880330 words of memory out of 5000000
+ 315364 string characters out of 5794081
+ 1879330 words of memory out of 5000000
  35286 multiletter control sequences out of 15000+600000
- 525969 words of font info for 83 fonts, out of 8000000 for 9000
+ 526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,15n,118p,448b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
@@ -719,10 +718,10 @@ lic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm100
 0.pfb>
-Output written on main.pdf (95 pages, 467147 bytes).
+Output written on main.pdf (93 pages, 465716 bytes).
 PDF statistics:
- 435 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
+ 429 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
