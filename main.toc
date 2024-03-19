@@ -46,7 +46,8 @@
 \contentsline {section}{\numberline {11.3}Nilpotent Elements}{80}{}%
 \contentsline {chapter}{\numberline {12}Monoid Rings}{81}{}%
 \contentsline {section}{\numberline {12.1}Polynomials}{81}{}%
-\contentsline {section}{\numberline {12.2}Power Series}{82}{}%
+\contentsline {section}{\numberline {12.2}Laurent Polynomials}{82}{}%
+\contentsline {section}{\numberline {12.3}Power Series}{82}{}%
 \contentsline {chapter}{\numberline {13}Integral Domains}{83}{}%
 \contentsline {chapter}{\numberline {14}Unique Factorization Domains}{85}{}%
 \contentsline {chapter}{\numberline {15}Principal Ideal Domains}{87}{}%
