@@ -3337,6 +3337,16 @@ Given a rng $R$ and a set $S$, then $R^S$ is a rng under $(f + g)(s) = f(s) + g(
 \item The set $\sl{n}{\mathbb{R}} = \{ M \in \gl{n}{\mathbb{R}} : \tr M = 0 \}$ is a rng.
 \item The set $\sl{n}{\mathbb{C}} = \{ M \in \gl{n}{\mathbb{C}} : \tr M = 0 \}$ is a rng.
 \item $\mathbb{Z} / n \mathbb{Z}$ is a rng.
+\item The ring $\mathbb{H}$ of \emph{quaternions} is $\mathbb{R}^4$ under the following operations, where we write $(a,b,c,d)$ as $a + bi + cj + dk$:
+\begin{align*}
+(a + bi + cj + dk) + (a' + b'i + c'j + d'k) & = (a + a') + (b + b')i\\
+&  + (c + c')j + (d + d')k \\
+(a + bi + cj + dk)(a' + b'i + c'j + d'k) & = 
+(aa' - bb' - cc' - dd') \\
+& + (ab' + ba' + cd' - dc') i \\
+& + (ac' - bd' + ca' + db')j \\
+& + (ad' + bc' - cb' + da') k
+\end{align*}
 \end{itemize}
 \end{ex}
 
@@ -3797,9 +3807,23 @@ $m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$ if and only if $m$ is divisible 
 
 \begin{df}[Polynomial]
 Let $R$ be a ring. A \emph{polynomial} in $R$ is a sequence $(a_n)$ in $R$ such that there exists $N$ such that $\forall n \geq N. a_n = 0$. We write the polynomial as
-\[ a_0 + a_1 x + a_2 x^2 + \cdots + a_{N-1} x^{N-1} \enspace . \]
+\[ \sum_{n=0}^{N-1} a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots + a_{N-1} x^{N-1} \enspace . \]
 We write $R[x]$ for the set of all polynomials in $R$.
+
+Define addition and multiplication on $R[x]$ by
+\begin{align*}
+\sum_n a_n x^n + \sum_n b_n x^n & = \sum_n (a_n + b_n) x^n \\
+\left( \sum_n a_n x^n \right) \left( \sum_n b_n x^n \right) & = \sum_n \sum_{i+j=n} a_i b_j x^n
+\end{align*}
 \end{df}
+
+\begin{prop}
+For any ring $R$, the set of polynomials $R[x]$ is a ring.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \chapter{Integral Domains}
 
