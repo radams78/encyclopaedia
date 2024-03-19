@@ -42,7 +42,7 @@
 \contentsline {chapter}{\numberline {10}Rings}{73}{}%
 \contentsline {section}{\numberline {10.1}Units}{74}{}%
 \contentsline {section}{\numberline {10.2}Euler's $\phi $-function}{76}{}%
-\contentsline {section}{\numberline {10.3}Nilpotent Elements}{77}{}%
+\contentsline {section}{\numberline {10.3}Nilpotent Elements}{78}{}%
 \contentsline {chapter}{\numberline {11}Polynomials}{79}{}%
 \contentsline {chapter}{\numberline {12}Integral Domains}{81}{}%
 \contentsline {chapter}{\numberline {13}Unique Factorization Domains}{83}{}%
