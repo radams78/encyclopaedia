@@ -481,14 +481,16 @@ bijection only.
 
 \part{Group Theory}
 
+\chapter{Semigroups}
+
+\begin{df}[Semigroup]
+A \emph{semigroup} consists of a set $S$ and an associative binary operation $\cdot$ on $S$.
+\end{df}
+
 \chapter{Monoids}
 
 \begin{df}[Monoid]
-A \emph{monoid} consists of a set $M$ and a binary operation $\cdot : M^2 \rightarrow M$ such that:
-\begin{itemize}
-\item $\cdot$ is associative
-\item There exists $e \in M$ such that, for all $x \in M$, we have $x e = ex = x$.
-\end{itemize}
+A \emph{monoid} consists of a semigroup $M$ such that there exists $e \in M$, the \emph{unit}, such that, for all $x \in M$, we have $x e = ex = x$.
 
 We identify a monoid $M$ with the category with one object whose morphisms are the elements of $M$, with composition given by $\cdot$.
 \end{df}
@@ -2283,15 +2285,13 @@ where $N(R)$ is the smallest normal subgroup of $F(A)$ that includes $R$.
 \end{df}
 
 \begin{ex}
-The free group on a set $A$ is presented by $(A, \emptyset)$.
-\end{ex}
-
-\begin{ex}
-$S_3$ is presented by $(x,y|x^2,y^3,xyxy)$.
-\end{ex}
-
-\begin{ex}
+\begin{itemize}
+\item The free group on a set $A$ is presented by $(A, \emptyset)$.
+\item $S_3$ is presented by $(x,y|x^2,y^3,xyxy)$.
+\item 
 $(a,b \mid a^2, b^2, (ab)^n)$ is a presentation of $D_{2n}$.
+\item $(x,y \mid x^2 y^{-2}, y^4, xyx^{-1}y)$ is a presentation of $Q_8$.
+\end{itemize}
 \end{ex}
 
 \begin{prop}[Word Problem]
@@ -3824,10 +3824,25 @@ $m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$ if and only if $m$ is divisible 
 \qed
 \end{proof}
 
-\chapter{Polynomials}
+\chapter{Monoid Rings}
+
+\begin{df}[Monoid Ring]
+Let $R$ be a ring and $M$ a monoid. Define $R[M]$ to be the ring whose elements are the families $\{ a_m \}_{m \in M}$ such that $a_m = 0$ for all but finitely many $m \in M$, written
+\[ \sum_{m \in M} a_m m \enspace , \]
+under
+\begin{align*}
+\sum_m a_m m + \sum_m b_m m & = \sum_m (a_m + b_m) m \\
+\left( \sum_m a_m m \right) \left( \sum_m b_m m \right) & = \sum_{m \in M} \sum_{m_1 m_2 = m} a_{m_1} b_{m_2} m
+\end{align*}
+\end{df}
+
+\section{Polynomials}
 
 \begin{df}[Polynomial]
-Let $R$ be a ring. A \emph{polynomial} in $R$ is a sequence $(a_n)$ in $R$ such that there exists $N$ such that $\forall n \geq N. a_n = 0$. We write the polynomial as
+Let $R$ be a ring. The ring of \emph{polynomials} $R[x]$ is $R[\mathbb{N}]$. We write 
+\[ \sum_n a_n x^n \text{ for } \sum_n a_n n \enspace . \]
+
+Concretely, a \emph{polynomial} in $R$ is a sequence $(a_n)$ in $R$ such that there exists $N$ such that $\forall n \geq N. a_n = 0$. We write the polynomial as
 \[ \sum_{n=0}^{N-1} a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots + a_{N-1} x^{N-1} \enspace . \]
 We write $R[x]$ for the set of all polynomials in $R$.
 
@@ -3836,10 +3851,47 @@ Define addition and multiplication on $R[x]$ by
 \sum_n a_n x^n + \sum_n b_n x^n & = \sum_n (a_n + b_n) x^n \\
 \left( \sum_n a_n x^n \right) \left( \sum_n b_n x^n \right) & = \sum_n \sum_{i+j=n} a_i b_j x^n
 \end{align*}
+
+A \emph{constant} is a polynomial of the form $a + 0x + 0x^2 + \cdots$ for some $a \in R$.
 \end{df}
 
 \begin{prop}
 For any ring $R$, the set of polynomials $R[x]$ is a ring.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Degree]
+The \emph{degree} of a polynomial $\sum_n a_n x^n$ is the largest integer $d$ such that $a_d \neq 0$. We take the degree of the zero polynomial to be $- \infty$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $f,g \in R[x]$ be nonzero polynomials. Then
+\[ \deg(f + g) \leq \max(\deg f, \deg g) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ If $a_n + b_n \neq 0$ then $a_n \neq 0$ or $b_n \neq 0$. \qed
+\end{proof}
+
+\section{Power Series}
+
+\begin{df}[Power Series]
+Let $R$ be a ring. A \emph{power series} in $R$ is a sequence $(a_n)$ in $R$. We write the power series as
+\[ \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots \enspace . \]
+We write $R[[x]]$ for the set of all power series in $R$.
+
+Define addition and multiplication on $R[[x]]$ by
+\begin{align*}
+\sum_n a_n x^n + \sum_n b_n x^n & = \sum_n (a_n + b_n) x^n \\
+\left( \sum_n a_n x^n \right) \left( \sum_n b_n x^n \right) & = \sum_n \sum_{i+j=n} a_i b_j x^n
+\end{align*}
+\end{df}
+
+\begin{prop}
+For any ring $R$, the set of power series $R[[x]]$ is a ring.
 \end{prop}
 
 \begin{proof}
@@ -3877,6 +3929,37 @@ In an integral domain, if $x^2 = 1$ then $x = \pm 1$.
 \pf\ We have $x^2 - 1 = (x-1)(x+1) = 0$ so $x-1 = 0$ or $x+1 = 0$. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be an integral domain and $f,g \in R[x]$. Then
+\[ \deg(fg) = \deg f + \deg g \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f = \sum_n a_n x^n$ and $g = \sum_n b_n x^n$.}}
+\step{2}{\pflet{$d = \deg f$ and $e = \deg g$.}}
+\step{3}{The $d + e$th term of $fg$ is
+\[ a_d b_e x^{d + e} \]
+which is non-zero.}
+\step{4}{For $n > d + e$ the $n$th term of $fg$ is 0.}
+\qed
+\end{proof}
+
+\begin{cor}
+If $R$ is an integral domain then $R[x]$ is an integral domain.
+\end{cor}
+
+\begin{ex}
+We cannot remove the hypothesis that $R$ is an integral domain. In $(\mathbb{Z} / 6 \mathbb{Z})[x]$ we have
+\begin{align*}
+\deg (1 + 2 x) & = 1 \\
+\deg (1 + 3 x) & = 1 \\
+\deg ((1 + 2x)(1 + 3x)) & = \deg (1 + 5x + 6x^2) \\
+& = \deg (1 + 5 x) \\
+& = 1
+\end{align*}
+\end{ex}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
@@ -3910,6 +3993,10 @@ A \emph{division ring} is a ring in which every nonzero element is a two-sided u
 \begin{ex}
 The quaternions form a division ring, with the inverse of a non-zero element $a + bi + cj + dk$ being
 \[ \frac{1}{a^2 + b^2 + c^2 + d^2} (a - bi - cj - dk) \enspace . \]
+\end{ex}
+
+\begin{ex}
+For any ring $R$, the ring of polynomials $R[x]$ is not a division ring, since $x$ has no inverse.
 \end{ex}
 
 \part{Field Theory}

@@ -9,46 +9,49 @@
 \contentsline {chapter}{\numberline {3}Functors}{15}{}%
 \contentsline {section}{\numberline {3.1}Comma Categories}{15}{}%
 \contentsline {part}{II\hspace {1em}Group Theory}{17}{}%
-\contentsline {chapter}{\numberline {4}Monoids}{19}{}%
-\contentsline {chapter}{\numberline {5}Groups}{21}{}%
-\contentsline {section}{\numberline {5.1}Order of an Element}{24}{}%
-\contentsline {section}{\numberline {5.2}Generators}{27}{}%
-\contentsline {chapter}{\numberline {6}Group Homomorphisms}{29}{}%
-\contentsline {section}{\numberline {6.1}Subgroups}{31}{}%
-\contentsline {section}{\numberline {6.2}Kernel}{32}{}%
-\contentsline {section}{\numberline {6.3}Inner Automorphisms}{33}{}%
-\contentsline {section}{\numberline {6.4}Direct Products}{34}{}%
-\contentsline {section}{\numberline {6.5}Free Groups}{34}{}%
-\contentsline {section}{\numberline {6.6}Normal Subgroups}{37}{}%
-\contentsline {section}{\numberline {6.7}Quotient Groups}{38}{}%
-\contentsline {section}{\numberline {6.8}Cosets}{42}{}%
-\contentsline {section}{\numberline {6.9}Congruence}{46}{}%
-\contentsline {section}{\numberline {6.10}Cyclic Groups}{47}{}%
-\contentsline {section}{\numberline {6.11}Commutator Subgroup}{47}{}%
-\contentsline {section}{\numberline {6.12}Presentations}{47}{}%
-\contentsline {section}{\numberline {6.13}Index of a Subgroup}{48}{}%
-\contentsline {section}{\numberline {6.14}Cokernels}{49}{}%
-\contentsline {section}{\numberline {6.15}Cayley Graphs}{50}{}%
-\contentsline {chapter}{\numberline {7}Abelian Groups}{51}{}%
-\contentsline {section}{\numberline {7.1}The Category of Abelian Groups}{55}{}%
-\contentsline {section}{\numberline {7.2}Free Abelian Groups}{56}{}%
-\contentsline {section}{\numberline {7.3}Cokernels}{59}{}%
-\contentsline {chapter}{\numberline {8}Group Actions}{61}{}%
-\contentsline {section}{\numberline {8.1}Group Actions}{61}{}%
-\contentsline {section}{\numberline {8.2}Category of $G$-Sets}{64}{}%
-\contentsline {part}{III\hspace {1em}Ring Theory}{67}{}%
-\contentsline {chapter}{\numberline {9}Rngs}{69}{}%
-\contentsline {section}{\numberline {9.1}Commutative Rngs}{70}{}%
-\contentsline {chapter}{\numberline {10}Rings}{73}{}%
-\contentsline {section}{\numberline {10.1}Units}{74}{}%
-\contentsline {section}{\numberline {10.2}Euler's $\phi $-function}{76}{}%
-\contentsline {section}{\numberline {10.3}Nilpotent Elements}{78}{}%
-\contentsline {chapter}{\numberline {11}Polynomials}{79}{}%
-\contentsline {chapter}{\numberline {12}Integral Domains}{81}{}%
-\contentsline {chapter}{\numberline {13}Unique Factorization Domains}{83}{}%
-\contentsline {chapter}{\numberline {14}Principal Ideal Domains}{85}{}%
-\contentsline {chapter}{\numberline {15}Euclidean Domains}{87}{}%
-\contentsline {chapter}{\numberline {16}Division Rings}{89}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{91}{}%
-\contentsline {chapter}{\numberline {17}Fields}{93}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{95}{}%
+\contentsline {chapter}{\numberline {4}Semigroups}{19}{}%
+\contentsline {chapter}{\numberline {5}Monoids}{21}{}%
+\contentsline {chapter}{\numberline {6}Groups}{23}{}%
+\contentsline {section}{\numberline {6.1}Order of an Element}{26}{}%
+\contentsline {section}{\numberline {6.2}Generators}{29}{}%
+\contentsline {chapter}{\numberline {7}Group Homomorphisms}{31}{}%
+\contentsline {section}{\numberline {7.1}Subgroups}{33}{}%
+\contentsline {section}{\numberline {7.2}Kernel}{34}{}%
+\contentsline {section}{\numberline {7.3}Inner Automorphisms}{35}{}%
+\contentsline {section}{\numberline {7.4}Direct Products}{36}{}%
+\contentsline {section}{\numberline {7.5}Free Groups}{36}{}%
+\contentsline {section}{\numberline {7.6}Normal Subgroups}{39}{}%
+\contentsline {section}{\numberline {7.7}Quotient Groups}{40}{}%
+\contentsline {section}{\numberline {7.8}Cosets}{44}{}%
+\contentsline {section}{\numberline {7.9}Congruence}{48}{}%
+\contentsline {section}{\numberline {7.10}Cyclic Groups}{49}{}%
+\contentsline {section}{\numberline {7.11}Commutator Subgroup}{49}{}%
+\contentsline {section}{\numberline {7.12}Presentations}{49}{}%
+\contentsline {section}{\numberline {7.13}Index of a Subgroup}{50}{}%
+\contentsline {section}{\numberline {7.14}Cokernels}{51}{}%
+\contentsline {section}{\numberline {7.15}Cayley Graphs}{52}{}%
+\contentsline {chapter}{\numberline {8}Abelian Groups}{53}{}%
+\contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{57}{}%
+\contentsline {section}{\numberline {8.2}Free Abelian Groups}{58}{}%
+\contentsline {section}{\numberline {8.3}Cokernels}{61}{}%
+\contentsline {chapter}{\numberline {9}Group Actions}{63}{}%
+\contentsline {section}{\numberline {9.1}Group Actions}{63}{}%
+\contentsline {section}{\numberline {9.2}Category of $G$-Sets}{66}{}%
+\contentsline {part}{III\hspace {1em}Ring Theory}{69}{}%
+\contentsline {chapter}{\numberline {10}Rngs}{71}{}%
+\contentsline {section}{\numberline {10.1}Commutative Rngs}{72}{}%
+\contentsline {chapter}{\numberline {11}Rings}{75}{}%
+\contentsline {section}{\numberline {11.1}Units}{76}{}%
+\contentsline {section}{\numberline {11.2}Euler's $\phi $-function}{78}{}%
+\contentsline {section}{\numberline {11.3}Nilpotent Elements}{80}{}%
+\contentsline {chapter}{\numberline {12}Monoid Rings}{81}{}%
+\contentsline {section}{\numberline {12.1}Polynomials}{81}{}%
+\contentsline {section}{\numberline {12.2}Power Series}{82}{}%
+\contentsline {chapter}{\numberline {13}Integral Domains}{83}{}%
+\contentsline {chapter}{\numberline {14}Unique Factorization Domains}{85}{}%
+\contentsline {chapter}{\numberline {15}Principal Ideal Domains}{87}{}%
+\contentsline {chapter}{\numberline {16}Euclidean Domains}{89}{}%
+\contentsline {chapter}{\numberline {17}Division Rings}{91}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{93}{}%
+\contentsline {chapter}{\numberline {18}Fields}{95}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{97}{}%
