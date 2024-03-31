@@ -55,11 +55,12 @@
 \contentsline {section}{\numberline {14.1}Polynomials}{89}{}%
 \contentsline {section}{\numberline {14.2}Laurent Polynomials}{91}{}%
 \contentsline {section}{\numberline {14.3}Power Series}{91}{}%
-\contentsline {chapter}{\numberline {15}Integral Domains}{93}{}%
-\contentsline {chapter}{\numberline {16}Unique Factorization Domains}{95}{}%
-\contentsline {chapter}{\numberline {17}Principal Ideal Domains}{97}{}%
-\contentsline {chapter}{\numberline {18}Euclidean Domains}{99}{}%
-\contentsline {chapter}{\numberline {19}Division Rings}{101}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{103}{}%
-\contentsline {chapter}{\numberline {20}Fields}{105}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{107}{}%
+\contentsline {chapter}{\numberline {15}Ideals}{93}{}%
+\contentsline {chapter}{\numberline {16}Integral Domains}{95}{}%
+\contentsline {chapter}{\numberline {17}Unique Factorization Domains}{97}{}%
+\contentsline {chapter}{\numberline {18}Principal Ideal Domains}{99}{}%
+\contentsline {chapter}{\numberline {19}Euclidean Domains}{101}{}%
+\contentsline {chapter}{\numberline {20}Division Rings}{103}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{105}{}%
+\contentsline {chapter}{\numberline {21}Fields}{107}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{109}{}%
