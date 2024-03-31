@@ -3991,6 +3991,20 @@ Let $R$ and $S$ be rings. Then $R$ is a subring of $S$ if and only if $R$ is a s
 The zero ring is not a subring of any non-zero ring.
 \end{cor}
 
+\section{Centralizer}
+
+\begin{df}[Centralizer]
+Let $R$ be a ring and $a \in R$. The \emph{centralizer} of $a$ is $\{ r \in R : ar = ra \}$.
+\end{df}
+
+\begin{prop}
+The centralizer of $a$ is a subring of $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \section{Center}
 
 \begin{df}[Center]
@@ -4259,6 +4273,14 @@ The quaternions form a division ring, with the inverse of a non-zero element $a 
 \begin{ex}
 For any ring $R$, the ring of polynomials $R[x]$ is not a division ring, since $x$ has no inverse.
 \end{ex}
+
+\begin{prop}
+Every centralizer in a division ring is a division ring.
+\end{prop}
+
+\begin{proof}
+\pf\ If $ar = ra$ then $r\inv{a} = \inv{a}r$. \qed
+\end{proof}
 
 \part{Field Theory}
 
