@@ -30,6 +30,7 @@
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
 \renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
+\newcommand{\Ring}{\ensuremath{\mathbf{Ring}}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
 \renewcommand{\sl}[2]{\ensuremath{\mathfrak{sl}_{#1} \left( {#2} \right)}}
@@ -1321,6 +1322,7 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Then the inclusion $i : \k
 \end{proof}
 
 \begin{prop}
+\label{prop:ker-zero}
 Let $\phi : G \rightarrow H$ be a group homomorphism. Then the following are equivalent:
 \begin{enumerate}
 \item $\phi$ is monic.
@@ -3435,6 +3437,24 @@ $2 \mathbb{Z}$ is commutative.
 \end{itemize}
 \end{ex}
 
+\section{Rng Homomorphisms}
+
+\begin{df}
+Let $R$ and $S$ be rngs. A \emph{rng homomorphism} $\phi : R \rightarrow S$ is a function such that, for all $x,y \in R$, we have
+\begin{align*}
+\phi(x + y) & = \phi(x) + \phi(y) \\
+\phi(xy) & = \phi(x) \phi(y)
+\end{align*}
+Let $\mathbf{Rng}$ be the category of rngs and rng homomorphisms.
+\end{df}
+
+\section{Quaternions}
+
+\begin{df}[Norm]
+The \emph{norm} of a quaternion is defined by
+\[ N(a + bi + cj + dk) = a^2 + b^2 + c^2 + d^2 \enspace . \]
+\end{df}
+
 \chapter{Rings}
 
 \begin{df}[Ring]
@@ -3582,6 +3602,12 @@ For any ring $R$, we write $R^*$ for the group of the units of $R$ under multipl
 
 \begin{ex}
 The quaternionic group is a subgroup of $\mathbb{H}^*$.
+\end{ex}
+
+\begin{ex}
+The norm is a group homomorphism $\mathbb{H}^* \rightarrow \mathbb{R}^+$ where $\mathbb{R}^+$ is the group of positive real numbers under multiplication with kernel isomorphic to $\mathrm{SU}_2(\mathbb{C})$. The isomorphism maps a quaternion $a + bi + cj + dk$ to $\left( \begin{array}{cc}
+a + bi & c + di \\ -c + di & a - bi
+\end{array} \right)$.
 \end{ex}
 
 \begin{thm}[Fermat's Little Theorem]
@@ -3824,6 +3850,161 @@ $m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$ if and only if $m$ is divisible 
 \qed
 \end{proof}
 
+\chapter{Ring Homomorphisms}
+
+\begin{df}[Ring Homomorphism]
+Let $R$ and $S$ be rings. A \emph{ring homomorphism} $\phi : R \rightarrow S$ is a rng homomorphism such that $\phi(1) = 1$.
+\end{df}
+
+\begin{prop}
+The zero-ring is terminal in $\mathbf{Ring}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+The ring $\mathbb{Z}$ is initial in $\mathbf{Ring}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ and $S$ be rings and $\phi : R \rightarrow S$ be a rng homomorphism. If $\phi$ is surjective, then $\phi$ is a ring homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a \in R$ such that $\phi(a) = 1$}
+\step{3}{$\phi(1) = 1$}
+\begin{proof}
+\pf
+\begin{align*}
+\phi(1) & = \phi(1) \phi(a) \\
+& = \phi(1a) \\
+& = \phi(a) \\
+& = 1 & \qed
+\end{align*}
+\end{proof}
+\end{proof}
+
+\begin{ex}
+For any set $S$ we have $\mathcal{P} S \cong (\mathbb{Z} / 2 \mathbb{Z})^S$ in $\mathbf{Ring}$ with the isomorphism
+\begin{align*}
+\phi & : \mathcal{P} S \cong (\mathbb{Z} / 2 \mathbb{Z})^S \\
+\phi(A)(s) & = \begin{cases}
+1 & \text{if } s \in A \\
+0 & \text{if } s \notin A
+\end{cases}
+\end{align*}
+\end{ex}
+
+\begin{ex}
+The function $\mathbb{H} \rightarrow \mathfrak{gl}_4(\mathbb{R})$ that maps $a + bi + cj + dk$ to
+\[ \left( \begin{array}{cccc}
+a & b & c & d \\
+-b & a & -d & c \\
+-c & d & a & -b \\
+-d & -c & b & a
+\end{array} \right) \]
+is a monomorphism in $\mathbf{Ring}$, as is the function $\mathbb{H} \rightarrow \mathfrak{sl}_2(\mathbb{C})$ that maps $a + bi + cj + dk$ to
+\[ \left( \begin{array}{cc}
+a + bi & c + di \\
+-c + di & a - bi
+\end{array} \right) \enspace . \]
+\end{ex}
+
+\begin{prop}
+Ring homomorphisms preserve units.
+\end{prop}
+
+\begin{proof}
+\pf\ If $uv = 1$ then $\phi(u) \phi(v) = 1$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. Then the following are equivalent.
+\begin{enumerate}
+\item $\phi$ is a monomorphism.
+\item $\ker \phi = \{0\}$
+\item $\phi$ is injective.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\phi$ is a monomorphism.}}
+	\step{b}{\pflet{$r \in \ker \phi$}}
+	\step{c}{\pflet{$\mathrm{ev}_r : \mathbb{Z}[x] \rightarrow R$ be the unique ring homomorphism such that $\mathrm{ev}_r(x) = r$.}}
+	\step{d}{\pflet{$\mathrm{ev}_0 : \mathbb{Z}[x] \rightarrow R$ be the unique ring homomorphism such that $\mathrm{ev}_0(x) = 0$.}}
+	\step{e}{$\phi \circ \mathrm{ev}_r = \phi \circ \mathrm{ev}_0$}
+	\step{f}{$\mathrm{ev}_r = \mathrm{ev}_0$}
+	\step{g}{$r = 0$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ker-zero}.
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
+It is not true that every epimorphism in $\Ring$ is surjective. The inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is an epimorphism but not surjective.
+
+The same example shows that a ring homomorphism may be a monomorphism and an epimorphism but not be an isomorphism.
+\end{ex}
+
+\section{Products}
+
+\begin{prop}
+Let $R$ and $S$ be rings. Then $R \times S$ is a ring under componentwise addition and multiplication, and this ring is the product of $R$ and $S$ in $\Ring$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\chapter{Subrings}
+
+\begin{df}[Subring]
+Let $S$ be a ring. A \emph{subring} of $S$ is a ring $R$ such that $R$ is a subset of $S$ and the inclusion $R \hookrightarrow S$ is a ring homomorphism.
+\end{df}
+
+\begin{prop}
+Let $R$ and $S$ be rings. Then $R$ is a subring of $S$ if and only if $R$ is a subset of $S$, the unit 1 of $S$ is an element of $R$, and the operations of $R$ are the restrictions of the operations of $S$ to $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+The zero ring is not a subring of any non-zero ring.
+\end{cor}
+
+\section{Center}
+
+\begin{df}[Center]
+The \emph{center} of a ring $R$ is $\{ x \in R : \forall y \in R. xy = yx \}$.
+\end{df}
+
+\begin{prop}
+The center of a ring is a subring.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Monoid Rings}
 
 \begin{df}[Monoid Ring]
@@ -3835,6 +4016,10 @@ under
 \left( \sum_m a_m m \right) \left( \sum_m b_m m \right) & = \sum_{m \in M} \sum_{m_1 m_2 = m} a_{m_1} b_{m_2} m
 \end{align*}
 \end{df}
+
+\begin{ex}
+Ring homomorphisms do not necessarily preserve zero-divisors. The canonical homomorphism $\pi : \mathbb{Z} \rightarrow \mathbb{Z} / 6 \mathbb{Z}$ maps the non-zero-divisor 2 to a zero-divisor.
+\end{ex}
 
 \section{Polynomials}
 
@@ -3853,6 +4038,8 @@ Define addition and multiplication on $R[x]$ by
 \end{align*}
 
 A \emph{constant} is a polynomial of the form $a + 0x + 0x^2 + \cdots$ for some $a \in R$.
+
+We write $R[x_1, \ldots, x_n]$ for $R[x_1][x_2] \cdots [x_n]$.
 \end{df}
 
 \begin{prop}
@@ -3875,6 +4062,27 @@ Let $R$ be a ring and $f,g \in R[x]$ be nonzero polynomials. Then
 \begin{proof}
 \pf\ If $a_n + b_n \neq 0$ then $a_n \neq 0$ or $b_n \neq 0$. \qed
 \end{proof}
+
+\begin{prop}
+The function $i : n \rightarrow \mathbb{Z}[x_1, \ldots, x_n]$ that maps $k$ to $x_k$ is initial in the category with:
+\begin{itemize}
+\item objects all pairs $j : n \rightarrow R$ where $R$ is a commutative ring and $j$ a function
+\item morphisms $\phi : (j_1, R_1) \rightarrow (j_2,R_2)$ are ring homomorphisms $\phi : R_1 \rightarrow R_2$ such that $\phi \circ j_1 = j_2$.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ The unique morphism $(i, \mathbb{Z}[x_1, \ldots, x_n]) \rightarrow (j, R)$ maps a polynomial $p$ to $p(j(0), j(1), \ldots, j(n-1))$. \qed
+\end{proof}
+
+\begin{df}
+Let $R$ be a commutative ring.
+Given a polynomial $p \in R[x]$, the \emph{polynomial function} $p : R \rightarrow R$ is the function given by: $p(r) = \alpha_r(p)$, where $\alpha_r : R[x] \rightarrow R$ is the unique ring homomorphism such that the following diagram commutes.
+\[ \begin{tikzcd}
+R[x] \arrow[r,"\alpha_r"] & R \\
+1 \arrow[u,"x"] \arrow[ur,"r"]
+\end{tikzcd} \]
+\end{df}
 
 \section{Laurent Polynomials}
 
@@ -4000,6 +4208,19 @@ Let $R$ be a ring. Then $R[[x]]$ is an integral domain if and only if $R$ is an 
 \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a ring and $S$ an integral domain. Every rng homomorphism $\phi : R \rightarrow S$ is a ring homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\phi(1) & = \phi(1 \cdot 1) \\
+& = \phi(1) \phi(1)
+\end{align*}
+and so $\phi(1) = 1$ by Cancellation. \qed
+\end{proof}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
@@ -4085,6 +4306,40 @@ Every finite division ring is a field.
 \end{thm}
 
 %TODO
+
+\begin{prop}
+Every subring of a field is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+The center of a division ring is a field.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a division ring.}}
+\step{2}{\pflet{$Z$ be the center of $R$.}}
+\step{3}{$Z$ is non-trivial.}
+\begin{proof}
+\pf\ Since $1 \in Z$.
+\end{proof}
+\step{4}{$Z$ is commutative.}
+\step{5}{$Z$ is a division ring.}
+\begin{proof}
+	\step{a}{\pflet{$a \in Z$}}
+	\step{b}{$\inv{a} \in Z$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in R$}}
+		\step{ii}{$ax = xa$}
+		\step{iii}{$x \inv{a} = \inv{a} x$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}
 For any prime $p$ and positive integer $r$, define a multiplication on $(\mathbb{Z} / p \mathbb{Z})^r$ that makes this group into a field by:
