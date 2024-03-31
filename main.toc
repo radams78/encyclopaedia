@@ -53,7 +53,7 @@
 \contentsline {section}{\numberline {13.2}Center}{87}{}%
 \contentsline {chapter}{\numberline {14}Monoid Rings}{89}{}%
 \contentsline {section}{\numberline {14.1}Polynomials}{89}{}%
-\contentsline {section}{\numberline {14.2}Laurent Polynomials}{90}{}%
+\contentsline {section}{\numberline {14.2}Laurent Polynomials}{91}{}%
 \contentsline {section}{\numberline {14.3}Power Series}{91}{}%
 \contentsline {chapter}{\numberline {15}Integral Domains}{93}{}%
 \contentsline {chapter}{\numberline {16}Unique Factorization Domains}{95}{}%

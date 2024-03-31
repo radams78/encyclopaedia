@@ -3973,6 +3973,7 @@ Let $R$ and $S$ be rings. Then $R \times S$ is a ring under componentwise additi
 \pf\ Easy. \qed
 \end{proof}
 
+
 \chapter{Subrings}
 
 \begin{df}[Subring]
@@ -4097,6 +4098,18 @@ R[x] \arrow[r,"\alpha_r"] & R \\
 1 \arrow[u,"x"] \arrow[ur,"r"]
 \end{tikzcd} \]
 \end{df}
+
+\begin{prop}
+$\mathbb{Z}[x,y]$ is the coproduct of $\mathbb{Z}[x]$ and $\mathbb{Z}[y]$ in the category of commutative rings.
+\end{prop}
+
+\begin{proof}
+\pf\ Given ring homomorphisms $f : \mathbb{Z}[x] \rightarrow R$ and $g : \mathbb{Z}[y] \rightarrow R$, the required morphism $\mathbb{Z}[x,y] \rightarrow R$ maps $p(x,y)$ to $p(f(x),g(y))$. \qed
+\end{proof}
+
+\begin{ex}
+$\mathbb{Z}[x,y]$ is not the coproduct of $\mathbb{Z}[x]$ and $\mathbb{Z}[y]$ in $\Ring$. Given $f : \mathbb{Z}[x] \rightarrow R$ and $g : \mathbb{Z}[y] \rightarrow R$ with $f(x) \neq g(y)$, the mediating morphism $\mathbb{Z}[x,y] \rightarrow R$ cannot exist since it must map $xy$ to both $f(x)g(y)$ and $g(y)f(x)$. \qed
+\end{ex}
 
 \section{Laurent Polynomials}
 
