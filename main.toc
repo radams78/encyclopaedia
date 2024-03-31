@@ -39,7 +39,7 @@
 \contentsline {section}{\numberline {9.2}Category of $G$-Sets}{68}{}%
 \contentsline {part}{III\hspace {1em}Ring Theory}{71}{}%
 \contentsline {chapter}{\numberline {10}Rngs}{73}{}%
-\contentsline {section}{\numberline {10.1}Commutative Rngs}{74}{}%
+\contentsline {section}{\numberline {10.1}Commutative Rngs}{75}{}%
 \contentsline {section}{\numberline {10.2}Rng Homomorphisms}{75}{}%
 \contentsline {section}{\numberline {10.3}Quaternions}{75}{}%
 \contentsline {chapter}{\numberline {11}Rings}{77}{}%

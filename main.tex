@@ -22,6 +22,7 @@
 \newcommand{\Ab}{\ensuremath{\mathbf{Ab}}}
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
 \newcommand{\coker}{\ensuremath{\operatorname{coker}}}
+\newcommand{\End}[2]{\ensuremath{\mathrm{End}_{#1} \left( {#2} \right)}}
 \newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
 \newcommand{\gl}[2]{\ensuremath{\mathfrak{gl}_{#1} \left( {#2} \right)}}
 \newcommand{\Grp}{\ensuremath{\mathbf{Grp}}}
@@ -3366,6 +3367,7 @@ Given a rng $R$ and a set $S$, then $R^S$ is a rng under $(f + g)(s) = f(s) + g(
 & + (ac' - bd' + ca' + db')j \\
 & + (ad' + bc' - cb' + da') k
 \end{align*}
+\item For any Abelian group $G$, the set $\End{\Ab}{G}$ is a ring under pointwise addition and composition.
 \end{itemize}
 \end{ex}
 
@@ -3963,6 +3965,25 @@ It is not true that every epimorphism in $\Ring$ is surjective. The inclusion $\
 The same example shows that a ring homomorphism may be a monomorphism and an epimorphism but not be an isomorphism.
 \end{ex}
 
+\begin{ex}
+\[ \End{\Ab}{\mathbb{Z}} \cong \mathbb{Z} \]
+The isomorphism maps any group endomorphism $\phi : \mathbb{Z} \rightarrow \mathbb{Z}$ to $\phi(1)$.
+\end{ex}
+
+\begin{ex}
+The group of units of $\End{\Ab}{G}$ is $\Aut{\Ab}{G}$.
+\end{ex}
+
+\begin{ex}
+Let $R$ be a ring. Then the function $\lambda : R \rightarrow \End{\Ab}{R}$ defined by
+\[ \lambda(a)(b) = ab \]
+is a ring monomorphism.
+\end{ex}
+ 
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+ 
 \section{Products}
 
 \begin{prop}
@@ -4018,6 +4039,32 @@ The center of a ring is a subring.
 
 \begin{proof}
 \pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. The center of $\End{\Ab}{R}$ is isomorphic to the center of $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\lambda : R \rightarrow \End{\Ab}{R}$ be left multiplication.}}
+\step{2}{$\lambda$ maps $Z(R)$ to $Z(\End{\Ab}{R})$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in Z(R)$}}
+	\step{b}{\pflet{$\phi \in \End{\Ab}{R}$} \prove{$\lambda(a) \circ \phi = \phi \circ \lambda(a)$}}
+	\step{c}{\pflet{$x \in R$}}
+	\step{d}{$a + \phi(x) = \phi(a + x)$}
+\end{proof}
+\step{3}{$\lambda(Z(R)) = Z(\End{\Ab}{R})$}
+\begin{proof}
+	\step{a}{\pflet{$\phi \in Z(\End{\Ab}{R})$}}
+	\step{b}{For all $r \in R$, \pflet{$\mu_r \in \End{\Ab}{R}$ be right multiplication by $r$.}}
+	\step{c}{For all $r \in R$ we have $\phi \circ \mu_r = \mu_r \circ \phi$.}
+	\step{d}{For all $r,x \in R$ we have $\phi(xr) = \phi(x)r$}
+	\step{e}{For all $r \in R$ we have $\phi(r) = \phi(1)r$}
+	\step{f}{$\phi = \lambda(\phi(1))$}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Monoid Rings}
