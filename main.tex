@@ -4013,6 +4013,14 @@ Let $R$ and $S$ be rings. Then $R$ is a subring of $S$ if and only if $R$ is a s
 The zero ring is not a subring of any non-zero ring.
 \end{cor}
 
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. Then $\phi(R)$ is a subring of $S$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \section{Centralizer}
 
 \begin{df}[Centralizer]
@@ -4226,8 +4234,91 @@ A subgroup $I$ of $R$ is a \emph{left-ideal} iff, for all $r \in R$, we have $rI
 
 A subgroup $I$ of $R$ is a \emph{right-ideal} iff, for all $r \in R$, we have $Ir \subseteq I$.
 
-A subgroup $I$ of $R$ is a \emph{two-sided ideal} iff it is a left-ideal and a right-ideal.
+A subgroup $I$ of $R$ is a \emph{(two-sided) ideal} iff it is a left-ideal and a right-ideal.
 \end{df}
+
+\begin{ex}
+In any ring, $\{0\}$ is an ideal.
+\end{ex}
+
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism and $I$ a (left-, right-)ideal in $S$. Then $\inv{\phi}{I}$ is a (left-, right-)ideal in $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. Then $\ker \phi$ is an ideal in $R$.
+\end{cor}
+
+\begin{df}[Quotient Ring]
+Let $I$ be an ideal in $R$. The \emph{quotient ring} $R / I$ is the quotient group $R/I$ under
+\[ (a + I)(b + I) = ab + I \enspace . \]
+
+This is well-defined as, if $a + I = a' + I$ and $b + I = b' + I$ then
+\begin{align*}
+a-a' & \in I \\
+b - b' & \in I \\
+\therefore ab - a'b & \in I \\
+a'b - a'b' & \in I \\
+\therefore ab - a'b' & \in I
+\end{align*}
+\end{df}
+
+\begin{prop}
+Let $I$ be an ideal in $R$. Then the canonical group homomorphism $\pi : R \rightarrow R / I$ is a ring homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ By construction. \qed
+\end{proof}
+
+\begin{prop}
+Let $I$ be an ideal in a ring $R$. For every ring homomorphism $\phi : R \rightarrow S$ such that $I \subseteq \ker \phi$, there exists a unique ring homomorphism $\overline{\phi} : R / I \rightarrow S$ such that the following diagram commutes.
+
+\begin{center}
+\begin{tikzcd}
+R \arrow[rr,"\phi"] \arrow[dr, two heads, "\pi"] & & S \\
+& R / I \arrow[ur,"\overline{\phi}"]
+\end{tikzcd}
+\end{center}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+Every ring homomorphism $\phi : R \rightarrow S$ decomposes as follows.
+
+\begin{center}
+\begin{tikzcd}
+R \arrow[r, two heads] \arrow[rrr, bend left=25, "\phi"] & R / \ker \phi \arrow[r,"\cong"] & \im \phi \arrow[r, hook] & S
+\end{tikzcd}
+\end{center}
+\end{cor}
+
+\begin{cor}[First Isomorphism Theorem]
+Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Then
+\[ S \cong R / \ker \phi \enspace . \]
+\end{cor}
+
+\section{Characteristic}
+
+\begin{df}[Characteristic]
+The \emph{characteristic} of a ring $R$ is the nonnegative integer $n$ such that $n \mathbb{Z}$ is the kernel of the unique ring homomorphism $\mathbb{Z} \rightarrow R$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring.
+If the unit 1 has finite order in $R$, then its order is the characteristic of $R$; otherwise, the characteristic of $R$ is 0.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \chapter{Integral Domains}
 
