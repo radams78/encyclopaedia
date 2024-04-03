@@ -4538,14 +4538,12 @@ A non-trivial ring $R$ is a division ring if and only if its only left-ideals an
 \chapter{Simple Rings}
 
 \begin{df}[Simple Ring]
-A ring is $R$ \emph{simple} iff its only two-sided ideals are $\{0\}$ and $R$.
+A non-trivial ring is $R$ \emph{simple} iff its only two-sided ideals are $\{0\}$ and $R$.
 \end{df}
 
 \begin{ex}
 For any simple ring $R$ we have $\gl{n}{R}$ is simple, by Corollary \ref{cor:ideals-in-glnR}.
 \end{ex}
-
-
 
 \part{Field Theory}
 
@@ -4639,6 +4637,24 @@ A commutative ring is a field if and only if it is simple.
 
 \begin{proof}
 \pf\ Proposition \ref{prop:division-ring-ideals}. \qed
+\end{proof}
+
+\begin{prop}
+Let $K$ be a field and $R$ a non-trivial ring. Every ring homomorphism $K \rightarrow R$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : K \rightarrow R$ be a ring homomorphism.} \prove{$\ker \phi = \{0\}$}}
+\step{2}{\pflet{$x \in \ker \phi$}}
+\step{3}{\assume{for a contradiction $x \neq 0$.}}
+\step{4}{$\phi(x \inv{x}) = 1$}
+\step{5}{$0 = 1$}
+\qedstep
+\begin{proof}
+\pf\ This contradicts the assumption that $R$ is non-trivial.
+\end{proof}
+\qed
 \end{proof}
 
 \part{Linear Algebra}
