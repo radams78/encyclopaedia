@@ -4242,6 +4242,25 @@ In any ring, $\{0\}$ is an ideal.
 \end{ex}
 
 \begin{prop}
+Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Let $J$ be an ideal in $R$. Then $\phi(J)$ is an ideal in $S$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$j \in J$ and $s \in S$} \prove{$s \phi(j), \phi(j)s \in \phi(J)$}}
+\step{2}{\pick\ $r \in R$ such that $\phi(r) = s$}
+\step{3}{$rj, jr \in J$}
+\step{4}{$s\phi(j), \phi(j)s \in \phi(J)$}
+\qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the hypothesis that $\phi$ is surjective.
+
+Let $i : \mathbb{Z} \hookrightarrow \mathbb{Q}$ be the inclusion. Then $i(2 \mathbb{Z}) = 2 \mathbb{Z}$ is not an ideal in $\mathbb{Q}$.
+\end{ex}
+
+\begin{prop}
 Let $\phi : R \rightarrow S$ be a ring homomorphism and $I$ a (left-, right-)ideal in $S$. Then $\inv{\phi}{I}$ is a (left-, right-)ideal in $R$.
 \end{prop}
 
@@ -4313,6 +4332,24 @@ Let $I$ and $J$ be ideals in $R$ with $I \subseteq J$. Then $J/I$ is an ideal in
 \begin{proof}
 \pf\ Since the function $R/I \rightarrow R/J$ that maps $r + I$ to $r + J$ is a surjective ring homomorphism with kernel $J/I$. \qed
 \end{proof}
+
+\begin{cor}
+Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Let $J$ be an ideal in $R$. Then
+\[ \frac{S}{\phi(J)} \cong \frac{R}{\ker S + J} \]
+\end{cor}
+
+\begin{prop}
+Let $R$ be a ring and $J$ an ideal in $\gl{n}{R}$. Let $A \in \gl{n}{R}$. Then $A \in J$ if and only if the matrices obtained by placing any entry of $A$ in any position and zeros elsewhere all belong to $J$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each such matrix can be obtained by pre- and post-multiplying $A$ by matrices which have a single 1 and 0s elsewhere. Conversely, $A$ is a sum of such matrices. \qed
+\end{proof}
+
+\begin{cor}
+\label{cor:ideals-in-glnR}
+Let $R$ be a ring. Let $J$ be an ideal in $\gl{n}{R}$. Let $I$ be the set of all entries of elements of $J$. Then $I$ is an ideal in $R$, and $J$ is the set of all matrices whose entries are in $I$.
+\end{cor}
 
 \section{Characteristic}
 
@@ -4465,6 +4502,51 @@ Every centralizer in a division ring is a division ring.
 \pf\ If $ar = ra$ then $r\inv{a} = \inv{a}r$. \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:division-ring-ideals}
+A non-trivial ring $R$ is a division ring if and only if its only left-ideals and right-ideals are $\{0\}$ and $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $R$ is a division ring then the only left-ideals and right-ideals are $\{0\}$ and $R$.}
+\begin{proof}
+	\step{a}{\assume{$R$ is a division ring.}}
+	\step{b}{The only left-ideals are $\{0\}$ and $R$.}
+	\begin{proof}
+		\step{i}{\pflet{$I$ be a left-ideal that is not $\{0\}$.} \prove{$I = R$}}
+		\step{ii}{\pick\ $a \in I - \{0\}$}
+		\step{iii}{\pick\ a left inverse $b$ for $a$}
+		\step{iv}{$1 \in I$}
+		\begin{proof}
+			\pf\ Since $1 = ba$.
+		\end{proof}
+		\step{v}{$I = R$}
+		\begin{proof}
+			\pf\ For any $r \in R$ we have $r = r1 \in I$.
+		\end{proof}
+	\end{proof}
+	\step{c}{The only right-ideals are $\{0\}$ and $R$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{2}{If the only left-ideals and right-ideals are $\{0\}$ and $R$ then $R$ is a division ring.}
+\qed
+\end{proof}
+
+\chapter{Simple Rings}
+
+\begin{df}[Simple Ring]
+A ring is $R$ \emph{simple} iff its only two-sided ideals are $\{0\}$ and $R$.
+\end{df}
+
+\begin{ex}
+For any simple ring $R$ we have $\gl{n}{R}$ is simple, by Corollary \ref{cor:ideals-in-glnR}.
+\end{ex}
+
+
+
 \part{Field Theory}
 
 \chapter{Fields}
@@ -4550,6 +4632,14 @@ The center of a division ring is a field.
 For any prime $p$ and positive integer $r$, define a multiplication on $(\mathbb{Z} / p \mathbb{Z})^r$ that makes this group into a field by:
 %TODO
 \end{df}
+
+\begin{prop}
+A commutative ring is a field if and only if it is simple.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:division-ring-ideals}. \qed
+\end{proof}
 
 \part{Linear Algebra}
 
