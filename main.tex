@@ -4366,6 +4366,24 @@ If the unit 1 has finite order in $R$, then its order is the characteristic of $
 \pf\ Easy. \qed
 \end{proof}
 
+\section{Nilradical}
+
+\begin{df}[Nilradical]
+Let $R$ be a commutative ring. The \emph{nilradical} of $R$ is the set of all nilpotent elements.
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring. The nilradical of $R$ is an ideal in $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $a^n = 0$ then for any $b$ we have $(ba)^n = 0$. \qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the assumption that $R$ is commutative. In $\gl{2}{\mathbb{R}}$ we have that $\left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array} \right)$ is nilpotent but $\left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array} \right) \left( \begin{array}{cc} 0 & 0 \\ 1 & 1 \end{array} \right) = \left( \begin{array}{cc} 1 & 1 \\ 0 & 0 \end{array} \right)$ is not.
+\end{ex}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
@@ -4562,6 +4580,28 @@ A non-trivial ring is $R$ \emph{simple} iff its only two-sided ideals are $\{0\}
 \begin{ex}
 For any simple ring $R$ we have $\gl{n}{R}$ is simple, by Corollary \ref{cor:ideals-in-glnR}.
 \end{ex}
+
+\chapter{Reduced Rings}
+
+\begin{df}[Reduced Ring]
+A ring is \emph{reduced} iff it has no non-zero nilpotent elements.
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $N$ be its nilradical. Then $R/N$ is reduced.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r + N$ be nilpotent.}}
+\step{2}{\pick\ $n$ such that $(r+N)^n = N$}
+\step{3}{$r^n \in N$}
+\step{4}{\pick\ $k$ such that $(r^n)^k = 0$}
+\step{5}{$r^{nk} = 0$}
+\step{6}{$r \in N$}
+\step{7}{$r + N = N$}
+\qed
+\end{proof}
 
 \part{Field Theory}
 
