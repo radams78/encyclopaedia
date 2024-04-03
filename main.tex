@@ -4473,6 +4473,23 @@ Let $R$ be a ring and $S$ an integral domain. Every rng homomorphism $\phi : R \
 and so $\phi(1) = 1$ by Cancellation. \qed
 \end{proof}
 
+\begin{prop}
+The characteristic of an integral domain is either 0 or a prime number.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$D$ be an integral domain.}}
+\step{1}{\pflet{$n$ be the characteristic of $D$}}
+\step{2}{\assume{$n \neq 0$}}
+\step{3}{\assume{$n = ab$}}
+\step{4}{$ab = 0$ in $D$}
+\step{5}{$a = 0$ or $b = 0$ in $D$}
+\step{6}{$n \mid a$ or $n \mid b$}
+\step{7}{One of $a$, $b$ is 1 and the other is $n$.}
+\qed
+\end{proof}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
