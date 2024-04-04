@@ -4366,6 +4366,10 @@ If the unit 1 has finite order in $R$, then its order is the characteristic of $
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{ex}
+The zero ring is the only ring with characteristic 1.
+\end{ex}
+
 \section{Nilradical}
 
 \begin{df}[Nilradical]
@@ -4619,6 +4623,45 @@ Let $R$ be a commutative ring. Let $N$ be its nilradical. Then $R/N$ is reduced.
 \step{7}{$r + N = N$}
 \qed
 \end{proof}
+
+\chapter{Boolean Rings}
+
+\begin{df}[Boolean]
+A ring is \emph{Boolean} iff $a^2 = a$ for every element $a$.
+\end{df}
+
+\begin{ex}
+For any set $S$, the ring $\mathcal{P} S$ is Boolean.
+\end{ex}
+
+\begin{prop}
+\label{prop:Boolean-char-2}
+Every non-trivial Boolean ring has characteristic 2.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $4 = 2$ and so $2 = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Every Boolean ring is commutative.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(ab)^2 & = a=b \\
+\therefore a^2 + ab + ba + b^2 & = a+b \\
+\therefore a + ab + ba + b & = a + b \\
+\therefore ab + ba & = 0 \\
+\therefore ab & = -ba \\
+& = ba & (\text{Proposition \ref{prop:Boolean-char-2}})
+\end{align*}
+\end{proof}
+
+\begin{ex}
+The only Boolean integral domain is $\mathbb{Z} / 2 \mathbb{Z}$. For, if $D$ is a Boolean integral domain and $x \in D$, we have $x^2 = x$, so $x^2 - x = x(x-1) = 0$ and so $x = 0$ or $x = 1$, i.e. $D = \{0,1\}$.
+\end{ex}
 
 \part{Field Theory}
 
