@@ -4241,6 +4241,31 @@ A subgroup $I$ of $R$ is a \emph{(two-sided) ideal} iff it is a left-ideal and a
 In any ring, $\{0\}$ is an ideal.
 \end{ex}
 
+\begin{ex}
+Let $S$ be a set and $T \subseteq S$. Then $\{ X \in \mathcal{P} S : X \subseteq T \}$ is an ideal in $\mathcal{P} S$.
+\end{ex}
+
+\begin{prop}
+Let $S$ be a finite set. Then every ideal in $\mathcal{P} S$ is of the form $\{ X \in \mathcal{P} S : X \subseteq T \}$ for some $T \subseteq S$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I$ be an ideal in $\mathcal{P} S$.}}
+\step{2}{\pflet{$T = \bigcup I$}}
+\step{3}{For all $i \in T$ we have $\{i\} \in I$.}
+\begin{proof}
+	\step{a}{\pflet{$i \in T$}}
+	\step{b}{\pick\ $X \in I$ such that $i \in X$}
+	\step{c}{$\{i\} = \{i \} \cap X \in I$}
+\end{proof}
+\step{4}{For all $X \subseteq T$ we have $X \in I$.}
+\begin{proof}
+	\pf\ If $X = \{x_1, \ldots, x_n\}$ then $X = \{x_1\} + \cdots + \{x_n\} \in I$.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{prop}
 Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Let $J$ be an ideal in $R$. Then $\phi(J)$ is an ideal in $S$.
 \end{prop}
