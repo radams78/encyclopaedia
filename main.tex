@@ -4191,7 +4191,7 @@ A monic polynomial is not a left- or right-zero-divisor.
 \end{proof}
 
 \begin{prop}
-Let $R$ be a ring. Let $f,g \in R[x]$ with $f$ monic. Then there exist polynomials $q,r \in R[x]$ with $\deg r < \deg f$ such that
+Let $R$ be a ring. Let $f,g \in R[x]$ with $f$ monic. Then there exist unique polynomials $q,r \in R[x]$ with $\deg r < \deg f$ such that
 \[ g = qf + r \enspace . \]
 \end{prop}
 
@@ -4211,6 +4211,10 @@ Let $R$ be a ring. Let $f,g \in R[x]$ with $f$ monic. Then there exist polynomia
 \step{2}{\pflet{$g = \sum_{i=0}^n a_i x^i$}}
 \step{3}{For $i > d$, \pick\ $q_ih_i \in R[x]$ with $\deg h < \deg f$ such that $a_i x^i = q_i f + h_i$}
 \step{4}{$g = \left( \sum_{i=d+1}^n q_i \right) f + \sum_{i=d+1}^n h_i$}
+\step{5}{$q$ and $r$ are unique.}
+\begin{proof}
+\pf\ If $q_1 f + r_1 = q_2 f + r_2$ then $r_1 - r_2 = (q_2 - q_1)f$ and so $r_1 - r_2 = (q_2 - q_1) f = 0$ since $\deg (r_1 - r_2) < \deg f$.
+\end{proof}
 \qed
 \end{proof}
 
@@ -4513,6 +4517,40 @@ Let $R$ be a commutative ring. Let $I$ and $J$ be ideals in $R$. If $I + J = R$ 
 \step{2}{\pick\ $i \in I$ and $j \in J$ such that $i + j = 1$.}
 \step{3}{$ri, rj \in IJ$}
 \step{4}{$r = ri + rj \in IJ$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $f \in R[x]$ be a monic polynomial of degree $d$. Then the function
+\[ \phi : R[x] \rightarrow R^{\oplus d} \]
+that sends a polynomial $g$ to the remainder of the division of $g$ by $f$ induces an isomorphism of Abelian groups
+\[ \frac{R[x]}{(f(x))} \cong R^{\oplus d} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ It is clearly a group homomorphism; it is surjective since it maps any polynomial of degree $< d$ to itself, and its kernel is $(f(x))$ since these are the polynomials with remainder 0. \qed
+\end{proof}
+
+\begin{cor}
+Let $R$ be a commutative ring and $a \in R$. Then we have
+\[ \frac{R[x]}{(x-a)} \cong R \]
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : R[x] \rightarrow R$ be evaluation at $a$.}}
+\step{2}{$\phi(g)$ is the remainder when dividing $g$ by $x-a$.}
+\begin{proof}
+\pf\ If $g = (x-a)q + r$ then $g(a) = (a-a)q(a) + r = r$.
+\end{proof}
+\step{3}{$\phi$ induces a group isomorphism $R[x]/(x-a) \cong R$}
+\begin{proof}
+\pf\ By the theorem.
+\end{proof}
+\step{4}{This isomorphism is a ring isomorphism.}
+\begin{proof}
+\pf\ Since evaluation at $a$ is a ring homomorphism.
+\end{proof}
 \qed
 \end{proof}
 
