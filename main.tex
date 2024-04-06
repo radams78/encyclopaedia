@@ -5063,6 +5063,37 @@ I \text{ is prime} & \Leftrightarrow R / I \text{ is a field} \\
 \qed
 \end{proof}
 
+\begin{prop}
+Every nonzero prime ideal in a PID is maximal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a PID.}}
+\step{2}{\pflet{$I$ be a nonzero prime ideal in $R$.}}
+\step{3}{\pick\ $a \in R$ such that $I = (a)$.}
+\step{4}{\pflet{$J$ be an ideal such that $I \subseteq J$}}
+\step{5}{\pick\ $b \in R$ such that $J = (b)$.}
+\step{6}{\pick\ $t \in R$ such that $a = bt$.}
+\step{7}{$b \in I$ or $t \in I$}
+\step{8}{\case{$b \in I$}}
+\begin{proof}
+	\pf\ Then $J \subseteq I$ so $I = J$.
+\end{proof}
+\step{9}{\case{$t \in I$}}
+\begin{proof}
+	\step{a}{\pick\ $s \in R$ such that $t = as$.}
+	\step{b}{$a = ast$}
+	\step{c}{$st = 1$}
+	\begin{proof}
+		\pf\ Since $R$ is an integral domain.
+	\end{proof}
+	\step{d}{$1 \in I$}
+	\step{e}{$I = R$}
+\end{proof}
+\qed
+\end{proof}
+
 \part{Linear Algebra}
 
 \begin{df}
