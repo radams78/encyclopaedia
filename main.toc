@@ -59,6 +59,7 @@
 \contentsline {section}{\numberline {15.1}Characteristic}{96}{}%
 \contentsline {section}{\numberline {15.2}Nilradical}{96}{}%
 \contentsline {section}{\numberline {15.3}Principal Ideals}{96}{}%
+\contentsline {section}{\numberline {15.4}Maximal Ideals}{97}{}%
 \contentsline {chapter}{\numberline {16}Integral Domains}{99}{}%
 \contentsline {section}{\numberline {16.1}Prime Ideals}{100}{}%
 \contentsline {chapter}{\numberline {17}Unique Factorization Domains}{103}{}%
@@ -71,6 +72,5 @@
 \contentsline {chapter}{\numberline {24}Boolean Rings}{117}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{119}{}%
 \contentsline {chapter}{\numberline {25}Fields}{121}{}%
-\contentsline {section}{\numberline {25.1}Maximal Ideals}{122}{}%
 \contentsline {chapter}{\numberline {26}Algebraically Closed Fields}{125}{}%
 \contentsline {part}{V\hspace {1em}Linear Algebra}{127}{}%

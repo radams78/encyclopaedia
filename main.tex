@@ -4561,6 +4561,12 @@ We have
 as rings.
 \end{ex}
 
+\section{Maximal Ideals}
+
+\begin{df}[Maximal Ideal]
+Let $R$ be a ring and $I$ an ideal in $R$. Then $I$ is a \emph{maximal ideal} iff $I \neq R$ and, whenever $J$ is an ideal with $I \subseteq J$, then either $I = J$ or $J = R$.
+\end{df}
+
 \chapter{Integral Domains}
 
 \begin{df}[Integral Domain]
@@ -4862,6 +4868,22 @@ A non-trivial ring is $R$ \emph{simple} iff its only two-sided ideals are $\{0\}
 For any simple ring $R$ we have $\gl{n}{R}$ is simple, by Corollary \ref{cor:ideals-in-glnR}.
 \end{ex}
 
+\begin{prop}
+\label{prop:maximal-iff-quotient-simple}
+Let $R$ be a ring and $I$ an ideal in $R$. Then $I$ is maximal iff $R/I$ is simple.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+R / I \text{ is simple}
+& \Leftrightarrow \text{the only ideals in } R / I \text{ are } \{I\} \text{ and } R / I \\
+& \Leftrightarrow \text{the only ideals in } R \text{ that include } I \text{ are } I \text{ and } R \\
+& \Leftrightarrow I \text{ is maximal}
+\end{align*}
+\qed
+\end{proof}
+
 \chapter{Reduced Rings}
 
 \begin{df}[Reduced Ring]
@@ -5051,11 +5073,13 @@ Let $K$ be a field. Then $K[x]$ is a PID, and every non-zero ideal in $K[x]$ is 
 \qed
 \end{proof}
 
-\section{Maximal Ideals}
+\begin{prop}
+Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $I$ is maximal iff $R/I$ is a field.
+\end{prop}
 
-\begin{df}[Maximal Ideal]
-Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $I$ is a \emph{maximal ideal} iff $R/I$ is a field.
-\end{df}
+\begin{proof}
+\pf\ From Proposition \ref{prop:maximal-iff-quotient-simple}. \qed
+\end{proof}
 
 \begin{ex}
 Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in $R[x]$ iff $R$ is a field.
@@ -5066,7 +5090,7 @@ The ideal $(2,x)$ is a maximal ideal in $\mathbb{Z}[x]$, since $\mathbb{Z}[x] / 
 \end{ex}
 
 \begin{prop}
-Every maximal ideal is a prime ideal.
+Every maximal ideal in a commutative ring is a prime ideal.
 \end{prop}
 
 \begin{proof}
@@ -5085,15 +5109,6 @@ Let $R$ be a commutative ring and $I$ an ideal in $R$. If $I$ is a prime ideal a
 Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is maximal iff, whenever $J$ is an ideal and $I \subseteq J$, then $I = J$ or $J = R$.
 \end{prop}
 
-\begin{proof}
-\pf
-\begin{align*}
-I \text{ is prime} & \Leftrightarrow R / I \text{ is a field} \\
-& \Leftrightarrow \text{the only ideals in } R / I \text{ are } \{I\} \text{ and } R / I \\
-& \Leftrightarrow \text{the only ideals in } R \text{ that include } I \text{ are } I \text{ and } R
-\end{align*}
-\qed
-\end{proof}
 
 \begin{prop}
 Every nonzero prime ideal in a PID is maximal.
