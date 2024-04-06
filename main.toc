@@ -56,7 +56,7 @@
 \contentsline {section}{\numberline {14.2}Laurent Polynomials}{91}{}%
 \contentsline {section}{\numberline {14.3}Power Series}{91}{}%
 \contentsline {chapter}{\numberline {15}Ideals}{93}{}%
-\contentsline {section}{\numberline {15.1}Characteristic}{95}{}%
+\contentsline {section}{\numberline {15.1}Characteristic}{96}{}%
 \contentsline {section}{\numberline {15.2}Nilradical}{96}{}%
 \contentsline {section}{\numberline {15.3}Principal Ideals}{96}{}%
 \contentsline {chapter}{\numberline {16}Integral Domains}{97}{}%
