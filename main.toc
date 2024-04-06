@@ -58,6 +58,7 @@
 \contentsline {chapter}{\numberline {15}Ideals}{93}{}%
 \contentsline {section}{\numberline {15.1}Characteristic}{95}{}%
 \contentsline {section}{\numberline {15.2}Nilradical}{96}{}%
+\contentsline {section}{\numberline {15.3}Principal Ideals}{96}{}%
 \contentsline {chapter}{\numberline {16}Integral Domains}{97}{}%
 \contentsline {chapter}{\numberline {17}Unique Factorization Domains}{99}{}%
 \contentsline {chapter}{\numberline {18}Principal Ideal Domains}{101}{}%
