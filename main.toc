@@ -60,6 +60,7 @@
 \contentsline {section}{\numberline {15.2}Nilradical}{96}{}%
 \contentsline {section}{\numberline {15.3}Principal Ideals}{96}{}%
 \contentsline {chapter}{\numberline {16}Integral Domains}{99}{}%
+\contentsline {section}{\numberline {16.1}Prime Ideals}{100}{}%
 \contentsline {chapter}{\numberline {17}Unique Factorization Domains}{101}{}%
 \contentsline {chapter}{\numberline {18}Noetherian Rings}{103}{}%
 \contentsline {chapter}{\numberline {19}Principal Ideal Domains}{105}{}%
@@ -70,4 +71,5 @@
 \contentsline {chapter}{\numberline {24}Boolean Rings}{115}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{117}{}%
 \contentsline {chapter}{\numberline {25}Fields}{119}{}%
+\contentsline {section}{\numberline {25.1}Maximal Ideals}{120}{}%
 \contentsline {part}{V\hspace {1em}Linear Algebra}{121}{}%
