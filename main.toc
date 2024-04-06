@@ -67,6 +67,7 @@
 \contentsline {chapter}{\numberline {21}Simple Rings}{107}{}%
 \contentsline {chapter}{\numberline {22}Reduced Rings}{109}{}%
 \contentsline {chapter}{\numberline {23}Boolean Rings}{111}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{113}{}%
-\contentsline {chapter}{\numberline {24}Fields}{115}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{117}{}%
+\contentsline {chapter}{\numberline {24}Noetherian Rings}{113}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{115}{}%
+\contentsline {chapter}{\numberline {25}Fields}{117}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{119}{}%
