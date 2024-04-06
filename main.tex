@@ -4564,13 +4564,26 @@ $\mathbb{Z}$ is a UFD.
 \chapter{Noetherian Rings}
 
 \begin{df}[Noetherian Ring]
-A ring is \emph{Noetherian} iff every ideal is finitely generated.
+A commutative ring is \emph{Noetherian} iff every ideal is finitely generated.
 \end{df}
+
+\begin{prop}
+The homomorphic image of a Noetherian ring is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a Noetherian ring, $S$ be a commutative ring, and $\phi : R \rightarrow S$ a surjective ring homomorphism.}}
+\step{2}{\pflet{$I$ be an ideal in $S$.}}
+\step{3}{\pflet{$\inv{\phi}(I) = (a_1, \ldots, a_n)$}}
+\step{4}{$I = (\phi(a_1), \ldots, \phi(a_n))$}
+\qed
+\end{proof}
 
 \chapter{Principal Ideal Domains}
 
 \begin{df}[Principal Ideal Domain]
-A ring is a \emph{principal ideal domain} (\emph{PID}) iff every ideal is principal.
+A commutative ring is a \emph{principal ideal domain} (\emph{PID}) iff every ideal is principal.
 \end{df}
 
 \begin{ex}
