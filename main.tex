@@ -36,6 +36,7 @@
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
 \renewcommand{\sl}[2]{\ensuremath{\mathfrak{sl}_{#1} \left( {#2} \right)}}
 \newcommand{\so}[2]{\ensuremath{\mathfrak{so}_{#1} \left( {#2} \right)}}
+\newcommand{\Spec}{\ensuremath{\operatorname{Spec}}}
 \newcommand{\Stab}[2]{\ensuremath{\mathrm{Stab}_{#1} \left( {#2} \right)}}
 \newcommand{\tr}{\ensuremath{\operatorname{tr}}}
 
@@ -4684,6 +4685,10 @@ Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is prime i
 \pf\ The condition is the same as saying that, if $(a+I)(b+I) = I$, then $a+I = I$ or $b+I = I$. \qed
 \end{proof}
 
+\begin{df}[Spectrum]
+The \emph{spectrum} of a commutative ring $R$, $\Spec R$, is the set of prime ideals.
+\end{df}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
@@ -5034,6 +5039,14 @@ Every maximal ideal is a prime ideal.
 
 \begin{proof}
 \pf\ Since every field is an integral domain. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring and $I$ an ideal in $R$. If $I$ is a prime ideal and $R/I$ is finite then $I$ is a maximal ideal.
+\end{prop}
+
+\begin{proof}
+\pf\ Since every finite integral domain is a field. \qed
 \end{proof}
 
 \begin{prop}
