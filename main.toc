@@ -59,15 +59,15 @@
 \contentsline {section}{\numberline {15.1}Characteristic}{96}{}%
 \contentsline {section}{\numberline {15.2}Nilradical}{96}{}%
 \contentsline {section}{\numberline {15.3}Principal Ideals}{96}{}%
-\contentsline {chapter}{\numberline {16}Integral Domains}{97}{}%
-\contentsline {chapter}{\numberline {17}Unique Factorization Domains}{99}{}%
-\contentsline {chapter}{\numberline {18}Noetherian Rings}{101}{}%
-\contentsline {chapter}{\numberline {19}Principal Ideal Domains}{103}{}%
-\contentsline {chapter}{\numberline {20}Euclidean Domains}{105}{}%
-\contentsline {chapter}{\numberline {21}Division Rings}{107}{}%
-\contentsline {chapter}{\numberline {22}Simple Rings}{109}{}%
-\contentsline {chapter}{\numberline {23}Reduced Rings}{111}{}%
-\contentsline {chapter}{\numberline {24}Boolean Rings}{113}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{115}{}%
-\contentsline {chapter}{\numberline {25}Fields}{117}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{119}{}%
+\contentsline {chapter}{\numberline {16}Integral Domains}{99}{}%
+\contentsline {chapter}{\numberline {17}Unique Factorization Domains}{101}{}%
+\contentsline {chapter}{\numberline {18}Noetherian Rings}{103}{}%
+\contentsline {chapter}{\numberline {19}Principal Ideal Domains}{105}{}%
+\contentsline {chapter}{\numberline {20}Euclidean Domains}{107}{}%
+\contentsline {chapter}{\numberline {21}Division Rings}{109}{}%
+\contentsline {chapter}{\numberline {22}Simple Rings}{111}{}%
+\contentsline {chapter}{\numberline {23}Reduced Rings}{113}{}%
+\contentsline {chapter}{\numberline {24}Boolean Rings}{115}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{117}{}%
+\contentsline {chapter}{\numberline {25}Fields}{119}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{121}{}%
