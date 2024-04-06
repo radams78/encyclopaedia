@@ -4749,6 +4749,23 @@ Let $R$ be a commutative ring. Let $N$ be its nilradical. Then $R/N$ is reduced.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a commutative ring. Let $I$ and $J$ be ideals in $R$. If $R/IJ$ is reduced then $IJ = I \cap J$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r \in I \cap J$} \prove{$r \in IJ$}}
+\step{2}{$r^2 \in IJ$}
+\step{3}{$(r + IJ)^2 = IJ$}
+\step{4}{$r+IJ = IJ$}
+\begin{proof}
+	\pf\ Since $R/IJ$ is reduced.
+\end{proof}
+\step{5}{$r \in IJ$}
+\qed
+\end{proof}
+
 \chapter{Boolean Rings}
 
 \begin{df}[Boolean]
