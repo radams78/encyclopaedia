@@ -4190,6 +4190,30 @@ A monic polynomial is not a left- or right-zero-divisor.
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a ring. Let $f,g \in R[x]$ with $f$ monic. Then there exist polynomials $q,r \in R[x]$ with $\deg r < \deg f$ such that
+\[ g = qf + r \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$d = \deg f$}}
+\step{1}{For all $a \in R$ and $n > d$, there exists $h \in R[x]$ with $\deg h < n$ such that 
+\[ ax^n = ax^{n-d} f + h \enspace . \]}
+\begin{proof}
+\pf\ Take $h = ax^n - ax^{n-d}f$.
+\end{proof}
+\step{1a}{For all $a \in R$ and $n > d$, there exists $q,h \in R[x]$ with $\deg h \leq d$ such that 
+\[ ax^n = q f + h \enspace . \]}
+\begin{proof}
+\pf\ Repeating \stepref{1} by induction.
+\end{proof}
+\step{2}{\pflet{$g = \sum_{i=0}^n a_i x^i$}}
+\step{3}{For $i > d$, \pick\ $q_ih_i \in R[x]$ with $\deg h < \deg f$ such that $a_i x^i = q_i f + h_i$}
+\step{4}{$g = \left( \sum_{i=d+1}^n q_i \right) f + \sum_{i=d+1}^n h_i$}
+\qed
+\end{proof}
+
 \section{Laurent Polynomials}
 
 \begin{df}[Laurent Polynomial]
