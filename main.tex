@@ -4676,6 +4676,14 @@ Let $I$ be an ideal in a commutative ring $R$. Then $I$ is a \emph{prime ideal} 
 Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a prime ideal in $R$ iff $R$ is an integral domain.
 \end{ex}
 
+\begin{prop}
+Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is prime iff, whenever $ab \in I$, then $a \in I$ or $b \in I$.
+\end{prop}
+
+\begin{proof}
+\pf\ The condition is the same as saying that, if $(a+I)(b+I) = I$, then $a+I = I$ or $b+I = I$. \qed
+\end{proof}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
@@ -5019,6 +5027,20 @@ Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in 
 \begin{ex}
 The ideal $(2,x)$ is a maximal ideal in $\mathbb{Z}[x]$, since $\mathbb{Z}[x] / (2,x) \cong \mathbb{Z} / 2 \mathbb{Z}$.
 \end{ex}
+
+\begin{prop}
+Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is prime iff, whenever $J$ is an ideal and $I \subseteq J$, then $I = J$ or $J = R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+I \text{ is prime} & \Leftrightarrow R / I \text{ is a field} \\
+& \Leftrightarrow \text{the only ideals in } R / I \text{ are } \{I\} \text{ and } R / I \\
+& \Leftrightarrow \text{the only ideals in } R \text{ that include } I \text{ are } I \text{ and } R
+\end{align*}
+\qed
+\end{proof}
 
 \part{Linear Algebra}
 
