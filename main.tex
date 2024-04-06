@@ -4590,6 +4590,10 @@ A commutative ring is a \emph{principal ideal domain} (\emph{PID}) iff every ide
 $\mathbb{Z}$ is a PID by Proposition \ref{prop:subgroups-of-Z}.
 \end{ex}
 
+\begin{ex}
+$\mathbb{Z}[x]$ is not a PID. The ideal $(2,x)$ is not principal.
+\end{ex}
+
 \begin{prop}
 Every PID is Noetherian.
 \end{prop}
@@ -4844,6 +4848,22 @@ A commutative ring is a field if and only if it is simple.
 
 \begin{proof}
 \pf\ Proposition \ref{prop:division-ring-ideals}. \qed
+\end{proof}
+
+\begin{prop}
+Let $K$ be a field. Then $K[x]$ is a PID.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I$ be a non-zero ideal in $K[x]$}}
+\step{2}{\pick\ a monic polynomial $f \in K[x]$ of minimal degree. \prove{$I = (f)$}}
+\step{3}{\pflet{$g \in I$}}
+\step{4}{\pick\ polynomials $q$, $r$ with $\deg r < \deg f$ such that $g = qf + r$}
+\step{5}{$r \in I$}
+\step{6}{$r = 0$}
+\step{7}{$g \in (f)$}
+\qed
 \end{proof}
 
 \part{Linear Algebra}
