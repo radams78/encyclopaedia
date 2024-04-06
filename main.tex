@@ -4689,6 +4689,15 @@ Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is prime i
 The \emph{spectrum} of a commutative ring $R$, $\Spec R$, is the set of prime ideals.
 \end{df}
 
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. If $I$ is a prime ideal in $S$ then $\inv{\phi}(I)$ is a prime ideal in $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+If $ab \in \inv{\phi}(I)$ then $\phi(a)\phi(b) \in I$ so either $\phi(a) \in I$ or $\phi(b) \in I$, i.e. either $a \in \inv{\phi}(I)$ or $b \in \inv{\phi}(I)$. \qed
+\end{proof}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
