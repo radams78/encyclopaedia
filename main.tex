@@ -4698,6 +4698,19 @@ Let $\phi : R \rightarrow S$ be a ring homomorphism. If $I$ is a prime ideal in 
 If $ab \in \inv{\phi}(I)$ then $\phi(a)\phi(b) \in I$ so either $\phi(a) \in I$ or $\phi(b) \in I$, i.e. either $a \in \inv{\phi}(I)$ or $b \in \inv{\phi}(I)$. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a commutative ring. Suppose there exists a prime ideal $P$ in $R$ such that the only zero-divisor in $P$ is 0. Then $R$ is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$ab = 0$ in $R$}}
+\step{2}{$ab \in P$}
+\step{3}{$a \in P$ or $b \in P$}
+\step{4}{$a = 0$ or $b = 0$}
+\qed
+\end{proof}
+
 \chapter{Unique Factorization Domains}
 
 %TODO Define this
@@ -5035,7 +5048,7 @@ Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $I$ is a \emph{maxim
 \end{df}
 
 \begin{ex}
-Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in $R$ iff $R$ is a field.
+Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in $R[x]$ iff $R$ is a field.
 \end{ex}
 
 \begin{ex}
@@ -5059,7 +5072,7 @@ Let $R$ be a commutative ring and $I$ an ideal in $R$. If $I$ is a prime ideal a
 \end{proof}
 
 \begin{prop}
-Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is prime iff, whenever $J$ is an ideal and $I \subseteq J$, then $I = J$ or $J = R$.
+Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is maximal iff, whenever $J$ is an ideal and $I \subseteq J$, then $I = J$ or $J = R$.
 \end{prop}
 
 \begin{proof}
@@ -5102,6 +5115,12 @@ Every nonzero prime ideal in a PID is maximal.
 \end{proof}
 \qed
 \end{proof}
+
+\begin{ex}
+The inverse image of a maximal ideal under a homomorphism is not necessarily maximal.
+
+Let $i : \mathbb{Z}[x] \rightarrow \mathbb{Q}[x]$ be the inclusion. Then $(x)$ is maximal in $\mathbb{Q}[x]$ but its inverse image $(x)$ is not maximal in $\mathbb{Z}[x]$.
+\end{ex}
 
 \chapter{Algebraically Closed Fields}
 
