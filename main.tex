@@ -5082,7 +5082,8 @@ Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $I$ is maximal iff $
 \end{proof}
 
 \begin{ex}
-Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in $R[x]$ iff $R$ is a field.
+\label{ex:x-minus-a-maximal}
+Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in $R[x]$ iff $R$ is a field, since $R[x]/(x-a) \cong R$.
 \end{ex}
 
 \begin{ex}
@@ -5154,7 +5155,7 @@ Let $R$ be a commutative ring. The \emph{maximal spectrum} of $R$ is the set of 
 \chapter{Algebraically Closed Fields}
 
 \begin{df}[Algebraically Closed]
-A field $K$ is \emph{algebraically closed} iff, for every $f \in K[x]$, there exists $r \in K$ such that $f(r) = 0$.
+A field $K$ is \emph{algebraically closed} iff, for every $f \in K[x]$ that is not constant, there exists $r \in K$ such that $f(r) = 0$.
 \end{df}
 
 \begin{thm}
@@ -5162,6 +5163,32 @@ $\mathbb{C}$ is algebraically closed.
 \end{thm}
 
 %TODO
+
+\begin{prop}
+Let $K$ be an algebraically closed field. Let $I$ be an ideal in $K[x]$. Then $I$ is maximal if and only if $I = (x-c)$ for some $c \in K$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $I$ is maximal then there exists $c \in K$ such that $I = (x-c)$.}
+\begin{proof}
+	\step{a}{\assume{$I$ is maximal.}}
+	\step{b}{\pick\ $f$ monic of minimal degree such that $f \in I$.}
+	\step{c}{$f$ is not constant.}
+	\begin{proof}
+		\pf\ Otherwise $f = 1$ and $I = K[x]$.
+	\end{proof}
+	\step{d}{\pick\ $c \in K$ such that $f(c) = 0$}
+	\step{e}{$x-c \mid f$}
+	\step{f}{$I \subseteq (x-c)$}
+	\step{g}{$I = (x-c)$}
+\end{proof}
+\step{2}{For all $c \in K$ we have $(x-c)$ is maximal.}
+\begin{proof}
+	\pf\ Example \ref{ex:x-minus-a-maximal}.
+\end{proof}
+\qed
+\end{proof}
 
 \part{Linear Algebra}
 
