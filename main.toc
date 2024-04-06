@@ -72,4 +72,4 @@
 \contentsline {part}{IV\hspace {1em}Field Theory}{119}{}%
 \contentsline {chapter}{\numberline {25}Fields}{121}{}%
 \contentsline {section}{\numberline {25.1}Maximal Ideals}{122}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{123}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{125}{}%
