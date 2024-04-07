@@ -5032,6 +5032,20 @@ Let $R$ be a ring and $M$ an Abelian group. A \emph{left-action} of $R$ on $M$ i
 A \emph{left $R$-module} consists of an Abelian group $M$ and a left-action of $R$ on $M$.
 \end{df}
 
+\begin{prop}
+Let $R$ be a ring and $M$ an Abelian group. Let $\cdot : R \times M \rightarrow M$. Then $\cdot$ defines a left-action of $R$ on $M$ if and only if, for all $r,s \in R$ and $m,n \in M$:
+\begin{itemize}
+\item $r(m+n) = rm + rn$
+\item $(r+s)m = rm + sm$
+\item $(rs)m = r(sm)$
+\item $1m = m$
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
 \part{Field Theory}
 
 \chapter{Fields}
