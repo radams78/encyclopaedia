@@ -20,6 +20,7 @@
 \newtheorem{ex}[prop]{Example}
 
 \newcommand{\Ab}{\ensuremath{\mathbf{Ab}}}
+\newcommand{\Alg}[1]{\ensuremath{{#1}-\mathbf{Alg}}}
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
 \newcommand{\coker}{\ensuremath{\operatorname{coker}}}
 \newcommand{\End}[2]{\ensuremath{\mathrm{End}_{#1} \left( {#2} \right)}}
@@ -5098,6 +5099,16 @@ Let $\Mod{R}$ be the category of left-$R$-modules and left-$R$-module homomorphi
 The trivial group $0$ is the zero object in $\Mod{R}$.
 \end{ex}
 
+\begin{prop}
+Let $R$ be a ring. Let $M$ be an $R$-module. Then
+\[ M \cong \Mod{R}[R,M] \]
+as $R$-modules.
+\end{prop}
+
+\begin{proof}
+\pf\ The isomorphism maps $m$ to the function $\lambda r.rm$. Its inverse maps an $R$-module homomorphism $\alpha$ to $\alpha(1)$. \qed
+\end{proof}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
@@ -5143,15 +5154,19 @@ iff $S$ is an $R$-module under $\cdot$ and, for all $r_1,r_2 \in R$ and $s_1,s_2
 \begin{df}[Algebra Homomorphism]
 Let $R$ be a commutative ring. Let $S$ and $T$ be $R$-algebras. An \emph{$R$-algebra homomorphism} $\phi : S \rightarrow T$ is a ring homomorphism such that, for all $r \in R$ and $s \in S$, we have $\phi(rs) = r\phi(s)$.
 
-Let $R-\mathbf{Alg}$ be the category of $R$-algebras and $R$-algebra homomorphisms.
+Let $\Alg{R}$ be the category of $R$-algebras and $R$-algebra homomorphisms.
 \end{df}
 
 \begin{ex}
-\[ \mathbb{Z}-\mathbf{Alg} \cong \Ring \]
+\[ \Alg{\mathbb{Z}} \cong \Ring \]
 \end{ex}
 
 \begin{ex}
 Let $R$ be a commutative ring. Then $R[x_1, \ldots, x_n]$, and any quotient ring of $R[x_1, \ldots, x_n]$, is a commutative $R$-algebra.
+\end{ex}
+
+\begin{ex}
+$R$ is the initial object in $\Alg{R}$.
 \end{ex}
 
 \chapter{Division Algebras}
@@ -5330,6 +5345,14 @@ Let $K$ be a field. The Krull dimension of $K[x_1, \ldots, x_n]$ is $n$.
 %TODO
 
 %TODO Hilbert's Nullstellensatz
+
+\begin{prop}
+Let $K$ be a subfield of $L$. Then $L$ is a $K$-algebra under multiplication.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \chapter{Algebraically Closed Fields}
 
