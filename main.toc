@@ -70,7 +70,8 @@
 \contentsline {chapter}{\numberline {22}Simple Rings}{113}{}%
 \contentsline {chapter}{\numberline {23}Reduced Rings}{115}{}%
 \contentsline {chapter}{\numberline {24}Boolean Rings}{117}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{119}{}%
-\contentsline {chapter}{\numberline {25}Fields}{121}{}%
-\contentsline {chapter}{\numberline {26}Algebraically Closed Fields}{125}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{127}{}%
+\contentsline {chapter}{\numberline {25}Modules}{119}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{121}{}%
+\contentsline {chapter}{\numberline {26}Fields}{123}{}%
+\contentsline {chapter}{\numberline {27}Algebraically Closed Fields}{127}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{129}{}%
