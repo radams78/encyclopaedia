@@ -73,6 +73,7 @@
 \contentsline {chapter}{\numberline {25}Modules}{119}{}%
 \contentsline {section}{\numberline {25.1}Homomorphisms}{120}{}%
 \contentsline {section}{\numberline {25.2}Submodules}{121}{}%
+\contentsline {section}{\numberline {25.3}Quotient Modules}{121}{}%
 \contentsline {chapter}{\numberline {26}Simple Modules}{123}{}%
 \contentsline {chapter}{\numberline {27}Algebras}{125}{}%
 \contentsline {chapter}{\numberline {28}Division Algebras}{127}{}%
