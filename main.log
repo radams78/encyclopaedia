@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  7 APR 2024 20:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  7 APR 2024 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,11 +716,11 @@ Chapter 25.
 
 ]
 WARNING: proof step "3" (<1>4) already defined
-[120] [121] [122
-
-]
+[120] [121] [122]
 Chapter 26.
-[123] [124
+[123
+
+] [124
 
 ]
 Chapter 27.
@@ -745,16 +745,16 @@ Chapter 31.
 [139
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 5615--5623
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 5635--5643
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
 [140] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 15365 strings out of 476091
- 320522 string characters out of 5794081
+ 15404 strings out of 476091
+ 321493 string characters out of 5794081
  1879330 words of memory out of 5000000
- 35495 multiletter control sequences out of 15000+600000
+ 35534 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,448b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -783,7 +783,7 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on main.pdf (140 pages, 554174 bytes).
+Output written on main.pdf (140 pages, 555563 bytes).
 PDF statistics:
  585 PDF objects out of 1000 (max. 8388607)
  389 compressed objects within 4 object streams

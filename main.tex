@@ -5211,6 +5211,18 @@ Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ be a submodule of $M$. 
 \[ r(m+N) = rm+N \enspace . \]
 \end{df}
 
+\begin{prop}
+Let $R$ be a ring. Let $M$ and $P$ be left-$R$-modules. Let $N$ be a submodule of $M$. Let $\phi : M \rightarrow P$ be an $R$-module homomorphism. If $N \subseteq \ker \phi$, then there exists a unique $R$-module homomorphism $\overline{\phi} : M / N \rightarrow P$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+M \arrow[rr,"\phi"] \arrow[dr] & & P \\
+& M/N \arrow[ur,"\overline{\phi}"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
@@ -5252,6 +5264,14 @@ iff $S$ is an $R$-module under $\cdot$ and, for all $r_1,r_2 \in R$ and $s_1,s_2
 \begin{proof}
 \pf\ Immediate from definitions. \qed
 \end{proof}
+
+\begin{ex}
+Let $R$ be a commutative ring. Then $R$ is an $R$-algebra under multiplication.
+\end{ex}
+
+\begin{ex}
+Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $R/I$ is an $R$-algebra.
+\end{ex}
 
 \begin{ex}
 Let $R$ be a commutative ring and $M$ an $R$-module. Then $\End{\Mod{R}}{M}$ is an $R$-algebra under composition.
