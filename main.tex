@@ -5159,6 +5159,27 @@ Let $R$ be a commutative ring. Let $M$ and $N$ be $R$-modules. Then $\Mod{R}[M,N
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be an integral domain. Let $I$ be a nonzero principal ideal of $R$. Then $I \cong R$ in $\Mod{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a \in R$ such that $I = (a)$.}
+\step{2}{\pflet{$\phi : R \rightarrow I$ be the map $\phi(r) = ra$.}}
+\step{3}{$\phi$ is an $R$-module homomorphism.}
+\begin{proof}
+	\pf\ Since $(r+s)a = ra + sa$ and $(rs)a = r(sa)$.
+\end{proof}
+\step{4}{$\phi$ is surjective.}
+\step{5}{$\phi$ is injective.}
+\begin{proof}
+	\pf\ If $ra = sa$ then $(r-s)a = 0$ so $r - s = 0$ and $r = s$.
+\end{proof}
+\step{6}{$\phi : R \cong I$}
+\qed
+\end{proof}
+
 \section{Submodules}
 
 \begin{df}[Submodule]
@@ -5238,6 +5259,33 @@ M \arrow[r] & M / \ker \phi \arrow[r,"\cong"] & \im \phi \arrow[r] & N
 Let $\phi : M \rightarrow M'$ be a surjective $R$-module homomorphism. Then
 \[ M' \cong \frac{M}{\ker \phi} \enspace . \]
 \end{cor}
+
+\begin{prop}[Second Isomorphism Theorem]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ and $P$ be submodules of $M$. Then $N+P$ is a submodule of $M$, $N \cap P$ is a submodule of $P$, and
+\[ \frac{N+P}{N} \cong \frac{P}{N \cap P} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $P$ to $p + N$ is a surjective homomorphism $P \rightarrow (N+P)/N$ with kernel $N \cap P$. \qed
+\end{proof}
+
+\begin{prop}[Third Isomorphism Theorem]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ be a submodule of $M$ and $P$ a submodule of $N$. Then $N/P$ is a submodule of $M/P$ and
+\[ \frac{M/P}{N/P} \cong \frac{M}{N} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The canonical map $M \rightarrow M/N$ induces a surjective homomorphism $M/P \rightarrow M/N$ which has kernel $N/P$. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module.
+The sum and intersection of a family of submodules of $M$ are submodules of $M$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \chapter{Simple Modules}
 
