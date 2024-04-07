@@ -76,3 +76,4 @@
 \contentsline {chapter}{\numberline {26}Fields}{123}{}%
 \contentsline {chapter}{\numberline {27}Algebraically Closed Fields}{127}{}%
 \contentsline {part}{V\hspace {1em}Linear Algebra}{129}{}%
+\contentsline {chapter}{\numberline {28}Vector Spaces}{131}{}%
