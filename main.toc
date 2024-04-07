@@ -76,6 +76,7 @@
 \contentsline {section}{\numberline {25.3}Quotient Modules}{122}{}%
 \contentsline {chapter}{\numberline {26}Simple Modules}{125}{}%
 \contentsline {chapter}{\numberline {27}Algebras}{127}{}%
+\contentsline {section}{\numberline {27.1}Rees Algebra}{128}{}%
 \contentsline {chapter}{\numberline {28}Division Algebras}{129}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{131}{}%
 \contentsline {chapter}{\numberline {29}Fields}{133}{}%

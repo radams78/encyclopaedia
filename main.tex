@@ -5363,6 +5363,41 @@ Let $R$ be a commutative ring. Then $R[x_1, \ldots, x_n]$, and any quotient ring
 $R$ is the initial object in $\Alg{R}$.
 \end{ex}
 
+\section{Rees Algebra}
+
+\begin{df}[Rees Algebra]
+Let $R$ be a commutative ring. Let $I$ be an ideal in $R$. The \emph{Rees algebra} is the direct sum
+\[ \mathrm{Rees}_R(I) = \bigoplus_{j \geq 0} I^j \]
+under the multiplication 
+\begin{align*}
+(r_0, r_1, r_2, r_3, \ldots)(s_0, s_1, s_2, \ldots) & = (r_0s_0, r_1s_0 + r_0s_1, r_0s_2 + r_1s_1 + r_2s_0, \ldots) \\
+r(r_0, r_1, r_2, \ldots) & = (rr_0, rr_1, rr_2, \ldots)
+\end{align*}
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $a \in R$ be a non-zero-divisor. Then $R[x]$ is the Rees algebra of $(a)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : R[x] \rightarrow \mathrm{Rees}_R((a))$ be the function $\phi(r_0 + r_1 x + r_2 x^2 + \cdots) = (r_0, r_1 a, r_2 a^2, \ldots)$.}}
+\step{2}{$\phi$ is an $R$-algebra homomorphism.}
+\step{3}{$\phi$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$\phi(r_0 + r_1 x + r_2 x^2 + \cdots) = \phi(s_0 + s_1 x + s_2 x^2 + \cdots)$}}
+	\step{b}{For all $n$ we have $r_n a^n = s_n a^n$}
+	\step{c}{$(r_n - s_n)a^n = 0$}
+	\step{d}{$r_n - s_n = 0$}
+	\begin{proof}
+		\pf\ Since $a$ is not a zero-divisor.
+	\end{proof}
+	\step{e}{$r_n = s_n$}
+\end{proof}
+\step{4}{$\phi$ is surjective.}
+\qed
+\end{proof}
+
 \chapter{Division Algebras}
 
 \begin{df}[Division Algebra]
