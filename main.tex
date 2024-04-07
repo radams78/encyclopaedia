@@ -624,6 +624,7 @@ k & -k & j & -j & -i & i & -1 & 1 \\
 \end{proof}
 
 \begin{df}
+\label{df:power-in-group}
     Let $G$ be a group. Let $g \in G$. We define $g^n \in G$ for all $n \in \mathbb{Z}$ as follows:
     \begin{align*}
         g^0     & = e                       \\
@@ -5060,6 +5061,14 @@ In any $R$-module $M$ we have $(-1)m = -m$ for all $m \in M$.
 
 \begin{proof}
 \pf\ Since $m + (-1)m = 1m + (-1)m = (1+(-1))m = 0m = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Every Abelian group is a $\mathbb{Z}$-module in exactly one way.
+\end{prop}
+
+\begin{proof}
+\pf\ The only possible action maps $n$ and $a$ to $na$ as defined in Definition \ref{df:power-in-group}.
 \end{proof}
 
 \begin{df}[Right Module]
