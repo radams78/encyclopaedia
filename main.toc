@@ -73,8 +73,9 @@
 \contentsline {chapter}{\numberline {25}Modules}{119}{}%
 \contentsline {section}{\numberline {25.1}Homomorphisms}{120}{}%
 \contentsline {chapter}{\numberline {26}Algebras}{121}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{123}{}%
-\contentsline {chapter}{\numberline {27}Fields}{125}{}%
-\contentsline {chapter}{\numberline {28}Algebraically Closed Fields}{129}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{131}{}%
-\contentsline {chapter}{\numberline {29}Vector Spaces}{133}{}%
+\contentsline {chapter}{\numberline {27}Division Algebras}{123}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{125}{}%
+\contentsline {chapter}{\numberline {28}Fields}{127}{}%
+\contentsline {chapter}{\numberline {29}Algebraically Closed Fields}{131}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{133}{}%
+\contentsline {chapter}{\numberline {30}Vector Spaces}{135}{}%
