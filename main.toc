@@ -72,8 +72,9 @@
 \contentsline {chapter}{\numberline {24}Boolean Rings}{117}{}%
 \contentsline {chapter}{\numberline {25}Modules}{119}{}%
 \contentsline {section}{\numberline {25.1}Homomorphisms}{120}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{121}{}%
-\contentsline {chapter}{\numberline {26}Fields}{123}{}%
-\contentsline {chapter}{\numberline {27}Algebraically Closed Fields}{127}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{129}{}%
-\contentsline {chapter}{\numberline {28}Vector Spaces}{131}{}%
+\contentsline {chapter}{\numberline {26}Algebras}{121}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{123}{}%
+\contentsline {chapter}{\numberline {27}Fields}{125}{}%
+\contentsline {chapter}{\numberline {28}Algebraically Closed Fields}{129}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{131}{}%
+\contentsline {chapter}{\numberline {29}Vector Spaces}{133}{}%
