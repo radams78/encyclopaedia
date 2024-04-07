@@ -5068,7 +5068,7 @@ Every Abelian group is a $\mathbb{Z}$-module in exactly one way.
 \end{prop}
 
 \begin{proof}
-\pf\ The only possible action maps $n$ and $a$ to $na$ as defined in Definition \ref{df:power-in-group}.
+\pf\ Since $\mathbb{Z}$ is initial in $\Ring$. \qed
 \end{proof}
 
 \begin{df}[Right Module]
@@ -5079,6 +5079,12 @@ Let $R$ be a ring. A \emph{right $R$-module} consists of an Abelian group $M$ an
 \item $m(rs) = (mr)s$
 \item $m1 = m$
 \end{itemize}
+\end{df}
+
+\section{Homomorphisms}
+
+\begin{df}[Homomorphism of Left-Modules]
+Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules. A \emph{homomorphism of left-$R$-modules} $\phi : M \rightarrow N$ is a group homomorphism such that, for all $r \in R$ and $m \in M$, we have $\phi(rm) = r\phi(m)$.
 \end{df}
 
 \part{Field Theory}

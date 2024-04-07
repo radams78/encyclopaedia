@@ -71,6 +71,7 @@
 \contentsline {chapter}{\numberline {23}Reduced Rings}{115}{}%
 \contentsline {chapter}{\numberline {24}Boolean Rings}{117}{}%
 \contentsline {chapter}{\numberline {25}Modules}{119}{}%
+\contentsline {section}{\numberline {25.1}Homomorphisms}{120}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{121}{}%
 \contentsline {chapter}{\numberline {26}Fields}{123}{}%
 \contentsline {chapter}{\numberline {27}Algebraically Closed Fields}{127}{}%
