@@ -5223,6 +5223,22 @@ M \arrow[rr,"\phi"] \arrow[dr] & & P \\
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{thm}
+Every $R$-module homomorphism $\phi : M \rightarrow M'$ may be decomposed as:
+\[ \begin{tikzcd}
+M \arrow[r] & M / \ker \phi \arrow[r,"\cong"] & \im \phi \arrow[r] & N 
+\end{tikzcd} \]
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}[First Isomorphism Theorem]
+Let $\phi : M \rightarrow M'$ be a surjective $R$-module homomorphism. Then
+\[ M' \cong \frac{M}{\ker \phi} \enspace . \]
+\end{cor}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
