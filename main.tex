@@ -5098,6 +5098,31 @@ Let $\Mod{R}$ be the category of left-$R$-modules and left-$R$-module homomorphi
 The trivial group $0$ is the zero object in $\Mod{R}$.
 \end{ex}
 
+\chapter{Simple Modules}
+
+\begin{df}[Simple Module]
+Let $R$ be a ring.
+An $R$-module $M$ is \emph{simple} or \emph{irreducible} iff its only submodules are $\{0\}$ and $M$.
+\end{df}
+
+\begin{prop}[Schur's Lemma]
+Let $R$ be a ring. Let $M$ and $N$ be simple $R$-modules. Let $\phi : M \rightarrow N$ be an $R$-module homomorphism. Then either $\phi = 0$ or $\phi$ is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\phi \neq 0$}}
+\step{3}{$\ker \phi = 0$}
+\begin{proof}
+	\pf\ Since $\ker \phi$ is a submodule of $M$ that is not $M$.
+\end{proof}
+\step{4}{$\im \phi = N$}
+\begin{proof}
+	\pf\ Since $\im \phi$ is a submodule of $N$ that is not $\{0\}$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Algebras}
 
 \begin{df}[Algebra]

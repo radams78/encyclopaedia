@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  7 APR 2024 13:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  7 APR 2024 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,26 +724,30 @@ Chapter 26.
 Chapter 27.
 [123] [124
 
-] [125] [126]
+]
 Chapter 28.
-[127
+[125] [126
 
-] [128] [129] [130
-
-]
+] [127] [128]
 Chapter 29.
-[131] [132
+[129
 
-] [133] [134]
-Chapter 30.
-[135
+] [130] [131] [132
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 5453--5461
+Chapter 30.
+[133] [134
+
+] [135] [136]
+Chapter 31.
+[137
+
+]
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 5478--5486
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[136] (./main.aux) ) 
+[138] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  15329 strings out of 476091
  319640 string characters out of 5794081
@@ -777,10 +781,10 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on main.pdf (136 pages, 545511 bytes).
+Output written on main.pdf (138 pages, 547100 bytes).
 PDF statistics:
- 572 PDF objects out of 1000 (max. 8388607)
- 380 compressed objects within 4 object streams
+ 578 PDF objects out of 1000 (max. 8388607)
+ 384 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
