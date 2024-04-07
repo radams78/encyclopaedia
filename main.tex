@@ -31,6 +31,7 @@
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
 \renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
+\newcommand{\Mod}[1]{\ensuremath{{#1}-\mathbf{Mod}}}
 \newcommand{\Ring}{\ensuremath{\mathbf{Ring}}}
 \newcommand{\Set}{\ensuremath{\mathbf{Set}}}
 \newcommand{\SL}[2]{\ensuremath{\mathrm{SL}_{#1} \left( {#2} \right)}}
@@ -5086,11 +5087,11 @@ Let $R$ be a ring. A \emph{right $R$-module} consists of an Abelian group $M$ an
 \begin{df}[Homomorphism of Left-Modules]
 Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules. A \emph{homomorphism of left-$R$-modules} $\phi : M \rightarrow N$ is a group homomorphism such that, for all $r \in R$ and $m \in M$, we have $\phi(rm) = r\phi(m)$.
 
-Let $R-\mathbf{Mod}$ be the category of left-$R$-modules and left-$R$-module homomorphisms.
+Let $\Mod{R}$ be the category of left-$R$-modules and left-$R$-module homomorphisms.
 \end{df}
 
 \begin{ex}
-\[ \mathbb{Z}-\mathbf{Mod} \cong \Ab \]
+\[ \Mod{\mathbb{Z}} \cong \Ab \]
 \end{ex}
 
 \part{Field Theory}
@@ -5306,7 +5307,7 @@ Let $K$ be an algebraically closed field. Let $I$ be an ideal in $K[x]$. Then $I
 \chapter{Vector Spaces}
 
 \begin{df}[Vector Space]
-Let $K$ be a field. A \emph{$K$-vector space} is a $K$-module.
+Let $K$ be a field. A \emph{$K$-vector space} is a $K$-module. We write $K-\mathbf{Vect}$ for $\Mod{K}$.
 \end{df}
 
 \begin{df}
