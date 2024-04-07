@@ -5181,6 +5181,29 @@ Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules and $\phi : M \rightarrow
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a commutative ring. Let $M$ be a left-$R$-module. Let $r \in R$. Then $rM = \{ rm : m \in M \}$ is a submodule of $M$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $I$ be a left-ideal in $R$. Then $IM = \{ rm : r \in I, m \in M \}$ is a submodule of $M$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$IM$ is a subgroup of $M$.}
+\begin{proof}
+	\step{a}{\pflet{$r,s \in I$ and $m,n \in M$.} \prove{$rm + sn \in IM$}}
+	\step{b}{$rm+sn = r(m-n) + (s-r)n$}
+\end{proof}
+\step{2}{For all $r \in R$ and $x \in IM$ we have $rx \in IM$.}
+\qed
+\end{proof}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
