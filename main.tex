@@ -4161,6 +4161,20 @@ The function $i : n \rightarrow \mathbb{Z}[x_1, \ldots, x_n]$ that maps $k$ to $
 \pf\ The unique morphism $(i, \mathbb{Z}[x_1, \ldots, x_n]) \rightarrow (j, R)$ maps a polynomial $p$ to $p(j(0), j(1), \ldots, j(n-1))$. \qed
 \end{proof}
 
+\begin{prop}
+Let $\alpha : R \rightarrow S$ be a ring homomorphism. Let $s \in S$ commute with $\alpha(r)$ for all $r \in R$. Then there exists a unique ring homomorphism $\overline{\alpha} : R[x] \rightarrow S$ such that $\overline{\alpha}(x) = s$ and the following diagram commutes:
+\[ \begin{tikzcd}
+R[x] \arrow[r,"\overline{\alpha}"] & S \\
+R \arrow[u] \arrow[ur,"\alpha"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The map $\overline{\alpha}$ is given by
+\[ \overline{\alpha}(a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n) = \alpha(a_0) + \alpha(a_1) s + \alpha(a_2) s^2 + \cdots + \alpha(a_n) s^n \enspace . \]
+\qed
+\end{proof}
+
 \begin{df}
 Let $R$ be a commutative ring.
 Given a polynomial $p \in R[x]$, the \emph{polynomial function} $p : R \rightarrow R$ is the function given by: $p(r) = \alpha_r(p)$, where $\alpha_r : R[x] \rightarrow R$ is the unique ring homomorphism such that the following diagram commutes.
@@ -5109,6 +5123,23 @@ as $R$-modules.
 \pf\ The isomorphism maps $m$ to the function $\lambda r.rm$. Its inverse maps an $R$-module homomorphism $\alpha$ to $\alpha(1)$. \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a commutative ring. Let $M$ be an $R$-module. Then there is a bijection between the set of $R[x]$-module structures on $M$ that extend the given $R$-module structure and $\End{\Mod{R}}{M}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha : R \rightarrow \End{\Ab}{M}$ be the given $R$-module structure on $M$.}}
+\step{2}{An $R[x]$-module structure on $M$ that extends $\alpha$ is a ring homomorphism $\beta : R[x] \rightarrow \End{\Ab}{M}$ such that $\beta \circ i = \alpha$, where $i$ is the inclusion $R \rightarrow R[x]$.}
+\step{3}{There is a bijection between the $R[x]$-module structures on $M$ that extend $\alpha$ and the elements $s \in \End{\Ab}{M}$ that commute with $\alpha(r)$ for all $r \in R$.}
+\begin{proof}
+	\pf\ By the universal property for polynomials.
+\end{proof}
+\step{3}{There is a bijection between the $R[x]$-module structures on $M$ that extend $\alpha$ and the $R$-module homomorphisms $(M,\alpha) \rightarrow (M,\alpha)$.}
+\qed
+\end{proof}
+
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
@@ -5183,6 +5214,10 @@ $R$ is the initial object in $\Alg{R}$.
 Let $R$ be a commutative ring.
 A \emph{division $R$-algebra} is an $R$-algebra that is a division ring.
 \end{df}
+
+\begin{ex}
+Let $R$ be a commutative ring. Let $M$ be a simple $R$-algebra. Then $\End{\Mod{R}}{M}$ is a division algebra. For if $\phi \circ \psi = 0$ then $\phi$ and $\psi$ cannot both be isomorphisms, hence $\phi = 0$ or $\psi = 0$ by Schur's Lemma.
+\end{ex}
 
 \part{Field Theory}
 

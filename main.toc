@@ -54,7 +54,7 @@
 \contentsline {chapter}{\numberline {14}Monoid Rings}{89}{}%
 \contentsline {section}{\numberline {14.1}Polynomials}{89}{}%
 \contentsline {section}{\numberline {14.2}Laurent Polynomials}{91}{}%
-\contentsline {section}{\numberline {14.3}Power Series}{91}{}%
+\contentsline {section}{\numberline {14.3}Power Series}{92}{}%
 \contentsline {chapter}{\numberline {15}Ideals}{93}{}%
 \contentsline {section}{\numberline {15.1}Characteristic}{96}{}%
 \contentsline {section}{\numberline {15.2}Nilradical}{96}{}%
