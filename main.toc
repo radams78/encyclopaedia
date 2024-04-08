@@ -80,6 +80,7 @@
 \contentsline {chapter}{\numberline {26}Simple Modules}{127}{}%
 \contentsline {chapter}{\numberline {27}Algebras}{129}{}%
 \contentsline {section}{\numberline {27.1}Rees Algebra}{130}{}%
+\contentsline {section}{\numberline {27.2}Free Algebras}{130}{}%
 \contentsline {chapter}{\numberline {28}Division Algebras}{131}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{133}{}%
 \contentsline {chapter}{\numberline {29}Fields}{135}{}%
