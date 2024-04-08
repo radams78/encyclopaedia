@@ -76,12 +76,13 @@
 \contentsline {section}{\numberline {25.3}Quotient Modules}{122}{}%
 \contentsline {section}{\numberline {25.4}Direct Sum}{123}{}%
 \contentsline {section}{\numberline {25.5}Kernels and Cokernels}{123}{}%
-\contentsline {chapter}{\numberline {26}Simple Modules}{125}{}%
-\contentsline {chapter}{\numberline {27}Algebras}{127}{}%
-\contentsline {section}{\numberline {27.1}Rees Algebra}{128}{}%
-\contentsline {chapter}{\numberline {28}Division Algebras}{129}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{131}{}%
-\contentsline {chapter}{\numberline {29}Fields}{133}{}%
-\contentsline {chapter}{\numberline {30}Algebraically Closed Fields}{137}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{139}{}%
-\contentsline {chapter}{\numberline {31}Vector Spaces}{141}{}%
+\contentsline {section}{\numberline {25.6}Free Modules}{124}{}%
+\contentsline {chapter}{\numberline {26}Simple Modules}{127}{}%
+\contentsline {chapter}{\numberline {27}Algebras}{129}{}%
+\contentsline {section}{\numberline {27.1}Rees Algebra}{130}{}%
+\contentsline {chapter}{\numberline {28}Division Algebras}{131}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{133}{}%
+\contentsline {chapter}{\numberline {29}Fields}{135}{}%
+\contentsline {chapter}{\numberline {30}Algebraically Closed Fields}{139}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{141}{}%
+\contentsline {chapter}{\numberline {31}Vector Spaces}{143}{}%

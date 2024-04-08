@@ -5364,6 +5364,58 @@ Every epimorphism in $\Mod{R}$ is the cokernel of some homomorphism.
 \pf\ If $\phi : M \rightarrow N$ is epi then it is the cokernel of $\ker \phi \hookrightarrow M$. \qed
 \end{proof}
 
+\begin{ex}
+Monomorphisms do not split in $\Mod{R}$. Multiplication by 2 is a monomorphism $\mathbb{Z} \rightarrow \mathbb{Z}$ but has no left inverse.
+\end{ex}
+
+\begin{ex}
+Epimorphisms do not split in $\Mod{R}$. The canonical map $\mathbb{Z} \rightarrow \mathbb{Z} / 2 \mathbb{Z}$ is an epimorphism without a right inverse.
+\end{ex}
+
+\section{Free Modules}
+
+\begin{prop}
+Let $R$ be a ring and $A$ a set. Then there exists a left-$R$-module $F^R(A)$ and function $j : A \rightarrow F^R(A)$ such that, for any left-$R$-module $M$ and function $f : A \rightarrow M$, there exists a unique left-$R$-module homomorphism $\overline{f} : F^R(A) \rightarrow M$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+F^R(A) \arrow[r,"\overline{f}"] & M \\
+A \arrow[u,"j"] \arrow[ur,"f"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R^{\oplus A} = \{ \alpha : A \rightarrow R : \alpha(a) = 0 \text{ for all but finitely many } a \in A \}$ under the operations
+\begin{align*}
+(\alpha + \beta)(a) & = \alpha(a) + \beta(a) \\
+(r \alpha)(a) & = r\alpha(a)
+\end{align*}}}
+\step{2}{$R^{\oplus A}$ is a left-$R$-module.}
+\step{3}{\pflet{$j : A \rightarrow R^{\oplus A}$ be the function
+\[ j(a)(a') = \begin{cases}
+1 & \text{if } a = a' \\
+0 & \text{if } a \neq a'
+\end{cases} \]}}
+\step{4}{\pflet{$M$ be any left-$R$-module.}}
+\step{5}{\pflet{$f : A \rightarrow M$ be a function.}}
+\step{6}{\pflet{$\overline{f} : R^{\oplus A} \rightarrow M$ be the function
+\[ \overline{f}(\alpha) = \sum_{a \in A, \alpha(a) \neq 0} \alpha(a) f(a) \]}}
+\step{7}{$\overline{f}$ is a left-$R$-module homomorphism.}
+\step{8}{$\overline{f} \circ j = f$}
+\step{9}{$\overline{f}$ is unique.}
+\end{proof}
+
+\begin{df}
+We call $j : A \rightarrow F^R(A)$ the \emph{free} left-$R$-module over $A$.
+\end{df}
+
+\begin{prop}
+$j$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ By the proof of the previous proposition. \qed
+\end{proof}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  8 APR 2024 20:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  8 APR 2024 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,16 +716,16 @@ Chapter 25.
 
 ]
 WARNING: proof step "3" (<1>4) already defined
-[120] [121] [122] [123] [124]
-Chapter 26.
-[125
+[120] [121] [122] [123] [124] [125] [126
 
-] [126
+]
+Chapter 26.
+[127] [128
 
 ]
 Chapter 27.
-[127]
-Overfull \hbox (46.77194pt too wide) in paragraph at lines 5484--5484
+[129]
+Overfull \hbox (46.77194pt too wide) in paragraph at lines 5536--5536
 []$\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 I\OT1/cmr/m/n/1
 0 ) \OMS/cmsy/m/n/10 ! [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 aI\OT1/cmr/m/n/10 
 )$ be the func-tion $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r[];
@@ -733,37 +733,37 @@ Overfull \hbox (46.77194pt too wide) in paragraph at lines 5484--5484
 r/m/n/10 )$. 
  []
 
-[128]
+[130]
 Chapter 28.
-[129
+[131
 
-] [130
+] [132
 
-] [131] [132]
+] [133] [134]
 Chapter 29.
-[133
+[135
 
-] [134] [135] [136
+] [136] [137] [138
 
 ]
 Chapter 30.
-[137] [138
+[139] [140
 
-] [139] [140]
+] [141] [142]
 Chapter 31.
-[141
+[143
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 5823--5831
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 5875--5883
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[142] (./main.aux) ) 
+[144] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 15446 strings out of 476091
- 322571 string characters out of 5794081
+ 15481 strings out of 476091
+ 323450 string characters out of 5794081
  1879330 words of memory out of 5000000
- 35576 multiletter control sequences out of 15000+600000
+ 35611 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,448b,1080s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -792,10 +792,10 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on main.pdf (142 pages, 563928 bytes).
+Output written on main.pdf (144 pages, 567364 bytes).
 PDF statistics:
- 591 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
+ 597 PDF objects out of 1000 (max. 8388607)
+ 397 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
