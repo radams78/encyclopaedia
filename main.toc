@@ -74,6 +74,8 @@
 \contentsline {section}{\numberline {25.1}Homomorphisms}{120}{}%
 \contentsline {section}{\numberline {25.2}Submodules}{121}{}%
 \contentsline {section}{\numberline {25.3}Quotient Modules}{122}{}%
+\contentsline {section}{\numberline {25.4}Direct Sum}{123}{}%
+\contentsline {section}{\numberline {25.5}Kernels and Cokernels}{123}{}%
 \contentsline {chapter}{\numberline {26}Simple Modules}{125}{}%
 \contentsline {chapter}{\numberline {27}Algebras}{127}{}%
 \contentsline {section}{\numberline {27.1}Rees Algebra}{128}{}%

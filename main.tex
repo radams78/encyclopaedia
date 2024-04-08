@@ -5287,6 +5287,83 @@ The sum and intersection of a family of submodules of $M$ are submodules of $M$.
 \pf\ Easy. \qed
 \end{proof}
 
+\section{Direct Sum}
+
+\begin{df}[Direct Sum]
+Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules. Then the direct sum $M \oplus N$ is an $R$-module under
+\[ r(m,n) = (rm,rn) \enspace . \]
+\end{df}
+
+\begin{prop}
+$M \oplus N$ is the biproduct of $M$ and $N$ in $\Mod{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Kernels and Cokernels}
+
+\begin{prop}
+Let $R$ be a ring.
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\ker \phi \hookrightarrow M$ is terminal in the category of left-$R$-module homomorphisms $\alpha : P \rightarrow M$ such that $\phi \circ \alpha = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring.
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $N \twoheadrightarrow \coker \phi$ is initial in the category of left-$R$-module homomorphisms $\alpha : N \rightarrow P$ such that $\alpha \circ \phi = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then the following are equivalent.
+\begin{itemize}
+\item $\phi$ is a monomorphism.
+\item $\ker \phi$ is trivial.
+\item $\phi$ is injective.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then the following are equivalent.
+\begin{itemize}
+\item $\phi$ is an epimorphism.
+\item $\coker \phi$ is trivial.
+\item $\phi$ is surjective.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every monomorphism in $\Mod{R}$ is the kernel of some homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : M \rightarrow N$ is a monomorphism then it is the kernel of $N \twoheadrightarrow N / \im \phi$. \qed
+\end{proof}
+
+\begin{prop}
+Every epimorphism in $\Mod{R}$ is the cokernel of some homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : M \rightarrow N$ is epi then it is the cokernel of $\ker \phi \hookrightarrow M$. \qed
+\end{proof}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
@@ -5398,6 +5475,18 @@ Let $R$ be a commutative ring. Let $a \in R$ be a non-zero-divisor. Then $R[x]$ 
 \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a commutative ring. Let $a \in R$ be a non-zero-divisor. Let $I$ be an ideal of $R$. Then $\mathrm{Rees}_R(I) \cong \mathrm{Rees}_R(aI)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : \mathrm{Rees}_R(I) \rightarrow \mathrm{Rees}_R(aI)$ be the function $\phi(r_0, r_1, r_2, \ldots) = (r_0, ar_1, a^2r_2, \ldots)$.}}
+\step{2}{$\phi$ is an $R$-algebra homomorphism.}
+\step{3}{$\phi$ is injective.}
+\step{4}{$\phi$ is surjective.}
+\qed
+\end{proof}
 \chapter{Division Algebras}
 
 \begin{df}[Division Algebra]
