@@ -79,12 +79,13 @@
 \contentsline {section}{\numberline {25.6}Free Modules}{124}{}%
 \contentsline {section}{\numberline {25.7}Generators}{125}{}%
 \contentsline {chapter}{\numberline {26}Simple Modules}{127}{}%
-\contentsline {chapter}{\numberline {27}Algebras}{129}{}%
-\contentsline {section}{\numberline {27.1}Rees Algebra}{130}{}%
-\contentsline {section}{\numberline {27.2}Free Algebras}{130}{}%
-\contentsline {chapter}{\numberline {28}Division Algebras}{131}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{133}{}%
-\contentsline {chapter}{\numberline {29}Fields}{135}{}%
-\contentsline {chapter}{\numberline {30}Algebraically Closed Fields}{139}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{141}{}%
-\contentsline {chapter}{\numberline {31}Vector Spaces}{143}{}%
+\contentsline {chapter}{\numberline {27}Noetherian Modules}{129}{}%
+\contentsline {chapter}{\numberline {28}Algebras}{131}{}%
+\contentsline {section}{\numberline {28.1}Rees Algebra}{132}{}%
+\contentsline {section}{\numberline {28.2}Free Algebras}{132}{}%
+\contentsline {chapter}{\numberline {29}Division Algebras}{133}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{135}{}%
+\contentsline {chapter}{\numberline {30}Fields}{137}{}%
+\contentsline {chapter}{\numberline {31}Algebraically Closed Fields}{141}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{143}{}%
+\contentsline {chapter}{\numberline {32}Vector Spaces}{145}{}%

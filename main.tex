@@ -5427,6 +5427,10 @@ A \arrow[u] \arrow[ur,hook]
 The submodule of $M$ \emph{generated} by $A$, denoted $\langle A \rangle$, is defined to be $\im \phi_A$.
 \end{df}
 
+\begin{df}[Finitely Generated]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Then $M$ is \emph{finitely generated} iff there exists a finite set $A \subseteq M$ such that $M = \langle A \rangle$.
+\end{df}
+
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]
@@ -5448,6 +5452,45 @@ Let $R$ be a ring. Let $M$ and $N$ be simple $R$-modules. Let $\phi : M \rightar
 \step{4}{$\im \phi = N$}
 \begin{proof}
 	\pf\ Since $\im \phi$ is a submodule of $N$ that is not $\{0\}$.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Noetherian Modules}
+
+\begin{df}[Noetherian Module]
+Let $R$ be a ring. A left-$R$-module is \emph{Noetherian} iff every submodule is finitely generated.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module and $N$ a submodule of $M$. Then $M$ is Noetherian if and only if $N$ and $M/N$ are Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $M$ is Noetherian then $N$ is Noetherian.}
+\begin{proof}
+	\pf\ Every submodule of $N$ is a submodule of $M$, hence finitely generated.
+\end{proof}
+\step{2}{If $M$ is Noetherian then $M/N$ is Noetherian.}
+\begin{proof}
+	\step{a}{\assume{$M$ is Noetherian.}}
+	\step{b}{\pflet{$\pi : M \twoheadrightarrow M / N$ be the canonical epimorphism.}}
+	\step{c}{\pflet{$P$ be a submodule of $M/N$.}}
+	\step{d}{\pick\ $a_1, \ldots, a_n \in M$ that generate $\inv{\pi}(P)$.}
+	\step{e}{$a_1 + N$, \ldots, $a_n + N$ generate $P$.}
+\end{proof}
+\step{3}{If $N$ and $M/N$ are Noetherian then $M$ is Noetherian.}
+\begin{proof}
+	\step{a}{\assume{$N$ and $M/N$ are Noetherian.}}
+	\step{b}{\pflet{$P$ be a submodule of $M$.}}
+	\step{c}{\pick\ $a_1, \ldots, a_m \in P$ such that $a_1 + N$, \ldots, $a_m + N$ generate $\pi(P)$.}
+	\step{d}{\pick\ $b_1, \ldots, b_n \in M$ that generated $P \cap N$. \prove{$a_1, \ldots, a_m, b_1, \ldots, b_n$ generate $P$.}}
+	\step{e}{\pflet{$p \in P$}}
+	\step{f}{\pick\ $r_1, \ldots, r_m \in R$ such that $p + N = r_1 a_1 + \cdots + r_m a_m + N$}
+	\step{g}{$p - r_1 a_1 - \cdots - r_m a_m \in P \cap N$}
+	\step{h}{\pick\ $s_1, \ldots, s_n \in R$ such that $p - r_1 a_1 - \cdots - r_m a_m = s_1 b_1 + \cdots + s_n b_n$}
+	\step{i}{$p = r_1 a_1 + \cdots + r_m a_m + s_1 b_1 + \cdots + s_n b_n$}
 \end{proof}
 \qed
 \end{proof}
