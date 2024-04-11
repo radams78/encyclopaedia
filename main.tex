@@ -5495,6 +5495,24 @@ Let $R$ be a ring. Let $M$ be a left-$R$-module and $N$ a submodule of $M$. Then
 \qed
 \end{proof}
 
+\begin{cor}
+If $R$ is a Noetherian ring then $R^{\oplus n}$ is a Noetherian left-$R$-module.
+\end{cor}
+
+\begin{proof}
+\pf\ The proof is by induction on $n$. The case $n = 1$ is immediate.
+
+The induction step holds since $R^{\oplus (n+1)} / R^{\oplus n} \cong R$. \qed
+\end{proof}
+
+\begin{cor}
+If $R$ is a Noetherian ring and $M$ is a finitely generated left-$R$-module then $M$ is Noetherian.
+\end{cor}
+
+\begin{proof}
+\pf\ There is a surjective homomorphism $R^{\oplus n} \twoheadrightarrow M$ for some $n$, so $M$ is a quotient of $R^{\oplus n}$. \qed
+\end{proof}
+
 \chapter{Algebras}
 
 \begin{df}[Algebra]
