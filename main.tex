@@ -6093,6 +6093,21 @@ such that the diagram commutes and the two rows are short exact sequences. Then 
 \qed
 \end{proof}
 
+\begin{cor}
+Suppose we have $R$-modules and homomorphisms
+\[ \begin{tikzcd}
+0 \arrow[r] & L_1 \arrow[r,"\alpha_1"] \arrow[d,"\lambda"] & M_1 \arrow[r,"\beta_1"] \arrow[d,"\mu"] & N_1 \arrow[r] \arrow[d,"\nu"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"\alpha_0"] & M_0 \arrow[r,"\beta_0"] & N_0 \arrow[r] & 0
+\end{tikzcd} \]
+such that the diagram commutes and the two rows are short exact sequences. Suppose $\mu$ is surjective and $\nu$ is injective. Then $\lambda$ is surjective and $\nu$ is an isomorphism.
+\end{cor}
+
+\begin{proof}
+\pf\ We have $\ker \nu = \coker \mu = 0$ and so $0 \stackrel{\delta}{\rightarrow} \coker \lambda \stackrel{\alpha_0}{\rightarrow} 0$ is an exact sequence, hence $\coker \lambda = 0$ and so $\lambda$ is surjective.
+
+Since $\coker \mu = 0$ we have $0 \rightarrow \coker \nu \rightarrow 0$ is an exact sequence and so $\coker \nu = 0$, hence $\nu$ is surjective, hence $\nu$ is an isomorphism. \qed
+\end{proof}
+
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]
