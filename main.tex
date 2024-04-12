@@ -6075,6 +6075,20 @@ splits.
 \qed
 \end{proof}
 
+\chapter{Homology}
+
+\begin{df}[Homology]
+Let $(M_\bullet, d_\bullet)$ be a chain complex.
+The \emph{$i$th homology} of the complex is the $R$-module
+\[ H_i(M_\bullet) := \frac{\ker d_i}{\im d_{i+1}} \enspace . \]
+\end{df}
+
+\begin{prop}
+Consider the complex
+\[ 0 \rightarrow M_1 \stackrel{\phi}{\rightarrow} M_0 \rightarrow 0 \enspace . \]
+The 1st homology is $\ker \phi$, and the 0th homology is $\coker \phi$.
+\end{prop}
+
 \part{Field Theory}
 
 \chapter{Fields}
