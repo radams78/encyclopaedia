@@ -5957,6 +5957,142 @@ A \emph{short exact sequence} is an exact complex of the form
 \[ 0 \rightarrow L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N \rightarrow 0 \enspace . \]
 \end{df}
 
+\begin{thm}[Snake Lemma]
+Suppose we have $R$-modules and homomorphisms
+\[ \begin{tikzcd}
+0 \arrow[r] & L_1 \arrow[r,"\alpha_1"] \arrow[d,"\lambda"] & M_1 \arrow[r,"\beta_1"] \arrow[d,"\mu"] & N_1 \arrow[r] \arrow[d,"\nu"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"\alpha_0"] & M_0 \arrow[r,"\beta_0"] & N_0 \arrow[r] & 0
+\end{tikzcd} \]
+such that the diagram commutes and the two rows are short exact sequences. Then there exists a homomorphism $\delta : \ker \nu \rightarrow \coker \lambda$ such that the following is an exact sequence.
+\[ 0 \rightarrow \ker \lambda \stackrel{\alpha_1}{\rightarrow} \ker \mu \stackrel{\beta_1}{\rightarrow} \ker \nu \stackrel{\delta}{\rightarrow} \coker \lambda \stackrel{\alpha_0}{\rightarrow} \coker \mu \stackrel{\beta_0}{\rightarrow} \coker \nu \rightarrow 0 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $\delta : \ker \nu \rightarrow \coker \lambda$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in \ker \nu$}}
+	\step{b}{\pick\ $c \in M_1$ such that $\beta_1(c) = a$.}
+	\begin{proof}
+		\pf\ Since $\beta_1$ is surjective.
+	\end{proof}
+	\step{c}{\pflet{$d = \mu(c)$}}
+	\step{d}{$d \in \ker \beta_0 = \im \alpha_0$}
+	\begin{proof}
+		\pf\ Since $\beta_0(d) = \beta_0(\mu(c)) = \nu(a) = 0$.
+	\end{proof}
+	\step{e}{\pflet{$e \in L_0$ be the element such that $\alpha_0(e) = d$.}}
+	\step{f}{\pflet{$\delta(a) = e + \im \lambda$}}
+\end{proof}
+\step{2}{$\delta$ is a left-$R$-module homomorphism.}
+\begin{proof}
+	\step{a}{For $a,a' \in \ker \nu$ we have $\delta(a + a') = \delta(a) + \delta(a')$.}
+	\begin{proof}
+		\step{i}{\pflet{$a,a' \in \ker \nu$}}
+		\step{ii}{\pflet{$c,c',c'' \in M_1$ and $e,e',e'' \in L_0$ be the elements such that
+		\begin{align*}
+		\beta_1(c) & = a \\
+		\beta_1(c') & = a' \\
+		\beta_1(c'') & = a + a' \\
+		\alpha_0(e) & = \mu(c) \\
+		\alpha_0(e') & = \mu(c') \\
+		\alpha_0(e'') & = \mu(c'') \\
+		\delta(a) & = e + \im \lambda \\
+		\delta(a') & = e' + \im \lambda \\
+		\delta(a + a') & = e'' + \im \lambda
+		\end{align*}}}
+		\step{iii}{$c'' - c - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{iv}{\pick\ $g \in L_1$ such that $\alpha_1(g) = c'' - c -c'$.}
+		\step{v}{$\alpha_0(\lambda(g)) = \alpha_0(e'' - e - e')$}
+		\step{vi}{$\lambda(g) = e'' - e - e'$}
+		\step{vii}{$e'' - e - e' \in \im \lambda$}
+		\step{viii}{$e'' + \im \lambda = e + e' + \im \lambda$}
+		\step{ix}{$\delta(a + a') = \delta(a) + \delta(a')$}
+	\end{proof}
+	\step{b}{For $r \in R$ and $a \in \ker \nu$ we have $\delta(ra) = r \delta(a)$.}
+	\begin{proof}
+		\step{i}{\pflet{$r \in R$ and $a \in \ker \nu$}}
+		\step{ii}{\pflet{$c,c'\in M_1$ and $e,e' \in L_0$ be the elements such that
+		\begin{align*}
+		\beta_1(c) & = a \\
+		\beta_1(c') & = ra \\
+		\alpha_0(e) & = \mu(c) \\
+		\alpha_0(e') & = \mu(c') \\
+		\delta(a) & = e + \im \lambda \\
+		\delta(ra) & = e' + \im \lambda
+		\end{align*}}}
+		\step{iii}{$rc - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{iv}{\pick\ $g \in L_1$ such that $\alpha_1(g) = rc - c'$.}
+		\step{v}{$\alpha_0(\lambda(g)) = \alpha_0(re - e')$}
+		\step{vi}{$\lambda(g) = re - e'$}
+		\step{viii}{$re - e' \in \im \lambda$}
+		\step{ix}{$re + \im \lambda = e' + \im \lambda$}
+		\step{x}{$r\delta(a) = \delta(ra)$}
+	\end{proof}
+\end{proof}
+\step{3}{The sequence is exact at $\ker \lambda$.}
+\begin{proof}
+	\pf\ Since $\alpha_1$ is injective.
+\end{proof}
+\step{4}{The sequence is exact at $\ker \mu$.}
+\begin{proof}
+	\pf\ Since $\im \alpha_1 = \ker \beta_1$.
+\end{proof}
+\step{5}{The sequence is exact at $\ker \nu$, i.e. $\\beta_1(\ker \mu) = \ker \delta$.}
+\begin{proof}
+	\step{i}{\pflet{$a \in \ker \nu$}}
+	\step{ii}{\pflet{$c \in M_1$ and $e \in L_0$ be the elements such that $\beta_1(c) = a$, $\alpha_0(e) = \mu(c)$, and $\delta(a) = e + \im \lambda$.}}
+	\step{iii}{If $\delta(a) = \im \lambda$ then $a \in \beta_1(\ker \mu)$}
+	\begin{proof}
+		\step{one}{\assume{$\delta(a) = \im \lambda$}}
+		\step{two}{$e \in \im \lambda$}
+		\step{three}{\pick\ $g \in L_1$ such that $\lambda(g) = e$}
+		\step{four}{$\mu(\alpha_1(g)) = \mu(c)$}
+		\step{five}{$c - \alpha_1(g) \in \ker \mu$}
+		\step{six}{$a = \beta_1(c - \alpha_1(g))$}
+	\end{proof}
+	\step{iv}{If $a \in \beta_1(\ker \mu)$ then $\delta(a) = \im \lambda$}
+	\begin{proof}
+		\step{one}{\assume{$c' \in \ker \mu$ and $a = \beta_1(c')$}}
+		\step{two}{$c - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{three}{\pick\ $g \in L_1$ such that $\alpha_1(g) = c - c'$}
+		\step{four}{$\alpha_0(\lambda(g)) = \mu(c) - \mu(c') = \alpha_0(e) - 0 = \alpha_0(e)$}
+		\step{five}{$\lambda(g) = e$}
+		\step{six}{$e \in \im \lambda$}
+		\step{seven}{$\delta(a) = \im \lambda$}
+	\end{proof}
+\end{proof}
+\step{6}{THe sequence is exact at $\coker \lambda$.}
+\begin{proof}
+	\step{a}{\pflet{$e \in L_0$} \prove{$e + \im \lambda \in \im \delta$ iff $\alpha_0(e) \in \im \mu$.}}
+	\step{b}{For all $a \in \ker \nu$, if $\delta(a) = e + \im \lambda$ then $\alpha_0(e) \in \im \mu$}
+	\begin{proof}
+		\pf\ From \stepref{1} and the fact that $\alpha_0$ is injective hence $e$ is unique given $a$.
+	\end{proof}
+	\step{c}{For all $e \in L_0$, if $\alpha_0(e) \in \im \mu$ then $e + \im \lambda \in \im \delta$.}
+	\begin{proof}
+		\step{i}{\pflet{$e \in L_0$}}
+		\step{ii}{\assume{$\alpha_0(e) \in \im \mu$}}
+		\step{iii}{\pick\ $c \in M_1$ such that $\mu(c) = \alpha_0(e)$. \prove{$e + \im \lambda = \delta(\beta_1(c))$}}
+		\step{iv}{\pick\ $c' \in M_1$ and $e' \in L_0$ such that $\beta_1(c') = \beta_1(c)$, $\alpha_0(e') = \mu(c')$ and $\delta(\beta_1(c)) = e' + \im \lambda$}
+		\step{v}{$c - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{vi}{\pick\ $g \in L_1$ such that $\alpha_1(g) = c - c'$.}
+		\step{vii}{$\alpha_0(\lambda(g)) = \alpha_0(e- e')$}
+		\step{viii}{$\lambda(g) = e - e'$}
+		\step{ix}{$e + \im \lambda = e' + \im \lambda = \delta(\beta_1(c))$}
+	\end{proof}
+\end{proof}
+\step{7}{The sequence is exact at $\coker \mu$.}
+\begin{proof}
+	\pf\ Since $\im \alpha_0 = \ker \beta_0$.
+\end{proof}
+\step{8}{The sequence is exact at $\coker \nu$.}
+\begin{proof}
+	\pf\ Since $\beta_0$ is surjective.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]
