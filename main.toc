@@ -93,6 +93,7 @@
 \contentsline {chapter}{\numberline {31}Finite Algebras}{141}{}%
 \contentsline {chapter}{\numberline {32}Division Algebras}{143}{}%
 \contentsline {chapter}{\numberline {33}Chain Complexes}{145}{}%
+\contentsline {section}{\numberline {33.1}Split Exact Sequences}{146}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{147}{}%
 \contentsline {chapter}{\numberline {34}Fields}{149}{}%
 \contentsline {chapter}{\numberline {35}Algebraically Closed Fields}{153}{}%

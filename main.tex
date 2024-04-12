@@ -5957,6 +5957,69 @@ A \emph{short exact sequence} is an exact complex of the form
 \[ 0 \rightarrow L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N \rightarrow 0 \enspace . \]
 \end{df}
 
+\section{Split Exact Sequences}
+
+\begin{df}[Split Sequence]
+Let $0 \rightarrow M_1 \stackrel{\alpha}{\rightarrow} N \stackrel{\beta}{\rightarrow} M_2 \rightarrow 0$ be a short exact sequence. Then this sequence \emph{splits} iff there exists an isomorphism
+\[ \phi : N \cong M_1 \oplus M_2 \]
+such that $\phi \circ \alpha = \kappa_1 : M_1 \rightarrow M_1 \oplus M_2$ and $\beta \circ \inv{\phi} = \pi_2 : M_1 \oplus M_2 \rightarrow M_2$.
+\end{df}
+
+\begin{prop}
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\phi$ has a left-inverse if and only if the sequence
+\[ 0 \rightarrow M \stackrel{\phi}{\rightarrow} N \rightarrow \coker \phi \rightarrow 0 \]
+splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\phi$ has a left-inverse then the sequence splits.}
+\begin{proof}
+	\step{a}{\assume{$\phi$ has a left-inverse $\psi : N \rightarrow M$.}}
+	\step{b}{Define $i : N \rightarrow M \oplus \coker \phi$ by $i(n) = (\psi(n), n + \im \phi)$.}
+	\step{c}{Define $\inv{i} : M \oplus \coker \phi$ by $\inv{i}(m,x + \im \phi) = \phi(m) + x - \phi(\psi(x))$.}
+	\step{d}{$i \circ \inv{i} = \id{M \oplus \coker \phi}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\psi(\phi(m) + x - \phi(\psi(x))) & = m + \psi(x) - \psi(x) \\
+			& = m
+		\end{align*}
+	\end{proof}
+	\step{e}{$\inv{i} \circ i = \id{N}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\inv{i}(\psi(n), n + \im \phi)
+			& = \phi(\psi(n)) + n - \phi(\psi(n)) \\
+			& = n
+		\end{align*}
+	\end{proof}
+	\step{f}{$i \circ \phi = \kappa_1 : M \rightarrow M \oplus \coker \phi$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			i(\phi(m)) & = (\psi(\phi(m)), \phi(m) + \im \phi) \\
+			& = (m, \im \phi)
+		\end{align*}
+	\end{proof}
+	\step{g}{$\pi \circ \inv{i} = \pi_2 : M \oplus \coker \phi \rightarrow \coker \phi$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\inv{i}(\psi(n), n + \im \phi) + \im \phi
+			& = \phi(\psi(n)) + n - \phi(\psi(n)) + \im \phi \\
+			& = n + \im \phi
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If the sequence splits then $\phi$ has a left-inverse.}
+\begin{proof}
+	\pf\ Since $\kappa_1 : M \rightarrow M \oplus \coker \phi$ has left inverse $\pi_1$.
+\end{proof}
+\qed
+\end{proof}
+
 \part{Field Theory}
 
 \chapter{Fields}
