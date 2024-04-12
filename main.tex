@@ -5498,6 +5498,14 @@ The submodule of $M$ \emph{generated} by $A$, denoted $\langle A \rangle$, is de
 Let $R$ be a ring. Let $M$ be a left-$R$-module. Then $M$ is \emph{finitely generated} iff there exists a finite set $A \subseteq M$ such that $M = \langle A \rangle$.
 \end{df}
 
+\begin{prop}
+The homomorphic image of a finitely generated module is finitely generated.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy.  \qed
+\end{proof}
+
 \section{Projections}
 
 \begin{df}[Projection]
@@ -5516,6 +5524,35 @@ Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $p : M \rightarrow M$ be a 
 \step{3}{$\phi$ is injective.}
 \step{4}{$\phi$ is surjective.}
 \qed
+\end{proof}
+
+\section{Pullbacks}
+
+\begin{prop}
+$\Mod{R}$ has pullbacks.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mu : M \rightarrow Z$, $\nu : N \rightarrow Z$ be left-$R$-module homomorphisms.}}
+\step{2}{\pflet{$M \times_Z N = \{ (m,n) \in M \times N : \mu(m) = \nu(n) \}$ under
+\begin{align*}
+(m,n) + (m',n') & = (m+m',n+n') \\
+r(m,n) & = (rm,rn)
+\end{align*}}}
+\step{3}{$M \times_Z N$ is the pullback of $M$ and $N$.}
+\qed
+\end{proof}
+
+\section{Pushouts}
+
+\begin{prop}
+$\Mod{R}$ has pushouts.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mu : A \rightarrow M$ and $\nu : A \rightarrow N$ be left-$R$-module homomorphisms.}}
 \end{proof}
 
 \chapter{Simple Modules}

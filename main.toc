@@ -81,6 +81,8 @@
 \contentsline {section}{\numberline {25.8}Free Modules}{125}{}%
 \contentsline {section}{\numberline {25.9}Generators}{126}{}%
 \contentsline {section}{\numberline {25.10}Projections}{127}{}%
+\contentsline {section}{\numberline {25.11}Pullbacks}{127}{}%
+\contentsline {section}{\numberline {25.12}Pushouts}{127}{}%
 \contentsline {chapter}{\numberline {26}Simple Modules}{129}{}%
 \contentsline {chapter}{\numberline {27}Noetherian Modules}{131}{}%
 \contentsline {chapter}{\numberline {28}Algebras}{133}{}%
