@@ -88,11 +88,11 @@
 \contentsline {chapter}{\numberline {28}Algebras}{133}{}%
 \contentsline {section}{\numberline {28.1}Rees Algebra}{134}{}%
 \contentsline {section}{\numberline {28.2}Free Algebras}{134}{}%
-\contentsline {chapter}{\numberline {29}Algebras of Finite Type}{135}{}%
-\contentsline {chapter}{\numberline {30}Finite Algebras}{137}{}%
-\contentsline {chapter}{\numberline {31}Division Algebras}{139}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{141}{}%
-\contentsline {chapter}{\numberline {32}Fields}{143}{}%
-\contentsline {chapter}{\numberline {33}Algebraically Closed Fields}{147}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{149}{}%
-\contentsline {chapter}{\numberline {34}Vector Spaces}{151}{}%
+\contentsline {chapter}{\numberline {29}Algebras of Finite Type}{137}{}%
+\contentsline {chapter}{\numberline {30}Finite Algebras}{139}{}%
+\contentsline {chapter}{\numberline {31}Division Algebras}{141}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{143}{}%
+\contentsline {chapter}{\numberline {32}Fields}{145}{}%
+\contentsline {chapter}{\numberline {33}Algebraically Closed Fields}{149}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{151}{}%
+\contentsline {chapter}{\numberline {34}Vector Spaces}{153}{}%
