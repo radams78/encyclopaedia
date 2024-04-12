@@ -12,7 +12,7 @@
 \usepackage{tikz-cd}
 
 \newtheorem{ax}{Axiom}
-\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{prop}{Proposfition}[chapter]
 \newtheorem{thm}[prop]{Theorem}
 \newtheorem{cor}{Corollary}[prop]
 \theoremstyle{definition}
@@ -6016,6 +6016,61 @@ splits.
 \step{2}{If the sequence splits then $\phi$ has a left-inverse.}
 \begin{proof}
 	\pf\ Since $\kappa_1 : M \rightarrow M \oplus \coker \phi$ has left inverse $\pi_1$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\phi$ has a right-inverse if and only if the sequence
+\[ 0 \rightarrow \ker \phi \rightarrow M \stackrel{\phi}{\rightarrow} N \rightarrow 0 \]
+splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\phi$ has a right-inverse then the sequence splits.}
+\begin{proof}
+	\step{a}{\pflet{$\psi : N \rightarrow M$ be a right inverse to $\phi$.}}
+	\step{b}{\pflet{$i : M \rightarrow \ker \phi \oplus N$ be the function $i(m) = (m - \psi(\phi(m)),\phi(m))$.}}
+	\begin{proof}
+		\pf\ $m - \psi(\phi(m)) \in \ker \phi$ since $\phi(m - \psi(\phi(m))) = \phi(m) - \phi(m) = 0$.
+	\end{proof}
+	\step{c}{\pflet{$\inv{i} : \ker \phi \oplus N \rightarrow M$ be the function $\inv{i}(x,n) = x + \psi(n)$.}}
+	\step{d}{$i \circ \inv{i} = \id{\ker \phi \oplus N}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			i(\inv{i}(x,n)) & = i(x + \psi(n)) \\
+			& = (x + \psi(n) - \psi(\phi(x)) - \psi(\phi(\psi(n))), \phi(x) + \phi(\psi(n))) \\
+			& = (x + \psi(n) - \psi(n), n) \\
+			& = (x, n)
+		\end{align*}
+	\end{proof}
+	\step{e}{$\inv{i} \circ i = \id{M}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\inv{i}(i(m)) & = m - \psi(\phi(m)) + \psi(\phi(m)) \\
+			& = m
+		\end{align*}
+	\end{proof}
+	\step{f}{$i \circ \iota = \kappa_1$}
+	\begin{proof}
+		\pf\ For $m \in \ker \phi$ we have $i(m) = (m - \psi(\phi(m)), \phi(m)) = (m,0)$.
+	\end{proof}
+	\step{g}{$\phi \circ \inv{i} = \pi_2$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\phi(\inv{i}(x,n)) & = \phi(x) + \phi(\psi(n)) \\
+			& = 0 + n \\
+			& = n
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If the sequence splits then $\phi$ has a right-inverse.}
+\begin{proof}
+\pf\ Since $\kappa_2 : N \rightarrow M \oplus N$ is a right-inverse to $\pi_2$.
 \end{proof}
 \qed
 \end{proof}
