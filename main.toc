@@ -92,8 +92,9 @@
 \contentsline {chapter}{\numberline {30}Algebras of Finite Type}{139}{}%
 \contentsline {chapter}{\numberline {31}Finite Algebras}{141}{}%
 \contentsline {chapter}{\numberline {32}Division Algebras}{143}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{145}{}%
-\contentsline {chapter}{\numberline {33}Fields}{147}{}%
-\contentsline {chapter}{\numberline {34}Algebraically Closed Fields}{151}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{153}{}%
-\contentsline {chapter}{\numberline {35}Vector Spaces}{155}{}%
+\contentsline {chapter}{\numberline {33}Chain Complexes}{145}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{147}{}%
+\contentsline {chapter}{\numberline {34}Fields}{149}{}%
+\contentsline {chapter}{\numberline {35}Algebraically Closed Fields}{153}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{155}{}%
+\contentsline {chapter}{\numberline {36}Vector Spaces}{157}{}%
