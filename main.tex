@@ -5512,6 +5512,22 @@ The homomorphic image of a finitely generated module is finitely generated.
 \pf\ Easy.  \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ be a submodule of $M$. If $N$ and $M/N$ are finitely generated then $M$ is finitely generated.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a_1$, \ldots, $a_n$ that generate $N$.}
+\step{2}{\pick\ $b_1$, \ldots, $b_m$ such that $b_1 + N$, \ldots, $b_m + N$ generate $M/N$. \prove{$a_1$, \ldots, $a_n$, $b_1$, \ldots, $b_m$ generate $M$.}}
+\step{3}{\pflet{$m \in M$}}
+\step{4}{\pick\ $r_1, \ldots, r_m \in R$ such that $m + N = r_1 b_1 + \cdots + r_m b_m + N$}
+\step{5}{$m - r_1b_1 - \cdots - r_m b_m \in N$}
+\step{6}{\pick\ $s_1, \ldots, s_n \in R$ such that $m - r_1 b_1 - \cdots - r_m b_m = s_1 a_1 + \cdots + s_n a_n$}
+\step{7}{$m = r_1 b_1 + \cdots + r_m b_m + s_1 a_1 + \cdots + s_n a_n$}
+\qed
+\end{proof}
+
 \section{Projections}
 
 \begin{df}[Projection]
@@ -5620,6 +5636,20 @@ For any left-ideal $I$ in $R$ and any left-$R$-module $N$, we have
 \qed
 \end{proof}
 
+\begin{cor}
+For all $a,b \in \mathbb{Z}$ we have $\Ab[\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}] \cong \mathbb{Z} / \gcd(a,b) \mathbb{Z}$.
+\end{cor}
+
+\begin{proof}
+\pf
+\begin{align*}
+\Ab[\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}]
+& \cong \Mod{\mathbb{Z}}[\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}] \\
+& \cong \{ n \in \mathbb{Z} / b \mathbb{Z} : \forall x \in a \mathbb{Z}. xn \cong 0 (\mod b) \} \\
+& \cong \{ n \in \mathbb{Z} / b \mathbb{Z} : \forall x \in \mathbb{Z}. b \mid xan \} \\
+& = \{ n \in \mathbb{Z} / b \mathbb{Z} : b \mid an \}
+\end{align*}
+\end{proof}
 \chapter{Simple Modules}
 
 \begin{df}[Simple Module]

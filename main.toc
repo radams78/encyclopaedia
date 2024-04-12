@@ -82,7 +82,7 @@
 \contentsline {section}{\numberline {25.9}Generators}{126}{}%
 \contentsline {section}{\numberline {25.10}Projections}{127}{}%
 \contentsline {section}{\numberline {25.11}Pullbacks}{127}{}%
-\contentsline {section}{\numberline {25.12}Pushouts}{127}{}%
+\contentsline {section}{\numberline {25.12}Pushouts}{128}{}%
 \contentsline {chapter}{\numberline {26}Cyclic Modules}{129}{}%
 \contentsline {chapter}{\numberline {27}Simple Modules}{131}{}%
 \contentsline {chapter}{\numberline {28}Noetherian Modules}{133}{}%
