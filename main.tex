@@ -6126,6 +6126,40 @@ If $L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N$ is an ex
 \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a ring. Let 
+\[ 0 \rightarrow M \stackrel{\alpha}{\rightarrow} N \stackrel{\beta}{\rightarrow} P \rightarrow 0 \]
+be a short exact sequence of left-$R$-modules. Let $L$ be an $R$-module. Then the following is an exact sequence:
+\[ 0 \rightarrow \Mod{R}[P,L] \stackrel{\Mod{R}[\beta,\id{L}]}{\longrightarrow} \Mod{R}[N,L] \stackrel{\Mod{R}[\alpha,\id{L}]}{\longrightarrow} \Mod{R}[M,L] \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\Mod{R}[\beta,\id{L}]$ is injective.}
+\begin{proof}
+	\pf\ Since $\beta$ is epi.
+\end{proof}
+\step{2}{$\im \Mod{R}[\beta,\id{L}] = \ker \Mod{R}[\alpha,\id{L}]$}
+\begin{proof}
+	\step{a}{$\im \Mod{R}[\beta, \id{L}] \subseteq \ker \Mod{R}[\alpha, \id{L}]$}
+	\begin{proof}
+		\pf\ For any $\gamma \in \Mod{R}[P,L]$ we have $\gamma \circ \beta \circ \alpha = 0$ because $\beta \circ \alpha = 0$.
+	\end{proof}
+	\step{b}{$\ker \Mod{R}[\alpha, \id{L}] \subseteq \im \Mod{R}[\beta, \id{L}]$}
+	\begin{proof}
+		\step{i}{\pflet{$\gamma \in \ker \Mod{R}[\alpha, \id{L}]$}}
+		\step{ii}{$\gamma \circ \alpha = 0$}
+		\step{iii}{\pick\ $\delta : P \rightarrow L$ by: for all $p \in P$, we have $\delta(p) = \gamma(n)$ where $n \in N$ is an element such that $\beta(n) = p$. \prove{$\delta \circ \beta = \gamma$}}
+		\step{iv}{\pflet{$n \in N$} \prove{$\delta(\beta(n)) = \gamma(n)$}}
+		\step{v}{\pick\ $n' \in N$ such that $\delta(\beta(n)) = \gamma(n')$ and $\beta(n') = \beta(n)$}
+		\step{vi}{$n - n' \in \ker \beta = \im \alpha$}
+		\step{vii}{\pick\ $m \in M$ such that $\alpha(m) = n - n'$}
+		\step{viii}{$0 = \gamma(\alpha(m)) = \gamma(n) - \gamma(n')$}
+		\step{ix}{$\gamma(n) = \gamma(n') = \delta(\beta(n))$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]

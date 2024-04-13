@@ -94,9 +94,9 @@
 \contentsline {chapter}{\numberline {32}Division Algebras}{143}{}%
 \contentsline {chapter}{\numberline {33}Chain Complexes}{145}{}%
 \contentsline {section}{\numberline {33.1}Split Exact Sequences}{149}{}%
-\contentsline {chapter}{\numberline {34}Homology}{151}{}%
-\contentsline {part}{IV\hspace {1em}Field Theory}{153}{}%
-\contentsline {chapter}{\numberline {35}Fields}{155}{}%
-\contentsline {chapter}{\numberline {36}Algebraically Closed Fields}{159}{}%
-\contentsline {part}{V\hspace {1em}Linear Algebra}{161}{}%
-\contentsline {chapter}{\numberline {37}Vector Spaces}{163}{}%
+\contentsline {chapter}{\numberline {34}Homology}{153}{}%
+\contentsline {part}{IV\hspace {1em}Field Theory}{155}{}%
+\contentsline {chapter}{\numberline {35}Fields}{157}{}%
+\contentsline {chapter}{\numberline {36}Algebraically Closed Fields}{161}{}%
+\contentsline {part}{V\hspace {1em}Linear Algebra}{163}{}%
+\contentsline {chapter}{\numberline {37}Vector Spaces}{165}{}%
