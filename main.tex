@@ -6108,6 +6108,24 @@ such that the diagram commutes and the two rows are short exact sequences. Suppo
 Since $\coker \mu = 0$ we have $0 \rightarrow \coker \nu \rightarrow 0$ is an exact sequence and so $\coker \nu = 0$, hence $\nu$ is surjective, hence $\nu$ is an isomorphism. \qed
 \end{proof}
 
+\begin{prop}
+If $L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N$ is an exact sequence and $L$ and $N$ are Noetherian then $M$ is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P$ be a submodule of $M$.}}
+\step{2}{\pick\ $a_1$, \ldots, $a_m$ generate $\inv{\alpha}(P)$.}
+\step{3}{\pick\ $c_1$, \ldots, $c_n$ that generate $\beta(P)$.}
+\step{4}{For $i=1, \ldots, n$, \pick\ $b_i$ such that $\beta(b_i) = c_i$. \prove{$\alpha(a_1)$, \ldots, $\alpha(a_m)$, $b_1$, \ldots, $b_n$ generate $P$.}}
+\step{5}{\pflet{$p \in P$}}
+\step{6}{\pick\ $r_1, \ldots, r_n \in R$ such that $r_1 c_1 + \cdots + r_n c_n = \beta(p)$}
+\step{7}{$r_1 b_1 + \cdots + r_n b_n - p \in \ker \beta = \im \alpha$}
+\step{8}{\pick\ $s_1, \ldots, s_m \in R$ such that $\alpha(s_1 a_1 + \cdots + s_m a_m) = r_1 b_1 + \cdots + r_n b_n - p$.}
+\step{9}{$p = s_1 \alpha(a_1) + \cdots + s_m \alpha(a_m) + r_1 b_1 + \cdots + r_n b_n$}
+\qed
+\end{proof}
+
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]
