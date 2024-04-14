@@ -6160,6 +6160,7 @@ be a short exact sequence of left-$R$-modules. Let $L$ be an $R$-module. Then th
 \end{proof}
 \qed
 \end{proof}
+
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]
@@ -6275,6 +6276,45 @@ splits.
 \begin{proof}
 \pf\ Since $\kappa_2 : N \rightarrow M \oplus N$ is a right-inverse to $\pi_2$.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let
+\[ 0 \rightarrow M \stackrel{\alpha}{\rightarrow} N \stackrel{\beta}{\rightarrow} F \rightarrow 0 \]
+be a short exact sequence where $F$ is free. Then the sequence splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$F = R^{\oplus A}$}}
+\step{2}{\pick\ $\gamma : F \rightarrow N$ such that $\id{F} = \beta \circ \gamma$}
+\step{3}{\pflet{$i : M \oplus F \rightarrow N$ be the homomorphism $i(m,f) = \alpha(m) + \gamma(f)$}}
+\step{4}{$i$ is injective.}
+\begin{proof}
+	\step{a}{\assume{$i(m,f) = i(m',f')$}}
+	\step{b}{$\alpha(m) + \gamma(f) = \alpha(m') + \gamma(f')$}
+	\step{c}{$\alpha(m-m') = \gamma(f-f')$}
+	\step{d}{$f-f' = 0$}
+	\begin{proof}
+		\pf\ Applying $\beta$ to both sides of \stepref{c}.
+	\end{proof}
+	\step{e}{$f = f'$}
+	\step{f}{$\alpha(m-m') = 0$}
+	\step{g}{$m = m'$}
+	\begin{proof}
+		\pf\ Since $\alpha$ is injective. 
+	\end{proof}
+\end{proof}
+\step{5}{$i$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$n \in N$}}
+	\step{b}{$n - \gamma(\beta(n)) \in \ker \beta = \im \alpha$}
+	\step{c}{\pick\ $m \in M$ such that $\alpha(m) = n - \gamma(\beta(n))$}
+	\step{d}{$n = i(m, \beta(n))$}
+\end{proof}
+\step{6}{$\alpha = i \circ \kappa_1$}
+\step{7}{$\beta \circ i = \pi_2$}
 \qed
 \end{proof}
 
