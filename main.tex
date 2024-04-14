@@ -6108,6 +6108,27 @@ such that the diagram commutes and the two rows are short exact sequences. Suppo
 Since $\coker \mu = 0$ we have $0 \rightarrow \coker \nu \rightarrow 0$ is an exact sequence and so $\coker \nu = 0$, hence $\nu$ is surjective, hence $\nu$ is an isomorphism. \qed
 \end{proof}
 
+\begin{prop}[Short Five-Lemma]
+Suppose we have $R$-modules and homomorphisms
+\[ \begin{tikzcd}
+0 \arrow[r] & L_1 \arrow[r,"\alpha_1"] \arrow[d,"\lambda"] & M_1 \arrow[r,"\beta_1"] \arrow[d,"\mu"] & N_1 \arrow[r] \arrow[d,"\nu"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"\alpha_0"] & M_0 \arrow[r,"\beta_0"] & N_0 \arrow[r] & 0
+\end{tikzcd} \]
+such that the diagram commutes and the two rows are short exact sequences. If $\lambda$ and $\nu$ are isomorphisms then $\mu$ is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{There exists a homomorphism $\delta : 0 \rightarrow L_0$ such that the following is an exact sequence.
+\[ 0 \rightarrow 0 \rightarrow \ker \mu \rightarrow 0 \stackrel{\delta}{\rightarrow} L_0 \stackrel{\alpha_0}{\rightarrow} \coker \mu \stackrel{\beta_0}{\rightarrow} N_0 \rightarrow 0 \enspace . \]}
+\begin{proof}
+	\pf\ Snake Lemma
+\end{proof}
+\step{2}{$\ker \mu = 0$}
+\step{3}{$\coker \mu = M_0$}
+\qed
+\end{proof}
+
 \begin{prop}
 If $L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N$ is an exact sequence and $L$ and $N$ are Noetherian then $M$ is Noetherian.
 \end{prop}
