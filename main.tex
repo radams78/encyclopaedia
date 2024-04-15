@@ -5957,6 +5957,91 @@ A \emph{short exact sequence} is an exact complex of the form
 \[ 0 \rightarrow L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N \rightarrow 0 \enspace . \]
 \end{df}
 
+\begin{prop}[Four-Lemma]
+If
+\[ \begin{tikzcd}
+A_1 \arrow[r,"f_1"] \arrow[d,"\alpha"] & B_1 \arrow[r,"g_1"] \arrow[d,"\beta"] & C_1 \arrow[r,"h_1"] \arrow[d,"\gamma"] & D_1 \arrow[d,"\delta"] \\
+A_2 \arrow[r,"f_2"] & B_2 \arrow[r,"g_2"] & C_2 \arrow[r,"h_2"] & D_2
+\end{tikzcd} \]
+is a commutative diagram of left-$R$-modules with exact rows, $\alpha$ is an epimorphism, and $\beta$ and $\delta$ are monomorphisms, then $\gamma$ is an monomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+	\step{a}{\pflet{$x,y \in C_1$}}
+	\step{b}{\assume{$\gamma(x) = \gamma(y)$}}
+	\step{c}{$\delta(h_1(x)) = \delta(h_1(y))$}
+	\step{d}{$h_1(x) = h_1(y)$}
+	\begin{proof}
+		\pf\ $\delta$ is injective.
+	\end{proof}
+	\step{e}{$x-y \in \ker h_1$}
+	\step{f}{$x-y \in \im g_1$}
+	\step{g}{\pick\ $b \in B_1$ such that $g_1(b) = x - y$.}
+	\step{h}{$g_2(\beta(b)) = 0$}
+	\begin{proof}
+		\pf\ $g_2(\beta(b)) = \gamma(g_1(b)) = \gamma(x-y) = 0$
+	\end{proof}
+	\step{i}{$\beta(b) \in \ker g_2$}
+	\step{j}{$\beta(b) \in \im f_2$}
+	\step{k}{\pick\ $a' \in A_2$ such that $f_2(a') = \beta(b)$}
+	\step{l}{\pick\ $a \in A_1$ such that $\alpha(a) = a'$}
+	\begin{proof}
+		\pf\ $\alpha$ is surjective.
+	\end{proof}
+	\step{m}{$\beta(f_1(a)) = \beta(b)$}
+	\step{n}{$f_1(a) = b$}
+	\begin{proof}
+		\pf\ $\beta$ is injective.
+	\end{proof}
+	\step{o}{$0 = g_1(b)$}
+	\begin{proof}
+		\pf\ Since $g_1(b) = g_1(f_1(a)) = 0$.
+	\end{proof}
+	\step{p}{$x = y$}
+	\begin{proof}
+		\pf\ \stepref{g}
+	\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Four-Lemma]
+If
+\[ \begin{tikzcd}
+A_1 \arrow[r,"f_1"] \arrow[d,"\beta"] & B_1 \arrow[r,"g_1"] \arrow[d,"\gamma"] & C_1 \arrow[r,"h_1"] \arrow[d,"\delta"] & D_1 \arrow[d,"\epsilon"] \\
+A_2 \arrow[r,"f_2"] & B_2 \arrow[r,"g_2"] & C_2 \arrow[r,"h_2"] & D_2
+\end{tikzcd} \]
+is a commutative diagram of left-$R$-modules with exact rows, $\beta$ and $\delta$ are epimorphisms, and $\epsilon$ is a monomorphism, then $\gamma$ is an epimorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$b_2 \in B_2$}}
+\step{2}{\pick\ $c_1 \in C_1$ such that $\delta(c_1) = g_2(b_2)$}
+\begin{proof}
+	\pf\ $\delta$ is surjective.
+\end{proof}
+\step{3}{$\epsilon(h_1(c_1)) = 0$}
+\step{4}{$h_1(c_1) = 0$}
+\begin{proof}
+	\pf\ $\epsilon$ is injective.
+\end{proof}
+\step{5}{$c_1 \in \ker h_1$}
+\step{6}{$c_1 \in \im g_1$}
+\step{7}{\pick\ $b_1 \in B_1$ such that $g_1(b_1) = c_1$}
+\step{8}{$g_2(\gamma(b_1)) = g_2(b_2)$}
+\step{9}{$\gamma(b_1) - b_2 \in \ker g_2$}
+\step{10}{$\gamma(b_1) - b_2 \in \im f_2$}
+\step{11}{\pick\ $a_2 \in A_2$ such that $f_2(a_2) = \gamma(b_1) - b_2$.}
+\step{12}{\pick\ $a_1 \in A_1$ such that $\beta(a_1) = a_2$.}
+\begin{proof}
+	\pf\ $\beta$ is surjective.
+\end{proof}
+\step{13}{$\gamma(f_1(a_1)) = \gamma(b_1) - b_2$}
+\step{14}{$b_2 = \gamma(b_1 - f_1(a_1))$}
+\qed
+\end{proof}
+
 \begin{thm}[Snake Lemma]
 Suppose we have $R$-modules and homomorphisms
 \[ \begin{tikzcd}
