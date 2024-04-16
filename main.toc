@@ -93,7 +93,7 @@
 \contentsline {chapter}{\numberline {31}Finite Algebras}{141}{}%
 \contentsline {chapter}{\numberline {32}Division Algebras}{143}{}%
 \contentsline {chapter}{\numberline {33}Chain Complexes}{145}{}%
-\contentsline {section}{\numberline {33.1}Split Exact Sequences}{151}{}%
+\contentsline {section}{\numberline {33.1}Split Exact Sequences}{152}{}%
 \contentsline {chapter}{\numberline {34}Homology}{155}{}%
 \contentsline {part}{IV\hspace {1em}Field Theory}{157}{}%
 \contentsline {chapter}{\numberline {35}Fields}{159}{}%

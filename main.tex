@@ -6267,6 +6267,50 @@ be a short exact sequence of left-$R$-modules. Let $L$ be an $R$-module. Then th
 \qed
 \end{proof}
 
+\begin{thm}[Nine-Lemma]
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the two rightmost columns are exact then the left column is exact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$(L_2,f_2)$ is the kernel of $g_2$, $(L_1,f_1)$ is the kernel of $g_1$ and $(L_0,f_0)$ is the kernel of $g_0$.}
+\step{2}{0 is the cokernel of $g_2$, $g_1$ and $g_0$.}
+\step{1}{\pick\ a homomomorphism $\delta : L_0 \rightarrow 0$ such that the following is an exact sequence:
+\[ L_2 \stackrel{\beta_1 \restriction L_2}{\rightarrow} L_1 \stackrel{\beta_0 \restriction L_1}{\rightarrow} L_0 \stackrel{\delta}{\rightarrow} 0 \rightarrow 0 \rightarrow 0 \]}
+\begin{proof}
+	\pf\ Snake Lemma.
+\end{proof}
+\step{2}{$\beta_1 \restriction L_2 = \alpha_1$}
+\step{3}{$\beta_0 \restriction L_1 = \alpha_0$}
+\step{4}{The following is an exact sequence:
+\[ 0 \rightarrow L_2 \stackrel{\alpha_1}{\rightarrow} L_1 \stackrel{\alpha_0}{\rightarrow} L_0 \rightarrow 0 \]}
+\qed
+\end{proof}
+
+\begin{thm}[Nine-Lemma]
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the two leftmost columns are exact then the right column is exact.
+\end{thm}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]

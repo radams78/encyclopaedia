@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  15 APR 2024 15:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 APR 2024 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -770,11 +770,15 @@ Chapter 33.
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
  [147]
-[148] [149] [150] [151] [152] [153] [154
-
-]
+[148] [149] [150]
+WARNING: proof step "1" (<1>3) already defined
+[151]
+WARNING: proof step "2" (<1>4) already defined
+[152] [153] [154]
 Chapter 34.
-[155] [156
+[155
+
+] [156
 
 ] [157] [158]
 Chapter 35.
@@ -791,16 +795,16 @@ Chapter 37.
 [167
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 6767--6775
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 6811--6819
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
 [168] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16061 strings out of 476091
- 338159 string characters out of 5794081
- 1884330 words of memory out of 5000000
- 36191 multiletter control sequences out of 15000+600000
+ 16455 strings out of 476091
+ 348573 string characters out of 5794081
+ 1885330 words of memory out of 5000000
+ 36585 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,448b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -829,7 +833,7 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on main.pdf (168 pages, 619379 bytes).
+Output written on main.pdf (168 pages, 624125 bytes).
 PDF statistics:
  675 PDF objects out of 1000 (max. 8388607)
  450 compressed objects within 5 object streams
