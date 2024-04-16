@@ -3192,6 +3192,17 @@ Every subgroup of the free group on a finite set is free.
 \pf\ If $H$ is a subgroup of $F(A)$ then left multiplication defines a free action of $H$ on the Cayley graph of $F(A)$, which is a tree. \qed
 \end{proof}
 
+\begin{prop}
+Let $S$ be a finite set. Let $G$ be a group acting on $S$. Let $Z$ be the set of fixed points of the action:
+\[ Z = \{a \in S : \forall g \in G. ga = a \} \enspace . \]
+Let $A$ be a set of representatives for the nontrivial orbits of the action. Then
+\[ |S| = |Z| + \sum_{a \in A} [G : \Stab{G}{a}] \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from the fact that the orbits partition $S$. \qed
+\end{proof}
+
 \section{Category of $G$-Sets}
 
 \begin{df}
