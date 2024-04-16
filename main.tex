@@ -3377,6 +3377,7 @@ The center of a group $G$ is
 \end{proof}
 
 \begin{lm}
+\label{lm:G-ZG-cyclic}
 Let $G$ be a finite group. Assume $G / Z(G)$ is cyclic. Then $G$ is Abelian and so $G/Z(G)$ is trivial.
 \end{lm}
 
@@ -3434,6 +3435,22 @@ Let $p$ be a prime.
 Every $p$-group has a non-trivial center.
 \end{cor}
 
+\begin{cor}
+Let $p$ be a prime. Every group $G$ of order $p^2$ is Abelian.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{$|Z(G)| = p$ or $p^2$}
+\step{2}{\case{$|Z(G)| = p$}}
+\step{3}{$|G/Z(G)| = p$}
+\step{4}{$G/Z(G)$ is cyclic.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:G-ZG-cyclic}.
+\end{proof}
+\step{5}{$G$ is Abelian.}
+\qed
+\end{proof}
 \part{Ring Theory}
 
 \chapter{Rngs}
