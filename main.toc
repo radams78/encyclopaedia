@@ -14,6 +14,7 @@
 \contentsline {chapter}{\numberline {6}Groups}{25}{}%
 \contentsline {section}{\numberline {6.1}Order of an Element}{28}{}%
 \contentsline {section}{\numberline {6.2}Generators}{31}{}%
+\contentsline {section}{\numberline {6.3}$p$-groups}{32}{}%
 \contentsline {chapter}{\numberline {7}Group Homomorphisms}{33}{}%
 \contentsline {section}{\numberline {7.1}Subgroups}{35}{}%
 \contentsline {section}{\numberline {7.2}Kernel}{36}{}%
