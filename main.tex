@@ -3214,6 +3214,10 @@ Let $p$ be a prime.
 Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. Let $Z$ be the set of fixed points of the action. Then $|Z| \cong |S| (\mod p)$.
 \end{cor}
 
+\begin{cor}
+Let $p$ be a prime. Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. If $p$ does not divide $|S|$ then the action has a fixed point.
+\end{cor}
+
 \section{Category of $G$-Sets}
 
 \begin{df}
@@ -3353,6 +3357,21 @@ For any group $G$ we have $G \cong \Aut{G-\mathbf{Set}}{G}$ (considering $G$ as 
 		\end{proof}
 	\end{proof}
 \qed
+\end{proof}
+
+\section{Center}
+
+\begin{df}[Center]
+The \emph{center} of a group $G$, $Z(G)$, is the kernel of the conjugation action $\sigma : G \rightarrow S_G$.
+\end{df}
+
+\begin{prop}
+The center of a group $G$ is
+\[ Z(G) = \{ g \in G : \forall a \in G. ag = ga \} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
 \end{proof}
 
 \part{Ring Theory}

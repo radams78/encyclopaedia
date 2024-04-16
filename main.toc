@@ -38,6 +38,7 @@
 \contentsline {chapter}{\numberline {9}Group Actions}{65}{}%
 \contentsline {section}{\numberline {9.1}Group Actions}{65}{}%
 \contentsline {section}{\numberline {9.2}Category of $G$-Sets}{68}{}%
+\contentsline {section}{\numberline {9.3}Center}{70}{}%
 \contentsline {part}{III\hspace {1em}Ring Theory}{71}{}%
 \contentsline {chapter}{\numberline {10}Rngs}{73}{}%
 \contentsline {section}{\numberline {10.1}Commutative Rngs}{75}{}%
