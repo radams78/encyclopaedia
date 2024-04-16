@@ -3200,6 +3200,7 @@ Every subgroup of the free group on a finite set is free.
 \end{proof}
 
 \begin{prop}
+\label{prop:class-formula}
 Let $S$ be a finite set. Let $G$ be a group acting on $S$. Let $Z$ be the set of fixed points of the action:
 \[ Z = \{a \in S : \forall g \in G. ga = a \} \enspace . \]
 Let $A$ be a set of representatives for the nontrivial orbits of the action. Then
@@ -3418,6 +3419,20 @@ Let $G$ be a group. Let $a \in G$. The \emph{centralizer} or \emph{normalizer} o
 \begin{df}[Conjugacy Class]
 Let $G$ be a group. Let $a \in G$. The \emph{conjugacy class} of $a$, denoted $[a]$, is the orbit of $a$ under the action of conjugation.
 \end{df}
+
+\begin{prop}[Class Formula]
+Let $G$ be a finite group. Let $A$ be a set of representatives of the non-trivial conjugacy classes. Then
+\[ |G| = |Z(G)| + \sum_{a \in A} [G : Z(a)] \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:class-formula}. \qed
+\end{proof}
+
+\begin{cor}
+Let $p$ be a prime.
+Every $p$-group has a non-trivial center.
+\end{cor}
 
 \part{Ring Theory}
 
