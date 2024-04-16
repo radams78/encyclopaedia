@@ -6295,7 +6295,100 @@ If the rows are exact and the two rightmost columns are exact then the left colu
 \qed
 \end{proof}
 
-\begin{thm}[Nine-Lemma]
+\begin{thm}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& \vdots \arrow[d] & \vdots \arrow[d] & \vdots \arrow[d] \\
+0 \arrow[r] & L_{i+1} \arrow[r] \arrow[d,"\alpha_{i+1}"] & M_{i+1} \arrow[r] \arrow[d] & N_{i+1} \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & L_i \arrow[r] \arrow[d,"\alpha_i"] & M_i \arrow[r] \arrow[d] & N_i \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & L_{i-1} \arrow[r,"f_{i-1}"] \arrow[d] & M_{i-1} \arrow[r] \arrow[d] & N_{i-1} \arrow[r] \arrow[d] & 0 \\
+& \vdots & \vdots & \vdots
+\end{tikzcd} \]
+Assume the central column is a complex and every row is an exact complex. Then the left and right columns are complexes. Further, if any two of the columns are exact, then so is the third.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{The left column is a complex.}
+\begin{proof}
+\step{1}{\pflet{$x \in L_{i+1}$}}
+\step{2}{$f_{i-1}(\alpha_i(\alpha_{i+1}(x))) = 0$}
+\step{3}{$\alpha_i(\alpha_{i+1}(x)) = 0$}
+\begin{proof}
+	\pf\ $f_{i-1}$ is injective.
+\end{proof}
+\end{proof}
+\step{2}{The right column is a complex.}
+\begin{proof}
+\step{1}{\pflet{$x \in N_{i+1}$}}
+\step{2}{\pick\ $y \in N_{i+1}$ such that $g_{i+1}(y) = x$}
+\step{3}{$\gamma_i(\gamma_{i+1}(x)) = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\gamma_i(\gamma_{i+1}(x)) & = \gamma_i(\gamma_{i+1}(g_{i+1}(y))) \\
+		& = g_{i-1}(\beta_i(\beta_{i+1}(y))) \\
+		& = g_{i-1}(0) \\
+		& = 0
+	\end{align*}
+\end{proof}
+\end{proof}
+\step{3}{If the left and center columns are exact then the right column is exact.}
+\begin{proof}
+	\step{a}{\pflet{$n_i \in \ker \gamma_{i-1}$} \prove{$n_i \in \im \gamma_i$}}
+	\step{b}{\pick\ $m_i \in M_i$ such that $g_i(m_i) = n_i$}
+	\step{c}{$g_{i-1}(\beta_i(m_i)) = 0$}
+	\step{d}{$\beta_i(m_i) \in \ker g_{i-1} = \im f_{i-1}$}
+	\step{e}{\pick\ $l_{i-1} \in L_{i-1}$ such that $f_{i-1}(l_{i-1}) = \beta_i(m_i)$}
+	\step{f}{$\beta_{i-1}(f_{i-1}(l_{i-1})) = 0$}
+	\step{g}{$f_{i-2}(\alpha_{i-1}(l_{i-1})) = 0$}
+	\step{h}{$\alpha_{i-1}(l_{i-1}) = 0$}
+	\step{i}{$l_{i-1} \in \ker \alpha_{i-1} = \im \alpha_i$}
+	\step{j}{\pick\ $l_i \in L_i$ such that $\alpha_i(l_i) = l_{i-1}$}
+	\step{k}{$\beta_i(f_i(l_i)) = \beta_i(m_i)$}
+	\step{l}{$f_i(l_i) - m_i \in \ker \beta_i = \im \beta_{i+1}$}
+	\step{m}{\pick\ $m_{i+1} \in M_{i+1}$ such that $\beta_{i+1}(m_{i+1}) = f_i(l_i) - m_i$}
+	\step{n}{$\gamma_{i+1}(-g_{i+1}(m_{i+1})) = n_i$}
+\end{proof}
+\step{4}{If the left and right columns are exact then the center column is exact.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \ker \beta_i$} \prove{$x \in \im \beta_{i+1}$}}
+	\step{b}{$g_{i-1}(\beta_i(x)) = 0$}
+	\step{c}{$\gamma_i(g_i(x)) = 0$}
+	\step{d}{$g_i(x) \in \ker \gamma_i = \im \gamma_{i+1}$}
+	\step{e}{\pick\ $n_{i+1} \in N_{i+1}$ such that $\gamma_{i+1}(n_{i+1}) = g_i(x)$}
+	\step{f}{\pick\ $m_{i+1} \in M_{i+1}$ such that $g_{i+1}(m_{i+1}) = n_{i+1}$}
+	\step{g}{$g_i(\beta_{i+1}(m_{i+1})) = g_i(x)$}
+	\step{h}{$\beta_{i+1}(m_{i+1}) - x \in \ker g_i = \im f_i$}
+	\step{i}{\pick\ $l_i \in L_i$ such that $f_i(l_i) = \beta_{i+1}(m_{i+1}) - x$}
+	\step{j}{$\beta_i(f_i(l_i)) = 0$}
+	\step{k}{$f_{i-1}(\alpha_i(l_i)) = 0$}
+	\step{l}{$\alpha_i(l_i) = 0$}
+	\step{m}{$l_i \in \ker \alpha_i = \im \alpha_{i+1}$}
+	\step{n}{\pick\ $l_{i+1} \in L_{i+1}$ such that $\alpha_{i+1}(l_{i+1}) = l_i$}
+	\step{o}{$\beta_{i+1}(f_{i+1}(l_{i+1})) = \beta_{i+1}(m_{i+1}) - x$}
+	\step{p}{$x = \beta_{i+1}(m_{i+1} - f_{i+1}(l_{i+1}))$}
+	\end{proof}
+\step{5}{If the center and right columns are exact then the left column is exact.}
+\begin{proof}
+	\step{a}{\pflet{$l_i \in \ker \alpha_i$} \prove{$l_i \in \im \alpha_{i+1}$}}
+	\step{b}{$\beta_i(f_i(l_i)) = 0$}
+	\step{c}{$f_i(l_i) \in \ker \beta_i = \im \beta_{i+1}$}
+	\step{d}{\pick\ $m_{i+1} \in M_{i+1}$ such that $\beta_{i+1}(m_{i+1}) = f_i(l_i)$}
+	\step{e}{$\gamma_{i+1}(g_{i+1}(m_{i+1})) = 0$}
+	\step{f}{$g_{i+1}(m_{i+1}) \in \ker \gamma_{i+1} = \im \gamma_{i+2}$}
+	\step{g}{\pick\ $n_{i+2} \in N_{i+2}$ such that $\gamma_{i+2}(n_{i+2}) = g_{i+1}(m_{i+1})$}
+	\step{h}{\pick\ $m_{i+2} \in M_{i+2}$ such that $g_{i+2}(m_{i+2}) = n_{i+2}$}
+	\step{i}{$g_{i+1}(\beta_{i+2}(n_{i+2})) = g_{i+1}(m_{i+1})$}
+	\step{j}{$\beta_{i+2}(n_{i+2}) - m_{i+1} \in \ker g_{i+1} = \im f_{i+1}$}
+	\step{k}{\pick\ $l_{i+1} \in L_{i+1}$ such that $f_{i+1}(l_{i+1}) = \beta_{i+2}(n_{i+2}) - m_{i+1}$}
+	\step{l}{$f_i(\alpha_{i+1}(l_{i+1})) = - f_i(l_i)$}
+	\step{m}{$l_i = \alpha_{i+1}(-l_{i+1})$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Nine-Lemma]
 Let the following be a commuting diagram of left-$R$-modules.
 \[ \begin{tikzcd}
 & 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
@@ -6305,11 +6398,7 @@ Let the following be a commuting diagram of left-$R$-modules.
 & 0 & 0 & 0
 \end{tikzcd} \]
 If the rows are exact and the two leftmost columns are exact then the right column is exact.
-\end{thm}
-
-\begin{proof}
-\pf\ Similar. \qed
-\end{proof}
+\end{cor}
 
 \begin{prop}
 Let the following be a commuting diagram of left-$R$-modules.
