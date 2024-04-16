@@ -12,8 +12,9 @@
 \usepackage{tikz-cd}
 
 \newtheorem{ax}{Axiom}
-\newtheorem{prop}{Proposfition}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
 \newtheorem{thm}[prop]{Theorem}
+\newtheorem{lm}[prop]{Lemma}
 \newtheorem{cor}{Corollary}[prop]
 \theoremstyle{definition}
 \newtheorem{df}[prop]{Definition}
@@ -3372,6 +3373,30 @@ The center of a group $G$ is
 
 \begin{proof}
 \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{lm}
+Let $G$ be a finite group. Assume $G / Z(G)$ is cyclic. Then $G$ is Abelian and so $G/Z(G)$ is trivial.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $g \in G$ such that $gZ(G)$ generates $G/Z(G)$.}
+\step{2}{\pflet{$a,b \in G$}}
+\step{3}{\pick\ $r,s \in \mathbb{Z}$ such that $aZ(G) = g^rZ(G)$ and $bZ(G) = g^sZ(G)$}
+\step{4}{\pflet{$z = g^{-r}a \in Z(G)$ and $w = g^{-s}b \in Z(G)$}}
+\step{5}{$a = g^rz$ and $b = g^sw$}
+\step{6}{$ab = ba$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		ab & = g^rzg^sw \\
+		& = g^{r+s}zw \\
+		& = g^swg^rz \\
+		& = ba
+	\end{align*}
+\end{proof}
+\qed
 \end{proof}
 
 \part{Ring Theory}
