@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 APR 2024 09:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 APR 2024 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -774,37 +774,37 @@ Underfull \vbox (badness 1132) has occurred while \output is active []
 WARNING: proof step "1" (<1>3) already defined
 [151]
 WARNING: proof step "2" (<1>4) already defined
-[152] [153] [154]
+[152] [153] [154] [155] [156]
 Chapter 34.
-[155
+[157
 
-] [156
+] [158
 
-] [157] [158]
+] [159] [160]
 Chapter 35.
-[159
+[161
 
-] [160] [161] [162
+] [162] [163] [164
 
 ]
 Chapter 36.
-[163] [164
+[165] [166
 
-] [165] [166]
+] [167] [168]
 Chapter 37.
-[167
+[169
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 6811--6819
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 6888--6896
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[168] (./main.aux) ) 
+[170] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 16455 strings out of 476091
- 348573 string characters out of 5794081
- 1885330 words of memory out of 5000000
- 36585 multiletter control sequences out of 15000+600000
+ 17244 strings out of 476091
+ 369588 string characters out of 5794081
+ 1900330 words of memory out of 5000000
+ 37374 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,448b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -833,10 +833,10 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on main.pdf (168 pages, 624125 bytes).
+Output written on main.pdf (170 pages, 631594 bytes).
 PDF statistics:
- 675 PDF objects out of 1000 (max. 8388607)
- 450 compressed objects within 5 object streams
+ 682 PDF objects out of 1000 (max. 8388607)
+ 455 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

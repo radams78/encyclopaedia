@@ -6311,6 +6311,83 @@ If the rows are exact and the two leftmost columns are exact then the right colu
 \pf\ Similar. \qed
 \end{proof}
 
+\begin{prop}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the left and right columns are exact then $\beta_1$ is monic.
+\end{prop}
+
+\begin{proof}
+\pf\ By the Snake Lemma, the following is an exact sequence
+\[ 0 \rightarrow \ker \alpha_1 \rightarrow \ker \beta_1 \rightarrow \ker \gamma_1 \]
+But $\ker \alpha_1 = \ker \gamma_1 = 0$ so $\ker \beta_1 = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the left and right columns are exact then $\beta_0$ is epi.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact, the left and right columns are exact, and the central column is a complex, then the central column is exact.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \ker \beta_0$} \prove{$x \in \im \beta_1$}}
+\step{2}{$\gamma_0(g_1(x)) = 0$}
+\step{3}{$g_1(x) \in \ker \gamma_0 = \im \gamma_1$}
+\step{4}{\pick\ $n_2 \in N_2$ such that $\gamma_1(n_2) = g_1(x)$}
+\step{5}{\pick\ $m_2 \in M_2$ such that $g_2(m_2) = n_2$}
+\step{6}{$g_1(\beta_1(m_2)) = g_1(x)$}
+\step{7}{$\beta_1(m_2) - x \in \ker g_1 = \im f_1$}
+\step{8}{\pick\ $l_1 \in L_1$ such that $f_1(l) = \beta_1(m_2) - x$.}
+\step{9}{$f_0(\alpha_0(l_1)) = 0$}
+\step{10}{$\alpha_0(l_1) = 0$}
+\step{11}{$l_1 \in \ker \alpha_0 = \im \alpha_1$}
+\step{12}{\pick\ $l_2 \in L_2$ such that $\alpha_1(l_2) = l_1$.}
+\step{13}{$\beta_1(f_2(l_2)) = \beta_1(m_2) - x$}
+\step{14}{$x = \beta_1(m_2 - f_2(l_2))$}
+\qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the hypothesis that the central column is a complex. Consider the situation
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & 0 \arrow[r] \arrow[d] & \mathbb{Z} \arrow[r,equals] \arrow[d,"\Delta"] & \mathbb{Z} \arrow[r] \arrow[d,equals] & 0 \\
+0 \arrow[r] & \mathbb{Z} \arrow[r,"\kappa_1"] \arrow[d,equals] & \mathbb{Z} \oplus \mathbb{Z} \arrow[r,"\pi_2"] \arrow[d, "\pi_1"] & \mathbb{Z} \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & \mathbb{Z} \arrow[r,equals] \arrow[d] & \mathbb{Z} \arrow[r] \arrow[d] & 0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+This diagram commutes, the rows are exact, the left and right columns are exact, but the central column is not a complex and $\im \Delta \neq \ker \pi_1$.
+\end{ex}
+
 \section{Split Exact Sequences}
 
 \begin{df}[Split Sequence]
