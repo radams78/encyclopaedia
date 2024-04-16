@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 APR 2024 20:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  16 APR 2024 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,97 +643,97 @@ msy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ; p\OT1/cmr/m/
 n/10 !)$. 
  []
 
-[67] [68] [69] [70] [71
+[67] [68] [69] [70] [71] [72
 
-] [72]
+] [73] [74]
 Chapter 10.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 342
-3.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 343
+7.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [73
+) [75
 
-] [74] [75]
-[76
+] [76] [77]
+[78
 
 ]
 Chapter 11.
-[77] [78] [79] [80] [81] [82]
+[79] [80] [81] [82] [83] [84]
 Chapter 12.
-[83
+[85
 
-] [84] [85] [86
+] [86] [87] [88
 
 ]
 Chapter 13.
-[87] [88]
+[89] [90]
 Chapter 14.
-[89
+[91
 
-] [90] [91] [92]
+] [92] [93] [94]
 Chapter 15.
-[93
+[95
 
-] [94] [95] [96] [97] [98
+] [96] [97] [98] [99] [100
 
 ]
 Chapter 16.
-[99] [100] [101] [102
+[101] [102] [103] [104
 
 ]
 Chapter 17.
-[103] [104
-
-]
-Chapter 18.
 [105] [106
 
 ]
-Chapter 19.
+Chapter 18.
 [107] [108
 
 ]
-Chapter 20.
+Chapter 19.
 [109] [110
 
 ]
-Chapter 21.
-[111] [112]
-Chapter 22.
-[113
+Chapter 20.
+[111] [112
 
-] [114
+]
+Chapter 21.
+[113] [114]
+Chapter 22.
+[115
+
+] [116
 
 ]
 Chapter 23.
-[115] [116
+[117] [118
 
 ]
 Chapter 24.
-[117] [118]
+[119] [120]
 Chapter 25.
-[119
+[121
 
 ]
 WARNING: proof step "3" (<1>4) already defined
-[120] [121] [122] [123] [124] [125] [126] [127] [128]
+[122] [123] [124] [125] [126] [127] [128] [129] [130]
 Chapter 26.
-[129
-
-] [130]
-Chapter 27.
 [131
 
-] [132
+] [132]
+Chapter 27.
+[133
+
+] [134
 
 ]
 Chapter 28.
-[133] [134]
+[135] [136]
 Chapter 29.
-[135
+[137
 
 ]
-Overfull \hbox (46.77194pt too wide) in paragraph at lines 5912--5912
+Overfull \hbox (46.77194pt too wide) in paragraph at lines 5926--5926
 []$\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 I\OT1/cmr/m/n/1
 0 ) \OMS/cmsy/m/n/10 ! [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 aI\OT1/cmr/m/n/10 
 )$ be the func-tion $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r[];
@@ -741,80 +741,84 @@ Overfull \hbox (46.77194pt too wide) in paragraph at lines 5912--5912
 r/m/n/10 )$. 
  []
 
-[136] [137] [138
+[138] [139] [140
 
 ]
 Chapter 30.
-[139] [140
-
-]
-Chapter 31.
 [141] [142
 
 ]
-Chapter 32.
+Chapter 31.
 [143] [144
 
 ]
+Chapter 32.
+[145] [146
+
+]
 Chapter 33.
-[145] [146]
+[147] [148]
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
- [147]
-[148] [149] [150]
+ [149]
+[150] [151] [152]
 WARNING: proof step "1" (<1>3) already defined
-[151]
+[153]
 WARNING: proof step "2" (<1>4) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
-[152] [153]
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6470--6471
+[154] [155]
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 6484--6485
 []\OT1/cmr/bx/n/10 Proposition 33.14. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
 
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6488--6489
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 6502--6503
 []\OT1/cmr/bx/n/10 Proposition 33.15. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[154]
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6504--6505
+[156]
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 6518--6519
 []\OT1/cmr/bx/n/10 Proposition 33.16. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[155] [156] [157] [158]
+[157] [158] [159] [160]
 Chapter 34.
-[159
+[161
 
-] [160
+] [162
 
-] [161] [162]
+] [163] [164]
 Chapter 35.
-[163
+[165
 
-] [164] [165] [166
+] [166] [167] [168
 
 ]
 Chapter 36.
-[167] [168
+[169] [170
 
-] [169] [170]
+] [171] [172]
 Chapter 37.
-[171
+[173
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 7043--7051
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 7057--7065
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[172] (./main.aux) ) 
+[174] (./main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  17442 strings out of 476091
  374775 string characters out of 5794081
@@ -823,35 +827,34 @@ Here is how much of TeX's memory you used:
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,448b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
-.pfb>
-Output written on main.pdf (172 pages, 641316 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/eule
+r/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on main.pdf (174 pages, 642432 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
+ 694 PDF objects out of 1000 (max. 8388607)
+ 463 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
