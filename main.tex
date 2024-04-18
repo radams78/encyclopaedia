@@ -3459,6 +3459,16 @@ Let $G$ be a finite group. Let $A$ be a set of representatives of the non-trivia
 \end{proof}
 
 \begin{cor}
+Let $p$ be a prime. Let $G$ be a $p$-group and $H$ a nontrivial normal subgroup of $G$. Then $H \cap Z(G) \neq \{e\}$.
+\end{cor}
+
+\begin{proof}
+\pf\ Let $A$ be a set of representatives of the non-trivial conjugacy classes. Let $A \cap H = \{a_1, \ldots, a_n\}$. Then
+\[ |H| = |H \cap Z(G)| + \sum_{i=1}^n [G : Z(a_i)] \enspace . \]
+Since $p \mid |H|$ and $p \mid [G : Z(a_i)]$ for all $i$, we have $p \mid |H \cap Z(G)|$. \qed
+\end{proof}
+
+\begin{cor}
 \label{cor:p-group-non-trivial-center}
 Let $p$ be a prime.
 Every $p$-group has a non-trivial center.
