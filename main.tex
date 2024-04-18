@@ -3403,6 +3403,7 @@ Let $G$ be a finite group. Assume $G / Z(G)$ is cyclic. Then $G$ is Abelian and 
 \end{proof}
 
 \begin{prop}
+\label{prop:subgroup-of-Z-normal}
 Let $G$ be a group. Let $N$ be a subgroup of $Z(G)$. Then $N$ is normal in $G$.
 \end{prop}
 
@@ -3469,6 +3470,40 @@ Let $p$ be a prime. Every group $G$ of order $p^2$ is Abelian.
 
 \begin{proof}
 \pf\ By Proposition \ref{prop:pq-abelian}. \qed
+\end{proof}
+
+\begin{prop}
+Let $p$ be a prime and $r$ a non-negative integer. Let $G$ be a group of order $p^r$. Then, for $k = 0, 1, \ldots, r$, we have $G$ has a normal subgroup of order $p^k$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result holds for $r' < r$.}}
+\step{2}{\assume{w.l.o.g. $k > 0$}}
+\begin{proof}
+	\pf\ Since $\{e\}$ is a normal subgroup of order $p^0$.
+\end{proof}
+\step{2}{\pick\ a subgroup $N$ of $Z(G)$ of order $p$.}
+\begin{proof}
+	\step{a}{$p \mid |Z(G)|$}
+	\begin{proof}
+		\pf\ From Corollary \ref{cor:p-group-non-trivial-center}.
+	\end{proof}
+	\step{b}{$Z(G)$ has a subgroup of order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem.
+	\end{proof}
+\end{proof}
+\step{3}{$N$ is normal.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:subgroup-of-Z-normal}.
+\end{proof}
+\step{4}{\pick\ a normal subgroup $M$ of $G/N$ of order $p^{k-1}$.}
+\begin{proof}
+	\pf\ From the induction hypothesis \stepref{1}.
+\end{proof}
+\step{5}{$\inv{\pi}(M)$ is a normal subgroup of $G$ of order $p^k$.}
+\qed
 \end{proof}
 
 \part{Ring Theory}
