@@ -2752,6 +2752,32 @@ If $(G, m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G)$ is a g
 Conversely, if $(G, m)$ is any Abelian group, then $(G,m,e,i)$ is a group object in $\Grp$ where $e(*) = e$ and $i(g) = \inv{g}$.
 \end{cor}
 
+\begin{prop}
+\label{prop:all-orders-leq-two}
+Let $G$ be a group.
+If every element of $G$ has order $\leq 2$ then $G$ is Abelian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in G$} \prove{$xy = yx$}}
+\step{2}{\assume{w.l.o.g. $x \neq e \neq y$.}}
+\step{3}{$x^2 = e = y^2$}
+\step{4}{$\inv{x} = x$ and $\inv{y} = y$.}
+\step{5}{\case{$xy = e$}}
+\begin{proof}
+	\pf\ Then $y = \inv{x}$ and so $xy = yx = e$.
+\end{proof}
+\step{6}{\case{$xy \neq e$}}
+\begin{proof}
+	\step{a}{$(xy)^2 = e$}
+	\step{b}{$xyxy = e$}
+	\step{c}{$xy = \inv{y} \inv{x}$}
+	\step{d}{$xy = yx$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{The Category of Abelian Groups}
 
 \begin{df}[Category of Abelian Groups]
@@ -3513,6 +3539,56 @@ Let $p$ be a prime and $r$ a non-negative integer. Let $G$ be a group of order $
 	\pf\ From the induction hypothesis \stepref{1}.
 \end{proof}
 \step{5}{$\inv{\pi}(M)$ is a normal subgroup of $G$ of order $p^k$.}
+\qed
+\end{proof}
+
+\begin{ex}
+The only non-Abelian group of order 6 is $S_3$.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a non-Adelian group of order 6.}}
+\step{2}{$Z(G) = \{e\}$}
+\begin{proof}
+	\pf\ Otherwise $Z(G)$ has order 2 or 3 and is cyclic, contradicting Lemma \ref{lm:G-ZG-cyclic}.
+\end{proof}
+\step{3}{$G$ has three conjugacy classes: $Z(G)$, a class of size 2 and a class of size 3.}
+\begin{proof}
+	\pf\ By the Class Formula since the only way to make 5 using non-trivial factors of 6 is $2+3$.
+\end{proof}
+\step{4}{\pick\ an element $y \in G$ of order 3.}
+\begin{proof}
+	\pf\ It cannot be that every element is of order $\leq 2$ by Proposition \ref{prop:all-orders-leq-two}.
+\end{proof}
+\step{5}{$\langle y \rangle$ is normal in $G$.}
+\begin{proof}
+	\pf\ Since it has index 2.
+\end{proof}
+\step{6}{The conjugacy class $y$ is $\{y,y^2\}$.}
+\begin{proof}
+	\pf\ Since $\langle y \rangle$ must be a union of conjugacy classes.
+\end{proof}
+\step{6}{The conjugacy class of size 2 is $\{y,y^2\}$.}
+\begin{proof}
+	\pf\ Since $y^2$ has order 3 and so its conjugacy class is of size 2 similarly, and there is only one conjugacy class of size 2.
+\end{proof}
+\step{7}{\pick\ $x \in G$ such that $yx = xy^2$.}
+\begin{proof}
+	\pf\ $y^2$ is conjugate to $y$ so there exists $x$ such that $\inv{x}yx = y^2$.
+\end{proof}
+\step{8}{$x$ has order 2.}
+\begin{proof}
+	\pf\ $x$ is not in the conjugacy class of size 2 so its order cannot be 3.
+\end{proof}
+\step{9}{$x$ and $y$ generate $G$.}
+\begin{proof}
+	\pf\ Since $e$, $y$, $y^2$, $x$, $xy$, $xy^2$ are all distinct.
+\end{proof}
+\step{10}{$G \cong S_3$}
+\begin{proof}
+	\pf\ We now know the entire multiplication table of $G$.
+\end{proof}
 \qed
 \end{proof}
 
