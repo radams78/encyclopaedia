@@ -3599,14 +3599,64 @@ Let $G$ be a group. Define an action of $G$ on $\mathcal{P} G$ called \emph{conj
 \[ gA\inv{g} = \{ ga\inv{g} : a \in A \} \enspace . \]
 \end{df}
 
+\begin{prop}
+The conjugate of a subgroup is a subgroup.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $H$ be a subgroup of $G$. Given $gh_1\inv{g},gh_2\inv{g} \in gH\inv{g}$, we have
+\[ (gh_1\inv{g})\inv{(gh_2\inv{g})} = gh_1\inv{h_2}\inv{g} \in gH\inv{g} \enspace . \qquad \qed \]
+\end{proof}
+
 \begin{df}[Normalizer]
-Let $G$ be a group and $A \subseteq G$. The \emph{normalizer} of $A$ is its stabilizer under conjugation.
+Let $G$ be a group and $A \subseteq G$. The \emph{normalizer} of $A$, denoted $N_G(A)$, is its stabilizer under conjugation.
 \end{df}
+
+\begin{prop}
+Let $G$ be a group, $g \in G$ and $A$ a finite subset of $G$. If $gA\inv{g} \subseteq A$ then $gA\inv{g} = A$ and so $g \in N_G(A)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Conjugation by $g$ is an injection from $A$ into $A$, hence a bijection. \qed
+\end{proof}
+
+%TODO Example where $A$ is infinite and this is not true.
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $N_G(H)$ is the largest subgroup of $G$ that includes $H$ such that $H$ is normal in $N_G(H)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{$N_G(H)$ is a subgroup of $G$.}
+\begin{proof}
+	\pf\ If $a,b \in N_G(H)$ then $a\inv{b}Hb\inv{a} = aH\inv{a} = H$ so $a\inv{b} \in N_G(H)$.
+\end{proof}
+\step{1}{$H \subseteq N_G(H)$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\step{2}{$H$ is normal in $N_G(H)$.}
+\begin{proof}
+	\pf\ If $a \in N_G(H)$ then $aH\inv{a} = H$ by definition.
+\end{proof}
+\step{3}{For any subgroup $K$ of $G$, if $H \subseteq K$ and $H$ is normal in $K$ then $K \subseteq N_G(H)$.}
+\begin{proof}
+	\pf\ $H$ is normal in $K$ means that, for all $a \in K$, we have $aH\inv{a} = H$ and so $a \in N_G(H)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if $H = N_G(H)$.
+\end{cor}
 
 \begin{df}[Centralizer]
 Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
 \[ Z_G(A) := \{ g \in G : \forall a \in A. ga\inv{g} = a \} \enspace . \]
 \end{df}
+
+%TODO Example where $Z_G(A) \neq N_G(A)$.
 
 \part{Ring Theory}
 
