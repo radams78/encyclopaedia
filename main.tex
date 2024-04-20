@@ -3197,6 +3197,7 @@ Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of index $p$ where $p$ i
 \end{proof}
 
 \begin{cor}
+\label{cor:index-two-normal}
 Any subgroup of index 2 is normal.
 \end{cor}
 
@@ -3592,6 +3593,49 @@ The only non-Abelian group of order 6 is $S_3$.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of order 2. Let $a \in H$. Let $[a]_H$ be the conjugacy class of $a$ in $H$, and $[a]_G$ the conjugacy class of $a$ in $G$. If $Z_G(a) \subseteq H$ then $[a]_H$ is half the size of $[a]_G$; otherwise, $[a]_H = [a]_G$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$H$ is normal in $G$.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:index-two-normal}.
+\end{proof}
+\step{2}{$HZ_G(a)$ is a subgroup of $G$.}
+\step{3}{$H$ is normal in $HZ_G(a)$.}
+\step{4}{$H \cap Z_G(a)$ is normal in $Z_G(a)$.}
+\step{5}{\[ \frac{HZ_G(a)}{H} \cong \frac{Z_G(a)}{H \cap Z_G(a)} \]}
+\step{6}{If $Z_G(a) \subseteq H$ then $|[a]_H| = |[a]_G|/2$.}
+\begin{proof}
+	\pf\ In this case we have $Z_H(a) = Z_G(a)$ and so $|[a]_H| = |H| / |Z_H(a)| = (|G|/2)/|Z_G(a)| = |[a]_G|/2$.
+\end{proof}
+\step{7}{If $Z_G(a) \nsubseteq H$ then $[a]_H = [a]_G$.}
+\begin{proof}
+	\pf
+	\step{a}{\pick\ $b \in Z_G(a) - H$}
+	\step{b}{$H\inv{b} = G - H$}
+	\step{c}{$G = H Z_G(a)$}
+	\begin{proof}
+		\pf\ For $x \in H$ we have $x = xe$ and for $x \notin H$ we have $x \in H\inv{b}$ hence $xb \in H$ and $x = (xb)b$.
+	\end{proof}
+	\step{b}{$|[a]_H| = |[a]_G|$}
+	\begin{proof}
+	\pf
+	\begin{align*}
+		|[a]_H| & = \frac{|H|}{|Z_H(a)|} \\
+		& = \frac{|H|}{|H \cap Z_G(a)|} \\
+		& = \frac{|Z_G(a)||H|}{|Z_G(a)||H \cap Z_G(a)|} \\
+		& = \frac{|HZ_G(a)|}{|Z_G(a)|} \\
+		& = \frac{|G|}{|Z_G(a)|} \\
+		& = |[a]_G|
+	\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Conjugation on Sets}
 
 \begin{df}[Conjugation]
@@ -3658,6 +3702,10 @@ Let $G$ be a group and $H$ a subgroup of $G$. If $[G:N_G(H)]$ is finite, then it
 \begin{proof}
 \pf\ By the Orbit-Stabilizer Theorem. \qed
 \end{proof}
+
+\begin{cor}
+Let $G$ be a group and $H$ a subgroup of $G$. If $[G:H]$ is finite, the the number of subgroups conjugate to $H$ is finite and divides $[G:H]$.
+\end{cor}
 
 \begin{df}[Centralizer]
 Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
