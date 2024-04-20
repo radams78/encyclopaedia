@@ -29,7 +29,7 @@
 \contentsline {section}{\numberline {7.11}Commutator Subgroup}{51}{}%
 \contentsline {section}{\numberline {7.12}Presentations}{51}{}%
 \contentsline {section}{\numberline {7.13}Index of a Subgroup}{52}{}%
-\contentsline {section}{\numberline {7.14}Cokernels}{53}{}%
+\contentsline {section}{\numberline {7.14}Cokernels}{54}{}%
 \contentsline {section}{\numberline {7.15}Cayley Graphs}{54}{}%
 \contentsline {chapter}{\numberline {8}Abelian Groups}{55}{}%
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{60}{}%

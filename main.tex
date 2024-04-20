@@ -2363,10 +2363,43 @@ For $p$ a prime number, the only group of order $p$ is $C_p$.
 \end{proof}
 
 \begin{thm}[Cauchy's Theorem]
-Let $G$ be a finite group. If $p$ is prime and $p \mid |G|$ then $G$ has a subgroup of order $p$.
+Let $G$ be a finite group. If $p$ is prime and $p \mid |G|$ then the number of cyclic subgroups of order $p$ is congruent to 1 modulo $p$. In particular, there exists an element of order $p$.
 \end{thm}
 
-%TODO
+\begin{proof}
+\pf
+\step{1}{\pflet{$S = \{ (a_1, a_2, \ldots, a_p) \in G^p : a_1 a_2 \cdots a_p = e \}$}}
+\step{2}{$|S| = |G|^{p-1}$}
+\begin{proof}
+	\pf\ Given any $a_1, \ldots, a_{p-1} \in G$, there exists a unique $a_p$ such that $(a_1, \ldots, a_p) \in S$, namely $a_p = (a_1 \cdots a_{p-1})^{-1}$.
+\end{proof}
+\step{3}{$p \mid |S|$}
+\step{4}{Define an action of $\mathbb{Z} / p \mathbb{Z}$ on $S$ by
+\[ m \cdot (a_1, \ldots, a_p) = (a_m, a_{m+1}, \ldots, a_p, a_1, a_2, \ldots, a_{m-1}) \enspace . \]}
+\begin{proof}
+	\pf\ If $(a_1, \ldots, a_p) \in S$ then $(a_2, a_3, \ldots, a_p, a_1) \in S$ since $a_1 = (a_2 \cdots a_p)^{-1}$.
+\end{proof}
+\step{5}{\pflet{$Z$ be the set of fixed points of this action.}}
+\step{6}{$|Z| \equiv 0 (\mod p)$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:fixed-points-of-action-of-p-group}, \stepref{3}.
+\end{proof}
+\step{7}{$Z = \{(a, a, \ldots, a) : a^p = e \}$}
+\step{8}{$Z \neq \emptyset$}
+\begin{proof}
+	\pf\ Since $(e, e, \ldots, e) \in Z$.
+\end{proof}
+\step{10}{An element $a$ has order $p$ iff $(a, a, \ldots, a) \in Z$ and $a \neq e$.}
+\step{11}{\pflet{$N$ be the number of cyclic subgroups of order $p$.}}
+\step{12}{The number of elements of order $p$ is $N(p-1)$}
+\step{13}{$|Z| = N(p-1) + 1$}
+\step{14}{$-N+1 \equiv 0 (\mod p)$}
+\begin{proof}
+	\pf\ From \stepref{6}.
+\end{proof}
+\step{15}{$N \equiv 1 (\mod p)$}
+\qed
+\end{proof}
 
 \begin{prop}
 Let $G$ be a group. Let $K$ be a subgroup of $G$ and $H$ a subgroup of $K$. If $|G:H|$, $|G:K|$ and $|K:H|$ are all finite then
@@ -3240,6 +3273,7 @@ Let $A$ be a set of representatives for the nontrivial orbits of the action. The
 \end{proof}
 
 \begin{cor}
+\label{cor:fixed-points-of-action-of-p-group}
 Let $p$ be a prime.
 Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. Let $Z$ be the set of fixed points of the action. Then $|Z| \cong |S| (\mod p)$.
 \end{cor}
