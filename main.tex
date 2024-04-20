@@ -3714,6 +3714,24 @@ Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
 
 %TODO Example where $Z_G(A) \neq N_G(A)$.
 
+\begin{prop}
+Let $H$ and $K$ be subgroups of $G$ with $H \subseteq N_G(K)$. Then the function $\gamma : H \rightarrow \Aut{\Grp}{K}$ defined by conjugation
+\[ \gamma_h(k) = hk\inv{h} \]
+is a homomorphism of groups with $\ker \gamma = H \cap Z_G(K)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $g,h \in H$ we have $\gamma_{gh} = \gamma_g \circ \gamma_h$.}
+\begin{proof}
+	\pf\ Since $\gamma_{gh}(k) = \gamma_g(\gamma_h(k)) = ghk\inv{h}\inv{g}$.
+\end{proof}
+\step{2}{For all $h \in H$ we have $\gamma_h = \id{K}$ iff $h \in Z_G(K)$.}
+\begin{proof}
+	\pf\ Both are equivalent to $\forall k \in K. hk\inv{h} = k$, i.e. $\forall k \in K. hk = kh$.
+\end{proof}
+\qed
+\end{proof}
 \part{Ring Theory}
 
 \chapter{Rngs}
