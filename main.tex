@@ -2470,6 +2470,50 @@ $G$ is the free group on $A$ iff the Cayley graph with respect to $A$ is a tree.
 \pf\ Both are equivalent to saying that the product of two different strings of elements of $A$ and/or their inverses are not equal. \qed
 \end{proof}
 
+\section{Characteristic Subgroups}
+
+\begin{df}[Characteristic Subgroup]
+Let $G$ be a group. Let $H$ be a subgroup of $G$. Then $H$ is a \emph{characteristic} subgroup of $G$ iff, for every automorphism $\phi$ of $G$, we have $\phi(H) \subseteq H$.
+\end{df}
+
+\begin{prop}
+Characteristic subgroups are normal.
+\end{prop}
+
+\begin{proof}
+\pf\ Take $\phi$ to be conjugation with respect to an arbitrary element. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group. Let $K$ be a normal subgroup of $G$ and $H$ a characteristic subgroup of $K$. Then $H$ is normal in $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $a \in G$ we have conjugation by $a$ is an automorphism on $K$, hence $H$ is closed under it. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group. Let $H$ be a subgroup of $G$. Suppose there is no other subgroup of $G$ isomorphic to $H$. Then $H$ is characteristic, hence normal.
+\end{prop}
+
+\begin{proof}
+\pf\ For any automorphism $\phi$ on $G$, we have $\phi(H)$ is isomorphic to $H$, hence $\phi(H) = H$. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a finite group. Let $K$ be a normal subgroup of $G$. Assume $|K|$ and $|G/K|$ are relatively prime. Then $K$ is characteristic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$K'$ be a subgroup of $G$ isomorphic to $K$.} \prove{$K' = K$}}
+\step{2}{$|K' / (K \cap K')|$ divides both $|K'| = |K|$ and $|G/K|$}
+\step{3}{$|K'/(K \cap K')| = 1$}
+\step{4}{$K' = K \cap K'$}
+\step{5}{$K' = K$}
+\qed
+\end{proof}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]

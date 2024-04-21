@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  20 APR 2024 20:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 APR 2024 20:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -625,12 +625,12 @@ L/cmm/m/it/10 S$ \OT1/cmr/m/n/10 since $\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 =
 (\OML/cmm/m/it/10 a[] [] a[]\OT1/cmr/m/n/10 )[]$. 
  []
 
-[53] [54]
-Chapter 8.
-[55
+[53] [54] [55] [56
 
-] [56]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2601--2602
+]
+Chapter 8.
+[57] [58]
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2645--2646
 []\OT1/cmr/bx/n/10 Proposition 8.12. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -638,12 +638,12 @@ m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
 
 WARNING: proof step "b" (<3>1) already defined
 WARNING: proof step "2" (<1>3) already defined
-[57] [58] [59] [60] [61] [62] [63] [64]
+[59] [60] [61] [62] [63] [64] [65] [66]
 Chapter 9.
-[65
+[67
 
-] [66]
-Overfull \hbox (0.47714pt too wide) in paragraph at lines 3223--3223
+] [68]
+Overfull \hbox (0.47714pt too wide) in paragraph at lines 3267--3267
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a sub-group $\OML/cmm/m/it/10 K$ \OT1/c
 mr/m/n/10 of $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 nor-mal in $\OML/cmm/m/it/10 
 G$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G \OT1/cmr/m/n
@@ -652,102 +652,102 @@ msy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ; p\OT1/cmr/m/
 n/10 !)$. 
  []
 
-[67] [68] [69] [70] [71]
+[69] [70] [71] [72] [73]
 WARNING: proof step "2" (<1>3) already defined
 WARNING: proof step "6" (<1>7) already defined
-[72]
+[74]
 WARNING: proof step "b" (<2>4) already defined
-[73] [74] [75] [76
+[75] [76] [77] [78
 
-] [77] [78]
+] [79] [80]
 Chapter 10.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 379
-0.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 383
+4.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [79
+) [81
 
-] [80] [81]
-[82
+] [82] [83]
+[84
 
 ]
 Chapter 11.
-[83] [84] [85] [86] [87] [88]
+[85] [86] [87] [88] [89] [90]
 Chapter 12.
-[89
+[91
 
-] [90] [91] [92
+] [92] [93] [94
 
 ]
 Chapter 13.
-[93] [94]
+[95] [96]
 Chapter 14.
-[95
+[97
 
-] [96] [97] [98]
+] [98] [99] [100]
 Chapter 15.
-[99
+[101
 
-] [100] [101] [102] [103] [104
+] [102] [103] [104] [105] [106
 
 ]
 Chapter 16.
-[105] [106] [107] [108
+[107] [108] [109] [110
 
 ]
 Chapter 17.
-[109] [110
-
-]
-Chapter 18.
 [111] [112
 
 ]
-Chapter 19.
+Chapter 18.
 [113] [114
 
 ]
-Chapter 20.
+Chapter 19.
 [115] [116
 
 ]
-Chapter 21.
-[117] [118]
-Chapter 22.
-[119
+Chapter 20.
+[117] [118
 
-] [120
+]
+Chapter 21.
+[119] [120]
+Chapter 22.
+[121
+
+] [122
 
 ]
 Chapter 23.
-[121] [122
+[123] [124
 
 ]
 Chapter 24.
-[123] [124]
+[125] [126]
 Chapter 25.
-[125
+[127
 
 ]
 WARNING: proof step "3" (<1>4) already defined
-[126] [127] [128] [129] [130] [131] [132] [133] [134]
+[128] [129] [130] [131] [132] [133] [134] [135] [136]
 Chapter 26.
-[135
-
-] [136]
-Chapter 27.
 [137
 
-] [138
+] [138]
+Chapter 27.
+[139
+
+] [140
 
 ]
 Chapter 28.
-[139] [140]
+[141] [142]
 Chapter 29.
-[141
+[143
 
 ]
-Overfull \hbox (46.77194pt too wide) in paragraph at lines 6279--6279
+Overfull \hbox (46.77194pt too wide) in paragraph at lines 6323--6323
 []$\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 I\OT1/cmr/m/n/1
 0 ) \OMS/cmsy/m/n/10 ! [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 aI\OT1/cmr/m/n/10 
 )$ be the func-tion $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r[];
@@ -755,80 +755,80 @@ Overfull \hbox (46.77194pt too wide) in paragraph at lines 6279--6279
 r/m/n/10 )$. 
  []
 
-[142] [143] [144
+[144] [145] [146
 
 ]
 Chapter 30.
-[145] [146
-
-]
-Chapter 31.
 [147] [148
 
 ]
-Chapter 32.
+Chapter 31.
 [149] [150
 
 ]
+Chapter 32.
+[151] [152
+
+]
 Chapter 33.
-[151] [152]
+[153] [154]
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
- [153]
-[154] [155] [156]
+ [155]
+[156] [157] [158]
 WARNING: proof step "1" (<1>3) already defined
-[157]
+[159]
 WARNING: proof step "2" (<1>4) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
-[158] [159]
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6837--6838
+[160] [161]
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 6881--6882
 []\OT1/cmr/bx/n/10 Proposition 33.14. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
 
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6855--6856
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 6899--6900
 []\OT1/cmr/bx/n/10 Proposition 33.15. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[160]
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6871--6872
+[162]
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 6915--6916
 []\OT1/cmr/bx/n/10 Proposition 33.16. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[161] [162] [163] [164]
+[163] [164] [165] [166]
 Chapter 34.
-[165
+[167
 
-] [166
+] [168
 
-] [167] [168]
+] [169] [170]
 Chapter 35.
-[169
+[171
 
-] [170] [171] [172
+] [172] [173] [174
 
 ]
 Chapter 36.
-[173] [174
+[175] [176
 
-] [175] [176]
+] [177] [178]
 Chapter 37.
-[177
+[179
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 7410--7418
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 7454--7462
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[178] (./main.aux) ) 
+[180] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  17452 strings out of 476091
  374981 string characters out of 5794081
@@ -862,10 +862,10 @@ c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
 .pfb>
-Output written on main.pdf (178 pages, 658112 bytes).
+Output written on main.pdf (180 pages, 660656 bytes).
 PDF statistics:
- 707 PDF objects out of 1000 (max. 8388607)
- 472 compressed objects within 5 object streams
+ 713 PDF objects out of 1000 (max. 8388607)
+ 476 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
