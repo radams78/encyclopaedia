@@ -2493,6 +2493,7 @@ Let $G$ be a group. Let $K$ be a normal subgroup of $G$ and $H$ a characteristic
 \end{proof}
 
 \begin{prop}
+\label{prop:unique-subgroup-normal}
 Let $G$ be a group. Let $H$ be a subgroup of $G$. Suppose there is no other subgroup of $G$ isomorphic to $H$. Then $H$ is characteristic, hence normal.
 \end{prop}
 
@@ -2519,6 +2520,39 @@ Let $G$ be a finite group. Let $K$ be a normal subgroup of $G$. Assume $|K|$ and
 \begin{df}[Simple Group]
 A group $G$ is \emph{simple} iff its only normal subgroups are $\{e\}$ and $G$.
 \end{df}
+
+\begin{prop}
+Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp$ where $1 < m < p$ then $G$ is not simple.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{There exists a unique subgroup of $G$ of order $p$.}
+\begin{proof}
+	\step{a}{There exists a subgroup of order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem
+	\end{proof}
+	\step{b}{\assume{for a contradiction there is more than one subgroup of order $p$.}}
+	\step{c}{There are at least $p + 1$ subgroups of order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem
+	\end{proof}
+	\step{d}{The union of all the subgroups of order $p$ has a total of $(p+1)(p-1)+1 = p^2$ elements.}
+	\begin{proof}
+		\pf\ Any two subgroups of order $p$ intersect only in $e$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Since $|G| = mp < p^2$.
+	\end{proof}
+\end{proof}
+\step{2}{The subgroup of order $p$ is normal.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:unique-subgroup-normal}.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Abelian Groups}
 
