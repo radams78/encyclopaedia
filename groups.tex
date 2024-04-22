@@ -1,0 +1,3368 @@
+\chapter{Semigroups}
+
+\begin{df}[Semigroup]
+A \emph{semigroup} consists of a set $S$ and an associative binary operation $\cdot$ on $S$.
+\end{df}
+
+\chapter{Monoids}
+
+\begin{df}[Monoid]
+A \emph{monoid} consists of a semigroup $M$ such that there exists $e \in M$, the \emph{unit}, such that, for all $x \in M$, we have $x e = ex = x$.
+
+We identify a monoid $M$ with the category with one object whose morphisms are the elements of $M$, with composition given by $\cdot$.
+\end{df}
+
+\begin{prop}
+    The identity in a group is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ Proposition \ref{prop:id-morph-unique}.
+\end{proof}
+
+\chapter{Groups}
+
+\begin{df}[Group]
+Let $\mathcal{C}$ be a category with finite products. A \emph{group (object)} in $\mathcal{C}$ consists of an object $G \in \mathcal{C}$ and morphisms
+\[ m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G \]
+such that the following diagrams commute.
+\[ \begin{tikzcd}
+G^3 \arrow[r,"m \times \id{G}"] \arrow[d,"\id{G} \times m"] & G^2 \arrow[d,"m"] \\
+G^2 \arrow[r,"m"] & G
+\end{tikzcd} \]
+\[ \begin{tikzcd}
+1 \times G \arrow[r,"e \times \id{G}"] \arrow[dr,"\cong"] & G^2 \arrow[d,"m"] \\
+& G
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+G \times 1 \arrow[r,"\id{G} \times e"] \arrow[dr,"\cong"] & G^2 \arrow[d,"m"] \\
+& G
+\end{tikzcd} \]
+\[ \begin{tikzcd}
+G \arrow[r,"\Delta"] \arrow[d] & G^2 \arrow[r,"\id{G} \times i"] & G^2 \arrow[d,"m"] \\
+1 \arrow[rr,"e"] & & G
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+G \arrow[r,"\Delta"] \arrow[d] & G^2 \arrow[r,"i \times \id{G}"] & G^2 \arrow[d,"m"] \\
+1 \arrow[rr,"e"] & & G
+\end{tikzcd} \]
+\end{df}
+
+\begin{df}[Group]
+We write just 'group' for 'group in $\Set$. Thus, a \emph{group} $G$ consists of a set $G$ and a binary operation $\cdot : G^2 \rightarrow G$ such that $\cdot$ is associative, and there exists $e \in G$, the \emph{identity} element of the group, such that:
+    \begin{itemize}
+        \item For all $x \in G$ we have $xe = ex = x$
+        \item For all $x \in G$, there exists $\inv{x} \in G$, the \emph{inverse} of $x$,
+              such that $x \inv{x} = \inv{x} x = e$.
+    \end{itemize}
+
+    The \emph{order} of a group $G$, denoted $|G|$, is the number of elements in
+    $G$ if $G$ is finite; otherwise we write $|G| = \infty$.
+\end{df}
+
+\begin{prop}
+    \label{prop:grp-inv-unique}
+    The inverse of an element is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $i$ and $j$ are inverses of $x$ then $i = ixj = j$. \qed
+\end{proof}
+
+\begin{ex}
+    \begin{itemize}
+        \item
+              The \emph{trivial} group is $\{e\}$ under $ee = e$.
+        \item $\mathbb{Z}$ is a group under addition %TODO Define this
+        \item $\mathbb{Q}$ is a group under addition %TODO Define this
+        \item $\mathbb{Q} - \{0\}$ is a group under multiplication
+        \item $\mathbb{R}$ is a group under addition %TODO Define this
+        \item $\mathbb{R} - \{0\}$ is a group under multiplication
+        \item $\mathbb{C}$ is a group under addition %TODO Define this
+        \item $\mathbb{C} - \{0\}$ is a group under multiplication
+        \item $\{-1,1\}$ is a group under multiplication
+        \item For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, we have
+              $\Aut{\mathcal{C}}{A}$ is a group under $gf = f \circ g$.
+
+              For $A$ a set, we call $S_A = \Aut{\Set}{A}$ the \emph{symmetric group} or
+              \emph{group of permutations} of $A$.
+
+        \item For $n \geq 3$, the \emph{dihedral group} $D_{2n}$ consists of the set of rigid
+              motions that map the regular $n$-gon onto itself under composition.
+              \item Let $SL_2(\mathbb{Z}) = \left\{ \left( \begin{array}{cc}
+              a & b \\
+              c & d \end{array} \right)
+              : a,b,c,d \in \mathbb{Z}, ad - bc = 1 \right\}$ under matrix multiplication.
+\item The quaternionic group $Q_8$ is the group
+\[ \{ 1, -1, i, -i, j, -j, k, -k \} \]
+with multiplication table
+\[ \begin{array}{cccccccc}
+1 & -1 & i & -i & j & -j & k & -k \\
+-1 & 1 & -i & i & -j & j & -k & k \\
+i & -i & -1 & 1 & k & -k & -j & j \\
+-i & i & 1 & -1 & -k & k & j & -j \\
+j & -j & -k & k & -1 & 1 & i & -i \\
+-j & j & k & -k & 1 & -1 & -i & i \\
+k & -k & j & -j & -i & i & -1 & 1 \\
+-k & k & -j & j & i & -i & 1 & -1
+\end{array} \]
+    \end{itemize}
+\end{ex}
+
+\begin{ex}
+    \begin{itemize}
+        \item The only group of order 1 is the trivial group.
+        \item The only group of order 2 is $\mathbb{Z}_2$.
+        \item The only group of order 3 is $\mathbb{Z}_3$.
+        \item There are exactly two groups of order 4: $\mathbb{Z}_4$ and $\mathbb{Z}_2
+                  \times \mathbb{Z}_2$ under $(a,b) (c,d) = (ac,bd)$.
+    \end{itemize}
+\end{ex}
+
+\begin{prop}[Cancellation]
+    Let $G$ be a group. Let $a,g,h \in G$. If $ag = ah$ or $ga = ha$ then $g = h$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $ag = ah$ then $g = \inv{a} a g = \inv{a} a h = h$. Similarly if $ga = ha$. \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group and $g,h \in G$. Then $(gh)^{-1} = h^{-1}g^{-1}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $ghh^{-1}g^{-1} = e$. \qed
+\end{proof}
+
+\begin{df}
+\label{df:power-in-group}
+    Let $G$ be a group. Let $g \in G$. We define $g^n \in G$ for all $n \in \mathbb{Z}$ as follows:
+    \begin{align*}
+        g^0     & = e                       \\
+        g^{n+1} & = g^n g      & (n \geq 0) \\
+        g^{-n}  & = (g^{-1})^n & (n > 0)
+    \end{align*}
+\end{df}
+
+\begin{prop}
+    \label{prop:power-add}
+    Let $G$ be a group. Let $g \in G$ and $m,n \in \mathbb{Z}$. Then
+    \[ g^{m+n} = g^m g^n \enspace . \]
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{For all $k \in \mathbb{Z}$ we have $g^{k+1} = g^k g$}
+    \begin{proof}
+        \step{a}{For all $k \geq 0$ we have $g^{k+1} = g^k g$}
+        \begin{proof}
+            \pf\ Immediate from definition.
+        \end{proof}
+        \step{b}{$g^{-1+1} = g^{-1} g$}
+        \begin{proof}
+            \pf\ Both are equal to $e$.
+        \end{proof}
+        \step{c}{For all $k > 1$ we have $g^{-k+1} = g^{-k} g$}
+        \begin{proof}
+            \pf
+            \begin{align*}
+                g^{-k+1} & = (g^{-1})^{k-1}          \\
+                         & = (g^{-1})^{k-1} g^{-1} g \\
+                         & = (g^{-1})^k g            \\
+                         & = g^{-k} g
+            \end{align*}
+        \end{proof}
+    \end{proof}
+    \step{2}{For all $k \in \mathbb{Z}$ we have $g^{k-1} = g^k g^{-1}$}
+    \begin{proof}
+        \pf\ Substitute $k = k-1$ above and multiply by $g^{-1}$.
+    \end{proof}
+    \step{3}{$g^{m+0} = g^m g^0$}
+    \begin{proof}
+        \pf\ Since $g^m g^0 = g^m e = g^m$.
+    \end{proof}
+    \step{4}{If $g^{m+n} = g^m g^n$ then $g^{m+n+1} = g^m g^{n+1}$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            g^{m+n+1} & = g^{m+n} g   & (\text{\stepref{1}}) \\
+                      & = g^m g^n g                          \\
+                      & = g^m g^{n+1} & (\text{\stepref{1}})
+        \end{align*}
+    \end{proof}
+    \step{5}{If $g^{m+n} = g^m g^n$ then $g^{m+n-1} = g^m g^{n-1}$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            g^{m+n-1} g          & = g^{m+n}        & (\text{\stepref{1}}) \\
+                                 & = g^m g^n                               \\
+            \therefore g^{m+n-1} & = g^m g^n g^{-1}                        \\
+                                 & = g^m g^{n-1}    & (\text{\stepref{2}})
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:power-mult}
+    Let $G$ be a group. Let $g \in G$ and $m,n \in \mathbb{Z}$. Then
+    \[ (g^m)^n = g^{mn} \enspace . \]
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$(g^m)^0 = g^0$}
+    \begin{proof}
+        \pf\ Both sides are equal to $e$.
+    \end{proof}
+    \step{2}{If $(g^m)^n = g^{mn}$ then $(g^m)^{n+1} = g^{m(n+1)}$.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            (g^m)^{n+1} & = (g^m)^n g^m & (\text{Proposition \ref{prop:power-add}}) \\
+                        & = g^{mn} g^m                                              \\
+                        & = g^{mn + m}  & (\text{Proposition \ref{prop:power-add}})
+        \end{align*}
+    \end{proof}
+    \step{3}{If $(g^m)^n = g^{mn}$ then $(g^m)^{n-1} = g^{m(n-1)}$.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            (g^m)^n                    & = g^{mn}                                                   \\
+            \therefore (g^m)^{n-1} g^m & = g^{mn-m} g^m & (\text{Proposition \ref{prop:power-add}}) \\
+            \therefore (g^m)^{n-1}     & = g^{mn-m}     & (\text{Cancellation})
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}[Commute]
+    Let $G$ be a group and $g,h \in G$. We say $g$ and $h$ \emph{commute} iff $gh = hg$.
+\end{df}
+
+\begin{df}
+Let $G$ be a group. Given $g \in G$ and $A \subseteq G$, we define
+\[ gA = \{ ga : a \in A \}, \qquad Ag = \{ ag : a \in A \} \enspace . \]
+Given sets $A,B \subseteq G$, we define
+\[ AB = \{ ab : a \in A, b \in B \} \enspace . \]
+\end{df}
+
+\section{Order of an Element}
+
+\begin{df}[Order]
+    Let $G$ be a group. Let $g \in G$. Then $g$ has \emph{finite order} iff there exists a positive integer $n$ such that $g^n = e$. In this case, the \emph{order} of $g$, denoted $|g|$, is the least positive integer $n$ such that $g^n = e$.
+
+    If $g$ does not have finite order, we write $|g| = \infty$.
+\end{df}
+
+\begin{prop}
+    Let $G$ be a group. Let $g \in G$ and $n$ be a positive integer. If $g^n = e$ then $|g| \mid n$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$n = q |g| + d$ where $0 \leq d < |g|$}}
+    \begin{proof}
+        \pf\ Division Algorithm.
+    \end{proof}
+    \step{2}{$g^d = e$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            e & = g^n                                                                                 \\
+              & = g^{q|g| + d}                                                                        \\
+              & = (g^{|g|})^q g^d & (\text{Propositions \ref{prop:power-add}, \ref{prop:power-mult}}) \\
+              & = e^q g^d                                                                             \\
+              & = g^d
+        \end{align*}
+    \end{proof}
+    \step{3}{$d = 0$}
+    \begin{proof}
+        \pf\ By minimality of $|g|$.
+    \end{proof}
+    \step{4}{$n = q|g|$}
+    \qed
+\end{proof}
+
+\begin{cor}
+    \label{cor:order-divides}
+    Let $G$ be a group. Let $g \in G$ have finite order and $n \in \mathbb{Z}$. Then $g^n = e$ if and only if $|g| \mid n$.
+\end{cor}
+
+%TODO: In fact |g| \mid |G|
+\begin{prop}
+    Let $G$ be a group and $g \in G$. Then $|g| \leq |G|$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\assume{w.l.o.g. $G$ is finite.}}
+    \step{2}{\pick\ $i$, $j$ with $0 \leq i < j \leq |G|$ such that $g^i = g^j$.}
+    \begin{proof}
+        \pf\ Otherwise $g^0$, $g^1$, \ldots, $g^{|G|}$ would be $|G| + 1$ distinct elements of $G$.
+    \end{proof}
+    \step{3}{$g^{j-i} = e$}
+    \step{4}{$g$ has finite order and $|g| \leq |G|$}
+    \begin{proof}
+        \pf\ Since $|g| \leq j - i \leq j \leq |G|$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:order-of-g-to-the-m}
+    Let $G$ be a group. Let $g \in G$ have finite order. Let $m \in \mathbb{N}$. Then
+    \[ |g^m| = \frac{\lcm(m,|g|)}{m} = \frac{|g|}{\gcd(m,|g|)}\]
+\end{prop}
+
+\begin{proof}
+    \pf\ Since for any integer $d$ we have
+    \begin{align*}
+        g^{md} = e & \Leftrightarrow |g| \mid md                  & (\text{Corollary \ref{cor:order-divides}}) \\
+                   & \Leftrightarrow \lcm(m,|g|) \mid md                                                       \\
+                   & \Leftrightarrow \frac{\lcm(m,|g|)}{m} \mid d & \qed
+    \end{align*}
+    and so $|g^m| = \frac{\lcm(m,|g|)}{m}$ by Corollary \ref{cor:order-divides}. \qed
+\end{proof}
+
+\begin{cor}
+    If $g$ has odd order then $|g^2| = |g|$.
+\end{cor}
+
+\begin{prop}
+    \label{prop:order-gh}
+    Let $G$ be a group. Let $g,h \in G$ have finite order. Assume $gh = hg$. Then $|gh|$ has finite order and
+    \[ |gh| \mid \lcm(|g|,|h|)\]
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $(gh)^{\lcm(|g|,|h|)} = g^{\lcm(|g|,|h|)}h^{\lcm(|g|,|h|)} = e$. \qed
+\end{proof}
+
+\begin{ex}
+    This example shows that we cannot remove the hypothesis that $gh = hg$.
+
+    In $\mathrm{GL}_2(\mathbb{R})$, take
+    \[ g = \left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right), \qquad
+        h = \left( \begin{array}{cc} 0 & 1 \\ -1 & -1 \end{array} \right) \enspace . \]
+    Then $|g| = 4$, $|h| = 3$ and $|gh| = \infty$.
+\end{ex}
+
+\begin{prop}
+    \label{prop:order-gh-if-gcd-one}
+    Let $G$ be a group and $g,h \in G$ have finite order. If $gh=hg$ and $\gcd(|g|,|h|) = 1$ then $|gh| = |g||h|$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$N = |gh|$}}
+    \step{2}{$g^N = (\inv{h})^N$}
+    \step{3}{$g^{N|g|} = e$}
+    \step{4}{$|g^N| \mid |g|$}
+    \step{5}{$h^{-N|h|} = e$}
+    \step{5}{$|g^N| \mid |h|$}
+    \step{6}{$|g^N| = 1$}
+    \begin{proof}
+        \pf\ Since $\gcd(|g|,|h|) = 1$.
+    \end{proof}
+    \step{7}{$g^N = e$}
+    \step{8}{$|g| \mid N$}
+    \step{9}{$h^{-N} = e$}
+    \step{10}{$|h| \mid N$}
+    \step{11}{$N = |g||h|$}
+    \begin{proof}
+        \pf\ Using Proposition \ref{prop:order-gh}.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:product-of-all-elements}
+    Let $G$ be a finite group. Assume there is exactly one element $f \in G$ of order 2. Then the product of all the elements of $G$ is $f$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Let the elements of $G$ be $g_1$, $g_2$, \ldots, $g_n$. Apart from $e$ and $f$, every element and its inverse are distinct elements of the list. Hence the product of the list is $ef = f$. \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a finite group of order $n$. Let $m$ be the number of elements of $G$ of order 2. Then $n-m$ is odd.
+\end{prop}
+
+\begin{proof}
+    \pf\ In the list of all elements that are not of order 2, every element and its inverse are distinct except for $e$. Hence the list has odd length. \qed
+\end{proof}
+
+\begin{cor}
+    If a finite group has even order, then it contains an element of order 2.
+\end{cor}
+
+\begin{prop}
+    Let $G$ be a group and $a,g \in G$. Then $|ag\inv{a}| = |g|$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since
+    \begin{align*}
+        (ag\inv{a})^n = e & \Leftrightarrow a g^n \inv{a} = e        \\
+                          & \Leftrightarrow g^n = e           & \qed
+    \end{align*}
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group and $g,h \in G$. Then $|gh| = |hg|$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $|gh| = |ghg\inv{g}| = |hg|$. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group of order $n$. Let $k$ be relatively prime to $n$. Then every element in $G$ has the form $x^k$ for some $x$.
+\end{prop}
+
+\begin{proof}
+\step{1}{\pick\ integers $a$ and $b$ such that $an + bk = 1$.}
+\step{2}{\pflet{$g \in G$}}
+\step{3}{$g = (g^b)^k$}
+\begin{proof}
+\pf
+\begin{align*}
+g & = g. (g^n)^{-a} & (g^n = e) \\
+& = g^{1-an} \\
+& = g^{bk}
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Generators}
+
+\begin{df}[Generator]
+    Let $G$ be a group and $a \in G$. We say $a$ \emph{generates} the group iff, for all $x \in G$, there exists an integer $n$ such that $x^n = a$.
+\end{df}
+
+\begin{ex}
+\label{ex:SL2Z}
+$\mathrm{SL}_2(\mathbb{Z})$ is generated by
+\[ s = \left( \begin{array}{cc}
+0 & -1 \\ 1 & 0
+\end{array} \right), \qquad
+t = \left( \begin{array}{cc}
+1 & 1 \\
+0 & 1
+\end{array} \right) \]
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$H = \langle s, t \rangle$}}
+\step{2}{For all $q \in \mathbb{Z}$ we have $\left( \begin{array}{cc} 1 & q \\ 0 & 1 \end{array} \right) \in H$.}
+\begin{proof}
+	\pf\ It is $t^q$.
+\end{proof}
+\step{3}{For all $q \in \mathbb{Z}$ we have $\left( \begin{array}{cc} 1 & 0 \\ q & 1 \end{array} \right) \in H$.}
+\begin{proof}
+\pf
+\begin{align*}
+st^{-q}\inv{s} & = \left( \begin{array}{cc}
+0 & -1 \\
+1 & 0
+\end{array} \right)
+\left( \begin{array}{cc}
+1 & -q \\ 0 & 1
+\end{array} \right)
+\left( \begin{array}{cc}
+0 & 1 \\
+-1 & 0
+\end{array} \right) \\
+& = \left( \begin{array}{cc}
+0 & -1 \\
+1 & -q
+\end{array} \right)
+\left( \begin{array}{cc}
+0 & 1 \\
+-1 & 0
+\end{array} \right) \\
+& = \left( \begin{array}{cc}
+1 & 0 \\
+q & 1
+\end{array} \right)
+\end{align*}
+\end{proof}
+\step{4}{\[ \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \left( \begin{array}{cc} 1 & q \\ 0 & 1 \end{array} \right) = \left( \begin{array}{cc} a & qa + b \\ c & qc + d \end{array} \right) \]}
+\step{5}{\[ \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \left( \begin{array}{cc} 1 & 0 \\ q & 1 \end{array} \right) = \left( \begin{array}{cc} a+qb & b \\ c +qd & d \end{array} \right) \]}
+\step{6}{For any $M = \left( \begin{array}{cc} a & b \\ c & d \end{array} \right) \in \mathrm{SL}_2(\mathbb{Z})$, if $c$ and $d$ are both nonzero, then there exists $N \in H$ such that the bottom row of $MN$ has one entry the same as $M$ and one entry with smaller absolute value.}
+\begin{proof}
+\pf\ From \stepref{4} and \stepref{5} taking $q = -1$.
+\end{proof}
+\step{7}{For any $M \in \mathrm{SL}_2(\mathbb{Z})$, there exists $N \in H$ such that $MN$ has a zero on the bottom row.}
+\begin{proof}
+\pf\ Apply \stepref{6} repeatedly.
+\end{proof}
+\step{8}{Any matrix in $\SL{2}{\mathbb{Z}}$ with a zero on the bottom row is in $H$.}
+\begin{proof}
+\step{a}{$\left( \begin{array}{cc}
+1 & b \\
+0 & 1
+\end{array} \right) \in H$}
+\begin{proof}
+\pf\ \stepref{2}
+\end{proof}
+\step{b}{$\left( \begin{array}{cc}
+-1 & b \\
+0 & -1
+\end{array} \right) \in H$}
+\begin{proof}
+\pf\ It is
+$s^2 \left( \begin{array}{cc}
+1 & b \\
+0 & 1
+\end{array} \right)$ since $s^2 = -I$.
+\end{proof}
+\step{c}{$\left( \begin{array}{cc}
+a & 1 \\
+-1 & 0
+\end{array} \right) \in H$}
+\begin{proof}
+\pf\ It is $\left( \begin{array}{cc}
+1 & -a \\ 0 & 1 \end{array} \right) s$.
+\end{proof}
+\step{d}{$\left( \begin{array}{cc}
+a & -1 \\
+1 & 0
+\end{array} \right) \in H$}
+\begin{proof}
+\pf\ It is $s^2 \left( \begin{array}{cc}
+1 & a \\ 0 & 1 \end{array} \right) s$.
+\end{proof}
+\end{proof}
+\step{9}{Every matrix in $\SL{2}{\mathbb{Z}}$ is in $H$.}
+\qed
+\end{proof}
+
+\section{$p$-groups}
+
+\begin{df}[$p$-group]
+Let $p$ be a prime. A \emph{$p$-group} is a finite group whose order is a power of $p$.
+\end{df}
+
+\chapter{Group Homomorphisms}
+
+\begin{df}[Homomorphism]
+    Let $G$ and $H$ be groups. A \emph{(group) homomorphism} $\phi : G \rightarrow H$ is a function such that, for all $x,y \in G$,
+    \[ \phi(xy) = \phi(x) \phi(y) \enspace . \]
+\end{df}
+
+\begin{prop}
+    Let $G$ and $H$ be groups with identities $e_G$ and $e_H$.
+    Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\phi(e_G) = e_H$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\phi(e_G) = \phi(e_G e_G) = \phi(e_G) \phi(e_G)$ and so $\phi(e_G) = e_H$ by Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+    Let $\phi : G \rightarrow H$ be a group homomorphism. For all $x \in G$ we have $\phi(x^{-1}) = \phi(x)^{-1}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\phi(x) \phi(x^{-1}) = \phi(xx^{-1}) = \phi(e_G) = e_H$. \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$, $H$ and $K$ be groups. If $\phi : G \rightarrow H$ and $\psi : H \rightarrow K$ are homomorphisms then $\psi \circ \phi : G \rightarrow K$ is a homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf\ For $x,y \in G$ we have
+    \[ \psi(\phi(xy)) = \psi(\phi(x) \phi(y)) = \psi(\phi(x)) \psi(\phi(y)) \enspace . \]
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Then $\id{G} : G \rightarrow G$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf\ For $x,y \in G$ we have $\id{G}(xy) = xy = \id{G}(x) \id{G}(y)$. \qed
+\end{proof}
+
+\begin{prop}
+    Let $\phi : G \rightarrow H$ be a group homomorphism. Let $g \in G$ have finite order. Then $|\phi(g)|$ divides $|g|$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\phi(g)^{|g|} = \phi(g^{|g|}) = e$. \qed
+\end{proof}
+
+\begin{df}[Category of Groups]
+    Let $\mathbf{Grp}$ be the category of groups and group homomorphisms.
+\end{df}
+
+\begin{ex}
+There are 49487365402 groups of order 1024 up to isomorphism. %TODO
+\end{ex}
+
+\begin{prop}
+    A group homomorphism $\phi : G \rightarrow H$ is an isomorphism in $\mathbf{Grp}$ if and only if it is bijective.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\assume{$\phi$ is bijective.} \prove{$\inv{\phi}$ is a group homomorphism.}}
+    \step{2}{\pflet{$h,h' \in H$}}
+    \step{3}{$\phi(\inv{\phi}(hh')) = \phi(\inv{\phi}(h)\inv{\phi}(h'))$}
+    \begin{proof}
+        \pf\ Both are equal to $hh'$.
+    \end{proof}
+    \step{4}{$\inv{\phi}(hh') = \inv{\phi}(h) \inv{\phi}(h')$}
+    \qed
+\end{proof}
+
+\begin{cor}
+    \[ D_6 \cong C_3 \]
+\end{cor}
+
+\begin{proof}
+    \pf\ The canonical homomorphism $D_6 \rightarrow C_3$ is bijective. \qed
+\end{proof}
+
+\begin{cor}
+    \[ (\mathbb{R}, +) \cong (\{ x \in \mathbb{R} : x > 0 \}, \cdot) \]
+\end{cor}
+
+\begin{proof}
+    \pf\ The function that maps $x$ to $e^x$ is a bijective homomorphism. \qed
+\end{proof}
+
+\begin{prop}
+    The trivial group is the zero object in $\mathbf{Grp}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ For any group $G$, the unique function $G \rightarrow \{e\}$ is a group homomorphism, and the only group homomorphism $\{e\} \rightarrow G$ maps $e$ to $e_G$. \qed
+\end{proof}
+
+\begin{prop}
+    For any groups $G$ and $H$, the set $G \times H$ under $(g,h)(g',h') = (gg',hh')$ is the product of $G$ and $H$ in $\mathbf{Grp}$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$G \times H$ is a group.}
+    \begin{proof}
+        \step{a}{The multiplication is associative.}
+        \begin{proof}
+            \pf\ Since $(g_1,h_1)((g_2,h_2)(g_3,h_3)) = ((g_1,h_1)(g_2,h_2))(g_3,h_3) = (g_1 g_2 g_3, h_1 h_2 h_3)$.
+        \end{proof}
+        \step{b}{$(e_G,e_H)$ is the identity.}
+        \begin{proof}
+            \pf\ Since $(g,h)(e_G,e_H) = (e_G,e_H)(g,h) = (g,h)$.
+        \end{proof}
+        \step{c}{The inverse of $(g,h)$ is $(\inv{g},\inv{h})$.}
+        \begin{proof}
+            \pf\ Since $(g,h)(\inv{g},\inv{h}) = (\inv{g},\inv{h})(g,h) = (e_G,e_H)$.
+        \end{proof}
+    \end{proof}
+    \step{2}{$\pi_1 : G \times H \rightarrow G$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Immediate from definitions.
+    \end{proof}
+    \step{3}{$\pi_2 : G \times H \rightarrow H$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Immediate from definitions.
+    \end{proof}
+    \step{4}{For any group homomorphism $\phi : K \rightarrow G$ and $\psi : K \rightarrow H$, the function $\langle \phi, \psi \rangle : K \rightarrow G \times H$ where $\langle \phi, \psi \rangle(k) = (\phi(k), \psi(k))$ is a group homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            \langle \phi, \psi \rangle (kk') & = (\phi(kk'), \psi(kk'))                                     \\
+                                             & = (\phi(k)\phi(k'), \psi(k)\psi(k'))                         \\
+                                             & = (\phi(k),\psi(k)) (\phi(k'),\psi(k'))                      \\
+                                             & = \langle \phi,\psi \rangle(k) \langle \phi,\psi \rangle(k')
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\section{Subgroups}
+
+\begin{df}[Subgroup]
+Let $(G,\cdot)$ and $(H,*)$ be groups such that $H$ is a subset of $G$. Then $H$ is a \emph{subgroup} of $G$ iff the inclusion $i : H \hookrightarrow G$ is a group homomorphism.
+\end{df}
+
+\begin{prop}
+If $(H,*)$ is a subgroup of $(G,\cdot)$ then $*$ is the restriction of $\cdot$ to $H$.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $x,y \in H$ we have
+\[ x * y = i(x * y) = i(x) \cdot i(y) = x \cdot y \enspace .  \qquad \qed \]
+\end{proof}
+
+\begin{ex}
+For any group $G$ we have $\{e\}$ is a subgroup of $G$.
+\end{ex}
+
+\begin{prop}
+Let $G$ be a group. Let $H$ be a subset of $G$. Then $H$ is a subgroup of $G$ iff $H$ is nonempty and, for all $x,y \in H$, we have $x \inv{y} \in H$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $H$ is a subgroup of $G$ then $H$ is nonempty.}
+\begin{proof}
+\pf\ Since every group has an identity element and so is nonempty.
+\end{proof}
+\step{2}{If $H$ is a subgroup of $G$ then, for all $x,y \in H$, we have $x \inv{y} \in H$.}
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+\step{3}{If $H$ is nonempty and, for all $x,y \in H$, we have $x \inv{y} \in H$, then $H$ is a subgroup of $G$.}
+\begin{proof}
+	\step{a}{\assume{$H$ is nonempty.}}
+	\step{b}{\assume{$\forall x,y \in H. x \inv{y} \in H$}}
+	\step{c}{$e \in H$}
+	\begin{proof}
+		\pf\ Pick $x \in H$. We have $e = x \inv{x} \in H$.
+	\end{proof}
+	\step{d}{$\forall x \in H. \inv{x} \in H$}
+	\begin{proof}
+		\pf\ Given $x \in H$ we have $\inv{x} = e \inv{x} \in H$.
+	\end{proof}
+	\step{c}{$H$ is closed under the restriction of $\cdot$}
+	\begin{proof}
+		\pf\ Given $x,y \in H$ we have $xy = x \inv{(\inv{y})} \in H$.
+	\end{proof}
+	\step{d}{$H$ is a group under the restriction of $\cdot$}
+	\begin{proof}
+		\pf\ Associativity is inherited from $G$ and the existence of an identity element and inverses follows from \stepref{c} and \stepref{d}.
+	\end{proof}
+	\step{e}{The inclusion $H \hookrightarrow G$ is a group homomorphism.}
+	\begin{proof}
+		\pf\ For $x,y \in H$ we have $i(xy) = i(x)i(y) = xy$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The intersection of a set of subgroups of $G$ is a subgroup of $G$.
+\end{cor}
+
+\begin{cor}
+\label{cor:inverse-image-subgroup}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $H$. Then $\inv{\phi}(K)$ is a subgroup of $G$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{0}{$\inv{\phi}(K)$ is nonempty.}
+\begin{proof}
+\pf\ Since $e \in \inv{\phi}(K)$.
+\end{proof}
+\step{1}{\pflet{$x,y \in \inv{\phi}(K)$}}
+\step{2}{$\phi(x),\phi(y) \in K$}
+\step{3}{$\phi(x)\inv{\phi(y)} \in K$}
+\step{4}{$\phi(x\inv{y}) \in K$}
+\step{5}{$x\inv{y} \in \inv{\phi}(K)$}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Let $K$ be a subgroup of $G$. Then $\phi(K)$ is a subgroup of $H$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in \phi(K)$}}
+\step{2}{\pick\ $a,b \in K$ such that $x = \phi(a)$ and $y = \phi(b)$}
+\step{3}{$x\inv{y} = \phi(a\inv{b})$}
+\step{4}{$x\inv{y} \in \phi(K)$}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:subgroups-of-Z}
+Let $G$ be a subgroup of $\mathbb{Z}$. Then there exists $d \geq 0$ such that $G = d \mathbb{Z}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $G \neq \{0\}$}}
+\begin{proof}
+\pf\ Since $\{0\} = 0 \mathbb{Z}$.
+\end{proof}
+\step{2}{\pflet{$d$ be the least positive element of $G$.} \prove{$G = d \mathbb{Z}$}}
+\begin{proof}
+\pf\ If $n \in G$ then $-n \in G$ so $G$ must contain a positive element.
+\end{proof}
+\step{3}{$G \subseteq d \mathbb{Z}$}
+\begin{proof}
+	\step{a}{\pflet{$n \in G$}}
+	\step{b}{\pflet{$q$ and $r$ be the integers such that $n = qd + r$ and $0 \leq r < d$.}}
+	\step{c}{$r \in G$}
+	\begin{proof}
+		\pf\ Since $r = n - qd$.
+	\end{proof}
+	\step{d}{$r = 0$}
+	\begin{proof}
+		\pf\ By minimality of $d$.
+	\end{proof}
+	\step{e}{$n = qd \in d \mathbb{Z}$}
+\end{proof}
+\step{4}{$d \mathbb{Z} \subseteq G$}
+\qed
+\end{proof}
+
+\section{Kernel}
+
+\begin{df}[Kernel]
+Let $\phi : G \rightarrow H$ be a group homomorphism. The \emph{kernel} of $\phi$ is
+\[ \ker \phi = \{ g \in G : \phi(g) = e \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a subgroup of $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ Corollary \ref{cor:inverse-image-subgroup}. \qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then the inclusion $i : \ker \phi \hookrightarrow G$ is terminal in the category of pairs $(K,\alpha : K \rightarrow G)$ such that $\phi \circ \alpha = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\phi \circ i = 0$}
+\step{2}{For any group $K$ and homomorphism $\alpha : K \rightarrow G$ such that $\phi \circ \alpha = 0$, there exists a unique homomorphism $\beta : K \rightarrow \ker \phi$ such that $i \circ \beta = \alpha$.}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:ker-zero}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then the following are equivalent:
+\begin{enumerate}
+\item $\phi$ is monic.
+\item $\ker \phi = \{e\}$
+\item $\phi$ is injective.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\phi$ is monic.}}
+	\step{b}{\pflet{$i : \ker \phi \hookrightarrow G$, $j : \{e\} \hookrightarrow \ker \phi \hookrightarrow G$ be the inclusions.}}
+	\step{c}{$\phi \circ i = \phi \circ j$}
+	\step{d}{$i = j$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$\ker \phi = \{e\}$}}
+	\step{b}{\pflet{$x,y \in G$}}
+	\step{c}{\assume{$\phi(x) = \phi(y)$}}
+	\step{d}{$\phi(x\inv{y}) = e$}
+	\step{e}{$x \inv{y} \in \ker \phi$}
+	\step{f}{$x \inv{y} = e$}
+	\step{g}{$x = y$}
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+A group homomorphism is an epimorphism if and only if it is surjective.
+\end{prop}
+
+%TODO
+
+\section{Inner Automorphisms}
+
+\begin{prop}
+    Let $G$ be a group and $g \in G$. The function $\gamma_g : G \rightarrow G$ defined by $\gamma_g(a) = ga\inv{g}$ is an automorphism on $G$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$\gamma_g$ is a homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            \gamma_g(ab) & = gab\inv{g}              \\
+                         & = ga\inv{g} gb\inv{g}     \\
+                         & = \gamma_g(a) \gamma_g(b)
+        \end{align*}
+    \end{proof}
+    \step{2}{$\gamma_g$ is injective.}
+    \begin{proof}
+        \pf\ By Cancellation.
+    \end{proof}
+    \step{3}{$\gamma_g$ is surjective.}
+    \begin{proof}
+        \pf\ Given $b \in G$, we have $\gamma_g(\inv{g}bg) = b$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{df}[Inner Automorphism]
+    Let $G$ be a group. An \emph{inner automorphism} on $G$ is a function of the form $\gamma_g(a) = ga\inv{g}$ for some $g \in G$.
+    
+    We write $\mathrm{Inn}(G)$ for the set of inner automorphisms of $G$.
+\end{df}
+
+\begin{prop}
+    Let $G$ be a group.
+    The function $\gamma : G \rightarrow \Aut{\Grp}{G}$ that maps $g$ to $\gamma_g$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\gamma_{gh}(a) = gha\inv{h}\inv{g} = \gamma_g(\gamma_h(a))$. \qed
+\end{proof}
+
+\begin{cor}
+$\mathrm{Inn}(G)$ is a subgroup of $\Aut{\Grp}{G}$.
+\end{cor}
+
+\section{Direct Products}
+
+\begin{df}[Direct Product]
+    The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$.
+\end{df}
+
+\section{Free Groups}
+
+\begin{prop}
+    Let $A$ be a set. Let $\mathcal{F}^A$ be the category whose objects are pairs $(G,j)$ where $G$ is a group and $j$ is a function $A \rightarrow G$, with morphisms $f : (G,j) \rightarrow (H,k)$ the group homomorphisms $f : G \rightarrow H$ such that $f \circ j = k$. Then $\mathcal{F}^A$ has an initial object.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$W(A)$ be the set of words in the alphabet whose elements are the elements of $A$ together with $\{ \inv{a} : a \in A \}$.}}
+    \step{2}{\pflet{$r : W(A) \rightarrow W(A)$ be the function that, given a word $w$, removes the first pair of letters of the form $a \inv{a}$ or $\inv{a}a$; if there is no such pair, then $r(w) = w$.}}
+    \step{3}{Let us say that a word $w$ is a \emph{reduced word} iff $r(w) = w$.}
+    \step{4}{For any word $w$ of length $n$, we have $r^{\ulcorner \frac{n}{2} \urcorner}(w)$ is a reduced word.}
+    \begin{proof}
+        \pf\ Since we cannot remove more than $n/2$ pairs of letters from $w$.
+    \end{proof}
+    \step{5}{\pflet{$R : W(A) \rightarrow W(A)$ be the function $R(w) = r^{\ulcorner \frac{n}{2} \urcorner}(w)$, where $n$ is the length of $w$.}}
+    \step{5}{\pflet{$F(A)$ be the set of reduced words.}}
+    \step{6}{Define $\cdot : F(A)^2 \rightarrow F(A)$ by $w \cdot w' = R(ww')$}
+    \step{7}{$\cdot$ is associative.}
+    \begin{proof}
+        \pf\ Both $w_1 \cdot (w_2 \cdot w_3)$ and $(w_1 \cdot w_2) \cdot w_3$ are equal to $R(w_1 w_2 w_3)$.
+    \end{proof}
+    \step{8}{The empty word is the identity element in $F(A)$}
+    \step{9}{The inverse of $a_1^{\pm 1} a_2^{\pm 1} \cdots a_n^{\pm 1}$ is $a_n^{\mp 1} \cdots a_2^{\mp 1} a_1^{\mp 1}$.}
+    \step{10}{\pflet{$j : A \rightarrow F(A)$ be the function that maps $a$ to the word $a$ of length .}}
+    \step{11}{\pflet{$G$ be any group and $k : A \rightarrow G$ any function.}}
+    \step{12}{The only morphism $f : (F(A),j) \rightarrow (G,k)$ in $\mathcal{F}^A$ is $f(a_1^{\pm 1} a_2^{\pm 1} \cdots a_n^{\pm 1}) = k(a_1)^{\pm 1} k(a_2)^{\pm 1} \cdots k(a_n)^{\pm 1}$.}
+    \qed
+\end{proof}
+
+\begin{df}[Free Group]
+    For any set $A$, the \emph{free group} on $A$ is the initial object $(F(A),i)$ in $\mathcal{F}^A$.
+\end{df}
+
+\begin{prop}
+    $i : A \rightarrow F(A)$ is injective.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$x,y \in A$}}
+    \step{2}{\assume{$x \neq y$} \prove{$i(x) \neq i(y)$}}
+    \step{3}{\pflet{$f : A \rightarrow C_2$ be the function that maps $x$ to $0$ and all other elements of $A$ to 1.}}
+    \step{4}{\pflet{$\phi : F(A) \rightarrow C_2$ be the group homomorphism such that $f = \phi\circ i$.}}
+    \step{5}{$f(x) \neq f(y)$}
+    \step{6}{$\phi(i(x)) \neq \phi(i(y))$}
+    \step{7}{$i(x) \neq i(y)$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    \[ F(0) \cong \{e\} \]
+\end{prop}
+
+\begin{proof}
+    \pf\ For any set $A$, the unique group homomorphism $\{e\} \rightarrow A$ makes the following diagram commute.
+    \[ \begin{tikzcd}
+            \{e\} \arrow[r] & A \\
+            \emptyset \arrow[u] \arrow[ur]
+        \end{tikzcd} \]
+\end{proof}
+
+\begin{prop}
+    The free group on 1 is $\mathbb{Z}$ with the injection mapping 0 to $1$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Given any group $G$ and function $a : 1 \rightarrow G$, the required unique homomorphism $\phi : \mathbb{Z} \rightarrow G$ is defined by $\phi(n) = a(0)^n$. \qed
+\end{proof}
+
+\begin{prop}
+    For any sets $A$ and $B$, we have that $F(A+B)$ is the coproduct of $F(A)$ and $F(B)$ in $\Grp$.
+\end{prop}
+
+\[ \begin{tikzcd}
+        & G & \\
+        F(A) \arrow[r,"\kappa_1"] \arrow[ur,"f"] & F(A+B) \arrow[u,"k"] & \arrow[l,"\kappa_2"] F(B) \arrow[ul,"g"] \\
+        A \arrow[r,"k_1"] \arrow[u,"i_A"] & A+B \arrow[u,"j"] & \arrow[l,"k_2"] \arrow[u,"i_B"] B
+    \end{tikzcd} \]
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$i_A : A \rightarrow F(A)$, $i_B : B \rightarrow F(B)$, $j : A + B \rightarrow F(A+B)$ be the canonical injections.}}
+    \step{2}{\pflet{$\kappa_1$, $\kappa_2$ be the unique group homomorphisms that make the diagram above commute.}}
+    \step{3}{\pflet{$G$ be any group and $f : F(A) \rightarrow G$, $g : F(B) \rightarrow G$ any group homomorphisms.}}
+    \step{4}{\pflet{$h : A + B \rightarrow G$ be the unique function such that $h \circ k_1 = f \circ i_A$ and $h \circ k_2 = g \circ i_B$.}}
+    \step{5}{\pflet{$k : F(A+B) \rightarrow G$ be the unique group homomorphism such that $k \circ j = h$.}}
+    \step{6}{$k$ is the unique group homomorphism such that $k \circ \kappa_1 \circ i_A = f \circ i_A$ and $k \circ \kappa_2 \circ i_B = g \circ i_B$.}
+    \step{7}{$k$ is the unique group homomorphism such that $k \circ \kappa_1 = f$ and $k \circ \kappa_2 = g$.}
+    \qed
+\end{proof}
+
+\begin{df}[Subgroup Generated by a Group]
+Let $G$ be a group and $A$ a subset of $G$. Let $\phi : F(A) \rightarrow G$ be the unique group homomorphism such that $\phi(a) = a$ for all $a \in A$. The subgroup \emph{generated} by $A$ is
+
+\[ \langle A \rangle := \im \phi \]
+
+\[ \begin{tikzcd}
+F(A) \arrow[r,"\phi"] & G \\
+A \arrow[u] \arrow[ur]
+\end{tikzcd} \]
+\end{df}
+
+\begin{prop}
+Let $G$ be a group and $A$ a subset of $G$. Then $\langle A \rangle$ is the set of all elements of the form $a_1^{\pm 1} a_2^{\pm 1} \cdots a_n^{\pm 1}$ (where $n \geq 0$) such that $a_1, \ldots, a_n \in A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $g \in G$. Then
+\[ \langle g \rangle = \{ g^n : n \in \mathbb{Z} \} \enspace . \]
+\end{cor}
+
+\begin{prop}
+Let $G$ be a group and $A$ a subset of $G$. Then $\langle A \rangle$ is the intersection of all the subgroups of $G$ that include $A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Finitely Generated]
+Let $G$ be a group. Then $G$ is \emph{finitely generated} iff there exists a finite subset $A$ of $G$ such that $G = \langle A \rangle$.
+\end{df}
+
+\begin{prop}
+Every subgroup of a finitely generated free group is free.
+\end{prop}
+
+\begin{proof}
+\pf\ TODO.
+\end{proof}
+
+\begin{prop}
+$F(2)$ includes subgroups isomorphic to the free group on arbitrarily many generators.
+\end{prop}
+
+\begin{proof}
+\pf\ TODO
+\end{proof}
+
+\begin{prop}
+\[ [F(2),F(2)] \cong F(\mathbb{Z}) \]
+\end{prop}
+
+\begin{proof}
+\pf\ TODO
+\end{proof}
+
+\section{Normal Subgroups}
+
+\begin{df}[Normal Subgroup]
+A subgroup $N$ of $G$ is \emph{normal} iff, for all $g \in G$ and $n \in N$, we have $gn\inv{g} \in N$.
+\end{df}
+
+\begin{ex}
+Every subgroup of $Q_8$ is normal.
+\end{ex}
+
+\begin{prop}
+Let $G$ be a group and $N$ a subgroup of $G$. Then the following are equivalent.
+\begin{enumerate}
+\item $N$ is normal.
+\item $\forall g \in G. g N \inv{g} \subseteq N$
+\item $\forall g \in G. g N \inv{g} = N$
+\item $\forall g \in G. g N \subseteq N g$
+\item $\forall g \in G. gN = Ng$
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Leftrightarrow 2$}
+\begin{proof}
+\pf\ Immediate from definitions.
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If 2 holds then we have $gN\inv{g} \subseteq N$ and $\inv{g}Ng \subseteq N$ hence $N = gN\inv{g}$.
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+\pf\ Trivial.
+\end{proof}
+\step{3}{$2 \Leftrightarrow 4$}
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+\step{4}{$3 \Leftrightarrow 5$}
+\begin{proof}
+\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:kernel-normal}
+Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a normal subgroup of $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ Given $g \in G$ and $n \in \ker \phi$ we have
+\begin{align*}
+\phi(gn\inv{g}) & = \phi(g) \phi(n) \inv{\phi(g)} \\
+& = \phi(g) \inv{\phi(g)} \\
+& = e
+\end{align*}
+and so $gn\inv{g} \in \ker \phi$. \qed
+\end{proof}
+
+\section{Quotient Groups}
+
+\begin{df}
+Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$. Then we say that $\sim$ is \emph{compatible} with the group operation on $G$ iff, for all $a, a', g \in G$, if $a \sim a'$ then $ga \sim ga'$ and $ag \sim a'g$.
+\end{df}
+
+\begin{prop}
+Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$. Then there exists an operation $\cdot : (G/\sim)^2 \rightarrow G/sim$ such that
+\[ \forall a,b \in G. [a][b] = [ab] \]
+iff $\sim$ is compatible with the group operation on $G$. In this case, $G/\sim$ is a group under $\cdot$ and the canonical function $\pi : G \rightarrow G / \sim$ is a group homomorphism, and is universal with respect to group homomorphisms $\phi : G \rightarrow G'$ such that if $a \sim a'$ then $\phi(a) = \phi(a')$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Quotient Group]
+Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ that is compatible with the group operation on $G$. Then $G/\sim$ is the \emph{quotient group} of $G$ by $\sim$ under $[a][b] = [ab]$.
+\end{df}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if there exists a group $K$ and homomorphism $\phi : G \rightarrow K$ such that $H = \ker \phi$.
+\end{prop}
+
+\begin{proof}
+\pf\ One direction is given by Proposition \ref{prop:kernel-normal}. For the other direction, take $K = G / H$ and $\phi$ to be the canonical map $G \rightarrow G / H$. \qed
+\end{proof}
+
+\begin{df}[Modular Group]
+The \emph{modular group} $\mathrm{PSL}_2(\mathbb{Z})$ is $\mathrm{SL}_2(\mathbb{Z}) / \{ I, -I \}$.
+\end{df}
+
+\begin{prop}
+$\mathrm{PSL}_2(\mathbb{Z})$ is generated by $\left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right)$ and $\left( \begin{array}{cc} 1 & -1 \\ 1 & 0 \end{array} \right)$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Example \ref{ex:SL2Z}. 
+\end{proof}
+
+\begin{prop}[Roger Alperin]
+$\mathrm{PSL}_2(\mathbb{Z})$ is presented by $(x,y|x^2,y^3)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x = \left( \begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array} \right)$}}
+\step{2}{\pflet{$y = \left( \begin{array}{cc} 1 & -1 \\ 1 & 0 \end{array} \right)$}}
+\step{3}{Define an action of $\mathrm{PSL}_2(\mathbb{Z})$ on $\mathbb{R} - \mathbb{Q}$ by
+\[ \left( \begin{array}{cc}
+a & b \\ c & d
+\end{array} \right) r = \frac{ar+b}{cr+d} \enspace . \]}
+\begin{proof}
+	\step{a}{Given $\left( \begin{array}{cc}
+a & b \\ c & d
+\end{array} \right) \in \mathrm{PSL}_2(\mathbb{Z})$ and $r$ irrational we have $\frac{ar+b}{cr+d}$ is irrational.}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $\frac{ar+b}{cr+d} = \frac{p}{q}$ where $p$ and $q$ are integers with $q > 0$.}}
+		\step{ii}{$aqr + bq = cpr + dp$}
+		\step{iii}{$(aq-cp)r = dp-bq$}
+		\step{iv}{$aq=cp = dp-bq = 0$}
+		\step{v}{$adq - cdp = 0$}
+		\step{vi}{$cdp - cbq = 0$}
+		\step{vii}{$(ad-cb)q = 0$}
+		\begin{proof}
+			\pf\ Since $ad - cb = 1$.
+		\end{proof}
+		\step{viii}{$q = 0$}
+		\qedstep
+		\begin{proof}
+			\pf\ This contradicts \stepref{i}.
+		\end{proof}
+	\end{proof}
+	\step{b}{$-Ir = r$}
+	\begin{proof}
+		\pf\ Since $-Ir = \frac{-r}{-1} = r$.
+	\end{proof}
+	\step{b}{Given $A,B \in \mathrm{PSL}_2(\mathbb{Z})$ we have $A(Br) = (AB)r$.}
+	\begin{proof}
+		\pf
+		\begin{align*}
+		\left( \begin{array}{cc}
+		a & b \\ c & d
+		\end{array} \right)
+		\left[
+		\left( \begin{array}{cc}
+		e & f \\ g & h
+		\end{array} \right) r \right]
+		& = \left( \begin{array}{cc}
+		a & b \\ c & d
+		\end{array} \right)
+		\frac{er+f}{gr+h} \\
+		& = \frac{a\frac{er+f}{gr+h}+b}{c\frac{er+f}{gr+h}+d} \\
+		& = \frac{a(er+f)+b(gr+h)}{c(er+f)+d(gr+h)} \\
+		& = \frac{(ae+bg)r+(af+bh)}{(ce+dg)r+(cf+dh)} \\
+		& = \left( \begin{array}{cc}
+		ae+bg & af+bh \\ ce+dg & cf+dh
+		\end{array} \right) r \\
+		& = \left[ 
+		\left( 
+		\begin{array}{cc}
+		a & b \\ c & d
+		\end{array} 
+		\right)
+		\left( \begin{array}{cc}
+		e & f \\ g & h
+		\end{array} \right) 
+		\right] 
+		r
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{\[ yr = 1 - \frac{1}{r} \]}
+\step{5}{\[ \inv{y} r = \frac{1}{1-r} \]}
+\begin{proof}
+	\pf\ Since $\inv{y} = \left( \begin{array}{cc}
+	0 & 1 \\ -1 & 1
+	\end{array} \right)$
+\end{proof}
+\step{6}{\[ yxr = 1+r \]}
+\begin{proof}
+	\pf\ Since $yx = \left( \begin{array}{cc}
+	-1 & -1 \\
+	0 & -1
+	\end{array} \right)$.
+\end{proof}
+\step{7}{\[ \inv{y}xr = \frac{r}{1+r} \]}
+\begin{proof}
+	\pf\ Since $\inv{y}x = 
+	\left( \begin{array}{cc}
+	1 & 0 \\ 1 & 1
+	\end{array} \right)
+	$.
+\end{proof}
+\step{8}{If $r > -1$ is positive then $yxr$ is positive.}
+\step{9}{If $r$ is positive then $\inv{y}xr$ is positive.}
+\step{19}{If $r < -1$ then $\inv{y}xr$ is positive.}
+\step{10}{If $r$ is negative then $yr$ is positive.}
+\step{11}{If $r$ is negative then $\inv{y}r$ is positive.}
+\step{3}{No product of the form
+\[ (y^{\pm 1}x)(y^{\pm 1}x) \cdots (y^{\pm 1}x) \]
+with one or more factors can equal the identity.}
+\begin{proof}
+	\pf\ If the last factor is $(yx)$, then the product maps numbers in $(-1,0)$ to positive numbers. If the last factor is $(\inv{y}x)$, then the product maps numbers $< -1$ to positive numbers.
+\end{proof}
+\step{4}{No product of the form
+\[ (y^{\pm 1}x)(y^{\pm 1}x) \cdots (y^{\pm 1}x)y^{\pm 1} \]
+with one or more factors can equal the identity.}
+\begin{proof}
+	\pf\ The product maps negative numbers to positive numbers.
+\end{proof}
+\step{5}{$\mathrm{PSL}_2(\mathbb{Z})$ is presented by $(x,y|x^2,y^3)$.}
+\qed
+\end{proof}
+
+\begin{cor}
+$\mathrm{PSL}_2(\mathbb{Z})$ is the coproduct of $C_2$ and $C_3$ in $\Grp$.
+\end{cor}
+
+\begin{thm}
+Every group homomorphism $\phi : G \rightarrow H$ may be decomposed as
+\[ \begin{tikzcd}
+G \arrow[r] & G / \ker \phi \arrow[r,"\cong"] & \im \phi \arrow[r] & H 
+\end{tikzcd} \]
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}[First Isomorphism Theorem]
+Let $\phi : G \rightarrow H$ be a surjective group homomorphism. Then $H \cong G / \ker \phi$.
+\end{cor}
+
+\begin{prop}
+Let $H_1$ be a normal subgroup of $G_1$ and $H_2$ a normal subgroup of $G_2$. Then $H_1 \times H_2$ is a normal subgroup of $G_1 \times G_2$, and
+\[ \frac{G_1 \times G_2}{H_1 \times H_2} \cong \frac{G_1}{H_1} \times \frac{G_2}{H_2} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ $\pi \times \pi : G_1 \times G_2 \twoheadrightarrow G_1 / H_1 \times G_2 / H_2$ is a surjective homomorphism with kernel $H_1 \times H_2$. \qed
+\end{proof}
+
+\begin{ex}
+\[ \mathbb{R} / \mathbb{Z} \cong S^1 \]
+\end{ex}
+
+\begin{proof}
+\pf\ Map a real number $r$ to $(\cos r, \sin r)$. The result is a surjective group homomorphism with kernel $\mathbb{Z}$. \qed
+\end{proof}
+
+\begin{prop}
+Let $H$ be a normal subgroup of a group $G$. For every subgroup $K$ of $G$ that includes $H$, we have $H$ is a normal subgroup of $K$, and $K/H$ is a subgroup of $G/H$. The mapping
+\[ u : \{ \text{subgroups of } G \text{ including } H \} \rightarrow \{ \text{subgroups of } G / H \} \]
+with $u(K) = K/H$ is a poset isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $K$ is a subgroup of $G$ that includes $H$ then $H$ is normal in $K$.}
+\step{2}{If $K$ is a subgroup of $G$ that includes $H$ then $K/H$ is a subgroup of $G/H$.}
+\step{3}{If $H \subseteq K_1 \subseteq K_2$ then $K_1/H \subseteq K_2/H$.}
+\step{4}{If $K_1/H = K_2/H$ then $K_1 = K_2$}
+\begin{proof}
+	\step{a}{\assume{$K_1 / H = K_2 / H$}}
+	\step{b}{$K_1 \subseteq K_2$}
+	\begin{proof}
+		\step{i}{\pflet{$k \in K_1$}}
+		\step{ii}{$kH \in K_2 / H$}
+		\step{iii}{\pick\ $k' \in K_2$ such that $kH = k'H$}
+		\step{iv}{$k\inv{k'} \in H$}
+		\step{v}{$k \inv{k'} \in K_2$}
+		\step{v}{$k \in K_2$}
+	\end{proof}
+	\step{c}{$K_2 \subseteq K_1$}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{5}{For any subgroup $L$ of $G/H$, there exists a subgroup $K$ of $G$ that includes $H$ such that $L = K / H$.}
+\begin{proof}
+	\step{a}{\pflet{$L$ be a subgroup of $G / H$.}}
+	\step{b}{\pflet{$K = \{ k \in G : kH \in L \}$}}
+	\step{c}{$K$ is a subgroup of $G$.}
+	\begin{proof}
+		\pf\ Given $k,k' \in K$ we have $kH,k'H \in L$ hence $k\inv{k'}H \in L$ and so $k\inv{k'} \in K$.
+	\end{proof}
+	\step{d}{$H \subseteq K$}
+	\begin{proof}
+		\pf\ For all $h \in H$ we have $hH = H \in L$.
+	\end{proof}
+	\step{e}{$L = K / H$}
+	\begin{proof}
+		\pf\ By definition.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Third Isomorphism Theorem]
+Let $H$ be a normal subgroup of a group $G$. Let $N$ be a subgroup of $G$ that includes $H$. Then $N / H$ is normal in $G/H$ if and only if $N$ is normal in $G$, in which case
+\[ \frac{G/H}{N/H} \cong \frac{G}{N} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $N/H$ is normal in $G/H$ then $N$ is normal in $G$.}
+\begin{proof}
+	\step{a}{\assume{$N/H$ is normal in $G/H$.}}
+	\step{b}{\pflet{$g \in G$ and $n \in N$.}}
+	\step{c}{$gn\inv{g}H \in N/H$}
+	\step{d}{\pick\ $n' \in N$ such that $gn\inv{g}H = n'H$}
+	\step{e}{$gn\inv{g}\inv{n'} \in H$}
+	\step{f}{$gn\inv{g}\inv{n'} \in N$}
+	\step{g}{$gn\inv{g} \in N$}
+\end{proof}
+\step{2}{If $N$ is normal in $G$ then $N/H$ is normal in $G/H$ and $(G/H)/(N/H) \cong G/N$.}
+\begin{proof}
+	\step{a}{\assume{$N$ is normal in $G$.}}
+	\step{b}{\pflet{$\phi : G/H \rightarrow G/N$ be the homomorphism $\phi(gH) = gN$}}
+	\begin{proof}
+		\step{i}{If $gH = g'H$ then $gN = g'N$}
+		\begin{proof}
+			\pf\ If $g \inv{g'} \in H$ then $g \inv{g'} \in N$.
+		\end{proof}
+		\step{ii}{$\phi((gH)(g'H)) = \phi(gH)\phi(g'H)$}
+		\begin{proof}
+			\pf\ Both are $gg'N$.
+		\end{proof}
+	\end{proof}
+	\step{c}{$\phi$ is surjective.}
+	\step{d}{$\ker \phi = N/H$}
+	\step{e}{$(G/H)/(N/H) \cong G/N$}
+	\begin{proof}
+		\pf\ By the First Isomorphism Theorem.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Second Isomorphism Theorem]
+Let $H$ and $K$ be subgroups of a group $G$. Assume that $H$ is normal in $G$. Then:
+\begin{enumerate}
+\item $HK$ is a subgroup of $G$, and $H$ is normal in $HK$.
+\item $H \cap K$ is normal in $K$, and
+\[ \frac{HK}{H} \cong \frac{K}{H \cap K} \enspace . \]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$HK$ is a subgroup of $G$.}
+\begin{proof}
+	\pf\ Since $hkh'k' = hh'(\inv{h'}kh')k' \in HK$.
+\end{proof}
+\step{2}{$H$ is normal in $HK$.}
+\step{3}{$H \cap K$ is normal in $K$ and $HK/H \cong K/(H \cap K)$}
+\begin{proof}
+\pf\ The function that maps $k$ to $kH$ is a surjective homomorphism $K \twoheadrightarrow HK/H$ with kernel $H \cap K$. Surjectivity follows because $hkH = hk\inv{h}H$.
+\end{proof}
+\qed
+\end{proof}
+
+See also Proposition \ref{prop:order-of-HK} for a result that holds even if $H$ is not normal.
+
+\section{Cosets}
+
+\begin{prop}
+\label{prop:sim-gives-H}
+Let $G$ be a group. Let $\sim$ be an equivalence relation on $G$ such that, for all $a,b,g \in G$, if $a \sim b$ then $ga \sim gb$. Let $H = \{ h \in G : h \sim e \}$. Then $H$ is a subgroup of $G$ and, for all $a,b \in G$, we have
+\[ a \sim b \Leftrightarrow \inv{a} b \in H \Leftrightarrow aH = bH \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{$e \in H$}
+\step{1}{For all $x,y \in H$ we have $x \inv{y} \in H$.}
+\begin{proof}
+	\step{a}{\assume{$x \sim e$ and $y \sim e$.}}
+	\step{b}{$e \sim \inv{y}$}
+	\begin{proof}
+		\pf\ Since $y \inv{y} \sim e \inv{y}$.
+	\end{proof}
+	\step{c}{$x \inv{y} \sim e$}
+	\begin{proof}
+		\pf\ Since $x \inv{y} \sim e \inv{y} \sim e$.
+	\end{proof}
+\end{proof}
+\step{2}{If $a \sim b$ then $\inv{a} b \in H$.}
+\begin{proof}
+	\pf\ If $a \sim b$ then $\inv{a} b \sim \inv{a} a = e$.
+\end{proof}
+\step{3}{If $\inv{a}b \in H$ then $aH = bH$.}
+\begin{proof}
+	\step{a}{\assume{$\inv{a}b \in H$}}
+	\step{c}{$bH \subseteq aH$}
+	\begin{proof}
+		\pf\ For any $h \in H$ we have $bh = a \inv{a} b h \in a H$.	
+	\end{proof}
+	\step{b}{$aH \subseteq bH$}
+	\begin{proof}
+		\pf\ Similar since $\inv{b}a \in H$.
+	\end{proof}
+\end{proof}
+\step{4}{If $aH = bH$ then $a \sim b$.}
+\begin{proof}
+	\step{a}{\assume{$aH = bH$}}
+	\step{b}{\pick\ $h \in H$ such that $a = bh$.}
+	\step{c}{$\inv{b} a = h$}
+	\step{d}{$\inv{b} a \in H$}
+	\step{e}{$\inv{b} a \sim e$}
+	\step{f}{$a \sim b$}
+	\begin{proof}
+		\pf\ $a = b \inv{b} a \sim b e = b$.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Coset]
+Let $G$ be a group and $H$ a subgroup of $G$. A \emph{left coset} of $H$ is a set of the form $aH$ for $a \in G$. A \emph{right coset} of $H$ is a set of the form $Ha$ for some $a \in G$.
+
+We write $G / H$ for the set of all left cosets of $H$, and $G \backslash H$ for the set of all right cosets of $H$.
+\end{df}
+
+\begin{prop}
+\[ G / H \cong G \backslash H \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $aH$ to $H \inv{a}$ is a bijection. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $\inv{a} b \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ga \sim gb$. The equivalence class of $a$ is $aH$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For any subgroup $H$, we have $\sim_H$ is an equivalence relation on $G$.}
+\begin{proof}
+	\step{1}{$\sim$ is reflexive.}
+	\begin{proof}
+		\pf\ For any $a \in G$ we have $\inv{a} a = e \in H$.
+	\end{proof}
+	\step{2}{$\sim$ is symmetric.}
+	\begin{proof}
+		\pf\ If $\inv{a} b \in H$ then $\inv{b} a \in H$.
+	\end{proof}
+	\step{3}{$\sim$ is transitive.}
+	\begin{proof}
+		\pf\ If $\inv{a} b \in H$ and $\inv{b} c \in H$ then $\inv{a} c = (\inv{a} b) (\inv{b} c) \in H$.
+	\end{proof}
+\end{proof}
+\step{4}{If $a \sim_H b$ then $ga \sim_H gb$.}
+\begin{proof}
+	\pf\ If $\inv{a} b \in H$ then $\inv{(ga)}(gb) = \inv{a} \inv{g} g b = \inv{a} b \in H$.
+\end{proof}
+\step{5}{For any equivalence relation $\sim$ on $G$ such that, whenever $a \sim b$, then $ga \sim gb$, there exists a subgroup $H$ such that $\sim = \sim_H$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:sim-gives-H}.
+\end{proof}
+\step{6}{The $\sim_H$-equivalence class of $a$ is $aH$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		a \sim b & \Leftrightarrow \inv{a} b \in H \\
+		& \Leftrightarrow \exists h \in H. \inv{a} b = h \\
+		& \Leftrightarrow \exists h \in H. b = aH \\
+		& \Leftrightarrow b \in aH
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Define $\sim_H$ on $G$ by: $a\sim b$ iff $a \inv{b} \in H$. This defines a one-to-one correspondence between the subgroups of $G$ and the equivalence relations $\sim$ on $G$ such that, for all $a,b,g \in G$, if $a \sim b$, then $ag \sim bg$. The equivalence class of $a$ is $Ha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $H$ be a subgroup of $G$. Define $\sim_L$ and $\sim_R$ on $G$ by:
+\[ a \sim_L b \Leftrightarrow \inv{a} b \in H, \qquad a \sim_R b \Leftrightarrow a \inv{b} \in H \enspace . \]
+Then $\sim_L = \sim_R$ if and only if $H$ is normal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\sim_L = \sim_R$ then $H$ is normal.}
+\begin{proof}
+	\step{a}{\assume{$\sim_L = \sim_R$}}
+	\step{b}{\pflet{$h \in H$ and $g \in G$}}
+	\step{c}{$g \sim_L g\inv{h}$}
+	\step{d}{$g \sim_R g \inv{h} h$}
+	\step{e}{$gh\inv{g} \in H$}
+\end{proof}
+\step{2}{If $H$ is normal then $\sim_L = \sim_R$.}
+\begin{proof}
+	\step{a}{\assume{$H$ is normal.}}
+	\step{b}{If $a \sim_L b$ then $a \sim_R b$.}
+	\begin{proof}
+		\step{i}{\assume{$a \sim_L b$}}
+		\step{ii}{$\inv{a} b \in H$}
+		\step{iii}{$a \inv{a} b \inv{a} \in H$}
+		\step{iv}{$b \inv{a} \in H$}
+		\step{v}{$a \sim_R b$}
+	\end{proof}
+	\step{c}{If $a \sim_R b$ then $a \sim_L b$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $H$ be a normal subgroup of $G$. Define $\sim$ on $G$ by $a \sim b$ iff $\inv{a} b \in H$. Then $G / \sim$ is a group under $[a][b] = [ab]$.
+\end{cor}
+
+\begin{df}[Quotient Group]
+Let $G$ be a group and $H$ be a normal subgroup of $G$. The \emph{quotient group} $G / H$ is $G / \sim$ where $a \sim b$ iff $\inv{a} b \in H$, under $[a][b] = [ab]$ or $(aH)(bH) = abH$.
+\end{df}
+
+\begin{cor}
+Let $H$ be a normal subgroup of a group $G$. For every group homomorphism $\phi : G \rightarrow G'$ such that $H \subseteq \ker \phi$, there exists a unique group homomorphism $\overline{\phi} : G / H \rightarrow G'$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+G \arrow[rr,"\phi"]  \arrow[dr,"\pi"] & & G' \\
+& G/ H\arrow[ur,"\overline{\phi}"]
+\end{tikzcd} \]
+\end{cor}
+
+\begin{prop}
+    $\mathbb{Z} / n \mathbb{Z}$ has exactly $n$ elements.
+\end{prop}
+
+\begin{proof}
+    \pf\ Every integer is congruent to one of 0, 1, \ldots, $n - 1$ by the division algorithm, and no two of them are conguent to one another, since if $0 \leq i < j < n$ then $0 < j - i < n$. \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:order-of-m-in-ZnZ}
+    Let $m$ and $n$ be integers with $n > 0$. The order of $m$ in $\mathbb{Z} / n \mathbb{Z}$ is $\frac{n}{\gcd(m,n)}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ By Proposition \ref{prop:order-of-g-to-the-m} since the order of 1 is $n$. \qed
+\end{proof}
+
+\begin{prop}
+    The integer $m$ generates $\mathbb{Z} / n \mathbb{Z}$ if and only if $\gcd(m,n) = 1$.
+\end{prop}
+
+\begin{proof}
+    \pf\ By Proposition \ref{prop:order-of-m-in-ZnZ}. \qed
+\end{proof}
+
+\begin{cor}
+    If $p$ is prime then every non-zero element in $\mathbb{Z} / p \mathbb{Z}$ is a generator.
+\end{cor}
+
+\begin{prop}
+    \[ \Aut{\Grp}{\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}} \cong S_3 \]
+\end{prop}
+
+\begin{proof}
+    \pf\ Every permutation of $\{ (1,0), (0,1), (1,1) \}$ gives an automorphism of $\mathbb{Z} / 2 \mathbb{Z} \times \mathbb{Z} / 2 \mathbb{Z}$. \qed
+\end{proof}
+
+\begin{ex}
+Not all monomorphisms split in $\Grp$.
+
+Define $\phi : \mathbb{Z} / 3 \mathbb{Z} \rightarrow S_3$ by
+\[ \phi(0) = \id{3}, \qquad \phi(1) = (1 \ 3 \ 2), \qquad \phi(2) = (1 \ 2 \ 3) \enspace . \]
+Then $\phi$ is monic but has no retraction.
+
+For if $r : S_3 \rightarrow \mathbb{Z} / 3 \mathbb{Z}$ is a retraction, then we would have
+\[ r(1\ 2) + r(2\ 3) = 1, \qquad r(2\ 3) + r(1\ 2) = 2 \]
+which is impossible.
+\end{ex}
+
+\begin{prop}
+Let $G$ be a group, $H$ a subgroup of $G$, and $g \in G$. The function that maps $h$ to $gh$ is a bijection $H \cong gH$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group, $H$ a subgroup of $G$, and $g \in G$. The function that maps $h$ to $hg$ is a bijection $H \cong Hg$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:order-of-HK}
+Let $H$ and $K$ be finite subgroups of a group $G$. Then
+\[ |HK| = \frac{|H||K|}{|H \cap K|} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : \{ hK : h \in H \} \rightarrow H/(H \cap K)$ be the function $f(hK) = h(H \cap K)$}}
+\begin{proof}
+	\pf\ This is well-defined because if $hK = h'K$ then $\inv{h} h' \in H \cap K$ so $h(H \cap K) = h'(H \cap K)$.
+\end{proof}
+\step{2}{$f$ is injective.}
+\begin{proof}
+	\pf\ If $h(H \cap K) = h'(H \cap K)$ then $hK = h'K$.
+\end{proof}
+\step{3}{$f$ is surjective.}
+\begin{proof}
+	\pf\ Clear.
+\end{proof}
+\step{4}{\[ \frac{|HK|}{|K|} = \frac{|H|}{|H \cap K|} \]}
+\qed
+\end{proof}
+
+\section{Congruence}
+
+\begin{df}[Congruence]
+Given integers $a$, $b$, $n$ with $n$ positive, we say $a$ is \emph{congruent} to $b$ \emph{modulo} $n$, and write $a \equiv b (\mod n)$, iff $a + n \mathbb{Z} = b + n \mathbb{Z}$ in $\mathbb{Z} / n \mathbb{Z}$.
+\end{df}
+
+\begin{prop}
+Given integers $a$, $b$, $n$ with $n$ positive, we have $a \equiv b (\mod n)$ iff $n \mid a - b$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:sim-gives-H}. \qed
+\end{proof}
+
+\begin{prop}
+    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $a + b \equiv a' + b' \mod n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid (a' + b') - (a + b)$. \qed
+\end{proof}
+
+\begin{prop}
+    If $a \equiv a' \mod n$ and $b \equiv b' \mod n$ then $ab \equiv a'b' \mod n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $n \mid a' - a$ and $n \mid b' - b$ then $n \mid a'b' - ab = a'(b'-b) + (a'-a)b$. \qed
+\end{proof}
+
+\section{Cyclic Groups}
+
+\begin{df}[Cyclic Group]
+    The \emph{cyclic} groups are $\mathbb{Z}$ and $\mathbb{Z} / n \mathbb{Z}$ for positive integers $n$.
+\end{df}
+
+\begin{prop}
+    If $m$ and $n$ are positive integers with $\gcd(m,n) = 1$ then $C_{mn} \cong C_m \times C_n$.
+\end{prop}
+
+\begin{proof}
+    \pf\ The function that maps $x$ to $(x \mod m, x \mod n)$ is an isomorphism. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $g \in G$. Then $\langle g \rangle$ is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf\ If $g$ has finite order then $\langle g \rangle \cong C_{|g|}$, otherwise $\langle g \rangle \cong \mathbb{Z}$. \qed
+\end{proof}
+
+\begin{prop}
+Every finitely generated subgroup of $\mathbb{Q}$ is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G = \langle a_1/b, \ldots, a_n/b \rangle$ where $a_1$, \ldots, $a_n$, $b$ are integers with $b > 0$}}
+\step{2}{\pflet{$a = \gcd(a_1, \ldots, a_n)$}}
+\step{3}{$G = \langle a/b \rangle$}
+\qed
+\end{proof}
+
+\begin{cor}
+$\mathbb{Q}$ is not finitely generated.
+\end{cor}
+
+\section{Commutator Subgroup}
+
+\begin{df}[Commutator Subgroup]
+Let $G$ be a group. The \emph{commutator subgroup} $[G,G]$ is the subgroup generated by the elements of the form $ab\inv{a}\inv{b}$.
+\end{df}
+
+\begin{prop}
+The commutator subgroup is normal.
+\end{prop}
+
+\begin{proof}
+\pf\ Since
+\begin{align*} 
+& g a_1 b_1 \inv{a_1} \inv{b_1} a_2 b_2 \inv{a_2} \inv{b_2} \cdots a_n b_n \inv{a_n} \inv{b_n} \inv{g} \\
+= & (g a_1 \inv{g}) (g b_1 \inv{g}) \inv{(g a_1 \inv{g})} \inv{(g b_1 \inv{g})} \cdots (g a_n \inv{g}) (g b_n \inv{g}) \inv{(g a_n \inv{g})} \inv{(g b_n \inv{g})} \enspace . \qquad \qed
+\end{align*}
+\end{proof}
+
+\section{Presentations}
+
+\begin{df}[Presentation]
+A \emph{presentation} of a group $G$ is a pair $(A,R)$ where $A$ is a set and $R \subseteq F(A)$ is a set of words such that
+\[ G \cong F(A) / N(R) \]
+where $N(R)$ is the smallest normal subgroup of $F(A)$ that includes $R$.
+\end{df}
+
+\begin{ex}
+\begin{itemize}
+\item The free group on a set $A$ is presented by $(A, \emptyset)$.
+\item $S_3$ is presented by $(x,y|x^2,y^3,xyxy)$.
+\item 
+$(a,b \mid a^2, b^2, (ab)^n)$ is a presentation of $D_{2n}$.
+\item $(x,y \mid x^2 y^{-2}, y^4, xyx^{-1}y)$ is a presentation of $Q_8$.
+\end{itemize}
+\end{ex}
+
+\begin{prop}[Word Problem]
+Let $(A,R)$ be a presentation of the group $G$. Let $w_1, w_2 \in F(A)$ be two words. Then it is undecidable in general if $w_1N(R) = w_2N(R)$ in $G$.
+\end{prop}
+
+%TODO
+\begin{df}[Finitely Presented]
+A group is \emph{finitely presented} iff it has a presentation $(A,R)$ where both $A$ and $R$ are finite.
+\end{df}
+
+\begin{prop}
+Let $(A|R)$ be a presentation of $G$ and $(A'|R')$ a presentation of $H$. Assume w.l.o.g. $A$ and $A'$ are disjoint. Then the group $G * G'$ presented by $(A \cup A' | R \cup R')$ is the coproduct of $G$ and $G'$ in $\mathbf{Grp}$.
+\end{prop}
+
+\[ \begin{tikzcd}
+A \arrow[d] \arrow[r] & A \cup A' \arrow[d] & A' \arrow[l] \arrow[d] \\
+ F(A) \arrow[d] \arrow[r] & F(A \cup A') \arrow[d] & F(A') \arrow[l] \arrow[d] \\
+G \arrow[r, "\kappa_1"] & G * G' & G' \arrow[l, "\kappa_2"]
+\end{tikzcd} \]
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\kappa_1 : G \rightarrow G * G'$ and $\kappa_2 : G' \rightarrow G * G'$ be the unique homomorphisms that make the diagram above commute.}}
+\step{2}{\pflet{$\phi : G \rightarrow H$ and $\psi : G' \rightarrow H$ be any homomorphisms.}}
+\step{3}{\pflet{$[\phi, \psi] : F(A \cup A') \rightarrow H$ be the unique homomorphism such that \ldots}}
+\step{4}{$R \cup R' \subseteq \ker [\phi, \psi]$}
+\step{5}{$[\phi, \psi]$ factors uniquely through the morphism $F(A \cup A') \rightarrow G * G'$}
+\qed
+\end{proof}
+
+\section{Index of a Subgroup}
+
+\begin{df}[Index]
+Let $G$ be a group and $H$ a subgroup of $G$. The \emph{index} of $H$ in $G$, denoted $|G:H|$, is the number of left cosets of $H$ in $G$ if this is finite, otherwise $\infty$.
+\end{df}
+
+\begin{thm}[Lagrange's Theorem]
+Let $G$ be a finite group and $H$ a subgroup of $G$. Then
+\[ |G| = |G : H| |H| \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf\ $G/H$ is a partition of $G$ into $|G:H|$ subsets, each of size $|H|$. \qed
+\end{proof}
+
+\begin{cor}
+For $p$ a prime number, the only group of order $p$ is $C_p$.
+\end{cor}
+
+\begin{proof}
+\pf\ Let $G$ be a group of order $p$ and $g \in G$ with $g \neq e$. Then $|\langle g \rangle|$ divides $p$ and is not 1, hence is $p$, that is, $G = \langle g \rangle$. \qed
+\end{proof}
+
+\begin{thm}[Cauchy's Theorem]
+Let $G$ be a finite group. If $p$ is prime and $p \mid |G|$ then the number of cyclic subgroups of order $p$ is congruent to 1 modulo $p$. In particular, there exists an element of order $p$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$S = \{ (a_1, a_2, \ldots, a_p) \in G^p : a_1 a_2 \cdots a_p = e \}$}}
+\step{2}{$|S| = |G|^{p-1}$}
+\begin{proof}
+	\pf\ Given any $a_1, \ldots, a_{p-1} \in G$, there exists a unique $a_p$ such that $(a_1, \ldots, a_p) \in S$, namely $a_p = (a_1 \cdots a_{p-1})^{-1}$.
+\end{proof}
+\step{3}{$p \mid |S|$}
+\step{4}{Define an action of $\mathbb{Z} / p \mathbb{Z}$ on $S$ by
+\[ m \cdot (a_1, \ldots, a_p) = (a_m, a_{m+1}, \ldots, a_p, a_1, a_2, \ldots, a_{m-1}) \enspace . \]}
+\begin{proof}
+	\pf\ If $(a_1, \ldots, a_p) \in S$ then $(a_2, a_3, \ldots, a_p, a_1) \in S$ since $a_1 = (a_2 \cdots a_p)^{-1}$.
+\end{proof}
+\step{5}{\pflet{$Z$ be the set of fixed points of this action.}}
+\step{6}{$|Z| \equiv 0 (\mod p)$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:fixed-points-of-action-of-p-group}, \stepref{3}.
+\end{proof}
+\step{7}{$Z = \{(a, a, \ldots, a) : a^p = e \}$}
+\step{8}{$Z \neq \emptyset$}
+\begin{proof}
+	\pf\ Since $(e, e, \ldots, e) \in Z$.
+\end{proof}
+\step{10}{An element $a$ has order $p$ iff $(a, a, \ldots, a) \in Z$ and $a \neq e$.}
+\step{11}{\pflet{$N$ be the number of cyclic subgroups of order $p$.}}
+\step{12}{The number of elements of order $p$ is $N(p-1)$}
+\step{13}{$|Z| = N(p-1) + 1$}
+\step{14}{$-N+1 \equiv 0 (\mod p)$}
+\begin{proof}
+	\pf\ From \stepref{6}.
+\end{proof}
+\step{15}{$N \equiv 1 (\mod p)$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group. Let $K$ be a subgroup of $G$ and $H$ a subgroup of $K$. If $|G:H|$, $|G:K|$ and $|K:H|$ are all finite then
+\[ |G:H| = |G:K| |K:H| \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G/K = \{ g_1 K, g_2 K, \ldots, g_m K \}$}}
+\step{2}{\pflet{$K / H = \{ k_1 H, k_2 H, \ldots, k_n H \}$}}
+\step{3}{$G/H = \{ g_i k_j H : 1 \leq i \leq m, 1 \leq j \leq n \}$}
+\begin{proof}
+	\step{a}{\pflet{$g \in G$}}
+	\step{b}{\pick\ $i$ such that $gK = g_i K$}
+	\step{c}{$\inv{g} g_i \in K$}
+	\step{d}{\pick\ $j$ such that $\inv{g} g_i H = k_j H$}
+	\step{e}{$\inv{g} g_i k_j \in H$}
+	\step{f}{$gH = g_i k_j H$}
+\end{proof}
+\step{4}{If $g_i k_j H = g_{i'} k_{j'} H$ then $i = i'$ and $j = j'$.}
+\begin{proof}
+	\step{a}{\assume{$g_i k_j H = g_{i'} k_{j'} H$}}
+	\step{b}{$g_i K = g_{i'} K$}
+	\step{c}{$i = i'$}
+	\step{d}{$k_j H = k_{j'} H$}
+	\step{e}{$j = j'$}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Cokernels}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a homomorphism between groups. Then there exists a group $K$ and homomorphism $\pi : H \rightarrow K$ that is initial with respect to all homomorphism $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$N$ be the intersection of all the normal subgroups of $H$ that include $\im \phi$.}}
+\step{1}{\pflet{$K = H / N$ and $\pi$ be the canonical homomorphism.}}
+\step{2}{\pflet{$\pi \circ \phi = 0$}}
+\step{3}{\pflet{$\alpha : H \rightarrow L$ satisfy $\alpha \circ \phi = 0$}}
+\step{4}{$\im \phi \subseteq \ker \alpha$}
+\step{4a}{$N \subseteq \ker \alpha$}
+\step{5}{There exists a unique $\overline{\alpha} : H / \im \phi \rightarrow L$ such that $\overline{\alpha} \circ \pi = \alpha$}
+\qed
+\end{proof}
+
+\begin{df}[Cokernel]
+For any homomorphism $\phi : G \rightarrow H$ in $\mathbf{Grp}$, the \emph{cokernel} of $\phi$ is the group $\coker \phi$ and homomorphism $\pi : H \rightarrow \coker \phi$ that is initial among homomorphisms $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{df}
+
+\begin{ex}
+It is not true that a homomorphism with trivial cokernel is epi. The inclusion $\langle (1\ 2) \rangle \hookrightarrow S_3$ has trivial cokernel but is not epi.
+\end{ex}
+
+\section{Cayley Graphs}
+
+\begin{df}[Cayley Graph]
+Let $G$ be a finitely generated group. Let $A$ be a finite set of generators for $G$. The \emph{Cayley graph} of $G$ with respect to $A$ is the directed graph whose vertices are the elements of $G$, with an edge $g_1 \rightarrow g_2$ labelled by $a \in A$ iff $g_2 = g_1 a$.
+\end{df}
+
+\begin{prop}
+$G$ is the free group on $A$ iff the Cayley graph with respect to $A$ is a tree.
+\end{prop}
+
+\begin{proof}
+\pf\ Both are equivalent to saying that the product of two different strings of elements of $A$ and/or their inverses are not equal. \qed
+\end{proof}
+
+\section{Characteristic Subgroups}
+
+\begin{df}[Characteristic Subgroup]
+Let $G$ be a group. Let $H$ be a subgroup of $G$. Then $H$ is a \emph{characteristic} subgroup of $G$ iff, for every automorphism $\phi$ of $G$, we have $\phi(H) \subseteq H$.
+\end{df}
+
+\begin{prop}
+Characteristic subgroups are normal.
+\end{prop}
+
+\begin{proof}
+\pf\ Take $\phi$ to be conjugation with respect to an arbitrary element. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group. Let $K$ be a normal subgroup of $G$ and $H$ a characteristic subgroup of $K$. Then $H$ is normal in $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $a \in G$ we have conjugation by $a$ is an automorphism on $K$, hence $H$ is closed under it. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:unique-subgroup-normal}
+Let $G$ be a group. Let $H$ be a subgroup of $G$. Suppose there is no other subgroup of $G$ isomorphic to $H$. Then $H$ is characteristic, hence normal.
+\end{prop}
+
+\begin{proof}
+\pf\ For any automorphism $\phi$ on $G$, we have $\phi(H)$ is isomorphic to $H$, hence $\phi(H) = H$. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a finite group. Let $K$ be a normal subgroup of $G$. Assume $|K|$ and $|G/K|$ are relatively prime. Then $K$ is characteristic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$K'$ be a subgroup of $G$ isomorphic to $K$.} \prove{$K' = K$}}
+\step{2}{$|K' / (K \cap K')|$ divides both $|K'| = |K|$ and $|G/K|$}
+\step{3}{$|K'/(K \cap K')| = 1$}
+\step{4}{$K' = K \cap K'$}
+\step{5}{$K' = K$}
+\qed
+\end{proof}
+
+\section{Simple Groups}
+
+\begin{df}[Simple Group]
+A group $G$ is \emph{simple} iff its only normal subgroups are $\{e\}$ and $G$.
+\end{df}
+
+\begin{prop}
+Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp$ where $1 < m < p$ then $G$ is not simple.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{There exists a unique subgroup of $G$ of order $p$.}
+\begin{proof}
+	\step{a}{There exists a subgroup of order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem
+	\end{proof}
+	\step{b}{\assume{for a contradiction there is more than one subgroup of order $p$.}}
+	\step{c}{There are at least $p + 1$ subgroups of order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem
+	\end{proof}
+	\step{d}{The union of all the subgroups of order $p$ has a total of $(p+1)(p-1)+1 = p^2$ elements.}
+	\begin{proof}
+		\pf\ Any two subgroups of order $p$ intersect only in $e$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Since $|G| = mp < p^2$.
+	\end{proof}
+\end{proof}
+\step{2}{The subgroup of order $p$ is normal.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:unique-subgroup-normal}.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Sylow Subgroups}
+
+\begin{df}[Sylow Subgroup]
+Let $p$ be a prime number. Let $G$ be a finite group. A \emph{$p$-Sylow subgroup} of $G$ is a subgroup of order $p^r$, where $r$ is the largest integer such that $p^r$ divides $|G|$.
+\end{df}
+
+\chapter{Abelian Groups}
+
+\begin{df}[Abelian Group]
+    A group is \emph{Abelian} iff any two elements commute.
+\end{df}
+
+In an Abelian group $G$, we often denote the group operation by $+$, the
+identity element by $0$ and the inverse of an element $g$ by $-g$. We write
+$ng$ for $g^n$ ($g \in G$, $n \in \mathbb{Z}$).
+
+\begin{ex}
+    Every group of order $\leq 4$ is Abelian.
+\end{ex}
+
+\begin{ex}
+    For any positive integer $n$, we have $\mathbb{Z} / n \mathbb{Z}$ is an Abelian group under addition.
+\end{ex}
+
+\begin{ex}
+    $S_n$ is not Abelian for $n \geq 3$. If $x = \left( \begin{array}{cc} 1 & 2 \end{array} \right)$ and $y = \left( \begin{array}{ccc} 1 & 3 & 2 \end{array} \right)$ then $xy = \left( \begin{array}{cc} 2 & 3 \end{array} \right)$ and $yx = \left( \begin{array}{cc} 1 & 3 \end{array} \right)$.
+\end{ex}
+
+\begin{ex}
+There are 42 Abelian groups of order 1024 up to isomorphism. %TODO
+\end{ex}
+
+\begin{prop}
+    Let $G$ be a group. If $g^2 = e$ for all $g \in G$ then $G$ is Abelian.
+\end{prop}
+
+\begin{proof}
+    \pf\ For any $g,h \in G$ we have
+    \begin{align*}
+        ghgh           & = e                                                   \\
+        \therefore hgh & = g  & (\text{multiplying on the left by }g)          \\
+        \therefore hg  & = gh & (\text{multiplying on the right by } h) & \qed
+    \end{align*}
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Then $G$ is Abelian if and only if the function that maps $g$ to $\inv{g}$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{If $G$ is Abelian then the function that maps $g$ to $\inv{g}$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Since $\inv{(gh)} = \inv{h} \inv{g} = \inv{g} \inv{h}$.
+    \end{proof}
+    \step{2}{If the function that maps $g$ to $\inv{g}$ is a group homomorphism then $G$ is Abelian.}
+    \begin{proof}
+        \pf\ Since $gh = \inv{(\inv{g})}\inv{(\inv{h})} = \inv{(\inv{g}\inv{h})} = hg$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Then $G$ is Abelian if and only if the function that maps $g$ to $g^2$ is a group homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{If $G$ is Abelian then the function that maps $g$ to $g^2$ is a group homomorphism.}
+    \begin{proof}
+        \pf\ Since $(gh)^2 = g^2h^2$.
+    \end{proof}
+    \step{2}{If the function that maps $g$ to $g^2$ is a group homomorphism then $G$ is Abelian.}
+    \begin{proof}
+        \pf\ Since we have $(gh)^2 = ghgh = g^2 h^2$ and so $hg = gh$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Let $G$ be a group. Then $G$ is Abelian if and only if the homomorphism $\gamma : G \rightarrow \Aut{\Grp}{G}$ is the trivial homomorphism.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{If $G$ is Abelian then $\gamma$ is trivial.}
+    \begin{proof}
+        \pf\ Since $\gamma_g(a) = ga\inv{g} = a$.
+    \end{proof}
+    \step{2}{If $\gamma$ is trivial then $G$ is Abelian.}
+    \begin{proof}
+        \pf\ If $\gamma_g(a) = ga\inv{g} = a$ for all $g$ and $a$ then $ga = ag$ for all $g$, $a$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:maximal-finite-order}
+    Let $G$ be an Abelian group. Let $g,h \in G$. If $g$ has maximal finite order in $G$, and $h$ has finite order, then $|h| \mid |g|$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\assume{for a contradiction $|h| \nmid |g|$.}}
+    \step{2}{\pick\ a prime $p$ such that $|g| = p^mr$, $|h| = p^n s$ where $p \nmid r$, $p \nmid s$ and $m < n$.}
+    \step{3}{$|g^{p^m}h^s| = p^n r$}
+    \begin{proof}
+        \pf\ Proposition \ref{prop:order-gh-if-gcd-one}.
+    \end{proof}
+    \step{4}{$|g| < |g^{p^m}h^s|$}
+    \qedstep
+    \begin{proof}
+        \pf\ This contradicts the maximality of $|g|$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Given a set $A$ and an Abelian group $H$, the set $H^A$ is an Abelian group under
+    \[ (\phi + \psi)(a) = \phi(a) + \psi(a) \qquad (\phi,\psi \in H^A, a \in A) \enspace . \]
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{2}{$\phi + (\psi + \chi) = (\phi + \psi) + \chi$}
+    \step{2a}{$\phi + \psi = \psi + \phi$}
+    \step{3}{\pflet{$0 : A \rightarrow H$ be the function $0(a) = 0$.}}
+    \step{4}{$\phi + 0 = 0 + \phi = \phi$}
+    \step{5}{Given $\phi : A \rightarrow H$, define $-\phi : A \rightarrow H$ by $(-\phi)(a) = -(\phi(a))$.}
+    \step{6}{$\phi + (-\phi) = (-\phi) + \phi = 0$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Given a group $G$ and an Abelian group $H$, the set $\mathbf{Grp}[G,H]$ is a subgroup of $H^G$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{Given $\phi, \psi : G \rightarrow H$ group homomorphisms, we have $\phi - \psi$ is a group homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            (\phi - \psi)(g + g') & = \phi(g + g') - \psi(g + g')             \\
+                                  & = \phi(g) + \phi(g') - \psi(g) - \psi(g') \\
+                                  & = \phi(g) - \psi(g) + \phi(g') - \psi(g') \\
+                                  & = (\phi - \psi)(g) + (\phi - \psi)(g')
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group. The following are equivalent.
+\begin{enumerate}
+\item $\mathrm{Inn}(G)$ is cyclic.
+\item $\mathrm{Inn}(G)$ is trivial.
+\item $G$ is Abelian.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\mathrm{Inn}(G) = \langle \gamma_g \rangle$}}
+	\step{b}{$g$ commutes with every element of $G$}
+	\begin{proof}
+		\step{b}{\pflet{$x \in G$}}
+		\step{c}{\pick\ $n \in \mathbb{Z}$ such that $\gamma_x = \gamma_g^n$}
+		\step{d}{$\forall y \in G. xy\inv{x} = g^nyg^{-n}$}
+		\step{e}{$x g \inv{x} = g$}
+	\end{proof}
+	\step{c}{$\gamma_g = \id{G}$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\step{a}{\assume{$\forall g \in G. \gamma_g = \id{G}$}}
+	\step{b}{\pflet{$x,y \in G$}}
+	\step{c}{$\gamma_x(y) = y$}
+	\step{d}{$xy\inv{x} = y$}
+	\step{e}{$xy = yx$}
+\end{proof}
+\step{2}{$3 \Rightarrow 2$}
+\begin{proof}
+	\pf\ If $xy = yx$ for all $x,y$ then $\gamma_x(y) = y$ for all $x$, $y$.
+\end{proof}
+\step{3}{$2 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+If $\Aut{\Grp}{G}$ is cyclic then $G$ is Abelian.
+\end{cor}
+
+\begin{prop}
+Every subgroup of an Abelian group is normal.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $G$ be an Abelian group and $N$ a subgroup of $G$. Given $g \in G$ and $n \in N$ we have $gn\inv{g} = n \in N$. \qed
+\end{proof}
+
+\begin{prop}
+For any group $G$, the group $G / [G,G]$ is Abelian.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $g,h \in G$ we have
+\begin{align*}
+gh\inv{(hg)} & \in [G,G] \\
+\therefore gh[G,G] & = hg[G,G] & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $G$ be a finite Abelian group. Let $p$ be a prime divisor of $|G|$. Then $G$ has an element of order $p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result holds for all groups smaller than $G$.}}
+\step{2}{\pick\ $g \in G - \{0\}$.}
+\step{3}{\pick\ an element $h \in \langle g \rangle$ with prime order $q$.}
+\step{4}{\case{$q = p$}}
+\begin{proof}
+\pf\ $h$ is the required element.
+\end{proof}
+\step{5}{\case{$q \neq p$}}
+\begin{proof}
+\step{a}{\pick\ $r \in G$ such that $r + \langle h \rangle$ has order $p$ in $G / \langle h \rangle$.}
+\begin{proof}
+\pf\ By induction hypothesis since $|G / \langle h \rangle| = |G| / q$.
+\end{proof}
+\step{b}{$pr \in \langle h \rangle$}
+\step{c}{\pick\ $k$ such that $pr = kh$}
+\step{d}{$pqr = e$}
+\step{e}{$qr$ has order $p$.}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+For $n$ an odd integer, any Abelian group of order $2n$ has exactly one element of order 2.
+\end{cor}
+
+\begin{proof}
+\pf\ If $x$ and $y$ are distinct elements of order 2 then $\langle x,y \rangle = \{ e, x, y, xy \}$ has size 4 and so $4 \mid 2n$ which is a contradiction. \qed
+\end{proof}
+
+\begin{ex}
+It is not true that, if $G$ is a finite group and $d \mid |G|$, then $G$ has an element of order $d$. The quaternionic group has no element of order 4.
+\end{ex}
+
+\begin{prop}
+If $G$ is a finite Abelian group and $d \mid |G|$ then $G$ has a subgroup of size $d$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result is true for all $d' < d$.}}
+\step{2}{\assume{w.l.o.g. $d \neq 1$.}}
+\step{3}{\pick\ a prime $p$ such that $p \mid d$.}
+\step{4}{\pick\ an element $g \in G$ of order $p$.}
+\step{5}{$d/p \mid |G/\langle g \rangle|$}
+\step{6}{\pick\ a subgrop $H$ of $G/\langle g \rangle$ of size $d/p$.}
+\step{7}{$\inv{\pi}(H)$ is a subgroup of $G$ of size $d$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $(G,\cdot)$ be a group. Let $\circ : G^2 \rightarrow G$ be a group homomorphism such that $(G,\circ)$ is a group. Then $\circ$ and $\cdot$ coincide, and $G$ is Abelian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $g_1,g_2,h_1,h_2 \in G$ we have
+\[ (g_1 g_2) \circ (h_1 h_2) = (g_1 \circ h_1)(g_2 \circ h_2) \]}
+\step{2}{$e \circ e = e$}
+\begin{proof}
+\pf
+\begin{align*}
+e \circ e & = (ee) \circ (ee) \\
+& = (e \circ e) (e \circ e)
+\end{align*}
+Hence $e \circ e = e$ by Cancellation.
+\end{proof}
+\step{3}{$e$ is the identity of $(G,\circ)$}
+\step{4}{For all $g,h \in G$ we have
+\[ g \circ h = g h \]}
+\begin{proof}
+\pf
+\begin{align*}
+g \circ h & = (ge) \circ (eh) \\
+& = (g \circ e)(e \circ h) \\
+& = gh
+\end{align*}
+\end{proof}
+\step{5}{For all $g,h \in G$ we have $gh = hg$.}
+\begin{proof}
+\pf
+\begin{align*}
+gh & = (e \circ g)(h \circ e) \\
+& = (eh) \circ (ge) \\
+& = h \circ g \\
+& = hg
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+\label{cor:group-in-group}
+If $(G, m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G)$ is a group object in $\Grp$ then $m$ is the multiplication of $G$, $e(*)$ is the identity of $G$, $i(g) = \inv{g}$, and $G$ is Abelian.
+
+Conversely, if $(G, m)$ is any Abelian group, then $(G,m,e,i)$ is a group object in $\Grp$ where $e(*) = e$ and $i(g) = \inv{g}$.
+\end{cor}
+
+\begin{prop}
+\label{prop:all-orders-leq-two}
+Let $G$ be a group.
+If every element of $G$ has order $\leq 2$ then $G$ is Abelian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x,y \in G$} \prove{$xy = yx$}}
+\step{2}{\assume{w.l.o.g. $x \neq e \neq y$.}}
+\step{3}{$x^2 = e = y^2$}
+\step{4}{$\inv{x} = x$ and $\inv{y} = y$.}
+\step{5}{\case{$xy = e$}}
+\begin{proof}
+	\pf\ Then $y = \inv{x}$ and so $xy = yx = e$.
+\end{proof}
+\step{6}{\case{$xy \neq e$}}
+\begin{proof}
+	\step{a}{$(xy)^2 = e$}
+	\step{b}{$xyxy = e$}
+	\step{c}{$xy = \inv{y} \inv{x}$}
+	\step{d}{$xy = yx$}
+\end{proof}
+\qed
+\end{proof}
+
+\section{The Category of Abelian Groups}
+
+\begin{df}[Category of Abelian Groups]
+    Let $\Ab$ be the full subcategory of $\mathbf{Grp}$ whose objects are the Abelian groups.
+\end{df}
+
+\begin{prop}
+If $(G, m : G^2 \rightarrow G, e : 1 \rightarrow G, i : G \rightarrow G)$ is a group object in $\Ab$ then $m$ is the multiplication of $G$, $e(*)$ is the identity of $G$, $i(g) = \inv{g}$, and $G$ is Abelian.
+
+Conversely, if $(G, m)$ is any Abelian group, then $(G,m,e,i)$ is a group object in $\Ab$ where $e(*) = e$ and $i(g) = \inv{g}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from Corollary \ref{cor:group-in-group}. \qed
+\end{proof}
+
+\begin{df}[Direct Sum]
+    Given Abelian groups $G$ and $H$, we also call the direct product of $G$ and $H$ the \emph{direct sum} and denote it $G \oplus H$.
+\end{df}
+
+\begin{prop}
+    Given Abelian groups $G$ and $H$, the direct sum $G \oplus H$ is the coproduct of $G$ and $H$ in $\Ab$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$\kappa_1 : G \rightarrow G \oplus H$ be the group homomorphism $\kappa_1(g) = (g,e_H)$.}}
+    \step{2}{\pflet{$\kappa_2 : H \rightarrow G \oplus H$ be the group homomorphism $\kappa_2(h) = (e_G,h)$.}}
+    \step{3}{Given group homomorphism $\phi : G \rightarrow K$ and $\psi : H \rightarrow K$, define $[\phi, \psi] : G \oplus H \rightarrow K$ by $[\phi,\psi](g,h) = \phi(g) + \psi(h)$.}
+    \step{4}{$[\phi,\psi]$ is a group homomorphism.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            [\phi,\psi]((g,h) + (g',h')) & = [\phi,\psi](g + g', h + h')             \\
+                                         & = \phi(g + g') + \psi(h + h')             \\
+                                         & = \phi(g) + \phi(g') + \psi(h) + \psi(h') \\
+                                         & = \phi(g) + \psi(h) + \phi(g') + \psi(h') \\
+                                         & = [\phi,\psi](g,h) + [\phi,\psi](g',h')
+        \end{align*}
+    \end{proof}
+    \step{5}{$[\phi,\psi] \circ \kappa_1 = \phi$}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            [\phi,\psi](\kappa_1(g)) & = [\phi,\psi](g,e_h)  \\
+                                     & = \phi(g) + \psi(e_H) \\
+                                     & = \phi(g) + e_K       \\
+                                     & = \phi(g)
+        \end{align*}
+    \end{proof}
+    \step{6}{$[\phi,\psi] \circ \kappa_2 = \psi$}
+    \begin{proof}
+        \pf\ Similar.
+    \end{proof}
+    \step{7}{If $f : G \oplus H \rightarrow K$ is a group homomorphism with $f \circ \kappa_1 = \phi$ and $f \circ \kappa_2 = \psi$ then $f = [\phi,\psi]$.}
+    \begin{proof}
+        \pf
+        \begin{align*}
+            f(g,h) & = f((g,e_H) + (e_G,h))            \\
+                   & = f(\kappa_1(g)) + f(\kappa_2(h)) \\
+                   & = \phi(g) + \psi(h)
+        \end{align*}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{thm}
+Every finitely generated Abelian group is a direct sum of cyclic groups.
+\end{thm}
+
+\begin{proof}
+\pf\ TODO \qed
+\end{proof}
+
+\section{Free Abelian Groups}
+
+\begin{prop}
+    Let $A$ be a set. Let $\mathcal{F}^A$ be the category whose objects are pairs $(G,j)$ where $G$ is an Abelian group and $j$ is a function $A \rightarrow G$, with morphisms $f : (G,j) \rightarrow (H,k)$ the group homomorphisms $f : G \rightarrow H$ such that $f \circ j = k$. Then $\mathcal{F}^A$ has an initial object.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$\mathbb{Z}^{\oplus A}$ be the subgroup of $\mathbb{Z}^A$ consisting of all functions $\alpha : A \rightarrow \mathbb{Z}$ such that $\alpha(a) = 0$ for only finitely many $a \in A$.}}
+    \step{2}{\pflet{$i : A \rightarrow \mathbb{Z}^{\oplus A}$ be the function such that $i(a)(b) = 1$ if $a = b$ and 0 if $a \neq b$.}}
+    \step{3}{\pflet{$G$ be any Abelian group and $j : A \rightarrow G$ any function.}}
+    \step{4}{The unique homomorphism $\phi : \mathbb{Z}^{\oplus A} \rightarrow G$ required is defined by $\phi(\alpha) = \sum_{a \in A} \alpha(a) j(a)$}
+    \qed
+\end{proof}
+
+\begin{df}[Free Abelian Group]
+    For any set $A$, the \emph{free Abelian group} on $A$ is the initial object $(F^{ab}(A),i)$ in $\mathcal{F}^A$.
+\end{df}
+
+\begin{prop}
+    For any sets $A$ and $B$, we have that $F^{ab}(A+B)$ is the coproduct of $F^{ab}(A)$ and $F^{ab}(B)$ in $\Grp$.
+\end{prop}
+
+\[ \begin{tikzcd}
+        & G & \\
+        F^{ab}(A) \arrow[r,"\kappa_1"] \arrow[ur,"f"] & F^{ab}(A+B) \arrow[u,"k"] & \arrow[l,"\kappa_2"] F^{ab}(B) \arrow[ul,"g"] \\
+        A \arrow[r,"k_1"] \arrow[u,"i_A"] & A+B \arrow[u,"j"] & \arrow[l,"k_2"] \arrow[u,"i_B"] B
+    \end{tikzcd} \]
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$i_A : A \rightarrow F^{ab}(A)$, $i_B : B \rightarrow F^{ab}(B)$, $j : A + B \rightarrow F^{ab}(A+B)$ be the canonical injections.}}
+    \step{2}{\pflet{$\kappa_1$, $\kappa_2$ be the unique group homomorphisms that make the diagram above commute.}}
+    \step{3}{\pflet{$G$ be any group and $f : F^{ab}(A) \rightarrow G$, $g : F^{ab}(B) \rightarrow G$ any group homomorphisms.}}
+    \step{4}{\pflet{$h : A + B \rightarrow G$ be the unique function such that $h \circ k_1 = f \circ i_A$ and $h \circ k_2 = g \circ i_B$.}}
+    \step{5}{\pflet{$k : F^{ab}(A+B) \rightarrow G$ be the unique group homomorphism such that $k \circ j = h$.}}
+    \step{6}{$k$ is the unique group homomorphism such that $k \circ \kappa_1 \circ i_A = f \circ i_A$ and $k \circ \kappa_2 \circ i_B = g \circ i_B$.}
+    \step{7}{$k$ is the unique group homomorphism such that $k \circ \kappa_1 = f$ and $k \circ \kappa_2 = g$.}
+    \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:Fab-reflects-cong}
+    For $A$ and $B$ finite sets, if $\Fab{A} \cong \Fab{B}$ then $A \cong B$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{For any set $C$, define $\sim$ on $\Fab{C}$ by: $f \sim f'$ iff there exists $g \in \Fab{C}$ such that $f - f' = 2g$.}
+    \step{2}{For any set $C$, $\sim$ is an equivalence relation on $\Fab{C}$.}
+    \step{3}{For any set $C$, we have $\Fab{C}/\sim$ is finite if and only if $C$ is finite, in which case $|\Fab{C}/\sim| = 2^{|C|}$.}
+    \begin{proof}
+        \pf\ There is a bijection between $\Fab{C}/\sim$ and the finite subsets of $C$, which maps $f$ to $\{ c \in C : f(c) \text{ is odd} \}$.
+    \end{proof}
+    \step{4}{If $\Fab{A} \cong \Fab{B}$ then $A \cong B$.}
+    \begin{proof}
+        \pf\ If $|\Fab{A}/\sim| = |\Fab{B} / \sim|$ then $2^{|A|} = 2^{|B|}$ and so $|A| = |B|$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be an Abelian group. Then $G$ is finitely generated if and only if there exists a surjective homomorphism $\mathbb{Z}^{\oplus n} \twoheadrightarrow G$ for some $n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $G$ is finitely generated then there exists a surjective homomorphism $\mathbb{Z}^{\oplus n} \twoheadrightarrow G$ for some $n$.}
+\begin{proof}
+	\pf\ Let $G = \langle a_1, \ldots, a_n \rangle$. Define $\phi : \mathbb{Z}^{\oplus n} \twoheadrightarrow G$ by $\phi(i_1, \ldots, i_n) = i_1 \cdot a_1 + \cdots + i_n \cdot a_n$.
+\end{proof}
+\step{2}{If there exists a surjective homomorphism $\phi : \mathbb{Z}^{\oplus n} \twoheadrightarrow G$ for some $n$ then $G$ is finitely generated.}
+\begin{proof}
+	\pf\ $G$ is generated by $\phi(1, 0, \ldots, 0)$, $\phi(0, 1, 0, \ldots, 0)$, \ldots, $\phi(0, \ldots, 0, 1)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $A$ be a set. Let $i : A \hookrightarrow F(A)$ be the free group on $A$. Then $\pi \circ i : A \rightarrow F(A) / [F(A),F(A)]$ is the free Abelian group on $A$.
+\end{prop}
+
+\[ \begin{tikzcd}
+F(A)/[F(A),F(A)] \arrow[dr,"h"] \\
+F(A) \arrow[r,"g"] \arrow[u,"\pi"] & G \\
+A \arrow[u,"i"] \arrow[ur,"f"]
+\end{tikzcd} \]
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be an Abelian group and $f : A \rightarrow G$ a function.}}
+\step{2}{\pflet{$g : F(A) \rightarrow G$ be the unique group homomorphism such that $g \circ i = f$.}}
+\step{3}{$[F(A),F(A)] \subseteq \ker g$}
+\begin{proof}
+	\pf\ For all $x,y \in F(A)$ we have $g(xy\inv{x}\inv{y}) = g(x) + g(y) - g(x) - g(y) = 0$.
+\end{proof}
+\step{4}{\pflet{$h : F(A)/[F(A),F(A)]$ be the unique group homomorphism such that $h \circ \pi = g$.}}
+\step{5}{$h$ is the unique group homomorphism such that $h \circ \pi \circ i = f$.}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $A$ and $B$ be sets. Let $F(A)$ and $F(B)$ be the free groups on $A$ and $B$ respectively. If $F(A) \cong F(B)$ then $A \cong B$.
+\end{cor}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:Fab-reflects-cong}. \qed
+\end{proof}
+
+\section{Cokernels}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a homomorphism between Abelian groups. Then there exists an Abelian group $K$ and homomorphism $\pi : H \rightarrow K$ that is initial with respect to all homomorphism $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$K = H / \im \phi$ and $\pi$ be the canonical homomorphism.}}
+\step{2}{\pflet{$\pi \circ \phi = 0$}}
+\step{3}{\pflet{$\alpha : H \rightarrow L$ satisfy $\alpha \circ \phi = 0$}}
+\step{4}{$\im \phi \subseteq \ker \alpha$}
+\step{5}{There exists a unique $\overline{\alpha} : H / \im \phi \rightarrow L$ such that $\overline{\alpha} \circ \pi = \alpha$}
+\qed
+\end{proof}
+
+\begin{df}[Cokernel]
+For any homomorphism $\phi : G \rightarrow H$ in $\Ab$, the \emph{cokernel} of $\phi$ is the Abelian group $\coker \phi$ and homomorphism $\pi : H \rightarrow \coker \phi$ that is initial among homomorphisms $\alpha : H \rightarrow L$ such that $\alpha \circ \phi = 0$.
+\end{df}
+
+\begin{prop}
+$\pi : H \rightarrow \coker \phi$ is initial among functions $f : H \rightarrow X$ such that, for all $x,y \in H$, if $x + \im \phi = y + \im \phi$ then $f(x) = f(y)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : G \rightarrow H$ be a homomorphism of Abelian groups. Then the following are equivalent.
+\begin{itemize}
+\item $\phi$ is an epimorphism.
+\item $\coker \phi$ is trivial.
+\item $\phi$ is surjective.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\phi$ is epi.}}
+	\step{b}{\pflet{$\pi : H \rightarrow \coker \phi$ be the canonical homomorphism.}}
+	\step{c}{$\pi \circ \phi = 0 \circ \phi$}
+	\step{d}{$\pi = 0$}
+	\step{e}{$\coker \phi = \im \pi$ is trivial.}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If $\coker \phi = H / \im \phi$ is trivial then $\im \phi = H$.
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\pf\ If it is surjective then it is epi in $\mathbf{Set}$.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Group Actions}
+
+\section{Group Actions}
+
+\begin{df}[Action]
+Let $G$ be a group. Let $A$ be an object of a category $\mathcal{C}$. A \emph{(left) action} of $G$ on $A$ is a group homomorphism $G \rightarrow \mathrm{Aut}_\mathcal{C}(A)$.
+
+It is \emph{faithful} or \emph{effective} iff it is injective.
+\end{df}
+
+\begin{prop}
+Let $A$ be a set. An action of the group $G$ on the set $A$ is given by a function $\cdot : G \times A \rightarrow A$ such that
+\begin{itemize}
+\item $\forall a \in A. ea = a$
+\item $\forall g,h \in G. \forall a \in A. (gh)a = g(ha)$
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Just unfolding definitions. \qed
+\end{proof}
+
+\begin{ex}
+Left multiplication defines a faithful action of any group on its own underlying set.
+
+In fact, for any subgroup $H$ of a group $G$, left multiplication defines an action of $G$ on $G/H$.
+\end{ex}
+
+\begin{cor}[Cayley's Theorem]
+Every group $G$ is a subgroup of a symmetric group, namely $\Aut{\Set}{G}$.
+\end{cor}
+
+\begin{ex}
+Conjugation $g * h = gh\inv{g}$ is an action of any group on its own underlying set.
+\end{ex}
+
+\begin{df}[Transitive]
+An action of a group $G$ on a set $A$ is \emph{transitive} iff, for all $a,b \in A$, there exists $g \in G$ such that $ga = b$.
+\end{df}
+
+\begin{ex}
+Left multiplication of a group $G$ is a transitive action of $G$ on $G$.
+\end{ex}
+
+\begin{df}[Orbit]
+Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{orbit} of $a$ is
+\[ \mathrm{O}_G(a) := \{ ga : g \in G \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Given an action of a group $G$ on a set $A$, the orbits form a partition of $A$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Every element of $A$ is in some orbit.}
+\begin{proof}
+\pf\ Since $a \in \mathrm{O}_G(a)$.
+\end{proof}
+\step{2}{Distinct orbits are disjoint.}
+\begin{proof}
+\step{a}{\pflet{$a \in \mathrm{O}_G(b) \cap \mathrm{O}_G(c)$}}
+\step{b}{\pick\ $g,h \in G$ such that $a = gb = hc$.}
+\step{c}{$\mathrm{O}_G(b) \subseteq \mathrm{O}_G(c)$}
+\begin{proof}
+\pf\ For all $k \in G$ we have $kb = k\inv{g}hc$.
+\end{proof}
+\step{d}{$\mathrm{O}_G(c) \subseteq \mathrm{O}_G(b)$}
+\begin{proof}
+\pf\ Similar.
+\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Given an action of a group $G$ on a set $A$ and $a \in A$, the action is transitive on $\mathrm{O}_G(a)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{The restriction of the action is an action on $\mathrm{O}_G(a)$.}
+\begin{proof}
+\pf\ Since $g(ha) = (gh)a$, the action maps $\mathrm{O}_G(a)$ to itself.
+\end{proof}
+\step{2}{The restricted action is transitive.}
+\begin{proof}
+\pf\ Given $ga, ha \in \mathrm{O}_G(a)$, we have $ha = (h\inv{g})(ga)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Stabilizer Subgroup]
+Given an action of a group $G$ on a set $A$ and $a \in A$, the \emph{stabilizer subgroup} of $a$ is
+\[ \Stab{G}{a} := \{ g \in G : ga = a \} \enspace . \]
+\end{df}
+
+\begin{prop}
+Stabilizer subgroups are subgroups.
+\end{prop}
+
+\begin{proof}
+\pf\ If $g,h \in \Stab{G}{a}$ then $g \inv{h} a = a$ so $g \inv{h} \in \Stab{G}{a}$. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ act on a set $A$. Let $a \in A$ and $g \in G$. Then
+\[ \Stab{G}{ga} = g \Stab{G}{a} \inv{g} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+h \in \Stab{G}{ga} & \Leftrightarrow hga = ga \\
+& \Leftrightarrow \inv{g}hga = a \\
+& \Leftrightarrow \inv{g}hg \in \Stab{G}{a} \\
+& \Leftrightarrow h \in g \Stab{G}{a} \inv{g} & \qed
+\end{align*}
+\end{proof}
+
+\begin{cor}
+Let $G$ be an action on a set $A$ and $a \in A$. If $\Stab{G}{a}$ is normal in $G$, then for any $b \in \mathrm{O}_G(a)$ we have $\Stab{G}{a} = \Stab{G}{b}$.
+\end{cor}
+
+\begin{df}[Free]
+An action of a group $G$ on a set $A$ is \emph{free} iff, whenever $ga = a$, then $g = e$.
+\end{df}
+
+\begin{ex}
+The action of left multiplication is free.
+\end{ex}
+
+\begin{prop}
+Let $G$ be a group. Let $H$ be a subgroup of $G$ of finite index $n$. Then $H$ includes a subgroup $K$ that is normal in $G$ and such that $|G:K|$ divides $\gcd(|G|,n!)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\sigma : G \rightarrow \Aut{\Set}{G/H}$ be the action of left multiplication.}}
+\step{2}{\pflet{$K = \ker \sigma$}}
+\step{3}{$K \subseteq H$}
+\begin{proof}
+	\step{a}{\pflet{$g \in K$}}
+	\step{b}{$\sigma(g)(H) = H$}
+	\step{c}{$gH = H$}
+	\step{d}{$g \in H$}
+\end{proof}
+\step{4}{$K$ is normal in $G$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:kernel-normal}.
+\end{proof}
+\step{5}{$|G : K| \mid |G|$}
+\begin{proof}
+	\pf\ Lagrange's Theorem.
+\end{proof}
+\step{6}{$|G : K| \mid n!$} 
+\begin{proof}
+	\pf\ Since $G / K$ is a subgroup of $\Aut{\Set}{G/H}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of index $p$ where $p$ is the smallest prime that divides $|G|$. Then $H$ is normal in $G$.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a subgroup $K$ of $H$ normal in $G$ such that $|G : K|$ divides $\gcd(|G|, p!)$.}
+\step{2}{$|G : K|$ divides $p$.}
+\step{3}{$|G:H||H:K|$ divides $p$.}
+\step{4}{$|H:K| = 1$}
+\step{9}{$H = K$}
+\step{10}{$H$ is normal.}
+\qed
+\end{proof}
+
+\begin{cor}
+\label{cor:index-two-normal}
+Any subgroup of index 2 is normal.
+\end{cor}
+
+\begin{prop}
+Let $G$ be a group with finite set of generators $A$. Then left multiplication defines a free action of $G$ on its Cayley graph.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy since if $g_2 = g_1 a$ then $h g_2 = h g_1 a$. \qed
+\end{proof}
+
+\begin{cor}
+A free group acts freely on a tree.
+\end{cor}
+
+\begin{thm}
+If a group $G$ acts freely on a tree then $G$ is free.
+\end{thm}
+
+%TODO
+
+\begin{cor}
+Every subgroup of the free group on a finite set is free.
+\end{cor}
+
+\begin{proof}
+\pf\ If $H$ is a subgroup of $F(A)$ then left multiplication defines a free action of $H$ on the Cayley graph of $F(A)$, which is a tree. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:class-formula}
+Let $S$ be a finite set. Let $G$ be a group acting on $S$. Let $Z$ be the set of fixed points of the action:
+\[ Z = \{a \in S : \forall g \in G. ga = a \} \enspace . \]
+Let $A$ be a set of representatives for the nontrivial orbits of the action. Then
+\[ |S| = |Z| + \sum_{a \in A} [G : \Stab{G}{a}] \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from the fact that the orbits partition $S$. \qed
+\end{proof}
+
+\begin{cor}
+\label{cor:fixed-points-of-action-of-p-group}
+Let $p$ be a prime.
+Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. Let $Z$ be the set of fixed points of the action. Then $|Z| \cong |S| (\mod p)$.
+\end{cor}
+
+\begin{cor}
+Let $p$ be a prime. Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. If $p$ does not divide $|S|$ then the action has a fixed point.
+\end{cor}
+
+\section{Category of $G$-Sets}
+
+\begin{df}
+Given a group $G$, let $G-\mathbf{Set}$ be the category with:
+\begin{itemize}
+\item objects all pairs $(A, \rho)$ such that $A$ is a set and $\rho : G \times A \rightarrow A$ is an action of $G$ on $A$;
+\item morphisms $f : (A, \rho) \rightarrow (B, \sigma)$ are functions $f : A \rightarrow B$ that are \emph{($G$-)equivariant}, i.e.
+\[ \forall g \in G. \forall a \in A. f(\rho(g,a)) = \sigma(g,f(a)) \enspace . \]
+\end{itemize}
+\end{df}
+
+\begin{prop}
+A $G$-equivariant function $f : A \rightarrow B$ is an isomorphism in $G-\mathbf{Set}$ if and only if it is bijective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : A \rightarrow B$ be $G$-equivariant and bijective.} \prove{$\inv{f}$ is $G$-equivariant.}}
+\step{2}{\pflet{$g \in G$ and $b \in B$}}
+\step{3}{$\inv{f}(gb) = g \inv{f}(b)$}
+\begin{proof}
+\pf
+\begin{align*}
+f(\inv{f}(gb)) & = gb \\
+& = g f(\inv{f}(b)) \\
+& = f(g \inv{f}(b))
+\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group and $A$ a transitive $G$-set. Let $a \in A$. Then $A$ is isomorphic to $G / \Stab{G}{a}$ under left multiplication.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f : G / \Stab{G}{a} \rightarrow A$ be the function $f(g \Stab{G}{a}) = ga$.}}
+\begin{proof}
+	\step{a}{\assume{$g \Stab{G}{a} = h \Stab{G}{a}$} \prove{$ga = ha$}}
+	\step{b}{$\inv{g} h \in \Stab{G}{a}$}
+	\step{c}{$\inv{g} h a = a$}
+	\step{d}{$ha = ga$}
+\end{proof}
+\step{2}{$f$ is $G$-equivariant.}
+\begin{proof}
+	\pf\ Since $f(gh \Stab{G}{a}) = gha = g f(h \Stab{G}{a})$.
+\end{proof}
+\step{3}{$f$ is injective.}
+\begin{proof}
+	\pf\ If $ga = ha$ then $\inv{g}h \in \Stab{G}{a}$ so $g \Stab{G}{a} = h \Stab{G}{a}$.
+\end{proof}
+\step{4}{$f$ is surjective.}
+\begin{proof}
+	\pf\ Since for all $b \in A$ there exists $g \in G$ such that $ga = b$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+If $O$ is an orbit of the action of a finite group $G$ on a set $A$, then $O$ is finite and $|O|$ divides $|G|$.
+\end{cor}
+
+\begin{cor}
+Let $H$ be a subgroup of $G$ and $g \in G$. Then
+\[ G / H \cong G / (g H \inv{g}) \]
+in $G-\mathbf{Set}$.
+\end{cor}
+
+\begin{proof}
+\pf\ Taking $A = G / H$ and $a = gH$. \qed
+\end{proof}
+
+\begin{prop}
+Given a family of $G$-sets $\{ A_i \}_{i \in I}$, we have $\prod_{i \in I} A_i$ is their product in $G-\mathbf{Set}$ under
+\[ g \{a_i\}_{i \in I} = \{ga_i\}_{i \in I} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Given a family of $G$-sets $\{ A_i \}_{i \in I}$, we have $\coprod_{i \in I} A_i$ is their product in $G-\mathbf{Set}$ under
+\[ g (i,a_i) = (i, ga_i) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every finite $G$-set is a coproduct of $G$-sets of the form $G/H$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $O(a_1)$, \ldots, $O(a_n)$ are the orbits of the $G$-set $A$, then $G$ is the coproduct of $G / \Stab{G}{a_1}$, \ldots, $G / \Stab{G}{a_n}$. \qed
+\end{proof}
+
+\begin{prop}
+For any group $G$ we have $G \cong \Aut{G-\mathbf{Set}}{G}$ (considering $G$ as a $G$-set under left multiplication).
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Define $\phi : G \rightarrow \Aut{G-\mathbf{Set}}{G}$ by $\phi(g)(g') = g'\inv{g}$.}
+\begin{proof}
+	\step{a}{\pflet{$g \in G$} \prove{$\lambda g' \in G. g'\inv{g}$ is an automorphism of $G$ in $G-\mathbf{Set}$.}}
+	\step{b}{$\phi(g)$ is $G$-equivariant.}
+	\begin{proof}
+		\pf\ Since $\phi(g)(h_1h_2) = h_1h_2\inv{g} = h_1 \phi(g)(h_2)$.
+	\end{proof}
+	\step{c}{$\phi(g)$ is injective.}
+	\begin{proof}
+		\pf\ By Cancellation.
+	\end{proof}
+	\step{d}{$\phi(g)$ is surjective.}
+	\begin{proof}
+		\pf\ For any $h \in G$ we ahev $h = \phi(g)(hg)$.
+	\end{proof}
+\end{proof}
+\step{2}{$\phi$ is a group homomorphism.}
+\begin{proof}
+	\pf\ $\phi(g_1 g_2)(h) = h\inv{g_2} \inv{g_1} = \phi(g_1)(\phi(g_2)(h))$.
+\end{proof}
+\step{3}{$\phi$ is injective.}
+\begin{proof}
+	\pf\ If $\phi(g) = \phi(g')$ then $g = \phi(g)(e) = \phi(g')(e) = g'$.
+\end{proof}
+\step{4}{$\phi$ is surjective.}
+	\begin{proof}
+		\step{i}{\pflet{$\sigma \in \Aut{G-\mathbf{Set}}{G}$}}
+		\step{ii}{\pflet{$g = \sigma(e)$} \prove{$\sigma = \phi(\inv{g})$}}
+		\step{iii}{$\sigma(h) = hg$}
+		\begin{proof}
+		\pf\ $\sigma(h) = \sigma(he) = h \sigma(e) = hg$.
+		\end{proof}
+	\end{proof}
+\qed
+\end{proof}
+
+\section{Center}
+
+\begin{df}[Center]
+The \emph{center} of a group $G$, $Z(G)$, is the kernel of the conjugation action $\sigma : G \rightarrow S_G$.
+\end{df}
+
+\begin{prop}
+The center of a group $G$ is
+\[ Z(G) = \{ g \in G : \forall a \in G. ag = ga \} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{lm}
+\label{lm:G-ZG-cyclic}
+Let $G$ be a finite group. Assume $G / Z(G)$ is cyclic. Then $G$ is Abelian and so $G/Z(G)$ is trivial.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $g \in G$ such that $gZ(G)$ generates $G/Z(G)$.}
+\step{2}{\pflet{$a,b \in G$}}
+\step{3}{\pick\ $r,s \in \mathbb{Z}$ such that $aZ(G) = g^rZ(G)$ and $bZ(G) = g^sZ(G)$}
+\step{4}{\pflet{$z = g^{-r}a \in Z(G)$ and $w = g^{-s}b \in Z(G)$}}
+\step{5}{$a = g^rz$ and $b = g^sw$}
+\step{6}{$ab = ba$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		ab & = g^rzg^sw \\
+		& = g^{r+s}zw \\
+		& = g^swg^rz \\
+		& = ba
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:subgroup-of-Z-normal}
+Let $G$ be a group. Let $N$ be a subgroup of $Z(G)$. Then $N$ is normal in $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ For all $n \in N$ and $g \in G$ we have $gn\inv{g} = ng\inv{g} = n \in N$ since $n \in Z(G)$. \qed
+\end{proof}
+
+\begin{prop}
+For any group $G$ we have $G / Z(G) \cong \Inn{G}$.
+\end{prop}
+
+\begin{proof}
+\pf\ The homomorphism $g \mapsto \gamma_g$ is a surjective homomorphism with kernel $Z(G)$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:pq-abelian}
+Let $p$ and $q$ be prime integers. Let $G$ be a group of order $pq$. Then either $G$ is Abelian or the center of $G$ is trivial.
+\end{prop}
+
+\begin{proof}
+\pf\ Otherwise we would have $|Z(G)| = p$ say and so $|\Inn{G}| = q$, meaning $\Inn{G}$ is cyclic, hence trivial, which is a contradiction.
+\qed
+\end{proof}
+
+\section{Centralizer}
+
+\begin{df}[Centralizer]
+Let $G$ be a group. Let $a \in G$. The \emph{centralizer} or \emph{normalizer} of $a$, denoted $Z_G(a)$, is the stabilizer of $a$ under the action of conjugation.
+\end{df}
+
+\begin{prop}
+\[ Z_G(a) = \{ g \in G : ga = ag \} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\section{Conjugacy Class}
+
+\begin{df}[Conjugacy Class]
+Let $G$ be a group. Let $a \in G$. The \emph{conjugacy class} of $a$, denoted $[a]$, is the orbit of $a$ under the action of conjugation.
+\end{df}
+
+\begin{prop}[Class Formula]
+Let $G$ be a finite group. Let $A$ be a set of representatives of the non-trivial conjugacy classes. Then
+\[ |G| = |Z(G)| + \sum_{a \in A} [G : Z(a)] \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:class-formula}. \qed
+\end{proof}
+
+\begin{cor}
+Let $p$ be a prime. Let $G$ be a $p$-group and $H$ a nontrivial normal subgroup of $G$. Then $H \cap Z(G) \neq \{e\}$.
+\end{cor}
+
+\begin{proof}
+\pf\ Let $A$ be a set of representatives of the non-trivial conjugacy classes. Let $A \cap H = \{a_1, \ldots, a_n\}$. Then
+\[ |H| = |H \cap Z(G)| + \sum_{i=1}^n [G : Z(a_i)] \enspace . \]
+Since $p \mid |H|$ and $p \mid [G : Z(a_i)]$ for all $i$, we have $p \mid |H \cap Z(G)|$. \qed
+\end{proof}
+
+\begin{cor}
+\label{cor:p-group-non-trivial-center}
+Let $p$ be a prime.
+Every $p$-group has a non-trivial center.
+\end{cor}
+
+\begin{cor}
+Let $p$ be a prime. Every group $G$ of order $p^2$ is Abelian.
+\end{cor}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:pq-abelian}. \qed
+\end{proof}
+
+\begin{prop}
+Let $p$ be a prime and $r$ a non-negative integer. Let $G$ be a group of order $p^r$. Then, for $k = 0, 1, \ldots, r$, we have $G$ has a normal subgroup of order $p^k$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result holds for $r' < r$.}}
+\step{2}{\assume{w.l.o.g. $k > 0$}}
+\begin{proof}
+	\pf\ Since $\{e\}$ is a normal subgroup of order $p^0$.
+\end{proof}
+\step{2}{\pick\ a subgroup $N$ of $Z(G)$ of order $p$.}
+\begin{proof}
+	\step{a}{$p \mid |Z(G)|$}
+	\begin{proof}
+		\pf\ From Corollary \ref{cor:p-group-non-trivial-center}.
+	\end{proof}
+	\step{b}{$Z(G)$ has a subgroup of order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem.
+	\end{proof}
+\end{proof}
+\step{3}{$N$ is normal.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:subgroup-of-Z-normal}.
+\end{proof}
+\step{4}{\pick\ a normal subgroup $M$ of $G/N$ of order $p^{k-1}$.}
+\begin{proof}
+	\pf\ From the induction hypothesis \stepref{1}.
+\end{proof}
+\step{5}{$\inv{\pi}(M)$ is a normal subgroup of $G$ of order $p^k$.}
+\qed
+\end{proof}
+
+\begin{ex}
+The only non-Abelian group of order 6 is $S_3$.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a non-Adelian group of order 6.}}
+\step{2}{$Z(G) = \{e\}$}
+\begin{proof}
+	\pf\ Otherwise $Z(G)$ has order 2 or 3 and is cyclic, contradicting Lemma \ref{lm:G-ZG-cyclic}.
+\end{proof}
+\step{3}{$G$ has three conjugacy classes: $Z(G)$, a class of size 2 and a class of size 3.}
+\begin{proof}
+	\pf\ By the Class Formula since the only way to make 5 using non-trivial factors of 6 is $2+3$.
+\end{proof}
+\step{4}{\pick\ an element $y \in G$ of order 3.}
+\begin{proof}
+	\pf\ It cannot be that every element is of order $\leq 2$ by Proposition \ref{prop:all-orders-leq-two}.
+\end{proof}
+\step{5}{$\langle y \rangle$ is normal in $G$.}
+\begin{proof}
+	\pf\ Since it has index 2.
+\end{proof}
+\step{6}{The conjugacy class $y$ is $\{y,y^2\}$.}
+\begin{proof}
+	\pf\ Since $\langle y \rangle$ must be a union of conjugacy classes.
+\end{proof}
+\step{6}{The conjugacy class of size 2 is $\{y,y^2\}$.}
+\begin{proof}
+	\pf\ Since $y^2$ has order 3 and so its conjugacy class is of size 2 similarly, and there is only one conjugacy class of size 2.
+\end{proof}
+\step{7}{\pick\ $x \in G$ such that $yx = xy^2$.}
+\begin{proof}
+	\pf\ $y^2$ is conjugate to $y$ so there exists $x$ such that $\inv{x}yx = y^2$.
+\end{proof}
+\step{8}{$x$ has order 2.}
+\begin{proof}
+	\pf\ $x$ is not in the conjugacy class of size 2 so its order cannot be 3.
+\end{proof}
+\step{9}{$x$ and $y$ generate $G$.}
+\begin{proof}
+	\pf\ Since $e$, $y$, $y^2$, $x$, $xy$, $xy^2$ are all distinct.
+\end{proof}
+\step{10}{$G \cong S_3$}
+\begin{proof}
+	\pf\ We now know the entire multiplication table of $G$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a finite group. Let $H$ be a subgroup of $G$ of order 2. Let $a \in H$. Let $[a]_H$ be the conjugacy class of $a$ in $H$, and $[a]_G$ the conjugacy class of $a$ in $G$. If $Z_G(a) \subseteq H$ then $[a]_H$ is half the size of $[a]_G$; otherwise, $[a]_H = [a]_G$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$H$ is normal in $G$.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:index-two-normal}.
+\end{proof}
+\step{2}{$HZ_G(a)$ is a subgroup of $G$.}
+\step{3}{$H$ is normal in $HZ_G(a)$.}
+\step{4}{$H \cap Z_G(a)$ is normal in $Z_G(a)$.}
+\step{5}{\[ \frac{HZ_G(a)}{H} \cong \frac{Z_G(a)}{H \cap Z_G(a)} \]}
+\step{6}{If $Z_G(a) \subseteq H$ then $|[a]_H| = |[a]_G|/2$.}
+\begin{proof}
+	\pf\ In this case we have $Z_H(a) = Z_G(a)$ and so $|[a]_H| = |H| / |Z_H(a)| = (|G|/2)/|Z_G(a)| = |[a]_G|/2$.
+\end{proof}
+\step{7}{If $Z_G(a) \nsubseteq H$ then $[a]_H = [a]_G$.}
+\begin{proof}
+	\pf
+	\step{a}{\pick\ $b \in Z_G(a) - H$}
+	\step{b}{$H\inv{b} = G - H$}
+	\step{c}{$G = H Z_G(a)$}
+	\begin{proof}
+		\pf\ For $x \in H$ we have $x = xe$ and for $x \notin H$ we have $x \in H\inv{b}$ hence $xb \in H$ and $x = (xb)b$.
+	\end{proof}
+	\step{b}{$|[a]_H| = |[a]_G|$}
+	\begin{proof}
+	\pf
+	\begin{align*}
+		|[a]_H| & = \frac{|H|}{|Z_H(a)|} \\
+		& = \frac{|H|}{|H \cap Z_G(a)|} \\
+		& = \frac{|Z_G(a)||H|}{|Z_G(a)||H \cap Z_G(a)|} \\
+		& = \frac{|HZ_G(a)|}{|Z_G(a)|} \\
+		& = \frac{|G|}{|Z_G(a)|} \\
+		& = |[a]_G|
+	\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Conjugation on Sets}
+
+\begin{df}[Conjugation]
+Let $G$ be a group. Define an action of $G$ on $\mathcal{P} G$ called \emph{conjugation} that takes $g$ and $A$ to
+\[ gA\inv{g} = \{ ga\inv{g} : a \in A \} \enspace . \]
+\end{df}
+
+\begin{prop}
+The conjugate of a subgroup is a subgroup.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $H$ be a subgroup of $G$. Given $gh_1\inv{g},gh_2\inv{g} \in gH\inv{g}$, we have
+\[ (gh_1\inv{g})\inv{(gh_2\inv{g})} = gh_1\inv{h_2}\inv{g} \in gH\inv{g} \enspace . \qquad \qed \]
+\end{proof}
+
+\begin{df}[Normalizer]
+Let $G$ be a group and $A \subseteq G$. The \emph{normalizer} of $A$, denoted $N_G(A)$, is its stabilizer under conjugation.
+\end{df}
+
+\begin{prop}
+Let $G$ be a group, $g \in G$ and $A$ a finite subset of $G$. If $gA\inv{g} \subseteq A$ then $gA\inv{g} = A$ and so $g \in N_G(A)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Conjugation by $g$ is an injection from $A$ into $A$, hence a bijection. \qed
+\end{proof}
+
+%TODO Example where $A$ is infinite and this is not true.
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $N_G(H)$ is the largest subgroup of $G$ that includes $H$ such that $H$ is normal in $N_G(H)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{$N_G(H)$ is a subgroup of $G$.}
+\begin{proof}
+	\pf\ If $a,b \in N_G(H)$ then $a\inv{b}Hb\inv{a} = aH\inv{a} = H$ so $a\inv{b} \in N_G(H)$.
+\end{proof}
+\step{1}{$H \subseteq N_G(H)$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\step{2}{$H$ is normal in $N_G(H)$.}
+\begin{proof}
+	\pf\ If $a \in N_G(H)$ then $aH\inv{a} = H$ by definition.
+\end{proof}
+\step{3}{For any subgroup $K$ of $G$, if $H \subseteq K$ and $H$ is normal in $K$ then $K \subseteq N_G(H)$.}
+\begin{proof}
+	\pf\ $H$ is normal in $K$ means that, for all $a \in K$, we have $aH\inv{a} = H$ and so $a \in N_G(H)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if $H = N_G(H)$.
+\end{cor}
+
+\begin{prop}
+Let $G$ be a group and $H$ a subgroup of $G$. If $[G:N_G(H)]$ is finite, then it is the number of subgroups conjugate to $H$.
+\end{prop}
+
+\begin{proof}
+\pf\ By the Orbit-Stabilizer Theorem. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $H$ a subgroup of $G$. If $[G:H]$ is finite, the the number of subgroups conjugate to $H$ is finite and divides $[G:H]$.
+\end{cor}
+
+\begin{df}[Centralizer]
+Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
+\[ Z_G(A) := \{ g \in G : \forall a \in A. ga\inv{g} = a \} \enspace . \]
+\end{df}
+
+%TODO Example where $Z_G(A) \neq N_G(A)$.
+
+\begin{prop}
+Let $H$ and $K$ be subgroups of $G$ with $H \subseteq N_G(K)$. Then the function $\gamma : H \rightarrow \Aut{\Grp}{K}$ defined by conjugation
+\[ \gamma_h(k) = hk\inv{h} \]
+is a homomorphism of groups with $\ker \gamma = H \cap Z_G(K)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $g,h \in H$ we have $\gamma_{gh} = \gamma_g \circ \gamma_h$.}
+\begin{proof}
+	\pf\ Since $\gamma_{gh}(k) = \gamma_g(\gamma_h(k)) = ghk\inv{h}\inv{g}$.
+\end{proof}
+\step{2}{For all $h \in H$ we have $\gamma_h = \id{K}$ iff $h \in Z_G(K)$.}
+\begin{proof}
+	\pf\ Both are equivalent to $\forall k \in K. hk\inv{h} = k$, i.e. $\forall k \in K. hk = kh$.
+\end{proof}
+\qed
+\end{proof}

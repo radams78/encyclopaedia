@@ -1,0 +1,3655 @@
+\chapter{Rngs}
+
+
+\begin{df}[Ring]
+A \emph{rng} consists of a set $R$ and binary operations $+, \cdot : R^2 \rightarrow R$ such that:
+\begin{itemize}
+\item $(R,+)$ is an Abelian group
+\item $\cdot$ is associative.
+\item The \emph{distributive properties} hold: for all $r,s,t \in R$ we have
+\[ (r+s)t = rt + st, \qquad r(s+t) = rs + rt \enspace .\]
+\end{itemize}
+\end{df}
+
+\begin{ex}
+\begin{itemize}
+\item The \emph{zero rng} is $\{0\}$.
+\item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are rngs.
+\item
+$2 \mathbb{Z}$ is a rng.
+\item
+Given a rng $R$ and natural number $n$, then the set $\gl{n}{R}$ of all $n \times n$ matrices with entries in $R$ is a rng under matrix addition and matrix multiplication.
+\item
+For any set $S$, the power set $\mathcal{P} S$ is a rng under $A + B = (A \cup B) - (A \cap B)$ and $AB = A \cap B$.
+\item
+Given a rng $R$ and a set $S$, then $R^S$ is a rng under $(f + g)(s) = f(s) + g(s)$ and $(fg)(s) = f(s)g(s)$ for all $f,g \in R^S$ and $s \in S$.
+\item The set $\sl{n}{\mathbb{R}} = \{ M \in \gl{n}{\mathbb{R}} : \tr M = 0 \}$ is a rng.
+\item The set $\sl{n}{\mathbb{C}} = \{ M \in \gl{n}{\mathbb{C}} : \tr M = 0 \}$ is a rng.
+\item $\mathbb{Z} / n \mathbb{Z}$ is a rng.
+\item The ring $\mathbb{H}$ of \emph{quaternions} is $\mathbb{R}^4$ under the following operations, where we write $(a,b,c,d)$ as $a + bi + cj + dk$:
+\begin{align*}
+(a + bi + cj + dk) + (a' + b'i + c'j + d'k) & = (a + a') + (b + b')i\\
+&  + (c + c')j + (d + d')k \\
+(a + bi + cj + dk)(a' + b'i + c'j + d'k) & = 
+(aa' - bb' - cc' - dd') \\
+& + (ab' + ba' + cd' - dc') i \\
+& + (ac' - bd' + ca' + db')j \\
+& + (ad' + bc' - cb' + da') k
+\end{align*}
+\item For any Abelian group $G$, the set $\End{\Ab}{G}$ is a ring under pointwise addition and composition.
+\end{itemize}
+\end{ex}
+
+\begin{prop}
+In any rng $R$ we have
+\[ \forall x \in R. x0 = 0x = 0 \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+x0 & = x(0+0) \\
+& = x0+x0
+\end{align*}
+and so $x0 = 0$ by Cancellation. Similarly $0x = 0$. \qed
+\end{proof}
+
+\begin{df}[Zero Divisor]
+Let $R$ be a rng and $a \in R$.
+
+Then $a$ is a \emph{left-zero-divisor} iff there exists $b \in R - \{0\}$ such that $ab = 0$.
+
+The element $a$ is a \emph{right-zero-divisor} iff there exists $b \in R - \{0\}$ such that $ba = 0$.
+\end{df}
+
+\begin{ex}
+0 is a left- and right-zero-divisor in every non-zero rng.
+
+The zero rng is the only ring with no zero-divisors.
+\end{ex}
+
+\begin{prop}
+Let $R$ be a rng and $a \in R$. Then $a$ is not a left-zero-divisor if and only if left multiplication by $a$ is an injective function $R \rightarrow R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ is not a left-zero-divisor then left multiplication by $a$ is injective.}
+\begin{proof}
+	\step{a}{\assume{$a$ is not a left-zero-divisor.}}
+	\step{b}{\pflet{$ab = ac$}}
+	\step{c}{$a(b-c) = 0$}
+	\step{d}{$b - c = 0$}
+	\step{e}{$b = c$}
+\end{proof}
+\step{2}{If $a$ is a left-zero-divisor then left multiplication by $a$ is not injective.}
+\begin{proof}
+	\step{a}{\pick\ $b \neq 0$ such that $ab = 0$.}
+	\step{b}{$ab = a0$ but $b \neq 0$}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Commutative Rngs}
+
+\begin{df}[Commutative]
+A rng $R$ is \emph{commutative} iff $\forall x,y \in R. xy = yx$.
+\end{df}
+
+\begin{ex}
+\begin{itemize}
+\item The zero rng is commutative.
+\item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are commutative.
+\item
+$2 \mathbb{Z}$ is commutative.
+\item $\gl{2}{\mathbb{R}}$ is not commutative.
+\item For any set $S$, the rng $\mathcal{P} S$ is commutative.
+\item If $R$ is commutative then $R^S$ is commutative.
+\end{itemize}
+\end{ex}
+
+\section{Rng Homomorphisms}
+
+\begin{df}
+Let $R$ and $S$ be rngs. A \emph{rng homomorphism} $\phi : R \rightarrow S$ is a function such that, for all $x,y \in R$, we have
+\begin{align*}
+\phi(x + y) & = \phi(x) + \phi(y) \\
+\phi(xy) & = \phi(x) \phi(y)
+\end{align*}
+Let $\mathbf{Rng}$ be the category of rngs and rng homomorphisms.
+\end{df}
+
+\section{Quaternions}
+
+\begin{df}[Norm]
+The \emph{norm} of a quaternion is defined by
+\[ N(a + bi + cj + dk) = a^2 + b^2 + c^2 + d^2 \enspace . \]
+\end{df}
+
+\chapter{Rings}
+
+\begin{df}[Ring]
+A \emph{ring} $R$ is a rng such that there exists $1 \in R$, the \emph{multiplicative identity}, such that
+\[ \forall x \in R. x1 = 1x = x \enspace . \]
+\end{df}
+
+\begin{ex}
+\begin{itemize}
+\item The zero rng is a ring with $1 = 0$.
+\item $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are rngs.
+\item $2 \mathbb{Z}$ is not a ring.
+\item If $R$ is a ring then $\gl{n}{R}$ is a ring.
+\item For any set $S$, the rng $\mathcal{P} S$ is a ring with $1 = S$.
+\item If $R$ is a ring then $R^S$ is a ring.
+\item $\sl{n}{\mathbb{R}}$ is not a ring for $n > 0$.
+\item $\sl{n}{\mathbb{C}}$ is not a ring for $n > 0$.
+\item $\so{n}{\mathbb{R}} = \{ M \in \sl{n}{\mathbb{R}} : M + M^T = 0 \}$ is not a ring.
+\item $\mathbb{Z} / n \mathbb{Z}$ is a ring.
+\end{itemize}
+\end{ex}
+
+\begin{prop}
+In any ring $R$, if $0 = 1$ then $R$ is the zero ring.
+\end{prop}
+
+\begin{proof}
+\pf\ For any $x \in R$ we have $x = 1x = 0x = 0$. \qed
+\end{proof}
+
+\begin{prop}
+In any ring we have $(-1)x = -x$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since
+\begin{align*}
+x + (-1)x & = 1x + (-1) x \\
+& = (1 + (-1))x \\
+& = 0x \\
+& = 0 & \qed
+\end{align*}
+\end{proof}
+
+\section{Units}
+
+\begin{df}[Left-Unit, Right-Unit]
+Let $R$ be a ring and $a \in R$. Then $a$ is a \emph{left-unit} iff there exists $b \in R$ such that $ab = 1$. The element $a$ is a \emph{right-unit} iff there exists $b \in R$ such that $ba = 1$.
+
+An element is a \emph{unit} iff it is a left-unit and a right-unit.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $a \in R$. Then $a$ is a left-unit iff left multiplication by $a$ is a surjective function $R \rightarrow R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ is a left-unit then left multiplication by $a$ is surjective.}
+\begin{proof}
+	\step{a}{\pick\ $b \in R$ such that $ab = 1$.}
+	\step{b}{For all $c \in R$ we have $c = a(bc)$.}
+\end{proof}
+\step{2}{If left multiplication by $a$ is surjective then $a$ is a left-unit.}
+\begin{proof}
+	\pf\ Immediate.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring and $a \in R$. Then $a$ is a right-unit iff right multiplication by $a$ is a surjective function $R \rightarrow R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:no-left-unit-is-a-right-zero-divisor}
+No left-unit is a right-zero-divisor.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $ab = 1$ and $ca = 0$ where $c \neq 0$.}}
+\step{2}{$c = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		0 & = 0b \\
+		& = cab \\
+		& = c1 \\
+		& = c
+	\end{align*}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\label{prop:no-right-unit-is-a-left-zero-divisor}
+No right-unit is a left-zero-divisor.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+The inverse of a unit is unique.
+\end{prop}
+
+\begin{proof}
+\pf\ If $ba = 1$ and $ac = 1$ then $b = bac = c$. \qed
+\end{proof}
+
+\begin{prop}
+The units of a ring form a group under multiplication.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $a$ and $b$ are units then $ab$ is a unit.}
+\begin{proof}
+	\pf\ We have $\inv{b} \inv{a} a b = 1$ and $ab \inv{b} \inv{a} = 1$.
+\end{proof}
+\step{2}{1 is a unit.}
+\begin{proof}
+	\pf\ Since $1 \cdot 1 = 1$.
+\end{proof}
+\step{3}{If $a$ is a unit then its inverse is a unit.}
+\begin{proof}
+	\pf\ Immediate from definitions.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Group of Units]
+For any ring $R$, we write $R^*$ for the group of the units of $R$ under multiplication.
+\end{df}
+
+\begin{ex}
+The quaternionic group is a subgroup of $\mathbb{H}^*$.
+\end{ex}
+
+\begin{ex}
+The norm is a group homomorphism $\mathbb{H}^* \rightarrow \mathbb{R}^+$ where $\mathbb{R}^+$ is the group of positive real numbers under multiplication with kernel isomorphic to $\mathrm{SU}_2(\mathbb{C})$. The isomorphism maps a quaternion $a + bi + cj + dk$ to $\left( \begin{array}{cc}
+a + bi & c + di \\ -c + di & a - bi
+\end{array} \right)$.
+\end{ex}
+
+\begin{thm}[Fermat's Little Theorem]
+Let $p$ be a prime number and $a$ any integer. Then $a^p \equiv a (\mod p)$.
+\end{thm}
+
+\begin{proof}
+\pf\ If $p \mid a$ then $a^p \equiv a \equiv 0 (\mod p)$. Otherwise, we have $a^{p-1} \equiv 1 (\mod p)$ by applying Lagrange's Theorem to $(\mathbb{Z} / p \mathbb{Z})^*$. \qed
+\end{proof}
+
+\begin{ex}
+It is not true that, if $n \mid |G|$, then $G$ has a subgroup of order $n$. The group $A_4$ has order 12 but no subgroup of order 6.
+\end{ex}
+
+\begin{prop}
+    If $p$ is prime then $(\mathbb{Z} / p \mathbb{Z})^*$ is cyclic.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$g$ be an element of maximal order in $(\mathbb{Z} / p \mathbb{Z})^*$.}}
+    \step{2}{For all $h \in (\mathbb{Z} / p \mathbb{Z})^*$ we have $h^{|g|} = 1$.}
+    \begin{proof}
+        \pf\ Proposition \ref{prop:maximal-finite-order}.
+    \end{proof}
+    \step{3}{There are at most $|g|$ elements $x$ such that $x^{|g|} = 1$ in $\mathbb{Z} / p \mathbb{Z}$} %TODO
+    \step{4}{$p-1 \leq |g|$}
+    \step{5}{$|g| = p-1$}
+    \step{6}{$g$ generates $(\mathbb{Z} / p \mathbb{Z})^*$.}
+    \qed
+\end{proof}
+
+\begin{ex}
+    $(\mathbb{Z} / 12 \mathbb{Z})^*$ is not cyclic. Its elements are 1, 5, 7 and 11 with orders 1, 2, 2 and 2.
+\end{ex}
+
+\begin{thm}[Wilson's Theorem]
+    A positive integer $p$ is prime if and only if $(p-1)! \equiv 1 (\mod p)$.
+\end{thm}
+
+\begin{proof}
+    \step{1}{If $p$ is prime then $(p-1)! \equiv 1 (\mod p)$.}
+    \begin{proof}
+        \step{a}{\assume{$p$ is prime.}}
+        \step{b}{$(p-1)!$ is the product of all the elements of $(\mathbb{Z} / p \mathbb{Z})^*$}
+        \step{c}{The only element of $(\mathbb{Z} / p \mathbb{Z})^*$ with order 2 is $-1$.}
+        \step{d}{$(p-1)! \equiv -1 (\mod p)$}
+        \begin{proof}
+            \pf\ Proposition \ref{prop:product-of-all-elements}.
+        \end{proof}
+    \end{proof}
+    \step{2}{If $(p-1)! \equiv -1 (\mod p)$ then $p$ is prime.}
+    \begin{proof}
+        \step{a}{\assume($(p-1)! \equiv -1 (\mod p)$)}
+        \step{b}{\pflet{$d$ be a proper divisor of $p$.} \prove{$d = 1$}}
+        \step{c}{$d \mid (p-1)!$}
+        \step{d}{$d \mid 1$}
+        \begin{proof}
+            \pf\ Since $d \mid p \mid (p-1)! + 1$.
+        \end{proof}
+        \step{e}{$d = 1$}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    If $p$ and $q$ are distinct odd primes then $(\mathbb{Z} / pq\mathbb{Z})^*$ is not cyclic.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{$|(\mathbb{Z} / pq \mathbb{Z})^*| = (p-1)(q-1)$}
+    \step{2}{\pflet{$g \in (\mathbb{Z} / p q \mathbb{Z})^*$} \prove{$g$ does not have order $(p-1)(q-1)$}}
+    \step{3}{$g^{(p-1)(q-1)/2} \equiv 1 (\mod p)$}
+    \step{4}{$g^{(p-1)(q-1)/2} \equiv 1 (\mod q)$}
+    \step{5}{$pq \mid g^{(p-1)(q-1)/2} - 1$}
+    \step{6}{$g^{(p-1)(q-1)/2} \equiv 1 (\mod pq)$}
+    \step{7}{$|g| \mid (p-1)(q-1)/2$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    For any prime $p$, we have $\Aut{\Grp}{C_p} \cong C_{p-1}$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$\phi : \Aut{\Grp}{C_p} \rightarrow (\mathbb{Z} / p \mathbb{Z})^*$ be the function $\phi(\alpha) = \alpha(1)$.}}
+    \begin{proof}
+        \pf\ $\alpha(1)$ has order $p$ in $C_p$ and so is coprime with $p$.
+    \end{proof}
+    \step{2}{$\phi$ is a homomorphism.}
+    \begin{proof}
+        \pf\ $\phi(\alpha \circ \beta) = \alpha(\beta(1)) = \alpha(\beta(1) 1) = \beta(1) \alpha(1) = \phi(\alpha) \phi(\beta)$
+    \end{proof}
+    \step{3}{$\phi$ is injective.}
+    \begin{proof}
+        \pf\ If $\phi(\alpha) = \phi(\beta)$ then for any $n$ we have $\alpha(n) = n \alpha(1) = n \phi(\alpha) = n \phi(\beta) = n \beta(1) = \beta(n)$.
+    \end{proof}
+    \step{4}{$\phi$ is surjective.}
+    \begin{proof}
+        \pf\ For any $r \in (\mathbb{Z} / p \mathbb{Z})^*$ we have $r = \phi(\alpha)$ where $\alpha(n) = nr \mod p$.
+    \end{proof}
+    \step{5}{$(\mathbb{Z} / p \mathbb{Z})^* \cong C_{p-1}$}
+    \qed
+\end{proof}
+
+\section{Euler's $\phi$-function}
+
+\begin{prop}
+    For $n$ a positive integer, we have $(\mathbb{Z} / n \mathbb{Z})^* = \{ m \in \mathbb{Z} / n \mathbb{Z} : \gcd(m,n) = 1 \}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+m \in (\mathbb{Z} / n \mathbb{Z})^* & \Leftrightarrow \exists a. am \equiv 1 (\mod n) \\
+& \Leftrightarrow \exists a,b. am + bn = 1 \\
+& \Leftrightarrow \gcd(m,n) = 1 & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Euler's Totient Function]
+    For $n$ a positive integer, let $\phi(n) = |(\mathbb{Z} / n \mathbb{Z})^*|$.
+\end{df}
+
+\begin{prop}
+    If $n$ is an odd positive integer then $\phi(2n) = \phi(n)$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$n$ be an odd positive integer.}}
+    \step{2}{For any integer $m$, if $\gcd(m,n) = 1$ then $\gcd(2m+n,2n) = 1$}
+    \begin{proof}
+        \pf\ For $p$ a prime, if $p \mid 2m+n$ and $p \mid 2n$ then $p \neq 2$ (since $2m+n$ is odd) so $p \mid n$ and hence $p \mid m$, which is a contradiction.
+    \end{proof}
+    \step{3}{For any integer $r$, if $\gcd(r,2n) = 1$ then $\gcd(\frac{r+n}{2},n) = 1$}
+    \begin{proof}
+        \pf\ If $p \mid n$ and $p \mid \frac{r + n}{2}$ then $p \mid r + n$ so $p \mid r$ which is a contradiction.
+    \end{proof}
+    \step{4}{The function that maps $m$ to $2m+n$ is a bijection between $(\mathbb{Z} / n\mathbb{Z})^*$
+        and $(\mathbb{Z} / 2n\mathbb{Z})^*$.}
+    \qed
+\end{proof}
+
+\begin{thm}
+For any positive integer $n$ we have
+\[ \sum_{m > 0, m \mid n} \phi(m) = n \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $\chi : \{ 0, 1, \ldots, n-1 \} \rightarrow \{ (m,d) : m > 0, m \mid n, d \text{ generates } \langle n/m \rangle \}$ by: $\chi(x) = (\gcd(x,n), x)$.}
+\step{2}{$\chi$ is injective.}
+\step{3}{$\chi$ is surjective.}
+\begin{proof}
+\pf\ Given $(m,d)$ such that $d$ generates $\langle n/m \rangle$ we have $\chi(d) = (m,d)$.
+\end{proof}
+\step{4}{$n = \sum_{m > 0, m \mid n} \phi(m)$}
+\begin{proof}
+\pf\ Since $\langle n/m \rangle \cong C_m$ and so has $\phi(m)$ generators.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+For any positive integers $a$ and $n$, we have $n \mid \phi(a^n - 1)$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since the order of $a$ is $n$ in $(\mathbb{Z} / (a^n - 1)\mathbb{Z})^*$. \qed
+\end{proof}
+
+\begin{thm}[Euler's Theorem]
+For any coprime integers $a$ and $n$ we have $a^{\phi(n)} \equiv a (\mod n)$.
+\end{thm}
+
+\begin{proof}
+\pf\ Immediate from Lagrange's Theorem. \qed
+\end{proof}
+
+\begin{prop}
+    \[ |\Aut{\Grp}{C_n}| = \phi(n) \]
+\end{prop}
+
+\begin{proof}
+    \pf\ An automorphism $\alpha$ is determined by $\alpha(1)$ which is any element of order $n$, and $g$ has order $n$ iff $\gcd(g,n) = 1$. \qed
+\end{proof}
+
+\begin{ex}
+    \[ \Aut{\Grp}{\mathbb{Z}} \cong C_2 \]
+\end{ex}
+
+\begin{proof}
+    \pf\ The only automorphisms are the identity and multiplication by -1. \qed
+\end{proof}
+
+\section{Nilpotent Elements}
+
+\begin{df}[Nilpotent]
+Let $R$ be a ring and $a \in R$. Then $a$ is \emph{nilpotent} iff there exists $n$ such that $a^n = 0$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $a,b \in R$. If $a$ and $b$ are nilpotent and $ab = ba$ then $a + b$ is nilpotent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $m$ and $n$ such that $a^m = b^n = 0$.}
+\step{2}{$(a+b)^{m+n} = 0$}
+\begin{proof}
+	\pf\ Since $(a+b)^{m+n} = \sum_k \left( \begin{array}{c} m + n \\ k \end{array} \right) a^k b^{m+n-k}$ and every term in this sum is 0 since, for every $k$, either $k \geq m$ or $m+n-k \geq n$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+$m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$ if and only if $m$ is divisible by all the prime factors of $n$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $m$ is nilpotent then $m$ is divisible by all the prime factors of $n$.}
+\begin{proof}
+	\step{a}{\assume{$m^a \equiv 0 (\mod n)$}}
+	\step{b}{For every prime $p$, if $p \mid n$ then $p \mid m^a$.}
+	\step{c}{For every prime $p$, if $p \mid n$ then $p \mid m$.}
+\end{proof}
+\step{2}{If $m$ is divisible by all the prime factors of $n$ then $m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$.}
+\begin{proof}
+	\step{a}{\assume{$m$ is divisible by all the prime factors of $n$.}}
+	\step{b}{\pflet{$a$ be the largest number such that $p^a \mid n$ for some prime $p$.}}
+	\step{c}{For every prime $p$ that divides $n$ we have $p^a \mid m^a$}
+	\step{d}{$n \mid m^a$}
+	\step{e}{$m^a \equiv 0 (\mod n)$}
+	\step{f}{$m$ is nilpotent in $\mathbb{Z} / n \mathbb{Z}$.}
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Ring Homomorphisms}
+
+\begin{df}[Ring Homomorphism]
+Let $R$ and $S$ be rings. A \emph{ring homomorphism} $\phi : R \rightarrow S$ is a rng homomorphism such that $\phi(1) = 1$.
+\end{df}
+
+\begin{prop}
+The zero-ring is terminal in $\mathbf{Ring}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+The ring $\mathbb{Z}$ is initial in $\mathbf{Ring}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ and $S$ be rings and $\phi : R \rightarrow S$ be a rng homomorphism. If $\phi$ is surjective, then $\phi$ is a ring homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a \in R$ such that $\phi(a) = 1$}
+\step{3}{$\phi(1) = 1$}
+\begin{proof}
+\pf
+\begin{align*}
+\phi(1) & = \phi(1) \phi(a) \\
+& = \phi(1a) \\
+& = \phi(a) \\
+& = 1 & \qed
+\end{align*}
+\end{proof}
+\end{proof}
+
+\begin{ex}
+For any set $S$ we have $\mathcal{P} S \cong (\mathbb{Z} / 2 \mathbb{Z})^S$ in $\mathbf{Ring}$ with the isomorphism
+\begin{align*}
+\phi & : \mathcal{P} S \cong (\mathbb{Z} / 2 \mathbb{Z})^S \\
+\phi(A)(s) & = \begin{cases}
+1 & \text{if } s \in A \\
+0 & \text{if } s \notin A
+\end{cases}
+\end{align*}
+\end{ex}
+
+\begin{ex}
+The function $\mathbb{H} \rightarrow \mathfrak{gl}_4(\mathbb{R})$ that maps $a + bi + cj + dk$ to
+\[ \left( \begin{array}{cccc}
+a & b & c & d \\
+-b & a & -d & c \\
+-c & d & a & -b \\
+-d & -c & b & a
+\end{array} \right) \]
+is a monomorphism in $\mathbf{Ring}$, as is the function $\mathbb{H} \rightarrow \mathfrak{sl}_2(\mathbb{C})$ that maps $a + bi + cj + dk$ to
+\[ \left( \begin{array}{cc}
+a + bi & c + di \\
+-c + di & a - bi
+\end{array} \right) \enspace . \]
+\end{ex}
+
+\begin{prop}
+Ring homomorphisms preserve units.
+\end{prop}
+
+\begin{proof}
+\pf\ If $uv = 1$ then $\phi(u) \phi(v) = 1$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. Then the following are equivalent.
+\begin{enumerate}
+\item $\phi$ is a monomorphism.
+\item $\ker \phi = \{0\}$
+\item $\phi$ is injective.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$\phi$ is a monomorphism.}}
+	\step{b}{\pflet{$r \in \ker \phi$}}
+	\step{c}{\pflet{$\mathrm{ev}_r : \mathbb{Z}[x] \rightarrow R$ be the unique ring homomorphism such that $\mathrm{ev}_r(x) = r$.}}
+	\step{d}{\pflet{$\mathrm{ev}_0 : \mathbb{Z}[x] \rightarrow R$ be the unique ring homomorphism such that $\mathrm{ev}_0(x) = 0$.}}
+	\step{e}{$\phi \circ \mathrm{ev}_r = \phi \circ \mathrm{ev}_0$}
+	\step{f}{$\mathrm{ev}_r = \mathrm{ev}_0$}
+	\step{g}{$r = 0$}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:ker-zero}.
+\end{proof}
+\step{3}{$3 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
+It is not true that every epimorphism in $\Ring$ is surjective. The inclusion $\mathbb{Z} \hookrightarrow \mathbb{Q}$ is an epimorphism but not surjective.
+
+The same example shows that a ring homomorphism may be a monomorphism and an epimorphism but not be an isomorphism.
+\end{ex}
+
+\begin{ex}
+\[ \End{\Ab}{\mathbb{Z}} \cong \mathbb{Z} \]
+The isomorphism maps any group endomorphism $\phi : \mathbb{Z} \rightarrow \mathbb{Z}$ to $\phi(1)$.
+\end{ex}
+
+\begin{ex}
+The group of units of $\End{\Ab}{G}$ is $\Aut{\Ab}{G}$.
+\end{ex}
+
+\begin{ex}
+Let $R$ be a ring. Then the function $\lambda : R \rightarrow \End{\Ab}{R}$ defined by
+\[ \lambda(a)(b) = ab \]
+is a ring monomorphism.
+\end{ex}
+ 
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+ 
+\section{Products}
+
+\begin{prop}
+Let $R$ and $S$ be rings. Then $R \times S$ is a ring under componentwise addition and multiplication, and this ring is the product of $R$ and $S$ in $\Ring$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+
+\chapter{Subrings}
+
+\begin{df}[Subring]
+Let $S$ be a ring. A \emph{subring} of $S$ is a ring $R$ such that $R$ is a subset of $S$ and the inclusion $R \hookrightarrow S$ is a ring homomorphism.
+\end{df}
+
+\begin{prop}
+Let $R$ and $S$ be rings. Then $R$ is a subring of $S$ if and only if $R$ is a subset of $S$, the unit 1 of $S$ is an element of $R$, and the operations of $R$ are the restrictions of the operations of $S$ to $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+The zero ring is not a subring of any non-zero ring.
+\end{cor}
+
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. Then $\phi(R)$ is a subring of $S$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Centralizer}
+
+\begin{df}[Centralizer]
+Let $R$ be a ring and $a \in R$. The \emph{centralizer} of $a$ is $\{ r \in R : ar = ra \}$.
+\end{df}
+
+\begin{prop}
+The centralizer of $a$ is a subring of $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Center}
+
+\begin{df}[Center]
+The \emph{center} of a ring $R$ is $\{ x \in R : \forall y \in R. xy = yx \}$.
+\end{df}
+
+\begin{prop}
+The center of a ring is a subring.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. The center of $\End{\Ab}{R}$ is isomorphic to the center of $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\lambda : R \rightarrow \End{\Ab}{R}$ be left multiplication.}}
+\step{2}{$\lambda$ maps $Z(R)$ to $Z(\End{\Ab}{R})$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in Z(R)$}}
+	\step{b}{\pflet{$\phi \in \End{\Ab}{R}$} \prove{$\lambda(a) \circ \phi = \phi \circ \lambda(a)$}}
+	\step{c}{\pflet{$x \in R$}}
+	\step{d}{$a + \phi(x) = \phi(a + x)$}
+\end{proof}
+\step{3}{$\lambda(Z(R)) = Z(\End{\Ab}{R})$}
+\begin{proof}
+	\step{a}{\pflet{$\phi \in Z(\End{\Ab}{R})$}}
+	\step{b}{For all $r \in R$, \pflet{$\mu_r \in \End{\Ab}{R}$ be right multiplication by $r$.}}
+	\step{c}{For all $r \in R$ we have $\phi \circ \mu_r = \mu_r \circ \phi$.}
+	\step{d}{For all $r,x \in R$ we have $\phi(xr) = \phi(x)r$}
+	\step{e}{For all $r \in R$ we have $\phi(r) = \phi(1)r$}
+	\step{f}{$\phi = \lambda(\phi(1))$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+If $R$ is a commutative ring then $R$ is isomorphic to the center of $\End{\Ab}{R}$.
+\end{cor}
+
+\begin{ex}
+For $n$ a positive integer we have $\mathbb{Z} / n \mathbb{Z} \cong \End{\Ab}{\mathbb{Z} / n \mathbb{Z}}$.
+
+Since, for any $\phi \in \End{\Ab}{\mathbb{Z} / n \mathbb{Z}}$ we have $\phi(m) = m \phi(1)$ and so the whole of $\End{\Ab}{\mathbb{Z} / n \mathbb{Z}}$ is the image of $\lambda$.
+\end{ex}
+
+
+\chapter{Monoid Rings}
+
+\begin{df}[Monoid Ring]
+Let $R$ be a ring and $M$ a monoid. Define $R[M]$ to be the ring whose elements are the families $\{ a_m \}_{m \in M}$ such that $a_m = 0$ for all but finitely many $m \in M$, written
+\[ \sum_{m \in M} a_m m \enspace , \]
+under
+\begin{align*}
+\sum_m a_m m + \sum_m b_m m & = \sum_m (a_m + b_m) m \\
+\left( \sum_m a_m m \right) \left( \sum_m b_m m \right) & = \sum_{m \in M} \sum_{m_1 m_2 = m} a_{m_1} b_{m_2} m
+\end{align*}
+\end{df}
+
+\begin{ex}
+Ring homomorphisms do not necessarily preserve zero-divisors. The canonical homomorphism $\pi : \mathbb{Z} \rightarrow \mathbb{Z} / 6 \mathbb{Z}$ maps the non-zero-divisor 2 to a zero-divisor.
+\end{ex}
+
+\section{Polynomials}
+
+\begin{df}[Polynomial]
+Let $R$ be a ring. The ring of \emph{polynomials} $R[x]$ is $R[\mathbb{N}]$. We write 
+\[ \sum_n a_n x^n \text{ for } \sum_n a_n n \enspace . \]
+
+Concretely, a \emph{polynomial} in $R$ is a sequence $(a_n)$ in $R$ such that there exists $N$ such that $\forall n \geq N. a_n = 0$. We write the polynomial as
+\[ \sum_{n=0}^{N-1} a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots + a_{N-1} x^{N-1} \enspace . \]
+We write $R[x]$ for the set of all polynomials in $R$.
+
+Define addition and multiplication on $R[x]$ by
+\begin{align*}
+\sum_n a_n x^n + \sum_n b_n x^n & = \sum_n (a_n + b_n) x^n \\
+\left( \sum_n a_n x^n \right) \left( \sum_n b_n x^n \right) & = \sum_n \sum_{i+j=n} a_i b_j x^n
+\end{align*}
+
+A \emph{constant} is a polynomial of the form $a + 0x + 0x^2 + \cdots$ for some $a \in R$.
+
+We write $R[x_1, \ldots, x_n]$ for $R[x_1][x_2] \cdots [x_n]$.
+\end{df}
+
+\begin{prop}
+For any ring $R$, the set of polynomials $R[x]$ is a ring.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{df}[Degree]
+The \emph{degree} of a polynomial $\sum_n a_n x^n$ is the largest integer $d$ such that $a_d \neq 0$. We take the degree of the zero polynomial to be $- \infty$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $f,g \in R[x]$ be nonzero polynomials. Then
+\[ \deg(f + g) \leq \max(\deg f, \deg g) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ If $a_n + b_n \neq 0$ then $a_n \neq 0$ or $b_n \neq 0$. \qed
+\end{proof}
+
+\begin{prop}
+The function $i : n \rightarrow \mathbb{Z}[x_1, \ldots, x_n]$ that maps $k$ to $x_k$ is initial in the category with:
+\begin{itemize}
+\item objects all pairs $j : n \rightarrow R$ where $R$ is a commutative ring and $j$ a function
+\item morphisms $\phi : (j_1, R_1) \rightarrow (j_2,R_2)$ are ring homomorphisms $\phi : R_1 \rightarrow R_2$ such that $\phi \circ j_1 = j_2$.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ The unique morphism $(i, \mathbb{Z}[x_1, \ldots, x_n]) \rightarrow (j, R)$ maps a polynomial $p$ to $p(j(0), j(1), \ldots, j(n-1))$. \qed
+\end{proof}
+
+\begin{prop}
+Let $\alpha : R \rightarrow S$ be a ring homomorphism. Let $s \in S$ commute with $\alpha(r)$ for all $r \in R$. Then there exists a unique ring homomorphism $\overline{\alpha} : R[x] \rightarrow S$ such that $\overline{\alpha}(x) = s$ and the following diagram commutes:
+\[ \begin{tikzcd}
+R[x] \arrow[r,"\overline{\alpha}"] & S \\
+R \arrow[u] \arrow[ur,"\alpha"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The map $\overline{\alpha}$ is given by
+\[ \overline{\alpha}(a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n) = \alpha(a_0) + \alpha(a_1) s + \alpha(a_2) s^2 + \cdots + \alpha(a_n) s^n \enspace . \]
+\qed
+\end{proof}
+
+\begin{df}
+Let $R$ be a commutative ring.
+Given a polynomial $p \in R[x]$, the \emph{polynomial function} $p : R \rightarrow R$ is the function given by: $p(r) = \alpha_r(p)$, where $\alpha_r : R[x] \rightarrow R$ is the unique ring homomorphism such that the following diagram commutes.
+\[ \begin{tikzcd}
+R[x] \arrow[r,"\alpha_r"] & R \\
+1 \arrow[u,"x"] \arrow[ur,"r"]
+\end{tikzcd} \]
+\end{df}
+
+\begin{prop}
+$\mathbb{Z}[x,y]$ is the coproduct of $\mathbb{Z}[x]$ and $\mathbb{Z}[y]$ in the category of commutative rings.
+\end{prop}
+
+\begin{proof}
+\pf\ Given ring homomorphisms $f : \mathbb{Z}[x] \rightarrow R$ and $g : \mathbb{Z}[y] \rightarrow R$, the required morphism $\mathbb{Z}[x,y] \rightarrow R$ maps $p(x,y)$ to $p(f(x),g(y))$. \qed
+\end{proof}
+
+\begin{ex}
+$\mathbb{Z}[x,y]$ is not the coproduct of $\mathbb{Z}[x]$ and $\mathbb{Z}[y]$ in $\Ring$. Given $f : \mathbb{Z}[x] \rightarrow R$ and $g : \mathbb{Z}[y] \rightarrow R$ with $f(x) \neq g(y)$, the mediating morphism $\mathbb{Z}[x,y] \rightarrow R$ cannot exist since it must map $xy$ to both $f(x)g(y)$ and $g(y)f(x)$. \qed
+\end{ex}
+
+\begin{df}
+A polynomial is \emph{monic} iff its last non-zero coefficient is 1.
+\end{df}
+
+\begin{prop}
+A monic polynomial is not a left- or right-zero-divisor.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $f,g \in R[x]$ with $f$ monic. Then there exist unique polynomials $q,r \in R[x]$ with $\deg r < \deg f$ such that
+\[ g = qf + r \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$d = \deg f$}}
+\step{1}{For all $a \in R$ and $n > d$, there exists $h \in R[x]$ with $\deg h < n$ such that 
+\[ ax^n = ax^{n-d} f + h \enspace . \]}
+\begin{proof}
+\pf\ Take $h = ax^n - ax^{n-d}f$.
+\end{proof}
+\step{1a}{For all $a \in R$ and $n > d$, there exists $q,h \in R[x]$ with $\deg h \leq d$ such that 
+\[ ax^n = q f + h \enspace . \]}
+\begin{proof}
+\pf\ Repeating \stepref{1} by induction.
+\end{proof}
+\step{2}{\pflet{$g = \sum_{i=0}^n a_i x^i$}}
+\step{3}{For $i > d$, \pick\ $q_ih_i \in R[x]$ with $\deg h < \deg f$ such that $a_i x^i = q_i f + h_i$}
+\step{4}{$g = \left( \sum_{i=d+1}^n q_i \right) f + \sum_{i=d+1}^n h_i$}
+\step{5}{$q$ and $r$ are unique.}
+\begin{proof}
+\pf\ If $q_1 f + r_1 = q_2 f + r_2$ then $r_1 - r_2 = (q_2 - q_1)f$ and so $r_1 - r_2 = (q_2 - q_1) f = 0$ since $\deg (r_1 - r_2) < \deg f$.
+\end{proof}
+\qed
+\end{proof}
+
+\section{Laurent Polynomials}
+
+\begin{df}[Laurent Polynomial]
+Let $R$ be a ring. The ring of \emph{Laurent polynomials} is the group ring $R[\mathbb{Z}]$. We write $\sum_{n \in \mathbb{Z}} a_n x^{n}$ for $\sum_n a_n n$.
+\end{df}
+
+\section{Power Series}
+
+\begin{df}[Power Series]
+Let $R$ be a ring. A \emph{power series} in $R$ is a sequence $(a_n)$ in $R$. We write the power series as
+\[ \sum_{n=0}^{\infty} a_n x^n = a_0 + a_1 x + a_2 x^2 + \cdots \enspace . \]
+We write $R[[x]]$ for the set of all power series in $R$.
+
+Define addition and multiplication on $R[[x]]$ by
+\begin{align*}
+\sum_n a_n x^n + \sum_n b_n x^n & = \sum_n (a_n + b_n) x^n \\
+\left( \sum_n a_n x^n \right) \left( \sum_n b_n x^n \right) & = \sum_n \sum_{i+j=n} a_i b_j x^n
+\end{align*}
+\end{df}
+
+\begin{prop}
+For any ring $R$, the set of power series $R[[x]]$ is a ring.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+A power series $\sum_n a_n x^n$ is a unit in $R[[x]]$ if and only if $a_0$ is a unit in $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\sum_n a_n x^n$ is a unit then $a_0$ is a unit.}
+\begin{proof}
+	\step{a}{\pflet{$\sum_n b_n x^n$ be the inverse of $\sum_n a_n x^n$.}}
+	\step{b}{$a_0 b_0 = b_0 a_0 = 1$}
+\end{proof}
+\step{2}{If $a_0$ is a unit then $\sum_n a_n x^n$ is a unit.}
+\begin{proof}
+	\pf\ Define the sequence $(b_n)$ in $R$ by
+	\[ b_n = - \inv{a_0} \sum_{i=1}^n a_i b_{n-i} \]
+	Then $\sum_n b_n x^n$ is the inverse of $\sum_n a_n x^n$.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Ideals}
+
+\begin{df}[Left-Ideal]
+Let $R$ be a ring.
+
+A subgroup $I$ of $R$ is a \emph{left-ideal} iff, for all $r \in R$, we have $rI \subseteq I$.
+
+A subgroup $I$ of $R$ is a \emph{right-ideal} iff, for all $r \in R$, we have $Ir \subseteq I$.
+
+A subgroup $I$ of $R$ is a \emph{(two-sided) ideal} iff it is a left-ideal and a right-ideal.
+\end{df}
+
+\begin{ex}
+Let $R$ be a ring and $a \in R$. Then $Ra$ is a left-ideal and $aR$ is a right-ideal.
+
+In particular, $\{0\}$ is always a two-sided ideal.
+\end{ex}
+
+\begin{ex}
+Let $S$ be a set and $T \subseteq S$. Then $\{ X \in \mathcal{P} S : X \subseteq T \}$ is an ideal in $\mathcal{P} S$.
+\end{ex}
+
+\begin{prop}
+Let $S$ be a finite set. Then every ideal in $\mathcal{P} S$ is of the form $\{ X \in \mathcal{P} S : X \subseteq T \}$ for some $T \subseteq S$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I$ be an ideal in $\mathcal{P} S$.}}
+\step{2}{\pflet{$T = \bigcup I$}}
+\step{3}{For all $i \in T$ we have $\{i\} \in I$.}
+\begin{proof}
+	\step{a}{\pflet{$i \in T$}}
+	\step{b}{\pick\ $X \in I$ such that $i \in X$}
+	\step{c}{$\{i\} = \{i \} \cap X \in I$}
+\end{proof}
+\step{4}{For all $X \subseteq T$ we have $X \in I$.}
+\begin{proof}
+	\pf\ If $X = \{x_1, \ldots, x_n\}$ then $X = \{x_1\} + \cdots + \{x_n\} \in I$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
+If $S$ is an infinite set, then there is always an ideal in $\mathcal{P} S$ that is not of the form $\{X \in \mathcal{P} S : X \subseteq T \}$ for some $T \subseteq S$, namely the set of all finite subsets of $S$.
+\end{ex}
+
+\begin{prop}
+Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Let $J$ be an ideal in $R$. Then $\phi(J)$ is an ideal in $S$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$j \in J$ and $s \in S$} \prove{$s \phi(j), \phi(j)s \in \phi(J)$}}
+\step{2}{\pick\ $r \in R$ such that $\phi(r) = s$}
+\step{3}{$rj, jr \in J$}
+\step{4}{$s\phi(j), \phi(j)s \in \phi(J)$}
+\qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the hypothesis that $\phi$ is surjective.
+
+Let $i : \mathbb{Z} \hookrightarrow \mathbb{Q}$ be the inclusion. Then $i(2 \mathbb{Z}) = 2 \mathbb{Z}$ is not an ideal in $\mathbb{Q}$.
+\end{ex}
+
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism and $I$ a (left-, right-)ideal in $S$. Then $\inv{\phi}{I}$ is a (left-, right-)ideal in $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. Then $\ker \phi$ is an ideal in $R$.
+\end{cor}
+
+\begin{df}[Quotient Ring]
+Let $I$ be an ideal in $R$. The \emph{quotient ring} $R / I$ is the quotient group $R/I$ under
+\[ (a + I)(b + I) = ab + I \enspace . \]
+
+This is well-defined as, if $a + I = a' + I$ and $b + I = b' + I$ then
+\begin{align*}
+a-a' & \in I \\
+b - b' & \in I \\
+\therefore ab - a'b & \in I \\
+a'b - a'b' & \in I \\
+\therefore ab - a'b' & \in I
+\end{align*}
+\end{df}
+
+\begin{prop}
+Let $I$ be an ideal in $R$. Then the canonical group homomorphism $\pi : R \rightarrow R / I$ is a ring homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ By construction. \qed
+\end{proof}
+
+\begin{prop}
+Let $I$ be an ideal in a ring $R$. For every ring homomorphism $\phi : R \rightarrow S$ such that $I \subseteq \ker \phi$, there exists a unique ring homomorphism $\overline{\phi} : R / I \rightarrow S$ such that the following diagram commutes.
+
+\begin{center}
+\begin{tikzcd}
+R \arrow[rr,"\phi"] \arrow[dr, two heads, "\pi"] & & S \\
+& R / I \arrow[ur,"\overline{\phi}"]
+\end{tikzcd}
+\end{center}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}
+Every ring homomorphism $\phi : R \rightarrow S$ decomposes as follows.
+
+\begin{center}
+\begin{tikzcd}
+R \arrow[r, two heads] \arrow[rrr, bend left=25, "\phi"] & R / \ker \phi \arrow[r,"\cong"] & \im \phi \arrow[r, hook] & S
+\end{tikzcd}
+\end{center}
+\end{cor}
+
+\begin{cor}[First Isomorphism Theorem]
+Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Then
+\[ S \cong R / \ker \phi \enspace . \]
+\end{cor}
+
+\begin{thm}[Third Isomorphism Theorem]
+Let $I$ and $J$ be ideals in $R$ with $I \subseteq J$. Then $J/I$ is an ideal in $R/I$, and
+\[ \frac{R/I}{J/I} \cong R/J \]
+\end{thm}
+
+\begin{proof}
+\pf\ Since the function $R/I \rightarrow R/J$ that maps $r + I$ to $r + J$ is a surjective ring homomorphism with kernel $J/I$. \qed
+\end{proof}
+
+\begin{cor}
+Let $\phi : R \twoheadrightarrow S$ be a surjective ring homomorphism. Let $J$ be an ideal in $R$. Then
+\[ \frac{S}{\phi(J)} \cong \frac{R}{\ker S + J} \]
+\end{cor}
+
+\begin{prop}
+Let $R$ be a ring and $J$ an ideal in $\gl{n}{R}$. Let $A \in \gl{n}{R}$. Then $A \in J$ if and only if the matrices obtained by placing any entry of $A$ in any position and zeros elsewhere all belong to $J$.
+\end{prop}
+
+\begin{proof}
+\pf\ Each such matrix can be obtained by pre- and post-multiplying $A$ by matrices which have a single 1 and 0s elsewhere. Conversely, $A$ is a sum of such matrices. \qed
+\end{proof}
+
+\begin{cor}
+\label{cor:ideals-in-glnR}
+Let $R$ be a ring. Let $J$ be an ideal in $\gl{n}{R}$. Let $I$ be the set of all entries of elements of $J$. Then $I$ is an ideal in $R$, and $J$ is the set of all matrices whose entries are in $I$.
+\end{cor}
+
+\begin{prop}
+Let $R$ be a ring. Let $\{I_\alpha\}_{\alpha \in A}$ be a family of ideals in $R$. Let
+\[ \sum_{\alpha \in A} I_\alpha = \{ \sum_{\alpha \in A} r_\alpha : \forall \alpha. r_\alpha \in I_\alpha, r_\alpha = 0 \text{ for all but finitely many } \alpha \in A \}\enspace . \]
+Then $\sum_{\alpha \in A} I_\alpha$ is an ideal, and is the smallest ideal that includes every $I_\alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+The intersection of a set of ideals is an ideal.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Characteristic}
+
+\begin{df}[Characteristic]
+The \emph{characteristic} of a ring $R$ is the nonnegative integer $n$ such that $n \mathbb{Z}$ is the kernel of the unique ring homomorphism $\mathbb{Z} \rightarrow R$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring.
+If the unit 1 has finite order in $R$, then its order is the characteristic of $R$; otherwise, the characteristic of $R$ is 0.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{ex}
+The zero ring is the only ring with characteristic 1.
+\end{ex}
+
+\section{Nilradical}
+
+\begin{df}[Nilradical]
+Let $R$ be a commutative ring. The \emph{nilradical} of $R$ is the set of all nilpotent elements.
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring. The nilradical of $R$ is an ideal in $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $a^n = 0$ then for any $b$ we have $(ba)^n = 0$. \qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the assumption that $R$ is commutative. In $\gl{2}{\mathbb{R}}$ we have that $\left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array} \right)$ is nilpotent but $\left( \begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array} \right) \left( \begin{array}{cc} 0 & 0 \\ 1 & 1 \end{array} \right) = \left( \begin{array}{cc} 1 & 1 \\ 0 & 0 \end{array} \right)$ is not.
+\end{ex}
+
+\section{Principal Ideals}
+
+\begin{df}[Principal Ideal]
+Let $R$ be a commutative ring and $a \in R$. The \emph{principal ideal} generated by $a$ is $(a) = Ra = aR$.
+\end{df}
+
+\begin{ex}
+$\{0\} = (0)$ and $R = \{1\}$ are principal ideals.
+\end{ex}
+
+\begin{df}
+Let $R$ be a commutative ring and $\{a_\alpha\}_{\alpha \in A}$ be a family of elements of $R$. The \emph{ideal generated by the elements $a_\alpha$} is
+\[ (a_\alpha)_{\alpha \in A} := \sum_{\alpha \in A} (a_\alpha) \enspace . \]
+
+An ideal is \emph{finitely generated} iff it is generated by a finite family of elements.
+\end{df}
+
+\begin{df}
+Let $R$ be a commutative ring and $I$, $J$ be ideals in $R$. Then $IJ$ is the ideal generated by $\{ ij \}_{i \in I, j \in J}$.
+\end{df}
+
+\begin{prop}
+\[ IJ \subseteq I \cap J \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $I$ and $J$ be ideals in $R$. If $I + J = R$ then $IJ = I \cap J$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r \in I \cap J$}}
+\step{2}{\pick\ $i \in I$ and $j \in J$ such that $i + j = 1$.}
+\step{3}{$ri, rj \in IJ$}
+\step{4}{$r = ri + rj \in IJ$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $f \in R[x]$ be a monic polynomial of degree $d$. Then the function
+\[ \phi : R[x] \rightarrow R^{\oplus d} \]
+that sends a polynomial $g$ to the remainder of the division of $g$ by $f$ induces an isomorphism of Abelian groups
+\[ \frac{R[x]}{(f(x))} \cong R^{\oplus d} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ It is clearly a group homomorphism; it is surjective since it maps any polynomial of degree $< d$ to itself, and its kernel is $(f(x))$ since these are the polynomials with remainder 0. \qed
+\end{proof}
+
+\begin{cor}
+Let $R$ be a commutative ring and $a \in R$. Then we have
+\[ \frac{R[x]}{(x-a)} \cong R \]
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : R[x] \rightarrow R$ be evaluation at $a$.}}
+\step{2}{$\phi(g)$ is the remainder when dividing $g$ by $x-a$.}
+\begin{proof}
+\pf\ If $g = (x-a)q + r$ then $g(a) = (a-a)q(a) + r = r$.
+\end{proof}
+\step{3}{$\phi$ induces a group isomorphism $R[x]/(x-a) \cong R$}
+\begin{proof}
+\pf\ By the theorem.
+\end{proof}
+\step{4}{This isomorphism is a ring isomorphism.}
+\begin{proof}
+\pf\ Since evaluation at $a$ is a ring homomorphism.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{ex}
+We have
+\[ \frac{\mathbb{R}[x]}{(x^2 + 1)} \cong \mathbb{C} \]
+as rings.
+\end{ex}
+
+\section{Maximal Ideals}
+
+\begin{df}[Maximal Ideal]
+Let $R$ be a ring and $I$ an ideal in $R$. Then $I$ is a \emph{maximal ideal} iff $I \neq R$ and, whenever $J$ is an ideal with $I \subseteq J$, then either $I = J$ or $J = R$.
+\end{df}
+
+\chapter{Integral Domains}
+
+\begin{df}[Integral Domain]
+An \emph{integral domain} is a non-trivial commutative ring with no nonzero zero-divisors.
+\end{df}
+
+\begin{ex}
+$\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are integral domains.
+\end{ex}
+
+\begin{prop}
+$\mathbb{Z} / n \mathbb{Z}$ is an integral domain if and only if $n$ is prime.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+n \text{ is prime} & \Leftrightarrow \forall a,b \in \mathbb{Z} (n \mid a b \Rightarrow n \mid a \vee n \mid b) \\
+& \Leftrightarrow \forall a,b \in \mathbb{Z} / n \mathbb{Z} (ab \cong 0 (\mod n) \Rightarrow a \cong 0 (\mod n) \vee b \cong 0 (\mod n)) \\
+& \Leftrightarrow \mathbb{Z} / n \mathbb{Z} \text{ is an integral domain} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+In an integral domain, if $x^2 = 1$ then $x = \pm 1$.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $x^2 - 1 = (x-1)(x+1) = 0$ so $x-1 = 0$ or $x+1 = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be an integral domain and $f,g \in R[x]$. Then
+\[ \deg(fg) = \deg f + \deg g \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$f = \sum_n a_n x^n$ and $g = \sum_n b_n x^n$.}}
+\step{2}{\pflet{$d = \deg f$ and $e = \deg g$.}}
+\step{3}{The $d + e$th term of $fg$ is
+\[ a_d b_e x^{d + e} \]
+which is non-zero.}
+\step{4}{For $n > d + e$ the $n$th term of $fg$ is 0.}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $R$ be a ring. Then $R[x]$ is an integral domain if and only if $R$ is an integral domain.
+\end{cor}
+
+\begin{prop}
+Let $R$ be a ring. Then $R[[x]]$ is an integral domain if and only if $R$ is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $R[[x]]$ is an integral domain then $R$ is an integral domain.}
+\begin{proof}
+	\pf\ Easy.
+\end{proof}
+\step{2}{If $R$ is an integral domain then $R[[x]]$ is an integral domain.}
+\begin{proof}
+	\step{a}{\assume{$R$ is an integral domain.}}
+	\step{b}{\pflet{$\left( \sum_n a_n x^n \right) \left( \sum_n b_n x^n \right) = 0$}}
+	\step{c}{$a_0 b_0 = 0$}
+	\step{d}{$a_0 = 0$ or $b_0 = 0$}
+	\step{e}{\assume{w.l.o.g. $b_0 \neq 0$} \prove{For all $n$ we have $a_n = 0$}}
+	\step{f}{\assume{as induction hypothesis $a_0 = a_1 = \cdots = a_{n-1} = 0$}}
+	\step{g}{$\sum_{i=0}^n a_i b_{n-i} = 0$}
+	\step{h}{$a_n b_0 = 0$}
+	\step{i}{$a_n = 0$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring and $S$ an integral domain. Every rng homomorphism $\phi : R \rightarrow S$ is a ring homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\phi(1) & = \phi(1 \cdot 1) \\
+& = \phi(1) \phi(1)
+\end{align*}
+and so $\phi(1) = 1$ by Cancellation. \qed
+\end{proof}
+
+\begin{prop}
+The characteristic of an integral domain is either 0 or a prime number.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$D$ be an integral domain.}}
+\step{1}{\pflet{$n$ be the characteristic of $D$}}
+\step{2}{\assume{$n \neq 0$}}
+\step{3}{\assume{$n = ab$}}
+\step{4}{$ab = 0$ in $D$}
+\step{5}{$a = 0$ or $b = 0$ in $D$}
+\step{6}{$n \mid a$ or $n \mid b$}
+\step{7}{One of $a$, $b$ is 1 and the other is $n$.}
+\qed
+\end{proof}
+
+\section{Prime Ideals}
+
+\begin{df}[Prime Ideal]
+Let $I$ be an ideal in a commutative ring $R$. Then $I$ is a \emph{prime ideal} iff $R/I$ is an integral domain.
+\end{df}
+
+\begin{ex}
+Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a prime ideal in $R$ iff $R$ is an integral domain.
+\end{ex}
+
+\begin{prop}
+Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is prime iff, whenever $ab \in I$, then $a \in I$ or $b \in I$.
+\end{prop}
+
+\begin{proof}
+\pf\ The condition is the same as saying that, if $(a+I)(b+I) = I$, then $a+I = I$ or $b+I = I$. \qed
+\end{proof}
+
+\begin{df}[Spectrum]
+The \emph{spectrum} of a commutative ring $R$, $\Spec R$, is the set of prime ideals.
+\end{df}
+
+\begin{prop}
+Let $\phi : R \rightarrow S$ be a ring homomorphism. If $I$ is a prime ideal in $S$ then $\inv{\phi}(I)$ is a prime ideal in $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+If $ab \in \inv{\phi}(I)$ then $\phi(a)\phi(b) \in I$ so either $\phi(a) \in I$ or $\phi(b) \in I$, i.e. either $a \in \inv{\phi}(I)$ or $b \in \inv{\phi}(I)$. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Suppose there exists a prime ideal $P$ in $R$ such that the only zero-divisor in $P$ is 0. Then $R$ is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$ab = 0$ in $R$}}
+\step{2}{$ab \in P$}
+\step{3}{$a \in P$ or $b \in P$}
+\step{4}{$a = 0$ or $b = 0$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. The nilradical of $R$ is included in every prime ideal of $R$.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $P$ be a prime ideal. If $a^n = 0$ then $a^n \in P$ hence $a \in P$. \qed
+\end{proof}
+
+%TODO The nilradical is the intersection of all the prime ideals
+
+\begin{df}[Krull Dimension]
+The \emph{(Krull) dimension} of a commutative ring $R$ is the length of the longest chain of prime ideals in $R$.
+\end{df}
+
+\begin{ex}
+$\mathbb{Z}[x]$ has Krull dimension 2. %TODO
+\end{ex}
+
+\chapter{Unique Factorization Domains}
+
+%TODO Define this
+
+\begin{ex}
+$\mathbb{Z}$ is a UFD.
+\end{ex}
+
+\chapter{Noetherian Rings}
+
+\begin{df}[Noetherian Ring]
+A commutative ring is \emph{Noetherian} iff every ideal is finitely generated.
+\end{df}
+
+\begin{prop}
+The homomorphic image of a Noetherian ring is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a Noetherian ring, $S$ be a commutative ring, and $\phi : R \rightarrow S$ a surjective ring homomorphism.}}
+\step{2}{\pflet{$I$ be an ideal in $S$.}}
+\step{3}{\pflet{$\inv{\phi}(I) = (a_1, \ldots, a_n)$}}
+\step{4}{$I = (\phi(a_1), \ldots, \phi(a_n))$}
+\qed
+\end{proof}
+
+\chapter{Principal Ideal Domains}
+
+\begin{df}[Principal Ideal Domain]
+A commutative ring is a \emph{principal ideal domain} (\emph{PID}) iff every ideal is principal.
+\end{df}
+
+\begin{ex}
+$\mathbb{Z}$ is a PID by Proposition \ref{prop:subgroups-of-Z}.
+\end{ex}
+
+\begin{ex}
+$\mathbb{Z}[x]$ is not a PID. The ideal $(2,x)$ is not principal.
+\end{ex}
+
+\begin{prop}
+Every PID is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf\ Trivial. \qed
+\end{proof}
+
+\begin{prop}
+Every nonzero prime ideal in a PID is maximal.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a PID.}}
+\step{2}{\pflet{$I$ be a nonzero prime ideal in $R$.}}
+\step{3}{\pick\ $a \in R$ such that $I = (a)$.}
+\step{4}{\pflet{$J$ be an ideal such that $I \subseteq J$}}
+\step{5}{\pick\ $b \in R$ such that $J = (b)$.}
+\step{6}{\pick\ $t \in R$ such that $a = bt$.}
+\step{7}{$b \in I$ or $t \in I$}
+\step{8}{\case{$b \in I$}}
+\begin{proof}
+	\pf\ Then $J \subseteq I$ so $I = J$.
+\end{proof}
+\step{9}{\case{$t \in I$}}
+\begin{proof}
+	\step{a}{\pick\ $s \in R$ such that $t = as$.}
+	\step{b}{$a = ast$}
+	\step{c}{$st = 1$}
+	\begin{proof}
+		\pf\ Since $R$ is an integral domain.
+	\end{proof}
+	\step{d}{$1 \in I$}
+	\step{e}{$I = R$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Any PID has Krull dimension 1.
+\end{cor}
+
+\chapter{Euclidean Domains}
+
+%TODO Define this
+
+\begin{ex}
+$\mathbb{Z}$ is a Euclidean domain.
+\end{ex}
+
+\chapter{Division Rings}
+
+\begin{df}[Division Ring]
+A \emph{division ring} is a ring in which every nonzero element is a two-sided unit.
+\end{df}
+
+\begin{ex}
+The quaternions form a division ring, with the inverse of a non-zero element $a + bi + cj + dk$ being
+\[ \frac{1}{a^2 + b^2 + c^2 + d^2} (a - bi - cj - dk) \enspace . \]
+\end{ex}
+
+\begin{ex}
+For any ring $R$, the ring of polynomials $R[x]$ is not a division ring, since $x$ has no inverse.
+\end{ex}
+
+\begin{prop}
+Every centralizer in a division ring is a division ring.
+\end{prop}
+
+\begin{proof}
+\pf\ If $ar = ra$ then $r\inv{a} = \inv{a}r$. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:division-ring-ideals}
+A non-trivial ring $R$ is a division ring if and only if its only left-ideals and right-ideals are $\{0\}$ and $R$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $R$ is a division ring then the only left-ideals and right-ideals are $\{0\}$ and $R$.}
+\begin{proof}
+	\step{a}{\assume{$R$ is a division ring.}}
+	\step{b}{The only left-ideals are $\{0\}$ and $R$.}
+	\begin{proof}
+		\step{i}{\pflet{$I$ be a left-ideal that is not $\{0\}$.} \prove{$I = R$}}
+		\step{ii}{\pick\ $a \in I - \{0\}$}
+		\step{iii}{\pick\ a left inverse $b$ for $a$}
+		\step{iv}{$1 \in I$}
+		\begin{proof}
+			\pf\ Since $1 = ba$.
+		\end{proof}
+		\step{v}{$I = R$}
+		\begin{proof}
+			\pf\ For any $r \in R$ we have $r = r1 \in I$.
+		\end{proof}
+	\end{proof}
+	\step{c}{The only right-ideals are $\{0\}$ and $R$.}
+	\begin{proof}
+		\pf\ Similar.
+	\end{proof}
+\end{proof}
+\step{2}{If the only left-ideals and right-ideals are $\{0\}$ and $R$ then $R$ is a division ring.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $K$ be a division ring and $R$ a non-trivial ring. Every ring homomorphism $K \rightarrow R$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : K \rightarrow R$ be a ring homomorphism.} \prove{$\ker \phi = \{0\}$}}
+\step{2}{\pflet{$x \in \ker \phi$}}
+\step{3}{\assume{for a contradiction $x \neq 0$.}}
+\step{4}{$\phi(x \inv{x}) = 1$}
+\step{5}{$0 = 1$}
+\qedstep
+\begin{proof}
+\pf\ This contradicts the assumption that $R$ is non-trivial.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Simple Rings}
+
+\begin{df}[Simple Ring]
+A non-trivial ring is $R$ \emph{simple} iff its only two-sided ideals are $\{0\}$ and $R$.
+\end{df}
+
+\begin{ex}
+For any simple ring $R$ we have $\gl{n}{R}$ is simple, by Corollary \ref{cor:ideals-in-glnR}.
+\end{ex}
+
+\begin{prop}
+\label{prop:maximal-iff-quotient-simple}
+Let $R$ be a ring and $I$ an ideal in $R$. Then $I$ is maximal iff $R/I$ is simple.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+R / I \text{ is simple}
+& \Leftrightarrow \text{the only ideals in } R / I \text{ are } \{I\} \text{ and } R / I \\
+& \Leftrightarrow \text{the only ideals in } R \text{ that include } I \text{ are } I \text{ and } R \\
+& \Leftrightarrow I \text{ is maximal}
+\end{align*}
+\qed
+\end{proof}
+
+\chapter{Reduced Rings}
+
+\begin{df}[Reduced Ring]
+A ring is \emph{reduced} iff it has no non-zero nilpotent elements.
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $N$ be its nilradical. Then $R/N$ is reduced.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r + N$ be nilpotent.}}
+\step{2}{\pick\ $n$ such that $(r+N)^n = N$}
+\step{3}{$r^n \in N$}
+\step{4}{\pick\ $k$ such that $(r^n)^k = 0$}
+\step{5}{$r^{nk} = 0$}
+\step{6}{$r \in N$}
+\step{7}{$r + N = N$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $I$ and $J$ be ideals in $R$. If $R/IJ$ is reduced then $IJ = I \cap J$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r \in I \cap J$} \prove{$r \in IJ$}}
+\step{2}{$r^2 \in IJ$}
+\step{3}{$(r + IJ)^2 = IJ$}
+\step{4}{$r+IJ = IJ$}
+\begin{proof}
+	\pf\ Since $R/IJ$ is reduced.
+\end{proof}
+\step{5}{$r \in IJ$}
+\qed
+\end{proof}
+
+\chapter{Boolean Rings}
+
+\begin{df}[Boolean]
+A ring is \emph{Boolean} iff $a^2 = a$ for every element $a$.
+\end{df}
+
+\begin{ex}
+For any set $S$, the ring $\mathcal{P} S$ is Boolean.
+\end{ex}
+
+\begin{prop}
+\label{prop:Boolean-char-2}
+Every non-trivial Boolean ring has characteristic 2.
+\end{prop}
+
+\begin{proof}
+\pf\ We have $4 = 2$ and so $2 = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Every Boolean ring is commutative.
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(a+b)^2 & = a+b \\
+\therefore a^2 + ab + ba + b^2 & = a+b \\
+\therefore a + ab + ba + b & = a + b \\
+\therefore ab + ba & = 0 \\
+\therefore ab & = -ba \\
+& = ba & (\text{Proposition \ref{prop:Boolean-char-2}})
+\end{align*}
+\end{proof}
+
+\begin{ex}
+The only Boolean integral domain is $\mathbb{Z} / 2 \mathbb{Z}$. For, if $D$ is a Boolean integral domain and $x \in D$, we have $x^2 = x$, so $x^2 - x = x(x-1) = 0$ and so $x = 0$ or $x = 1$, i.e. $D = \{0,1\}$.
+\end{ex}
+
+\begin{prop}
+Every Boolean ring has Krull dimension 0.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a Boolean ring.}}
+\step{2}{\pflet{$I$ be a prime ideal in $R$.} \prove{$I$ is maximal.}}
+\step{3}{\pflet{$J$ be an ideal with $I \subsetneq J$}}
+\step{4}{\pick\ $a \in J$ with $a \notin I$}
+\step{5}{$a^2 - a = 0 \in I$}
+\step{6}{$a(a-1) \in I$}
+\step{7}{$a-1 \in I$}
+\step{8}{$a-1 \in J$}
+\step{9}{$1 \in J$}
+\step{10}{$J = R$}
+\qed
+\end{proof}
+
+\chapter{Modules}
+
+\begin{df}[Left Module]
+Let $R$ be a ring and $M$ an Abelian group. A \emph{left-action} of $R$ on $M$ is a ring homomorphism
+\[ R \rightarrow \End{\Ab}{M} \enspace . \]
+A \emph{left $R$-module} consists of an Abelian group $M$ and a left-action of $R$ on $M$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $M$ an Abelian group. Let $\cdot : R \times M \rightarrow M$. Then $\cdot$ defines a left-action of $R$ on $M$ if and only if, for all $r,s \in R$ and $m,n \in M$:
+\begin{itemize}
+\item $r(m+n) = rm + rn$
+\item $(r+s)m = rm + sm$
+\item $(rs)m = r(sm)$
+\item $1m = m$
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+In any $R$-module $M$ we have $0m= 0$ for all $m \in M$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $0m = (0+0)m = 0m+0m$ and so $0m = 0$ by cancellation in $M$. \qed
+\end{proof}
+
+\begin{prop}
+In any $R$-module $M$ we have $(-1)m = -m$ for all $m \in M$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $m + (-1)m = 1m + (-1)m = (1+(-1))m = 0m = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Every Abelian group is a $\mathbb{Z}$-module in exactly one way.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\mathbb{Z}$ is initial in $\Ring$. \qed
+\end{proof}
+
+\begin{df}[Right Module]
+Let $R$ be a ring. A \emph{right $R$-module} consists of an Abelian group $M$ and a function $\cdot : M \times R \rightarrow M$ such that, for all $r,s \in R$ and $m,n \in M$:
+\begin{itemize}
+\item $(m+n)r = mr + nr$
+\item $m(r+s) = mr + ms$
+\item $m(rs) = (mr)s$
+\item $m1 = m$
+\end{itemize}
+\end{df}
+
+\section{Homomorphisms}
+
+\begin{df}[Homomorphism of Left-Modules]
+Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules. A \emph{homomorphism of left-$R$-modules} $\phi : M \rightarrow N$ is a group homomorphism such that, for all $r \in R$ and $m \in M$, we have $\phi(rm) = r\phi(m)$.
+
+Let $\Mod{R}$ be the category of left-$R$-modules and left-$R$-module homomorphisms.
+\end{df}
+
+\begin{ex}
+\[ \Mod{\mathbb{Z}} \cong \Ab \]
+\end{ex}
+
+\begin{ex}
+The trivial group $0$ is the zero object in $\Mod{R}$.
+\end{ex}
+
+\begin{prop}
+Every bijective $R$-module homomorphism is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be an $R$-module. Then
+\[ M \cong \Mod{R}[R,M] \]
+as $R$-modules.
+\end{prop}
+
+\begin{proof}
+\pf\ The isomorphism maps $m$ to the function $\lambda r.rm$. Its inverse maps an $R$-module homomorphism $\alpha$ to $\alpha(1)$. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $M$ be an $R$-module. Then there is a bijection between the set of $R[x]$-module structures on $M$ that extend the given $R$-module structure and $\End{\Mod{R}}{M}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\alpha : R \rightarrow \End{\Ab}{M}$ be the given $R$-module structure on $M$.}}
+\step{2}{An $R[x]$-module structure on $M$ that extends $\alpha$ is a ring homomorphism $\beta : R[x] \rightarrow \End{\Ab}{M}$ such that $\beta \circ i = \alpha$, where $i$ is the inclusion $R \rightarrow R[x]$.}
+\step{3}{There is a bijection between the $R[x]$-module structures on $M$ that extend $\alpha$ and the elements $s \in \End{\Ab}{M}$ that commute with $\alpha(r)$ for all $r \in R$.}
+\begin{proof}
+	\pf\ By the universal property for polynomials.
+\end{proof}
+\step{3}{There is a bijection between the $R[x]$-module structures on $M$ that extend $\alpha$ and the $R$-module homomorphisms $(M,\alpha) \rightarrow (M,\alpha)$.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $M$ and $N$ be $R$-modules. Then $\Mod{R}[M,N]$ is an $R$-module under
+\begin{align*}
+(\phi + \psi)(m) & = \phi(m) + \psi(m) \\
+(r \phi)(m) & = r \phi(m)
+\end{align*}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be an integral domain. Let $I$ be a nonzero principal ideal of $R$. Then $I \cong R$ in $\Mod{R}$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a \in R$ such that $I = (a)$.}
+\step{2}{\pflet{$\phi : R \rightarrow I$ be the map $\phi(r) = ra$.}}
+\step{3}{$\phi$ is an $R$-module homomorphism.}
+\begin{proof}
+	\pf\ Since $(r+s)a = ra + sa$ and $(rs)a = r(sa)$.
+\end{proof}
+\step{4}{$\phi$ is surjective.}
+\step{5}{$\phi$ is injective.}
+\begin{proof}
+	\pf\ If $ra = sa$ then $(r-s)a = 0$ so $r - s = 0$ and $r = s$.
+\end{proof}
+\step{6}{$\phi : R \cong I$}
+\qed
+\end{proof}
+
+\section{Submodules}
+
+\begin{df}[Submodule]
+Let $M$ be a left-$R$-module and $N \subseteq M$. Then $N$ is a \emph{submodule} of $M$ iff $N$ is a subgroup of $M$ and $\forall r \in R. \forall n \in N. rn \in N$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring and $I \subseteq R$. Then $I$ is a left-ideal in $R$ iff $I$ is a submodule of $R$ as an $R$-module.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules and $\phi : M \rightarrow N$ an $R$-module homomorphism. Then $\ker \phi$ is a submodule of $M$ and $\im \phi$ is a submodule of $N$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $M$ be a left-$R$-module. Let $r \in R$. Then $rM = \{ rm : m \in M \}$ is a submodule of $M$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $I$ be a left-ideal in $R$. Then $IM = \{ rm : r \in I, m \in M \}$ is a submodule of $M$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$IM$ is a subgroup of $M$.}
+\begin{proof}
+	\step{a}{\pflet{$r,s \in I$ and $m,n \in M$.} \prove{$rm + sn \in IM$}}
+	\step{b}{$rm+sn = r(m-n) + (s-r)n$}
+\end{proof}
+\step{2}{For all $r \in R$ and $x \in IM$ we have $rx \in IM$.}
+\qed
+\end{proof}
+
+\section{Quotient Modules}
+
+\begin{df}[Quotient Module]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ be a submodule of $M$. Then the \emph{quotient module} $M/N$ is the quotient group $M/N$ under
+\[ r(m+N) = rm+N \enspace . \]
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ and $P$ be left-$R$-modules. Let $N$ be a submodule of $M$. Let $\phi : M \rightarrow P$ be an $R$-module homomorphism. If $N \subseteq \ker \phi$, then there exists a unique $R$-module homomorphism $\overline{\phi} : M / N \rightarrow P$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+M \arrow[rr,"\phi"] \arrow[dr] & & P \\
+& M/N \arrow[ur,"\overline{\phi}"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{thm}
+Every $R$-module homomorphism $\phi : M \rightarrow M'$ may be decomposed as:
+\[ \begin{tikzcd}
+M \arrow[r] & M / \ker \phi \arrow[r,"\cong"] & \im \phi \arrow[r] & N 
+\end{tikzcd} \]
+\end{thm}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{cor}[First Isomorphism Theorem]
+Let $\phi : M \rightarrow M'$ be a surjective $R$-module homomorphism. Then
+\[ M' \cong \frac{M}{\ker \phi} \enspace . \]
+\end{cor}
+
+\begin{prop}[Second Isomorphism Theorem]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ and $P$ be submodules of $M$. Then $N+P$ is a submodule of $M$, $N \cap P$ is a submodule of $P$, and
+\[ \frac{N+P}{N} \cong \frac{P}{N \cap P} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The function that maps $P$ to $p + N$ is a surjective homomorphism $P \rightarrow (N+P)/N$ with kernel $N \cap P$. \qed
+\end{proof}
+
+\begin{prop}[Third Isomorphism Theorem]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ be a submodule of $M$ and $P$ a submodule of $N$. Then $N/P$ is a submodule of $M/P$ and
+\[ \frac{M/P}{N/P} \cong \frac{M}{N} \]
+\end{prop}
+
+\begin{proof}
+\pf\ The canonical map $M \rightarrow M/N$ induces a surjective homomorphism $M/P \rightarrow M/N$ which has kernel $N/P$. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module.
+The sum and intersection of a family of submodules of $M$ are submodules of $M$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\section{Products}
+
+\begin{prop}
+$\Mod{R}$ has products.
+\end{prop}
+
+\begin{proof}
+\pf\ Given a family $\{ M_\alpha \}_{\alpha \in A}$ of left-$R$-modules, we make $\prod_{\alpha \in A} M_\alpha$ into a left-$R$-module by
+\begin{align*}
+(f + g)(\alpha) & = f(\alpha) + g(\alpha) \\
+(rf)(\alpha) & = rf(\alpha) & \qed
+\end{align*}
+\end{proof}
+
+\section{Coproducts}
+
+\begin{prop}
+$\Mod{R}$ has coproducts.
+\end{prop}
+
+\begin{proof}
+\pf\ Given a family $\{M_\alpha \}_{\alpha \in A}$ of left-$R$-modules, take $\bigoplus_{\alpha \in A} M_\alpha$ to be $\{ f \in \prod_{\alpha \in A} M_\alpha : f(\alpha) = 0 \text{ for all but finitely many } \alpha \in A \}$. \qed
+\end{proof}
+
+\section{Direct Sum}
+
+\begin{df}[Direct Sum]
+Let $R$ be a ring. Let $M$ and $N$ be left-$R$-modules. Then the direct sum $M \oplus N$ is an $R$-module under
+\[ r(m,n) = (rm,rn) \enspace . \]
+\end{df}
+
+\begin{prop}
+$M \oplus N$ is the biproduct of $M$ and $N$ in $\Mod{R}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{ex}
+Infinite products and coproducts are in general different. We have $\mathbb{Z}^{\mathbb{N}} \not\cong \mathbb{Z}^{\oplus \mathbb{N}}$ since $\mathbb{Z}^{\mathbb{N}}$ is uncountable but $\mathbb{Z}^{\oplus \mathbb{N}}$ is countable.
+\end{ex}
+
+\section{Kernels and Cokernels}
+
+\begin{prop}
+Let $R$ be a ring.
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\ker \phi \hookrightarrow M$ is terminal in the category of left-$R$-module homomorphisms $\alpha : P \rightarrow M$ such that $\phi \circ \alpha = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring.
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $N \twoheadrightarrow \coker \phi$ is initial in the category of left-$R$-module homomorphisms $\alpha : N \rightarrow P$ such that $\alpha \circ \phi = 0$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then the following are equivalent.
+\begin{itemize}
+\item $\phi$ is a monomorphism.
+\item $\ker \phi$ is trivial.
+\item $\phi$ is injective.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then the following are equivalent.
+\begin{itemize}
+\item $\phi$ is an epimorphism.
+\item $\coker \phi$ is trivial.
+\item $\phi$ is surjective.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Every monomorphism in $\Mod{R}$ is the kernel of some homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : M \rightarrow N$ is a monomorphism then it is the kernel of $N \twoheadrightarrow N / \im \phi$. \qed
+\end{proof}
+
+\begin{prop}
+Every epimorphism in $\Mod{R}$ is the cokernel of some homomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\phi : M \rightarrow N$ is epi then it is the cokernel of $\ker \phi \hookrightarrow M$. \qed
+\end{proof}
+
+\begin{ex}
+Monomorphisms do not split in $\Mod{R}$. Multiplication by 2 is a monomorphism $\mathbb{Z} \rightarrow \mathbb{Z}$ but has no left inverse.
+\end{ex}
+
+\begin{ex}
+Epimorphisms do not split in $\Mod{R}$. The canonical map $\mathbb{Z} \rightarrow \mathbb{Z} / 2 \mathbb{Z}$ is an epimorphism without a right inverse.
+\end{ex}
+
+\section{Free Modules}
+
+\begin{prop}
+Let $R$ be a ring and $A$ a set. Then there exists a left-$R$-module $F^R(A)$ and function $j : A \rightarrow F^R(A)$ such that, for any left-$R$-module $M$ and function $f : A \rightarrow M$, there exists a unique left-$R$-module homomorphism $\overline{f} : F^R(A) \rightarrow M$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+F^R(A) \arrow[r,"\overline{f}"] & M \\
+A \arrow[u,"j"] \arrow[ur,"f"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R^{\oplus A} = \{ \alpha : A \rightarrow R : \alpha(a) = 0 \text{ for all but finitely many } a \in A \}$ under the operations
+\begin{align*}
+(\alpha + \beta)(a) & = \alpha(a) + \beta(a) \\
+(r \alpha)(a) & = r\alpha(a)
+\end{align*}}}
+\step{2}{$R^{\oplus A}$ is a left-$R$-module.}
+\step{3}{\pflet{$j : A \rightarrow R^{\oplus A}$ be the function
+\[ j(a)(a') = \begin{cases}
+1 & \text{if } a = a' \\
+0 & \text{if } a \neq a'
+\end{cases} \]}}
+\step{4}{\pflet{$M$ be any left-$R$-module.}}
+\step{5}{\pflet{$f : A \rightarrow M$ be a function.}}
+\step{6}{\pflet{$\overline{f} : R^{\oplus A} \rightarrow M$ be the function
+\[ \overline{f}(\alpha) = \sum_{a \in A, \alpha(a) \neq 0} \alpha(a) f(a) \]}}
+\step{7}{$\overline{f}$ is a left-$R$-module homomorphism.}
+\step{8}{$\overline{f} \circ j = f$}
+\step{9}{$\overline{f}$ is unique.}
+\end{proof}
+
+\begin{df}
+We call $j : A \rightarrow F^R(A)$ the \emph{free} left-$R$-module over $A$.
+\end{df}
+
+\begin{prop}
+$j$ is injective.
+\end{prop}
+
+\begin{proof}
+\pf\ By the proof of the previous proposition. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $F$ be a non-zero free left-$R$-module. Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\phi$ is onto if and only if, for every left-$R$-module homomorphism $\alpha : F \rightarrow N$, there exists a left-$R$-module homomorphism $\beta : F \rightarrow M$ such that the diagram below commutes.
+\[ \begin{tikzcd}
+M \arrow[r,"\phi"] & N \\
+F \arrow[u,"\beta"] \arrow[ur,"\alpha"]
+\end{tikzcd} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\pflet{$F$ be the free left-$R$-module over $A$ with injection $j : A \rightarrow F$.}}
+\step{1}{If $\phi$ is onto then, for every homomorphism $\alpha : F \rightarrow N$, there exists a homomorphism $\beta : F \rightarrow M$ such that $\phi \circ \beta = \alpha$.}
+\begin{proof}
+	\step{a}{\assume{$\phi$ is onto.}}
+	\step{b}{\pflet{$\alpha : F \rightarrow N$ be a homomorphism.}}
+	\step{c}{For $a \in A$, \pick\ $f(a) \in M$ such that $\phi(f(a)) = \alpha(j(a))$}
+	\step{d}{\pflet{$\beta : F \rightarrow M$ be the unique homomorphism such that $\beta \circ j = f$}}
+	\step{e}{$\phi \circ \beta = \alpha$}
+	\begin{proof}
+		\pf\ Each is the unique homomorphism such that $\alpha \circ j = \phi \circ f$.
+	\end{proof}
+	\qed
+	\[ \begin{tikzcd}
+& 	M \arrow[r,"\phi"] & N \\
+A \arrow[ur,"f"] \arrow[r,"j"] & F \arrow[u,"\beta"] \arrow[ur,"\alpha"]
+\end{tikzcd} \]	
+\end{proof}
+\step{2}{If, for every homomorphism $\alpha : F \rightarrow N$, there exists a homomorphism $\beta : F \rightarrow M$ such that $\phi \circ \beta = \alpha$, then $\phi$ is onto.}
+\begin{proof}
+	\step{a}{\assume{For every homomorphism $\alpha : F \rightarrow N$ there exists a homomorphism $\beta : F \rightarrow M$ such that $\phi \circ \alpha = \beta$.}}
+	\step{b}{\pflet{$n \in N$}}
+	\step{c}{\pflet{$\alpha : F \rightarrow N$ be the unique homomorphism such that, for all $a \in A$, we have $\alpha(j(a)) = n$}}
+	\step{d}{\pick\ a homomorphism $\beta : F \rightarrow M$ such that $\phi \circ \beta = \alpha$}
+	\step{e}{\pick\ $a \in A$}
+	\step{f}{$\phi(\beta(j(a))) = n$}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Generators}
+
+\begin{df}[Submodule Generated by a Set]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $A$ be a subset of $M$. Let $\phi_A : F^R(A) \rightarrow M$ be the unique left-$R$-module homomorphism such that the following diagram commutes.
+\[ \begin{tikzcd}
+F^R(A) \arrow[r,"\phi_A"] & M \\
+A \arrow[u] \arrow[ur,hook]
+\end{tikzcd} \]
+The submodule of $M$ \emph{generated} by $A$, denoted $\langle A \rangle$, is defined to be $\im \phi_A$.
+\end{df}
+
+\begin{df}[Finitely Generated]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Then $M$ is \emph{finitely generated} iff there exists a finite set $A \subseteq M$ such that $M = \langle A \rangle$.
+\end{df}
+
+\begin{ex}
+A submodule of a finitely generated module is not necessarily finitely generated.
+
+Let $R = \mathbb{Z}[x_1, x_2, \ldots]$. Then $R$ is finitely generated as an $R$-module, but $(x_1, x_2, \ldots)$ is not.
+\end{ex}
+
+\begin{prop}
+The homomorphic image of a finitely generated module is finitely generated.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy.  \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $N$ be a submodule of $M$. If $N$ and $M/N$ are finitely generated then $M$ is finitely generated.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ $a_1$, \ldots, $a_n$ that generate $N$.}
+\step{2}{\pick\ $b_1$, \ldots, $b_m$ such that $b_1 + N$, \ldots, $b_m + N$ generate $M/N$. \prove{$a_1$, \ldots, $a_n$, $b_1$, \ldots, $b_m$ generate $M$.}}
+\step{3}{\pflet{$m \in M$}}
+\step{4}{\pick\ $r_1, \ldots, r_m \in R$ such that $m + N = r_1 b_1 + \cdots + r_m b_m + N$}
+\step{5}{$m - r_1b_1 - \cdots - r_m b_m \in N$}
+\step{6}{\pick\ $s_1, \ldots, s_n \in R$ such that $m - r_1 b_1 - \cdots - r_m b_m = s_1 a_1 + \cdots + s_n a_n$}
+\step{7}{$m = r_1 b_1 + \cdots + r_m b_m + s_1 a_1 + \cdots + s_n a_n$}
+\qed
+\end{proof}
+
+\section{Projections}
+
+\begin{df}[Projection]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $p : M \rightarrow M$ be a left-$R$-module homomorphism. Then $p$ is a \emph{projection} iff $p^2 = p$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Let $p : M \rightarrow M$ be a projection. Then
+\[ M \cong \ker p \oplus \im p \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : M \rightarrow \ker p \oplus \im p$ be the map $\phi(m) = (m - p(m), p(m))$}}
+\step{2}{$\phi$ is a left-$R$-module homomorphism.}
+\step{3}{$\phi$ is injective.}
+\step{4}{$\phi$ is surjective.}
+\qed
+\end{proof}
+
+\section{Pullbacks}
+
+\begin{prop}
+$\Mod{R}$ has pullbacks.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mu : M \rightarrow Z$, $\nu : N \rightarrow Z$ be left-$R$-module homomorphisms.}}
+\step{2}{\pflet{$M \times_Z N = \{ (m,n) \in M \times N : \mu(m) = \nu(n) \}$ under
+\begin{align*}
+(m,n) + (m',n') & = (m+m',n+n') \\
+r(m,n) & = (rm,rn)
+\end{align*}}}
+\step{3}{$M \times_Z N$ is the pullback of $M$ and $N$.}
+\qed
+\end{proof}
+
+\section{Pushouts}
+
+\begin{prop}
+$\Mod{R}$ has pushouts.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\mu : A \rightarrow M$ and $\nu : A \rightarrow N$ be left-$R$-module homomorphisms.}}
+\end{proof}
+
+\chapter{Cyclic Modules}
+
+\begin{df}[Cyclic Module]
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Then $M$ is \emph{cyclic} iff there exists $m \in M$ such that $M = \langle m \rangle$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module. Then $M$ is cyclic if and only if there exists a left-ideal $I$ in $R$ such that $M \cong R / I$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $M$ is cyclic then there exists a left-ideal $I$ in $R$ such that $M \cong R / I$.}
+\begin{proof}
+	\step{a}{\assume{$M$ is cyclic.}}
+	\step{b}{\pick\ $m \in M$ such that $M = \langle m \rangle$}
+	\step{c}{\pflet{$\phi : R \rightarrow M$ be the left-$R$-module homomorphism $\phi(r) = rm$.}}
+	\step{d}{$\phi$ is surjective.}
+	\step{e}{$M \cong R / \ker \phi$}
+\end{proof}
+\step{2}{For every left-ideal $I$ in $R$, we have that $R/I$ is cyclic.}
+\begin{proof}
+	\pf\ $R/I$ is generated by $1+I$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+A quotient of a cyclic module is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf\ If $M$ is generated by $m$ then $M/N$ is generated by $m+N$. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring.
+For any left-ideal $I$ in $R$ and any left-$R$-module $N$, we have
+\[ \Mod{R}[R/I,N] \cong \{ n \in N : \forall a \in I. an = 0 \} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\Phi : \Mod{R}[R/I,N] \rightarrow \{n \in N : \forall a \in I. an = 0\}$ be the function $\Phi(\alpha) = \alpha(1 + I)$}}
+\begin{proof}
+	\pf\ For all $a \in I$ we have $a \alpha(1 + I) = \alpha(a +I) = \alpha(I) = 0$.
+\end{proof}
+\step{2}{$\Phi$ is injective.}
+\begin{proof}
+	\pf\ If $\alpha(1+I) = \beta(1+I)$ then $\alpha(r+I) = r\alpha(1+I) = r\beta(1+I) = \beta(r+I)$ for all $r \in R$, hence $\alpha = \beta$.
+\end{proof}
+\step{3}{$\Phi$ is surjective.}
+\begin{proof}
+	\pf\ Given $n \in N$ such that $\forall a \in I. an = 0$, define $\alpha : R/I \rightarrow N$ by $\alpha(r+I) = rn$.
+\end{proof}
+\step{4}{If $R$ is commutative then $\Phi$ is an $R$-module homomorphism.}
+\qed
+\end{proof}
+
+\begin{cor}
+For all $a,b \in \mathbb{Z}$ we have $\Ab[\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}] \cong \mathbb{Z} / \gcd(a,b) \mathbb{Z}$.
+\end{cor}
+
+\begin{proof}
+\pf
+\begin{align*}
+\Ab[\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}]
+& \cong \Mod{\mathbb{Z}}[\mathbb{Z} / a \mathbb{Z}, \mathbb{Z} / b \mathbb{Z}] \\
+& \cong \{ n \in \mathbb{Z} / b \mathbb{Z} : \forall x \in a \mathbb{Z}. xn \cong 0 (\mod b) \} \\
+& \cong \{ n \in \mathbb{Z} / b \mathbb{Z} : \forall x \in \mathbb{Z}. b \mid xan \} \\
+& = \{ n \in \mathbb{Z} / b \mathbb{Z} : b \mid an \}
+\end{align*}
+\end{proof}
+\chapter{Simple Modules}
+
+\begin{df}[Simple Module]
+Let $R$ be a ring.
+An $R$-module $M$ is \emph{simple} or \emph{irreducible} iff its only submodules are $\{0\}$ and $M$.
+\end{df}
+
+\begin{prop}[Schur's Lemma]
+Let $R$ be a ring. Let $M$ and $N$ be simple $R$-modules. Let $\phi : M \rightarrow N$ be an $R$-module homomorphism. Then either $\phi = 0$ or $\phi$ is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{$\phi \neq 0$}}
+\step{3}{$\ker \phi = 0$}
+\begin{proof}
+	\pf\ Since $\ker \phi$ is a submodule of $M$ that is not $M$.
+\end{proof}
+\step{4}{$\im \phi = N$}
+\begin{proof}
+	\pf\ Since $\im \phi$ is a submodule of $N$ that is not $\{0\}$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every simple module is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$M$ be a simple module.}}
+\step{2}{\assume{w.l.o.g. $M \neq \{0\}$}}
+\begin{proof}
+	\pf\ $\{0\} = \langle 0 \rangle$ is cyclic.
+\end{proof}
+\step{3}{\pick\ $m \in M$ with $m \ne 0$}
+\step{4}{$\langle m \rangle = M$}
+\begin{proof}
+	\pf\ Since $\langle m \rangle$ is a submodule of $M$ that is not $\{0\}$.
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Noetherian Modules}
+
+\begin{df}[Noetherian Module]
+Let $R$ be a ring. A left-$R$-module is \emph{Noetherian} iff every submodule is finitely generated.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring. Let $M$ be a left-$R$-module and $N$ a submodule of $M$. Then $M$ is Noetherian if and only if $N$ and $M/N$ are Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $M$ is Noetherian then $N$ is Noetherian.}
+\begin{proof}
+	\pf\ Every submodule of $N$ is a submodule of $M$, hence finitely generated.
+\end{proof}
+\step{2}{If $M$ is Noetherian then $M/N$ is Noetherian.}
+\begin{proof}
+	\step{a}{\assume{$M$ is Noetherian.}}
+	\step{b}{\pflet{$\pi : M \twoheadrightarrow M / N$ be the canonical epimorphism.}}
+	\step{c}{\pflet{$P$ be a submodule of $M/N$.}}
+	\step{d}{\pick\ $a_1, \ldots, a_n \in M$ that generate $\inv{\pi}(P)$.}
+	\step{e}{$a_1 + N$, \ldots, $a_n + N$ generate $P$.}
+\end{proof}
+\step{3}{If $N$ and $M/N$ are Noetherian then $M$ is Noetherian.}
+\begin{proof}
+	\step{a}{\assume{$N$ and $M/N$ are Noetherian.}}
+	\step{b}{\pflet{$P$ be a submodule of $M$.}}
+	\step{c}{\pick\ $a_1, \ldots, a_m \in P$ such that $a_1 + N$, \ldots, $a_m + N$ generate $\pi(P)$.}
+	\step{d}{\pick\ $b_1, \ldots, b_n \in M$ that generated $P \cap N$. \prove{$a_1, \ldots, a_m, b_1, \ldots, b_n$ generate $P$.}}
+	\step{e}{\pflet{$p \in P$}}
+	\step{f}{\pick\ $r_1, \ldots, r_m \in R$ such that $p + N = r_1 a_1 + \cdots + r_m a_m + N$}
+	\step{g}{$p - r_1 a_1 - \cdots - r_m a_m \in P \cap N$}
+	\step{h}{\pick\ $s_1, \ldots, s_n \in R$ such that $p - r_1 a_1 - \cdots - r_m a_m = s_1 b_1 + \cdots + s_n b_n$}
+	\step{i}{$p = r_1 a_1 + \cdots + r_m a_m + s_1 b_1 + \cdots + s_n b_n$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+If $R$ is a Noetherian ring then $R^{\oplus n}$ is a Noetherian left-$R$-module.
+\end{cor}
+
+\begin{proof}
+\pf\ The proof is by induction on $n$. The case $n = 1$ is immediate.
+
+The induction step holds since $R^{\oplus (n+1)} / R^{\oplus n} \cong R$. \qed
+\end{proof}
+
+\begin{cor}
+If $R$ is a Noetherian ring and $M$ is a finitely generated left-$R$-module then $M$ is Noetherian.
+\end{cor}
+
+\begin{proof}
+\pf\ There is a surjective homomorphism $R^{\oplus n} \twoheadrightarrow M$ for some $n$, so $M$ is a quotient of $R^{\oplus n}$. \qed
+\end{proof}
+
+\chapter{Algebras}
+
+\begin{df}[Algebra]
+Let $R$ be a commutative ring. An \emph{$R$-algebra} consists of a ring $S$ and a ring homomorphism $\alpha : R \rightarrow S$ such that $\alpha(R)$ is included in the center of $S$. We write $rs$ for $\alpha(r)s$.
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring and $S$ a ring. Let $\cdot : R \times S \rightarrow S$. Then there exists $\alpha : R \rightarrow S$ that makes $S$ into an $R$-algebra such that
+\[ rs = \alpha(r)s \qquad (r \in R, s \in S) \]
+iff $S$ is an $R$-module under $\cdot$ and, for all $r_1,r_2 \in R$ and $s_1,s_2 \in S$,
+\[ (r_1 s_1)(r_2 s_2) = (r_1 r_2)(s_1 s_2) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{ex}
+Let $R$ be a commutative ring. Then $R$ is an $R$-algebra under multiplication.
+\end{ex}
+
+\begin{ex}
+Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $R/I$ is an $R$-algebra.
+\end{ex}
+
+\begin{ex}
+Let $R$ be a commutative ring and $M$ an $R$-module. Then $\End{\Mod{R}}{M}$ is an $R$-algebra under composition.
+\end{ex}
+
+\begin{ex}
+Let $R$ be a commutative ring. Then $\gl{n}{R}$ is an $R$-algebra under matrix multiplication.
+\end{ex}
+
+\begin{df}[Algebra Homomorphism]
+Let $R$ be a commutative ring. Let $S$ and $T$ be $R$-algebras. An \emph{$R$-algebra homomorphism} $\phi : S \rightarrow T$ is a ring homomorphism such that, for all $r \in R$ and $s \in S$, we have $\phi(rs) = r\phi(s)$.
+
+Let $\Alg{R}$ be the category of $R$-algebras and $R$-algebra homomorphisms.
+\end{df}
+
+\begin{ex}
+\[ \Alg{\mathbb{Z}} \cong \Ring \]
+\end{ex}
+
+\begin{ex}
+Let $R$ be a commutative ring. Then $R[x_1, \ldots, x_n]$, and any quotient ring of $R[x_1, \ldots, x_n]$, is a commutative $R$-algebra.
+\end{ex}
+
+\begin{ex}
+$R$ is the initial object in $\Alg{R}$.
+\end{ex}
+
+\section{Rees Algebra}
+
+\begin{df}[Rees Algebra]
+Let $R$ be a commutative ring. Let $I$ be an ideal in $R$. The \emph{Rees algebra} is the direct sum
+\[ \mathrm{Rees}_R(I) = \bigoplus_{j \geq 0} I^j \]
+under the multiplication 
+\begin{align*}
+(r_0, r_1, r_2, r_3, \ldots)(s_0, s_1, s_2, \ldots) & = (r_0s_0, r_1s_0 + r_0s_1, r_0s_2 + r_1s_1 + r_2s_0, \ldots) \\
+r(r_0, r_1, r_2, \ldots) & = (rr_0, rr_1, rr_2, \ldots)
+\end{align*}
+\end{df}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $a \in R$ be a non-zero-divisor. Then $R[x]$ is the Rees algebra of $(a)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : R[x] \rightarrow \mathrm{Rees}_R((a))$ be the function $\phi(r_0 + r_1 x + r_2 x^2 + \cdots) = (r_0, r_1 a, r_2 a^2, \ldots)$.}}
+\step{2}{$\phi$ is an $R$-algebra homomorphism.}
+\step{3}{$\phi$ is injective.}
+\begin{proof}
+	\step{a}{\pflet{$\phi(r_0 + r_1 x + r_2 x^2 + \cdots) = \phi(s_0 + s_1 x + s_2 x^2 + \cdots)$}}
+	\step{b}{For all $n$ we have $r_n a^n = s_n a^n$}
+	\step{c}{$(r_n - s_n)a^n = 0$}
+	\step{d}{$r_n - s_n = 0$}
+	\begin{proof}
+		\pf\ Since $a$ is not a zero-divisor.
+	\end{proof}
+	\step{e}{$r_n = s_n$}
+\end{proof}
+\step{4}{$\phi$ is surjective.}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring. Let $a \in R$ be a non-zero-divisor. Let $I$ be an ideal of $R$. Then $\mathrm{Rees}_R(I) \cong \mathrm{Rees}_R(aI)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : \mathrm{Rees}_R(I) \rightarrow \mathrm{Rees}_R(aI)$ be the function $\phi(r_0, r_1, r_2, \ldots) = (r_0, ar_1, a^2r_2, \ldots)$.}}
+\step{2}{$\phi$ is an $R$-algebra homomorphism.}
+\step{3}{$\phi$ is injective.}
+\step{4}{$\phi$ is surjective.}
+\qed
+\end{proof}
+
+\section{Free Algebras}
+
+\begin{prop}
+Let $R$ be a ring. Then $R[x_1, \ldots, x_n]$ is the free commutative $R$-algebra on $\{ 1, \ldots, n \}$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring and $A$ a set. Let $A^*$ be the free monoid on $A$. Then the monoid ring $R[A^*]$ is the free $R$-algebra on $A$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring and $S$ a commutative $R$-algebra. Then $S$ is finitely generated as an $R$-algebra if and only if $S$ is finitely generated as a commutative $R$-algebra.
+\end{prop}
+
+\begin{proof}
+\pf\ Since a subalgebra of a commutative subalgebra is commutative, so the smallest algebra that contains $\{a_1, \ldots, a_n\}$ is the smallest commutative subalgebra that contains $\{a_1, \ldots, a_n\}$. \qed
+\end{proof}
+
+\chapter{Algebras of Finite Type}
+
+\begin{df}[Algebra of Finite Type]
+Let $R$ be a ring. Let $S$ be an $R$-algebra. Then $R$ is of \emph{finite type} iff $S$ is a finitely generated $R$-algebra.
+\end{df}
+
+\begin{prop}
+Let $R$ be a Noetherian ring. Let $S$ be a finite-type $R$-algebra. Then $S$ is a Noetherian ring.
+\end{prop}
+
+%TODO
+
+\chapter{Finite Algebras}
+
+\begin{df}[Finite Algebra]
+Let $R$ be a ring. Let $S$ be an $R$-algebra. Then $S$ is a \emph{finite} $R$-algebra iff it is a finitely generated left-$R$-module.
+\end{df}
+
+\begin{prop}
+Let $R$ be a ring. Every finite $R$-algebra is of finite type.
+\end{prop}
+
+\begin{proof}
+\pf\ If $S$ is generated by $a_1$, \ldots, $a_n$ as an $R$-module, then it is generated by $a_1$, \ldots, $a_n$ as an $R$-algebra. \qed
+\end{proof}
+
+\begin{ex}
+The converse does not hold. $R[x]$ is of finite type but is not finite.
+\end{ex}
+
+\chapter{Division Algebras}
+
+\begin{df}[Division Algebra]
+Let $R$ be a commutative ring.
+A \emph{division $R$-algebra} is an $R$-algebra that is a division ring.
+\end{df}
+
+\begin{ex}
+Let $R$ be a commutative ring. Let $M$ be a simple $R$-algebra. Then $\End{\Mod{R}}{M}$ is a division algebra. For if $\phi \circ \psi = 0$ then $\phi$ and $\psi$ cannot both be isomorphisms, hence $\phi = 0$ or $\psi = 0$ by Schur's Lemma.
+\end{ex}
+
+\chapter{Chain Complexes}
+
+\begin{df}[Chain Complex]
+Let $R$ be a ring. A \emph{chain complex of left-$R$-modules} $M_\bullet = (M_\bullet, d_\bullet)$ consists of a family of left-$R$-modules $\{ M_i \}_{i \in \mathbb{Z}}$ and a family of left-$R$-module homomorphisms $\{ d_i : M_i \rightarrow M_{i-1} \}_{i \in \mathbb{Z}}$ such that, for all $i$,
+\[ d_i \circ d_{i+1} = 0 \enspace . \]
+
+We call each $d_i$ a \emph{differential} and the family $\{d_i\}_i$ the \emph{boundary} of the chain complex.
+\end{df}
+
+\begin{df}[Exact]
+A chain complex $M_\bullet$ is \emph{exact} at $M_i$ iff $\im d_{i+1} = \ker d_i$.
+
+It is \emph{exact} or an \emph{exact sequence} iff it is exact at $M_i$ for all $i$.
+\end{df}
+
+\begin{prop}
+A complex
+\[ \cdots \rightarrow 0 \rightarrow L \stackrel{\alpha}{\rightarrow} M \rightarrow \cdots \]
+is exact at $L$ iff $\alpha$ is a monomorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ Since both are equivalent to $\ker \alpha = 0$. \qed
+\end{proof}
+
+\begin{prop}
+A complex
+\[ \cdots \rightarrow M \stackrel{\beta}{\rightarrow} N \rightarrow 0 \rightarrow \cdots \]
+is exact at $N$ iff $\beta$ is a epimorphism.
+\end{prop}
+
+\begin{proof}
+\pf\ Since both are equivalent to $\im \beta = N$. \qed
+\end{proof}
+
+\begin{df}[Short Exact Sequence]
+A \emph{short exact sequence} is an exact complex of the form
+\[ 0 \rightarrow L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N \rightarrow 0 \enspace . \]
+\end{df}
+
+\begin{prop}[Four-Lemma]
+If
+\[ \begin{tikzcd}
+A_1 \arrow[r,"f_1"] \arrow[d,"\alpha"] & B_1 \arrow[r,"g_1"] \arrow[d,"\beta"] & C_1 \arrow[r,"h_1"] \arrow[d,"\gamma"] & D_1 \arrow[d,"\delta"] \\
+A_2 \arrow[r,"f_2"] & B_2 \arrow[r,"g_2"] & C_2 \arrow[r,"h_2"] & D_2
+\end{tikzcd} \]
+is a commutative diagram of left-$R$-modules with exact rows, $\alpha$ is an epimorphism, and $\beta$ and $\delta$ are monomorphisms, then $\gamma$ is an monomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+	\step{a}{\pflet{$x,y \in C_1$}}
+	\step{b}{\assume{$\gamma(x) = \gamma(y)$}}
+	\step{c}{$\delta(h_1(x)) = \delta(h_1(y))$}
+	\step{d}{$h_1(x) = h_1(y)$}
+	\begin{proof}
+		\pf\ $\delta$ is injective.
+	\end{proof}
+	\step{e}{$x-y \in \ker h_1$}
+	\step{f}{$x-y \in \im g_1$}
+	\step{g}{\pick\ $b \in B_1$ such that $g_1(b) = x - y$.}
+	\step{h}{$g_2(\beta(b)) = 0$}
+	\begin{proof}
+		\pf\ $g_2(\beta(b)) = \gamma(g_1(b)) = \gamma(x-y) = 0$
+	\end{proof}
+	\step{i}{$\beta(b) \in \ker g_2$}
+	\step{j}{$\beta(b) \in \im f_2$}
+	\step{k}{\pick\ $a' \in A_2$ such that $f_2(a') = \beta(b)$}
+	\step{l}{\pick\ $a \in A_1$ such that $\alpha(a) = a'$}
+	\begin{proof}
+		\pf\ $\alpha$ is surjective.
+	\end{proof}
+	\step{m}{$\beta(f_1(a)) = \beta(b)$}
+	\step{n}{$f_1(a) = b$}
+	\begin{proof}
+		\pf\ $\beta$ is injective.
+	\end{proof}
+	\step{o}{$0 = g_1(b)$}
+	\begin{proof}
+		\pf\ Since $g_1(b) = g_1(f_1(a)) = 0$.
+	\end{proof}
+	\step{p}{$x = y$}
+	\begin{proof}
+		\pf\ \stepref{g}
+	\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}[Four-Lemma]
+If
+\[ \begin{tikzcd}
+A_1 \arrow[r,"f_1"] \arrow[d,"\beta"] & B_1 \arrow[r,"g_1"] \arrow[d,"\gamma"] & C_1 \arrow[r,"h_1"] \arrow[d,"\delta"] & D_1 \arrow[d,"\epsilon"] \\
+A_2 \arrow[r,"f_2"] & B_2 \arrow[r,"g_2"] & C_2 \arrow[r,"h_2"] & D_2
+\end{tikzcd} \]
+is a commutative diagram of left-$R$-modules with exact rows, $\beta$ and $\delta$ are epimorphisms, and $\epsilon$ is a monomorphism, then $\gamma$ is an epimorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$b_2 \in B_2$}}
+\step{2}{\pick\ $c_1 \in C_1$ such that $\delta(c_1) = g_2(b_2)$}
+\begin{proof}
+	\pf\ $\delta$ is surjective.
+\end{proof}
+\step{3}{$\epsilon(h_1(c_1)) = 0$}
+\step{4}{$h_1(c_1) = 0$}
+\begin{proof}
+	\pf\ $\epsilon$ is injective.
+\end{proof}
+\step{5}{$c_1 \in \ker h_1$}
+\step{6}{$c_1 \in \im g_1$}
+\step{7}{\pick\ $b_1 \in B_1$ such that $g_1(b_1) = c_1$}
+\step{8}{$g_2(\gamma(b_1)) = g_2(b_2)$}
+\step{9}{$\gamma(b_1) - b_2 \in \ker g_2$}
+\step{10}{$\gamma(b_1) - b_2 \in \im f_2$}
+\step{11}{\pick\ $a_2 \in A_2$ such that $f_2(a_2) = \gamma(b_1) - b_2$.}
+\step{12}{\pick\ $a_1 \in A_1$ such that $\beta(a_1) = a_2$.}
+\begin{proof}
+	\pf\ $\beta$ is surjective.
+\end{proof}
+\step{13}{$\gamma(f_1(a_1)) = \gamma(b_1) - b_2$}
+\step{14}{$b_2 = \gamma(b_1 - f_1(a_1))$}
+\qed
+\end{proof}
+
+\begin{thm}[Snake Lemma]
+Suppose we have $R$-modules and homomorphisms
+\[ \begin{tikzcd}
+0 \arrow[r] & L_1 \arrow[r,"\alpha_1"] \arrow[d,"\lambda"] & M_1 \arrow[r,"\beta_1"] \arrow[d,"\mu"] & N_1 \arrow[r] \arrow[d,"\nu"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"\alpha_0"] & M_0 \arrow[r,"\beta_0"] & N_0 \arrow[r] & 0
+\end{tikzcd} \]
+such that the diagram commutes and the two rows are short exact sequences. Then there exists a homomorphism $\delta : \ker \nu \rightarrow \coker \lambda$ such that the following is an exact sequence.
+\[ 0 \rightarrow \ker \lambda \stackrel{\alpha_1}{\rightarrow} \ker \mu \stackrel{\beta_1}{\rightarrow} \ker \nu \stackrel{\delta}{\rightarrow} \coker \lambda \stackrel{\alpha_0}{\rightarrow} \coker \mu \stackrel{\beta_0}{\rightarrow} \coker \nu \rightarrow 0 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{Define $\delta : \ker \nu \rightarrow \coker \lambda$.}
+\begin{proof}
+	\step{a}{\pflet{$a \in \ker \nu$}}
+	\step{b}{\pick\ $c \in M_1$ such that $\beta_1(c) = a$.}
+	\begin{proof}
+		\pf\ Since $\beta_1$ is surjective.
+	\end{proof}
+	\step{c}{\pflet{$d = \mu(c)$}}
+	\step{d}{$d \in \ker \beta_0 = \im \alpha_0$}
+	\begin{proof}
+		\pf\ Since $\beta_0(d) = \beta_0(\mu(c)) = \nu(a) = 0$.
+	\end{proof}
+	\step{e}{\pflet{$e \in L_0$ be the element such that $\alpha_0(e) = d$.}}
+	\step{f}{\pflet{$\delta(a) = e + \im \lambda$}}
+\end{proof}
+\step{2}{$\delta$ is a left-$R$-module homomorphism.}
+\begin{proof}
+	\step{a}{For $a,a' \in \ker \nu$ we have $\delta(a + a') = \delta(a) + \delta(a')$.}
+	\begin{proof}
+		\step{i}{\pflet{$a,a' \in \ker \nu$}}
+		\step{ii}{\pflet{$c,c',c'' \in M_1$ and $e,e',e'' \in L_0$ be the elements such that
+		\begin{align*}
+		\beta_1(c) & = a \\
+		\beta_1(c') & = a' \\
+		\beta_1(c'') & = a + a' \\
+		\alpha_0(e) & = \mu(c) \\
+		\alpha_0(e') & = \mu(c') \\
+		\alpha_0(e'') & = \mu(c'') \\
+		\delta(a) & = e + \im \lambda \\
+		\delta(a') & = e' + \im \lambda \\
+		\delta(a + a') & = e'' + \im \lambda
+		\end{align*}}}
+		\step{iii}{$c'' - c - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{iv}{\pick\ $g \in L_1$ such that $\alpha_1(g) = c'' - c -c'$.}
+		\step{v}{$\alpha_0(\lambda(g)) = \alpha_0(e'' - e - e')$}
+		\step{vi}{$\lambda(g) = e'' - e - e'$}
+		\step{vii}{$e'' - e - e' \in \im \lambda$}
+		\step{viii}{$e'' + \im \lambda = e + e' + \im \lambda$}
+		\step{ix}{$\delta(a + a') = \delta(a) + \delta(a')$}
+	\end{proof}
+	\step{b}{For $r \in R$ and $a \in \ker \nu$ we have $\delta(ra) = r \delta(a)$.}
+	\begin{proof}
+		\step{i}{\pflet{$r \in R$ and $a \in \ker \nu$}}
+		\step{ii}{\pflet{$c,c'\in M_1$ and $e,e' \in L_0$ be the elements such that
+		\begin{align*}
+		\beta_1(c) & = a \\
+		\beta_1(c') & = ra \\
+		\alpha_0(e) & = \mu(c) \\
+		\alpha_0(e') & = \mu(c') \\
+		\delta(a) & = e + \im \lambda \\
+		\delta(ra) & = e' + \im \lambda
+		\end{align*}}}
+		\step{iii}{$rc - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{iv}{\pick\ $g \in L_1$ such that $\alpha_1(g) = rc - c'$.}
+		\step{v}{$\alpha_0(\lambda(g)) = \alpha_0(re - e')$}
+		\step{vi}{$\lambda(g) = re - e'$}
+		\step{viii}{$re - e' \in \im \lambda$}
+		\step{ix}{$re + \im \lambda = e' + \im \lambda$}
+		\step{x}{$r\delta(a) = \delta(ra)$}
+	\end{proof}
+\end{proof}
+\step{3}{The sequence is exact at $\ker \lambda$.}
+\begin{proof}
+	\pf\ Since $\alpha_1$ is injective.
+\end{proof}
+\step{4}{The sequence is exact at $\ker \mu$.}
+\begin{proof}
+	\pf\ Since $\im \alpha_1 = \ker \beta_1$.
+\end{proof}
+\step{5}{The sequence is exact at $\ker \nu$, i.e. $\\beta_1(\ker \mu) = \ker \delta$.}
+\begin{proof}
+	\step{i}{\pflet{$a \in \ker \nu$}}
+	\step{ii}{\pflet{$c \in M_1$ and $e \in L_0$ be the elements such that $\beta_1(c) = a$, $\alpha_0(e) = \mu(c)$, and $\delta(a) = e + \im \lambda$.}}
+	\step{iii}{If $\delta(a) = \im \lambda$ then $a \in \beta_1(\ker \mu)$}
+	\begin{proof}
+		\step{one}{\assume{$\delta(a) = \im \lambda$}}
+		\step{two}{$e \in \im \lambda$}
+		\step{three}{\pick\ $g \in L_1$ such that $\lambda(g) = e$}
+		\step{four}{$\mu(\alpha_1(g)) = \mu(c)$}
+		\step{five}{$c - \alpha_1(g) \in \ker \mu$}
+		\step{six}{$a = \beta_1(c - \alpha_1(g))$}
+	\end{proof}
+	\step{iv}{If $a \in \beta_1(\ker \mu)$ then $\delta(a) = \im \lambda$}
+	\begin{proof}
+		\step{one}{\assume{$c' \in \ker \mu$ and $a = \beta_1(c')$}}
+		\step{two}{$c - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{three}{\pick\ $g \in L_1$ such that $\alpha_1(g) = c - c'$}
+		\step{four}{$\alpha_0(\lambda(g)) = \mu(c) - \mu(c') = \alpha_0(e) - 0 = \alpha_0(e)$}
+		\step{five}{$\lambda(g) = e$}
+		\step{six}{$e \in \im \lambda$}
+		\step{seven}{$\delta(a) = \im \lambda$}
+	\end{proof}
+\end{proof}
+\step{6}{THe sequence is exact at $\coker \lambda$.}
+\begin{proof}
+	\step{a}{\pflet{$e \in L_0$} \prove{$e + \im \lambda \in \im \delta$ iff $\alpha_0(e) \in \im \mu$.}}
+	\step{b}{For all $a \in \ker \nu$, if $\delta(a) = e + \im \lambda$ then $\alpha_0(e) \in \im \mu$}
+	\begin{proof}
+		\pf\ From \stepref{1} and the fact that $\alpha_0$ is injective hence $e$ is unique given $a$.
+	\end{proof}
+	\step{c}{For all $e \in L_0$, if $\alpha_0(e) \in \im \mu$ then $e + \im \lambda \in \im \delta$.}
+	\begin{proof}
+		\step{i}{\pflet{$e \in L_0$}}
+		\step{ii}{\assume{$\alpha_0(e) \in \im \mu$}}
+		\step{iii}{\pick\ $c \in M_1$ such that $\mu(c) = \alpha_0(e)$. \prove{$e + \im \lambda = \delta(\beta_1(c))$}}
+		\step{iv}{\pick\ $c' \in M_1$ and $e' \in L_0$ such that $\beta_1(c') = \beta_1(c)$, $\alpha_0(e') = \mu(c')$ and $\delta(\beta_1(c)) = e' + \im \lambda$}
+		\step{v}{$c - c' \in \ker \beta_1 = \im \alpha_1$}
+		\step{vi}{\pick\ $g \in L_1$ such that $\alpha_1(g) = c - c'$.}
+		\step{vii}{$\alpha_0(\lambda(g)) = \alpha_0(e- e')$}
+		\step{viii}{$\lambda(g) = e - e'$}
+		\step{ix}{$e + \im \lambda = e' + \im \lambda = \delta(\beta_1(c))$}
+	\end{proof}
+\end{proof}
+\step{7}{The sequence is exact at $\coker \mu$.}
+\begin{proof}
+	\pf\ Since $\im \alpha_0 = \ker \beta_0$.
+\end{proof}
+\step{8}{The sequence is exact at $\coker \nu$.}
+\begin{proof}
+	\pf\ Since $\beta_0$ is surjective.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Suppose we have $R$-modules and homomorphisms
+\[ \begin{tikzcd}
+0 \arrow[r] & L_1 \arrow[r,"\alpha_1"] \arrow[d,"\lambda"] & M_1 \arrow[r,"\beta_1"] \arrow[d,"\mu"] & N_1 \arrow[r] \arrow[d,"\nu"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"\alpha_0"] & M_0 \arrow[r,"\beta_0"] & N_0 \arrow[r] & 0
+\end{tikzcd} \]
+such that the diagram commutes and the two rows are short exact sequences. Suppose $\mu$ is surjective and $\nu$ is injective. Then $\lambda$ is surjective and $\nu$ is an isomorphism.
+\end{cor}
+
+\begin{proof}
+\pf\ We have $\ker \nu = \coker \mu = 0$ and so $0 \stackrel{\delta}{\rightarrow} \coker \lambda \stackrel{\alpha_0}{\rightarrow} 0$ is an exact sequence, hence $\coker \lambda = 0$ and so $\lambda$ is surjective.
+
+Since $\coker \mu = 0$ we have $0 \rightarrow \coker \nu \rightarrow 0$ is an exact sequence and so $\coker \nu = 0$, hence $\nu$ is surjective, hence $\nu$ is an isomorphism. \qed
+\end{proof}
+
+\begin{prop}[Short Five-Lemma]
+Suppose we have $R$-modules and homomorphisms
+\[ \begin{tikzcd}
+0 \arrow[r] & L_1 \arrow[r,"\alpha_1"] \arrow[d,"\lambda"] & M_1 \arrow[r,"\beta_1"] \arrow[d,"\mu"] & N_1 \arrow[r] \arrow[d,"\nu"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"\alpha_0"] & M_0 \arrow[r,"\beta_0"] & N_0 \arrow[r] & 0
+\end{tikzcd} \]
+such that the diagram commutes and the two rows are short exact sequences. If $\lambda$ and $\nu$ are isomorphisms then $\mu$ is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{There exists a homomorphism $\delta : 0 \rightarrow L_0$ such that the following is an exact sequence.
+\[ 0 \rightarrow 0 \rightarrow \ker \mu \rightarrow 0 \stackrel{\delta}{\rightarrow} L_0 \stackrel{\alpha_0}{\rightarrow} \coker \mu \stackrel{\beta_0}{\rightarrow} N_0 \rightarrow 0 \enspace . \]}
+\begin{proof}
+	\pf\ Snake Lemma
+\end{proof}
+\step{2}{$\ker \mu = 0$}
+\step{3}{$\coker \mu = M_0$}
+\qed
+\end{proof}
+
+\begin{prop}
+If $L \stackrel{\alpha}{\rightarrow} M \stackrel{\beta}{\rightarrow} N$ is an exact sequence and $L$ and $N$ are Noetherian then $M$ is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$P$ be a submodule of $M$.}}
+\step{2}{\pick\ $a_1$, \ldots, $a_m$ generate $\inv{\alpha}(P)$.}
+\step{3}{\pick\ $c_1$, \ldots, $c_n$ that generate $\beta(P)$.}
+\step{4}{For $i=1, \ldots, n$, \pick\ $b_i$ such that $\beta(b_i) = c_i$. \prove{$\alpha(a_1)$, \ldots, $\alpha(a_m)$, $b_1$, \ldots, $b_n$ generate $P$.}}
+\step{5}{\pflet{$p \in P$}}
+\step{6}{\pick\ $r_1, \ldots, r_n \in R$ such that $r_1 c_1 + \cdots + r_n c_n = \beta(p)$}
+\step{7}{$r_1 b_1 + \cdots + r_n b_n - p \in \ker \beta = \im \alpha$}
+\step{8}{\pick\ $s_1, \ldots, s_m \in R$ such that $\alpha(s_1 a_1 + \cdots + s_m a_m) = r_1 b_1 + \cdots + r_n b_n - p$.}
+\step{9}{$p = s_1 \alpha(a_1) + \cdots + s_m \alpha(a_m) + r_1 b_1 + \cdots + r_n b_n$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a ring. Let 
+\[ 0 \rightarrow M \stackrel{\alpha}{\rightarrow} N \stackrel{\beta}{\rightarrow} P \rightarrow 0 \]
+be a short exact sequence of left-$R$-modules. Let $L$ be an $R$-module. Then the following is an exact sequence:
+\[ 0 \rightarrow \Mod{R}[P,L] \stackrel{\Mod{R}[\beta,\id{L}]}{\longrightarrow} \Mod{R}[N,L] \stackrel{\Mod{R}[\alpha,\id{L}]}{\longrightarrow} \Mod{R}[M,L] \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$\Mod{R}[\beta,\id{L}]$ is injective.}
+\begin{proof}
+	\pf\ Since $\beta$ is epi.
+\end{proof}
+\step{2}{$\im \Mod{R}[\beta,\id{L}] = \ker \Mod{R}[\alpha,\id{L}]$}
+\begin{proof}
+	\step{a}{$\im \Mod{R}[\beta, \id{L}] \subseteq \ker \Mod{R}[\alpha, \id{L}]$}
+	\begin{proof}
+		\pf\ For any $\gamma \in \Mod{R}[P,L]$ we have $\gamma \circ \beta \circ \alpha = 0$ because $\beta \circ \alpha = 0$.
+	\end{proof}
+	\step{b}{$\ker \Mod{R}[\alpha, \id{L}] \subseteq \im \Mod{R}[\beta, \id{L}]$}
+	\begin{proof}
+		\step{i}{\pflet{$\gamma \in \ker \Mod{R}[\alpha, \id{L}]$}}
+		\step{ii}{$\gamma \circ \alpha = 0$}
+		\step{iii}{\pick\ $\delta : P \rightarrow L$ by: for all $p \in P$, we have $\delta(p) = \gamma(n)$ where $n \in N$ is an element such that $\beta(n) = p$. \prove{$\delta \circ \beta = \gamma$}}
+		\step{iv}{\pflet{$n \in N$} \prove{$\delta(\beta(n)) = \gamma(n)$}}
+		\step{v}{\pick\ $n' \in N$ such that $\delta(\beta(n)) = \gamma(n')$ and $\beta(n') = \beta(n)$}
+		\step{vi}{$n - n' \in \ker \beta = \im \alpha$}
+		\step{vii}{\pick\ $m \in M$ such that $\alpha(m) = n - n'$}
+		\step{viii}{$0 = \gamma(\alpha(m)) = \gamma(n) - \gamma(n')$}
+		\step{ix}{$\gamma(n) = \gamma(n') = \delta(\beta(n))$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Nine-Lemma]
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the two rightmost columns are exact then the left column is exact.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$(L_2,f_2)$ is the kernel of $g_2$, $(L_1,f_1)$ is the kernel of $g_1$ and $(L_0,f_0)$ is the kernel of $g_0$.}
+\step{2}{0 is the cokernel of $g_2$, $g_1$ and $g_0$.}
+\step{1}{\pick\ a homomomorphism $\delta : L_0 \rightarrow 0$ such that the following is an exact sequence:
+\[ L_2 \stackrel{\beta_1 \restriction L_2}{\rightarrow} L_1 \stackrel{\beta_0 \restriction L_1}{\rightarrow} L_0 \stackrel{\delta}{\rightarrow} 0 \rightarrow 0 \rightarrow 0 \]}
+\begin{proof}
+	\pf\ Snake Lemma.
+\end{proof}
+\step{2}{$\beta_1 \restriction L_2 = \alpha_1$}
+\step{3}{$\beta_0 \restriction L_1 = \alpha_0$}
+\step{4}{The following is an exact sequence:
+\[ 0 \rightarrow L_2 \stackrel{\alpha_1}{\rightarrow} L_1 \stackrel{\alpha_0}{\rightarrow} L_0 \rightarrow 0 \]}
+\qed
+\end{proof}
+
+\begin{thm}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& \vdots \arrow[d] & \vdots \arrow[d] & \vdots \arrow[d] \\
+0 \arrow[r] & L_{i+1} \arrow[r] \arrow[d,"\alpha_{i+1}"] & M_{i+1} \arrow[r] \arrow[d] & N_{i+1} \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & L_i \arrow[r] \arrow[d,"\alpha_i"] & M_i \arrow[r] \arrow[d] & N_i \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & L_{i-1} \arrow[r,"f_{i-1}"] \arrow[d] & M_{i-1} \arrow[r] \arrow[d] & N_{i-1} \arrow[r] \arrow[d] & 0 \\
+& \vdots & \vdots & \vdots
+\end{tikzcd} \]
+Assume the central column is a complex and every row is an exact complex. Then the left and right columns are complexes. Further, if any two of the columns are exact, then so is the third.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{The left column is a complex.}
+\begin{proof}
+\step{1}{\pflet{$x \in L_{i+1}$}}
+\step{2}{$f_{i-1}(\alpha_i(\alpha_{i+1}(x))) = 0$}
+\step{3}{$\alpha_i(\alpha_{i+1}(x)) = 0$}
+\begin{proof}
+	\pf\ $f_{i-1}$ is injective.
+\end{proof}
+\end{proof}
+\step{2}{The right column is a complex.}
+\begin{proof}
+\step{1}{\pflet{$x \in N_{i+1}$}}
+\step{2}{\pick\ $y \in N_{i+1}$ such that $g_{i+1}(y) = x$}
+\step{3}{$\gamma_i(\gamma_{i+1}(x)) = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\gamma_i(\gamma_{i+1}(x)) & = \gamma_i(\gamma_{i+1}(g_{i+1}(y))) \\
+		& = g_{i-1}(\beta_i(\beta_{i+1}(y))) \\
+		& = g_{i-1}(0) \\
+		& = 0
+	\end{align*}
+\end{proof}
+\end{proof}
+\step{3}{If the left and center columns are exact then the right column is exact.}
+\begin{proof}
+	\step{a}{\pflet{$n_i \in \ker \gamma_{i-1}$} \prove{$n_i \in \im \gamma_i$}}
+	\step{b}{\pick\ $m_i \in M_i$ such that $g_i(m_i) = n_i$}
+	\step{c}{$g_{i-1}(\beta_i(m_i)) = 0$}
+	\step{d}{$\beta_i(m_i) \in \ker g_{i-1} = \im f_{i-1}$}
+	\step{e}{\pick\ $l_{i-1} \in L_{i-1}$ such that $f_{i-1}(l_{i-1}) = \beta_i(m_i)$}
+	\step{f}{$\beta_{i-1}(f_{i-1}(l_{i-1})) = 0$}
+	\step{g}{$f_{i-2}(\alpha_{i-1}(l_{i-1})) = 0$}
+	\step{h}{$\alpha_{i-1}(l_{i-1}) = 0$}
+	\step{i}{$l_{i-1} \in \ker \alpha_{i-1} = \im \alpha_i$}
+	\step{j}{\pick\ $l_i \in L_i$ such that $\alpha_i(l_i) = l_{i-1}$}
+	\step{k}{$\beta_i(f_i(l_i)) = \beta_i(m_i)$}
+	\step{l}{$f_i(l_i) - m_i \in \ker \beta_i = \im \beta_{i+1}$}
+	\step{m}{\pick\ $m_{i+1} \in M_{i+1}$ such that $\beta_{i+1}(m_{i+1}) = f_i(l_i) - m_i$}
+	\step{n}{$\gamma_{i+1}(-g_{i+1}(m_{i+1})) = n_i$}
+\end{proof}
+\step{4}{If the left and right columns are exact then the center column is exact.}
+\begin{proof}
+	\step{a}{\pflet{$x \in \ker \beta_i$} \prove{$x \in \im \beta_{i+1}$}}
+	\step{b}{$g_{i-1}(\beta_i(x)) = 0$}
+	\step{c}{$\gamma_i(g_i(x)) = 0$}
+	\step{d}{$g_i(x) \in \ker \gamma_i = \im \gamma_{i+1}$}
+	\step{e}{\pick\ $n_{i+1} \in N_{i+1}$ such that $\gamma_{i+1}(n_{i+1}) = g_i(x)$}
+	\step{f}{\pick\ $m_{i+1} \in M_{i+1}$ such that $g_{i+1}(m_{i+1}) = n_{i+1}$}
+	\step{g}{$g_i(\beta_{i+1}(m_{i+1})) = g_i(x)$}
+	\step{h}{$\beta_{i+1}(m_{i+1}) - x \in \ker g_i = \im f_i$}
+	\step{i}{\pick\ $l_i \in L_i$ such that $f_i(l_i) = \beta_{i+1}(m_{i+1}) - x$}
+	\step{j}{$\beta_i(f_i(l_i)) = 0$}
+	\step{k}{$f_{i-1}(\alpha_i(l_i)) = 0$}
+	\step{l}{$\alpha_i(l_i) = 0$}
+	\step{m}{$l_i \in \ker \alpha_i = \im \alpha_{i+1}$}
+	\step{n}{\pick\ $l_{i+1} \in L_{i+1}$ such that $\alpha_{i+1}(l_{i+1}) = l_i$}
+	\step{o}{$\beta_{i+1}(f_{i+1}(l_{i+1})) = \beta_{i+1}(m_{i+1}) - x$}
+	\step{p}{$x = \beta_{i+1}(m_{i+1} - f_{i+1}(l_{i+1}))$}
+	\end{proof}
+\step{5}{If the center and right columns are exact then the left column is exact.}
+\begin{proof}
+	\step{a}{\pflet{$l_i \in \ker \alpha_i$} \prove{$l_i \in \im \alpha_{i+1}$}}
+	\step{b}{$\beta_i(f_i(l_i)) = 0$}
+	\step{c}{$f_i(l_i) \in \ker \beta_i = \im \beta_{i+1}$}
+	\step{d}{\pick\ $m_{i+1} \in M_{i+1}$ such that $\beta_{i+1}(m_{i+1}) = f_i(l_i)$}
+	\step{e}{$\gamma_{i+1}(g_{i+1}(m_{i+1})) = 0$}
+	\step{f}{$g_{i+1}(m_{i+1}) \in \ker \gamma_{i+1} = \im \gamma_{i+2}$}
+	\step{g}{\pick\ $n_{i+2} \in N_{i+2}$ such that $\gamma_{i+2}(n_{i+2}) = g_{i+1}(m_{i+1})$}
+	\step{h}{\pick\ $m_{i+2} \in M_{i+2}$ such that $g_{i+2}(m_{i+2}) = n_{i+2}$}
+	\step{i}{$g_{i+1}(\beta_{i+2}(n_{i+2})) = g_{i+1}(m_{i+1})$}
+	\step{j}{$\beta_{i+2}(n_{i+2}) - m_{i+1} \in \ker g_{i+1} = \im f_{i+1}$}
+	\step{k}{\pick\ $l_{i+1} \in L_{i+1}$ such that $f_{i+1}(l_{i+1}) = \beta_{i+2}(n_{i+2}) - m_{i+1}$}
+	\step{l}{$f_i(\alpha_{i+1}(l_{i+1})) = - f_i(l_i)$}
+	\step{m}{$l_i = \alpha_{i+1}(-l_{i+1})$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}[Nine-Lemma]
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the two leftmost columns are exact then the right column is exact.
+\end{cor}
+
+\begin{prop}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the left and right columns are exact then $\beta_1$ is monic.
+\end{prop}
+
+\begin{proof}
+\pf\ By the Snake Lemma, the following is an exact sequence
+\[ 0 \rightarrow \ker \alpha_1 \rightarrow \ker \beta_1 \rightarrow \ker \gamma_1 \]
+But $\ker \alpha_1 = \ker \gamma_1 = 0$ so $\ker \beta_1 = 0$. \qed
+\end{proof}
+
+\begin{prop}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact and the left and right columns are exact then $\beta_0$ is epi.
+\end{prop}
+
+\begin{proof}
+\pf\ Similar. \qed
+\end{proof}
+
+\begin{prop}
+Let the following be a commuting diagram of left-$R$-modules.
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & L_2 \arrow[r,"f_2"] \arrow[d,"\alpha_1"] & M_2 \arrow[r,"g_2"] \arrow[d,"\beta_1"] & N_2 \arrow[r] \arrow[d,"\gamma_1"] & 0 \\
+0 \arrow[r] & L_1 \arrow[r,"f_1"] \arrow[d,"\alpha_0"] & M_1 \arrow[r,"g_1"] \arrow[d,"\beta_0"] & N_1 \arrow[r] \arrow[d,"\gamma_0"] & 0 \\
+0 \arrow[r] & L_0 \arrow[r,"f_0"] \arrow[d] & M_0 \arrow[r,"g_0"] \arrow[d] & N_0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+If the rows are exact, the left and right columns are exact, and the central column is a complex, then the central column is exact.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$x \in \ker \beta_0$} \prove{$x \in \im \beta_1$}}
+\step{2}{$\gamma_0(g_1(x)) = 0$}
+\step{3}{$g_1(x) \in \ker \gamma_0 = \im \gamma_1$}
+\step{4}{\pick\ $n_2 \in N_2$ such that $\gamma_1(n_2) = g_1(x)$}
+\step{5}{\pick\ $m_2 \in M_2$ such that $g_2(m_2) = n_2$}
+\step{6}{$g_1(\beta_1(m_2)) = g_1(x)$}
+\step{7}{$\beta_1(m_2) - x \in \ker g_1 = \im f_1$}
+\step{8}{\pick\ $l_1 \in L_1$ such that $f_1(l) = \beta_1(m_2) - x$.}
+\step{9}{$f_0(\alpha_0(l_1)) = 0$}
+\step{10}{$\alpha_0(l_1) = 0$}
+\step{11}{$l_1 \in \ker \alpha_0 = \im \alpha_1$}
+\step{12}{\pick\ $l_2 \in L_2$ such that $\alpha_1(l_2) = l_1$.}
+\step{13}{$\beta_1(f_2(l_2)) = \beta_1(m_2) - x$}
+\step{14}{$x = \beta_1(m_2 - f_2(l_2))$}
+\qed
+\end{proof}
+
+\begin{ex}
+We cannot remove the hypothesis that the central column is a complex. Consider the situation
+\[ \begin{tikzcd}
+& 0 \arrow[d] & 0 \arrow[d] & 0 \arrow[d] \\
+0 \arrow[r] & 0 \arrow[r] \arrow[d] & \mathbb{Z} \arrow[r,equals] \arrow[d,"\Delta"] & \mathbb{Z} \arrow[r] \arrow[d,equals] & 0 \\
+0 \arrow[r] & \mathbb{Z} \arrow[r,"\kappa_1"] \arrow[d,equals] & \mathbb{Z} \oplus \mathbb{Z} \arrow[r,"\pi_2"] \arrow[d, "\pi_1"] & \mathbb{Z} \arrow[r] \arrow[d] & 0 \\
+0 \arrow[r] & \mathbb{Z} \arrow[r,equals] \arrow[d] & \mathbb{Z} \arrow[r] \arrow[d] & 0 \arrow[r] \arrow[d] & 0 \\
+& 0 & 0 & 0
+\end{tikzcd} \]
+This diagram commutes, the rows are exact, the left and right columns are exact, but the central column is not a complex and $\im \Delta \neq \ker \pi_1$.
+\end{ex}
+
+\section{Split Exact Sequences}
+
+\begin{df}[Split Sequence]
+Let $0 \rightarrow M_1 \stackrel{\alpha}{\rightarrow} N \stackrel{\beta}{\rightarrow} M_2 \rightarrow 0$ be a short exact sequence. Then this sequence \emph{splits} iff there exists an isomorphism
+\[ \phi : N \cong M_1 \oplus M_2 \]
+such that $\phi \circ \alpha = \kappa_1 : M_1 \rightarrow M_1 \oplus M_2$ and $\beta \circ \inv{\phi} = \pi_2 : M_1 \oplus M_2 \rightarrow M_2$.
+\end{df}
+
+\begin{prop}
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\phi$ has a left-inverse if and only if the sequence
+\[ 0 \rightarrow M \stackrel{\phi}{\rightarrow} N \rightarrow \coker \phi \rightarrow 0 \]
+splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\phi$ has a left-inverse then the sequence splits.}
+\begin{proof}
+	\step{a}{\assume{$\phi$ has a left-inverse $\psi : N \rightarrow M$.}}
+	\step{b}{Define $i : N \rightarrow M \oplus \coker \phi$ by $i(n) = (\psi(n), n + \im \phi)$.}
+	\step{c}{Define $\inv{i} : M \oplus \coker \phi$ by $\inv{i}(m,x + \im \phi) = \phi(m) + x - \phi(\psi(x))$.}
+	\step{d}{$i \circ \inv{i} = \id{M \oplus \coker \phi}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\psi(\phi(m) + x - \phi(\psi(x))) & = m + \psi(x) - \psi(x) \\
+			& = m
+		\end{align*}
+	\end{proof}
+	\step{e}{$\inv{i} \circ i = \id{N}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\inv{i}(\psi(n), n + \im \phi)
+			& = \phi(\psi(n)) + n - \phi(\psi(n)) \\
+			& = n
+		\end{align*}
+	\end{proof}
+	\step{f}{$i \circ \phi = \kappa_1 : M \rightarrow M \oplus \coker \phi$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			i(\phi(m)) & = (\psi(\phi(m)), \phi(m) + \im \phi) \\
+			& = (m, \im \phi)
+		\end{align*}
+	\end{proof}
+	\step{g}{$\pi \circ \inv{i} = \pi_2 : M \oplus \coker \phi \rightarrow \coker \phi$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\inv{i}(\psi(n), n + \im \phi) + \im \phi
+			& = \phi(\psi(n)) + n - \phi(\psi(n)) + \im \phi \\
+			& = n + \im \phi
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If the sequence splits then $\phi$ has a left-inverse.}
+\begin{proof}
+	\pf\ Since $\kappa_1 : M \rightarrow M \oplus \coker \phi$ has left inverse $\pi_1$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\phi : M \rightarrow N$ be a left-$R$-module homomorphism. Then $\phi$ has a right-inverse if and only if the sequence
+\[ 0 \rightarrow \ker \phi \rightarrow M \stackrel{\phi}{\rightarrow} N \rightarrow 0 \]
+splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\phi$ has a right-inverse then the sequence splits.}
+\begin{proof}
+	\step{a}{\pflet{$\psi : N \rightarrow M$ be a right inverse to $\phi$.}}
+	\step{b}{\pflet{$i : M \rightarrow \ker \phi \oplus N$ be the function $i(m) = (m - \psi(\phi(m)),\phi(m))$.}}
+	\begin{proof}
+		\pf\ $m - \psi(\phi(m)) \in \ker \phi$ since $\phi(m - \psi(\phi(m))) = \phi(m) - \phi(m) = 0$.
+	\end{proof}
+	\step{c}{\pflet{$\inv{i} : \ker \phi \oplus N \rightarrow M$ be the function $\inv{i}(x,n) = x + \psi(n)$.}}
+	\step{d}{$i \circ \inv{i} = \id{\ker \phi \oplus N}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			i(\inv{i}(x,n)) & = i(x + \psi(n)) \\
+			& = (x + \psi(n) - \psi(\phi(x)) - \psi(\phi(\psi(n))), \phi(x) + \phi(\psi(n))) \\
+			& = (x + \psi(n) - \psi(n), n) \\
+			& = (x, n)
+		\end{align*}
+	\end{proof}
+	\step{e}{$\inv{i} \circ i = \id{M}$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\inv{i}(i(m)) & = m - \psi(\phi(m)) + \psi(\phi(m)) \\
+			& = m
+		\end{align*}
+	\end{proof}
+	\step{f}{$i \circ \iota = \kappa_1$}
+	\begin{proof}
+		\pf\ For $m \in \ker \phi$ we have $i(m) = (m - \psi(\phi(m)), \phi(m)) = (m,0)$.
+	\end{proof}
+	\step{g}{$\phi \circ \inv{i} = \pi_2$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\phi(\inv{i}(x,n)) & = \phi(x) + \phi(\psi(n)) \\
+			& = 0 + n \\
+			& = n
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{2}{If the sequence splits then $\phi$ has a right-inverse.}
+\begin{proof}
+\pf\ Since $\kappa_2 : N \rightarrow M \oplus N$ is a right-inverse to $\pi_2$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let
+\[ 0 \rightarrow M \stackrel{\alpha}{\rightarrow} N \stackrel{\beta}{\rightarrow} F \rightarrow 0 \]
+be a short exact sequence where $F$ is free. Then the sequence splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$F = R^{\oplus A}$}}
+\step{2}{\pick\ $\gamma : F \rightarrow N$ such that $\id{F} = \beta \circ \gamma$}
+\step{3}{\pflet{$i : M \oplus F \rightarrow N$ be the homomorphism $i(m,f) = \alpha(m) + \gamma(f)$}}
+\step{4}{$i$ is injective.}
+\begin{proof}
+	\step{a}{\assume{$i(m,f) = i(m',f')$}}
+	\step{b}{$\alpha(m) + \gamma(f) = \alpha(m') + \gamma(f')$}
+	\step{c}{$\alpha(m-m') = \gamma(f-f')$}
+	\step{d}{$f-f' = 0$}
+	\begin{proof}
+		\pf\ Applying $\beta$ to both sides of \stepref{c}.
+	\end{proof}
+	\step{e}{$f = f'$}
+	\step{f}{$\alpha(m-m') = 0$}
+	\step{g}{$m = m'$}
+	\begin{proof}
+		\pf\ Since $\alpha$ is injective. 
+	\end{proof}
+\end{proof}
+\step{5}{$i$ is surjective.}
+\begin{proof}
+	\step{a}{\pflet{$n \in N$}}
+	\step{b}{$n - \gamma(\beta(n)) \in \ker \beta = \im \alpha$}
+	\step{c}{\pick\ $m \in M$ such that $\alpha(m) = n - \gamma(\beta(n))$}
+	\step{d}{$n = i(m, \beta(n))$}
+\end{proof}
+\step{6}{$\alpha = i \circ \kappa_1$}
+\step{7}{$\beta \circ i = \pi_2$}
+\qed
+\end{proof}
+
+\chapter{Homology}
+
+\begin{df}[Homology]
+Let $(M_\bullet, d_\bullet)$ be a chain complex.
+The \emph{$i$th homology} of the complex is the $R$-module
+\[ H_i(M_\bullet) := \frac{\ker d_i}{\im d_{i+1}} \enspace . \]
+\end{df}
+
+\begin{prop}
+Consider the complex
+\[ 0 \rightarrow M_1 \stackrel{\phi}{\rightarrow} M_0 \rightarrow 0 \enspace . \]
+The 1st homology is $\ker \phi$, and the 0th homology is $\coker \phi$.
+\end{prop}
+
+\part{Field Theory}
+
+\chapter{Fields}
+
+\begin{df}[Field]
+A \emph{field} is a non-trivial commutative division ring.
+\end{df}
+
+\begin{ex}
+$\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are fields.
+\end{ex}
+
+\begin{prop}
+Every field is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ By Propositions \ref{prop:no-left-unit-is-a-right-zero-divisor} and \ref{prop:no-right-unit-is-a-left-zero-divisor}. \qed
+\end{proof}
+
+\begin{ex}
+The converse does not hold: $\mathbb{Z}$ is an integral domain but not a field.
+\end{ex}
+
+\begin{prop}
+Every finite integral domain is a field.
+\end{prop}
+
+\begin{proof}
+\pf\ In a finite integral domain, multiplication by any non-zero element is injective, hence surjective. \qed
+\end{proof}
+
+\begin{cor}
+For any positive integer $n$, the following are equivalent:
+\begin{itemize}
+\item $n$ is prime.
+\item $\mathbb{Z} / n \mathbb{Z}$ is an integral domain.
+\item $\mathbb{Z} / n \mathbb{Z}$ is a field.
+\end{itemize}
+\end{cor}
+
+\begin{thm}[Wedderburn's Little Theorem]
+Every finite division ring is a field.
+\end{thm}
+
+%TODO
+
+\begin{prop}
+Every subring of a field is an integral domain.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+The center of a division ring is a field.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a division ring.}}
+\step{2}{\pflet{$Z$ be the center of $R$.}}
+\step{3}{$Z$ is non-trivial.}
+\begin{proof}
+\pf\ Since $1 \in Z$.
+\end{proof}
+\step{4}{$Z$ is commutative.}
+\step{5}{$Z$ is a division ring.}
+\begin{proof}
+	\step{a}{\pflet{$a \in Z$}}
+	\step{b}{$\inv{a} \in Z$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in R$}}
+		\step{ii}{$ax = xa$}
+		\step{iii}{$x \inv{a} = \inv{a} x$}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}
+For any prime $p$ and positive integer $r$, define a multiplication on $(\mathbb{Z} / p \mathbb{Z})^r$ that makes this group into a field by:
+%TODO
+\end{df}
+
+\begin{prop}
+A commutative ring is a field if and only if it is simple.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:division-ring-ideals}. \qed
+\end{proof}
+
+\begin{cor}
+Every field has Krull dimension 0.
+\end{cor}
+
+\begin{prop}
+Let $K$ be a field. Then $K[x]$ is a PID, and every non-zero ideal in $K[x]$ is generated by a unique monic polynomial.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$I$ be a non-zero ideal in $K[x]$}}
+\step{2}{\pick\ a monic polynomial $f \in K[x]$ of minimal degree. \prove{$I = (f)$}}
+\step{3}{\pflet{$g \in I$}}
+\step{4}{\pick\ polynomials $q$, $r$ with $\deg r < \deg f$ such that $g = qf + r$}
+\step{5}{$r \in I$}
+\step{6}{$r = 0$}
+\step{7}{$g \in (f)$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring and $I$ an ideal in $R$. Then $I$ is maximal iff $R/I$ is a field.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:maximal-iff-quotient-simple}. \qed
+\end{proof}
+
+\begin{ex}
+\label{ex:x-minus-a-maximal}
+Let $R$ be a commutative ring and $a \in R$. Then $(x-a)$ is a maximal ideal in $R[x]$ iff $R$ is a field, since $R[x]/(x-a) \cong R$.
+\end{ex}
+
+\begin{ex}
+The ideal $(2,x)$ is a maximal ideal in $\mathbb{Z}[x]$, since $\mathbb{Z}[x] / (2,x) \cong \mathbb{Z} / 2 \mathbb{Z}$.
+\end{ex}
+
+\begin{prop}
+Every maximal ideal in a commutative ring is a prime ideal.
+\end{prop}
+
+\begin{proof}
+\pf\ Since every field is an integral domain. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring and $I$ an ideal in $R$. If $I$ is a prime ideal and $R/I$ is finite then $I$ is a maximal ideal.
+\end{prop}
+
+\begin{proof}
+\pf\ Since every finite integral domain is a field. \qed
+\end{proof}
+
+\begin{prop}
+Let $R$ be a commutative ring and $I$ a proper ideal in $R$. Then $I$ is maximal iff, whenever $J$ is an ideal and $I \subseteq J$, then $I = J$ or $J = R$.
+\end{prop}
+
+
+\begin{ex}
+The inverse image of a maximal ideal under a homomorphism is not necessarily maximal.
+
+Let $i : \mathbb{Z}[x] \rightarrow \mathbb{Q}[x]$ be the inclusion. Then $(x)$ is maximal in $\mathbb{Q}[x]$ but its inverse image $(x)$ is not maximal in $\mathbb{Z}[x]$.
+\end{ex}
+
+\begin{df}[Maximal Spectrum]
+Let $R$ be a commutative ring. The \emph{maximal spectrum} of $R$ is the set of all maximal ideals in $R$.
+\end{df}
+
+\begin{prop}
+Let $K$ be a field. The Krull dimension of $K[x_1, \ldots, x_n]$ is $n$.
+\end{prop}
+
+%TODO
+
+\begin{thm}[Hilbert's Nullstellensatz]
+Let $K$ be a field and $L$ a subfield of $K$. If $K$ is an $L$-algebra of finite type, then $K$ is a finite $L$-algebra.
+\end{thm}
+
+%TODO
+
+\begin{prop}
+Let $K$ be a subfield of $L$. Then $L$ is a $K$-algebra under multiplication.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\chapter{Algebraically Closed Fields}
+
+\begin{df}[Algebraically Closed]
+A field $K$ is \emph{algebraically closed} iff, for every $f \in K[x]$ that is not constant, there exists $r \in K$ such that $f(r) = 0$.
+\end{df}
+
+\begin{thm}
+$\mathbb{C}$ is algebraically closed.
+\end{thm}
+
+%TODO
+
+\begin{prop}
+Let $K$ be an algebraically closed field. Let $I$ be an ideal in $K[x]$. Then $I$ is maximal if and only if $I = (x-c)$ for some $c \in K$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $I$ is maximal then there exists $c \in K$ such that $I = (x-c)$.}
+\begin{proof}
+	\step{a}{\assume{$I$ is maximal.}}
+	\step{b}{\pick\ $f$ monic of minimal degree such that $f \in I$.}
+	\step{c}{$f$ is not constant.}
+	\begin{proof}
+		\pf\ Otherwise $f = 1$ and $I = K[x]$.
+	\end{proof}
+	\step{d}{\pick\ $c \in K$ such that $f(c) = 0$}
+	\step{e}{$x-c \mid f$}
+	\step{f}{$I \subseteq (x-c)$}
+	\step{g}{$I = (x-c)$}
+\end{proof}
+\step{2}{For all $c \in K$ we have $(x-c)$ is maximal.}
+\begin{proof}
+	\pf\ Example \ref{ex:x-minus-a-maximal}.
+\end{proof}
+\qed
+\end{proof}
+
+\part{Linear Algebra}
+
+\chapter{Vector Spaces}
+
+\begin{df}[Vector Space]
+Let $K$ be a field. A \emph{$K$-vector space} is a $K$-module. A \emph{linear map} is a homomorphism of $K$-modules. We write $K-\mathbf{Vect}$ for $\Mod{K}$.
+\end{df}
+
+\begin{df}
+    Let $\mathrm{GL}_n(\mathbb{R})$ be the group of invertible $n \times n$ real matrices.
+    
+    $\mathrm{GL}_n(\mathbb{R})$ acts on $\mathbb{R}^n$ by matrix multiplication.
+\end{df}
+
+\begin{df}
+    Let $\mathrm{GL}_n(\mathbb{C})$ be the group of invertible $n \times n$ complex matrices.
+    
+    $\mathrm{GL}_n(\mathbb{C})$ acts on $\mathbb{C}^n$ by matrix multiplication.
+\end{df}
+
+\begin{df}
+Let $\mathrm{SL}_n(\mathbb{R}) = \{ M \in \mathrm{GL}_n(\mathbb{R}) : \det M = 1 \}$.
+\end{df}
+
+\begin{prop}
+$\mathrm{SL}_n(\mathbb{R})$ is a normal subgroup of $\mathrm{GL}_n(\mathbb{R})$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\det M = 1$ then $\det(AMA^{-1}) = (\det A) (\det M) (\det A)^{-1} = 1$. \qed
+\end{proof}
+
+\begin{prop}
+\[ \mathrm{GL}_n(\mathbb{R}) / \mathrm{SL}_n(\mathbb{R}) \cong \mathbb{R}^* \]
+\end{prop}
+
+\begin{proof}
+\end{proof}
+
+\begin{df}
+Let $\mathrm{SL}_n(\mathbb{C}) = \{ M \in \mathrm{GL}_n(\mathbb{C}) : \det M = 1 \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{O}_n(\mathbb{R}) = \{ M \in \mathrm{GL}_n(\mathbb{R}) : M M^\mathrm{T} = M^\mathrm{T} M = I_n \}$.
+\end{df}
+
+\begin{prop}
+The action of $\mathrm{O}_n(\mathbb{R})$ on $\mathbb{R}^n$ preserves lengths and angles.
+\end{prop}
+
+%TODO
+
+\begin{df}
+Let $\mathrm{SO}_n(\mathbb{R}) = \{ M \in \mathrm{O}_n(\mathbb{R}) : \det M = 1 \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{U}_n(\mathbb{C}) = \{ M \in \mathrm{GL}_n(\mathbb{C}) : M M^\dagger = M^\dagger M = I_n \}$.
+\end{df}
+
+\begin{df}
+Let $\mathrm{SU}_n(\mathbb{C}) = \{ M \in U_n(\mathbb{C}) : \det M = 1 \}$.
+\end{df}
+
+\begin{prop}
+Every matrix in $\mathrm{SU}_2(\mathbb{C})$ can be written in the form
+\[ \left( \begin{array}{cc}
+a + b i & c + d i \\
+-c + di & a - bi
+\end{array} \right) \]
+for some $a,b,c,d \in \mathbb{R}$ with $a^2 + b^2 + c^2 + d^2 = 1$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$M = \left( \begin{array}{cc}
+\alpha & \beta \\
+\gamma & \delta
+\end{array} \right) \in \mathrm{SU}_2(\mathbb{C})$}}
+\step{2}{$\inv{M} = M^\dagger$}
+\step{3}{$\left( \begin{array}{cc}
+\delta & - \beta \\
+- \gamma & \alpha
+\end{array} \right) = \left( \begin{array}{cc}
+\overline{\alpha} & \overline{\gamma} \\
+\overline{\beta} & \overline{\delta}
+\end{array} \right)$}
+\step{4}{\pflet{$\alpha = a + bi$ and $\beta = c+di$.}}
+\step{5}{$\delta = \overline{\alpha} = a-bi$}
+\step{6}{$\gamma = - \overline{\beta} = -c+di$}
+\step{7}{$\det M = a^2 + b^2 + c^2 + d^2 = 1$}
+\qed
+\end{proof}
+
+\begin{cor}
+$\mathrm{SU}_2(\mathbb{C})$ is simply connected.
+\end{cor}
+
+%TODO
+
+\begin{cor}
+\[ \mathrm{SO}_3(\mathbb{R}) \cong \mathrm{SU}_2(\mathbb{C}) / \{ I, -I \} \]
+\end{cor}
+
+\begin{proof}
+\pf\ The function that maps $\left( \begin{array}{cc}
+a + b i & c + d i \\
+-c + di & a - bi
+\end{array} \right)$ to $\left( \begin{array}{ccc}
+a^2 + b^2 - c^2 - d^2 & 2(bc - ad) & 2(ac + bd) \\
+2(ad + bc) & a^2 - b^2 + c^2 - d^2 & 2(cd - ab) \\
+2(bd - ac) & 2(ab + cd) & a^2 - b^2 - c^2 + d^2
+\end{array} \right)$ is a surjective homomorphism with kernel $\{ I, -I \}$. \qed
+\end{proof}
+
+\begin{cor}
+The fundamental group of $\mathrm{SO}_3(\mathbb{R})$ is $C_2$.
+\end{cor}
+
+%TODO

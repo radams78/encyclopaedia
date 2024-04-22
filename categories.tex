@@ -1,0 +1,434 @@
+\chapter{Foundations}
+
+This is a placeholder --- I am not sure what foundation I want to use for this
+project yet. I will try to work in a way which is foundation-independent. What
+I do could be formalized in ZFC, ETCS, or some other system. I will assume the
+usual set theoretic constructions as needed. Sets will be defined up to
+bijection only.
+
+\chapter{Categories}
+
+\begin{df}[Category]
+    A \emph{category} $\mathcal{C}$ consists of:
+    \begin{itemize}
+        \item A class $|\mathcal{C}|$ of \emph{objects}. We write $A \in \mathcal{C}$ for $A
+                  \in |\mathcal{C}|$.
+        \item For any objects $A$, $B$, a set $\mathcal{C}[A,B]$ of \emph{morphisms} from $A$
+              to $B$. We write $f : A \rightarrow B$ for $f \in \mathcal{C}[A,B]$.
+        \item For any object $A$, a morphism $\id{A} : A \rightarrow A$, the \emph{identity}
+              morphism on $A$.
+        \item For any morphisms $f : A \rightarrow B$ and $g : B \rightarrow C$, a morphism
+              $g \circ f : A \rightarrow C$, the \emph{composite} of $f$ and $g$.
+    \end{itemize}
+    such that:
+    \begin{description}
+        \item[Associativity] Given $f : A \rightarrow B$, $g : B \rightarrow C$ and $h : C
+                \rightarrow D$, we have $h \circ (g \circ f) = (h \circ g) \circ f$
+        \item[Left Unit Law] For any morphism $f : A \rightarrow B$, we have $\id{B} \circ f
+                = f$.
+        \item[Right Unit Law] For any morphism $f : A \rightarrow B$, we have $f \circ \id{A}
+                = f$.
+    \end{description}
+\end{df}
+
+\begin{prop}
+    \label{prop:id-morph-unique}
+    The identity morphism on an object is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $i$ and $j$ are identity morphisms on $A$ then $i = i \circ j = j$. \qed
+\end{proof}
+
+\begin{ex}[Category of Sets]
+    The \emph{category of sets} $\Set$ has objects all sets and morphisms all functions.
+\end{ex}
+
+\begin{df}[Endomorphism]
+    In a category $\mathcal{C}$, an \emph{endomorphism} on an object $A$ is a morphism $A \rightarrow A$. We write $\mathrm{End}_\mathcal{C}(A)$ for $\mathcal{C}[A,A]$.
+\end{df}
+
+\begin{df}[Opposite Category]
+    For any category $\mathcal{C}$, the \emph{opposite} category $\mathcal{C}^\mathrm{op}$ is the category with the same objects as $\mathcal{C}$ and
+    \[ \mathcal{C}^\mathrm{op}[A,B] = \mathcal{C}[B,A] \]
+\end{df}
+
+\section{Preorders}
+
+\begin{df}[Preorder]
+    A \emph{preorder} on a set $A$ is a relation $\leq$ on $A$ that is reflexive and transitive.
+
+    A \emph{preordered set} is a pair $(A, \leq)$ such that $\leq$ is a preorder on
+    $A$. We usually write $A$ for the preordered set $(A, \leq)$.
+
+    We identify any preordered set $A$ with the category whose objects are the
+    elements of $A$, with one morphism $a \rightarrow b$ iff $a \leq b$, and no
+    morphism $a \rightarrow b$ otherwise.
+\end{df}
+
+\begin{ex}
+    For any ordinal $\alpha$, let $\mathbf{\alpha}$ be the preorder $\{ \beta : \beta < \alpha \}$ under $\leq$.
+\end{ex}
+
+\begin{df}[Discrete Preorder]
+    We identify any set $A$ with the \emph{discrete} preorder $(A, =)$.
+\end{df}
+
+\section{Monomorphisms and Epimorphisms}
+
+\begin{df}[Monomorphism]
+    In a category, let $f : A \rightarrow B$. Then $f$ is a \emph{monomorphism} or \emph{monic} iff, for every object $X$ and morphism $x,y : X \rightarrow A$, if $fx = fy$ then $x=y$.
+\end{df}
+
+\begin{df}[Epimorphism]
+    In a category, let $f : A \rightarrow B$. Then $f$ is a \emph{epimorphism} or \emph{epi} iff, for every object $X$ and morphism $x,y : B \rightarrow X$, if $xf = yf$ then $x=y$.
+\end{df}
+
+\begin{prop}
+    The composite of two monomorphism is monic.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$f : A \rightarrowtail B$ and $g : B \rightarrowtail C$ be monic.}}
+    \step{2}{\pflet{$x,y : X \rightarrow A$}}
+    \step{3}{\assume{$g \circ f \circ x = g \circ f \circ y$}}
+    \step{4}{$f \circ x = f \circ y$}
+    \step{5}{$x = y$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    The composite of two epimorphisms is epi.
+\end{prop}
+
+\begin{proof}
+    \pf\ Dual. \qed
+\end{proof}
+
+\begin{prop}
+    Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is monic then $f$ is monic.
+\end{prop}
+
+\begin{proof}
+    \pf\ If $f \circ x = f \circ y$ then $gfx = gfy$ and so $x = y$. \qed
+\end{proof}
+
+\begin{prop}
+    Let $f : A \rightarrow B$ and $g : B \rightarrow C$. If $g \circ f$ is epi then $g$ is epi.
+\end{prop}
+
+\begin{proof}
+    \pf\ Dual. \qed
+\end{proof}
+
+\begin{prop}
+    A function is a monomorphism in $\Set$ iff it is injective.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$f : A \rightarrow B$}}
+    \step{2}{If $f$ is monic then $f$ is injective.}
+    \begin{proof}
+        \step{a}{\assume{$f$ is monic.}}
+        \step{b}{\pflet{$x,y \in A$}}
+        \step{c}{\assume{$f(x) = f(y)$}}
+        \step{d}{\pflet{$\overline{x}, \overline{y} : 1 \rightarrow A$ be the functions such that $\overline{x}(*) = x$ and $\overline{y}(*) = y$}}
+        \step{e}{$f \circ \overline{x} = f \circ \overline{y}$}
+        \step{f}{$\overline{x} = \overline{y}$}
+        \begin{proof}
+            \pf\ By \stepref{a}.
+        \end{proof}
+        \step{g}{$x = y$}
+    \end{proof}
+    \step{3}{If $f$ is injective then $f$ is monic.}
+    \begin{proof}
+        \step{a}{\assume{$f$ is injective.}}
+        \step{b}{\pflet{$X$ be a set and $x,y : X \rightarrow A$.}}
+        \step{c}{\assume{$f \circ x = f \circ y$} \prove{$x = y$}}
+        \step{d}{\pflet{$t \in X$} \prove{$x(t) = y(t)$}}
+        \step{e}{$f(x(t)) = f(y(t))$}
+        \step{f}{$x(t) = y(t)$}
+        \begin{proof}
+            \pf\ By \stepref{a}.
+        \end{proof}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    A function is an epimorphism in $\Set$ iff it is surjective.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$f : A \rightarrow B$}}
+    \step{2}{If $f$ is an epimorphism then $f$ is surjective.}
+    \begin{proof}
+        \step{a}{\assume{$f$ is an epimorphism.}}
+        \step{b}{\pflet{$b \in B$}}
+        \step{d}{\pflet{$x,y : B \rightarrow 2$ be defined by $x(b) = 1$ and $x(t) = 0$ for all other $t \in B$, $y(t) = 0$ for all $t \in B$.}}
+        \step{f}{$x \neq y$}
+        \step{e}{$x \circ f \neq y \circ f$}
+        \step{g}{There exists $a \in A$ such that $f(a) = b$.}
+    \end{proof}
+    \step{3}{If $f$ is surjective then $f$ is an epimorphism.}
+    \begin{proof}
+        \step{a}{\assume{$f$ is surjective.}}
+        \step{b}{\pflet{$x,y : B \rightarrow X$}}
+        \step{c}{\assume{$x \circ f = y \circ f$} \prove{$x = y$}}
+        \step{d}{\pflet{$b \in B$} \prove{$x(b) = y(b)$}}
+        \step{e}{\pick\ $a \in A$ such that $f(a) = b$}
+        \step{f}{$x(f(a)) = y(f(a))$}
+        \step{g}{$x(b) = y(b)$}
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    In a preorder, every morphism is monic and epi.
+\end{prop}
+
+\begin{proof}
+    \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\section{Sections and Retractions}
+
+\begin{df}[Section, Retraction]
+    In a category, let $r : A \rightarrow B$ and $s : B \rightarrow A$. Then $r$ is a \emph{retraction} of $s$, and $s$ is a \emph{section} of $r$, iff $r \circ s = \id{B}$.
+\end{df}
+
+\begin{prop}
+    Every identity morphism is a section and retraction of itself.
+\end{prop}
+
+\begin{proof}
+    \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+    \label{prop:retraction-is-section}
+    Let $r,r' : A \rightarrow B$ and $s : B \rightarrow A$.
+    If $r$ is a retraction of $s$ and $r'$ is a section of $s$ then $r = r'$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \begin{align*}
+        r & = r \circ \id{A}            \\
+          & = r \circ s \circ r'        \\
+          & = \id{B} \circ r'           \\
+          & = r'                 & \qed
+    \end{align*}
+\end{proof}
+
+\begin{prop}
+    \label{prop:retraction-comp}
+    Let $r_1 : A \rightarrow B$, $r_2 : B \rightarrow C$, $s_1 : B \rightarrow A$ and $s_2 : C \rightarrow B$. If $r_1$ is a retraction of $s_1$ and $r_2$ is a retraction of $s_2$ then $r_2 \circ r_1$ is a retraction of $s_1 \circ s_2$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \begin{align*}
+        r_2 \circ r_1 \circ s_1 \circ s_2 & = r_2 \circ \id{B} \circ s_2        \\
+                                          & = r_2 \circ s_2                     \\
+                                          & = \id{C}                     & \qed
+    \end{align*}
+\end{proof}
+
+\begin{prop}
+    Every section is monic.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$s : A \rightarrow B$ be a section of $r : B \rightarrow A$.}}
+    \step{2}{\pflet{$x,y : X \rightarrow A$ satisfy $sx = sy$.}}
+    \step{3}{$rsx = rsy$}
+    \step{4}{$x = y$}
+    \qed
+\end{proof}
+
+\begin{prop}
+    Every retraction is epi.
+\end{prop}
+
+\begin{proof}
+    \pf\ Dual. \qed
+\end{proof}
+
+\begin{prop}
+    In $\Set$, every epimorphism has a retraction.
+\end{prop}
+
+\begin{proof}
+    \pf\ By the Axiom of Choice. \qed
+\end{proof}
+
+\begin{ex}
+    It is not true in general that every monomorphism in any category has a section. nor that every epimorphism in any category has a retraction.
+
+    In the category $\mathbf{2}$, the morphism $0 \leq 1$ is monic and epi but has
+    no retraction or section.
+\end{ex}
+
+%TODO This is not true in Grp
+
+\section{Isomorphisms}
+
+\begin{df}[Isomorphism]
+    In a category $\mathcal{C}$, a morphism $f : A \rightarrow B$ is an \emph{isomorphism}, denoted $f : A \cong B$, iff there exists a morphism $f^{-1} : B \rightarrow A$, the \emph{inverse} of $f$, such that $f^{-1} \circ f = \id{A}$ and $f \circ f^{-1} = \id{B}$.
+
+    An \emph{automorphism} on an object $A$ is an isomorphism between $A$ and
+    itself. We write $\mathrm{Aut}_\mathcal{C}(A)$ for the set of all automorphisms
+    on $A$.
+
+    Objects $A$ and $B$ are \emph{isomorphic}, $A \cong B$, iff there exists an
+    isomorphism between them.
+\end{df}
+
+\begin{prop}
+    \label{prop:inv-unique}
+    The inverse of an isomorphism is unique.
+\end{prop}
+
+\begin{proof}
+    \pf\ Proposition \ref{prop:retraction-is-section}. \qed
+\end{proof}
+
+\begin{prop}
+    For any object $A$ we have $\id{A} : A \cong A$ and $\id{A}^{-1} = \id{A}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Since $\id{A} \circ \id{A} = \id{A}$ by the Unit Laws. \qed
+\end{proof}
+
+\begin{prop}
+    If $f : A \cong B$ then $f^{-1} : B \cong A$ and $(f^{-1})^{-1} = f$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+    If $f : A \cong B$ and $g : B \cong C$ then $g \circ f : A \cong C$ and $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.
+\end{prop}
+
+\begin{proof}
+    \pf\ From Proposition \ref{prop:retraction-comp}. \qed
+\end{proof}
+
+\begin{df}[Groupoid]
+    A \emph{groupoid} is a category in which every morphism is an isomorphism.
+\end{df}
+
+\section{Initial and Terminal Objects}
+
+\begin{df}[Initial Object]
+    An object $I$ in a category is \emph{initial} iff, for any object $X$, there is exactly one morphism $I \rightarrow X$.
+\end{df}
+
+\begin{ex}
+    The empty set is the initial object in $\Set$.
+\end{ex}
+
+\begin{df}[Terminal Object]
+    An object $T$ in a category is \emph{terminal} iff, for any object $X$, there is exactly one morphism $X \rightarrow T$.
+\end{df}
+
+\begin{ex}
+    Every singleton is terminal in $\Set$.
+\end{ex}
+
+\begin{prop}
+    If $I$ and $J$ are initial in a category, then there exists a unique isomorphism $I \cong J$.
+\end{prop}
+
+\begin{proof}
+    \pf
+    \step{1}{\pflet{$i$ be the unique morphism $I \rightarrow J$.}}
+    \step{2}{\pflet{$\inv{i}$ be the unique morphism $J \rightarrow I$.}}
+    \step{3}{$i \circ \inv{i} = \id{J}$}
+    \begin{proof}
+        \pf\ Since there is only one morphism $J \rightarrow J$.
+    \end{proof}
+    \step{4}{$\inv{i} \circ i = \id{I}$}
+    \begin{proof}
+        \pf\ Since there is only one morphism $I \rightarrow I$.
+    \end{proof}
+    \qed
+\end{proof}
+
+\begin{prop}
+    If $S$ and $T$ are terminal in a category, then there exists a unique isomorphism $S \cong T$.
+\end{prop}
+
+\begin{proof}
+    \pf\ Dual. \qed
+\end{proof}
+
+\chapter{Functors}
+
+\begin{df}[Functor]
+    Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
+    \begin{itemize}
+        \item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
+        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA
+                  \rightarrow FB : \mathcal{D}$
+    \end{itemize}
+    such that:
+    \begin{itemize}
+        \item $F \id{A} = \id{FA}$
+        \item $F(g \circ f) = Fg \circ Ff$
+    \end{itemize}
+\end{df}
+
+\begin{df}[Identity Functor]
+    For any category $\mathcal{C}$, the \emph{identity functor} $1_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ is defined by
+    \begin{align*}
+        1_\mathcal{C} A & = A \\
+        1_\mathcal{C} f & = f
+    \end{align*}
+\end{df}
+
+\begin{df}[Constant Functor]
+    Given categories $\mathcal{C}$, $\mathcal{D}$ and an object $D \in \mathcal{D}$, the \emph{constant functor} $K^\mathcal{C} D : \mathcal{C} \rightarrow \mathcal{D}$ is the functor defined by
+    \begin{align*}
+        K^\mathcal{C} D C & = D      \\
+        K^\mathcal{C} D f & = \id{D}
+    \end{align*}
+\end{df}
+
+\section{Comma Categories}
+
+\begin{df}[Comma Category]
+    Let $F : \mathcal{C} \rightarrow \mathcal{E}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$ be functors. The \emph{comma category} $F \downarrow G$ is the category with:
+    \begin{itemize}
+        \item objects all pairs $(C,D,f)$ where $C \in \mathcal{C}$, $D \in \mathcal{D}$ and
+              $f : FC \rightarrow GD : \mathcal{E}$
+        \item morphisms $(u,v) : (C,D,f) \rightarrow (C',D',g)$ all pairs $u : C \rightarrow
+                  C' : \mathcal{C}$ and $v : D \rightarrow D' : \mathcal{D}$ such that the
+              following diagram commutes:
+
+              \begin{tikzcd}
+                  FC \arrow[r,"f"] \arrow[d,"Fu"] & GD \arrow[d,"Gv"] \\
+                  FC' \arrow[r,"g"] & GD'
+              \end{tikzcd}
+    \end{itemize}
+\end{df}
+
+\begin{df}[Slice Category]
+    Let $\mathcal{C}$ be a category and $A \in \mathcal{C}$. The \emph{slice category} over $A$, denoted $\mathcal{C} / A$, is the comma category $1_\mathcal{C} \downarrow K^{\mathbf{1}} A$.
+\end{df}
+
+\begin{df}[Coslice Category]
+    Let $\mathcal{C}$ be a category and $A \in \mathcal{C}$. The \emph{coslice category} over $A$, denoted $\mathcal{C} \backslash A$, is the comma category $K^{\mathbf{1}} A \downarrow 1_\mathcal{C}$.
+\end{df}
+
+\begin{df}[Pointed Sets]
+    The \emph{category of pointed sets} $\Set_*$ is the coslice category $\Set \backslash 1$.
+\end{df}

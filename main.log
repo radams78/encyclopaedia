@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  21 APR 2024 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  22 APR 2024 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,7 +535,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [6] [7
 
 ]
-[8]
+[8] (./categories.tex
 Chapter 1.
 [9
 
@@ -547,9 +547,9 @@ Chapter 2.
 Chapter 3.
 [17
 
-] [18] [19
+]) [18] [19
 
-] [20]
+] [20] (./groups.tex
 Chapter 4.
 [21
 
@@ -568,7 +568,7 @@ Chapter 7.
 [33
 
 ]
-Overfull \hbox (0.97186pt too wide) in paragraph at lines 1141--1142
+Overfull \hbox (0.97186pt too wide) in paragraph at lines 651--652
 []\OT1/cmr/bx/n/10 Proposition 7.11. []\OT1/cmr/m/it/10 For any groups $\OML/cm
 m/m/it/10 G$ \OT1/cmr/m/it/10 and $\OML/cmm/m/it/10 H$\OT1/cmr/m/it/10 , the se
 t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
@@ -577,7 +577,7 @@ t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
  []
 
 
-Overfull \hbox (42.37027pt too wide) in paragraph at lines 1150--1151
+Overfull \hbox (42.37027pt too wide) in paragraph at lines 660--661
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Since $(\OML/cmm/m/it/10 g[]; h[]\OT1
 /cmr/m/n/10 )((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 g[];
  h[]\OT1/cmr/m/n/10 )) = ((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/
@@ -593,7 +593,7 @@ WARNING: proof step "5" (<1>6) already defined
 [38] [39] [40]
 WARNING: proof step "2" (<1>3) already defined
 [41]
-Overfull \hbox (16.43498pt too wide) in paragraph at lines 1675--1676
+Overfull \hbox (16.43498pt too wide) in paragraph at lines 1185--1186
 []\OT1/cmr/bx/n/10 Definition 7.47 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/bx
 /n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 mod-u-lar group $[][]\OT1/cmr/m/
 n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 )$ is $[][](\U/msb/m/n/10 Z\OT1/cmr/m/n/10
@@ -612,12 +612,12 @@ WARNING: proof step "v" (<3>6) already defined
 [45] [46]
 WARNING: proof step "1" (<2>1) already defined
 [47] [48] [49] [50]
-Overfull \hbox (62.49506pt too wide) detected at line 2292
+Overfull \hbox (62.49506pt too wide) detected at line 1802
 []
  []
 
 [51] [52]
-Overfull \hbox (4.40312pt too wide) in paragraph at lines 2380--2381
+Overfull \hbox (4.40312pt too wide) in paragraph at lines 1890--1891
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : If $(\OML/cmm/m/it/10 a[]; [] ; a[]\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 then $(\
 OML/cmm/m/it/10 a[]; a[]; [] ; a[]; a[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OM
@@ -630,7 +630,7 @@ Chapter 8.
 [57
 
 ] [58]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2685--2686
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2201--2202
 []\OT1/cmr/bx/n/10 Proposition 8.12. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -643,7 +643,7 @@ Chapter 9.
 [67
 
 ] [68]
-Overfull \hbox (0.47714pt too wide) in paragraph at lines 3307--3307
+Overfull \hbox (0.47714pt too wide) in paragraph at lines 2823--2823
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a sub-group $\OML/cmm/m/it/10 K$ \OT1/c
 mr/m/n/10 of $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 nor-mal in $\OML/cmm/m/it/10 
 G$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G \OT1/cmr/m/n
@@ -657,12 +657,12 @@ WARNING: proof step "2" (<1>3) already defined
 WARNING: proof step "6" (<1>7) already defined
 [74]
 WARNING: proof step "b" (<2>4) already defined
-[75] [76] [77] [78
+[75] [76]) [77] [78
 
-] [79] [80]
+] [79] [80] (./rings.tex
 Chapter 10.
-LaTeX Font Info:    Trying to load font information for U+euf on input line 387
-4.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 21.
+
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [81
@@ -747,7 +747,7 @@ Chapter 29.
 [143
 
 ]
-Overfull \hbox (46.77194pt too wide) in paragraph at lines 6363--6363
+Overfull \hbox (46.77194pt too wide) in paragraph at lines 2510--2510
 []$\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 I\OT1/cmr/m/n/1
 0 ) \OMS/cmsy/m/n/10 ! [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 aI\OT1/cmr/m/n/10 
 )$ be the func-tion $\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r[];
@@ -783,21 +783,21 @@ WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
 [160] [161]
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6921--6922
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 3068--3069
 []\OT1/cmr/bx/n/10 Proposition 33.14. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
 
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6939--6940
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 3086--3087
 []\OT1/cmr/bx/n/10 Proposition 33.15. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
 [162]
-Overfull \hbox (5.62077pt too wide) in paragraph at lines 6955--6956
+Overfull \hbox (5.62077pt too wide) in paragraph at lines 3102--3103
 []\OT1/cmr/bx/n/10 Proposition 33.16. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
@@ -824,45 +824,45 @@ Chapter 37.
 [179
 
 ]
-Overfull \hbox (169.33514pt too wide) in paragraph at lines 7494--7502
+Overfull \hbox (169.33514pt too wide) in paragraph at lines 3641--3649
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-[180] (./main.aux) ) 
+) [180] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17454 strings out of 476091
- 375021 string characters out of 5794081
- 1911330 words of memory out of 5000000
- 37584 multiletter control sequences out of 15000+600000
+ 17472 strings out of 476091
+ 375273 string characters out of 5794081
+ 1910330 words of memory out of 5000000
+ 37593 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,448b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
-.pfb>
-Output written on main.pdf (180 pages, 661894 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.e
+nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm10
+00.pfb>
+Output written on main.pdf (180 pages, 662131 bytes).
 PDF statistics:
  713 PDF objects out of 1000 (max. 8388607)
  476 compressed objects within 5 object streams
