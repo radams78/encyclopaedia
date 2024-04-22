@@ -2879,6 +2879,7 @@ Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. Let $Z$ be the se
 \end{cor}
 
 \begin{cor}
+\label{cor:p-not-divide-fixed-point}
 Let $p$ be a prime. Let $S$ be a finite set. Let $G$ be a $p$-group acting on $S$. If $p$ does not divide $|S|$ then the action has a fixed point.
 \end{cor}
 
@@ -3125,6 +3126,21 @@ Let $p$ be a prime and $k \in \mathbb{N}$. Let $G$ be a finite group. If $p^k$ d
 	\step{g}{\pflet{$P = \inv{\pi}(Q)$}}
 	\step{h}{$|P| = p^k$}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Second Sylow Theorem]
+Let $G$ be a finite group. Let $p$ be a prime. Let $P$ be a $p$-Sylow subgroup of $G$. Let $H$ be a subgroup of $G$ that is a $p$-group. Then $H$ is a subgroup of a conjugate of $P$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a fixed point $gP$ for the action of $H$ on the set of left cosets of $P$ by left multiplication.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:p-not-divide-fixed-point}.
+\end{proof}
+\step{2}{For all $h \in H$ we have $hgP = gP$}
+\step{3}{$H \subseteq gP\inv{g}$}
 \qed
 \end{proof}
 
