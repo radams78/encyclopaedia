@@ -1940,6 +1940,7 @@ Let $G$ be a group. Let $K$ be a subgroup of $G$ and $H$ a subgroup of $K$. If $
 \qed
 \end{proof}
 
+
 \section{Cokernels}
 
 \begin{prop}
@@ -3394,6 +3395,33 @@ Let $G$ be a group and $H$ a subgroup of $G$. If $[G:N_G(H)]$ is finite, then it
 \begin{cor}
 Let $G$ be a group and $H$ a subgroup of $G$. If $[G:H]$ is finite, the the number of subgroups conjugate to $H$ is finite and divides $[G:H]$.
 \end{cor}
+
+\begin{lm}
+Let $H$ be a $p$-group that is a subgroup of a finite group $G$. Then
+\[ [N_G(H) : H] \equiv [G:H] (\mod p) \enspace . \]
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $H$ is non-trivial.}}
+\step{2}{$gH$ is a fixed point of the action of $H$ on the set of left cosets of $H$ by left multiplication if and only if $g \in N_G(H)$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		gH \text{ is a fixed point}
+		& \Leftrightarrow \forall h \in H. hgH = gH \\
+		& \Leftrightarrow H \subseteq gH\inv{g} \\
+		& \Leftrightarrow H = gH\inv{g} & (|gH\inv{g}| = |H|) \\
+		& \Leftrightarrow g \in N_G(H)
+	\end{align*}
+\end{proof}
+\step{3}{The number of fixed points in $[N_G(H) : H]$.}
+\qedstep
+\begin{proof}
+	\pf\ Corollary \ref{cor:fixed-points-of-action-of-p-group}.
+\end{proof}
+\qed
+\end{proof}
 
 \begin{df}[Centralizer]
 Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
