@@ -3145,7 +3145,6 @@ Let $G$ be a finite group. Let $p$ be a prime. Let $P$ be a $p$-Sylow subgroup o
 \qed
 \end{proof}
 
-
 \section{Centralizer}
 
 \begin{df}[Centralizer]
@@ -3386,6 +3385,7 @@ Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if 
 \end{cor}
 
 \begin{prop}
+\label{prop:number-of-subgroup-conjugate-to-H}
 Let $G$ be a group and $H$ a subgroup of $G$. If $[G:N_G(H)]$ is finite, then it is the number of subgroups conjugate to $H$.
 \end{prop}
 
@@ -3442,6 +3442,41 @@ Let $H$ be a $p$-subgroup of a finite group $G$ that is not a $p$-Sylow subgroup
 \step{3}{\pflet{$H' = \inv{\pi}(\langle gH \rangle)$}}
 \step{4}{$H$ is a normal subgroup of $H'$.}
 \step{5}{$[H':H] = p$}
+\qed
+\end{proof}
+
+\begin{thm}[Third Sylow Theorem]
+Let $p$ be a prime. Let $G$ be a finite group of order $p^rm$ where $p$ does not divide $m$. Then the number of $p$-Sylow subgroups of $G$ divides $m$ and is congruent to 1 modulo $p$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$N_p$ be the number of $p$-Sylow subgroups of $G$.}}
+\step{2}{\pick\ a $p$-Sylow subgroup $P$.}
+\begin{proof}
+	\pf\ One exists by the First Sylow Theorem.
+\end{proof}
+\step{3}{The $p$-Sylow subgroups of $G$ are exactly the conjugates of $P$.}
+\begin{proof}
+	\pf\ Second Sylow Theorem
+\end{proof}
+\step{3a}{$m = N_p [N_G(P) : P]$}
+\begin{proof}
+	\pf\ Since $N_p = [G : N_G(P)]$ by Proposition \ref{prop:number-of-subgroup-conjugate-to-H}.
+\end{proof}
+\step{4}{$N_p$ divides $m$.}
+\step{5}{$mN_p \equiv m (\mod p)$}
+\begin{proof}
+	\step{a}{$m \equiv [N_G(P) : P] (\mod p)$}
+	\begin{proof}
+		\pf\ Lemma \ref{lm:index-of-H-in-NGH}.
+	\end{proof}
+	\step{b}{$mN_p \equiv m (\mod p)$}
+	\begin{proof}
+		\pf\ By \stepref{3a}.
+	\end{proof}
+\end{proof}
+\step{6}{$N_p \equiv 1 (\mod p)$}
 \qed
 \end{proof}
 
