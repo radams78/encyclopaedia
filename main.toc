@@ -43,7 +43,7 @@
 \contentsline {section}{\numberline {9.2}Category of $G$-Sets}{70}{}%
 \contentsline {section}{\numberline {9.3}Center}{72}{}%
 \contentsline {section}{\numberline {9.4}Centralizer}{73}{}%
-\contentsline {section}{\numberline {9.5}Conjugacy Class}{73}{}%
+\contentsline {section}{\numberline {9.5}Conjugacy Class}{74}{}%
 \contentsline {section}{\numberline {9.6}Conjugation on Sets}{76}{}%
 \contentsline {part}{III\hspace {1em}Ring Theory}{79}{}%
 \contentsline {chapter}{\numberline {10}Rngs}{81}{}%

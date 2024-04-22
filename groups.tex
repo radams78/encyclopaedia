@@ -3090,6 +3090,44 @@ Let $p$ and $q$ be prime integers. Let $G$ be a group of order $pq$. Then either
 \qed
 \end{proof}
 
+\begin{thm}[First Sylow Theorem]
+Let $p$ be a prime and $k \in \mathbb{N}$. Let $G$ be a finite group. If $p^k$ divides $|G|$ then $G$ has a subgroup of order $p^k$.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the statement is true for all groups smaller than $G$.}}
+\step{2}{\assume{w.l.o.g. $k \neq 0$ and $|G| \neq p$}}
+\step{3}{\case{There exists a proper subgroup $H$ of $G$ such that $p$ does not divide $[G:H]$.}}
+\begin{proof}
+	\pf\ Then $H$ has a subgroup of order $p^k$ by induction hypothesis \stepref{1}.
+\end{proof}
+\step{4}{\case{For every proper subgroup $H$ of $G$ we have $p$ divides $[G:H]$.}}
+\begin{proof}
+	\step{a}{$p$ divides $|Z(G)|$.}
+	\begin{proof}
+		\pf\ By the Class Formula.
+	\end{proof}
+	\step{b}{\pick\ $a \in Z(G)$ that has order $p$.}
+	\begin{proof}
+		\pf\ Cauchy's Theorem.
+	\end{proof}
+	\step{c}{\pflet{$N = \langle a \rangle$}}
+	\step{d}{$N$ is normal.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:subgroup-of-Z-normal}.
+	\end{proof}
+	\step{e}{$p^{k-1}$ divides $|G/N|$.}
+	\step{f}{\pick\ a subgroup $Q$ of $G/N$ of order $p^{k-1}$.}
+	\begin{proof}
+		\pf\ Induction hypothesis \stepref{1}.
+	\end{proof}
+	\step{g}{\pflet{$P = \inv{\pi}(Q)$}}
+	\step{h}{$|P| = p^k$}
+\end{proof}
+\qed
+\end{proof}
+
 \section{Centralizer}
 
 \begin{df}[Centralizer]
