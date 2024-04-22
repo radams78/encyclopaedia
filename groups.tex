@@ -3145,6 +3145,7 @@ Let $G$ be a finite group. Let $p$ be a prime. Let $P$ be a $p$-Sylow subgroup o
 \qed
 \end{proof}
 
+
 \section{Centralizer}
 
 \begin{df}[Centralizer]
@@ -3397,6 +3398,7 @@ Let $G$ be a group and $H$ a subgroup of $G$. If $[G:H]$ is finite, the the numb
 \end{cor}
 
 \begin{lm}
+\label{lm:index-of-H-in-NGH}
 Let $H$ be a $p$-group that is a subgroup of a finite group $G$. Then
 \[ [N_G(H) : H] \equiv [G:H] (\mod p) \enspace . \]
 \end{lm}
@@ -3420,6 +3422,26 @@ Let $H$ be a $p$-group that is a subgroup of a finite group $G$. Then
 \begin{proof}
 	\pf\ Corollary \ref{cor:fixed-points-of-action-of-p-group}.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $H$ be a $p$-subgroup of a finite group $G$ that is not a $p$-Sylow subgroup. Then there exists a $p$-subgroup $H'$ of $G$ such that $H$ is a normal subgroup of $H'$ and $[H':H] = p$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$p$ divides $[N_G(H) : H]$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:index-of-H-in-NGH}.
+\end{proof}
+\step{2}{\pick\ $gH \in N_G(H) /H$ of order $p$.}
+\begin{proof}
+	\pf\ Cauchy's Theorem.
+\end{proof}
+\step{3}{\pflet{$H' = \inv{\pi}(\langle gH \rangle)$}}
+\step{4}{$H$ is a normal subgroup of $H'$.}
+\step{5}{$[H':H] = p$}
 \qed
 \end{proof}
 
