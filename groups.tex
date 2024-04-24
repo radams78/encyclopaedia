@@ -3475,6 +3475,7 @@ No $p$-group of order $\geq p^2$ is simple.
 \end{cor}
 
 \begin{lm}
+\label{lm:third-sylow-1}
 Let $p$ be a prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Every $p$-subgroup of $N_G(P)$ is a subgroup of $P$.
 \end{lm}
 
@@ -3509,6 +3510,33 @@ Let $p$ be a prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup o
 	\pf\ By maximality of $P$.
 \end{proof}
 \step{7}{$H \subseteq P$}
+\qed
+\end{proof}
+
+\begin{lm}
+Let $p$ be a prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Let $P$ act by conjugation on the set of $p$-Sylow subgroups of $G$. Then $P$ is the unique fixed point of this action.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$P$ is a fixed point of this action.}
+\begin{proof}
+	\pf\ For any $x \in P$ we have $xP\inv{x} = P$.
+\end{proof}
+\step{2}{If $Q$ is any fixed point of the action then $Q = P$.}
+\begin{proof}
+	\step{a}{\pflet{$Q$ be a fixed point of the action.}}
+	\step{b}{For all $x \in P$ we have $xQ\inv{x} = Q$.}
+	\step{c}{$P \subseteq N_G(Q)$}
+	\step{d}{$P \subseteq Q$}
+	\begin{proof}
+		\pf\ Lemma \ref{lm:third-sylow-1}.
+	\end{proof}
+	\step{e}{$P = Q$}
+	\begin{proof}
+		\pf\ Since $|P| = |Q|$.
+	\end{proof}
+\end{proof}
 \qed
 \end{proof}
 
