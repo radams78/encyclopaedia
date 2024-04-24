@@ -3380,6 +3380,7 @@ Let $G$ be a group, $g \in G$ and $A$ a finite subset of $G$. If $gA\inv{g} \sub
 %TODO Example where $A$ is infinite and this is not true.
 
 \begin{prop}
+\label{prop:H-normal-in-NGH}
 Let $G$ be a group and $H$ a subgroup of $G$. Then $N_G(H)$ is the largest subgroup of $G$ that includes $H$ such that $H$ is normal in $N_G(H)$.
 \end{prop}
 
@@ -3472,6 +3473,44 @@ Let $H$ be a $p$-subgroup of a finite group $G$ that is not a $p$-Sylow subgroup
 \begin{cor}
 No $p$-group of order $\geq p^2$ is simple.
 \end{cor}
+
+\begin{lm}
+Let $p$ be a prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Every $p$-subgroup of $N_G(P)$ is a subgroup of $P$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$H$ be a $p$-subgroup of $N_G(P)$.}}
+\step{2}{$P$ is normal in $N_G(P)$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:H-normal-in-NGH}.
+\end{proof}
+\step{3}{$PH$ is a subgroup of $N_G(P)$.}
+\begin{proof}
+	\pf\ Second Isomorphism Theorem.
+\end{proof}
+\step{4}{$|PH/P| = |H/(P \cap H)|$}
+\begin{proof}
+	\pf\ Second Isomorphism Theorem.
+\end{proof}
+\step{5}{$PH$ is a $p$-group.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $q$ is prime, $q \mid |PH|$ and $q \neq p$}}
+	\step{b}{$q \mid |PH/P|$}
+	\step{c}{$q \mid |H/(P \cap H)|$}
+	\step{d}{$q \mid |H|$}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts the fact that $H$ is a $p$-group, \stepref{1}.
+	\end{proof}
+\end{proof}
+\step{6}{$PH=P$}
+\begin{proof}
+	\pf\ By maximality of $P$.
+\end{proof}
+\step{7}{$H \subseteq P$}
+\qed
+\end{proof}
 
 \begin{thm}[Third Sylow Theorem]
 Let $p$ be a prime. Let $G$ be a finite group of order $p^rm$ where $p$ does not divide $m$. Then the number of $p$-Sylow subgroups of $G$ divides $m$ and is congruent to 1 modulo $p$.
