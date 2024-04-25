@@ -2013,6 +2013,7 @@ Let $G$ be a group. Let $H$ be a subgroup of $G$. Suppose there is no other subg
 \end{proof}
 
 \begin{prop}
+\label{prop:K-GK-relatively-prime-K-characteristic}
 Let $G$ be a finite group. Let $K$ be a normal subgroup of $G$. Assume $|K|$ and $|G/K|$ are relatively prime. Then $K$ is characteristic.
 \end{prop}
 
@@ -2045,6 +2046,19 @@ Let $G$ be a group. Then $G$ is simple if and only if the only homomorphic image
 \begin{df}[Sylow Subgroup]
 Let $p$ be a prime number. Let $G$ be a finite group. A \emph{$p$-Sylow subgroup} of $G$ is a subgroup of order $p^r$, where $r$ is the largest integer such that $p^r$ divides $|G|$.
 \end{df}
+
+\begin{prop}
+Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. If $P$ is normal then $P$ is characteristic.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:K-GK-relatively-prime-K-characteristic}. \qed
+\end{proof}
+
+\begin{cor}
+\label{cor:normal-normal-normal}
+Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Let $H$ be a subgroup of $G$ that includes $P$. If $P$ is normal in $H$ and $H$ is normal in $G$ then $P$ is normal in $G$.
+\end{cor}
 
 \chapter{Abelian Groups}
 
@@ -3373,6 +3387,7 @@ Let $G$ be a group and $H$ a subgroup of $G$. Then $N_G(H)$ is the largest subgr
 \end{proof}
 
 \begin{cor}
+\label{cor:normal-NG}
 Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if $H = N_G(H)$.
 \end{cor}
 
@@ -3626,6 +3641,33 @@ Let $p$ and $q$ be prime numbers with $p < q$ and $q \not\equiv 1 (\mod p)$. The
 		\pf\ Proposition \ref{prop:order-gh-if-gcd-one}.
 	\end{proof}
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Then
+\[ N_G(N_G(P)) = N_G(P) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$P$ is normal in $N_G(P)$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:H-normal-in-NGH}.
+\end{proof}
+\step{2}{$N_G(P)$ is normal in $N_G(N_G(P))$.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:H-normal-in-NGH}.
+\end{proof}
+\step{3}{$P$ is normal in $N_G(N_G(P))$.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:normal-normal-normal}.
+\end{proof}
+\step{5}{$N_G(N_G(P)) \subseteq N_G(P)$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:H-normal-in-NGH}.
+\end{proof}
+\step{6}{$N_G(N_G(P)) = N_G(P)$}
 \qed
 \end{proof}
 
