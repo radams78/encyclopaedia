@@ -3419,6 +3419,7 @@ Let $G$ be a group and $H$ a subgroup of $G$. If $[G:N_G(H)]$ is finite, then it
 \end{proof}
 
 \begin{cor}
+\label{cor:number-of-conjugates-divides-index}
 Let $G$ be a group and $H$ a subgroup of $G$. If $[G:H]$ is finite, the the number of subgroups conjugate to $H$ is finite and divides $[G:H]$.
 \end{cor}
 
@@ -3514,6 +3515,7 @@ Let $p$ be a prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup o
 \end{proof}
 
 \begin{lm}
+\label{lm:third-sylow-2}
 Let $p$ be a prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Let $P$ act by conjugation on the set of $p$-Sylow subgroups of $G$. Then $P$ is the unique fixed point of this action.
 \end{lm}
 
@@ -3572,6 +3574,32 @@ Let $p$ be a prime. Let $G$ be a finite group of order $p^rm$ where $p$ does not
 	\end{proof}
 \end{proof}
 \step{6}{$N_p \equiv 1 (\mod p)$}
+\qed
+\end{proof}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$N_p$ be the number of $p$-Sylow subgroups of $G$.}}
+\step{2}{\pick\ a $p$-Sylow subgroup $P$ of $G$.}
+\begin{proof}
+	\pf\ First Sylow Theorem.
+\end{proof}
+\step{3}{$N_p$ is the number of conjugates of $P$.}
+\begin{proof}
+	\pf\ Second Sylow Theorem.
+\end{proof}
+\step{4}{$N_p \mid m$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:number-of-conjugates-divides-index}.
+\end{proof}
+\step{5}{$P$ acts on the set of conjugates of $P$ with one fixed point.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:third-sylow-2}.
+\end{proof}
+\step{6}{$N_p \equiv 1 (\mod p)$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:fixed-points-of-action-of-p-group}.
+\end{proof}
 \qed
 \end{proof}
 
