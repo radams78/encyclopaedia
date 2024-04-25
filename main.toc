@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {7.15}Cayley Graphs}{54}{}%
 \contentsline {section}{\numberline {7.16}Characteristic Subgroups}{54}{}%
 \contentsline {section}{\numberline {7.17}Simple Groups}{55}{}%
-\contentsline {section}{\numberline {7.18}Sylow Subgroups}{56}{}%
+\contentsline {section}{\numberline {7.18}Sylow Subgroups}{55}{}%
 \contentsline {chapter}{\numberline {8}Abelian Groups}{57}{}%
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{62}{}%
 \contentsline {section}{\numberline {8.2}Free Abelian Groups}{63}{}%

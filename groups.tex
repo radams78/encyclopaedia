@@ -2033,39 +2033,6 @@ A group $G$ is \emph{simple} iff its only normal subgroups are $\{e\}$ and $G$.
 \end{df}
 
 \begin{prop}
-Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp$ where $1 < m < p$ then $G$ is not simple.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{There exists a unique subgroup of $G$ of order $p$.}
-\begin{proof}
-	\step{a}{There exists a subgroup of order $p$.}
-	\begin{proof}
-		\pf\ Cauchy's Theorem
-	\end{proof}
-	\step{b}{\assume{for a contradiction there is more than one subgroup of order $p$.}}
-	\step{c}{There are at least $p + 1$ subgroups of order $p$.}
-	\begin{proof}
-		\pf\ Cauchy's Theorem
-	\end{proof}
-	\step{d}{The union of all the subgroups of order $p$ has a total of $(p+1)(p-1)+1 = p^2$ elements.}
-	\begin{proof}
-		\pf\ Any two subgroups of order $p$ intersect only in $e$.
-	\end{proof}
-	\qedstep
-	\begin{proof}
-		\pf\ Since $|G| = mp < p^2$.
-	\end{proof}
-\end{proof}
-\step{2}{The subgroup of order $p$ is normal.}
-\begin{proof}
-	\pf\ Proposition \ref{prop:unique-subgroup-normal}.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
 Let $G$ be a group. Then $G$ is simple if and only if the only homomorphic images of $G$ are $1$ and $G$.
 \end{prop}
 
@@ -3602,6 +3569,16 @@ Let $p$ be a prime. Let $G$ be a finite group of order $p^rm$ where $p$ does not
 \end{proof}
 \qed
 \end{proof}
+
+\begin{cor}
+Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp^r$ where $1 < m < p$ then $G$ is not simple.
+\end{cor}
+
+\begin{proof}
+\pf\ There must be 1 $p$-Sylow subgroup, which has order $p^r$ and is normal.
+\qed
+\end{proof}
+
 
 \begin{df}[Centralizer]
 Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
