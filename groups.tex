@@ -3696,3 +3696,125 @@ is a homomorphism of groups with $\ker \gamma = H \cap Z_G(K)$.
 \end{proof}
 \qed
 \end{proof}
+
+\chapter{Classification of Groups}
+
+\begin{ex}
+\begin{itemize}
+\item The only group of order 1 is the trivial group.
+\item The only group of order 2 is $C_2$.
+\item The only group of order 3 is $C_3$.
+\item There are two groups of order 4: $C_4$ and $C_2 \times C_2$.
+\item The only group of order 5 is $C_5$.
+\item There are two groups of order 6: $C_6$ and $S_3$.
+\item The only group of order 7 is $C_7$.
+\item There are two groups of order 9: $C_9$ and $C_3 \times C_3$.
+\item There are two groups of order 10: $C_{10}$ and $D_{10}$.
+\item The only group of order 11 is $C_{11}$.
+\item The only group of order 13 is $C_{13}$.
+\item There are two groups of order 14: $C_{14}$ and $D_{14}$.
+\item The only group of order 15 is $C_{15}$.
+\end{itemize}
+\end{ex}
+
+\begin{prop}
+The only non-Abelian groups of order 8 are $D_8$ and $Q_8$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a non-Abelian group of order 8.}}
+\step{2}{$G$ has no element of order 8.}
+\begin{proof}
+	\pf\ If it does then it is $C_8$ and hence Abelian.
+\end{proof}
+\step{3}{\pick\ an element $y$ of order 4.}
+\begin{proof}
+	\step{a}{\pick\ an element $a$ of order 2.}
+	\step{b}{$G/\langle a \rangle$ is isomorphic to $C_4$ or $C_2 \times C_2$.}
+	\step{c}{\pick\ an element $y \langle a \rangle$ of order 2 in $G / \langle a \rangle$}
+	\step{d}{$y^2 \in \langle a \rangle$}
+	\step{e}{\case\ $y^2 = a$}
+	\begin{proof}
+		\pf\ In this case $y$ is of order 4.
+	\end{proof}
+	\step{f}{\case\ $y^2 = e$}
+	\begin{proof}
+		\pf\ In this case $G \cong C_2^3$ which is Abelian.
+	\end{proof}
+\end{proof}
+\step{4}{\pick\ $x \notin \langle y \rangle$ such that $x^2 = e$ or $x^2 = y^2$}
+\begin{proof}
+	\step{a}{$G / \langle y \rangle \cong C_2$}
+	\step{b}{\pick\ $x \langle y \rangle \in G / \langle y \rangle$ of order 2.}
+	\step{c}{$x^2 \in \langle y \rangle$}
+	\step{d}{$x^2 \neq y$ and $x^2 \neq y^3$}
+	\step{e}{$x^2 = e$ or $x^2 = y^2$}
+\end{proof}
+\step{5}{$xy = y^3 x$}
+\begin{proof}
+	\step{a}{$xy \neq e$}
+	\begin{proof}
+		\pf\ Since $\inv{y} = y^3 \neq x$.
+	\end{proof}
+	\step{b}{$xy \neq y$}
+	\begin{proof}
+		\pf\ $xy = y$ implies $x=e$.
+	\end{proof}
+	\step{c}{$xy \neq y^2$}
+	\begin{proof}
+		\pf\ $xy = y^2$ implies $x = y$.
+	\end{proof}
+	\step{d}{$xy \neq y^3$}
+	\begin{proof}
+		\pf\ $xy = y^3$ implies $x = y^2$.
+	\end{proof}
+	\step{e}{$xy \neq x$}
+	\begin{proof}
+		\pf\ $xy = x$ implies $y = e$.
+	\end{proof}
+	\step{f}{$xy \neq yx$}
+	\begin{proof}
+		\pf\ $xy = yx$ implies $G$ is Abelian.
+	\end{proof}
+	\step{g}{$xy \neq y^2 x$}
+	\begin{proof}
+		\step{i}{\assume{for a contradiction $xy = y^2 x$}}
+		\step{ii}{$xy^2 = x$}
+		\begin{proof}
+			\pf
+			\begin{align*}
+				xy^2 & = y^2xy \\
+				& = y^4x \\
+				& = x
+			\end{align*}
+		\end{proof}
+		\step{iii}{$y^2 = e$}
+	\end{proof}
+\end{proof}
+\step{4a}{The multiplication table of $G$ is one of the following.
+\[ \begin{array}{cccccccc}
+e & y & y^2 & y^3 & x & yx & y^2 x & y^3 x \\
+y & y^2 & y^3 & e & yx & y^2 x & y^3 x & x \\
+y^2 & y^3 & e & y & y^2 x & y^3 x & x & yx \\
+y^3 & e & y & y^2 & y^3x & x & yx & y^2x \\
+x & y^3x & y^2x & yx & e & y^3 & y^2 & y \\
+yx & x & y^3 x & y^2 x & y & e & y^3 & y^2 \\
+y^2 x & yx & x & y^3 x & y^2 & y & e & y^3 \\
+y^3 x & y^2 x & yx & x & y^3 & y^2 & y & e
+\end{array} \]
+\vspace{0.5cm}
+\[ \begin{array}{cccccccc}
+e & y & y^2 & y^3 & x & yx & y^2 x & y^3 x \\
+y & y^2 & y^3 & e & yx & y^2 x & y^3 x & x \\
+y^2 & y^3 & e & y & y^2 x & y^3 x & x & yx \\
+y^3 & e & y & y^2 & y^3x & x & yx & y^2x \\
+x & y^3x & y^2x & yx & y^2 & y & e & y^3 \\
+yx & x & y^3 x & y^2 x & y^3 & y^2 & y & e \\
+y^2 x & yx & x & y^3 x & e & y^3 & y^2 & y \\
+y^3 x & y^2 x & yx & x & y & e & y^3 & y^2
+\end{array} \]}
+\step{6}{$G \cong D_8$ or $G \cong Q_8$.}
+\qed
+\end{proof}
+
