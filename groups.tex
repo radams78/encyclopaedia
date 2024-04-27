@@ -3601,45 +3601,17 @@ Let $p$ and $q$ be prime numbers with $p < q$ and $q \not\equiv 1 (\mod p)$. The
 \begin{proof}
 \pf
 \step{1}{\pflet{$G$ be a group of order $pq$.}}
-\step{2}{\pflet{$H$ be the unique $p$-Sylow subgroup of $G$.}}
+\step{2}{There are $p-1$ elements of order $p$.}
 \begin{proof}
-	\pf\ By the Third Sylow Theorem, the number of $p$-Sylow subgroups divides $q$ and is congruent to 1 modulo $p$, so must be 1.
+	\pf\ By the Third Sylow Theorem, there is exactly one $p$-Sylow subgroup.
 \end{proof}
-\step{3}{\pflet{$\gamma : G \rightarrow \Aut{\Grp}{H}$ be the action of conjugation.}}
-\step{4}{$\gamma$ is the zero map.}
+\step{3}{There are $q-1$ elements of order $q$.}
 \begin{proof}
-	\pf\ $|\im \gamma|$ must dive both $|G| = pq$ and $|\Aut{\Grp}{H}| = p-1$ and so must be 1.
+	\pf\ By the Third Sylow Theorem, there is exactly one $q$-Sylow subgroup.
 \end{proof}
-\step{5}{$H \subseteq Z(G)$}
-\step{6}{$G$ is Abelian.}
+\step{4}{There exists an element of order $pq$.}
 \begin{proof}
-	\step{a}{$G/H$ is cyclic.}
-	\begin{proof}
-		\pf\ Since its order is $q$.
-	\end{proof}
-	\step{b}{$G/Z(G)$ is cyclic.}
-	\begin{proof}
-		\pf\ It is a quotient of $G/H$ by the Third Isomorphism Theorem.
-	\end{proof}
-	\qedstep
-	\begin{proof}
-		\pf\ Lemma \ref{lm:G-ZG-cyclic}.
-	\end{proof}
-\end{proof}
-\step{7}{$G$ is cyclic.}
-\begin{proof}
-	\step{a}{\pick\ an element $g$ of order $p$.}
-	\begin{proof}
-		\pf\ Cauchy's Theorem.
-	\end{proof}
-	\step{b}{\pick\ an element $h$ of order $q$.}
-	\begin{proof}
-		\pf\ Cauchy's Theorem.
-	\end{proof}
-	\step{c}{$|gh| = pq$}
-	\begin{proof}
-		\pf\ Proposition \ref{prop:order-gh-if-gcd-one}.
-	\end{proof}
+	\pf\ Since the number of elements of order 1, $p$ or $q$ is $1 + (p-1) + (q-1) = p + q - 1 < 2q \leq pq$.
 \end{proof}
 \qed
 \end{proof}
