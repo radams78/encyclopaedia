@@ -3594,26 +3594,48 @@ Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp^r$ where $1 <
 \qed
 \end{proof}
 
+\begin{prop}
+Let $p$ and $q$ be prime numbers with $p < q$. Let $G$ be a group of order $pq$ with a normal subgroup $H$ of order $p$. Then $G$ is cyclic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\gamma : G \rightarrow \Aut{\Grp}{H}$ be the action of conjugation.}}
+\step{2}{$H$ is cyclic of order $p$.}
+\step{3}{$|\Aut{\Grp}{H}| = p-1$}
+\step{4}{$|\im \gamma| \mid pq$}
+\begin{proof}
+	\pf\ Since $\im \gamma$ is a quotient group of $G$.
+\end{proof}
+\step{5}{$|\im \gamma| \mid p-1$}
+\step{5a}{$|\im \gamma| = 1$}
+\step{6}{$\gamma = 0$}
+\step{7}{$H \subseteq Z(G)$}
+\step{8}{$G$ is Abelian.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:G-ZG-cyclic}.
+\end{proof}
+\step{9}{\pick\ an element $g$ of order $p$.}
+\begin{proof}
+	\pf\ Cauchy's Theorem.
+\end{proof}
+\step{10}{\pick\ an element $g$ of order $q$.}
+\begin{proof}
+	\pf\ Cauchy's Theorem.
+\end{proof}
+\step{11}{$|gh| = pq$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:order-gh-if-gcd-one}.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{cor}
 Let $p$ and $q$ be prime numbers with $p < q$ and $q \not\equiv 1 (\mod p)$. Then the only group of order $pq$ is the cyclic group.
 \end{cor}
 
 \begin{proof}
-\pf
-\step{1}{\pflet{$G$ be a group of order $pq$.}}
-\step{2}{There are $p-1$ elements of order $p$.}
-\begin{proof}
-	\pf\ By the Third Sylow Theorem, there is exactly one $p$-Sylow subgroup.
-\end{proof}
-\step{3}{There are $q-1$ elements of order $q$.}
-\begin{proof}
-	\pf\ By the Third Sylow Theorem, there is exactly one $q$-Sylow subgroup.
-\end{proof}
-\step{4}{There exists an element of order $pq$.}
-\begin{proof}
-	\pf\ Since the number of elements of order 1, $p$ or $q$ is $1 + (p-1) + (q-1) = p + q - 1 < 2q \leq pq$.
-\end{proof}
-\qed
+\pf\ By the Third Sylow Theorem, such a group must have exactly one $p$-Sylow subgroup, which is therefore normal. \qed
 \end{proof}
 
 \begin{prop}
@@ -3790,3 +3812,68 @@ y^3 x & y^2 x & yx & x & y & e & y^3 & y^2
 \qed
 \end{proof}
 
+\begin{prop}
+Let $q$ be an odd prime. Then $D_{2q}$ is the only non-Abelian group of order $2q$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a non-Abelian group of order $2q$.}}
+\step{2}{\pick\ $y \in G$ of order $q$.}
+\begin{proof}
+	\pf\ Cauchy's Theorem
+\end{proof}
+\step{2.5}{$\langle y \rangle$ is the only subgroup of order $q$.}
+\begin{proof}
+	\pf\ Third Sylow Theorem
+\end{proof}
+\step{3}{$\langle y \rangle$ is normal.}
+\step{4}{\pick\ $x \in G - \langle y \rangle - \{e\}$}
+\step{4.5}{$|x| = 2$}
+\begin{proof}
+	\pf\ We cannot have $|x| = 2q$ since $G$ is not cyclic, and $|x| \neq q$ since $\langle x \rangle$ is not the subgroup of order $q$.
+\end{proof}
+\step{5}{$xy\inv{x} \in \langle y \rangle$}
+\begin{proof}
+	\pf\ Since $x \langle y \rangle \inv{x} = \langle y \rangle$ by \stepref{2.5}.
+\end{proof}
+\step{6}{\pick\ $r$ such that $0 \leq r < q$ and $xy\inv{x} = y^r$.}
+\step{7}{$y^{r^2} = y$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		y^{r^2} & = (xy \inv{x})^r & (\text{\stepref{6}}) \\
+		& = x y^r \inv{x} \\
+		& = x^2 y x^{-2} & (\text{\stepref{6}}) \\
+		& = y & (\text{\stepref{4.5}})
+	\end{align*}
+\end{proof}
+\step{8}{$q \mid (r-1)(r+1)$}
+\begin{proof}
+	\pf\ Since $y^{(r-1)(r+1)} = e$ and $|y| = q$ by \stepref{2}.
+\end{proof}
+\step{9}{$r = 1$ or $r = q-1$}
+\begin{proof}
+	\pf\ Since $0 \leq r < q$ by \stepref{6}.
+\end{proof}
+\step{10}{$r \neq 1$}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $r = 1$.}}
+	\step{b}{$xy = yx$}
+	\begin{proof}
+		\pf\ \stepref{6}
+	\end{proof}
+	\step{c}{$|xy| = 2q$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:order-gh-if-gcd-one}
+	\end{proof}
+	\step{d}{$G$ is cyclic.}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{1}.
+	\end{proof}
+\end{proof}
+\step{11}{$x^2 = e$ and $y^q = e$ and $yx = xy^{q-1}$}
+\step{12}{$G \cong D_{2q}$}
+\qed
+\end{proof}
