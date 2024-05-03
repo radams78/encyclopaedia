@@ -3454,6 +3454,7 @@ Let $H$ be a $p$-subgroup of a finite group $G$ that is not a $p$-Sylow subgroup
 \end{proof}
 
 \begin{cor}
+\label{cor:p-squared-not-simple}
 No $p$-group of order $\geq p^2$ is simple.
 \end{cor}
 
@@ -3586,6 +3587,7 @@ Let $p$ be a prime. Let $G$ be a finite group of order $p^rm$ where $p$ does not
 \end{proof}
 
 \begin{cor}
+\label{cor:mpr-not-simple}
 Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp^r$ where $1 < m < p$ then $G$ is not simple.
 \end{cor}
 
@@ -3665,6 +3667,66 @@ Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of 
 \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:pqr-not-simple}
+Let $p$, $q$ and $r$ be three distinct prime numbers.	Then there is no simple group of order $pqr$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a group of order $pqr$.}}
+\step{2}{\assume{w.l.o.g. $p < q < r$}}
+\step{3}{\assume{for a contradiction $G$ is simple.}}
+\step{4}{The number of subgroups of order $p$ is at least $p+1$.}
+\begin{proof}
+	\pf\ Third Sylow Theorem
+\end{proof}
+\step{5}{The number of subgroups of order $q$ is at least $q+1$.}
+\begin{proof}
+	\pf\ Third Sylow Theorem
+\end{proof}
+\step{6}{The number of subgroups of order $r$ is $pq$.}
+\begin{proof}
+	\pf\ By the Third Sylow Theorem, the number divides $pq$, and it cannot be 1 (lest that subgroup be normal) or $p$ or $q$ (as these are less than $r$ hence not congruent to 1 modulo $r$).
+\end{proof}
+\step{7}{There are at least $p^2-1$ elements of order $p$.}
+\step{8}{There are at least $q^2 - 1$ elements of order $q$.}
+\step{9}{There are at least $pqr-pq$ elements of order $r$.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction as the total number of elements of order 1, $p$, $q$ and $r$ is
+	\begin{align*}
+		1 + (p^2 - 1) + (q^2 - 1) + (pqr - pq)
+		& = p^2 + q^2 + pqr - pq - 1 \\
+		& > pqr + p^2 - 1 \\
+		& > pqr
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a finite simple group. Let $H$ be a subgroup of $G$ of index $N > 1$. Then $|G|$ divides $N!$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ a subgroup $K$ of $H$ that is normal in $G$ such that $[G:K]$ divides $\gcd(|G|,N!)$.}
+\step{2}{$K = \{e\}$}
+\step{3}{$[G:K] = |G|$}
+\step{4}{$|G|$ divides $N!$}
+\qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a finite simple group. Let $p$ be a prime factor of $|G|$.
+Let $N_p$ be the number of $p$-Sylow subgroups of $G$. Then $|G|$ divides $N_p!$.
+\end{cor}
+
+\begin{proof}
+\pf\ Since $N_p = [G : N_G(P)]$ and $N_p > 1$ since $G$ is simple. \qed
+\end{proof}
+
 \begin{df}[Centralizer]
 Let $G$ be a group and $A \subseteq G$. The \emph{centralizer} of $A$ is
 \[ Z_G(A) := \{ g \in G : \forall a \in A. ga\inv{g} = a \} \enspace . \]
@@ -3712,6 +3774,7 @@ is a homomorphism of groups with $\ker \gamma = H \cap Z_G(K)$.
 \end{ex}
 
 \begin{prop}
+\label{prop:order-eight}
 The only non-Abelian groups of order 8 are $D_8$ and $Q_8$.
 \end{prop}
 
@@ -3881,3 +3944,134 @@ Let $q$ be an odd prime. Then $D_{2q}$ is the only non-Abelian group of order $2
 \begin{cor}
 For $q$ an odd prime, the only groups of order $2q$ are $C_{2q}$ and $D_{2q}$.
 \end{cor}
+
+\begin{prop}
+There is no non-Abelian simple group of order less than 60.
+\end{prop}
+
+\begin{proof}
+\pf
+We rule out the other sizes as follows:
+\begin{itemize}
+\item 1 --- Only group is the trivial group.
+\item 2 --- Prime therefore cyclic
+\item 3 --- Prime therefore cyclic
+\item 4 --- Corollary \ref{cor:p-squared-not-simple}
+\item 5 --- Prime therefore cyclic
+\item 6 --- Corollary \ref{cor:mpr-not-simple}
+\item 7 --- Prime therefore cyclic
+\item 8 --- Corollary \ref{cor:p-squared-not-simple}
+\item 9 --- Corollary \ref{cor:p-squared-not-simple}
+\item 10 --- Corollary \ref{cor:mpr-not-simple}
+\item 11 --- Prime therefore cyclic
+\item 12 ---
+\step{12}{There is no simple non-Abelian group of order 12.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 12.}}
+	\step{b}{$G$ has 4 3-Sylow subgroups.}
+	\step{c}{$G$ has 8 elements of order 3.}
+	\step{d}{$G$ has 3 elements of order 2 or 4.}
+	\step{e}{$G$ has one 2-Sylow subgroup.}
+	\step{f}{The 2-Sylow subgroup of $G$ is normal.}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{a}.
+	\end{proof}
+\end{proof}
+\item 13 --- Prime therefore cyclic
+\item 14 --- Corollary \ref{cor:mpr-not-simple}
+\item 15 --- Corollary \ref{cor:mpr-not-simple}
+\item 16 --- Corollary \ref{cor:p-squared-not-simple}
+\item 17 --- Prime therefore cyclic
+\item 18 --- Corollary \ref{cor:mpr-not-simple}
+\item 19 --- Prime therefore cyclic
+\item 20 --- Corollary \ref{cor:mpr-not-simple}
+\item 21 --- Corollary \ref{cor:mpr-not-simple}
+\item 22 --- Corollary \ref{cor:mpr-not-simple}
+\item 23 --- Prime therefore cyclic
+\item 24 ---
+\step{24}{There is no simple non-Abelian group of order 24.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 24.}}
+	\step{b}{$G$ has 3 2-Sylow subgroups.}
+	\step{c}{\pflet{$\gamma : G \rightarrow S_3$ be the action of conjugation of $G$ on the set of 2-Sylow subgroups.}}
+	\step{d}{$\ker \gamma \neq \{e\}$}
+	\begin{proof}
+		\pf\ $\gamma$ cannot be injective since $|G| > |S_3|$.
+	\end{proof}
+	\step{e}{$\ker \gamma \neq G$}
+	\step{f}{$\ker \gamma$ is a proper non-trivial normal subgroup of $G$.}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{a}.
+	\end{proof}
+\end{proof}
+\item 25 --- Corollary \ref{cor:p-squared-not-simple}
+\item 26 --- Corollary \ref{cor:mpr-not-simple}
+\item 27 --- Corollary \ref{cor:p-squared-not-simple}
+\item 28 --- Corollary \ref{cor:mpr-not-simple}
+\item 29 --- Prime therefore cyclic
+\item 30 --- Proposition \ref{prop:pqr-not-simple} 
+\item 31 --- Prime therefore cyclic
+\item 32 --- Corollary \ref{cor:p-squared-not-simple}
+\item 33 --- Corollary \ref{cor:mpr-not-simple}
+\item 34 --- Corollary \ref{cor:mpr-not-simple}
+\item 35 --- Corollary \ref{cor:mpr-not-simple}
+\item 36 ---
+\step{36}{There is no simple non-Abelian group of order 36.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 36.}}
+	\step{b}{$G$ has 4 3-Sylow subgroups.}
+	\step{c}{\pflet{$\gamma : G \rightarrow S_4$ be the action of conjugation of $G$ on the set of 2-Sylow subgroups.}}
+	\step{d}{$\ker \gamma \neq \{e\}$}
+	\begin{proof}
+		\pf\ $\gamma$ cannot be injective since $|G| > |S_4|$.
+	\end{proof}
+	\step{e}{$\ker \gamma \neq G$}
+	\step{f}{$\ker \gamma$ is a proper non-trivial normal subgroup of $G$.}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{a}.
+	\end{proof}
+\end{proof}
+\item 37 --- Prime therefore cyclic
+\item 38 --- Corollary \ref{cor:mpr-not-simple}
+\item 39 --- Corollary \ref{cor:mpr-not-simple}
+\item 40 --- There can be only 1 5-Sylow subgroup.
+\item 41 --- Prime therefore cyclic
+\item 42 --- Proposition \ref{prop:pqr-not-simple} 
+\item 43 --- Prime therefore cyclic
+\item 44 --- Corollary \ref{cor:mpr-not-simple}
+\item 45 --- There can be only 1 5-Sylow subgroup.
+\item 46 --- Corollary \ref{cor:mpr-not-simple}
+\item 47 --- Prime therefore cyclic
+\item 48 ---
+\step{48}{There is no simple non-Abelian group of order 48.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 48.}}
+	\step{b}{$G$ has 3 2-Sylow subgroups.}
+	\step{c}{\pflet{$\gamma : G \rightarrow S_3$ be the action of conjugation of $G$ on the set of 2-Sylow subgroups.}}
+	\step{d}{$\ker \gamma \neq \{e\}$}
+	\begin{proof}
+		\pf\ $\gamma$ cannot be injective since $|G| > |S_3|$.
+	\end{proof}
+	\step{e}{$\ker \gamma \neq G$}
+	\step{f}{$\ker \gamma$ is a proper non-trivial normal subgroup of $G$.}
+	\qedstep
+	\begin{proof}
+		\pf\ This contradicts \stepref{a}.
+	\end{proof}
+\end{proof}
+\item 49 --- Corollary \ref{cor:p-squared-not-simple}
+\item 50 --- Corollary \ref{cor:mpr-not-simple}
+\item 51 --- Corollary \ref{cor:mpr-not-simple}
+\item 52 --- Corollary \ref{cor:mpr-not-simple}
+\item 53 --- Prime therefore cyclic
+\item 54 --- Corollary \ref{cor:mpr-not-simple}
+\item 55 --- Corollary \ref{cor:mpr-not-simple}
+\item 56 --- Corollary \ref{cor:mpr-not-simple}
+\item 57 --- Corollary \ref{cor:mpr-not-simple}
+\item 58 --- Corollary \ref{cor:mpr-not-simple}
+\item 59 --- Prime therefore cyclic
+\end{itemize}
+\end{proof}
