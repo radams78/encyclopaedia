@@ -3587,14 +3587,19 @@ Let $p$ be a prime. Let $G$ be a finite group of order $p^rm$ where $p$ does not
 \end{proof}
 
 \begin{cor}
-\label{cor:mpr-not-simple}
-Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp^r$ where $1 < m < p$ then $G$ is not simple.
+\label{cor:mpr-not-simple1}
+Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp^r$ and the only divisor $d$ of $m$ such that $d \equiv 1 (\mod p)$ is $d = 1$, then $G$ is not simple.
 \end{cor}
 
 \begin{proof}
 \pf\ There must be 1 $p$-Sylow subgroup, which has order $p^r$ and is normal.
 \qed
 \end{proof}
+
+\begin{cor}
+\label{cor:mpr-not-simple}
+Let $G$ be a finite group. Let $p$ be a prime number. If $|G| = mp^r$ where $1 < m < p$ then $G$ is not simple.
+\end{cor}
 
 \begin{prop}
 Let $p$ and $q$ be prime numbers with $p < q$. Let $G$ be a group of order $pq$ with a normal subgroup $H$ of order $p$. Then $G$ is cyclic.
@@ -3719,6 +3724,7 @@ Let $G$ be a finite simple group. Let $H$ be a subgroup of $G$ of index $N > 1$.
 \end{proof}
 
 \begin{cor}
+\label{cor:G-divides-Npfac}
 Let $G$ be a finite simple group. Let $p$ be a prime factor of $|G|$.
 Let $N_p$ be the number of $p$-Sylow subgroups of $G$. Then $|G|$ divides $N_p!$.
 \end{cor}
@@ -4073,5 +4079,242 @@ We rule out the other sizes as follows:
 \item 57 --- Corollary \ref{cor:mpr-not-simple}
 \item 58 --- Corollary \ref{cor:mpr-not-simple}
 \item 59 --- Prime therefore cyclic
+\end{itemize}
+\end{proof}
+
+\begin{prop}
+Every simple group of order 60 has a subgroup of index 5.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a simple group of order 60.}}
+\step{2}{The number of 2-Sylow subgroups of $G$ is either 5 or 15.}
+\begin{proof}
+	\step{a}{\pflet{$n$ be the number of 2-Sylow subgroups.}}
+	\step{b}{$60 | n!$}
+	\begin{proof}
+		\pf\ Corollary \ref{cor:G-divides-Npfac}.
+	\end{proof}
+	\step{c}{$n \geq 5$}
+	\step{e}{$n \mid 15$}
+	\begin{proof}
+		\pf\ Third Sylow Theorem
+	\end{proof}
+	\step{f}{$n = 5$ or $n = 15$}
+\end{proof}
+\step{3}{\assume{w.l.o.g.\ $G$ has 15 2-Sylow subgroups.}}
+\step{4}{$G$ has 4 or 10 3-Sylow subgroups.}
+\step{4a}{$G$ has 10 3-Sylow subgroups.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:G-divides-Npfac}.
+\end{proof}
+\step{5}{$G$ has exactly 6 5-Sylow subgroups.}
+\step{6}{The number of elements of order 3 is 20.}
+\step{7}{The number of elements of order 5 is 24.}
+\step{8}{The number of elements of order 2 or 4 is 15.}
+\step{9}{\pick\ two 2-Sylow subgroups $H_1$ and $H_2$ with non-trivial intersection.}
+\step{10}{\pflet{$g \in G$ be such that $H_1 \cap H_2 = \{e, g\}$.}}
+\step{11}{\pflet{$K = Z_G(H_1 \cap H_2)$}}
+\step{12}{$|K| = 12$ or $|K| = 20$}
+\begin{proof}
+	\pf\ We have $4 \mid |K|$ since $H_1 \leq K$, and $|K| \geq 6$ since $H_1 \cup H_2 \subseteq K$. We also have $|K| \mid 60$.
+\end{proof}
+\step{13}{$[G:K] \neq 3$}
+\begin{proof}
+	\pf\ There cannot be an embedding of $G$ in $S_3$.
+\end{proof}
+\step{14}{$[G:K] = 5$}
+\qed 
+\end{proof}
+
+\begin{prop}
+There is no non-Abelian simple group of order between 60 and 168.
+\end{prop}
+
+\begin{proof}
+\pf\ We rule out the other sizes as follows:
+\begin{itemize}
+\item 61 --- prime therefore cyclic
+\item 62 --- Corollary \ref{cor:mpr-not-simple}
+\item 63 --- Corollary \ref{cor:mpr-not-simple1}
+\item 64 --- Corollary \ref{cor:p-squared-not-simple}
+\item 65 --- Corollary \ref{cor:mpr-not-simple}
+\item 66 --- Corollary \ref{cor:mpr-not-simple}
+\item 67 --- prime therefore cyclic
+\item 68 --- Corollary \ref{cor:mpr-not-simple}
+\item 69 --- Corollary \ref{cor:mpr-not-simple}
+\item 70 --- Proposition \ref{prop:pqr-not-simple}
+\item 71 --- prime therefore cyclic
+\item 72
+\step{72}{There is no simple non-Abelian group of order 72}
+\begin{proof}
+	\pf
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 72.}}
+	\step{c}{$G$ has 4 3-Sylow subgroups.}
+	\step{d}{\pflet{$\gamma : G \rightarrow S_4$ be the action of conjugation on the set of 3-Sylow subgroups.}}
+	\step{e}{$\ker \gamma \neq 1$}
+	\begin{proof}
+		\pf\ Since $|G| > |S_4|$.
+	\end{proof}
+	\step{f}{$\ker \gamma$ is a non-trivial proper subgroup of $G$.}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+\item 73 --- prime therefore cyclic
+\item 74 --- Corollary \ref{cor:mpr-not-simple}
+\item 75 --- Corollary \ref{cor:mpr-not-simple}
+\item 76 --- Corollary \ref{cor:mpr-not-simple}
+\item 77 --- Corollary \ref{cor:mpr-not-simple}
+\item 78 --- Corollary \ref{cor:mpr-not-simple}
+\item 79 --- prime therefore cyclic
+\item 80
+\step{80}{There is no simple non-Abelian group of order 80.}
+\begin{proof}
+	\pf
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 80.}}
+	\step{c}{$G$ has 5 2-Sylow subgroups.}
+	\step{d}{\pflet{$\gamma : G \rightarrow S_5$ be the action of conjugation on the set of 2-Sylow subgroups.}}
+	\step{e}{$\ker \gamma \neq 1$}
+	\begin{proof}
+		\pf\ Otherwise $\im \gamma$ would be a subgroup of $S_5$ of order 80, contradicting Lagrange's Theorem.
+	\end{proof}
+	\step{f}{$\ker \gamma$ is a non-trivial normal subgroup of $G$.}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction.
+	\end{proof}
+\end{proof}
+
+\item 81 --- Corollary \ref{cor:p-squared-not-simple}
+\item 82 --- Corollary \ref{cor:mpr-not-simple}
+\item 83 --- prime therefore cyclic
+\item 84 --- Corollary \ref{cor:mpr-not-simple1}
+\item 85 --- Corollary \ref{cor:mpr-not-simple}
+\item 86 --- Corollary \ref{cor:mpr-not-simple}
+\item 87 --- Corollary \ref{cor:mpr-not-simple}
+\item 88 --- Corollary \ref{cor:mpr-not-simple}
+\item 89 --- prime therefore cyclic
+\item 90 --- Corollary \ref{cor:mpr-not-simple1}
+\item 91 --- Corollary \ref{cor:mpr-not-simple}
+\item 92 --- Corollary \ref{cor:mpr-not-simple}
+\item 93 --- Corollary \ref{cor:mpr-not-simple}
+\item 94 --- Corollary \ref{cor:mpr-not-simple}
+\item 95 --- Corollary \ref{cor:mpr-not-simple}
+\item 96 --- There are 3 2-Sylow subgroups. The kernel of the action of conjugation $G \rightarrow S_3$ is a non-trivial normal subgroup of $G$.
+\item 97 --- prime therefore cyclic
+\item 98 --- Corollary \ref{cor:mpr-not-simple}
+\item 99 --- Corollary \ref{cor:mpr-not-simple}
+\item 100 --- Corollary \ref{cor:mpr-not-simple}
+\item 101 --- prime therefore cyclic
+\item 102 --- Proposition \ref{prop:pqr-not-simple}
+\item 103 --- prime therefore cyclic
+\item 104 --- Corollary \ref{cor:mpr-not-simple}
+\item 105 --- Proposition \ref{prop:pqr-not-simple}
+\item 106 --- Corollary \ref{cor:mpr-not-simple}
+\item 107 --- prime therefore cyclic
+\item 108 --- There are 4 3-Sylow subgroups. The kernel of the action of conjugation $G \rightarrow S_4$ is a non-trivial normal subgroup of $G$.
+\item 109 --- prime therefore cyclic
+\item 110 --- Proposition \ref{prop:pqr-not-simple}
+\item 111 --- Corollary \ref{cor:mpr-not-simple}
+\item 112
+\step{112}{There is no simple non-Abelian group of order 112.}
+\begin{proof}
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 112.}}
+	\step{b}{$G$ has exactly 7 2-Sylow subgroups.}
+	\step{c}{\pflet{$\gamma : G \rightarrow A_7$ be the action of conjugation of $G$ on the set of 2-Sylow subgroups.}}
+	\begin{proof}
+		\pf\ $\gamma(g)$ is always an even permutation since $G$ has no subgroup of index 2.
+	\end{proof}
+	\step{d}{$\ker \gamma \neq 1$}
+	\begin{proof}
+		\pf\ Since $|G|$ does not divide $|A_7| = 7!/2$.
+	\end{proof}
+	\step{e}{$\ker \gamma$ is a non-trivial normal subgroup of $G$.}
+	\qedstep
+\end{proof}
+\item 113 --- prime therefore cyclic
+\item 114 --- Proposition \ref{prop:pqr-not-simple}
+\item 115 --- Corollary \ref{cor:mpr-not-simple}
+\item 116 --- Corollary \ref{cor:mpr-not-simple}
+\item 117 --- Corollary \ref{cor:mpr-not-simple}
+\item 118 --- Corollary \ref{cor:mpr-not-simple}
+\item 119 --- Corollary \ref{cor:mpr-not-simple}
+\item 120
+\step{120}{There is no simple non-Abelian group of order 120.}
+\begin{proof}
+	\pf
+	\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 120.}}
+	\step{b}{There are exactly 6 5-Sylow subgroups.}
+	\step{c}{\pflet{$\gamma : G \rightarrow A_6$ be the action of conjugation on the set of 5-Sylow subgroups.}}
+	\step{d}{$\im \gamma$ is a subgroup of $A_6$ of order 120.}
+	\qedstep
+	\begin{proof}
+		\pf\ This is a contradiction by inspection of the list of subgroups of $A_6$.
+	\end{proof}
+\end{proof}
+\item 121 --- Corollary \ref{cor:p-squared-not-simple}
+\item 122 --- Corollary \ref{cor:mpr-not-simple}
+\item 123 --- Corollary \ref{cor:mpr-not-simple}
+\item 124 --- Corollary \ref{cor:mpr-not-simple}
+\item 125 --- Corollary \ref{cor:p-squared-not-simple}
+\item 126 --- Corollary \ref{cor:mpr-not-simple1}
+\item 127 --- prime therefore cyclic
+\item 128 --- Corollary \ref{cor:p-squared-not-simple}
+\item 129 --- Corollary \ref{cor:mpr-not-simple}
+\item 130 --- Proposition \ref{prop:pqr-not-simple}
+\item 131 --- prime therefore cyclic
+\item 132
+\step{132}{There is no simple non-Abelian group of order 132.}
+\begin{proof}
+\step{a}{\assume{for a contradiction $G$ is a simple non-Abelian group of order 132.}}
+\step{b}{There are at least 4 3-Sylow subgroups.}
+\step{c}{There are at least 8 elements of order 3.}
+\step{d}{There are exactly 12 11-Sylow subgroups.}
+\step{e}{There are exactly 120 elements of order 11.}
+\step{f}{There are exactly 3 elements of order 2.}
+\step{g}{There is a unique 2-Sylow subgroups.}
+\qedstep
+\begin{proof}
+	\pf\ This is a contradiction.
+\end{proof}
+\end{proof}
+\item 133 --- Corollary \ref{cor:mpr-not-simple}
+\item 134 --- Corollary \ref{cor:mpr-not-simple}
+\item 135 --- Corollary \ref{cor:mpr-not-simple1}
+\item 136 --- Corollary \ref{cor:mpr-not-simple}
+\item 137 --- prime therefore cyclic
+\item 138 --- Proposition \ref{prop:pqr-not-simple}
+\item 139 --- prime therefore cyclic
+\item 140 --- Corollary \ref{cor:mpr-not-simple1}
+\item 141 --- Corollary \ref{cor:mpr-not-simple}
+\item 142 --- Corollary \ref{cor:mpr-not-simple}
+\item 143 --- Corollary \ref{cor:mpr-not-simple}
+\item 144 --- Burnside's Theorem
+\item 145 --- Burnside's Theorem
+\item 146 --- Burnside's Theorem
+\item 147 --- Burnside's Theorem
+\item 148 --- Burnside's Theorem
+\item 149 --- prime therefore cyclic
+\item 150 --- There are exactly 6 5-Sylow subgroups. The kernel of the action of conjugation $G \rightarrow A_5$ is a non-trivial normal subgroup since 150 does not divide $|A_5| = 60$.
+\item 151 --- prime therefore cyclic
+\item 152 --- Burnside's Theorem
+\item 153 --- Burnside's Theorem
+\item 154 --- Proposition \ref{prop:pqr-not-simple}
+\item 155 --- Burnside's Theorem
+\item 156 --- Corollary \ref{cor:mpr-not-simple}
+\item 157 --- prime therefore cyclic
+\item 158 --- Burnside's Theorem
+\item 159 --- Burnside's Theorem
+\item 160 --- Burnside's Theorem
+\item 161 --- Burnside's Theorem
+\item 162 --- Burnside's Theorem
+\item 163 --- prime therefore cyclic
+\item 164 --- Burnside's Theorem
+\item 165 --- Proposition \ref{prop:pqr-not-simple}
+\item 166 --- Burnside's Theorem
+\item 167 --- prime therefore cyclic
 \end{itemize}
 \end{proof}
