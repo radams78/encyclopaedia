@@ -2084,6 +2084,23 @@ The maximal length of a normal series in $G$ is 1 iff $G$ is non-trivial and sim
 \pf\ Immediate from definitions. \qed
 \end{proof}
 
+\begin{ex}
+$\mathbb{Z}$ has normal series of arbitrary length.
+\end{ex}
+
+\begin{proof}
+\pf\ We have $\mathbb{Z} \supsetneq 2 \mathbb{Z} \supsetneq 4 \mathbb{Z} \supsetneq \cdots$. \qed
+\end{proof}
+
+\begin{ex}
+The maximal length of a normal series in $\mathbb{Z} / n \mathbb{Z}$ is the number of primes in the prime factorization of $n$.
+\end{ex}
+
+\begin{proof}
+\pf\ Let $n = p_1 p_2 \cdots p_k$. A normal series of maximal length is
+\[ \mathbb{Z} / p_1 p_2 \cdots p_k \mathbb{Z} \supsetneq \mathbb{Z} / p_1 p_2 \cdots p_{k-1} \mathbb{Z} \supsetneq \cdots \supsetneq \mathbb{Z} / p_1 \mathbb{Z} \supsetneq \{e\} \enspace . \qed \]
+\end{proof}
+
 \begin{df}[Composition Series]
 Let $G$ be a group. A \emph{composition series} for $G$ is a series of subgroups in $G$
 \[ G = G_0 \supsetneq G_1 \supsetneq G_2 \supsetneq \cdots \supsetneq G_n = \{e\} \]
@@ -2091,12 +2108,17 @@ such that, for all $i$, we have $G_i / G_{i+1}$ is simple.
 \end{df}
 
 \begin{prop}
-Every finite group has a composition series.
+A normal series of maximal length in a group is a composition series.
 \end{prop}
 
 \begin{proof}
-\pf\ Easy induction on the order of the group. \qed
+\pf\ Easy. \qed
 \end{proof}
+
+\begin{cor}
+Every finite group has a composition series.
+\end{cor}
+
 
 \chapter{Abelian Groups}
 
