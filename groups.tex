@@ -2068,6 +2068,28 @@ Let $G$ be a group. A \emph{series} of subgroups of $G$ is a sequence $(G_n)$ of
 It is a \emph{normal} series iff $G_{n+1}$ is normal in $G_n$ for all $n$.
 \end{df}
 
+\begin{prop}
+The maximal length of a normal series in $G$ is 0 iff $G$ is trivial.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $1$ is normal in $G$ for every $G$. \qed
+\end{proof}
+
+\begin{prop}
+The maximal length of a normal series in $G$ is 1 iff $G$ is non-trivial and simple.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}[Composition Series]
+Let $G$ be a group. A \emph{composition series} for $G$ is a series of subgroups in $G$
+\[ G = G_0 \supsetneq G_1 \supsetneq G_2 \supsetneq \cdots \supsetneq G_n = \{e\} \]
+such that, for all $i$, we have $G_i / G_{i+1}$ is simple.
+\end{df}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
