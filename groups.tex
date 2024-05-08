@@ -1153,6 +1153,16 @@ Let $\phi : G \rightarrow H$ be a group homomorphism. Then $\ker \phi$ is a norm
 and so $gn\inv{g} \in \ker \phi$. \qed
 \end{proof}
 
+\begin{prop}
+\label{prop:HK-normal}
+If $H$ and $K$ are normal subgroups of a group $G$ then $HK$ is normal in $G$.
+\end{prop}
+
+\begin{proof}
+\pf\ For $g \in G$, $h \in H$ and $k \in K$ we have $ghk\inv{g} = (gh\inv{g})(gk\inv{g}) \in HK$.
+\qed
+\end{proof}
+
 \section{Quotient Groups}
 
 \begin{df}
@@ -2119,6 +2129,62 @@ A normal series of maximal length in a group is a composition series.
 Every finite group has a composition series.
 \end{cor}
 
+\begin{cor}
+If a group has a composition series then every normal subgroup has a composition series.
+\end{cor}
+
+\begin{thm}[Jordan-H\"{o}lder]
+Let $G$ be a group. Let
+\begin{align*}
+S_1 : G & = G_0 \supsetneq G_1 \supsetneq \cdots \supsetneq G_m = \{e\} \\
+S_2 : G & = G'_0 \supsetneq G'_1 \supsetneq \cdots \supsetneq G'_n = \{e\}
+\end{align*}
+be two composition series for $G$. Then $m = n$ and there exists a permutation $\sigma \in S_n$ such that, for all $i$, we have
+\[ G_1 / G_{i+1} \cong G'_{\sigma(i)} / G'_{\sigma(i)+1} \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the theorem holds for any composition series of length $<n$.}}
+\step{2}{\assume{w.l.o.g. $G_1 \neq G'_1$}}
+\begin{proof}
+	\pf\ Otherwise apply the induction hypothesis to the two composition series for $G_1$.
+\end{proof}
+\step{3}{$G_1 G'_1 = G$}
+\begin{proof}
+	\step{a}{$G_1 G'_1$ is normal in $G$.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:HK-normal}.
+	\end{proof}
+	\step{b}{$G_1 \subsetneq G_1 G'_1$}
+	\step{c}{There is no proper normal subgroup between $G_1$ and $G$.}
+	\begin{proof}
+		\pf\ If $G_1 \subsetneq K \subsetneq G$ then $1 \subsetneq G/K \subsetneq G/G_1$ contradicting the fact that $G/G_1$ is simple.
+	\end{proof}
+\end{proof}
+\step{4}{\pflet{$K = G_1 \cap G'_1$}}
+\step{5}{\pick\ a composition series
+\[ K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq K_r = \{e\} \]
+for $K$.}
+\step{6}{$G_1 / K$ and $G'_1/K$ are simple.}
+\begin{proof}
+	\pf\ Since $G_1 / K \cong G / G'_1$ and $G'_1/K \cong G / G_1$ by the Second Isomorphism Theorem and \stepref{3}.
+\end{proof}
+\step{7}{$S_3 : G \supsetneq G_1 \supsetneq K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq \{e\}$ and $S_4 : G \supsetneq G'_1 \supsetneq K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq \{e\}$ are two composition series for $G$.}
+\step{8}{$S_3$ and $S_4$ have the same length and the same quotients up to a permutation.}
+\begin{proof}
+	\pf\ Since $G / G_1 \cong G'_1 / K$ and $G/G'_1 \cong G_1 / K$ by the Second Isomorphism Theorem.
+\end{proof}
+\step{9}{$S_3$ and $S_1$ have the same length and the same quotients up to a permutation.}
+\begin{proof}
+	\pf\ By the induction hypothesis \stepref{1}.
+\end{proof}
+\step{10}{$S_4$ and $S_2$ have the same length and the same quotients up to a permutation.}
+\begin{proof}
+	\pf\ By the induction hypothesis \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Abelian Groups}
 
