@@ -2111,6 +2111,15 @@ The maximal length of a normal series in $\mathbb{Z} / n \mathbb{Z}$ is the numb
 \[ \mathbb{Z} / p_1 p_2 \cdots p_k \mathbb{Z} \supsetneq \mathbb{Z} / p_1 p_2 \cdots p_{k-1} \mathbb{Z} \supsetneq \cdots \supsetneq \mathbb{Z} / p_1 \mathbb{Z} \supsetneq \{e\} \enspace . \qed \]
 \end{proof}
 
+\begin{df}[Equivalent Normal Series]
+Let
+\begin{align*}
+G & = G_0 \supsetneq G_1 \supsetneq G_2 \supsetneq \cdots \supsetneq G_n = \{e\} \\
+G & = G'_0 \supsetneq G'_1 \supsetneq G'_2 \supsetneq \cdots \supsetneq G'_m = \{e\}
+\end{align*}
+be two normal series in a group $G$. Then the two series are \emph{equivalent} iff $m = n$ and there exists a permutation $\sigma \in S_n$ such that, for all $i$, we have $G_i / G_{i+1} \cong G'_{\sigma(i)} / G'_{\sigma(i) + 1}$.
+\end{df}
+
 \begin{df}[Composition Series]
 Let $G$ be a group. A \emph{composition series} for $G$ is a series of subgroups in $G$
 \[ G = G_0 \supsetneq G_1 \supsetneq G_2 \supsetneq \cdots \supsetneq G_n = \{e\} \]
@@ -2134,17 +2143,16 @@ If a group has a composition series then every normal subgroup has a composition
 \end{cor}
 
 \begin{thm}[Jordan-H\"{o}lder]
-Let $G$ be a group. Let
-\begin{align*}
-S_1 : G & = G_0 \supsetneq G_1 \supsetneq \cdots \supsetneq G_m = \{e\} \\
-S_2 : G & = G'_0 \supsetneq G'_1 \supsetneq \cdots \supsetneq G'_n = \{e\}
-\end{align*}
-be two composition series for $G$. Then $m = n$ and there exists a permutation $\sigma \in S_n$ such that, for all $i$, we have
-\[ G_1 / G_{i+1} \cong G'_{\sigma(i)} / G'_{\sigma(i)+1} \]
+Let $G$ be a group. Then any two composition series for $G$ are equivalent.
 \end{thm}
 
 \begin{proof}
 \pf
+\step{00}{\pflet{\begin{align*}
+S_1 : G & = G_0 \supsetneq G_1 \supsetneq \cdots \supsetneq G_m = \{e\} \\
+S_2 : G & = G'_0 \supsetneq G'_1 \supsetneq \cdots \supsetneq G'_n = \{e\}
+\end{align*}
+be two composition series for $G$.}}
 \step{1}{\assume{as induction hypothesis the theorem holds for any composition series of length $<n$.}}
 \step{2}{\assume{w.l.o.g. $G_1 \neq G'_1$}}
 \begin{proof}
@@ -2171,15 +2179,15 @@ for $K$.}
 	\pf\ Since $G_1 / K \cong G / G'_1$ and $G'_1/K \cong G / G_1$ by the Second Isomorphism Theorem and \stepref{3}.
 \end{proof}
 \step{7}{$S_3 : G \supsetneq G_1 \supsetneq K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq \{e\}$ and $S_4 : G \supsetneq G'_1 \supsetneq K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq \{e\}$ are two composition series for $G$.}
-\step{8}{$S_3$ and $S_4$ have the same length and the same quotients up to a permutation.}
+\step{8}{$S_3$ and $S_4$ are equivalent.}
 \begin{proof}
 	\pf\ Since $G / G_1 \cong G'_1 / K$ and $G/G'_1 \cong G_1 / K$ by the Second Isomorphism Theorem.
 \end{proof}
-\step{9}{$S_3$ and $S_1$ have the same length and the same quotients up to a permutation.}
+\step{9}{$S_3$ and $S_1$ are equivalent.}
 \begin{proof}
 	\pf\ By the induction hypothesis \stepref{1}.
 \end{proof}
-\step{10}{$S_4$ and $S_2$ have the same length and the same quotients up to a permutation.}
+\step{10}{$S_4$ and $S_2$ are equivalent.}
 \begin{proof}
 	\pf\ By the induction hypothesis \stepref{1}.
 \end{proof}
