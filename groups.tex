@@ -2291,6 +2291,13 @@ Any two normal series of a finite group ending in $\{e\}$ have a common refineme
 \pf\ Refine to a composition series then apply Jordan-H\"{o}lder. \qed
 \end{proof}
 
+\section{Derived Series}
+
+\begin{df}[Derived Series]
+Let $G$ be a group. The \emph{derived series} of $G$ is the series of subgroups
+\[ G \supseteq G' \supseteq G'' \supseteq G''' \supseteq \cdots \]
+\end{df}
+
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -2882,6 +2889,20 @@ Let $G$ be a group. Let $G'$ be the commutator subgroup of $G$. Then $G / G'$ is
 \begin{proof}
 \pf\ Since $gh\inv{g}\inv{h}G' = G'$ so $ghG' = hgG'$. \qed
 \end{proof}
+
+\begin{prop}
+Let $G$ be a group and $A$ an Abelian group. Let $\alpha : G \rightarrow A$ be a homomorphism. Then $G' \subseteq \ker \alpha$.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\phi([g,h]) = \phi(g) \phi(h) \inv{\phi(g)} \inv{\phi(h)} = e$. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group.
+The canonical projection $G \twoheadrightarrow G / G'$ is initial in the category of homomorphisms from $G$ to an Abelian group.
+\end{cor}
+
 \chapter{Group Actions}
 
 \section{Group Actions}
