@@ -2291,6 +2291,10 @@ Any two normal series of a finite group ending in $\{e\}$ have a common refineme
 \pf\ Refine to a composition series then apply Jordan-H\"{o}lder. \qed
 \end{proof}
 
+\begin{df}[Cyclic Series]
+A normal series of subgroups is \emph{cyclic} iff every quotient is cyclic.
+\end{df}
+
 \section{Derived Series}
 
 \begin{df}[Derived Series]
@@ -2916,6 +2920,59 @@ Let $G$ be a group and $A$ an Abelian group. Let $\alpha : G \rightarrow A$ be a
 Let $G$ be a group.
 The canonical projection $G \twoheadrightarrow G / G'$ is initial in the category of homomorphisms from $G$ to an Abelian group.
 \end{cor}
+
+\begin{df}[Abelian Series]
+A normal series of subgroups is \emph{Abelian} iff every quotient is Abelian.
+\end{df}
+
+\begin{lm}
+\label{lm:GH-Abelian}
+Let $G$ be a group. Let $H$ be a normal subgroup of $G$. If $G/H$ is Abelian then $G' \subseteq G/H$.
+\end{lm}
+
+\begin{proof}
+\pf\ Given $g,h \in G$ we have
+\begin{align*}
+ghH & = hgH \\
+\therefore gh\inv{g}\inv{h} & \in H & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Let $G$ be a finite group. The following are equivalent.
+\begin{enumerate}
+\item All composition factors of $G$ are cyclic.
+\item $G$ has a cyclic series of subgroups ending in $\{e\}$.
+\item $G$ has an Abelian series of subgroups ending in $\{e\}$.
+\item $G$ is solvable.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{3}{$3 \Rightarrow 4$}
+\begin{proof}
+	\step{a}{\pflet{$G = G_0 \supseteq G_1 \supseteq \cdots \supseteq G_n = \{e\}$ be an Abelian series of subgroups.}}
+	\step{b}{For all $i$ we have $G^{(i)} \subseteq G_i$.}
+	\begin{proof}
+		\pf\ Lemma \ref{lm:GH-Abelian}.
+	\end{proof}
+	\step{c}{$G^{(n)} = \{e\}$}
+\end{proof}
+\step{4}{$4 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Extend the derived series of $G$ to a composition series, using the fact that every simple Abelian group is cyclic.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Group Actions}
 
