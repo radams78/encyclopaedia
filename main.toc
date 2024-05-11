@@ -36,6 +36,7 @@
 \contentsline {section}{\numberline {7.18}Sylow Subgroups}{56}{}%
 \contentsline {section}{\numberline {7.19}Series of Subgroups}{56}{}%
 \contentsline {section}{\numberline {7.20}Derived Series}{59}{}%
+\contentsline {section}{\numberline {7.21}Solvable Groups}{59}{}%
 \contentsline {chapter}{\numberline {8}Abelian Groups}{61}{}%
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{66}{}%
 \contentsline {section}{\numberline {8.2}Free Abelian Groups}{67}{}%
