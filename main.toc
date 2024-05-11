@@ -39,6 +39,7 @@
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{66}{}%
 \contentsline {section}{\numberline {8.2}Free Abelian Groups}{67}{}%
 \contentsline {section}{\numberline {8.3}Cokernels}{69}{}%
+\contentsline {section}{\numberline {8.4}Commutator Subgroups}{70}{}%
 \contentsline {chapter}{\numberline {9}Group Actions}{71}{}%
 \contentsline {section}{\numberline {9.1}Group Actions}{71}{}%
 \contentsline {section}{\numberline {9.2}Category of $G$-Sets}{74}{}%

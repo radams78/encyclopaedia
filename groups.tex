@@ -1807,16 +1807,15 @@ Let $G$ be a group. The \emph{commutator subgroup}, denoted $[G,G]$ or $G'$, is 
 We write $G^{(i)}$ for the result of taking the commutator subgroup $i$ times starting with $G$.
 \end{df}
 
-\begin{prop}
-The commutator subgroup is normal.
-\end{prop}
+\begin{lm}
+\label{lm:commutator-characteristic}
+Let $\phi : G_1 \rightarrow G_2$ be a group homomorphism. Then, for all $g,h \in G_1$, we have
+\[ \phi([g,h]) = [\phi(g), \phi(h)] \]
+and so $\phi(G_1') \subseteq G_2'$.
+\end{lm}
 
 \begin{proof}
-\pf\ Since
-\begin{align*} 
-& g a_1 b_1 \inv{a_1} \inv{b_1} a_2 b_2 \inv{a_2} \inv{b_2} \cdots a_n b_n \inv{a_n} \inv{b_n} \inv{g} \\
-= & (g a_1 \inv{g}) (g b_1 \inv{g}) \inv{(g a_1 \inv{g})} \inv{(g b_1 \inv{g})} \cdots (g a_n \inv{g}) (g b_n \inv{g}) \inv{(g a_n \inv{g})} \inv{(g b_n \inv{g})} \enspace . \qquad \qed
-\end{align*}
+\pf\ Easy. \qed
 \end{proof}
 
 \section{Presentations}
@@ -2042,6 +2041,14 @@ Let $G$ be a finite group. Let $K$ be a normal subgroup of $G$. Assume $|K|$ and
 \step{4}{$K' = K \cap K'$}
 \step{5}{$K' = K$}
 \qed
+\end{proof}
+
+\begin{prop}
+The commutator subgroup of a group is characteristic.
+\end{prop}
+
+\begin{proof}
+\pf\ Lemma \ref{lm:commutator-characteristic}. \qed
 \end{proof}
 
 \section{Simple Groups}
@@ -2866,6 +2873,15 @@ Let $\phi : G \rightarrow H$ be a homomorphism of Abelian groups. Then the follo
 \qed
 \end{proof}
 
+\section{Commutator Subgroups}
+
+\begin{prop}
+Let $G$ be a group. Let $G'$ be the commutator subgroup of $G$. Then $G / G'$ is Abelian.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $gh\inv{g}\inv{h}G' = G'$ so $ghG' = hgG'$. \qed
+\end{proof}
 \chapter{Group Actions}
 
 \section{Group Actions}
