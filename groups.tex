@@ -2044,6 +2044,7 @@ A group $G$ is \emph{simple} iff its only normal subgroups are $\{e\}$ and $G$.
 \end{df}
 
 \begin{prop}
+\label{prop:image_of_simple_group}
 Let $G$ be a group. Then $G$ is simple if and only if the only homomorphic images of $G$ are $1$ and $G$.
 \end{prop}
 
@@ -2197,6 +2198,72 @@ for $K$.}
 \begin{df}[Composition Factors]
 Let $G$ be a group that has a composition series. The multiset of \emph{composition factors} of $G$ is the multiset of quotients of any composition series.
 \end{df}
+
+\begin{ex}
+Non-isomorphic groups can have the same composition factors. For example, $C_2 \times C_2$ and $C_4$ both have composition factors $\{| C_2 , C_2 |\}$.
+\end{ex}
+
+\begin{prop}
+Let $G$ be a group. Let $N$ be a normal subgroup of $G$. Then $G$ has a composition series if and only if $N$ and $G/N$ both have composition series, in which case the composition factors of $G$ are the union of the composition factors of $N$ and the composition factors of $G/N$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $G$ has a composition series then $N$ and $G/N$ have composition series.}
+\begin{proof}
+	\step{a}{\pflet{$G = G_0 \supsetneq G_1 \supsetneq G_2 \supsetneq \cdots \supsetneq G_n = \{e\}$ be a composition series for $G$.}}
+	\step{b}{$N$ has a composition series.}
+	\begin{proof}
+		\step{i}{For all $i$, we have $\frac{G_i \cap N}{G_{i+1} \cap N}$ is either trivial or isomorphic to $G_i / G_{i+1}$.}
+		\begin{proof}
+			\step{one}{The homomorphism $G_i \cap N \hookrightarrow G_i \twoheadrightarrow G_i / G_{i+1}$ has kernel $G_{i+1} \cap N$.}
+			\step{two}{There is an injective homomorphism $(G_i \cap N) / (G_{i+1} \cap N) \rightarrow G_i / G_{i+1}$.}
+			\begin{proof}
+				\pf\ First Isomorphism Theorem.
+			\end{proof}
+			\step{three}{$(G_i \cap N) / (G_{i+1} \cap N)$ is either trivial or isomorphic to $G_i / G_{i+1}$.}
+			\begin{proof}
+				\pf\ Since $G_i / G_{i+1}$ is simple.
+			\end{proof}
+		\end{proof}
+		\step{ii}{Eliminating all duplicates from the series $N = G_0 \cap N \supseteq G_1 \cap N \supseteq G_2 \cap N \supseteq \cdots \supseteq G_n \cap N = \{e\}$ gives a composition series for $N$.}	
+	\end{proof}
+	\step{c}{$G/N$ has a composition series.}
+	\begin{proof}
+		\step{i}{For all $i$ we have $\frac{(G_iN)/N}{(G_{i+1}N)/N}$ is either trivial or isomorphic to $G_i / G_{i+1}$.}
+		\begin{proof}
+			\step{one}{\pflet{$0 \leq i < n$}}
+			\step{two}{$\frac{(G_i N)/N}{(G_{i+1}N)N} \cong G_i N / G_{i+1} N$}
+			\begin{proof}
+				\pf\ Third Isomorphism Theorem.
+			\end{proof}
+			\step{three}{There exists a surjective homomorphism
+			\[ \frac{G_i}{G_{i+1}} \twoheadrightarrow \frac{G_i N}{G_{i+1}N} \enspace . \]}
+			\begin{proof}
+				\step{A}{\pflet{$f$ be the homomorphism $G_i \hookrightarrow G_i N \twoheadrightarrow G_i N / G_{i+1} N$}}
+				\step{B}{$f$ is surjective.}
+				\step{C}{$f(G_{i+1}) = \{e\}$}
+				\qedstep
+				\begin{proof}
+					\pf\ By the universal property of quotient groups.
+				\end{proof}
+			\end{proof}
+			\step{four}{$G_i N / G_{i+1} N$ is either trivial or isomorphic to $G_i / G_{i+1}$.}
+			\begin{proof}
+				\pf\ Proposition \ref{prop:image_of_simple_group}.
+			\end{proof}
+		\end{proof}
+		\step{ii}{Eliminating all duplicates from the series $G/N = G_0 N/ N \supseteq G_1 N / N \supseteq G_2 N / N \supseteq \cdots \supseteq G_n N / N = \{e\}$ gives a composition series for $G/N$.}
+	\end{proof}
+\end{proof}
+\step{2}{If $N$ and $G/N$ have composition series, then $G$ has a composition series, and the composition factors of $G$ are the union of the composition factors of $N$ and the composition factors of $G/N$.}
+\begin{proof}
+	\step{a}{\pflet{$N = N_0 \supsetneq N_1 \supsetneq N_2 \supsetneq \cdots \supsetneq N_n = \{e\}$ be a composition series for $N$.}}
+	\step{b}{\pflet{$G/N = H_0 \supsetneq H_1 \supsetneq H_2 \supsetneq \cdots \supsetneq H_m = \{e\}$ be a composition series for $G/N$.}}
+	\step{c}{$G = \inv{\pi}(H_0) \supsetneq \inv{\pi}(H_1) \supsetneq \cdots \inv{\pi}(H_m) = N_0 \supsetneq N_1 \supsetneq N_2 \supsetneq \cdots \supsetneq N_n$ is a composition series for $G$.}
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Abelian Groups}
 
