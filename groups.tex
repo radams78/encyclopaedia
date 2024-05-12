@@ -4200,6 +4200,34 @@ is a homomorphism of groups with $\ker \gamma = H \cap Z_G(K)$.
 \qed
 \end{proof}
 
+\section{Nilpotent Groups}
+
+\begin{df}[Nilpotent]
+Let $G$ be a group. Define inductively a sequence $(Z_n)$ of subgroups of $G$ by $Z_0 = \{e\}$, and $Z_{i+1}$ is the inverse image under $\pi$ of the center of $G / Z_i$.
+
+Then $G$ is \emph{nilpotent} iff $Z_n = G$ for some $n$.
+
+We prove this is well-defined by proving that, for all $i$, we have $Z_i$ is normal in $G$.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis $Z_i$ is normal in $G$.} \prove{$Z_{i+1}$ is normal in $G$.}}
+\step{2}{\pflet{$x \in Z_{i+1}$ and $g \in G$} \prove{$gx\inv{g} \in Z_{i+1}$} \prove{For all $h \in G$ we have $gx\inv{g}hZ_i = hgx\inv{g}Z_i$}}
+\step{3}{\pflet{$h \in G$}}
+\step{4}{$gx\inv{g}hZ_i = hgx\inv{g}Z_i$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		gx\inv{g}hZ_i & = g\inv{g}hxZ_i \\
+		& = hxZ_i \\
+		& = hg\inv{g}xZ_i \\
+		& = hgx\inv{g}Z_i
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Classification of Groups}
 
 \begin{ex}

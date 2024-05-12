@@ -49,6 +49,7 @@
 \contentsline {section}{\numberline {9.4}Centralizer}{82}{}%
 \contentsline {section}{\numberline {9.5}Conjugacy Class}{82}{}%
 \contentsline {section}{\numberline {9.6}Conjugation on Sets}{84}{}%
+\contentsline {section}{\numberline {9.7}Nilpotent Groups}{90}{}%
 \contentsline {chapter}{\numberline {10}Classification of Groups}{91}{}%
 \contentsline {part}{III\hspace {1em}Ring Theory}{105}{}%
 \contentsline {chapter}{\numberline {11}Rngs}{107}{}%
