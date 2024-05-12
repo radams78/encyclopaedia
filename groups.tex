@@ -2157,57 +2157,122 @@ Every finite group has a composition series.
 If a group has a composition series then every normal subgroup has a composition series.
 \end{cor}
 
-\begin{thm}[Jordan-H\"{o}lder]
-Let $G$ be a group. Then any two composition series for $G$ are equivalent.
+\begin{df}[Refinement]
+A series of subgroups $S_1$ is a \emph{refinement} of the series $S_2$ iff every subgroup in $S_2$ appears in $S_1$.
+\end{df}
+
+\begin{lm}
+\label{lm:Schreier}
+Let $G$ be a group. Let $Q$, $N$ and $L$ be subgroups of $G$. Assume $L$ is a normal subgroup of $Q$ and $qN = Nq$ for all $q \in Q$. Then
+\[ \frac{QN}{LN} \cong \frac{Q}{L(Q \cap N)} \enspace . \]
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{$QN$ is a subgroup of $G$.}
+\begin{proof}
+	\pf\ Since $QN = NQ$.
+\end{proof}
+\step{2}{$LN$ is a subgroup of $G$.}
+\begin{proof}
+	\pf\ Since $LN = NL$.
+\end{proof}
+\step{3}{$LN$ is normal in $QN$.}
+\begin{proof}
+	\step{a}{\pflet{$l \in L$, $q \in Q$, and $n,n' \in N$.} \prove{$qnln'\inv{n}\inv{q} \in LN$}}
+	\step{b}{\pick\ $n_1 \in N$ such that $nl = ln_1$}
+	\step{c}{\pick\ $n_2 \in N$ such that $n_1n' \inv{n} \inv{q} = \inv{q} n_2$}
+	\step{d}{$qnln' \inv{n} \inv{q} = ql\inv{q}n_2 \in LN$}
+	\begin{proof}
+		\pf\ Since $L$ is normal in $Q$.
+	\end{proof}
+\end{proof}
+\step{4}{The function $f : Q \rightarrow QN/LN$ that maps $q$ to $qLN$ is a surjective homomorphism.}
+\step{5}{$\ker f = L(Q \cap N)$}
+\begin{proof}
+	\step{a}{$\ker f \subseteq L (Q \cap N)$}
+	\begin{proof}
+		\step{i}{\pflet{$x \in \ker f$}}
+		\step{ii}{$x \in LN$}
+		\step{iii}{\pick\ $l \in L$ and $n \in N$ such that $x = ln$}
+		\step{iv}{$n = \inv{l} x \in Q \cap N$}
+		\step{v}{$x \in L(Q \cap N)$}
+	\end{proof}
+	\step{b}{$L(Q \cap N) \subseteq \ker f$}
+	\begin{proof}
+		\pf\ Since $L(Q \cap N) \subseteq Q$ and $L(Q \cap N) \subseteq LN$.
+	\end{proof}
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ First Isomorphism Theorem.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{thm}[Schreier]
+Any two normal series in a group have equivalent refinements.
 \end{thm}
 
 \begin{proof}
 \pf
-\step{00}{\pflet{\begin{align*}
-S_1 : G & = G_0 \supsetneq G_1 \supsetneq \cdots \supsetneq G_m = \{e\} \\
-S_2 : G & = G'_0 \supsetneq G'_1 \supsetneq \cdots \supsetneq G'_n = \{e\}
-\end{align*}
-be two composition series for $G$.}}
-\step{1}{\assume{as induction hypothesis the theorem holds for any composition series of length $<n$.}}
-\step{2}{\assume{w.l.o.g. $G_1 \neq G'_1$}}
+\step{1}{\pflet{$G$ be a group.}}
+\step{2}{\pflet{$S_1: G = G_0 \supsetneq G_1 \supsetneq G_2 \supsetneq \cdots \supsetneq G_m = \{e\}$ and $S_2: G = H_0 \supsetneq H_1 \supsetneq H_2 \supsetneq \cdots \supsetneq H_n = \{e\}$ be two normal series in $G$.}}
+\step{3}{For each $i$, we have
+\[ G_i = G_i \cap H_0 \supseteq G_i \cap H_1 \supseteq \cdots \supseteq G_i \cap H_n = \{e\} \]
+is a series of subgroups in $G_i$.}
+\step{4}{For each $i$, we have
+\[ G_i = (G_i \cap H_0) G_{i+1} \supseteq (G_i \cap H_1) G_{i+1} \supseteq \cdots \supseteq (G_i \cap H_n) G_{i+1} = G_{i+1} \]
+is a normal series in $G_i$.}
 \begin{proof}
-	\pf\ Otherwise apply the induction hypothesis to the two composition series for $G_1$.
-\end{proof}
-\step{3}{$G_1 G'_1 = G$}
-\begin{proof}
-	\step{a}{$G_1 G'_1$ is normal in $G$.}
+	\step{a}{\pflet{$0 \leq i < m$ and $0 \leq j < n$} \prove{$(G_i \cap H_{j+1})G_{i+1}$ is normal in $(G_i \cap H_j)G_{i+1}$}}
+	\step{b}{\pflet{$x \in G_i \cap H_{j+1}$, $y \in G_{i+1}$, $a \in G_i \cap H_j$ and $b \in G_{i+1}$} \prove{$abxy\inv{b}\inv{a} \in (G_i \cap H_{j+1}) G_{i+1}$}}
+	\step{c}{$ax\inv{a} \in G_i \cap H_{j+1}$}
 	\begin{proof}
-		\pf\ Proposition \ref{prop:HK-normal}.
+		\pf\ Since $a,x \in G_i$ and $H_{j+1}$ is normal in $H_j$.
 	\end{proof}
-	\step{b}{$G_1 \subsetneq G_1 G'_1$}
-	\step{c}{There is no proper normal subgroup between $G_1$ and $G$.}
+	\step{d}{$a\inv{x}bx\inv{a} \in G_{i+1}$}
 	\begin{proof}
-		\pf\ If $G_1 \subsetneq K \subsetneq G$ then $1 \subsetneq G/K \subsetneq G/G_1$ contradicting the fact that $G/G_1$ is simple.
+		\pf\ Since $G_{i+1}$ is normal in $G_i$.
+	\end{proof}
+	\step{e}{$y\inv{b} \in G_{i+1}$}
+	\step{f}{$ay\inv{b}\inv{a} \in G_{i+1}$}
+	\begin{proof}
+		\pf\ Since $G_{i+1}$ is normal in $G_i$.
+	\end{proof}
+	\step{g}{$abxy\inv{b}\inv{a} = (ax\inv{a})(a\inv{x}bx\inv{a}ay\inv{b}\inv{a}) \in (G_i \cap H_{j+1})G_{i+1}$}
+\end{proof}
+\step{5}{Let $S$ be the series obtained by concatenating the series \stepref{4} for $G_0$ to $G_1$, $G_1$ to $G_2$, \ldots, $G_{m-1}$ to $G_m$}
+\step{6}{$S$ is a refinement of $S_1$.}
+\step{7}{$S$ is normal.}
+\step{8}{\pflet{$T$ be the similarly constructed normal refinement of $S_2$.}}
+\step{9}{For all $i$, $j$ we have
+\[ \frac{(G_i \cap H_j) G_{i+1}}{(G_i \cap H_{j+1}) G_{i+1}} \cong \frac{G_i \cap H_j}{(G_i \cap H_{j+1})(G_{i+1} \cap H_j)} \]}
+\begin{proof}
+	\step{a}{$G_i \cap H_{j+1}$ is normal in $G_i \cap H_j$}
+	\step{b}{For all $q \in G_i \cap H_j$ we have $qG_{i+1} = G_{i+1}q$}
+	\begin{proof}
+		\pf\ Since for all $q \in G_i$ we have $q G_{i+1} = G_{i+1}q$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Lemma \ref{lm:Schreier}
 	\end{proof}
 \end{proof}
-\step{4}{\pflet{$K = G_1 \cap G'_1$}}
-\step{5}{\pick\ a composition series
-\[ K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq K_r = \{e\} \]
-for $K$.}
-\step{6}{$G_1 / K$ and $G'_1/K$ are simple.}
+\step{10}{For all $i$, $j$ we have
+\[ \frac{(G_i \cap H_j) H_{j+1}}{(G_{i+1} \cap H_j) H_{j+1}} \cong \frac{G_i \cap H_j}{(G_{i+1} \cap H_j)(G_i \cap H_{j+1})} \]}
 \begin{proof}
-	\pf\ Since $G_1 / K \cong G / G'_1$ and $G'_1/K \cong G / G_1$ by the Second Isomorphism Theorem and \stepref{3}.
+	\pf\ Lemma \ref{lm:Schreier}
 \end{proof}
-\step{7}{$S_3 : G \supsetneq G_1 \supsetneq K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq \{e\}$ and $S_4 : G \supsetneq G'_1 \supsetneq K \supsetneq K_1 \supsetneq K_2 \supsetneq \cdots \supsetneq \{e\}$ are two composition series for $G$.}
-\step{8}{$S_3$ and $S_4$ are equivalent.}
-\begin{proof}
-	\pf\ Since $G / G_1 \cong G'_1 / K$ and $G/G'_1 \cong G_1 / K$ by the Second Isomorphism Theorem.
-\end{proof}
-\step{9}{$S_3$ and $S_1$ are equivalent.}
-\begin{proof}
-	\pf\ By the induction hypothesis \stepref{1}.
-\end{proof}
-\step{10}{$S_4$ and $S_2$ are equivalent.}
-\begin{proof}
-	\pf\ By the induction hypothesis \stepref{1}.
-\end{proof}
+\step{11}{For all $i$, $j$ we have
+\[ \frac{(G_i \cap H_j) G_{i+1}}{(G_i \cap H_{j+1}) G_{i+1}} \cong \frac{(G_i \cap H_j) H_{j+1}}{(G_{i+1} \cap H_j) H_{j+1}} \]}
+\step{12}{$S$ and $T$ are equivalent.}
 \qed
 \end{proof}
+
+\begin{cor}[Jordan-H\"{o}lder]
+Any two composition series for a group are equivalent.
+\end{cor}
 
 \begin{df}[Composition Factors]
 Let $G$ be a group that has a composition series. The multiset of \emph{composition factors} of $G$ is the multiset of quotients of any composition series.
@@ -2218,6 +2283,7 @@ Non-isomorphic groups can have the same composition factors. For example, $C_2 \
 \end{ex}
 
 \begin{prop}
+\label{prop:composition-series-N-GN}
 Let $G$ be a group. Let $N$ be a normal subgroup of $G$. Then $G$ has a composition series if and only if $N$ and $G/N$ both have composition series, in which case the composition factors of $G$ are the union of the composition factors of $N$ and the composition factors of $G/N$.
 \end{prop}
 
@@ -2279,16 +2345,29 @@ Let $G$ be a group. Let $N$ be a normal subgroup of $G$. Then $G$ has a composit
 \qed
 \end{proof}
 
-\begin{df}[Refinement]
-A series of subgroups $S_1$ is a \emph{refinement} of the series $S_2$ iff every subgroup in $S_2$ appears in $S_1$.
-\end{df}
-
 \begin{prop}
-Any two normal series of a finite group ending in $\{e\}$ have a common refinement up to equivalence.
+Let $G_1$ and $G_2$ be groups. Then $G_1 \times G_2$ has a composition series if and only if $G_1$ and $G_2$ both have composition series.
 \end{prop}
 
 \begin{proof}
-\pf\ Refine to a composition series then apply Jordan-H\"{o}lder. \qed
+\pf
+\step{1}{If $G_1 \times G_2$ has a composition series then $G_1$ has a composition series.}
+\begin{proof}
+	\step{a}{\pflet{$G_1 \times G_2 = A_0 \supsetneq A_1 \supsetneq \cdots \supsetneq A_n = \{e\}$ be a composition series.}}
+	\step{b}{For each $i$, we have $\pi_1(A_i) / \pi_1(A_{i+1})$ is either isomorphic to $A_i / A_{i+1}$ or trivial.}
+	\step{c}{Eliminating duplicates from $G_1 = \pi_1(A_0) \supseteq \pi_1(A_1) \supseteq \cdots \supseteq \pi_1(A_n) = \{e\}$ gives a composition series for $G_1$.}
+\end{proof}
+\step{2}{If $G_1 \times G_2$ has a composotion series then $G_2$ has a composition series.}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\step{3}{If $G_1$ and $G_2$ have composition series then $G_1 \times G_2$ has a composition series.}
+\begin{proof}
+	\step{a}{\pflet{$G_1 = H_0 \supsetneq H_1 \supsetneq \cdots \supsetneq H_m = \{e\}$ be a composition series for $G_1$.}}
+	\step{b}{\pflet{$G_2 = K_0 \supsetneq K_1 \supsetneq \cdots \supsetneq K_n = \{e\}$ be a composition series for $G_2$.}}
+	\step{c}{$G_1 \times G_2 = H_0 \times K_0 \supsetneq H_1 \times K_0 \supsetneq \cdots \supsetneq H_m \times K_0 \supsetneq H_m \times K_1 \supsetneq \cdots \supsetneq H_m \times K_n = \{e\}$ is a composition series for $G_1 \times G_2$.}
+\end{proof}
+\qed
 \end{proof}
 
 \begin{df}[Cyclic Series]
@@ -2307,6 +2386,12 @@ Let $G$ be a group. The \emph{derived series} of $G$ is the series of subgroups
 \begin{df}[Solvable]
 A group is \emph{solvable} iff its derived series terminates in $\{e\}$.
 \end{df}
+
+\begin{thm}[Feit-Thompson]
+Every finite group of odd order is solvable.
+\end{thm}
+
+%TODO
 
 \chapter{Abelian Groups}
 
@@ -2657,6 +2742,22 @@ Every Abelian group is solvable.
 \pf\ If $G$ is Abelian then $G' = \{e\}$. \qed
 \end{proof}
 
+\begin{prop}
+The only non-trivial simple finite Abelian groups are $\mathbb{Z} / p \mathbb{Z}$ for $p$ a prime.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a non-trivial simple finite Abelian group.}}
+\step{2}{\pick\ a prime $p$ that divides $|G|$.}
+\step{3}{\pick\ an element $a \in G$ of order $p$.}
+\begin{proof}
+	\pf\ Cauchy's Theorem.
+\end{proof}
+\step{4}{$\langle a \rangle = G$}
+\qed
+\end{proof}
+
 \section{The Category of Abelian Groups}
 
 \begin{df}[Category of Abelian Groups]
@@ -2972,6 +3073,30 @@ Let $G$ be a finite group. The following are equivalent.
 	\pf\ Extend the derived series of $G$ to a composition series, using the fact that every simple Abelian group is cyclic.
 \end{proof}
 \qed
+\end{proof}
+
+\begin{cor}
+All $p$-groups are solvable.
+\end{cor}
+
+\begin{proof}
+\pf\ Their composition factors are simple $p$-groups, hence cyclic. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $N$ a normal subgroup. Then $G$ is solvable if and only if both $N$ and $G/N$ are solvable.
+\end{cor}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:composition-series-N-GN}. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a finite solvable group. Then the composition factors of $G$ are exactly $C_p$ for $p$ a prime factor of $G$ (with the same multiplicities).
+\end{cor}
+
+\begin{proof}
+\pf\ Since each composition factor is simple and cyclic hence removes one prime factor in $|G|$. \qed
 \end{proof}
 
 \chapter{Group Actions}
@@ -3448,22 +3573,6 @@ Let $p$ be a prime and $k \in \mathbb{N}$. Let $G$ be a finite group. If $p^k$ d
 	\step{g}{\pflet{$P = \inv{\pi}(Q)$}}
 	\step{h}{$|P| = p^k$}
 \end{proof}
-\qed
-\end{proof}
-
-\begin{prop}
-The only non-trivial simple finite Abelian groups are $\mathbb{Z} / p \mathbb{Z}$ for $p$ a prime.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$G$ be a non-trivial simple finite Abelian group.}}
-\step{2}{\pick\ a prime $p$ that divides $|G|$.}
-\step{3}{\pick\ an element $a \in G$ of order $p$.}
-\begin{proof}
-	\pf\ Cauchy's Theorem.
-\end{proof}
-\step{4}{$\langle a \rangle = G$}
 \qed
 \end{proof}
 
