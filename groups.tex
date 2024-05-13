@@ -3040,6 +3040,7 @@ ghH & = hgH \\
 \end{proof}
 
 \begin{prop}
+\label{prop:solvable}
 Let $G$ be a finite group. The following are equivalent.
 \begin{enumerate}
 \item All composition factors of $G$ are cyclic.
@@ -4226,6 +4227,47 @@ We prove this is well-defined by proving that, for all $i$, we have $Z_i$ is nor
 	\end{align*}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+Every Abelian group is nilpotent.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $G$ be an Abelian group. The center of $G/Z_0$ is $G/Z_0$, hence $Z_1 = G$. \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be a group. Then $G$ is nilpotent if and only if $G/Z(G)$ is nilpotent.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$(Z_n)$ be the sequence of subgroups of $G$ where $Z_0 = \{e\}$ and $Z_{n+1}$ is the inverse image of the center of $G / Z_n$.}}
+\step{2}{$G / Z_0 \cong G$}
+\step{3}{$Z_1 = Z(G)$}
+\step{4}{The corresponding sequence of subgroups for $G/ Z(G)$ is $G/Z(G)$, $Z_2 / Z(G)$, $Z_3 / Z(G)$, \ldots}
+\step{5}{$G$ is nilpotent iff $G/Z(G)$ is nilpotent.}
+\begin{proof}
+	\pf\ Both are equivalent to $\exists n. Z_n = g$ and to $\exists n. Z_n/Z(G) = G/Z(G)$.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Every $p$-group is nilpotent.
+\end{prop}
+
+\begin{proof}
+\pf\ Each $Z_n$ is a $p$-group and so has non-trivial center, hence each $Z_{n+1}$ is larger than $Z_n$ and so the sequence must terminate. \qed
+\end{proof}
+
+\begin{prop}
+Every nilpotent group is solvable.
+\end{prop}
+
+\begin{proof}
+\pf\ Let $(Z_n)$ be the defining sequence of subgroups. Then $Z_{n+1}/Z_n = Z(G/Z_n)$ is Abelian for all $n$, hence the group is solvable by Proposition \ref{prop:solvable}. \qed
 \end{proof}
 
 \chapter{Classification of Groups}
