@@ -4274,6 +4274,28 @@ Every nilpotent group is solvable.
 The converse is not true --- $S_3$ is solvable but not nilpotent.
 \end{ex}
 
+\begin{prop}
+Let $G$ be a nilpotent group. Then every nontrivial normal subgroup of $G$ intersects $Z(G)$ non-trivially.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$H$ be a nontrivial normal subgroup of $G$.}}
+\step{2}{\pflet{$(Z_n)$ be the sequence of subgroups with $Z_0 = \{e\}$ and $Z_{n+1}$ the inverse image of $Z(G/Z_n)$.}}
+\step{3}{\pflet{$r$ be least such that $H \cap Z_r \neq \{e\}$.}}
+\step{4}{\pick\ $h \in H \cap Z_r$ with $h \neq e$.}
+\step{5}{$hZ_{r-1} \in Z(G/Z_{r-1})$}
+\step{6}{For all $g \in G$ we have $ghZ_{r-1} = hgZ_{r-1}$}
+\step{7}{For all $g \in G$ we have $gh\inv{g}\inv{h} \in Z_{r-1}$}
+\step{8}{For all $g \in G$ we have $gh\inv{g}\inv{h} = e$}
+\begin{proof}
+	\pf\ Since $gh\inv{g}\inv{h} \in H$ and $H \cap Z_{r-1} = \{e\}$.
+\end{proof}
+\step{9}{For all $g \in G$ we have $gh = hg$}
+\step{10}{$h \in H \cap Z(G)$}
+\qed
+\end{proof}
+
 \chapter{Classification of Groups}
 
 \begin{ex}
