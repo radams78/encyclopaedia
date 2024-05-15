@@ -2374,13 +2374,6 @@ Let $G_1$ and $G_2$ be groups. Then $G_1 \times G_2$ has a composition series if
 A normal series of subgroups is \emph{cyclic} iff every quotient is cyclic.
 \end{df}
 
-\section{Derived Series}
-
-\begin{df}[Derived Series]
-Let $G$ be a group. The \emph{derived series} of $G$ is the series of subgroups
-\[ G \supseteq G' \supseteq G'' \supseteq G''' \supseteq \cdots \]
-\end{df}
-
 \section{Solvable Groups}
 
 \begin{df}[Solvable]
@@ -3098,6 +3091,39 @@ Let $G$ be a finite solvable group. Then the composition factors of $G$ are exac
 
 \begin{proof}
 \pf\ Since each composition factor is simple and cyclic hence removes one prime factor in $|G|$. \qed
+\end{proof}
+
+\section{Derived Series}
+
+\begin{df}[Derived Series]
+Let $G$ be a group. The \emph{derived series} of $G$ is the series of subgroups
+\[ G \supseteq G' \supseteq G'' \supseteq G''' \supseteq \cdots \]
+where $G'$ is the commutator subgroup of $G$.
+
+We write $G^{(i)}$ for the $i+1$st entry in the derived series
+\end{df}
+
+\begin{prop}
+Each $G^{(i)}$ is characteristic.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{$G$ is characteristic in $G$.}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{1}{If $G^{(i)}$ is characteristic in $G$ then $G^{(i+1)}$ is characteristic in $G$.}
+\begin{proof}
+	\step{a}{\assume{$G^{(i)}$ is characteristic.}}
+	\step{b}{\pflet{$\phi : G \cong G$ be an automorphism of $G$.}}
+	\step{c}{For all $g,h \in G^{(i)}$ we have $\phi([g,h]) \in G^{(i+1)}$.}
+	\begin{proof}
+		\pf\ Since $\phi([g,h]) = [\phi(g),\phi(h)]$ and $\phi(g),\phi(h) \in G^{(i)}$.
+	\end{proof}
+	\step{d}{$\phi(G^{(i+1)}) \subseteq G^{(i+1)}$}
+\end{proof}
+\qed
 \end{proof}
 
 \chapter{Group Actions}
@@ -3830,7 +3856,7 @@ Let $G$ be a group and $H$ a subgroup of $G$. Then $N_G(H)$ is the largest subgr
 
 \begin{cor}
 \label{cor:normal-NG}
-Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if $H = N_G(H)$.
+Let $G$ be a group and $H$ a subgroup of $G$. Then $H$ is normal if and only if $G = N_G(H)$.
 \end{cor}
 
 \begin{prop}
@@ -4088,6 +4114,7 @@ Let $p$ and $q$ be prime numbers with $p < q$ and $q \not\equiv 1 (\mod p)$. The
 \end{proof}
 
 \begin{prop}
+\label{prop:NG-NG}
 Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Then
 \[ N_G(N_G(P)) = N_G(P) \enspace . \]
 \end{prop}
@@ -4295,6 +4322,66 @@ Let $G$ be a nilpotent group. Then every nontrivial normal subgroup of $G$ inter
 \step{10}{$h \in H \cap Z(G)$}
 \qed
 \end{proof}
+
+\begin{prop}
+\label{prop:H-sub-NGH}
+Let $G$ be a finite nilpotent group. Let $H$ be a proper subgroup of $G$. Then $H \subsetneq N_G(H)$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{0}{\assume{as induction hypothesis the theorem holds for all groups smaller than $G$.}}
+\step{1}{$Z(G)$ is non-trivial.}
+\step{2}{\case{$Z(G) \nsubseteq H$}}
+\begin{proof}
+	\step{a}{\pick\ $g \in Z(G) - H$}
+	\step{b}{$g \in N_G(H) - H$}
+\end{proof}
+\step{3}{\case{$Z(G) \subseteq H$}}
+\begin{proof}
+	\step{a}{$H / Z(G) \subsetneq N_{G/Z(G)}(H/Z(G))$}
+	\begin{proof}
+		\pf\ By induction hypothesis \stepref{0}.
+	\end{proof}
+	\step{b}{\pick\ $g$ such that $gZ(G) \in N_{G/Z(G)}(H/Z(G)) - H / Z(G)$}
+	\step{c}{$g \in N_G(H)$}
+	\begin{proof}
+		\step{i}{\pflet{$h \in H$} \prove{$gh\inv{g} \in H$}}
+		\step{ii}{$gh\inv{g}Z(G) \in H / Z(G)$}
+		\step{iii}{\pick\ $h_1 \in H$ such that $gh\inv{g}Z(G) = h_1Z(G)$}
+		\step{iv}{$gh\inv{g}\inv{h_1} \in Z(G)$}
+		\step{v}{$gh\inv{g}\inv{h_1} \in H$}
+		\begin{proof}
+			\pf\ \stepref{3}
+		\end{proof}
+		\step{vi}{$gh\inv{g} \in H$}
+	\end{proof}
+	\step{d}{$g \notin H$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+Every Sylow subgroup of a finite nilpotent group is normal.
+\end{cor}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a finite nilpotent group.}}
+\step{2}{\pflet{$P$ be Sylow subgroup of $G$}}
+\step{3}{$N_G(P) = N_G(N_G(P))$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:NG-NG}.
+\end{proof}
+\step{4}{$N_G(P) = G$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:H-sub-NGH}.
+\end{proof}
+\step{5}{$P$ is normal.}
+\qed
+\end{proof}
+
+%TODO The converse holds
 
 \chapter{Classification of Groups}
 
