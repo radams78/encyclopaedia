@@ -35,13 +35,13 @@
 \contentsline {section}{\numberline {7.17}Simple Groups}{55}{}%
 \contentsline {section}{\numberline {7.18}Sylow Subgroups}{56}{}%
 \contentsline {section}{\numberline {7.19}Series of Subgroups}{56}{}%
-\contentsline {section}{\numberline {7.20}Solvable Groups}{60}{}%
 \contentsline {chapter}{\numberline {8}Abelian Groups}{61}{}%
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{66}{}%
 \contentsline {section}{\numberline {8.2}Free Abelian Groups}{67}{}%
 \contentsline {section}{\numberline {8.3}Cokernels}{69}{}%
 \contentsline {section}{\numberline {8.4}Commutator Subgroups}{70}{}%
 \contentsline {section}{\numberline {8.5}Derived Series}{71}{}%
+\contentsline {section}{\numberline {8.6}Solvable Groups}{72}{}%
 \contentsline {chapter}{\numberline {9}Group Actions}{73}{}%
 \contentsline {section}{\numberline {9.1}Group Actions}{73}{}%
 \contentsline {section}{\numberline {9.2}Category of $G$-Sets}{76}{}%

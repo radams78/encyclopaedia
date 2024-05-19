@@ -2374,18 +2374,6 @@ Let $G_1$ and $G_2$ be groups. Then $G_1 \times G_2$ has a composition series if
 A normal series of subgroups is \emph{cyclic} iff every quotient is cyclic.
 \end{df}
 
-\section{Solvable Groups}
-
-\begin{df}[Solvable]
-A group is \emph{solvable} iff its derived series terminates in $\{e\}$.
-\end{df}
-
-\begin{thm}[Feit-Thompson]
-Every finite group of odd order is solvable.
-\end{thm}
-
-%TODO
-
 \chapter{Abelian Groups}
 
 \begin{df}[Abelian Group]
@@ -3104,6 +3092,7 @@ We write $G^{(i)}$ for the $i+1$st entry in the derived series
 \end{df}
 
 \begin{prop}
+\label{prop:derived-group-characteristic}
 Each $G^{(i)}$ is characteristic.
 \end{prop}
 
@@ -3122,6 +3111,37 @@ Each $G^{(i)}$ is characteristic.
 		\pf\ Since $\phi([g,h]) = [\phi(g),\phi(h)]$ and $\phi(g),\phi(h) \in G^{(i)}$.
 	\end{proof}
 	\step{d}{$\phi(G^{(i+1)}) \subseteq G^{(i+1)}$}
+\end{proof}
+\qed
+\end{proof}
+
+\section{Solvable Groups}
+
+\begin{df}[Solvable]
+A group is \emph{solvable} iff its derived series terminates in $\{e\}$.
+\end{df}
+
+\begin{thm}[Feit-Thompson]
+Every finite group of odd order is solvable.
+\end{thm}
+
+%TODO
+
+\begin{prop}
+Let $H$ be a nontrivial normal subgroup of a solvable group $G$. Then $H$ contains a nontrivial Abelian subgroup that is normal in $G$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$r$ be the largest number such that $H \cap G^{(r)}$ is non-trivial.}}
+\step{2}{\pflet{$K = H \cap G^{(r)}$}}
+\step{3}{$K$ is Abelian.}
+\begin{proof}
+	\pf\ Since $[K,K] \subseteq G^{(r+1)} = \{e\}$.
+\end{proof}
+\step{4}{$K$ is normal.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:derived-group-characteristic}.
 \end{proof}
 \qed
 \end{proof}
