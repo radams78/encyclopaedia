@@ -150,6 +150,17 @@ $\mathbf{Vect}_K$ is a symmetric monoidal category under $\otimes$.
 
 \begin{df}[$\sigma$-algebra]
 Let $X$ be a set. A \emph{$\sigma$-algebra} on $X$ is a nonempty set $\Sigma \subseteq \mathcal{P} X$ that is closed under complement, countable union, and countable intersection.
+
+A \emph{measurable space} consists of a set with a $\sigma$-algebra.
+\end{df}
+
+\begin{df}[Measure]
+Let $(X, \sigma)$ be a measurable space. A \emph{measure} on $(X, \sigma)$ is a function $\mu : \Sigma \rightarrow \mathbb{R}_{\geq 0} \cup \{ + \infty \}$ such that:
+\begin{itemize}
+\item $\mu(\emptyset) = 0$
+\item For any countable set of pairwise disjoint sets $\{ E_n : n \in \mathbb{N} \}$ in $\Sigma$,
+\[ \mu \left( \bigcup_{n=0}^\infty E_n \right) = \sum_{n=0}^\infty \mu(E_n) \enspace . \]
+\end{itemize}
 \end{df}
 
 \end{document}
