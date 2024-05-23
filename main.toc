@@ -116,3 +116,4 @@
 \contentsline {chapter}{\numberline {38}Vector Spaces}{205}{}%
 \contentsline {part}{VI\hspace {1em}Linear Algebra}{207}{}%
 \contentsline {chapter}{\numberline {39}Vector Spaces}{209}{}%
+\contentsline {part}{VII\hspace {1em}Measure Theory}{211}{}%
