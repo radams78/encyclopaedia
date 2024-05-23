@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  19 MAY 2024 20:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  23 MAY 2024 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -653,7 +653,7 @@ Chapter 9.
 [73
 
 ] [74]
-Overfull \hbox (0.47714pt too wide) in paragraph at lines 3317--3317
+Overfull \hbox (0.47714pt too wide) in paragraph at lines 3323--3323
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a sub-group $\OML/cmm/m/it/10 K$ \OT1/c
 mr/m/n/10 of $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 nor-mal in $\OML/cmm/m/it/10 
 G$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G \OT1/cmr/m/n
@@ -668,7 +668,7 @@ WARNING: proof step "6" (<1>7) already defined
 [81]
 WARNING: proof step "b" (<2>4) already defined
 [82] [83] [84] [85] [86] [87] [88]
-Overfull \hbox (3.30603pt too wide) in paragraph at lines 4296--4296
+Overfull \hbox (3.30603pt too wide) in paragraph at lines 4302--4302
 []\OT1/cmr/m/n/10 The cor-re-spond-ing se-quence of sub-groups for $\OML/cmm/m/
 it/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$ is $\OML/cmm/m/i
 t/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$, $\OML/cmm/m/it/1
@@ -855,15 +855,21 @@ Overfull \hbox (169.33514pt too wide) in paragraph at lines 3641--3649
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-) [206] (./main.aux) ) 
+) [206] [207
+
+] [208]
+Chapter 39.
+[209
+
+] [210] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17515 strings out of 476091
- 375982 string characters out of 5794081
+ 17551 strings out of 476091
+ 376885 string characters out of 5794081
  1910330 words of memory out of 5000000
- 37636 multiletter control sequences out of 15000+600000
+ 37672 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,20n,118p,448b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,20n,118p,452b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.e
 nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
@@ -889,10 +895,10 @@ ic/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm10
 00.pfb>
-Output written on main.pdf (206 pages, 722128 bytes).
+Output written on main.pdf (210 pages, 729564 bytes).
 PDF statistics:
- 798 PDF objects out of 1000 (max. 8388607)
- 534 compressed objects within 6 object streams
+ 810 PDF objects out of 1000 (max. 8388607)
+ 542 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
