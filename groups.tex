@@ -250,6 +250,16 @@ Given sets $A,B \subseteq G$, we define
 \[ AB = \{ ab : a \in A, b \in B \} \enspace . \]
 \end{df}
 
+\section{Symmetric Groups}
+
+\begin{df}
+Let $n$ be a natural number and $a_1, \ldots, a_r \in \{ 1, \ldots, n \}$ be distinct. The \emph{cycle} or \emph{$n$-cycle}
+\[ (a_1 \ a_2 \ \cdots\ a_n) \in S_n \]
+is the permutation that sends $a_i$ to $a_{i+1}$ ($1 \leq i < n$) and $a_n$ to $a_1$.
+
+We call $n$ the \emph{length} of the cycle.
+\end{df}
+
 \section{Order of an Element}
 
 \begin{df}[Order]
@@ -3127,6 +3137,14 @@ Every finite group of odd order is solvable.
 
 %TODO
 
+\begin{cor}
+Every non-Abelian finite simple group has even order.
+\end{cor}
+
+\begin{proof}
+\pf\ A non-Abelian finite simple group of odd order is solvable, hence its composition factors are all Abelian. But a simple group is its own only composition factor. \qed
+\end{proof}
+
 \begin{prop}
 Let $H$ be a nontrivial normal subgroup of a solvable group $G$. Then $H$ contains a nontrivial Abelian subgroup that is normal in $G$.
 \end{prop}
@@ -4972,4 +4990,31 @@ There is no non-Abelian simple group of order between 60 and 168.
 \item 166 --- Burnside's Theorem
 \item 167 --- prime therefore cyclic
 \end{itemize}
+
+\begin{prop}
+Every group of order $< 120$ and $\neq 60$ is solvable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a group of order $n$ where $n < 120$ and $n \neq 60$.}}
+\step{2}{If $n$ is odd then $G$ is solvable.}
+\begin{proof}
+	\pf\ Feit-Thompson Theorem
+\end{proof}
+\step{3}{If $n$ has at most two prime factors then $G$ is solvable.}
+\begin{proof}
+	\pf\ Burnside's Theorem
+\end{proof}
+\step{4}{\case{$n = pqr$ for some primes $p$, $q$, $r$}}
+\begin{proof}
+	\pf\ Its composition factors must be $C_p$, $C_q$ and $C_r$.
+\end{proof}
+\step{8}{\case{$n = 84$}}
+\begin{proof}
+	\pf\ By the Third Sylow Theorem, the 7-Sylow subgroup is normal. Since every group of order 12 is solvable, so is every group of order 84.
+\end{proof}
+\qed
+\end{proof}
+
 \end{proof}
