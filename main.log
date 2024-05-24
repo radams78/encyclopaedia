@@ -570,7 +570,7 @@ WARNING: proof step "5" (<1>6) already defined
 ]
 Chapter 7.
 [39]
-Overfull \hbox (0.97186pt too wide) in paragraph at lines 678--679
+Overfull \hbox (0.97186pt too wide) in paragraph at lines 680--681
 []\OT1/cmr/bx/n/10 Proposition 7.11. []\OT1/cmr/m/it/10 For any groups $\OML/cm
 m/m/it/10 G$ \OT1/cmr/m/it/10 and $\OML/cmm/m/it/10 H$\OT1/cmr/m/it/10 , the se
 t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
@@ -579,7 +579,7 @@ t $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10
  []
 
 
-Overfull \hbox (42.37027pt too wide) in paragraph at lines 687--688
+Overfull \hbox (42.37027pt too wide) in paragraph at lines 689--690
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : Since $(\OML/cmm/m/it/10 g[]; h[]\OT1
 /cmr/m/n/10 )((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 g[];
  h[]\OT1/cmr/m/n/10 )) = ((\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 )(\OML/cmm/
@@ -595,7 +595,7 @@ WARNING: proof step "5" (<1>6) already defined
 [44] [45] [46]
 WARNING: proof step "2" (<1>3) already defined
 [47]
-Overfull \hbox (16.43498pt too wide) in paragraph at lines 1222--1223
+Overfull \hbox (16.43498pt too wide) in paragraph at lines 1224--1225
 []\OT1/cmr/bx/n/10 Definition 7.48 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/bx
 /n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 mod-u-lar group $[][]\OT1/cmr/m/
 n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 )$ is $[][](\U/msb/m/n/10 Z\OT1/cmr/m/n/10
@@ -614,7 +614,7 @@ WARNING: proof step "v" (<3>6) already defined
 [51] [52] [53]
 WARNING: proof step "1" (<2>1) already defined
 [54] [55] [56] [57] [58]
-Overfull \hbox (4.40312pt too wide) in paragraph at lines 1933--1934
+Overfull \hbox (4.40312pt too wide) in paragraph at lines 1935--1936
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : If $(\OML/cmm/m/it/10 a[]; [] ; a[]\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 then $(\
 OML/cmm/m/it/10 a[]; a[]; [] ; a[]; a[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OM
@@ -623,7 +623,7 @@ L/cmm/m/it/10 S$ \OT1/cmr/m/n/10 since $\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 =
  []
 
 [59] [60] [61] [62] [63] [64]
-Overfull \hbox (8.71196pt too wide) in paragraph at lines 2327--2327
+Overfull \hbox (8.71196pt too wide) in paragraph at lines 2329--2329
 []\OT1/cmr/m/n/10 There is an in-jec-tive ho-mo-mor-phism $(\OML/cmm/m/it/10 G[
 ] \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 N\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =\OT1/
 cmr/m/n/10 (\OML/cmm/m/it/10 G[] \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 N\OT1/cmr/
@@ -631,7 +631,7 @@ m/n/10 ) \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 G[]=G[]$\OT1/cmr/m/n/10 .
  []
 
 [65]
-Overfull \hbox (4.37918pt too wide) in paragraph at lines 2363--2363
+Overfull \hbox (4.37918pt too wide) in paragraph at lines 2365--2365
 []\OT1/cmr/m/n/10 Eliminating all du-pli-cates from the se-ries $\OML/cmm/m/it/
 10 G=N \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 G[]N=N \OMS/cmsy/m/n/10 ^^S \OML/cmm/
 m/it/10 G[]N=N \OMS/cmsy/m/n/10 ^^S
@@ -642,7 +642,7 @@ Chapter 8.
 [67
 
 ] [68]
-Overfull \hbox (1.42752pt too wide) in paragraph at lines 2532--2533
+Overfull \hbox (1.42752pt too wide) in paragraph at lines 2534--2535
 []\OT1/cmr/bx/n/10 Proposition 8.12. []\OT1/cmr/m/it/10 Given a group $\OML/cmm
 /m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr/
 m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
@@ -655,7 +655,7 @@ Chapter 9.
 [79
 
 ] [80]
-Overfull \hbox (0.47714pt too wide) in paragraph at lines 3358--3358
+Overfull \hbox (0.47714pt too wide) in paragraph at lines 3360--3360
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a sub-group $\OML/cmm/m/it/10 K$ \OT1/c
 mr/m/n/10 of $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 nor-mal in $\OML/cmm/m/it/10 
 G$ \OT1/cmr/m/n/10 such that $\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 G \OT1/cmr/m/n
@@ -670,7 +670,7 @@ WARNING: proof step "6" (<1>7) already defined
 [87]
 WARNING: proof step "b" (<2>4) already defined
 [88] [89] [90] [91] [92] [93] [94]
-Overfull \hbox (3.30603pt too wide) in paragraph at lines 4337--4337
+Overfull \hbox (3.30603pt too wide) in paragraph at lines 4339--4339
 []\OT1/cmr/m/n/10 The cor-re-spond-ing se-quence of sub-groups for $\OML/cmm/m/
 it/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$ is $\OML/cmm/m/i
 t/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$, $\OML/cmm/m/it/1
@@ -678,7 +678,7 @@ t/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$, $\OML/cmm/m/it/1
  []
 
 [95] [96]
-Overfull \hbox (197.10255pt too wide) detected at line 4475
+Overfull \hbox (197.10255pt too wide) detected at line 4477
 \OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[] a[]  []  a[]\OT1/cmr/
 m/n/10 )(\OML/cmm/m/it/10 b[] b[]  []  b[]\OT1/cmr/m/n/10 ) [] (\OML/cmm/m/it/1
 0 c[] c[]  []  c[]\OT1/cmr/m/n/10 )[][] = (\OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 
@@ -915,7 +915,7 @@ e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
 public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm1000.pfb>
-Output written on main.pdf (221 pages, 739933 bytes).
+Output written on main.pdf (221 pages, 739981 bytes).
 PDF statistics:
  848 PDF objects out of 1000 (max. 8388607)
  569 compressed objects within 6 object streams
