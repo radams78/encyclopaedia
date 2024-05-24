@@ -4550,6 +4550,56 @@ $A_n$ is normal in $S_n$ and
 \pf\ Since $\epsilon : S_n \rightarrow \{ 1, -1 \}$ is a homomorphism with kernel $A_n$. \qed
 \end{proof}
 
+\begin{prop}
+Let $n \geq 2$ and $\sigma \in A_n$. Let $[\sigma]_{A_n}$ be the conjugacy class of $\sigma$ in $A_n$, and $[\sigma]_{S_n}$ the conjugacy class of $\sigma$ is $S_n$. Then:
+\begin{enumerate}
+\item If $Z_{S_n}(\sigma) \subseteq A_n$ then $|[\sigma]_{S_n}| = 2 |[\sigma]_{A_n}|$.
+\item If not then $[\sigma]_{S_n} = [\sigma]_{A_n}$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$Z_{A_n}(\sigma) = A_n \cap Z_{S_n}(\sigma)$}
+\step{2}{$|[\sigma]_{S_n}| = [S_n : Z_{S_n}(\sigma)]$}
+\begin{proof}
+	\pf\ Orbit-Stabilizer Theorem.
+\end{proof}
+\step{3}{$|[\sigma]_{A_n}| = [A_n : Z_{A_n}(\sigma)]$}
+\begin{proof}
+	\pf\ Orbit-Stabilizer Theorem.
+\end{proof}
+\step{4}{If $Z_{S_n}(\sigma) \subseteq A_n$ then $|[\sigma]_{S_n}| = 2|[\sigma]_{A_n}|$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		|[\sigma]_{S_n}| & = [S_n : Z_{S_n}(\sigma)] \\
+		& = [S_n : A_n][A_n : Z_{S_n}(\sigma)] \\
+		& = 2|[\sigma]_{A_n}|
+	\end{align*}
+\end{proof}
+\step{5}{If $Z_{S_n}(\sigma) \nsubseteq A_n$ then $[\sigma]_{S_n} = [\sigma]_{A_n}$.}
+\begin{proof}
+	\step{a}{\assume{$Z_{S_n}(\sigma) \nsubseteq A_n$}}
+	\step{b}{$A_n Z_{S_n}(\sigma) = S_n$}
+	\begin{proof}
+		\pf\ Since $A_n \subseteq A_n Z_{S_n}(\sigma)$ and $[S_n : A_n] = 2$.
+	\end{proof}
+	\step{c}{$|[\sigma]_{S_n}| = |[\sigma]_{A_n}|$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			|[\sigma]_{S_n}| & = [S_n : Z_{S_n}(\sigma)] \\
+			& = [A_n Z_{S_n}(\sigma) : Z_{S_n}(\sigma)] \\
+			& = [A_n : A_n \cap Z_{S_n}(\sigma)] & (\text{Second Isomorphism Theorem}) \\
+			& = [A_n : Z_{A_n}(\sigma)] \\
+			& = |[\sigma]_{A_n}|
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Classification of Groups}
 
 \begin{ex}
