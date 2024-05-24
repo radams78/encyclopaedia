@@ -4469,6 +4469,7 @@ The transpositions generate $S_n$.
 \pf\ Since any cycle is a product of transpositions:
 \[ (a_1\ a_2\ \cdots\ a_n) = (a_1\ a_n) \circ \cdots \circ (a_1\ a_3) \circ (a_1\ a_2) \enspace . \qed \]
 \end{proof}
+
 \begin{df}[Type]
 For any $\sigma \in S_n$, the \emph{type} of $\sigma$ is the partition of $n$ consisting of the sizes of the orbits of $\sigma$.
 \end{df}
@@ -4504,6 +4505,8 @@ Define an action of $S_n$ on $\mathbb{Z}[x_1, \ldots, x_n]$ by
 \[ \sigma p(x_1, \ldots, x_n) = p(x_{\sigma(1)}, \ldots, x_{\sigma(n)}) \enspace . \]
 The \emph{sign} of a permutation $\sigma \in S_n$ is the number $\epsilon(\sigma) \in \{ 1, -1 \}$ such that
 \[ \sigma \Delta_n = \epsilon(\sigma) \Delta_n \enspace. \]
+
+We say $\sigma$ is \emph{even} if $\epsilon(\sigma) = 1$ and \emph{odd} if $\epsilon(\sigma) = -1$.
 \end{df}
 
 \begin{prop}
@@ -4517,6 +4520,14 @@ $\epsilon$ is a group homomorphism $S_n \rightarrow \mathbb{Z}^*$.
 \step{3}{$\epsilon(\rho \circ \sigma) \Delta_n = \epsilon(\rho) \epsilon(\sigma) \Delta_n$}
 \step{4}{$\epsilon(\rho \circ \sigma) = \epsilon(\rho) \epsilon(\sigma)$}
 \qed
+\end{proof}
+
+\begin{prop}
+Let $\sigma = \tau_1 \cdots \tau_r$ where each $\tau_i$ is a transposition. Then $\sigma$ is even if and only if $r$ is even.
+\end{prop}
+
+\begin{proof}
+\pf\ Since every transposition is odd and $\epsilon$ is a homomorphism, we have $\epsilon(\tau_1 \cdots \tau_r) = (-1)^r$. \qed
 \end{proof}
 \chapter{Classification of Groups}
 
