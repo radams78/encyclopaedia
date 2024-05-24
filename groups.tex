@@ -4487,6 +4487,15 @@ Two permutations in $S_n$ are conjugate if and only if they have the same type.
 The number of conjugacy classes in $S_n$ equals the number of permutations of $n$.
 \end{cor}
 
+\begin{df}[Sign]
+Define $\Delta_n \in \mathbb{Z}[x_1, \ldots, x_n]$ by
+\[ \Delta_n = \prod_{1 \leq i < j \leq n} (x_i - x_j) \]
+Define an action of $S_n$ on $\mathbb{Z}[x_1, \ldots, x_n]$ by
+\[ \sigma p(x_1, \ldots, x_n) = p(x_{\sigma(1)}, \ldots, x_{\sigma(n)}) \enspace . \]
+The \emph{sign} of a permutation $\sigma \in S_n$ is the number $\sigma \in \{ 1, -1 \}$ such that
+\[ \sigma \Delta_n = (-1)^\sigma \Delta_n \enspace. \]
+\end{df}
+
 \chapter{Classification of Groups}
 
 \begin{ex}

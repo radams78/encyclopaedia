@@ -1,11 +1,12 @@
 \contentsline {part}{I\hspace {1em}Category Theory}{7}{}%
 \contentsline {chapter}{\numberline {1}Foundations}{9}{}%
 \contentsline {chapter}{\numberline {2}Categories}{11}{}%
-\contentsline {section}{\numberline {2.1}Preorders}{12}{}%
-\contentsline {section}{\numberline {2.2}Monomorphisms and Epimorphisms}{12}{}%
-\contentsline {section}{\numberline {2.3}Sections and Retractions}{14}{}%
-\contentsline {section}{\numberline {2.4}Isomorphisms}{15}{}%
-\contentsline {section}{\numberline {2.5}Initial and Terminal Objects}{15}{}%
+\contentsline {section}{\numberline {2.1}Categories}{11}{}%
+\contentsline {section}{\numberline {2.2}Preorders}{12}{}%
+\contentsline {section}{\numberline {2.3}Monomorphisms and Epimorphisms}{12}{}%
+\contentsline {section}{\numberline {2.4}Sections and Retractions}{14}{}%
+\contentsline {section}{\numberline {2.5}Isomorphisms}{15}{}%
+\contentsline {section}{\numberline {2.6}Initial and Terminal Objects}{15}{}%
 \contentsline {chapter}{\numberline {3}Functors}{17}{}%
 \contentsline {section}{\numberline {3.1}Comma Categories}{17}{}%
 \contentsline {part}{II\hspace {1em}Number Theory}{19}{}%
