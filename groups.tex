@@ -4492,10 +4492,22 @@ Define $\Delta_n \in \mathbb{Z}[x_1, \ldots, x_n]$ by
 \[ \Delta_n = \prod_{1 \leq i < j \leq n} (x_i - x_j) \]
 Define an action of $S_n$ on $\mathbb{Z}[x_1, \ldots, x_n]$ by
 \[ \sigma p(x_1, \ldots, x_n) = p(x_{\sigma(1)}, \ldots, x_{\sigma(n)}) \enspace . \]
-The \emph{sign} of a permutation $\sigma \in S_n$ is the number $\sigma \in \{ 1, -1 \}$ such that
-\[ \sigma \Delta_n = (-1)^\sigma \Delta_n \enspace. \]
+The \emph{sign} of a permutation $\sigma \in S_n$ is the number $\epsilon(\sigma) \in \{ 1, -1 \}$ such that
+\[ \sigma \Delta_n = \epsilon(\sigma) \Delta_n \enspace. \]
 \end{df}
 
+\begin{prop}
+$\epsilon$ is a group homomorphism $S_n \rightarrow \mathbb{Z}^*$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\rho, \sigma \in S_n$}}
+\step{2}{$(\rho \circ \sigma) \Delta_n = \rho (\sigma \Delta_n)$}
+\step{3}{$\epsilon(\rho \circ \sigma) \Delta_n = \epsilon(\rho) \epsilon(\sigma) \Delta_n$}
+\step{4}{$\epsilon(\rho \circ \sigma) = \epsilon(\rho) \epsilon(\sigma)$}
+\qed
+\end{proof}
 \chapter{Classification of Groups}
 
 \begin{ex}
