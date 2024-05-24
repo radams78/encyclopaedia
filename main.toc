@@ -54,6 +54,7 @@
 \contentsline {section}{\numberline {9.6}Conjugation on Sets}{88}{}%
 \contentsline {section}{\numberline {9.7}Nilpotent Groups}{94}{}%
 \contentsline {section}{\numberline {9.8}Symmetric Groups}{96}{}%
+\contentsline {section}{\numberline {9.9}Alternating Groups}{98}{}%
 \contentsline {chapter}{\numberline {10}Classification of Groups}{99}{}%
 \contentsline {part}{IV\hspace {1em}Ring Theory}{113}{}%
 \contentsline {chapter}{\numberline {11}Rngs}{115}{}%
