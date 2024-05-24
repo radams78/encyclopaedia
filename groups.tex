@@ -253,12 +253,29 @@ Given sets $A,B \subseteq G$, we define
 \section{Symmetric Groups}
 
 \begin{df}
-Let $n$ be a natural number and $a_1, \ldots, a_r \in \{ 1, \ldots, n \}$ be distinct. The \emph{cycle} or \emph{$n$-cycle}
-\[ (a_1 \ a_2 \ \cdots\ a_n) \in S_n \]
-is the permutation that sends $a_i$ to $a_{i+1}$ ($1 \leq i < n$) and $a_n$ to $a_1$.
+Let $n$ be a natural number and $a_1, \ldots, a_r \in \{ 1, \ldots, n \}$ be distinct. The \emph{cycle} or \emph{$r$-cycle}
+\[ (a_1 \ a_2 \ \cdots\ a_r) \in S_n \]
+is the permutation that sends $a_i$ to $a_{i+1}$ ($1 \leq i < r$) and $a_r$ to $a_1$.
 
-We call $n$ the \emph{length} of the cycle.
+We call $r$ the \emph{length} of the cycle.
 \end{df}
+
+\begin{prop}
+Disjoint cycles commute.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+For any cycle $(a_1\ a_2\ \cdots\ a_r)$ in $S_n$ and $\tau \in S_n$ we have
+\[ \tau (a_1\ a_2\ \cdots\ a_n) \inv{\tau} = (\tau(a_1)\ \tau(a_2)\ \cdots\ \tau(a_n)) \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
 
 \section{Order of an Element}
 
@@ -4431,6 +4448,44 @@ Every Sylow subgroup of a finite nilpotent group is normal.
 \end{proof}
 
 %TODO The converse holds
+
+\section{Symmetric Groups}
+
+\begin{prop}
+Every permutation in $S_n$ is the product of a unique set of disjoint cycles.
+\end{prop}
+
+\begin{proof}
+\pf\ Since any permutation acts as a cycle on any of its orbits. \qed
+\end{proof}
+
+\begin{df}[Type]
+For any $\sigma \in S_n$, the \emph{type} of $\sigma$ is the partition of $n$ consisting of the sizes of the orbits of $\sigma$.
+\end{df}
+
+\begin{prop}
+Two permutations in $S_n$ are conjugate if and only if they have the same type.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{Two permutations that are conjugate have the same type.}
+\begin{proof}
+	\pf\ Since
+	\[ \tau (a_1\ a_2\ \cdots\ a_r) (b_1\ b_2\ \cdots\ b_s) \cdots (c_1\ c_2\ \cdots\ c_t) \inv{tau} = (\tau(a_1)\ \tau(a_2)\ \cdots\ \tau(a_r)) (\tau(b_1)\ \tau(b_2)\ \cdots\ \tau(b_s)) \cdots (\tau(c_1)\ \tau(c_2)\ \cdots\ \tau(c_t)) \]
+\end{proof}
+\step{2}{Two permutaitons with the same type are conjugate.}
+\begin{proof}
+	\step{a}{\pflet{$\rho = (a_1\ a_2\ \cdots\ a_r) (b_1\ b_2\ \cdots\ b_s) \cdots (c_1\ c_2\ \cdots\ c_t)$ and $\sigma = (a_1'\ a_2'\ \cdots\ a_r') (b_1'\ b_2'\ \cdots\ b_s') \cdots (c_1'\ c_2'\ \cdots\ c_t')$}}
+	\step{b}{\pflet{$\tau$ be the permutation $\tau(a_i) = a_i'$, $\tau(b_i) = b_i'$, \ldots, $\tau(c_i) = c_i'$}}
+	\step{c}{$\sigma = \tau \rho \inv{\tau}$}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+The number of conjugacy classes in $S_n$ equals the number of permutations of $n$.
+\end{cor}
 
 \chapter{Classification of Groups}
 
