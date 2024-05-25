@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 MAY 2024 15:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 MAY 2024 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -701,10 +701,11 @@ Chapter 10.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [102]
-[103] [104] [105] [106] [107] [108] [109] [110] [111] [112]) [113] [114
+[103] [104] [105] [106] [107]
+WARNING: proof step "6" (<1>7) already defined
+[108] [109] [110] [111] [112] [113]) [114] [115
 
-]
-[115] [116] (./rings.tex
+] [116] (./rings.tex
 Chapter 11.
 LaTeX Font Info:    Trying to load font information for U+euf on input line 21.
 
@@ -883,10 +884,10 @@ Chapter 39.
 
 ] [222] [223] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17552 strings out of 476091
- 376908 string characters out of 5794081
+ 17553 strings out of 476091
+ 376930 string characters out of 5794081
  1910330 words of memory out of 5000000
- 37673 multiletter control sequences out of 15000+600000
+ 37674 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,452b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -915,7 +916,7 @@ e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
 public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm1000.pfb>
-Output written on main.pdf (223 pages, 745549 bytes).
+Output written on main.pdf (223 pages, 746432 bytes).
 PDF statistics:
  855 PDF objects out of 1000 (max. 8388607)
  574 compressed objects within 6 object streams

@@ -4602,6 +4602,7 @@ Let $n \geq 2$ and $\sigma \in A_n$. Let $[\sigma]_{A_n}$ be the conjugacy class
 \end{proof}
 
 \begin{prop}
+\label{prop:conjugacy-split}
 Let $n \geq 2$. Let $\sigma \in A_n$. Then $|[\sigma]_{S_n}| = 2|[\sigma]_{A_n}|$ if and only if the type of $\sigma$ consists of distinct odd numbers.
 \end{prop}
 
@@ -5001,6 +5002,47 @@ Every simple group of order 60 has a subgroup of index 5.
 \end{proof}
 \step{14}{$[G:K] = 5$}
 \qed 
+\end{proof}
+
+\begin{ex}
+$A_5$ is a simple noncommutative group of size 60.
+\end{ex}
+
+\begin{proof}
+\pf
+\step{1}{\assume{for a contradiction $G$ is a non-trivial proper normal subgroup of $A_5$.}}
+\step{2}{$|G|$ is one of 2, 3, 4, 5, 6, 10, 12, 15, 20 or 30.}
+\step{3}{There are conjugacy classes in $A_5$ whose sizes total to 1, 2, 3, 4, 5, 9, 11, 14, 19 or 29.}
+\step{4}{The types of the even permutations in $S_5$ are $[1,1,1,1,1]$, $[2,2,1]$, $[3,1,1]$ and $[5]$.}
+\step{5}{The size of the conjugacy class of type $[2,2,1]$ in $S_5$ is 15.}
+\begin{proof}
+	\pf\ There are 5 ways to choose the element not in the 2-cycles, and then 3 ways to arrange the other 4 elements into two 2-cycles.
+\end{proof}
+\step{6}{The size of the conjugacy class of type $[2,2,1]$ in $A_5$ is 15.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:conjugacy-split}.
+\end{proof}
+\step{6}{The size of the conjugacy class of type $[3,1,1]$ in $S_5$ is 20.}
+\begin{proof}
+	\pf\ There are 10 ways to choose the three elements in the 3-cycle, and then two 3-cycles that they can form.
+\end{proof}
+\step{7}{The size of the conjugacy class of type $[3,1,1]$ in $A_5$ is 20.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:conjugacy-split}.
+\end{proof}
+\step{8}{The size of the conjugacy class of type $[5]$ in $S_5$ is 24.}
+\begin{proof}
+	\pf\ There are four choices for the value at 1, then three choices for its value, then two choices for its value, then one choice for its value.
+\end{proof}
+\step{9}{The size of the conjugacy class of type $[5]$ in $S_5$ is 12.}
+\begin{proof}
+	\pf\ Proposition \ref{prop:conjugacy-split}.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts \stepref{3}.
+\end{proof}
+\qed
 \end{proof}
 
 \begin{prop}
