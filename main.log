@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  24 MAY 2024 17:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  25 MAY 2024 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -693,103 +693,103 @@ it/10 c[]\OT1/cmr/m/n/10 )  []  \OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 c[]\OT1/cmr/m/n/10 ))
  []
 
-[97] [98]
-Chapter 10.
-[99
+[97] [98] [99] [100
 
 ]
+Chapter 10.
+[101]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [100]
-[101] [102] [103] [104] [105] [106] [107] [108] [109] [110]) [111] [112
+ [102]
+[103] [104] [105] [106] [107] [108] [109] [110] [111] [112]) [113] [114
 
 ]
-[113] [114] (./rings.tex
+[115] [116] (./rings.tex
 Chapter 11.
 LaTeX Font Info:    Trying to load font information for U+euf on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [115
+) [117
 
-] [116] [117]
-[118
+] [118] [119]
+[120
 
 ]
 Chapter 12.
-[119] [120] [121] [122] [123] [124]
+[121] [122] [123] [124] [125] [126]
 Chapter 13.
-[125
+[127
 
-] [126] [127] [128
+] [128] [129] [130
 
 ]
 Chapter 14.
-[129] [130]
+[131] [132]
 Chapter 15.
-[131
+[133
 
-] [132] [133] [134]
+] [134] [135] [136]
 Chapter 16.
-[135
+[137
 
-] [136] [137] [138] [139] [140
+] [138] [139] [140] [141] [142
 
 ]
 Chapter 17.
-[141] [142] [143] [144
+[143] [144] [145] [146
 
 ]
 Chapter 18.
-[145] [146
-
-]
-Chapter 19.
 [147] [148
 
 ]
-Chapter 20.
+Chapter 19.
 [149] [150
 
 ]
-Chapter 21.
+Chapter 20.
 [151] [152
 
 ]
-Chapter 22.
-[153] [154]
-Chapter 23.
-[155
+Chapter 21.
+[153] [154
 
-] [156
+]
+Chapter 22.
+[155] [156]
+Chapter 23.
+[157
+
+] [158
 
 ]
 Chapter 24.
-[157] [158
+[159] [160
 
 ]
 Chapter 25.
-[159] [160]
+[161] [162]
 Chapter 26.
-[161
+[163
 
 ]
 WARNING: proof step "3" (<1>4) already defined
-[162] [163] [164] [165] [166] [167] [168] [169] [170]
+[164] [165] [166] [167] [168] [169] [170] [171] [172]
 Chapter 27.
-[171
-
-] [172]
-Chapter 28.
 [173
 
-] [174
+] [174]
+Chapter 28.
+[175
+
+] [176
 
 ]
 Chapter 29.
-[175] [176]
+[177] [178]
 Chapter 30.
-[177
+[179
 
 ]
 Overfull \hbox (46.77194pt too wide) in paragraph at lines 2510--2510
@@ -800,34 +800,34 @@ Overfull \hbox (46.77194pt too wide) in paragraph at lines 2510--2510
 r/m/n/10 )$. 
  []
 
-[178] [179] [180
+[180] [181] [182
 
 ]
 Chapter 31.
-[181] [182
-
-]
-Chapter 32.
 [183] [184
 
 ]
-Chapter 33.
+Chapter 32.
 [185] [186
 
 ]
+Chapter 33.
+[187] [188
+
+]
 Chapter 34.
-[187] [188]
+[189] [190]
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
- [189]
-[190] [191] [192]
+ [191]
+[192] [193] [194]
 WARNING: proof step "1" (<1>3) already defined
-[193]
+[195]
 WARNING: proof step "2" (<1>4) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
-[194] [195]
+[196] [197]
 Overfull \hbox (5.62077pt too wide) in paragraph at lines 3068--3069
 []\OT1/cmr/bx/n/10 Proposition 34.14. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
@@ -841,52 +841,52 @@ Overfull \hbox (5.62077pt too wide) in paragraph at lines 3086--3087
  
  []
 
-[196]
+[198]
 Overfull \hbox (5.62077pt too wide) in paragraph at lines 3102--3103
 []\OT1/cmr/bx/n/10 Proposition 34.16. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[197] [198] [199] [200]
+[199] [200] [201] [202]
 Chapter 35.
-[201
+[203
 
-] [202
+] [204
 
-] [203] [204]
+] [205] [206]
 Chapter 36.
-[205
+[207
 
-] [206] [207] [208
+] [208] [209] [210
 
 ]
 Chapter 37.
-[209] [210
+[211] [212
 
-] [211] [212]
+] [213] [214]
 Chapter 38.
-[213
+[215
 
 ]
 Overfull \hbox (169.33514pt too wide) in paragraph at lines 3641--3649
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-) [214] [215
+) [216] [217
 
-] [216]
+] [218]
 Chapter 39.
-[217
+[219
 
-] [218] [219
+] [220] [221
 
-] [220] [221] (./main.aux) ) 
+] [222] [223] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17551 strings out of 476091
- 376885 string characters out of 5794081
- 1911330 words of memory out of 5000000
- 37672 multiletter control sequences out of 15000+600000
+ 17552 strings out of 476091
+ 376908 string characters out of 5794081
+ 1910330 words of memory out of 5000000
+ 37673 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,452b,1119s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -915,10 +915,10 @@ e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
 public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msbm7.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfrm1000.pfb>
-Output written on main.pdf (221 pages, 742767 bytes).
+Output written on main.pdf (223 pages, 745549 bytes).
 PDF statistics:
- 848 PDF objects out of 1000 (max. 8388607)
- 569 compressed objects within 6 object streams
+ 855 PDF objects out of 1000 (max. 8388607)
+ 574 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

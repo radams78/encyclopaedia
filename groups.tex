@@ -4551,6 +4551,7 @@ $A_n$ is normal in $S_n$ and
 \end{proof}
 
 \begin{prop}
+\label{prop:size-of-sigma-An}j6FAK
 Let $n \geq 2$ and $\sigma \in A_n$. Let $[\sigma]_{A_n}$ be the conjugacy class of $\sigma$ in $A_n$, and $[\sigma]_{S_n}$ the conjugacy class of $\sigma$ is $S_n$. Then:
 \begin{enumerate}
 \item If $Z_{S_n}(\sigma) \subseteq A_n$ then $|[\sigma]_{S_n}| = 2 |[\sigma]_{A_n}|$.
@@ -4596,6 +4597,39 @@ Let $n \geq 2$ and $\sigma \in A_n$. Let $[\sigma]_{A_n}$ be the conjugacy class
 			& = |[\sigma]_{A_n}|
 		\end{align*}
 	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $n \geq 2$. Let $\sigma \in A_n$. Then $|[\sigma]_{S_n}| = 2|[\sigma]_{A_n}|$ if and only if the type of $\sigma$ consists of distinct odd numbers.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $|[\sigma]_{S_n}| = 2 |[\sigma]_{A_n}|$ then the type of $\sigma$ consists of distinct odd numbers.}
+\begin{proof}
+	\step{a}{If the type of $\sigma$ has an even number then $Z_{S_n}(\sigma) \nsubseteq A_n$.}
+	\begin{proof}
+		\pf\ If $(a_1\ a_2\ \cdots\ a_n)$ is an even cycle that is a factor of $\sigma$ then $(1\ 2\ \cdots\ n)$ is an odd permutation in $Z_{S_n}(\sigma)$.
+	\end{proof}
+	\step{b}{If the type of $\sigma$ has an odd number repeated then $Z_{S_n}(\sigma) \nsubseteq A_n$.}
+	\begin{proof}
+		\pf\ If $(a_1\ a_2\ \cdots\ a_n)$ and $(b_1\ b_2\ \cdots\ b_n)$ are two distinct odd factors of $\sigma$ then $(a_1\ b_1)(a_2\ b_2) \cdots (a_n\ b_n)$ is an odd permutation in $Z_{S_n}(\sigma)$.
+	\end{proof}
+	\qedstep
+	\begin{proof}
+		\pf\ Proposition \ref{prop:size-of-sigma-An}
+	\end{proof}
+\end{proof}
+\step{2}{If the type of $\sigma$ consists of distinct odd numbers then $|[\sigma]_{S_n}| = 2 |[\sigma]_{A_n}|$.}
+\begin{proof}
+	\step{a}{\pflet{$\sigma = (a_{11}\ \cdots\ a_{1\lambda_1})(b_{21}\ \cdots\ b_{2\lambda_2}) \cdots (c_{n1}\ \cdots\ c_{n\lambda_n})$ where the $\lambda_i$ are all odd and distinct.}}
+	\step{b}{\pflet{$\tau \in Z_{S_n}(\sigma)$} \prove{$\tau$ is even.}}
+	\step{c}{$(\tau(a_{i1})\ \cdots\ \tau(a_{i\lambda_i})) = (\tau_{i1}\ \cdots\ \tau_{i\lambda_i})$}
+	\step{d}{The action of $\tau$ on $\{a_{i1}, \ldots, a_{i\lambda_i}\}$ is $(a_{i1}\ \cdots\ a_{i\lambda_i})^{r_i}$ for some $r_i$}
+	\step{e}{$\tau = \prod_{i=1}^n (a_{i1}\ \cdots\ a_{i \lambda_i})^{r_i}$}
+	\step{f}{$\tau$ is even.}
 \end{proof}
 \qed
 \end{proof}

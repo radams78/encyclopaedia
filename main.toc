@@ -55,70 +55,70 @@
 \contentsline {section}{\numberline {9.7}Nilpotent Groups}{94}{}%
 \contentsline {section}{\numberline {9.8}Symmetric Groups}{96}{}%
 \contentsline {section}{\numberline {9.9}Alternating Groups}{98}{}%
-\contentsline {chapter}{\numberline {10}Classification of Groups}{99}{}%
-\contentsline {part}{IV\hspace {1em}Ring Theory}{113}{}%
-\contentsline {chapter}{\numberline {11}Rngs}{115}{}%
-\contentsline {section}{\numberline {11.1}Commutative Rngs}{117}{}%
-\contentsline {section}{\numberline {11.2}Rng Homomorphisms}{117}{}%
-\contentsline {section}{\numberline {11.3}Quaternions}{117}{}%
-\contentsline {chapter}{\numberline {12}Rings}{119}{}%
-\contentsline {section}{\numberline {12.1}Units}{120}{}%
-\contentsline {section}{\numberline {12.2}Euler's $\phi $-function}{122}{}%
-\contentsline {section}{\numberline {12.3}Nilpotent Elements}{124}{}%
-\contentsline {chapter}{\numberline {13}Ring Homomorphisms}{125}{}%
-\contentsline {section}{\numberline {13.1}Products}{127}{}%
-\contentsline {chapter}{\numberline {14}Subrings}{129}{}%
-\contentsline {section}{\numberline {14.1}Centralizer}{129}{}%
-\contentsline {section}{\numberline {14.2}Center}{129}{}%
-\contentsline {chapter}{\numberline {15}Monoid Rings}{131}{}%
-\contentsline {section}{\numberline {15.1}Polynomials}{131}{}%
-\contentsline {section}{\numberline {15.2}Laurent Polynomials}{133}{}%
-\contentsline {section}{\numberline {15.3}Power Series}{134}{}%
-\contentsline {chapter}{\numberline {16}Ideals}{135}{}%
-\contentsline {section}{\numberline {16.1}Characteristic}{138}{}%
-\contentsline {section}{\numberline {16.2}Nilradical}{138}{}%
-\contentsline {section}{\numberline {16.3}Principal Ideals}{138}{}%
-\contentsline {section}{\numberline {16.4}Maximal Ideals}{139}{}%
-\contentsline {chapter}{\numberline {17}Integral Domains}{141}{}%
-\contentsline {section}{\numberline {17.1}Prime Ideals}{142}{}%
-\contentsline {chapter}{\numberline {18}Unique Factorization Domains}{145}{}%
-\contentsline {chapter}{\numberline {19}Noetherian Rings}{147}{}%
-\contentsline {chapter}{\numberline {20}Principal Ideal Domains}{149}{}%
-\contentsline {chapter}{\numberline {21}Euclidean Domains}{151}{}%
-\contentsline {chapter}{\numberline {22}Division Rings}{153}{}%
-\contentsline {chapter}{\numberline {23}Simple Rings}{155}{}%
-\contentsline {chapter}{\numberline {24}Reduced Rings}{157}{}%
-\contentsline {chapter}{\numberline {25}Boolean Rings}{159}{}%
-\contentsline {chapter}{\numberline {26}Modules}{161}{}%
-\contentsline {section}{\numberline {26.1}Homomorphisms}{162}{}%
-\contentsline {section}{\numberline {26.2}Submodules}{163}{}%
-\contentsline {section}{\numberline {26.3}Quotient Modules}{164}{}%
-\contentsline {section}{\numberline {26.4}Products}{165}{}%
-\contentsline {section}{\numberline {26.5}Coproducts}{165}{}%
-\contentsline {section}{\numberline {26.6}Direct Sum}{165}{}%
-\contentsline {section}{\numberline {26.7}Kernels and Cokernels}{166}{}%
-\contentsline {section}{\numberline {26.8}Free Modules}{167}{}%
-\contentsline {section}{\numberline {26.9}Generators}{168}{}%
-\contentsline {section}{\numberline {26.10}Projections}{169}{}%
-\contentsline {section}{\numberline {26.11}Pullbacks}{169}{}%
-\contentsline {section}{\numberline {26.12}Pushouts}{170}{}%
-\contentsline {chapter}{\numberline {27}Cyclic Modules}{171}{}%
-\contentsline {chapter}{\numberline {28}Simple Modules}{173}{}%
-\contentsline {chapter}{\numberline {29}Noetherian Modules}{175}{}%
-\contentsline {chapter}{\numberline {30}Algebras}{177}{}%
-\contentsline {section}{\numberline {30.1}Rees Algebra}{178}{}%
-\contentsline {section}{\numberline {30.2}Free Algebras}{178}{}%
-\contentsline {chapter}{\numberline {31}Algebras of Finite Type}{181}{}%
-\contentsline {chapter}{\numberline {32}Finite Algebras}{183}{}%
-\contentsline {chapter}{\numberline {33}Division Algebras}{185}{}%
-\contentsline {chapter}{\numberline {34}Chain Complexes}{187}{}%
-\contentsline {section}{\numberline {34.1}Split Exact Sequences}{198}{}%
-\contentsline {chapter}{\numberline {35}Homology}{201}{}%
-\contentsline {part}{V\hspace {1em}Field Theory}{203}{}%
-\contentsline {chapter}{\numberline {36}Fields}{205}{}%
-\contentsline {chapter}{\numberline {37}Algebraically Closed Fields}{209}{}%
-\contentsline {part}{VI\hspace {1em}Linear Algebra}{211}{}%
-\contentsline {chapter}{\numberline {38}Vector Spaces}{213}{}%
-\contentsline {part}{VII\hspace {1em}Linear Algebra}{215}{}%
-\contentsline {chapter}{\numberline {39}Vector Spaces}{217}{}%
-\contentsline {part}{VIII\hspace {1em}Measure Theory}{219}{}%
+\contentsline {chapter}{\numberline {10}Classification of Groups}{101}{}%
+\contentsline {part}{IV\hspace {1em}Ring Theory}{115}{}%
+\contentsline {chapter}{\numberline {11}Rngs}{117}{}%
+\contentsline {section}{\numberline {11.1}Commutative Rngs}{119}{}%
+\contentsline {section}{\numberline {11.2}Rng Homomorphisms}{119}{}%
+\contentsline {section}{\numberline {11.3}Quaternions}{119}{}%
+\contentsline {chapter}{\numberline {12}Rings}{121}{}%
+\contentsline {section}{\numberline {12.1}Units}{122}{}%
+\contentsline {section}{\numberline {12.2}Euler's $\phi $-function}{124}{}%
+\contentsline {section}{\numberline {12.3}Nilpotent Elements}{126}{}%
+\contentsline {chapter}{\numberline {13}Ring Homomorphisms}{127}{}%
+\contentsline {section}{\numberline {13.1}Products}{129}{}%
+\contentsline {chapter}{\numberline {14}Subrings}{131}{}%
+\contentsline {section}{\numberline {14.1}Centralizer}{131}{}%
+\contentsline {section}{\numberline {14.2}Center}{131}{}%
+\contentsline {chapter}{\numberline {15}Monoid Rings}{133}{}%
+\contentsline {section}{\numberline {15.1}Polynomials}{133}{}%
+\contentsline {section}{\numberline {15.2}Laurent Polynomials}{135}{}%
+\contentsline {section}{\numberline {15.3}Power Series}{136}{}%
+\contentsline {chapter}{\numberline {16}Ideals}{137}{}%
+\contentsline {section}{\numberline {16.1}Characteristic}{140}{}%
+\contentsline {section}{\numberline {16.2}Nilradical}{140}{}%
+\contentsline {section}{\numberline {16.3}Principal Ideals}{140}{}%
+\contentsline {section}{\numberline {16.4}Maximal Ideals}{141}{}%
+\contentsline {chapter}{\numberline {17}Integral Domains}{143}{}%
+\contentsline {section}{\numberline {17.1}Prime Ideals}{144}{}%
+\contentsline {chapter}{\numberline {18}Unique Factorization Domains}{147}{}%
+\contentsline {chapter}{\numberline {19}Noetherian Rings}{149}{}%
+\contentsline {chapter}{\numberline {20}Principal Ideal Domains}{151}{}%
+\contentsline {chapter}{\numberline {21}Euclidean Domains}{153}{}%
+\contentsline {chapter}{\numberline {22}Division Rings}{155}{}%
+\contentsline {chapter}{\numberline {23}Simple Rings}{157}{}%
+\contentsline {chapter}{\numberline {24}Reduced Rings}{159}{}%
+\contentsline {chapter}{\numberline {25}Boolean Rings}{161}{}%
+\contentsline {chapter}{\numberline {26}Modules}{163}{}%
+\contentsline {section}{\numberline {26.1}Homomorphisms}{164}{}%
+\contentsline {section}{\numberline {26.2}Submodules}{165}{}%
+\contentsline {section}{\numberline {26.3}Quotient Modules}{166}{}%
+\contentsline {section}{\numberline {26.4}Products}{167}{}%
+\contentsline {section}{\numberline {26.5}Coproducts}{167}{}%
+\contentsline {section}{\numberline {26.6}Direct Sum}{167}{}%
+\contentsline {section}{\numberline {26.7}Kernels and Cokernels}{168}{}%
+\contentsline {section}{\numberline {26.8}Free Modules}{169}{}%
+\contentsline {section}{\numberline {26.9}Generators}{170}{}%
+\contentsline {section}{\numberline {26.10}Projections}{171}{}%
+\contentsline {section}{\numberline {26.11}Pullbacks}{171}{}%
+\contentsline {section}{\numberline {26.12}Pushouts}{172}{}%
+\contentsline {chapter}{\numberline {27}Cyclic Modules}{173}{}%
+\contentsline {chapter}{\numberline {28}Simple Modules}{175}{}%
+\contentsline {chapter}{\numberline {29}Noetherian Modules}{177}{}%
+\contentsline {chapter}{\numberline {30}Algebras}{179}{}%
+\contentsline {section}{\numberline {30.1}Rees Algebra}{180}{}%
+\contentsline {section}{\numberline {30.2}Free Algebras}{180}{}%
+\contentsline {chapter}{\numberline {31}Algebras of Finite Type}{183}{}%
+\contentsline {chapter}{\numberline {32}Finite Algebras}{185}{}%
+\contentsline {chapter}{\numberline {33}Division Algebras}{187}{}%
+\contentsline {chapter}{\numberline {34}Chain Complexes}{189}{}%
+\contentsline {section}{\numberline {34.1}Split Exact Sequences}{200}{}%
+\contentsline {chapter}{\numberline {35}Homology}{203}{}%
+\contentsline {part}{V\hspace {1em}Field Theory}{205}{}%
+\contentsline {chapter}{\numberline {36}Fields}{207}{}%
+\contentsline {chapter}{\numberline {37}Algebraically Closed Fields}{211}{}%
+\contentsline {part}{VI\hspace {1em}Linear Algebra}{213}{}%
+\contentsline {chapter}{\numberline {38}Vector Spaces}{215}{}%
+\contentsline {part}{VII\hspace {1em}Linear Algebra}{217}{}%
+\contentsline {chapter}{\numberline {39}Vector Spaces}{219}{}%
+\contentsline {part}{VIII\hspace {1em}Measure Theory}{221}{}%
