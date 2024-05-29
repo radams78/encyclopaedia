@@ -4559,10 +4559,28 @@ Let $\sigma = \tau_1 \cdots \tau_r$ where each $\tau_i$ is a transposition. Then
 A cycle is even if and only if its length is odd.
 \end{cor}
 
+\subsection{Transitive Subgroups}
+
+\begin{df}[Transitive]
+A subgroup of $S_n$ is \emph{transitive} iff its action on $\{1, \ldots, n\}$ is transitive.
+\end{df}
+
+\begin{prop}
+If $G$ is a transitive subgroup of $S_n$ then $n \mid |G|$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:class-formula} we have
+\[ n = [G : \Stab{G}{1}] \]
+and so $n \mid |G|$. \qed
+\end{proof}
+
 \section{Alternating Groups}
 
 \begin{df}
 Let $n \in \mathbb{N}$. The \emph{alternating group} $A_n$ is the subgroup of $S_n$ consisting of the even permutations.
+
+We call $A_5$ the \emph{icosahedral (rotating) group}.
 \end{df}
 
 \begin{prop}
@@ -4658,6 +4676,14 @@ Let $n \geq 2$. Let $\sigma \in A_n$. Then $|[\sigma]_{S_n}| = 2|[\sigma]_{A_n}|
 	\step{f}{$\tau$ is even.}
 \end{proof}
 \qed
+\end{proof}
+
+\begin{prop}
+The icosahedral group $A_5$ is the group of symmetries of an icosahedron obtained through rigid motions.
+\end{prop}
+
+\begin{proof}
+\pf\ Routine. \qed
 \end{proof}
 
 \chapter{Classification of Groups}
