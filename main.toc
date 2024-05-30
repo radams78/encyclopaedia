@@ -33,12 +33,12 @@
 \contentsline {section}{\numberline {7.11}Commutator Subgroup}{57}{}%
 \contentsline {section}{\numberline {7.12}Presentations}{58}{}%
 \contentsline {section}{\numberline {7.13}Index of a Subgroup}{59}{}%
-\contentsline {section}{\numberline {7.14}Cokernels}{60}{}%
+\contentsline {section}{\numberline {7.14}Cokernels}{61}{}%
 \contentsline {section}{\numberline {7.15}Cayley Graphs}{61}{}%
 \contentsline {section}{\numberline {7.16}Characteristic Subgroups}{61}{}%
 \contentsline {section}{\numberline {7.17}Simple Groups}{62}{}%
 \contentsline {section}{\numberline {7.18}Sylow Subgroups}{62}{}%
-\contentsline {section}{\numberline {7.19}Series of Subgroups}{62}{}%
+\contentsline {section}{\numberline {7.19}Series of Subgroups}{63}{}%
 \contentsline {chapter}{\numberline {8}Abelian Groups}{69}{}%
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{74}{}%
 \contentsline {section}{\numberline {8.2}Free Abelian Groups}{75}{}%

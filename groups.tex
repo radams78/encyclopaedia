@@ -1869,8 +1869,31 @@ Let $N$ and $H$ be normal subgroups of a group $G$. Then $[N,H] \subseteq N \cap
 \end{proof}
 
 \begin{cor}
+\label{cor:N-H-commute}
 Let $N$ and $H$ be normal subgroups of $G$. If $N \cap H = \{e\}$, then every element in $N$ commutes with every element in $H$.
 \end{cor}
+
+\begin{prop}
+Let $N$ and $H$ be normal subgroups of $G$. If $N \cap H = \{e\}$ then $NH \cong N \times H$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : N \times H \rightarrow NH$ be the function $\phi(n,h) = nh$.}}
+\step{2}{$\phi$ is a homomorphism.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\phi((n,h)(n',h')) & = \phi(nn',hh') \\
+		& = nn'hh' \\
+		& = nhn'h' & (\text{Corollary \ref{cor:N-H-commute}}) \\
+		& = \phi(n,h)\phi(n',h')
+	\end{align*}
+\end{proof}
+\step{3}{$\ker \phi = \{(e,e)\}$}
+\step{4}{$\phi : N \times H \cong NH$}
+\qed
+\end{proof}
 
 \section{Presentations}
 
