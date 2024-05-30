@@ -1847,6 +1847,21 @@ and so $\phi(G_1') \subseteq G_2'$.
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{lm}
+Let $N$ and $H$ be normal subgroups of a group $G$. Then $[N,H] \subseteq N \cap H$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$n \in N$ and $h \in H$} \prove{$nh\inv{n}\inv{h} \in N \cap H$}}
+\step{2}{$nh\inv{n} \in H$}
+\step{3}{$n h \inv{n} \inv{h} \in H$}
+\step{4}{$h \inv{n} \inv{h} \in N$}
+\step{5}{$nh\inv{n}\inv{h} \in N$}
+\step{6}{$nh\inv{n}\inv{h} \in N \cap H$}
+\qed
+\end{proof}
+
 \section{Presentations}
 
 \begin{df}[Presentation]
