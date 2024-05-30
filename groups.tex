@@ -4837,6 +4837,14 @@ For $n \geq 5$, the alternating group $A_n$ is simple.
 \qed
 \end{proof}
 
+\begin{cor}
+For $n \geq 5$, we have $S_n$ is unsolvable.
+\end{cor}
+
+\begin{proof}
+\pf\ Since the composition factors of $S_n$ are $C_2$ and $A_n$. \qed
+\end{proof}
+
 \chapter{Classification of Groups}
 
 \begin{ex}
@@ -5204,6 +5212,37 @@ Every simple group of order 60 has a subgroup of index 5.
 \end{proof}
 \step{14}{$[G:K] = 5$}
 \qed 
+\end{proof}
+
+\begin{thm}
+$A_5$ is the only simple group of order 60.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$G$ be a simple group of order 60.}}
+\step{2}{\pick\ a subgroup $K$ of $G$ of index 5.}
+\step{3}{\pflet{$\phi : G \rightarrow S_5$ be the action of $G$ on $G / K$ of left multiplication.}}
+\step{4}{$\phi$ is injective.}
+\begin{proof}
+	\pf\ Since $\ker \phi$ is a proper normal subgroup of $G$ hence $\ker \phi = \{e\}$.
+\end{proof}
+\step{5}{$\phi(G)$ is a subgroup of $S_5$ of index 2.}
+\step{6}{$\phi(G)$ is normal in $S_5$.}
+\step{7}{$\phi(G) \cap A_5$ is a normal subgroup of $A_5$}
+\step{8}{$\phi(G) \cap A_5 = \{e\}$ or $\phi(G) \cap A_5 = A_5$}
+\begin{proof}
+	\pf\ Corollary \ref{cor:A5-simple}.
+\end{proof}
+\step{9}{$\phi(G) \cap A_5 = A_5$}
+\begin{proof}
+	\pf\ We cannot have $\phi(G) \cap A_5 = \{e\}$ lest
+	\[ |\phi(G) A_5| = |\phi(G)||A_5| / |\phi(G) \cap A_5| = 3600 \]
+	by the Second Isomorphism Theorem.
+\end{proof}
+\step{10}{$\phi(G) = A_5$}
+\step{11}{$\phi : G \cong A_5$}
+\qed
 \end{proof}
 
 \begin{prop}
