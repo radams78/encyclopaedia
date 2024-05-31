@@ -1367,6 +1367,7 @@ Let $\phi : G \rightarrow H$ be a surjective group homomorphism. Then $H \cong G
 \end{cor}
 
 \begin{prop}
+\label{prop:quotient-of-product}
 Let $H_1$ be a normal subgroup of $G_1$ and $H_2$ a normal subgroup of $G_2$. Then $H_1 \times H_2$ is a normal subgroup of $G_1 \times G_2$, and
 \[ \frac{G_1 \times G_2}{H_1 \times H_2} \cong \frac{G_1}{H_1} \times \frac{G_2}{H_2} \enspace . \]
 \end{prop}
@@ -2175,6 +2176,7 @@ Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of 
 \end{cor}
 
 \begin{prop}
+\label{prop:P1-times-cdots-times-Pr}
 Let $G$ be a finite group. Let $P_1$, \ldots, $P_r$ be its nontrivial Sylow subgroups. Assume all $P_i$ are normal in $G$. Then
 \[ G \cong P_1 \times \cdots \times P_r \enspace . \]
 \end{prop}
@@ -3782,6 +3784,7 @@ Let $G$ be a finite group. Let $p$ be a prime. Let $P$ be a $p$-Sylow subgroup o
 \end{proof}
 
 \begin{prop}
+\label{prop:center-of-G-times-H}
 \[ Z(G \times H) = Z(G) \times Z(H) \]
 \end{prop}
 
@@ -4472,6 +4475,7 @@ Every Abelian group is nilpotent.
 \end{proof}
 
 \begin{prop}
+\label{prop:G-over-ZG-nilpotent}
 Let $G$ be a group. Then $G$ is nilpotent if and only if $G/Z(G)$ is nilpotent.
 \end{prop}
 
@@ -4489,6 +4493,7 @@ Let $G$ be a group. Then $G$ is nilpotent if and only if $G/Z(G)$ is nilpotent.
 \end{proof}
 
 \begin{prop}
+\label{prop:p-group-nilpotent}
 Every $p$-group is nilpotent.
 \end{prop}
 
@@ -4574,12 +4579,14 @@ Let $G$ be a finite nilpotent group. Let $H$ be a proper subgroup of $G$. Then $
 \end{proof}
 
 \begin{cor}
-Every Sylow subgroup of a finite nilpotent group is normal.
+Let $G$ be a finite group. Then $G$ is nilpotent if and only if every Sylow subgroup of $G$ is normal.
 \end{cor}
 
 \begin{proof}
 \pf
-\step{1}{\pflet{$G$ be a finite nilpotent group.}}
+\step{1}{If $G$ is nilpotent then every Sylow subgroup of $G$ is normal.}
+\begin{proof}
+\step{1}{\assume{$G$ is nilpotent.}}
 \step{2}{\pflet{$P$ be Sylow subgroup of $G$}}
 \step{3}{$N_G(P) = N_G(N_G(P))$}
 \begin{proof}
@@ -4590,6 +4597,43 @@ Every Sylow subgroup of a finite nilpotent group is normal.
 	\pf\ Proposition \ref{prop:H-sub-NGH}.
 \end{proof}
 \step{5}{$P$ is normal.}
+\end{proof}
+\step{2}{If every Sylow subgroup of $G$ is normal then $G$ is nilpotent.}
+\begin{proof}
+	\step{aa}{\assume{As induction hypothesis the result holds for all groups smaller than $G$.}}
+	\step{a}{\assume{Every Sylow subgroup of $G$ is normal.}}
+	\step{b}{\pflet{$P_1$, \ldots, $P_r$ be the nontrivial Sylow subgroups of $G$.}}
+	\step{c}{$G \cong P_1 \times \cdots \times P_r$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:P1-times-cdots-times-Pr}.
+	\end{proof}
+	\step{d}{\assume{w.l.o.g. $r > 1$}}
+	\begin{proof}
+		\pf\ The case $r = 1$ holds by Proposition \ref{prop:p-group-nilpotent}.
+	\end{proof}
+	\step{d}{$Z(G) \cong Z(P_1) \times \cdots \times Z(P_r)$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:center-of-G-times-H}.
+	\end{proof}
+	\step{e}{$G / Z(G) \cong P_1 / Z(P_1) \times \cdots \times P_r / Z(P_r)$}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:quotient-of-product}.
+	\end{proof}
+	\step{f}{The nontrivial Sylow subgroups of $G / Z(G)$ are $P_1 / Z(P_1)$, \ldots, $P_r / Z(P_r)$.}
+	\step{g}{Every Sylow subgroup of $G / Z(G)$ is normal.}
+	\step{h}{$|G/Z(G)| < |G|$}
+	\begin{proof}
+		\pf\ Because of Corollary \ref{cor:p-group-non-trivial-center}.
+	\end{proof}
+	\step{i}{$G / Z(G)$ is nilpotent.}
+	\begin{proof}
+		\pf\ By the induction hypothesis \ref{aa}.
+	\end{proof}
+	\step{j}{$G$ is nilpotent.}
+	\begin{proof}
+		\pf\ Proposition \ref{prop:G-over-ZG-nilpotent}.
+	\end{proof}
+\end{proof}
 \qed
 \end{proof}
 
