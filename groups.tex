@@ -3781,6 +3781,20 @@ Let $G$ be a finite group. Let $p$ be a prime. Let $P$ be a $p$-Sylow subgroup o
 \qed
 \end{proof}
 
+\begin{prop}
+\[ Z(G \times H) = Z(G) \times Z(H) \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+(g,h) \in Z(G \times H) & \Leftrightarrow \forall g' \in G. \forall h' \in H. (g,h) (g',h') = (g',h')(g,h) \\
+& \Leftrightarrow \forall g' \in G. \forall h' \in H. (gg',hh') = (g'g,h'h) \\
+& \Leftrightarrow \forall g' \in G. \forall h' \in H (gg' = g'g \wedge hh' = h'h) \\
+& \Leftrightarrow g \in Z(G) \wedge h \in Z(H) & \qed
+\end{align*}
+\end{proof}
+
 \section{Centralizer}
 
 \begin{df}[Centralizer]

@@ -56,10 +56,10 @@
 \contentsline {section}{\numberline {9.3}Center}{88}{}%
 \contentsline {section}{\numberline {9.4}Centralizer}{90}{}%
 \contentsline {section}{\numberline {9.5}Conjugacy Class}{90}{}%
-\contentsline {section}{\numberline {9.6}Conjugation on Sets}{92}{}%
-\contentsline {section}{\numberline {9.7}Nilpotent Groups}{98}{}%
+\contentsline {section}{\numberline {9.6}Conjugation on Sets}{93}{}%
+\contentsline {section}{\numberline {9.7}Nilpotent Groups}{99}{}%
 \contentsline {section}{\numberline {9.8}Symmetric Groups}{101}{}%
-\contentsline {subsection}{\numberline {9.8.1}Transitive Subgroups}{102}{}%
+\contentsline {subsection}{\numberline {9.8.1}Transitive Subgroups}{103}{}%
 \contentsline {section}{\numberline {9.9}Alternating Groups}{103}{}%
 \contentsline {chapter}{\numberline {10}Extensions}{107}{}%
 \contentsline {chapter}{\numberline {11}Classification of Groups}{109}{}%
