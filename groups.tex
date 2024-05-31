@@ -1874,6 +1874,7 @@ Let $N$ and $H$ be normal subgroups of $G$. If $N \cap H = \{e\}$, then every el
 \end{cor}
 
 \begin{prop}
+\label{prop:NH-cong-N-times-H}
 Let $N$ and $H$ be normal subgroups of $G$. If $N \cap H = \{e\}$ then $NH \cong N \times H$.
 \end{prop}
 
@@ -2172,6 +2173,46 @@ Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of 
 \label{cor:normal-normal-normal}
 Let $p$ be prime. Let $G$ be a finite group. Let $P$ be a $p$-Sylow subgroup of $G$. Let $H$ be a subgroup of $G$ that includes $P$. If $P$ is normal in $H$ and $H$ is normal in $G$ then $P$ is normal in $G$.
 \end{cor}
+
+\begin{prop}
+Let $G$ be a finite group. Let $P_1$, \ldots, $P_r$ be its nontrivial Sylow subgroups. Assume all $P_i$ are normal in $G$. Then
+\[ G \cong P_1 \times \cdots \times P_r \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$P_1 P_2 \cdots P_r \cong P_1 \times P_2 \times \cdots \times P_r$}
+\begin{proof}
+	\step{a}{$P_1 \cong P_1$}
+	\step{b}{For $1 \leq i < r$, if $P_1 P_2 \cdots P_i \cong P_1 \times P_2 \times \cdots \times P_i$ then $P_1 P_2 \cdots P_i P_{i+1} \cong P_1 \times P_2 \times \cdots P_i \times P_{i+1}$}
+	\begin{proof}
+		\step{i}{\pflet{$1 \leq i < r$}}
+		\step{ii}{\assume{$P_1 P_2 \cdots P_i \cong P_1 \times P_2 \times \cdots \times P_i$}}
+		\step{iii}{$P_1 P_2 \cdots P_i$ is normal in $G$.}
+		\step{iv}{$P_1 P_2 \cdots P_i \cap P_{i+1} = \{e\}$}
+		\begin{proof}
+			\step{one}{\pflet{$|P_j| = p_j^{k_j}$ for all $j$.}}
+			\step{two}{The order of any element of $P_1 P_2 \cdots P_i$ divides $p_1^{k_1} p_2^{k_2} \cdots p_i^{k_i}$}
+			\step{three}{The order of any element of $P_{i+1}$ divides $p_{i+1}^{k_{i+1}}$}
+			\step{four}{The $p_j$ are all distinct.}
+			\begin{proof}
+				\pf\ Any $p_j$-Sylow subgroup is congruent to $P_j$ hence equal to $P_j$ since $P_j$ is normal.
+			\end{proof}
+			\step{five}{The only element in $P_1 P_2 \cdots P_i$ and $P_{i+1}$ is $e$.}
+		\end{proof}
+		\step{v}{$P_1 P_2 \cdots P_i P_{i+1} \cong P_1 P_2 \cdots P_i \times P_{i+1}$}
+		\begin{proof}
+			\pf\ Proposition \ref{prop:NH-cong-N-times-H}.
+		\end{proof}
+		\step{vi}{$P_1 P_2 \cdots P_i P_{i+1} \cong P_1 \times P_2 \times \cdots \times P_i \times P_{i+1}$}
+	\end{proof}
+\end{proof}
+\step{2}{$G = P_1 P_2 \cdots P_r$}
+\begin{proof}
+	\pf\ Since $|G| = p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r}$.
+\end{proof}
+\qed
+\end{proof}
 
 \section{Series of Subgroups}
 
@@ -4538,6 +4579,7 @@ Every Sylow subgroup of a finite nilpotent group is normal.
 \qed
 \end{proof}
 
+
 %TODO The converse holds
 
 \section{Symmetric Groups}
@@ -4940,6 +4982,12 @@ For $n \geq 5$, we have $S_n$ is unsolvable.
 Let $G$, $N$ and $H$ be groups. Then $G$ is an \emph{extension} of $H$ by $N$ iff there exist homomorphisms $N \rightarrow G$ and $G \rightarrow H$ such that
 \[ 1 \rightarrow N \rightarrow G \rightarrow H \rightarrow 1 \]
 is an exact sequence.
+\end{df}
+
+\begin{df}[Split Extension]
+An exact sequence of groups
+\[ 1 \rightarrow N \rightarrow G \rightarrow H \rightarrow 1 \]
+\emph{splits} iff $H$ is a subgroup of $G$ and $N \cap H = \{e\}$.
 \end{df}
 
 \chapter{Classification of Groups}
