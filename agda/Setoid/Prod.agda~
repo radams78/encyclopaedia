@@ -1,0 +1,3 @@
+module Setoid.Prod where
+
+open import Setoid
