@@ -5042,11 +5042,25 @@ Let $G$, $N$ and $H$ be groups. Then $G$ is an \emph{extension} of $H$ by $N$ if
 is an exact sequence.
 \end{df}
 
+\begin{prop}
+Let $G$ be an extension of $H$ by $N$. Then the composition factors of $G$ are the union of the composition factors of $H$ and the composition factors of $N$.
+\end{prop}
+
+\begin{proof}
+\pf\ From Proposition \ref{prop:composition-series-N-GN} since $H \cong G / N$. \qed
+\end{proof}
+
 \begin{df}[Split Extension]
 An exact sequence of groups
 \[ 1 \rightarrow N \rightarrow G \rightarrow H \rightarrow 1 \]
 \emph{splits} iff $H$ is a subgroup of $G$ and $N \cap H = \{e\}$.
 \end{df}
+
+\begin{ex}
+The sequence
+\[ 0 \rightarrow \mathbb{Z} \stackrel{\times 2}{\rightarrow} \mathbb{Z} \rightarrow \mathbb{Z} / 2 \mathbb{Z} \rightarrow 0 \]
+is exact but does not split as there is no subgroup of $\mathbb{Z}$ isomorphic to $\mathbb{Z} / 2 \mathbb{Z}$.
+\end{ex}
 
 \chapter{Classification of Groups}
 
