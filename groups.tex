@@ -1891,6 +1891,17 @@ Let $N$ and $H$ be normal subgroups of $G$. If $N \cap H = \{e\}$ then $NH \cong
 	\end{align*}
 \end{proof}
 \step{3}{$\ker \phi = \{(e,e)\}$}
+\begin{proof}
+	\step{a}{\pflet{$(n,h) \in \ker \phi$}}
+	\step{b}{$nh = e$}
+	\step{c}{$n = \inv{h}$}
+	\step{d}{$n \in N \cap H$}
+	\step{e}{$n = e$}
+	\step{f}{$h = e$}
+	\begin{proof}
+		\pf\ By \stepref{c}.
+	\end{proof}
+\end{proof}
 \step{4}{$\phi : N \times H \cong NH$}
 \qed
 \end{proof}
@@ -4205,13 +4216,43 @@ Let $p$ and $q$ be prime numbers with $p < q$. Let $G$ be a group of order $pq$ 
 \begin{proof}
 	\pf\ Cauchy's Theorem.
 \end{proof}
-\step{10}{\pick\ an element $g$ of order $q$.}
+\step{10}{\pick\ an element $h$ of order $q$.}
 \begin{proof}
 	\pf\ Cauchy's Theorem.
 \end{proof}
 \step{11}{$|gh| = pq$}
 \begin{proof}
 	\pf\ Proposition \ref{prop:order-gh-if-gcd-one}.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{proof}
+\pf
+\step{1}{\assume{w.l.o.g. $q \not\equiv 1 (\mod p)$}}
+\begin{proof}
+	\pf\ Since the only non-cyclic group of order 6 is $S_3$ which does not have a normal subgroup of order 2.
+\end{proof}
+\step{2}{\pick\ a subgroup $K$ of order $q$.}
+\step{4}{$K$ is normal.}
+\begin{proof}
+	\pf\ Since $K$ is the unique $q$-Sylow subgroup by the Third Sylow Theorem.
+\end{proof}
+\step{5}{$H \cap K = \{e\}$}
+\step{6}{$HK \cong H \times K$}
+\begin{proof}
+	\pf\ Proposition \ref{HK-cong-H-times-K}.
+\end{proof}
+\step{7}{$|HK| = pq$}
+\step{8}{$HK = G$}
+\step{11}{$G \cong \mathbb{Z} / pq \mathbb{Z}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		G & \cong H \times K \\
+		& \cong \mathbb{Z} / p \mathbb{Z} \times \mathbb{Z} / q \mathbb{Z} \\
+		& \cong \mathbb{Z} / pq \mathbb{Z}
+	\end{align*}
 \end{proof}
 \qed
 \end{proof}
