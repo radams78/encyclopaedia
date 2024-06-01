@@ -5062,6 +5062,29 @@ The sequence
 is exact but does not split as there is no subgroup of $\mathbb{Z}$ isomorphic to $\mathbb{Z} / 2 \mathbb{Z}$.
 \end{ex}
 
+\begin{prop}
+Let $N$ be a normal subgroup of $G$ and let $H$ be a subgroup such that $G = NH$ and $N \cap H = \{e\}$. Then $G$ is a split extension of $H$ by $N$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$G/N \cong H$}
+\begin{proof}
+	\step{a}{\pflet{$\alpha$ be the homomorphism $H \hookrightarrow G \twoheadrightarrow G / N$}}
+	\step{c}{$\alpha$ is injective.}
+	\begin{proof}
+		\pf\ Since $\ker \alpha = \{e\}$
+	\end{proof}
+	\step{d}{$\alpha$ is surjective.}
+	\begin{proof}
+		\pf\ For all $g \in G$, pick $n \in N$ and $h \in H$ such that $\inv{g} = nh$. Then $gN = \alpha(\inv{h})$.
+	\end{proof}
+	\step{d}{$\alpha : H \cong G / N$ is an isomorphism.}
+\end{proof}
+\step{2}{The exact sequnce $1 \rightarrow N \rightarrow G \twoheadrightarrow G / N \cong H \rightarrow 1$ splits.}
+\qed
+\end{proof}
+
 \chapter{Classification of Groups}
 
 \begin{ex}
