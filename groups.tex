@@ -718,45 +718,6 @@ There are 49487365402 groups of order 1024 up to isomorphism. %TODO
     \qed
 \end{proof}
 
-\begin{lm}
-Let $N$ and $H$ be groups. Let $\theta : H \rightarrow \Aut{\Grp}{N}$ be a homomorphism. Define $\cdot$ on $N \times H$ by
-\[ (n_1,h_1)(n_2,h_2) = (n_1 \theta(h_1)(n_2), h_1 h_2) \enspace . \]
-Then $N \times H$ is a group under $\cdot$ with identity $(e_N, e_H)$.
-\end{lm}
-
-\begin{proof}
-\pf
-\step{1}{Associativity}
-\begin{proof}
-	\pf
-	\begin{align*}
-		(n_1,h_1) ((n_2,h_2)(n_3,h_3))
-		& = (n_1,h_1)(n_2 \theta(h_2)(n_3), h_2 h_3) \\
-		& = (n_1 \theta(h_1)(n_2 \theta(h_2)(n_3)), h_1 h_2 h_3) \\
-		& = (n_1 \theta(h_1)(n_2) \theta(h_1h_2)(n_3), h_1 h_2 h_3) \\
-		& = (n_1 \theta(h_1)(n_2), h_1 h_2)(n_3, h_3) \\
-		& = ((n_1,h_1) (n_2,h_2)) (n_3,h_3)
-	\end{align*}
-\end{proof}
-\step{2}{$(e_N,e_H)(n,h) = (n,h)$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		(e_N,e_H)(n,h) & = (e_N \theta(e_H)(n), e_Hh) \\
-		& = (n,h)
-	\end{align*}
-\end{proof}
-\step{3}{$(n,h)(e_N,e_H) = (n,h)$}
-\begin{proof}
-	\pf
-	\begin{align*}
-		(n,h)(e_N,e_H) & = (n \theta(h)(e_N), h e_H) \\
-		& = (n,h)
-	\end{align*}
-\end{proof}
-\qed
-\end{proof}
-
 \section{Subgroups}
 
 \begin{df}[Subgroup]
@@ -2543,6 +2504,66 @@ Let $G_1$ and $G_2$ be groups. Then $G_1 \times G_2$ has a composition series if
 \begin{df}[Cyclic Series]
 A normal series of subgroups is \emph{cyclic} iff every quotient is cyclic.
 \end{df}
+
+\section{Semidirect Products}
+
+\begin{df}[Semidirect Product]
+Let $N$ and $H$ be groups. Let $\theta : H \rightarrow \Aut{\Grp}{N}$ be a homomorphism. The \emph{semidirect product} $N \rtimes_\theta H$ is the group $N \times H$ under
+\[ (n_1,h_1) (n_2,h_2) = (n_1 \theta(h_1)(n_2), h_1h_2) \]
+
+We prove that this is a group.
+\end{df}
+
+\begin{proof}
+\pf
+\step{1}{Associativity}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(n_1,h_1) ((n_2,h_2)(n_3,h_3))
+		& = (n_1,h_1)(n_2 \theta(h_2)(n_3), h_2 h_3) \\
+		& = (n_1 \theta(h_1)(n_2 \theta(h_2)(n_3)), h_1 h_2 h_3) \\
+		& = (n_1 \theta(h_1)(n_2) \theta(h_1h_2)(n_3), h_1 h_2 h_3) \\
+		& = (n_1 \theta(h_1)(n_2), h_1 h_2)(n_3, h_3) \\
+		& = ((n_1,h_1) (n_2,h_2)) (n_3,h_3)
+	\end{align*}
+\end{proof}
+\step{2}{$(e_N,e_H)(n,h) = (n,h)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(e_N,e_H)(n,h) & = (e_N \theta(e_H)(n), e_Hh) \\
+		& = (n,h)
+	\end{align*}
+\end{proof}
+\step{3}{$(n,h)(e_N,e_H) = (n,h)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(n,h)(e_N,e_H) & = (n \theta(h)(e_N), h e_H) \\
+		& = (n,h)
+	\end{align*}
+\end{proof}
+\step{4}{$(n,h)(\theta(\inv{h})(\inv{n}),\inv{h}) = (e_N,e_H)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(n,h)(\inv{n},\inv{h}) & = (n \theta(h)(\theta(\inv{h})(\inv{n})), h \inv{h}) \\
+		& = (n \inv{n}, h \inv{h}) \\
+		& = (e_N, e_H)
+	\end{align*}
+\end{proof}
+\step{5}{$(\theta(\inv{h})(\inv{n}),\inv{h})(n,h) = (e_N,e_H)$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		(\theta(\inv{h})(\inv{n}), \inv{h})(n,h) & = (\theta(\inv{h})(\inv{n}) \theta(\inv{h})(n), \inv{h}h) \\
+		& = (e_N,e_H)
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
 
 \chapter{Abelian Groups}
 
