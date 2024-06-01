@@ -7,8 +7,9 @@
 \contentsline {section}{\numberline {2.2}Objects}{14}{}%
 \contentsline {section}{\numberline {2.3}Morphisms}{14}{}%
 \contentsline {subsection}{\numberline {2.3.1}Identity Morphisms}{14}{}%
+\contentsline {subsection}{\numberline {2.3.2}Endomorphisms}{14}{}%
 \contentsline {section}{\numberline {2.4}Preorders}{14}{}%
-\contentsline {section}{\numberline {2.5}Monomorphisms and Epimorphisms}{14}{}%
+\contentsline {section}{\numberline {2.5}Monomorphisms and Epimorphisms}{15}{}%
 \contentsline {section}{\numberline {2.6}Sections and Retractions}{16}{}%
 \contentsline {section}{\numberline {2.7}Isomorphisms}{17}{}%
 \contentsline {section}{\numberline {2.8}Initial and Terminal Objects}{18}{}%
