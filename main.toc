@@ -33,7 +33,7 @@
 \contentsline {section}{\numberline {7.6}Free Groups}{47}{}%
 \contentsline {section}{\numberline {7.7}Normal Subgroups}{50}{}%
 \contentsline {section}{\numberline {7.8}Quotient Groups}{51}{}%
-\contentsline {section}{\numberline {7.9}Cosets}{55}{}%
+\contentsline {section}{\numberline {7.9}Cosets}{56}{}%
 \contentsline {section}{\numberline {7.10}Congruence}{59}{}%
 \contentsline {section}{\numberline {7.11}Cyclic Groups}{60}{}%
 \contentsline {section}{\numberline {7.12}Commutator Subgroup}{60}{}%
