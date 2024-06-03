@@ -1093,6 +1093,7 @@ I.e.
 \end{proof}
 
 \begin{prop}
+\label{prop:internal-product}
 Let $G$ be a group. Let $N$ and $H$ be subgroups of $G$ with $N$ normal. Assume $N \cap H = \{e\}$ and $G = NH$. Let $\gamma : H \rightarrow \Aut{\Grp}{N}$ be conjugation. Then
 \[ G \cong N \rtimes_\gamma H \]
 \end{prop}
@@ -2048,32 +2049,7 @@ Let $N$ and $H$ be normal subgroups of $G$. If $N \cap H = \{e\}$ then $NH \cong
 \end{prop}
 
 \begin{proof}
-\pf
-\step{1}{\pflet{$\phi : N \times H \rightarrow NH$ be the function $\phi(n,h) = nh$.}}
-\step{2}{$\phi$ is a homomorphism.}
-\begin{proof}
-	\pf
-	\begin{align*}
-		\phi((n,h)(n',h')) & = \phi(nn',hh') \\
-		& = nn'hh' \\
-		& = nhn'h' & (\text{Corollary \ref{cor:N-H-commute}}) \\
-		& = \phi(n,h)\phi(n',h')
-	\end{align*}
-\end{proof}
-\step{3}{$\ker \phi = \{(e,e)\}$}
-\begin{proof}
-	\step{a}{\pflet{$(n,h) \in \ker \phi$}}
-	\step{b}{$nh = e$}
-	\step{c}{$n = \inv{h}$}
-	\step{d}{$n \in N \cap H$}
-	\step{e}{$n = e$}
-	\step{f}{$h = e$}
-	\begin{proof}
-		\pf\ By \stepref{c}.
-	\end{proof}
-\end{proof}
-\step{4}{$\phi : N \times H \cong NH$}
-\qed
+\pf\ From Proposition \ref{prop:internal-product}. \qed
 \end{proof}
 
 \section{Presentations}
