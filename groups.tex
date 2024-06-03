@@ -1092,6 +1092,33 @@ I.e.
 \end{align*}
 \end{proof}
 
+\begin{prop}
+Let $G$ be a group. Let $N$ and $H$ be subgroups of $G$ with $N$ normal. Assume $N \cap H = \{e\}$ and $G = NH$. Let $\gamma : H \rightarrow \Aut{\Grp}{N}$ be conjugation. Then
+\[ G \cong N \rtimes_\gamma H \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\phi : N \rtimes_\gamma H \rightarrow G$ be the homomorphism
+\[ \phi(n,h) = nh \enspace . \]}}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\phi((n_1,h_1)(n_2,h_2)) & = \phi(n_1 \theta(h_1)(n_2), h_1 h_2) \\
+		& = n_1 \theta(h_1)(n_2) h_1 h_2 \\
+		& = n_1 h_1 n_2 \inv{h_1} h_1 h_2 \\
+		& = n_1 h_1 n_2 h_2 \\
+		& = \phi(n_1,h_1) \phi(n_2,h_2)
+	\end{align*}
+\end{proof}
+\step{2}{$\ker \phi = \{e\}$}
+\step{3}{$\phi$ is surjective.}
+\begin{proof}
+	\pf\ Since $G = NH$.
+\end{proof}
+\qed
+\end{proof}
+
 \section{Direct Products}
 
 \begin{df}[Direct Product]
