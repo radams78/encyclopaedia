@@ -1024,6 +1024,74 @@ We prove that this is a group.
 \qed
 \end{proof}
 
+\begin{prop}
+The function $i : N \rightarrow N \rtimes_\theta H$ that maps $n$ to $(n,e_H)$ is a group monomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$i(nn') = i(n)i(n')$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		i(n)i(n') & = (n,e_H)(n',e_H) \\
+		& = (n \theta(e_H)(n'), e_H e_H) \\
+		& = (nn',e_H) \\
+		& = i(nn')
+	\end{align*}
+\end{proof}
+\step{2}{$i$ is injective.}
+\qed
+\end{proof}
+
+\begin{prop}
+The function $J : h \rightarrow N \rtimes_\theta H$ that maps $h$ to $(e_N,h)$ is a group monomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$j(hh') = j(h)j(h')$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		j(h)j(h') & = (e_N,h)(e_N,h') \\
+		& = (e_N \theta(h)(e_N), hh') \\
+		& = (e_N, hh') \\
+		& = j(hh')
+	\end{align*}
+\end{proof}
+\step{2}{$i$ is injective.}
+\qed
+\end{proof}
+
+\begin{prop}
+The natural projection $N \rtimes_\theta H \rightarrow H$ is a surjective group homomorphism with kernel $N$.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+Let $N$ and $H$ be groups and $\theta : H \rightarrow \Aut{\Grp}{N}$ a homomorphism. Let $G = N \rtimes_\theta H$. Let $i : H \hookrightarrow G$ and $j : N \hookrightarrow G$ be the injections. Then $\theta$ is realised by conjugation in $G$. That is, for all $h \in H$ and $n \in N$ we have
+\[ j(\theta(h)(n)) = i(h) j(n) \inv{i(h)} \]
+I.e.
+\[ j \circ \theta(h) = \gamma_{i(h)} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+	i(h) j(n) \inv{i(h)} & = (e_N,h)(n,e_H)\inv{(e_N,h)} \\
+	& = (e_N,h)(n,e_H)(\theta(\inv{h})(e_N),\inv{h})\\
+	& = (e_N,h)(n,e_H)(e_N,\inv{h}) \\
+	& = (\theta(h)(n),h)(e_N,\inv{h}) \\
+	& = (\theta(h)(n)\theta(h)(e_N),h \inv{h}) \\
+	& = (\theta(h)(n), e_H) \\
+	& = j(\theta(h)(n)) & \qed
+\end{align*}
+\end{proof}
+
 \section{Direct Products}
 
 \begin{df}[Direct Product]
@@ -5152,6 +5220,16 @@ Let $N$ be a normal subgroup of $G$ and let $H$ be a subgroup such that $G = NH$
 \end{proof}
 \step{2}{The exact sequnce $1 \rightarrow N \rightarrow G \twoheadrightarrow G / N \cong H \rightarrow 1$ splits.}
 \qed
+\end{proof}
+
+\begin{prop}
+Let $N$ and $H$ be groups. Let $\theta : H \rightarrow \Aut{\Grp}{N}$ be a homomorphism. The sequence
+\[ 1 \rightarrow N \rightarrow N \rtimes_\theta H \rightarrow H \rightarrow 1 \]
+is split exact.
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
 \end{proof}
 
 \chapter{Classification of Groups}

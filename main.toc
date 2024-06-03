@@ -29,22 +29,22 @@
 \contentsline {section}{\numberline {7.2}Kernel}{44}{}%
 \contentsline {section}{\numberline {7.3}Inner Automorphisms}{45}{}%
 \contentsline {section}{\numberline {7.4}Semidirect Products}{46}{}%
-\contentsline {section}{\numberline {7.5}Direct Products}{47}{}%
-\contentsline {section}{\numberline {7.6}Free Groups}{47}{}%
-\contentsline {section}{\numberline {7.7}Normal Subgroups}{50}{}%
-\contentsline {section}{\numberline {7.8}Quotient Groups}{51}{}%
-\contentsline {section}{\numberline {7.9}Cosets}{56}{}%
-\contentsline {section}{\numberline {7.10}Congruence}{59}{}%
-\contentsline {section}{\numberline {7.11}Cyclic Groups}{60}{}%
-\contentsline {section}{\numberline {7.12}Commutator Subgroup}{60}{}%
-\contentsline {section}{\numberline {7.13}Presentations}{61}{}%
-\contentsline {section}{\numberline {7.14}Index of a Subgroup}{62}{}%
-\contentsline {section}{\numberline {7.15}Cokernels}{64}{}%
-\contentsline {section}{\numberline {7.16}Cayley Graphs}{64}{}%
-\contentsline {section}{\numberline {7.17}Characteristic Subgroups}{64}{}%
-\contentsline {section}{\numberline {7.18}Simple Groups}{65}{}%
-\contentsline {section}{\numberline {7.19}Sylow Subgroups}{65}{}%
-\contentsline {section}{\numberline {7.20}Series of Subgroups}{66}{}%
+\contentsline {section}{\numberline {7.5}Direct Products}{48}{}%
+\contentsline {section}{\numberline {7.6}Free Groups}{48}{}%
+\contentsline {section}{\numberline {7.7}Normal Subgroups}{51}{}%
+\contentsline {section}{\numberline {7.8}Quotient Groups}{52}{}%
+\contentsline {section}{\numberline {7.9}Cosets}{57}{}%
+\contentsline {section}{\numberline {7.10}Congruence}{60}{}%
+\contentsline {section}{\numberline {7.11}Cyclic Groups}{61}{}%
+\contentsline {section}{\numberline {7.12}Commutator Subgroup}{61}{}%
+\contentsline {section}{\numberline {7.13}Presentations}{62}{}%
+\contentsline {section}{\numberline {7.14}Index of a Subgroup}{63}{}%
+\contentsline {section}{\numberline {7.15}Cokernels}{65}{}%
+\contentsline {section}{\numberline {7.16}Cayley Graphs}{65}{}%
+\contentsline {section}{\numberline {7.17}Characteristic Subgroups}{65}{}%
+\contentsline {section}{\numberline {7.18}Simple Groups}{66}{}%
+\contentsline {section}{\numberline {7.19}Sylow Subgroups}{66}{}%
+\contentsline {section}{\numberline {7.20}Series of Subgroups}{67}{}%
 \contentsline {chapter}{\numberline {8}Abelian Groups}{73}{}%
 \contentsline {section}{\numberline {8.1}The Category of Abelian Groups}{78}{}%
 \contentsline {section}{\numberline {8.2}Free Abelian Groups}{79}{}%
