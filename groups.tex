@@ -1131,6 +1131,7 @@ Let $G$ be a group. Let $N$ and $H$ be subgroups of $G$. Then $G$ is the \emph{i
 \end{df}
 
 \begin{prop}
+\label{prop:semidirect-direct}
 $G \times H$ is the semidirect product $G \rtimes_\theta H$ where $\theta(g) = e$ for all $g \in G$.
 \end{prop}
 
@@ -3012,6 +3013,14 @@ The only non-trivial simple finite Abelian groups are $\mathbb{Z} / p \mathbb{Z}
 \end{proof}
 \step{4}{$\langle a \rangle = G$}
 \qed
+\end{proof}
+
+\begin{prop}
+If $N \rtimes_\theta H$ is Abelian then $N \rtimes_\theta H \cong N \times H$.
+\end{prop}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:semidirect-direct} since $\theta(h)(n) = hn\inv{h} = n$. \qed
 \end{proof}
 
 \section{The Category of Abelian Groups}
