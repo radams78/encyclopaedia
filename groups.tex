@@ -3295,67 +3295,6 @@ ghH & = hgH \\
 \end{align*}
 \end{proof}
 
-\begin{prop}
-\label{prop:solvable}
-Let $G$ be a finite group. The following are equivalent.
-\begin{enumerate}
-\item All composition factors of $G$ are cyclic.
-\item $G$ has a cyclic series of subgroups ending in $\{e\}$.
-\item $G$ has an Abelian series of subgroups ending in $\{e\}$.
-\item $G$ is solvable.
-\end{enumerate}
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{$1 \Rightarrow 2$}
-\begin{proof}
-	\pf\ Trivial.
-\end{proof}
-\step{2}{$2 \Rightarrow 3$}
-\begin{proof}
-	\pf\ Trivial.
-\end{proof}
-\step{3}{$3 \Rightarrow 4$}
-\begin{proof}
-	\step{a}{\pflet{$G = G_0 \supseteq G_1 \supseteq \cdots \supseteq G_n = \{e\}$ be an Abelian series of subgroups.}}
-	\step{b}{For all $i$ we have $G^{(i)} \subseteq G_i$.}
-	\begin{proof}
-		\pf\ Lemma \ref{lm:GH-Abelian}.
-	\end{proof}
-	\step{c}{$G^{(n)} = \{e\}$}
-\end{proof}
-\step{4}{$4 \Rightarrow 1$}
-\begin{proof}
-	\pf\ Extend the derived series of $G$ to a composition series, using the fact that every simple Abelian group is cyclic.
-\end{proof}
-\qed
-\end{proof}
-
-\begin{cor}
-All $p$-groups are solvable.
-\end{cor}
-
-\begin{proof}
-\pf\ Their composition factors are simple $p$-groups, hence cyclic. \qed
-\end{proof}
-
-\begin{cor}
-Let $G$ be a group and $N$ a normal subgroup. Then $G$ is solvable if and only if both $N$ and $G/N$ are solvable.
-\end{cor}
-
-\begin{proof}
-\pf\ By Proposition \ref{prop:composition-series-N-GN}. \qed
-\end{proof}
-
-\begin{cor}
-Let $G$ be a finite solvable group. Then the composition factors of $G$ are exactly $C_p$ for $p$ a prime factor of $G$ (with the same multiplicities).
-\end{cor}
-
-\begin{proof}
-\pf\ Since each composition factor is simple and cyclic hence removes one prime factor in $|G|$. \qed
-\end{proof}
-
 \section{Derived Series}
 
 \begin{df}[Derived Series]
@@ -3434,6 +3373,89 @@ Let $p$ and $q$ be primes. Every group of order $p^a q^b$ is solvable.
 \end{thm}
 
 %TODO
+
+\begin{prop}
+The semidirect product of two solvable groups is solvable.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$N$ and $H$ be solvable groups.}}
+\step{2}{\pflet{$\theta : H \rightarrow \Aut{\Grp}{N}$}}
+\begin{align*}
+[(n_1,h_1),(n_2,h_2)] & = (n_1,h_1)(n_2,h_2)\inv{(n_1,h_1)}\inv{(n_2,h_2)} \\
+& = (n_1,h_1)(n_2,h_2)(\theta(\inv{h_1})(\inv{n_1}),\inv{h_1})(\theta(\inv{h_2})(\inv{n_2}),\inv{h_2}) \\
+& = (n_1 \theta(h_1)(n_2), h_1 h_2)(\theta(\inv{h_1})(\inv{n_1})\theta(\inv{h_1})(\theta(\inv{h_2})(\inv{n_2})),\inv{h_1}\inv{h_2}) \\
+& = (n_1 \theta(h_1)(n_2), h_1 h_2)(\theta(\inv{h_1})(\inv{n_1} \theta(\inv{h_2})(\inv{n_2})),\inv{h_1}\inv{h_2}) \\
+& = (n_1 \theta(h_1)(n_2) \theta(h_1h_2)(\theta(\inv{h_1})(\inv{n_1} \theta(\inv{h_2})(\inv{n_2}))),[h_1,h_2]) \\
+& = (n_1 \theta_{h_1}(n_2) \theta_{h_1h_2\inv{h_1}}(\inv{n_1}) \theta_{[h_1,h_2]}(\inv{n_2}), [h_1,h_2])
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:solvable}
+Let $G$ be a finite group. The following are equivalent.
+\begin{enumerate}
+\item All composition factors of $G$ are cyclic.
+\item $G$ has a cyclic series of subgroups ending in $\{e\}$.
+\item $G$ has an Abelian series of subgroups ending in $\{e\}$.
+\item $G$ is solvable.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ Trivial.
+\end{proof}
+\step{3}{$3 \Rightarrow 4$}
+\begin{proof}
+	\step{a}{\pflet{$G = G_0 \supseteq G_1 \supseteq \cdots \supseteq G_n = \{e\}$ be an Abelian series of subgroups.}}
+	\step{b}{For all $i$ we have $G^{(i)} \subseteq G_i$.}
+	\begin{proof}
+		\pf\ Lemma \ref{lm:GH-Abelian}.
+	\end{proof}
+	\step{c}{$G^{(n)} = \{e\}$}
+\end{proof}
+\step{4}{$4 \Rightarrow 1$}
+\begin{proof}
+	\pf\ Extend the derived series of $G$ to a composition series, using the fact that every simple Abelian group is cyclic.
+\end{proof}
+\qed
+\end{proof}
+
+\begin{cor}
+All $p$-groups are solvable.
+\end{cor}
+
+\begin{proof}
+\pf\ Their composition factors are simple $p$-groups, hence cyclic. \qed
+\end{proof}
+
+\begin{cor}
+Let $G$ be a group and $N$ a normal subgroup. Then $G$ is solvable if and only if both $N$ and $G/N$ are solvable.
+\end{cor}
+
+\begin{proof}
+\pf\ By Proposition \ref{prop:composition-series-N-GN}. \qed
+\end{proof}
+
+\begin{cor}
+The semidirect product of two solvable groups is solvable.
+\end{cor}
+
+\begin{cor}
+Let $G$ be a finite solvable group. Then the composition factors of $G$ are exactly $C_p$ for $p$ a prime factor of $G$ (with the same multiplicities).
+\end{cor}
+
+\begin{proof}
+\pf\ Since each composition factor is simple and cyclic hence removes one prime factor in $|G|$. \qed
+\end{proof}
 
 \chapter{Group Actions}
 
@@ -4618,6 +4640,10 @@ Every Abelian group is nilpotent.
 \pf\ Let $G$ be an Abelian group. The center of $G/Z_0$ is $G/Z_0$, hence $Z_1 = G$. \qed
 \end{proof}
 
+\begin{ex}
+The semidirect product of two nilpotent groups is not necessarily nilpotent. $S_3$ is the semidirect product of $\mathbb{Z} / 2 \mathbb{Z}$ and $\mathbb{Z} / 3 \mathbb{Z}$ but is not nilpotent.
+\end{ex}
+
 \begin{prop}
 \label{prop:G-over-ZG-nilpotent}
 Let $G$ be a group. Then $G$ is nilpotent if and only if $G/Z(G)$ is nilpotent.
@@ -5181,9 +5207,9 @@ For $n \geq 5$, we have $S_n$ is unsolvable.
 \chapter{Extensions}
 
 \begin{df}[Extension]
-Let $G$, $N$ and $H$ be groups. Then $G$ is an \emph{extension} of $H$ by $N$ iff there exist homomorphisms $N \rightarrow G$ and $G \rightarrow H$ such that
+Let $G$, $N$ and $H$ be groups. Then $G$ is an \emph{extension} of $H$ by $N$ iff there exist homomorphisms $phi : N \rightarrow G$ and $\psi : G \rightarrow H$ such that
 \[ 1 \rightarrow N \rightarrow G \rightarrow H \rightarrow 1 \]
-is an exact sequence.
+is an exact sequence; i.e. $\phi$ is injective, $\psi$ is surjective, and $\im \phi = \ker \psi$.
 \end{df}
 
 \begin{prop}
