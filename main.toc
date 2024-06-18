@@ -29,10 +29,10 @@
 \contentsline {section}{\numberline {7.2}Kernel}{44}{}%
 \contentsline {section}{\numberline {7.3}Inner Automorphisms}{45}{}%
 \contentsline {section}{\numberline {7.4}Semidirect Products}{46}{}%
-\contentsline {section}{\numberline {7.5}Direct Products}{48}{}%
+\contentsline {section}{\numberline {7.5}Direct Products}{49}{}%
 \contentsline {section}{\numberline {7.6}Free Groups}{49}{}%
-\contentsline {section}{\numberline {7.7}Normal Subgroups}{51}{}%
-\contentsline {section}{\numberline {7.8}Quotient Groups}{52}{}%
+\contentsline {section}{\numberline {7.7}Normal Subgroups}{52}{}%
+\contentsline {section}{\numberline {7.8}Quotient Groups}{53}{}%
 \contentsline {section}{\numberline {7.9}Cosets}{57}{}%
 \contentsline {section}{\numberline {7.10}Congruence}{61}{}%
 \contentsline {section}{\numberline {7.11}Cyclic Groups}{61}{}%

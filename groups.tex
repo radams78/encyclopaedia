@@ -1024,6 +1024,13 @@ We prove that this is a group.
 \qed
 \end{proof}
 
+\begin{ex}
+Let $n > 0$. Let $D_{2n}$ be presented by $(a,b \mid a^n, b^2, (ab)^2)$. Define $\theta : C_2 \rightarrow \Aut{\Grp}{C_n}$ by
+\[ \theta(1)(i) = n-i \]
+Then $\phi : C_n \rtimes_\theta C_2 \cong D_{2n}$ with the isomorphism being given by
+\[ \phi(i,j) = a^ib^j \qquad (0 \leq i < n, 0 \leq i < 2) \enspace . \]
+\end{ex}
+
 \begin{prop}
 The function $i : N \rightarrow N \rtimes_\theta H$ that maps $n$ to $(n,e_H)$ is a group monomorphism.
 \end{prop}
@@ -3095,6 +3102,14 @@ Every finitely generated Abelian group is a direct sum of cyclic groups.
 
 \begin{proof}
 \pf\ TODO \qed
+\end{proof}
+
+\begin{prop}
+Let $G$ be an Abelian group. Let $H$ and $K$ be subgroups of $G$ such that $|H|$ and $|K|$ are relatively prime. Then $H + K \cong H \oplus K$.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:NH-cong-N-times-H}. \qed
 \end{proof}
 
 \section{Free Abelian Groups}
@@ -5888,5 +5903,34 @@ Every group of order $< 120$ and $\neq 60$ is solvable.
 \begin{proof}
 	\pf\ By the Third Sylow Theorem, the 7-Sylow subgroup is normal. Since every group of order 12 is solvable, so is every group of order 84.
 \end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $p$ and $q$ be primes with $p < q$. 
+\begin{enumerate}
+\item If $q \not\equiv 1 (\mod p)$, then the only group of order $pq$ is $C_{pq}$
+\item If $q \equiv 1 (\mod p)$, then there are exactly two groups of order $pq$: the cyclic group $C_{pq}$ and a non-Abelian group.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$|G| = pq$}}
+\step{2}{\assume{$G$ is not cyclic.}}
+\step{3}{There is exactly one $q$-Sylow subgroup $\langle a \rangle$, say.}
+\begin{proof}
+	\pf\ Third Sylow Theorem.
+\end{proof}
+\step{4}{There is more than one $p$-Sylow subgroup.}
+\step{5}{The number of $p$-Sylow subgroups divides $q$ and is congruent to 1 modulo $p$.}
+\step{6}{$q \equiv 1 (\mod p)$}
+\step{7}{\pick\ an element $b$ of order $q$.}
+\step{8}{\pflet{$N = \langle a \rangle$ and $H = \langle b \rangle$}}
+\step{9}{$N \cap H = \{e\}$}
+\step{10}{$G = NH$}
+\step{11}{Define $\gamma : H \rightarrow \Aut{\Grp}{N}$ by $\gamma(h)(n) = hn\inv{h}$}
+\step{12}{$\Aut{\Grp}{N} \cong C_{q-1}$}
+\step{13}{$\Aut{\Grp}{N}$ has a unique subgroup of order $p$.}
 \qed
 \end{proof}
