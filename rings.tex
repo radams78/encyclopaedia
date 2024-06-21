@@ -3494,6 +3494,23 @@ Let $K$ be a subfield of $L$. Then $L$ is a $K$-algebra under multiplication.
 \pf\ Easy. \qed
 \end{proof}
 
+\begin{thm}
+Let $F$ be a field. Let $G$ be a finite subgroup of $F^*$. Then $G$ is cyclic.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{For every $n$, there are at most $n$ elements $a \in G$ such that $a^n = 1$.}
+\begin{proof}
+	\pf\ Since the polynomial $x^n - 1$ in $F[x]$ can have at most $n$ linear factors $(x - a)$.
+\end{proof}
+\qedstep
+\begin{proof}
+	\pf\ Lemma \ref{lm:ng-is-zero-cyclic}.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Algebraically Closed Fields}
 
 \begin{df}[Algebraically Closed]
