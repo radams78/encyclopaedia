@@ -5465,6 +5465,23 @@ and
 \[ G \cong \frac{\mathbb{Z}}{d_1 \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{d_s \mathbb{Z}} \enspace . \]
 \end{df}
 
+\begin{lm}
+Let $G$ be a finite Abelian group. Assume that, for every $n$, the number of elements $g$ such that $ng = 0$ is at most $n$. Then $G$ is cyclic.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$1 < d_1 \mid \cdots \mid d_r$ be the invariant factors of $G$.} \prove{$r = 1$ hence $G \cong \mathbb{Z} / d_1 \mathbb{Z}$}}
+\step{2}{\assume{for a contradiction $s > 1$}}
+\step{3}{$|G| > d_s$}
+\step{4}{For all $g \in G$ we have $d_s g = 0$.}
+\qedstep
+\begin{proof}
+	\pf\ This contradicts the assumption that the number of elements $g$ such that $d_s g = 0$ is at most $d_s$.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Classification of Groups}
 
 \begin{ex}
