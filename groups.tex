@@ -2001,6 +2001,23 @@ Every finitely generated subgroup of $\mathbb{Q}$ is cyclic.
 $\mathbb{Q}$ is not finitely generated.
 \end{cor}
 
+\begin{prop}
+\label{prop:subgroup-of-Z-nZ}
+Let $n > 0$. Let $G$ be a subgroup of $\mathbb{Z} / n \mathbb{Z}$. Then there exists $d$ such that $d \mid n$ and $G = \langle d \rangle$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\pi : \mathbb{Z} \rightarrow \mathbb{Z} / n \mathbb{Z}$ be the canonical projection.}}
+\step{2}{\pflet{$G' = \inv{\pi}(G)$}}
+\step{3}{$G'$ is a cyclic subgroup of $\mathbb{Z}$.}
+\step{4}{\pick\ $d \in \mathbb{Z}$ such that $d > 0$ and $G' = \langle d \rangle$.}
+\step{5}{$G = \langle d \rangle$}
+\step{6}{$n \in G'$}
+\step{7}{$d \mid n$}
+\qed
+\end{proof}
+
 \section{Commutator Subgroup}
 
 \begin{df}[Commutator]
@@ -3028,6 +3045,42 @@ If $N \rtimes_\theta H$ is Abelian then $N \rtimes_\theta H \cong N \times H$.
 
 \begin{proof}
 \pf\ By Proposition \ref{prop:semidirect-direct} since $\theta(h)(n) = hn\inv{h} = n$. \qed
+\end{proof}
+
+\begin{lm}
+\label{lm:element-of-order-p}
+Let $p$ be a prime integer and $r \geq 1$. Let $G$ be a noncyclic Abelian group of order $p^{r+1}$, and let $g \in G$ be an element of order $p^r$. Then there exists an element $h \in G$ such that $h \notin \langle g \rangle$ and $|h| = p$.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$K = \langle G \rangle$}}
+\step{2}{\pick\ $h' \in G$ such that $h' \notin K$.}
+\step{3}{$|G/K| = p$}
+\step{4}{$ph' \in K$}
+\step{5}{\pflet{$k = ph'$}}
+\step{6}{$|k|$ is a power of $p$.}
+\step{7}{$|k| \neq p^r$}
+\begin{proof}
+	\pf\ If $|k| = p^r$ then $|h'| = p^{r+1}$ contradicting the hypothesis that $G$ is not cyclic.
+\end{proof}
+\step{8}{\pick\ $s < r$ such that $|\langle k \rangle| = p^s$.}
+\step{9}{$\langle k \rangle = \langle p^{r-s} g \rangle$}
+\begin{proof}
+	\pf\ Proposition \ref{prop:subgroup-of-Z-nZ}.
+\end{proof}
+\step{10}{\pick\ $m \in \mathbb{Z}$ such that $k = mpg$.}
+\step{11}{\pflet{$h = h' - m g$}}
+\step{12}{$|h| = p$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		ph & = ph' - pmg \\
+		& = k-k \\
+		& = 0
+	\end{align*}
+\end{proof}
+\qed
 \end{proof}
 
 \section{The Category of Abelian Groups}
@@ -5292,6 +5345,73 @@ is split exact.
 \begin{proof}
 \pf\ Easy. \qed
 \end{proof}
+
+\begin{prop}
+Let $G$ be an Abelian $p$-group. Let $g \in G$ be an element of maximal order. Then the exact sequence
+\[ 0 \rightarrow \langle g \rangle \rightarrow G \rightarrow G / \langle g \rangle \rightarrow 0 \]
+splits.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the proposition is true for all Abelian $p$-groups smaller than $G$.}}
+\step{2}{\assume{w.l.o.g. $G$ is non-trivial.}}
+\step{3}{\pflet{$|g| = p^r$}}
+\step{4}{\pflet{$K = \langle g \rangle$}}
+\step{5}{$K$ is normal.}
+\step{6}{\assume{w.l.o.g. $G \neq K$}}
+\step{7}{\pick\ an element $h + K \in G / K$ of order $p$.}
+\begin{proof}
+	\pf\ Cauchy's Theorem
+\end{proof}
+\step{8}{\pflet{$G' = \inv{\pi}(\langle h + K \rangle)$}}
+\step{9}{$|G'| = p^{r+1}$}
+\step{10}{$K \subseteq G'$}
+\step{11}{$G'$ is not cyclic.}
+\begin{proof}
+	\pf\ By maximality of the order of $g$.
+\end{proof}
+\step{12}{\pick\ $h \in G'$ with $h \notin K$ and $|h| = p$.}
+\begin{proof}
+	\pf\ Lemma \ref{lm:element-of-order-p}.
+\end{proof}
+\step{13}{\pflet{$H = \langle h \rangle$}}
+\step{14}{$K \cap H = \{0\}$}
+\begin{proof}
+	\step{a}{\pflet{$x \in K \cap H$}}
+	\step{b}{\pflet{$x = ih$ where $0 \leq i < p$}}
+	\step{c}{$x + K = K$}
+	\step{d}{$ih + K = K$}
+	\step{e}{$i = 0$}
+	\begin{proof}
+		\pf\ Since the order of $h+K$ is $p$.
+	\end{proof}
+\end{proof}
+\step{15}{$|G/H| < |G|$}
+\step{16}{\pflet{$K' = \langle g + H \rangle$}}
+\step{17}{$K'$ is a cyclic subgroup of maximal order in $G/H$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		K' & = \frac{K+H}{H} \\
+		& \cong \frac{K}{K \cap H} & (\text{Second Isomorphism Theorem}) \\
+		& \cong K
+	\end{align*}
+\end{proof}
+\step{18}{\pick\ a subgroup $L'$ of $G/H$ such that $K' + L' = G/H$ and $K' \cap L' = \{0\}$.}
+\begin{proof}
+	\pf\ By the induction hypothesis \stepref{1}.
+\end{proof}
+\step{19}{\pflet{$L = \inv{\pi}(L')$}}
+\step{20}{$H \subseteq L$}
+\step{21}{$K + L = G$}
+\step{22}{$K \cap L = \{0\}$}
+\qed
+\end{proof}
+
+\begin{cor}
+Every finite Abelian group is a direct sum of cyclic $p$-groups.
+\end{cor}
 
 \chapter{Classification of Groups}
 
