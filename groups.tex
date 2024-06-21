@@ -5409,9 +5409,61 @@ splits.
 \qed
 \end{proof}
 
+\begin{prop}
+Let $p$ be a prime.
+If
+\[ G = \frac{\mathbb{Z}}{p^{r_1} \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{p^{r_m} \mathbb{Z}} \cong \frac{\mathbb{Z}}{p^{s_1} \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{p^{s_n} \mathbb{Z}} \]
+with $r_1 \geq \cdots \geq r_m$ and $s_1 \geq \cdots \geq s_n$ then $m = n$ and $r_i = s_i$ for all $i$.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\assume{as induction hypothesis the result is true for all groups smaller than $G$.}}
+	\step{a}{\pflet{$pG$ be the image of the homomorphsim $g \mapsto pg$}}
+	\step{b}{
+	\[ pG \cong \frac{\mathbb{Z}}{p^{r_1-1} \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{p^{r_m-1} \mathbb{Z}} \cong \frac{\mathbb{Z}}{p^{s_1-1} \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{p^{s_n-1} \mathbb{Z}} \]
+}
+\qedstep
+\begin{proof}
+	\pf\ The result follows by induction.
+\end{proof}
+\qed
+\end{proof}
+
 \begin{cor}
-Every finite Abelian group is a direct sum of cyclic $p$-groups.
+Every finite Abelian group is the direct sum of a unique multiset of cyclic $p$-groups.
 \end{cor}
+
+\begin{df}
+Let $G$ be a finite Abelian group. The multiset of \emph{elementary divisors} of $G$ are the numbers $e_1$, \ldots, $e_n$ such that each is a power of a prime and
+\[ G \cong \frac{\mathbb{Z}}{e_1 \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{e_n \mathbb{Z}} \enspace . \]
+\end{df}
+
+\begin{prop}
+For any finite Abelian group $G$, there exist positive integers $d_1$, \ldots, $d_s$ such that
+\[ 1 < d_1 \mid \cdots \mid d_s \]
+and
+\[ G \cong \frac{\mathbb{Z}}{d_1 \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{d_s \mathbb{Z}} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$p_1$, \ldots, $p_s$ be the prime factors of $|G|$.}}
+\step{2}{For $i=1, \ldots, s$, let $n_{ij}$ be the integers such that $n_{i1} \geq n_{i2} \geq \cdots$ such that either $p_i^{n_{ij}}$ is an elementary divisor of $G$, or $n_{ij} = 0$}
+\step{3}{\pflet{$r$ be the greatest integer such that some $n_{ir}$ is non-zero.}}
+\step{4}{\pflet{$d_{r-j+1} = \prod_i p_i^{n_{ij}}$}}
+\step{5}{\[ \frac{\mathbb{Z}}{d_{r-j+1} \mathbb{Z}}
+\cong \frac{\mathbb{Z}}{p_1^{n_{1j}} \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{p_s^{n_{sj}} \mathbb{Z}} \]}
+\step{6}{\[ G \cong \frac{\mathbb{Z}}{d_1 \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{d_r \mathbb{Z}} \]}
+\qed
+\end{proof}
+
+\begin{df}[Invariant Factors]
+For any finite Abelian group $G$, the \emph{invariant factors} of $G$ are the positive integers $d_1$, \ldots, $d_s$ such that
+\[ 1 < d_1 \mid \cdots \mid d_s \]
+and
+\[ G \cong \frac{\mathbb{Z}}{d_1 \mathbb{Z}} \oplus \cdots \oplus \frac{\mathbb{Z}}{d_s \mathbb{Z}} \enspace . \]
+\end{df}
 
 \chapter{Classification of Groups}
 
