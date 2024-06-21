@@ -2,7 +2,8 @@
 \contentsline {chapter}{\numberline {1}Foundations}{11}{}%
 \contentsline {chapter}{\numberline {2}Categories}{13}{}%
 \contentsline {section}{\numberline {2.1}Categories}{13}{}%
-\contentsline {subsection}{\numberline {2.1.1}Definition of a Category}{13}{}%
+\contentsline {subsection}{\numberline {2.1.1}Definition}{13}{}%
+\contentsline {subsection}{\numberline {2.1.2}Examples}{13}{}%
 \contentsline {section}{\numberline {2.2}Preorders}{14}{}%
 \contentsline {section}{\numberline {2.3}Monomorphisms and Epimorphisms}{14}{}%
 \contentsline {section}{\numberline {2.4}Sections and Retractions}{16}{}%
