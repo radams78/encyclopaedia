@@ -2372,6 +2372,7 @@ Let $R$ be a ring. Let $M$ be a left-$R$-module and $N$ a submodule of $M$. Then
 \end{proof}
 
 \begin{prop}
+\label{prop:Noetherian-acc}
 Let $R$ be a commutative ring. Let $M$ be an $R$-module. Then the following are equivalent.
 \begin{enumerate}
 \item $M$ is Noetherian.
@@ -2454,6 +2455,14 @@ If $R$ is a Noetherian ring and $M$ is a finitely generated left-$R$-module then
 
 \begin{proof}
 \pf\ There is a surjective homomorphism $R^{\oplus n} \twoheadrightarrow M$ for some $n$, so $M$ is a quotient of $R^{\oplus n}$. \qed
+\end{proof}
+
+\begin{prop}
+A ring is Noetherian iff every ascending chain of ideals stabilizes.
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:Noetherian-acc}. \qed
 \end{proof}
 
 \chapter{Algebras}
