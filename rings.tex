@@ -2371,6 +2371,46 @@ Let $R$ be a ring. Let $M$ be a left-$R$-module and $N$ a submodule of $M$. Then
 \qed
 \end{proof}
 
+\begin{prop}
+Let $R$ be a commutative ring. Let $M$ be an $R$-module. Then the following are equivalent.
+\begin{enumerate}
+\item $M$ is Noetherian.
+\item \emph{Ascending Chain Condition (a.c.c.)} Every ascending chain of submodules of $M$ stabilizes; that is, if
+\[ N_1 \subseteq N_2 \subseteq N_3 \subseteq \cdots \]
+is a chain of submodules of $M$, then there exists $i$ such that $\forall j \geq i. N_i = N_j$.
+\item Every nonempty set of submodules of $M$ has a maximal element.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$1 \Rightarrow 2$}
+\begin{proof}
+	\step{a}{\assume{$M$ is Noetherian.}}
+	\step{b}{\pflet{$N_1 \subseteq N_2 \subseteq N_3 \subseteq \cdots$ be an ascending chain of submodules of $M$.}}
+	\step{c}{\pick\ generators $a_1$, \ldots, $a_k$ that generate $\bigcup_i N_i$}
+	\step{d}{\pick\ $j$ such that $a_1, \ldots, a_k \in N_j$}
+	\step{e}{$N_j$ is maximal.}
+\end{proof}
+\step{2}{$2 \Rightarrow 3$}
+\begin{proof}
+	\pf\ If $\mathcal{S}$ is a nonempty set of submodules of $M$ with no maximal element, then we can choose a sequence $(N_i)$ in $\mathcal{S}$ with $N_i \subsetneq N_{i+1}$ for all $i$.
+\end{proof}
+\step{3}{$3 \Rightarrow 2$}
+\begin{proof}
+	\pf\ Pick $i$ such that $N_i$ is maximal in $\{ N_j : j \geq 1 \}$.
+\end{proof}
+\step{4}{$2 \Rightarrow 1$}
+\begin{proof}
+	\step{a}{\assume{$M$ is not Noetherian.} \prove{a.c.c. does not hold.}}
+	\step{b}{\pick\ a submodule $N$ of $M$ that is not finitely generated.}
+	\step{c}{Choose a sequence of elements $(n_i)$ in $N$ such that $n_{i+1} \notin \langle n_1, \ldots, n_i \rangle$.}
+	\step{d}{\pflet{$N_i = \langle n_1, \ldots, n_i \rangle$ for all $i$.}}
+	\step{e}{$N_1 \subsetneq N_2 \subsetneq \cdots$}
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Noetherian Rings}
 
 \begin{df}[Noetherian Ring]
