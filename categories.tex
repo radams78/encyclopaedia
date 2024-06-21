@@ -3,8 +3,7 @@
 This is a placeholder --- I am not sure what foundation I want to use for this
 project yet. I will try to work in a way which is foundation-independent. What
 I do could be formalized in ZFC, ETCS, or some other system. I will assume the
-usual set theoretic constructions as needed. Sets will be defined up to
-bijection only.
+usual set theoretic constructions as needed. 
 
 \chapter{Categories}
 
@@ -35,39 +34,9 @@ bijection only.
     \end{description}
 \end{df}
 
-\subsection{Examples}
-
 \begin{ex}[Category of Sets]
     The \emph{category of sets} $\Set$ has objects all sets and morphisms all functions.
 \end{ex}
-
-\section{Objects}
-
-\section{Morphisms}
-
-\subsection{Identity Morphisms}
-
-\begin{prop}
-    \label{prop:id-morph-unique}
-    The identity morphism on an object is unique. 
-    
-    More specifically, let $i : A \rightarrow A$. Then the following are equivalent:
-    \begin{enumerate}
-    \item For every object $B$ and morphism $f : A \rightarrow B$ we have $f \circ i = f$.
-    \item For every object $B$ and morphism $f : B \rightarrow A$ we have $i \circ f = f$.
-    \item For every morphism $f : A \rightarrow A$ we have $f \circ i = f$.
-    \item For every morphism $f : A \rightarrow A$ we have $i \circ f = f$.
-    \item $\id{A} \circ i = \id{A}$
-    \item $i \circ \id{A} = i$
-    \item $i = \id{A}$
-    \end{enumerate}
-\end{prop}
-
-\begin{proof}
-    \pf\ $1 \Rightarrow 3 \Rightarrow 5 \Rightarrow 7 \Rightarrow 1$ and $2 \Rightarrow 4 \Rightarrow 6 \Rightarrow 7 \Rightarrow 2$ are all trivial. \qed
-\end{proof}
-
-\subsection{Endomorphisms}
 
 \begin{df}[Endomorphism]
     In a category $\mathcal{C}$, an \emph{endomorphism} on an object $A$ is a morphism $A \rightarrow A$. We write $\mathrm{End}_\mathcal{C}(A)$ for $\mathcal{C}[A,A]$.
@@ -91,12 +60,8 @@ bijection only.
     morphism $a \rightarrow b$ otherwise.
 \end{df}
 
-\begin{ex}
-    For any ordinal $\alpha$, let $\mathbf{\alpha}$ be the preorder $\{ \beta : \beta < \alpha \}$ under $\leq$.
-\end{ex}
-
 \begin{df}[Discrete Preorder]
-    We identify any set $A$ with the \emph{discrete} preorder $(A, =)$.
+    For any set $A$, we have $(A, =)$ is a preorder, called a \emph{discrete} preorder.
 \end{df}
 
 \section{Monomorphisms and Epimorphisms}

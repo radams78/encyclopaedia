@@ -3,16 +3,11 @@
 \contentsline {chapter}{\numberline {2}Categories}{13}{}%
 \contentsline {section}{\numberline {2.1}Categories}{13}{}%
 \contentsline {subsection}{\numberline {2.1.1}Definition of a Category}{13}{}%
-\contentsline {subsection}{\numberline {2.1.2}Examples}{13}{}%
-\contentsline {section}{\numberline {2.2}Objects}{14}{}%
-\contentsline {section}{\numberline {2.3}Morphisms}{14}{}%
-\contentsline {subsection}{\numberline {2.3.1}Identity Morphisms}{14}{}%
-\contentsline {subsection}{\numberline {2.3.2}Endomorphisms}{14}{}%
-\contentsline {section}{\numberline {2.4}Preorders}{14}{}%
-\contentsline {section}{\numberline {2.5}Monomorphisms and Epimorphisms}{15}{}%
-\contentsline {section}{\numberline {2.6}Sections and Retractions}{16}{}%
-\contentsline {section}{\numberline {2.7}Isomorphisms}{17}{}%
-\contentsline {section}{\numberline {2.8}Initial and Terminal Objects}{18}{}%
+\contentsline {section}{\numberline {2.2}Preorders}{14}{}%
+\contentsline {section}{\numberline {2.3}Monomorphisms and Epimorphisms}{14}{}%
+\contentsline {section}{\numberline {2.4}Sections and Retractions}{16}{}%
+\contentsline {section}{\numberline {2.5}Isomorphisms}{17}{}%
+\contentsline {section}{\numberline {2.6}Initial and Terminal Objects}{17}{}%
 \contentsline {chapter}{\numberline {3}Functors}{19}{}%
 \contentsline {section}{\numberline {3.1}Comma Categories}{19}{}%
 \contentsline {part}{II\hspace {1em}Number Theory}{21}{}%
@@ -91,29 +86,29 @@
 \contentsline {chapter}{\numberline {18}Integral Domains}{161}{}%
 \contentsline {section}{\numberline {18.1}Prime Ideals}{162}{}%
 \contentsline {chapter}{\numberline {19}Unique Factorization Domains}{165}{}%
-\contentsline {chapter}{\numberline {20}Noetherian Rings}{167}{}%
-\contentsline {chapter}{\numberline {21}Principal Ideal Domains}{169}{}%
-\contentsline {chapter}{\numberline {22}Euclidean Domains}{171}{}%
-\contentsline {chapter}{\numberline {23}Division Rings}{173}{}%
-\contentsline {chapter}{\numberline {24}Simple Rings}{175}{}%
-\contentsline {chapter}{\numberline {25}Reduced Rings}{177}{}%
-\contentsline {chapter}{\numberline {26}Boolean Rings}{179}{}%
-\contentsline {chapter}{\numberline {27}Modules}{181}{}%
-\contentsline {section}{\numberline {27.1}Homomorphisms}{182}{}%
-\contentsline {section}{\numberline {27.2}Submodules}{183}{}%
-\contentsline {section}{\numberline {27.3}Quotient Modules}{184}{}%
-\contentsline {section}{\numberline {27.4}Products}{185}{}%
-\contentsline {section}{\numberline {27.5}Coproducts}{185}{}%
-\contentsline {section}{\numberline {27.6}Direct Sum}{185}{}%
-\contentsline {section}{\numberline {27.7}Kernels and Cokernels}{186}{}%
-\contentsline {section}{\numberline {27.8}Free Modules}{187}{}%
-\contentsline {section}{\numberline {27.9}Generators}{188}{}%
-\contentsline {section}{\numberline {27.10}Projections}{189}{}%
-\contentsline {section}{\numberline {27.11}Pullbacks}{189}{}%
-\contentsline {section}{\numberline {27.12}Pushouts}{190}{}%
-\contentsline {chapter}{\numberline {28}Cyclic Modules}{191}{}%
-\contentsline {chapter}{\numberline {29}Simple Modules}{193}{}%
-\contentsline {chapter}{\numberline {30}Noetherian Modules}{195}{}%
+\contentsline {chapter}{\numberline {20}Principal Ideal Domains}{167}{}%
+\contentsline {chapter}{\numberline {21}Euclidean Domains}{169}{}%
+\contentsline {chapter}{\numberline {22}Division Rings}{171}{}%
+\contentsline {chapter}{\numberline {23}Simple Rings}{173}{}%
+\contentsline {chapter}{\numberline {24}Reduced Rings}{175}{}%
+\contentsline {chapter}{\numberline {25}Boolean Rings}{177}{}%
+\contentsline {chapter}{\numberline {26}Modules}{179}{}%
+\contentsline {section}{\numberline {26.1}Homomorphisms}{180}{}%
+\contentsline {section}{\numberline {26.2}Submodules}{181}{}%
+\contentsline {section}{\numberline {26.3}Quotient Modules}{182}{}%
+\contentsline {section}{\numberline {26.4}Products}{183}{}%
+\contentsline {section}{\numberline {26.5}Coproducts}{183}{}%
+\contentsline {section}{\numberline {26.6}Direct Sum}{183}{}%
+\contentsline {section}{\numberline {26.7}Kernels and Cokernels}{184}{}%
+\contentsline {section}{\numberline {26.8}Free Modules}{185}{}%
+\contentsline {section}{\numberline {26.9}Generators}{186}{}%
+\contentsline {section}{\numberline {26.10}Projections}{187}{}%
+\contentsline {section}{\numberline {26.11}Pullbacks}{187}{}%
+\contentsline {section}{\numberline {26.12}Pushouts}{188}{}%
+\contentsline {chapter}{\numberline {27}Cyclic Modules}{189}{}%
+\contentsline {chapter}{\numberline {28}Simple Modules}{191}{}%
+\contentsline {chapter}{\numberline {29}Noetherian Modules}{193}{}%
+\contentsline {chapter}{\numberline {30}Noetherian Rings}{195}{}%
 \contentsline {chapter}{\numberline {31}Algebras}{197}{}%
 \contentsline {section}{\numberline {31.1}Rees Algebra}{198}{}%
 \contentsline {section}{\numberline {31.2}Free Algebras}{198}{}%

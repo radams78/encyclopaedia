@@ -1424,25 +1424,6 @@ $\mathbb{Z}[x]$ has Krull dimension 2. %TODO
 $\mathbb{Z}$ is a UFD.
 \end{ex}
 
-\chapter{Noetherian Rings}
-
-\begin{df}[Noetherian Ring]
-A commutative ring is \emph{Noetherian} iff every ideal is finitely generated.
-\end{df}
-
-\begin{prop}
-The homomorphic image of a Noetherian ring is Noetherian.
-\end{prop}
-
-\begin{proof}
-\pf
-\step{1}{\pflet{$R$ be a Noetherian ring, $S$ be a commutative ring, and $\phi : R \rightarrow S$ a surjective ring homomorphism.}}
-\step{2}{\pflet{$I$ be an ideal in $S$.}}
-\step{3}{\pflet{$\inv{\phi}(I) = (a_1, \ldots, a_n)$}}
-\step{4}{$I = (\phi(a_1), \ldots, \phi(a_n))$}
-\qed
-\end{proof}
-
 \chapter{Principal Ideal Domains}
 
 \begin{df}[Principal Ideal Domain]
@@ -1456,14 +1437,6 @@ $\mathbb{Z}$ is a PID by Proposition \ref{prop:subgroups-of-Z}.
 \begin{ex}
 $\mathbb{Z}[x]$ is not a PID. The ideal $(2,x)$ is not principal.
 \end{ex}
-
-\begin{prop}
-Every PID is Noetherian.
-\end{prop}
-
-\begin{proof}
-\pf\ Trivial. \qed
-\end{proof}
 
 \begin{prop}
 Every nonzero prime ideal in a PID is maximal.
@@ -2413,6 +2386,33 @@ If $R$ is a Noetherian ring and $M$ is a finitely generated left-$R$-module then
 
 \begin{proof}
 \pf\ There is a surjective homomorphism $R^{\oplus n} \twoheadrightarrow M$ for some $n$, so $M$ is a quotient of $R^{\oplus n}$. \qed
+\end{proof}
+
+\chapter{Noetherian Rings}
+
+\begin{df}[Noetherian Ring]
+A commutative ring is \emph{Noetherian} iff it is Noetherian as a module over itself.
+\end{df}
+
+\begin{prop}
+The homomorphic image of a Noetherian ring is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a Noetherian ring, $S$ be a commutative ring, and $\phi : R \rightarrow S$ a surjective ring homomorphism.}}
+\step{2}{\pflet{$I$ be an ideal in $S$.}}
+\step{3}{\pflet{$\inv{\phi}(I) = (a_1, \ldots, a_n)$}}
+\step{4}{$I = (\phi(a_1), \ldots, \phi(a_n))$}
+\qed
+\end{proof}
+
+\begin{prop}
+Every PID is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf\ Trivial. \qed
 \end{proof}
 
 \chapter{Algebras}
