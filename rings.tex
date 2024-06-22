@@ -2450,6 +2450,7 @@ The induction step holds by Proposition \ref{prop:N-and-M-over-N-Noetherian} sin
 \end{proof}
 
 \begin{cor}
+\label{cor:finitely-generated-Noetherian}
 If $R$ is a Noetherian ring and $M$ is a finitely generated left-$R$-module then $M$ is Noetherian.
 \end{cor}
 
@@ -2463,6 +2464,79 @@ A ring is Noetherian iff every ascending chain of ideals stabilizes.
 
 \begin{proof}
 \pf\ Proposition \ref{prop:Noetherian-acc}. \qed
+\end{proof}
+
+\begin{prop}
+\label{prop:quotient-Noetherian}
+Let $R$ be a commutative Noetherian ring and $I$ an ideal of $R$. Then $R / I$ is Noetherian.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$J$ be an ideal in $R/I$.}}
+\step{2}{$\inv{\pi}(J)$ is an ideal in $R$.}
+\step{3}{$\inv{\pi}(J)$ is finitely generated.}
+\step{4}{$J$ is finitely generated.}
+\qed
+\end{proof}
+
+\begin{lm}[Hilbert's Basis Theorem]
+If $R$ is a commutative Noetherian ring then $R[x]$ is a Noetherian ring.
+\end{lm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$R$ be a commutative Noetherian ring.}}
+\step{2}{\pflet{$I$ be an ideal of $R[x]$.} \prove{$I$ is finitely generated.}}
+\step{3}{\pflet{$A = \{0\} \cup \{ a \in R : a \text{ is the leading coefficient of an element of } I \}$}}
+\step{4}{$A$ is an ideal of $R$.}
+\begin{proof}
+	\step{a}{$\forall a,b \in A. a-b \in A$}
+	\begin{proof}
+		\step{i}{\pflet{$a,b \in A$}}
+		\step{ii}{\assume{w.l.o.g. $a \neq 0 \neq b$}}
+		\step{ii}{\pick\ $f,g \in I$ such that $a$ is the leading coefficient of $f$ and $b$ is the leading coefficient of $g$.}
+		\step{iii}{\pflet{$d = \deg f$}}
+		\step{iv}{\pflet{$e = \deg g$}}
+		\step{v}{\assume{w.l.o.g. $d \leq e$}}
+		\step{vi}{$a-b$ is the leading coefficient of $x^{e-d} f - g \in I$}
+		\step{vii}{$a-b \in A$}
+	\end{proof}
+	\step{b}{$\forall r \in R. \forall a \in A. ra \in A$}
+	\begin{proof}
+		\pf\ If $a$ is the leading coefficient of $f$ then $ra$ is the leading coefficient of $rf$.
+	\end{proof}
+\end{proof}
+\step{5}{\pick\ $a_1, \ldots, a_r \in A$ that generate $A$.}
+\begin{proof}
+	\pf\ Since $R$ is Noetherian.
+\end{proof}
+\step{6}{\pick\ $f_1, \ldots, f_r \in I$ such that $a_i$ is the leading coefficient of $f_i$.}
+\step{7}{For $i=1, \ldots, r$, \pflet{$d_i = \deg f_i$.}}
+\step{8}{\pflet{$d = \max(d_1, \ldots, d_r)$}}
+\step{9}{\pflet{$M$ be the following submodule of $R[x]$: $M = \langle 1, x, x^2, \ldots, x^{d-1} \rangle$.}}
+\step{10}{$M$ is a Noetherian $R$-module.}
+\begin{proof}
+	\pf\ Corollary \ref{cor:finitely-generated-Noetherian}.
+\end{proof}
+\step{11}{$M \cap I$ is a finitely generated $R$-module.}
+\step{12}{\pick\ $g_1, \ldots, g_s \in M \cap I$ that generate $M \cap I$. \prove{$I = (f_1, \ldots, f_r, g_1, \ldots, g_s)$}}
+\step{13}{For all $\alpha \in I$, there exist $\beta_1, \ldots, \beta_r \in R[x]$ such that $\deg (\alpha + \beta_1 f_1 + \cdots + \beta_r f_r) < d$}
+\begin{proof}
+	\step{a}{For all $\alpha \in I$ with $\deg \alpha \geq d$, there exist $\beta_1, \ldots, \beta_r \in R[x]$ such that $\deg(\alpha + \beta_1 f_1 + \cdots + \beta_r f_r) < \deg \alpha$}
+	\begin{proof}
+		\step{i}{\pflet{$\alpha \in I$}}
+		\step{ii}{\pflet{$e = \deg \alpha$}}
+		\step{iii}{\pflet{$a$ be the leading coefficient of $\alpha$.}}
+		\step{iv}{\pick\ $b_1, \ldots, b_r \in R$ such that $a = b_1 a_1 + \cdots + b_r a_r$.}
+		\step{v}{$\deg (\alpha - b_1 x^{e - d_1} f_1 - \cdots - b_r x^{e - d_r} f_r) < e$}
+	\end{proof}
+\end{proof}
+\step{14}{\pflet{$\alpha \in I$}}
+\step{15}{\pick\ $\beta_1, \ldots, \beta_r \in R[x]$ such that $\deg(\alpha + \beta_1 f_1 + \cdots + \beta_r f_r) < d$}
+\step{16}{$\alpha + \beta_1 f_1 + \cdots + \beta_r f_r \in M \cap I = (g_1, \ldots, g_s)$}
+\step{17}{$\alpha \in (f_1, \ldots, f_r, g_1, \ldots, g_s)$}
+\qed
 \end{proof}
 
 \chapter{Algebras}
@@ -2596,11 +2670,13 @@ Let $R$ be a commutative ring and $S$ a commutative $R$-algebra. Then $S$ is fin
 Let $R$ be a ring. Let $S$ be an $R$-algebra. Then $R$ is of \emph{finite type} iff $S$ is a finitely generated $R$-algebra.
 \end{df}
 
-\begin{prop}
+\begin{thm}
 Let $R$ be a Noetherian ring. Let $S$ be a finite-type $R$-algebra. Then $S$ is a Noetherian ring.
-\end{prop}
+\end{thm}
 
-%TODO
+\begin{proof}
+\pf\ $S \cong R[x_1, \ldots, x_n]/J$ for some $n$ and some ideal $J$ in $R[x_1, \ldots, x_n]$. We have that $R[x_1, \ldots, x_n]$ is Noetherian by Hilbert's Basis Theorem, hence $R[x_1,\ldots, x_n] / J$ is Noetherian by Proposition \ref{prop:quotient-Noetherian}. \qed
+\end{proof}
 
 \chapter{Finite Algebras}
 

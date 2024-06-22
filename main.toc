@@ -4,11 +4,14 @@
 \contentsline {section}{\numberline {2.1}Categories}{13}{}%
 \contentsline {subsection}{\numberline {2.1.1}Definition}{13}{}%
 \contentsline {subsection}{\numberline {2.1.2}Examples}{13}{}%
-\contentsline {section}{\numberline {2.2}Preorders}{14}{}%
-\contentsline {section}{\numberline {2.3}Monomorphisms and Epimorphisms}{14}{}%
-\contentsline {section}{\numberline {2.4}Sections and Retractions}{16}{}%
-\contentsline {section}{\numberline {2.5}Isomorphisms}{17}{}%
-\contentsline {section}{\numberline {2.6}Initial and Terminal Objects}{17}{}%
+\contentsline {section}{\numberline {2.2}Objects}{14}{}%
+\contentsline {section}{\numberline {2.3}Morphisms}{14}{}%
+\contentsline {subsection}{\numberline {2.3.1}Endomorphisms}{14}{}%
+\contentsline {section}{\numberline {2.4}Preorders}{14}{}%
+\contentsline {section}{\numberline {2.5}Monomorphisms and Epimorphisms}{14}{}%
+\contentsline {section}{\numberline {2.6}Sections and Retractions}{16}{}%
+\contentsline {section}{\numberline {2.7}Isomorphisms}{17}{}%
+\contentsline {section}{\numberline {2.8}Initial and Terminal Objects}{18}{}%
 \contentsline {chapter}{\numberline {3}Functors}{19}{}%
 \contentsline {section}{\numberline {3.1}Comma Categories}{19}{}%
 \contentsline {part}{II\hspace {1em}Number Theory}{21}{}%
@@ -110,20 +113,20 @@
 \contentsline {chapter}{\numberline {28}Simple Modules}{191}{}%
 \contentsline {chapter}{\numberline {29}Noetherian Modules}{193}{}%
 \contentsline {chapter}{\numberline {30}Noetherian Rings}{195}{}%
-\contentsline {chapter}{\numberline {31}Algebras}{197}{}%
-\contentsline {section}{\numberline {31.1}Rees Algebra}{198}{}%
-\contentsline {section}{\numberline {31.2}Free Algebras}{198}{}%
-\contentsline {chapter}{\numberline {32}Algebras of Finite Type}{201}{}%
-\contentsline {chapter}{\numberline {33}Finite Algebras}{203}{}%
-\contentsline {chapter}{\numberline {34}Division Algebras}{205}{}%
-\contentsline {chapter}{\numberline {35}Chain Complexes}{207}{}%
-\contentsline {section}{\numberline {35.1}Split Exact Sequences}{218}{}%
-\contentsline {chapter}{\numberline {36}Homology}{221}{}%
-\contentsline {part}{V\hspace {1em}Field Theory}{223}{}%
-\contentsline {chapter}{\numberline {37}Fields}{225}{}%
-\contentsline {chapter}{\numberline {38}Algebraically Closed Fields}{229}{}%
-\contentsline {part}{VI\hspace {1em}Linear Algebra}{231}{}%
-\contentsline {chapter}{\numberline {39}Vector Spaces}{233}{}%
-\contentsline {part}{VII\hspace {1em}Linear Algebra}{235}{}%
-\contentsline {chapter}{\numberline {40}Vector Spaces}{237}{}%
-\contentsline {part}{VIII\hspace {1em}Measure Theory}{239}{}%
+\contentsline {chapter}{\numberline {31}Algebras}{199}{}%
+\contentsline {section}{\numberline {31.1}Rees Algebra}{200}{}%
+\contentsline {section}{\numberline {31.2}Free Algebras}{200}{}%
+\contentsline {chapter}{\numberline {32}Algebras of Finite Type}{203}{}%
+\contentsline {chapter}{\numberline {33}Finite Algebras}{205}{}%
+\contentsline {chapter}{\numberline {34}Division Algebras}{207}{}%
+\contentsline {chapter}{\numberline {35}Chain Complexes}{209}{}%
+\contentsline {section}{\numberline {35.1}Split Exact Sequences}{220}{}%
+\contentsline {chapter}{\numberline {36}Homology}{223}{}%
+\contentsline {part}{V\hspace {1em}Field Theory}{225}{}%
+\contentsline {chapter}{\numberline {37}Fields}{227}{}%
+\contentsline {chapter}{\numberline {38}Algebraically Closed Fields}{231}{}%
+\contentsline {part}{VI\hspace {1em}Linear Algebra}{233}{}%
+\contentsline {chapter}{\numberline {39}Vector Spaces}{235}{}%
+\contentsline {part}{VII\hspace {1em}Linear Algebra}{237}{}%
+\contentsline {chapter}{\numberline {40}Vector Spaces}{239}{}%
+\contentsline {part}{VIII\hspace {1em}Measure Theory}{241}{}%
