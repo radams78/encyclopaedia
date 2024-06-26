@@ -66,6 +66,33 @@
 A \emph{partition} of a natural number $n$ is a nonincreasing sequence of positive integers whose sum is $n$.
 \end{df}
 
+\part{Order Theory}
+
+\chapter{Boolean Algebras}
+
+\begin{df}[Boolean Algebra]
+A \emph{Boolean algebra} $B$ is a lattice %TODO Define this
+with a function $\neg : B \rightarrow B$ such that, for all $a,b \in B$, we have
+\begin{align*}
+a \leq \neg b & \text{iff } a \wedge b = \bot \\
+\neg \neg a & = a
+\end{align*}
+\end{df}
+
+\begin{ex}
+For any set $A$, the power set $\mathcal{P} A$ is a Boolean algebra under inclusion, with $\neg X = A - X$.
+\end{ex}
+
+\begin{df}[Boolean Algebra Homomorphism]
+Given Boolean algebras $B$ and $B'$, a \emph{Boolean algebra homomorphism} $h : B \rightarrow B'$ is a lattice homomorphism such that
+\[ \forall x \in B. h(\neg x) = \neg h(x) \enspace . \]
+Let $\mathbf{BA}$ be the category of Boolean algebras and Boolean algebra homomorphisms.
+\end{df}
+
+\begin{ex}
+$\mathbf{2} = \mathcal{P} \mathbf{1}$ is initial in $\mathbf{BA}$.
+\end{ex}
+
 \part{Group Theory}
 
 \input{groups}
