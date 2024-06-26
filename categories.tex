@@ -5,11 +5,19 @@ project yet. I will try to work in a way which is foundation-independent. What
 I do could be formalized in ZFC, ETCS, or some other system. I will assume the
 usual set theoretic constructions as needed. 
 
+\section{Relations}
+
+\begin{df}[Reflexive]
+A relation $R$ on a class $A$ is \emph{reflexive} iff, for all $x \in A$, we have $xRx$.
+\end{df}
+
+\begin{df}[Transitive]
+A relation $R$ on a class $A$ is \emph{transitive} iff, whenever $xRy$ and $yRz$, then $xRz$.
+\end{df}
+
 \chapter{Categories}
 
-\section{Categories}
-
-\subsection{Definition}
+\section{Definition}
 
 \begin{df}[Category]
     A \emph{category} $\mathcal{C}$ consists of:
@@ -34,7 +42,7 @@ usual set theoretic constructions as needed.
     \end{description}
 \end{df}
 
-\subsection{Examples}
+\section{Examples}
 
 \begin{ex}[Category of Sets]
     The \emph{category of sets} $\Set$ has objects all sets and morphisms all functions.
@@ -44,13 +52,150 @@ usual set theoretic constructions as needed.
 The \emph{category of finite sets} $\Set_{\mathbf{fin}}$ has objects all finite sets and morphisms all functions.
 \end{ex}
 
+\begin{ex}[Category of Sets and Relations]
+The \emph{category of sets and relations} $\mathbf{Rel}$ has:
+\begin{itemize}
+\item objects all sets
+\item morphism $A \rightarrow B$ all relations between $A$ and $B$
+\item the identity on $A$ is $\{ (a,a) : a \in A \}$
+\item given $R \subseteq A \times B$ and $S \subseteq B \times C$, we define
+\[ S \circ R = \{ (a,c) \in A \times C : \exists b \in B. aRb \wedge bSc \} \enspace . \]
+\end{itemize}
+\end{ex}
+
+%Basic Properties
+
 %Ways of constructing categories
 
 %Special kinds of categories
 
-\section{Objects}
+\section{Subcategories}
 
-\section{Morphisms}
+\begin{df}[Subcategory]
+A category $\mathcal{C}$ is a \emph{subcategory} of a category $\mathcal{D}$ iff:
+\begin{itemize}
+\item $|\mathcal{C}| \subseteq |\mathcal{D}|$
+\item for all $A,B \in \mathcal{C}$, we have $\mathcal{C}[A,B] \subseteq \mathcal{D}[A,B]$
+\item for all $A \in \mathcal{C}$, the identity on $A$ is the same in $\mathcal{C}$ and $\mathcal{D}$
+\item composition in $\mathcal{C}$ and composition in $\mathcal{D}$ agree on composable pairs of morphisms from $\mathcal{C}$.
+\end{itemize}
+It is a \emph{full} subcategory iff, for all $A, B \in \mathcal{C}$, we have $\mathcal{C}[A,B] = \mathcal{D}[A,B]$.
+\end{df}
+
+\chapter{Functors}
+
+\begin{df}[Functor]
+    Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
+    \begin{itemize}
+        \item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
+        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA
+                  \rightarrow FB : \mathcal{D}$
+    \end{itemize}
+    such that:
+    \begin{itemize}
+        \item $F \id{A} = \id{FA}$
+        \item $F(g \circ f) = Fg \circ Ff$
+    \end{itemize}
+\end{df}
+
+\begin{df}[Identity Functor]
+    For any category $\mathcal{C}$, the \emph{identity functor} $1_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ is defined by
+    \begin{align*}
+        1_\mathcal{C} A & = A \\
+        1_\mathcal{C} f & = f
+    \end{align*}
+\end{df}
+
+\begin{df}[Constant Functor]
+    Given categories $\mathcal{C}$, $\mathcal{D}$ and an object $D \in \mathcal{D}$, the \emph{constant functor} $K^\mathcal{C} D : \mathcal{C} \rightarrow \mathcal{D}$ is the functor defined by
+    \begin{align*}
+        K^\mathcal{C} D C & = D      \\
+        K^\mathcal{C} D f & = \id{D}
+    \end{align*}
+\end{df}
+
+\begin{df}[Composition of Functors]
+Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$, define the \emph{composite} functor $G \circ F : \mathcal{C} \rightarrow \mathcal{E}$ by
+\begin{align*}
+(G \circ F) A & = G (F A) \\
+(G \circ F) f & = G (F f)
+\end{align*}
+\end{df}
+
+\begin{df}[Isomorphism]
+A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is an \emph{isomorphism} iff there exists a function $\inv{F} : \mathcal{D} \rightarrow \mathcal{C}$, its \emph{inverse}, such that
+\[ \inv{F} \circ F = 1_{\mathcal{C}}, \qquad F \circ \inv{F} = 1_{\mathcal{D}} \enspace . \]
+\end{df}
+
+\chapter{Preorders}
+
+\section{Definition}
+
+\begin{df}[Thin Category]
+A category $\mathcal{C}$ is \emph{thin} or a \emph{preorder} iff, for any objects $A$ and $B$, there is at most one morphism $A \rightarrow B$. We write $A \leq B$ iff there exists a morphism $A \rightarrow B$; this is called the \emph{ordering relation} on $\mathcal{C}$.
+\end{df}
+
+\begin{prop}
+For any preorder $\mathcal{C}$, the relation $\leq$ is reflexive and transitive. Conversely, given any class $A$ and relation $\leq$ on $A$ that is reflexive and transitive, there exists a preorder $A$ with class of objects $A$, unique up to unique isomorphism that is the identity on objects, such that $\leq$ is the ordering relation on $A$.
+\end{prop}
+
+\begin{proof}
+\pf\ All parts are immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+Let $\mathcal{C}$ and $\mathcal{D}$ be preorders and $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor. Then $F$ is \emph{monotone}: for all $x,y \in \mathcal{C}$, if $x \leq y$ then $F(x) \leq F(y)$.
+
+Conversely, given any monotone function $f$ from the objects of $\mathcal{C}$ to the objects of $\mathcal{D}$, there exists a unique functor whose action on objects is $f$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{ex}[Discrete Category]
+For any set $A$, the \emph{discrete} category $A$ is the preorder with objects the elements of $A$ and order relation $=$.
+\end{ex}
+
+\begin{ex}
+For any ordinal $\alpha$, let $\mathbf{\alpha}$ be the preorder $\{ \beta : \beta < \alpha \}$ under $\leq$.
+\end{ex}
+
+%Examples
+
+%Basic Properties
+
+%Ways of constructing preordered sets
+
+\section{Partial Orders}
+
+\subsection{Definition}
+
+\begin{df}[Partial Order]
+A \emph{partial order}, \emph{partially ordered set} or \emph{poset} is a preorder such that, for any $x$ and $y$, if $x \leq y$ and $y \leq x$ then $x = y$.
+\end{df}
+
+\begin{ex}
+Every discrete category is a poset.
+\end{ex}
+
+\begin{ex}
+For any ordinal $\alpha$, the preorder $\mathbf{\alpha}$ is a poset.
+\end{ex}
+
+\begin{df}[Category of Posets]
+Let $\mathbf{Pos}$ be full subcategory of $\mathbf{Cat}$ whose objects are the posets.
+\end{df}
+
+% Examples
+% Basic Properties
+% Relation with Previous Concepts
+% Ways of Constructing X
+% Special Kinds
+
+\chapter{Objects}
+
+\chapter{Morphisms}
 
 \subsection{Endomorphisms}
 
@@ -376,38 +521,6 @@ The \emph{category of finite sets} $\Set_{\mathbf{fin}}$ has objects all finite 
 \begin{proof}
     \pf\ Dual. \qed
 \end{proof}
-
-\chapter{Functors}
-
-\begin{df}[Functor]
-    Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
-    \begin{itemize}
-        \item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
-        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA
-                  \rightarrow FB : \mathcal{D}$
-    \end{itemize}
-    such that:
-    \begin{itemize}
-        \item $F \id{A} = \id{FA}$
-        \item $F(g \circ f) = Fg \circ Ff$
-    \end{itemize}
-\end{df}
-
-\begin{df}[Identity Functor]
-    For any category $\mathcal{C}$, the \emph{identity functor} $1_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ is defined by
-    \begin{align*}
-        1_\mathcal{C} A & = A \\
-        1_\mathcal{C} f & = f
-    \end{align*}
-\end{df}
-
-\begin{df}[Constant Functor]
-    Given categories $\mathcal{C}$, $\mathcal{D}$ and an object $D \in \mathcal{D}$, the \emph{constant functor} $K^\mathcal{C} D : \mathcal{C} \rightarrow \mathcal{D}$ is the functor defined by
-    \begin{align*}
-        K^\mathcal{C} D C & = D      \\
-        K^\mathcal{C} D f & = \id{D}
-    \end{align*}
-\end{df}
 
 \section{Comma Categories}
 

@@ -4,12 +4,46 @@
 A \emph{semigroup} consists of a set $S$ and an associative binary operation $\cdot$ on $S$.
 \end{df}
 
+\begin{df}[Unit]
+Let $S$ be a semigroup. An element $e \in S$ is a \emph{unit} iff $\forall x \in S. xe = ex = x$.
+\end{df}
+
 \chapter{Monoids}
 
 \begin{df}[Monoid]
-A \emph{monoid} consists of a semigroup $M$ such that there exists $e \in M$, the \emph{unit}, such that, for all $x \in M$, we have $x e = ex = x$.
+A \emph{monoid} is a category with one object.
+\end{df}
 
-We identify a monoid $M$ with the category with one object whose morphisms are the elements of $M$, with composition given by $\cdot$.
+\begin{prop}
+Let $M$ be a monoid with object $*$. Then the set of morphisms $M[*,*]$ is a semigroup with a unit. Conversely, given any semigroup with a unit $M$, there exists a monoid, unique up to isomorphism that is the identity on morphisms, such that the morphisms are the elements of $M$ with composition given by the semigroup operation.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{df}[Monoid Homomorphism]
+A \emph{monoid homomorphism} is a functor between monoids.
+\end{df}
+
+\begin{prop}
+The monoid homomorphisms are exactly the semigroup homomorphisms that preserve the unit.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{ex}
+$\mathbb{N}$, $\mathbb{Q}$ and $\mathbb{R}$ are monoids under addition.
+\end{ex}
+
+\begin{ex}
+For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, the full subcategory of $\mathcal{C}$ with only one object $A$ is a monoid. We write $\mathcal{C}[A,A]$ for this monoid.
+\end{ex}
+
+\begin{df}
+Let $\mathbf{Mon}$ be the full subcategory of $\mathbf{Cat}$ whose objects are the monoids.
 \end{df}
 
 \chapter{Groups}
