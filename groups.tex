@@ -1,4 +1,5 @@
 \chapter{Semigroups}
+%TODO Generalize all this by introducing Lawvere theories.
 
 \begin{df}[Semigroup]
 A \emph{semigroup} consists of a set $S$ and an associative binary operation $\cdot$ on $S$.
@@ -44,6 +45,24 @@ For any category $\mathcal{C}$ and object $A \in \mathcal{C}$, the full subcateg
 
 \begin{df}
 Let $\mathbf{Mon}$ be the full subcategory of $\mathbf{Cat}$ whose objects are the monoids.
+
+Let $U : \mathbf{Mon} \rightarrow \mathbf{Cat}$ be the functor that maps a monoid to its \emph{underlying} set of morphisms.
+\end{df}
+
+\section{Free Monoids}
+
+%TODO Rewrite in terms of adjoints
+\begin{thm}
+Let $A$ be a set. Then there exists a monoid $F(A)$ and function $i : A \rightarrow UF(A)$ such that, for any monoid $M$ and function $f : A \rightarrow UM$, there exists a unique monoid homomorphism $\overline{f} : FA \rightarrow M$ such that
+\[ f = U\overline{f} \circ i \]
+\end{thm}
+
+\begin{proof}
+\pf\ Take $FA$ to be the set of all finite sequences in $A$ under concatenation. \qed
+\end{proof}
+
+\begin{df}
+We call $FA$ the \emph{free} monoid on $A$.
 \end{df}
 
 \chapter{Groups}
@@ -76,17 +95,13 @@ G \arrow[r,"\Delta"] \arrow[d] & G^2 \arrow[r,"i \times \id{G}"] & G^2 \arrow[d,
 \end{tikzcd} \]
 \end{df}
 
-\begin{df}[Group]
-We write just 'group' for 'group in $\Set$'. Thus, a \emph{group} $G$ consists of a set $G$ and a binary operation $\cdot : G^2 \rightarrow G$ such that $\cdot$ is associative, and there exists $e \in G$, the \emph{identity} element of the group, such that:
-    \begin{itemize}
-        \item For all $x \in G$ we have $xe = ex = x$
-        \item For all $x \in G$, there exists $\inv{x} \in G$, the \emph{inverse} of $x$,
-              such that $x \inv{x} = \inv{x} x = e$.
-    \end{itemize}
+\begin{prop}
+A group in $\mathbf{Set}$ is exactly (the set of morphisms of) a monoid that is also a groupoid.
+\end{prop}
 
-    The \emph{order} of a group $G$, denoted $|G|$, is the number of elements in
-    $G$ if $G$ is finite; otherwise we write $|G| = \infty$.
-\end{df}
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
 
 \begin{prop}
     \label{prop:grp-inv-unique}
@@ -655,8 +670,12 @@ Let $p$ be a prime. A \emph{$p$-group} is a finite group whose order is a power 
 \end{proof}
 
 \begin{df}[Category of Groups]
-    Let $\mathbf{Grp}$ be the category of groups and group homomorphisms.
+    Let $\Grp$ be the category of groups and group homomorphisms.
 \end{df}
+
+\begin{ex}
+The trivial group 1 is both initial and terminal in $\Grp$.
+\end{ex}
 
 \begin{ex}
 There are 49487365402 groups of order 1024 up to isomorphism. %TODO
@@ -1160,7 +1179,7 @@ Let $G$ be a group. Let $N$ and $H$ be subgroups of $G$. Then $G$ is the \emph{i
 \section{Direct Products}
 
 \begin{df}[Direct Product]
-    The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$.
+    The \emph{direct product} of groups $G$ and $H$ is their product in $\mathbf{Grp}$ (which is the same as their product in $\mathbf{Cat}$).
 \end{df}
 
 \begin{prop}

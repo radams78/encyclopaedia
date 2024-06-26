@@ -1,3 +1,7 @@
+\newcommand{\dom}{\ensuremath{\operatorname{dom}}}
+\newcommand{\cod}{\ensuremath{\operatorname{cod}}}
+\newcommand{\Cat}{\ensuremath{\mathbf{Cat}}}
+
 \chapter{Foundations}
 
 This is a placeholder --- I am not sure what foundation I want to use for this
@@ -82,147 +86,10 @@ A category $\mathcal{C}$ is a \emph{subcategory} of a category $\mathcal{D}$ iff
 It is a \emph{full} subcategory iff, for all $A, B \in \mathcal{C}$, we have $\mathcal{C}[A,B] = \mathcal{D}[A,B]$.
 \end{df}
 
-\chapter{Functors}
-
-\begin{df}[Functor]
-    Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
-    \begin{itemize}
-        \item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
-        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA
-                  \rightarrow FB : \mathcal{D}$
-    \end{itemize}
-    such that:
-    \begin{itemize}
-        \item $F \id{A} = \id{FA}$
-        \item $F(g \circ f) = Fg \circ Ff$
-    \end{itemize}
-\end{df}
-
-\begin{df}[Identity Functor]
-    For any category $\mathcal{C}$, the \emph{identity functor} $1_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ is defined by
-    \begin{align*}
-        1_\mathcal{C} A & = A \\
-        1_\mathcal{C} f & = f
-    \end{align*}
-\end{df}
-
-\begin{df}[Constant Functor]
-    Given categories $\mathcal{C}$, $\mathcal{D}$ and an object $D \in \mathcal{D}$, the \emph{constant functor} $K^\mathcal{C} D : \mathcal{C} \rightarrow \mathcal{D}$ is the functor defined by
-    \begin{align*}
-        K^\mathcal{C} D C & = D      \\
-        K^\mathcal{C} D f & = \id{D}
-    \end{align*}
-\end{df}
-
-\begin{df}[Composition of Functors]
-Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$, define the \emph{composite} functor $G \circ F : \mathcal{C} \rightarrow \mathcal{E}$ by
-\begin{align*}
-(G \circ F) A & = G (F A) \\
-(G \circ F) f & = G (F f)
-\end{align*}
-\end{df}
-
-\begin{df}[Isomorphism]
-A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is an \emph{isomorphism} iff there exists a function $\inv{F} : \mathcal{D} \rightarrow \mathcal{C}$, its \emph{inverse}, such that
-\[ \inv{F} \circ F = 1_{\mathcal{C}}, \qquad F \circ \inv{F} = 1_{\mathcal{D}} \enspace . \]
-\end{df}
-
-\chapter{Preorders}
-
-\section{Definition}
-
-\begin{df}[Thin Category]
-A category $\mathcal{C}$ is \emph{thin} or a \emph{preorder} iff, for any objects $A$ and $B$, there is at most one morphism $A \rightarrow B$. We write $A \leq B$ iff there exists a morphism $A \rightarrow B$; this is called the \emph{ordering relation} on $\mathcal{C}$.
-\end{df}
-
-\begin{prop}
-For any preorder $\mathcal{C}$, the relation $\leq$ is reflexive and transitive. Conversely, given any class $A$ and relation $\leq$ on $A$ that is reflexive and transitive, there exists a preorder $A$ with class of objects $A$, unique up to unique isomorphism that is the identity on objects, such that $\leq$ is the ordering relation on $A$.
-\end{prop}
-
-\begin{proof}
-\pf\ All parts are immediate from definitions. \qed
-\end{proof}
-
-\begin{prop}
-Let $\mathcal{C}$ and $\mathcal{D}$ be preorders and $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor. Then $F$ is \emph{monotone}: for all $x,y \in \mathcal{C}$, if $x \leq y$ then $F(x) \leq F(y)$.
-
-Conversely, given any monotone function $f$ from the objects of $\mathcal{C}$ to the objects of $\mathcal{D}$, there exists a unique functor whose action on objects is $f$.
-\end{prop}
-
-\begin{proof}
-\pf\ Immediate from definitions. \qed
-\end{proof}
-
-\begin{ex}[Discrete Category]
-For any set $A$, the \emph{discrete} category $A$ is the preorder with objects the elements of $A$ and order relation $=$.
-\end{ex}
-
-\begin{ex}
-For any ordinal $\alpha$, let $\mathbf{\alpha}$ be the preorder $\{ \beta : \beta < \alpha \}$ under $\leq$.
-\end{ex}
-
-%Examples
-
-%Basic Properties
-
-%Ways of constructing preordered sets
-
-\section{Partial Orders}
-
-\subsection{Definition}
-
-\begin{df}[Partial Order]
-A \emph{partial order}, \emph{partially ordered set} or \emph{poset} is a preorder such that, for any $x$ and $y$, if $x \leq y$ and $y \leq x$ then $x = y$.
-\end{df}
-
-\begin{ex}
-Every discrete category is a poset.
-\end{ex}
-
-\begin{ex}
-For any ordinal $\alpha$, the preorder $\mathbf{\alpha}$ is a poset.
-\end{ex}
-
-\begin{df}[Category of Posets]
-Let $\mathbf{Pos}$ be full subcategory of $\mathbf{Cat}$ whose objects are the posets.
-\end{df}
-
-% Examples
-% Basic Properties
-% Relation with Previous Concepts
-% Ways of Constructing X
-% Special Kinds
-
-\chapter{Objects}
-
 \chapter{Morphisms}
-
-\subsection{Endomorphisms}
 
 \begin{df}[Endomorphism]
     In a category $\mathcal{C}$, an \emph{endomorphism} on an object $A$ is a morphism $A \rightarrow A$. We write $\mathrm{End}_\mathcal{C}(A)$ for $\mathcal{C}[A,A]$.
-\end{df}
-
-\begin{df}[Opposite Category]
-    For any category $\mathcal{C}$, the \emph{opposite} category $\mathcal{C}^\mathrm{op}$ is the category with the same objects as $\mathcal{C}$ and
-    \[ \mathcal{C}^\mathrm{op}[A,B] = \mathcal{C}[B,A] \]
-\end{df}
-
-\section{Preorders}
-
-\begin{df}[Preorder]
-    A \emph{preorder} on a set $A$ is a relation $\leq$ on $A$ that is reflexive and transitive.
-
-    A \emph{preordered set} is a pair $(A, \leq)$ such that $\leq$ is a preorder on
-    $A$. We usually write $A$ for the preordered set $(A, \leq)$.
-
-    We identify any preordered set $A$ with the category whose objects are the
-    elements of $A$, with one morphism $a \rightarrow b$ iff $a \leq b$, and no
-    morphism $a \rightarrow b$ otherwise.
-\end{df}
-
-\begin{df}[Discrete Preorder]
-    For any set $A$, we have $(A, =)$ is a preorder, called a \emph{discrete} preorder.
 \end{df}
 
 \section{Monomorphisms and Epimorphisms}
@@ -551,3 +418,213 @@ Let $\mathbf{Pos}$ be full subcategory of $\mathbf{Cat}$ whose objects are the p
 \begin{df}[Pointed Sets]
     The \emph{category of pointed sets} $\Set_*$ is the coslice category $\Set \backslash 1$.
 \end{df}
+
+\chapter{Functors}
+
+\begin{df}[Functor]
+    Let $\mathcal{C}$ and $\mathcal{D}$ be categories. A \emph{functor} $F : \mathcal{C} \rightarrow \mathcal{D}$ consists of:
+    \begin{itemize}
+        \item for every object $A \in \mathcal{C}$, an object $FA \in \mathcal{D}$
+        \item for any morphism $f : A \rightarrow B : \mathcal{C}$, a morphism $Ff : FA
+                  \rightarrow FB : \mathcal{D}$
+    \end{itemize}
+    such that:
+    \begin{itemize}
+        \item $F \id{A} = \id{FA}$
+        \item $F(g \circ f) = Fg \circ Ff$
+    \end{itemize}
+\end{df}
+
+\begin{df}[Identity Functor]
+    For any category $\mathcal{C}$, the \emph{identity functor} $1_\mathcal{C} : \mathcal{C} \rightarrow \mathcal{C}$ is defined by
+    \begin{align*}
+        1_\mathcal{C} A & = A \\
+        1_\mathcal{C} f & = f
+    \end{align*}
+\end{df}
+
+\begin{df}[Constant Functor]
+    Given categories $\mathcal{C}$, $\mathcal{D}$ and an object $D \in \mathcal{D}$, the \emph{constant functor} $K^\mathcal{C} D : \mathcal{C} \rightarrow \mathcal{D}$ is the functor defined by
+    \begin{align*}
+        K^\mathcal{C} D C & = D      \\
+        K^\mathcal{C} D f & = \id{D}
+    \end{align*}
+\end{df}
+
+\begin{df}[Composition of Functors]
+Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \rightarrow \mathcal{E}$, define the \emph{composite} functor $G \circ F : \mathcal{C} \rightarrow \mathcal{E}$ by
+\begin{align*}
+(G \circ F) A & = G (F A) \\
+(G \circ F) f & = G (F f)
+\end{align*}
+\end{df}
+
+\begin{df}[Category of Categories]
+For any universe $\mathcal{U}$, let $\mathbf{Cat}_\mathcal{U}$ be the category of categories whose sets of objects and morphisms are in $\mathcal{U}$, and functors.
+\end{df}
+
+\chapter{Constructions of Categories}
+
+\section{Opposite Category}
+
+\begin{df}[Opposite Category]
+    For any category $\mathcal{C}$, the \emph{opposite} category $\mathcal{C}^\mathrm{op}$ is the category with the same objects as $\mathcal{C}$ and
+    \[ \mathcal{C}^\mathrm{op}[A,B] = \mathcal{C}[B,A] \]
+\end{df}
+
+\section{Product Categories}
+
+\begin{df}[Product Category]
+Given categories $\mathcal{C}$ and $\mathcal{D}$, the \emph{product category} $\mathcal{C} \times \mathcal{D}$ has:
+\begin{itemize}
+\item objects $|\mathcal{C} \times \mathcal{D}| = |\mathcal{C}| \times |\mathcal{D}|$
+\item a morphism $(C,D) \rightarrow (C',D')$ is a pair $(f,g)$ where $f : C \rightarrow C' : \mathcal{C}$ and $g : D \rightarrow D' : \mathcal{D}$
+\item $\id{(C,D)} = (\id{C},\id{D})$
+\item $(g',f') \circ (g,f) = (g' \circ g, f' \circ f)$
+\end{itemize}
+
+Define the \emph{projection} functors $\pi_1 : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{C}$ and $\pi_2 : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{D}$ by
+\begin{align*}
+\pi_1(C,D) & = C & \pi_2(C,D) & = D \\
+\pi_1(f,g) & = f & \pi_2(f,g) & = g
+\end{align*}
+\end{df}
+
+\section{Arrow Category}
+
+\begin{df}[Arrow Category]
+For any category $\mathcal{C}$, the \emph{arrow category} $\mathcal{C}^\rightarrow$ has:
+\begin{itemize}
+\item objects all triples $(A,B,f)$ where $A,B \in \mathcal{C}$ and $f : A \rightarrow B : \mathcal{C}$
+\item morphisms $(u,v) : (A,B,f) \rightarrow (C,D,g)$ all pairs $(u : A \rightarrow C, v : B \rightarrow D)$ such that the following diagram commutes.
+\[ \begin{tikzcd}
+A \arrow[r,"f"] \arrow[d,"u"] & B \arrow[d,"v"] \\
+C \arrow[r,"g"] & D
+\end{tikzcd} \]
+\end{itemize}
+
+We have the domain and codomain functors $\dom : \mathcal{C}^\rightarrow \rightarrow \mathcal{C}$ and $\cod : \mathcal{C}^\rightarrow \rightarrow \mathcal{C}$ given by
+\begin{align*}
+\dom (A,B,f) & = A & \cod (A,B,f) & = B \\
+\dom(u,v) & = u & \cod (u,v) & = v
+\end{align*}
+\end{df}
+
+\section{Slice Category}
+
+\begin{df}[Slice Category]
+Let $\mathcal{C}$ be a category and $A \in \mathcal{C}$. The \emph{slice category} $\mathcal{C} / A$ is the category with
+\begin{itemize}
+\item objects all pairs $(B,f)$ such that $f : B \rightarrow A$
+\item morphisms $u : (B,f) \rightarrow (C,g)$ all morphisms $u : B \rightarrow C$ such that $g \circ u = f$.
+\end{itemize}
+\end{df}
+
+\begin{df}[Slice Category]
+Let $\mathcal{C}$ be a category and $A \in \mathcal{C}$. The \emph{coslice category} $A \backslash \mathcal{C}$ is the category with
+\begin{itemize}
+\item objects all pairs $(B,f)$ such that $f : A \rightarrow B$
+\item morphisms $u : (B,f) \rightarrow (C,g)$ all morphisms $u : B \rightarrow C$ such that $u \circ f = g$.
+\end{itemize}
+\end{df}
+
+\begin{ex}
+The \emph{category of pointed sets} $\mathbf{Set}_*$ is $\mathbf{1} \backslash \mathbf{Set}$.
+\end{ex}
+
+\chapter{Preorders}
+
+\section{Definition}
+
+\begin{df}[Thin Category]
+A category $\mathcal{C}$ is \emph{thin} or a \emph{preorder} iff, for any objects $A$ and $B$, there is at most one morphism $A \rightarrow B$. We write $A \leq B$ iff there exists a morphism $A \rightarrow B$; this is called the \emph{ordering relation} on $\mathcal{C}$.
+\end{df}
+
+\begin{prop}
+For any preorder $\mathcal{C}$, the relation $\leq$ is reflexive and transitive. Conversely, given any class $A$ and relation $\leq$ on $A$ that is reflexive and transitive, there exists a preorder $A$ with class of objects $A$, unique up to unique isomorphism that is the identity on objects, such that $\leq$ is the ordering relation on $A$.
+\end{prop}
+
+\begin{proof}
+\pf\ All parts are immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+Let $\mathcal{C}$ and $\mathcal{D}$ be preorders and $F : \mathcal{C} \rightarrow \mathcal{D}$ be a functor. Then $F$ is \emph{monotone}: for all $x,y \in \mathcal{C}$, if $x \leq y$ then $F(x) \leq F(y)$.
+
+Conversely, given any monotone function $f$ from the objects of $\mathcal{C}$ to the objects of $\mathcal{D}$, there exists a unique functor whose action on objects is $f$.
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{ex}[Discrete Category]
+For any set $A$, the \emph{discrete} category $A$ is the preorder with objects the elements of $A$ and order relation $=$.
+\end{ex}
+
+\begin{ex}
+For any ordinal $\alpha$, let $\mathbf{\alpha}$ be the preorder $\{ \beta : \beta < \alpha \}$ under $\leq$.
+\end{ex}
+
+%Examples
+
+%Basic Properties
+
+%Ways of constructing preordered sets
+
+\section{Partial Orders}
+
+\subsection{Definition}
+
+\begin{df}[Partial Order]
+A \emph{partial order}, \emph{partially ordered set} or \emph{poset} is a preorder such that, for any $x$ and $y$, if $x \leq y$ and $y \leq x$ then $x = y$.
+\end{df}
+
+\begin{ex}
+Every discrete category is a poset.
+\end{ex}
+
+\begin{ex}
+For any ordinal $\alpha$, the preorder $\mathbf{\alpha}$ is a poset.
+\end{ex}
+
+\begin{df}[Category of Posets]
+Let $\mathbf{Pos}$ be full subcategory of $\mathbf{Cat}$ whose objects are the posets.
+\end{df}
+
+% Examples
+% Basic Properties
+% Relation with Previous Concepts
+% Ways of Constructing X
+% Special Kinds
+
+\chapter{Objects}
+
+
+\section{Terminal and Initial Objects}
+
+\begin{df}[Terminal Object]
+Let $\mathcal{C}$ be a category.
+An object $T \in \mathcal{C}$ is \emph{terminal} iff, for every object $X$, there is exactly one morphism $X \rightarrow T$.
+\end{df}
+
+\begin{ex}$ $
+\begin{itemize}
+\item The terminal objects in $\Set$ are the singletons.
+\item $\mathbf{1}$ is terminal in $\Cat$.
+\end{itemize}
+\end{ex}
+
+\begin{df}[Initial Object]
+Let $\mathcal{C}$ be a category.
+An object $I \in \mathcal{C}$ is \emph{initial} iff, for every object $X$, there is exactly one morphism $I \rightarrow X$.
+\end{df}
+
+\begin{ex}$ $
+\begin{itemize}
+\item
+The empty set is the initial object in $\Set$.
+\item
+$\mathbf{0}$ is initial in $\Cat$.
+\end{itemize}
+\end{ex}
