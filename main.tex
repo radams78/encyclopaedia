@@ -74,7 +74,7 @@ A \emph{partition} of a natural number $n$ is a nonincreasing sequence of positi
 A \emph{Boolean algebra} $B$ is a lattice %TODO Define this
 with a function $\neg : B \rightarrow B$ such that, for all $a,b \in B$, we have
 \begin{align*}
-a \leq \neg b & \text{iff } a \wedge b = \bot \\
+a \leq \neg b & \text{ iff } a \wedge b = \bot \\
 \neg \neg a & = a
 \end{align*}
 \end{df}
@@ -92,6 +92,52 @@ Let $\mathbf{BA}$ be the category of Boolean algebras and Boolean algebra homomo
 \begin{ex}
 $\mathbf{2} = \mathcal{P} \mathbf{1}$ is initial in $\mathbf{BA}$.
 \end{ex}
+
+\begin{df}[Filter]
+Let $B$ be a Boolean algebra. A \emph{filter} in $B$ is a subset $F \subseteq B$ that is closed upwards and closed under binary meets.
+\end{df}
+
+\begin{df}[Maximal Filter]
+A filter $F$ in $B$ is \emph{maximal} or an \emph{ultrafilter} iff $F \neq B$ and, for any filter $F'$, if $F \subseteq F'$ then either $F = F'$ or $F' = B$.
+\end{df}
+
+\begin{prop}
+Let $F$ be a filter in $B$. Then $F$ is an ultrafilter iff, for all $x \in B$, exactly one of $x \in F$ and $\neg x \in F$ holds.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $F$ is an ultrafilter then, for all $x \in B$, we have either $x \in F$ or $\neg x \in F$.}
+\begin{proof}
+	\step{a}{\assume{$F$ is an ultrafilter.}}
+	\step{b}{\pflet{$x \in B$}}
+	\step{c}{\pflet{$F' = \{y \in B \mid \neg x \vee y \in F \}$}}
+	\step{d}{$F \subseteq F'$}
+	\step{e}{$F' = F$ or $F' = B$}
+	\step{f}{\case{$F' = F$}}
+	\begin{proof}
+		\pf\ We have $x \in F'$ hence $x \in B$.
+	\end{proof}
+	\step{g}{\case{$F' = B$}}
+	\begin{proof}
+		\pf\ We have $\bot \in F'$ hence $\neg x \vee \bot \in F$ and so $\neg x \in F$.
+	\end{proof}
+\end{proof}
+\step{2}{If $F$ is an ultrafilter then we do not have $x \in F$ and $\neg x \in F$.}
+\begin{proof}
+	\pf\ If $x \in F$ and $\neg x \in F$ then $\bot \in F$ hence $F = B$.
+\end{proof}
+\step{3}{If, for all $x \in B$, we have exactly one of $x \in F$ and $\neg x \in F$ holds, then $F$ is an ultrafilter.}
+\begin{proof}
+	\step{a}{\assume{For all $x \in B$, we have exactly one of $x \in F$ and $\neg x \in F$ holds.}}
+	\step{b}{\pflet{$F'$ be a filter with $F \subset F'$.} \prove{$F' = B$}}
+	\step{c}{\pick\ $x \in F' - F$}
+	\step{d}{$\neg x \in F$}
+	\step{e}{$x, \neg x \in F'$}
+	\step{f}{$F' = B$}
+\end{proof}
+\qed
+\end{proof}
 
 \part{Group Theory}
 
