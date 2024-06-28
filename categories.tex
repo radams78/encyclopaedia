@@ -463,6 +463,150 @@ Given functors $F : \mathcal{C} \rightarrow \mathcal{D}$ and $G : \mathcal{D} \r
 For any universe $\mathcal{U}$, let $\mathbf{Cat}_\mathcal{U}$ be the category of categories whose sets of objects and morphisms are in $\mathcal{U}$, and functors.
 \end{df}
 
+\begin{df}[Faithful]
+A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{faithful} iff, for any objects $A,B \in \mathcal{C}$ and morphisms $f,g : A \rightarrow B$, if $Ff = Fg$ then $f = g$.
+\end{df}
+
+\begin{df}[Full]
+A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{full} iff, for any objects $A, B \in \mathcal{C}$ and morphism $g : FA \rightarrow FB$, there exists $f : A \rightarrow B$ such that $Ff = g$.
+\end{df}
+
+\chapter{Natural Transformations}
+
+\begin{df}[Natural Transformation]
+Let $F,G : \mathcal{C} \rightarrow \mathcal{D}$ be functors. A \emph{natural transformation} $\tau : F \Rightarrow G$ consists of, for every object $X \in \mathcal{C}$, a morphism $\tau_X : F X \rightarrow G X : \mathcal{D}$ such that, for every morphism $f : X \rightarrow Y : \mathcal{C}$, the following diagram commutes.
+\[ \begin{tikzcd}
+FX \arrow[r,"Ff"] \arrow[d,"\tau_X"] & FY \arrow[d,"\tau_Y"] \\
+GX \arrow[r,"Gf"] & GY
+\end{tikzcd} \]
+\end{df}
+
+\begin{df}[Identity Natural Transformation]
+For any functor $F : \mathcal{C} \rightarrow \mathcal{D}$, define the \emph{identity} natural transformation $\id{F} : F \Rightarrow F$ by
+\[ (\id{F})_X = \id{FX} \qquad (X \in \mathcal{C}) \enspace . \]
+\end{df}
+
+\begin{df}[Composition of Natural Transformations]
+Given natural transformations $\sigma : F \Rightarrow G$ and $\tau : G \Rightarrow H$, define the \emph{composite} $\tau \bullet \sigma : F \Rightarrow H$ by
+\[ (\tau \bullet \sigma)_X = \tau_X \circ \sigma_X \]
+\end{df}
+
+\begin{df}
+Given categories $\mathcal{C}$ and $\mathcal{D}$, let $\mathbf{Cat}[\mathcal{C}, \mathcal{D}]$ be the category of functors $\mathcal{C} \rightarrow \mathcal{D}$ and natural transformations.
+\end{df}
+
+\begin{df}[Natural Isomorphism]
+A \emph{natural isomorphism} is an isomorphism in a functor category.
+\end{df}
+
+\begin{prop}
+A natural transformation $\theta : F \Rightarrow G : \mathcal{C} \rightarrow \mathcal{D}$ is a natural isomorphism if and only if, for all $X \in \mathcal{C}$, the morphism $\theta_X : FX \rightarrow GX$ is an isomorphism.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{If $\theta$ is a natural isomorphism then every $\theta_X$ is iso.}
+\begin{proof}
+	\step{a}{\assume{$\theta$ is a natural isomorphism with inverse $\inv{\theta} : G \Rightarrow F$.}}
+	\step{b}{For all $X$ we have $\theta_X$ is iso with inverse $(\inv{\theta})_X$.}
+\end{proof}
+\step{2}{If every $\theta_X$ is iso then $\theta$ is a natural isomorphism.}
+\begin{proof}
+	\step{a}{\assume{Every $\theta_X$ is iso.}}
+	\step{b}{\pflet{$\inv{\theta} : G \Rightarrow F$ be the natural transformation defined by $(\inv{\theta})_X = \inv{(\theta_X)}$.}}
+	\begin{proof}
+		\step{i}{\pflet{$f : X \rightarrow Y : \mathcal{C}$}}
+		\step{ii}{$\theta_Y \circ Ff = Gf \circ \theta_X$}
+		\step{iii}{$Ff \circ \inv{\theta_X} = \inv{\theta_Y} \circ Gf$}
+	\end{proof}
+	\step{c}{$\theta \bullet \inv{\theta} = \id{G}$}
+	\step{d}{$\inv{\theta} \bullet \theta = \id{F}$}
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Adjunctions}
+
+\begin{df}[Adjunction]
+Let $\mathcal{C}$ and $\mathcal{D}$ be categories. An \emph{adjunction} $F \dashv U : \mathcal{C} \rightharpoonup \mathcal{D}$ consists of:
+\begin{itemize}
+\item a functor $F : \mathcal{C} \rightarrow \mathcal{D}$, the \emph{left adjoint};
+\item a functor $U : \mathcal{D} \rightarrow \mathcal{C}$, the \emph{right adjoint};
+\item a natural isomorphism $\phi_{XY} : \mathcal{D}[FX,Y] \cong \mathcal{C}[X,UY]$
+\end{itemize}
+We write $\breve{f}$ for $\phi(f)$ and $\hat{f}$ for $\inv{\phi}(f)$. We call $f$ and $\breve{f}$ \emph{adjuncts}.
+\end{df}
+
+\begin{df}[Unit]
+The \emph{unit} of an adjunction is the natural transformation
+\begin{align*}
+\eta_X & : X \rightarrow UFX \\
+\eta_X & = \phi(\id{FX})
+\end{align*}
+\end{df}
+
+\begin{df}[Counit]
+The \emph{counit} of an adjunction is the natural transformation
+\begin{align*}
+\epsilon_Y & : FUY \rightarrow Y \\
+\epsilon_Y & = \inv{\phi}(\id{UY})
+\end{align*}
+\end{df}
+
+\begin{prop}
+Given $g : FX \rightarrow Y$ we have
+\[ \phi(g) = Ug \circ \eta_X \]
+\end{prop}
+
+\begin{prop}
+Given $f : X \rightarrow UY$ we have
+\[ \inv{\phi}(f) = \epsilon_Y \circ Ff \]
+\end{prop}
+
+\begin{prop}
+Let $U : \mathcal{D} \rightarrow \mathcal{C}$. Assume that, for all $X \in \mathcal{C}$, there exists an initial object $(FX,\eta_X : X \rightarrow UFX)$ in $\id{\mathcal{C}} \downarrow U$. Then $F$ extends to a functor $F : \mathcal{C} \rightarrow \mathcal{D}$ that is left adjoint to $U$ with unit $\eta$.
+\end{prop}
+
+\begin{prop}
+Let $F : \mathcal{C} \rightarrow \mathcal{D}$. Assume that, for all $Y \in \mathcal{D}$, there exists a terminal object $(UY, \epsilon_Y : FUY \rightarrow Y)$ in $F \downarrow \id{\mathcal{D}}$. Then $U$ extends to a functor $U : \mathcal{D} \rightarrow \mathcal{C}$ that is right adjoint to $F$ with counit $\epsilon$.
+\end{prop}
+
+\begin{prop}[Uniqueness of Right Adjoints]
+If $F \dashv U$ and $F \dashv V$, then there exists a unique natural isomorphism $\alpha : U \cong V$ such that the following diagram commutes
+\[ \begin{tikzcd}
+\mathcal{D}[FX,Y] \arrow[r] \arrow[dr] & \mathcal{C}[X,UY] \arrow[d] \\
+& \mathcal{C}[X,VY] 
+\end{tikzcd}
+\]
+\end{prop}
+
+\begin{prop}[Uniqueness of Left Adjoints]
+If $F \dashv U$ and $G \dashv U$, then there exists a unique natural isomorphism $\alpha : F \cong G$ such that the following diagram commutes
+\[ \begin{tikzcd}
+\mathcal{D}[FX,Y] \arrow[r] \arrow[d] & \mathcal{C}[X,UY] \\
+\mathcal{D}[GX,Y] \arrow[ur]
+\end{tikzcd}
+\]
+\end{prop}
+
+\chapter{Limits and Colimits}
+
+\begin{df}[Limit]
+Let $D : \mathcal{J} \rightarrow \mathcal{C}$ be a functor. The category of \emph{cones} over $D$ is
+\[ \mathbf{Cone}(D) = K^\mathcal{\mathcal{C},\mathcal{J}} \downarrow K^{\mathbf{1},\mathbf{Cat}[\mathcal{J},\mathcal{C}]}D \]
+That is, a cone over $D$ consists of an object $C \in \mathcal{C}$ and a natural transformation $KC \Rightarrow D : \mathcal{J} \rightarrow \mathcal{C}$.
+
+A \emph{limit} of $D$ is a terminal object in $\mathbf{Cone}(D)$.
+\end{df}
+
+\begin{df}[Colimit]
+Let $D : \mathcal{J} \rightarrow \mathcal{C}$ be a functor. The category of \emph{cocones} under $D$ is
+\[ \mathbf{Cocone}(D) = K^{\mathbf{1},\mathbf{Cat}[\mathcal{J},\mathcal{C}]}D \downarrow K^\mathcal{\mathcal{C},\mathcal{J}} \]
+That is, a cocone under $D$ consists of an object $C \in \mathcal{C}$ and a natural transformation $D \Rightarrow KC : \mathcal{J} \rightarrow \mathcal{C}$.
+
+A \emph{colimit} of $D$ is an initial object in $\mathbf{Cocone}(D)$.
+\end{df}
+
 \chapter{Constructions of Categories}
 
 \section{Opposite Category}
@@ -636,3 +780,4 @@ The empty set is the initial object in $\Set$.
 $\mathbf{0}$ is initial in $\Cat$.
 \end{itemize}
 \end{ex}
+

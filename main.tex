@@ -23,6 +23,7 @@
 \newcommand{\Ab}{\ensuremath{\mathbf{Ab}}}
 \newcommand{\Alg}[1]{\ensuremath{{#1}-\mathbf{Alg}}}
 \newcommand{\Aut}[2]{\ensuremath{\mathrm{Aut}_{#1} \left( {#2} \right)}}
+\newcommand{\bra}[1]{\ensuremath{\left\langle {#1} \right|}}
 \newcommand{\coker}{\ensuremath{\operatorname{coker}}}
 \newcommand{\End}[2]{\ensuremath{\mathrm{End}_{#1} \left( {#2} \right)}}
 \newcommand{\Fab}[1]{\ensuremath{F^{\mathrm{ab}} \left( {#1} \right)}}
@@ -32,6 +33,7 @@
 \newcommand{\im}{\ensuremath{\operatorname{im}}}
 \newcommand{\Inn}[1]{\ensuremath{\mathrm{Inn} \left( {#1} \right)}}
 \newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+\newcommand{\ket}[1]{\ensuremath{\left| {#1} \right\rangle}}
 \newcommand{\lcm}{\ensuremath{\operatorname{lcm}}}
 \renewcommand{\mod}{\ensuremath{\operatorname{mod}}}
 \newcommand{\Mod}[1]{\ensuremath{{#1}-\mathbf{Mod}}}
@@ -43,6 +45,8 @@
 \newcommand{\Spec}{\ensuremath{\operatorname{Spec}}}
 \newcommand{\Stab}[2]{\ensuremath{\mathrm{Stab}_{#1} \left( {#2} \right)}}
 \newcommand{\tr}{\ensuremath{\operatorname{tr}}}
+\newcommand{\Tr}{\ensuremath{\operatorname{Tr}}}
+\newcommand{\Vect}[1]{\ensuremath{\mathbf{Vect}_{#1}}}
 
 \begin{document}
 
@@ -232,6 +236,351 @@ If $U$ and $V$ are finite dimensional vector spaces over $K$ then
 $\mathbf{Vect}_K$ is a symmetric monoidal category under $\otimes$.
 \end{prop}
 
+\section{Dual Spaces}
+
+\begin{df}
+Given vector spaces $U$ and $V$ over $K$, we make $\mathbf{Vect}_K[U,V]$ into a $K$-vector space by defining:
+\begin{align*}
+(S + T)(u) & = S(u) + T(u) \\
+(\alpha T)(u) & = \alpha T(u)
+\end{align*}
+\end{df}
+
+\begin{df}[Dual Space]
+Given a vector space $V$ over $K$, the \emph{dual space} $V^*$ is
+\[ V^* = \Vect{K}[V,K] \enspace . \]
+An element of $V^*$ is called a \emph{linear functional} on $V$.
+\end{df}
+
+\begin{prop}
+The natural transformation
+\[ \eta_V : V \rightarrow V^{**} \]
+defined by
+\[ \eta_V(v)(f) = f(v) \enspace . \]
+is a natural isomorphism if $V$ is finite dimensional.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $v \in V$ we have $\eta_V(v) \in V^{**}$.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\eta_V(v)(f + \lambda g) & = (f + \lambda g)(v) \\
+		& = f(v) + \lambda g(v) \\
+		& = \eta_V(v)(f) + \lambda \eta_V(v)(g)
+	\end{align*}
+\end{proof}
+\step{2}{$\eta_V$ is linear.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\eta_V(u + \lambda v)(f) & = f(u + \lambda v) \\
+		& = f(u) + \lambda f(v) \\
+		& = \eta_V(u)(f) + \lambda \eta_V(v)(f)
+	\end{align*}
+\end{proof}
+\step{3}{$\eta_V$ is natural in $V$.}
+\begin{proof}
+	\step{i}{\pflet{$T : U \rightarrow V$ be a linear transformation.}}
+	\step{ii}{$\eta_V \circ T = \Vect{K}[\Vect{K}[T, \id{K}], \id{K}] \circ \eta_U$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			\eta_V(T(u))(f) & = f(T(u)) \\
+			(\Vect{K}[\Vect{K}[T,\id{K}],\id{K}](\eta_U(u)))(f) & = \eta_U(u)(\Vect{K}[T,\id{K}](f)) \\
+			& = \eta_U(u)(f \circ T) \\
+			& = f(T(u))
+		\end{align*}
+	\end{proof}
+\end{proof}
+\step{4}{$\ker \eta_V = \{0\}$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		v \in \ker \eta_V & \Leftrightarrow \forall f \in V^*. f(v) = 0 \\
+		& \Leftrightarrow v = 0
+	\end{align*}
+	using the fact that $V$ is finite dimensional.
+\end{proof}
+\step{5}{$\im \eta_V = V^{**}$}
+\begin{proof}
+	\step{a}{\pick\ a basis $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ for $V$.}
+	\step{b}{\pflet{$f \in V^{**}$}}
+	\step{c}{For $i = 1, \ldots, n$, \pflet{$\alpha_i = f(\bra{e_i})$}}
+	\step{d}{\pflet{$v = \sum_i \alpha_i \ket{e_i}$}}
+	\step{e}{$f = \eta_V(v)$}
+	\begin{proof}
+		\pf
+		\begin{align*}
+			f(\bra{e_i}) & = \alpha_i \\
+			& = \bra{e_i}(v) \\
+			& = \eta_V(v)(\bra{e_i}) 
+		\end{align*}
+	\end{proof}
+\end{proof}
+\qed
+\end{proof}
+
+\chapter{Hilbert Spaces}
+
+\begin{prop}
+Let $V$ and $W$ be complex inner product spaces and $T : V \rightarrow W$ linear. If $V$ is finite dimensional then $T$ is bounded.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pick\ an orthonormal basis $\ket{v_1}$, \ldots, $\ket{v_n}$.}
+\step{2}{\pflet{$B = \max(\| T\ket{v_1} \|, \ldots, \| T \ket{v_n} \|)$}}
+\step{3}{For all $v \in V$ we have $\| Tv \| \leq B \|v\|$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\| T (\alpha_1 v_1 + \cdots + \alpha_n v_n) \|
+		& = \| \alpha_1 T v_1 + \cdots + \alpha_n T v_n \| \\
+		& \leq |\alpha_1| \| T v_1 \| + \cdots + |\alpha_n| \|T v_n \| \\
+		& \leq B (|\alpha_1| + \cdots + |\alpha_n|) \\
+		& = B \| \alpha_1 v_1 + \cdots + \alpha_n v_n \|
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{df}[Hilbert Space]
+A \emph{Hilbert space} is a complete complex inner product space.
+\end{df}
+
+
+\begin{df}[Separable]
+A Hilbert space is \emph{separable} iff there exists a countable orthonormal basis that is dense.
+\end{df}
+
+\begin{df}[Bra]
+Let $\mathcal{H}$ be a Hilbert space and $\ket{\psi} \in \mathcal{H}$. We define the \emph{bra} $\bra{\psi} : \mathcal{H} \rightarrow \mathbb{C}$ to be the linear functional
+\[ \bra{\psi} (\ket{\phi}) = \langle \psi | \phi \rangle \enspace . \]
+\end{df}
+
+\begin{prop}
+\[ \bra{\psi + \phi} = \bra{\psi} + \bra{\phi} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\langle \psi + \phi \mid \chi \rangle = \langle \psi \mid \chi \rangle + \langle \phi \mid \chi \rangle$. \qed
+\end{proof}
+
+\begin{prop}
+\[ \bra{\alpha \psi} = \overline{\alpha} \bra{\psi} \]
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\langle \alpha \psi \mid \chi \rangle = \overline{\alpha} \langle \psi \mid \chi \rangle$. \qed
+\end{proof}
+
+\begin{df}[Outer Product]
+Let $\mathcal{H}$ be a Hilbert space and $\ket{\phi}, \ket{\psi} \in \mathcal{H}$. Define the \emph{outer product}
+\[ \ket{\psi} \bra{\phi} : \mathcal{H} \rightarrow \mathcal{H} \]
+to be the linear transformation
+\[ (\ket{\psi} \bra{\phi})(\ket{\chi}) = \langle \phi \mid \chi \rangle \ket{\psi} \enspace . \]
+\end{df}
+
+\begin{prop}[Completeness Relation]
+If $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ is an orthonormal basis for $\mathcal{H}$, then
+\[ \sum_{i=1}^n \ket{e_i} \bra{e_i} = \id{\mathcal{H}} \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\left( \sum_{i=1}^n \ket{e_i} \bra{e_i} \right) \sum_{j=1}^n \alpha_j \ket{e_j}
+& = \sum_{i=1}^n \sum_{j=1}^n \alpha_j \langle e_i \mid e_j \rangle \ket{e_j} \\
+& = \sum_{j=1}^n \alpha_j \ket{e_j} & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+Given a bounded linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$, there exists a unique linear operator $T^\dagger : \mathcal{H} \rightarrow \mathcal{H}$ such that, for all $\ket{\phi}, \ket{\psi} \in \mathcal{H}$,
+\[ \langle T \psi \mid \phi \rangle = \langle \psi \mid T^\dagger \mid \phi \rangle \]
+\end{prop}
+
+%TODO
+
+\begin{df}[Adjoint]
+Given a bounded linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$, the \emph{adjoint} of $T$ is the linear operator $T^\dagger : \mathcal{H} \rightarrow \mathcal{H}$ such that, for all $\ket{\phi}, \ket{\psi} \in \mathcal{H}$,
+\[ \langle T \psi \mid \phi \rangle = \langle \psi \mid T^\dagger \mid \phi \rangle \]
+\end{df}
+
+\begin{df}[Hermitian]
+A linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{Hermitian} or \emph{self-adjoint} iff $T$ is bounded and $T^\dagger = T$.
+\end{df}
+
+\begin{df}[Projection]
+A linear operator $P : \mathcal{H} \rightarrow \mathcal{H}$ is a \emph{projection} iff $P = P^2 = P^\dagger$.
+\end{df}
+
+\begin{df}[Unitary]
+A linear operator $U : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{unitary} iff $U^\dagger U = \id{\mathcal{H}}$.
+\end{df}
+
+\begin{df}[Trace]
+Let $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ be an orthonormal basis for $\mathcal{H}$. The \emph{trace} of a linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is
+\[ \Tr(T) = \sum_{i=1}^n \langle e_i \mid T \mid e_i \rangle \enspace . \]
+\end{df}
+
+%TODO Prove this is independent of the choice of basis
+
+\begin{df}[Positive Semidefinite]
+A Hermitian operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{positive semidefinite} iff, for all $\psi \in \mathcal{H}$, we have
+\[ \langle \psi \mid T \mid \psi \rangle \geq 0 \enspace . \]
+\end{df}
+
+\chapter{Lie Algebras}
+
+\begin{df}[Lie Algebra]
+Let $K$ be a field. A \emph{Lie algebra} $\mathcal{L}$ over $K$ is a vector space over $K$ with an operation
+\[ [\ ,\ ] : \mathcal{L}^2 \rightarrow \mathcal{L} \enspace , \]
+the \emph{Lie bracket} or \emph{commutator}, such that, for all $\alpha \in K$ and $x,y,z \in \mathcal{L}$:
+\begin{align*}
+[x+y,z] & = [x,z] + [y,z] \\
+[x,y+z] & = [x,y] + [x,z] \\
+[\alpha x,y] & = \alpha [x,y] \\
+[x,x] & = 0 \\
+[x,[y,z]] + [y,[z,x]] + [z,[x,y]] & = 0
+\end{align*}
+The last equation is called the \emph{Jacobi identity}.
+\end{df}
+
+\begin{prop}
+If $K$ is either $\mathbb{R}$ or $\mathbb{C}$, then the condition $[x,x] = 0$ is equivalent to the \emph{skew-symmetry condition}:
+\[ [x,y] = -[y,x] \enspace . \]
+\end{prop}
+
+%TODO
+
+\begin{ex}
+$\mathbb{R}^3$ is a Lie algebra under the cross product.
+\end{ex}
+
+\begin{ex}
+$\gl
+{n}{\mathbb{R}}$ and $\gl{n}{\mathbb{C}}$ are Lie algebras under
+\[ [A,B] = AB - BA \enspace . \]
+A sub-Lie algebra of one of these is called a \emph{linear} Lie algebra.
+\end{ex}
+
+\begin{ex}
+$\sl{n}{\mathbb{R}}$ is a linear Lie algebra.
+\end{ex}
+
+\begin{ex}
+$\so{n}{\mathbb{R}}$ is a linear Lie algebra.
+\end{ex}
+
+\begin{ex}
+The set $u(n)$ of skew-Hermitian $n \times n$ matrices is a real linear Lie algebra.
+\end{ex}
+
+\begin{ex}
+$su(n) = \{ M \in u(n) : \tr U = 0 \}$ is a sub-Lie algebra of $u(n)$.
+\end{ex}
+
+\begin{df}[Pauli matrices]
+The \emph{Pauli matrices} are
+\begin{align*}
+\sigma_x & = \left( \begin{array}{cc}
+0 & 1 \\ 1 & 0
+\end{array} \right) \\
+\sigma_y & = \left( \begin{array}{cc}
+0 & -i \\ i & 0
+\end{array} \right) \\
+\sigma_z & = \left( \begin{array}{cc}
+1 & 0 \\ 0 & -1
+\end{array} \right)
+\end{align*}
+\end{df}
+
+\begin{prop}
+The Pauli matrices span $su(2)$.
+\end{prop}
+
+\begin{prop}
+\begin{align*}
+[\sigma_x, \sigma_y] & = \sigma_z \\
+[\sigma_y, \sigma_z] & = \sigma_x \\
+[\sigma_z, \sigma_x] & = \sigma_y
+\end{align*}
+\end{prop}
+
+\begin{cor}
+Any two of the Pauli matrices generate $su(2)$ as a Lie algebra.
+\end{cor}
+
+\section{Lie Algebra Homomorphisms}
+
+\begin{df}[Lie Algebra Homomorphism]
+A \emph{Lie algebra homomorphism} is a linear transformation that preserves the Lie bracket.
+
+Let $\mathbf{Lie}_K$ be the category of Lie algebras over $K$.
+\end{df}
+
+\begin{prop}
+The forgetful functor $\mathbf{Lie}_K \rightarrow \Set$ reflects isomorphisms; i.e. bijective Lie homomorphisms are isomorphisms.
+\end{prop}
+
+%TODO
+
+\begin{ex}
+$su(2)$ is isomorphic to $\mathbb{R}^3$ under the cross product, with the isomorphism given by
+\[ \sigma_x \mapsto \vec{i}, \sigma_y \mapsto \vec{j}, \sigma_z \mapsto \vec{k} \]
+\end{ex}
+
+\chapter{Lie Groups}
+
+\begin{df}[Lie Group]
+A \emph{Lie group} is a group object in the category of analytic differentiable manifolds.
+\end{df}
+
+\begin{ex}
+$GL(n,\mathbb{C})$ is a Lie group.
+\end{ex}
+
+\begin{ex}
+$U(n)$ is a Lie subgroup of $GL(n,\mathbb{C})$.
+\end{ex}
+
+\begin{ex}
+$SU(n)$ is a Lie subgroup of $U(n)$.
+\end{ex}
+
+\begin{prop}
+The forgetful functor $\mathbf{LieGroup} \rightarrow \Set$ reflects isomorphisms.
+\end{prop}
+
+%TODO
+
+\begin{df}[Tangent Vector at the Identity]
+Let $G$ be a Lie group. Let $N$ be a neighbourhood of $e$. The set of \emph{tangent vectors at the identity} at $N$ is the set of curves $\gamma : \mathbb{R} \rightarrow N$ such that $\gamma(0) = e$ quotiented by: $\gamma_1 = \gamma_2$ iff, for every smooth function $f : N \rightarrow \mathbb{R}$,
+\[ (f \circ \gamma_1)'(0) = (f \circ \gamma_2)'(0) \enspace . \]
+\end{df}
+
+\begin{prop}
+The function that maps $\gamma$ to
+\[ \lambda f. (f \circ \gamma)'(0) \]
+ is a bijection between the tangent vectors at the identity and the set of derivations on the space of the smooth functions $N \rightarrow \mathbb{R}$.
+ \end{prop}
+ 
+ %TODO
+ 
+\begin{df}[Tangent Space]
+The \emph{tangent space} is the set of tangent vectors at the identity under the vector space structure inherited from the space of derivations on $C^\infty[N, \mathbb{R}]$.
+\end{df}
+
+\begin{prop}
+The dimension of the tangent space is the same as the dimension of $G$.
+\end{prop}
+
+%TODO
+
+
 \part{Measure Theory}
 
 \begin{df}[$\sigma$-algebra]
@@ -248,5 +597,9 @@ Let $(X, \sigma)$ be a measurable space. A \emph{measure} on $(X, \sigma)$ is a 
 \[ \mu \left( \bigcup_{n=0}^\infty E_n \right) = \sum_{n=0}^\infty \mu(E_n) \enspace . \]
 \end{itemize}
 \end{df}
+
+\part{Quantum Theory}
+
+
 
 \end{document}

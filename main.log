@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  27 JUN 2024 09:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  28 JUN 2024 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,20 +476,20 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count309
@@ -512,13 +512,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -551,53 +551,71 @@ Chapter 3.
 
 ]
 Chapter 4.
-[21] [22
-
-]
+[21] [22]
 Chapter 5.
-[23] [24]
+
+Overfull \hbox (2.02104pt too wide) in paragraph at lines 490--491
+[]\OT1/cmr/bx/n/10 Definition 5.3 \OT1/cmr/m/n/10 (Com-po-si-tion of Nat-u-ral 
+Trans-for-ma-tions)\OT1/cmr/bx/n/10 . []\OT1/cmr/m/n/10 Given nat-u-ral trans-
+ []
+
+[23
+
+] [24]
 Chapter 6.
 [25
 
 ] [26]
 Chapter 7.
-) [27
+[27
 
 ] [28
 
-] [29] [30] [31] [32
-
-] [33] [34]
+]
 Chapter 8.
-[35
-
-] [36] [37
-
-] [38] (./groups.tex
+[29] [30]
 Chapter 9.
-[39
+[31
 
-] [40
+] [32]
+Chapter 10.
+) [33
+
+] [34
+
+] [35] [36] [37] [38
+
+] [39] [40]
+Chapter 11.
+[41
+
+] [42] [43
+
+] [44] (./groups.tex
+Chapter 12.
+[45
+
+] [46
 
 ]
-Chapter 10.
-[41] [42]
-Chapter 11.
-[43
+Chapter 13.
+[47] [48]
+Chapter 14.
+[49
 
-] [44] [45] [46] [47]
+] [50] [51] [52] [53]
 WARNING: proof step "5" (<1>6) already defined
-[48] [49]
+[54] [55]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50]
-[51] [52
+ [56]
+[57] [58
 
 ]
-Chapter 12.
-[53]
+Chapter 15.
+[59]
 Overfull \hbox (6.72183pt too wide) in paragraph at lines 725--726
-[]\OT1/cmr/bx/n/10 Proposition 12.12. []\OT1/cmr/m/it/10 For any groups $\OML/c
+[]\OT1/cmr/bx/n/10 Proposition 15.12. []\OT1/cmr/m/it/10 For any groups $\OML/c
 mm/m/it/10 G$ \OT1/cmr/m/it/10 and $\OML/cmm/m/it/10 H$\OT1/cmr/m/it/10 , the s
 et $\OML/cmm/m/it/10 G \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 H$ \OT1/cmr/m/it/1
 0 un-der $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 g; h\OT1/cmr/m/n/10 )(\OML/cmm/m/it
@@ -613,37 +631,37 @@ m/it/10 g[]; h[]\OT1/cmr/m/n/10 ))(\OML/cmm/m/it/10 g[]; h[]\OT1/cmr/m/n/10 ) =
  (\OML/cmm/m/it/10 g[]g[]g[]; h[]h[]h[]\OT1/cmr/m/n/10 )$. 
  []
 
-[54]
+[60]
 WARNING: proof step "c" (<2>5) already defined
 WARNING: proof step "d" (<2>6) already defined
-[55]
+[61]
 Underfull \vbox (badness 1264) has occurred while \output is active []
 
- [56]
-[57] [58] [59] [60]
+ [62]
+[63] [64] [65] [66]
 WARNING: proof step "5" (<1>6) already defined
-[61] [62] [63]
+[67] [68] [69]
 WARNING: proof step "2" (<1>3) already defined
-[64]
+[70]
 Overfull \hbox (22.18495pt too wide) in paragraph at lines 1446--1447
-[]\OT1/cmr/bx/n/10 Definition 12.58 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/b
+[]\OT1/cmr/bx/n/10 Definition 15.58 \OT1/cmr/m/n/10 (Mod-u-lar Group)\OT1/cmr/b
 x/n/10 . []\OT1/cmr/m/n/10 The \OT1/cmr/m/it/10 mod-u-lar group $[][]\OT1/cmr/m
 /n/10 (\U/msb/m/n/10 Z\OT1/cmr/m/n/10 )$ is $[][](\U/msb/m/n/10 Z\OT1/cmr/m/n/1
 0 )\OML/cmm/m/it/10 =\OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 I; \OMS/cmsy/m/n/10 ^^@
 \OML/cmm/m/it/10 I\OMS/cmsy/m/n/10 g$\OT1/cmr/m/n/10 . 
  []
 
-[65]
+[71]
 WARNING: proof step "b" (<2>3) already defined
-[66]
+[72]
 WARNING: proof step "3" (<1>13) already defined
 WARNING: proof step "4" (<1>14) already defined
 WARNING: proof step "5" (<1>15) already defined
-[67]
+[73]
 WARNING: proof step "v" (<3>6) already defined
-[68] [69]
+[74] [75]
 WARNING: proof step "1" (<2>1) already defined
-[70] [71] [72] [73] [74] [75] [76]
+[76] [77] [78] [79] [80] [81] [82]
 Overfull \hbox (4.40312pt too wide) in paragraph at lines 2210--2211
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : If $(\OML/cmm/m/it/10 a[]; [] ; a[]\O
 T1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 S$ \OT1/cmr/m/n/10 then $(\
@@ -655,8 +673,8 @@ L/cmm/m/it/10 S$ \OT1/cmr/m/n/10 since $\OML/cmm/m/it/10 a[] \OT1/cmr/m/n/10 =
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [77]
-[78] [79] [80] [81] [82]
+ [83]
+[84] [85] [86] [87] [88]
 Overfull \hbox (8.71196pt too wide) in paragraph at lines 2645--2645
 []\OT1/cmr/m/n/10 There is an in-jec-tive ho-mo-mor-phism $(\OML/cmm/m/it/10 G[
 ] \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 N\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 =\OT1/
@@ -664,40 +682,40 @@ cmr/m/n/10 (\OML/cmm/m/it/10 G[] \OMS/cmsy/m/n/10 \ \OML/cmm/m/it/10 N\OT1/cmr/
 m/n/10 ) \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 G[]=G[]$\OT1/cmr/m/n/10 . 
  []
 
-[83]
+[89]
 Overfull \hbox (4.37918pt too wide) in paragraph at lines 2681--2681
 []\OT1/cmr/m/n/10 Eliminating all du-pli-cates from the se-ries $\OML/cmm/m/it/
 10 G=N \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 G[]N=N \OMS/cmsy/m/n/10 ^^S \OML/cmm/
 m/it/10 G[]N=N \OMS/cmsy/m/n/10 ^^S
  []
 
-[84] [85] [86
+[90] [91] [92
 
 ]
-Chapter 13.
-[87] [88]
+Chapter 16.
+[93] [94]
 Overfull \hbox (7.17749pt too wide) in paragraph at lines 2850--2851
-[]\OT1/cmr/bx/n/10 Proposition 13.12. []\OT1/cmr/m/it/10 Given a group $\OML/cm
+[]\OT1/cmr/bx/n/10 Proposition 16.12. []\OT1/cmr/m/it/10 Given a group $\OML/cm
 m/m/it/10 G$ \OT1/cmr/m/it/10 and an Abelian group $\OML/cmm/m/it/10 H$\OT1/cmr
 /m/it/10 , the set $[]\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 G; H\OT1/cmr/m/n/10 ]$
  []
 
 WARNING: proof step "b" (<3>1) already defined
 WARNING: proof step "2" (<1>3) already defined
-[89] [90] [91] [92] [93] [94]
+[95] [96] [97] [98] [99] [100]
 Underfull \vbox (badness 3872) has occurred while \output is active []
 
- [95]
-[96] [97] [98]
+ [101]
+[102] [103] [104]
 Overfull \hbox (49.8944pt too wide) detected at line 3518
 []
  []
 
-[99] [100]
-Chapter 14.
-[101
+[105] [106]
+Chapter 17.
+[107
 
-] [102]
+] [108]
 Overfull \hbox (0.47714pt too wide) in paragraph at lines 3754--3754
 []\OT1/cmr/m/sc/10 Pick \OT1/cmr/m/n/10 a sub-group $\OML/cmm/m/it/10 K$ \OT1/c
 mr/m/n/10 of $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 nor-mal in $\OML/cmm/m/it/10 
@@ -707,17 +725,17 @@ msy/m/n/10 j\OML/cmm/m/it/10 G\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ; p\OT1/cmr/m/
 n/10 !)$. 
  []
 
-[103] [104] [105] [106] [107] [108]
+[109] [110] [111] [112] [113] [114]
 WARNING: proof step "2" (<1>3) already defined
 WARNING: proof step "6" (<1>7) already defined
-[109]
+[115]
 WARNING: proof step "b" (<2>4) already defined
-[110] [111] [112] [113] [114]
+[116] [117] [118] [119] [120]
 
-LaTeX Warning: Reference `HK-cong-H-times-K' on page 115 undefined on input lin
+LaTeX Warning: Reference `HK-cong-H-times-K' on page 121 undefined on input lin
 e 4594.
 
-[115] [116]
+[121] [122]
 Overfull \hbox (3.30603pt too wide) in paragraph at lines 4783--4783
 []\OT1/cmr/m/n/10 The cor-re-spond-ing se-quence of sub-groups for $\OML/cmm/m/
 it/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$ is $\OML/cmm/m/i
@@ -725,7 +743,7 @@ t/10 G=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$, $\OML/cmm/m/it/1
 0 Z[]=Z\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$,
  []
 
-[117] [118]
+[123] [124]
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "d" (<2>6) already defined
 
@@ -737,12 +755,12 @@ T1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )$ are $\OML/cmm/m/it/10 P[]=Z
  []
 
 
-LaTeX Warning: Reference `aa' on page 119 undefined on input line 4926.
+LaTeX Warning: Reference `aa' on page 125 undefined on input line 4926.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [119]
+ [125]
 Overfull \hbox (197.10255pt too wide) detected at line 4996
 \OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a[] a[]  []  a[]\OT1/cmr/
 m/n/10 )(\OML/cmm/m/it/10 b[] b[]  []  b[]\OT1/cmr/m/n/10 ) [] (\OML/cmm/m/it/1
@@ -758,78 +776,66 @@ it/10 c[]\OT1/cmr/m/n/10 )  []  \OML/cmm/m/it/10 ^^\\OT1/cmr/m/n/10 (\OML/cmm/m
 /it/10 c[]\OT1/cmr/m/n/10 ))
  []
 
-[120] [121] [122]
+[126] [127] [128]
 WARNING: proof step "6" (<1>7) already defined
-[123] [124] [125] [126
+[129] [130] [131] [132
 
 ]
-Chapter 15.
+Chapter 18.
 WARNING: proof step "d" (<2>4) already defined
-[127] [128] [129] [130]
-Chapter 16.
-[131
+[133] [134] [135] [136]
+Chapter 19.
+[137
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [132]
-[133] [134] [135] [136] [137] [138] [139] [140] [141] [142] [143]) [144]
-[145
+ [138]
+[139] [140] [141] [142] [143] [144] [145] [146] [147] [148] [149]) [150]
+[151
 
-] [146] (./rings.tex
-Chapter 17.
+] [152] (./rings.tex
+Chapter 20.
 LaTeX Font Info:    Trying to load font information for U+euf on input line 21.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [147
+) [153
 
-] [148] [149]
-[150
-
-]
-Chapter 18.
-[151] [152] [153] [154] [155] [156]
-Chapter 19.
-[157
-
-] [158] [159] [160
+] [154] [155]
+[156
 
 ]
-Chapter 20.
-[161] [162]
 Chapter 21.
+[157] [158] [159] [160] [161] [162]
+Chapter 22.
 [163
 
-] [164] [165] [166]
-Chapter 22.
-[167
-
-] [168] [169] [170] [171] [172
+] [164] [165] [166
 
 ]
 Chapter 23.
-[173] [174] [175] [176
-
-]
+[167] [168]
 Chapter 24.
-[177] [178
+[169
 
-]
+] [170] [171] [172]
 Chapter 25.
-[179] [180
+[173
+
+] [174] [175] [176] [177] [178
 
 ]
 Chapter 26.
-[181] [182
+[179] [180] [181] [182
 
 ]
 Chapter 27.
-[183] [184]
-Chapter 28.
-[185
+[183] [184
 
-] [186
+]
+Chapter 28.
+[185] [186
 
 ]
 Chapter 29.
@@ -841,31 +847,43 @@ Chapter 30.
 Chapter 31.
 [191
 
+] [192
+
+]
+Chapter 32.
+[193] [194
+
+]
+Chapter 33.
+[195] [196]
+Chapter 34.
+[197
+
 ]
 WARNING: proof step "3" (<1>4) already defined
-[192] [193] [194] [195] [196] [197] [198] [199] [200]
-Chapter 32.
-[201
-
-] [202]
-Chapter 33.
-[203
-
-] [204
-
-]
-Chapter 34.
-[205] [206]
+[198] [199] [200] [201] [202] [203] [204] [205] [206]
 Chapter 35.
 [207
 
-]
-WARNING: proof step "ii" (<3>3) already defined
-[208] [209] [210
+] [208]
+Chapter 36.
+[209
+
+] [210
 
 ]
-Chapter 36.
-[211]
+Chapter 37.
+[211] [212]
+Chapter 38.
+[213
+
+]
+WARNING: proof step "ii" (<3>3) already defined
+[214] [215] [216
+
+]
+Chapter 39.
+[217]
 Overfull \hbox (46.77194pt too wide) in paragraph at lines 2634--2634
 []$\OML/cmm/m/it/10 ^^^ \OT1/cmr/m/n/10 : [][](\OML/cmm/m/it/10 I\OT1/cmr/m/n/1
 0 ) \OMS/cmsy/m/n/10 ! [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 aI\OT1/cmr/m/n/10 
@@ -874,97 +892,114 @@ Overfull \hbox (46.77194pt too wide) in paragraph at lines 2634--2634
 r/m/n/10 )$. 
  []
 
-[212] [213] [214
-
-]
-Chapter 37.
-[215] [216
-
-]
-Chapter 38.
-[217] [218
-
-]
-Chapter 39.
-[219] [220
+[218] [219] [220
 
 ]
 Chapter 40.
-[221] [222]
+[221] [222
+
+]
+Chapter 41.
+[223] [224
+
+]
+Chapter 42.
+[225] [226
+
+]
+Chapter 43.
+[227] [228]
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
- [223]
-[224] [225] [226]
+ [229]
+[230] [231] [232]
 WARNING: proof step "1" (<1>3) already defined
-[227]
+[233]
 WARNING: proof step "2" (<1>4) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "1" (<2>1) already defined
 WARNING: proof step "2" (<2>2) already defined
-[228] [229]
+[234] [235]
 Overfull \hbox (5.62077pt too wide) in paragraph at lines 3194--3195
-[]\OT1/cmr/bx/n/10 Proposition 40.14. []\OT1/cmr/m/it/10 Let the fol-low-ing be
+[]\OT1/cmr/bx/n/10 Proposition 43.14. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
 
 Overfull \hbox (5.62077pt too wide) in paragraph at lines 3212--3213
-[]\OT1/cmr/bx/n/10 Proposition 40.15. []\OT1/cmr/m/it/10 Let the fol-low-ing be
+[]\OT1/cmr/bx/n/10 Proposition 43.15. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[230]
+[236]
 Overfull \hbox (5.62077pt too wide) in paragraph at lines 3228--3229
-[]\OT1/cmr/bx/n/10 Proposition 40.16. []\OT1/cmr/m/it/10 Let the fol-low-ing be
+[]\OT1/cmr/bx/n/10 Proposition 43.16. []\OT1/cmr/m/it/10 Let the fol-low-ing be
  a com-mut-ing di-a-gram of left-$\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -modules.
  
  []
 
-[231] [232] [233] [234]
-Chapter 41.
-[235
+[237] [238] [239] [240]
+Chapter 44.
+[241
 
-] [236
+] [242
 
-] [237] [238]
-Chapter 42.
-[239
+] [243] [244]
+Chapter 45.
+[245
 
-] [240] [241] [242
+] [246] [247] [248
 
 ]
-Chapter 43.
-[243] [244
+Chapter 46.
+[249] [250
 
-] [245] [246]
-Chapter 44.
-[247
+] [251] [252]
+Chapter 47.
+[253
 
 ]
 Overfull \hbox (169.33514pt too wide) in paragraph at lines 3784--3792
 []\OT1/cmr/m/sc/10 Proof\OT1/cmr/m/n/10 : The func-tion that maps $[]$ to $[]$
  []
 
-) [248] [249
+) [254] [255
 
-] [250]
-Chapter 45.
-[251
+] [256]
+Chapter 48.
+[257
 
-] [252] [253
+] [258] [259] [260
 
-] [254] [255] (./main.aux)
+]
+Chapter 49.
+[261] [262]
+Chapter 50.
+[263
+
+] [264]
+Chapter 51.
+[265
+
+] [266
+
+] [267] [268] [269] [270
+
+] [271] [272] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 17628 strings out of 476091
- 378538 string characters out of 5794081
+ 17744 strings out of 476091
+ 381431 string characters out of 5794081
  1910330 words of memory out of 5000000
- 37749 multiletter control sequences out of 15000+600000
+ 37865 multiletter control sequences out of 15000+600000
  526205 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,118p,452b,1121s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -992,10 +1027,10 @@ r/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (255 pages, 809286 bytes).
+Output written on main.pdf (272 pages, 839909 bytes).
 PDF statistics:
- 958 PDF objects out of 1000 (max. 8388607)
- 644 compressed objects within 7 object streams
+ 1012 PDF objects out of 1200 (max. 8388607)
+ 681 compressed objects within 7 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

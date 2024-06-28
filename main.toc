@@ -12,133 +12,142 @@
 \contentsline {section}{\numberline {3.4}Initial and Terminal Objects}{18}{}%
 \contentsline {section}{\numberline {3.5}Comma Categories}{19}{}%
 \contentsline {chapter}{\numberline {4}Functors}{21}{}%
-\contentsline {chapter}{\numberline {5}Constructions of Categories}{23}{}%
-\contentsline {section}{\numberline {5.1}Opposite Category}{23}{}%
-\contentsline {section}{\numberline {5.2}Product Categories}{23}{}%
-\contentsline {section}{\numberline {5.3}Arrow Category}{23}{}%
-\contentsline {section}{\numberline {5.4}Slice Category}{24}{}%
-\contentsline {chapter}{\numberline {6}Preorders}{25}{}%
-\contentsline {section}{\numberline {6.1}Definition}{25}{}%
-\contentsline {section}{\numberline {6.2}Partial Orders}{25}{}%
-\contentsline {subsection}{\numberline {6.2.1}Definition}{25}{}%
-\contentsline {chapter}{\numberline {7}Objects}{27}{}%
-\contentsline {section}{\numberline {7.1}Terminal and Initial Objects}{27}{}%
-\contentsline {part}{II\hspace {1em}Number Theory}{29}{}%
-\contentsline {part}{III\hspace {1em}Order Theory}{33}{}%
-\contentsline {chapter}{\numberline {8}Boolean Algebras}{35}{}%
-\contentsline {part}{IV\hspace {1em}Group Theory}{37}{}%
-\contentsline {chapter}{\numberline {9}Semigroups}{39}{}%
-\contentsline {chapter}{\numberline {10}Monoids}{41}{}%
-\contentsline {section}{\numberline {10.1}Free Monoids}{41}{}%
-\contentsline {chapter}{\numberline {11}Groups}{43}{}%
-\contentsline {section}{\numberline {11.1}Symmetric Groups}{46}{}%
-\contentsline {section}{\numberline {11.2}Order of an Element}{47}{}%
-\contentsline {section}{\numberline {11.3}Generators}{49}{}%
-\contentsline {section}{\numberline {11.4}$p$-groups}{51}{}%
-\contentsline {chapter}{\numberline {12}Group Homomorphisms}{53}{}%
-\contentsline {section}{\numberline {12.1}Subgroups}{55}{}%
-\contentsline {section}{\numberline {12.2}Kernel}{57}{}%
-\contentsline {section}{\numberline {12.3}Inner Automorphisms}{58}{}%
-\contentsline {section}{\numberline {12.4}Semidirect Products}{58}{}%
-\contentsline {section}{\numberline {12.5}Direct Products}{61}{}%
-\contentsline {section}{\numberline {12.6}Free Groups}{61}{}%
-\contentsline {section}{\numberline {12.7}Normal Subgroups}{64}{}%
-\contentsline {section}{\numberline {12.8}Quotient Groups}{65}{}%
-\contentsline {section}{\numberline {12.9}Cosets}{69}{}%
-\contentsline {section}{\numberline {12.10}Congruence}{73}{}%
-\contentsline {section}{\numberline {12.11}Cyclic Groups}{74}{}%
-\contentsline {section}{\numberline {12.12}Commutator Subgroup}{74}{}%
-\contentsline {section}{\numberline {12.13}Presentations}{75}{}%
-\contentsline {section}{\numberline {12.14}Index of a Subgroup}{76}{}%
-\contentsline {section}{\numberline {12.15}Cokernels}{78}{}%
-\contentsline {section}{\numberline {12.16}Cayley Graphs}{78}{}%
-\contentsline {section}{\numberline {12.17}Characteristic Subgroups}{78}{}%
-\contentsline {section}{\numberline {12.18}Simple Groups}{79}{}%
-\contentsline {section}{\numberline {12.19}Sylow Subgroups}{79}{}%
-\contentsline {section}{\numberline {12.20}Series of Subgroups}{80}{}%
-\contentsline {chapter}{\numberline {13}Abelian Groups}{87}{}%
-\contentsline {section}{\numberline {13.1}The Category of Abelian Groups}{93}{}%
-\contentsline {section}{\numberline {13.2}Free Abelian Groups}{94}{}%
-\contentsline {section}{\numberline {13.3}Cokernels}{96}{}%
-\contentsline {section}{\numberline {13.4}Commutator Subgroups}{97}{}%
-\contentsline {section}{\numberline {13.5}Derived Series}{98}{}%
-\contentsline {section}{\numberline {13.6}Solvable Groups}{98}{}%
-\contentsline {chapter}{\numberline {14}Group Actions}{101}{}%
-\contentsline {section}{\numberline {14.1}Group Actions}{101}{}%
-\contentsline {section}{\numberline {14.2}Category of $G$-Sets}{104}{}%
-\contentsline {section}{\numberline {14.3}Center}{106}{}%
-\contentsline {section}{\numberline {14.4}Centralizer}{108}{}%
-\contentsline {section}{\numberline {14.5}Conjugacy Class}{108}{}%
-\contentsline {section}{\numberline {14.6}Conjugation on Sets}{111}{}%
-\contentsline {section}{\numberline {14.7}Nilpotent Groups}{117}{}%
-\contentsline {section}{\numberline {14.8}Symmetric Groups}{120}{}%
-\contentsline {subsection}{\numberline {14.8.1}Transitive Subgroups}{121}{}%
-\contentsline {section}{\numberline {14.9}Alternating Groups}{121}{}%
-\contentsline {chapter}{\numberline {15}Extensions}{127}{}%
-\contentsline {chapter}{\numberline {16}Classification of Groups}{131}{}%
-\contentsline {part}{V\hspace {1em}Ring Theory}{145}{}%
-\contentsline {chapter}{\numberline {17}Rngs}{147}{}%
-\contentsline {section}{\numberline {17.1}Commutative Rngs}{149}{}%
-\contentsline {section}{\numberline {17.2}Rng Homomorphisms}{149}{}%
-\contentsline {section}{\numberline {17.3}Quaternions}{149}{}%
-\contentsline {chapter}{\numberline {18}Rings}{151}{}%
-\contentsline {section}{\numberline {18.1}Units}{152}{}%
-\contentsline {section}{\numberline {18.2}Euler's $\phi $-function}{154}{}%
-\contentsline {section}{\numberline {18.3}Nilpotent Elements}{156}{}%
-\contentsline {chapter}{\numberline {19}Ring Homomorphisms}{157}{}%
-\contentsline {section}{\numberline {19.1}Products}{159}{}%
-\contentsline {chapter}{\numberline {20}Subrings}{161}{}%
-\contentsline {section}{\numberline {20.1}Centralizer}{161}{}%
-\contentsline {section}{\numberline {20.2}Center}{161}{}%
-\contentsline {chapter}{\numberline {21}Monoid Rings}{163}{}%
-\contentsline {section}{\numberline {21.1}Polynomials}{163}{}%
-\contentsline {section}{\numberline {21.2}Laurent Polynomials}{165}{}%
-\contentsline {section}{\numberline {21.3}Power Series}{166}{}%
-\contentsline {chapter}{\numberline {22}Ideals}{167}{}%
-\contentsline {section}{\numberline {22.1}Characteristic}{170}{}%
-\contentsline {section}{\numberline {22.2}Nilradical}{170}{}%
-\contentsline {section}{\numberline {22.3}Principal Ideals}{170}{}%
-\contentsline {section}{\numberline {22.4}Maximal Ideals}{171}{}%
-\contentsline {chapter}{\numberline {23}Integral Domains}{173}{}%
-\contentsline {section}{\numberline {23.1}Prime Ideals}{174}{}%
-\contentsline {chapter}{\numberline {24}Unique Factorization Domains}{177}{}%
-\contentsline {chapter}{\numberline {25}Principal Ideal Domains}{179}{}%
-\contentsline {chapter}{\numberline {26}Euclidean Domains}{181}{}%
-\contentsline {chapter}{\numberline {27}Division Rings}{183}{}%
-\contentsline {chapter}{\numberline {28}Simple Rings}{185}{}%
-\contentsline {chapter}{\numberline {29}Reduced Rings}{187}{}%
-\contentsline {chapter}{\numberline {30}Boolean Rings}{189}{}%
-\contentsline {chapter}{\numberline {31}Modules}{191}{}%
-\contentsline {section}{\numberline {31.1}Homomorphisms}{192}{}%
-\contentsline {section}{\numberline {31.2}Submodules}{193}{}%
-\contentsline {section}{\numberline {31.3}Quotient Modules}{194}{}%
-\contentsline {section}{\numberline {31.4}Products}{195}{}%
-\contentsline {section}{\numberline {31.5}Coproducts}{195}{}%
-\contentsline {section}{\numberline {31.6}Direct Sum}{195}{}%
-\contentsline {section}{\numberline {31.7}Kernels and Cokernels}{196}{}%
-\contentsline {section}{\numberline {31.8}Free Modules}{197}{}%
-\contentsline {section}{\numberline {31.9}Generators}{198}{}%
-\contentsline {section}{\numberline {31.10}Projections}{199}{}%
-\contentsline {section}{\numberline {31.11}Pullbacks}{199}{}%
-\contentsline {section}{\numberline {31.12}Pushouts}{200}{}%
-\contentsline {chapter}{\numberline {32}Cyclic Modules}{201}{}%
-\contentsline {chapter}{\numberline {33}Simple Modules}{203}{}%
-\contentsline {chapter}{\numberline {34}Noetherian Modules}{205}{}%
-\contentsline {chapter}{\numberline {35}Noetherian Rings}{207}{}%
-\contentsline {chapter}{\numberline {36}Algebras}{211}{}%
-\contentsline {section}{\numberline {36.1}Rees Algebra}{212}{}%
-\contentsline {section}{\numberline {36.2}Free Algebras}{212}{}%
-\contentsline {chapter}{\numberline {37}Algebras of Finite Type}{215}{}%
-\contentsline {chapter}{\numberline {38}Finite Algebras}{217}{}%
-\contentsline {chapter}{\numberline {39}Division Algebras}{219}{}%
-\contentsline {chapter}{\numberline {40}Chain Complexes}{221}{}%
-\contentsline {section}{\numberline {40.1}Split Exact Sequences}{232}{}%
-\contentsline {chapter}{\numberline {41}Homology}{235}{}%
-\contentsline {part}{VI\hspace {1em}Field Theory}{237}{}%
-\contentsline {chapter}{\numberline {42}Fields}{239}{}%
-\contentsline {chapter}{\numberline {43}Algebraically Closed Fields}{243}{}%
-\contentsline {part}{VII\hspace {1em}Linear Algebra}{245}{}%
-\contentsline {chapter}{\numberline {44}Vector Spaces}{247}{}%
-\contentsline {part}{VIII\hspace {1em}Linear Algebra}{249}{}%
-\contentsline {chapter}{\numberline {45}Vector Spaces}{251}{}%
-\contentsline {part}{IX\hspace {1em}Measure Theory}{253}{}%
+\contentsline {chapter}{\numberline {5}Natural Transformations}{23}{}%
+\contentsline {chapter}{\numberline {6}Adjunctions}{25}{}%
+\contentsline {chapter}{\numberline {7}Limits and Colimits}{27}{}%
+\contentsline {chapter}{\numberline {8}Constructions of Categories}{29}{}%
+\contentsline {section}{\numberline {8.1}Opposite Category}{29}{}%
+\contentsline {section}{\numberline {8.2}Product Categories}{29}{}%
+\contentsline {section}{\numberline {8.3}Arrow Category}{29}{}%
+\contentsline {section}{\numberline {8.4}Slice Category}{30}{}%
+\contentsline {chapter}{\numberline {9}Preorders}{31}{}%
+\contentsline {section}{\numberline {9.1}Definition}{31}{}%
+\contentsline {section}{\numberline {9.2}Partial Orders}{31}{}%
+\contentsline {subsection}{\numberline {9.2.1}Definition}{31}{}%
+\contentsline {chapter}{\numberline {10}Objects}{33}{}%
+\contentsline {section}{\numberline {10.1}Terminal and Initial Objects}{33}{}%
+\contentsline {part}{II\hspace {1em}Number Theory}{35}{}%
+\contentsline {part}{III\hspace {1em}Order Theory}{39}{}%
+\contentsline {chapter}{\numberline {11}Boolean Algebras}{41}{}%
+\contentsline {part}{IV\hspace {1em}Group Theory}{43}{}%
+\contentsline {chapter}{\numberline {12}Semigroups}{45}{}%
+\contentsline {chapter}{\numberline {13}Monoids}{47}{}%
+\contentsline {section}{\numberline {13.1}Free Monoids}{47}{}%
+\contentsline {chapter}{\numberline {14}Groups}{49}{}%
+\contentsline {section}{\numberline {14.1}Symmetric Groups}{52}{}%
+\contentsline {section}{\numberline {14.2}Order of an Element}{53}{}%
+\contentsline {section}{\numberline {14.3}Generators}{55}{}%
+\contentsline {section}{\numberline {14.4}$p$-groups}{57}{}%
+\contentsline {chapter}{\numberline {15}Group Homomorphisms}{59}{}%
+\contentsline {section}{\numberline {15.1}Subgroups}{61}{}%
+\contentsline {section}{\numberline {15.2}Kernel}{63}{}%
+\contentsline {section}{\numberline {15.3}Inner Automorphisms}{64}{}%
+\contentsline {section}{\numberline {15.4}Semidirect Products}{64}{}%
+\contentsline {section}{\numberline {15.5}Direct Products}{67}{}%
+\contentsline {section}{\numberline {15.6}Free Groups}{67}{}%
+\contentsline {section}{\numberline {15.7}Normal Subgroups}{70}{}%
+\contentsline {section}{\numberline {15.8}Quotient Groups}{71}{}%
+\contentsline {section}{\numberline {15.9}Cosets}{75}{}%
+\contentsline {section}{\numberline {15.10}Congruence}{79}{}%
+\contentsline {section}{\numberline {15.11}Cyclic Groups}{80}{}%
+\contentsline {section}{\numberline {15.12}Commutator Subgroup}{80}{}%
+\contentsline {section}{\numberline {15.13}Presentations}{81}{}%
+\contentsline {section}{\numberline {15.14}Index of a Subgroup}{82}{}%
+\contentsline {section}{\numberline {15.15}Cokernels}{84}{}%
+\contentsline {section}{\numberline {15.16}Cayley Graphs}{84}{}%
+\contentsline {section}{\numberline {15.17}Characteristic Subgroups}{84}{}%
+\contentsline {section}{\numberline {15.18}Simple Groups}{85}{}%
+\contentsline {section}{\numberline {15.19}Sylow Subgroups}{85}{}%
+\contentsline {section}{\numberline {15.20}Series of Subgroups}{86}{}%
+\contentsline {chapter}{\numberline {16}Abelian Groups}{93}{}%
+\contentsline {section}{\numberline {16.1}The Category of Abelian Groups}{99}{}%
+\contentsline {section}{\numberline {16.2}Free Abelian Groups}{100}{}%
+\contentsline {section}{\numberline {16.3}Cokernels}{102}{}%
+\contentsline {section}{\numberline {16.4}Commutator Subgroups}{103}{}%
+\contentsline {section}{\numberline {16.5}Derived Series}{104}{}%
+\contentsline {section}{\numberline {16.6}Solvable Groups}{104}{}%
+\contentsline {chapter}{\numberline {17}Group Actions}{107}{}%
+\contentsline {section}{\numberline {17.1}Group Actions}{107}{}%
+\contentsline {section}{\numberline {17.2}Category of $G$-Sets}{110}{}%
+\contentsline {section}{\numberline {17.3}Center}{112}{}%
+\contentsline {section}{\numberline {17.4}Centralizer}{114}{}%
+\contentsline {section}{\numberline {17.5}Conjugacy Class}{114}{}%
+\contentsline {section}{\numberline {17.6}Conjugation on Sets}{117}{}%
+\contentsline {section}{\numberline {17.7}Nilpotent Groups}{123}{}%
+\contentsline {section}{\numberline {17.8}Symmetric Groups}{126}{}%
+\contentsline {subsection}{\numberline {17.8.1}Transitive Subgroups}{127}{}%
+\contentsline {section}{\numberline {17.9}Alternating Groups}{127}{}%
+\contentsline {chapter}{\numberline {18}Extensions}{133}{}%
+\contentsline {chapter}{\numberline {19}Classification of Groups}{137}{}%
+\contentsline {part}{V\hspace {1em}Ring Theory}{151}{}%
+\contentsline {chapter}{\numberline {20}Rngs}{153}{}%
+\contentsline {section}{\numberline {20.1}Commutative Rngs}{155}{}%
+\contentsline {section}{\numberline {20.2}Rng Homomorphisms}{155}{}%
+\contentsline {section}{\numberline {20.3}Quaternions}{155}{}%
+\contentsline {chapter}{\numberline {21}Rings}{157}{}%
+\contentsline {section}{\numberline {21.1}Units}{158}{}%
+\contentsline {section}{\numberline {21.2}Euler's $\phi $-function}{160}{}%
+\contentsline {section}{\numberline {21.3}Nilpotent Elements}{162}{}%
+\contentsline {chapter}{\numberline {22}Ring Homomorphisms}{163}{}%
+\contentsline {section}{\numberline {22.1}Products}{165}{}%
+\contentsline {chapter}{\numberline {23}Subrings}{167}{}%
+\contentsline {section}{\numberline {23.1}Centralizer}{167}{}%
+\contentsline {section}{\numberline {23.2}Center}{167}{}%
+\contentsline {chapter}{\numberline {24}Monoid Rings}{169}{}%
+\contentsline {section}{\numberline {24.1}Polynomials}{169}{}%
+\contentsline {section}{\numberline {24.2}Laurent Polynomials}{171}{}%
+\contentsline {section}{\numberline {24.3}Power Series}{172}{}%
+\contentsline {chapter}{\numberline {25}Ideals}{173}{}%
+\contentsline {section}{\numberline {25.1}Characteristic}{176}{}%
+\contentsline {section}{\numberline {25.2}Nilradical}{176}{}%
+\contentsline {section}{\numberline {25.3}Principal Ideals}{176}{}%
+\contentsline {section}{\numberline {25.4}Maximal Ideals}{177}{}%
+\contentsline {chapter}{\numberline {26}Integral Domains}{179}{}%
+\contentsline {section}{\numberline {26.1}Prime Ideals}{180}{}%
+\contentsline {chapter}{\numberline {27}Unique Factorization Domains}{183}{}%
+\contentsline {chapter}{\numberline {28}Principal Ideal Domains}{185}{}%
+\contentsline {chapter}{\numberline {29}Euclidean Domains}{187}{}%
+\contentsline {chapter}{\numberline {30}Division Rings}{189}{}%
+\contentsline {chapter}{\numberline {31}Simple Rings}{191}{}%
+\contentsline {chapter}{\numberline {32}Reduced Rings}{193}{}%
+\contentsline {chapter}{\numberline {33}Boolean Rings}{195}{}%
+\contentsline {chapter}{\numberline {34}Modules}{197}{}%
+\contentsline {section}{\numberline {34.1}Homomorphisms}{198}{}%
+\contentsline {section}{\numberline {34.2}Submodules}{199}{}%
+\contentsline {section}{\numberline {34.3}Quotient Modules}{200}{}%
+\contentsline {section}{\numberline {34.4}Products}{201}{}%
+\contentsline {section}{\numberline {34.5}Coproducts}{201}{}%
+\contentsline {section}{\numberline {34.6}Direct Sum}{201}{}%
+\contentsline {section}{\numberline {34.7}Kernels and Cokernels}{202}{}%
+\contentsline {section}{\numberline {34.8}Free Modules}{203}{}%
+\contentsline {section}{\numberline {34.9}Generators}{204}{}%
+\contentsline {section}{\numberline {34.10}Projections}{205}{}%
+\contentsline {section}{\numberline {34.11}Pullbacks}{205}{}%
+\contentsline {section}{\numberline {34.12}Pushouts}{206}{}%
+\contentsline {chapter}{\numberline {35}Cyclic Modules}{207}{}%
+\contentsline {chapter}{\numberline {36}Simple Modules}{209}{}%
+\contentsline {chapter}{\numberline {37}Noetherian Modules}{211}{}%
+\contentsline {chapter}{\numberline {38}Noetherian Rings}{213}{}%
+\contentsline {chapter}{\numberline {39}Algebras}{217}{}%
+\contentsline {section}{\numberline {39.1}Rees Algebra}{218}{}%
+\contentsline {section}{\numberline {39.2}Free Algebras}{218}{}%
+\contentsline {chapter}{\numberline {40}Algebras of Finite Type}{221}{}%
+\contentsline {chapter}{\numberline {41}Finite Algebras}{223}{}%
+\contentsline {chapter}{\numberline {42}Division Algebras}{225}{}%
+\contentsline {chapter}{\numberline {43}Chain Complexes}{227}{}%
+\contentsline {section}{\numberline {43.1}Split Exact Sequences}{238}{}%
+\contentsline {chapter}{\numberline {44}Homology}{241}{}%
+\contentsline {part}{VI\hspace {1em}Field Theory}{243}{}%
+\contentsline {chapter}{\numberline {45}Fields}{245}{}%
+\contentsline {chapter}{\numberline {46}Algebraically Closed Fields}{249}{}%
+\contentsline {part}{VII\hspace {1em}Linear Algebra}{251}{}%
+\contentsline {chapter}{\numberline {47}Vector Spaces}{253}{}%
+\contentsline {part}{VIII\hspace {1em}Linear Algebra}{255}{}%
+\contentsline {chapter}{\numberline {48}Vector Spaces}{257}{}%
+\contentsline {section}{\numberline {48.1}Dual Spaces}{258}{}%
+\contentsline {chapter}{\numberline {49}Hilbert Spaces}{261}{}%
+\contentsline {chapter}{\numberline {50}Lie Algebras}{263}{}%
+\contentsline {section}{\numberline {50.1}Lie Algebra Homomorphisms}{264}{}%
+\contentsline {chapter}{\numberline {51}Lie Groups}{265}{}%
+\contentsline {part}{IX\hspace {1em}Measure Theory}{267}{}%
+\contentsline {part}{X\hspace {1em}Quantum Theory}{271}{}%
