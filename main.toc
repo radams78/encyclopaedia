@@ -15,6 +15,7 @@
 \contentsline {chapter}{\numberline {5}Natural Transformations}{23}{}%
 \contentsline {chapter}{\numberline {6}Adjunctions}{25}{}%
 \contentsline {chapter}{\numberline {7}Limits and Colimits}{27}{}%
+\contentsline {section}{\numberline {7.1}Products and Coproducts}{28}{}%
 \contentsline {chapter}{\numberline {8}Constructions of Categories}{29}{}%
 \contentsline {section}{\numberline {8.1}Opposite Category}{29}{}%
 \contentsline {section}{\numberline {8.2}Product Categories}{29}{}%
@@ -22,8 +23,8 @@
 \contentsline {section}{\numberline {8.4}Slice Category}{30}{}%
 \contentsline {chapter}{\numberline {9}Preorders}{31}{}%
 \contentsline {section}{\numberline {9.1}Definition}{31}{}%
-\contentsline {section}{\numberline {9.2}Partial Orders}{31}{}%
-\contentsline {subsection}{\numberline {9.2.1}Definition}{31}{}%
+\contentsline {section}{\numberline {9.2}Partial Orders}{32}{}%
+\contentsline {subsection}{\numberline {9.2.1}Definition}{32}{}%
 \contentsline {chapter}{\numberline {10}Objects}{33}{}%
 \contentsline {section}{\numberline {10.1}Terminal and Initial Objects}{33}{}%
 \contentsline {part}{II\hspace {1em}Number Theory}{35}{}%

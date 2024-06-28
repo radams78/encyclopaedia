@@ -607,6 +607,32 @@ That is, a cocone under $D$ consists of an object $C \in \mathcal{C}$ and a natu
 A \emph{colimit} of $D$ is an initial object in $\mathbf{Cocone}(D)$.
 \end{df}
 
+\begin{thm}[Uniqueness of Limits]
+If $\{ \tau_J : L \rightarrow D J \}$ and $\{ \sigma_J : M \rightarrow D J \}$ are limits of $D$, then there exists a unique isomorphism $\phi : L \cong M$ such that the following diagram commutes
+\[ \begin{tikzcd}
+L \arrow[r,"\tau_J"] \arrow[d,"\phi"] & D J \\
+M \arrow[ur,"\sigma_J"]
+\end{tikzcd} \]
+\end{thm}
+
+\begin{thm}[Uniqueness of Colimits]
+If $\{ \tau_J : D J \rightarrow L \}$ and $\{ \sigma_J : D J \rightarrow M \}$ are limits of $D$, then there exists a unique isomorphism $\phi : L \cong M$ such that the following diagram commutes
+\[ \begin{tikzcd}
+D J \arrow[r,"\tau_J"] \arrow[dr,"\sigma_J"] & L \arrow[d,"\phi"] \\
+& M
+\end{tikzcd} \]
+\end{thm}
+
+\section{Products and Coproducts}
+
+\begin{df}[Product]
+Let $\{ A_i \}_{i \in I}$ be a family of objects in $\mathcal{C}$. 
+
+A \emph{product} $\{ \pi_i : P \rightarrow A_i \}_{i \in I}$ is a limit of $A$ considered as a functor from the discrete category $I$ to $\mathcal{C}$. The components $\pi_i$ are called the \emph{projections}.
+
+A \emph{coproduct} $\{ \kappa_i : A_i \rightarrow C \}_{i \in I}$ is a colimit of $A$ considered as a functor from the discrete category $I$ to $\mathcal{C}$. The components $\kappa_i$ are called the \emph{coprojections} or \emph{injections}.
+\end{df}
+
 \chapter{Constructions of Categories}
 
 \section{Opposite Category}
@@ -618,21 +644,14 @@ A \emph{colimit} of $D$ is an initial object in $\mathbf{Cocone}(D)$.
 
 \section{Product Categories}
 
-\begin{df}[Product Category]
-Given categories $\mathcal{C}$ and $\mathcal{D}$, the \emph{product category} $\mathcal{C} \times \mathcal{D}$ has:
+\begin{thm}
+Let $\{ \mathcal{C}_i \}_{i \in I}$ be a family of categories in $\Cat_{\mathcal{U}}$, where $I \in \mathcal{U}$. Then there is a product $\prod_i \mathcal{C}_i$ in $\Cat_{\mathcal{U}}$ with:
 \begin{itemize}
-\item objects $|\mathcal{C} \times \mathcal{D}| = |\mathcal{C}| \times |\mathcal{D}|$
-\item a morphism $(C,D) \rightarrow (C',D')$ is a pair $(f,g)$ where $f : C \rightarrow C' : \mathcal{C}$ and $g : D \rightarrow D' : \mathcal{D}$
-\item $\id{(C,D)} = (\id{C},\id{D})$
-\item $(g',f') \circ (g,f) = (g' \circ g, f' \circ f)$
+\item objects the families of objects $\{ X_i \in \mathcal{C}_i \}_{i \in I}$
+\item morphisms the families of morphisms $\{ f_i : X_i \rightarrow Y_i \}_{i \in I}$.
 \end{itemize}
+\end{thm}
 
-Define the \emph{projection} functors $\pi_1 : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{C}$ and $\pi_2 : \mathcal{C} \times \mathcal{D} \rightarrow \mathcal{D}$ by
-\begin{align*}
-\pi_1(C,D) & = C & \pi_2(C,D) & = D \\
-\pi_1(f,g) & = f & \pi_2(f,g) & = g
-\end{align*}
-\end{df}
 
 \section{Arrow Category}
 
@@ -723,6 +742,22 @@ For any ordinal $\alpha$, let $\mathbf{\alpha}$ be the preorder $\{ \beta : \bet
 %Basic Properties
 
 %Ways of constructing preordered sets
+
+\begin{df}
+A \emph{meet}, \emph{infimum} or \emph{greatest lower bound} is a product in a preorder. That is, a meet of $\{ a_i \}_{i \in I}$ is an element $\bigwedge_i a_i$ such that:
+\begin{itemize}
+\item $\bigwedge_i a_i \leq a_i$ for all $i$
+\item if $x \leq a_i$ for all $i$ then $x \leq \bigwedge_i a_i$
+\end{itemize}
+\end{df}
+
+\begin{df}
+A \emph{join}, \emph{supremum} or \emph{least upper bound} is a coproduct in a preorder. That is, a join of $\{ a_i \}_{i \in I}$ is an element $\bigvee_i a_i$ such that:
+\begin{itemize}
+\item $a_i \leq \bigvee_i a_i$ for all $i$
+\item if $a_i \leq x$ for all $i$ then $\bigvee_i a_i \leq x$
+\end{itemize}
+\end{df}
 
 \section{Partial Orders}
 
