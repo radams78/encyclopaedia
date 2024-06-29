@@ -1,5 +1,6 @@
 \newcommand{\dom}{\ensuremath{\operatorname{dom}}}
 \newcommand{\cod}{\ensuremath{\operatorname{cod}}}
+\newcommand{\colim}{\ensuremath{\operatorname{colim}}}
 \newcommand{\Cat}{\ensuremath{\mathbf{Cat}}}
 
 \chapter{Foundations}
@@ -471,6 +472,14 @@ A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{faithful} iff, for 
 A functor $F : \mathcal{C} \rightarrow \mathcal{D}$ is \emph{full} iff, for any objects $A, B \in \mathcal{C}$ and morphism $g : FA \rightarrow FB$, there exists $f : A \rightarrow B$ such that $Ff = g$.
 \end{df}
 
+\begin{df}
+Given any category $\mathcal{C}$, the \emph{hom functor} $\mathcal{C}[-,+] : \mathcal{C}^\mathrm{op} \times \mathcal{C} \rightarrow \mathbf{Set}$ is defined by
+\begin{align*}
+\mathcal{C}[A,B] & \text{ is the set of all morphisms } A \rightarrow B \\
+\mathcal{C}[f,g](h) & = g \circ h \circ f
+\end{align*}
+\end{df}
+
 \chapter{Natural Transformations}
 
 \begin{df}[Natural Transformation]
@@ -621,6 +630,26 @@ If $\{ \tau_J : D J \rightarrow L \}$ and $\{ \sigma_J : D J \rightarrow M \}$ a
 D J \arrow[r,"\tau_J"] \arrow[dr,"\sigma_J"] & L \arrow[d,"\phi"] \\
 & M
 \end{tikzcd} \]
+\end{thm}
+
+\begin{prop}
+An initial object in $\mathcal{C}$ is the same as a colimit of the unique functor $\mathbf{0} \rightarrow \mathcal{C}$.
+\end{prop}
+
+\begin{prop}
+A terminal object in $\mathcal{C}$ is the same as a limit of the unique functor $\mathbf{0} \rightarrow \mathcal{C}$.
+\end{prop}
+
+\begin{thm}
+Let $\mathcal{J}$ and $\mathcal{C}$ be categories. Suppose that $\{ \tau^D_J : \lim D \rightarrow D J \}$ is a limit of $D$ for every functor $D : \mathcal{J} \rightarrow \mathcal{C}$. Then $\lim$ extends to a functor $\mathbf{Cat}[\mathcal{J},\mathcal{C}] \rightarrow \mathcal{C}$ that is right adjoint to $K^{\mathcal{C},\mathcal{J}}$.
+\end{thm}
+
+\begin{proof}
+\pf\ Since by defintion $(KD, \tau^D : K(\lim D) \Rightarrow D)$ is terminal in $K \downarrow \id{\mathbf{Cat}[\mathcal{J},\mathcal{C}]}$ for all $D$. \qed
+\end{proof}
+
+\begin{thm}
+Let $\mathcal{J}$ and $\mathcal{C}$ be categories. Suppose that $\{ \tau^D_J : D J \rightarrow \colim D \}$ is a colimit of $D$ for every functor $D : \mathcal{J} \rightarrow \mathcal{C}$. Then $\colim$ extends to a functor $\mathbf{Cat}[\mathcal{J},\mathcal{C}] \rightarrow \mathcal{C}$ that is left adjoint to $K^{\mathcal{C},\mathcal{J}}$.
 \end{thm}
 
 \section{Products and Coproducts}

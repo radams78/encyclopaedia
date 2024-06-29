@@ -147,8 +147,9 @@
 \contentsline {chapter}{\numberline {48}Vector Spaces}{257}{}%
 \contentsline {section}{\numberline {48.1}Dual Spaces}{258}{}%
 \contentsline {chapter}{\numberline {49}Hilbert Spaces}{261}{}%
-\contentsline {chapter}{\numberline {50}Lie Algebras}{263}{}%
-\contentsline {section}{\numberline {50.1}Lie Algebra Homomorphisms}{264}{}%
-\contentsline {chapter}{\numberline {51}Lie Groups}{265}{}%
-\contentsline {part}{IX\hspace {1em}Measure Theory}{267}{}%
-\contentsline {part}{X\hspace {1em}Quantum Theory}{271}{}%
+\contentsline {chapter}{\numberline {50}Lie Algebras}{265}{}%
+\contentsline {section}{\numberline {50.1}Lie Algebra Homomorphisms}{266}{}%
+\contentsline {chapter}{\numberline {51}Lie Groups}{267}{}%
+\contentsline {part}{IX\hspace {1em}Topology}{269}{}%
+\contentsline {part}{X\hspace {1em}Measure Theory}{273}{}%
+\contentsline {part}{XI\hspace {1em}Quantum Theory}{277}{}%
