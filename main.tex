@@ -322,7 +322,33 @@ is a natural isomorphism if $V$ is finite dimensional.
 \qed
 \end{proof}
 
-\chapter{Hilbert Spaces}
+\section{Eigenvalues and Eigenvectors}
+
+\begin{df}[Eigenvalue, Eigenvector]
+Let $V$ be a vector space over $K$ and $T : V \rightarrow V$ a linear transformation. Then $v \in V$ is an \emph{eigenvector} of $T$ with \emph{eigenvalue} $\lambda$ iff
+\[ T(v) = \lambda v \enspace . \]
+\end{df}
+
+\section{Commutators and Anticommutators}
+
+\begin{df}[Commutator]
+The \emph{commutator} of linear transformations $S,T : V \rightarrow V$ is $[S,T] = ST - TS$.
+\end{df}
+
+\begin{df}[Anticommutator]
+The \emph{antycommutator} of linear transformations $S,T : V \rightarrow V$ is $\{ S,T \} = ST + TS$.
+\end{df}
+
+\chapter{Inner Product Spaces}
+
+\begin{df}[Orthogonal]
+Vectors $u$ and $v$ are \emph{orthogonal} iff $\langle u \mid v \rangle = 0$.
+\end{df}
+
+\begin{df}[Norm]
+The \emph{norm} of a vector $v$ is defined by
+\[ \| v \| = \langle v \mid v \rangle \enspace . \]
+\end{df}
 
 \begin{prop}
 Let $V$ and $W$ be complex inner product spaces and $T : V \rightarrow W$ linear. If $V$ is finite dimensional then $T$ is bounded.
@@ -345,6 +371,21 @@ Let $V$ and $W$ be complex inner product spaces and $T : V \rightarrow W$ linear
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Bra]
+Given a vector $\ket{v} \in V$, define the \emph{bra} $\bra{v} \in V^*$ by:
+\[ (\bra{v})(\ket{u}) = \langle v | u \rangle \enspace . \]
+\end{df}
+
+\begin{prop}
+\begin{align*}
+\bra{u + v} & = \bra{u} + \bra{v} \\
+\bra{\alpha v} & = \overline{\alpha} \bra{v}
+\end{align*}
+\end{prop}
+
+
+\chapter{Hilbert Spaces}
 
 \begin{df}[Hilbert Space]
 A \emph{Hilbert space} is a complete complex inner product space.
@@ -409,9 +450,41 @@ Given a bounded linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$, the \
 \[ \langle T \psi \mid \phi \rangle = \langle \psi \mid T^\dagger \mid \phi \rangle \]
 \end{df}
 
+\begin{prop}
+\[ (S \circ T)^\dagger = T^\dagger \circ S^\dagger \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \psi \mid (S \circ T)^\dagger \mid \phi \rangle
+& = \langle S(T\psi) \mid \phi \rangle \\
+& = \langle T \psi \mid S^\dagger \phi \rangle \\
+& = \langle T \psi \mid T^\dagger (S^\dagger \phi) \rangle & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\label{prop:dirac-triple}
+\[ \overline{\langle \alpha \mid T \mid \beta \rangle} = \langle \beta \mid T^\dagger \mid \alpha \rangle \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
 \begin{df}[Hermitian]
 A linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{Hermitian} or \emph{self-adjoint} iff $T$ is bounded and $T^\dagger = T$.
 \end{df}
+
+\begin{prop}
+If $T$ is Hermitian then
+\[ \overline{\langle \alpha \mid T \mid \beta} = \langle \beta \mid T \mid \alpha \rangle \]
+\end{prop}
+
+\begin{proof}
+\pf\ Proposition \ref{prop:dirac-triple}. \qed
+\end{proof}
 
 \begin{thm}
 The eigenvalues of a Hermitian operator are real.
@@ -476,6 +549,29 @@ Let $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ be an orthonormal basis for $\mathcal{H
 \begin{df}[Positive Semidefinite]
 A Hermitian operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{positive semidefinite} iff, for all $\psi \in \mathcal{H}$, we have
 \[ \langle \psi \mid T \mid \psi \rangle \geq 0 \enspace . \]
+\end{df}
+
+\begin{df}[Outer Product]
+Given vectors $\ket{\alpha}, \ket{\beta} \in H$, the \emph{outer product} $\ket{\beta} \bra{\alpha} : H \rightarrow H$ is the linear transformation defined by
+\[ (\ket{\beta} \bra{\alpha})(\ket{\gamma}) = \langle \alpha \mid \gamma \rangle \ket{\beta} \enspace . \]
+\end{df}
+
+\begin{prop}
+\[ (\ket{\beta} \bra{\alpha})^\dagger = \ket{\alpha} \bra{\beta} \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle \psi \mid \alpha \rangle \langle \beta \mid \phi \rangle
+& = \langle \langle \alpha \mid \psi \rangle \beta \mid \phi \rangle \\
+& = \langle (\ket{\beta} \bra{\alpha})(\ket{\psi}) \mid \phi \rangle & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Expectation Value]
+Let $A$ be a Hermitian operator on $H$ and $\ket{\alpha} \in H$ be normalized. The \emph{expectation} value of $A$ with respect to $\ket{\alpha}$ is
+\[ \langle A \rangle = \langle \alpha \mid A \mid \alpha \rangle \enspace . \]
 \end{df}
 
 \chapter{Lie Algebras}
@@ -650,6 +746,52 @@ Let $(X, \sigma)$ be a measurable space. A \emph{measure} on $(X, \sigma)$ is a 
 
 \part{Quantum Theory}
 
+Associated with any physical system $S$ is a Hilbert space $H_S$ such that the states of $S$ correspond to the non-zero vectors in $H_S$ quotiented by: $\ket{\alpha}$ and $c \ket{\alpha}$ represent the same physical state ($c \neq 0$).
 
+Associated with any \emph{observable} property $P$ of the system $S$ is a Hermitian operator $T_P : H_S \rightarrow H_S$.
+
+\begin{ex}
+A \emph{spin-$1/2$ system} has a 2-dimensional Hilbert space with basis $\{ \ket{+}, \ket{-} \} = \{ \left( \begin{array}{c} 1 \\ 0 \end{array} \right), \left( \begin{array}{c} 0 \\ 1 \end{array} \right) \}$.
+
+We have the observables
+\begin{align*}
+S_x & = \frac{\hbar}{2} (\ket{+} \bra{-} + \ket{-} \bra{+}) \\
+& = \frac{\hbar}{2} \left( \begin{array}{cc}
+0 & 1 \\ 1 & 0
+\end{array} \right) \\
+S_y & = \frac{\hbar}{2} (-i \ket{+} \bra{-} + i \ket{-} \bra{+}) \\
+& = \frac{\hbar}{2} \left( \begin{array}{cc}
+0 & -i \\
+i & 0
+\end{array} \right) \\
+S_z & = \frac{\hbar}{2} (\ket{+} \bra{+} - \ket{-} \bra{-}) \\
+& = \frac{\hbar}{2} \left( \begin{array}{cc} 1 & 0 \\ 0 & -1 \end{array} \right) \\
+S_+ & = \hbar \ket{+} \bra{-} \\
+& = \hbar \left( \begin{array}{cc}
+0 & 1 \\ 0 & 0
+\end{array} \right) \\
+& = S_x + i S_y \\
+S_- & = \hbar \ket{-} \bra{+} \\
+& = \hbar \left( \begin{array}{cc}
+0 & 0 \\ 1 & 0 \end{array} \right) \\
+& = S_x - i S_y \\
+\vec{S}^2 & = S_x^2 + S_y^2 + S_z^2 \\
+& = \frac{3}{4} \hbar^2 I
+\end{align*}
+
+The eigenstates of $S_x$ are $\frac{1}{\sqrt{2}} \ket{+} + \frac{1}{\sqrt{2}} \ket{-}$ with eigenvalue $\hbar / 2$, and $\frac{1}{\sqrt{2}} \ket{+} - \frac{1}{\sqrt{2}} \ket{-}$ with eigenvalue $- \hbar / 2$.
+
+The eigenstates of $S_y$ are $\frac{1}{\sqrt{2}} \ket{+} + \frac{i}{\sqrt{2}} \ket{-}$ with eigenvalue $\hbar/2$ and $\frac{1}{\sqrt{2}} \ket{+} - \frac{i}{\sqrt{2}} \ket{-}$ with eigenvalue $-\hbar/2$.
+
+The eigenstates of $S_z$ are $\ket{+}$ with eigenvalue $\hbar/2$ and $\ket{-}$ with eigenvalue $-\hbar/2$.
+
+For $a,b,c \in \{x,y,z\}$ we have
+\begin{align*}
+[S_a,S_b] & = i \epsilon_{abc} \hbar S_c \\
+\{S_a,S_b\} & = \frac{\hbar}{2} \delta_{ab} \\
+[\vec{S}^2, S_a] & = 0
+\end{align*}
+where $\epsilon_{abc} = 1$ if $a$, $b$, $c$ are a cyclic permutation of $x$, $y$, $z$; $\epsilon_{abc} = -1$ if $a$, $b$, $c$ are a cyclic permutation of $y$, $x$, $z$; and 0 if $a$, $b$ and $c$ are not all distinct.
+\end{ex}
 
 \end{document}

@@ -146,10 +146,13 @@
 \contentsline {part}{VIII\hspace {1em}Linear Algebra}{255}{}%
 \contentsline {chapter}{\numberline {48}Vector Spaces}{257}{}%
 \contentsline {section}{\numberline {48.1}Dual Spaces}{258}{}%
-\contentsline {chapter}{\numberline {49}Hilbert Spaces}{261}{}%
-\contentsline {chapter}{\numberline {50}Lie Algebras}{265}{}%
-\contentsline {section}{\numberline {50.1}Lie Algebra Homomorphisms}{266}{}%
-\contentsline {chapter}{\numberline {51}Lie Groups}{267}{}%
-\contentsline {part}{IX\hspace {1em}Topology}{269}{}%
-\contentsline {part}{X\hspace {1em}Measure Theory}{273}{}%
-\contentsline {part}{XI\hspace {1em}Quantum Theory}{277}{}%
+\contentsline {section}{\numberline {48.2}Eigenvalues and Eigenvectors}{260}{}%
+\contentsline {section}{\numberline {48.3}Commutators and Anticommutators}{260}{}%
+\contentsline {chapter}{\numberline {49}Inner Product Spaces}{261}{}%
+\contentsline {chapter}{\numberline {50}Hilbert Spaces}{263}{}%
+\contentsline {chapter}{\numberline {51}Lie Algebras}{267}{}%
+\contentsline {section}{\numberline {51.1}Lie Algebra Homomorphisms}{268}{}%
+\contentsline {chapter}{\numberline {52}Lie Groups}{269}{}%
+\contentsline {part}{IX\hspace {1em}Topology}{271}{}%
+\contentsline {part}{X\hspace {1em}Measure Theory}{275}{}%
+\contentsline {part}{XI\hspace {1em}Quantum Theory}{279}{}%
