@@ -606,7 +606,7 @@ Given vectors $\ket{\alpha}, \ket{\beta} \in H$, the \emph{outer product} $\ket{
 \end{proof}
 
 \begin{df}[Expectation Value]
-Let $A$ be a Hermitian operator on $H$ and $\ket{\alpha} \in H$ be normalized. The \emph{expectation} value of $A$ with respect to $\ket{\alpha}$ is
+Let $A : H \rightarrow H$ be a linear transformation and $\ket{\alpha} \in H$ be normalized. The \emph{expectation} value of $A$ with respect to $\ket{\alpha}$ is
 \[ \langle A \rangle_{\ket{\alpha}} = \langle \alpha \mid A \mid \alpha \rangle \enspace . \]
 \end{df}
 
@@ -616,6 +616,19 @@ The expectation value of a Hermitian operator is real.
 
 \begin{proof}
 \pf\ Since $\langle \alpha \mid A \mid \alpha \rangle = \overline{\langle \alpha \mid A \mid \alpha \rangle}$. \qed
+\end{proof}
+
+\begin{prop}
+The expectation value of an anti-Hermitian operator is purely imaginary.
+\end{prop}
+
+\begin{proof}
+\pf\ If $A$ is anti-Hermitian then
+\begin{align*}
+\overline{\langle \alpha \mid A \mid \alpha \rangle}
+& = \langle \alpha \mid A^\dagger \mid \alpha \rangle \\
+& = - \langle \alpha \mid A \mid \alpha \rangle & \qed
+\end{align*}
 \end{proof}
 
 \begin{df}[Dispersion]
