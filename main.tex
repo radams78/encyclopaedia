@@ -649,6 +649,70 @@ The \emph{dispersion}, \emph{variance} or \emph{mean square deviation} of $A$ is
 & = \langle A^2 \rangle - \langle A \rangle^2 & \qed
 \end{align*}
 \end{proof}
+
+\begin{thm}[Uncertainty Relation]
+Let $A$ and $B$ be Hermitian operators on $H$ and $\ket{\alpha} \in H$ be normalized. Then
+\[ \langle (\Delta A)^2 \rangle_{\ket{\alpha}} \langle (\Delta B)^2 \rangle_{\ket{\alpha}} \geq \frac{1}{4} |\langle [A,B] \rangle_{\ket{\alpha}}|^2 \enspace . \]
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{$\langle (\Delta A)^2 \rangle \langle (\Delta B)^2 \rangle \geq | \langle \Delta A \Delta B \rangle |^2$}
+\begin{proof}
+\pf
+\begin{align*}
+	\langle (\Delta A)^2 \rangle \langle (\Delta B)^2 \rangle
+	& = \langle \Delta A \alpha \mid \Delta A \alpha \rangle \langle \Delta B \alpha \mid \Delta B \alpha \rangle \\
+	& \geq |\langle \Delta A \alpha \mid \Delta B \alpha \rangle|^2 & (\text{Schwarz inequality}) 	\\
+	& = |\langle \Delta A \Delta B \rangle|
+\end{align*}
+\end{proof}
+\step{2}{$\Delta A \Delta B = \frac{1}{2}[\Delta A, \Delta B] + \frac{1}{2} \{ \Delta A, \Delta B \}$}
+\step{3}{$[\Delta A, \Delta B] = [A,B]$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		[\Delta A, \Delta B] & = \Delta A \Delta B - \Delta B \Delta A \\
+		& = (AB - \langle A \rangle B - \langle B \rangle A + \langle A \rangle \langle B \rangle) \\
+		& - (BA - \langle A \rangle B - \langle B \rangle A + \langle A \rangle \langle B \rangle) \\
+		& = AB - BA \\
+		& = [A,B]
+	\end{align*}
+\end{proof}
+\step{31}{$[A, B]$ is anti-Hermitian.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		[A,B]^\dagger & = (AB - BA)^\dagger \\
+		& = B^\dagger A^\dagger - A^\dagger B^\dagger \\
+		&= BA - AB \\
+		& = -[A,B]
+	\end{align*}
+\end{proof}
+\step{4}{$\langle \Delta A \Delta B \rangle = \frac{1}{2} \langle [A,B] \rangle + \frac{1}{2} \langle \{ \Delta A , \Delta B \} \rangle$}
+\step{5}{$\langle [A,B] \rangle$ is purely imaginary.}
+\step{6a}{$\{ \Delta A, \Delta B \}$ is Hermitian.}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\{ \Delta A, \Delta B \}^\dagger
+		& = (\Delta A \Delta B + \Delta B \Delta A)^\dagger \\
+		& = \Delta B \Delta A + \Delta A \Delta B \\
+		& = \{ \Delta A, \Delta B \}
+	\end{align*}
+\end{proof}
+\step{6}{$\langle \{ \Delta A, \Delta B \}\rangle$ is real.}
+\step{7}{$|\langle \Delta A \Delta B \rangle|^2 = \frac{1}{4} |\langle [A,B] \rangle|^2 + \frac{1}{4}| \langle \{ \Delta A , \Delta B \} \rangle |^2$}
+\begin{proof}
+	\pf\ From \stepref{4}, \stepref{5} and \stepref{6}.
+\end{proof}
+\step{8}{\[ \langle (\Delta A)^2 \rangle \langle (\Delta B)^2 \rangle \geq \frac{1}{4} |\langle [A,B] \rangle|^2 \enspace . \]}
+\begin{proof}
+	\pf\ From \stepref{1} and \stepref{7}.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Lie Algebras}
 
 \begin{df}[Lie Algebra]

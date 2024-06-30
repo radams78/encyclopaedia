@@ -150,9 +150,9 @@
 \contentsline {section}{\numberline {48.3}Commutators and Anticommutators}{260}{}%
 \contentsline {chapter}{\numberline {49}Inner Product Spaces}{261}{}%
 \contentsline {chapter}{\numberline {50}Hilbert Spaces}{263}{}%
-\contentsline {chapter}{\numberline {51}Lie Algebras}{267}{}%
-\contentsline {section}{\numberline {51.1}Lie Algebra Homomorphisms}{268}{}%
-\contentsline {chapter}{\numberline {52}Lie Groups}{269}{}%
-\contentsline {part}{IX\hspace {1em}Topology}{271}{}%
-\contentsline {part}{X\hspace {1em}Measure Theory}{275}{}%
-\contentsline {part}{XI\hspace {1em}Quantum Theory}{279}{}%
+\contentsline {chapter}{\numberline {51}Lie Algebras}{269}{}%
+\contentsline {section}{\numberline {51.1}Lie Algebra Homomorphisms}{270}{}%
+\contentsline {chapter}{\numberline {52}Lie Groups}{271}{}%
+\contentsline {part}{IX\hspace {1em}Topology}{273}{}%
+\contentsline {part}{X\hspace {1em}Measure Theory}{277}{}%
+\contentsline {part}{XI\hspace {1em}Quantum Theory}{281}{}%
