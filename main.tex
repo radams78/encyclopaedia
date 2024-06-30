@@ -356,6 +356,65 @@ We say $\lambda \in K$ is a \emph{degenerate} eigenvalue iff its eigenspace has 
 The \emph{commutator} of linear transformations $S,T : V \rightarrow V$ is $[S,T] = ST - TS$.
 \end{df}
 
+\begin{prop}
+\[ [A,A] = 0 \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\[ [A,B] = -[B,A] \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\[ [A,I] = 0 \]
+\end{prop}
+
+\begin{proof}
+\pf\ Immediate from definitions. \qed
+\end{proof}
+
+\begin{prop}
+\[ [A + B, C] = [A,C] + [B,C] \]
+\end{prop}
+
+\begin{proof}
+\pf\ Easy. \qed
+\end{proof}
+
+\begin{prop}
+\[ [A,BC] = [A,B]C + B[A,C] \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+[A,B]C + B[A,C] & = ABC - BAC + BAC - BCA \\
+& = ABC - BCA \\
+& = [A,BC] & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}[Jacobi Identity]
+\[ [A,[B,C]] + [B, [C,A]] + [C, [A,B]] = 0 \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+& [A,[B,C]] + [B,[C,A]] + [C,[A,B]] \\
+= & [A,BC-CB] + [B,CA-AC] + [C,AB-BA] \\
+& = ABC - ACB - BCA + CBA + BCA - BAC - CAB + ACB + CAB - CBA - ABC + BAC \\
+& = 0 & \qed
+\end{align*}
+\end{proof}
+
 \begin{df}[Anticommutator]
 The \emph{antycommutator} of linear transformations $S,T : V \rightarrow V$ is $\{ S,T \} = ST + TS$.
 \end{df}
@@ -571,16 +630,44 @@ Let $T$ be a Hermitian operator. Then eigenvectors of $T$ with different eigenva
 A linear operator $P : \mathcal{H} \rightarrow \mathcal{H}$ is a \emph{projection} iff $P = P^2 = P^\dagger$.
 \end{df}
 
-\begin{df}[Unitary]
-A linear operator $U : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{unitary} iff $U^\dagger U = \id{\mathcal{H}}$.
-\end{df}
-
 \begin{df}[Trace]
 Let $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ be an orthonormal basis for $\mathcal{H}$. The \emph{trace} of a linear operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is
 \[ \Tr(T) = \sum_{i=1}^n \langle e_i \mid T \mid e_i \rangle \enspace . \]
 \end{df}
 
-%TODO Prove this is independent of the choice of basis
+\begin{prop}
+The trace of a linear operator is independent of the choice of basis.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\{ \ket{e_1}, \ldots, \ket{e_n} \}$ and $\{ \ket{f_1}, \ldots, \ket{f_n} \}$ be two orthonormal bases.}}
+\step{2}{$\sum_i \langle e_i \mid T \mid e_i \rangle = \sum_j \langle f_i \mid T \mid f_i \rangle$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\sum_i \langle e_i \mid T \mid e_i \rangle
+		& = \sum_{i,j,k} \langle e_i \mid f_j \rangle \langle f_j \mid T \mid f_k \rangle \langle f_k \mid e_i \rangle \\
+		& = \sum_{j,k} \langle f_k \mid f_j \rangle \langle f_j \mid T \mid f_k \rangle \\
+		& = \sum_j \langle f_j \mid T \mid f_j \rangle
+	\end{align*}
+\end{proof}
+\qed
+\end{proof}
+
+\begin{prop}
+\[ \Tr(S \circ T) = \Tr(T \circ S) \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\sum_i \langle e_i \mid ST \mid e_i \rangle
+& = \sum_{i,j} \langle e_i \mid S \mid e_j \rangle \langle e_j \mid T \mid e_i \rangle \\
+& = \sum_{i,j} \langle e_j \mid T \mid e_i \rangle \langle e_i \mid S \mid e_j \rangle \\
+& = \sum_j \langle e_j \mid TS \mid e_j \rangle & \qed
+\end{align*}
+\end{proof}
 
 \begin{df}[Positive Semidefinite]
 A Hermitian operator $T : \mathcal{H} \rightarrow \mathcal{H}$ is \emph{positive semidefinite} iff, for all $\psi \in \mathcal{H}$, we have
@@ -602,6 +689,19 @@ Given vectors $\ket{\alpha}, \ket{\beta} \in H$, the \emph{outer product} $\ket{
 \langle \psi \mid \alpha \rangle \langle \beta \mid \phi \rangle
 & = \langle \langle \alpha \mid \psi \rangle \beta \mid \phi \rangle \\
 & = \langle (\ket{\beta} \bra{\alpha})(\ket{\psi}) \mid \phi \rangle & \qed
+\end{align*}
+\end{proof}
+
+\begin{prop}
+\[ \Tr(\ket{\beta} \bra{\alpha}) = \langle \alpha \mid \beta \rangle \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\sum_i \langle e_i \mid \beta \rangle \langle \alpha \mid e_i \rangle
+& = \sum_i \langle \alpha \mid e_i \rangle \langle e_i \mid \beta \rangle \\
+& = \langle \alpha \mid \beta \rangle & \qed
 \end{align*}
 \end{proof}
 
@@ -718,6 +818,15 @@ Let $H$ be a Hilbert space and $U : H \rightarrow H$ be a bounded linear transfo
 \end{df}
 
 \begin{prop}
+Let $T,U : H \rightarrow H$ where $U$ is unitary. Then
+\[ \Tr(U^\dagger T U) = \Tr(T) \]
+\end{prop}
+
+\begin{proof}
+\pf\ $\Tr(U^\dagger T U) = \Tr(U U^\dagger T)  = \Tr(T)$. \qed
+\end{proof}
+
+\begin{prop}
 Let $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ and $\{ \ket{f_1}, \ldots, \ket{f_n} \}$ be orthonormal bases. Then the operator $U$ such that $U \ket{e_i} = \ket{f_i}$ for all $i$ is unitary.
 \end{prop}
 
@@ -739,6 +848,11 @@ Let $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ and $\{ \ket{f_1}, \ldots, \ket{f_n} \}
 \end{proof}
 \qed
 \end{proof}
+
+\begin{df}[Exponent of an Operator]
+For any operator $X$, define the \emph{exponent} $\exp(X)$ to be the operator
+\[ \exp(X) = 1 + X + \frac{X^2}{2} + \cdots \]
+\end{df}
 
 \chapter{Lie Algebras}
 
@@ -1004,5 +1118,16 @@ Suppose there exists an orthonormal basis $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ o
 Let $\mathcal{H}$ be a finite dimensional Hilbert space. Let $S$ and $T$ be compatible observables. Then every orthonormal basis of eigenvectors of $T$ is an orthonormal basis of eigenvectors of $S$.
 \end{cor}
 
+\begin{df}[Unitary Equivalent Observables]
+Observables $A$ and $B$ are \emph{unitary equivalent} iff there exists a unitary $U$ such that $B = UAU^\dagger$.
+\end{df}
+
+\begin{prop}
+Unitary equivalent observables have the same spectrum.
+\end{prop}
+
+\begin{proof}
+\pf\ If $\ket{v}$ is a $\lambda$-eigenvalue of $A$ then $U\ket{v}$ is a $\lambda$-eigenvalue of $UAU^\dagger$. \qed
+\end{proof}
 
 \end{document}
