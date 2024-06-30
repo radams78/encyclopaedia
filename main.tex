@@ -329,6 +329,27 @@ Let $V$ be a vector space over $K$ and $T : V \rightarrow V$ a linear transforma
 \[ T(v) = \lambda v \enspace . \]
 \end{df}
 
+\begin{prop}
+For $\lambda \in K$, the set of all eigenvectors with eigenvalue $\lambda$ forms a subspace of $V$.
+\end{prop}
+
+\begin{proof}
+\pf\ If $u$ and $v$ are $\lambda$-eigenvectors then
+\begin{align*}
+T(u + \alpha v) & = T(u) + \alpha T(v) \\
+& = \lambda u + \alpha \lambda v \\
+& = \lambda (u + \alpha v) & \qed
+\end{align*}
+\end{proof}
+
+\begin{df}[Eigenspace]
+For $\lambda \in K$, the \emph{eigenspace} of $\lambda$ is the subspace of all eigenvectors with eigenvalue $\lambda$.
+\end{df}
+
+\begin{df}[Degenerate]
+We say $\lambda \in K$ is a \emph{degenerate} eigenvalue iff its eigenspace has dimension $> 1$, and \emph{non-degenerate} iff its eigenspace has dimension 1.
+\end{df}
+
 \section{Commutators and Anticommutators}
 
 \begin{df}[Commutator]
@@ -384,6 +405,21 @@ Given a vector $\ket{v} \in V$, define the \emph{bra} $\bra{v} \in V^*$ by:
 \end{align*}
 \end{prop}
 
+\begin{prop}[Schwarz Inequality]
+Let $V$ be an inner product space and $\ket{\alpha}, \ket{\beta} \in V$. Then
+\[ \| \alpha\| ^2 \| \beta \|^2 \geq |\langle \alpha \mid \beta \rangle|^2 \enspace . \]
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{For all $\lambda \in \mathbb{C}$ we have
+\[ (\bra{\alpha} + \overline{\lambda} \bra{\beta}) (\ket{\alpha} + \lambda \ket{\beta}) \geq 0 \enspace . \]}
+\step{2}{$\langle \alpha \mid \alpha \rangle \langle \beta \mid \beta \rangle - |\langle \alpha \mid \beta \rangle|^2 \geq 0$}
+\begin{proof}
+	\pf\ Taking $\lambda = - \langle \beta \mid \alpha \rangle \langle \beta \mid \beta \rangle$ in \stepref{1}.
+\end{proof}
+\qed
+\end{proof}
 
 \chapter{Hilbert Spaces}
 
@@ -571,9 +607,35 @@ Given vectors $\ket{\alpha}, \ket{\beta} \in H$, the \emph{outer product} $\ket{
 
 \begin{df}[Expectation Value]
 Let $A$ be a Hermitian operator on $H$ and $\ket{\alpha} \in H$ be normalized. The \emph{expectation} value of $A$ with respect to $\ket{\alpha}$ is
-\[ \langle A \rangle = \langle \alpha \mid A \mid \alpha \rangle \enspace . \]
+\[ \langle A \rangle_{\ket{\alpha}} = \langle \alpha \mid A \mid \alpha \rangle \enspace . \]
 \end{df}
 
+\begin{prop}
+The expectation value of a Hermitian operator is real.
+\end{prop}
+
+\begin{proof}
+\pf\ Since $\langle \alpha \mid A \mid \alpha \rangle = \overline{\langle \alpha \mid A \mid \alpha \rangle}$. \qed
+\end{proof}
+
+\begin{df}[Dispersion]
+Let $A$ be a Hermitian operator on $H$ and $\ket{\alpha} \in H$ be normalized. Define
+\[ \Delta A = A - \langle A \rangle_{\ket{\alpha}} \enspace . \]
+The \emph{dispersion}, \emph{variance} or \emph{mean square deviation} of $A$ is $\langle (\Delta A)^2 \rangle_{\ket{\alpha}}$.
+\end{df}
+
+\begin{prop}
+\[ \langle (\Delta A)^2 \rangle_{\ket{\alpha}} = \langle A^2 \rangle_{\ket{\alpha}} - \langle A \rangle_{\ket{\alpha}}^2 \]
+\end{prop}
+
+\begin{proof}
+\pf
+\begin{align*}
+\langle (\Delta A)^2 \rangle & = \langle A^2 - 2 \langle A \rangle A + \langle A \rangle^2 \rangle \\
+& = \langle A^2 \rangle - 2 \langle A \rangle^2 + \langle A \rangle^2 \\
+& = \langle A^2 \rangle - \langle A \rangle^2 & \qed
+\end{align*}
+\end{proof}
 \chapter{Lie Algebras}
 
 \begin{df}[Lie Algebra]
@@ -750,6 +812,8 @@ Associated with any physical system $S$ is a Hilbert space $H_S$ such that the s
 
 Associated with any \emph{observable} property $P$ of the system $S$ is a Hermitian operator $T_P : H_S \rightarrow H_S$.
 
+If we measure the property $P$, then the value measured is an eigevalue of $T_P$, and after the measurement the state is an eigenvector of $T_P$ with that eigenvalue.
+
 \begin{ex}
 A \emph{spin-$1/2$ system} has a 2-dimensional Hilbert space with basis $\{ \ket{+}, \ket{-} \} = \{ \left( \begin{array}{c} 1 \\ 0 \end{array} \right), \left( \begin{array}{c} 0 \\ 1 \end{array} \right) \}$.
 
@@ -793,5 +857,48 @@ For $a,b,c \in \{x,y,z\}$ we have
 \end{align*}
 where $\epsilon_{abc} = 1$ if $a$, $b$, $c$ are a cyclic permutation of $x$, $y$, $z$; $\epsilon_{abc} = -1$ if $a$, $b$, $c$ are a cyclic permutation of $y$, $x$, $z$; and 0 if $a$, $b$ and $c$ are not all distinct.
 \end{ex}
+
+\begin{df}[Compatible Observables]
+Observables $A$ and $B$ are \emph{compatible} iff $[A,B] = 0$; otherwise they are \emph{incompatible}.
+\end{df}
+
+\begin{thm}
+\label{thm:compatible-diagonal}
+Suppose that $A$ and $B$ are compatible observables, and the eigenvalues of $A$ are non-degenerate. Assume the eigenvectors of $A$ span $H$. Pick an orthonormal basis of eigenvectors of $A$. With respect to this basis, the matrix of $B$ is diagonal.
+\end{thm}
+
+\begin{proof}
+\pf
+\step{1}{\pflet{$\ket{u}$ and $\ket{v}$ be distinct basis elements with $A$-eigenvalues $\alpha$ and $\beta$.}}
+\step{2}{$\langle u \mid [A,B] \mid v \rangle = 0$}
+\step{3}{$(\alpha - \beta) \langle u \mid B \mid v \rangle = 0$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		\langle u \mid [A,B] \mid v \rangle
+		& = \langle u \mid AB \mid v \rangle - \langle u \mid BA \mid v \rangle \\
+		& = \langle Au \mid B \mid v \rangle - \langle u \mid B \mid Av \rangle & (A \text{ is Hermitian}) \\
+		& = \alpha \langle u \mid B \mid v \rangle - \beta \langle u \mid B \mid v \rangle
+	\end{align*}
+\end{proof}
+\step{4}{$\alpha \neq \beta$}
+\begin{proof}
+	\pf\ Since the $\alpha$ and $\beta$ eigenspaces are non-degenerate.
+\end{proof}
+\step{5}{$\langle u \mid B \mid v \rangle = 0$}
+\qed
+\end{proof}
+
+\begin{prop}
+Let $\mathcal{H}$ be a finite dimensional Hilbert space. Let $S$ and $T$ be compatible observables.
+Suppose there exists an orthonormal basis $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ of eigenvectors of $T$. If $\ket{e_i}$ is a $\lambda$-eigenvector of $T$, then it is a $\langle e_i \mid S \mid e_i \rangle$-eigenvector of $S$.
+\end{prop}
+
+%TODO
+
+\begin{cor}
+Let $\mathcal{H}$ be a finite dimensional Hilbert space. Let $S$ and $T$ be compatible observables. Then every orthonormal basis of eigenvectors of $T$ is an orthonormal basis of eigenvectors of $S$.
+\end{cor}
+
 
 \end{document}
