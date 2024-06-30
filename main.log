@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  30 JUN 2024 08:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.8.17)  30 JUN 2024 08:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,11 +983,11 @@ Chapter 49.
 Chapter 50.
 [263
 
-] [264] [265] [266] [267] [268
-
-]
+] [264] [265] [266] [267] [268]
 Chapter 51.
-[269] [270]
+[269
+
+] [270]
 Chapter 52.
 [271
 
@@ -999,7 +999,7 @@ Chapter 52.
 
 ] [281] [282]
 [283]
-Overfull \hbox (4.57143pt too wide) in paragraph at lines 970--972
+Overfull \hbox (4.57143pt too wide) in paragraph at lines 997--999
 \OT1/cmr/m/it/10 com-pat-i-ble ob-serv-ables. Sup-pose there ex-ists an or-thon
 or-mal ba-sis $\OMS/cmsy/m/n/10 f[] \OML/cmm/m/it/10 ; [] ; []\OMS/cmsy/m/n/10 
 g$
@@ -1042,7 +1042,7 @@ r/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 bm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 m7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (284 pages, 864099 bytes).
+Output written on main.pdf (284 pages, 865232 bytes).
 PDF statistics:
  1051 PDF objects out of 1200 (max. 8388607)
  707 compressed objects within 8 object streams

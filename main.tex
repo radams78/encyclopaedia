@@ -713,6 +713,33 @@ Let $A$ and $B$ be Hermitian operators on $H$ and $\ket{\alpha} \in H$ be normal
 \qed
 \end{proof}
 
+\begin{df}[Unitary]
+Let $H$ be a Hilbert space and $U : H \rightarrow H$ be a bounded linear transformation. Then $U$ is \emph{unitary} iff $U^\dagger U = I$ and $U U^\dagger = I$.
+\end{df}
+
+\begin{prop}
+Let $\{ \ket{e_1}, \ldots, \ket{e_n} \}$ and $\{ \ket{f_1}, \ldots, \ket{f_n} \}$ be orthonormal bases. Then the operator $U$ such that $U \ket{e_i} = \ket{f_i}$ for all $i$ is unitary.
+\end{prop}
+
+\begin{proof}
+\pf
+\step{1}{$U = \sum_i \ket{f_i} \bra{e_i}$}
+\step{2}{$U^\dagger U = I$}
+\begin{proof}
+	\pf
+	\begin{align*}
+		U^\dagger U & = \sum_{i,j} \ket{e_i} \langle f_i \mid f_j \rangle \bra{e_j} \\
+		& = \sum_i \ket{e_i} \bra{e_i} \\
+		& = I & (\text{Completeness Relation})
+	\end{align*}
+\end{proof}
+\step{3}{$U U^\dagger = I$}
+\begin{proof}
+	\pf\ Similar.
+\end{proof}
+\qed
+\end{proof}
+
 \chapter{Lie Algebras}
 
 \begin{df}[Lie Algebra]
